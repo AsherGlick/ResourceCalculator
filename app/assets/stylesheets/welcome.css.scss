@@ -1,0 +1,20 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.desired_item {
+	float: left;
+	width: 100px;
+	height: 100px;
+	// background: #CCC;
+	margin: 2px;
+	text-align: center;
+}
+
+.desired_item_count {
+	width: 100%;
+	// border:none;
+	box-sizing: border-box;
+	
+}

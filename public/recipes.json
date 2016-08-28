@@ -1,0 +1,88 @@
+{
+  "Wooden Sword": [
+    {
+      "output": 1, 
+      "recipe": [
+        null, 
+        "Oak Wood Planks", 
+        null, 
+        null, 
+        "Oak Wood Planks", 
+        null, 
+        null, 
+        "Stick", 
+        null
+      ], 
+      "shapeless": 0,
+      "raw_material":false
+    }
+  ], 
+  "Stick": [
+    {
+      "output": 4,
+      "recipe": [
+        null, 
+        null, 
+        null, 
+        null, 
+        "Oak Wood Planks", 
+        null, 
+        null, 
+        "Oak Wood Planks", 
+        null
+      ], 
+      "shapeless": 0
+    }
+  ],
+  "Oak Wood Planks": [
+    {
+      "output": 4, 
+      "recipe": [
+        null, 
+        null, 
+        null, 
+        null, 
+        "Oak Wood", 
+        null, 
+        null, 
+        null, 
+        null
+      ], 
+      "shapeless": 1
+    }
+  ],
+  "Oak Wood": [
+    {
+      "output": 1, 
+      "recipe": [
+        null, 
+        null, 
+        null, 
+        null, 
+        null, 
+        null, 
+        null, 
+        null, 
+        null
+      ], 
+      "shapeless": 1
+    }
+  ],
+  "Fence Gate": [
+    {
+      "output": 1, 
+      "recipe": [
+        null, 
+        null, 
+        null, 
+        "Stick", 
+        "Oak Wood Planks", 
+        "Stick", 
+        "Stick", 
+        "Oak Wood Planks", 
+        "Stick"
+      ], 
+      "shapeless": 0
+    }
+  ]
+}
