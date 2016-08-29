@@ -23,5 +23,5 @@ deploy-prod:
     - mkdir -p ~/.ssh
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
     - ssh $PROD_USER@$PROD_HOST ls
-    - ssh $PROD_USER@$PROD_HOST cwd
     - ssh $PROD_USER@$PROD_HOST tree
+    - spc -r . $PROD_USER@$PROD_HOST:/home/$PROD_USER/resourcecalculator.com/
