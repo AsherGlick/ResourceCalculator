@@ -25,3 +25,4 @@ deploy-prod:
     - ssh $PROD_USER@$PROD_HOST ls
     - ssh $PROD_USER@$PROD_HOST tree
     - scp -r . $PROD_USER@$PROD_HOST:/home/$PROD_USER/resourcecalculator.com/
+    - ssh $PROD_USER@$PROD_HOST "cd resourcecalculator.com; bundle install"
