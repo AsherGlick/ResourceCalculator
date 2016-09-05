@@ -23,8 +23,8 @@ deploy-prod:
     # - aws ecr get-login --region us-east-1
     - docker login -u AWS -p $DOCKER_REGISTRY_PASSWORD -e none $DOCKER_REGISTRY_URL
     - docker build -t resourcecalculator .
-    - docker tag resourcecalculator:latest 879234386562.dkr.ecr.us-east-1.amazonaws.com/resourcecalculator:latest
-    - docker push 879234386562.dkr.ecr.us-east-1.amazonaws.com/resourcecalculator:latest
+    - docker tag resourcecalculator:latest 879234386562.dkr.ecr.us-east-1.amazonaws.com/resourcecalculator:$CI_BUILD_ID
+    - docker push 879234386562.dkr.ecr.us-east-1.amazonaws.com/resourcecalculator:$CI_BUILD_ID
   only:
     - master
 
