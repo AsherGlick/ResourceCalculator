@@ -4,11 +4,13 @@ stages:
   - deploy
 
 deploy-prod:
+  services:
+    - docker:dind
   stage: deploy
   script:
     # install the required applications
     - apt-get update
-    - apt-get install -qq -y pip
+    - apt-get install -qq -y python-pip
     - pip install aws
 
     - mkdir ~/.aws
