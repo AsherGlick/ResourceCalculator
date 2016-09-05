@@ -4,6 +4,7 @@ stages:
   - deploy
 
 deploy-prod:
+  image: docker:git
   services:
     - docker:dind
   stage: deploy
@@ -12,7 +13,7 @@ deploy-prod:
     - apt-get update
     - apt-get install -qq -y python-pip
     - pip install awscli --ignore-installed six
-    - apt-get install -qq -y docker
+    # - apt-get install -qq -y docker
 
     - mkdir ~/.aws
     - "echo -e '[default]'\naws_access_key_id=$AWS_ACCESS_KEY_ID\naws_secret_access_key=$AWS_SECRET_ACCESS_KEY"
@@ -23,7 +24,8 @@ deploy-prod:
     - docker build -t resourcecalculator .
     - docker tag resourcecalculator:latest 879234386562.dkr.ecr.us-east-1.amazonaws.com/resourcecalculator:latest
     - docker push 879234386562.dkr.ecr.us-east-1.amazonaws.com/resourcecalculator:latest
-
+  only:
+    - master
 
 
 
