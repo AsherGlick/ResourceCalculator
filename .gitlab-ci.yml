@@ -18,6 +18,7 @@ deploy-prod:
     # - mkdir ~/.aws
     # - "echo -e '[default]'\naws_access_key_id=$AWS_ACCESS_KEY_ID\naws_secret_access_key=$AWS_SECRET_ACCESS_KEY"
 
+    - pip --version
 
     # Build and upload the image
     # - aws ecr get-login --region us-east-1
@@ -25,6 +26,7 @@ deploy-prod:
     - docker build -t resourcecalculator .
     - docker tag resourcecalculator:latest 879234386562.dkr.ecr.us-east-1.amazonaws.com/resourcecalculator:$CI_BUILD_ID
     - docker push 879234386562.dkr.ecr.us-east-1.amazonaws.com/resourcecalculator:$CI_BUILD_ID
+
   only:
     - master
 
