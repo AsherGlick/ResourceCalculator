@@ -4,25 +4,25 @@ stages:
   - deploy
 
 deploy-prod:
-  image: docker:git
+  image: ubuntu:16.04
   services:
     - docker:dind
   stage: deploy
   script:
     # # install the required applications
-    # - apt-get update
-    # - apt-get install -qq -y python-pip
-    # - pip install awscli --ignore-installed six
-    # # - apt-get install -qq -y docker
+    - apt-get update
+    - apt-get install -qq -y python-pip
+    - pip install awscli --ignore-installed six
+    - apt-get install -qq -y docker
 
     # - mkdir ~/.aws
-    # - "echo -e '[default]'\naws_access_key_id=$AWS_ACCESS_KEY_ID\naws_secret_access_key=$AWS_SECRET_ACCESS_KEY"
+    - "echo -e '[default]'\naws_access_key_id=$AWS_ACCESS_KEY_ID\naws_secret_access_key=$AWS_SECRET_ACCESS_KEY"
 
     - pip --version
 
     # Build and upload the image
-    # - aws ecr get-login --region us-east-1
-    - docker login -u AWS -p $DOCKER_REGISTRY_PASSWORD -e none $DOCKER_REGISTRY_URL
+    - `aws ecr get-login --region us-east-1`
+    # - docker login -u AWS -p $DOCKER_REGISTRY_PASSWORD -e none $DOCKER_REGISTRY_URL
     - docker build -t resourcecalculator .
     - docker tag resourcecalculator:latest 879234386562.dkr.ecr.us-east-1.amazonaws.com/resourcecalculator:$CI_BUILD_ID
     - docker push 879234386562.dkr.ecr.us-east-1.amazonaws.com/resourcecalculator:$CI_BUILD_ID
