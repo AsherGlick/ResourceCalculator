@@ -21,7 +21,7 @@ deploy-prod:
     - pip --version
 
     # Build and upload the image
-    - `aws ecr get-login --region us-east-1`
+    - "`aws ecr get-login --region us-east-1`"
     # - docker login -u AWS -p $DOCKER_REGISTRY_PASSWORD -e none $DOCKER_REGISTRY_URL
     - docker build -t resourcecalculator .
     - docker tag resourcecalculator:latest 879234386562.dkr.ecr.us-east-1.amazonaws.com/resourcecalculator:$CI_BUILD_ID
