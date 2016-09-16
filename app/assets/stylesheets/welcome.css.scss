@@ -5,16 +5,34 @@
 
 .desired_item {
 	float: left;
-	width: 100px;
-	height: 100px;
-	// background: #CCC;
+	width: 80px;
+	height: 80px;
+	background: #AAA;
 	margin: 2px;
 	text-align: center;
+	position: relative;
+
+
 }
 
 .desired_item_count {
 	width: 100%;
 	// border:none;
 	box-sizing: border-box;
-	
+	background: transparent;
+	text-align: right;
+	position:absolute;
+	bottom: 0;
+	left: 0;
+	font-family:'Minecraft Regular', courier;
+	color: #FFF !important;
+	text-shadow: 2px 2px 0 #3F3F3F;
+	border:none;
+	border-top: 1px solid black;
+	padding-bottom: 2px;
+}
+
+
+.search_bar {
+	font-family:'Minecraft Regular', courier;
 }
