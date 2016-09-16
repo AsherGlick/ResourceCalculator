@@ -3,6 +3,8 @@
 
 
 
+
+
 	$(window).load(function(){
 		var global_recepies;
 		// Assign handlers immediately after making the request,
@@ -11,15 +13,16 @@
 			// console.log( "success" );
 
 			var content = $("#contentfield");
-			var cList = $('<ul/>');
+			// var cList = $('<ul/>');
 
 
 			$.each(result, function(i)
 			{
 				var li = $('<div/>')
 					.addClass('desired_item')
+					.attr("mc_value", i.toLowerCase())
 					.text(i)
-					.appendTo(cList);
+					.appendTo(content);
 				var aaa = $('<input/>')
 					.addClass('desired_item_count')
 					.attr('type','textbox')
@@ -39,7 +42,7 @@
 			});
 
 			global_recepies = result;
-			cList.appendTo(content);
+			// cList.appendTo(content);
 
 		})
 		.done(function() {
@@ -171,6 +174,46 @@
 			});
 			return resources;
 		}
+
+
+
+		$("#item_filter").bind("propertychange change click keyup input paste", function(event){
+			// // If value has changed...
+			// if (elem.data('oldVal') != elem.val()) {
+			// // Updated stored value
+			// elem.data('oldVal', elem.val());
+
+			var search_string = $(this).val().toLowerCase()
+
+
+			$("#contentfield").children().each(function(index) {
+				// console.log(index)
+
+				var item_name = $(this).attr('mc_value');
+
+				if (item_name.indexOf(search_string) === -1) {
+					$(this).hide();
+				}
+				else {
+					$(this).show();
+				}
+
+			});
+
+
+
+
+			// Do action
+			// ....
+		});
+
+
+
+
+		// keyup(function() {
+		// 	console.log($(this).val());
+		// })
+
 
 	}); 
 
