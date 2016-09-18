@@ -20,13 +20,27 @@
 			{
 				var li = $('<div/>')
 					.addClass('desired_item')
-					.attr("mc_value", i.toLowerCase())
-					.text(i)
+					.attr("mc_value", filenameify(i))
+					// .attr("mc_value", i.toLowerCase())
+					.css('background-image', 'url(items/' + filenameify(i) + '.png)')
+					// .text(i)
 					.appendTo(content);
 				var aaa = $('<input/>')
 					.addClass('desired_item_count')
 					.attr('type','textbox')
 					.appendTo(li);
+
+
+
+
+				li.mouseover( function() {
+					$("#hover_name").show();
+					$("#hover_name").text(i);
+				});
+
+				li.mouseout( function() {
+					$("#hover_name").hide();
+				})
 
 			/*	if (!result[i]["raw_material"]){
 					console.log(result[i]["raw_material"]);
@@ -63,11 +77,20 @@
 		});	
 
 
+		function filenameify(rawname) {
+			name = rawname.toLowerCase();
+			name = name.split(" ").join('_');
+			name = name.replace(/[^a-zA-Z0-9_]/g,"");
+			console.log(name);
+			return name;
+		}
 
 
 
 		$("#generatelist").click(function() {
 			requirements = gather_requirements();
+
+			console.log(requirements);
 
 			raw_resources = {};
 
@@ -163,7 +186,8 @@
 		function gather_requirements() {
 			var resources = {};
 			$(".desired_item").each(function() {
-				var key = $(this).text();
+				var key = $(this).attr("mc_value");
+				console.log(key);
 				var value = $(this).find(".desired_item_count").val();
 
 				if ($.isNumeric(value)) {
@@ -205,6 +229,18 @@
 
 			// Do action
 			// ....
+		});
+
+
+		$("#hover_name").hide();
+
+
+		$(document).on('mousemove', function(e){
+		    $('#hover_name').offset	({
+		       left:  e.pageX +10,
+		       top:   e.pageY -10
+		    });
+		    console.log("mousemove");
 		});
 
 

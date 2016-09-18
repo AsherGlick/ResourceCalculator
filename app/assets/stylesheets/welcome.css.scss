@@ -5,9 +5,9 @@
 
 .desired_item {
 	float: left;
-	width: 80px;
-	height: 80px;
-	background: #AAA;
+	width: 32px;
+	height: 32px;
+	background: #F0F;
 	margin: 2px;
 	text-align: center;
 	position: relative;
@@ -28,11 +28,18 @@
 	color: #FFF !important;
 	text-shadow: 2px 2px 0 #3F3F3F;
 	border:none;
-	border-top: 1px solid black;
+	// border-top: 1px solid black;
 	padding-bottom: 2px;
 }
 
 
 .search_bar {
 	font-family:'Minecraft Regular', courier;
+}
+
+#hover_name {
+	height: 1em;
+	// width: 100px;
+	background-color: #AAA;
+	position:absolute;
 }
