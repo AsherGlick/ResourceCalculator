@@ -20,7 +20,7 @@
 			{
 				var li = $('<div/>')
 					.addClass('desired_item')
-					.attr("mc_value", filenameify(i))
+					.attr("mc_value", i)
 					// .attr("mc_value", i.toLowerCase())
 					.css('background-image', 'url(items/' + filenameify(i) + '.png)')
 					// .text(i)
