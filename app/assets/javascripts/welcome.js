@@ -213,7 +213,7 @@
 			$("#contentfield").children().each(function(index) {
 				// console.log(index)
 
-				var item_name = $(this).attr('mc_value');
+				var item_name = $(this).attr('mc_value').toLowerCase();
 
 				if (item_name.indexOf(search_string) === -1) {
 					$(this).hide();
