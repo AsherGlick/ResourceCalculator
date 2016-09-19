@@ -9,6 +9,9 @@ deploy-prod:
     - docker:dind
   stage: deploy
   script:
+    - CLUSTER_NAME="ResourceCalculator"
+    - TASK_DEFINITION_FAMILY="ResourceCalculator"
+    - SERVICE_NAME="ResourceCalculator"
     # # install the required applications
     - apt-get update
     - apt-get install -qq -y python-pip
@@ -27,6 +30,11 @@ deploy-prod:
     - docker build -t resourcecalculator .
     - docker tag resourcecalculator:latest 879234386562.dkr.ecr.us-east-1.amazonaws.com/resourcecalculator:$CI_BUILD_ID
     - docker push 879234386562.dkr.ecr.us-east-1.amazonaws.com/resourcecalculator:$CI_BUILD_ID
+    # Create a new task definition for the new docker container
+    - "TASK_DEFINITION=`sed -i 's/{{DOCKER_IMAGE}}/879234386562.dkr.ecr.us-east-1.amazonaws.com/resourcecalculator:'$CI_BUILD_ID'/g' task_definition.template.json`"
+    - aws ecs register-task-definition --container-definitions "$TASK_DEFINITION" --family $TASK_DEFINITION_FAMILY
+    # Deploy the new task definition to the running service
+    - aws ecs update-service --cluster $CLUSTER_NAME --service $SERVICE_NAME --task-definition $TASK_DEFINITION_FAMILY
 
   only:
     - master
