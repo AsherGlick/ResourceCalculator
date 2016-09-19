@@ -1,0 +1,15 @@
+[
+  {
+    "portMappings": [
+      {
+        "hostPort": 0,
+        "containerPort": 80,
+        "protocol": "tcp"
+      }
+    ],
+    "essential": true,
+    "name": "ResourceCalculator",
+    "image": "{{DOCKER_IMAGE}}",
+    "memoryReservation": 100
+  }
+]
