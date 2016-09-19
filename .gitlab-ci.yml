@@ -12,7 +12,7 @@ deploy-prod:
     - CLUSTER_NAME="ResourceCalculator"
     - TASK_DEFINITION_FAMILY="ResourceCalculator"
     - SERVICE_NAME="ResourceCalculator"
-    - AWS_DEFAULT_REGION="us-east-1"
+    - export AWS_DEFAULT_REGION="us-east-1"
     # # install the required applications
     - apt-get update
     - apt-get install -qq -y python-pip
