@@ -140,21 +140,31 @@
 
 			var chart = $("#chart");
 			chart.empty();
-			var cList = $('<ul/>');
+			// var cList = $('<ul/>');
 
 			// Fill output
 			$.each(raw_resources, function(i) {
-				var li = $('<li/>')
-					.addClass('desired_item')
-					.text(i + ": " + raw_resources[i] )
-					.appendTo(cList);
+				var li = $('<div/>')
+					.addClass('required_item')
+					.css('background-image', 'url(items/' + filenameify(i) + '.png)')
+					.text(raw_resources[i] )
+					.appendTo(chart);
 				// var aaa = $('<input/>')
 				// 	.addClass('desired_item_count')
 				// 	.attr('type','textbox')
 				// 	.appendTo(li);
+
+				li.mouseover( function() {
+					$("#hover_name").show();
+					$("#hover_name").text(i);
+				});
+
+				li.mouseout( function() {
+					$("#hover_name").hide();
+				})
 			});
 
-			cList.appendTo(chart);
+			// cList.appendTo(chart);
 
 
 		});

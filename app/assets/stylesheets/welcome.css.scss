@@ -15,6 +15,26 @@
 
 }
 
+
+.required_item {
+	float: left;
+	width: 32px;
+	height: 32px;
+	background: #F0F;
+	margin: 2px;
+	text-align: right;
+	// vertical-align: bottom;
+	// position: relative;
+	// display: table-cell;
+  	vertical-align: middle;
+
+	font-size: .8em;
+
+	font-family:'Minecraft Regular', courier;
+	color: #FFF !important;
+	text-shadow: 2px 2px 0 #3F3F3F;
+}
+
 .desired_item_count {
 	width: 100%;
 	// border:none;
