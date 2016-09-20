@@ -24,7 +24,7 @@ deploy-prod:
     - "echo -e '[default]'\naws_access_key_id=$AWS_ACCESS_KEY_ID\naws_secret_access_key=$AWS_SECRET_ACCESS_KEY"
 
     - pip --version
-
+    - docker --version
     # Build and upload the image
     - "`aws ecr get-login --region us-east-1`"
     # - docker login -u AWS -p $DOCKER_REGISTRY_PASSWORD -e none $DOCKER_REGISTRY_URL
