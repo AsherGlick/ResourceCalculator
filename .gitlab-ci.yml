@@ -67,7 +67,7 @@ deploy-dreamhost-prod:
     # - scp -r . $PROD_USER@$PROD_HOST:/home/$PROD_USER/resourcecalculator.com/
     - apt-get install -y rsync
     - rsync -rav -e ssh --include '*' --exclude='.git' --exclude='scripts' --exclude='.gitlab-ci.yml' . $PROD_USER@$PROD_HOST:/home/$PROD_USER/resourcecalculator.com/
-    - ssh $PROD_USER@$PROD_HOST "cd resourcecalculator.com; bundle install"
+    - ssh $PROD_USER@$PROD_HOST "source .zlogin; cd resourcecalculator.com; bundle install; bundle exec rake assets:precompile"
     - ssh $PROD_USER@$PROD_HOST "touch resourcecalculator.com/tmp/restart.txt"
   only:
     - master
