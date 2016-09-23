@@ -12,7 +12,7 @@
 		var jqxhr = $.getJSON( "recipes.json", function(result) {
 			// console.log( "success" );
 
-			var content = $("#contentfield");
+			var content = $("#content_field");
 			// var cList = $('<ul/>');
 
 
@@ -220,7 +220,7 @@
 			var search_string = $(this).val().toLowerCase()
 
 
-			$("#contentfield").children().each(function(index) {
+			$("#content_field").find(".desired_item").each(function(index) {
 				// console.log(index)
 
 				var item_name = $(this).attr('mc_value').toLowerCase();

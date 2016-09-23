@@ -1,11 +1,14 @@
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="/sankey.js"></script>
 
-<label for="item_filter">Search</label><input type="text" class="search_bar" id="item_filter" />
-<div id="contentfield">
-</div>
+<div id="content_field">
+	<div class="search_bar">
+		<div class='hide_unused_wrapper'><input type="checkbox" id="unused_hide_checkbox" class="hide_unused_checkbox"> <label class="hide_unused_label" for="unused_hide_checkbox">Hide Unused</label></div>
+		<label class="search_label" for="item_filter">Search Items&nbsp;</label><span class="search_box_wrapper"><input type="text" class="search_box" id="item_filter" />  </span></div>
 
-<div style="clear:both"></div>
+</div>
+	<div style="clear:both"></div>
+
 
 <div>
 	<input type="button" id="generatelist" value="Generate List"/>

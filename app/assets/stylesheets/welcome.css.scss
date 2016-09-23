@@ -2,16 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$font-stack:    'Minecraft Regular', courier, sans-serif;
 
 .desired_item {
 	float: left;
 	width: 32px;
 	height: 32px;
 	background: #F0F;
-	margin: 2px;
+	// margin: 2px;
 	text-align: center;
 	position: relative;
 
+	border: 2px solid transparent;
+	border-image: url(/ItemBorder.png) 2 ;
 
 }
 
@@ -30,7 +33,7 @@
 
 	font-size: .8em;
 
-	font-family:'Minecraft Regular', courier;
+	font-family: $font-stack;
 	color: #FFF !important;
 	text-shadow: 2px 2px 0 #3F3F3F;
 }
@@ -44,7 +47,7 @@
 	position:absolute;
 	bottom: 0;
 	left: 0;
-	font-family:'Minecraft Regular', courier;
+	font-family: $font-stack;
 	color: #FFF !important;
 	text-shadow: 2px 2px 0 #3F3F3F;
 	border:none;
@@ -55,11 +58,72 @@
 
 .search_bar {
 	font-family:'Minecraft Regular', courier;
+	padding-bottom: 2px;
+
 }
+.search_label {
+	float:left;
+}
+.search_box {
+	font-family:'Minecraft Regular', courier;
+	width: 100%;
+	box-sizing:border-box;
+	border: 2px solid transparent;
+	border-image: url(/ItemBorder.png) 2 ;
+	background-color: #8b8b8b;
+	color: #FFF;
+	text-shadow: 2 2 0 #222;
+}
+.search_box_wrapper {
+    display: block;
+    overflow: hidden;
+}
+
+.hide_unused_wrapper {
+	float:right;
+	// padding: -2px;
+	margin-left: 5px;
+	margin-right: 5px;
+	// padding-left: 2px;
+	// padding-right: 2px;
+	// border: 2px solid transparent;
+	// border-image: url(/ItemBorder.png) 2 ;
+	// box-sizing: border-box;
+	// height: 1em;
+}
+
+.hide_unused_label {
+	cursor: pointer;
+}
+
+input[type=checkbox] + label.hide_unused_label {
+	color: #AAA;
+	text-shadow: 2px 0px 0 #F3F3F3;
+
+}
+input[type=checkbox]:checked + label.hide_unused_label {
+	color: #222;
+	text-shadow: -2px 0px 0 #F3F3F3;
+}
+
+
+.hide_unused_checkbox {
+	display: none;
+}
+
+
 
 #hover_name {
 	height: 1em;
 	// width: 100px;
 	background-color: #AAA;
 	position:absolute;
+}
+
+#content_field {
+	border: 10px solid transparent;
+	background-color: #C3C3C3	;
+	overflow: hidden;
+	border-radius: 10px;
+	border-image: url(/FrameBorder.png) 10 ;
 }
