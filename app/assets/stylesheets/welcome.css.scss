@@ -72,12 +72,18 @@ $font-stack:    'Minecraft Regular', courier, sans-serif;
 	border-image: url(/ItemBorder.png) 2 ;
 	background-color: #8b8b8b;
 	color: #FFF;
-	text-shadow: 2 2 0 #222;
+	text-shadow: 2px 2px 0 #000;
+	padding: 0;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	margin: 0;
+	font-size: .9em;
 }
 .search_box_wrapper {
     display: block;
     overflow: hidden;
 }
+
 
 .hide_unused_wrapper {
 	float:right;
