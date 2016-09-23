@@ -64,7 +64,9 @@ deploy-dreamhost-prod:
     - ssh $PROD_USER@$PROD_HOST ls
     - ssh $PROD_USER@$PROD_HOST tree
     # - ssh $PROD_USER@$PROD_HOST mkdir $CI_BUILD_ID
-    - scp -r . $PROD_USER@$PROD_HOST:/home/$PROD_USER/resourcecalculator.com/
+    # - scp -r . $PROD_USER@$PROD_HOST:/home/$PROD_USER/resourcecalculator.com/
+    - apt-get install rsync
+    - rsync -rav -e ssh --include '*' --exclude='.git' --exclude='scripts' --exclude='.gitlab-ci.yml' $PROD_USER@$PROD_HOST:/usr/some/unknown/number/of/sub/folders/ /usr/project/backup/some/unknown/number/of/sub/folders/
     - ssh $PROD_USER@$PROD_HOST "cd resourcecalculator.com; bundle install"
     - ssh $PROD_USER@$PROD_HOST "touch resourcecalculator.com/tmp/restart.txt"
   only:
