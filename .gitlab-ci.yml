@@ -3,7 +3,7 @@ stages:
   # - test
   - deploy
 
-deploy-prod:
+deploy-aws:
   image: ubuntu:16.04
   services:
     - docker:dind
@@ -38,19 +38,22 @@ deploy-prod:
     - aws ecs update-service --cluster $CLUSTER_NAME --service $SERVICE_NAME --task-definition $TASK_DEFINITION_FAMILY
 
   only:
-    - master
+    - NEVER_aws_deploy
 
 
+deploy-dreamhost-prod:
+  image: ubuntu:16.04
+  stage: deploy
+  script:
+    # Install ssh-agent if not already installed, it is required by Docker.
+    # (change apt-get to yum if you use a CentOS-based image)
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
 
-    # # Install ssh-agent if not already installed, it is required by Docker.
-    # # (change apt-get to yum if you use a CentOS-based image)
-    # - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    # Run ssh-agent (inside the build environment)
+    - eval $(ssh-agent -s)
 
-    # # Run ssh-agent (inside the build environment)
-    # - eval $(ssh-agent -s)
-
-    # # Add the SSH key stored in SSH_PRIVATE_KEY variable to the agent store
-    # - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    # Add the SSH key stored in SSH_PRIVATE_KEY variable to the agent store
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
 
     # # For Docker builds disable host key checking. Be aware that by adding that
     # # you are suspectible to man-in-the-middle attacks.
@@ -58,7 +61,11 @@ deploy-prod:
     # # you will overwrite your user's SSH config.
     # - mkdir -p ~/.ssh
     # - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
-    # - ssh $PROD_USER@$PROD_HOST ls
-    # - ssh $PROD_USER@$PROD_HOST tree
-    # - scp -r . $PROD_USER@$PROD_HOST:/home/$PROD_USER/resourcecalculator.com/
-    # - ssh $PROD_USER@$PROD_HOST "cd resourcecalculator.com; bundle install"
+    - ssh $PROD_USER@$PROD_HOST ls
+    - ssh $PROD_USER@$PROD_HOST tree
+    # - ssh $PROD_USER@$PROD_HOST mkdir $CI_BUILD_ID
+    - scp -r . $PROD_USER@$PROD_HOST:/home/$PROD_USER/resourcecalculator.com/
+    - ssh $PROD_USER@$PROD_HOST "cd resourcecalculator.com; bundle install"
+    - ssh $PROD_USER@$PROD_HOST "touch resourcecalculator.com/tmp/restart.txt"
+  only:
+    - master

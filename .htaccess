@@ -1,0 +1,2 @@
+# This command is specific for Dreamhost to tell passenger to run the custom version of ruby
+PassengerRuby //home/dh_d9v7nb/ruby/bin/ruby
