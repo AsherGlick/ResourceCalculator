@@ -57,7 +57,7 @@ $font-stack:    'Minecraft Regular', courier, sans-serif;
 
 
 .search_bar {
-	font-family:'Minecraft Regular', courier;
+	font-family: $font-stack;
 	padding-bottom: 2px;
 
 }
@@ -65,7 +65,7 @@ $font-stack:    'Minecraft Regular', courier, sans-serif;
 	float:left;
 }
 .search_box {
-	font-family:'Minecraft Regular', courier;
+	font-family: $font-stack;
 	width: 100%;
 	box-sizing:border-box;
 	border: 2px solid transparent;
@@ -122,14 +122,23 @@ input[type=checkbox]:checked + label.hide_unused_label {
 #hover_name {
 	height: 1em;
 	// width: 100px;
-	background-color: #AAA;
+	// background-color: #AAA;
 	position:absolute;
+    background: url(/HoverBackground.png);
+    background-clip: content-box;
+	border: 8px solid transparent;
+	border-image: url(/HoverBorder.png) 8;
+	font-family: $font-stack;
+	color: #FFF;
+	// padding-bottom: 2px;
+	line-height: .7;
+	text-shadow: #3f3f3f 2px 2px;
 }
 
 #content_field {
 	border: 10px solid transparent;
 	background-color: #C3C3C3	;
 	overflow: hidden;
-	border-radius: 10px;
-	border-image: url(/FrameBorder.png) 10 ;
+    background-clip: content-box;
+	border-image: url(/FrameBorder.png) 10;
 }
