@@ -133,6 +133,8 @@ input[type=checkbox]:checked + label.hide_unused_label {
 	// padding-bottom: 2px;
 	line-height: .7;
 	text-shadow: #3f3f3f 2px 2px;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 #content_field {

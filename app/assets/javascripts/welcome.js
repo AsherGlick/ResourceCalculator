@@ -244,13 +244,28 @@
 
 		$("#hover_name").hide();
 
+		// How far away from the mouse should hte hoverbox be
+		var hover_x_offset = 10;
+		var hover_y_offset = -10;
 
 		$(document).on('mousemove', function(e){
-		    $('#hover_name').offset	({
-		       left:  e.pageX +10,
-		       top:   e.pageY -10
-		    });
-		    console.log("mousemove");
+
+			// If the hoverbox is not hanging over the side of the screen when rendered, render normally
+			if ($(window).width() > $('#hover_name').outerWidth() + e.pageX + hover_x_offset) {
+
+			    $('#hover_name').offset	({
+			       left:  e.pageX + hover_x_offset,
+			       top:   e.pageY + hover_y_offset
+			    });
+			}
+			// If the hoverbox is hanging over the side of the screen then render on the other side of the mouse
+			else {
+
+				$('#hover_name').offset	({
+					left:  e.pageX - hover_x_offset - $('#hover_name').outerWidth(),
+					top:   e.pageY + hover_y_offset
+				});
+			}
 		});
 
 
