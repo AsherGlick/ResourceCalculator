@@ -85,7 +85,17 @@
 			return name;
 		}
 
-
+		$("#unused_hide_checkbox").change(function() {
+			if ($(this).prop('checked')) {
+				var label = $("label[for='"+$(this).attr('id')+"']");
+				label.text("Show Unused");
+			}
+			else {
+				var label = $("label[for='"+$(this).attr('id')+"']");
+				label.text("Hide Unused");
+			}
+			filter_items()
+		});
 
 		$("#generatelist").click(function() {
 			requirements = gather_requirements();
@@ -211,21 +221,18 @@
 
 
 
-		$("#item_filter").bind("propertychange change click keyup input paste", function(event){
-			// // If value has changed...
-			// if (elem.data('oldVal') != elem.val()) {
-			// // Updated stored value
-			// elem.data('oldVal', elem.val());
+		function filter_items() {
+			var search_string = $("#item_filter").val().toLowerCase()
+			var hide_unused = $("#unused_hide_checkbox").prop('checked');
 
-			var search_string = $(this).val().toLowerCase()
-
-
+			// Loop through each item
 			$("#content_field").find(".desired_item").each(function(index) {
-				// console.log(index)
-
 				var item_name = $(this).attr('mc_value').toLowerCase();
+				var item_count = $(this).find(".desired_item_count").val();
 
-				if (item_name.indexOf(search_string) === -1) {
+				// If the search string does not match hide the item
+				// If the item count is not greated then 0 and hide unused is true hide
+				if (item_name.indexOf(search_string) === -1 || !(item_count > 0 || !hide_unused)) {
 					$(this).hide();
 				}
 				else {
@@ -233,12 +240,11 @@
 				}
 
 			});
+		}
 
-
-
-
-			// Do action
-			// ....
+		// Re-filter the items each time the search bar is modified
+		$("#item_filter").bind("propertychange change click keyup input paste", function(event){
+			filter_items();
 		});
 
 
