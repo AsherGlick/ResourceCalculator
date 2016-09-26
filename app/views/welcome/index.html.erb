@@ -1,5 +1,5 @@
 <script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="/sankey.js"></script>
+<script src="https://unpkg.com/d3-sankey@0"></script>
 
 <div id="content_field">
 	<div class="search_bar">
@@ -11,11 +11,19 @@
 
 
 <div>
-	<input type="button" id="generatelist" value="Generate List"/>
+	<input type="button" id="generatelist" value="Generate Chest List"/>
+	<input type="button" id="generatechart" value="Generate Instruction Chart"/>
+	<input type="button" id="generatetextlist" value="Generate Text List"/>
+	<!-- <input type="button" id="generatelist" value="Generate List"/> -->
+
+</div>
+
+<div id="item_list">
+	Chart Here
 </div>
 
 <div id="chart">
-	Chart Here
+	Sankey Chart
 </div>
 
 <div id="hover_name"></div>

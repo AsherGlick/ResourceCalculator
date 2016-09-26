@@ -51,7 +51,7 @@
 					result[i][recipe]['requirements'] = condence_recepie(result[i][recipe]['recipe']);
 				});
 
-				console.log(result[i]);
+				// console.log(result[i]);
 
 			});
 
@@ -81,7 +81,7 @@
 			name = rawname.toLowerCase();
 			name = name.split(" ").join('_');
 			name = name.replace(/[^a-zA-Z0-9_]/g,"");
-			console.log(name);
+			// console.log(name);
 			return name;
 		}
 
@@ -96,6 +96,8 @@
 			}
 			filter_items()
 		});
+
+		var resource_tracker = {};
 
 		$("#generatelist").click(function() {
 			requirements = gather_requirements();
@@ -137,6 +139,21 @@
 									output_requirements[item] = 0;
 								}
 								output_requirements[item] += recipe[item] * produce_count;
+
+								// Log the transaction
+								// console.log( requirement + "<=" + item + "(" + recipe[item] * -produce_count + ")" );
+
+
+								//Key
+								var tracker_key = requirement+item;
+								if (!(tracker_key in resource_tracker)) {
+									resource_tracker[tracker_key] = {
+										"source":item,
+										"target":requirement,
+										"value":0
+									}
+								}
+								resource_tracker[tracker_key]["value"] += recipe[item] * -produce_count
 							});
 						}
 					}
@@ -146,9 +163,11 @@
 				requirements = output_requirements;
 			}
 
+			// console.log(resource_tracker);
 
+			generate_chart(resource_tracker);
 
-			var chart = $("#chart");
+			var chart = $("#item_list");
 			chart.empty();
 			// var cList = $('<ul/>');
 
@@ -259,10 +278,10 @@
 			// If the hoverbox is not hanging over the side of the screen when rendered, render normally
 			if ($(window).width() > $('#hover_name').outerWidth() + e.pageX + hover_x_offset) {
 
-			    $('#hover_name').offset	({
-			       left:  e.pageX + hover_x_offset,
-			       top:   e.pageY + hover_y_offset
-			    });
+				$('#hover_name').offset	({
+					 left:  e.pageX + hover_x_offset,
+					 top:   e.pageY + hover_y_offset
+				});
 			}
 			// If the hoverbox is hanging over the side of the screen then render on the other side of the mouse
 			else {
@@ -277,30 +296,185 @@
 
 
 
-		// keyup(function() {
-		// 	console.log($(this).val());
-		// })
+		////////////////////////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////////////////////
+		// Flow Chart stuff
+		function generate_chart(resource_tracker) {
+
+			var sankey = d3.sankey();
+			var margin = {
+				top: 1,
+				right: 1,
+				bottom: 6,
+				left: 1
+			},
+			width = 960 - margin.left - margin.right,
+			height = 500 - margin.top - margin.bottom;
+
+			var formatNumber = d3.format(",.0f"),
+				format = function(d) {
+					return formatNumber(d) + " TWh";
+				},
+				color = d3.scaleOrdinal(d3.schemeCategory20);
+
+			$("#chart").empty();
+
+			var svg = d3.select("#chart").append("svg")
+				.attr("width", width + margin.left + margin.right)
+				.attr("height", height + margin.top + margin.bottom)
+				.append("g")
+				.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+			var sankey = d3.sankey()
+				.nodeWidth(15)
+				.nodePadding(10)
+				.size([width, height]);
+
+			var path = sankey.link();
+
+			// d3.json("energy.json", function(energy) {
+
+			// Need piston
+			// 0: make sure this exists
+			// 1: make sure all of the sources exist
+			// 2: mapping 
+
+			// Add mapping to and from and the quantity for each element
+			// "tofrom":{"source":"from","target":"to","value":1}
 
 
+			
+			var nodes = [];
+			var inverted_nodes = {};
+			var links = [];
+
+
+
+
+			for (var key in resource_tracker) {
+				var resource = resource_tracker[key];
+
+
+				var source = resource["source"];
+				var target = resource["target"];
+
+				var value = resource["value"];
+
+
+				var source_index;
+				if (source in inverted_nodes) {
+					source_index = inverted_nodes[source];
+				}
+				else {
+					source_index = nodes.length;
+					nodes.push({"name":source});
+					inverted_nodes[source] = source_index
+				}
+
+				var target_index;
+				if (target in inverted_nodes) {
+					target_index = inverted_nodes[target];
+				}
+				else {
+					target_index = nodes.length;
+					nodes.push({"name":target});
+					inverted_nodes[target] = target_index;
+				}
+
+				links.push({
+					"source":source_index,
+					"target":target_index,
+					"value":value
+				})
+
+
+			}
+
+
+			var energy = {
+				"nodes":nodes,
+				"links":links
+			}
+
+			sankey
+				.nodes(energy.nodes)
+				.links(energy.links)
+				.layout(32);
+
+			var link = svg.append("g").selectAll(".link")
+				.data(energy.links)
+				.enter().append("path")
+				.attr("class", "link")
+				.attr("d", path)
+				.style("stroke-width", function(d) {
+					return Math.max(1, d.dy);
+				})
+				.sort(function(a, b) {
+					return b.dy - a.dy;
+				});
+
+			link.append("title")
+				.text(function(d) {
+					return d.source.name + " → " + d.target.name + "\n" + format(d.value);
+				});
+
+			var node = svg.append("g").selectAll(".node")
+				.data(energy.nodes)
+				.enter().append("g")
+				.attr("class", "node")
+				.attr("transform", function(d) {
+					return "translate(" + d.x + "," + d.y + ")";
+				})
+				.call(d3.drag()
+					.subject(function(d) {
+						return d;
+					})
+					.on("start", function() {
+						this.parentNode.appendChild(this);
+					})
+					.on("drag", dragmove));
+
+			node.append("rect")
+				.attr("height", function(d) {
+					return d.dy;
+				})
+				.attr("width", sankey.nodeWidth())
+				.style("fill", function(d) {
+					return d.color = color(d.name.replace(/ .*/, ""));
+				})
+				.style("stroke", function(d) {
+					return d3.rgb(d.color).darker(2);
+				})
+				.append("title")
+				.text(function(d) {
+					return d.name + "\n" + format(d.value);
+				});
+
+			node.append("text")
+				.attr("x", -6)
+				.attr("y", function(d) {
+					return d.dy / 2;
+				})
+				.attr("dy", ".35em")
+				.attr("text-anchor", "end")
+				.attr("transform", null)
+				.text(function(d) {
+					return d.name;
+				})
+				.filter(function(d) {
+					return d.x < width / 2;
+				})
+				.attr("x", 6 + sankey.nodeWidth())
+				.attr("text-anchor", "start");
+
+			function dragmove(d) {
+				d3.select(this).attr("transform", "translate(" + d.x + "," + (d.y = Math.max(0, Math.min(height - d.dy, d3.event.y))) + ")");
+				sankey.relayout();
+				link.attr("d", path);
+			}
+		}
 	}); 
-
-
-
-
-
-
-// Requires []
-// Feeds []
-
-
-
-// Parents
-// - request item type
-// Children
-// - quantity
-
-
-
 })(jQuery);
 
 

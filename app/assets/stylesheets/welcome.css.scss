@@ -144,3 +144,36 @@ input[type=checkbox]:checked + label.hide_unused_label {
     background-clip: content-box;
 	border-image: url(/FrameBorder.png) 10;
 }
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// Flow chart styling
+
+  #chart {
+    height: 500px;
+  }
+
+  .node rect {
+    cursor: move;
+    fill-opacity: .9;
+    shape-rendering: crispEdges;
+  }
+
+  .node text {
+    pointer-events: none;
+    text-shadow: 0 1px 0 #fff;
+  }
+
+  .link {
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .2;
+  }
+
+  .link:hover {
+    stroke-opacity: .5;
+  }
