@@ -38,6 +38,10 @@
 					})
 					.appendTo(li);
 
+				li.click(function() {
+					aaa.focus();
+				});
+
 
 
 
