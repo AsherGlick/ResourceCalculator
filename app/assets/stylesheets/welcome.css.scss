@@ -24,7 +24,6 @@ $font-stack:    'Minecraft Regular', courier, sans-serif;
 	width: 32px;
 	height: 32px;
 	background: #F0F;
-	margin: 2px;
 	text-align: right;
 	// vertical-align: bottom;
 	// position: relative;
@@ -36,6 +35,9 @@ $font-stack:    'Minecraft Regular', courier, sans-serif;
 	font-family: $font-stack;
 	color: #FFF !important;
 	text-shadow: 2px 2px 0 #3F3F3F;
+
+	border: 2px solid transparent;
+	border-image: url(/ItemBorder.png) 2 ;
 }
 
 .desired_item_count {
@@ -102,6 +104,28 @@ $font-stack:    'Minecraft Regular', courier, sans-serif;
 	cursor: pointer;
 }
 
+
+.chest_list {
+	border: 10px solid transparent;
+	background-color: #C3C3C3	;
+	overflow: hidden;
+	background-clip: content-box;
+	border-image: url(/FrameBorder.png) 10;
+	max-width: 324px;
+	float:left;
+	margin-right: 5px;
+}
+
+.chest_list_title {
+	font-family: $font-stack;
+	color: #404040;
+	padding-bottom: 6px;
+
+}
+
+
+
+
 input[type=checkbox] + label.hide_unused_label {
 	color: #AAA;
 	text-shadow: 2px 0px 0 #F3F3F3;
@@ -144,3 +168,36 @@ input[type=checkbox]:checked + label.hide_unused_label {
     background-clip: content-box;
 	border-image: url(/FrameBorder.png) 10;
 }
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// Flow chart styling
+
+  #chart {
+    height: 500px;
+  }
+
+  .node rect {
+    cursor: move;
+    fill-opacity: .9;
+    shape-rendering: crispEdges;
+  }
+
+  .node text {
+    pointer-events: none;
+    text-shadow: 0 1px 0 #fff;
+  }
+
+  .link {
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .2;
+  }
+
+  .link:hover {
+    stroke-opacity: .5;
+  }
