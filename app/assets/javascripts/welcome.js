@@ -1,3 +1,7 @@
+//= require d3.v4.min.js
+//= require sankey.js
+
+
 (function($) {
 
 
