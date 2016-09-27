@@ -101,14 +101,14 @@
 		  //////////////////////////////////////////////////////////////////////////////
 		 /////////////////////// Requirements Calculation Logic /////////////////////// 
 		//////////////////////////////////////////////////////////////////////////////  
-		var resource_tracker = {};
 		$("#generatelist").click(function() {
 			requirements = gather_requirements();
 
 			console.log(requirements);
+			var resource_tracker = {};
+			var generation_totals = {}; // the total number of each resource produce (ignoring any consumption)
 
-			raw_resources = {};
-
+			var raw_resources = {};
 			for (var i = 0; i < 50; i++) {
 				var output_requirements = JSON.parse(JSON.stringify(requirements));
 
@@ -127,6 +127,12 @@
 						// console.log(produce_count);
 
 						output_requirements[requirement] += produce_count * produces_count;
+
+						if (!(requirement in generation_totals)) {
+							generation_totals[requirement] = 0;
+						}
+
+						generation_totals[requirement] += produce_count * produces_count;
 						console.log(recipe); 
 
 						if ($.isEmptyObject(recipe)) {
@@ -166,14 +172,30 @@
 				requirements = output_requirements;
 			}
 
+			// This mapps all extra items to an extra value
+			// It is done in order to get the right heights for items that produce more then they take
+			// TODO, it might be nice to have a special path instead of a node to represent "extra"
+			for (var key in output_requirements) {
+				if (output_requirements[key] > 0) {
+					var tracker_key = key+"extra";
+					resource_tracker[tracker_key] = {
+						"source":key,
+						"target":"extra",
+						"value":output_requirements[key]
+					}
+				}
+			}
+
 			// console.log(resource_tracker);
 
-			generate_chart(resource_tracker);
+			generate_chart(resource_tracker, generation_totals);
 
-			generate_chest_list(resource_tracker);
+			generate_chest_list(raw_resources);
+
+			generate_instructions(resource_tracker);
 
 
-			function generate_chest_list(resource_tracker){
+			function generate_chest_list(raw_resources){
 				var chart = $("#item_list");
 				chart.empty();
 				// var cList = $('<ul/>');
@@ -342,13 +364,17 @@
 		});
 
 
+		function generate_instructions(generation_events) {
 
+		}
 
 		/******************************* Generate Chart *******************************\
 		| This functoin takes in the resources list and generates a graphical chart    |
 		| that is displayed to the user                                                |
 		\******************************************************************************/
-		function generate_chart(resource_tracker) {
+		function generate_chart(generation_events, resource_totals) {
+
+			console.log(resource_totals);
 
 			var sankey = d3.sankey();
 			var margin = {
@@ -375,7 +401,7 @@
 				.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 			var sankey = d3.sankey()
-				.nodeWidth(200)
+				.nodeWidth(20)
 				.nodePadding(10)
 				.size([width, height]);
 
@@ -400,8 +426,8 @@
 
 
 
-			for (var key in resource_tracker) {
-				var resource = resource_tracker[key];
+			for (var key in generation_events) {
+				var resource = generation_events[key];
 
 
 				var source = resource["source"];
@@ -486,7 +512,7 @@
 
 
 
-			var rect = node.append("rect")
+			node.append("rect")
 				.attr("height", function(d) {
 					return d.dy;
 				})
@@ -500,9 +526,9 @@
 				.append("title")
 				.text(function(d) {
 					console.log(d);
-					return d.name + "\n" + format(d.value);
+					// return d.name + "\n" + format(d.value);
+					return d.name + "\n" + resource_totals[d.name];
 				});
-			console.log(rect);
 
 
 
