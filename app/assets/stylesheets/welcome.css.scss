@@ -20,7 +20,6 @@ body {
 
 	border: 2px solid transparent;
 	border-image: url(/ItemBorder.png) 2 ;
-
 }
 
 
@@ -119,6 +118,8 @@ body {
 	max-width: 324px;
 	float:left;
 	margin-right: 5px;
+	margin-bottom: 5px;
+
 }
 
 .chest_list_title {
@@ -128,6 +129,10 @@ body {
 
 }
 
+
+#generatelist {
+
+}
 
 
 
@@ -172,6 +177,7 @@ input[type=checkbox]:checked + label.hide_unused_label {
 	overflow: hidden;
 	background-clip: content-box;
 	border-image: url(/FrameBorder.png) 10;
+	margin-bottom: 5px;
 }
 
 
@@ -183,7 +189,7 @@ input[type=checkbox]:checked + label.hide_unused_label {
 // Flow chart styling
 
   #chart {
-    height: 500px;
+    // height: 500px;
   }
 
   .node rect {
@@ -287,4 +293,56 @@ a {
 	line-height: 1.7em;
 
 
+}
+
+
+
+
+
+
+.generate_button {
+	height: 40px;
+	width: 400px;
+	outline: 2px solid black;
+	position: relative;
+	margin: 0;
+	display: inline-block;
+	background-image: url('/button_center.png');
+	background-repeat: repeat;
+	padding: 0;
+	font-family: $font-stack;
+	text-align: center;
+	color: white;
+	text-shadow: 3px 3px #4C4C4C;
+	border-bottom: 4px solid #565656;
+	border-right: 2px solid #565656;
+	border-left: 2px solid #AAA;
+	border-top: 2px solid #AAA;
+	box-sizing: border-box;
+	font-size: 16px;
+	margin-bottom: 5px;
+
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+
+
+
+
+}
+
+.generate_button span {
+	position: relative;
+	line-height: 40px;
+	bottom: 3px;
+}
+
+.generate_button:hover {
+	border-bottom: 4px solid #59639A;
+	border-right: 2px solid #59639A;
+	border-left: 2px solid #BDC6FF;
+	border-top: 2px solid #BDC6FF;
+	background-image: url('/button_active_center.png');
+	color: #FFFFA0;
+	cursor: pointer;
 }
