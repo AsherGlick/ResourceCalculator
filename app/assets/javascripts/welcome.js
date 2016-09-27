@@ -490,7 +490,7 @@
 
 			link.append("title")
 				.text(function(d) {
-					return d.source.name + " → " + d.target.name + "\n" + format(d.value);
+					return d.value +" " + d.source.name + " → " + d.target.name;
 				});
 
 			var node = svg.append("g").selectAll(".node")
@@ -512,11 +512,35 @@
 
 
 
-			node.append("rect")
-				.attr("height", function(d) {
-					return d.dy;
+
+
+			node.append("path")
+				.attr("d", function(d) {
+
+
+
+					var left_count = 0; // sum target links
+					for (var target_link in d.targetLinks) {
+						left_count += d.targetLinks[target_link].value;
+					}
+					// If this is the first element make it the full height
+					if (left_count === 0) {left_count = d.value};
+
+					var right_count = 0; // sum source links
+					for (var source_link in d.sourceLinks) {
+						right_count += d.sourceLinks[source_link].value;
+					}
+					// If this is the last element make it the full height
+					if (right_count === 0) {right_count = d.value};
+
+
+
+					var left_height = d.dy * (left_count / d.value);
+					var full_height = d.dy;
+					var right_height = d.dy * (right_count / d.value);
+					var width = d.dx;
+					return "M 0,0 L 0,"+left_height+" "+width/3+","+left_height+" "+width/3+","+full_height+" "+width*2/3+","+full_height+" "+width*2/3+","+right_height+" "+width+","+right_height+" "+width+",0 Z"
 				})
-				.attr("width", sankey.nodeWidth())
 				.style("fill", function(d) {
 					return d.color = color(d.name.replace(/ .*/, ""));
 				})
@@ -527,9 +551,8 @@
 				.text(function(d) {
 					console.log(d);
 					// return d.name + "\n" + format(d.value);
-					return d.name + "\n" + resource_totals[d.name];
+					return resource_totals[d.name] + " " + d.name;
 				});
-
 
 
 
