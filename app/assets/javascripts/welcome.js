@@ -32,6 +32,10 @@
 				var aaa = $('<input/>')
 					.addClass('desired_item_count')
 					.attr('type','textbox')
+					.attr('id', i.toLowerCase().split(" ").join(""))
+					.bind("propertychange change click keyup input paste", function(event){
+						save();
+					})
 					.appendTo(li);
 
 
@@ -65,6 +69,8 @@
 		})
 		.done(function() {
 			console.log( "second success" );
+			load();
+
 		})
 		.fail(function() {
 			console.log( "error" );
@@ -101,11 +107,55 @@
 			filter_items()
 		});
 
+		// This function changes the url hash whenever an item is added or removed
+		function save() {
+			var selected_items = {};
+			$(".desired_item").each(function() {
+				var key = $(this).find(".desired_item_count").attr('id');
+				// console.log(key);
+				var value = $(this).find(".desired_item_count").val();
+
+				if ($.isNumeric(value)) {
+					// Set the value as negative to indicate they are needed
+					selected_items[key] = value;
+				}
+
+			});
+			// console.log($.param(selected_items));
+			window.location.hash = $.param(selected_items);
+		}
+		// This function should only be called once on pageload and after the item elements are created
+		// loads the url into the item list then generates the results
+		function load() {
+			var arguments = decodeURIComponent(window.location.hash.substr(1));
+			// console.log("Loading");
+			// console.log(arguments);
+			// var obj = {};
+			if (arguments !== "") {
+				var pairs = arguments.split('&');
+				for(i in pairs){
+					var split = pairs[i].split('=');
+					var id = decodeURIComponent(split[0]);
+					var value = decodeURIComponent(split[1]);
+					$("#"+id).val(value);
+					console.log($("#andesite"));
+
+				}
+				$("#unused_hide_checkbox").prop("checked", true).change();
+				// filter_items();
+				generatelist();
+
+			}
+		}
+
 
 		  //////////////////////////////////////////////////////////////////////////////
 		 /////////////////////// Requirements Calculation Logic /////////////////////// 
 		//////////////////////////////////////////////////////////////////////////////  
-		$("#generatelist").click(function() {
+		$("#generatelist").click(generatelist);
+
+
+		function generatelist() {
 			requirements = gather_requirements();
 
 			console.log(requirements);
@@ -267,7 +317,7 @@
 			// cList.appendTo(chart);
 
 
-		});
+		};
 
 		function craft_requirements(requirements) {
 			return output_requirements;
@@ -305,6 +355,7 @@
 			});
 			return resources;
 		}
+
 
 
 		  //////////////////////////////////////////////////////////////////////////////
@@ -583,6 +634,17 @@
 				link.attr("d", path);
 			}
 		}
+
+		// About us lightbox
+		$('#about_us_lightbox').click(function (evt) {
+			evt.stopPropagation();
+		});
+		$("#about_us_lightbox_background").click(function(evt) {
+			$(this).hide();
+		});
+		$("#about_us_button").click(function(evt) {
+			$("#about_us_lightbox_background").show();
+		});
 	}); 
 })(jQuery);
 
