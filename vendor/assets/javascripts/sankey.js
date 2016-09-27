@@ -1,4 +1,8 @@
-d3.sankey = function() {
+import {ascending, min, sum} from "d3-array";
+import {nest} from "d3-collection";
+import {number} from "d3-interpolate";
+
+export default function() {
   var sankey = {},
       nodeWidth = 24,
       nodePadding = 8,
@@ -56,7 +60,7 @@ d3.sankey = function() {
     function link(d) {
       var x0 = d.source.x + d.source.dx,
           x1 = d.target.x,
-          xi = d3.interpolateNumber(x0, x1),
+          xi = number(x0, x1),
           x2 = xi(curvature),
           x3 = xi(1 - curvature),
           y0 = d.source.y + d.sy + d.dy / 2,
@@ -97,8 +101,8 @@ d3.sankey = function() {
   function computeNodeValues() {
     nodes.forEach(function(node) {
       node.value = Math.max(
-        d3.sum(node.sourceLinks, value),
-        d3.sum(node.targetLinks, value)
+        sum(node.sourceLinks, value),
+        sum(node.targetLinks, value)
       );
     });
   }
@@ -132,13 +136,13 @@ d3.sankey = function() {
     scaleNodeBreadths((size[0] - nodeWidth) / (x - 1));
   }
 
-  function moveSourcesRight() {
-    nodes.forEach(function(node) {
-      if (!node.targetLinks.length) {
-        node.x = d3.min(node.sourceLinks, function(d) { return d.target.x; }) - 1;
-      }
-    });
-  }
+  // function moveSourcesRight() {
+  //   nodes.forEach(function(node) {
+  //     if (!node.targetLinks.length) {
+  //       node.x = min(node.sourceLinks, function(d) { return d.target.x; }) - 1;
+  //     }
+  //   });
+  // }
 
   function moveSinksRight(x) {
     nodes.forEach(function(node) {
@@ -155,9 +159,9 @@ d3.sankey = function() {
   }
 
   function computeNodeDepths(iterations) {
-    var nodesByBreadth = d3.nest()
+    var nodesByBreadth = nest()
         .key(function(d) { return d.x; })
-        .sortKeys(d3.ascending)
+        .sortKeys(ascending)
         .entries(nodes)
         .map(function(d) { return d.values; });
 
@@ -172,8 +176,8 @@ d3.sankey = function() {
     }
 
     function initializeNodeDepth() {
-      var ky = d3.min(nodesByBreadth, function(nodes) {
-        return (size[1] - (nodes.length - 1) * nodePadding) / d3.sum(nodes, value);
+      var ky = min(nodesByBreadth, function(nodes) {
+        return (size[1] - (nodes.length - 1) * nodePadding) / sum(nodes, value);
       });
 
       nodesByBreadth.forEach(function(nodes) {
@@ -189,10 +193,10 @@ d3.sankey = function() {
     }
 
     function relaxLeftToRight(alpha) {
-      nodesByBreadth.forEach(function(nodes, breadth) {
+      nodesByBreadth.forEach(function(nodes) {
         nodes.forEach(function(node) {
           if (node.targetLinks.length) {
-            var y = d3.sum(node.targetLinks, weightedSource) / d3.sum(node.targetLinks, value);
+            var y = sum(node.targetLinks, weightedSource) / sum(node.targetLinks, value);
             node.y += (y - center(node)) * alpha;
           }
         });
@@ -207,7 +211,7 @@ d3.sankey = function() {
       nodesByBreadth.slice().reverse().forEach(function(nodes) {
         nodes.forEach(function(node) {
           if (node.sourceLinks.length) {
-            var y = d3.sum(node.sourceLinks, weightedTarget) / d3.sum(node.sourceLinks, value);
+            var y = sum(node.sourceLinks, weightedTarget) / sum(node.sourceLinks, value);
             node.y += (y - center(node)) * alpha;
           }
         });
@@ -291,4 +295,4 @@ d3.sankey = function() {
   }
 
   return sankey;
-};
+}

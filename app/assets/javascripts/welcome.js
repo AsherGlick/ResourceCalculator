@@ -97,8 +97,11 @@
 			filter_items()
 		});
 
-		var resource_tracker = {};
 
+		  //////////////////////////////////////////////////////////////////////////////
+		 /////////////////////// Requirements Calculation Logic /////////////////////// 
+		//////////////////////////////////////////////////////////////////////////////  
+		var resource_tracker = {};
 		$("#generatelist").click(function() {
 			requirements = gather_requirements();
 
@@ -167,31 +170,73 @@
 
 			generate_chart(resource_tracker);
 
-			var chart = $("#item_list");
-			chart.empty();
-			// var cList = $('<ul/>');
+			generate_chest_list(resource_tracker);
 
-			// Fill output
-			$.each(raw_resources, function(i) {
-				var li = $('<div/>')
-					.addClass('required_item')
-					.css('background-image', 'url(items/' + filenameify(i) + '.png)')
-					.text(raw_resources[i] )
-					.appendTo(chart);
-				// var aaa = $('<input/>')
-				// 	.addClass('desired_item_count')
-				// 	.attr('type','textbox')
-				// 	.appendTo(li);
 
-				li.mouseover( function() {
-					$("#hover_name").show();
-					$("#hover_name").text(i);
+			function generate_chest_list(resource_tracker){
+				var chart = $("#item_list");
+				chart.empty();
+				// var cList = $('<ul/>');
+
+
+
+
+
+				var chest;
+
+				var items_in_chest = 0;
+
+				// Fill output
+				$.each(raw_resources, function(i) {
+
+					function add_item(item_name, item_count) {
+						if (items_in_chest === 0) {
+							chest = $('<div/>');
+							chest.addClass("chest_list");
+							var title = $('<div/>');
+							title.appendTo(chest);
+							title.addClass('chest_list_title');
+							title.text("Large Chest");
+							chest.appendTo(chart);
+						}
+						var li = $('<div/>')
+							.addClass('required_item')
+							.css('background-image', 'url(items/' + filenameify(item_name) + '.png)')
+							.text(item_count)
+							.appendTo(chest);
+						// var aaa = $('<input/>')
+						// 	.addClass('desired_item_count')
+						// 	.attr('type','textbox')
+						// 	.appendTo(li);
+
+						li.mouseover( function() {
+							$("#hover_name").show();
+							$("#hover_name").text(i);
+						});
+
+						li.mouseout( function() {
+							$("#hover_name").hide();
+						});
+
+						items_in_chest += 1;
+						if (items_in_chest >= 6 * 9) {
+							items_in_chest = 0;
+						}
+					}
+
+
+					var count = raw_resources[i];
+					while (count > 64) {
+						add_item(i, 64);
+						count -= 64
+					}
+					if (count > 0) {
+						add_item(i,count);
+					}
+
+
 				});
-
-				li.mouseout( function() {
-					$("#hover_name").hide();
-				})
-			});
+			}
 
 			// cList.appendTo(chart);
 
@@ -199,9 +244,6 @@
 		});
 
 		function craft_requirements(requirements) {
-
-			
-
 			return output_requirements;
 		}
 
@@ -239,6 +281,14 @@
 		}
 
 
+		  //////////////////////////////////////////////////////////////////////////////
+		 ///////////////////////////// Item Filter Logic ////////////////////////////// 
+		//////////////////////////////////////////////////////////////////////////////  
+
+		// Re-filter the items each time the search bar is modified
+		$("#item_filter").bind("propertychange change click keyup input paste", function(event){
+			filter_items();
+		});
 
 		function filter_items() {
 			var search_string = $("#item_filter").val().toLowerCase()
@@ -261,18 +311,16 @@
 			});
 		}
 
-		// Re-filter the items each time the search bar is modified
-		$("#item_filter").bind("propertychange change click keyup input paste", function(event){
-			filter_items();
-		});
 
 
-		$("#hover_name").hide();
 
+		  //////////////////////////////////////////////////////////////////////////////
+		 ////////////////////////////// Hover Text Logic ////////////////////////////// 
+		//////////////////////////////////////////////////////////////////////////////  
 		// How far away from the mouse should hte hoverbox be
 		var hover_x_offset = 10;
 		var hover_y_offset = -10;
-
+		$("#hover_name").hide();
 		$(document).on('mousemove', function(e){
 
 			// If the hoverbox is not hanging over the side of the screen when rendered, render normally
@@ -296,10 +344,10 @@
 
 
 
-		////////////////////////////////////////////////////////////////////////////
-		////////////////////////////////////////////////////////////////////////////
-		////////////////////////////////////////////////////////////////////////////
-		// Flow Chart stuff
+		/******************************* Generate Chart *******************************\
+		| This functoin takes in the resources list and generates a graphical chart    |
+		| that is displayed to the user                                                |
+		\******************************************************************************/
 		function generate_chart(resource_tracker) {
 
 			var sankey = d3.sankey();
@@ -327,7 +375,7 @@
 				.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 			var sankey = d3.sankey()
-				.nodeWidth(15)
+				.nodeWidth(200)
 				.nodePadding(10)
 				.size([width, height]);
 
@@ -435,7 +483,10 @@
 					})
 					.on("drag", dragmove));
 
-			node.append("rect")
+
+
+
+			var rect = node.append("rect")
 				.attr("height", function(d) {
 					return d.dy;
 				})
@@ -448,8 +499,13 @@
 				})
 				.append("title")
 				.text(function(d) {
+					console.log(d);
 					return d.name + "\n" + format(d.value);
 				});
+			console.log(rect);
+
+
+
 
 			node.append("text")
 				.attr("x", -6)
