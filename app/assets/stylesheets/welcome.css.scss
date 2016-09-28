@@ -7,6 +7,13 @@ $font-stack:    'Minecraft Regular', courier, sans-serif;
 
 body {
 	overflow-y: scroll;
+	word-spacing: 5px;
+	font-family: $font-stack;
+
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
 }
 
 .desired_item {
@@ -231,6 +238,8 @@ a {
 	background-clip: content-box;
 	border: 10px solid transparent;
 	border-image: url(/FrameBorder.png) 10;
+
+	margin-right: 5px;
 }
 .home_button:hover {
 	color: #AAA;
@@ -359,7 +368,7 @@ a {
 
 .instructions {
 	font-family: $font-stack;
-	color: #CCC;
+	color: #888;
 	text-align: center;
 	margin-bottom: 7px;
 }
