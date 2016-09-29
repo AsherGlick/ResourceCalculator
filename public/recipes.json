@@ -115,7 +115,7 @@
 "Dark Oak Wood Slab": [{"output": 6,"recipe": ["Dark Oak Wood Planks","Dark Oak Wood Planks","Dark Oak Wood Planks",null,null,null,null,null,null], "shapeless": 0}],
 "Sandstone Stairs": [{"output": 4,"recipe": ["Sandstone","Sandstone","Sandstone",null,"Sandstone","Sandstone",null,null,"Sandstone"], "shapeless": 0}],
 "Emerald Ore": [{"output": 1,"recipe": [null,null,null,null,null,null,null,null,null], "shapeless": 1}],
-"Block of Emerald": [{"output": 1,"recipe": [null,null,null,null,null,null,null,null,null], "shapeless": 1}],
+"Block of Emerald": [{"output": 1,"recipe": ["Emerald","Emerald","Emerald","Emerald","Emerald","Emerald","Emerald","Emerald","Emerald"], "shapeless": 1}],
 "Spruce Wood Stairs": [{"output": 4,"recipe": ["Spruce Wood Planks","Spruce Wood Planks","Spruce Wood Planks",null,"Spruce Wood Planks","Spruce Wood Planks",null,null,"Spruce Wood Planks"], "shapeless": 0}],
 "Birch Wood Stairs": [{"output": 4,"recipe": ["Birch Wood Planks","Birch Wood Planks","Birch Wood Planks",null,"Birch Wood Planks","Birch Wood Planks",null,null,"Birch Wood Planks"], "shapeless": 0}],
 "Jungle Wood Stairs": [{"output": 4,"recipe": ["Jungle Wood Planks","Jungle Wood Planks","Jungle Wood Planks",null,"Jungle Wood Planks","Jungle Wood Planks",null,null,"Jungle Wood Planks"], "shapeless": 0}],
