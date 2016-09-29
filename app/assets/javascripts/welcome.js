@@ -313,9 +313,14 @@
 					if (count > 0) {
 						add_item(i,count);
 					}
-
-
 				});
+				for (var i = 0; i < 9 * 6 - items_in_chest; i++) {
+					var li = $('<div/>')
+						.addClass('required_item')
+						// .css('background-image', 'url(items/' + filenameify(item_name) + '.png)')
+						// .text(item_count)
+						.appendTo(chest);
+				}
 			}
 
 			// cList.appendTo(chart);
