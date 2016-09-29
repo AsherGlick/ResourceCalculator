@@ -216,7 +216,7 @@
 "Nether Brick Fence": [{"output": 6,"recipe": ["Nether Brick","Nether Brick","Nether Brick","Nether Brick","Nether Brick","Nether Brick",null,null,null], "shapeless": 0}],
 "Enchantment Table": [{"output": 1,"recipe": [null,null,null,null,null,null,null,null,null], "shapeless": 1}],
 "End Portal": [{"output": 1,"recipe": [null,null,null,null,null,null,null,null,null], "shapeless": 1}],
-"Ender Chest": [{"output": 1,"recipe": [null,null,null,null,null,null,null,null,null], "shapeless": 1}],
+"Ender Chest": [{"output": 1,"recipe": ["Obsidian","Obsidian","Obsidian","Obsidian","Eye of Ender","Obsidian","Obsidian","Obsidian","Obsidian"], "shapeless": 1}],
 "Anvil": [{"output": 1,"recipe": [null,null,null,null,null,null,null,null,null], "shapeless": 1}],
 "White Stained Glass Pane": [{"output": 16,"recipe": ["White Stained Glass","White Stained Glass","White Stained Glass","White Stained Glass","White Stained Glass","White Stained Glass",null,null,null], "shapeless": 0}],
 "Orange Stained Glass Pane": [{"output": 16,"recipe": ["Orange Stained Glass","Orange Stained Glass","Orange Stained Glass","Orange Stained Glass","Orange Stained Glass","Orange Stained Glass",null,null,null], "shapeless": 0}],
