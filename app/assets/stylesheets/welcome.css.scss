@@ -116,7 +116,10 @@ body {
 	cursor: pointer;
 }
 
-
+#item_list {
+	text-align: center;
+	// overflow: hidden;
+}
 .chest_list {
 	border: 10px solid transparent;
 	background-color: #C3C3C3	;
@@ -124,9 +127,12 @@ body {
 	background-clip: content-box;
 	border-image: url(/FrameBorder.png) 10;
 	max-width: 324px;
-	float:left;
+	// float:left;
 	margin-right: 5px;
 	margin-bottom: 5px;
+
+	display: inline-block;
+	text-align: left;
 
 }
 
