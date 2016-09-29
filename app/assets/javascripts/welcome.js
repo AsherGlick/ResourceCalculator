@@ -442,7 +442,10 @@
 				bottom: 6,
 				left: 1
 			},
-			width = 960 - margin.left - margin.right,
+
+
+
+			width = $('body').width() - margin.left - margin.right,
 			height = 500 - margin.top - margin.bottom;
 
 			var formatNumber = d3.format(",.0f"),
