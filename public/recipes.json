@@ -336,7 +336,7 @@
 "Dark Oak Door": [{"output": 3,"recipe": ["Dark Oak Wood Planks","Dark Oak Wood Planks",null,"Dark Oak Wood Planks","Dark Oak Wood Planks",null,"Dark Oak Wood Planks","Dark Oak Wood Planks",null], "shapeless": 0}],
 "Powered Rail": [{"output": 6,"recipe": ["Gold Ingot","Redstone","Gold Ingot","Gold Ingot","Stick","Gold Ingot","Gold Ingot",null,"Gold Ingot"], "shapeless": 0}],
 "Detector Rail": [{"output": 6,"recipe": ["Iron Ingot","Redstone","Iron Ingot","Iron Ingot","Stone Pressure Plate","Iron Ingot","Iron Ingot",null,"Iron Ingot"], "shapeless": 0}],
-"Rail": [{"output": 6,"recipe": ["Iron Ingot",null,"Iron Ingot","Iron Ingot","Stick","Iron Ingot","Iron Ingot",null,"Iron Ingot"], "shapeless": 0}],
+"Rail": [{"output": 16,"recipe": ["Iron Ingot",null,"Iron Ingot","Iron Ingot","Stick","Iron Ingot","Iron Ingot",null,"Iron Ingot"], "shapeless": 0}],
 "Activator Rail": [{"output": 6,"recipe": ["Iron Ingot","Stick","Iron Ingot","Iron Ingot","Redstone Torch","Iron Ingot","Iron Ingot","Stick","Iron Ingot"], "shapeless": 0}],
 "Minecart": [{"output": 1,"recipe": ["Iron Ingot","Iron Ingot","Iron Ingot","Iron Ingot",null,"Iron Ingot",null,null,null], "shapeless": 0}],
 "Saddle": [{"output": 1,"recipe": [null,null,null,null,null,null,null,null,null], "shapeless": 1}],
