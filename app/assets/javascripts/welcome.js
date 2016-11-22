@@ -13,7 +13,7 @@
 		var global_recepies;
 		// Assign handlers immediately after making the request,
 		// and remember the jqxhr object for this request
-		var jqxhr = $.getJSON( "recipes.json", function(result) {
+		var jqxhr = $.getJSON( "recipes_1.11.json", function(result) {
 			// console.log( "success" );
 
 			var content = $("#content_field");
