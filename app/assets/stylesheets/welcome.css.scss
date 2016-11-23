@@ -9,6 +9,7 @@ body {
 	overflow-y: scroll;
 	word-spacing: 5px;
 	font-family: $font-stack;
+	background-color: #EFEFEF;
 
 	-webkit-transform-style: preserve-3d;
 	-moz-transform-style: preserve-3d;
@@ -67,6 +68,7 @@ body {
 	border:none;
 	// border-top: 1px solid black;
 	padding-bottom: 2px;
+	-moz-appearance:textfield;
 }
 
 
@@ -183,6 +185,7 @@ input[type=checkbox]:checked + label.hide_unused_label {
 	text-shadow: #3f3f3f 2px 2px;
 	overflow: hidden;
 	white-space: nowrap;
+	pointer-events: none;
 }
 
 #content_field {
@@ -380,4 +383,15 @@ a {
 	color: #888;
 	text-align: center;
 	margin-bottom: 7px;
+}
+
+
+.item_input_focused {
+	border: 2px solid #F80;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }

@@ -24,19 +24,26 @@
 			{
 				var li = $('<div/>')
 					.addClass('desired_item')
+					.addClass('item_' + filenameify(i))
 					.attr("mc_value", i)
 					// .attr("mc_value", i.toLowerCase())
-					.css('background-image', 'url(items/' + filenameify(i) + '.png)')
 					// .text(i)
 					.appendTo(content);
 				var aaa = $('<input/>')
 					.addClass('desired_item_count')
-					.attr('type','textbox')
+					.attr('type','number')
 					.attr('id', i.toLowerCase().split(" ").join(""))
 					.bind("propertychange change click keyup input paste", function(event){
 						save();
 					})
+					.focus(function() {
+						li.addClass("item_input_focused")
+					})
+					.blur(function() {
+						li.removeClass("item_input_focused")
+					})
 					.appendTo(li);
+
 
 				li.click(function() {
 					aaa.focus();
@@ -657,6 +664,7 @@
 		$("#about_us_button").click(function(evt) {
 			$("#about_us_lightbox_background").show();
 		});
+
 	}); 
 })(jQuery);
 

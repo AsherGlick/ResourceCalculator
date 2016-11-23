@@ -1,0 +1,1586 @@
+/*
+
+        Creating a sprite from following images:
+        
+        items/acacia_boat.png (32x32)
+        items/acacia_door.png (32x32)
+        items/acacia_fence.png (32x32)
+        items/acacia_fence_gate.png (32x32)
+        items/acacia_leaves.png (32x32)
+        items/acacia_sapling.png (32x32)
+        items/acacia_wood.png (32x32)
+        items/acacia_wood_planks.png (32x32)
+        items/acacia_wood_slab.png (32x32)
+        items/acacia_wood_stairs.png (32x32)
+        items/activator_rail.png (32x32)
+        items/allium.png (32x32)
+        items/andesite.png (32x32)
+        items/anvil.png (32x32)
+        items/apple.png (32x32)
+        items/armor_stand.png (32x32)
+        items/arrow.png (32x32)
+        items/awkward_potion.png (32x32)
+        items/awkward_splash_potion.png (32x32)
+        items/azure_bluet.png (32x32)
+        items/baked_potato.png (32x32)
+        items/bat_egg.png (32x32)
+        items/beacon.png (32x32)
+        items/bed.png (32x32)
+        items/bedrock.png (32x32)
+        items/beetroot.png (32x32)
+        items/beetroot_seeds.png (32x32)
+        items/beetroot_soup.png (32x32)
+        items/birch_boat.png (32x32)
+        items/birch_door.png (32x32)
+        items/birch_fence.png (32x32)
+        items/birch_fence_gate.png (32x32)
+        items/birch_leaves.png (32x32)
+        items/birch_sapling.png (32x32)
+        items/birch_wood.png (32x32)
+        items/birch_wood_planks.png (32x32)
+        items/birch_wood_slab.png (32x32)
+        items/birch_wood_stairs.png (32x32)
+        items/black_banner.png (32x32)
+        items/black_carpet.png (32x32)
+        items/black_hardened_clay.png (32x32)
+        items/black_shulker_box.png (32x32)
+        items/black_stained_glass.png (32x32)
+        items/black_stained_glass_pane.png (32x32)
+        items/black_wool.png (32x32)
+        items/blaze_egg.png (32x32)
+        items/blaze_powder.png (32x32)
+        items/blaze_rod.png (32x32)
+        items/block_of_clay.png (32x32)
+        items/block_of_coal.png (32x32)
+        items/block_of_diamond.png (32x32)
+        items/block_of_emerald.png (32x32)
+        items/block_of_gold.png (32x32)
+        items/block_of_iron.png (32x32)
+        items/block_of_quartz.png (32x32)
+        items/block_of_redstone.png (32x32)
+        items/blue_banner.png (32x32)
+        items/blue_carpet.png (32x32)
+        items/blue_hardened_clay.png (32x32)
+        items/blue_orchid.png (32x32)
+        items/blue_shulker_box.png (32x32)
+        items/blue_stained_glass.png (32x32)
+        items/blue_stained_glass_pane.png (32x32)
+        items/blue_wool.png (32x32)
+        items/bone.png (32x32)
+        items/bone_block.png (32x32)
+        items/bone_meal.png (32x32)
+        items/book.png (32x32)
+        items/book_and_quill.png (32x32)
+        items/bookshelf.png (32x32)
+        items/bottle_o_enchanting.png (32x32)
+        items/bow.png (32x32)
+        items/bowl.png (32x32)
+        items/bread.png (32x32)
+        items/brewing_stand.png (32x32)
+        items/brick.png (32x32)
+        items/brick_stairs.png (32x32)
+        items/bricks.png (32x32)
+        items/bricks_slab.png (32x32)
+        items/brown_banner.png (32x32)
+        items/brown_carpet.png (32x32)
+        items/brown_hardened_clay.png (32x32)
+        items/brown_mushroom.png (32x32)
+        items/brown_shulker_box.png (32x32)
+        items/brown_stained_glass.png (32x32)
+        items/brown_stained_glass_pane.png (32x32)
+        items/brown_wool.png (32x32)
+        items/bucket.png (32x32)
+        items/cactus.png (32x32)
+        items/cactus_green.png (32x32)
+        items/cake.png (32x32)
+        items/carpet.png (32x32)
+        items/carrot.png (32x32)
+        items/carrot_on_a_stick.png (32x32)
+        items/cauldron.png (32x32)
+        items/cave_spider_egg.png (32x32)
+        items/chain_boots.png (32x32)
+        items/chain_chestplate.png (32x32)
+        items/chain_helmet.png (32x32)
+        items/chain_leggings.png (32x32)
+        items/charcoal.png (32x32)
+        items/chest.png (32x32)
+        items/chicken_egg.png (32x32)
+        items/chiseled_quartz_block.png (32x32)
+        items/chiseled_red_sandstone.png (32x32)
+        items/chiseled_sandstone.png (32x32)
+        items/chiseled_stone_brick_monster_egg.png (32x32)
+        items/chiseled_stone_bricks.png (32x32)
+        items/chorus_flower.png (32x32)
+        items/chorus_fruit.png (32x32)
+        items/chorus_plant.png (32x32)
+        items/clay.png (32x32)
+        items/clock.png (32x32)
+        items/clownfish.png (32x32)
+        items/coal.png (32x32)
+        items/coal_ore.png (32x32)
+        items/coarse_dirt.png (32x32)
+        items/cobblestone.png (32x32)
+        items/cobblestone_monster_egg.png (32x32)
+        items/cobblestone_slab.png (32x32)
+        items/cobblestone_stairs.png (32x32)
+        items/cobblestone_wall.png (32x32)
+        items/cobweb.png (32x32)
+        items/cocoa_beans.png (32x32)
+        items/compass.png (32x32)
+        items/cooked_chicken.png (32x32)
+        items/cooked_fish.png (32x32)
+        items/cooked_mutton.png (32x32)
+        items/cooked_porkchop.png (32x32)
+        items/cooked_rabbit.png (32x32)
+        items/cooked_salmon.png (32x32)
+        items/cookie.png (32x32)
+        items/cow_egg.png (32x32)
+        items/cracked_stone_brick_monster_egg.png (32x32)
+        items/cracked_stone_bricks.png (32x32)
+        items/crafting_table.png (32x32)
+        items/creeper_egg.png (32x32)
+        items/creeper_head.png (32x32)
+        items/cyan_banner.png (32x32)
+        items/cyan_carpet.png (32x32)
+        items/cyan_dye.png (32x32)
+        items/cyan_hardened_clay.png (32x32)
+        items/cyan_shulker_box.png (32x32)
+        items/cyan_stained_glass.png (32x32)
+        items/cyan_stained_glass_pane.png (32x32)
+        items/cyan_wool.png (32x32)
+        items/dandelion.png (32x32)
+        items/dandelion_yellow.png (32x32)
+        items/dark_oak_boat.png (32x32)
+        items/dark_oak_door.png (32x32)
+        items/dark_oak_fence.png (32x32)
+        items/dark_oak_fence_gate.png (32x32)
+        items/dark_oak_leaves.png (32x32)
+        items/dark_oak_sapling.png (32x32)
+        items/dark_oak_wood.png (32x32)
+        items/dark_oak_wood_planks.png (32x32)
+        items/dark_oak_wood_slab.png (32x32)
+        items/dark_oak_wood_stairs.png (32x32)
+        items/dark_prismarine.png (32x32)
+        items/daylight_sensor.png (32x32)
+        items/dead_bush.png (32x32)
+        items/detector_rail.png (32x32)
+        items/diamond.png (32x32)
+        items/diamond_axe.png (32x32)
+        items/diamond_boots.png (32x32)
+        items/diamond_chestplate.png (32x32)
+        items/diamond_helmet.png (32x32)
+        items/diamond_hoe.png (32x32)
+        items/diamond_horse_armor.png (32x32)
+        items/diamond_leggings.png (32x32)
+        items/diamond_ore.png (32x32)
+        items/diamond_pickaxe.png (32x32)
+        items/diamond_shovel.png (32x32)
+        items/diamond_sword.png (32x32)
+        items/diorite.png (32x32)
+        items/dirt.png (32x32)
+        items/dispenser.png (32x32)
+        items/double_tallgrass.png (32x32)
+        items/dragon_head.png (32x32)
+        items/dragons_breath.png (32x32)
+        items/dropper.png (32x32)
+        items/egg.png (32x32)
+        items/elytra.png (32x32)
+        items/emerald.png (32x32)
+        items/emerald_ore.png (32x32)
+        items/empty_map.png (32x32)
+        items/enchanted_book01.png (32x32)
+        items/enchanted_book02.png (32x32)
+        items/enchanted_book03.png (32x32)
+        items/enchanted_book04.png (32x32)
+        items/enchanted_book05.png (32x32)
+        items/enchanted_book06.png (32x32)
+        items/enchanted_book07.png (32x32)
+        items/enchanted_book08.png (32x32)
+        items/enchanted_book09.png (32x32)
+        items/enchanted_book10.png (32x32)
+        items/enchanted_book11.png (32x32)
+        items/enchanted_book12.png (32x32)
+        items/enchanted_book13.png (32x32)
+        items/enchanted_book14.png (32x32)
+        items/enchanted_book15.png (32x32)
+        items/enchanted_book16.png (32x32)
+        items/enchanted_book17.png (32x32)
+        items/enchanted_book18.png (32x32)
+        items/enchanted_book19.png (32x32)
+        items/enchanted_book20.png (32x32)
+        items/enchanted_book21.png (32x32)
+        items/enchanted_book22.png (32x32)
+        items/enchanted_book23.png (32x32)
+        items/enchanted_book24.png (32x32)
+        items/enchanted_book25.png (32x32)
+        items/enchanted_book26.png (32x32)
+        items/enchanted_book27.png (32x32)
+        items/enchanted_book28.png (32x32)
+        items/enchanted_book29.png (32x32)
+        items/enchanted_book30.png (32x32)
+        items/enchanted_book31.png (32x32)
+        items/enchanted_book32.png (32x32)
+        items/enchanted_book33.png (32x32)
+        items/enchanted_book34.png (32x32)
+        items/enchanted_book35.png (32x32)
+        items/enchanted_book36.png (32x32)
+        items/enchanted_book37.png (32x32)
+        items/enchanted_book38.png (32x32)
+        items/enchanted_book39.png (32x32)
+        items/enchanted_book40.png (32x32)
+        items/enchanted_book41.png (32x32)
+        items/enchanted_book42.png (32x32)
+        items/enchanted_book43.png (32x32)
+        items/enchanted_book44.png (32x32)
+        items/enchanted_book45.png (32x32)
+        items/enchanted_book46.png (32x32)
+        items/enchanted_book47.png (32x32)
+        items/enchanted_book48.png (32x32)
+        items/enchanted_book49.png (32x32)
+        items/enchanted_book50.png (32x32)
+        items/enchanted_book51.png (32x32)
+        items/enchanted_book52.png (32x32)
+        items/enchantment_table.png (32x32)
+        items/end_crystal.png (32x32)
+        items/end_portal.png (32x32)
+        items/end_rod.png (32x32)
+        items/end_stone.png (32x32)
+        items/end_stone_bricks.png (32x32)
+        items/ender_chest.png (32x32)
+        items/ender_pearl.png (32x32)
+        items/enderman_egg.png (32x32)
+        items/endermite_egg.png (32x32)
+        items/eye_of_ender.png (32x32)
+        items/feather.png (32x32)
+        items/fermented_spider_eye.png (32x32)
+        items/fern.png (32x32)
+        items/fire_charge.png (32x32)
+        items/firework_star.png (32x32)
+        items/fishing_rod.png (32x32)
+        items/flint.png (32x32)
+        items/flint_and_steel.png (32x32)
+        items/flower_pot.png (32x32)
+        items/furnace.png (32x32)
+        items/ghast_egg.png (32x32)
+        items/ghast_tear.png (32x32)
+        items/glass.png (32x32)
+        items/glass_bottle.png (32x32)
+        items/glass_pane.png (32x32)
+        items/glistering_melon.png (32x32)
+        items/glowstone.png (32x32)
+        items/glowstone_dust.png (32x32)
+        items/gold_horse_armor.png (32x32)
+        items/gold_ingot.png (32x32)
+        items/gold_nugget.png (32x32)
+        items/gold_ore.png (32x32)
+        items/golden_apple.png (32x32)
+        items/golden_axe.png (32x32)
+        items/golden_boots.png (32x32)
+        items/golden_carrot.png (32x32)
+        items/golden_chestplate.png (32x32)
+        items/golden_helmet.png (32x32)
+        items/golden_hoe.png (32x32)
+        items/golden_leggings.png (32x32)
+        items/golden_pickaxe.png (32x32)
+        items/golden_shovel.png (32x32)
+        items/golden_sword.png (32x32)
+        items/granite.png (32x32)
+        items/grass.png (32x32)
+        items/grass_block.png (32x32)
+        items/gravel.png (32x32)
+        items/gray_banner.png (32x32)
+        items/gray_carpet.png (32x32)
+        items/gray_dye.png (32x32)
+        items/gray_hardened_clay.png (32x32)
+        items/gray_shulker_box.png (32x32)
+        items/gray_stained_glass.png (32x32)
+        items/gray_stained_glass_pane.png (32x32)
+        items/gray_wool.png (32x32)
+        items/green_banner.png (32x32)
+        items/green_carpet.png (32x32)
+        items/green_hardened_clay.png (32x32)
+        items/green_shulker_box.png (32x32)
+        items/green_stained_glass.png (32x32)
+        items/green_stained_glass_pane.png (32x32)
+        items/green_wool.png (32x32)
+        items/guardian_egg.png (32x32)
+        items/gunpowder.png (32x32)
+        items/hardened_clay.png (32x32)
+        items/hay_bale.png (32x32)
+        items/head.png (32x32)
+        items/hopper.png (32x32)
+        items/horse_egg.png (32x32)
+        items/ice.png (32x32)
+        items/ink_sac.png (32x32)
+        items/iron_axe.png (32x32)
+        items/iron_bars.png (32x32)
+        items/iron_boots.png (32x32)
+        items/iron_chestplate.png (32x32)
+        items/iron_door.png (32x32)
+        items/iron_helmet.png (32x32)
+        items/iron_hoe.png (32x32)
+        items/iron_horse_armor.png (32x32)
+        items/iron_ingot.png (32x32)
+        items/iron_leggings.png (32x32)
+        items/iron_ore.png (32x32)
+        items/iron_pickaxe.png (32x32)
+        items/iron_shovel.png (32x32)
+        items/iron_sword.png (32x32)
+        items/iron_trapdoor.png (32x32)
+        items/item_frame.png (32x32)
+        items/jack_olantern.png (32x32)
+        items/jukebox.png (32x32)
+        items/jungle_boat.png (32x32)
+        items/jungle_door.png (32x32)
+        items/jungle_fence.png (32x32)
+        items/jungle_fence_gate.png (32x32)
+        items/jungle_leaves.png (32x32)
+        items/jungle_sapling.png (32x32)
+        items/jungle_wood.png (32x32)
+        items/jungle_wood_planks.png (32x32)
+        items/jungle_wood_slab.png (32x32)
+        items/jungle_wood_stairs.png (32x32)
+        items/ladder.png (32x32)
+        items/lapis_lazuli.png (32x32)
+        items/lapis_lazuli_block.png (32x32)
+        items/lapis_lazuli_ore.png (32x32)
+        items/large_fern.png (32x32)
+        items/lava_bucket.png (32x32)
+        items/lead.png (32x32)
+        items/leather.png (32x32)
+        items/leather_boots.png (32x32)
+        items/leather_cap.png (32x32)
+        items/leather_pants.png (32x32)
+        items/leather_tunic.png (32x32)
+        items/lever.png (32x32)
+        items/light_blue_banner.png (32x32)
+        items/light_blue_carpet.png (32x32)
+        items/light_blue_dye.png (32x32)
+        items/light_blue_hardened_clay.png (32x32)
+        items/light_blue_shulker_box.png (32x32)
+        items/light_blue_stained_glass.png (32x32)
+        items/light_blue_stained_glass_pane.png (32x32)
+        items/light_blue_wool.png (32x32)
+        items/light_gray_banner.png (32x32)
+        items/light_gray_carpet.png (32x32)
+        items/light_gray_dye.png (32x32)
+        items/light_gray_hardened_clay.png (32x32)
+        items/light_gray_shulker_box.png (32x32)
+        items/light_gray_stained_glass.png (32x32)
+        items/light_gray_stained_glass_pane.png (32x32)
+        items/light_gray_wool.png (32x32)
+        items/lilac.png (32x32)
+        items/lily_pad.png (32x32)
+        items/lime_banner.png (32x32)
+        items/lime_carpet.png (32x32)
+        items/lime_dye.png (32x32)
+        items/lime_hardened_clay.png (32x32)
+        items/lime_shulker_box.png (32x32)
+        items/lime_stained_glass.png (32x32)
+        items/lime_stained_glass_pane.png (32x32)
+        items/lime_wool.png (32x32)
+        items/lingering_potion_01.png (32x32)
+        items/lingering_potion_02.png (32x32)
+        items/lingering_potion_03.png (32x32)
+        items/lingering_potion_04.png (32x32)
+        items/lingering_potion_05.png (32x32)
+        items/lingering_potion_06.png (32x32)
+        items/lingering_potion_07.png (32x32)
+        items/lingering_potion_08.png (32x32)
+        items/lingering_potion_09.png (32x32)
+        items/lingering_potion_10.png (32x32)
+        items/lingering_potion_11.png (32x32)
+        items/lingering_potion_12.png (32x32)
+        items/lingering_potion_13.png (32x32)
+        items/lingering_potion_14.png (32x32)
+        items/lingering_potion_15.png (32x32)
+        items/lingering_potion_16.png (32x32)
+        items/lingering_potion_17.png (32x32)
+        items/lingering_potion_18.png (32x32)
+        items/lingering_potion_19.png (32x32)
+        items/lingering_potion_20.png (32x32)
+        items/lingering_potion_21.png (32x32)
+        items/lingering_potion_22.png (32x32)
+        items/lingering_potion_23.png (32x32)
+        items/lingering_potion_24.png (32x32)
+        items/lingering_potion_25.png (32x32)
+        items/lingering_potion_26.png (32x32)
+        items/lingering_potion_27.png (32x32)
+        items/lingering_potion_28.png (32x32)
+        items/lingering_potion_29.png (32x32)
+        items/lingering_potion_30.png (32x32)
+        items/lingering_potion_31.png (32x32)
+        items/lingering_potion_32.png (32x32)
+        items/lingering_potion_33.png (32x32)
+        items/lingering_potion_34.png (32x32)
+        items/lingering_potion_35.png (32x32)
+        items/lingering_potion_36.png (32x32)
+        items/lingering_potion_37.png (32x32)
+        items/magenta_banner.png (32x32)
+        items/magenta_carpet.png (32x32)
+        items/magenta_dye.png (32x32)
+        items/magenta_hardened_clay.png (32x32)
+        items/magenta_shulker_box.png (32x32)
+        items/magenta_stained_glass.png (32x32)
+        items/magenta_stained_glass_pane.png (32x32)
+        items/magenta_wool.png (32x32)
+        items/magma_block.png (32x32)
+        items/magma_cream.png (32x32)
+        items/magma_cube_egg.png (32x32)
+        items/melon.png (32x32)
+        items/melon_seeds.png (32x32)
+        items/melon_slice.png (32x32)
+        items/milk.png (32x32)
+        items/minecart.png (32x32)
+        items/minecart_with_chest.png (32x32)
+        items/minecart_with_furnace.png (32x32)
+        items/minecart_with_hopper.png (32x32)
+        items/minecart_with_tnt.png (32x32)
+        items/mooshroom_egg.png (32x32)
+        items/moss_stone.png (32x32)
+        items/mossy_cobblestone_wall.png (32x32)
+        items/mossy_stone_brick_monster_egg.png (32x32)
+        items/mossy_stone_bricks.png (32x32)
+        items/mundane_potion.png (32x32)
+        items/mundane_splash_potion.png (32x32)
+        items/mushroom_stew.png (32x32)
+        items/music_disk01.png (32x32)
+        items/music_disk02.png (32x32)
+        items/music_disk03.png (32x32)
+        items/music_disk04.png (32x32)
+        items/music_disk05.png (32x32)
+        items/music_disk06.png (32x32)
+        items/music_disk07.png (32x32)
+        items/music_disk08.png (32x32)
+        items/music_disk09.png (32x32)
+        items/music_disk10.png (32x32)
+        items/music_disk11.png (32x32)
+        items/mycelium.png (32x32)
+        items/name_tag.png (32x32)
+        items/nether_brick.png (32x32)
+        items/nether_brick_block.png (32x32)
+        items/nether_brick_fence.png (32x32)
+        items/nether_brick_slab.png (32x32)
+        items/nether_brick_stairs.png (32x32)
+        items/nether_quartz.png (32x32)
+        items/nether_quartz_ore.png (32x32)
+        items/nether_star.png (32x32)
+        items/nether_wart.png (32x32)
+        items/nether_wart_block.png (32x32)
+        items/netherrack.png (32x32)
+        items/notch_apple.png (32x32)
+        items/note_block.png (32x32)
+        items/oak_boat.png (32x32)
+        items/oak_door.png (32x32)
+        items/oak_fence.png (32x32)
+        items/oak_fence_gate.png (32x32)
+        items/oak_leaves.png (32x32)
+        items/oak_sapling.png (32x32)
+        items/oak_wood.png (32x32)
+        items/oak_wood_planks.png (32x32)
+        items/oak_wood_slab.png (32x32)
+        items/oak_wood_stairs.png (32x32)
+        items/observer.png (32x32)
+        items/obsidian.png (32x32)
+        items/ocelot_egg.png (32x32)
+        items/orange_banner.png (32x32)
+        items/orange_carpet.png (32x32)
+        items/orange_dye.png (32x32)
+        items/orange_hardened_clay.png (32x32)
+        items/orange_shulker_box.png (32x32)
+        items/orange_stained_glass.png (32x32)
+        items/orange_stained_glass_pane.png (32x32)
+        items/orange_tulip.png (32x32)
+        items/orange_wool.png (32x32)
+        items/oxeye_daisy.png (32x32)
+        items/packed_ice.png (32x32)
+        items/painting.png (32x32)
+        items/paper.png (32x32)
+        items/peony.png (32x32)
+        items/pig_egg.png (32x32)
+        items/pillar_quartz_block.png (32x32)
+        items/pink_banner.png (32x32)
+        items/pink_carpet.png (32x32)
+        items/pink_dye.png (32x32)
+        items/pink_hardened_clay.png (32x32)
+        items/pink_shulker_box.png (32x32)
+        items/pink_stained_glass.png (32x32)
+        items/pink_stained_glass_pane.png (32x32)
+        items/pink_tulip.png (32x32)
+        items/pink_wool.png (32x32)
+        items/piston.png (32x32)
+        items/podzol.png (32x32)
+        items/poisonous_potato.png (32x32)
+        items/polar_bear_egg.png (32x32)
+        items/polished_andesite.png (32x32)
+        items/polished_diorite.png (32x32)
+        items/polished_granite.png (32x32)
+        items/popped_chorous_fruit.png (32x32)
+        items/popped_chorus_fruit.png (32x32)
+        items/poppy.png (32x32)
+        items/potato.png (32x32)
+        items/potion_of_fire_resistance.png (32x32)
+        items/potion_of_fire_resistance+.png (32x32)
+        items/potion_of_harming.png (32x32)
+        items/potion_of_harming_II.png (32x32)
+        items/potion_of_healing.png (32x32)
+        items/potion_of_healing_II.png (32x32)
+        items/potion_of_invisibility.png (32x32)
+        items/potion_of_invisibility+.png (32x32)
+        items/potion_of_leaping.png (32x32)
+        items/potion_of_leaping+.png (32x32)
+        items/potion_of_leaping_II.png (32x32)
+        items/potion_of_luck.png (32x32)
+        items/potion_of_night_vision.png (32x32)
+        items/potion_of_night_vision+.png (32x32)
+        items/potion_of_posion.png (32x32)
+        items/potion_of_posion+.png (32x32)
+        items/potion_of_posion_II.png (32x32)
+        items/potion_of_regeneration.png (32x32)
+        items/potion_of_regeneration+.png (32x32)
+        items/potion_of_regeneration_II.png (32x32)
+        items/potion_of_slowness.png (32x32)
+        items/potion_of_slowness+.png (32x32)
+        items/potion_of_strength.png (32x32)
+        items/potion_of_strength+.png (32x32)
+        items/potion_of_strength_II.png (32x32)
+        items/potion_of_swiftness.png (32x32)
+        items/potion_of_swiftness+.png (32x32)
+        items/potion_of_swiftness_II.png (32x32)
+        items/potion_of_water_breathing.png (32x32)
+        items/potion_of_water_breathing+.png (32x32)
+        items/potion_of_weakness.png (32x32)
+        items/potion_of_weakness+.png (32x32)
+        items/powered_rail.png (32x32)
+        items/prismarine.png (32x32)
+        items/prismarine_bricks.png (32x32)
+        items/prismarine_crystals.png (32x32)
+        items/prismarine_shard.png (32x32)
+        items/pufferfish.png (32x32)
+        items/pumpkin.png (32x32)
+        items/pumpkin_pie.png (32x32)
+        items/pumpkin_seeds.png (32x32)
+        items/purple_banner.png (32x32)
+        items/purple_carpet.png (32x32)
+        items/purple_dye.png (32x32)
+        items/purple_hardened_clay.png (32x32)
+        items/purple_shulker_box.png (32x32)
+        items/purple_stained_glass.png (32x32)
+        items/purple_stained_glass_pane.png (32x32)
+        items/purple_wool.png (32x32)
+        items/purpur_block.png (32x32)
+        items/purpur_pillar.png (32x32)
+        items/purpur_slab.png (32x32)
+        items/purpur_stairs.png (32x32)
+        items/quartz_slab.png (32x32)
+        items/quartz_stairs.png (32x32)
+        items/rabbit_egg.png (32x32)
+        items/rabbit_hide.png (32x32)
+        items/rabbit_stew.png (32x32)
+        items/rabbits_foot.png (32x32)
+        items/rail.png (32x32)
+        items/raw_beef.png (32x32)
+        items/raw_chicken.png (32x32)
+        items/raw_fish.png (32x32)
+        items/raw_mutton.png (32x32)
+        items/raw_porkchop.png (32x32)
+        items/raw_rabbit.png (32x32)
+        items/raw_salmon.png (32x32)
+        items/red_banner.png (32x32)
+        items/red_carpet.png (32x32)
+        items/red_hardened_clay.png (32x32)
+        items/red_mushroom.png (32x32)
+        items/red_nether_brick.png (32x32)
+        items/red_sand.png (32x32)
+        items/red_sandstone.png (32x32)
+        items/red_sandstone_slab.png (32x32)
+        items/red_sandstone_stairs.png (32x32)
+        items/red_shulker_box.png (32x32)
+        items/red_stained_glass.png (32x32)
+        items/red_stained_glass_pane.png (32x32)
+        items/red_tulip.png (32x32)
+        items/red_wool.png (32x32)
+        items/redstone.png (32x32)
+        items/redstone_comparator.png (32x32)
+        items/redstone_lamp.png (32x32)
+        items/redstone_ore.png (32x32)
+        items/redstone_repeater.png (32x32)
+        items/redstone_torch.png (32x32)
+        items/rose_bush.png (32x32)
+        items/rose_red.png (32x32)
+        items/rotten_flesh.png (32x32)
+        items/saddle.png (32x32)
+        items/sand.png (32x32)
+        items/sandstone.png (32x32)
+        items/sandstone_slab.png (32x32)
+        items/sandstone_stairs.png (32x32)
+        items/sea_lantern.png (32x32)
+        items/seeds.png (32x32)
+        items/shears.png (32x32)
+        items/sheep_egg.png (32x32)
+        items/shield.png (32x32)
+        items/shulker_egg.png (32x32)
+        items/shulker_shell.png (32x32)
+        items/sign.png (32x32)
+        items/silverfish_egg.png (32x32)
+        items/skeleton_egg.png (32x32)
+        items/skeleton_skull.png (32x32)
+        items/slightly_damaged_anvil.png (32x32)
+        items/slime_block.png (32x32)
+        items/slime_egg.png (32x32)
+        items/slimeball.png (32x32)
+        items/smooth_red_sandstone.png (32x32)
+        items/smooth_sandstone.png (32x32)
+        items/snow.png (32x32)
+        items/snow_block.png (32x32)
+        items/snowball.png (32x32)
+        items/soul_sand.png (32x32)
+        items/spectral_arrow.png (32x32)
+        items/spider_egg.png (32x32)
+        items/spider_eye.png (32x32)
+        items/splash_potion_of_fire_resistance.png (32x32)
+        items/splash_potion_of_fire_resistance+.png (32x32)
+        items/splash_potion_of_healing.png (32x32)
+        items/splash_potion_of_healing_II.png (32x32)
+        items/splash_potion_of_instant_damage.png (32x32)
+        items/splash_potion_of_instant_damage_II.png (32x32)
+        items/splash_potion_of_invisibility.png (32x32)
+        items/splash_potion_of_invisibility+.png (32x32)
+        items/splash_potion_of_leaping.png (32x32)
+        items/splash_potion_of_leaping+.png (32x32)
+        items/splash_potion_of_leaping_II.png (32x32)
+        items/splash_potion_of_luck.png (32x32)
+        items/splash_potion_of_night_vision.png (32x32)
+        items/splash_potion_of_night_vision+.png (32x32)
+        items/splash_potion_of_posion.png (32x32)
+        items/splash_potion_of_posion+.png (32x32)
+        items/splash_potion_of_posion_II.png (32x32)
+        items/splash_potion_of_regeneration.png (32x32)
+        items/splash_potion_of_regeneration+.png (32x32)
+        items/splash_potion_of_regeneration_II.png (32x32)
+        items/splash_potion_of_slowness.png (32x32)
+        items/splash_potion_of_slowness+.png (32x32)
+        items/splash_potion_of_strength.png (32x32)
+        items/splash_potion_of_strength+.png (32x32)
+        items/splash_potion_of_strength_II.png (32x32)
+        items/splash_potion_of_swiftness.png (32x32)
+        items/splash_potion_of_swiftness+.png (32x32)
+        items/splash_potion_of_swiftness_II.png (32x32)
+        items/splash_potion_of_water_breathing.png (32x32)
+        items/splash_potion_of_water_breathing+.png (32x32)
+        items/splash_potion_of_weakness.png (32x32)
+        items/splash_potion_of_weakness+.png (32x32)
+        items/splash_uncraftable_potion.png (32x32)
+        items/splash_water_bottle.png (32x32)
+        items/sponge.png (32x32)
+        items/spruce_boat.png (32x32)
+        items/spruce_door.png (32x32)
+        items/spruce_fence.png (32x32)
+        items/spruce_fence_gate.png (32x32)
+        items/spruce_leaves.png (32x32)
+        items/spruce_sapling.png (32x32)
+        items/spruce_wood.png (32x32)
+        items/spruce_wood_planks.png (32x32)
+        items/spruce_wood_slab.png (32x32)
+        items/spruce_wood_stairs.png (32x32)
+        items/squid_egg.png (32x32)
+        items/steak.png (32x32)
+        items/stick.png (32x32)
+        items/sticky_piston.png (32x32)
+        items/stone.png (32x32)
+        items/stone_axe.png (32x32)
+        items/stone_brick.png (32x32)
+        items/stone_brick_monster_egg.png (32x32)
+        items/stone_brick_stairs.png (32x32)
+        items/stone_bricks_slab.png (32x32)
+        items/stone_button.png (32x32)
+        items/stone_hoe.png (32x32)
+        items/stone_monster_egg.png (32x32)
+        items/stone_pickaxe.png (32x32)
+        items/stone_pressure_plate.png (32x32)
+        items/stone_shovel.png (32x32)
+        items/stone_slab.png (32x32)
+        items/stone_sword.png (32x32)
+        items/string.png (32x32)
+        items/sugar.png (32x32)
+        items/sugar_canes.png (32x32)
+        items/sunflower.png (32x32)
+        items/thick_potion.png (32x32)
+        items/thick_splash_potion.png (32x32)
+        items/tipped_arrow.png (32x32)
+        items/tipped_arrow_01.png (32x32)
+        items/tipped_arrow_02.png (32x32)
+        items/tipped_arrow_03.png (32x32)
+        items/tipped_arrow_04.png (32x32)
+        items/tipped_arrow_05.png (32x32)
+        items/tipped_arrow_06.png (32x32)
+        items/tipped_arrow_07.png (32x32)
+        items/tipped_arrow_08.png (32x32)
+        items/tipped_arrow_09.png (32x32)
+        items/tipped_arrow_10.png (32x32)
+        items/tipped_arrow_11.png (32x32)
+        items/tipped_arrow_12.png (32x32)
+        items/tipped_arrow_13.png (32x32)
+        items/tipped_arrow_14.png (32x32)
+        items/tipped_arrow_15.png (32x32)
+        items/tipped_arrow_16.png (32x32)
+        items/tipped_arrow_17.png (32x32)
+        items/tipped_arrow_18.png (32x32)
+        items/tipped_arrow_19.png (32x32)
+        items/tipped_arrow_20.png (32x32)
+        items/tipped_arrow_21.png (32x32)
+        items/tipped_arrow_22.png (32x32)
+        items/tipped_arrow_23.png (32x32)
+        items/tipped_arrow_24.png (32x32)
+        items/tipped_arrow_25.png (32x32)
+        items/tipped_arrow_26.png (32x32)
+        items/tipped_arrow_27.png (32x32)
+        items/tipped_arrow_28.png (32x32)
+        items/tipped_arrow_29.png (32x32)
+        items/tipped_arrow_30.png (32x32)
+        items/tipped_arrow_31.png (32x32)
+        items/tipped_arrow_32.png (32x32)
+        items/tipped_arrow_33.png (32x32)
+        items/tipped_arrow_34.png (32x32)
+        items/tipped_arrow_35.png (32x32)
+        items/tipped_arrow_36.png (32x32)
+        items/tipped_arrow_37.png (32x32)
+        items/tnt.png (32x32)
+        items/torch.png (32x32)
+        items/totem_of_undying.png (32x32)
+        items/trapped_chest.png (32x32)
+        items/tripwire_hook.png (32x32)
+        items/uncraftable_potion.png (32x32)
+        items/very_damaged_anvil.png (32x32)
+        items/villager_egg.png (32x32)
+        items/vines.png (32x32)
+        items/water_bottle.png (32x32)
+        items/water_bucket.png (32x32)
+        items/weighted_pressure_plate_heavy.png (32x32)
+        items/weighted_pressure_plate_light.png (32x32)
+        items/wet_sponge.png (32x32)
+        items/wheat.png (32x32)
+        items/white_banner.png (32x32)
+        items/white_hardened_clay.png (32x32)
+        items/white_shulker_box.png (32x32)
+        items/white_stained_glass.png (32x32)
+        items/white_stained_glass_pane.png (32x32)
+        items/white_tulip.png (32x32)
+        items/witch_egg.png (32x32)
+        items/wither_skeleton_skull.png (32x32)
+        items/wolf_egg.png (32x32)
+        items/wooden_axe.png (32x32)
+        items/wooden_button.png (32x32)
+        items/wooden_hoe.png (32x32)
+        items/wooden_pickaxe.png (32x32)
+        items/wooden_pressure_plate.png (32x32)
+        items/wooden_shovel.png (32x32)
+        items/wooden_sword.png (32x32)
+        items/wooden_trapdoor.png (32x32)
+        items/wool.png (32x32)
+        items/yellow_banner.png (32x32)
+        items/yellow_carpet.png (32x32)
+        items/yellow_hardened_clay.png (32x32)
+        items/yellow_shulker_box.png (32x32)
+        items/yellow_stained_glass.png (32x32)
+        items/yellow_stained_glass_pane.png (32x32)
+        items/yellow_wool.png (32x32)
+        items/zombie_egg.png (32x32)
+        items/zombie_head.png (32x32)
+        items/zombie_pigman_egg.png (32x32)
+
+        Output files:
+          items.png
+          items.css
+
+        Output size:
+          928x896
+
+
+*/
+div.item_acacia_boat { width: 32px; height: 32px; background: url(items.png) 0px 0px no-repeat; }
+div.item_acacia_door { width: 32px; height: 32px; background: url(items.png) -32px 0px no-repeat; }
+div.item_acacia_fence { width: 32px; height: 32px; background: url(items.png) 0px -32px no-repeat; }
+div.item_acacia_fence_gate { width: 32px; height: 32px; background: url(items.png) -32px -32px no-repeat; }
+div.item_acacia_leaves { width: 32px; height: 32px; background: url(items.png) -64px 0px no-repeat; }
+div.item_acacia_sapling { width: 32px; height: 32px; background: url(items.png) -64px -32px no-repeat; }
+div.item_acacia_wood { width: 32px; height: 32px; background: url(items.png) 0px -64px no-repeat; }
+div.item_acacia_wood_planks { width: 32px; height: 32px; background: url(items.png) -32px -64px no-repeat; }
+div.item_acacia_wood_slab { width: 32px; height: 32px; background: url(items.png) -64px -64px no-repeat; }
+div.item_acacia_wood_stairs { width: 32px; height: 32px; background: url(items.png) -96px 0px no-repeat; }
+div.item_activator_rail { width: 32px; height: 32px; background: url(items.png) -96px -32px no-repeat; }
+div.item_allium { width: 32px; height: 32px; background: url(items.png) -96px -64px no-repeat; }
+div.item_andesite { width: 32px; height: 32px; background: url(items.png) 0px -96px no-repeat; }
+div.item_anvil { width: 32px; height: 32px; background: url(items.png) -32px -96px no-repeat; }
+div.item_apple { width: 32px; height: 32px; background: url(items.png) -64px -96px no-repeat; }
+div.item_armor_stand { width: 32px; height: 32px; background: url(items.png) -96px -96px no-repeat; }
+div.item_arrow { width: 32px; height: 32px; background: url(items.png) -128px 0px no-repeat; }
+div.item_awkward_potion { width: 32px; height: 32px; background: url(items.png) -128px -32px no-repeat; }
+div.item_awkward_splash_potion { width: 32px; height: 32px; background: url(items.png) -128px -64px no-repeat; }
+div.item_azure_bluet { width: 32px; height: 32px; background: url(items.png) -128px -96px no-repeat; }
+div.item_baked_potato { width: 32px; height: 32px; background: url(items.png) 0px -128px no-repeat; }
+div.item_bat_egg { width: 32px; height: 32px; background: url(items.png) -32px -128px no-repeat; }
+div.item_beacon { width: 32px; height: 32px; background: url(items.png) -64px -128px no-repeat; }
+div.item_bed { width: 32px; height: 32px; background: url(items.png) -96px -128px no-repeat; }
+div.item_bedrock { width: 32px; height: 32px; background: url(items.png) -128px -128px no-repeat; }
+div.item_beetroot { width: 32px; height: 32px; background: url(items.png) -160px 0px no-repeat; }
+div.item_beetroot_seeds { width: 32px; height: 32px; background: url(items.png) -160px -32px no-repeat; }
+div.item_beetroot_soup { width: 32px; height: 32px; background: url(items.png) -160px -64px no-repeat; }
+div.item_birch_boat { width: 32px; height: 32px; background: url(items.png) -160px -96px no-repeat; }
+div.item_birch_door { width: 32px; height: 32px; background: url(items.png) -160px -128px no-repeat; }
+div.item_birch_fence { width: 32px; height: 32px; background: url(items.png) 0px -160px no-repeat; }
+div.item_birch_fence_gate { width: 32px; height: 32px; background: url(items.png) -32px -160px no-repeat; }
+div.item_birch_leaves { width: 32px; height: 32px; background: url(items.png) -64px -160px no-repeat; }
+div.item_birch_sapling { width: 32px; height: 32px; background: url(items.png) -96px -160px no-repeat; }
+div.item_birch_wood { width: 32px; height: 32px; background: url(items.png) -128px -160px no-repeat; }
+div.item_birch_wood_planks { width: 32px; height: 32px; background: url(items.png) -160px -160px no-repeat; }
+div.item_birch_wood_slab { width: 32px; height: 32px; background: url(items.png) -192px 0px no-repeat; }
+div.item_birch_wood_stairs { width: 32px; height: 32px; background: url(items.png) -192px -32px no-repeat; }
+div.item_black_banner { width: 32px; height: 32px; background: url(items.png) -192px -64px no-repeat; }
+div.item_black_carpet { width: 32px; height: 32px; background: url(items.png) -192px -96px no-repeat; }
+div.item_black_hardened_clay { width: 32px; height: 32px; background: url(items.png) -192px -128px no-repeat; }
+div.item_black_shulker_box { width: 32px; height: 32px; background: url(items.png) -192px -160px no-repeat; }
+div.item_black_stained_glass { width: 32px; height: 32px; background: url(items.png) 0px -192px no-repeat; }
+div.item_black_stained_glass_pane { width: 32px; height: 32px; background: url(items.png) -32px -192px no-repeat; }
+div.item_black_wool { width: 32px; height: 32px; background: url(items.png) -64px -192px no-repeat; }
+div.item_blaze_egg { width: 32px; height: 32px; background: url(items.png) -96px -192px no-repeat; }
+div.item_blaze_powder { width: 32px; height: 32px; background: url(items.png) -128px -192px no-repeat; }
+div.item_blaze_rod { width: 32px; height: 32px; background: url(items.png) -160px -192px no-repeat; }
+div.item_block_of_clay { width: 32px; height: 32px; background: url(items.png) -192px -192px no-repeat; }
+div.item_block_of_coal { width: 32px; height: 32px; background: url(items.png) -224px 0px no-repeat; }
+div.item_block_of_diamond { width: 32px; height: 32px; background: url(items.png) -224px -32px no-repeat; }
+div.item_block_of_emerald { width: 32px; height: 32px; background: url(items.png) -224px -64px no-repeat; }
+div.item_block_of_gold { width: 32px; height: 32px; background: url(items.png) -224px -96px no-repeat; }
+div.item_block_of_iron { width: 32px; height: 32px; background: url(items.png) -224px -128px no-repeat; }
+div.item_block_of_quartz { width: 32px; height: 32px; background: url(items.png) -224px -160px no-repeat; }
+div.item_block_of_redstone { width: 32px; height: 32px; background: url(items.png) -224px -192px no-repeat; }
+div.item_blue_banner { width: 32px; height: 32px; background: url(items.png) 0px -224px no-repeat; }
+div.item_blue_carpet { width: 32px; height: 32px; background: url(items.png) -32px -224px no-repeat; }
+div.item_blue_hardened_clay { width: 32px; height: 32px; background: url(items.png) -64px -224px no-repeat; }
+div.item_blue_orchid { width: 32px; height: 32px; background: url(items.png) -96px -224px no-repeat; }
+div.item_blue_shulker_box { width: 32px; height: 32px; background: url(items.png) -128px -224px no-repeat; }
+div.item_blue_stained_glass { width: 32px; height: 32px; background: url(items.png) -160px -224px no-repeat; }
+div.item_blue_stained_glass_pane { width: 32px; height: 32px; background: url(items.png) -192px -224px no-repeat; }
+div.item_blue_wool { width: 32px; height: 32px; background: url(items.png) -224px -224px no-repeat; }
+div.item_bone { width: 32px; height: 32px; background: url(items.png) -256px 0px no-repeat; }
+div.item_bone_block { width: 32px; height: 32px; background: url(items.png) -256px -32px no-repeat; }
+div.item_bone_meal { width: 32px; height: 32px; background: url(items.png) -256px -64px no-repeat; }
+div.item_book { width: 32px; height: 32px; background: url(items.png) -256px -96px no-repeat; }
+div.item_book_and_quill { width: 32px; height: 32px; background: url(items.png) -256px -128px no-repeat; }
+div.item_bookshelf { width: 32px; height: 32px; background: url(items.png) -256px -160px no-repeat; }
+div.item_bottle_o_enchanting { width: 32px; height: 32px; background: url(items.png) -256px -192px no-repeat; }
+div.item_bow { width: 32px; height: 32px; background: url(items.png) -256px -224px no-repeat; }
+div.item_bowl { width: 32px; height: 32px; background: url(items.png) 0px -256px no-repeat; }
+div.item_bread { width: 32px; height: 32px; background: url(items.png) -32px -256px no-repeat; }
+div.item_brewing_stand { width: 32px; height: 32px; background: url(items.png) -64px -256px no-repeat; }
+div.item_brick { width: 32px; height: 32px; background: url(items.png) -96px -256px no-repeat; }
+div.item_brick_stairs { width: 32px; height: 32px; background: url(items.png) -128px -256px no-repeat; }
+div.item_bricks { width: 32px; height: 32px; background: url(items.png) -160px -256px no-repeat; }
+div.item_bricks_slab { width: 32px; height: 32px; background: url(items.png) -192px -256px no-repeat; }
+div.item_brown_banner { width: 32px; height: 32px; background: url(items.png) -224px -256px no-repeat; }
+div.item_brown_carpet { width: 32px; height: 32px; background: url(items.png) -256px -256px no-repeat; }
+div.item_brown_hardened_clay { width: 32px; height: 32px; background: url(items.png) -288px 0px no-repeat; }
+div.item_brown_mushroom { width: 32px; height: 32px; background: url(items.png) -288px -32px no-repeat; }
+div.item_brown_shulker_box { width: 32px; height: 32px; background: url(items.png) -288px -64px no-repeat; }
+div.item_brown_stained_glass { width: 32px; height: 32px; background: url(items.png) -288px -96px no-repeat; }
+div.item_brown_stained_glass_pane { width: 32px; height: 32px; background: url(items.png) -288px -128px no-repeat; }
+div.item_brown_wool { width: 32px; height: 32px; background: url(items.png) -288px -160px no-repeat; }
+div.item_bucket { width: 32px; height: 32px; background: url(items.png) -288px -192px no-repeat; }
+div.item_cactus { width: 32px; height: 32px; background: url(items.png) -288px -224px no-repeat; }
+div.item_cactus_green { width: 32px; height: 32px; background: url(items.png) -288px -256px no-repeat; }
+div.item_cake { width: 32px; height: 32px; background: url(items.png) 0px -288px no-repeat; }
+div.item_carpet { width: 32px; height: 32px; background: url(items.png) -32px -288px no-repeat; }
+div.item_carrot { width: 32px; height: 32px; background: url(items.png) -64px -288px no-repeat; }
+div.item_carrot_on_a_stick { width: 32px; height: 32px; background: url(items.png) -96px -288px no-repeat; }
+div.item_cauldron { width: 32px; height: 32px; background: url(items.png) -128px -288px no-repeat; }
+div.item_cave_spider_egg { width: 32px; height: 32px; background: url(items.png) -160px -288px no-repeat; }
+div.item_chain_boots { width: 32px; height: 32px; background: url(items.png) -192px -288px no-repeat; }
+div.item_chain_chestplate { width: 32px; height: 32px; background: url(items.png) -224px -288px no-repeat; }
+div.item_chain_helmet { width: 32px; height: 32px; background: url(items.png) -256px -288px no-repeat; }
+div.item_chain_leggings { width: 32px; height: 32px; background: url(items.png) -288px -288px no-repeat; }
+div.item_charcoal { width: 32px; height: 32px; background: url(items.png) -320px 0px no-repeat; }
+div.item_chest { width: 32px; height: 32px; background: url(items.png) -320px -32px no-repeat; }
+div.item_chicken_egg { width: 32px; height: 32px; background: url(items.png) -320px -64px no-repeat; }
+div.item_chiseled_quartz_block { width: 32px; height: 32px; background: url(items.png) -320px -96px no-repeat; }
+div.item_chiseled_red_sandstone { width: 32px; height: 32px; background: url(items.png) -320px -128px no-repeat; }
+div.item_chiseled_sandstone { width: 32px; height: 32px; background: url(items.png) -320px -160px no-repeat; }
+div.item_chiseled_stone_brick_monster_egg { width: 32px; height: 32px; background: url(items.png) -320px -192px no-repeat; }
+div.item_chiseled_stone_bricks { width: 32px; height: 32px; background: url(items.png) -320px -224px no-repeat; }
+div.item_chorus_flower { width: 32px; height: 32px; background: url(items.png) -320px -256px no-repeat; }
+div.item_chorus_fruit { width: 32px; height: 32px; background: url(items.png) -320px -288px no-repeat; }
+div.item_chorus_plant { width: 32px; height: 32px; background: url(items.png) 0px -320px no-repeat; }
+div.item_clay { width: 32px; height: 32px; background: url(items.png) -32px -320px no-repeat; }
+div.item_clock { width: 32px; height: 32px; background: url(items.png) -64px -320px no-repeat; }
+div.item_clownfish { width: 32px; height: 32px; background: url(items.png) -96px -320px no-repeat; }
+div.item_coal { width: 32px; height: 32px; background: url(items.png) -128px -320px no-repeat; }
+div.item_coal_ore { width: 32px; height: 32px; background: url(items.png) -160px -320px no-repeat; }
+div.item_coarse_dirt { width: 32px; height: 32px; background: url(items.png) -192px -320px no-repeat; }
+div.item_cobblestone { width: 32px; height: 32px; background: url(items.png) -224px -320px no-repeat; }
+div.item_cobblestone_monster_egg { width: 32px; height: 32px; background: url(items.png) -256px -320px no-repeat; }
+div.item_cobblestone_slab { width: 32px; height: 32px; background: url(items.png) -288px -320px no-repeat; }
+div.item_cobblestone_stairs { width: 32px; height: 32px; background: url(items.png) -320px -320px no-repeat; }
+div.item_cobblestone_wall { width: 32px; height: 32px; background: url(items.png) -352px 0px no-repeat; }
+div.item_cobweb { width: 32px; height: 32px; background: url(items.png) -352px -32px no-repeat; }
+div.item_cocoa_beans { width: 32px; height: 32px; background: url(items.png) -352px -64px no-repeat; }
+div.item_compass { width: 32px; height: 32px; background: url(items.png) -352px -96px no-repeat; }
+div.item_cooked_chicken { width: 32px; height: 32px; background: url(items.png) -352px -128px no-repeat; }
+div.item_cooked_fish { width: 32px; height: 32px; background: url(items.png) -352px -160px no-repeat; }
+div.item_cooked_mutton { width: 32px; height: 32px; background: url(items.png) -352px -192px no-repeat; }
+div.item_cooked_porkchop { width: 32px; height: 32px; background: url(items.png) -352px -224px no-repeat; }
+div.item_cooked_rabbit { width: 32px; height: 32px; background: url(items.png) -352px -256px no-repeat; }
+div.item_cooked_salmon { width: 32px; height: 32px; background: url(items.png) -352px -288px no-repeat; }
+div.item_cookie { width: 32px; height: 32px; background: url(items.png) -352px -320px no-repeat; }
+div.item_cow_egg { width: 32px; height: 32px; background: url(items.png) 0px -352px no-repeat; }
+div.item_cracked_stone_brick_monster_egg { width: 32px; height: 32px; background: url(items.png) -32px -352px no-repeat; }
+div.item_cracked_stone_bricks { width: 32px; height: 32px; background: url(items.png) -64px -352px no-repeat; }
+div.item_crafting_table { width: 32px; height: 32px; background: url(items.png) -96px -352px no-repeat; }
+div.item_creeper_egg { width: 32px; height: 32px; background: url(items.png) -128px -352px no-repeat; }
+div.item_creeper_head { width: 32px; height: 32px; background: url(items.png) -160px -352px no-repeat; }
+div.item_cyan_banner { width: 32px; height: 32px; background: url(items.png) -192px -352px no-repeat; }
+div.item_cyan_carpet { width: 32px; height: 32px; background: url(items.png) -224px -352px no-repeat; }
+div.item_cyan_dye { width: 32px; height: 32px; background: url(items.png) -256px -352px no-repeat; }
+div.item_cyan_hardened_clay { width: 32px; height: 32px; background: url(items.png) -288px -352px no-repeat; }
+div.item_cyan_shulker_box { width: 32px; height: 32px; background: url(items.png) -320px -352px no-repeat; }
+div.item_cyan_stained_glass { width: 32px; height: 32px; background: url(items.png) -352px -352px no-repeat; }
+div.item_cyan_stained_glass_pane { width: 32px; height: 32px; background: url(items.png) -384px 0px no-repeat; }
+div.item_cyan_wool { width: 32px; height: 32px; background: url(items.png) -384px -32px no-repeat; }
+div.item_dandelion { width: 32px; height: 32px; background: url(items.png) -384px -64px no-repeat; }
+div.item_dandelion_yellow { width: 32px; height: 32px; background: url(items.png) -384px -96px no-repeat; }
+div.item_dark_oak_boat { width: 32px; height: 32px; background: url(items.png) -384px -128px no-repeat; }
+div.item_dark_oak_door { width: 32px; height: 32px; background: url(items.png) -384px -160px no-repeat; }
+div.item_dark_oak_fence { width: 32px; height: 32px; background: url(items.png) -384px -192px no-repeat; }
+div.item_dark_oak_fence_gate { width: 32px; height: 32px; background: url(items.png) -384px -224px no-repeat; }
+div.item_dark_oak_leaves { width: 32px; height: 32px; background: url(items.png) -384px -256px no-repeat; }
+div.item_dark_oak_sapling { width: 32px; height: 32px; background: url(items.png) -384px -288px no-repeat; }
+div.item_dark_oak_wood { width: 32px; height: 32px; background: url(items.png) -384px -320px no-repeat; }
+div.item_dark_oak_wood_planks { width: 32px; height: 32px; background: url(items.png) -384px -352px no-repeat; }
+div.item_dark_oak_wood_slab { width: 32px; height: 32px; background: url(items.png) 0px -384px no-repeat; }
+div.item_dark_oak_wood_stairs { width: 32px; height: 32px; background: url(items.png) -32px -384px no-repeat; }
+div.item_dark_prismarine { width: 32px; height: 32px; background: url(items.png) -64px -384px no-repeat; }
+div.item_daylight_sensor { width: 32px; height: 32px; background: url(items.png) -96px -384px no-repeat; }
+div.item_dead_bush { width: 32px; height: 32px; background: url(items.png) -128px -384px no-repeat; }
+div.item_detector_rail { width: 32px; height: 32px; background: url(items.png) -160px -384px no-repeat; }
+div.item_diamond { width: 32px; height: 32px; background: url(items.png) -192px -384px no-repeat; }
+div.item_diamond_axe { width: 32px; height: 32px; background: url(items.png) -224px -384px no-repeat; }
+div.item_diamond_boots { width: 32px; height: 32px; background: url(items.png) -256px -384px no-repeat; }
+div.item_diamond_chestplate { width: 32px; height: 32px; background: url(items.png) -288px -384px no-repeat; }
+div.item_diamond_helmet { width: 32px; height: 32px; background: url(items.png) -320px -384px no-repeat; }
+div.item_diamond_hoe { width: 32px; height: 32px; background: url(items.png) -352px -384px no-repeat; }
+div.item_diamond_horse_armor { width: 32px; height: 32px; background: url(items.png) -384px -384px no-repeat; }
+div.item_diamond_leggings { width: 32px; height: 32px; background: url(items.png) -416px 0px no-repeat; }
+div.item_diamond_ore { width: 32px; height: 32px; background: url(items.png) -416px -32px no-repeat; }
+div.item_diamond_pickaxe { width: 32px; height: 32px; background: url(items.png) -416px -64px no-repeat; }
+div.item_diamond_shovel { width: 32px; height: 32px; background: url(items.png) -416px -96px no-repeat; }
+div.item_diamond_sword { width: 32px; height: 32px; background: url(items.png) -416px -128px no-repeat; }
+div.item_diorite { width: 32px; height: 32px; background: url(items.png) -416px -160px no-repeat; }
+div.item_dirt { width: 32px; height: 32px; background: url(items.png) -416px -192px no-repeat; }
+div.item_dispenser { width: 32px; height: 32px; background: url(items.png) -416px -224px no-repeat; }
+div.item_double_tallgrass { width: 32px; height: 32px; background: url(items.png) -416px -256px no-repeat; }
+div.item_dragon_head { width: 32px; height: 32px; background: url(items.png) -416px -288px no-repeat; }
+div.item_dragons_breath { width: 32px; height: 32px; background: url(items.png) -416px -320px no-repeat; }
+div.item_dropper { width: 32px; height: 32px; background: url(items.png) -416px -352px no-repeat; }
+div.item_egg { width: 32px; height: 32px; background: url(items.png) -416px -384px no-repeat; }
+div.item_elytra { width: 32px; height: 32px; background: url(items.png) 0px -416px no-repeat; }
+div.item_emerald { width: 32px; height: 32px; background: url(items.png) -32px -416px no-repeat; }
+div.item_emerald_ore { width: 32px; height: 32px; background: url(items.png) -64px -416px no-repeat; }
+div.item_empty_map { width: 32px; height: 32px; background: url(items.png) -96px -416px no-repeat; }
+div.item_enchanted_book01 { width: 32px; height: 32px; background: url(items.png) -128px -416px no-repeat; }
+div.item_enchanted_book02 { width: 32px; height: 32px; background: url(items.png) -160px -416px no-repeat; }
+div.item_enchanted_book03 { width: 32px; height: 32px; background: url(items.png) -192px -416px no-repeat; }
+div.item_enchanted_book04 { width: 32px; height: 32px; background: url(items.png) -224px -416px no-repeat; }
+div.item_enchanted_book05 { width: 32px; height: 32px; background: url(items.png) -256px -416px no-repeat; }
+div.item_enchanted_book06 { width: 32px; height: 32px; background: url(items.png) -288px -416px no-repeat; }
+div.item_enchanted_book07 { width: 32px; height: 32px; background: url(items.png) -320px -416px no-repeat; }
+div.item_enchanted_book08 { width: 32px; height: 32px; background: url(items.png) -352px -416px no-repeat; }
+div.item_enchanted_book09 { width: 32px; height: 32px; background: url(items.png) -384px -416px no-repeat; }
+div.item_enchanted_book10 { width: 32px; height: 32px; background: url(items.png) -416px -416px no-repeat; }
+div.item_enchanted_book11 { width: 32px; height: 32px; background: url(items.png) -448px 0px no-repeat; }
+div.item_enchanted_book12 { width: 32px; height: 32px; background: url(items.png) -448px -32px no-repeat; }
+div.item_enchanted_book13 { width: 32px; height: 32px; background: url(items.png) -448px -64px no-repeat; }
+div.item_enchanted_book14 { width: 32px; height: 32px; background: url(items.png) -448px -96px no-repeat; }
+div.item_enchanted_book15 { width: 32px; height: 32px; background: url(items.png) -448px -128px no-repeat; }
+div.item_enchanted_book16 { width: 32px; height: 32px; background: url(items.png) -448px -160px no-repeat; }
+div.item_enchanted_book17 { width: 32px; height: 32px; background: url(items.png) -448px -192px no-repeat; }
+div.item_enchanted_book18 { width: 32px; height: 32px; background: url(items.png) -448px -224px no-repeat; }
+div.item_enchanted_book19 { width: 32px; height: 32px; background: url(items.png) -448px -256px no-repeat; }
+div.item_enchanted_book20 { width: 32px; height: 32px; background: url(items.png) -448px -288px no-repeat; }
+div.item_enchanted_book21 { width: 32px; height: 32px; background: url(items.png) -448px -320px no-repeat; }
+div.item_enchanted_book22 { width: 32px; height: 32px; background: url(items.png) -448px -352px no-repeat; }
+div.item_enchanted_book23 { width: 32px; height: 32px; background: url(items.png) -448px -384px no-repeat; }
+div.item_enchanted_book24 { width: 32px; height: 32px; background: url(items.png) -448px -416px no-repeat; }
+div.item_enchanted_book25 { width: 32px; height: 32px; background: url(items.png) 0px -448px no-repeat; }
+div.item_enchanted_book26 { width: 32px; height: 32px; background: url(items.png) -32px -448px no-repeat; }
+div.item_enchanted_book27 { width: 32px; height: 32px; background: url(items.png) -64px -448px no-repeat; }
+div.item_enchanted_book28 { width: 32px; height: 32px; background: url(items.png) -96px -448px no-repeat; }
+div.item_enchanted_book29 { width: 32px; height: 32px; background: url(items.png) -128px -448px no-repeat; }
+div.item_enchanted_book30 { width: 32px; height: 32px; background: url(items.png) -160px -448px no-repeat; }
+div.item_enchanted_book31 { width: 32px; height: 32px; background: url(items.png) -192px -448px no-repeat; }
+div.item_enchanted_book32 { width: 32px; height: 32px; background: url(items.png) -224px -448px no-repeat; }
+div.item_enchanted_book33 { width: 32px; height: 32px; background: url(items.png) -256px -448px no-repeat; }
+div.item_enchanted_book34 { width: 32px; height: 32px; background: url(items.png) -288px -448px no-repeat; }
+div.item_enchanted_book35 { width: 32px; height: 32px; background: url(items.png) -320px -448px no-repeat; }
+div.item_enchanted_book36 { width: 32px; height: 32px; background: url(items.png) -352px -448px no-repeat; }
+div.item_enchanted_book37 { width: 32px; height: 32px; background: url(items.png) -384px -448px no-repeat; }
+div.item_enchanted_book38 { width: 32px; height: 32px; background: url(items.png) -416px -448px no-repeat; }
+div.item_enchanted_book39 { width: 32px; height: 32px; background: url(items.png) -448px -448px no-repeat; }
+div.item_enchanted_book40 { width: 32px; height: 32px; background: url(items.png) -480px 0px no-repeat; }
+div.item_enchanted_book41 { width: 32px; height: 32px; background: url(items.png) -480px -32px no-repeat; }
+div.item_enchanted_book42 { width: 32px; height: 32px; background: url(items.png) -480px -64px no-repeat; }
+div.item_enchanted_book43 { width: 32px; height: 32px; background: url(items.png) -480px -96px no-repeat; }
+div.item_enchanted_book44 { width: 32px; height: 32px; background: url(items.png) -480px -128px no-repeat; }
+div.item_enchanted_book45 { width: 32px; height: 32px; background: url(items.png) -480px -160px no-repeat; }
+div.item_enchanted_book46 { width: 32px; height: 32px; background: url(items.png) -480px -192px no-repeat; }
+div.item_enchanted_book47 { width: 32px; height: 32px; background: url(items.png) -480px -224px no-repeat; }
+div.item_enchanted_book48 { width: 32px; height: 32px; background: url(items.png) -480px -256px no-repeat; }
+div.item_enchanted_book49 { width: 32px; height: 32px; background: url(items.png) -480px -288px no-repeat; }
+div.item_enchanted_book50 { width: 32px; height: 32px; background: url(items.png) -480px -320px no-repeat; }
+div.item_enchanted_book51 { width: 32px; height: 32px; background: url(items.png) -480px -352px no-repeat; }
+div.item_enchanted_book52 { width: 32px; height: 32px; background: url(items.png) -480px -384px no-repeat; }
+div.item_enchantment_table { width: 32px; height: 32px; background: url(items.png) -480px -416px no-repeat; }
+div.item_end_crystal { width: 32px; height: 32px; background: url(items.png) -480px -448px no-repeat; }
+div.item_end_portal { width: 32px; height: 32px; background: url(items.png) 0px -480px no-repeat; }
+div.item_end_rod { width: 32px; height: 32px; background: url(items.png) -32px -480px no-repeat; }
+div.item_end_stone { width: 32px; height: 32px; background: url(items.png) -64px -480px no-repeat; }
+div.item_end_stone_bricks { width: 32px; height: 32px; background: url(items.png) -96px -480px no-repeat; }
+div.item_ender_chest { width: 32px; height: 32px; background: url(items.png) -128px -480px no-repeat; }
+div.item_ender_pearl { width: 32px; height: 32px; background: url(items.png) -160px -480px no-repeat; }
+div.item_enderman_egg { width: 32px; height: 32px; background: url(items.png) -192px -480px no-repeat; }
+div.item_endermite_egg { width: 32px; height: 32px; background: url(items.png) -224px -480px no-repeat; }
+div.item_eye_of_ender { width: 32px; height: 32px; background: url(items.png) -256px -480px no-repeat; }
+div.item_feather { width: 32px; height: 32px; background: url(items.png) -288px -480px no-repeat; }
+div.item_fermented_spider_eye { width: 32px; height: 32px; background: url(items.png) -320px -480px no-repeat; }
+div.item_fern { width: 32px; height: 32px; background: url(items.png) -352px -480px no-repeat; }
+div.item_fire_charge { width: 32px; height: 32px; background: url(items.png) -384px -480px no-repeat; }
+div.item_firework_star { width: 32px; height: 32px; background: url(items.png) -416px -480px no-repeat; }
+div.item_fishing_rod { width: 32px; height: 32px; background: url(items.png) -448px -480px no-repeat; }
+div.item_flint { width: 32px; height: 32px; background: url(items.png) -480px -480px no-repeat; }
+div.item_flint_and_steel { width: 32px; height: 32px; background: url(items.png) -512px 0px no-repeat; }
+div.item_flower_pot { width: 32px; height: 32px; background: url(items.png) -512px -32px no-repeat; }
+div.item_furnace { width: 32px; height: 32px; background: url(items.png) -512px -64px no-repeat; }
+div.item_ghast_egg { width: 32px; height: 32px; background: url(items.png) -512px -96px no-repeat; }
+div.item_ghast_tear { width: 32px; height: 32px; background: url(items.png) -512px -128px no-repeat; }
+div.item_glass { width: 32px; height: 32px; background: url(items.png) -512px -160px no-repeat; }
+div.item_glass_bottle { width: 32px; height: 32px; background: url(items.png) -512px -192px no-repeat; }
+div.item_glass_pane { width: 32px; height: 32px; background: url(items.png) -512px -224px no-repeat; }
+div.item_glistering_melon { width: 32px; height: 32px; background: url(items.png) -512px -256px no-repeat; }
+div.item_glowstone { width: 32px; height: 32px; background: url(items.png) -512px -288px no-repeat; }
+div.item_glowstone_dust { width: 32px; height: 32px; background: url(items.png) -512px -320px no-repeat; }
+div.item_gold_horse_armor { width: 32px; height: 32px; background: url(items.png) -512px -352px no-repeat; }
+div.item_gold_ingot { width: 32px; height: 32px; background: url(items.png) -512px -384px no-repeat; }
+div.item_gold_nugget { width: 32px; height: 32px; background: url(items.png) -512px -416px no-repeat; }
+div.item_gold_ore { width: 32px; height: 32px; background: url(items.png) -512px -448px no-repeat; }
+div.item_golden_apple { width: 32px; height: 32px; background: url(items.png) -512px -480px no-repeat; }
+div.item_golden_axe { width: 32px; height: 32px; background: url(items.png) 0px -512px no-repeat; }
+div.item_golden_boots { width: 32px; height: 32px; background: url(items.png) -32px -512px no-repeat; }
+div.item_golden_carrot { width: 32px; height: 32px; background: url(items.png) -64px -512px no-repeat; }
+div.item_golden_chestplate { width: 32px; height: 32px; background: url(items.png) -96px -512px no-repeat; }
+div.item_golden_helmet { width: 32px; height: 32px; background: url(items.png) -128px -512px no-repeat; }
+div.item_golden_hoe { width: 32px; height: 32px; background: url(items.png) -160px -512px no-repeat; }
+div.item_golden_leggings { width: 32px; height: 32px; background: url(items.png) -192px -512px no-repeat; }
+div.item_golden_pickaxe { width: 32px; height: 32px; background: url(items.png) -224px -512px no-repeat; }
+div.item_golden_shovel { width: 32px; height: 32px; background: url(items.png) -256px -512px no-repeat; }
+div.item_golden_sword { width: 32px; height: 32px; background: url(items.png) -288px -512px no-repeat; }
+div.item_granite { width: 32px; height: 32px; background: url(items.png) -320px -512px no-repeat; }
+div.item_grass { width: 32px; height: 32px; background: url(items.png) -352px -512px no-repeat; }
+div.item_grass_block { width: 32px; height: 32px; background: url(items.png) -384px -512px no-repeat; }
+div.item_gravel { width: 32px; height: 32px; background: url(items.png) -416px -512px no-repeat; }
+div.item_gray_banner { width: 32px; height: 32px; background: url(items.png) -448px -512px no-repeat; }
+div.item_gray_carpet { width: 32px; height: 32px; background: url(items.png) -480px -512px no-repeat; }
+div.item_gray_dye { width: 32px; height: 32px; background: url(items.png) -512px -512px no-repeat; }
+div.item_gray_hardened_clay { width: 32px; height: 32px; background: url(items.png) -544px 0px no-repeat; }
+div.item_gray_shulker_box { width: 32px; height: 32px; background: url(items.png) -544px -32px no-repeat; }
+div.item_gray_stained_glass { width: 32px; height: 32px; background: url(items.png) -544px -64px no-repeat; }
+div.item_gray_stained_glass_pane { width: 32px; height: 32px; background: url(items.png) -544px -96px no-repeat; }
+div.item_gray_wool { width: 32px; height: 32px; background: url(items.png) -544px -128px no-repeat; }
+div.item_green_banner { width: 32px; height: 32px; background: url(items.png) -544px -160px no-repeat; }
+div.item_green_carpet { width: 32px; height: 32px; background: url(items.png) -544px -192px no-repeat; }
+div.item_green_hardened_clay { width: 32px; height: 32px; background: url(items.png) -544px -224px no-repeat; }
+div.item_green_shulker_box { width: 32px; height: 32px; background: url(items.png) -544px -256px no-repeat; }
+div.item_green_stained_glass { width: 32px; height: 32px; background: url(items.png) -544px -288px no-repeat; }
+div.item_green_stained_glass_pane { width: 32px; height: 32px; background: url(items.png) -544px -320px no-repeat; }
+div.item_green_wool { width: 32px; height: 32px; background: url(items.png) -544px -352px no-repeat; }
+div.item_guardian_egg { width: 32px; height: 32px; background: url(items.png) -544px -384px no-repeat; }
+div.item_gunpowder { width: 32px; height: 32px; background: url(items.png) -544px -416px no-repeat; }
+div.item_hardened_clay { width: 32px; height: 32px; background: url(items.png) -544px -448px no-repeat; }
+div.item_hay_bale { width: 32px; height: 32px; background: url(items.png) -544px -480px no-repeat; }
+div.item_head { width: 32px; height: 32px; background: url(items.png) -544px -512px no-repeat; }
+div.item_hopper { width: 32px; height: 32px; background: url(items.png) 0px -544px no-repeat; }
+div.item_horse_egg { width: 32px; height: 32px; background: url(items.png) -32px -544px no-repeat; }
+div.item_ice { width: 32px; height: 32px; background: url(items.png) -64px -544px no-repeat; }
+div.item_ink_sac { width: 32px; height: 32px; background: url(items.png) -96px -544px no-repeat; }
+div.item_iron_axe { width: 32px; height: 32px; background: url(items.png) -128px -544px no-repeat; }
+div.item_iron_bars { width: 32px; height: 32px; background: url(items.png) -160px -544px no-repeat; }
+div.item_iron_boots { width: 32px; height: 32px; background: url(items.png) -192px -544px no-repeat; }
+div.item_iron_chestplate { width: 32px; height: 32px; background: url(items.png) -224px -544px no-repeat; }
+div.item_iron_door { width: 32px; height: 32px; background: url(items.png) -256px -544px no-repeat; }
+div.item_iron_helmet { width: 32px; height: 32px; background: url(items.png) -288px -544px no-repeat; }
+div.item_iron_hoe { width: 32px; height: 32px; background: url(items.png) -320px -544px no-repeat; }
+div.item_iron_horse_armor { width: 32px; height: 32px; background: url(items.png) -352px -544px no-repeat; }
+div.item_iron_ingot { width: 32px; height: 32px; background: url(items.png) -384px -544px no-repeat; }
+div.item_iron_leggings { width: 32px; height: 32px; background: url(items.png) -416px -544px no-repeat; }
+div.item_iron_ore { width: 32px; height: 32px; background: url(items.png) -448px -544px no-repeat; }
+div.item_iron_pickaxe { width: 32px; height: 32px; background: url(items.png) -480px -544px no-repeat; }
+div.item_iron_shovel { width: 32px; height: 32px; background: url(items.png) -512px -544px no-repeat; }
+div.item_iron_sword { width: 32px; height: 32px; background: url(items.png) -544px -544px no-repeat; }
+div.item_iron_trapdoor { width: 32px; height: 32px; background: url(items.png) -576px 0px no-repeat; }
+div.item_item_frame { width: 32px; height: 32px; background: url(items.png) -576px -32px no-repeat; }
+div.item_jack_olantern { width: 32px; height: 32px; background: url(items.png) -576px -64px no-repeat; }
+div.item_jukebox { width: 32px; height: 32px; background: url(items.png) -576px -96px no-repeat; }
+div.item_jungle_boat { width: 32px; height: 32px; background: url(items.png) -576px -128px no-repeat; }
+div.item_jungle_door { width: 32px; height: 32px; background: url(items.png) -576px -160px no-repeat; }
+div.item_jungle_fence { width: 32px; height: 32px; background: url(items.png) -576px -192px no-repeat; }
+div.item_jungle_fence_gate { width: 32px; height: 32px; background: url(items.png) -576px -224px no-repeat; }
+div.item_jungle_leaves { width: 32px; height: 32px; background: url(items.png) -576px -256px no-repeat; }
+div.item_jungle_sapling { width: 32px; height: 32px; background: url(items.png) -576px -288px no-repeat; }
+div.item_jungle_wood { width: 32px; height: 32px; background: url(items.png) -576px -320px no-repeat; }
+div.item_jungle_wood_planks { width: 32px; height: 32px; background: url(items.png) -576px -352px no-repeat; }
+div.item_jungle_wood_slab { width: 32px; height: 32px; background: url(items.png) -576px -384px no-repeat; }
+div.item_jungle_wood_stairs { width: 32px; height: 32px; background: url(items.png) -576px -416px no-repeat; }
+div.item_ladder { width: 32px; height: 32px; background: url(items.png) -576px -448px no-repeat; }
+div.item_lapis_lazuli { width: 32px; height: 32px; background: url(items.png) -576px -480px no-repeat; }
+div.item_lapis_lazuli_block { width: 32px; height: 32px; background: url(items.png) -576px -512px no-repeat; }
+div.item_lapis_lazuli_ore { width: 32px; height: 32px; background: url(items.png) -576px -544px no-repeat; }
+div.item_large_fern { width: 32px; height: 32px; background: url(items.png) 0px -576px no-repeat; }
+div.item_lava_bucket { width: 32px; height: 32px; background: url(items.png) -32px -576px no-repeat; }
+div.item_lead { width: 32px; height: 32px; background: url(items.png) -64px -576px no-repeat; }
+div.item_leather { width: 32px; height: 32px; background: url(items.png) -96px -576px no-repeat; }
+div.item_leather_boots { width: 32px; height: 32px; background: url(items.png) -128px -576px no-repeat; }
+div.item_leather_cap { width: 32px; height: 32px; background: url(items.png) -160px -576px no-repeat; }
+div.item_leather_pants { width: 32px; height: 32px; background: url(items.png) -192px -576px no-repeat; }
+div.item_leather_tunic { width: 32px; height: 32px; background: url(items.png) -224px -576px no-repeat; }
+div.item_lever { width: 32px; height: 32px; background: url(items.png) -256px -576px no-repeat; }
+div.item_light_blue_banner { width: 32px; height: 32px; background: url(items.png) -288px -576px no-repeat; }
+div.item_light_blue_carpet { width: 32px; height: 32px; background: url(items.png) -320px -576px no-repeat; }
+div.item_light_blue_dye { width: 32px; height: 32px; background: url(items.png) -352px -576px no-repeat; }
+div.item_light_blue_hardened_clay { width: 32px; height: 32px; background: url(items.png) -384px -576px no-repeat; }
+div.item_light_blue_shulker_box { width: 32px; height: 32px; background: url(items.png) -416px -576px no-repeat; }
+div.item_light_blue_stained_glass { width: 32px; height: 32px; background: url(items.png) -448px -576px no-repeat; }
+div.item_light_blue_stained_glass_pane { width: 32px; height: 32px; background: url(items.png) -480px -576px no-repeat; }
+div.item_light_blue_wool { width: 32px; height: 32px; background: url(items.png) -512px -576px no-repeat; }
+div.item_light_gray_banner { width: 32px; height: 32px; background: url(items.png) -544px -576px no-repeat; }
+div.item_light_gray_carpet { width: 32px; height: 32px; background: url(items.png) -576px -576px no-repeat; }
+div.item_light_gray_dye { width: 32px; height: 32px; background: url(items.png) -608px 0px no-repeat; }
+div.item_light_gray_hardened_clay { width: 32px; height: 32px; background: url(items.png) -608px -32px no-repeat; }
+div.item_light_gray_shulker_box { width: 32px; height: 32px; background: url(items.png) -608px -64px no-repeat; }
+div.item_light_gray_stained_glass { width: 32px; height: 32px; background: url(items.png) -608px -96px no-repeat; }
+div.item_light_gray_stained_glass_pane { width: 32px; height: 32px; background: url(items.png) -608px -128px no-repeat; }
+div.item_light_gray_wool { width: 32px; height: 32px; background: url(items.png) -608px -160px no-repeat; }
+div.item_lilac { width: 32px; height: 32px; background: url(items.png) -608px -192px no-repeat; }
+div.item_lily_pad { width: 32px; height: 32px; background: url(items.png) -608px -224px no-repeat; }
+div.item_lime_banner { width: 32px; height: 32px; background: url(items.png) -608px -256px no-repeat; }
+div.item_lime_carpet { width: 32px; height: 32px; background: url(items.png) -608px -288px no-repeat; }
+div.item_lime_dye { width: 32px; height: 32px; background: url(items.png) -608px -320px no-repeat; }
+div.item_lime_hardened_clay { width: 32px; height: 32px; background: url(items.png) -608px -352px no-repeat; }
+div.item_lime_shulker_box { width: 32px; height: 32px; background: url(items.png) -608px -384px no-repeat; }
+div.item_lime_stained_glass { width: 32px; height: 32px; background: url(items.png) -608px -416px no-repeat; }
+div.item_lime_stained_glass_pane { width: 32px; height: 32px; background: url(items.png) -608px -448px no-repeat; }
+div.item_lime_wool { width: 32px; height: 32px; background: url(items.png) -608px -480px no-repeat; }
+div.item_lingering_potion_01 { width: 32px; height: 32px; background: url(items.png) -608px -512px no-repeat; }
+div.item_lingering_potion_02 { width: 32px; height: 32px; background: url(items.png) -608px -544px no-repeat; }
+div.item_lingering_potion_03 { width: 32px; height: 32px; background: url(items.png) -608px -576px no-repeat; }
+div.item_lingering_potion_04 { width: 32px; height: 32px; background: url(items.png) 0px -608px no-repeat; }
+div.item_lingering_potion_05 { width: 32px; height: 32px; background: url(items.png) -32px -608px no-repeat; }
+div.item_lingering_potion_06 { width: 32px; height: 32px; background: url(items.png) -64px -608px no-repeat; }
+div.item_lingering_potion_07 { width: 32px; height: 32px; background: url(items.png) -96px -608px no-repeat; }
+div.item_lingering_potion_08 { width: 32px; height: 32px; background: url(items.png) -128px -608px no-repeat; }
+div.item_lingering_potion_09 { width: 32px; height: 32px; background: url(items.png) -160px -608px no-repeat; }
+div.item_lingering_potion_10 { width: 32px; height: 32px; background: url(items.png) -192px -608px no-repeat; }
+div.item_lingering_potion_11 { width: 32px; height: 32px; background: url(items.png) -224px -608px no-repeat; }
+div.item_lingering_potion_12 { width: 32px; height: 32px; background: url(items.png) -256px -608px no-repeat; }
+div.item_lingering_potion_13 { width: 32px; height: 32px; background: url(items.png) -288px -608px no-repeat; }
+div.item_lingering_potion_14 { width: 32px; height: 32px; background: url(items.png) -320px -608px no-repeat; }
+div.item_lingering_potion_15 { width: 32px; height: 32px; background: url(items.png) -352px -608px no-repeat; }
+div.item_lingering_potion_16 { width: 32px; height: 32px; background: url(items.png) -384px -608px no-repeat; }
+div.item_lingering_potion_17 { width: 32px; height: 32px; background: url(items.png) -416px -608px no-repeat; }
+div.item_lingering_potion_18 { width: 32px; height: 32px; background: url(items.png) -448px -608px no-repeat; }
+div.item_lingering_potion_19 { width: 32px; height: 32px; background: url(items.png) -480px -608px no-repeat; }
+div.item_lingering_potion_20 { width: 32px; height: 32px; background: url(items.png) -512px -608px no-repeat; }
+div.item_lingering_potion_21 { width: 32px; height: 32px; background: url(items.png) -544px -608px no-repeat; }
+div.item_lingering_potion_22 { width: 32px; height: 32px; background: url(items.png) -576px -608px no-repeat; }
+div.item_lingering_potion_23 { width: 32px; height: 32px; background: url(items.png) -608px -608px no-repeat; }
+div.item_lingering_potion_24 { width: 32px; height: 32px; background: url(items.png) -640px 0px no-repeat; }
+div.item_lingering_potion_25 { width: 32px; height: 32px; background: url(items.png) -640px -32px no-repeat; }
+div.item_lingering_potion_26 { width: 32px; height: 32px; background: url(items.png) -640px -64px no-repeat; }
+div.item_lingering_potion_27 { width: 32px; height: 32px; background: url(items.png) -640px -96px no-repeat; }
+div.item_lingering_potion_28 { width: 32px; height: 32px; background: url(items.png) -640px -128px no-repeat; }
+div.item_lingering_potion_29 { width: 32px; height: 32px; background: url(items.png) -640px -160px no-repeat; }
+div.item_lingering_potion_30 { width: 32px; height: 32px; background: url(items.png) -640px -192px no-repeat; }
+div.item_lingering_potion_31 { width: 32px; height: 32px; background: url(items.png) -640px -224px no-repeat; }
+div.item_lingering_potion_32 { width: 32px; height: 32px; background: url(items.png) -640px -256px no-repeat; }
+div.item_lingering_potion_33 { width: 32px; height: 32px; background: url(items.png) -640px -288px no-repeat; }
+div.item_lingering_potion_34 { width: 32px; height: 32px; background: url(items.png) -640px -320px no-repeat; }
+div.item_lingering_potion_35 { width: 32px; height: 32px; background: url(items.png) -640px -352px no-repeat; }
+div.item_lingering_potion_36 { width: 32px; height: 32px; background: url(items.png) -640px -384px no-repeat; }
+div.item_lingering_potion_37 { width: 32px; height: 32px; background: url(items.png) -640px -416px no-repeat; }
+div.item_magenta_banner { width: 32px; height: 32px; background: url(items.png) -640px -448px no-repeat; }
+div.item_magenta_carpet { width: 32px; height: 32px; background: url(items.png) -640px -480px no-repeat; }
+div.item_magenta_dye { width: 32px; height: 32px; background: url(items.png) -640px -512px no-repeat; }
+div.item_magenta_hardened_clay { width: 32px; height: 32px; background: url(items.png) -640px -544px no-repeat; }
+div.item_magenta_shulker_box { width: 32px; height: 32px; background: url(items.png) -640px -576px no-repeat; }
+div.item_magenta_stained_glass { width: 32px; height: 32px; background: url(items.png) -640px -608px no-repeat; }
+div.item_magenta_stained_glass_pane { width: 32px; height: 32px; background: url(items.png) 0px -640px no-repeat; }
+div.item_magenta_wool { width: 32px; height: 32px; background: url(items.png) -32px -640px no-repeat; }
+div.item_magma_block { width: 32px; height: 32px; background: url(items.png) -64px -640px no-repeat; }
+div.item_magma_cream { width: 32px; height: 32px; background: url(items.png) -96px -640px no-repeat; }
+div.item_magma_cube_egg { width: 32px; height: 32px; background: url(items.png) -128px -640px no-repeat; }
+div.item_melon { width: 32px; height: 32px; background: url(items.png) -160px -640px no-repeat; }
+div.item_melon_seeds { width: 32px; height: 32px; background: url(items.png) -192px -640px no-repeat; }
+div.item_melon_slice { width: 32px; height: 32px; background: url(items.png) -224px -640px no-repeat; }
+div.item_milk { width: 32px; height: 32px; background: url(items.png) -256px -640px no-repeat; }
+div.item_minecart { width: 32px; height: 32px; background: url(items.png) -288px -640px no-repeat; }
+div.item_minecart_with_chest { width: 32px; height: 32px; background: url(items.png) -320px -640px no-repeat; }
+div.item_minecart_with_furnace { width: 32px; height: 32px; background: url(items.png) -352px -640px no-repeat; }
+div.item_minecart_with_hopper { width: 32px; height: 32px; background: url(items.png) -384px -640px no-repeat; }
+div.item_minecart_with_tnt { width: 32px; height: 32px; background: url(items.png) -416px -640px no-repeat; }
+div.item_mooshroom_egg { width: 32px; height: 32px; background: url(items.png) -448px -640px no-repeat; }
+div.item_moss_stone { width: 32px; height: 32px; background: url(items.png) -480px -640px no-repeat; }
+div.item_mossy_cobblestone_wall { width: 32px; height: 32px; background: url(items.png) -512px -640px no-repeat; }
+div.item_mossy_stone_brick_monster_egg { width: 32px; height: 32px; background: url(items.png) -544px -640px no-repeat; }
+div.item_mossy_stone_bricks { width: 32px; height: 32px; background: url(items.png) -576px -640px no-repeat; }
+div.item_mundane_potion { width: 32px; height: 32px; background: url(items.png) -608px -640px no-repeat; }
+div.item_mundane_splash_potion { width: 32px; height: 32px; background: url(items.png) -640px -640px no-repeat; }
+div.item_mushroom_stew { width: 32px; height: 32px; background: url(items.png) -672px 0px no-repeat; }
+div.item_music_disk01 { width: 32px; height: 32px; background: url(items.png) -672px -32px no-repeat; }
+div.item_music_disk02 { width: 32px; height: 32px; background: url(items.png) -672px -64px no-repeat; }
+div.item_music_disk03 { width: 32px; height: 32px; background: url(items.png) -672px -96px no-repeat; }
+div.item_music_disk04 { width: 32px; height: 32px; background: url(items.png) -672px -128px no-repeat; }
+div.item_music_disk05 { width: 32px; height: 32px; background: url(items.png) -672px -160px no-repeat; }
+div.item_music_disk06 { width: 32px; height: 32px; background: url(items.png) -672px -192px no-repeat; }
+div.item_music_disk07 { width: 32px; height: 32px; background: url(items.png) -672px -224px no-repeat; }
+div.item_music_disk08 { width: 32px; height: 32px; background: url(items.png) -672px -256px no-repeat; }
+div.item_music_disk09 { width: 32px; height: 32px; background: url(items.png) -672px -288px no-repeat; }
+div.item_music_disk10 { width: 32px; height: 32px; background: url(items.png) -672px -320px no-repeat; }
+div.item_music_disk11 { width: 32px; height: 32px; background: url(items.png) -672px -352px no-repeat; }
+div.item_mycelium { width: 32px; height: 32px; background: url(items.png) -672px -384px no-repeat; }
+div.item_name_tag { width: 32px; height: 32px; background: url(items.png) -672px -416px no-repeat; }
+div.item_nether_brick { width: 32px; height: 32px; background: url(items.png) -672px -448px no-repeat; }
+div.item_nether_brick_block { width: 32px; height: 32px; background: url(items.png) -672px -480px no-repeat; }
+div.item_nether_brick_fence { width: 32px; height: 32px; background: url(items.png) -672px -512px no-repeat; }
+div.item_nether_brick_slab { width: 32px; height: 32px; background: url(items.png) -672px -544px no-repeat; }
+div.item_nether_brick_stairs { width: 32px; height: 32px; background: url(items.png) -672px -576px no-repeat; }
+div.item_nether_quartz { width: 32px; height: 32px; background: url(items.png) -672px -608px no-repeat; }
+div.item_nether_quartz_ore { width: 32px; height: 32px; background: url(items.png) -672px -640px no-repeat; }
+div.item_nether_star { width: 32px; height: 32px; background: url(items.png) 0px -672px no-repeat; }
+div.item_nether_wart { width: 32px; height: 32px; background: url(items.png) -32px -672px no-repeat; }
+div.item_nether_wart_block { width: 32px; height: 32px; background: url(items.png) -64px -672px no-repeat; }
+div.item_netherrack { width: 32px; height: 32px; background: url(items.png) -96px -672px no-repeat; }
+div.item_notch_apple { width: 32px; height: 32px; background: url(items.png) -128px -672px no-repeat; }
+div.item_note_block { width: 32px; height: 32px; background: url(items.png) -160px -672px no-repeat; }
+div.item_oak_boat { width: 32px; height: 32px; background: url(items.png) -192px -672px no-repeat; }
+div.item_oak_door { width: 32px; height: 32px; background: url(items.png) -224px -672px no-repeat; }
+div.item_oak_fence { width: 32px; height: 32px; background: url(items.png) -256px -672px no-repeat; }
+div.item_oak_fence_gate { width: 32px; height: 32px; background: url(items.png) -288px -672px no-repeat; }
+div.item_oak_leaves { width: 32px; height: 32px; background: url(items.png) -320px -672px no-repeat; }
+div.item_oak_sapling { width: 32px; height: 32px; background: url(items.png) -352px -672px no-repeat; }
+div.item_oak_wood { width: 32px; height: 32px; background: url(items.png) -384px -672px no-repeat; }
+div.item_oak_wood_planks { width: 32px; height: 32px; background: url(items.png) -416px -672px no-repeat; }
+div.item_oak_wood_slab { width: 32px; height: 32px; background: url(items.png) -448px -672px no-repeat; }
+div.item_oak_wood_stairs { width: 32px; height: 32px; background: url(items.png) -480px -672px no-repeat; }
+div.item_observer { width: 32px; height: 32px; background: url(items.png) -512px -672px no-repeat; }
+div.item_obsidian { width: 32px; height: 32px; background: url(items.png) -544px -672px no-repeat; }
+div.item_ocelot_egg { width: 32px; height: 32px; background: url(items.png) -576px -672px no-repeat; }
+div.item_orange_banner { width: 32px; height: 32px; background: url(items.png) -608px -672px no-repeat; }
+div.item_orange_carpet { width: 32px; height: 32px; background: url(items.png) -640px -672px no-repeat; }
+div.item_orange_dye { width: 32px; height: 32px; background: url(items.png) -672px -672px no-repeat; }
+div.item_orange_hardened_clay { width: 32px; height: 32px; background: url(items.png) -704px 0px no-repeat; }
+div.item_orange_shulker_box { width: 32px; height: 32px; background: url(items.png) -704px -32px no-repeat; }
+div.item_orange_stained_glass { width: 32px; height: 32px; background: url(items.png) -704px -64px no-repeat; }
+div.item_orange_stained_glass_pane { width: 32px; height: 32px; background: url(items.png) -704px -96px no-repeat; }
+div.item_orange_tulip { width: 32px; height: 32px; background: url(items.png) -704px -128px no-repeat; }
+div.item_orange_wool { width: 32px; height: 32px; background: url(items.png) -704px -160px no-repeat; }
+div.item_oxeye_daisy { width: 32px; height: 32px; background: url(items.png) -704px -192px no-repeat; }
+div.item_packed_ice { width: 32px; height: 32px; background: url(items.png) -704px -224px no-repeat; }
+div.item_painting { width: 32px; height: 32px; background: url(items.png) -704px -256px no-repeat; }
+div.item_paper { width: 32px; height: 32px; background: url(items.png) -704px -288px no-repeat; }
+div.item_peony { width: 32px; height: 32px; background: url(items.png) -704px -320px no-repeat; }
+div.item_pig_egg { width: 32px; height: 32px; background: url(items.png) -704px -352px no-repeat; }
+div.item_pillar_quartz_block { width: 32px; height: 32px; background: url(items.png) -704px -384px no-repeat; }
+div.item_pink_banner { width: 32px; height: 32px; background: url(items.png) -704px -416px no-repeat; }
+div.item_pink_carpet { width: 32px; height: 32px; background: url(items.png) -704px -448px no-repeat; }
+div.item_pink_dye { width: 32px; height: 32px; background: url(items.png) -704px -480px no-repeat; }
+div.item_pink_hardened_clay { width: 32px; height: 32px; background: url(items.png) -704px -512px no-repeat; }
+div.item_pink_shulker_box { width: 32px; height: 32px; background: url(items.png) -704px -544px no-repeat; }
+div.item_pink_stained_glass { width: 32px; height: 32px; background: url(items.png) -704px -576px no-repeat; }
+div.item_pink_stained_glass_pane { width: 32px; height: 32px; background: url(items.png) -704px -608px no-repeat; }
+div.item_pink_tulip { width: 32px; height: 32px; background: url(items.png) -704px -640px no-repeat; }
+div.item_pink_wool { width: 32px; height: 32px; background: url(items.png) -704px -672px no-repeat; }
+div.item_piston { width: 32px; height: 32px; background: url(items.png) 0px -704px no-repeat; }
+div.item_podzol { width: 32px; height: 32px; background: url(items.png) -32px -704px no-repeat; }
+div.item_poisonous_potato { width: 32px; height: 32px; background: url(items.png) -64px -704px no-repeat; }
+div.item_polar_bear_egg { width: 32px; height: 32px; background: url(items.png) -96px -704px no-repeat; }
+div.item_polished_andesite { width: 32px; height: 32px; background: url(items.png) -128px -704px no-repeat; }
+div.item_polished_diorite { width: 32px; height: 32px; background: url(items.png) -160px -704px no-repeat; }
+div.item_polished_granite { width: 32px; height: 32px; background: url(items.png) -192px -704px no-repeat; }
+div.item_popped_chorous_fruit { width: 32px; height: 32px; background: url(items.png) -224px -704px no-repeat; }
+div.item_popped_chorus_fruit { width: 32px; height: 32px; background: url(items.png) -256px -704px no-repeat; }
+div.item_poppy { width: 32px; height: 32px; background: url(items.png) -288px -704px no-repeat; }
+div.item_potato { width: 32px; height: 32px; background: url(items.png) -320px -704px no-repeat; }
+div.item_potion_of_fire_resistance { width: 32px; height: 32px; background: url(items.png) -352px -704px no-repeat; }
+div.item_potion_of_fire_resistance+ { width: 32px; height: 32px; background: url(items.png) -384px -704px no-repeat; }
+div.item_potion_of_harming { width: 32px; height: 32px; background: url(items.png) -416px -704px no-repeat; }
+div.item_potion_of_harming_II { width: 32px; height: 32px; background: url(items.png) -448px -704px no-repeat; }
+div.item_potion_of_healing { width: 32px; height: 32px; background: url(items.png) -480px -704px no-repeat; }
+div.item_potion_of_healing_II { width: 32px; height: 32px; background: url(items.png) -512px -704px no-repeat; }
+div.item_potion_of_invisibility { width: 32px; height: 32px; background: url(items.png) -544px -704px no-repeat; }
+div.item_potion_of_invisibility+ { width: 32px; height: 32px; background: url(items.png) -576px -704px no-repeat; }
+div.item_potion_of_leaping { width: 32px; height: 32px; background: url(items.png) -608px -704px no-repeat; }
+div.item_potion_of_leaping+ { width: 32px; height: 32px; background: url(items.png) -640px -704px no-repeat; }
+div.item_potion_of_leaping_II { width: 32px; height: 32px; background: url(items.png) -672px -704px no-repeat; }
+div.item_potion_of_luck { width: 32px; height: 32px; background: url(items.png) -704px -704px no-repeat; }
+div.item_potion_of_night_vision { width: 32px; height: 32px; background: url(items.png) -736px 0px no-repeat; }
+div.item_potion_of_night_vision+ { width: 32px; height: 32px; background: url(items.png) -736px -32px no-repeat; }
+div.item_potion_of_posion { width: 32px; height: 32px; background: url(items.png) -736px -64px no-repeat; }
+div.item_potion_of_posion+ { width: 32px; height: 32px; background: url(items.png) -736px -96px no-repeat; }
+div.item_potion_of_posion_II { width: 32px; height: 32px; background: url(items.png) -736px -128px no-repeat; }
+div.item_potion_of_regeneration { width: 32px; height: 32px; background: url(items.png) -736px -160px no-repeat; }
+div.item_potion_of_regeneration+ { width: 32px; height: 32px; background: url(items.png) -736px -192px no-repeat; }
+div.item_potion_of_regeneration_II { width: 32px; height: 32px; background: url(items.png) -736px -224px no-repeat; }
+div.item_potion_of_slowness { width: 32px; height: 32px; background: url(items.png) -736px -256px no-repeat; }
+div.item_potion_of_slowness+ { width: 32px; height: 32px; background: url(items.png) -736px -288px no-repeat; }
+div.item_potion_of_strength { width: 32px; height: 32px; background: url(items.png) -736px -320px no-repeat; }
+div.item_potion_of_strength+ { width: 32px; height: 32px; background: url(items.png) -736px -352px no-repeat; }
+div.item_potion_of_strength_II { width: 32px; height: 32px; background: url(items.png) -736px -384px no-repeat; }
+div.item_potion_of_swiftness { width: 32px; height: 32px; background: url(items.png) -736px -416px no-repeat; }
+div.item_potion_of_swiftness+ { width: 32px; height: 32px; background: url(items.png) -736px -448px no-repeat; }
+div.item_potion_of_swiftness_II { width: 32px; height: 32px; background: url(items.png) -736px -480px no-repeat; }
+div.item_potion_of_water_breathing { width: 32px; height: 32px; background: url(items.png) -736px -512px no-repeat; }
+div.item_potion_of_water_breathing+ { width: 32px; height: 32px; background: url(items.png) -736px -544px no-repeat; }
+div.item_potion_of_weakness { width: 32px; height: 32px; background: url(items.png) -736px -576px no-repeat; }
+div.item_potion_of_weakness+ { width: 32px; height: 32px; background: url(items.png) -736px -608px no-repeat; }
+div.item_powered_rail { width: 32px; height: 32px; background: url(items.png) -736px -640px no-repeat; }
+div.item_prismarine { width: 32px; height: 32px; background: url(items.png) -736px -672px no-repeat; }
+div.item_prismarine_bricks { width: 32px; height: 32px; background: url(items.png) -736px -704px no-repeat; }
+div.item_prismarine_crystals { width: 32px; height: 32px; background: url(items.png) 0px -736px no-repeat; }
+div.item_prismarine_shard { width: 32px; height: 32px; background: url(items.png) -32px -736px no-repeat; }
+div.item_pufferfish { width: 32px; height: 32px; background: url(items.png) -64px -736px no-repeat; }
+div.item_pumpkin { width: 32px; height: 32px; background: url(items.png) -96px -736px no-repeat; }
+div.item_pumpkin_pie { width: 32px; height: 32px; background: url(items.png) -128px -736px no-repeat; }
+div.item_pumpkin_seeds { width: 32px; height: 32px; background: url(items.png) -160px -736px no-repeat; }
+div.item_purple_banner { width: 32px; height: 32px; background: url(items.png) -192px -736px no-repeat; }
+div.item_purple_carpet { width: 32px; height: 32px; background: url(items.png) -224px -736px no-repeat; }
+div.item_purple_dye { width: 32px; height: 32px; background: url(items.png) -256px -736px no-repeat; }
+div.item_purple_hardened_clay { width: 32px; height: 32px; background: url(items.png) -288px -736px no-repeat; }
+div.item_purple_shulker_box { width: 32px; height: 32px; background: url(items.png) -320px -736px no-repeat; }
+div.item_purple_stained_glass { width: 32px; height: 32px; background: url(items.png) -352px -736px no-repeat; }
+div.item_purple_stained_glass_pane { width: 32px; height: 32px; background: url(items.png) -384px -736px no-repeat; }
+div.item_purple_wool { width: 32px; height: 32px; background: url(items.png) -416px -736px no-repeat; }
+div.item_purpur_block { width: 32px; height: 32px; background: url(items.png) -448px -736px no-repeat; }
+div.item_purpur_pillar { width: 32px; height: 32px; background: url(items.png) -480px -736px no-repeat; }
+div.item_purpur_slab { width: 32px; height: 32px; background: url(items.png) -512px -736px no-repeat; }
+div.item_purpur_stairs { width: 32px; height: 32px; background: url(items.png) -544px -736px no-repeat; }
+div.item_quartz_slab { width: 32px; height: 32px; background: url(items.png) -576px -736px no-repeat; }
+div.item_quartz_stairs { width: 32px; height: 32px; background: url(items.png) -608px -736px no-repeat; }
+div.item_rabbit_egg { width: 32px; height: 32px; background: url(items.png) -640px -736px no-repeat; }
+div.item_rabbit_hide { width: 32px; height: 32px; background: url(items.png) -672px -736px no-repeat; }
+div.item_rabbit_stew { width: 32px; height: 32px; background: url(items.png) -704px -736px no-repeat; }
+div.item_rabbits_foot { width: 32px; height: 32px; background: url(items.png) -736px -736px no-repeat; }
+div.item_rail { width: 32px; height: 32px; background: url(items.png) -768px 0px no-repeat; }
+div.item_raw_beef { width: 32px; height: 32px; background: url(items.png) -768px -32px no-repeat; }
+div.item_raw_chicken { width: 32px; height: 32px; background: url(items.png) -768px -64px no-repeat; }
+div.item_raw_fish { width: 32px; height: 32px; background: url(items.png) -768px -96px no-repeat; }
+div.item_raw_mutton { width: 32px; height: 32px; background: url(items.png) -768px -128px no-repeat; }
+div.item_raw_porkchop { width: 32px; height: 32px; background: url(items.png) -768px -160px no-repeat; }
+div.item_raw_rabbit { width: 32px; height: 32px; background: url(items.png) -768px -192px no-repeat; }
+div.item_raw_salmon { width: 32px; height: 32px; background: url(items.png) -768px -224px no-repeat; }
+div.item_red_banner { width: 32px; height: 32px; background: url(items.png) -768px -256px no-repeat; }
+div.item_red_carpet { width: 32px; height: 32px; background: url(items.png) -768px -288px no-repeat; }
+div.item_red_hardened_clay { width: 32px; height: 32px; background: url(items.png) -768px -320px no-repeat; }
+div.item_red_mushroom { width: 32px; height: 32px; background: url(items.png) -768px -352px no-repeat; }
+div.item_red_nether_brick { width: 32px; height: 32px; background: url(items.png) -768px -384px no-repeat; }
+div.item_red_sand { width: 32px; height: 32px; background: url(items.png) -768px -416px no-repeat; }
+div.item_red_sandstone { width: 32px; height: 32px; background: url(items.png) -768px -448px no-repeat; }
+div.item_red_sandstone_slab { width: 32px; height: 32px; background: url(items.png) -768px -480px no-repeat; }
+div.item_red_sandstone_stairs { width: 32px; height: 32px; background: url(items.png) -768px -512px no-repeat; }
+div.item_red_shulker_box { width: 32px; height: 32px; background: url(items.png) -768px -544px no-repeat; }
+div.item_red_stained_glass { width: 32px; height: 32px; background: url(items.png) -768px -576px no-repeat; }
+div.item_red_stained_glass_pane { width: 32px; height: 32px; background: url(items.png) -768px -608px no-repeat; }
+div.item_red_tulip { width: 32px; height: 32px; background: url(items.png) -768px -640px no-repeat; }
+div.item_red_wool { width: 32px; height: 32px; background: url(items.png) -768px -672px no-repeat; }
+div.item_redstone { width: 32px; height: 32px; background: url(items.png) -768px -704px no-repeat; }
+div.item_redstone_comparator { width: 32px; height: 32px; background: url(items.png) -768px -736px no-repeat; }
+div.item_redstone_lamp { width: 32px; height: 32px; background: url(items.png) 0px -768px no-repeat; }
+div.item_redstone_ore { width: 32px; height: 32px; background: url(items.png) -32px -768px no-repeat; }
+div.item_redstone_repeater { width: 32px; height: 32px; background: url(items.png) -64px -768px no-repeat; }
+div.item_redstone_torch { width: 32px; height: 32px; background: url(items.png) -96px -768px no-repeat; }
+div.item_rose_bush { width: 32px; height: 32px; background: url(items.png) -128px -768px no-repeat; }
+div.item_rose_red { width: 32px; height: 32px; background: url(items.png) -160px -768px no-repeat; }
+div.item_rotten_flesh { width: 32px; height: 32px; background: url(items.png) -192px -768px no-repeat; }
+div.item_saddle { width: 32px; height: 32px; background: url(items.png) -224px -768px no-repeat; }
+div.item_sand { width: 32px; height: 32px; background: url(items.png) -256px -768px no-repeat; }
+div.item_sandstone { width: 32px; height: 32px; background: url(items.png) -288px -768px no-repeat; }
+div.item_sandstone_slab { width: 32px; height: 32px; background: url(items.png) -320px -768px no-repeat; }
+div.item_sandstone_stairs { width: 32px; height: 32px; background: url(items.png) -352px -768px no-repeat; }
+div.item_sea_lantern { width: 32px; height: 32px; background: url(items.png) -384px -768px no-repeat; }
+div.item_seeds { width: 32px; height: 32px; background: url(items.png) -416px -768px no-repeat; }
+div.item_shears { width: 32px; height: 32px; background: url(items.png) -448px -768px no-repeat; }
+div.item_sheep_egg { width: 32px; height: 32px; background: url(items.png) -480px -768px no-repeat; }
+div.item_shield { width: 32px; height: 32px; background: url(items.png) -512px -768px no-repeat; }
+div.item_shulker_egg { width: 32px; height: 32px; background: url(items.png) -544px -768px no-repeat; }
+div.item_shulker_shell { width: 32px; height: 32px; background: url(items.png) -576px -768px no-repeat; }
+div.item_sign { width: 32px; height: 32px; background: url(items.png) -608px -768px no-repeat; }
+div.item_silverfish_egg { width: 32px; height: 32px; background: url(items.png) -640px -768px no-repeat; }
+div.item_skeleton_egg { width: 32px; height: 32px; background: url(items.png) -672px -768px no-repeat; }
+div.item_skeleton_skull { width: 32px; height: 32px; background: url(items.png) -704px -768px no-repeat; }
+div.item_slightly_damaged_anvil { width: 32px; height: 32px; background: url(items.png) -736px -768px no-repeat; }
+div.item_slime_block { width: 32px; height: 32px; background: url(items.png) -768px -768px no-repeat; }
+div.item_slime_egg { width: 32px; height: 32px; background: url(items.png) -800px 0px no-repeat; }
+div.item_slimeball { width: 32px; height: 32px; background: url(items.png) -800px -32px no-repeat; }
+div.item_smooth_red_sandstone { width: 32px; height: 32px; background: url(items.png) -800px -64px no-repeat; }
+div.item_smooth_sandstone { width: 32px; height: 32px; background: url(items.png) -800px -96px no-repeat; }
+div.item_snow { width: 32px; height: 32px; background: url(items.png) -800px -128px no-repeat; }
+div.item_snow_block { width: 32px; height: 32px; background: url(items.png) -800px -160px no-repeat; }
+div.item_snowball { width: 32px; height: 32px; background: url(items.png) -800px -192px no-repeat; }
+div.item_soul_sand { width: 32px; height: 32px; background: url(items.png) -800px -224px no-repeat; }
+div.item_spectral_arrow { width: 32px; height: 32px; background: url(items.png) -800px -256px no-repeat; }
+div.item_spider_egg { width: 32px; height: 32px; background: url(items.png) -800px -288px no-repeat; }
+div.item_spider_eye { width: 32px; height: 32px; background: url(items.png) -800px -320px no-repeat; }
+div.item_splash_potion_of_fire_resistance { width: 32px; height: 32px; background: url(items.png) -800px -352px no-repeat; }
+div.item_splash_potion_of_fire_resistance+ { width: 32px; height: 32px; background: url(items.png) -800px -384px no-repeat; }
+div.item_splash_potion_of_healing { width: 32px; height: 32px; background: url(items.png) -800px -416px no-repeat; }
+div.item_splash_potion_of_healing_II { width: 32px; height: 32px; background: url(items.png) -800px -448px no-repeat; }
+div.item_splash_potion_of_instant_damage { width: 32px; height: 32px; background: url(items.png) -800px -480px no-repeat; }
+div.item_splash_potion_of_instant_damage_II { width: 32px; height: 32px; background: url(items.png) -800px -512px no-repeat; }
+div.item_splash_potion_of_invisibility { width: 32px; height: 32px; background: url(items.png) -800px -544px no-repeat; }
+div.item_splash_potion_of_invisibility+ { width: 32px; height: 32px; background: url(items.png) -800px -576px no-repeat; }
+div.item_splash_potion_of_leaping { width: 32px; height: 32px; background: url(items.png) -800px -608px no-repeat; }
+div.item_splash_potion_of_leaping+ { width: 32px; height: 32px; background: url(items.png) -800px -640px no-repeat; }
+div.item_splash_potion_of_leaping_II { width: 32px; height: 32px; background: url(items.png) -800px -672px no-repeat; }
+div.item_splash_potion_of_luck { width: 32px; height: 32px; background: url(items.png) -800px -704px no-repeat; }
+div.item_splash_potion_of_night_vision { width: 32px; height: 32px; background: url(items.png) -800px -736px no-repeat; }
+div.item_splash_potion_of_night_vision+ { width: 32px; height: 32px; background: url(items.png) -800px -768px no-repeat; }
+div.item_splash_potion_of_posion { width: 32px; height: 32px; background: url(items.png) 0px -800px no-repeat; }
+div.item_splash_potion_of_posion+ { width: 32px; height: 32px; background: url(items.png) -32px -800px no-repeat; }
+div.item_splash_potion_of_posion_II { width: 32px; height: 32px; background: url(items.png) -64px -800px no-repeat; }
+div.item_splash_potion_of_regeneration { width: 32px; height: 32px; background: url(items.png) -96px -800px no-repeat; }
+div.item_splash_potion_of_regeneration+ { width: 32px; height: 32px; background: url(items.png) -128px -800px no-repeat; }
+div.item_splash_potion_of_regeneration_II { width: 32px; height: 32px; background: url(items.png) -160px -800px no-repeat; }
+div.item_splash_potion_of_slowness { width: 32px; height: 32px; background: url(items.png) -192px -800px no-repeat; }
+div.item_splash_potion_of_slowness+ { width: 32px; height: 32px; background: url(items.png) -224px -800px no-repeat; }
+div.item_splash_potion_of_strength { width: 32px; height: 32px; background: url(items.png) -256px -800px no-repeat; }
+div.item_splash_potion_of_strength+ { width: 32px; height: 32px; background: url(items.png) -288px -800px no-repeat; }
+div.item_splash_potion_of_strength_II { width: 32px; height: 32px; background: url(items.png) -320px -800px no-repeat; }
+div.item_splash_potion_of_swiftness { width: 32px; height: 32px; background: url(items.png) -352px -800px no-repeat; }
+div.item_splash_potion_of_swiftness+ { width: 32px; height: 32px; background: url(items.png) -384px -800px no-repeat; }
+div.item_splash_potion_of_swiftness_II { width: 32px; height: 32px; background: url(items.png) -416px -800px no-repeat; }
+div.item_splash_potion_of_water_breathing { width: 32px; height: 32px; background: url(items.png) -448px -800px no-repeat; }
+div.item_splash_potion_of_water_breathing+ { width: 32px; height: 32px; background: url(items.png) -480px -800px no-repeat; }
+div.item_splash_potion_of_weakness { width: 32px; height: 32px; background: url(items.png) -512px -800px no-repeat; }
+div.item_splash_potion_of_weakness+ { width: 32px; height: 32px; background: url(items.png) -544px -800px no-repeat; }
+div.item_splash_uncraftable_potion { width: 32px; height: 32px; background: url(items.png) -576px -800px no-repeat; }
+div.item_splash_water_bottle { width: 32px; height: 32px; background: url(items.png) -608px -800px no-repeat; }
+div.item_sponge { width: 32px; height: 32px; background: url(items.png) -640px -800px no-repeat; }
+div.item_spruce_boat { width: 32px; height: 32px; background: url(items.png) -672px -800px no-repeat; }
+div.item_spruce_door { width: 32px; height: 32px; background: url(items.png) -704px -800px no-repeat; }
+div.item_spruce_fence { width: 32px; height: 32px; background: url(items.png) -736px -800px no-repeat; }
+div.item_spruce_fence_gate { width: 32px; height: 32px; background: url(items.png) -768px -800px no-repeat; }
+div.item_spruce_leaves { width: 32px; height: 32px; background: url(items.png) -800px -800px no-repeat; }
+div.item_spruce_sapling { width: 32px; height: 32px; background: url(items.png) -832px 0px no-repeat; }
+div.item_spruce_wood { width: 32px; height: 32px; background: url(items.png) -832px -32px no-repeat; }
+div.item_spruce_wood_planks { width: 32px; height: 32px; background: url(items.png) -832px -64px no-repeat; }
+div.item_spruce_wood_slab { width: 32px; height: 32px; background: url(items.png) -832px -96px no-repeat; }
+div.item_spruce_wood_stairs { width: 32px; height: 32px; background: url(items.png) -832px -128px no-repeat; }
+div.item_squid_egg { width: 32px; height: 32px; background: url(items.png) -832px -160px no-repeat; }
+div.item_steak { width: 32px; height: 32px; background: url(items.png) -832px -192px no-repeat; }
+div.item_stick { width: 32px; height: 32px; background: url(items.png) -832px -224px no-repeat; }
+div.item_sticky_piston { width: 32px; height: 32px; background: url(items.png) -832px -256px no-repeat; }
+div.item_stone { width: 32px; height: 32px; background: url(items.png) -832px -288px no-repeat; }
+div.item_stone_axe { width: 32px; height: 32px; background: url(items.png) -832px -320px no-repeat; }
+div.item_stone_brick { width: 32px; height: 32px; background: url(items.png) -832px -352px no-repeat; }
+div.item_stone_brick_monster_egg { width: 32px; height: 32px; background: url(items.png) -832px -384px no-repeat; }
+div.item_stone_brick_stairs { width: 32px; height: 32px; background: url(items.png) -832px -416px no-repeat; }
+div.item_stone_bricks_slab { width: 32px; height: 32px; background: url(items.png) -832px -448px no-repeat; }
+div.item_stone_button { width: 32px; height: 32px; background: url(items.png) -832px -480px no-repeat; }
+div.item_stone_hoe { width: 32px; height: 32px; background: url(items.png) -832px -512px no-repeat; }
+div.item_stone_monster_egg { width: 32px; height: 32px; background: url(items.png) -832px -544px no-repeat; }
+div.item_stone_pickaxe { width: 32px; height: 32px; background: url(items.png) -832px -576px no-repeat; }
+div.item_stone_pressure_plate { width: 32px; height: 32px; background: url(items.png) -832px -608px no-repeat; }
+div.item_stone_shovel { width: 32px; height: 32px; background: url(items.png) -832px -640px no-repeat; }
+div.item_stone_slab { width: 32px; height: 32px; background: url(items.png) -832px -672px no-repeat; }
+div.item_stone_sword { width: 32px; height: 32px; background: url(items.png) -832px -704px no-repeat; }
+div.item_string { width: 32px; height: 32px; background: url(items.png) -832px -736px no-repeat; }
+div.item_sugar { width: 32px; height: 32px; background: url(items.png) -832px -768px no-repeat; }
+div.item_sugar_canes { width: 32px; height: 32px; background: url(items.png) -832px -800px no-repeat; }
+div.item_sunflower { width: 32px; height: 32px; background: url(items.png) 0px -832px no-repeat; }
+div.item_thick_potion { width: 32px; height: 32px; background: url(items.png) -32px -832px no-repeat; }
+div.item_thick_splash_potion { width: 32px; height: 32px; background: url(items.png) -64px -832px no-repeat; }
+div.item_tipped_arrow { width: 32px; height: 32px; background: url(items.png) -96px -832px no-repeat; }
+div.item_tipped_arrow_01 { width: 32px; height: 32px; background: url(items.png) -128px -832px no-repeat; }
+div.item_tipped_arrow_02 { width: 32px; height: 32px; background: url(items.png) -160px -832px no-repeat; }
+div.item_tipped_arrow_03 { width: 32px; height: 32px; background: url(items.png) -192px -832px no-repeat; }
+div.item_tipped_arrow_04 { width: 32px; height: 32px; background: url(items.png) -224px -832px no-repeat; }
+div.item_tipped_arrow_05 { width: 32px; height: 32px; background: url(items.png) -256px -832px no-repeat; }
+div.item_tipped_arrow_06 { width: 32px; height: 32px; background: url(items.png) -288px -832px no-repeat; }
+div.item_tipped_arrow_07 { width: 32px; height: 32px; background: url(items.png) -320px -832px no-repeat; }
+div.item_tipped_arrow_08 { width: 32px; height: 32px; background: url(items.png) -352px -832px no-repeat; }
+div.item_tipped_arrow_09 { width: 32px; height: 32px; background: url(items.png) -384px -832px no-repeat; }
+div.item_tipped_arrow_10 { width: 32px; height: 32px; background: url(items.png) -416px -832px no-repeat; }
+div.item_tipped_arrow_11 { width: 32px; height: 32px; background: url(items.png) -448px -832px no-repeat; }
+div.item_tipped_arrow_12 { width: 32px; height: 32px; background: url(items.png) -480px -832px no-repeat; }
+div.item_tipped_arrow_13 { width: 32px; height: 32px; background: url(items.png) -512px -832px no-repeat; }
+div.item_tipped_arrow_14 { width: 32px; height: 32px; background: url(items.png) -544px -832px no-repeat; }
+div.item_tipped_arrow_15 { width: 32px; height: 32px; background: url(items.png) -576px -832px no-repeat; }
+div.item_tipped_arrow_16 { width: 32px; height: 32px; background: url(items.png) -608px -832px no-repeat; }
+div.item_tipped_arrow_17 { width: 32px; height: 32px; background: url(items.png) -640px -832px no-repeat; }
+div.item_tipped_arrow_18 { width: 32px; height: 32px; background: url(items.png) -672px -832px no-repeat; }
+div.item_tipped_arrow_19 { width: 32px; height: 32px; background: url(items.png) -704px -832px no-repeat; }
+div.item_tipped_arrow_20 { width: 32px; height: 32px; background: url(items.png) -736px -832px no-repeat; }
+div.item_tipped_arrow_21 { width: 32px; height: 32px; background: url(items.png) -768px -832px no-repeat; }
+div.item_tipped_arrow_22 { width: 32px; height: 32px; background: url(items.png) -800px -832px no-repeat; }
+div.item_tipped_arrow_23 { width: 32px; height: 32px; background: url(items.png) -832px -832px no-repeat; }
+div.item_tipped_arrow_24 { width: 32px; height: 32px; background: url(items.png) -864px 0px no-repeat; }
+div.item_tipped_arrow_25 { width: 32px; height: 32px; background: url(items.png) -864px -32px no-repeat; }
+div.item_tipped_arrow_26 { width: 32px; height: 32px; background: url(items.png) -864px -64px no-repeat; }
+div.item_tipped_arrow_27 { width: 32px; height: 32px; background: url(items.png) -864px -96px no-repeat; }
+div.item_tipped_arrow_28 { width: 32px; height: 32px; background: url(items.png) -864px -128px no-repeat; }
+div.item_tipped_arrow_29 { width: 32px; height: 32px; background: url(items.png) -864px -160px no-repeat; }
+div.item_tipped_arrow_30 { width: 32px; height: 32px; background: url(items.png) -864px -192px no-repeat; }
+div.item_tipped_arrow_31 { width: 32px; height: 32px; background: url(items.png) -864px -224px no-repeat; }
+div.item_tipped_arrow_32 { width: 32px; height: 32px; background: url(items.png) -864px -256px no-repeat; }
+div.item_tipped_arrow_33 { width: 32px; height: 32px; background: url(items.png) -864px -288px no-repeat; }
+div.item_tipped_arrow_34 { width: 32px; height: 32px; background: url(items.png) -864px -320px no-repeat; }
+div.item_tipped_arrow_35 { width: 32px; height: 32px; background: url(items.png) -864px -352px no-repeat; }
+div.item_tipped_arrow_36 { width: 32px; height: 32px; background: url(items.png) -864px -384px no-repeat; }
+div.item_tipped_arrow_37 { width: 32px; height: 32px; background: url(items.png) -864px -416px no-repeat; }
+div.item_tnt { width: 32px; height: 32px; background: url(items.png) -864px -448px no-repeat; }
+div.item_torch { width: 32px; height: 32px; background: url(items.png) -864px -480px no-repeat; }
+div.item_totem_of_undying { width: 32px; height: 32px; background: url(items.png) -864px -512px no-repeat; }
+div.item_trapped_chest { width: 32px; height: 32px; background: url(items.png) -864px -544px no-repeat; }
+div.item_tripwire_hook { width: 32px; height: 32px; background: url(items.png) -864px -576px no-repeat; }
+div.item_uncraftable_potion { width: 32px; height: 32px; background: url(items.png) -864px -608px no-repeat; }
+div.item_very_damaged_anvil { width: 32px; height: 32px; background: url(items.png) -864px -640px no-repeat; }
+div.item_villager_egg { width: 32px; height: 32px; background: url(items.png) -864px -672px no-repeat; }
+div.item_vines { width: 32px; height: 32px; background: url(items.png) -864px -704px no-repeat; }
+div.item_water_bottle { width: 32px; height: 32px; background: url(items.png) -864px -736px no-repeat; }
+div.item_water_bucket { width: 32px; height: 32px; background: url(items.png) -864px -768px no-repeat; }
+div.item_weighted_pressure_plate_heavy { width: 32px; height: 32px; background: url(items.png) -864px -800px no-repeat; }
+div.item_weighted_pressure_plate_light { width: 32px; height: 32px; background: url(items.png) -864px -832px no-repeat; }
+div.item_wet_sponge { width: 32px; height: 32px; background: url(items.png) 0px -864px no-repeat; }
+div.item_wheat { width: 32px; height: 32px; background: url(items.png) -32px -864px no-repeat; }
+div.item_white_banner { width: 32px; height: 32px; background: url(items.png) -64px -864px no-repeat; }
+div.item_white_hardened_clay { width: 32px; height: 32px; background: url(items.png) -96px -864px no-repeat; }
+div.item_white_shulker_box { width: 32px; height: 32px; background: url(items.png) -128px -864px no-repeat; }
+div.item_white_stained_glass { width: 32px; height: 32px; background: url(items.png) -160px -864px no-repeat; }
+div.item_white_stained_glass_pane { width: 32px; height: 32px; background: url(items.png) -192px -864px no-repeat; }
+div.item_white_tulip { width: 32px; height: 32px; background: url(items.png) -224px -864px no-repeat; }
+div.item_witch_egg { width: 32px; height: 32px; background: url(items.png) -256px -864px no-repeat; }
+div.item_wither_skeleton_skull { width: 32px; height: 32px; background: url(items.png) -288px -864px no-repeat; }
+div.item_wolf_egg { width: 32px; height: 32px; background: url(items.png) -320px -864px no-repeat; }
+div.item_wooden_axe { width: 32px; height: 32px; background: url(items.png) -352px -864px no-repeat; }
+div.item_wooden_button { width: 32px; height: 32px; background: url(items.png) -384px -864px no-repeat; }
+div.item_wooden_hoe { width: 32px; height: 32px; background: url(items.png) -416px -864px no-repeat; }
+div.item_wooden_pickaxe { width: 32px; height: 32px; background: url(items.png) -448px -864px no-repeat; }
+div.item_wooden_pressure_plate { width: 32px; height: 32px; background: url(items.png) -480px -864px no-repeat; }
+div.item_wooden_shovel { width: 32px; height: 32px; background: url(items.png) -512px -864px no-repeat; }
+div.item_wooden_sword { width: 32px; height: 32px; background: url(items.png) -544px -864px no-repeat; }
+div.item_wooden_trapdoor { width: 32px; height: 32px; background: url(items.png) -576px -864px no-repeat; }
+div.item_wool { width: 32px; height: 32px; background: url(items.png) -608px -864px no-repeat; }
+div.item_yellow_banner { width: 32px; height: 32px; background: url(items.png) -640px -864px no-repeat; }
+div.item_yellow_carpet { width: 32px; height: 32px; background: url(items.png) -672px -864px no-repeat; }
+div.item_yellow_hardened_clay { width: 32px; height: 32px; background: url(items.png) -704px -864px no-repeat; }
+div.item_yellow_shulker_box { width: 32px; height: 32px; background: url(items.png) -736px -864px no-repeat; }
+div.item_yellow_stained_glass { width: 32px; height: 32px; background: url(items.png) -768px -864px no-repeat; }
+div.item_yellow_stained_glass_pane { width: 32px; height: 32px; background: url(items.png) -800px -864px no-repeat; }
+div.item_yellow_wool { width: 32px; height: 32px; background: url(items.png) -832px -864px no-repeat; }
+div.item_zombie_egg { width: 32px; height: 32px; background: url(items.png) -864px -864px no-repeat; }
+div.item_zombie_head { width: 32px; height: 32px; background: url(items.png) -896px 0px no-repeat; }
+div.item_zombie_pigman_egg { width: 32px; height: 32px; background: url(items.png) -896px -32px no-repeat; }
