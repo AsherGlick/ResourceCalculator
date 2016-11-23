@@ -36,7 +36,14 @@
 					.bind("propertychange change click keyup input paste", function(event){
 						save();
 					})
+					.focus(function() {
+						li.addClass("item_input_focused")
+					})
+					.blur(function() {
+						li.removeClass("item_input_focused")
+					})
 					.appendTo(li);
+
 
 				li.click(function() {
 					aaa.focus();
@@ -657,6 +664,7 @@
 		$("#about_us_button").click(function(evt) {
 			$("#about_us_lightbox_background").show();
 		});
+
 	}); 
 })(jQuery);
 
