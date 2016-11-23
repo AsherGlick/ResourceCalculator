@@ -43,3 +43,8 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :assets do
+	gem 'sprite-factory', '~> 1.7.1'
+	gem 'chunky_png', '~> 1.3.8'
+end
