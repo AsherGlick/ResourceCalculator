@@ -31,7 +31,7 @@
 					.appendTo(content);
 				var aaa = $('<input/>')
 					.addClass('desired_item_count')
-					.attr('type','textbox')
+					.attr('type','number')
 					.attr('id', i.toLowerCase().split(" ").join(""))
 					.bind("propertychange change click keyup input paste", function(event){
 						save();
