@@ -190,7 +190,7 @@ input[type=checkbox]:checked + label.hide_unused_label {
 
 #content_field {
 	border: 10px solid transparent;
-	background-color: #C3C3C3	;
+	background-color: #C3C3C3;
 	overflow: hidden;
 	background-clip: content-box;
 	border-image: url(/FrameBorder.png) 10;
@@ -369,13 +369,17 @@ a {
 }
 
 .advertisement {
-    width: 728px;
-    max-width: 100%;
-    height: 90px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 7px;
-    background: #CCC;
+	width: 728px;
+	max-width: 100%;
+	height: 90px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 7px;
+
+	border: 10px solid transparent;
+	background-color: #C3C3C3;
+	background-clip: content-box;
+	border-image: url(/FrameBorder.png) 10;
 }
 
 .instructions {
