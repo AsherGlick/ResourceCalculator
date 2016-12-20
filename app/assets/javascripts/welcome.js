@@ -288,7 +288,7 @@
 						}
 						var li = $('<div/>')
 							.addClass('required_item')
-							.css('background-image', 'url(items/' + filenameify(item_name) + '.png)')
+							.addClass('item_' + filenameify(item_name))
 							.text(item_count)
 							.appendTo(chest);
 						// var aaa = $('<input/>')
