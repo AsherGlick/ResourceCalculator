@@ -390,7 +390,6 @@
 		// How far away from the mouse should hte hoverbox be
 		var hover_x_offset = 10;
 		var hover_y_offset = -10;
-		$("#hover_name").hide();
 		$(document).on('mousemove', function(e){
 
 			// If the hoverbox is not hanging over the side of the screen when rendered, render normally

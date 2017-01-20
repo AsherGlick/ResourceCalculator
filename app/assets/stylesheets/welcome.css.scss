@@ -186,6 +186,7 @@ input[type=checkbox]:checked + label.hide_unused_label {
 	overflow: hidden;
 	white-space: nowrap;
 	pointer-events: none;
+	display: none;
 }
 
 #content_field {
