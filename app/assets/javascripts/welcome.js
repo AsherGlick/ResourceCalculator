@@ -11,101 +11,12 @@
 
 	$(window).load(function(){
 		var global_recepies;
-		// Assign handlers immediately after making the request,
-		// and remember the jqxhr object for this request
-		var jqxhr = $.getJSON( "recipes_1.11.json", function(result) {
-			// console.log( "success" );
-
-			var content = $("#content_field");
-			// var cList = $('<ul/>');
-
-
-			$.each(result, function(i)
-			{
-				var li = $('<div/>')
-					.addClass('desired_item')
-					.addClass('item_' + filenameify(i))
-					.attr("mc_value", i)
-					// .attr("mc_value", i.toLowerCase())
-					// .text(i)
-					.appendTo(content);
-				var aaa = $('<input/>')
-					.addClass('desired_item_count')
-					.attr('type','number')
-					.attr('id', i.toLowerCase().split(" ").join(""))
-					.bind("propertychange change click keyup input paste", function(event){
-						save();
-					})
-					.focus(function() {
-						li.addClass("item_input_focused")
-					})
-					.blur(function() {
-						li.removeClass("item_input_focused")
-					})
-					.appendTo(li);
-
-
-				li.click(function() {
-					aaa.focus();
-				});
 
 
 
 
-				li.mouseover( function() {
-					$("#hover_name").show();
-					$("#hover_name").text(i);
-				});
 
-				li.mouseout( function() {
-					$("#hover_name").hide();
-				})
-
-			/*	if (!result[i]["raw_material"]){
-					console.log(result[i]["raw_material"]);
-					console.log("Not Raw");
-				}*/
-				$.each(result[i], function(recipe) {
-					// console.log(recipe);
-					result[i][recipe]['requirements'] = condence_recepie(result[i][recipe]['recipe']);
-				});
-
-				// console.log(result[i]);
-
-			});
-
-			global_recepies = result;
-			// cList.appendTo(content);
-
-		})
-		.done(function() {
-			console.log( "second success" );
-			load();
-
-		})
-		.fail(function() {
-			console.log( "error" );
-		})
-		.always(function() {
-			console.log( "complete" );
-		});
-
-		// Perform other work here ...
-
-		// Set another completion function for the request above
-		jqxhr.complete(function() {
-			console.log( "second complete" );
-		});	
-
-
-		function filenameify(rawname) {
-			name = rawname.toLowerCase();
-			name = name.split(" ").join('_');
-			name = name.replace(/[^a-zA-Z0-9_]/g,"");
-			// console.log(name);
-			return name;
-		}
-
+		// Assign event handlers
 		$("#unused_hide_checkbox").change(function() {
 			if ($(this).prop('checked')) {
 				var label = $("label[for='"+$(this).attr('id')+"']");
@@ -117,6 +28,72 @@
 			}
 			filter_items()
 		});
+
+
+
+		// Create the recipe list
+		var content = $("#content_field");
+		$.each(recipe_json, function(i)
+		{
+			var li = $('<div/>')
+				.addClass('desired_item')
+				.addClass('item_' + filenameify(i))
+				.attr("mc_value", i)
+				// .attr("mc_value", i.toLowerCase())
+				// .text(i)
+				.appendTo(content);
+			var aaa = $('<input/>')
+				.addClass('desired_item_count')
+				.attr('type','number')
+				.attr('id', i.toLowerCase().split(" ").join(""))
+				.bind("propertychange change click keyup input paste", function(event){
+					save();
+				})
+				.focus(function() {
+					li.addClass("item_input_focused")
+				})
+				.blur(function() {
+					li.removeClass("item_input_focused")
+				})
+				.appendTo(li);
+
+
+			li.click(function() {
+				aaa.focus();
+			});
+
+
+
+
+			li.mouseover( function() {
+				$("#hover_name").show();
+				$("#hover_name").text(i);
+			});
+
+			li.mouseout( function() {
+				$("#hover_name").hide();
+			})
+
+			// Build unformatted recipe requirements for each recipe in the list
+			$.each(recipe_json[i], function(recipe) {
+				recipe_json[i][recipe]['requirements'] = condence_recepie(recipe_json[i][recipe]['recipe']);
+			});
+		});
+
+		global_recepies = recipe_json;
+
+
+		// Run the load function to load arguments from the URL if they exist
+		load();
+
+
+		function filenameify(rawname) {
+			name = rawname.toLowerCase();
+			name = name.split(" ").join('_');
+			name = name.replace(/[^a-zA-Z0-9_]/g,"");
+			// console.log(name);
+			return name;
+		}
 
 		// This function changes the url hash whenever an item is added or removed
 		function save() {

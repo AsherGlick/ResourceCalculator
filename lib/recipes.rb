@@ -6528,6 +6528,7 @@ module Recipes
 			recipes = recipe[:recipes]
 
 			output_list[name] = recipes
+		end
 		return output_list
 	end
 
