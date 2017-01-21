@@ -2,8 +2,7 @@ module Recipes
 
 	@minecraft_recipes = {
 		name: "Stone",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stone:stone"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -14,8 +13,7 @@ module Recipes
 		],
 	},{
 		name: "Granite",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stone:granite"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -26,8 +24,7 @@ module Recipes
 		],
 	},{
 		name: "Polished Granite",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stone:smooth_granite"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -38,8 +35,7 @@ module Recipes
 		],
 	},{
 		name: "Diorite",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stone:diorite"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -50,8 +46,7 @@ module Recipes
 		],
 	},{
 		name: "Polished Diorite",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stone:smooth_diorite"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -62,8 +57,7 @@ module Recipes
 		],
 	},{
 		name: "Andesite",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stone:andesite"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -74,8 +68,7 @@ module Recipes
 		],
 	},{
 		name: "Polished Andesite",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stone:smooth_andesite"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -86,8 +79,7 @@ module Recipes
 		],
 	},{
 		name: "Grass Block",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:grass", "minecraft:grass_path"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -98,8 +90,7 @@ module Recipes
 		],
 	},{
 		name: "Dirt",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:dirt:dirt", "minecraft:farmland"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -110,8 +101,7 @@ module Recipes
 		],
 	},{
 		name: "Coarse Dirt",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:dirt:coarse_dirt"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -122,8 +112,7 @@ module Recipes
 		],
 	},{
 		name: "Podzol",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:dirt:podzol"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -134,8 +123,7 @@ module Recipes
 		],
 	},{
 		name: "Cobblestone",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:cobblestone"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -146,8 +134,7 @@ module Recipes
 		],
 	},{
 		name: "Oak Wood Planks",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:planks:oak"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -158,8 +145,7 @@ module Recipes
 		],
 	},{
 		name: "Spruce Wood Planks",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:planks:spruce"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -170,8 +156,7 @@ module Recipes
 		],
 	},{
 		name: "Birch Wood Planks",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:planks:birch"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -182,8 +167,7 @@ module Recipes
 		],
 	},{
 		name: "Jungle Wood Planks",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:planks:jungle"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -194,8 +178,7 @@ module Recipes
 		],
 	},{
 		name: "Acacia Wood Planks",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:planks:acacia"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -206,8 +189,7 @@ module Recipes
 		],
 	},{
 		name: "Dark Oak Wood Planks",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:planks:dark_oak"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -218,8 +200,7 @@ module Recipes
 		],
 	},{
 		name: "Bedrock",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:bedrock"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -230,8 +211,7 @@ module Recipes
 		],
 	},{
 		name: "Sand",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:sand:sand"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -242,8 +222,7 @@ module Recipes
 		],
 	},{
 		name: "Red Sand",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:sand:red_sand"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -254,8 +233,7 @@ module Recipes
 		],
 	},{
 		name: "Gravel",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:gravel"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -266,8 +244,7 @@ module Recipes
 		],
 	},{
 		name: "Gold Ore",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:gold_ore"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -278,8 +255,7 @@ module Recipes
 		],
 	},{
 		name: "Iron Ore",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:iron_ore"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -290,8 +266,7 @@ module Recipes
 		],
 	},{
 		name: "Coal Ore",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:coal_ore"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -302,8 +277,7 @@ module Recipes
 		],
 	},{
 		name: "Oak Wood",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:log:oak"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -314,8 +288,7 @@ module Recipes
 		],
 	},{
 		name: "Spruce Wood",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:log:spruce"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -326,8 +299,7 @@ module Recipes
 		],
 	},{
 		name: "Birch Wood",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:log:birch"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -338,8 +310,7 @@ module Recipes
 		],
 	},{
 		name: "Jungle Wood",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:log:jungle"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -350,8 +321,7 @@ module Recipes
 		],
 	},{
 		name: "Sponge",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:sponge:false"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -362,8 +332,7 @@ module Recipes
 		],
 	},{
 		name: "Wet Sponge",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:sponge:true"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -374,8 +343,7 @@ module Recipes
 		],
 	},{
 		name: "Glass",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:glass"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -386,8 +354,7 @@ module Recipes
 		],
 	},{
 		name: "Lapis Lazuli Ore",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:lapis_ore"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -398,8 +365,7 @@ module Recipes
 		],
 	},{
 		name: "Lapis Lazuli Block",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:lapis_block"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -410,8 +376,7 @@ module Recipes
 		],
 	},{
 		name: "Sandstone",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:sandstone:sandstone"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -422,8 +387,7 @@ module Recipes
 		],
 	},{
 		name: "Chiseled Sandstone",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:sandstone:chiseled_sandstone"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -434,8 +398,7 @@ module Recipes
 		],
 	},{
 		name: "Smooth Sandstone",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:sandstone:smooth_sandstone"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -446,8 +409,7 @@ module Recipes
 		],
 	},{
 		name: "Wool",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wool:white"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -458,8 +420,7 @@ module Recipes
 		],
 	},{
 		name: "Orange Wool",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wool:orange"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -470,8 +431,7 @@ module Recipes
 		],
 	},{
 		name: "Magenta Wool",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wool:magenta"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -482,8 +442,7 @@ module Recipes
 		],
 	},{
 		name: "Light Blue Wool",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wool:light_blue"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -494,8 +453,7 @@ module Recipes
 		],
 	},{
 		name: "Yellow Wool",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wool:yellow"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -506,8 +464,7 @@ module Recipes
 		],
 	},{
 		name: "Lime Wool",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wool:lime"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -518,8 +475,7 @@ module Recipes
 		],
 	},{
 		name: "Pink Wool",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wool:pink"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -530,8 +486,7 @@ module Recipes
 		],
 	},{
 		name: "Gray Wool",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wool:gray"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -542,8 +497,7 @@ module Recipes
 		],
 	},{
 		name: "Light Gray Wool",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wool:silver"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -554,8 +508,7 @@ module Recipes
 		],
 	},{
 		name: "Cyan Wool",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wool:cyan"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -566,8 +519,7 @@ module Recipes
 		],
 	},{
 		name: "Purple Wool",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wool:purple"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -578,8 +530,7 @@ module Recipes
 		],
 	},{
 		name: "Blue Wool",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wool:blue"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -590,8 +541,7 @@ module Recipes
 		],
 	},{
 		name: "Brown Wool",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wool:brown"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -602,8 +552,7 @@ module Recipes
 		],
 	},{
 		name: "Green Wool",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wool:green"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -614,8 +563,7 @@ module Recipes
 		],
 	},{
 		name: "Red Wool",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wool:red"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -626,8 +574,7 @@ module Recipes
 		],
 	},{
 		name: "Black Wool",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wool:black"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -638,8 +585,7 @@ module Recipes
 		],
 	},{
 		name: "Block of Gold",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:gold_block"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -650,8 +596,7 @@ module Recipes
 		],
 	},{
 		name: "Block of Iron",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:iron_block"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -662,8 +607,7 @@ module Recipes
 		],
 	},{
 		name: "Stone Slab",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stone_slab:stone"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -674,8 +618,7 @@ module Recipes
 		],
 	},{
 		name: "Sandstone Slab",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stone_slab:sandstone"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -686,8 +629,7 @@ module Recipes
 		],
 	},{
 		name: "Cobblestone Slab",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stone_slab:cobblestone"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -698,8 +640,7 @@ module Recipes
 		],
 	},{
 		name: "Bricks Slab",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stone_slab:brick"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -710,8 +651,7 @@ module Recipes
 		],
 	},{
 		name: "Stone Bricks Slab",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stone_slab:stone_brick"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -722,8 +662,7 @@ module Recipes
 		],
 	},{
 		name: "Nether Brick Slab",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stone_slab:nether_brick"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -734,8 +673,7 @@ module Recipes
 		],
 	},{
 		name: "Quartz Slab",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stone_slab:quartz"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -746,8 +684,7 @@ module Recipes
 		],
 	},{
 		name: "Bricks",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:brick_block"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -758,8 +695,7 @@ module Recipes
 		],
 	},{
 		name: "Bookshelf",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:bookshelf"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -770,8 +706,7 @@ module Recipes
 		],
 	},{
 		name: "Moss Stone",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:mossy_cobblestone"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -782,8 +717,7 @@ module Recipes
 		],
 	},{
 		name: "Obsidian",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:obsidian"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -794,8 +728,7 @@ module Recipes
 		],
 	},{
 		name: "Oak Wood Stairs",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:oak_stairs"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -806,8 +739,7 @@ module Recipes
 		],
 	},{
 		name: "Diamond Ore",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:diamond_ore"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -818,8 +750,7 @@ module Recipes
 		],
 	},{
 		name: "Block of Diamond",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:diamond_block"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -830,8 +761,7 @@ module Recipes
 		],
 	},{
 		name: "Cobblestone Stairs",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stone_stairs"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -842,8 +772,7 @@ module Recipes
 		],
 	},{
 		name: "Redstone Ore",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:lit_redstone_ore"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -854,8 +783,7 @@ module Recipes
 		],
 	},{
 		name: "Ice",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:ice"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -866,8 +794,7 @@ module Recipes
 		],
 	},{
 		name: "Snow",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:snow_layer"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -878,8 +805,7 @@ module Recipes
 		],
 	},{
 		name: "Clay",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:clay"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -890,8 +816,7 @@ module Recipes
 		],
 	},{
 		name: "Pumpkin",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:pumpkin"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -902,8 +827,7 @@ module Recipes
 		],
 	},{
 		name: "Netherrack",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:netherrack"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -914,8 +838,7 @@ module Recipes
 		],
 	},{
 		name: "Soul Sand",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:soul_sand"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -926,8 +849,7 @@ module Recipes
 		],
 	},{
 		name: "Glowstone",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:glowstone"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -938,8 +860,7 @@ module Recipes
 		],
 	},{
 		name: "Jack o'Lantern",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:lit_pumpkin"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -950,8 +871,7 @@ module Recipes
 		],
 	},{
 		name: "White Stained Glass",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass:white"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -962,8 +882,7 @@ module Recipes
 		],
 	},{
 		name: "Orange Stained Glass",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass:orange"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -974,8 +893,7 @@ module Recipes
 		],
 	},{
 		name: "Magenta Stained Glass",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass:magenta"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -986,8 +904,7 @@ module Recipes
 		],
 	},{
 		name: "Light Blue Stained Glass",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass:light_blue"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -998,8 +915,7 @@ module Recipes
 		],
 	},{
 		name: "Yellow Stained Glass",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass:yellow"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1010,8 +926,7 @@ module Recipes
 		],
 	},{
 		name: "Lime Stained Glass",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass:lime"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1022,8 +937,7 @@ module Recipes
 		],
 	},{
 		name: "Pink Stained Glass",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass:pink"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1034,8 +948,7 @@ module Recipes
 		],
 	},{
 		name: "Gray Stained Glass",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass:gray"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1046,8 +959,7 @@ module Recipes
 		],
 	},{
 		name: "Light Gray Stained Glass",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass:silver"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1058,8 +970,7 @@ module Recipes
 		],
 	},{
 		name: "Cyan Stained Glass",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass:cyan"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1070,8 +981,7 @@ module Recipes
 		],
 	},{
 		name: "Purple Stained Glass",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass:purple"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1082,8 +992,7 @@ module Recipes
 		],
 	},{
 		name: "Blue Stained Glass",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass:blue"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1094,8 +1003,7 @@ module Recipes
 		],
 	},{
 		name: "Brown Stained Glass",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass:brown"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1106,8 +1014,7 @@ module Recipes
 		],
 	},{
 		name: "Green Stained Glass",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass:green"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1118,8 +1025,7 @@ module Recipes
 		],
 	},{
 		name: "Red Stained Glass",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass:red"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1130,8 +1036,7 @@ module Recipes
 		],
 	},{
 		name: "Black Stained Glass",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass:black"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1142,8 +1047,7 @@ module Recipes
 		],
 	},{
 		name: "Stone Brick",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stonebrick:stonebrick"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1154,8 +1058,7 @@ module Recipes
 		],
 	},{
 		name: "Mossy Stone Bricks",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stonebrick:mossy_stonebrick"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1166,8 +1069,7 @@ module Recipes
 		],
 	},{
 		name: "Cracked Stone Bricks",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stonebrick:cracked_stonebrick"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1178,8 +1080,7 @@ module Recipes
 		],
 	},{
 		name: "Chiseled Stone Bricks",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stonebrick:chiseled_stonebrick"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1190,8 +1091,7 @@ module Recipes
 		],
 	},{
 		name: "Melon",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:melon_block"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1202,8 +1102,7 @@ module Recipes
 		],
 	},{
 		name: "Brick Stairs",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:brick_stairs"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1214,8 +1113,7 @@ module Recipes
 		],
 	},{
 		name: "Stone Brick Stairs",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stone_brick_stairs"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1226,8 +1124,7 @@ module Recipes
 		],
 	},{
 		name: "Mycelium",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:mycelium"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1238,8 +1135,7 @@ module Recipes
 		],
 	},{
 		name: "Nether Brick Block",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1250,8 +1146,7 @@ module Recipes
 		],
 	},{
 		name: "Nether Brick Stairs",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:nether_brick_stairs"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1262,8 +1157,7 @@ module Recipes
 		],
 	},{
 		name: "End Stone",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:end_stone"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1274,8 +1168,7 @@ module Recipes
 		],
 	},{
 		name: "Oak Wood Slab",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wooden_slab:oak"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1286,8 +1179,7 @@ module Recipes
 		],
 	},{
 		name: "Spruce Wood Slab",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wooden_slab:spruce"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1298,8 +1190,7 @@ module Recipes
 		],
 	},{
 		name: "Birch Wood Slab",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wooden_slab:birch"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1310,8 +1201,7 @@ module Recipes
 		],
 	},{
 		name: "Jungle Wood Slab",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wooden_slab:jungle"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1322,8 +1212,7 @@ module Recipes
 		],
 	},{
 		name: "Acacia Wood Slab",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wooden_slab:acacia"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1334,8 +1223,7 @@ module Recipes
 		],
 	},{
 		name: "Dark Oak Wood Slab",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wooden_slab:dark_oak"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1346,8 +1234,7 @@ module Recipes
 		],
 	},{
 		name: "Sandstone Stairs",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:sandstone_stairs"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1358,8 +1245,7 @@ module Recipes
 		],
 	},{
 		name: "Emerald Ore",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:emerald_ore"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1370,8 +1256,7 @@ module Recipes
 		],
 	},{
 		name: "Block of Emerald",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:emerald_block"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1382,8 +1267,7 @@ module Recipes
 		],
 	},{
 		name: "Spruce Wood Stairs",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:spruce_stairs"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1394,8 +1278,7 @@ module Recipes
 		],
 	},{
 		name: "Birch Wood Stairs",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:birch_stairs"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1406,8 +1289,7 @@ module Recipes
 		],
 	},{
 		name: "Jungle Wood Stairs",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:jungle_stairs"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1418,8 +1300,7 @@ module Recipes
 		],
 	},{
 		name: "Cobblestone Wall",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:cobblestone_wall:cobblestone"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1430,8 +1311,7 @@ module Recipes
 		],
 	},{
 		name: "Mossy Cobblestone Wall",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:cobblestone_wall:mossy_cobblestone"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1442,8 +1322,7 @@ module Recipes
 		],
 	},{
 		name: "Nether Quartz Ore",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:quartz_ore"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1454,8 +1333,7 @@ module Recipes
 		],
 	},{
 		name: "Block of Quartz",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:quartz_block:default"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1466,8 +1344,7 @@ module Recipes
 		],
 	},{
 		name: "Chiseled Quartz Block",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:quartz_block:chiseled"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1478,8 +1355,7 @@ module Recipes
 		],
 	},{
 		name: "Pillar Quartz Block",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:quartz_block:lines_z"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1490,8 +1366,7 @@ module Recipes
 		],
 	},{
 		name: "Quartz Stairs",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:quartz_stairs"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1502,8 +1377,7 @@ module Recipes
 		],
 	},{
 		name: "White Hardened Clay",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_hardened_clay:white"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1514,8 +1388,7 @@ module Recipes
 		],
 	},{
 		name: "Orange Hardened Clay",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_hardened_clay:orange"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1526,8 +1399,7 @@ module Recipes
 		],
 	},{
 		name: "Magenta Hardened Clay",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_hardened_clay:magenta"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1538,8 +1410,7 @@ module Recipes
 		],
 	},{
 		name: "Light Blue Hardened Clay",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_hardened_clay:light_blue"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1550,8 +1421,7 @@ module Recipes
 		],
 	},{
 		name: "Yellow Hardened Clay",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_hardened_clay:yellow"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1562,8 +1432,7 @@ module Recipes
 		],
 	},{
 		name: "Lime Hardened Clay",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_hardened_clay:lime"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1574,8 +1443,7 @@ module Recipes
 		],
 	},{
 		name: "Pink Hardened Clay",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_hardened_clay:pink"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1586,8 +1454,7 @@ module Recipes
 		],
 	},{
 		name: "Gray Hardened Clay",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_hardened_clay:gray"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1598,8 +1465,7 @@ module Recipes
 		],
 	},{
 		name: "Light Gray Hardened Clay",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_hardened_clay:silver"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1610,8 +1476,7 @@ module Recipes
 		],
 	},{
 		name: "Cyan Hardened Clay",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_hardened_clay:cyan"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1622,8 +1487,7 @@ module Recipes
 		],
 	},{
 		name: "Purple Hardened Clay",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_hardened_clay:purple"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1634,8 +1498,7 @@ module Recipes
 		],
 	},{
 		name: "Blue Hardened Clay",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_hardened_clay:blue"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1646,8 +1509,7 @@ module Recipes
 		],
 	},{
 		name: "Brown Hardened Clay",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_hardened_clay:brown"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1658,8 +1520,7 @@ module Recipes
 		],
 	},{
 		name: "Green Hardened Clay",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_hardened_clay:green"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1670,8 +1531,7 @@ module Recipes
 		],
 	},{
 		name: "Red Hardened Clay",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_hardened_clay:red"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1682,8 +1542,7 @@ module Recipes
 		],
 	},{
 		name: "Black Hardened Clay",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_hardened_clay:black"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1694,8 +1553,7 @@ module Recipes
 		],
 	},{
 		name: "Acacia Wood",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:log2:acacia"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1706,8 +1564,7 @@ module Recipes
 		],
 	},{
 		name: "Dark Oak Wood",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:log2:dark_oak"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1718,8 +1575,7 @@ module Recipes
 		],
 	},{
 		name: "Acacia Wood Stairs",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:acacia_stairs"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1730,8 +1586,7 @@ module Recipes
 		],
 	},{
 		name: "Dark Oak Wood Stairs",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:dark_oak_stairs"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1742,8 +1597,7 @@ module Recipes
 		],
 	},{
 		name: "Prismarine",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:prismarine:prismarine"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1754,8 +1608,7 @@ module Recipes
 		],
 	},{
 		name: "Prismarine Bricks",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:prismarine:prismarine_bricks"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1766,8 +1619,7 @@ module Recipes
 		],
 	},{
 		name: "Dark Prismarine",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:prismarine:dark_prismarine"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1778,8 +1630,7 @@ module Recipes
 		],
 	},{
 		name: "Sea Lantern",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:sea_lantern"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1790,8 +1641,7 @@ module Recipes
 		],
 	},{
 		name: "Hay Bale",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:hay_block"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1802,8 +1652,7 @@ module Recipes
 		],
 	},{
 		name: "Hardened Clay",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:hardened_clay"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1814,8 +1663,7 @@ module Recipes
 		],
 	},{
 		name: "Block of Coal",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:coal_block"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1826,8 +1674,7 @@ module Recipes
 		],
 	},{
 		name: "Packed Ice",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:packed_ice"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1838,8 +1685,7 @@ module Recipes
 		],
 	},{
 		name: "Red Sandstone",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:red_sandstone:red_sandstone"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1850,8 +1696,7 @@ module Recipes
 		],
 	},{
 		name: "Chiseled Red Sandstone",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:red_sandstone:chiseled_red_sandstone"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1862,8 +1707,7 @@ module Recipes
 		],
 	},{
 		name: "Smooth Red Sandstone",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:red_sandstone:smooth_red_sandstone"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1874,8 +1718,7 @@ module Recipes
 		],
 	},{
 		name: "Red Sandstone Stairs",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:red_sandstone_stairs"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1886,8 +1729,7 @@ module Recipes
 		],
 	},{
 		name: "Red Sandstone Slab",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stone_slab2:red_sandstone"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1898,8 +1740,7 @@ module Recipes
 		],
 	},{
 		name: "Purpur Block",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:purpur_block"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1910,8 +1751,7 @@ module Recipes
 		],
 	},{
 		name: "Purpur Pillar",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:purpur_pillar"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1922,8 +1762,7 @@ module Recipes
 		],
 	},{
 		name: "Purpur Stairs",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:purpur_stairs"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1934,8 +1773,7 @@ module Recipes
 		],
 	},{
 		name: "Purpur Slab",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:purpur_slab:default"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1946,8 +1784,7 @@ module Recipes
 		],
 	},{
 		name: "End Stone Bricks",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:end_bricks"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1958,8 +1795,7 @@ module Recipes
 		],
 	},{
 		name: "Magma Block",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:magma"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1970,8 +1806,7 @@ module Recipes
 		],
 	},{
 		name: "Nether Wart Block",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:nether_wart_block"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1982,8 +1817,7 @@ module Recipes
 		],
 	},{
 		name: "Red Nether Brick",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:red_nether_brick"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -1994,8 +1828,7 @@ module Recipes
 		],
 	},{
 		name: "Bone Block",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:bone_block"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2006,8 +1839,7 @@ module Recipes
 		],
 	},{
 		name: "Observer",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:observer"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2018,8 +1850,7 @@ module Recipes
 		],
 	},{
 		name: "White Shulker Box",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:white_shulker_box"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2030,8 +1861,7 @@ module Recipes
 		],
 	},{
 		name: "Orange Shulker Box",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:orange_shulker_box"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2042,8 +1872,7 @@ module Recipes
 		],
 	},{
 		name: "Magenta Shulker Box",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:magenta_shulker_box"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2054,8 +1883,7 @@ module Recipes
 		],
 	},{
 		name: "Light Blue Shulker Box",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:light_blue_shulker_box"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2066,8 +1894,7 @@ module Recipes
 		],
 	},{
 		name: "Yellow Shulker Box",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:yellow_shulker_box"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2078,8 +1905,7 @@ module Recipes
 		],
 	},{
 		name: "Lime Shulker Box",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:lime_shulker_box"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2090,8 +1916,7 @@ module Recipes
 		],
 	},{
 		name: "Pink Shulker Box",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:pink_shulker_box"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2102,8 +1927,7 @@ module Recipes
 		],
 	},{
 		name: "Gray Shulker Box",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:gray_shulker_box"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2114,8 +1938,7 @@ module Recipes
 		],
 	},{
 		name: "Light Gray Shulker Box",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:silver_shulker_box"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2126,8 +1949,7 @@ module Recipes
 		],
 	},{
 		name: "Cyan Shulker Box",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:cyan_shulker_box"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2138,8 +1960,7 @@ module Recipes
 		],
 	},{
 		name: "Purple Shulker Box",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:purple_shulker_box"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2150,8 +1971,7 @@ module Recipes
 		],
 	},{
 		name: "Blue Shulker Box",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:blue_shulker_box"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2162,8 +1982,7 @@ module Recipes
 		],
 	},{
 		name: "Brown Shulker Box",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:brown_shulker_box"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2174,8 +1993,7 @@ module Recipes
 		],
 	},{
 		name: "Green Shulker Box",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:green_shulker_box"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2186,8 +2004,7 @@ module Recipes
 		],
 	},{
 		name: "Red Shulker Box",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:red_shulker_box"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2198,8 +2015,7 @@ module Recipes
 		],
 	},{
 		name: "Black Shulker Box",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:black_shulker_box"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2210,8 +2026,7 @@ module Recipes
 		],
 	},{
 		name: "Oak Sapling",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:sapling:oak"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2222,8 +2037,7 @@ module Recipes
 		],
 	},{
 		name: "Spruce Sapling",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:sapling:spruce"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2234,8 +2048,7 @@ module Recipes
 		],
 	},{
 		name: "Birch Sapling",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:sapling:birch"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2246,8 +2059,7 @@ module Recipes
 		],
 	},{
 		name: "Jungle Sapling",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:sapling:jungle"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2258,8 +2070,7 @@ module Recipes
 		],
 	},{
 		name: "Acacia Sapling",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:sapling:acacia"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2270,8 +2081,7 @@ module Recipes
 		],
 	},{
 		name: "Dark Oak Sapling",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:sapling:dark_oak"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2282,8 +2092,7 @@ module Recipes
 		],
 	},{
 		name: "Oak Leaves",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:leaves:oak"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2294,8 +2103,7 @@ module Recipes
 		],
 	},{
 		name: "Spruce Leaves",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:leaves:spruce"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2306,8 +2114,7 @@ module Recipes
 		],
 	},{
 		name: "Birch Leaves",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:leaves:birch"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2318,8 +2125,7 @@ module Recipes
 		],
 	},{
 		name: "Jungle Leaves",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:leaves:jungle"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2330,8 +2136,7 @@ module Recipes
 		],
 	},{
 		name: "Cobweb",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:web"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2342,8 +2147,7 @@ module Recipes
 		],
 	},{
 		name: "Grass",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:tallgrass:tall_grass"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2354,8 +2158,7 @@ module Recipes
 		],
 	},{
 		name: "Fern",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:tallgrass:fern"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2366,8 +2169,7 @@ module Recipes
 		],
 	},{
 		name: "Dead Bush",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:deadbush"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2378,8 +2180,7 @@ module Recipes
 		],
 	},{
 		name: "Dandelion",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:yellow_flower:dandelion"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2390,8 +2191,7 @@ module Recipes
 		],
 	},{
 		name: "Poppy",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:red_flower:poppy"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2402,8 +2202,7 @@ module Recipes
 		],
 	},{
 		name: "Blue Orchid",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:red_flower:blue_orchid"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2414,8 +2213,7 @@ module Recipes
 		],
 	},{
 		name: "Allium",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:red_flower:allium"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2426,8 +2224,7 @@ module Recipes
 		],
 	},{
 		name: "Azure Bluet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:red_flower:houstonia"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2438,8 +2235,7 @@ module Recipes
 		],
 	},{
 		name: "Red Tulip",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:red_flower:red_tulip"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2450,8 +2246,7 @@ module Recipes
 		],
 	},{
 		name: "Orange Tulip",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:red_flower:orange_tulip"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2462,8 +2257,7 @@ module Recipes
 		],
 	},{
 		name: "White Tulip",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:red_flower:white_tulip"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2474,8 +2268,7 @@ module Recipes
 		],
 	},{
 		name: "Pink Tulip",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:red_flower:pink_tulip"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2486,8 +2279,7 @@ module Recipes
 		],
 	},{
 		name: "Oxeye Daisy",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:red_flower:oxeye_daisy"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2498,8 +2290,7 @@ module Recipes
 		],
 	},{
 		name: "Brown Mushroom",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:brown_mushroom"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2510,8 +2301,7 @@ module Recipes
 		],
 	},{
 		name: "Red Mushroom",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:red_mushroom"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2522,8 +2312,7 @@ module Recipes
 		],
 	},{
 		name: "Torch",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:torch"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2534,8 +2323,7 @@ module Recipes
 		],
 	},{
 		name: "Chest",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:chest"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2546,8 +2334,7 @@ module Recipes
 		],
 	},{
 		name: "Crafting Table",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:crafting_table"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2558,8 +2345,7 @@ module Recipes
 		],
 	},{
 		name: "Furnace",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:furnace"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2570,8 +2356,7 @@ module Recipes
 		],
 	},{
 		name: "Ladder",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:ladder"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2582,8 +2367,7 @@ module Recipes
 		],
 	},{
 		name: "Snow Block",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:snow"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2594,8 +2378,7 @@ module Recipes
 		],
 	},{
 		name: "Cactus",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:cactus"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2606,8 +2389,7 @@ module Recipes
 		],
 	},{
 		name: "Jukebox",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:jukebox"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2618,8 +2400,7 @@ module Recipes
 		],
 	},{
 		name: "Oak Fence",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:fence"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2630,8 +2411,7 @@ module Recipes
 		],
 	},{
 		name: "Stone Monster Egg",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:monster_egg:stone"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2642,8 +2422,7 @@ module Recipes
 		],
 	},{
 		name: "Cobblestone Monster Egg",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:monster_egg:cobblestone"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2654,8 +2433,7 @@ module Recipes
 		],
 	},{
 		name: "Stone Brick Monster Egg",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:monster_egg:stone_brick"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2666,8 +2444,7 @@ module Recipes
 		],
 	},{
 		name: "Mossy Stone Brick Monster Egg",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:monster_egg:mossy_brick"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2678,8 +2455,7 @@ module Recipes
 		],
 	},{
 		name: "Cracked Stone Brick Monster Egg",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:monster_egg:cracked_brick"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2690,8 +2466,7 @@ module Recipes
 		],
 	},{
 		name: "Chiseled Stone Brick Monster Egg",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:monster_egg:chiseled_brick"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2702,8 +2477,7 @@ module Recipes
 		],
 	},{
 		name: "Iron Bars",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:iron_bars"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2714,8 +2488,7 @@ module Recipes
 		],
 	},{
 		name: "Glass Pane",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:glass_pane"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2726,8 +2499,7 @@ module Recipes
 		],
 	},{
 		name: "Vines",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:vine"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2738,8 +2510,7 @@ module Recipes
 		],
 	},{
 		name: "Lily Pad",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:waterlily"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2750,8 +2521,7 @@ module Recipes
 		],
 	},{
 		name: "Nether Brick Fence",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:nether_brick_fence"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2762,8 +2532,7 @@ module Recipes
 		],
 	},{
 		name: "Enchantment Table",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:enchanting_table"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2774,8 +2543,7 @@ module Recipes
 		],
 	},{
 		name: "End Portal",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:end_portal_frame"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2786,8 +2554,7 @@ module Recipes
 		],
 	},{
 		name: "Ender Chest",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:ender_chest"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2798,8 +2565,7 @@ module Recipes
 		],
 	},{
 		name: "Anvil",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:anvil"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2810,8 +2576,7 @@ module Recipes
 		],
 	},{
 		name: "White Stained Glass Pane",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass_pane:white"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2822,8 +2587,7 @@ module Recipes
 		],
 	},{
 		name: "Orange Stained Glass Pane",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass_pane:orange"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2834,8 +2598,7 @@ module Recipes
 		],
 	},{
 		name: "Magenta Stained Glass Pane",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass_pane:magenta"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2846,8 +2609,7 @@ module Recipes
 		],
 	},{
 		name: "Light Blue Stained Glass Pane",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass_pane:light_blue"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2858,8 +2620,7 @@ module Recipes
 		],
 	},{
 		name: "Yellow Stained Glass Pane",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass_pane:yellow"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2870,8 +2631,7 @@ module Recipes
 		],
 	},{
 		name: "Lime Stained Glass Pane",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass_pane:lime"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2882,8 +2642,7 @@ module Recipes
 		],
 	},{
 		name: "Pink Stained Glass Pane",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass_pane:pink"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2894,8 +2653,7 @@ module Recipes
 		],
 	},{
 		name: "Gray Stained Glass Pane",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass_pane:gray"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2906,8 +2664,7 @@ module Recipes
 		],
 	},{
 		name: "Light Gray Stained Glass Pane",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass_pane:silver"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2918,8 +2675,7 @@ module Recipes
 		],
 	},{
 		name: "Cyan Stained Glass Pane",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass_pane:cyan"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2930,8 +2686,7 @@ module Recipes
 		],
 	},{
 		name: "Purple Stained Glass Pane",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass_pane:purple"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2942,8 +2697,7 @@ module Recipes
 		],
 	},{
 		name: "Blue Stained Glass Pane",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass_pane:blue"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2954,8 +2708,7 @@ module Recipes
 		],
 	},{
 		name: "Brown Stained Glass Pane",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass_pane:brown"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2966,8 +2719,7 @@ module Recipes
 		],
 	},{
 		name: "Green Stained Glass Pane",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass_pane:green"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2978,8 +2730,7 @@ module Recipes
 		],
 	},{
 		name: "Red Stained Glass Pane",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass_pane:red"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -2990,8 +2741,7 @@ module Recipes
 		],
 	},{
 		name: "Black Stained Glass Pane",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stained_glass_pane:black"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3002,8 +2752,7 @@ module Recipes
 		],
 	},{
 		name: "Acacia Leaves",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:leaves2:acacia"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3014,8 +2763,7 @@ module Recipes
 		],
 	},{
 		name: "Dark Oak Leaves",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:leaves2:dark_oak"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3026,8 +2774,7 @@ module Recipes
 		],
 	},{
 		name: "Slime Block",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:slime"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3038,8 +2785,7 @@ module Recipes
 		],
 	},{
 		name: "Carpet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:carpet:white"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3050,8 +2796,7 @@ module Recipes
 		],
 	},{
 		name: "Orange Carpet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:carpet:orange"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3062,8 +2807,7 @@ module Recipes
 		],
 	},{
 		name: "Magenta Carpet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:carpet:magenta"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3074,8 +2818,7 @@ module Recipes
 		],
 	},{
 		name: "Light Blue Carpet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:carpet:light_blue"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3086,8 +2829,7 @@ module Recipes
 		],
 	},{
 		name: "Yellow Carpet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:carpet:yellow"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3098,8 +2840,7 @@ module Recipes
 		],
 	},{
 		name: "Lime Carpet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:carpet:lime"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3110,8 +2851,7 @@ module Recipes
 		],
 	},{
 		name: "Pink Carpet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:carpet:pink"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3122,8 +2862,7 @@ module Recipes
 		],
 	},{
 		name: "Gray Carpet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:carpet:gray"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3134,8 +2873,7 @@ module Recipes
 		],
 	},{
 		name: "Light Gray Carpet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:carpet:silver"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3146,8 +2884,7 @@ module Recipes
 		],
 	},{
 		name: "Cyan Carpet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:carpet:cyan"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3158,8 +2895,7 @@ module Recipes
 		],
 	},{
 		name: "Purple Carpet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:carpet:purple"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3170,8 +2906,7 @@ module Recipes
 		],
 	},{
 		name: "Blue Carpet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:carpet:blue"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3182,8 +2917,7 @@ module Recipes
 		],
 	},{
 		name: "Brown Carpet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:carpet:brown"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3194,8 +2928,7 @@ module Recipes
 		],
 	},{
 		name: "Green Carpet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:carpet:green"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3206,8 +2939,7 @@ module Recipes
 		],
 	},{
 		name: "Red Carpet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:carpet:red"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3218,8 +2950,7 @@ module Recipes
 		],
 	},{
 		name: "Black Carpet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:carpet:black"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3230,8 +2961,7 @@ module Recipes
 		],
 	},{
 		name: "Sunflower",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:double_plant:sunflower"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3242,8 +2972,7 @@ module Recipes
 		],
 	},{
 		name: "Lilac",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:double_plant:syringa"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3254,8 +2983,7 @@ module Recipes
 		],
 	},{
 		name: "Double Tallgrass",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:double_plant:double_grass"], 
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3266,8 +2994,7 @@ module Recipes
 		],
 	},{
 		name: "Large Fern",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:double_plant:double_fern"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3278,8 +3005,7 @@ module Recipes
 		],
 	},{
 		name: "Rose Bush",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:double_plant:double_rose"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3290,8 +3016,7 @@ module Recipes
 		],
 	},{
 		name: "Peony",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:double_plant:paeonia"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3302,8 +3027,7 @@ module Recipes
 		],
 	},{
 		name: "Spruce Fence",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:spruce_fence"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3314,8 +3038,7 @@ module Recipes
 		],
 	},{
 		name: "Birch Fence",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:birch_fence"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3326,8 +3049,7 @@ module Recipes
 		],
 	},{
 		name: "Jungle Fence",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:jungle_fence"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3338,8 +3060,7 @@ module Recipes
 		],
 	},{
 		name: "Dark Oak Fence",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:dark_oak_fence"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3350,8 +3071,7 @@ module Recipes
 		],
 	},{
 		name: "Acacia Fence",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:acacia_fence"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3362,8 +3082,7 @@ module Recipes
 		],
 	},{
 		name: "End Rod",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:end_rod"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3374,8 +3093,7 @@ module Recipes
 		],
 	},{
 		name: "Chorus Plant",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:chorus_plant"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3386,8 +3104,7 @@ module Recipes
 		],
 	},{
 		name: "Chorus Flower",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:chorus_flower"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3398,8 +3115,7 @@ module Recipes
 		],
 	},{
 		name: "Painting",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3410,8 +3126,7 @@ module Recipes
 		],
 	},{
 		name: "Sign",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wall_sign"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3422,8 +3137,7 @@ module Recipes
 		],
 	},{
 		name: "Bed",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:bed"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3434,8 +3148,7 @@ module Recipes
 		],
 	},{
 		name: "Item Frame",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3446,8 +3159,7 @@ module Recipes
 		],
 	},{
 		name: "Flower Pot",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:flower_pot"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3458,8 +3170,7 @@ module Recipes
 		],
 	},{
 		name: "Skeleton Skull",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3470,8 +3181,7 @@ module Recipes
 		],
 	},{
 		name: "Wither Skeleton Skull",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3482,8 +3192,7 @@ module Recipes
 		],
 	},{
 		name: "Zombie Head",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3494,8 +3203,7 @@ module Recipes
 		],
 	},{
 		name: "Head",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3506,8 +3214,7 @@ module Recipes
 		],
 	},{
 		name: "Creeper Head",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3518,8 +3225,7 @@ module Recipes
 		],
 	},{
 		name: "Dragon Head",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3530,8 +3236,7 @@ module Recipes
 		],
 	},{
 		name: "Armor Stand",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3542,8 +3247,7 @@ module Recipes
 		],
 	},{
 		name: "White Banner",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3554,8 +3258,7 @@ module Recipes
 		],
 	},{
 		name: "Orange Banner",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3566,8 +3269,7 @@ module Recipes
 		],
 	},{
 		name: "Magenta Banner",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3578,8 +3280,7 @@ module Recipes
 		],
 	},{
 		name: "Light Blue Banner",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3590,8 +3291,7 @@ module Recipes
 		],
 	},{
 		name: "Yellow Banner",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3602,8 +3302,7 @@ module Recipes
 		],
 	},{
 		name: "Lime Banner",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3614,8 +3313,7 @@ module Recipes
 		],
 	},{
 		name: "Pink Banner",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3626,8 +3324,7 @@ module Recipes
 		],
 	},{
 		name: "Gray Banner",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3638,8 +3335,7 @@ module Recipes
 		],
 	},{
 		name: "Light Gray Banner",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3650,8 +3346,7 @@ module Recipes
 		],
 	},{
 		name: "Cyan Banner",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3662,8 +3357,7 @@ module Recipes
 		],
 	},{
 		name: "Purple Banner",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3674,8 +3368,7 @@ module Recipes
 		],
 	},{
 		name: "Blue Banner",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3686,8 +3379,7 @@ module Recipes
 		],
 	},{
 		name: "Brown Banner",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3698,8 +3390,7 @@ module Recipes
 		],
 	},{
 		name: "Green Banner",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3710,8 +3401,7 @@ module Recipes
 		],
 	},{
 		name: "Red Banner",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3722,8 +3412,7 @@ module Recipes
 		],
 	},{
 		name: "Black Banner",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3734,8 +3423,7 @@ module Recipes
 		],
 	},{
 		name: "End Crystal",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3746,8 +3434,7 @@ module Recipes
 		],
 	},{
 		name: "Dispenser",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:dispenser"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3758,8 +3445,7 @@ module Recipes
 		],
 	},{
 		name: "Note Block",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:noteblock"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3770,8 +3456,7 @@ module Recipes
 		],
 	},{
 		name: "Sticky Piston",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:sticky_piston"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3782,8 +3467,7 @@ module Recipes
 		],
 	},{
 		name: "Piston",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:piston"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3794,8 +3478,7 @@ module Recipes
 		],
 	},{
 		name: "TNT",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:tnt"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3806,8 +3489,7 @@ module Recipes
 		],
 	},{
 		name: "Lever",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:lever"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3818,8 +3500,7 @@ module Recipes
 		],
 	},{
 		name: "Stone Pressure Plate",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stone_pressure_plate"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3830,8 +3511,7 @@ module Recipes
 		],
 	},{
 		name: "Wooden Pressure Plate",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wooden_pressure_plate"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3842,8 +3522,7 @@ module Recipes
 		],
 	},{
 		name: "Redstone Torch",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:redstone_torch"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3854,8 +3533,7 @@ module Recipes
 		],
 	},{
 		name: "Stone Button",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:stone_button"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3866,8 +3544,7 @@ module Recipes
 		],
 	},{
 		name: "Wooden Trapdoor",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:trapdoor"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3878,8 +3555,7 @@ module Recipes
 		],
 	},{
 		name: "Oak Fence Gate",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:fence_gate"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3890,8 +3566,7 @@ module Recipes
 		],
 	},{
 		name: "Redstone Lamp",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:redstone_lamp"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3902,8 +3577,7 @@ module Recipes
 		],
 	},{
 		name: "Tripwire Hook",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:tripwire_hook"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3914,8 +3588,7 @@ module Recipes
 		],
 	},{
 		name: "Wooden Button",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wooden_button"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3926,8 +3599,7 @@ module Recipes
 		],
 	},{
 		name: "Trapped Chest",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:trapped_chest"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3938,8 +3610,7 @@ module Recipes
 		],
 	},{
 		name: "Weighted Pressure Plate (Light)",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:light_weighted_pressure_plate"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3950,8 +3621,7 @@ module Recipes
 		],
 	},{
 		name: "Weighted Pressure Plate (Heavy)",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:heavy_weighted_pressure_plate"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3962,8 +3632,7 @@ module Recipes
 		],
 	},{
 		name: "Daylight Sensor",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:daylight_detector"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3974,8 +3643,7 @@ module Recipes
 		],
 	},{
 		name: "Block of Redstone",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:redstone_block"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3986,8 +3654,7 @@ module Recipes
 		],
 	},{
 		name: "Hopper",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:hopper"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3998,8 +3665,7 @@ module Recipes
 		],
 	},{
 		name: "Dropper",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:dropper"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4010,8 +3676,7 @@ module Recipes
 		],
 	},{
 		name: "Iron Trapdoor",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:iron_trapdoor"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4022,8 +3687,7 @@ module Recipes
 		],
 	},{
 		name: "Spruce Fence Gate",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:spruce_fence_gate"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4034,8 +3698,7 @@ module Recipes
 		],
 	},{
 		name: "Birch Fence Gate",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:birch_fence_gate"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4046,8 +3709,7 @@ module Recipes
 		],
 	},{
 		name: "Jungle Fence Gate",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:jungle_fence_gate"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4058,8 +3720,7 @@ module Recipes
 		],
 	},{
 		name: "Dark Oak Fence Gate",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:dark_oak_fence_gate"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4070,8 +3731,7 @@ module Recipes
 		],
 	},{
 		name: "Acacia Fence Gate",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:acacia_fence_gate"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4082,8 +3742,7 @@ module Recipes
 		],
 	},{
 		name: "Oak Door",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wooden_door"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4094,8 +3753,7 @@ module Recipes
 		],
 	},{
 		name: "Iron Door",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:iron_door"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4106,8 +3764,7 @@ module Recipes
 		],
 	},{
 		name: "Redstone",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:redstone_wire"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4118,8 +3775,7 @@ module Recipes
 		],
 	},{
 		name: "Redstone Repeater",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:unpowered_repeater"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4130,8 +3786,7 @@ module Recipes
 		],
 	},{
 		name: "Redstone Comparator",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:unpowered_comparator"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4142,8 +3797,7 @@ module Recipes
 		],
 	},{
 		name: "Spruce Door",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:spruce_door"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4154,8 +3808,7 @@ module Recipes
 		],
 	},{
 		name: "Birch Door",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:birch_door"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4166,8 +3819,7 @@ module Recipes
 		],
 	},{
 		name: "Jungle Door",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:jungle_door"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4178,8 +3830,7 @@ module Recipes
 		],
 	},{
 		name: "Acacia Door",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:acacia_door"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4190,8 +3841,7 @@ module Recipes
 		],
 	},{
 		name: "Dark Oak Door",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:dark_oak_door"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4202,8 +3852,7 @@ module Recipes
 		],
 	},{
 		name: "Powered Rail",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:golden_rail"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4214,8 +3863,7 @@ module Recipes
 		],
 	},{
 		name: "Detector Rail",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:detector_rail"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4226,8 +3874,7 @@ module Recipes
 		],
 	},{
 		name: "Rail",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:rail"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4238,8 +3885,7 @@ module Recipes
 		],
 	},{
 		name: "Activator Rail",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:activator_rail"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4250,8 +3896,7 @@ module Recipes
 		],
 	},{
 		name: "Minecart",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4262,8 +3907,7 @@ module Recipes
 		],
 	},{
 		name: "Saddle",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4274,8 +3918,7 @@ module Recipes
 		],
 	},{
 		name: "Oak Boat",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4286,8 +3929,7 @@ module Recipes
 		],
 	},{
 		name: "Minecart with Chest",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4298,8 +3940,7 @@ module Recipes
 		],
 	},{
 		name: "Minecart with Furnace",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4310,8 +3951,7 @@ module Recipes
 		],
 	},{
 		name: "Carrot on a Stick",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4322,8 +3962,7 @@ module Recipes
 		],
 	},{
 		name: "Minecart with TNT",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4334,8 +3973,7 @@ module Recipes
 		],
 	},{
 		name: "Minecart with Hopper",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4346,8 +3984,7 @@ module Recipes
 		],
 	},{
 		name: "Elytra",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4358,8 +3995,7 @@ module Recipes
 		],
 	},{
 		name: "Spruce Boat",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4370,8 +4006,7 @@ module Recipes
 		],
 	},{
 		name: "Birch Boat",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4382,8 +4017,7 @@ module Recipes
 		],
 	},{
 		name: "Jungle Boat",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4394,8 +4028,7 @@ module Recipes
 		],
 	},{
 		name: "Acacia Boat",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4406,8 +4039,7 @@ module Recipes
 		],
 	},{
 		name: "Dark Oak Boat",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4418,8 +4050,7 @@ module Recipes
 		],
 	},{
 		name: "Totem of Undying",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4430,8 +4061,7 @@ module Recipes
 		],
 	},{
 		name: "Shulker Shell",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4442,8 +4072,7 @@ module Recipes
 		],
 	},{
 		name: "Beacon",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:beacon"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4454,8 +4083,7 @@ module Recipes
 		],
 	},{
 		name: "Bucket",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4466,8 +4094,7 @@ module Recipes
 		],
 	},{
 		name: "Water Bucket",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:water"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4478,8 +4105,7 @@ module Recipes
 		],
 	},{
 		name: "Lava Bucket",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:lava"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4490,8 +4116,7 @@ module Recipes
 		],
 	},{
 		name: "Snowball",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4502,8 +4127,7 @@ module Recipes
 		],
 	},{
 		name: "Milk",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4514,8 +4138,7 @@ module Recipes
 		],
 	},{
 		name: "Paper",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4526,8 +4149,7 @@ module Recipes
 		],
 	},{
 		name: "Book",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4538,8 +4160,7 @@ module Recipes
 		],
 	},{
 		name: "Slimeball",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4550,8 +4171,7 @@ module Recipes
 		],
 	},{
 		name: "Bone",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4562,8 +4182,7 @@ module Recipes
 		],
 	},{
 		name: "Ender Pearl",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4574,8 +4193,7 @@ module Recipes
 		],
 	},{
 		name: "Eye of Ender",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4586,8 +4204,7 @@ module Recipes
 		],
 	},{
 		name: "Fire Charge",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4598,8 +4215,7 @@ module Recipes
 		],
 	},{
 		name: "Book and Quill",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4610,8 +4226,7 @@ module Recipes
 		],
 	},{
 		name: "Empty Map",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4622,8 +4237,7 @@ module Recipes
 		],
 	},{
 		name: "Firework Star",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4634,8 +4248,7 @@ module Recipes
 		],
 	},{
 		name: "Iron Horse Armor",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4646,8 +4259,7 @@ module Recipes
 		],
 	},{
 		name: "Gold Horse Armor",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4658,8 +4270,7 @@ module Recipes
 		],
 	},{
 		name: "Diamond Horse Armor",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4670,8 +4281,7 @@ module Recipes
 		],
 	},{
 		name: "Apple",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4682,8 +4292,7 @@ module Recipes
 		],
 	},{
 		name: "Mushroom Stew",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4694,8 +4303,7 @@ module Recipes
 		],
 	},{
 		name: "Bread",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4706,8 +4314,7 @@ module Recipes
 		],
 	},{
 		name: "Raw Porkchop",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4718,8 +4325,7 @@ module Recipes
 		],
 	},{
 		name: "Cooked Porkchop",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4730,8 +4336,7 @@ module Recipes
 		],
 	},{
 		name: "Golden Apple",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4742,8 +4347,7 @@ module Recipes
 		],
 	},{
 		name: "Notch Apple",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4754,8 +4358,7 @@ module Recipes
 		],
 	},{
 		name: "Raw Fish",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4766,8 +4369,7 @@ module Recipes
 		],
 	},{
 		name: "Raw Salmon",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4778,8 +4380,7 @@ module Recipes
 		],
 	},{
 		name: "Clownfish",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4790,8 +4391,7 @@ module Recipes
 		],
 	},{
 		name: "Pufferfish",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4802,8 +4402,7 @@ module Recipes
 		],
 	},{
 		name: "Cooked Fish",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4814,8 +4413,7 @@ module Recipes
 		],
 	},{
 		name: "Cooked Salmon",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4826,8 +4424,7 @@ module Recipes
 		],
 	},{
 		name: "Cake",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:cake"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4838,8 +4435,7 @@ module Recipes
 		],
 	},{
 		name: "Cookie",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4850,8 +4446,7 @@ module Recipes
 		],
 	},{
 		name: "Melon Slice",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4862,8 +4457,7 @@ module Recipes
 		],
 	},{
 		name: "Raw Beef",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4874,8 +4468,7 @@ module Recipes
 		],
 	},{
 		name: "Steak",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4886,8 +4479,7 @@ module Recipes
 		],
 	},{
 		name: "Raw Chicken",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4898,8 +4490,7 @@ module Recipes
 		],
 	},{
 		name: "Cooked Chicken",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4910,8 +4501,7 @@ module Recipes
 		],
 	},{
 		name: "Rotten Flesh",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4922,8 +4512,7 @@ module Recipes
 		],
 	},{
 		name: "Spider Eye",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4934,8 +4523,7 @@ module Recipes
 		],
 	},{
 		name: "Carrot",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4946,8 +4534,7 @@ module Recipes
 		],
 	},{
 		name: "Potato",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4958,8 +4545,7 @@ module Recipes
 		],
 	},{
 		name: "Baked Potato",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4970,8 +4556,7 @@ module Recipes
 		],
 	},{
 		name: "Poisonous Potato",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4982,8 +4567,7 @@ module Recipes
 		],
 	},{
 		name: "Pumpkin Pie",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -4994,8 +4578,7 @@ module Recipes
 		],
 	},{
 		name: "Raw Rabbit",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5006,8 +4589,7 @@ module Recipes
 		],
 	},{
 		name: "Cooked Rabbit",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5018,8 +4600,7 @@ module Recipes
 		],
 	},{
 		name: "Rabbit Stew",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5030,8 +4611,7 @@ module Recipes
 		],
 	},{
 		name: "Raw Mutton",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5042,8 +4622,7 @@ module Recipes
 		],
 	},{
 		name: "Cooked Mutton",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5054,8 +4633,7 @@ module Recipes
 		],
 	},{
 		name: "Beetroot",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5066,8 +4644,7 @@ module Recipes
 		],
 	},{
 		name: "Beetroot Soup",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5078,8 +4655,7 @@ module Recipes
 		],
 	},{
 		name: "Iron Shovel",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5090,8 +4666,7 @@ module Recipes
 		],
 	},{
 		name: "Iron Pickaxe",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5102,8 +4677,7 @@ module Recipes
 		],
 	},{
 		name: "Iron Axe",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5114,8 +4688,7 @@ module Recipes
 		],
 	},{
 		name: "Flint and Steel",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5126,8 +4699,7 @@ module Recipes
 		],
 	},{
 		name: "Wooden Shovel",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5138,8 +4710,7 @@ module Recipes
 		],
 	},{
 		name: "Wooden Pickaxe",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5150,8 +4721,7 @@ module Recipes
 		],
 	},{
 		name: "Wooden Axe",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5162,8 +4732,7 @@ module Recipes
 		],
 	},{
 		name: "Stone Shovel",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5174,8 +4743,7 @@ module Recipes
 		],
 	},{
 		name: "Stone Pickaxe",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5186,8 +4754,7 @@ module Recipes
 		],
 	},{
 		name: "Stone Axe",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5198,8 +4765,7 @@ module Recipes
 		],
 	},{
 		name: "Diamond Shovel",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5210,8 +4776,7 @@ module Recipes
 		],
 	},{
 		name: "Diamond Pickaxe",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5222,8 +4787,7 @@ module Recipes
 		],
 	},{
 		name: "Diamond Axe",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5234,8 +4798,7 @@ module Recipes
 		],
 	},{
 		name: "Golden Shovel",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5246,8 +4809,7 @@ module Recipes
 		],
 	},{
 		name: "Golden Pickaxe",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5258,8 +4820,7 @@ module Recipes
 		],
 	},{
 		name: "Golden Axe",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5270,8 +4831,7 @@ module Recipes
 		],
 	},{
 		name: "Wooden Hoe",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5282,8 +4842,7 @@ module Recipes
 		],
 	},{
 		name: "Stone Hoe",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5294,8 +4853,7 @@ module Recipes
 		],
 	},{
 		name: "Iron Hoe",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5306,8 +4864,7 @@ module Recipes
 		],
 	},{
 		name: "Diamond Hoe",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5318,8 +4875,7 @@ module Recipes
 		],
 	},{
 		name: "Golden Hoe",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5330,8 +4886,7 @@ module Recipes
 		],
 	},{
 		name: "Compass",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5342,8 +4897,7 @@ module Recipes
 		],
 	},{
 		name: "Fishing Rod",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5354,8 +4908,7 @@ module Recipes
 		],
 	},{
 		name: "Clock",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5366,8 +4919,7 @@ module Recipes
 		],
 	},{
 		name: "Shears",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5378,8 +4930,7 @@ module Recipes
 		],
 	},{
 		name: "Lead",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5390,8 +4941,7 @@ module Recipes
 		],
 	},{
 		name: "Name Tag",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5402,8 +4952,7 @@ module Recipes
 		],
 	},{
 		name: "Bow",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5414,8 +4963,7 @@ module Recipes
 		],
 	},{
 		name: "Arrow",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5426,8 +4974,7 @@ module Recipes
 		],
 	},{
 		name: "Iron Sword",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5438,8 +4985,7 @@ module Recipes
 		],
 	},{
 		name: "Wooden Sword",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5450,8 +4996,7 @@ module Recipes
 		],
 	},{
 		name: "Stone Sword",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5462,8 +5007,7 @@ module Recipes
 		],
 	},{
 		name: "Diamond Sword",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5474,8 +5018,7 @@ module Recipes
 		],
 	},{
 		name: "Golden Sword",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5486,8 +5029,7 @@ module Recipes
 		],
 	},{
 		name: "Leather Cap",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5498,8 +5040,7 @@ module Recipes
 		],
 	},{
 		name: "Leather Tunic",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5510,8 +5051,7 @@ module Recipes
 		],
 	},{
 		name: "Leather Pants",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5522,8 +5062,7 @@ module Recipes
 		],
 	},{
 		name: "Leather Boots",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5534,8 +5073,7 @@ module Recipes
 		],
 	},{
 		name: "Chain Helmet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5546,8 +5084,7 @@ module Recipes
 		],
 	},{
 		name: "Chain Chestplate",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5558,8 +5095,7 @@ module Recipes
 		],
 	},{
 		name: "Chain Leggings",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5570,8 +5106,7 @@ module Recipes
 		],
 	},{
 		name: "Chain Boots",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5582,8 +5117,7 @@ module Recipes
 		],
 	},{
 		name: "Iron Helmet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5594,8 +5128,7 @@ module Recipes
 		],
 	},{
 		name: "Iron Chestplate",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5606,8 +5139,7 @@ module Recipes
 		],
 	},{
 		name: "Iron Leggings",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5618,8 +5150,7 @@ module Recipes
 		],
 	},{
 		name: "Iron Boots",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5630,8 +5161,7 @@ module Recipes
 		],
 	},{
 		name: "Diamond Helmet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5642,8 +5172,7 @@ module Recipes
 		],
 	},{
 		name: "Diamond Chestplate",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5654,8 +5183,7 @@ module Recipes
 		],
 	},{
 		name: "Diamond Leggings",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5666,8 +5194,7 @@ module Recipes
 		],
 	},{
 		name: "Diamond Boots",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5678,8 +5205,7 @@ module Recipes
 		],
 	},{
 		name: "Golden Helmet",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5690,8 +5216,7 @@ module Recipes
 		],
 	},{
 		name: "Golden Chestplate",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5702,8 +5227,7 @@ module Recipes
 		],
 	},{
 		name: "Golden Leggings",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5714,8 +5238,7 @@ module Recipes
 		],
 	},{
 		name: "Golden Boots",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5726,8 +5249,7 @@ module Recipes
 		],
 	},{
 		name: "Spectral Arrow",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5738,8 +5260,7 @@ module Recipes
 		],
 	},{
 		name: "Shield",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5750,8 +5271,7 @@ module Recipes
 		],
 	},{
 		name: "Ghast Tear",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5762,8 +5282,7 @@ module Recipes
 		],
 	},{
 		name: "Water Bottle",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5774,8 +5293,7 @@ module Recipes
 		],
 	},{
 		name: "Glass Bottle",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5786,8 +5304,7 @@ module Recipes
 		],
 	},{
 		name: "Fermented Spider Eye",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5798,8 +5315,7 @@ module Recipes
 		],
 	},{
 		name: "Blaze Powder",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5810,8 +5326,7 @@ module Recipes
 		],
 	},{
 		name: "Magma Cream",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5822,8 +5337,7 @@ module Recipes
 		],
 	},{
 		name: "Brewing Stand",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:brewing_stand"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5834,8 +5348,7 @@ module Recipes
 		],
 	},{
 		name: "Cauldron",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:cauldron"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5846,8 +5359,7 @@ module Recipes
 		],
 	},{
 		name: "Glistering Melon",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5858,8 +5370,7 @@ module Recipes
 		],
 	},{
 		name: "Golden Carrot",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5870,8 +5381,7 @@ module Recipes
 		],
 	},{
 		name: "Rabbit's Foot",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5882,8 +5392,7 @@ module Recipes
 		],
 	},{
 		name: "Dragon's Breath",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5894,8 +5403,7 @@ module Recipes
 		],
 	},{
 		name: "Coal",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5906,8 +5414,7 @@ module Recipes
 		],
 	},{
 		name: "Charcoal",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5918,8 +5425,7 @@ module Recipes
 		],
 	},{
 		name: "Diamond",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5930,8 +5436,7 @@ module Recipes
 		],
 	},{
 		name: "Iron Ingot",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5942,8 +5447,7 @@ module Recipes
 		],
 	},{
 		name: "Gold Ingot",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5954,8 +5458,7 @@ module Recipes
 		],
 	},{
 		name: "Stick",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5966,8 +5469,7 @@ module Recipes
 		],
 	},{
 		name: "Bowl",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5978,8 +5480,7 @@ module Recipes
 		],
 	},{
 		name: "String",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:tripwire"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5990,8 +5491,7 @@ module Recipes
 		],
 	},{
 		name: "Feather",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6002,8 +5502,7 @@ module Recipes
 		],
 	},{
 		name: "Gunpowder",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6014,8 +5513,7 @@ module Recipes
 		],
 	},{
 		name: "Seeds",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:wheat"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6026,8 +5524,7 @@ module Recipes
 		],
 	},{
 		name: "Wheat",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6038,8 +5535,7 @@ module Recipes
 		],
 	},{
 		name: "Flint",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6050,8 +5546,7 @@ module Recipes
 		],
 	},{
 		name: "Leather",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6062,8 +5557,7 @@ module Recipes
 		],
 	},{
 		name: "Brick",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6074,8 +5568,7 @@ module Recipes
 		],
 	},{
 		name: "Clay",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6086,8 +5579,7 @@ module Recipes
 		],
 	},{
 		name: "Sugar Canes",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6098,8 +5590,7 @@ module Recipes
 		],
 	},{
 		name: "Egg",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6110,8 +5601,7 @@ module Recipes
 		],
 	},{
 		name: "Glowstone Dust",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6122,8 +5612,7 @@ module Recipes
 		],
 	},{
 		name: "Ink Sac",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6134,8 +5623,7 @@ module Recipes
 		],
 	},{
 		name: "Rose Red",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6146,8 +5634,7 @@ module Recipes
 		],
 	},{
 		name: "Cactus Green",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6158,8 +5645,7 @@ module Recipes
 		],
 	},{
 		name: "Cocoa Beans",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:cocoa"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6170,8 +5656,7 @@ module Recipes
 		],
 	},{
 		name: "Lapis Lazuli",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6182,8 +5667,7 @@ module Recipes
 		],
 	},{
 		name: "Purple Dye",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6194,8 +5678,7 @@ module Recipes
 		],
 	},{
 		name: "Cyan Dye",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6206,8 +5689,7 @@ module Recipes
 		],
 	},{
 		name: "Light Gray Dye",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6218,8 +5700,7 @@ module Recipes
 		],
 	},{
 		name: "Gray Dye",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6230,8 +5711,7 @@ module Recipes
 		],
 	},{
 		name: "Pink Dye",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6242,8 +5722,7 @@ module Recipes
 		],
 	},{
 		name: "Lime Dye",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6254,8 +5733,7 @@ module Recipes
 		],
 	},{
 		name: "Dandelion Yellow",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6266,8 +5744,7 @@ module Recipes
 		],
 	},{
 		name: "Light Blue Dye",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6278,8 +5755,7 @@ module Recipes
 		],
 	},{
 		name: "Magenta Dye",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6290,8 +5766,7 @@ module Recipes
 		],
 	},{
 		name: "Orange Dye",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6302,8 +5777,7 @@ module Recipes
 		],
 	},{
 		name: "Bone Meal",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6314,8 +5788,7 @@ module Recipes
 		],
 	},{
 		name: "Sugar",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6326,8 +5799,7 @@ module Recipes
 		],
 	},{
 		name: "Pumpkin Seeds",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:pumpkin_stem"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6338,8 +5810,7 @@ module Recipes
 		],
 	},{
 		name: "Melon Seeds",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:melon_stem"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6350,8 +5821,7 @@ module Recipes
 		],
 	},{
 		name: "Blaze Rod",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6362,8 +5832,7 @@ module Recipes
 		],
 	},{
 		name: "Gold Nugget",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6374,8 +5843,7 @@ module Recipes
 		],
 	},{
 		name: "Nether Wart",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:nether_wart"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6386,8 +5854,7 @@ module Recipes
 		],
 	},{
 		name: "Emerald",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6398,8 +5865,7 @@ module Recipes
 		],
 	},{
 		name: "Nether Star",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6410,8 +5876,7 @@ module Recipes
 		],
 	},{
 		name: "Nether Brick",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:nether_brick"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6422,8 +5887,7 @@ module Recipes
 		],
 	},{
 		name: "Nether Quartz",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6434,8 +5898,7 @@ module Recipes
 		],
 	},{
 		name: "Prismarine Shard",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6446,8 +5909,7 @@ module Recipes
 		],
 	},{
 		name: "Prismarine Crystals",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6458,8 +5920,7 @@ module Recipes
 		],
 	},{
 		name: "Rabbit Hide",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6470,8 +5931,7 @@ module Recipes
 		],
 	},{
 		name: "Chorus Fruit",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6482,8 +5942,7 @@ module Recipes
 		],
 	},{
 		name: "Popped Chorus Fruit",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6494,8 +5953,7 @@ module Recipes
 		]
 	},{
 		name: "Beetroot Seeds",
-		minecraft_name: "",
-		minecraft_data_value: 0,
+		minecraft_names: ["minecraft:beetroots"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -6506,8 +5964,58 @@ module Recipes
 		]
 	}
 
-
-
+	# a map of property names to weather they should be included in the item lookup
+	@object_properties = {
+		axis: false,
+		variant: true,
+		powered: false,
+		facing: false,
+		type: true,
+		check_decay: false,
+		decayable: false,
+		explode: false,
+		color: true,
+		wet: true,
+		snowy: false,
+		rotation: false,
+		mode: false,
+		nodrop: false,
+		legacy_data: false,
+		contents: false,
+		has_bottle_2: false,
+		has_bottle_1: false,
+		has_bottle_0: false,
+		has_record: false,
+		triggered: false,
+		enabled: false,
+		power: false,
+		age: false,
+		open: false,
+		hinge: false,
+		half: false,
+		locked: false,
+		delay: false,
+		occupied: false,
+		part: false,
+		bites: false,
+		level: false,
+		moisture: false,
+		disarmed: false,
+		attached: false,
+		south: false,
+		north: false,
+		east: false,
+		west: false,
+		shape: false,
+		down: false,
+		up: false,
+		in_wall: false,
+		layers: false,
+		extended: false,
+		damage: false,
+		eye: false,
+		stage: false
+	}
 
 
 
@@ -6535,6 +6043,19 @@ module Recipes
 	# def recipie_graph
 	# end
 
-	def item_name_from_mc_name
+	def self.minecraft_name_map
+		mapping_list = {}
+
+		for recipe in @minecraft_recipes
+			for minecraft_name in recipe[:minecraft_names]
+				mapping_list[minecraft_name] = recipe[:name]
+			end
+		end
+		return mapping_list
+	end
+
+
+	def self.property_map
+		return @object_properties
 	end
 end
