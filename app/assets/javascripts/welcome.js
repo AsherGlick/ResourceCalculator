@@ -15,7 +15,6 @@
 
 
 
-
 		// Assign event handlers
 		$("#unused_hide_checkbox").change(function() {
 			if ($(this).prop('checked')) {
@@ -45,7 +44,7 @@
 			var aaa = $('<input/>')
 				.addClass('desired_item_count')
 				.attr('type','number')
-				.attr('id', i.toLowerCase().split(" ").join(""))
+				.attr('id', i.toLowerCase().replace(/[^a-z]/g,''))
 				.bind("propertychange change click keyup input paste", function(event){
 					save();
 				})
