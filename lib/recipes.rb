@@ -1135,7 +1135,7 @@ module Recipes
 		],
 	},{
 		name: "Nether Brick Block",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:nether_brick"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -5876,7 +5876,7 @@ module Recipes
 		],
 	},{
 		name: "Nether Brick",
-		minecraft_names: ["minecraft:nether_brick"],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipie_type: "crafting",

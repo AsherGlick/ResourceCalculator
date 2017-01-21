@@ -14,23 +14,18 @@
 
 
 <div id="content_field">
-	Testing Testing 123
+	Welcome to the structurefile upload beta!<br>
+	This feature is still under construction but ready for testing and works most of the time. If you notice any issues with this feature then click the "Report an Issue" button in the top right<br>
+	To begin, click the button below and choose a structure file from one of your world saves. <br>
+	Structure files are usually found in "[minecraft_folder]/saves/[world_name]/structures"<br>
 	<input type="file" id="fileinput" />
-
-	<script>
-	var name_mappings = <%= raw @name_mappings.to_json %>;
-	</script>
-
-	There are <%= @recipie_count %> recipies stored on this website
 
 	<div id="outputbox"> </div>
 
 </div>
 <div style="clear:both"></div>
 
-<div class="instructions">
-	Click on an item above &nbsp;==&gt;&nbsp; Enter in the amount that item you want &nbsp;==&gt;&nbsp; Click the <b><u>Generate Items</u></b> button below
-</div>
+<div class="instructions"></div>
 
 <div class="advertisement">
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -46,10 +41,6 @@
 </div>
 
 
-
-<div class="generate_button" id="generatelist">
-    <span>Generate Items</span>
-</div>
 
 
 <script>

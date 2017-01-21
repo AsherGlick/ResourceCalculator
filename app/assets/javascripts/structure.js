@@ -192,12 +192,24 @@
 			// outputbox.text(outputbox.text() + block_keys[i] + ":" + block_list[block_keys[i]] + "\n")
 			// outputbox.innerHTML += block_keys[i] + ":" + block_list[block_keys[i]] + "<br>";
 
-			var block_url_name = block_keys[i];
+			var block_url_name = block_keys[i].toLowerCase().replace(/[^a-z]/g,'');
 			item_list[block_url_name] = block_list[block_keys[i]]
 		}
 
-		outputbox.text($.param(item_list));
+		// outputbox.text();
+		outputbox.empty();
+		var calculator_link = $('<a/>')
+			// .addClass('desired_item_count')
+			.attr('href',"/#"+$.param(item_list))
+			// .attr('href', '/')
+			.text("Click Here for calculation")
+			// .attr('id', i.toLowerCase().replace(/[^a-z]/g,''))
+			// .bind("propertychange change click keyup input paste", function(event){
+				// save();
+			// })
+			.appendTo(outputbox)
 	}
+
 
 
 
