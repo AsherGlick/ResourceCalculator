@@ -157,9 +157,44 @@
 						console.log("Error finding skull type mapping for", base_name)
 					}
 				}
+				// If this is a banner then do special logic to handle banners which also store their data solely in NBT data, also grr
 				else if (blocks[i].nbt.value.id.value === "minecraft:banner") {
-					// do something special
-					continue
+					// The color values for banners
+					var color_values = {
+						0: "black",
+						1: "red",
+						2: "green",
+						3: "brown",
+						4: "blue",
+						5: "purple",
+						6: "cyan",
+						7: "silver",
+						8: "gray",
+						9: "pink",
+						10: "lime",
+						11: "yellow",
+						12: "light_blue",
+						13: "magenta",
+						14: "orange",
+						15: "white"
+					}
+
+					// If the color is not one of the above throw an error
+					if (!(blocks[i].nbt.value.Base.value in color_values)) {
+						console.log("Error loading color, not a known value:", blocks[i].nbt.value.Base.value)
+						continue;
+					}
+
+					// Try to grab the name from the name mapping but if it does not exist throw an error
+					var base_name = "minecraft:banner:" + color_values[blocks[i].nbt.value.Base.value];
+					block_name = name_mappings[base_name];
+					if (block_name === undefined) {
+						console.log("Error finding banner type mapping for", base_name);
+					}
+				}
+				// We are just dealing with a regular run of the mill block that happens to have NBT data
+				else {
+					block_name = palette_map[palette_block_index]
 				}
 			}
 			else {

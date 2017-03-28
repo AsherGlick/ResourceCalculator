@@ -3247,7 +3247,7 @@ module Recipes
 		],
 	},{
 		name: "White Banner",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:banner:white"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3258,7 +3258,7 @@ module Recipes
 		],
 	},{
 		name: "Orange Banner",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:banner:orange"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3269,7 +3269,7 @@ module Recipes
 		],
 	},{
 		name: "Magenta Banner",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:banner:magenta"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3280,7 +3280,7 @@ module Recipes
 		],
 	},{
 		name: "Light Blue Banner",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:banner:light_blue"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3291,7 +3291,7 @@ module Recipes
 		],
 	},{
 		name: "Yellow Banner",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:banner:yellow"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3302,7 +3302,7 @@ module Recipes
 		],
 	},{
 		name: "Lime Banner",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:banner:lime"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3313,7 +3313,7 @@ module Recipes
 		],
 	},{
 		name: "Pink Banner",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:banner:pink"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3324,7 +3324,7 @@ module Recipes
 		],
 	},{
 		name: "Gray Banner",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:banner:gray"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3335,7 +3335,7 @@ module Recipes
 		],
 	},{
 		name: "Light Gray Banner",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:banner:silver"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3346,7 +3346,7 @@ module Recipes
 		],
 	},{
 		name: "Cyan Banner",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:banner:cyan"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3357,7 +3357,7 @@ module Recipes
 		],
 	},{
 		name: "Purple Banner",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:banner:purple"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3368,7 +3368,7 @@ module Recipes
 		],
 	},{
 		name: "Blue Banner",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:banner:blue"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3379,7 +3379,7 @@ module Recipes
 		],
 	},{
 		name: "Brown Banner",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:banner:brown"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3390,7 +3390,7 @@ module Recipes
 		],
 	},{
 		name: "Green Banner",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:banner:green"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3401,7 +3401,7 @@ module Recipes
 		],
 	},{
 		name: "Red Banner",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:banner:red"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3412,7 +3412,7 @@ module Recipes
 		],
 	},{
 		name: "Black Banner",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:banner:black"],
 		recipes: [
 			{
 				recipie_type: "crafting",
