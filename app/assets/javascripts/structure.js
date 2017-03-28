@@ -248,7 +248,9 @@
 			// .addClass('desired_item_count')
 			.attr('href',"/#"+$.param(item_list))
 			// .attr('href', '/')
-			.text("Click Here for calculation")
+			// .text("Click Here for calculation")
+			.addClass('internal_link')
+			.text("https://resourcecalculator.com/#" + $.param(item_list))
 			// .attr('id', i.toLowerCase().replace(/[^a-z]/g,''))
 			// .bind("propertychange change click keyup input paste", function(event){
 				// save();
@@ -264,7 +266,20 @@
 
 		// Monitor the file input box and check if it changes, if it does load the new file
 		document.getElementById('fileinput').addEventListener('change', parse_nbt_file, false);
+
+
+
+		// Add button functionality
+		$("#upload_structure").click(function(e){
+			e.preventDefault();
+			$("#fileinput").trigger('click');
+		});
+
 	});
+
+
+
+
 })(jQuery);
 
 

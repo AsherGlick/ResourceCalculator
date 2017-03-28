@@ -1,6 +1,5 @@
 <!-- <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="/sankey.js"></script> -->
-<%= javascript_include_tag params[:controller] %>
 <link rel="stylesheet" type="text/css" href="/items.css"> <%# This is a hack until we figure out how to get the sprite sheet generator working on asset precompile %>
 
 <div class="header_bar">
@@ -14,18 +13,23 @@
 
 
 <div id="content_field">
-	Welcome to the structurefile upload beta!<br>
-	This feature is still under construction but ready for testing and works most of the time. If you notice any issues with this feature then click the "Report an Issue" button in the top right<br>
-	To begin, click the button below and choose a structure file from one of your world saves. <br>
-	Structure files are usually found in "[minecraft_folder]/saves/[world_name]/structures"<br>
-	<input type="file" id="fileinput" />
 
-	<div id="outputbox"> </div>
+
+	<div class="psuedo_hidden"><input type="file" id="fileinput" /> </div>
+	<div id="outputbox"><span style="color: #999">Link will generate here</span></div>
+
+
 
 </div>
 <div style="clear:both"></div>
 
-<div class="instructions"></div>
+<div class="instructions">Welcome to the structurefile upload beta!<br>
+	If you notice any issues report them with the button in the top right<br></div>
+
+
+<div class="generate_button" id="upload_structure">
+    <span>Upload Structure</span>
+</div>
 
 <div class="advertisement">
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -40,6 +44,12 @@
 	</script>
 </div>
 
+
+<div class="instructions">
+	Minecraft Structure File Locations<br>
+	<b>Linux:</b> ~/.minecraft/saves/[WORLDNAME]/structures<br>
+	<b>Mac:</b> ~/Library/Application Support/minecraft/saves/[WORLDNAME]/structures<br>
+	<b>Windows:</b> %appdata%\.minecraft\saves\[WORLDNAME]\structures</div>
 
 
 
