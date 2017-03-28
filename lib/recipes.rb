@@ -3170,7 +3170,7 @@ module Recipes
 		],
 	},{
 		name: "Skeleton Skull",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:skull:SkeletonSkull"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3181,7 +3181,7 @@ module Recipes
 		],
 	},{
 		name: "Wither Skeleton Skull",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:skull:WitherSkeletonSkull"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3192,7 +3192,7 @@ module Recipes
 		],
 	},{
 		name: "Zombie Head",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:skull:ZombieSkull"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3203,7 +3203,7 @@ module Recipes
 		],
 	},{
 		name: "Head",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:skull:PlayerSkull"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3214,7 +3214,7 @@ module Recipes
 		],
 	},{
 		name: "Creeper Head",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:skull:CreeperSkull"],
 		recipes: [
 			{
 				recipie_type: "crafting",
@@ -3225,7 +3225,7 @@ module Recipes
 		],
 	},{
 		name: "Dragon Head",
-		minecraft_names: [],
+		minecraft_names: ["minecraft:skull:EnderDragonSkull"],
 		recipes: [
 			{
 				recipie_type: "crafting",

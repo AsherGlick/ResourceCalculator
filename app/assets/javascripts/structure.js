@@ -49,6 +49,9 @@
 	}
 
 
+	////////////////////////////////////////////////////////////////////////////
+	// The function parses the palette builds a list of item counts based on the pallet indexes
+	////////////////////////////////////////////////////////////////////////////
 	function build_block_count(parsed_structure_file) {
 		// console.log(parsed_structure_file.blocks)
 		// console.log(parsed_structure_file.palette)
@@ -60,19 +63,20 @@
 
 		block_list = {};
 
+		// A palette list to use for the resource block
 		palette_map = [];
 
+		// A list of all the property keys any block may have
 		properties = [];
 
 		air_block_index = -1;
 
 		for (var i = 0; i < palette.length; i++) {
-			// map between the index count and the palette blocks to produce a block count list
-			// console.log(palette[i].Name.value)
 
+			// Grab the base item name
 			base_name = palette[i].Name.value
 
-			// Special case of air, dont include this but save the id to ignore later
+			// Special case of air, don't include this but save the id to ignore later
 			if (base_name === "minecraft:air"){
 				if (air_block_index === -1) {
 					air_block_index = i;
@@ -83,9 +87,9 @@
 				}
 			}
 
-
+			// For anything that has properties (like color) add the properties to the name
+			// MODIFIES base_name
 			if (palette[i].Properties !== undefined) {
-				// console.log(palette[i].Properties.value)
 				var keys = Object.keys(palette[i].Properties.value)
 				for (var j = 0; j < keys.length; j++) {
 					var key = keys[j]
@@ -95,48 +99,29 @@
 					if (properties_map[key]) {
 						base_name += ":" +  palette[i].Properties.value[key].value
 					}
-
-					// console.log(properties_map)
-
-
-					// console.log(palette[i].Properties.value[key].value)
 				}
 			}
 
+			// If a global name mapping for the item cannot be found then ignore it and throw a warning
 			if (name_mappings[base_name] === undefined) {
-				console.log(base_name + " not found in name mappings, ignoring")
+				console.log(base_name + " not found in global name mappings, Ignoring. If this item should be mapped to a resource calculator recipe add it to the global mapping list")
 			}
 
 			palette_map[i] = name_mappings[base_name]
-
-			// console.log(base_name)
-
 		}
 
 		function onlyUnique(value, index, self) { 
 		    return self.indexOf(value) === index;
 		}
 
-		// usage example:
+		// A unique list of all the properties any block may have
 		var unique_properties = properties.filter( onlyUnique ); // returns ['a', 1, 2, '1']
 
 
 
 
 
-
-
-
-
-		// Read the blocks and add to the block list
-
-
-
-
-
-		// palette_count = Array.apply(null, Array(palette.length)).map(Number.prototype.valueOf,0);
-
-
+		// Read the blocks and add to the block list based off their pallet index
 		for (var i = 0; i < blocks.length; i++) {
 			palette_block_index = blocks[i].state.value
 			// palette_count[palette_block_index] += 1
@@ -144,22 +129,46 @@
 			// Skip air blocks
 			if (palette_block_index === air_block_index) continue;
 
+			// Grab the block name
+			var block_name = undefined;
 			if (blocks[i].nbt !== undefined) {
-				// console.log(blocks[i].nbt.value.id.value)
+
+				// If this is a skull block do special logic to handle skulls which store their data solely in NBT data, grr
 				if (blocks[i].nbt.value.id.value === "minecraft:skull") {
-					// do something special
-					continue
+					var skull_values = {
+						0: "SkeletonSkull",
+						1: "WitherSkeletonSkull",
+						2: "ZombieSkull",
+						3: "PlayerSkull",
+						4: "CreeperSkull",
+						5: "EnderDragonSkull"
+					}
+
+					// If the skull type is not one of the above types throw an error
+					if (!(blocks[i].nbt.value.SkullType.value in skull_values)) {
+						console.log("Error loading skull type, not a known value!");
+						continue;
+					}
+
+					// Try to grab the name from the name mapping but if it does not exist throw an error
+					var base_name = "minecraft:skull:" + skull_values[blocks[i].nbt.value.SkullType.value];
+					block_name = name_mappings[base_name];
+					if (block_name === undefined) {
+						console.log("Error finding skull type mapping for", base_name)
+					}
 				}
 				else if (blocks[i].nbt.value.id.value === "minecraft:banner") {
 					// do something special
 					continue
 				}
 			}
-
-			block_name = palette_map[palette_block_index]
+			else {
+				block_name = palette_map[palette_block_index]
+			}
 
 			if (block_name === undefined) {
-				console.log("BLOCK NAME IS UNDEFINED, SKIPPING")
+				console.log("BLOCK NAME '", block_name,"' IS UNDEFINED, SKIPPING");
+				continue;
 			}
 
 			// If the block does not exist initilize it
@@ -181,7 +190,9 @@
 
 	}
 
-
+	////////////////////////////////////////////////////////////////////////////
+	// Take the block_list and create a resource calculator url from that url
+	////////////////////////////////////////////////////////////////////////////
 	function display_url(block_list) {
 		var outputbox = $("#outputbox");
 		item_list = {}
