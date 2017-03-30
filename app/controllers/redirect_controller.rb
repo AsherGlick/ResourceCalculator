@@ -4,7 +4,12 @@ class RedirectController < ApplicationController
   def index
 
     # Grab the redirected URL
-    res = Net::HTTP.get_response(URI('https://goo.gl/'+params[:shorturl]))
+    url = URI.parse('https://goo.gl/'+params[:shorturl])
+    req = Net::HTTP::Get.new(url.request_uri)
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = (url.scheme == "https")
+    res = http.request(req)
+
     if res['location'] == nil
       raise ActionController::RoutingError.new('Not Found')
     end
