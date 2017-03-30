@@ -6,6 +6,7 @@ ResourceCalculator::Application.routes.draw do
   root 'welcome#index'
 
   get '/upload', to: 'structure#index'
+  get '/yt/:ytname/:shorturl', to: 'redirect#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
