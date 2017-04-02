@@ -424,16 +424,16 @@
 
 			var sankey = d3.sankey();
 			var margin = {
-				top: 1,
+				top: 10,
 				right: 1,
-				bottom: 6,
+				bottom: 10,
 				left: 1
 			},
 
 
 
 			width = $('body').width() - margin.left - margin.right,
-			height = 500 - margin.top - margin.bottom;
+			height = 800 - margin.top - margin.bottom;
 
 			var formatNumber = d3.format(",.0f"),
 				format = function(d) {
