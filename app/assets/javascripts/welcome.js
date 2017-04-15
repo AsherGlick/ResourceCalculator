@@ -446,19 +446,23 @@
 		}
 
 		$(document).on('mousemove', function(e) {
-			if ($(window).width() > $('#hover_recipe').outerWidth() + e.pageX + hover_x_offset ) {
-				$('#hover_recipe').offset({
-					left:  e.pageX + hover_x_offset,
-					top:   e.pageY + hover_y_offset
-				});
+
+
+			var left_offset = e.pageX + hover_x_offset
+			var top_offset = e.pageY + hover_y_offset;
+
+			if ($(window).width() < $('#hover_recipe').outerWidth() + e.pageX + hover_x_offset ) {
+				left_offset = e.pageX - hover_x_offset - $('#hover_recipe').outerWidth()
 			}
 
-			else {
-				$('#hover_recipe').offset ({
-					left: e.pageX - hover_x_offset - $('#hover_recipe').outerWidth(),
-					top:  e.pageY + hover_y_offset
-				})
-			}	
+			if ($(window).height() + $(document).scrollTop() < $("#hover_recipe").outerHeight() + e.pageY + hover_y_offset ) {
+				top_offset = e.pageY - hover_y_offset - $('#hover_recipe').outerHeight()
+			}
+
+			$('#hover_recipe').offset ({
+				left:  left_offset,
+				top:   top_offset
+			})
 		});
 
 
