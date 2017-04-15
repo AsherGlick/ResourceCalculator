@@ -707,6 +707,9 @@
 				sankey.relayout();
 				link.attr("d", path);
 			}
+
+			$("#chart path[target='extra']").remove();
+			$("#chart g text:contains('extra')").parent().remove();
 		}
 
 		// About us lightbox
