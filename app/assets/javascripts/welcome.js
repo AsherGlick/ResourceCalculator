@@ -414,10 +414,13 @@
 		  //////////////////////////////////////////////////////////////////////////////
 		 //////////////////////////// Hover Recipie Logic ///////////////////////////// 
 		//////////////////////////////////////////////////////////////////////////////  
-		function set_recipe (item) {
+		function set_recipe (target, source, source_quantity) {
 			var recipie_index = 0;
-			var recipe_list = recipe_json[item];
+			var recipe_list = recipe_json[target];
 			var recipe = recipe_list[recipie_index];
+
+			var source_item_count = -recipe["requirements"][source];
+			var item_multiplier = source_quantity / source_item_count;
 
 			if (recipe["recipe_type"] === "crafting") {
 
@@ -427,21 +430,27 @@
 					})
 					.addClass('item_' + filenameify(recipe["recipe"][i]));
 
+					if (item_multiplier > 1 && recipe["recipe"][i] != null) {
+						$("#crafting_slot_"+i).text(item_multiplier)
+					}
+					else {
+						$("#crafting_slot_"+i).text("")
+					}
 				}
 				$("#crafting_output_image").removeClass (function (index, className) {
     				return (className.match (/\bitem_[a-z0-9_]*/) || []).join(' ');
 				})
-				.addClass('item_' + filenameify(item))
+				.addClass('item_' + filenameify(target))
 
-				if (recipe["output"] > 1){
-					$("#crafting_output_image").text(recipe["output"]);
+				if (recipe["output"] * item_multiplier > 1){
+					$("#crafting_output_image").text(recipe["output"] * item_multiplier);
 				}
 				else {
 					$("#crafting_output_image").text("");
 				}
 			}
 			else {
-				console.log("The recipe type for " + item + " has not been created yet");
+				console.log("The recipe type for " + target + " has not been created yet");
 			}
 		}
 
@@ -606,16 +615,10 @@
 					// console.log($(this).attr("quantity"))
 					// // console.log(this.getElementsByTagName("text")[0].textContent);
 					$('#hover_recipe').show();
-					set_recipe($(this).attr("target"));
+					set_recipe($(this).attr("target"), $(this).attr("source"), $(this).attr("quantity"));
 				})
 				.on("mouseout", function() {
 					$("#hover_recipe").hide();
-				})
-				;
-
-			link.append("title")
-				.text(function(d) {
-					return d.value +" " + d.source.name + " → " + d.target.name;
 				});
 
 			var node = svg.append("g").selectAll(".node")
