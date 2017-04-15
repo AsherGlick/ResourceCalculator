@@ -153,7 +153,7 @@ body {
 
 
 input[type=checkbox] + label.hide_unused_label {
-	color: #AAA;
+		color: #AAA;
 	text-shadow: 2px 0px 0 #F3F3F3;
 
 }
@@ -198,7 +198,54 @@ input[type=checkbox]:checked + label.hide_unused_label {
 	margin-bottom: 5px;
 }
 
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// recipe styling
+#hover_recipe {
+	background-color: #C3C3C3;
+	background-clip: content-box;
+	border: 10px solid transparent;
+	border-image: url(/FrameBorder.png) 10;
+	position: absolute;
+	pointer-events: none;
+	display: none;
+	font-family: $font-stack;
+}
+.crafting_layout {
+	position: absolute;
+	top: 22px;
+	left: 48px;
+	width: 108px;
+}
+.crafting_output {
+	position: absolute;
+	top: 50px;
+	left: 228px;
 
+    background-position: center; 
+
+
+	width: 32px;
+	height: 32px;
+	background: #8b8b8b;
+	text-align: right;
+	// vertical-align: bottom;
+	// position: relative;
+	// display: table-cell;
+  	vertical-align: middle;
+
+  	padding: 8px;
+
+	font-size: .8em;
+
+	font-family: $font-stack;
+	color: #FFF !important;
+	text-shadow: 2px 2px 0 #3F3F3F;
+
+	border: 2px solid transparent;
+	border-image: url(/ItemBorder.png) 2;
+
+}
 
 
 

@@ -87,6 +87,7 @@
 
 
 		function filenameify(rawname) {
+			if (rawname == null) return "";
 			name = rawname.toLowerCase();
 			name = name.split(" ").join('_');
 			name = name.replace(/[^a-zA-Z0-9_]/g,"");
@@ -410,6 +411,61 @@
 		});
 
 
+		  //////////////////////////////////////////////////////////////////////////////
+		 //////////////////////////// Hover Recipie Logic ///////////////////////////// 
+		//////////////////////////////////////////////////////////////////////////////  
+		function set_recipe (item) {
+			var recipie_index = 0;
+			var recipe_list = recipe_json[item];
+			var recipe = recipe_list[recipie_index];
+
+			if (recipe["recipe_type"] === "crafting") {
+
+				for (var i in recipe["recipe"]) {
+					$("#crafting_slot_"+i).removeClass (function (index, className) {
+    					return (className.match (/\bitem_[a-z0-9_]*/) || []).join(' ');
+					})
+					.addClass('item_' + filenameify(recipe["recipe"][i]));
+
+				}
+				$("#crafting_output_image").removeClass (function (index, className) {
+    				return (className.match (/\bitem_[a-z0-9_]*/) || []).join(' ');
+				})
+				.addClass('item_' + filenameify(item))
+
+				if (recipe["output"] > 1){
+					$("#crafting_output_image").text(recipe["output"]);
+				}
+				else {
+					$("#crafting_output_image").text("");
+				}
+			}
+			else {
+				console.log("The recipe type for " + item + " has not been created yet");
+			}
+		}
+
+		$(document).on('mousemove', function(e) {
+			if ($(window).width() > $('#hover_recipe').outerWidth() + e.pageX + hover_x_offset ) {
+				$('#hover_recipe').offset({
+					left:  e.pageX + hover_x_offset,
+					top:   e.pageY + hover_y_offset
+				});
+			}
+
+			else {
+				$('#hover_recipe').offset ({
+					left: e.pageX - hover_x_offset - $('#hover_recipe').outerWidth(),
+					top:  e.pageY + hover_y_offset
+				})
+			}	
+		});
+
+
+
+
+
+
 		function generate_instructions(generation_events) {
 
 		}
@@ -530,12 +586,28 @@
 				.enter().append("path")
 				.attr("class", "link")
 				.attr("d", path)
+				.attr("rcalc:source", function(d) { return d.source.name})
+				.attr("rcalc:target", function(d) { return d.target.name})
+				.attr("rcalc:quantity", function(d) { return d.value})
 				.style("stroke-width", function(d) {
 					return Math.max(1, d.dy);
 				})
 				.sort(function(a, b) {
 					return b.dy - a.dy;
-				});
+				})
+				.on("mouseover", function() {
+					// console.log("Mouseover");
+					// console.log($(this).attr("source"))
+					// console.log($(this).attr("target"))
+					// console.log($(this).attr("quantity"))
+					// // console.log(this.getElementsByTagName("text")[0].textContent);
+					$('#hover_recipe').show();
+					set_recipe($(this).attr("target"));
+				})
+				.on("mouseout", function() {
+					$("#hover_recipe").hide();
+				})
+				;
 
 			link.append("title")
 				.text(function(d) {
@@ -556,7 +628,11 @@
 					.on("start", function() {
 						this.parentNode.appendChild(this);
 					})
-					.on("drag", dragmove));
+					.on("drag", dragmove))
+				// .on("click",function() {
+				// 	console.log("click");
+				// 	d3.event.stopPropagation();
+				// })
 
 
 
