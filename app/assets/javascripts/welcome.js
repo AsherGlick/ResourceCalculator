@@ -172,7 +172,7 @@
 						generation_totals[requirement] += produce_count * produces_count;
 						console.log(recipe); 
 
-						if ($.isEmptyObject(recipe)) {
+						if (recipe[requirement] === 0 && Object.keys(recipe).length === 1) {
 							if (raw_resources[requirement] == undefined) {
 								raw_resources[requirement] = 0;
 							}
@@ -204,7 +204,6 @@
 						}
 					}
 				});
-
 				console.log(output_requirements);
 				requirements = output_requirements;
 			}
@@ -224,7 +223,6 @@
 			}
 
 			// console.log(resource_tracker);
-
 			generate_chart(resource_tracker, generation_totals);
 
 			generate_chest_list(raw_resources);
@@ -469,6 +467,7 @@
 		function generate_chart(generation_events, resource_totals) {
 
 			console.log(resource_totals);
+			console.log(generation_events);
 
 			var sankey = d3.sankey();
 			var margin = {

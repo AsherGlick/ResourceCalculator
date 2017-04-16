@@ -5,10 +5,8 @@ module Recipes
 		minecraft_names: ["minecraft:stone:stone"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -20,6 +18,10 @@ module Recipes
 				output: 1,
 				recipe: ["Diorite","Nether Quartz",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -31,6 +33,10 @@ module Recipes
 				output: 4,
 				recipe: ["Granite","Granite",nil,"Granite","Granite",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -42,6 +48,10 @@ module Recipes
 				output: 2,
 				recipe: ["Nether Quartz","Cobblestone",nil,"Cobblestone","Nether Quartz",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -53,6 +63,10 @@ module Recipes
 				output: 4,
 				recipe: ["Diorite","Diorite",nil,"Diorite","Diorite",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -64,6 +78,10 @@ module Recipes
 				output: 2,
 				recipe: ["Diorite","Cobblestone",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -75,6 +93,10 @@ module Recipes
 				output: 4,
 				recipe: ["Andesite","Andesite",nil,"Andesite","Andesite",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -82,10 +104,8 @@ module Recipes
 		minecraft_names: ["minecraft:grass", "minecraft:grass_path"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -93,10 +113,8 @@ module Recipes
 		minecraft_names: ["minecraft:dirt:dirt", "minecraft:farmland"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -108,6 +126,10 @@ module Recipes
 				output: 4,
 				recipe: ["Gravel","Dirt",nil,"Dirt","Gravel",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -115,10 +137,8 @@ module Recipes
 		minecraft_names: ["minecraft:dirt:podzol"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -126,10 +146,8 @@ module Recipes
 		minecraft_names: ["minecraft:cobblestone"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -141,6 +159,10 @@ module Recipes
 				output: 4,
 				recipe: [nil,nil,nil,nil,"Oak Wood",nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -152,6 +174,10 @@ module Recipes
 				output: 4,
 				recipe: [nil,nil,nil,nil,"Spruce Wood",nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -174,6 +200,10 @@ module Recipes
 				output: 4,
 				recipe: [nil,nil,nil,nil,"Jungle Wood",nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -185,6 +215,10 @@ module Recipes
 				output: 4,
 				recipe: [nil,nil,nil,nil,"Acacia Wood",nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -196,6 +230,10 @@ module Recipes
 				output: 4,
 				recipe: [nil,nil,nil,nil,"Dark Oak Wood",nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -203,10 +241,8 @@ module Recipes
 		minecraft_names: ["minecraft:bedrock"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -214,10 +250,8 @@ module Recipes
 		minecraft_names: ["minecraft:sand:sand"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -225,10 +259,8 @@ module Recipes
 		minecraft_names: ["minecraft:sand:red_sand"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -236,10 +268,8 @@ module Recipes
 		minecraft_names: ["minecraft:gravel"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -247,10 +277,8 @@ module Recipes
 		minecraft_names: ["minecraft:gold_ore"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -258,10 +286,8 @@ module Recipes
 		minecraft_names: ["minecraft:iron_ore"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -269,10 +295,8 @@ module Recipes
 		minecraft_names: ["minecraft:coal_ore"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -280,10 +304,8 @@ module Recipes
 		minecraft_names: ["minecraft:log:oak"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -291,10 +313,8 @@ module Recipes
 		minecraft_names: ["minecraft:log:spruce"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -302,10 +322,8 @@ module Recipes
 		minecraft_names: ["minecraft:log:birch"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -313,10 +331,8 @@ module Recipes
 		minecraft_names: ["minecraft:log:jungle"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -324,10 +340,8 @@ module Recipes
 		minecraft_names: ["minecraft:sponge:false"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -335,10 +349,8 @@ module Recipes
 		minecraft_names: ["minecraft:sponge:true"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -346,10 +358,8 @@ module Recipes
 		minecraft_names: ["minecraft:glass"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -357,10 +367,8 @@ module Recipes
 		minecraft_names: ["minecraft:lapis_ore"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -372,6 +380,10 @@ module Recipes
 				output: 1,
 				recipe: ["Lapis Lazuli","Lapis Lazuli","Lapis Lazuli","Lapis Lazuli","Lapis Lazuli","Lapis Lazuli","Lapis Lazuli","Lapis Lazuli","Lapis Lazuli"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -383,6 +395,10 @@ module Recipes
 				output: 1,
 				recipe: ["Sand","Sand",nil,"Sand","Sand",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -394,6 +410,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Sandstone Slab",nil,nil,"Sandstone Slab",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -405,6 +425,10 @@ module Recipes
 				output: 4,
 				recipe: ["Sandstone","Sandstone",nil,"Sandstone","Sandstone",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -416,6 +440,10 @@ module Recipes
 				output: 1,
 				recipe: ["String","String",nil,"String","String",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -427,6 +455,10 @@ module Recipes
 				output: 1,
 				recipe: ["Wool","Orange Dye",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -438,6 +470,10 @@ module Recipes
 				output: 1,
 				recipe: ["Wool","Magenta Dye",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -449,6 +485,10 @@ module Recipes
 				output: 1,
 				recipe: ["Wool","Light Blue Dye",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -460,6 +500,10 @@ module Recipes
 				output: 1,
 				recipe: ["Wool","Dandelion Yellow",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -471,6 +515,10 @@ module Recipes
 				output: 1,
 				recipe: ["Wool","Lime Dye",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -482,6 +530,10 @@ module Recipes
 				output: 1,
 				recipe: ["Wool","Pink Dye",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -493,6 +545,10 @@ module Recipes
 				output: 1,
 				recipe: ["Wool","Gray Dye",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -504,6 +560,10 @@ module Recipes
 				output: 1,
 				recipe: ["Wool","Light Gray Dye",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -515,6 +575,10 @@ module Recipes
 				output: 1,
 				recipe: ["Wool","Cyan Dye",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -526,6 +590,10 @@ module Recipes
 				output: 1,
 				recipe: ["Wool","Purple Dye",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -537,6 +605,10 @@ module Recipes
 				output: 1,
 				recipe: ["Wool","Lapis Lazuli",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -548,6 +620,10 @@ module Recipes
 				output: 1,
 				recipe: ["Wool","Cocoa Beans",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -559,6 +635,10 @@ module Recipes
 				output: 1,
 				recipe: ["Wool","Cactus Green",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -570,6 +650,10 @@ module Recipes
 				output: 1,
 				recipe: ["Wool","Rose Red",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -581,6 +665,10 @@ module Recipes
 				output: 1,
 				recipe: ["Wool","Ink Sac",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -592,6 +680,10 @@ module Recipes
 				output: 1,
 				recipe: ["Gold Ingot","Gold Ingot","Gold Ingot","Gold Ingot","Gold Ingot","Gold Ingot","Gold Ingot","Gold Ingot","Gold Ingot"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -603,6 +695,10 @@ module Recipes
 				output: 1,
 				recipe: ["Iron Ingot","Iron Ingot","Iron Ingot","Iron Ingot","Iron Ingot","Iron Ingot","Iron Ingot","Iron Ingot","Iron Ingot"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -614,6 +710,10 @@ module Recipes
 				output: 6,
 				recipe: ["Stone","Stone","Stone",nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -625,6 +725,10 @@ module Recipes
 				output: 6,
 				recipe: ["Sandstone","Sandstone","Sandstone",nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -636,6 +740,10 @@ module Recipes
 				output: 6,
 				recipe: ["Cobblestone","Cobblestone","Cobblestone",nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -647,6 +755,10 @@ module Recipes
 				output: 6,
 				recipe: ["Bricks","Bricks","Bricks",nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -658,6 +770,10 @@ module Recipes
 				output: 6,
 				recipe: ["Stone Brick","Stone Brick","Stone Brick",nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -669,6 +785,10 @@ module Recipes
 				output: 6,
 				recipe: ["Nether Brick Block","Nether Brick Block","Nether Brick Block",nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -680,6 +800,10 @@ module Recipes
 				output: 6,
 				recipe: ["Block of Quartz","Block of Quartz","Block of Quartz",nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -691,6 +815,10 @@ module Recipes
 				output: 1,
 				recipe: ["Brick","Brick",nil,"Brick","Brick",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -702,6 +830,10 @@ module Recipes
 				output: 1,
 				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Book","Book","Book","Oak Wood Planks","Oak Wood Planks","Oak Wood Planks"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -713,6 +845,10 @@ module Recipes
 				output: 1,
 				recipe: ["Cobblestone","Vines",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -720,10 +856,8 @@ module Recipes
 		minecraft_names: ["minecraft:obsidian"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -735,6 +869,10 @@ module Recipes
 				output: 4,
 				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks",nil,"Oak Wood Planks","Oak Wood Planks",nil,nil,"Oak Wood Planks"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -742,10 +880,8 @@ module Recipes
 		minecraft_names: ["minecraft:diamond_ore"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -757,6 +893,10 @@ module Recipes
 				output: 1,
 				recipe: ["Diamond","Diamond","Diamond","Diamond","Diamond","Diamond","Diamond","Diamond","Diamond"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -768,6 +908,10 @@ module Recipes
 				output: 4,
 				recipe: ["Cobblestone","Cobblestone","Cobblestone",nil,"Cobblestone","Cobblestone",nil,nil,"Cobblestone"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -775,10 +919,8 @@ module Recipes
 		minecraft_names: ["minecraft:lit_redstone_ore"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -786,10 +928,8 @@ module Recipes
 		minecraft_names: ["minecraft:ice"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -797,10 +937,8 @@ module Recipes
 		minecraft_names: ["minecraft:snow_layer"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -808,10 +946,8 @@ module Recipes
 		minecraft_names: ["minecraft:clay"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -819,10 +955,8 @@ module Recipes
 		minecraft_names: ["minecraft:pumpkin"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -830,10 +964,8 @@ module Recipes
 		minecraft_names: ["minecraft:netherrack"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -841,10 +973,8 @@ module Recipes
 		minecraft_names: ["minecraft:soul_sand"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -856,6 +986,10 @@ module Recipes
 				output: 1,
 				recipe: ["Glowstone Dust","Glowstone Dust",nil,"Glowstone Dust","Glowstone Dust",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -867,6 +1001,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Torch",nil,"Pumpkin",nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -878,6 +1016,10 @@ module Recipes
 				output: 8,
 				recipe: ["Glass","Glass","Glass","Glass","Bone Meal","Glass","Glass","Glass","Glass"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -889,6 +1031,10 @@ module Recipes
 				output: 8,
 				recipe: ["Glass","Glass","Glass","Glass","Orange Dye","Glass","Glass","Glass","Glass"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -900,6 +1046,10 @@ module Recipes
 				output: 8,
 				recipe: ["Glass","Glass","Glass","Glass","Magenta Dye","Glass","Glass","Glass","Glass"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -911,6 +1061,10 @@ module Recipes
 				output: 8,
 				recipe: ["Glass","Glass","Glass","Glass","Light Blue Dye","Glass","Glass","Glass","Glass"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -922,6 +1076,10 @@ module Recipes
 				output: 8,
 				recipe: ["Glass","Glass","Glass","Glass","Dandelion Yellow","Glass","Glass","Glass","Glass"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -933,6 +1091,10 @@ module Recipes
 				output: 8,
 				recipe: ["Glass","Glass","Glass","Glass","Lime Dye","Glass","Glass","Glass","Glass"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -944,6 +1106,10 @@ module Recipes
 				output: 8,
 				recipe: ["Glass","Glass","Glass","Glass","Pink Dye","Glass","Glass","Glass","Glass"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -955,6 +1121,10 @@ module Recipes
 				output: 8,
 				recipe: ["Glass","Glass","Glass","Glass","Gray Dye","Glass","Glass","Glass","Glass"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -966,6 +1136,10 @@ module Recipes
 				output: 8,
 				recipe: ["Glass","Glass","Glass","Glass","Light Gray Dye","Glass","Glass","Glass","Glass"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -977,6 +1151,10 @@ module Recipes
 				output: 8,
 				recipe: ["Glass","Glass","Glass","Glass","Cyan Dye","Glass","Glass","Glass","Glass"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -988,6 +1166,10 @@ module Recipes
 				output: 8,
 				recipe: ["Glass","Glass","Glass","Glass","Purple Dye","Glass","Glass","Glass","Glass"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -999,6 +1181,10 @@ module Recipes
 				output: 8,
 				recipe: ["Glass","Glass","Glass","Glass","Lapis Lazuli","Glass","Glass","Glass","Glass"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1010,6 +1196,10 @@ module Recipes
 				output: 8,
 				recipe: ["Glass","Glass","Glass","Glass","Cocoa Beans","Glass","Glass","Glass","Glass"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1021,6 +1211,10 @@ module Recipes
 				output: 8,
 				recipe: ["Glass","Glass","Glass","Glass","Cactus Green","Glass","Glass","Glass","Glass"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1032,6 +1226,10 @@ module Recipes
 				output: 8,
 				recipe: ["Glass","Glass","Glass","Glass","Rose Red","Glass","Glass","Glass","Glass"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1043,6 +1241,10 @@ module Recipes
 				output: 8,
 				recipe: ["Glass","Glass","Glass","Glass","Ink Sac","Glass","Glass","Glass","Glass"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1054,6 +1256,10 @@ module Recipes
 				output: 4,
 				recipe: ["Stone","Stone",nil,"Stone","Stone",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1065,6 +1271,10 @@ module Recipes
 				output: 1,
 				recipe: ["Stone Brick","Vines",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1072,10 +1282,8 @@ module Recipes
 		minecraft_names: ["minecraft:stonebrick:cracked_stonebrick"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1087,6 +1295,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stone Bricks Slab",nil,nil,"Stone Bricks Slab",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1098,6 +1310,10 @@ module Recipes
 				output: 1,
 				recipe: ["Melon Slice","Melon Slice","Melon Slice","Melon Slice","Melon Slice","Melon Slice","Melon Slice","Melon Slice","Melon Slice"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1109,6 +1325,10 @@ module Recipes
 				output: 4,
 				recipe: ["Bricks","Bricks","Bricks",nil,"Bricks","Bricks",nil,nil,"Bricks"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1120,6 +1340,10 @@ module Recipes
 				output: 4,
 				recipe: ["Stone Brick","Stone Brick","Stone Brick",nil,"Stone Brick","Stone Brick",nil,nil,"Stone Brick"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1127,10 +1351,8 @@ module Recipes
 		minecraft_names: ["minecraft:mycelium"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1142,6 +1364,10 @@ module Recipes
 				output: 1,
 				recipe: ["Nether Brick","Nether Brick",nil,"Nether Brick","Nether Brick",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1153,6 +1379,10 @@ module Recipes
 				output: 4,
 				recipe: ["Nether Brick Block","Nether Brick Block","Nether Brick Block",nil,"Nether Brick Block","Nether Brick Block",nil,nil,"Nether Brick Block"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1160,10 +1390,8 @@ module Recipes
 		minecraft_names: ["minecraft:end_stone"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1175,6 +1403,10 @@ module Recipes
 				output: 6,
 				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks",nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1186,6 +1418,10 @@ module Recipes
 				output: 6,
 				recipe: ["Spruce Wood Planks","Spruce Wood Planks","Spruce Wood Planks",nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1197,6 +1433,10 @@ module Recipes
 				output: 6,
 				recipe: ["Birch Wood Planks","Birch Wood Planks","Birch Wood Planks",nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1208,6 +1448,10 @@ module Recipes
 				output: 6,
 				recipe: ["Jungle Wood Planks","Jungle Wood Planks","Jungle Wood Planks",nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1219,6 +1463,10 @@ module Recipes
 				output: 6,
 				recipe: ["Acacia Wood Planks","Acacia Wood Planks","Acacia Wood Planks",nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1230,6 +1478,10 @@ module Recipes
 				output: 6,
 				recipe: ["Dark Oak Wood Planks","Dark Oak Wood Planks","Dark Oak Wood Planks",nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1241,6 +1493,10 @@ module Recipes
 				output: 4,
 				recipe: ["Sandstone","Sandstone","Sandstone",nil,"Sandstone","Sandstone",nil,nil,"Sandstone"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1248,10 +1504,8 @@ module Recipes
 		minecraft_names: ["minecraft:emerald_ore"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1263,6 +1517,10 @@ module Recipes
 				output: 1,
 				recipe: ["Emerald","Emerald","Emerald","Emerald","Emerald","Emerald","Emerald","Emerald","Emerald"],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1274,6 +1532,10 @@ module Recipes
 				output: 4,
 				recipe: ["Spruce Wood Planks","Spruce Wood Planks","Spruce Wood Planks",nil,"Spruce Wood Planks","Spruce Wood Planks",nil,nil,"Spruce Wood Planks"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1285,6 +1547,10 @@ module Recipes
 				output: 4,
 				recipe: ["Birch Wood Planks","Birch Wood Planks","Birch Wood Planks",nil,"Birch Wood Planks","Birch Wood Planks",nil,nil,"Birch Wood Planks"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1296,6 +1562,10 @@ module Recipes
 				output: 4,
 				recipe: ["Jungle Wood Planks","Jungle Wood Planks","Jungle Wood Planks",nil,"Jungle Wood Planks","Jungle Wood Planks",nil,nil,"Jungle Wood Planks"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1307,6 +1577,10 @@ module Recipes
 				output: 6,
 				recipe: ["Cobblestone","Cobblestone","Cobblestone","Cobblestone","Cobblestone","Cobblestone",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1318,6 +1592,10 @@ module Recipes
 				output: 6,
 				recipe: ["Moss Stone","Moss Stone","Moss Stone","Moss Stone","Moss Stone","Moss Stone",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1325,10 +1603,8 @@ module Recipes
 		minecraft_names: ["minecraft:quartz_ore"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1340,6 +1616,10 @@ module Recipes
 				output: 1,
 				recipe: ["Nether Quartz","Nether Quartz",nil,"Nether Quartz","Nether Quartz",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1351,6 +1631,10 @@ module Recipes
 				output: 1,
 				recipe: ["Quartz Slab",nil,nil,"Quartz Slab",nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1362,6 +1646,10 @@ module Recipes
 				output: 2,
 				recipe: ["Block of Quartz",nil,nil,"Block of Quartz",nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1373,6 +1661,10 @@ module Recipes
 				output: 4,
 				recipe: ["Block of Quartz","Block of Quartz","Block of Quartz",nil,"Block of Quartz","Block of Quartz",nil,nil,"Block of Quartz"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1384,6 +1676,10 @@ module Recipes
 				output: 8,
 				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Bone Meal","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1395,6 +1691,10 @@ module Recipes
 				output: 8,
 				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Orange Dye","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1406,6 +1706,10 @@ module Recipes
 				output: 8,
 				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Magenta Dye","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1417,6 +1721,10 @@ module Recipes
 				output: 8,
 				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Light Blue Dye","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1428,6 +1736,10 @@ module Recipes
 				output: 8,
 				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Dandelion Yellow","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1439,6 +1751,10 @@ module Recipes
 				output: 8,
 				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Lime Dye","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1450,6 +1766,10 @@ module Recipes
 				output: 8,
 				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Pink Dye","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1461,6 +1781,10 @@ module Recipes
 				output: 8,
 				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Gray Dye","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1472,6 +1796,10 @@ module Recipes
 				output: 8,
 				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Light Gray Dye","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1483,6 +1811,10 @@ module Recipes
 				output: 8,
 				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Cyan Dye","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1494,6 +1826,10 @@ module Recipes
 				output: 8,
 				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Purple Dye","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1505,6 +1841,10 @@ module Recipes
 				output: 8,
 				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Lapis Lazuli","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1516,6 +1856,10 @@ module Recipes
 				output: 8,
 				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Cocoa Beans","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1527,6 +1871,10 @@ module Recipes
 				output: 8,
 				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Cactus Green","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1538,6 +1886,10 @@ module Recipes
 				output: 8,
 				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Rose Red","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1549,6 +1901,10 @@ module Recipes
 				output: 8,
 				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Ink Sac","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1556,10 +1912,8 @@ module Recipes
 		minecraft_names: ["minecraft:log2:acacia"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1567,10 +1921,8 @@ module Recipes
 		minecraft_names: ["minecraft:log2:dark_oak"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1582,6 +1934,10 @@ module Recipes
 				output: 4,
 				recipe: ["Acacia Wood Planks","Acacia Wood Planks","Acacia Wood Planks",nil,"Acacia Wood Planks","Acacia Wood Planks",nil,nil,"Acacia Wood Planks"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1593,6 +1949,10 @@ module Recipes
 				output: 4,
 				recipe: ["Dark Oak Wood Planks","Dark Oak Wood Planks","Dark Oak Wood Planks",nil,"Dark Oak Wood Planks","Dark Oak Wood Planks",nil,nil,"Dark Oak Wood Planks"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1604,6 +1964,10 @@ module Recipes
 				output: 1,
 				recipe: ["Prismarine Shard","Prismarine Shard",nil,"Prismarine Shard","Prismarine Shard",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1615,6 +1979,10 @@ module Recipes
 				output: 1,
 				recipe: ["Prismarine Shard","Prismarine Shard","Prismarine Shard","Prismarine Shard","Prismarine Shard","Prismarine Shard","Prismarine Shard","Prismarine Shard","Prismarine Shard"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1626,6 +1994,10 @@ module Recipes
 				output: 1,
 				recipe: ["Prismarine Shard","Prismarine Shard","Prismarine Shard","Prismarine Shard","Ink Sac","Prismarine Shard","Prismarine Shard","Prismarine Shard","Prismarine Shard"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1637,6 +2009,10 @@ module Recipes
 				output: 1,
 				recipe: ["Prismarine Shard","Prismarine Crystals","Prismarine Shard","Prismarine Crystals","Prismarine Shard","Prismarine Crystals","Prismarine Shard","Prismarine Crystals","Prismarine Shard"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1648,6 +2024,10 @@ module Recipes
 				output: 1,
 				recipe: ["Wheat","Wheat","Wheat","Wheat","Wheat","Wheat","Wheat","Wheat","Wheat"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1655,10 +2035,8 @@ module Recipes
 		minecraft_names: ["minecraft:hardened_clay"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1670,6 +2048,10 @@ module Recipes
 				output: 1,
 				recipe: ["Coal","Coal","Coal","Coal","Coal","Coal","Coal","Coal","Coal"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1677,10 +2059,8 @@ module Recipes
 		minecraft_names: ["minecraft:packed_ice"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1692,6 +2072,10 @@ module Recipes
 				output: 1,
 				recipe: ["Red Sand","Red Sand",nil,"Red Sand","Red Sand",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1703,6 +2087,10 @@ module Recipes
 				output: 1,
 				recipe: ["Red Sandstone Slab",nil,nil,"Red Sandstone Slab",nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1714,6 +2102,10 @@ module Recipes
 				output: 4,
 				recipe: ["Red Sandstone","Red Sandstone",nil,"Red Sandstone","Red Sandstone",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1725,6 +2117,10 @@ module Recipes
 				output: 4,
 				recipe: ["Red Sandstone","Red Sandstone","Red Sandstone",nil,"Red Sandstone","Red Sandstone",nil,nil,"Red Sandstone"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1736,6 +2132,10 @@ module Recipes
 				output: 6,
 				recipe: ["Red Sandstone","Red Sandstone","Red Sandstone",nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1747,6 +2147,10 @@ module Recipes
 				output: 4,
 				recipe: ["Popped Chorus Fruit","Popped Chorus Fruit",nil,"Popped Chorus Fruit","Popped Chorus Fruit",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1758,6 +2162,10 @@ module Recipes
 				output: 1,
 				recipe: ["Purpur Slab",nil,nil,"Purpur Slab",nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1769,6 +2177,10 @@ module Recipes
 				output: 4,
 				recipe: ["Purpur Block","Purpur Block","Purpur Block",nil,"Purpur Block","Purpur Block",nil,nil,"Purpur Block"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1780,6 +2192,10 @@ module Recipes
 				output: 6,
 				recipe: ["Purpur Block","Purpur Block","Purpur Block",nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1791,6 +2207,10 @@ module Recipes
 				output: 4,
 				recipe: ["End Stone","End Stone",nil,"End Stone","End Stone",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1802,6 +2222,10 @@ module Recipes
 				output: 1,
 				recipe: ["Magma Cream","Magma Cream",nil,"Magma Cream","Magma Cream",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1813,6 +2237,10 @@ module Recipes
 				output: 1,
 				recipe: ["Nether Wart","Nether Wart","Nether Wart","Nether Wart","Nether Wart","Nether Wart","Nether Wart","Nether Wart","Nether Wart"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1824,6 +2252,10 @@ module Recipes
 				output: 1,
 				recipe: ["Nether Brick","Nether Wart",nil,"Nether Wart","Nether Brick",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1835,6 +2267,10 @@ module Recipes
 				output: 1,
 				recipe: ["Bone Meal","Bone Meal","Bone Meal","Bone Meal","Bone Meal","Bone Meal","Bone Meal","Bone Meal","Bone Meal"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1846,6 +2282,10 @@ module Recipes
 				output:1, 
 				recipe:["Cobblestone","Cobblestone","Cobblestone","Redstone","Redstone","Nether Quartz","Cobblestone","Cobblestone","Cobblestone"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1857,6 +2297,10 @@ module Recipes
 				output:1, 
 				recipe:["Purple Shulker Box","Bone Meal", nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1868,6 +2312,10 @@ module Recipes
 				output:1, 
 				recipe:["Purple Shulker Box","Orange Dye", nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1879,6 +2327,10 @@ module Recipes
 				output:1, 
 				recipe:["Purple Shulker Box","Magenta Dye", nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1890,6 +2342,10 @@ module Recipes
 				output:1, 
 				recipe:["Purple Shulker Box","Light Blue Dye", nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1901,6 +2357,10 @@ module Recipes
 				output:1, 
 				recipe:["Purple Shulker Box","Dandelion Yellow", nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1912,6 +2372,10 @@ module Recipes
 				output:1, 
 				recipe:["Purple Shulker Box","Lime Dye", nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1923,6 +2387,10 @@ module Recipes
 				output:1, 
 				recipe:["Purple Shulker Box","Pink Dye", nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1934,6 +2402,10 @@ module Recipes
 				output:1, 
 				recipe:["Purple Shulker Box","Gray Dye", nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1945,6 +2417,10 @@ module Recipes
 				output:1, 
 				recipe:["Purple Shulker Box","Light Gray Dye", nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1956,6 +2432,10 @@ module Recipes
 				output:1, 
 				recipe:["Purple Shulker Box","Cyan Dye", nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1967,6 +2447,10 @@ module Recipes
 				output:1, 
 				recipe:[nil,"Shulker Shell",nil, nil,"Chest",nil,nil,"Shulker Shell",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1978,6 +2462,10 @@ module Recipes
 				output:1, 
 				recipe:["Purple Shulker Box","Lapis Lazuli", nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -1989,6 +2477,10 @@ module Recipes
 				output:1, 
 				recipe:["Purple Shulker Box","Cocoa Beans", nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2000,6 +2492,10 @@ module Recipes
 				output:1, 
 				recipe:["Purple Shulker Box","Cactus Green", nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2011,6 +2507,10 @@ module Recipes
 				output:1, 
 				recipe:["Purple Shulker Box","Rose Red", nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2022,6 +2522,10 @@ module Recipes
 				output:1, 
 				recipe:["Purple Shulker Box","Ink Sac", nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2029,10 +2533,8 @@ module Recipes
 		minecraft_names: ["minecraft:sapling:oak"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2040,10 +2542,8 @@ module Recipes
 		minecraft_names: ["minecraft:sapling:spruce"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2051,10 +2551,8 @@ module Recipes
 		minecraft_names: ["minecraft:sapling:birch"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2062,10 +2560,8 @@ module Recipes
 		minecraft_names: ["minecraft:sapling:jungle"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2073,10 +2569,8 @@ module Recipes
 		minecraft_names: ["minecraft:sapling:acacia"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2084,10 +2578,8 @@ module Recipes
 		minecraft_names: ["minecraft:sapling:dark_oak"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2095,10 +2587,8 @@ module Recipes
 		minecraft_names: ["minecraft:leaves:oak"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2106,10 +2596,8 @@ module Recipes
 		minecraft_names: ["minecraft:leaves:spruce"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2117,10 +2605,8 @@ module Recipes
 		minecraft_names: ["minecraft:leaves:birch"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2128,10 +2614,8 @@ module Recipes
 		minecraft_names: ["minecraft:leaves:jungle"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2139,10 +2623,8 @@ module Recipes
 		minecraft_names: ["minecraft:web"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2150,10 +2632,8 @@ module Recipes
 		minecraft_names: ["minecraft:tallgrass:tall_grass"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2161,10 +2641,8 @@ module Recipes
 		minecraft_names: ["minecraft:tallgrass:fern"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2172,10 +2650,8 @@ module Recipes
 		minecraft_names: ["minecraft:deadbush"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2183,10 +2659,8 @@ module Recipes
 		minecraft_names: ["minecraft:yellow_flower:dandelion"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2194,10 +2668,8 @@ module Recipes
 		minecraft_names: ["minecraft:red_flower:poppy"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2205,10 +2677,8 @@ module Recipes
 		minecraft_names: ["minecraft:red_flower:blue_orchid"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2216,10 +2686,8 @@ module Recipes
 		minecraft_names: ["minecraft:red_flower:allium"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2227,10 +2695,8 @@ module Recipes
 		minecraft_names: ["minecraft:red_flower:houstonia"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2238,10 +2704,8 @@ module Recipes
 		minecraft_names: ["minecraft:red_flower:red_tulip"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2249,10 +2713,8 @@ module Recipes
 		minecraft_names: ["minecraft:red_flower:orange_tulip"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2260,10 +2722,8 @@ module Recipes
 		minecraft_names: ["minecraft:red_flower:white_tulip"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2271,10 +2731,8 @@ module Recipes
 		minecraft_names: ["minecraft:red_flower:pink_tulip"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2282,10 +2740,8 @@ module Recipes
 		minecraft_names: ["minecraft:red_flower:oxeye_daisy"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2293,10 +2749,8 @@ module Recipes
 		minecraft_names: ["minecraft:brown_mushroom"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2304,10 +2758,8 @@ module Recipes
 		minecraft_names: ["minecraft:red_mushroom"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2319,6 +2771,10 @@ module Recipes
 				output: 4,
 				recipe: [nil,"Stick",nil,nil,"Charcoal",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2330,6 +2786,10 @@ module Recipes
 				output: 1,
 				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Oak Wood Planks",nil,"Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Oak Wood Planks"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2341,6 +2801,10 @@ module Recipes
 				output: 1,
 				recipe: ["Oak Wood Planks","Oak Wood Planks",nil,"Oak Wood Planks","Oak Wood Planks",nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2352,6 +2816,10 @@ module Recipes
 				output: 1,
 				recipe: ["Cobblestone","Cobblestone","Cobblestone","Cobblestone",nil,"Cobblestone","Cobblestone","Cobblestone","Cobblestone"],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2363,6 +2831,10 @@ module Recipes
 				output: 3,
 				recipe: ["Stick",nil,"Stick","Stick","Stick","Stick","Stick",nil,"Stick"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2374,6 +2846,10 @@ module Recipes
 				output: 1,
 				recipe: ["Snowball","Snowball",nil,"Snowball","Snowball",nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2381,10 +2857,8 @@ module Recipes
 		minecraft_names: ["minecraft:cactus"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2396,6 +2870,10 @@ module Recipes
 				output: 1,
 				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Diamond","Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Oak Wood Planks"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2407,6 +2885,10 @@ module Recipes
 				output: 3,
 				recipe: ["Oak Wood Planks","Stick","Oak Wood Planks","Oak Wood Planks","Stick","Oak Wood Planks",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2414,10 +2896,8 @@ module Recipes
 		minecraft_names: ["minecraft:monster_egg:stone"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2425,10 +2905,8 @@ module Recipes
 		minecraft_names: ["minecraft:monster_egg:cobblestone"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2436,10 +2914,8 @@ module Recipes
 		minecraft_names: ["minecraft:monster_egg:stone_brick"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2447,10 +2923,8 @@ module Recipes
 		minecraft_names: ["minecraft:monster_egg:mossy_brick"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2458,10 +2932,8 @@ module Recipes
 		minecraft_names: ["minecraft:monster_egg:cracked_brick"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2469,10 +2941,8 @@ module Recipes
 		minecraft_names: ["minecraft:monster_egg:chiseled_brick"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2484,6 +2954,10 @@ module Recipes
 				output: 16,
 				recipe: ["Iron Ingot","Iron Ingot","Iron Ingot","Iron Ingot","Iron Ingot","Iron Ingot",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2495,6 +2969,10 @@ module Recipes
 				output: 16,
 				recipe: ["Glass","Glass","Glass","Glass","Glass","Glass",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2502,10 +2980,8 @@ module Recipes
 		minecraft_names: ["minecraft:vine"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2513,10 +2989,8 @@ module Recipes
 		minecraft_names: ["minecraft:waterlily"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2528,6 +3002,10 @@ module Recipes
 				output: 6,
 				recipe: ["Nether Brick","Nether Brick","Nether Brick","Nether Brick","Nether Brick","Nether Brick",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2539,6 +3017,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Book",nil,"Diamond","Obsidian","Diamond","Obsidian","Obsidian","Obsidian"],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2546,10 +3028,8 @@ module Recipes
 		minecraft_names: ["minecraft:end_portal_frame"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2561,6 +3041,10 @@ module Recipes
 				output: 1,
 				recipe: ["Obsidian","Obsidian","Obsidian","Obsidian","Eye of Ender","Obsidian","Obsidian","Obsidian","Obsidian"],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2572,6 +3056,10 @@ module Recipes
 				output: 1,
 				recipe: ["Block of Iron","Block of Iron","Block of Iron",nil,"Iron Ingot",nil,"Iron Ingot","Iron Ingot","Iron Ingot"],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2583,6 +3071,10 @@ module Recipes
 				output: 16,
 				recipe: ["White Stained Glass","White Stained Glass","White Stained Glass","White Stained Glass","White Stained Glass","White Stained Glass",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2594,6 +3086,10 @@ module Recipes
 				output: 16,
 				recipe: ["Orange Stained Glass","Orange Stained Glass","Orange Stained Glass","Orange Stained Glass","Orange Stained Glass","Orange Stained Glass",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2605,6 +3101,10 @@ module Recipes
 				output: 16,
 				recipe: ["Magenta Stained Glass","Magenta Stained Glass","Magenta Stained Glass","Magenta Stained Glass","Magenta Stained Glass","Magenta Stained Glass",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2616,6 +3116,10 @@ module Recipes
 				output: 16,
 				recipe: ["Light Blue Stained Glass","Light Blue Stained Glass","Light Blue Stained Glass","Light Blue Stained Glass","Light Blue Stained Glass","Light Blue Stained Glass",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2627,6 +3131,10 @@ module Recipes
 				output: 16,
 				recipe: ["Yellow Stained Glass","Yellow Stained Glass","Yellow Stained Glass","Yellow Stained Glass","Yellow Stained Glass","Yellow Stained Glass",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2638,6 +3146,10 @@ module Recipes
 				output: 16,
 				recipe: ["Lime Stained Glass","Lime Stained Glass","Lime Stained Glass","Lime Stained Glass","Lime Stained Glass","Lime Stained Glass",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2649,6 +3161,10 @@ module Recipes
 				output: 16,
 				recipe: ["Pink Stained Glass","Pink Stained Glass","Pink Stained Glass","Pink Stained Glass","Pink Stained Glass","Pink Stained Glass",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2660,6 +3176,10 @@ module Recipes
 				output: 16,
 				recipe: ["Gray Stained Glass","Gray Stained Glass","Gray Stained Glass","Gray Stained Glass","Gray Stained Glass","Gray Stained Glass",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2671,6 +3191,10 @@ module Recipes
 				output: 16,
 				recipe: ["Light Gray Stained Glass","Light Gray Stained Glass","Light Gray Stained Glass","Light Gray Stained Glass","Light Gray Stained Glass","Light Gray Stained Glass",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2693,6 +3217,10 @@ module Recipes
 				output: 16,
 				recipe: ["Purple Stained Glass","Purple Stained Glass","Purple Stained Glass","Purple Stained Glass","Purple Stained Glass","Purple Stained Glass",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2704,6 +3232,10 @@ module Recipes
 				output: 16,
 				recipe: ["Blue Stained Glass","Blue Stained Glass","Blue Stained Glass","Blue Stained Glass","Blue Stained Glass","Blue Stained Glass",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2715,6 +3247,10 @@ module Recipes
 				output: 16,
 				recipe: ["Brown Stained Glass","Brown Stained Glass","Brown Stained Glass","Brown Stained Glass","Brown Stained Glass","Brown Stained Glass",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2726,6 +3262,10 @@ module Recipes
 				output: 16,
 				recipe: ["Green Stained Glass","Green Stained Glass","Green Stained Glass","Green Stained Glass","Green Stained Glass","Green Stained Glass",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2737,6 +3277,10 @@ module Recipes
 				output: 16,
 				recipe: ["Red Stained Glass","Red Stained Glass","Red Stained Glass","Red Stained Glass","Red Stained Glass","Red Stained Glass",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2748,6 +3292,10 @@ module Recipes
 				output: 16,
 				recipe: ["Black Stained Glass","Black Stained Glass","Black Stained Glass","Black Stained Glass","Black Stained Glass","Black Stained Glass",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2755,10 +3303,8 @@ module Recipes
 		minecraft_names: ["minecraft:leaves2:acacia"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2766,10 +3312,8 @@ module Recipes
 		minecraft_names: ["minecraft:leaves2:dark_oak"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2781,6 +3325,10 @@ module Recipes
 				output: 1,
 				recipe: ["Slimeball","Slimeball","Slimeball","Slimeball","Slimeball","Slimeball","Slimeball","Slimeball","Slimeball"],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2792,6 +3340,10 @@ module Recipes
 				output: 3,
 				recipe: ["Wool","Wool",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2803,6 +3355,10 @@ module Recipes
 				output: 3,
 				recipe: ["Orange Wool","Orange Wool",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2814,6 +3370,10 @@ module Recipes
 				output: 3,
 				recipe: ["Magenta Wool","Magenta Wool",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2825,6 +3385,10 @@ module Recipes
 				output: 3,
 				recipe: ["Light Blue Wool","Light Blue Wool",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2836,6 +3400,10 @@ module Recipes
 				output: 3,
 				recipe: ["Yellow Wool","Yellow Wool",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2847,6 +3415,10 @@ module Recipes
 				output: 3,
 				recipe: ["Lime Wool","Lime Wool",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2858,6 +3430,10 @@ module Recipes
 				output: 3,
 				recipe: ["Pink Wool","Pink Wool",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2869,6 +3445,10 @@ module Recipes
 				output: 3,
 				recipe: ["Gray Wool","Gray Wool",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2880,6 +3460,10 @@ module Recipes
 				output: 3,
 				recipe: ["Light Gray Wool","Light Gray Wool",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2891,6 +3475,10 @@ module Recipes
 				output: 3,
 				recipe: ["Cyan Wool","Cyan Wool",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2902,6 +3490,10 @@ module Recipes
 				output: 3,
 				recipe: ["Purple Wool","Purple Wool",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2913,6 +3505,10 @@ module Recipes
 				output: 3,
 				recipe: ["Blue Wool","Blue Wool",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2924,6 +3520,10 @@ module Recipes
 				output: 3,
 				recipe: ["Brown Wool","Brown Wool",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2935,6 +3535,10 @@ module Recipes
 				output: 3,
 				recipe: ["Green Wool","Green Wool",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2946,6 +3550,10 @@ module Recipes
 				output: 3,
 				recipe: ["Red Wool","Red Wool",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2957,6 +3565,10 @@ module Recipes
 				output: 3,
 				recipe: ["Black Wool","Black Wool",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2964,10 +3576,8 @@ module Recipes
 		minecraft_names: ["minecraft:double_plant:sunflower"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2975,10 +3585,8 @@ module Recipes
 		minecraft_names: ["minecraft:double_plant:syringa"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2986,10 +3594,8 @@ module Recipes
 		minecraft_names: ["minecraft:double_plant:double_grass"], 
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -2997,10 +3603,8 @@ module Recipes
 		minecraft_names: ["minecraft:double_plant:double_fern"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3008,10 +3612,8 @@ module Recipes
 		minecraft_names: ["minecraft:double_plant:double_rose"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3019,10 +3621,8 @@ module Recipes
 		minecraft_names: ["minecraft:double_plant:paeonia"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3034,6 +3634,10 @@ module Recipes
 				output: 3,
 				recipe: ["Spruce Wood Planks","Stick","Spruce Wood Planks","Spruce Wood Planks","Stick","Spruce Wood Planks",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3045,6 +3649,10 @@ module Recipes
 				output: 3,
 				recipe: ["Birch Wood Planks","Stick","Birch Wood Planks","Birch Wood Planks","Stick","Birch Wood Planks",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3056,6 +3664,10 @@ module Recipes
 				output: 3,
 				recipe: ["Jungle Wood Planks","Stick","Jungle Wood Planks","Jungle Wood Planks","Stick","Jungle Wood Planks",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3067,6 +3679,10 @@ module Recipes
 				output: 3,
 				recipe: ["Dark Oak Wood Planks","Stick","Dark Oak Wood Planks","Dark Oak Wood Planks","Stick","Dark Oak Wood Planks",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3078,6 +3694,10 @@ module Recipes
 				output: 3,
 				recipe: ["Acacia Wood Planks","Stick","Acacia Wood Planks","Acacia Wood Planks","Stick","Acacia Wood Planks",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3089,6 +3709,10 @@ module Recipes
 				output: 4,
 				recipe: ["Blaze Rod","Popped Chorus Fruit",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3096,10 +3720,8 @@ module Recipes
 		minecraft_names: ["minecraft:chorus_plant"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3107,10 +3729,8 @@ module Recipes
 		minecraft_names: ["minecraft:chorus_flower"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3122,6 +3742,10 @@ module Recipes
 				output: 1,
 				recipe: ["Stick","Stick","Stick","Stick","Wool","Stick","Stick","Stick","Stick"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3133,6 +3757,10 @@ module Recipes
 				output: 3,
 				recipe: [nil,"Stick",nil,"Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Oak Wood Planks"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3144,6 +3772,10 @@ module Recipes
 				output: 1,
 				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Wool","Wool","Wool",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3155,6 +3787,10 @@ module Recipes
 				output: 1,
 				recipe: ["Stick","Stick","Stick","Stick","Leather","Stick","Stick","Stick","Stick"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3166,6 +3802,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Brick",nil,"Brick",nil,"Brick",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3173,10 +3813,8 @@ module Recipes
 		minecraft_names: ["minecraft:skull:SkeletonSkull"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3184,10 +3822,8 @@ module Recipes
 		minecraft_names: ["minecraft:skull:WitherSkeletonSkull"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3195,10 +3831,8 @@ module Recipes
 		minecraft_names: ["minecraft:skull:ZombieSkull"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3206,10 +3840,8 @@ module Recipes
 		minecraft_names: ["minecraft:skull:PlayerSkull"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3217,10 +3849,8 @@ module Recipes
 		minecraft_names: ["minecraft:skull:CreeperSkull"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3228,10 +3858,8 @@ module Recipes
 		minecraft_names: ["minecraft:skull:EnderDragonSkull"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3243,6 +3871,10 @@ module Recipes
 				output: 1,
 				recipe: ["Stick","Stone Slab","Stick",nil,"Stick",nil,"Stick","Stick","Stick"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3254,6 +3886,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,"Wool","Wool","Wool","Wool","Wool","Wool"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3265,6 +3901,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,nil,nil,"Orange Wool","Orange Wool","Orange Wool","Orange Wool","Orange Wool","Orange Wool"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3276,6 +3916,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,nil,nil,"Magenta Wool","Magenta Wool","Magenta Wool","Magenta Wool","Magenta Wool","Magenta Wool"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3287,6 +3931,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,nil,nil,"Light Blue Wool","Light Blue Wool","Light Blue Wool","Light Blue Wool","Light Blue Wool","Light Blue Wool"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3298,6 +3946,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,nil,nil,"Yellow Wool","Yellow Wool","Yellow Wool","Yellow Wool","Yellow Wool","Yellow Wool"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3309,6 +3961,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,nil,nil,"Lime Wool","Lime Wool","Lime Wool","Lime Wool","Lime Wool","Lime Wool"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3320,6 +3976,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,nil,nil,"Pink Wool","Pink Wool","Pink Wool","Pink Wool","Pink Wool","Pink Wool"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3331,6 +3991,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,nil,nil,"Gray Wool","Gray Wool","Gray Wool","Gray Wool","Gray Wool","Gray Wool"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3342,6 +4006,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,nil,nil,"Light Gray Wool","Light Gray Wool","Light Gray Wool","Light Gray Wool","Light Gray Wool","Light Gray Wool"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3353,6 +4021,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,nil,nil,"Cyan Wool","Cyan Wool","Cyan Wool","Cyan Wool","Cyan Wool","Cyan Wool"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3364,6 +4036,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,nil,nil,"Purple Wool","Purple Wool","Purple Wool","Purple Wool","Purple Wool","Purple Wool"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3375,6 +4051,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,nil,nil,"Blue Wool","Blue Wool","Blue Wool","Blue Wool","Blue Wool","Blue Wool"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3386,6 +4066,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,nil,nil,"Brown Wool","Brown Wool","Brown Wool","Brown Wool","Brown Wool","Brown Wool"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3397,6 +4081,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,nil,nil,"Green Wool","Green Wool","Green Wool","Green Wool","Green Wool","Green Wool"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3408,6 +4096,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,nil,nil,"Red Wool","Red Wool","Red Wool","Red Wool","Red Wool","Red Wool"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3419,6 +4111,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,nil,nil,"Black Wool","Black Wool","Black Wool","Black Wool","Black Wool","Black Wool"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3430,6 +4126,10 @@ module Recipes
 				output: 1,
 				recipe: ["Glass","Ghast Tear","Glass","Glass","Eye of Ender","Glass","Glass","Glass","Glass"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3441,6 +4141,10 @@ module Recipes
 				output: 1,
 				recipe: ["Cobblestone","Redstone","Cobblestone","Cobblestone","Bow","Cobblestone","Cobblestone","Cobblestone","Cobblestone"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3452,6 +4156,10 @@ module Recipes
 				output: 1,
 				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Redstone","Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Oak Wood Planks"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3463,6 +4171,10 @@ module Recipes
 				output: 1,
 				recipe: ["Piston",nil,nil,"Slimeball",nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3474,6 +4186,10 @@ module Recipes
 				output: 1,
 				recipe: ["Cobblestone","Redstone","Cobblestone","Cobblestone","Iron Ingot","Cobblestone","Oak Wood Planks","Oak Wood Planks","Oak Wood Planks"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource",
 			}
 		],
 	},{
@@ -3485,6 +4201,10 @@ module Recipes
 				output: 1,
 				recipe: ["Gunpowder","Sand","Gunpowder","Sand","Gunpowder","Sand","Gunpowder","Sand","Gunpowder"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3496,6 +4216,10 @@ module Recipes
 				output: 1,
 				recipe: ["Cobblestone",nil,nil,"Stick",nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3507,6 +4231,10 @@ module Recipes
 				output: 1,
 				recipe: ["Stone","Stone",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3518,6 +4246,10 @@ module Recipes
 				output: 1,
 				recipe: ["Oak Wood Planks","Oak Wood Planks",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3529,6 +4261,10 @@ module Recipes
 				output: 1,
 				recipe: ["Stick",nil,nil,"Redstone",nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3540,6 +4276,10 @@ module Recipes
 				output: 1,
 				recipe: ["Stone",nil,nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3551,6 +4291,10 @@ module Recipes
 				output: 2,
 				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Oak Wood Planks",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3562,6 +4306,10 @@ module Recipes
 				output: 1,
 				recipe: ["Stick","Oak Wood Planks","Stick","Stick","Oak Wood Planks","Stick",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3573,6 +4321,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Redstone",nil,"Redstone","Glowstone","Redstone",nil,"Redstone",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3584,6 +4336,10 @@ module Recipes
 				output: 2,
 				recipe: [nil,"Oak Wood Planks",nil,nil,"Stick",nil,nil,"Iron Ingot",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3595,6 +4351,10 @@ module Recipes
 				output: 1,
 				recipe: ["Oak Wood Planks",nil,nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3606,6 +4366,14 @@ module Recipes
 				output: 1,
 				recipe: ["Chest","Tripwire Hook",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3617,6 +4385,10 @@ module Recipes
 				output: 1,
 				recipe: ["Gold Ingot","Gold Ingot",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3628,6 +4400,10 @@ module Recipes
 				output: 1,
 				recipe: ["Iron Ingot","Iron Ingot",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3639,6 +4415,10 @@ module Recipes
 				output: 1,
 				recipe: ["Oak Wood Slab","Oak Wood Slab","Oak Wood Slab","Nether Quartz","Nether Quartz","Nether Quartz","Glass","Glass","Glass"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3650,6 +4430,10 @@ module Recipes
 				output: 1,
 				recipe: ["Redstone","Redstone","Redstone","Redstone","Redstone","Redstone","Redstone","Redstone","Redstone"],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3661,6 +4445,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Iron Ingot",nil,"Iron Ingot","Chest","Iron Ingot","Iron Ingot",nil,"Iron Ingot"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3672,6 +4460,10 @@ module Recipes
 				output: 1,
 				recipe: ["Cobblestone","Redstone","Cobblestone","Cobblestone",nil,"Cobblestone","Cobblestone","Cobblestone","Cobblestone"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3683,6 +4475,10 @@ module Recipes
 				output: 1,
 				recipe: ["Iron Ingot","Iron Ingot",nil,"Iron Ingot","Iron Ingot",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3694,6 +4490,10 @@ module Recipes
 				output: 1,
 				recipe: ["Stick","Spruce Wood Planks","Stick","Stick","Spruce Wood Planks","Stick",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3705,6 +4505,10 @@ module Recipes
 				output: 1,
 				recipe: ["Stick","Birch Wood Planks","Stick","Stick","Birch Wood Planks","Stick",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3716,6 +4520,10 @@ module Recipes
 				output: 1,
 				recipe: ["Stick","Jungle Wood Planks","Stick","Stick","Jungle Wood Planks","Stick",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3727,6 +4535,10 @@ module Recipes
 				output: 1,
 				recipe: ["Stick","Dark Oak Wood Planks","Stick","Stick","Dark Oak Wood Planks","Stick",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3738,6 +4550,10 @@ module Recipes
 				output: 1,
 				recipe: ["Stick","Acacia Wood Planks","Stick","Stick","Acacia Wood Planks","Stick",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3749,6 +4565,10 @@ module Recipes
 				output: 3,
 				recipe: ["Oak Wood Planks","Oak Wood Planks",nil,"Oak Wood Planks","Oak Wood Planks",nil,"Oak Wood Planks","Oak Wood Planks",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3760,6 +4580,10 @@ module Recipes
 				output: 3,
 				recipe: ["Iron Ingot","Iron Ingot",nil,"Iron Ingot","Iron Ingot",nil,"Iron Ingot","Iron Ingot",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3767,10 +4591,8 @@ module Recipes
 		minecraft_names: ["minecraft:redstone_wire"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3782,6 +4604,10 @@ module Recipes
 				output: 1,
 				recipe: ["Stone","Stone","Stone","Redstone Torch","Redstone","Redstone Torch",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3793,6 +4619,10 @@ module Recipes
 				output: 1,
 				recipe: ["Stone","Stone","Stone","Redstone Torch","Nether Quartz","Redstone Torch",nil,"Redstone Torch",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3804,6 +4634,10 @@ module Recipes
 				output: 3,
 				recipe: ["Spruce Wood Planks","Spruce Wood Planks",nil,"Spruce Wood Planks","Spruce Wood Planks",nil,"Spruce Wood Planks","Spruce Wood Planks",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3815,6 +4649,10 @@ module Recipes
 				output: 3,
 				recipe: ["Birch Wood Planks","Birch Wood Planks",nil,"Birch Wood Planks","Birch Wood Planks",nil,"Birch Wood Planks","Birch Wood Planks",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3826,6 +4664,10 @@ module Recipes
 				output: 3,
 				recipe: ["Jungle Wood Planks","Jungle Wood Planks",nil,"Jungle Wood Planks","Jungle Wood Planks",nil,"Jungle Wood Planks","Jungle Wood Planks",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3837,6 +4679,10 @@ module Recipes
 				output: 3,
 				recipe: ["Acacia Wood Planks","Acacia Wood Planks",nil,"Acacia Wood Planks","Acacia Wood Planks",nil,"Acacia Wood Planks","Acacia Wood Planks",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3848,6 +4694,10 @@ module Recipes
 				output: 3,
 				recipe: ["Dark Oak Wood Planks","Dark Oak Wood Planks",nil,"Dark Oak Wood Planks","Dark Oak Wood Planks",nil,"Dark Oak Wood Planks","Dark Oak Wood Planks",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3859,6 +4709,10 @@ module Recipes
 				output: 6,
 				recipe: ["Gold Ingot","Redstone","Gold Ingot","Gold Ingot","Stick","Gold Ingot","Gold Ingot",nil,"Gold Ingot"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3870,6 +4724,10 @@ module Recipes
 				output: 6,
 				recipe: ["Iron Ingot","Redstone","Iron Ingot","Iron Ingot","Stone Pressure Plate","Iron Ingot","Iron Ingot",nil,"Iron Ingot"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3881,6 +4739,10 @@ module Recipes
 				output: 16,
 				recipe: ["Iron Ingot",nil,"Iron Ingot","Iron Ingot","Stick","Iron Ingot","Iron Ingot",nil,"Iron Ingot"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3892,6 +4754,10 @@ module Recipes
 				output: 6,
 				recipe: ["Iron Ingot","Stick","Iron Ingot","Iron Ingot","Redstone Torch","Iron Ingot","Iron Ingot","Stick","Iron Ingot"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3903,6 +4769,10 @@ module Recipes
 				output: 1,
 				recipe: ["Iron Ingot","Iron Ingot","Iron Ingot","Iron Ingot",nil,"Iron Ingot",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3910,10 +4780,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3925,6 +4793,10 @@ module Recipes
 				output: 1,
 				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Oak Wood Planks",nil,"Oak Wood Planks",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3936,6 +4808,10 @@ module Recipes
 				output: 1,
 				recipe: ["Minecart",nil,nil,"Chest",nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3947,6 +4823,10 @@ module Recipes
 				output: 1,
 				recipe: ["Minecart",nil,nil,"Furnace",nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3958,6 +4838,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Carrot",nil,"Fishing Rod",nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3969,6 +4853,10 @@ module Recipes
 				output: 1,
 				recipe: ["Minecart",nil,nil,"TNT",nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3980,6 +4868,10 @@ module Recipes
 				output: 1,
 				recipe: ["Minecart",nil,nil,"Hopper",nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -3987,10 +4879,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4002,6 +4892,10 @@ module Recipes
 				output: 1,
 				recipe: ["Spruce Wood Planks","Spruce Wood Planks","Spruce Wood Planks","Spruce Wood Planks",nil,"Spruce Wood Planks",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4013,6 +4907,10 @@ module Recipes
 				output: 1,
 				recipe: ["Birch Wood Planks","Birch Wood Planks","Birch Wood Planks","Birch Wood Planks",nil,"Birch Wood Planks",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4024,6 +4922,10 @@ module Recipes
 				output: 1,
 				recipe: ["Jungle Wood Planks","Jungle Wood Planks","Jungle Wood Planks","Jungle Wood Planks",nil,"Jungle Wood Planks",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4035,6 +4937,10 @@ module Recipes
 				output: 1,
 				recipe: ["Acacia Wood Planks","Acacia Wood Planks","Acacia Wood Planks","Acacia Wood Planks",nil,"Acacia Wood Planks",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4046,6 +4952,10 @@ module Recipes
 				output: 1,
 				recipe: ["Dark Oak Wood Planks","Dark Oak Wood Planks","Dark Oak Wood Planks","Dark Oak Wood Planks",nil,"Dark Oak Wood Planks",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4053,10 +4963,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4064,10 +4972,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4079,6 +4985,10 @@ module Recipes
 				output: 1,
 				recipe: ["Obsidian","Obsidian","Obsidian","Glass","Nether Star","Glass","Glass","Glass","Glass"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4090,6 +5000,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Iron Ingot",nil,"Iron Ingot",nil,"Iron Ingot",nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4097,10 +5011,8 @@ module Recipes
 		minecraft_names: ["minecraft:water"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4108,10 +5020,8 @@ module Recipes
 		minecraft_names: ["minecraft:lava"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4119,10 +5029,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4130,10 +5038,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4145,6 +5051,10 @@ module Recipes
 				output: 3,
 				recipe: ["Sugar Canes","Sugar Canes","Sugar Canes",nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4156,6 +5066,10 @@ module Recipes
 				output: 1,
 				recipe: ["Paper","Leather","Paper","Paper",nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4163,10 +5077,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 0
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4174,10 +5086,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4185,10 +5095,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4200,6 +5108,10 @@ module Recipes
 				output: 1,
 				recipe: ["Blaze Powder","Ender Pearl",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4211,6 +5123,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Gunpowder",nil,"Blaze Powder","Charcoal",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4222,6 +5138,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Feather",nil,"Book","Ink Sac",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4233,6 +5153,10 @@ module Recipes
 				output: 1,
 				recipe: ["Paper","Paper","Paper","Paper","Compass","Paper","Paper","Paper","Paper"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4240,10 +5164,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4251,10 +5173,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4262,10 +5182,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4273,10 +5191,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4284,10 +5200,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4299,6 +5213,10 @@ module Recipes
 				output: 1,
 				recipe: ["Red Mushroom","Brown Mushroom","Bowl",nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4310,6 +5228,10 @@ module Recipes
 				output: 1,
 				recipe: ["Wheat","Wheat","Wheat",nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4317,10 +5239,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4328,10 +5248,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4343,6 +5261,10 @@ module Recipes
 				output: 1,
 				recipe: ["Gold Ingot","Gold Ingot","Gold Ingot","Gold Ingot","Apple","Gold Ingot","Gold Ingot","Gold Ingot","Gold Ingot"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4350,10 +5272,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4361,10 +5281,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4372,10 +5290,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4383,10 +5299,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4394,10 +5308,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4405,10 +5317,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4416,10 +5326,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4431,6 +5339,10 @@ module Recipes
 				output: 1,
 				recipe: ["Wheat","Wheat","Wheat","Sugar","Egg","Sugar","Milk","Milk","Milk"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4442,6 +5354,10 @@ module Recipes
 				output: 1,
 				recipe: ["Wheat","Cocoa Beans","Wheat",nil,nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4449,10 +5365,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4460,10 +5374,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4471,10 +5383,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4482,10 +5392,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4493,10 +5401,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4504,10 +5410,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4515,10 +5419,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4526,10 +5428,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4537,10 +5437,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4548,10 +5446,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4559,10 +5455,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4574,6 +5468,10 @@ module Recipes
 				output: 1,
 				recipe: ["Pumpkin","Sugar","Egg",nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4581,10 +5479,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4592,10 +5488,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4607,6 +5501,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Bowl",nil,"Carrot","Baked Potato","Brown Mushroom",nil,"Cooked Rabbit",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4614,10 +5512,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4625,10 +5521,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4636,10 +5530,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4651,6 +5543,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Bowl",nil,"Beetroot","Beetroot","Beetroot","Beetroot","Beetroot","Beetroot"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4662,6 +5558,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Stick",nil,nil,"Iron Ingot",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4673,6 +5573,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Stick",nil,"Iron Ingot","Iron Ingot","Iron Ingot"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4684,6 +5588,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Stick","Iron Ingot",nil,"Iron Ingot","Iron Ingot"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4695,6 +5603,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Flint",nil,"Iron Ingot",nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4706,6 +5618,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Stick",nil,nil,"Oak Wood Planks",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4717,6 +5633,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Stick",nil,"Oak Wood Planks","Oak Wood Planks","Oak Wood Planks"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4728,6 +5648,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Stick","Oak Wood Planks",nil,"Oak Wood Planks","Oak Wood Planks"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4739,6 +5663,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Stick",nil,nil,"Cobblestone",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4750,6 +5678,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Stick",nil,"Cobblestone","Cobblestone","Cobblestone"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4761,6 +5693,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Stick","Cobblestone",nil,"Cobblestone","Cobblestone"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4772,6 +5708,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Stick",nil,nil,"Diamond",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4783,6 +5723,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Stick",nil,"Diamond","Diamond","Diamond"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4794,6 +5738,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Stick","Diamond",nil,"Diamond","Diamond"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4805,6 +5753,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Stick",nil,nil,"Gold Ingot",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4816,6 +5768,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Stick",nil,"Gold Ingot","Gold Ingot","Gold Ingot"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4827,6 +5783,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Stick","Gold Ingot",nil,"Gold Ingot","Gold Ingot"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4838,6 +5798,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Stick",nil,nil,"Oak Wood Planks","Oak Wood Planks"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4849,6 +5813,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Stick",nil,nil,"Cobblestone","Cobblestone"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4860,6 +5828,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Stick",nil,nil,"Iron Ingot","Iron Ingot"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4871,6 +5843,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Stick",nil,nil,"Diamond","Diamond"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4882,6 +5858,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Stick",nil,nil,"Gold Ingot","Gold Ingot"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4893,6 +5873,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Iron Ingot",nil,"Iron Ingot","Redstone","Iron Ingot",nil,"Iron Ingot",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4904,6 +5888,10 @@ module Recipes
 				output: 1,
 				recipe: ["Stick",nil,"String",nil,"Stick","String",nil,nil,"Stick"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4915,6 +5903,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Gold Ingot",nil,"Gold Ingot","Redstone","Gold Ingot",nil,"Gold Ingot",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4926,6 +5918,10 @@ module Recipes
 				output: 1,
 				recipe: ["Iron Ingot",nil,nil,"Iron Ingot",nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4937,6 +5933,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,nil,"String","String","Slimeball",nil,"String","String",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4944,10 +5944,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4959,6 +5957,10 @@ module Recipes
 				output: 1,
 				recipe: ["String","Stick",nil,"String",nil,"Stick","String","Stick",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4970,6 +5972,10 @@ module Recipes
 				output: 4,
 				recipe: [nil,"Feather",nil,nil,"Stick",nil,nil,"Flint",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4981,6 +5987,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Iron Ingot",nil,nil,"Iron Ingot",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -4992,6 +6002,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Oak Wood Planks",nil,nil,"Oak Wood Planks",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5003,6 +6017,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Cobblestone",nil,nil,"Cobblestone",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5014,6 +6032,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Diamond",nil,nil,"Diamond",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5025,6 +6047,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Stick",nil,nil,"Gold Ingot",nil,nil,"Gold Ingot",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5036,6 +6062,10 @@ module Recipes
 				output: 1,
 				recipe: ["Leather",nil,"Leather","Leather","Leather","Leather",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5047,6 +6077,10 @@ module Recipes
 				output: 1,
 				recipe: ["Leather","Leather","Leather","Leather","Leather","Leather","Leather",nil,"Leather"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5058,6 +6092,10 @@ module Recipes
 				output: 1,
 				recipe: ["Leather",nil,"Leather","Leather",nil,"Leather","Leather","Leather","Leather"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5069,6 +6107,10 @@ module Recipes
 				output: 1,
 				recipe: ["Leather",nil,"Leather","Leather",nil,"Leather",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5076,10 +6118,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5087,10 +6127,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5098,10 +6136,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5109,10 +6145,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5124,6 +6158,10 @@ module Recipes
 				output: 1,
 				recipe: ["Iron Ingot",nil,"Iron Ingot","Iron Ingot","Iron Ingot","Iron Ingot",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5135,6 +6173,10 @@ module Recipes
 				output: 1,
 				recipe: ["Iron Ingot","Iron Ingot","Iron Ingot","Iron Ingot","Iron Ingot","Iron Ingot","Iron Ingot",nil,"Iron Ingot"],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5146,6 +6188,10 @@ module Recipes
 				output: 1,
 				recipe: ["Iron Ingot",nil,"Iron Ingot","Iron Ingot",nil,"Iron Ingot","Iron Ingot","Iron Ingot","Iron Ingot"],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5157,6 +6203,10 @@ module Recipes
 				output: 1,
 				recipe: ["Iron Ingot",nil,"Iron Ingot","Iron Ingot",nil,"Iron Ingot",nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5168,6 +6218,10 @@ module Recipes
 				output: 1,
 				recipe: ["Diamond",nil,"Diamond","Diamond","Diamond","Diamond",nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5179,6 +6233,10 @@ module Recipes
 				output: 1,
 				recipe: ["Diamond","Diamond","Diamond","Diamond","Diamond","Diamond","Diamond",nil,"Diamond"],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5190,6 +6248,10 @@ module Recipes
 				output: 1,
 				recipe: ["Diamond",nil,"Diamond","Diamond",nil,"Diamond","Diamond","Diamond","Diamond"],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5201,6 +6263,10 @@ module Recipes
 				output: 1,
 				recipe: ["Diamond",nil,"Diamond","Diamond",nil,"Diamond",nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5212,6 +6278,10 @@ module Recipes
 				output: 1,
 				recipe: ["Gold Ingot",nil,"Gold Ingot","Gold Ingot","Gold Ingot","Gold Ingot",nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5223,6 +6293,10 @@ module Recipes
 				output: 1,
 				recipe: ["Gold Ingot","Gold Ingot","Gold Ingot","Gold Ingot","Gold Ingot","Gold Ingot","Gold Ingot",nil,"Gold Ingot"],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5234,6 +6308,10 @@ module Recipes
 				output: 1,
 				recipe: ["Gold Ingot",nil,"Gold Ingot","Gold Ingot",nil,"Gold Ingot","Gold Ingot","Gold Ingot","Gold Ingot"],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5245,6 +6323,10 @@ module Recipes
 				output: 1,
 				recipe: ["Gold Ingot",nil,"Gold Ingot","Gold Ingot",nil,"Gold Ingot",nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5256,6 +6338,10 @@ module Recipes
 				output: 2,
 				recipe: [nil,"Glowstone Dust",nil,"Glowstone Dust","Arrow","Glowstone Dust",nil,"Glowstone Dust",nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5267,6 +6353,10 @@ module Recipes
 				output: 1,
 				recipe: [nil,"Oak Wood Planks",nil,"Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Iron Ingot","Oak Wood Planks"],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5274,10 +6364,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5285,10 +6373,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5300,6 +6386,10 @@ module Recipes
 				output: 3,
 				recipe: [nil,"Glass",nil,"Glass",nil,"Glass",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5311,6 +6401,10 @@ module Recipes
 				output: 1,
 				recipe: ["Brown Mushroom","Sugar","Spider Eye",nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5322,6 +6416,10 @@ module Recipes
 				output: 2,
 				recipe: ["Blaze Rod",nil,nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5333,6 +6431,10 @@ module Recipes
 				output: 1,
 				recipe: ["Blaze Powder","Slimeball",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5344,6 +6446,10 @@ module Recipes
 				output: 1,
 				recipe: ["Cobblestone","Cobblestone","Cobblestone",nil,"Blaze Rod",nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5355,6 +6461,10 @@ module Recipes
 				output: 1,
 				recipe: ["Iron Ingot","Iron Ingot","Iron Ingot","Iron Ingot",nil,"Iron Ingot","Iron Ingot",nil,"Iron Ingot"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5366,6 +6476,10 @@ module Recipes
 				output: 1,
 				recipe: ["Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Melon Slice","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget"],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5377,6 +6491,10 @@ module Recipes
 				output: 1,
 				recipe: ["Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Carrot","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget"],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5384,10 +6502,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5395,10 +6511,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5406,10 +6520,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5417,10 +6529,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5428,10 +6538,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5439,10 +6547,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5454,6 +6560,10 @@ module Recipes
 				output: 1,
 				recipe: ["Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget"],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5465,6 +6575,10 @@ module Recipes
 				output: 4,
 				recipe: ["Oak Wood Planks",nil,nil,"Oak Wood Planks",nil,nil,nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5476,6 +6590,10 @@ module Recipes
 				output: 4,
 				recipe: [nil,"Oak Wood Planks",nil,"Oak Wood Planks",nil,"Oak Wood Planks",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5483,10 +6601,8 @@ module Recipes
 		minecraft_names: ["minecraft:tripwire"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5494,10 +6610,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5505,10 +6619,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5516,10 +6628,8 @@ module Recipes
 		minecraft_names: ["minecraft:wheat"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5527,10 +6637,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5538,10 +6646,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5549,10 +6655,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5560,10 +6664,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5571,10 +6673,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5582,10 +6682,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5593,10 +6691,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5604,10 +6700,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5615,10 +6709,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5630,6 +6722,10 @@ module Recipes
 				output: 1,
 				recipe: ["Poppy",nil,nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5637,10 +6733,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5648,10 +6742,8 @@ module Recipes
 		minecraft_names: ["minecraft:cocoa"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5659,10 +6751,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5674,6 +6764,10 @@ module Recipes
 				output: 2,
 				recipe: ["Lapis Lazuli","Rose Red",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5685,6 +6779,10 @@ module Recipes
 				output: 2,
 				recipe: ["Lapis Lazuli","Cactus Green",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5696,6 +6794,10 @@ module Recipes
 				output: 3,
 				recipe: ["Bone Meal","Bone Meal","Ink Sac",nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5707,6 +6809,10 @@ module Recipes
 				output: 2,
 				recipe: ["Bone Meal","Ink Sac",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5718,6 +6824,10 @@ module Recipes
 				output: 2,
 				recipe: ["Bone Meal","Rose Red",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5729,6 +6839,10 @@ module Recipes
 				output: 2,
 				recipe: ["Cactus Green","Bone Meal",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5740,6 +6854,10 @@ module Recipes
 				output: 1,
 				recipe: ["Dandelion",nil,nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5751,6 +6869,10 @@ module Recipes
 				output: 2,
 				recipe: ["Lapis Lazuli","Bone Meal",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5762,6 +6884,10 @@ module Recipes
 				output: 4,
 				recipe: ["Rose Red","Rose Red","Lapis Lazuli","Bone Meal",nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5773,6 +6899,10 @@ module Recipes
 				output: 2,
 				recipe: ["Dandelion Yellow","Rose Red",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5784,6 +6914,10 @@ module Recipes
 				output: 3,
 				recipe: ["Bone",nil,nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5795,6 +6929,10 @@ module Recipes
 				output: 1,
 				recipe: ["Sugar Canes",nil,nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5806,6 +6944,10 @@ module Recipes
 				output: 4,
 				recipe: ["Pumpkin",nil,nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5817,6 +6959,10 @@ module Recipes
 				output: 1,
 				recipe: ["Melon Slice",nil,nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5835,10 +6981,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5846,10 +6990,8 @@ module Recipes
 		minecraft_names: ["minecraft:nether_wart"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5857,10 +6999,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5868,10 +7008,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5879,10 +7017,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5890,10 +7026,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5901,10 +7035,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5912,10 +7044,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5923,10 +7053,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5934,10 +7062,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -5945,10 +7071,8 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		]
 	},{
@@ -5956,13 +7080,15 @@ module Recipes
 		minecraft_names: ["minecraft:beetroots"],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		]
 	}
+
+	# for item in @minecraft_recipes
+	# 	item[:recipes] << {recipie_type: "raw_resource"}
+	# end
 
 	# a map of property names to weather they should be included in the item lookup
 	@object_properties = {
