@@ -6031,9 +6031,30 @@ module Recipes
 
 	def self.item_list
 		output_list = {}
-		for recipe in @minecraft_recipes
-			name = recipe[:name]
-			recipes = recipe[:recipes]
+		for item in @minecraft_recipes
+			name = item[:name]
+			recipes = item[:recipes]
+
+			for recipe in recipes
+
+
+				required_resources = Hash.new(0)
+
+				if (recipe[:recipe_type] == "crafting")
+					# iterate over the array, counting duplicate entries
+					recipe[:recipe].each do |recipe_item|
+						if (recipe_item != nil)
+							required_resources[recipe_item] -= 1
+						end
+					end
+				elsif (recipe[:recipe_type] == "raw_resource")
+					# Create a dummy value that will show up for recipie selection
+					# but will not effect the overall crafting calculation
+					required_resources[name] = 0
+				end
+				recipe[:requirements] = required_resources
+			end
+
 
 			output_list[name] = recipes
 		end

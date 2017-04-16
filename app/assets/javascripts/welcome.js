@@ -71,11 +71,6 @@
 
 			li.mouseout( function() {
 				$("#hover_name").hide();
-			})
-
-			// Build unformatted recipe requirements for each recipe in the list
-			$.each(recipe_json[i], function(recipe) {
-				recipe_json[i][recipe]['requirements'] = condence_recepie(recipe_json[i][recipe]['recipe']);
 			});
 		});
 
@@ -314,22 +309,6 @@
 
 		function craft_requirements(requirements) {
 			return output_requirements;
-		}
-
-
-		function condence_recepie(recipe) {
-			var hash = {};
-			for (var i = 0; i< recipe.length; i++) {
-
-				if (recipe[i] == null) {
-					continue;
-				}
-				if (hash[recipe[i]] == undefined) {
-					hash[recipe[i]] = 0;
-				}
-				hash[recipe[i]] -= 1;
-			}
-			return hash;
 		}
 
 
