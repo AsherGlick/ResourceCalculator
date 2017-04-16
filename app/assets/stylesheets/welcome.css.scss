@@ -248,6 +248,32 @@ input[type=checkbox]:checked + label.hide_unused_label {
 }
 
 
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+#recipe_select {
+	position: absolute;
+	border: 1px solid #222;	
+	background-color: #EFEFEF;
+	display: none;
+}
+.recipe_selector_title {
+	padding: 4px;
+}
+.recipe_select_item {
+	padding: 4px;
+	// margin: 5px 0;
+	// border: 1px solid #CCC;
+	cursor: pointer;
+	background-color: #C3C3C3;
+	position: relative
+}
+.recipe_select_item:hover {
+	background-color: #3498db;
+}
+.recipe_select_item_name {
+	padding: 8px;
+	float: left;
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -461,4 +487,8 @@ a.internal_link {
 	color: #222;
 	text-decoration: underline;
 	word-wrap: break-word;
+}
+
+.clear {
+	clear: both;
 }

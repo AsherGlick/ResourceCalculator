@@ -628,18 +628,20 @@
 				.attr("transform", function(d) {
 					return "translate(" + d.x + "," + d.y + ")";
 				})
+				.on("dblclick", function(data,index) {
+					switch_recipe(data.name,d3.event);
+				})
 				.call(d3.drag()
 					.subject(function(d) {
 						return d;
 					})
-					.on("start", function() {
+					.on("start", function(d) {
 						this.parentNode.appendChild(this);
 					})
 					.on("drag", dragmove))
-				// .on("click",function() {
-				// 	console.log("click");
-				// 	d3.event.stopPropagation();
-				// })
+
+				// .bind("dblclick", function() {})
+				
 
 
 
@@ -711,9 +713,80 @@
 				link.attr("d", path);
 			}
 
+
+
+
 			$("#chart path[target='extra']").remove();
 			$("#chart g text:contains('extra')").parent().remove();
 		}
+
+
+
+		function switch_recipe(item_name, event) {
+			console.log("switch_recipe")
+
+			var recipe_selector = $("#recipe_select");
+			var recipe_selector_list = $("#recipe_selector_list")
+			recipe_selector_list.empty();
+
+
+			// recipe_name_list = ["Source Material"]
+			// for (var i in  {
+			// 	recipe_name_list.push("Recipe!")
+			// }
+
+			for (var i in recipe_json[item_name]) {
+				recipe_item = $('<div/>');
+				recipe_item.addClass("recipe_select_item");
+				// recipe_item.text(recipe_json[item_name][i]["recipe_type"])
+
+				$('<div/>').addClass('recipe_select_item_name').text(recipe_json[item_name][i]["recipe_type"]).appendTo(recipe_item)
+
+				for (var j in recipe_json[item_name][i]["requirements"]) {
+					// console.log(j)
+					var item = $('<div/>')
+						.addClass('required_item')
+						.addClass('item_' + filenameify(j))
+						.text(-recipe_json[item_name][i]["requirements"][j])
+						.appendTo(recipe_item)
+				}
+
+				$('<div/>').addClass('clear').appendTo(recipe_item)
+
+				recipe_item.appendTo(recipe_selector_list)
+			}
+
+			$("#recipe_select").show();
+			// recipe_selector
+
+			var menu_x_offset = -10;
+			var menu_y_offset = -10
+
+			var left_offset = event.pageX + menu_x_offset
+			var top_offset = event.pageY + menu_y_offset;
+
+			if ($(window).width() < recipe_selector.outerWidth() + event.pageX + menu_x_offset ) {
+				left_offset = event.pageX - menu_x_offset - recipe_selector.outerWidth()
+			}
+
+			console.log(recipe_selector.outerHeight())
+			if ($(window).height() + $(document).scrollTop() < recipe_selector.outerHeight() + event.pageY + menu_y_offset ) {
+				top_offset = event.pageY - menu_y_offset - recipe_selector.outerHeight()
+			}
+
+			recipe_selector.offset ({
+				left:  left_offset,
+				top:   top_offset
+			})
+		}
+
+
+		$("#recipe_select").mouseleave(function() {
+			$("#recipe_select").hide();
+		})
+
+
+
 
 		// About us lightbox
 		$('#about_us_lightbox').click(function (evt) {
