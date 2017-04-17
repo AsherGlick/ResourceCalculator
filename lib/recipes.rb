@@ -916,7 +916,7 @@ module Recipes
 		],
 	},{
 		name: "Redstone Ore",
-		minecraft_names: ["minecraft:lit_redstone_ore"],
+		minecraft_names: ["minecraft:lit_redstone_ore", "minecraft:redstone_ore"],
 		recipes: [
 			{
 				output: 1,
@@ -2809,7 +2809,7 @@ module Recipes
 		],
 	},{
 		name: "Furnace",
-		minecraft_names: ["minecraft:furnace"],
+		minecraft_names: ["minecraft:furnace", "minecraft:lit_furnace"],
 		recipes: [
 			{
 				recipe_type: "crafting",
@@ -4254,7 +4254,7 @@ module Recipes
 		],
 	},{
 		name: "Redstone Torch",
-		minecraft_names: ["minecraft:redstone_torch"],
+		minecraft_names: ["minecraft:redstone_torch", "minecraft:unlit_redstone_torch"],
 		recipes: [
 			{
 				recipe_type: "crafting",
@@ -4314,7 +4314,7 @@ module Recipes
 		],
 	},{
 		name: "Redstone Lamp",
-		minecraft_names: ["minecraft:redstone_lamp"],
+		minecraft_names: ["minecraft:redstone_lamp", "minecraft:lit_redstone_lamp"],
 		recipes: [
 			{
 				recipe_type: "crafting",
@@ -4408,7 +4408,7 @@ module Recipes
 		],
 	},{
 		name: "Daylight Sensor",
-		minecraft_names: ["minecraft:daylight_detector"],
+		minecraft_names: ["minecraft:daylight_detector", "minecraft:daylight_detector_inverted"],
 		recipes: [
 			{
 				recipe_type: "crafting",
@@ -4597,7 +4597,7 @@ module Recipes
 		],
 	},{
 		name: "Redstone Repeater",
-		minecraft_names: ["minecraft:unpowered_repeater"],
+		minecraft_names: ["minecraft:unpowered_repeater", "minecraft:powered_repeater"],
 		recipes: [
 			{
 				recipe_type: "crafting",
