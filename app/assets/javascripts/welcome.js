@@ -54,6 +54,10 @@
 				aaa.focus();
 			});
 
+			li.dblclick(function(event) {
+				switch_recipe(i, event);
+			});
+
 
 
 
@@ -615,9 +619,6 @@
 				.attr("class", "node")
 				.attr("transform", function(d) {
 					return "translate(" + d.x + "," + d.y + ")";
-				})
-				.on("dblclick", function(data,index) {
-					switch_recipe(data.name,d3.event);
 				})
 				.call(d3.drag()
 					.subject(function(d) {
