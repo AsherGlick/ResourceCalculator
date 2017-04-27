@@ -7,6 +7,11 @@ module Recipes
 			{
 				output: 1,
 				recipe_type: "raw_resource"
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				input: "Cobblestone",
 			}
 		],
 	},{
@@ -6549,6 +6554,12 @@ module Recipes
 			{
 				output: 1,
 				recipe_type: "raw_resource"
+			},
+			{
+				output: 9,
+				recipe:[nil,nil,nil,nil,"Block of Iron",nil,nil,nil,nil],
+				recipe_type: "crafting",
+				shapeless: 1
 			}
 		],
 	},{
@@ -6556,14 +6567,20 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
+				output: 1,
+				recipe_type: "raw_resource"
+			},
+			{
 				recipe_type: "crafting",
 				output: 1,
 				recipe: ["Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget"],
 				shapeless: 1
 			},
 			{
-				output: 1,
-				recipe_type: "raw_resource"
+				recipe_type: "crafting",
+				output: 9,
+				recipe: [nil,nil,nil,nil,"Block of Gold",nil,nil,nil,nil],
+				shapeless: 1
 			}
 		],
 	},{

@@ -1,14 +1,7 @@
 //= require d3.v4.min.js
 //= require sankey.js
 
-
 (function($) {
-
-
-
-
-
-
 	$(window).load(function(){
 		var global_recepies;
 
@@ -77,10 +70,6 @@
 		global_recepies = recipe_json;
 
 
-		// Run the load function to load arguments from the URL if they exist
-		load();
-
-
 		function filenameify(rawname) {
 			if (rawname == null) return "";
 			name = rawname.toLowerCase();
@@ -138,28 +127,49 @@
 		$("#generatelist").click(generatelist);
 
 
-		function generatelist() {
-			requirements = gather_requirements();
 
+		function negative_requirements_exist(requirements) {
+			for (var requirement in requirements){
+				console.log(requirements[requirement]);
+				if (requirements[requirement] < 0) {
+					return true;
+				}
+			}
+			return false;
+		}
+
+
+		function generatelist() {
+			var requirements = gather_requirements();
+			console.log("Requirements Outside");
 			console.log(requirements);
 			var resource_tracker = {};
 			var generation_totals = {}; // the total number of each resource produce (ignoring any consumption)
 
 			var raw_resources = {};
-			for (var i = 0; i < 50; i++) {
+
+			console.log(negative_requirements_exist(requirements));
+
+
+			var used_recipies = [];
+
+			while(negative_requirements_exist(requirements)) {
 				var output_requirements = JSON.parse(JSON.stringify(requirements));
 
-				$.each(requirements, function(requirement) {
+				console.log("Requirements");
+				console.log(requirements);
+
+				for (var requirement in requirements){
 					if (requirements[requirement] < 0) {
 
 
-						console.log(requirement);
-						var recipe = global_recepies[requirement][0]['requirements'];
-						var produces_count = global_recepies[requirement][0]['output'];
+						// console.log(requirement);
+						var recipe = get_recipe(requirement)['requirements'];
+						var produces_count = get_recipe(requirement)['output'];
 						var required_count = -requirements[requirement];
 
 						var produce_count = Math.ceil(required_count/produces_count);
-						console.log(produce_count);
+						// console.log(produce_count);
 
 						// console.log(produce_count);
 
@@ -170,8 +180,9 @@
 						}
 
 						generation_totals[requirement] += produce_count * produces_count;
-						console.log(recipe); 
+						// console.log(recipe); 
 
+						// if this is a raw resource then add it to the raw resource list
 						if (recipe[requirement] === 0 && Object.keys(recipe).length === 1) {
 							if (raw_resources[requirement] == undefined) {
 								raw_resources[requirement] = 0;
@@ -179,6 +190,7 @@
 							raw_resources[requirement] += produce_count * produces_count;
 						}
 
+						// If this is not a raw resource, track the change the  and modify the output requirements
 						else {
 							$.each(recipe, function(item) {
 								if (output_requirements[item] == undefined) {
@@ -203,12 +215,12 @@
 							});
 						}
 					}
-				});
-				console.log(output_requirements);
+				}
+				// console.log(output_requirements);
 				requirements = output_requirements;
 			}
 
-			// This mapps all extra items to an extra value
+			// This maps all extra items to an extra value
 			// It is done in order to get the right heights for items that produce more then they take
 			// TODO, it might be nice to have a special path instead of a node to represent "extra"
 			for (var key in output_requirements) {
@@ -314,7 +326,7 @@
 			var resources = {};
 			$(".desired_item").each(function() {
 				var key = $(this).attr("mc_value");
-				console.log(key);
+				// console.log(key);
 				var value = $(this).find(".desired_item_count").val();
 
 				if ($.isNumeric(value)) {
@@ -328,7 +340,7 @@
 
 
 
-		  //////////////////////////////////////////////////////////////////////////////
+			//////////////////////////////////////////////////////////////////////////////
 		 ///////////////////////////// Item Filter Logic ////////////////////////////// 
 		//////////////////////////////////////////////////////////////////////////////  
 
@@ -361,7 +373,7 @@
 
 
 
-		  //////////////////////////////////////////////////////////////////////////////
+			//////////////////////////////////////////////////////////////////////////////
 		 ////////////////////////////// Hover Text Logic ////////////////////////////// 
 		//////////////////////////////////////////////////////////////////////////////  
 		// How far away from the mouse should hte hoverbox be
@@ -388,13 +400,11 @@
 		});
 
 
-		  //////////////////////////////////////////////////////////////////////////////
+			//////////////////////////////////////////////////////////////////////////////
 		 //////////////////////////// Hover Recipie Logic ///////////////////////////// 
 		//////////////////////////////////////////////////////////////////////////////  
 		function set_recipe (target, source, source_quantity) {
-			var recipie_index = 0;
-			var recipe_list = recipe_json[target];
-			var recipe = recipe_list[recipie_index];
+			var recipe = get_recipe(target);
 
 			var source_item_count = -recipe["requirements"][source];
 			var item_multiplier = source_quantity / source_item_count;
@@ -403,7 +413,7 @@
 
 				for (var i in recipe["recipe"]) {
 					$("#crafting_slot_"+i).removeClass (function (index, className) {
-    					return (className.match (/\bitem_[a-z0-9_]*/) || []).join(' ');
+							return (className.match (/\bitem_[a-z0-9_]*/) || []).join(' ');
 					})
 					.addClass('item_' + filenameify(recipe["recipe"][i]));
 
@@ -415,7 +425,7 @@
 					}
 				}
 				$("#crafting_output_image").removeClass (function (index, className) {
-    				return (className.match (/\bitem_[a-z0-9_]*/) || []).join(' ');
+						return (className.match (/\bitem_[a-z0-9_]*/) || []).join(' ');
 				})
 				.addClass('item_' + filenameify(target))
 
@@ -466,8 +476,8 @@
 		\******************************************************************************/
 		function generate_chart(generation_events, resource_totals) {
 
-			console.log(resource_totals);
-			console.log(generation_events);
+			// console.log(resource_totals);
+			// console.log(generation_events);
 
 			var sankey = d3.sankey();
 			var margin = {
@@ -661,7 +671,7 @@
 				})
 				.append("title")
 				.text(function(d) {
-					console.log(d);
+					// console.log(d);
 					// return d.name + "\n" + format(d.value);
 					return resource_totals[d.name] + " " + d.name;
 				});
@@ -716,7 +726,19 @@
 			for (var i in recipe_json[item_name]) {
 				recipe_item = $('<div/>');
 				recipe_item.addClass("recipe_select_item");
+
 				// recipe_item.text(recipe_json[item_name][i]["recipe_type"])
+
+				recipe_item.click( (function(index) {
+        			return function() {
+						console.log("Switching Recipe", index);
+
+						set_recipe_index(item_name, index);
+						find_loop_from_node(item_name);
+						recipe_selector.hide();
+
+					};
+    			})(i));
 
 				$('<div/>').addClass('recipe_select_item_name').text(recipe_json[item_name][i]["recipe_type"]).appendTo(recipe_item)
 
@@ -777,8 +799,229 @@
 			$("#about_us_lightbox_background").show();
 		});
 
+
+
+
+
+
+
+		////////////////////////////////////////////////////////////////////////
+		/////////////////////// Selection and modification of raw resources/////
+		////////////////////////////////////////////////////////////////////////
+
+		var alternate_recipe_selections = {};
+
+		function set_recipe_index(node_name, recipe_index) {
+			alternate_recipe_selections[node_name] = recipe_index;
+			if (recipe_index === 0) {
+				delete alternate_recipe_selections[node_name]
+			}
+		}
+
+		function get_recipe_index(node_name) {
+			if (!(node_name in alternate_recipe_selections)) {
+				return 0;
+			}
+			else {
+				return alternate_recipe_selections[node_name];
+			}
+		}
+		function set_recipe_to_raw(node_name) {
+			// console.log("Setting as raw resource");
+
+			for (var i in recipe_json[node_name]){
+				if (recipe_json[node_name][i].recipe_type === "raw_resource"){
+					set_recipe_index(node_name, i);
+					return;
+				}
+			}
+			alert("ERROR SETTING RAW RESOURCE RECIPE");
+		}
+
+
+
+		function get_recipe(node_name) {
+			return recipe_json[node_name][get_recipe_index(node_name)];
+		}
+
+		function find_loop_from_node(start_node) {
+			// Generate Light Node Mapping
+			var nodes = {};
+			for (var node in recipe_json)  {
+				// Add all the edges
+				nodes[node] = [];
+				for (var edge in get_recipe(node).requirements) {
+					// console.log(get_recipe(node).requirements[edge]);
+					if (-get_recipe(node).requirements[edge] > 0) {
+						nodes[node].push(edge);
+					}
+				}
+			}
+
+			//Depth First search
+			recipe_changes = depth_first_search(nodes, start_node, start_node);
+
+
+			for (var i in recipe_changes){
+				console.log("Changing", recipe_changes[i], "to raw resource to avoid invinite loop");
+			}
+		}
+
+
+		function depth_first_search(nodes, node, match) {
+			var changes = [];
+
+			// loop through recipe requirements
+			for (var i in nodes[node]) {
+				// if a requirement is the original node then change this item to a soruce and report back
+				if (nodes[node][i] === match) {
+					// Convert to source recipe
+					set_recipe_to_raw(node);
+					console.log("Changing to source");
+					// Return this node name as changed
+					return [node];
+				}
+				else {
+					// Run the depth first search on the requirement and add any changes to the list of changes
+					changes = changes.concat(depth_first_search(nodes, nodes[node][i], match));
+				}
+			}
+
+
+			return changes;
+		}
+
+		// Run the load function to load arguments from the URL if they exist
+		load();
 	}); 
 })(jQuery);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function has_loop(recipe_json) {
+
+
+// 	var nodes = {};
+// 	for (var node in recipe_json)  {
+// 		// Add all the edges
+// 		nodes[node] = [];
+// 		for (var edge in get_recipe(node).requirements) {
+// 			// console.log(get_recipe(node).requirements[edge]);
+// 			if (-get_recipe(node).requirements[edge] > 0) {
+// 				nodes[node].push(edge);
+// 			}
+// 		}
+// 	}
+
+
+// 	console.log(nodes);
+
+
+// 	// Check all outgoing nodes to see if any have edges pointing to this one
+// 	function has_incoming_edge(query_node) {
+// 		for (var node in nodes) {
+// 			// console.log(nodes[node]);
+// 			for (var outgoing_node in nodes[node]) {
+// 				// console.log(query_node, nodes[node][outgoing_node])
+// 				if (nodes[node][outgoing_node] === query_node) {
+// 					// console.log("true", query_node);
+// 					return true;
+// 				}
+// 			}
+
+// 			// console.log("false");
+// 		}
+// 		return false;
+// 	}
+
+
+// 	// Get all the source node (nodes without incoiming edges)
+// 	function gather_source_nodes() {
+// 		var source_nodes = [];
+// 		for (var node in nodes) {
+// 			// console.log(node);
+// 			if (!has_incoming_edge(node)) {
+// 				source_nodes.push(node);
+// 			}
+// 		}
+// 		return source_nodes;
+// 	}
+
+
+
+
+
+// 	// Kahn Algorithm
+// 	var L = [], // TODO what is L
+// 	source_nodes = gather_source_nodes(),
+// 	node = null;
+
+
+// 	// return;
+// 	while (source_nodes.length > 0) {
+
+// 		// console.log(S[S.length-1]);
+// 		// console.log(S[381]);
+// 		// console.log(S[380]);
+// 		// console.log(S[382]);
+// 		// console.log(S.length);
+// 		// console.log(S);
+// 		node = source_nodes.pop(); // remove the first element of S and store it as n
+// 		// console.log("===");
+// 		// console.log(node);
+// 		// console.log("---");
+// 		// console.log("S.pop", n);
+
+
+// 		L.push(node); // Add the popped element to L
+
+// 		// var i = get_recipe(n).requirements.length; //n.links.length
+// 		// console.log(get_recipe(n).requirements);
+// 		// iterate over the count of i
+// 		// while (i--) {
+// 		var edges = nodes[node];
+// 		delete nodes[node];
+// 		for (var edge in edges) {
+
+// 			// console.log(edges[edge]);
+// 			// get_recipe(n).requirements.pop();
+// 			// node.requirements[key];
+
+// 			// if this node is now a source node add it to the source nodes list
+// 			if (!has_incoming_edge(edges[edge])){
+// 				source_nodes.push(edges[edge]);
+// 				// console.log(edges[edge], "no longer has incoming edges");
+// 			}
+// 		}
+// 	}	
+
+// 	// console.log(recipe_copy);
+
+// 	// var nodeWithEdge = _.find(nodes, function(node) {
+// 	//   return node.links.length !== 0;
+// 	// });
+ 
+// 	var nodes_with_edges = [];
+
+// 	for (var node in nodes) {
+// 		if (nodes[node].length > 0) {
+// 			nodes_with_edges.push(node);
+// 		}
+// 	}
+
+
+// 	return nodes_with_edges;
+// }
