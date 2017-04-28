@@ -400,7 +400,11 @@ a {
 	position: relative;
 	margin: 0;
 	display: inline-block;
-	background-image: url('/button_center.png');
+
+
+	background: url('/button_center.png') 0px 0px;
+
+	// background-image: url('/button_center.png');
 	background-repeat: repeat;
 	padding: 0;
 	font-family: $font-stack;
@@ -437,7 +441,7 @@ a {
 	border-right: 2px solid #59639A;
 	border-left: 2px solid #BDC6FF;
 	border-top: 2px solid #BDC6FF;
-	background-image: url('/button_active_center.png');
+	background: url('/button_center.png') 0px -45px;
 	color: #FFFFA0;
 	cursor: pointer;
 }
