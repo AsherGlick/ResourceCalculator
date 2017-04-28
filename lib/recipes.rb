@@ -11,7 +11,7 @@ module Recipes
 			{
 				output: 1,
 				recipe_type: "smelting",
-				input: "Cobblestone",
+				recipe: ["Cobblestone", "Fuel"],
 			}
 		],
 	},{
@@ -120,7 +120,7 @@ module Recipes
 			{
 				output: 1,
 				recipe_type: "raw_resource"
-			}
+			},
 		],
 	},{
 		name: "Coarse Dirt",
@@ -194,6 +194,10 @@ module Recipes
 				output: 4,
 				recipe: [nil,nil,nil,nil,"Birch Wood",nil,nil,nil,nil],
 				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
@@ -347,6 +351,11 @@ module Recipes
 			{
 				output: 1,
 				recipe_type: "raw_resource"
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Wet Sponge", "Fuel"],
 			}
 		],
 	},{
@@ -362,6 +371,16 @@ module Recipes
 		name: "Glass",
 		minecraft_names: ["minecraft:glass"],
 		recipes: [
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Sand", "Fuel"],
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Red Sand", "Fuel"],
+			},
 			{
 				output: 1,
 				recipe_type: "raw_resource"
@@ -456,15 +475,16 @@ module Recipes
 		minecraft_names: ["minecraft:wool:orange"],
 		recipes: [
 			{
+				output: 1,
+				recipe_type: "raw_resource"
+			},
+			{
 				recipe_type: "crafting",
 				output: 1,
 				recipe: ["Wool","Orange Dye",nil,nil,nil,nil,nil,nil,nil],
 				shapeless: 1
-			},
-			{
-				output: 1,
-				recipe_type: "raw_resource"
 			}
+
 		],
 	},{
 		name: "Magenta Wool",
@@ -947,9 +967,15 @@ module Recipes
 			}
 		],
 	},{
-		name: "Clay",
+		name: "Block of Clay",
 		minecraft_names: ["minecraft:clay"],
 		recipes: [
+			{
+				output:1,
+				recipe_type: "crafting",
+				recipe: [nil,nil,nil,"Clay","Clay",nil,"Clay","Clay",nil],
+				shapeless: 0
+			},
 			{
 				output: 1,
 				recipe_type: "raw_resource"
@@ -1286,6 +1312,11 @@ module Recipes
 		name: "Cracked Stone Bricks",
 		minecraft_names: ["minecraft:stonebrick:cracked_stonebrick"],
 		recipes: [
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Stone Bricks", "Fuel"],
+			},
 			{
 				output: 1,
 				recipe_type: "raw_resource"
@@ -2041,6 +2072,11 @@ module Recipes
 		recipes: [
 			{
 				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Block of Clay", "Fuel"],
+			},
+			{
+				output: 1,
 				recipe_type: "raw_resource"
 			}
 		],
@@ -2778,6 +2814,12 @@ module Recipes
 				shapeless: 0
 			},
 			{
+				recipe_type: "crafting",
+				output: 4,
+				recipe: [nil,"Stick",nil,nil,"Coal",nil,nil,nil,nil],
+				shapeless: 0
+			},
+			{
 				output: 1,
 				recipe_type: "raw_resource"
 			}
@@ -2793,6 +2835,36 @@ module Recipes
 				shapeless: 0
 			},
 			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Spruce Wood Planks","Spruce Wood Planks","Spruce Wood Planks","Spruce Wood Planks",nil,"Spruce Wood Planks","Spruce Wood Planks","Spruce Wood Planks","Spruce Wood Planks"],
+				shapeless: 0
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Birch Wood Planks","Birch Wood Planks","Birch Wood Planks","Birch Wood Planks",nil,"Birch Wood Planks","Birch Wood Planks","Birch Wood Planks","Birch Wood Planks"],
+				shapeless: 0
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Jungle Wood Planks","Jungle Wood Planks","Jungle Wood Planks","Jungle Wood Planks",nil,"Jungle Wood Planks","Jungle Wood Planks","Jungle Wood Planks","Jungle Wood Planks"],
+				shapeless: 0
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Acacia Wood Planks","Acacia Wood Planks","Acacia Wood Planks","Acacia Wood Planks",nil,"Acacia Wood Planks","Acacia Wood Planks","Acacia Wood Planks","Acacia Wood Planks"],
+				shapeless: 0
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Dark Oak Wood Planks","Dark Oak Wood Planks","Dark Oak Wood Planks","Dark Oak Wood Planks",nil,"Dark Oak Wood Planks","Dark Oak Wood Planks","Dark Oak Wood Planks","Dark Oak Wood Planks"],
+				shapeless: 0
+			},
+			{
 				output: 1,
 				recipe_type: "raw_resource"
 			}
@@ -2805,6 +2877,36 @@ module Recipes
 				recipe_type: "crafting",
 				output: 1,
 				recipe: ["Oak Wood Planks","Oak Wood Planks",nil,"Oak Wood Planks","Oak Wood Planks",nil,nil,nil,nil],
+				shapeless: 1
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Spruce Wood Planks","Spruce Wood Planks",nil,"Spruce Wood Planks","Spruce Wood Planks",nil,nil,nil,nil],
+				shapeless: 1
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Birch Wood Planks","Birch Wood Planks",nil,"Birch Wood Planks","Birch Wood Planks",nil,nil,nil,nil],
+				shapeless: 1
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Jungle Wood Planks","Jungle Wood Planks",nil,"Jungle Wood Planks","Jungle Wood Planks",nil,nil,nil,nil],
+				shapeless: 1
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Acacia Wood Planks","Acacia Wood Planks",nil,"Acacia Wood Planks","Acacia Wood Planks",nil,nil,nil,nil],
+				shapeless: 1
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Dark Oak Wood Planks","Dark Oak Wood Planks",nil,"Dark Oak Wood Planks","Dark Oak Wood Planks",nil,nil,nil,nil],
 				shapeless: 1
 			},
 			{
@@ -4376,10 +4478,6 @@ module Recipes
 				output: 1,
 				recipe_type: "raw_resource"
 			},
-			{
-				output: 1,
-				recipe_type: "raw_resource"
-			}
 		],
 	},{
 		name: "Weighted Pressure Plate (Light)",
@@ -5084,6 +5182,12 @@ module Recipes
 			{
 				output: 1,
 				recipe_type: "raw_resource"
+			},
+			{
+				output: 9,
+				recipe_type: "crafting",
+				recipe: [nil,nil,nil,nil,"Slime Block",nil,nil,nil,nil],
+				shapeless: 0
 			}
 		],
 	},{
@@ -5323,6 +5427,11 @@ module Recipes
 		recipes: [
 			{
 				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Raw Fish", "Fuel"],
+			},
+			{
+				output: 1,
 				recipe_type: "raw_resource"
 			}
 		],
@@ -5330,6 +5439,11 @@ module Recipes
 		name: "Cooked Salmon",
 		minecraft_names: [],
 		recipes: [
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Raw Salmon", "Fuel"],
+			},
 			{
 				output: 1,
 				recipe_type: "raw_resource"
@@ -5389,6 +5503,11 @@ module Recipes
 		recipes: [
 			{
 				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Raw Fish", "Fuel"],
+			},
+			{
+				output: 1,
 				recipe_type: "raw_resource"
 			}
 		],
@@ -5405,6 +5524,11 @@ module Recipes
 		name: "Cooked Chicken",
 		minecraft_names: [],
 		recipes: [
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Raw Chicken", "Fuel"],
+			},
 			{
 				output: 1,
 				recipe_type: "raw_resource"
@@ -5494,6 +5618,11 @@ module Recipes
 		recipes: [
 			{
 				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Raw Rabbit", "Fuel"],
+			},
+			{
+				output: 1,
 				recipe_type: "raw_resource"
 			}
 		],
@@ -5525,6 +5654,11 @@ module Recipes
 		name: "Cooked Mutton",
 		minecraft_names: [],
 		recipes: [
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Raw Mutton", "Fuel"],
+			},
 			{
 				output: 1,
 				recipe_type: "raw_resource"
@@ -5973,15 +6107,16 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
+				output: 1,
+				recipe_type: "raw_resource"
+			},
+			{
 				recipe_type: "crafting",
 				output: 4,
 				recipe: [nil,"Feather",nil,nil,"Stick",nil,nil,"Flint",nil],
 				shapeless: 0
 			},
-			{
-				output: 1,
-				recipe_type: "raw_resource"
-			}
+
 		],
 	},{
 		name: "Iron Sword",
@@ -6535,6 +6670,11 @@ module Recipes
 		recipes: [
 			{
 				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Oak Wood Log", "Fuel"],
+			},
+			{
+				output: 1,
 				recipe_type: "raw_resource"
 			}
 		],
@@ -6560,6 +6700,12 @@ module Recipes
 				recipe:[nil,nil,nil,nil,"Block of Iron",nil,nil,nil,nil],
 				recipe_type: "crafting",
 				shapeless: 1
+			},
+			{
+				output: 9,
+				recipe:["Iron Nugget","Iron Nugget","Iron Nugget","Iron Nugget","Iron Nugget","Iron Nugget","Iron Nugget","Iron Nugget","Iron Nugget"],
+				recipe_type: "crafting",
+				shapeless: 1
 			}
 		],
 	},{
@@ -6572,14 +6718,14 @@ module Recipes
 			},
 			{
 				recipe_type: "crafting",
-				output: 1,
-				recipe: ["Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget"],
+				output: 9,
+				recipe: [nil,nil,nil,nil,"Block of Gold",nil,nil,nil,nil],
 				shapeless: 1
 			},
 			{
 				recipe_type: "crafting",
-				output: 9,
-				recipe: [nil,nil,nil,nil,"Block of Gold",nil,nil,nil,nil],
+				output: 1,
+				recipe: ["Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget","Gold Nugget"],
 				shapeless: 1
 			}
 		],
@@ -6680,6 +6826,11 @@ module Recipes
 		name: "Brick",
 		minecraft_names: [],
 		recipes: [
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Clay", "Fuel"],
+			},
 			{
 				output: 1,
 				recipe_type: "raw_resource"
@@ -6933,6 +7084,12 @@ module Recipes
 				shapeless: 1
 			},
 			{
+				recipe_type: "crafting",
+				output: 9,
+				recipe: ["Bone Block",nil,nil,nil,nil,nil,nil,nil,nil],
+				shapeless: 1
+			},
+			{
 				output: 1,
 				recipe_type: "raw_resource"
 			}
@@ -6987,16 +7144,65 @@ module Recipes
 		minecraft_names: [],
 		recipes: [
 			{
-				recipe_type: "crafting",
 				output: 1,
-				recipe: [nil,nil,nil,nil,nil,nil,nil,nil,nil],
-				shapeless: 1
+				recipe_type: "raw_resource"
 			}
 		],
 	},{
 		name: "Gold Nugget",
 		minecraft_names: [],
 		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 9,
+				recipe: ["Gold Ingot",nil,nil,nil,nil,nil,nil,nil,nil],
+				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Golden Helmet", "Fuel"],
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Golden Chestplate", "Fuel"],
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Golden Leggings", "Fuel"],
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Golden Boots", "Fuel"],
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Golden Sword", "Fuel"],
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Golden Hoe", "Fuel"],
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Golden Axe", "Fuel"],
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Golden Pickaxe", "Fuel"],
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Gold Horse Armor", "Fuel"],
+			},
 			{
 				output: 1,
 				recipe_type: "raw_resource"
@@ -7018,7 +7224,14 @@ module Recipes
 			{
 				output: 1,
 				recipe_type: "raw_resource"
-			}
+			},
+			{
+				recipe_type: "crafting",
+				output: 9,
+				recipe: ["Emerald Block",nil,nil,nil,nil,nil,nil,nil,nil],
+				shapeless: 1
+			},
+
 		],
 	},{
 		name: "Nether Star",
@@ -7089,6 +7302,11 @@ module Recipes
 		recipes: [
 			{
 				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Chorus Fruit", "Fuel"],
+			},
+			{
+				output: 1,
 				recipe_type: "raw_resource"
 			}
 		]
@@ -7096,6 +7314,133 @@ module Recipes
 		name: "Beetroot Seeds",
 		minecraft_names: ["minecraft:beetroots"],
 		recipes: [
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Iron Nugget",
+		minecraft_names: [],
+		recipes: [
+
+			{
+				recipe_type: "crafting",
+				output: 9,
+				recipe: ["Iron Ingot",nil,nil,nil,nil,nil,nil,nil,nil],
+				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Iron Helmet", "Fuel"],
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Iron Chestplate", "Fuel"],
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Iron Leggings", "Fuel"],
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Iron Boots", "Fuel"],
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Iron Sword", "Fuel"],
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Iron Hoe", "Fuel"],
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Iron Axe", "Fuel"],
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Iron Pickaxe", "Fuel"],
+			},
+			{
+				output: 1,
+				recipe_type: "smelting",
+				recipe: ["Iron Horse Armor", "Fuel"],
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Firework",
+		minecraft_names: [],
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 3,
+				recipe: [nil,nil,nil,nil,"Paper",nil,"Gunpowder","Gunpowder","Gunpowder"],
+				shapeless: 1
+			},
+			{
+				recipe_type: "crafting",
+				output: 3,
+				recipe: [nil,nil,nil,nil,"Paper",nil,"Gunpowder","Gunpowder",nil],
+				shapeless: 1
+			},
+			{
+				recipe_type: "crafting",
+				output: 3,
+				recipe: [nil,nil,nil,nil,"Paper",nil,nil,"Gunpowder",nil],
+				shapeless: 1
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Fuel",
+		minecraft_names: [],
+		recipes: [
+			{
+				recipe_type: "as",
+				output: 8,
+				recipe: ["Coal"],
+			},
+			{
+				recipe_type: "as",
+				output: 8,
+				recipe: ["Charcoal"],
+			},
+			{
+				recipe_type: "as",
+				output: 80,
+				recipe: ["Block of Coal"],
+			},
+			{
+				recipe_type: "as",
+				output: 100,
+				recipe: ["Lava Bucket"],
+			},
+			{
+				recipe_type: "as",
+				output: 12,
+				recipe: ["Blaze Rod"],
+			},
+			{
+				recipe_type: "as",
+				output: 1,
+				recipe: ["Stick", "Stick"],
+			},
 			{
 				output: 1,
 				recipe_type: "raw_resource"
@@ -7183,17 +7528,17 @@ module Recipes
 
 				required_resources = Hash.new(0)
 
-				if (recipe[:recipe_type] == "crafting")
+				if (recipe[:recipe_type] == "raw_resource")
+					# Create a dummy value that will show up for recipie selection
+					# but will not effect the overall crafting calculation
+					required_resources[name] = 0
+				else
 					# iterate over the array, counting duplicate entries
 					recipe[:recipe].each do |recipe_item|
 						if (recipe_item != nil)
 							required_resources[recipe_item] -= 1
 						end
 					end
-				elsif (recipe[:recipe_type] == "raw_resource")
-					# Create a dummy value that will show up for recipie selection
-					# but will not effect the overall crafting calculation
-					required_resources[name] = 0
 				end
 				recipe[:requirements] = required_resources
 			end
