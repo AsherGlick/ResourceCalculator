@@ -15,3 +15,10 @@ in order to run the sprite factory gem use the command `sf items --layout packed
 
 This will generate a new `images.css` and `images.png` as of the time of writing these are the standards we use (instead of having something in scss or another image path)
 Image compression is also useful but there is no project standard for this yet so we have been using https://tinypng.com/ to do it for us
+
+
+```
+sudo apt-get install imagemagick libmagickwand-dev
+sudo gem install rmagick
+gem install sprite-factory
+```
