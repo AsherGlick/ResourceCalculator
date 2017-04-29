@@ -4,7 +4,7 @@ class StructureController < ApplicationController
   def index
   	@name_mappings = Recipes.minecraft_name_map
   	@properties = Recipes.property_map
-  	@recipie_count = Recipes.recipe_count
+  	@recipe_count = Recipes.recipe_count
 
   	# # not variant
   	# # these are properties that are only present in the block and not the item

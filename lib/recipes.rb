@@ -7448,9 +7448,6 @@ module Recipes
 		]
 	}
 
-	# for item in @minecraft_recipes
-	# 	item[:recipes] << {recipie_type: "raw_resource"}
-	# end
 
 	# a map of property names to weather they should be included in the item lookup
 	@object_properties = {
@@ -7529,7 +7526,7 @@ module Recipes
 				required_resources = Hash.new(0)
 
 				if (recipe[:recipe_type] == "raw_resource")
-					# Create a dummy value that will show up for recipie selection
+					# Create a dummy value that will show up for recipe selection
 					# but will not effect the overall crafting calculation
 					required_resources[name] = 0
 				else
@@ -7549,9 +7546,8 @@ module Recipes
 		return output_list
 	end
 
-	# def recipie_graph
-	# end
-
+	# Generate a name mapping for use when importing, maps the raw game-names to
+	# the resource calculator readable ids
 	def self.minecraft_name_map
 		mapping_list = {}
 
