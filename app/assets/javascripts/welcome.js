@@ -22,65 +22,53 @@
 		});
 
 
+		// Bind events to the item list elements
+		$(".desired_item").each(function() {
+			var item = $(this);
+			var item_input_box = item.find(".desired_item_count");
 
-		// Create the recipe list
-		var content = $("#content_field");
-		$.each(recipe_json, function(i)
-		{
-			var li = $('<div/>')
-				.addClass('desired_item')
-				.addClass('item_' + filenameify(i))
-				.attr("mc_value", i)
-				// .attr("mc_value", i.toLowerCase())
-				// .text(i)
-				.appendTo(content);
-			var aaa = $('<input/>')
-				.addClass('desired_item_count')
-				.attr('type','number')
-				.attr('id', i.toLowerCase().replace(/[^a-z]/g,''))
-				.bind("propertychange change click keyup input paste", function(event){
-					save();
-				})
-				.focus(function() {
-					li.addClass("item_input_focused")
-				})
-				.blur(function() {
-					li.removeClass("item_input_focused")
-				})
-				.appendTo(li);
-
-
-			li.click(function() {
-				aaa.focus();
+			// When clicking on the box focus the text box
+			item.click(function( event ) {
+				item_input_box.focus();
 			});
 
-			li.dblclick(function(event) {
-				switch_recipe(i, event);
+			// Make the item counts save when modified
+			item_input_box.bind("propertychange chagne click keyup input paste", function() {
+				save();
 			});
 
+			// Put an orage border around the item when the text box is focused
+			// This makes it more noticeable when an item is selected
+			item_input_box.focus(function() {
+				item.addClass("item_input_focused");
+			});
+			item_input_box.blur(function() {
+				item.removeClass("item_input_focused")
+			});
 
+			// When doubleclicking open the recipe select menu
+			item.dblclick( function (event) {
+				switch_recipe(item.attr("mc_value") , event);
+			});
 
-
-			li.mouseover( function() {
+			// Enable item name hover text
+			item.mouseover( function() {
+				$("#hover_name").text(item.attr("mc_value"));
 				$("#hover_name").show();
-				$("#hover_name").text(i);
 			});
-
-			li.mouseout( function() {
+			item.mouseout( function() {
 				$("#hover_name").hide();
-			});
+			})
 		});
+
+
 
 		global_recepies = recipe_json;
 
 
 		function filenameify(rawname) {
 			if (rawname == null) return "";
-			name = rawname.toLowerCase();
-			name = name.split(" ").join('_');
-			name = name.replace(/[^a-zA-Z0-9_]/g,"");
-			// console.log(name);
-			return name;
+			return rawname.toLowerCase().replace(/[^a-z]/g, "");
 		}
 
 		// This function changes the url hash whenever an item is added or removed

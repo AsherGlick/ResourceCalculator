@@ -15,6 +15,12 @@
 		<div class='hide_unused_wrapper'><input type="checkbox" id="unused_hide_checkbox" class="hide_unused_checkbox"> <label class="hide_unused_label" for="unused_hide_checkbox">Hide Unused</label></div>
 		<label class="search_label" for="item_filter">Search Items&nbsp;</label><span class="search_box_wrapper"><input type="text" class="search_box" id="item_filter" />  </span></div>
 
+		<%  @item_list.each do |item,recipes| %>
+			<div class="desired_item <%= "item_" + item.downcase.gsub(/[^a-z]/, "") %>" mc_value="<%= item %>">
+				<input class="desired_item_count" type="number" id="<%= item.downcase.gsub(/[^a-z]/, "") %>">
+			</div>
+		<% end %>
+
 </div>
 	<div style="clear:both"></div>
 
