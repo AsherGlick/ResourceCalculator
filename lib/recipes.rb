@@ -883,6 +883,11 @@ module Recipes
 			{
 				output: 1,
 				recipe_type: "raw_resource"
+			},
+			{
+				output: 1,
+				recipe_type: "add_water",
+				recipe: ["Lava Bucket"]
 			}
 		],
 	},{
@@ -2787,6 +2792,470 @@ module Recipes
 				recipe_type: "smelting",
 				output: 1,
 				recipe:["Black Terracotta","Fuel"]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "White Concrete",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "add_water",
+				output: 1,
+				recipe:["White Concrete Powder",]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Orange Concrete",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "add_water",
+				output: 1,
+				recipe:["Orange Concrete Powder",]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Magenta Concrete",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "add_water",
+				output: 1,
+				recipe:["Magenta Concrete Powder",]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Light Blue Concrete",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "add_water",
+				output: 1,
+				recipe:["Light Blue Concrete Powder",]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Yellow Concrete",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "add_water",
+				output: 1,
+				recipe:["Yellow Concrete Powder",]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Lime Concrete",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "add_water",
+				output: 1,
+				recipe:["Lime Concrete Powder",]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Pink Concrete",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "add_water",
+				output: 1,
+				recipe:["Pink Concrete Powder",]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Gray Concrete",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "add_water",
+				output: 1,
+				recipe:["Gray Concrete Powder",]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Light Gray Concrete",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "add_water",
+				output: 1,
+				recipe:["Light Gray Concrete Powder",]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Cyan Concrete",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "add_water",
+				output: 1,
+				recipe:["Cyan Concrete Powder",]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Purple Concrete",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "add_water",
+				output: 1,
+				recipe:["Purple Concrete Powder",]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Blue Concrete",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "add_water",
+				output: 1,
+				recipe:["Blue Concrete Powder",]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Brown Concrete",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "add_water",
+				output: 1,
+				recipe:["Brown Concrete Powder",]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Green Concrete",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "add_water",
+				output: 1,
+				recipe:["Green Concrete Powder",]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Red Concrete",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "add_water",
+				output: 1,
+				recipe:["Red Concrete Powder",]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Black Concrete",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "add_water",
+				output: 1,
+				recipe:["Black Concrete Powder",]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "White Concrete Powder",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe:["Sand","Gravel","Sand","Gravel","Bone Meal","Gravel","Sand","Gravel","Sand"],
+				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Orange Concrete Powder",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe:["Sand","Gravel","Sand","Gravel","Orange Dye","Gravel","Sand","Gravel","Sand"],
+				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Magenta Concrete Powder",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe:["Sand","Gravel","Sand","Gravel","Magenta Dye","Gravel","Sand","Gravel","Sand"],
+				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Light Blue Concrete Powder",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe:["Sand","Gravel","Sand","Gravel","Light Blue Dye","Gravel","Sand","Gravel","Sand"],
+				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Yellow Concrete Powder",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe:["Sand","Gravel","Sand","Gravel","Dandelion Yellow","Gravel","Sand","Gravel","Sand"],
+				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Lime Concrete Powder",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe:["Sand","Gravel","Sand","Gravel","Lime Dye","Gravel","Sand","Gravel","Sand"],
+				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Pink Concrete Powder",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe:["Sand","Gravel","Sand","Gravel","Pink Dye","Gravel","Sand","Gravel","Sand"],
+				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Gray Concrete Powder",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe:["Sand","Gravel","Sand","Gravel","Gray Dye","Gravel","Sand","Gravel","Sand"],
+				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Light Gray Concrete Powder",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe:["Sand","Gravel","Sand","Gravel","Light Gray Dye","Gravel","Sand","Gravel","Sand"],
+				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Cyan Concrete Powder",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe:["Sand","Gravel","Sand","Gravel","Cyan Dye","Gravel","Sand","Gravel","Sand"],
+				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Purple Concrete Powder",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe:["Sand","Gravel","Sand","Gravel","Purple Dye","Gravel","Sand","Gravel","Sand"],
+				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Blue Concrete Powder",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe:["Sand","Gravel","Sand","Gravel","Lapis Lazuli","Gravel","Sand","Gravel","Sand"],
+				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Brown Concrete Powder",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe:["Sand","Gravel","Sand","Gravel","Cocoa Beans","Gravel","Sand","Gravel","Sand"],
+				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Green Concrete Powder",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe:["Sand","Gravel","Sand","Gravel","Cactus Green","Gravel","Sand","Gravel","Sand"],
+				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Red Concrete Powder",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe:["Sand","Gravel","Sand","Gravel","Rose Red","Gravel","Sand","Gravel","Sand"],
+				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Black Concrete Powder",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe:["Sand","Gravel","Sand","Gravel","Ink Sac","Gravel","Sand","Gravel","Sand"],
+				shapeless: 0
 			},
 			{
 				output: 1,
