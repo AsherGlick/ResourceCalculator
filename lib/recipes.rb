@@ -1704,13 +1704,13 @@ module Recipes
 			}
 		],
 	},{
-		name: "White Hardened Clay",
+		name: "White Terracotta",
 		minecraft_names: ["minecraft:stained_hardened_clay:white"],
 		recipes: [
 			{
 				recipe_type: "crafting",
 				output: 8,
-				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Bone Meal","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
+				recipe: ["Terracotta","Terracotta","Terracotta","Terracotta","Bone Meal","Terracotta","Terracotta","Terracotta","Terracotta"],
 				shapeless: 0
 			},
 			{
@@ -1719,13 +1719,13 @@ module Recipes
 			}
 		],
 	},{
-		name: "Orange Hardened Clay",
+		name: "Orange Terracotta",
 		minecraft_names: ["minecraft:stained_hardened_clay:orange"],
 		recipes: [
 			{
 				recipe_type: "crafting",
 				output: 8,
-				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Orange Dye","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
+				recipe: ["Terracotta","Terracotta","Terracotta","Terracotta","Orange Dye","Terracotta","Terracotta","Terracotta","Terracotta"],
 				shapeless: 0
 			},
 			{
@@ -1734,13 +1734,13 @@ module Recipes
 			}
 		],
 	},{
-		name: "Magenta Hardened Clay",
+		name: "Magenta Terracotta",
 		minecraft_names: ["minecraft:stained_hardened_clay:magenta"],
 		recipes: [
 			{
 				recipe_type: "crafting",
 				output: 8,
-				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Magenta Dye","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
+				recipe: ["Terracotta","Terracotta","Terracotta","Terracotta","Magenta Dye","Terracotta","Terracotta","Terracotta","Terracotta"],
 				shapeless: 0
 			},
 			{
@@ -1749,13 +1749,13 @@ module Recipes
 			}
 		],
 	},{
-		name: "Light Blue Hardened Clay",
+		name: "Light Blue Terracotta",
 		minecraft_names: ["minecraft:stained_hardened_clay:light_blue"],
 		recipes: [
 			{
 				recipe_type: "crafting",
 				output: 8,
-				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Light Blue Dye","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
+				recipe: ["Terracotta","Terracotta","Terracotta","Terracotta","Light Blue Dye","Terracotta","Terracotta","Terracotta","Terracotta"],
 				shapeless: 0
 			},
 			{
@@ -1764,13 +1764,13 @@ module Recipes
 			}
 		],
 	},{
-		name: "Yellow Hardened Clay",
+		name: "Yellow Terracotta",
 		minecraft_names: ["minecraft:stained_hardened_clay:yellow"],
 		recipes: [
 			{
 				recipe_type: "crafting",
 				output: 8,
-				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Dandelion Yellow","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
+				recipe: ["Terracotta","Terracotta","Terracotta","Terracotta","Dandelion Yellow","Terracotta","Terracotta","Terracotta","Terracotta"],
 				shapeless: 0
 			},
 			{
@@ -1779,13 +1779,13 @@ module Recipes
 			}
 		],
 	},{
-		name: "Lime Hardened Clay",
+		name: "Lime Terracotta",
 		minecraft_names: ["minecraft:stained_hardened_clay:lime"],
 		recipes: [
 			{
 				recipe_type: "crafting",
 				output: 8,
-				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Lime Dye","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
+				recipe: ["Terracotta","Terracotta","Terracotta","Terracotta","Lime Dye","Terracotta","Terracotta","Terracotta","Terracotta"],
 				shapeless: 0
 			},
 			{
@@ -1794,13 +1794,13 @@ module Recipes
 			}
 		],
 	},{
-		name: "Pink Hardened Clay",
+		name: "Pink Terracotta",
 		minecraft_names: ["minecraft:stained_hardened_clay:pink"],
 		recipes: [
 			{
 				recipe_type: "crafting",
 				output: 8,
-				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Pink Dye","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
+				recipe: ["Terracotta","Terracotta","Terracotta","Terracotta","Pink Dye","Terracotta","Terracotta","Terracotta","Terracotta"],
 				shapeless: 0
 			},
 			{
@@ -1809,13 +1809,13 @@ module Recipes
 			}
 		],
 	},{
-		name: "Gray Hardened Clay",
+		name: "Gray Terracotta",
 		minecraft_names: ["minecraft:stained_hardened_clay:gray"],
 		recipes: [
 			{
 				recipe_type: "crafting",
 				output: 8,
-				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Gray Dye","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
+				recipe: ["Terracotta","Terracotta","Terracotta","Terracotta","Gray Dye","Terracotta","Terracotta","Terracotta","Terracotta"],
 				shapeless: 0
 			},
 			{
@@ -1824,13 +1824,13 @@ module Recipes
 			}
 		],
 	},{
-		name: "Light Gray Hardened Clay",
+		name: "Light Gray Terracotta",
 		minecraft_names: ["minecraft:stained_hardened_clay:silver"],
 		recipes: [
 			{
 				recipe_type: "crafting",
 				output: 8,
-				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Light Gray Dye","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
+				recipe: ["Terracotta","Terracotta","Terracotta","Terracotta","Light Gray Dye","Terracotta","Terracotta","Terracotta","Terracotta"],
 				shapeless: 0
 			},
 			{
@@ -1839,13 +1839,13 @@ module Recipes
 			}
 		],
 	},{
-		name: "Cyan Hardened Clay",
+		name: "Cyan Terracotta",
 		minecraft_names: ["minecraft:stained_hardened_clay:cyan"],
 		recipes: [
 			{
 				recipe_type: "crafting",
 				output: 8,
-				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Cyan Dye","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
+				recipe: ["Terracotta","Terracotta","Terracotta","Terracotta","Cyan Dye","Terracotta","Terracotta","Terracotta","Terracotta"],
 				shapeless: 0
 			},
 			{
@@ -1854,13 +1854,13 @@ module Recipes
 			}
 		],
 	},{
-		name: "Purple Hardened Clay",
+		name: "Purple Terracotta",
 		minecraft_names: ["minecraft:stained_hardened_clay:purple"],
 		recipes: [
 			{
 				recipe_type: "crafting",
 				output: 8,
-				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Purple Dye","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
+				recipe: ["Terracotta","Terracotta","Terracotta","Terracotta","Purple Dye","Terracotta","Terracotta","Terracotta","Terracotta"],
 				shapeless: 0
 			},
 			{
@@ -1869,13 +1869,13 @@ module Recipes
 			}
 		],
 	},{
-		name: "Blue Hardened Clay",
+		name: "Blue Terracotta",
 		minecraft_names: ["minecraft:stained_hardened_clay:blue"],
 		recipes: [
 			{
 				recipe_type: "crafting",
 				output: 8,
-				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Lapis Lazuli","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
+				recipe: ["Terracotta","Terracotta","Terracotta","Terracotta","Lapis Lazuli","Terracotta","Terracotta","Terracotta","Terracotta"],
 				shapeless: 0
 			},
 			{
@@ -1884,13 +1884,13 @@ module Recipes
 			}
 		],
 	},{
-		name: "Brown Hardened Clay",
+		name: "Brown Terracotta",
 		minecraft_names: ["minecraft:stained_hardened_clay:brown"],
 		recipes: [
 			{
 				recipe_type: "crafting",
 				output: 8,
-				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Cocoa Beans","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
+				recipe: ["Terracotta","Terracotta","Terracotta","Terracotta","Cocoa Beans","Terracotta","Terracotta","Terracotta","Terracotta"],
 				shapeless: 0
 			},
 			{
@@ -1899,13 +1899,13 @@ module Recipes
 			}
 		],
 	},{
-		name: "Green Hardened Clay",
+		name: "Green Terracotta",
 		minecraft_names: ["minecraft:stained_hardened_clay:green"],
 		recipes: [
 			{
 				recipe_type: "crafting",
 				output: 8,
-				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Cactus Green","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
+				recipe: ["Terracotta","Terracotta","Terracotta","Terracotta","Cactus Green","Terracotta","Terracotta","Terracotta","Terracotta"],
 				shapeless: 0
 			},
 			{
@@ -1914,13 +1914,13 @@ module Recipes
 			}
 		],
 	},{
-		name: "Red Hardened Clay",
+		name: "Red Terracotta",
 		minecraft_names: ["minecraft:stained_hardened_clay:red"],
 		recipes: [
 			{
 				recipe_type: "crafting",
 				output: 8,
-				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Rose Red","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
+				recipe: ["Terracotta","Terracotta","Terracotta","Terracotta","Rose Red","Terracotta","Terracotta","Terracotta","Terracotta"],
 				shapeless: 0
 			},
 			{
@@ -1929,13 +1929,13 @@ module Recipes
 			}
 		],
 	},{
-		name: "Black Hardened Clay",
+		name: "Black Terracotta",
 		minecraft_names: ["minecraft:stained_hardened_clay:black"],
 		recipes: [
 			{
 				recipe_type: "crafting",
 				output: 8,
-				recipe: ["Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay","Ink Sac","Hardened Clay","Hardened Clay","Hardened Clay","Hardened Clay"],
+				recipe: ["Terracotta","Terracotta","Terracotta","Terracotta","Ink Sac","Terracotta","Terracotta","Terracotta","Terracotta"],
 				shapeless: 0
 			},
 			{
@@ -2067,7 +2067,7 @@ module Recipes
 			}
 		],
 	},{
-		name: "Hardened Clay",
+		name: "Terracotta",
 		minecraft_names: ["minecraft:hardened_clay"],
 		recipes: [
 			{
@@ -2569,6 +2569,230 @@ module Recipes
 				recipe_type: "raw_resource"
 			}
 		],
+	},{
+		name: "White Glazed Terracotta",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "smelting",
+				output: 1,
+				recipe:["White Terracotta","Fuel"]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Orange Glazed Terracotta",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "smelting",
+				output: 1,
+				recipe:["Orange Terracotta","Fuel"]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Magenta Glazed Terracotta",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "smelting",
+				output: 1,
+				recipe:["Magenta Terracotta","Fuel"]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Light Blue Glazed Terracotta",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "smelting",
+				output: 1,
+				recipe:["Light Blue Terracotta","Fuel"]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Yellow Glazed Terracotta",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "smelting",
+				output: 1,
+				recipe:["Yellow Terracotta","Fuel"]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Lime Glazed Terracotta",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "smelting",
+				output: 1,
+				recipe:["Lime Terracotta","Fuel"]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Pink Glazed Terracotta",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "smelting",
+				output: 1,
+				recipe:["Pink Terracotta","Fuel"]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Gray Glazed Terracotta",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "smelting",
+				output: 1,
+				recipe:["Gray Terracotta","Fuel"]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Light Gray Glazed Terracotta",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "smelting",
+				output: 1,
+				recipe:["Light Gray Terracotta","Fuel"]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Cyan Glazed Terracotta",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "smelting",
+				output: 1,
+				recipe:["Cyan Terracotta","Fuel"]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Purple Glazed Terracotta",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "smelting",
+				output: 1,
+				recipe:["Purple Terracotta","Fuel"]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Blue Glazed Terracotta",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "smelting",
+				output: 1,
+				recipe:["Blue Terracotta","Fuel"]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Brown Glazed Terracotta",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "smelting",
+				output: 1,
+				recipe:["Brown Terracotta","Fuel"]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Green Glazed Terracotta",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "smelting",
+				output: 1,
+				recipe:["Green Terracotta","Fuel"]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Red Glazed Terracotta",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "smelting",
+				output: 1,
+				recipe:["Red Terracotta","Fuel"]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
+	},{
+		name: "Black Glazed Terracotta",
+		minecrat_names: [],
+		recipes: [
+			{
+				recipe_type: "smelting",
+				output: 1,
+				recipe:["Black Terracotta","Fuel"]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		]
 	},{
 		name: "Oak Sapling",
 		minecraft_names: ["minecraft:sapling:oak"],
