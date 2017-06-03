@@ -3871,14 +3871,314 @@ module Recipes
 			}
 		],
 	},{
-		name: "Bed",
-		minecraft_names: ["minecraft:bed"],
+		name: "White Bed",
+		minecraft_names: ["minecraft:bed"], # TODO - Get correct block ID for uploader
 		recipes: [
 			{
 				recipe_type: "crafting",
 				output: 1,
 				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Wool","Wool","Wool",nil,nil,nil],
 				shapeless: 0
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		],
+	},{
+		name: "Orange Bed",
+		minecraft_names: [], # TODO - Get correct block ID for uploader
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Orange Wool","Orange Wool","Orange Wool",nil,nil,nil],
+				shapeless: 0
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["White Bed","Orange Dye",nil,nil,nil,nil,nil,nil,nil]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		],
+	},{
+		name: "MAgenta Bed",
+		minecraft_names: [], # TODO - Get correct block ID for uploader
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Magenta Wool","Magenta Wool","Magenta Wool",nil,nil,nil],
+				shapeless: 0
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["White Bed","Magenta Dye",nil,nil,nil,nil,nil,nil,nil]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		],
+	},{
+		name: "Light Blue Bed",
+		minecraft_names: [], # TODO - Get correct block ID for uploader
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Light Blue Wool","Light Blue Wool","Light Blue Wool",nil,nil,nil],
+				shapeless: 0
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["White Bed","Light Blue Dye",nil,nil,nil,nil,nil,nil,nil]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		],
+	},{
+		name: "Yellow Bed",
+		minecraft_names: [], # TODO - Get correct block ID for uploader
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Yellow Wool","Yellow Wool","Yellow Wool",nil,nil,nil],
+				shapeless: 0
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["White Bed","Dandelion Yellow",nil,nil,nil,nil,nil,nil,nil]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		],
+	},{
+		name: "Lime Bed",
+		minecraft_names: [], # TODO - Get correct block ID for uploader
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Lime Wool","Lime Wool","Lime Wool",nil,nil,nil],
+				shapeless: 0
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["White Bed","Lime Dye",nil,nil,nil,nil,nil,nil,nil]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		],
+	},{
+		name: "Pink Bed",
+		minecraft_names: [], # TODO - Get correct block ID for uploader
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Pink Wool","Pink Wool","Pink Wool",nil,nil,nil],
+				shapeless: 0
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["White Bed","Pink Dye",nil,nil,nil,nil,nil,nil,nil]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		],
+	},{
+		name: "Gray Bed",
+		minecraft_names: [], # TODO - Get correct block ID for uploader
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Gray Wool","Gray Wool","Gray Wool",nil,nil,nil],
+				shapeless: 0
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["White Bed","Gray Dye",nil,nil,nil,nil,nil,nil,nil]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		],
+	},{
+		name: "Light Gray Bed",
+		minecraft_names: [], # TODO - Get correct block ID for uploader
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Light Gray Wool","Light Gray Wool","Light Gray Wool",nil,nil,nil],
+				shapeless: 0
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["White Bed","Light Gray Dye",nil,nil,nil,nil,nil,nil,nil]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		],
+	},{
+		name: "Cyan Bed",
+		minecraft_names: [], # TODO - Get correct block ID for uploader
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Cyan Wool","Cyan Wool","Cyan Wool",nil,nil,nil],
+				shapeless: 0
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["White Bed","Cyan Dye",nil,nil,nil,nil,nil,nil,nil]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		],
+	},{
+		name: "Purple Bed",
+		minecraft_names: [], # TODO - Get correct block ID for uploader
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Purple Wool","Purple Wool","Purple Wool",nil,nil,nil],
+				shapeless: 0
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["White Bed","Purple Dye",nil,nil,nil,nil,nil,nil,nil]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		],
+	},{
+		name: "Blue Bed",
+		minecraft_names: [], # TODO - Get correct block ID for uploader
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Blue Wool","Blue Wool","Blue Wool",nil,nil,nil],
+				shapeless: 0
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["White Bed","Lapis Lazuli",nil,nil,nil,nil,nil,nil,nil]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		],
+	},{
+		name: "Brown Bed",
+		minecraft_names: [], # TODO - Get correct block ID for uploader
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Brown Wool","Brown Wool","Brown Wool",nil,nil,nil],
+				shapeless: 0
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["White Bed","Cocoa Beans",nil,nil,nil,nil,nil,nil,nil]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		],
+	},{
+		name: "Green Bed",
+		minecraft_names: [], # TODO - Get correct block ID for uploader
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Green Wool","Green Wool","Green Wool",nil,nil,nil],
+				shapeless: 0
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["White Bed","Cactus Green",nil,nil,nil,nil,nil,nil,nil]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		],
+	},{
+		name: "Red Bed",
+		minecraft_names: [], # TODO - Get correct block ID for uploader
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Red Wool","Red Wool","Red Wool",nil,nil,nil],
+				shapeless: 0
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["White Bed","Rose Red",nil,nil,nil,nil,nil,nil,nil]
+			},
+			{
+				output: 1,
+				recipe_type: "raw_resource"
+			}
+		],
+	},{
+		name: "Black Bed",
+		minecraft_names: [], # TODO - Get correct block ID for uploader
+		recipes: [
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["Oak Wood Planks","Oak Wood Planks","Oak Wood Planks","Black Wool","Black Wool","Black Wool",nil,nil,nil],
+				shapeless: 0
+			},
+			{
+				recipe_type: "crafting",
+				output: 1,
+				recipe: ["White Bed","Ink Sac",nil,nil,nil,nil,nil,nil,nil]
 			},
 			{
 				output: 1,
