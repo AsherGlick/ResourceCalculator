@@ -2576,7 +2576,7 @@ module Recipes
 		],
 	},{
 		name: "White Glazed Terracotta",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "smelting",
@@ -2590,7 +2590,7 @@ module Recipes
 		]
 	},{
 		name: "Orange Glazed Terracotta",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "smelting",
@@ -2604,7 +2604,7 @@ module Recipes
 		]
 	},{
 		name: "Magenta Glazed Terracotta",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "smelting",
@@ -2618,7 +2618,7 @@ module Recipes
 		]
 	},{
 		name: "Light Blue Glazed Terracotta",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "smelting",
@@ -2632,7 +2632,7 @@ module Recipes
 		]
 	},{
 		name: "Yellow Glazed Terracotta",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "smelting",
@@ -2646,7 +2646,7 @@ module Recipes
 		]
 	},{
 		name: "Lime Glazed Terracotta",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "smelting",
@@ -2660,7 +2660,7 @@ module Recipes
 		]
 	},{
 		name: "Pink Glazed Terracotta",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "smelting",
@@ -2674,7 +2674,7 @@ module Recipes
 		]
 	},{
 		name: "Gray Glazed Terracotta",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "smelting",
@@ -2688,7 +2688,7 @@ module Recipes
 		]
 	},{
 		name: "Light Gray Glazed Terracotta",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "smelting",
@@ -2702,7 +2702,7 @@ module Recipes
 		]
 	},{
 		name: "Cyan Glazed Terracotta",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "smelting",
@@ -2716,7 +2716,7 @@ module Recipes
 		]
 	},{
 		name: "Purple Glazed Terracotta",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "smelting",
@@ -2730,7 +2730,7 @@ module Recipes
 		]
 	},{
 		name: "Blue Glazed Terracotta",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "smelting",
@@ -2744,7 +2744,7 @@ module Recipes
 		]
 	},{
 		name: "Brown Glazed Terracotta",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "smelting",
@@ -2758,7 +2758,7 @@ module Recipes
 		]
 	},{
 		name: "Green Glazed Terracotta",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "smelting",
@@ -2772,7 +2772,7 @@ module Recipes
 		]
 	},{
 		name: "Red Glazed Terracotta",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "smelting",
@@ -2786,7 +2786,7 @@ module Recipes
 		]
 	},{
 		name: "Black Glazed Terracotta",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "smelting",
@@ -2800,7 +2800,7 @@ module Recipes
 		]
 	},{
 		name: "White Concrete",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "add_water",
@@ -2814,7 +2814,7 @@ module Recipes
 		]
 	},{
 		name: "Orange Concrete",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "add_water",
@@ -2828,7 +2828,7 @@ module Recipes
 		]
 	},{
 		name: "Magenta Concrete",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "add_water",
@@ -2842,7 +2842,7 @@ module Recipes
 		]
 	},{
 		name: "Light Blue Concrete",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "add_water",
@@ -2856,7 +2856,7 @@ module Recipes
 		]
 	},{
 		name: "Yellow Concrete",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "add_water",
@@ -2870,7 +2870,7 @@ module Recipes
 		]
 	},{
 		name: "Lime Concrete",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "add_water",
@@ -2884,7 +2884,7 @@ module Recipes
 		]
 	},{
 		name: "Pink Concrete",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "add_water",
@@ -2898,7 +2898,7 @@ module Recipes
 		]
 	},{
 		name: "Gray Concrete",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "add_water",
@@ -2912,7 +2912,7 @@ module Recipes
 		]
 	},{
 		name: "Light Gray Concrete",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "add_water",
@@ -2926,7 +2926,7 @@ module Recipes
 		]
 	},{
 		name: "Cyan Concrete",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "add_water",
@@ -2940,7 +2940,7 @@ module Recipes
 		]
 	},{
 		name: "Purple Concrete",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "add_water",
@@ -2954,7 +2954,7 @@ module Recipes
 		]
 	},{
 		name: "Blue Concrete",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "add_water",
@@ -2968,7 +2968,7 @@ module Recipes
 		]
 	},{
 		name: "Brown Concrete",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "add_water",
@@ -2982,7 +2982,7 @@ module Recipes
 		]
 	},{
 		name: "Green Concrete",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "add_water",
@@ -2996,7 +2996,7 @@ module Recipes
 		]
 	},{
 		name: "Red Concrete",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "add_water",
@@ -3010,7 +3010,7 @@ module Recipes
 		]
 	},{
 		name: "Black Concrete",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "add_water",
@@ -3024,7 +3024,7 @@ module Recipes
 		]
 	},{
 		name: "White Concrete Powder",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "crafting",
@@ -3039,7 +3039,7 @@ module Recipes
 		]
 	},{
 		name: "Orange Concrete Powder",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "crafting",
@@ -3054,7 +3054,7 @@ module Recipes
 		]
 	},{
 		name: "Magenta Concrete Powder",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "crafting",
@@ -3069,7 +3069,7 @@ module Recipes
 		]
 	},{
 		name: "Light Blue Concrete Powder",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "crafting",
@@ -3084,7 +3084,7 @@ module Recipes
 		]
 	},{
 		name: "Yellow Concrete Powder",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "crafting",
@@ -3099,7 +3099,7 @@ module Recipes
 		]
 	},{
 		name: "Lime Concrete Powder",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "crafting",
@@ -3114,7 +3114,7 @@ module Recipes
 		]
 	},{
 		name: "Pink Concrete Powder",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "crafting",
@@ -3129,7 +3129,7 @@ module Recipes
 		]
 	},{
 		name: "Gray Concrete Powder",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "crafting",
@@ -3144,7 +3144,7 @@ module Recipes
 		]
 	},{
 		name: "Light Gray Concrete Powder",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "crafting",
@@ -3159,7 +3159,7 @@ module Recipes
 		]
 	},{
 		name: "Cyan Concrete Powder",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "crafting",
@@ -3174,7 +3174,7 @@ module Recipes
 		]
 	},{
 		name: "Purple Concrete Powder",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "crafting",
@@ -3189,7 +3189,7 @@ module Recipes
 		]
 	},{
 		name: "Blue Concrete Powder",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "crafting",
@@ -3204,7 +3204,7 @@ module Recipes
 		]
 	},{
 		name: "Brown Concrete Powder",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "crafting",
@@ -3219,7 +3219,7 @@ module Recipes
 		]
 	},{
 		name: "Green Concrete Powder",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "crafting",
@@ -3234,7 +3234,7 @@ module Recipes
 		]
 	},{
 		name: "Red Concrete Powder",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "crafting",
@@ -3249,7 +3249,7 @@ module Recipes
 		]
 	},{
 		name: "Black Concrete Powder",
-		minecrat_names: [],
+		minecraft_names: [],
 		recipes: [
 			{
 				recipe_type: "crafting",
