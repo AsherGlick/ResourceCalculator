@@ -3014,7 +3014,7 @@ module Recipes
 		recipes: [
 			{
 				recipe_type: "add_water",
-				output: 1,
+				output: 8,
 				recipe:["Black Concrete Powder",]
 			},
 			{
@@ -3028,7 +3028,7 @@ module Recipes
 		recipes: [
 			{
 				recipe_type: "crafting",
-				output: 1,
+				output: 8,
 				recipe:["Sand","Gravel","Sand","Gravel","Bone Meal","Gravel","Sand","Gravel","Sand"],
 				shapeless: 0
 			},
@@ -3043,7 +3043,7 @@ module Recipes
 		recipes: [
 			{
 				recipe_type: "crafting",
-				output: 1,
+				output: 8,
 				recipe:["Sand","Gravel","Sand","Gravel","Orange Dye","Gravel","Sand","Gravel","Sand"],
 				shapeless: 0
 			},
@@ -3058,7 +3058,7 @@ module Recipes
 		recipes: [
 			{
 				recipe_type: "crafting",
-				output: 1,
+				output: 8,
 				recipe:["Sand","Gravel","Sand","Gravel","Magenta Dye","Gravel","Sand","Gravel","Sand"],
 				shapeless: 0
 			},
@@ -3073,7 +3073,7 @@ module Recipes
 		recipes: [
 			{
 				recipe_type: "crafting",
-				output: 1,
+				output: 8,
 				recipe:["Sand","Gravel","Sand","Gravel","Light Blue Dye","Gravel","Sand","Gravel","Sand"],
 				shapeless: 0
 			},
@@ -3088,7 +3088,7 @@ module Recipes
 		recipes: [
 			{
 				recipe_type: "crafting",
-				output: 1,
+				output: 8,
 				recipe:["Sand","Gravel","Sand","Gravel","Dandelion Yellow","Gravel","Sand","Gravel","Sand"],
 				shapeless: 0
 			},
@@ -3103,7 +3103,7 @@ module Recipes
 		recipes: [
 			{
 				recipe_type: "crafting",
-				output: 1,
+				output: 8,
 				recipe:["Sand","Gravel","Sand","Gravel","Lime Dye","Gravel","Sand","Gravel","Sand"],
 				shapeless: 0
 			},
@@ -3118,7 +3118,7 @@ module Recipes
 		recipes: [
 			{
 				recipe_type: "crafting",
-				output: 1,
+				output: 8,
 				recipe:["Sand","Gravel","Sand","Gravel","Pink Dye","Gravel","Sand","Gravel","Sand"],
 				shapeless: 0
 			},
@@ -3133,7 +3133,7 @@ module Recipes
 		recipes: [
 			{
 				recipe_type: "crafting",
-				output: 1,
+				output: 8,
 				recipe:["Sand","Gravel","Sand","Gravel","Gray Dye","Gravel","Sand","Gravel","Sand"],
 				shapeless: 0
 			},
@@ -3148,7 +3148,7 @@ module Recipes
 		recipes: [
 			{
 				recipe_type: "crafting",
-				output: 1,
+				output: 8,
 				recipe:["Sand","Gravel","Sand","Gravel","Light Gray Dye","Gravel","Sand","Gravel","Sand"],
 				shapeless: 0
 			},
@@ -3163,7 +3163,7 @@ module Recipes
 		recipes: [
 			{
 				recipe_type: "crafting",
-				output: 1,
+				output: 8,
 				recipe:["Sand","Gravel","Sand","Gravel","Cyan Dye","Gravel","Sand","Gravel","Sand"],
 				shapeless: 0
 			},
@@ -3178,7 +3178,7 @@ module Recipes
 		recipes: [
 			{
 				recipe_type: "crafting",
-				output: 1,
+				output: 8,
 				recipe:["Sand","Gravel","Sand","Gravel","Purple Dye","Gravel","Sand","Gravel","Sand"],
 				shapeless: 0
 			},
@@ -3193,7 +3193,7 @@ module Recipes
 		recipes: [
 			{
 				recipe_type: "crafting",
-				output: 1,
+				output: 8,
 				recipe:["Sand","Gravel","Sand","Gravel","Lapis Lazuli","Gravel","Sand","Gravel","Sand"],
 				shapeless: 0
 			},
@@ -3208,7 +3208,7 @@ module Recipes
 		recipes: [
 			{
 				recipe_type: "crafting",
-				output: 1,
+				output: 8,
 				recipe:["Sand","Gravel","Sand","Gravel","Cocoa Beans","Gravel","Sand","Gravel","Sand"],
 				shapeless: 0
 			},
@@ -3223,7 +3223,7 @@ module Recipes
 		recipes: [
 			{
 				recipe_type: "crafting",
-				output: 1,
+				output: 8,
 				recipe:["Sand","Gravel","Sand","Gravel","Cactus Green","Gravel","Sand","Gravel","Sand"],
 				shapeless: 0
 			},
@@ -3238,7 +3238,7 @@ module Recipes
 		recipes: [
 			{
 				recipe_type: "crafting",
-				output: 1,
+				output: 8,
 				recipe:["Sand","Gravel","Sand","Gravel","Rose Red","Gravel","Sand","Gravel","Sand"],
 				shapeless: 0
 			},
@@ -3253,7 +3253,7 @@ module Recipes
 		recipes: [
 			{
 				recipe_type: "crafting",
-				output: 1,
+				output: 8,
 				recipe:["Sand","Gravel","Sand","Gravel","Ink Sac","Gravel","Sand","Gravel","Sand"],
 				shapeless: 0
 			},
