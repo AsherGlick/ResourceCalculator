@@ -1,0 +1,122 @@
+<!-- <script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/sankey.js"></script> -->
+<link rel="stylesheet" type="text/css" href="/items.css"> <%# This is a hack until we figure out how to get the sprite sheet generator working on asset precompile %>
+
+<%= @game_name %>
+
+
+
+<div class="header_bar">
+	<a href="/" onClick="window.location.hash=''; window.location.reload()"><div class="home_button menu_style">Resource Calculator <span class="debossed">.com</span></div></a>
+	<a href="/" onClick="window.location.hash=''; window.location.reload()"><div class="home_button menu_style"> Reset Item Counts</div></a>
+	<a href="/upload"><div class="home_button menu_style">Structure Block Upload</div></a>
+	<div class="other_button" id="about_us_button">About Us</div><div style="clear:right"></div>
+	<a href="mailto:admin@resourcecalculator.com?Subject=Resource%20Calculator%20Issue"><div class="other_button">Report An Issue</div></a>
+
+</div>
+<div id="content_field" class="menu_style">
+	<div class="search_bar">
+		<div class='hide_unused_wrapper'><input type="checkbox" id="unused_hide_checkbox" class="hide_unused_checkbox"> <label class="hide_unused_label" for="unused_hide_checkbox">Hide Unused</label></div>
+		<label class="search_label" for="item_filter">Search Items&nbsp;</label><span class="search_box_wrapper"><input type="text" class="search_box" id="item_filter" />  </span></div>
+
+		<%  @item_list.each do |item,recipes| %>
+			<div class="desired_item <%= "item_" + item.downcase.gsub(/[^a-z]/, "") %>" mc_value="<%= item %>">
+				<input class="desired_item_count" type="number" id="<%= item.downcase.gsub(/[^a-z]/, "") %>">
+			</div>
+		<% end %>
+
+</div>
+	<div style="clear:both"></div>
+
+<div class="instructions">
+	Click on an item above &nbsp;==&gt;&nbsp; Enter in the amount that item you want &nbsp;==&gt;&nbsp; Click the <b><u>Generate Items</u></b> button below<br>
+	To change recipes double click an item above. Then click <b><u>Generate Items</u></b> again
+</div>
+
+<div class="advertisement menu_style">
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- Resource calculator -->
+	<ins class="adsbygoogle"
+	     style="display:block"
+	     data-ad-client="ca-pub-8945065699951953"
+	     data-ad-slot="8668920966"
+	     data-ad-format="auto"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+</div>
+
+<!-- 
+<div>
+	<div id="generatelist" >Generate Chest List</div>
+</div> -->
+<div class="generate_button" id="generatelist">
+    <span>Generate Items</span>
+</div>
+
+
+
+
+<div id="item_list">
+<!-- 	Chart Here
+ --></div>
+<div style="clear: both"></div>
+<div id="chart"><!-- 
+	Sankey chart -->
+</div>
+
+<div id="hover_name"></div>
+<div id="hover_recipe" class="menu_style">
+	<div id='crafting'>
+		<img src="/Crafting.png" />
+		<div class="crafting_layout" id="crafting_layout">
+			<div class="required_item" id="crafting_slot_6"></div>
+			<div class="required_item" id="crafting_slot_7"></div>
+			<div class="required_item" id="crafting_slot_8"></div>
+			<div class="required_item" id="crafting_slot_3"></div>
+			<div class="required_item" id="crafting_slot_4"></div>
+			<div class="required_item" id="crafting_slot_5"></div>
+			<div class="required_item" id="crafting_slot_0"></div>
+			<div class="required_item" id="crafting_slot_1"></div>
+			<div class="required_item" id="crafting_slot_2"></div>
+		</div>
+		<div class="crafting_output"><div id='crafting_output_image'></div></div>
+	</div>
+	<div id='smelting'>
+	</div>
+	<div id='brewing'>
+	</div>
+
+</div>
+<div id="recipe_select">
+	<div class="recipe_selector_title">
+		Recipes:
+	</div>
+	<div id="recipe_selector_list"></div>
+</div>
+
+
+<div id="about_us_lightbox_background">
+	<div id="about_us_lightbox">
+		This website was developed buy one person with the help of the community who created the recipe lists <br><br>
+		ResourceCalculator.com is an easy way to calculate how many raw resources you need for large or small Minecraft projects<br>
+		You can share projects with other people just by sharing the link to the page<br><br>
+		This site is currently funded completely by advertising, which helps pay the server costs and feed the developer's family
+	</div>
+</div>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-28401056-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<script>
+	var recipe_json = <%= raw @item_list.to_json %>;
+</script>

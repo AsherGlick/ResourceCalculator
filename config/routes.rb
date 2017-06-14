@@ -8,6 +8,10 @@ ResourceCalculator::Application.routes.draw do
   get '/upload', to: 'structure#index'
   get '/yt/:ytname/:shorturl', to: 'redirect#index'
 
+
+  get '/:gamename/', to: 'calculator#index'
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

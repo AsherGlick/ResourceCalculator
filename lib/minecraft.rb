@@ -1,5 +1,4 @@
-module Recipes
-
+module Minecraft
 	@minecraft_recipes = {
 		name: "Stone",
 		minecraft_names: ["minecraft:stone:stone"],
@@ -8537,6 +8536,13 @@ module Recipes
 			output_list[name] = recipes
 		end
 		return output_list
+	end
+
+
+	def self.styles
+		return {
+
+		}
 	end
 
 	# Generate a name mapping for use when importing, maps the raw game-names to

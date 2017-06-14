@@ -1,0 +1,473 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$font-stack:    'Minecraft Regular', courier, sans-serif;
+
+
+
+.menu_style {
+	border: 10px solid transparent;
+	background-color: #C3C3C3;
+	background-clip: content-box;
+	border-image: url(/FrameBorder.png) 10;
+}
+
+body {
+	overflow-y: scroll;
+	word-spacing: 5px;
+	font-family: $font-stack;
+	background-color: #EFEFEF;
+
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
+    overflow-x: hidden;
+}
+
+.desired_item {
+	float: left;
+	width: 32px;
+	height: 32px;
+	background: #8b8b8b;
+	// margin: 2px;
+	text-align: center;
+	position: relative;
+
+	border: 2px solid transparent;
+	border-image: url(/ItemBorder.png) 2 ;
+}
+
+
+.required_item {
+	float: left;
+	width: 32px;
+	height: 32px;
+	background: #8b8b8b;
+	text-align: right;
+	// vertical-align: bottom;
+	// position: relative;
+	// display: table-cell;
+  	vertical-align: middle;
+
+	font-size: .8em;
+
+	font-family: $font-stack;
+	color: #FFF !important;
+	text-shadow: 2px 2px 0 #3F3F3F;
+
+	border: 2px solid transparent;
+	border-image: url(/ItemBorder.png) 2 ;
+}
+
+.desired_item_count {
+	width: 100%;
+	// border:none;
+	box-sizing: border-box;
+	background: transparent;
+	text-align: right;
+	position:absolute;
+	bottom: 0;
+	left: 0;
+	font-family: $font-stack;
+	color: #FFF !important;
+	text-shadow: 2px 2px 0 #3F3F3F;
+	border:none;
+	// border-top: 1px solid black;
+	padding-bottom: 2px;
+	-moz-appearance:textfield;
+}
+
+
+.search_bar {
+	font-family: $font-stack;
+	padding-bottom: 2px;
+
+}
+.search_label {
+	float:left;
+}
+.search_box {
+	font-family: $font-stack;
+	width: 100%;
+	box-sizing:border-box;
+	border: 2px solid transparent;
+	border-image: url(/ItemBorder.png) 2 ;
+	background-color: #8b8b8b;
+	color: #FFF;
+	text-shadow: 2px 2px 0 #000;
+	padding: 0;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	margin: 0;
+	font-size: .9em;
+}
+.search_box_wrapper {
+    display: block;
+    overflow: hidden;
+}
+
+
+.hide_unused_wrapper {
+	float:right;
+	// padding: -2px;
+	margin-left: 5px;
+	margin-right: 5px;
+	// padding-left: 2px;
+	// padding-right: 2px;
+	// border: 2px solid transparent;
+	// border-image: url(/ItemBorder.png) 2 ;
+	// box-sizing: border-box;
+	// height: 1em;
+}
+
+.hide_unused_label {
+	cursor: pointer;
+}
+
+#item_list {
+	text-align: center;
+	// overflow: hidden;
+}
+.chest_list {
+	overflow: hidden;
+	max-width: 324px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+
+	display: inline-block;
+	text-align: left;
+
+}
+
+.chest_list_title {
+	font-family: $font-stack;
+	color: #404040;
+	padding-bottom: 6px;
+
+}
+
+
+#generatelist {
+
+}
+
+
+
+input[type=checkbox] + label.hide_unused_label {
+		color: #AAA;
+	text-shadow: 2px 0px 0 #F3F3F3;
+
+}
+input[type=checkbox]:checked + label.hide_unused_label {
+	color: #222;
+	text-shadow: -2px 0px 0 #F3F3F3;
+}
+
+
+.hide_unused_checkbox {
+	display: none;
+}
+
+
+
+#hover_name {
+	height: 1em;
+	// width: 100px;
+	// background-color: #AAA;
+	position:absolute;
+    background: url(/HoverBackground.png);
+    background-clip: content-box;
+	border: 8px solid transparent;
+	border-image: url(/HoverBorder.png) 8;
+	font-family: $font-stack;
+	color: #FFF;
+	// padding-bottom: 2px;
+	line-height: .7;
+	text-shadow: #3f3f3f 2px 2px;
+	overflow: hidden;
+	white-space: nowrap;
+	pointer-events: none;
+	display: none;
+}
+
+#content_field {
+	overflow: hidden;
+	margin-bottom: 5px;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// recipe styling
+#hover_recipe {
+	position: absolute;
+	pointer-events: none;
+	display: none;
+	font-family: $font-stack;
+}
+.crafting_layout {
+	position: absolute;
+	top: 22px;
+	left: 48px;
+	width: 108px;
+}
+.crafting_output {
+	position: absolute;
+	top: 50px;
+	left: 228px;
+
+    background-position: center; 
+
+
+	width: 32px;
+	height: 32px;
+	background: #8b8b8b;
+	text-align: right;
+	// vertical-align: bottom;
+	// position: relative;
+	// display: table-cell;
+  	vertical-align: middle;
+
+  	padding: 8px;
+
+	font-size: .8em;
+
+	font-family: $font-stack;
+	color: #FFF !important;
+	text-shadow: 2px 2px 0 #3F3F3F;
+
+	border: 2px solid transparent;
+	border-image: url(/ItemBorder.png) 2;
+
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+#recipe_select {
+	position: absolute;
+	border: 1px solid #222;	
+	background-color: #EFEFEF;
+	display: none;
+}
+.recipe_selector_title {
+	padding: 4px;
+}
+.recipe_select_item {
+	padding: 4px;
+	// margin: 5px 0;
+	// border: 1px solid #CCC;
+	cursor: pointer;
+	background-color: #C3C3C3;
+	position: relative
+}
+.recipe_select_item:hover {
+	background-color: #3498db;
+}
+.recipe_select_item_name {
+	padding: 8px;
+	float: left;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// Flow chart styling
+
+  #chart {
+    // height: 500px;
+  }
+
+  .node rect {
+    cursor: move;
+    fill-opacity: .9;
+    shape-rendering: crispEdges;
+  }
+
+  .node text {
+    pointer-events: none;
+    text-shadow: 0 1px 0 #fff;
+  }
+
+  .link {
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .2;
+  }
+
+  .link:hover {
+    stroke-opacity: .5;
+  }
+
+.header_bar {
+	// background: #CCC;
+	overflow: hidden;
+	margin-bottom: 5px;
+}
+a {
+	text-decoration: none;
+}
+.home_button {
+	color: #000;
+	font-size: 1em;
+	font-family: $font-stack;
+	float: left;
+	margin-right: 5px;
+}
+.home_button:hover {
+	color: #AAA;
+	text-shadow: 2px 0px 0 #F3F3F3;
+
+}
+
+.other_button {
+	float: right;
+	font-family: $font-stack;
+	color: #CCC;
+	cursor: pointer;
+}
+.other_button:hover {
+	color: #000;
+}
+
+.debossed {
+	color: #888;
+	text-shadow: none;
+}
+
+
+
+#about_us_lightbox_background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0, 0, 0, 0.5);
+
+  // -webkit-transform-style: preserve-3d;
+  // -moz-transform-style: preserve-3d;
+  // transform-style: preserve-3d;
+	display:none;
+
+}
+
+
+// TO DELETE
+#about_us_lightbox {
+	max-width: 500px;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: perspective(1px) translateY(-50%) translateX(-50%);
+	padding: 10px;	
+	font-family: $font-stack;
+	line-height: 1.7em;
+
+
+}
+
+
+
+
+
+
+.generate_button {
+	height: 40px;
+	width: 400px;
+	outline: 2px solid black;
+	position: relative;
+	margin: 0;
+	display: inline-block;
+
+
+	background: url('/button_center.png') 0px 0px;
+
+	// background-image: url('/button_center.png');
+	background-repeat: repeat;
+	padding: 0;
+	font-family: $font-stack;
+	text-align: center;
+	color: white;
+	text-shadow: 3px 3px #4C4C4C;
+	border-bottom: 4px solid #565656;
+	border-right: 2px solid #565656;
+	border-left: 2px solid #AAA;
+	border-top: 2px solid #AAA;
+	box-sizing: border-box;
+	font-size: 16px;
+	margin-bottom: 5px;
+
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+
+	max-width: 100%;
+
+
+
+
+}
+
+.generate_button span {
+	position: relative;
+	line-height: 40px;
+	bottom: 3px;
+}
+
+.generate_button:hover {
+	border-bottom: 4px solid #59639A;
+	border-right: 2px solid #59639A;
+	border-left: 2px solid #BDC6FF;
+	border-top: 2px solid #BDC6FF;
+	background: url('/button_center.png') 0px -45px;
+	color: #FFFFA0;
+	cursor: pointer;
+}
+
+.advertisement {
+	width: 728px;
+	max-width: 100%;
+	height: 90px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 7px;
+}
+
+.instructions {
+	font-family: $font-stack;
+	color: #888;
+	text-align: center;
+	margin-bottom: 7px;
+}
+
+
+.item_input_focused {
+	border: 2px solid #F80;
+}
+
+// Hide the up and down buttons for the number input
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.psuedo_hidden {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+a.internal_link {
+	color: #222;
+	text-decoration: underline;
+	word-wrap: break-word;
+}
+
+.clear {
+	clear: both;
+}
