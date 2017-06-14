@@ -8541,7 +8541,15 @@ module Minecraft
 
 	def self.styles
 		return {
+			menu_background_color: "C3C3C3",
+			menu_border_image: "FrameBorder.png",
+			menu_border_width: 10,
 
+			item_width: 32,
+			item_hight: 32,
+			inset_background_color: "8b8b8b",
+			inset_border_image: "ItemBorder.png",
+			inset_border_width: 2,
 		}
 	end
 

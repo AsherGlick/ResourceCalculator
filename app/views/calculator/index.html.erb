@@ -4,6 +4,21 @@
 
 <%= @game_name %>
 
+<style>
+	.menu_style {
+		border: <%= @styles[:menu_border_width] %>px solid transparent;
+		background-color: #<%= @styles[:menu_background_color]%>;
+		background-clip: content-box;
+		border-image: url(/<%= @styles[:menu_border_image] %>) <%= @styles[:menu_border_width] %>;
+	}
+	.item {
+		width: <%= @styles[:item_width] %>px;
+		height: <%= @styles[:item_hight] %>px;
+		border: <%= @styles[:inset_border_width] %>px solid transparent;
+		border-image: url(/<%= @styles[:inset_border_image] %>) <%= @styles[:inset_border_width] %> ;
+		background: #<%= @styles[:inset_background_color]%>;
+	}
+</style>
 
 
 <div class="header_bar">
@@ -20,7 +35,7 @@
 		<label class="search_label" for="item_filter">Search Items&nbsp;</label><span class="search_box_wrapper"><input type="text" class="search_box" id="item_filter" />  </span></div>
 
 		<%  @item_list.each do |item,recipes| %>
-			<div class="desired_item <%= "item_" + item.downcase.gsub(/[^a-z]/, "") %>" mc_value="<%= item %>">
+			<div class="desired_item item <%= "item_" + item.downcase.gsub(/[^a-z]/, "") %>" mc_value="<%= item %>">
 				<input class="desired_item_count" type="number" id="<%= item.downcase.gsub(/[^a-z]/, "") %>">
 			</div>
 		<% end %>
@@ -70,17 +85,17 @@
 	<div id='crafting'>
 		<img src="/Crafting.png" />
 		<div class="crafting_layout" id="crafting_layout">
-			<div class="required_item" id="crafting_slot_6"></div>
-			<div class="required_item" id="crafting_slot_7"></div>
-			<div class="required_item" id="crafting_slot_8"></div>
-			<div class="required_item" id="crafting_slot_3"></div>
-			<div class="required_item" id="crafting_slot_4"></div>
-			<div class="required_item" id="crafting_slot_5"></div>
-			<div class="required_item" id="crafting_slot_0"></div>
-			<div class="required_item" id="crafting_slot_1"></div>
-			<div class="required_item" id="crafting_slot_2"></div>
+			<div class="required_item item" id="crafting_slot_6"></div>
+			<div class="required_item item" id="crafting_slot_7"></div>
+			<div class="required_item item" id="crafting_slot_8"></div>
+			<div class="required_item item" id="crafting_slot_3"></div>
+			<div class="required_item item" id="crafting_slot_4"></div>
+			<div class="required_item item" id="crafting_slot_5"></div>
+			<div class="required_item item" id="crafting_slot_0"></div>
+			<div class="required_item item" id="crafting_slot_1"></div>
+			<div class="required_item item" id="crafting_slot_2"></div>
 		</div>
-		<div class="crafting_output"><div id='crafting_output_image'></div></div>
+		<div class="crafting_output item"><div id='crafting_output_image'></div></div>
 	</div>
 	<div id='smelting'>
 	</div>

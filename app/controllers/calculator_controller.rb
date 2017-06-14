@@ -10,5 +10,6 @@ class CalculatorController < ApplicationController
 	class_name = params[:gamename].slice(0,1).capitalize + params[:gamename].slice(1..-1)
   	@game_name = params[:gamename]
     @item_list = class_from_string(class_name).item_list
+    @styles = class_from_string(class_name).styles
   end
 end

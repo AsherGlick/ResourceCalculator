@@ -379,34 +379,19 @@ module Astroneer
 
 	def self.item_list
 		return @astroneer_recipes
-		# output_list = {}
-		# for item in @minecraft_recipes
-		# 	name = item[:name]
-		# 	recipes = item[:recipes]
+	end
 
-		# 	for recipe in recipes
+	def self.styles
+		return {
+			menu_background_color: "44C344",
+			menu_border_image: "",
+			menu_border_width: 0,
 
-
-		# 		required_resources = Hash.new(0)
-
-		# 		if (recipe[:recipe_type] == "Raw Resource")
-		# 			# Create a dummy value that will show up for recipe selection
-		# 			# but will not effect the overall crafting calculation
-		# 			required_resources[name] = 0
-		# 		else
-		# 			# iterate over the array, counting duplicate entries
-		# 			recipe[:recipe].each do |recipe_item|
-		# 				if (recipe_item != nil)
-		# 					required_resources[recipe_item] -= 1
-		# 				end
-		# 			end
-		# 		end
-		# 		recipe[:requirements] = required_resources
-		# 	end
-
-
-		# 	output_list[name] = recipes
-		# end
-		# return output_list
+			item_width: 64,
+			item_hight: 64,
+			inset_background_color: "34B434",
+			inset_border_image: "",
+			inset_border_width: 2,
+		}
 	end
 end

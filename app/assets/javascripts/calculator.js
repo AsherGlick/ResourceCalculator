@@ -260,6 +260,7 @@
 						}
 						var li = $('<div/>')
 							.addClass('required_item')
+							.addClass('item')
 							.addClass('item_' + filenameify(item_name))
 							.text(item_count)
 							.appendTo(chest);
@@ -296,6 +297,7 @@
 				for (var i = 0; i < 9 * 6 - items_in_chest; i++) {
 					var li = $('<div/>')
 						.addClass('required_item')
+						.addClass('item')
 						// .css('background-image', 'url(items/' + filenameify(item_name) + '.png)')
 						// .text(item_count)
 						.appendTo(chest);
@@ -733,6 +735,7 @@
 					// console.log(j)
 					var item = $('<div/>')
 						.addClass('required_item')
+						.addClass('item')
 						.addClass('item_' + filenameify(j))
 						.text(-recipe_json[item_name][i]["requirements"][j])
 						.appendTo(recipe_item)
