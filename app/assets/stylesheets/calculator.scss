@@ -63,17 +63,16 @@ body {
 	font-family: $font-stack;
 	width: 100%;
 	box-sizing:border-box;
-	border: 2px solid transparent;
-	border-image: url(/ItemBorder.png) 2 ;
-	background-color: #8b8b8b;
-	color: #FFF;
-	text-shadow: 2px 2px 0 #000;
 	padding: 0;
 	padding-bottom: 2px;
 	padding-left: 2px;
 	margin: 0;
 	font-size: .9em;
+	color: #FFF;
+	text-shadow: 2px 2px 0 #000;
+
 }
+
 .search_box_wrapper {
     display: block;
     overflow: hidden;

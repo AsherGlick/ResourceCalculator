@@ -1,8 +1,10 @@
+<% content_for :for_head do %>
+  <link rel="stylesheet" type="text/css" href="/items.css"> <%# This is a hack until we figure out how to get the sprite sheet generator working on asset precompile %>
+  <style><%= @styles[:custom_css]%></style>
+<% end %>
+
 <!-- <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="/sankey.js"></script> -->
-<link rel="stylesheet" type="text/css" href="/items.css"> <%# This is a hack until we figure out how to get the sprite sheet generator working on asset precompile %>
-
-<%= @game_name %>
 
 <style>
 	.menu_style {
@@ -17,6 +19,11 @@
 		border: <%= @styles[:inset_border_width] %>px solid transparent;
 		border-image: url(/<%= @styles[:inset_border_image] %>) <%= @styles[:inset_border_width] %> ;
 		background: #<%= @styles[:inset_background_color]%>;
+	}
+	.search_box {
+		border: <%= @styles[:inset_border_width] %>px solid transparent;
+		border-image: url(/<%= @styles[:inset_border_image] %>) <%= @styles[:inset_border_width] %> ;
+		background-color: #<%= @styles[:inset_background_color]%>;
 	}
 </style>
 
