@@ -29,62 +29,64 @@
 
 
 <div class="header_bar">
-	<a href="/" onClick="window.location.hash=''; window.location.reload()"><div class="home_button menu_style">Resource Calculator <span class="debossed">.com</span></div></a>
-	<a href="/" onClick="window.location.hash=''; window.location.reload()"><div class="home_button menu_style"> Reset Item Counts</div></a>
-	<a href="/upload"><div class="home_button menu_style">Structure Block Upload</div></a>
-	<div class="other_button" id="about_us_button">About Us</div><div style="clear:right"></div>
-	<a href="mailto:admin@resourcecalculator.com?Subject=Resource%20Calculator%20Issue"><div class="other_button">Report An Issue</div></a>
-
-</div>
-<div id="content_field" class="menu_style">
-	<div class="search_bar">
-		<div class='hide_unused_wrapper'><input type="checkbox" id="unused_hide_checkbox" class="hide_unused_checkbox"> <label class="hide_unused_label" for="unused_hide_checkbox">Hide Unused</label></div>
-		<label class="search_label" for="item_filter">Search Items&nbsp;</label><span class="search_box_wrapper"><input type="text" class="search_box" id="item_filter" />  </span></div>
-
-		<%  @item_list.each do |item,recipes| %>
-			<div class="desired_item item <%= "item_" + item.downcase.gsub(/[^a-z]/, "") %>" mc_value="<%= item %>">
-				<input class="desired_item_count" type="number" id="<%= item.downcase.gsub(/[^a-z]/, "") %>">
-			</div>
-		<% end %>
-
-</div>
-	<div style="clear:both"></div>
-
-<div class="instructions">
-	Click on an item above &nbsp;==&gt;&nbsp; Enter in the amount that item you want &nbsp;==&gt;&nbsp; Click the <b><u>Generate Items</u></b> button below<br>
-	To change recipes double click an item above. Then click <b><u>Generate Items</u></b> again
+	<a href="/" onClick="window.location.hash=''; window.location.reload()"><div class="home_button">Resource Calculator</div></a>
+	<a href="/" onClick="window.location.hash=''; window.location.reload()"><div class="home_button"> Reset Item Counts</div></a>
+	<a href="/upload"><div class="home_button">Structure Block Upload</div></a>
+	<a href="/aboutus"><div class="home_button">About Us</div></a>
+	<a href="mailto:admin@resourcecalculator.com?Subject=Resource%20Calculator%20Issue"><div class="home_button">Report An Issue</div></a>
 </div>
 
-<div class="advertisement menu_style">
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<!-- Resource calculator -->
-	<ins class="adsbygoogle"
-	     style="display:block"
-	     data-ad-client="ca-pub-8945065699951953"
-	     data-ad-slot="8668920966"
-	     data-ad-format="auto"></ins>
-	<script>
-	(adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
-</div>
+<div class="content">
+	<div id="content_field" class="menu_style">
+		<div class="search_bar">
+			<div class='hide_unused_wrapper'><input type="checkbox" id="unused_hide_checkbox" class="hide_unused_checkbox"> <label class="hide_unused_label" for="unused_hide_checkbox">Hide Unused</label></div>
+			<label class="search_label" for="item_filter">Search Items&nbsp;</label><span class="search_box_wrapper"><input type="text" class="search_box" id="item_filter" />  </span></div>
 
-<!-- 
-<div>
-	<div id="generatelist" >Generate Chest List</div>
-</div> -->
-<div class="generate_button" id="generatelist">
-    <span>Generate Items</span>
-</div>
+			<%  @item_list.each do |item,recipes| %>
+				<div class="desired_item item <%= "item_" + item.downcase.gsub(/[^a-z]/, "") %>" mc_value="<%= item %>">
+					<input class="desired_item_count" type="number" id="<%= item.downcase.gsub(/[^a-z]/, "") %>">
+				</div>
+			<% end %>
+
+	</div>
+		<div style="clear:both"></div>
+
+	<div class="instructions">
+		Click on an item above &nbsp;==&gt;&nbsp; Enter in the amount that item you want &nbsp;==&gt;&nbsp; Click the <b><u>Generate Items</u></b> button below<br>
+		To change recipes double click an item above. Then click <b><u>Generate Items</u></b> again
+	</div>
+
+	<div class="advertisement menu_style">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- Resource calculator -->
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-client="ca-pub-8945065699951953"
+		     data-ad-slot="8668920966"
+		     data-ad-format="auto"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+
+	<!-- 
+	<div>
+		<div id="generatelist" >Generate Chest List</div>
+	</div> -->
+	<div class="generate_button" id="generatelist">
+	    <span>Generate Items</span>
+	</div>
 
 
 
 
-<div id="item_list">
-<!-- 	Chart Here
- --></div>
-<div style="clear: both"></div>
-<div id="chart"><!-- 
-	Sankey chart -->
+	<div id="item_list">
+	<!-- 	Chart Here
+	 --></div>
+	<div style="clear: both"></div>
+	<div id="chart"><!-- 
+		Sankey chart -->
+	</div>
 </div>
 
 <div id="hover_name"></div>

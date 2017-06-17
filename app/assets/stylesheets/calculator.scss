@@ -6,15 +6,18 @@ $font-stack:    'Minecraft Regular', courier, sans-serif;
 
 body {
 	overflow-y: scroll;
-	word-spacing: 5px;
 	font-family: $font-stack;
 	background-color: #EFEFEF;
 
 	-webkit-transform-style: preserve-3d;
 	-moz-transform-style: preserve-3d;
 	transform-style: preserve-3d;
+	word-spacing: 5px;
 
-    overflow-x: hidden;
+	overflow-x: hidden;
+}
+
+.content {
 }
 
 .desired_item {
@@ -27,7 +30,7 @@ body {
 .required_item {
 	float: left;
 	text-align: right;
-  	vertical-align: middle;
+	vertical-align: middle;
 	font-size: .8em;
 	font-family: $font-stack;
 	color: #FFF !important;
@@ -243,37 +246,22 @@ input[type=checkbox]:checked + label.hide_unused_label {
 
 .header_bar {
 	overflow: hidden;
-	margin-bottom: 5px;
+	margin-bottom: 8px;
 }
+
 a {
 	text-decoration: none;
 }
 .home_button {
 	color: #000;
+	border-radius: 100px;
 	font-size: 1em;
-	font-family: $font-stack;
 	float: left;
-	margin-right: 5px;
+	padding: 10px 20px;
 }
 .home_button:hover {
-	color: #AAA;
-	text-shadow: 2px 0px 0 #F3F3F3;
-
-}
-
-.other_button {
-	float: right;
-	font-family: $font-stack;
-	color: #CCC;
-	cursor: pointer;
-}
-.other_button:hover {
-	color: #000;
-}
-
-.debossed {
-	color: #888;
-	text-shadow: none;
+	color: #FFF;
+	background-color: #222
 }
 
 
