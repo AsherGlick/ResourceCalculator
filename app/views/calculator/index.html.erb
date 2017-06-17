@@ -1,31 +1,31 @@
-<% content_for :for_head do %>
+<% content_for :for_head_style do %>
   <style><%== @styles[:custom_css]%></style>
   <%= stylesheet_link_tag @game_name, media: "all" %>
+
+	<!-- <script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="/sankey.js"></script> -->
+
+	<style>
+		.menu_style {
+			border: <%= @styles[:menu_border_width] %>px solid transparent;
+			background-color: #<%= @styles[:menu_background_color]%>;
+			background-clip: content-box;
+			border-image: url(/<%= @styles[:menu_border_image] %>) <%= @styles[:menu_border_width] %>;
+		}
+		.item {
+			width: <%= @styles[:item_width] %>px;
+			height: <%= @styles[:item_hight] %>px;
+			border: <%= @styles[:inset_border_width] %>px solid transparent;
+			border-image: url(/<%= @styles[:inset_border_image] %>) <%= @styles[:inset_border_width] %> ;
+			background: #<%= @styles[:inset_background_color]%>;
+		}
+		.search_box {
+			border: <%= @styles[:inset_border_width] %>px solid transparent;
+			border-image: url(/<%= @styles[:inset_border_image] %>) <%= @styles[:inset_border_width] %> ;
+			background-color: #<%= @styles[:inset_background_color]%>;
+		}
+	</style>
 <% end %>
-
-<!-- <script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="/sankey.js"></script> -->
-
-<style>
-	.menu_style {
-		border: <%= @styles[:menu_border_width] %>px solid transparent;
-		background-color: #<%= @styles[:menu_background_color]%>;
-		background-clip: content-box;
-		border-image: url(/<%= @styles[:menu_border_image] %>) <%= @styles[:menu_border_width] %>;
-	}
-	.item {
-		width: <%= @styles[:item_width] %>px;
-		height: <%= @styles[:item_hight] %>px;
-		border: <%= @styles[:inset_border_width] %>px solid transparent;
-		border-image: url(/<%= @styles[:inset_border_image] %>) <%= @styles[:inset_border_width] %> ;
-		background: #<%= @styles[:inset_background_color]%>;
-	}
-	.search_box {
-		border: <%= @styles[:inset_border_width] %>px solid transparent;
-		border-image: url(/<%= @styles[:inset_border_image] %>) <%= @styles[:inset_border_width] %> ;
-		background-color: #<%= @styles[:inset_background_color]%>;
-	}
-</style>
 
 
 <div class="header_bar">

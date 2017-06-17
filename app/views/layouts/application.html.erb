@@ -4,13 +4,13 @@
   <title>ResourceCalculator</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    params[:controller], media: "all", "data-turbolinks-track" => true %>
+    <% if content_for? :for_head_style %>
+    <%= yield :for_head_style %>
+  <% end %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= javascript_include_tag params[:controller] %>
   <%= csrf_meta_tags %>
 
-  <% if content_for? :for_head %>
-    <%= yield :for_head %>
-  <% end %>
 
   <meta name="HandheldFriendly" content="true" />
   <meta name="MobileOptimized" content="320" />
