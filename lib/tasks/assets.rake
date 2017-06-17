@@ -16,5 +16,6 @@ namespace :assets do
     SpriteFactory.layout = :packed  # pack the images into a rectangle instead of a line
     
     make_sheet("minecraft")
+    make_sheet("astroneer")
   end
 end

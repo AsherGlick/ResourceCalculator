@@ -200,7 +200,7 @@ module Astroneer
 				requirements: {"Compound" => -1}
 			}
 		],
-		"1-Seat" => [
+		"One-Seat" => [
 			{
 				output: 1,
 				recipe_type: "Printer and Vehicle Bay",
@@ -311,7 +311,7 @@ module Astroneer
 				requirements: {"Aluminum" => -2}
 			}
 		],
-		"3-Seat" => [
+		"Three-Seat" => [
 			{
 				output: 1,
 				recipe_type: "Vehicle Bay",
