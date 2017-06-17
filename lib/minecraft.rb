@@ -8550,6 +8550,8 @@ module Minecraft
 			inset_background_color: "8b8b8b",
 			inset_border_image: "ItemBorder.png",
 			inset_border_width: 2,
+
+			custom_css: '/* @font-face kit by Fonts2u (http://www.fonts2u.com) */ @font-face {font-family:"Minecraft Regular";src:url("minecraft_font_by_pwnage_block-d37t6nb.eot?") format("eot"),url("minecraft_font_by_pwnage_block-d37t6nb.woff") format("woff"),url("minecraft_font_by_pwnage_block-d37t6nb.ttf") format("truetype"),url("minecraft_font_by_pwnage_block-d37t6nb.svg#Minecraft") format("svg");font-weight:normal;font-style:normal;}'
 		}
 	end
 

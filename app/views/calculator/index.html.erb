@@ -1,6 +1,6 @@
 <% content_for :for_head do %>
-  <link rel="stylesheet" type="text/css" href="/items.css"> <%# This is a hack until we figure out how to get the sprite sheet generator working on asset precompile %>
-  <style><%= @styles[:custom_css]%></style>
+  <style><%== @styles[:custom_css]%></style>
+  <%= stylesheet_link_tag @game_name, media: "all" %>
 <% end %>
 
 <!-- <script src="https://d3js.org/d3.v4.min.js"></script>
