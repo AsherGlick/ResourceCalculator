@@ -35,6 +35,20 @@ module Astroneer
 				requirements: {"Hydrazine" => 0}
 			},
 		],
+		"Hematite" => [
+			{
+				output: 1,
+				recipe_type: "Raw Resource",
+				requirements: {"Hematite" => 0}
+			},
+		],
+		"Marble" => [
+			{
+				output: 1,
+				recipe_type: "Raw Resource",
+				requirements: {"Marble" => 0}
+			},
+		],
 		"Lithium" => [
 			{
 				output: 1,
@@ -362,9 +376,7 @@ module Astroneer
 		],
 		# "Copper"	
 		# "Astronium"	N/A	N/A
-		# "Hematite"	N/A	N/A
 		# "Artifacts"	N/A	N/A
-		# "Marbles"	N/A	N/A
 		# "Terrain Tool"	N/A	N/A
 		# "Solar Array" (Wrecks)	N/A	N/A
 	}
@@ -383,15 +395,15 @@ module Astroneer
 
 	def self.styles
 		return {
-			menu_background_color: "44C344",
-			menu_border_image: "",
-			menu_border_width: 0,
+			menu_background_color: "EEE",
+			menu_border_image: "OutsetBorder.png",
+			menu_border_width: 2,
 
 			item_width: 64,
 			item_hight: 64,
-			inset_background_color: "34B434",
-			inset_border_image: "",
-			inset_border_width: 2,
+			inset_background_color: "ccc",
+			inset_border_image: "ItemBorder.png",
+			inset_border_width: 0,
 		}
 	end
 end
