@@ -367,7 +367,8 @@ a {
 
 
 .item_input_focused {
-	border: 2px solid #F80;
+	border-color: #F80 !important;
+	border-image: none !important;
 }
 
 // Hide the up and down buttons for the number input
