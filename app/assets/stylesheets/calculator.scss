@@ -6,7 +6,6 @@ $font-stack:    'Minecraft Regular', courier, sans-serif;
 
 body {
 	overflow-y: scroll;
-	font-family: $font-stack;
 	background-color: #EFEFEF;
 
 	-webkit-transform-style: preserve-3d;
@@ -32,7 +31,6 @@ body {
 	text-align: right;
 	vertical-align: middle;
 	font-size: .8em;
-	font-family: $font-stack;
 	color: #FFF !important;
 	text-shadow: 2px 2px 0 #3F3F3F;
 }
@@ -45,7 +43,6 @@ body {
 	position:absolute;
 	bottom: 0;
 	left: 0;
-	font-family: $font-stack;
 	color: #FFF !important;
 	text-shadow: 2px 2px 0 #3F3F3F;
 	border:none;
@@ -55,7 +52,6 @@ body {
 
 
 .search_bar {
-	font-family: $font-stack;
 	padding-bottom: 2px;
 
 }
@@ -63,7 +59,6 @@ body {
 	float:left;
 }
 .search_box {
-	font-family: $font-stack;
 	width: 100%;
 	box-sizing:border-box;
 	padding: 0;
@@ -107,7 +102,6 @@ body {
 }
 
 .chest_list_title {
-	font-family: $font-stack;
 	color: #404040;
 	padding-bottom: 6px;
 
@@ -141,7 +135,6 @@ input[type=checkbox]:checked + label.hide_unused_label {
     background-clip: content-box;
 	border: 8px solid transparent;
 	border-image: url(/HoverBorder.png) 8;
-	font-family: $font-stack;
 	color: #FFF;
 	line-height: .7;
 	text-shadow: #3f3f3f 2px 2px;
@@ -163,7 +156,6 @@ input[type=checkbox]:checked + label.hide_unused_label {
 	position: absolute;
 	pointer-events: none;
 	display: none;
-	font-family: $font-stack;
 }
 .crafting_layout {
 	position: absolute;
@@ -184,7 +176,6 @@ input[type=checkbox]:checked + label.hide_unused_label {
 
 	font-size: .8em;
 
-	font-family: $font-stack;
 	color: #FFF !important;
 	text-shadow: 2px 2px 0 #3F3F3F;
 }
@@ -278,24 +269,6 @@ a {
 }
 
 
-// TO DELETE
-#about_us_lightbox {
-	max-width: 500px;
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: perspective(1px) translateY(-50%) translateX(-50%);
-	padding: 10px;	
-	font-family: $font-stack;
-	line-height: 1.7em;
-
-
-}
-
-
-
-
-
 
 .generate_button {
 	height: 40px;
@@ -310,7 +283,6 @@ a {
 
 	background-repeat: repeat;
 	padding: 0;
-	font-family: $font-stack;
 	text-align: center;
 	color: white;
 	text-shadow: 3px 3px #4C4C4C;
@@ -359,7 +331,6 @@ a {
 }
 
 .instructions {
-	font-family: $font-stack;
 	color: #888;
 	text-align: center;
 	margin-bottom: 7px;

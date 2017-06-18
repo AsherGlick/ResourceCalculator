@@ -402,8 +402,12 @@ module Astroneer
 			item_width: 64,
 			item_hight: 64,
 			inset_background_color: "ccc",
-			inset_border_image: "ItemBorder.png",
-			inset_border_width: 0,
+			inset_border_image: "astroneer_outset_border.png",
+			inset_border_width: 4,
+
+			custom_css: "",
+			font_family: "sans-serif",
+
 		}
 	end
 end
