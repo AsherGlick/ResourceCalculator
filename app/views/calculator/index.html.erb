@@ -99,6 +99,8 @@
 </div>
 
 <div id="hover_name"></div>
+
+<% if @styles[:use_minecraft_customs] %>
 <div id="hover_recipe" class="menu_style">
 	<div id='crafting'>
 		<img src="/Crafting.png" />
@@ -119,8 +121,8 @@
 	</div>
 	<div id='brewing'>
 	</div>
-
 </div>
+<% end %>
 <div id="recipe_select">
 	<div class="recipe_selector_title">
 		Recipes:
@@ -152,4 +154,10 @@
 
 <script>
 	var recipe_json = <%= raw @item_list.to_json %>;
+
+	<% if @styles[:use_minecraft_customs] %>
+	var use_minecraft_customs = true;
+	<% else %>
+	var use_minecraft_customs = false;
+	<% end %>
 </script>

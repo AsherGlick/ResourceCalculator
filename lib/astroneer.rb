@@ -408,6 +408,10 @@ module Astroneer
 			custom_css: "",
 			font_family: "sans-serif",
 
+
+			# Quick hack to restrict the custom minecraft UI from non-minecraft pages until there is a better method of creating the custom UIs
+			use_minecraft_customs: false,
+
 		}
 	end
 end

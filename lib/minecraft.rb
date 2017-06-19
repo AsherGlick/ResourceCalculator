@@ -8555,6 +8555,9 @@ module Minecraft
 			font_family: "'Minecraft Regular', courier, sans-serif",
 			# font_size:
 			# font_weight:
+
+
+			use_minecraft_customs: true,
 		}
 	end
 

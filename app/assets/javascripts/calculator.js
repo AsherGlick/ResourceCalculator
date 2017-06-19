@@ -226,7 +226,9 @@
 			// console.log(resource_tracker);
 			generate_chart(resource_tracker, generation_totals);
 
-			generate_chest_list(raw_resources);
+			if (use_minecraft_customs) {
+				generate_chest_list(raw_resources);
+			}
 
 			generate_instructions(resource_tracker);
 
