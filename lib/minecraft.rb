@@ -7663,7 +7663,7 @@ module Minecraft
 			{
 				output: 1,
 				recipe_type: "smelting",
-				recipe: ["Oak Wood Log", "Fuel"],
+				recipe: ["Oak Wood", "Fuel"],
 			},
 			{
 				output: 1,
