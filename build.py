@@ -80,7 +80,8 @@ def create_packed_image(resource_list):
         result.paste(im=image, box=(x_coordinate, y_coordinate))
 
     # save the new packed image file and all the coordinates of the images
-    result.save(os.path.join("output/", resource_list+".png"))
+    calculator_folder = os.path.join("output", resource_list)
+    result.save(os.path.join(calculator_folder, resource_list+".png"))
 
     # TODO: Compress the image after it has been exported, or before if possible
 
@@ -88,6 +89,11 @@ def create_packed_image(resource_list):
 
 
 def create_calculator(resource_list):
+    calculator_folder = os.path.join("output", resource_list)
+    if not os.path.exists(calculator_folder):
+        os.makedirs(calculator_folder)
+    print(calculator_folder)
+
     # Create a packed image of all the item images
     image_width, image_height, resource_image_coordinates = create_packed_image(resource_list)
 
@@ -112,13 +118,18 @@ def create_calculator(resource_list):
             resource["css_offset"] += "background: url("+resource_list+".png) "+str(-x_coordinate)+"px "+str(-y_coordinate)+"px no-repeat;"
         else:
             resource["css_offset"] += "background: #f0f;"
+            print("WARNING:", simple_name, "has a recipe but no image and will appear purple in the calculator")
+
         resource["mc_value"] = recipe
         resource["simplename"] = simple_name
         resources.append(resource)
 
     output_from_parsed_template = template.render(resources=resources, recipe_json=recipe_json)
 
-    with open("output/index.html", "w") as f:
+
+
+
+    with open(os.path.join(calculator_folder, "index.html"), "w") as f:
         f.write(output_from_parsed_template)
 
     # Sanity Check Warning, is there an image that does not have a recipe
@@ -137,6 +148,14 @@ def copy_common_resources():
 
 
 
-# Create the astroneer calculator
-create_calculator("astroneer")
-copy_common_resources()
+
+
+def main():
+    if not os.path.exists("output"):
+        os.makedirs("output")
+    # Create the astroneer calculator
+    create_calculator("astroneer")
+    create_calculator("minecraft")
+    copy_common_resources()
+
+main()

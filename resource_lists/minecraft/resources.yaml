@@ -1,0 +1,10386 @@
+---
+Stone:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Stone: 0
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Cobblestone
+  - Fuel
+  requirements:
+    Cobblestone: -1
+    Fuel: -1
+
+Granite:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Diorite
+  - Nether Quartz
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Diorite: -1
+    Nether Quartz: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Granite: 0
+Polished Granite:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Granite
+  - Granite
+  - 
+  - Granite
+  - Granite
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Granite: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Polished Granite: 0
+Diorite:
+- recipe_type: crafting
+  output: 2
+  recipe:
+  - Nether Quartz
+  - Cobblestone
+  - 
+  - Cobblestone
+  - Nether Quartz
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Nether Quartz: -2
+    Cobblestone: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Diorite: 0
+Polished Diorite:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Diorite
+  - Diorite
+  - 
+  - Diorite
+  - Diorite
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Diorite: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Polished Diorite: 0
+Andesite:
+- recipe_type: crafting
+  output: 2
+  recipe:
+  - Diorite
+  - Cobblestone
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Diorite: -1
+    Cobblestone: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Andesite: 0
+Polished Andesite:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Andesite
+  - Andesite
+  - 
+  - Andesite
+  - Andesite
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Andesite: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Polished Andesite: 0
+Grass Block:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Grass Block: 0
+Dirt:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Dirt: 0
+Coarse Dirt:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Gravel
+  - Dirt
+  - 
+  - Dirt
+  - Gravel
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Gravel: -2
+    Dirt: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Coarse Dirt: 0
+Podzol:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Podzol: 0
+Cobblestone:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cobblestone: 0
+Oak Wood Planks:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - 
+  - 
+  - 
+  - 
+  - Oak Wood
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Oak Wood: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Oak Wood Planks: 0
+Spruce Wood Planks:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - 
+  - 
+  - 
+  - 
+  - Spruce Wood
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Spruce Wood: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Spruce Wood Planks: 0
+Birch Wood Planks:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - 
+  - 
+  - 
+  - 
+  - Birch Wood
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Birch Wood: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Birch Wood Planks: 0
+Jungle Wood Planks:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - 
+  - 
+  - 
+  - 
+  - Jungle Wood
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Jungle Wood: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Jungle Wood Planks: 0
+Acacia Wood Planks:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - 
+  - 
+  - 
+  - 
+  - Acacia Wood
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Acacia Wood: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Acacia Wood Planks: 0
+Dark Oak Wood Planks:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - 
+  - 
+  - 
+  - 
+  - Dark Oak Wood
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Dark Oak Wood: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Dark Oak Wood Planks: 0
+Bedrock:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Bedrock: 0
+Sand:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Sand: 0
+Red Sand:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Red Sand: 0
+Gravel:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Gravel: 0
+Gold Ore:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Gold Ore: 0
+Iron Ore:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Iron Ore: 0
+Coal Ore:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Coal Ore: 0
+Oak Wood:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Oak Wood: 0
+Spruce Wood:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Spruce Wood: 0
+Birch Wood:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Birch Wood: 0
+Jungle Wood:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Jungle Wood: 0
+Sponge:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Sponge: 0
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Wet Sponge
+  - Fuel
+  requirements:
+    Wet Sponge: -1
+    Fuel: -1
+Wet Sponge:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Wet Sponge: 0
+Glass:
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Sand
+  - Fuel
+  requirements:
+    Sand: -1
+    Fuel: -1
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Red Sand
+  - Fuel
+  requirements:
+    Red Sand: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Glass: 0
+Lapis Lazuli Ore:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Lapis Lazuli Ore: 0
+Lapis Lazuli Block:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Lapis Lazuli
+  - Lapis Lazuli
+  - Lapis Lazuli
+  - Lapis Lazuli
+  - Lapis Lazuli
+  - Lapis Lazuli
+  - Lapis Lazuli
+  - Lapis Lazuli
+  - Lapis Lazuli
+  shapeless: 0
+  requirements:
+    Lapis Lazuli: -9
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Lapis Lazuli Block: 0
+Sandstone:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Sand
+  - Sand
+  - 
+  - Sand
+  - Sand
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Sand: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Sandstone: 0
+Chiseled Sandstone:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Sandstone Slab
+  - 
+  - 
+  - Sandstone Slab
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Sandstone Slab: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Chiseled Sandstone: 0
+Smooth Sandstone:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Sandstone
+  - Sandstone
+  - 
+  - Sandstone
+  - Sandstone
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Sandstone: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Smooth Sandstone: 0
+Wool:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - String
+  - String
+  - 
+  - String
+  - String
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    String: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Wool: 0
+Orange Wool:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Orange Wool: 0
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Wool
+  - Orange Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Wool: -1
+    Orange Dye: -1
+Magenta Wool:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Wool
+  - Magenta Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Wool: -1
+    Magenta Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Magenta Wool: 0
+Light Blue Wool:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Wool
+  - Light Blue Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Wool: -1
+    Light Blue Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Blue Wool: 0
+Yellow Wool:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Wool
+  - Dandelion Yellow
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Wool: -1
+    Dandelion Yellow: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Yellow Wool: 0
+Lime Wool:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Wool
+  - Lime Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Wool: -1
+    Lime Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Lime Wool: 0
+Pink Wool:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Wool
+  - Pink Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Wool: -1
+    Pink Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Pink Wool: 0
+Gray Wool:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Wool
+  - Gray Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Wool: -1
+    Gray Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Gray Wool: 0
+Light Gray Wool:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Wool
+  - Light Gray Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Wool: -1
+    Light Gray Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Gray Wool: 0
+Cyan Wool:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Wool
+  - Cyan Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Wool: -1
+    Cyan Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cyan Wool: 0
+Purple Wool:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Wool
+  - Purple Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Wool: -1
+    Purple Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Purple Wool: 0
+Blue Wool:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Wool
+  - Lapis Lazuli
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Wool: -1
+    Lapis Lazuli: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Blue Wool: 0
+Brown Wool:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Wool
+  - Cocoa Beans
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Wool: -1
+    Cocoa Beans: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Brown Wool: 0
+Green Wool:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Wool
+  - Cactus Green
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Wool: -1
+    Cactus Green: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Green Wool: 0
+Red Wool:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Wool
+  - Rose Red
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Wool: -1
+    Rose Red: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Red Wool: 0
+Black Wool:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Wool
+  - Ink Sac
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Wool: -1
+    Ink Sac: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Black Wool: 0
+Block of Gold:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  shapeless: 0
+  requirements:
+    Gold Ingot: -9
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Block of Gold: 0
+Block of Iron:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  shapeless: 0
+  requirements:
+    Iron Ingot: -9
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Block of Iron: 0
+Stone Slab:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Stone
+  - Stone
+  - Stone
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Stone: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Stone Slab: 0
+Sandstone Slab:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Sandstone
+  - Sandstone
+  - Sandstone
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Sandstone: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Sandstone Slab: 0
+Cobblestone Slab:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Cobblestone
+  - Cobblestone
+  - Cobblestone
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Cobblestone: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cobblestone Slab: 0
+Bricks Slab:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Bricks
+  - Bricks
+  - Bricks
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Bricks: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Bricks Slab: 0
+Stone Bricks Slab:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Stone Brick
+  - Stone Brick
+  - Stone Brick
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Stone Brick: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Stone Bricks Slab: 0
+Nether Brick Slab:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Nether Brick Block
+  - Nether Brick Block
+  - Nether Brick Block
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Nether Brick Block: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Nether Brick Slab: 0
+Quartz Slab:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Block of Quartz
+  - Block of Quartz
+  - Block of Quartz
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Block of Quartz: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Quartz Slab: 0
+Bricks:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Brick
+  - Brick
+  - 
+  - Brick
+  - Brick
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Brick: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Bricks: 0
+Bookshelf:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Book
+  - Book
+  - Book
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -6
+    Book: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Bookshelf: 0
+Moss Stone:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Cobblestone
+  - Vines
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Cobblestone: -1
+    Vines: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Moss Stone: 0
+Obsidian:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Obsidian: 0
+- output: 1
+  recipe_type: add_water
+  recipe:
+  - Lava Bucket
+  requirements:
+    Lava Bucket: -1
+Oak Wood Stairs:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - 
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - 
+  - 
+  - Oak Wood Planks
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Oak Wood Stairs: 0
+Diamond Ore:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Diamond Ore: 0
+Block of Diamond:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Diamond
+  - Diamond
+  - Diamond
+  - Diamond
+  - Diamond
+  - Diamond
+  - Diamond
+  - Diamond
+  - Diamond
+  shapeless: 0
+  requirements:
+    Diamond: -9
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Block of Diamond: 0
+Cobblestone Stairs:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Cobblestone
+  - Cobblestone
+  - Cobblestone
+  - 
+  - Cobblestone
+  - Cobblestone
+  - 
+  - 
+  - Cobblestone
+  shapeless: 0
+  requirements:
+    Cobblestone: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cobblestone Stairs: 0
+Redstone Ore:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Redstone Ore: 0
+Ice:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Ice: 0
+Snow:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Snow: 0
+Block of Clay:
+- output: 1
+  recipe_type: crafting
+  recipe:
+  - 
+  - 
+  - 
+  - Clay
+  - Clay
+  - 
+  - Clay
+  - Clay
+  - 
+  shapeless: 0
+  requirements:
+    Clay: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Block of Clay: 0
+Pumpkin:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Pumpkin: 0
+Netherrack:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Netherrack: 0
+Soul Sand:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Soul Sand: 0
+Glowstone:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Glowstone Dust
+  - Glowstone Dust
+  - 
+  - Glowstone Dust
+  - Glowstone Dust
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Glowstone Dust: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Glowstone: 0
+Jack o'Lantern:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Torch
+  - 
+  - Pumpkin
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Torch: -1
+    Pumpkin: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Jack o'Lantern: 0
+White Stained Glass:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  - Bone Meal
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  shapeless: 0
+  requirements:
+    Glass: -8
+    Bone Meal: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    White Stained Glass: 0
+Orange Stained Glass:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  - Orange Dye
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  shapeless: 0
+  requirements:
+    Glass: -8
+    Orange Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Orange Stained Glass: 0
+Magenta Stained Glass:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  - Magenta Dye
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  shapeless: 0
+  requirements:
+    Glass: -8
+    Magenta Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Magenta Stained Glass: 0
+Light Blue Stained Glass:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  - Light Blue Dye
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  shapeless: 0
+  requirements:
+    Glass: -8
+    Light Blue Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Blue Stained Glass: 0
+Yellow Stained Glass:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  - Dandelion Yellow
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  shapeless: 0
+  requirements:
+    Glass: -8
+    Dandelion Yellow: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Yellow Stained Glass: 0
+Lime Stained Glass:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  - Lime Dye
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  shapeless: 0
+  requirements:
+    Glass: -8
+    Lime Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Lime Stained Glass: 0
+Pink Stained Glass:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  - Pink Dye
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  shapeless: 0
+  requirements:
+    Glass: -8
+    Pink Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Pink Stained Glass: 0
+Gray Stained Glass:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  - Gray Dye
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  shapeless: 0
+  requirements:
+    Glass: -8
+    Gray Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Gray Stained Glass: 0
+Light Gray Stained Glass:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  - Light Gray Dye
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  shapeless: 0
+  requirements:
+    Glass: -8
+    Light Gray Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Gray Stained Glass: 0
+Cyan Stained Glass:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  - Cyan Dye
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  shapeless: 0
+  requirements:
+    Glass: -8
+    Cyan Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cyan Stained Glass: 0
+Purple Stained Glass:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  - Purple Dye
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  shapeless: 0
+  requirements:
+    Glass: -8
+    Purple Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Purple Stained Glass: 0
+Blue Stained Glass:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  - Lapis Lazuli
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  shapeless: 0
+  requirements:
+    Glass: -8
+    Lapis Lazuli: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Blue Stained Glass: 0
+Brown Stained Glass:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  - Cocoa Beans
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  shapeless: 0
+  requirements:
+    Glass: -8
+    Cocoa Beans: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Brown Stained Glass: 0
+Green Stained Glass:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  - Cactus Green
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  shapeless: 0
+  requirements:
+    Glass: -8
+    Cactus Green: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Green Stained Glass: 0
+Red Stained Glass:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  - Rose Red
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  shapeless: 0
+  requirements:
+    Glass: -8
+    Rose Red: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Red Stained Glass: 0
+Black Stained Glass:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  - Ink Sac
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  shapeless: 0
+  requirements:
+    Glass: -8
+    Ink Sac: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Black Stained Glass: 0
+Stone Brick:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Stone
+  - Stone
+  - 
+  - Stone
+  - Stone
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Stone: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Stone Brick: 0
+Mossy Stone Bricks:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Stone Brick
+  - Vines
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Stone Brick: -1
+    Vines: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Mossy Stone Bricks: 0
+Cracked Stone Bricks:
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Stone Bricks
+  - Fuel
+  requirements:
+    Stone Bricks: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cracked Stone Bricks: 0
+Chiseled Stone Bricks:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stone Bricks Slab
+  - 
+  - 
+  - Stone Bricks Slab
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Stone Bricks Slab: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Chiseled Stone Bricks: 0
+Melon:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Melon Slice
+  - Melon Slice
+  - Melon Slice
+  - Melon Slice
+  - Melon Slice
+  - Melon Slice
+  - Melon Slice
+  - Melon Slice
+  - Melon Slice
+  shapeless: 0
+  requirements:
+    Melon Slice: -9
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Melon: 0
+Brick Stairs:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Bricks
+  - Bricks
+  - Bricks
+  - 
+  - Bricks
+  - Bricks
+  - 
+  - 
+  - Bricks
+  shapeless: 0
+  requirements:
+    Bricks: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Brick Stairs: 0
+Stone Brick Stairs:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Stone Brick
+  - Stone Brick
+  - Stone Brick
+  - 
+  - Stone Brick
+  - Stone Brick
+  - 
+  - 
+  - Stone Brick
+  shapeless: 0
+  requirements:
+    Stone Brick: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Stone Brick Stairs: 0
+Mycelium:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Mycelium: 0
+Nether Brick Block:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Nether Brick
+  - Nether Brick
+  - 
+  - Nether Brick
+  - Nether Brick
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Nether Brick: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Nether Brick Block: 0
+Nether Brick Stairs:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Nether Brick Block
+  - Nether Brick Block
+  - Nether Brick Block
+  - 
+  - Nether Brick Block
+  - Nether Brick Block
+  - 
+  - 
+  - Nether Brick Block
+  shapeless: 0
+  requirements:
+    Nether Brick Block: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Nether Brick Stairs: 0
+End Stone:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    End Stone: 0
+Oak Wood Slab:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Oak Wood Slab: 0
+Spruce Wood Slab:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Spruce Wood Planks
+  - Spruce Wood Planks
+  - Spruce Wood Planks
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Spruce Wood Planks: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Spruce Wood Slab: 0
+Birch Wood Slab:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Birch Wood Planks
+  - Birch Wood Planks
+  - Birch Wood Planks
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Birch Wood Planks: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Birch Wood Slab: 0
+Jungle Wood Slab:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Jungle Wood Planks
+  - Jungle Wood Planks
+  - Jungle Wood Planks
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Jungle Wood Planks: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Jungle Wood Slab: 0
+Acacia Wood Slab:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Acacia Wood Planks
+  - Acacia Wood Planks
+  - Acacia Wood Planks
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Acacia Wood Planks: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Acacia Wood Slab: 0
+Dark Oak Wood Slab:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Dark Oak Wood Planks
+  - Dark Oak Wood Planks
+  - Dark Oak Wood Planks
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Dark Oak Wood Planks: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Dark Oak Wood Slab: 0
+Sandstone Stairs:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Sandstone
+  - Sandstone
+  - Sandstone
+  - 
+  - Sandstone
+  - Sandstone
+  - 
+  - 
+  - Sandstone
+  shapeless: 0
+  requirements:
+    Sandstone: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Sandstone Stairs: 0
+Emerald Ore:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Emerald Ore: 0
+Block of Emerald:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Emerald
+  - Emerald
+  - Emerald
+  - Emerald
+  - Emerald
+  - Emerald
+  - Emerald
+  - Emerald
+  - Emerald
+  shapeless: 1
+  requirements:
+    Emerald: -9
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Block of Emerald: 0
+Spruce Wood Stairs:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Spruce Wood Planks
+  - Spruce Wood Planks
+  - Spruce Wood Planks
+  - 
+  - Spruce Wood Planks
+  - Spruce Wood Planks
+  - 
+  - 
+  - Spruce Wood Planks
+  shapeless: 0
+  requirements:
+    Spruce Wood Planks: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Spruce Wood Stairs: 0
+Birch Wood Stairs:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Birch Wood Planks
+  - Birch Wood Planks
+  - Birch Wood Planks
+  - 
+  - Birch Wood Planks
+  - Birch Wood Planks
+  - 
+  - 
+  - Birch Wood Planks
+  shapeless: 0
+  requirements:
+    Birch Wood Planks: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Birch Wood Stairs: 0
+Jungle Wood Stairs:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Jungle Wood Planks
+  - Jungle Wood Planks
+  - Jungle Wood Planks
+  - 
+  - Jungle Wood Planks
+  - Jungle Wood Planks
+  - 
+  - 
+  - Jungle Wood Planks
+  shapeless: 0
+  requirements:
+    Jungle Wood Planks: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Jungle Wood Stairs: 0
+Cobblestone Wall:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Cobblestone
+  - Cobblestone
+  - Cobblestone
+  - Cobblestone
+  - Cobblestone
+  - Cobblestone
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Cobblestone: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cobblestone Wall: 0
+Mossy Cobblestone Wall:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Moss Stone
+  - Moss Stone
+  - Moss Stone
+  - Moss Stone
+  - Moss Stone
+  - Moss Stone
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Moss Stone: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Mossy Cobblestone Wall: 0
+Nether Quartz Ore:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Nether Quartz Ore: 0
+Block of Quartz:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Nether Quartz
+  - Nether Quartz
+  - 
+  - Nether Quartz
+  - Nether Quartz
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Nether Quartz: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Block of Quartz: 0
+Chiseled Quartz Block:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Quartz Slab
+  - 
+  - 
+  - Quartz Slab
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Quartz Slab: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Chiseled Quartz Block: 0
+Pillar Quartz Block:
+- recipe_type: crafting
+  output: 2
+  recipe:
+  - Block of Quartz
+  - 
+  - 
+  - Block of Quartz
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Block of Quartz: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Pillar Quartz Block: 0
+Quartz Stairs:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Block of Quartz
+  - Block of Quartz
+  - Block of Quartz
+  - 
+  - Block of Quartz
+  - Block of Quartz
+  - 
+  - 
+  - Block of Quartz
+  shapeless: 0
+  requirements:
+    Block of Quartz: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Quartz Stairs: 0
+White Terracotta:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Bone Meal
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  shapeless: 0
+  requirements:
+    Terracotta: -8
+    Bone Meal: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    White Terracotta: 0
+Orange Terracotta:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Orange Dye
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  shapeless: 0
+  requirements:
+    Terracotta: -8
+    Orange Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Orange Terracotta: 0
+Magenta Terracotta:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Magenta Dye
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  shapeless: 0
+  requirements:
+    Terracotta: -8
+    Magenta Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Magenta Terracotta: 0
+Light Blue Terracotta:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Light Blue Dye
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  shapeless: 0
+  requirements:
+    Terracotta: -8
+    Light Blue Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Blue Terracotta: 0
+Yellow Terracotta:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Dandelion Yellow
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  shapeless: 0
+  requirements:
+    Terracotta: -8
+    Dandelion Yellow: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Yellow Terracotta: 0
+Lime Terracotta:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Lime Dye
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  shapeless: 0
+  requirements:
+    Terracotta: -8
+    Lime Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Lime Terracotta: 0
+Pink Terracotta:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Pink Dye
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  shapeless: 0
+  requirements:
+    Terracotta: -8
+    Pink Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Pink Terracotta: 0
+Gray Terracotta:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Gray Dye
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  shapeless: 0
+  requirements:
+    Terracotta: -8
+    Gray Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Gray Terracotta: 0
+Light Gray Terracotta:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Light Gray Dye
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  shapeless: 0
+  requirements:
+    Terracotta: -8
+    Light Gray Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Gray Terracotta: 0
+Cyan Terracotta:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Cyan Dye
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  shapeless: 0
+  requirements:
+    Terracotta: -8
+    Cyan Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cyan Terracotta: 0
+Purple Terracotta:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Purple Dye
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  shapeless: 0
+  requirements:
+    Terracotta: -8
+    Purple Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Purple Terracotta: 0
+Blue Terracotta:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Lapis Lazuli
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  shapeless: 0
+  requirements:
+    Terracotta: -8
+    Lapis Lazuli: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Blue Terracotta: 0
+Brown Terracotta:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Cocoa Beans
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  shapeless: 0
+  requirements:
+    Terracotta: -8
+    Cocoa Beans: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Brown Terracotta: 0
+Green Terracotta:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Cactus Green
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  shapeless: 0
+  requirements:
+    Terracotta: -8
+    Cactus Green: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Green Terracotta: 0
+Red Terracotta:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Rose Red
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  shapeless: 0
+  requirements:
+    Terracotta: -8
+    Rose Red: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Red Terracotta: 0
+Black Terracotta:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Ink Sac
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  - Terracotta
+  shapeless: 0
+  requirements:
+    Terracotta: -8
+    Ink Sac: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Black Terracotta: 0
+Acacia Wood:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Acacia Wood: 0
+Dark Oak Wood:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Dark Oak Wood: 0
+Acacia Wood Stairs:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Acacia Wood Planks
+  - Acacia Wood Planks
+  - Acacia Wood Planks
+  - 
+  - Acacia Wood Planks
+  - Acacia Wood Planks
+  - 
+  - 
+  - Acacia Wood Planks
+  shapeless: 0
+  requirements:
+    Acacia Wood Planks: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Acacia Wood Stairs: 0
+Dark Oak Wood Stairs:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Dark Oak Wood Planks
+  - Dark Oak Wood Planks
+  - Dark Oak Wood Planks
+  - 
+  - Dark Oak Wood Planks
+  - Dark Oak Wood Planks
+  - 
+  - 
+  - Dark Oak Wood Planks
+  shapeless: 0
+  requirements:
+    Dark Oak Wood Planks: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Dark Oak Wood Stairs: 0
+Prismarine:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Prismarine Shard
+  - Prismarine Shard
+  - 
+  - Prismarine Shard
+  - Prismarine Shard
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Prismarine Shard: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Prismarine: 0
+Prismarine Bricks:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Prismarine Shard
+  - Prismarine Shard
+  - Prismarine Shard
+  - Prismarine Shard
+  - Prismarine Shard
+  - Prismarine Shard
+  - Prismarine Shard
+  - Prismarine Shard
+  - Prismarine Shard
+  shapeless: 0
+  requirements:
+    Prismarine Shard: -9
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Prismarine Bricks: 0
+Dark Prismarine:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Prismarine Shard
+  - Prismarine Shard
+  - Prismarine Shard
+  - Prismarine Shard
+  - Ink Sac
+  - Prismarine Shard
+  - Prismarine Shard
+  - Prismarine Shard
+  - Prismarine Shard
+  shapeless: 0
+  requirements:
+    Prismarine Shard: -8
+    Ink Sac: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Dark Prismarine: 0
+Sea Lantern:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Prismarine Shard
+  - Prismarine Crystals
+  - Prismarine Shard
+  - Prismarine Crystals
+  - Prismarine Shard
+  - Prismarine Crystals
+  - Prismarine Shard
+  - Prismarine Crystals
+  - Prismarine Shard
+  shapeless: 0
+  requirements:
+    Prismarine Shard: -5
+    Prismarine Crystals: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Sea Lantern: 0
+Hay Bale:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Wheat
+  - Wheat
+  - Wheat
+  - Wheat
+  - Wheat
+  - Wheat
+  - Wheat
+  - Wheat
+  - Wheat
+  shapeless: 0
+  requirements:
+    Wheat: -9
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Hay Bale: 0
+Terracotta:
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Block of Clay
+  - Fuel
+  requirements:
+    Block of Clay: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Terracotta: 0
+Block of Coal:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Coal
+  - Coal
+  - Coal
+  - Coal
+  - Coal
+  - Coal
+  - Coal
+  - Coal
+  - Coal
+  shapeless: 0
+  requirements:
+    Coal: -9
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Block of Coal: 0
+Packed Ice:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Packed Ice: 0
+Red Sandstone:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Red Sand
+  - Red Sand
+  - 
+  - Red Sand
+  - Red Sand
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Red Sand: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Red Sandstone: 0
+Chiseled Red Sandstone:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Red Sandstone Slab
+  - 
+  - 
+  - Red Sandstone Slab
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Red Sandstone Slab: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Chiseled Red Sandstone: 0
+Smooth Red Sandstone:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Red Sandstone
+  - Red Sandstone
+  - 
+  - Red Sandstone
+  - Red Sandstone
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Red Sandstone: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Smooth Red Sandstone: 0
+Red Sandstone Stairs:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Red Sandstone
+  - Red Sandstone
+  - Red Sandstone
+  - 
+  - Red Sandstone
+  - Red Sandstone
+  - 
+  - 
+  - Red Sandstone
+  shapeless: 0
+  requirements:
+    Red Sandstone: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Red Sandstone Stairs: 0
+Red Sandstone Slab:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Red Sandstone
+  - Red Sandstone
+  - Red Sandstone
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Red Sandstone: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Red Sandstone Slab: 0
+Purpur Block:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Popped Chorus Fruit
+  - Popped Chorus Fruit
+  - 
+  - Popped Chorus Fruit
+  - Popped Chorus Fruit
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Popped Chorus Fruit: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Purpur Block: 0
+Purpur Pillar:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Purpur Slab
+  - 
+  - 
+  - Purpur Slab
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Purpur Slab: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Purpur Pillar: 0
+Purpur Stairs:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Purpur Block
+  - Purpur Block
+  - Purpur Block
+  - 
+  - Purpur Block
+  - Purpur Block
+  - 
+  - 
+  - Purpur Block
+  shapeless: 0
+  requirements:
+    Purpur Block: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Purpur Stairs: 0
+Purpur Slab:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Purpur Block
+  - Purpur Block
+  - Purpur Block
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Purpur Block: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Purpur Slab: 0
+End Stone Bricks:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - End Stone
+  - End Stone
+  - 
+  - End Stone
+  - End Stone
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    End Stone: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    End Stone Bricks: 0
+Magma Block:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Magma Cream
+  - Magma Cream
+  - 
+  - Magma Cream
+  - Magma Cream
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Magma Cream: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Magma Block: 0
+Nether Wart Block:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Nether Wart
+  - Nether Wart
+  - Nether Wart
+  - Nether Wart
+  - Nether Wart
+  - Nether Wart
+  - Nether Wart
+  - Nether Wart
+  - Nether Wart
+  shapeless: 0
+  requirements:
+    Nether Wart: -9
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Nether Wart Block: 0
+Red Nether Brick:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Nether Brick
+  - Nether Wart
+  - 
+  - Nether Wart
+  - Nether Brick
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Nether Brick: -2
+    Nether Wart: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Red Nether Brick: 0
+Bone Block:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Bone Meal
+  - Bone Meal
+  - Bone Meal
+  - Bone Meal
+  - Bone Meal
+  - Bone Meal
+  - Bone Meal
+  - Bone Meal
+  - Bone Meal
+  shapeless: 0
+  requirements:
+    Bone Meal: -9
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Bone Block: 0
+Observer:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Cobblestone
+  - Cobblestone
+  - Cobblestone
+  - Redstone
+  - Redstone
+  - Nether Quartz
+  - Cobblestone
+  - Cobblestone
+  - Cobblestone
+  shapeless: 0
+  requirements:
+    Cobblestone: -6
+    Redstone: -2
+    Nether Quartz: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Observer: 0
+White Shulker Box:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Purple Shulker Box
+  - Bone Meal
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Purple Shulker Box: -1
+    Bone Meal: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    White Shulker Box: 0
+Orange Shulker Box:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Purple Shulker Box
+  - Orange Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Purple Shulker Box: -1
+    Orange Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Orange Shulker Box: 0
+Magenta Shulker Box:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Purple Shulker Box
+  - Magenta Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Purple Shulker Box: -1
+    Magenta Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Magenta Shulker Box: 0
+Light Blue Shulker Box:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Purple Shulker Box
+  - Light Blue Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Purple Shulker Box: -1
+    Light Blue Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Blue Shulker Box: 0
+Yellow Shulker Box:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Purple Shulker Box
+  - Dandelion Yellow
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Purple Shulker Box: -1
+    Dandelion Yellow: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Yellow Shulker Box: 0
+Lime Shulker Box:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Purple Shulker Box
+  - Lime Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Purple Shulker Box: -1
+    Lime Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Lime Shulker Box: 0
+Pink Shulker Box:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Purple Shulker Box
+  - Pink Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Purple Shulker Box: -1
+    Pink Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Pink Shulker Box: 0
+Gray Shulker Box:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Purple Shulker Box
+  - Gray Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Purple Shulker Box: -1
+    Gray Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Gray Shulker Box: 0
+Light Gray Shulker Box:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Purple Shulker Box
+  - Light Gray Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Purple Shulker Box: -1
+    Light Gray Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Gray Shulker Box: 0
+Cyan Shulker Box:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Purple Shulker Box
+  - Cyan Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Purple Shulker Box: -1
+    Cyan Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cyan Shulker Box: 0
+Purple Shulker Box:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Shulker Shell
+  - 
+  - 
+  - Chest
+  - 
+  - 
+  - Shulker Shell
+  - 
+  shapeless: 0
+  requirements:
+    Shulker Shell: -2
+    Chest: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Purple Shulker Box: 0
+Blue Shulker Box:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Purple Shulker Box
+  - Lapis Lazuli
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Purple Shulker Box: -1
+    Lapis Lazuli: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Blue Shulker Box: 0
+Brown Shulker Box:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Purple Shulker Box
+  - Cocoa Beans
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Purple Shulker Box: -1
+    Cocoa Beans: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Brown Shulker Box: 0
+Green Shulker Box:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Purple Shulker Box
+  - Cactus Green
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Purple Shulker Box: -1
+    Cactus Green: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Green Shulker Box: 0
+Red Shulker Box:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Purple Shulker Box
+  - Rose Red
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Purple Shulker Box: -1
+    Rose Red: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Red Shulker Box: 0
+Black Shulker Box:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Purple Shulker Box
+  - Ink Sac
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Purple Shulker Box: -1
+    Ink Sac: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Black Shulker Box: 0
+White Glazed Terracotta:
+- recipe_type: smelting
+  output: 1
+  recipe:
+  - White Terracotta
+  - Fuel
+  requirements:
+    White Terracotta: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    White Glazed Terracotta: 0
+Orange Glazed Terracotta:
+- recipe_type: smelting
+  output: 1
+  recipe:
+  - Orange Terracotta
+  - Fuel
+  requirements:
+    Orange Terracotta: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Orange Glazed Terracotta: 0
+Magenta Glazed Terracotta:
+- recipe_type: smelting
+  output: 1
+  recipe:
+  - Magenta Terracotta
+  - Fuel
+  requirements:
+    Magenta Terracotta: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Magenta Glazed Terracotta: 0
+Light Blue Glazed Terracotta:
+- recipe_type: smelting
+  output: 1
+  recipe:
+  - Light Blue Terracotta
+  - Fuel
+  requirements:
+    Light Blue Terracotta: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Blue Glazed Terracotta: 0
+Yellow Glazed Terracotta:
+- recipe_type: smelting
+  output: 1
+  recipe:
+  - Yellow Terracotta
+  - Fuel
+  requirements:
+    Yellow Terracotta: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Yellow Glazed Terracotta: 0
+Lime Glazed Terracotta:
+- recipe_type: smelting
+  output: 1
+  recipe:
+  - Lime Terracotta
+  - Fuel
+  requirements:
+    Lime Terracotta: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Lime Glazed Terracotta: 0
+Pink Glazed Terracotta:
+- recipe_type: smelting
+  output: 1
+  recipe:
+  - Pink Terracotta
+  - Fuel
+  requirements:
+    Pink Terracotta: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Pink Glazed Terracotta: 0
+Gray Glazed Terracotta:
+- recipe_type: smelting
+  output: 1
+  recipe:
+  - Gray Terracotta
+  - Fuel
+  requirements:
+    Gray Terracotta: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Gray Glazed Terracotta: 0
+Light Gray Glazed Terracotta:
+- recipe_type: smelting
+  output: 1
+  recipe:
+  - Light Gray Terracotta
+  - Fuel
+  requirements:
+    Light Gray Terracotta: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Gray Glazed Terracotta: 0
+Cyan Glazed Terracotta:
+- recipe_type: smelting
+  output: 1
+  recipe:
+  - Cyan Terracotta
+  - Fuel
+  requirements:
+    Cyan Terracotta: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cyan Glazed Terracotta: 0
+Purple Glazed Terracotta:
+- recipe_type: smelting
+  output: 1
+  recipe:
+  - Purple Terracotta
+  - Fuel
+  requirements:
+    Purple Terracotta: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Purple Glazed Terracotta: 0
+Blue Glazed Terracotta:
+- recipe_type: smelting
+  output: 1
+  recipe:
+  - Blue Terracotta
+  - Fuel
+  requirements:
+    Blue Terracotta: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Blue Glazed Terracotta: 0
+Brown Glazed Terracotta:
+- recipe_type: smelting
+  output: 1
+  recipe:
+  - Brown Terracotta
+  - Fuel
+  requirements:
+    Brown Terracotta: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Brown Glazed Terracotta: 0
+Green Glazed Terracotta:
+- recipe_type: smelting
+  output: 1
+  recipe:
+  - Green Terracotta
+  - Fuel
+  requirements:
+    Green Terracotta: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Green Glazed Terracotta: 0
+Red Glazed Terracotta:
+- recipe_type: smelting
+  output: 1
+  recipe:
+  - Red Terracotta
+  - Fuel
+  requirements:
+    Red Terracotta: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Red Glazed Terracotta: 0
+Black Glazed Terracotta:
+- recipe_type: smelting
+  output: 1
+  recipe:
+  - Black Terracotta
+  - Fuel
+  requirements:
+    Black Terracotta: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Black Glazed Terracotta: 0
+White Concrete:
+- recipe_type: add_water
+  output: 1
+  recipe:
+  - White Concrete Powder
+  requirements:
+    White Concrete Powder: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    White Concrete: 0
+Orange Concrete:
+- recipe_type: add_water
+  output: 1
+  recipe:
+  - Orange Concrete Powder
+  requirements:
+    Orange Concrete Powder: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Orange Concrete: 0
+Magenta Concrete:
+- recipe_type: add_water
+  output: 1
+  recipe:
+  - Magenta Concrete Powder
+  requirements:
+    Magenta Concrete Powder: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Magenta Concrete: 0
+Light Blue Concrete:
+- recipe_type: add_water
+  output: 1
+  recipe:
+  - Light Blue Concrete Powder
+  requirements:
+    Light Blue Concrete Powder: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Blue Concrete: 0
+Yellow Concrete:
+- recipe_type: add_water
+  output: 1
+  recipe:
+  - Yellow Concrete Powder
+  requirements:
+    Yellow Concrete Powder: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Yellow Concrete: 0
+Lime Concrete:
+- recipe_type: add_water
+  output: 1
+  recipe:
+  - Lime Concrete Powder
+  requirements:
+    Lime Concrete Powder: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Lime Concrete: 0
+Pink Concrete:
+- recipe_type: add_water
+  output: 1
+  recipe:
+  - Pink Concrete Powder
+  requirements:
+    Pink Concrete Powder: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Pink Concrete: 0
+Gray Concrete:
+- recipe_type: add_water
+  output: 1
+  recipe:
+  - Gray Concrete Powder
+  requirements:
+    Gray Concrete Powder: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Gray Concrete: 0
+Light Gray Concrete:
+- recipe_type: add_water
+  output: 1
+  recipe:
+  - Light Gray Concrete Powder
+  requirements:
+    Light Gray Concrete Powder: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Gray Concrete: 0
+Cyan Concrete:
+- recipe_type: add_water
+  output: 1
+  recipe:
+  - Cyan Concrete Powder
+  requirements:
+    Cyan Concrete Powder: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cyan Concrete: 0
+Purple Concrete:
+- recipe_type: add_water
+  output: 1
+  recipe:
+  - Purple Concrete Powder
+  requirements:
+    Purple Concrete Powder: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Purple Concrete: 0
+Blue Concrete:
+- recipe_type: add_water
+  output: 1
+  recipe:
+  - Blue Concrete Powder
+  requirements:
+    Blue Concrete Powder: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Blue Concrete: 0
+Brown Concrete:
+- recipe_type: add_water
+  output: 1
+  recipe:
+  - Brown Concrete Powder
+  requirements:
+    Brown Concrete Powder: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Brown Concrete: 0
+Green Concrete:
+- recipe_type: add_water
+  output: 1
+  recipe:
+  - Green Concrete Powder
+  requirements:
+    Green Concrete Powder: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Green Concrete: 0
+Red Concrete:
+- recipe_type: add_water
+  output: 1
+  recipe:
+  - Red Concrete Powder
+  requirements:
+    Red Concrete Powder: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Red Concrete: 0
+Black Concrete:
+- recipe_type: add_water
+  output: 8
+  recipe:
+  - Black Concrete Powder
+  requirements:
+    Black Concrete Powder: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Black Concrete: 0
+White Concrete Powder:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Sand
+  - Gravel
+  - Sand
+  - Gravel
+  - Bone Meal
+  - Gravel
+  - Sand
+  - Gravel
+  - Sand
+  shapeless: 0
+  requirements:
+    Sand: -4
+    Gravel: -4
+    Bone Meal: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    White Concrete Powder: 0
+Orange Concrete Powder:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Sand
+  - Gravel
+  - Sand
+  - Gravel
+  - Orange Dye
+  - Gravel
+  - Sand
+  - Gravel
+  - Sand
+  shapeless: 0
+  requirements:
+    Sand: -4
+    Gravel: -4
+    Orange Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Orange Concrete Powder: 0
+Magenta Concrete Powder:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Sand
+  - Gravel
+  - Sand
+  - Gravel
+  - Magenta Dye
+  - Gravel
+  - Sand
+  - Gravel
+  - Sand
+  shapeless: 0
+  requirements:
+    Sand: -4
+    Gravel: -4
+    Magenta Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Magenta Concrete Powder: 0
+Light Blue Concrete Powder:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Sand
+  - Gravel
+  - Sand
+  - Gravel
+  - Light Blue Dye
+  - Gravel
+  - Sand
+  - Gravel
+  - Sand
+  shapeless: 0
+  requirements:
+    Sand: -4
+    Gravel: -4
+    Light Blue Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Blue Concrete Powder: 0
+Yellow Concrete Powder:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Sand
+  - Gravel
+  - Sand
+  - Gravel
+  - Dandelion Yellow
+  - Gravel
+  - Sand
+  - Gravel
+  - Sand
+  shapeless: 0
+  requirements:
+    Sand: -4
+    Gravel: -4
+    Dandelion Yellow: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Yellow Concrete Powder: 0
+Lime Concrete Powder:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Sand
+  - Gravel
+  - Sand
+  - Gravel
+  - Lime Dye
+  - Gravel
+  - Sand
+  - Gravel
+  - Sand
+  shapeless: 0
+  requirements:
+    Sand: -4
+    Gravel: -4
+    Lime Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Lime Concrete Powder: 0
+Pink Concrete Powder:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Sand
+  - Gravel
+  - Sand
+  - Gravel
+  - Pink Dye
+  - Gravel
+  - Sand
+  - Gravel
+  - Sand
+  shapeless: 0
+  requirements:
+    Sand: -4
+    Gravel: -4
+    Pink Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Pink Concrete Powder: 0
+Gray Concrete Powder:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Sand
+  - Gravel
+  - Sand
+  - Gravel
+  - Gray Dye
+  - Gravel
+  - Sand
+  - Gravel
+  - Sand
+  shapeless: 0
+  requirements:
+    Sand: -4
+    Gravel: -4
+    Gray Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Gray Concrete Powder: 0
+Light Gray Concrete Powder:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Sand
+  - Gravel
+  - Sand
+  - Gravel
+  - Light Gray Dye
+  - Gravel
+  - Sand
+  - Gravel
+  - Sand
+  shapeless: 0
+  requirements:
+    Sand: -4
+    Gravel: -4
+    Light Gray Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Gray Concrete Powder: 0
+Cyan Concrete Powder:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Sand
+  - Gravel
+  - Sand
+  - Gravel
+  - Cyan Dye
+  - Gravel
+  - Sand
+  - Gravel
+  - Sand
+  shapeless: 0
+  requirements:
+    Sand: -4
+    Gravel: -4
+    Cyan Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cyan Concrete Powder: 0
+Purple Concrete Powder:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Sand
+  - Gravel
+  - Sand
+  - Gravel
+  - Purple Dye
+  - Gravel
+  - Sand
+  - Gravel
+  - Sand
+  shapeless: 0
+  requirements:
+    Sand: -4
+    Gravel: -4
+    Purple Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Purple Concrete Powder: 0
+Blue Concrete Powder:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Sand
+  - Gravel
+  - Sand
+  - Gravel
+  - Lapis Lazuli
+  - Gravel
+  - Sand
+  - Gravel
+  - Sand
+  shapeless: 0
+  requirements:
+    Sand: -4
+    Gravel: -4
+    Lapis Lazuli: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Blue Concrete Powder: 0
+Brown Concrete Powder:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Sand
+  - Gravel
+  - Sand
+  - Gravel
+  - Cocoa Beans
+  - Gravel
+  - Sand
+  - Gravel
+  - Sand
+  shapeless: 0
+  requirements:
+    Sand: -4
+    Gravel: -4
+    Cocoa Beans: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Brown Concrete Powder: 0
+Green Concrete Powder:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Sand
+  - Gravel
+  - Sand
+  - Gravel
+  - Cactus Green
+  - Gravel
+  - Sand
+  - Gravel
+  - Sand
+  shapeless: 0
+  requirements:
+    Sand: -4
+    Gravel: -4
+    Cactus Green: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Green Concrete Powder: 0
+Red Concrete Powder:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Sand
+  - Gravel
+  - Sand
+  - Gravel
+  - Rose Red
+  - Gravel
+  - Sand
+  - Gravel
+  - Sand
+  shapeless: 0
+  requirements:
+    Sand: -4
+    Gravel: -4
+    Rose Red: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Red Concrete Powder: 0
+Black Concrete Powder:
+- recipe_type: crafting
+  output: 8
+  recipe:
+  - Sand
+  - Gravel
+  - Sand
+  - Gravel
+  - Ink Sac
+  - Gravel
+  - Sand
+  - Gravel
+  - Sand
+  shapeless: 0
+  requirements:
+    Sand: -4
+    Gravel: -4
+    Ink Sac: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Black Concrete Powder: 0
+Oak Sapling:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Oak Sapling: 0
+Spruce Sapling:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Spruce Sapling: 0
+Birch Sapling:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Birch Sapling: 0
+Jungle Sapling:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Jungle Sapling: 0
+Acacia Sapling:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Acacia Sapling: 0
+Dark Oak Sapling:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Dark Oak Sapling: 0
+Oak Leaves:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Oak Leaves: 0
+Spruce Leaves:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Spruce Leaves: 0
+Birch Leaves:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Birch Leaves: 0
+Jungle Leaves:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Jungle Leaves: 0
+Cobweb:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cobweb: 0
+Grass:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Grass: 0
+Fern:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Fern: 0
+Dead Bush:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Dead Bush: 0
+Dandelion:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Dandelion: 0
+Poppy:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Poppy: 0
+Blue Orchid:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Blue Orchid: 0
+Allium:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Allium: 0
+Azure Bluet:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Azure Bluet: 0
+Red Tulip:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Red Tulip: 0
+Orange Tulip:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Orange Tulip: 0
+White Tulip:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    White Tulip: 0
+Pink Tulip:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Pink Tulip: 0
+Oxeye Daisy:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Oxeye Daisy: 0
+Brown Mushroom:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Brown Mushroom: 0
+Red Mushroom:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Red Mushroom: 0
+Torch:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Charcoal
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Stick: -1
+    Charcoal: -1
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Coal
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Stick: -1
+    Coal: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Torch: 0
+Chest:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - 
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -8
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Spruce Wood Planks
+  - Spruce Wood Planks
+  - Spruce Wood Planks
+  - Spruce Wood Planks
+  - 
+  - Spruce Wood Planks
+  - Spruce Wood Planks
+  - Spruce Wood Planks
+  - Spruce Wood Planks
+  shapeless: 0
+  requirements:
+    Spruce Wood Planks: -8
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Birch Wood Planks
+  - Birch Wood Planks
+  - Birch Wood Planks
+  - Birch Wood Planks
+  - 
+  - Birch Wood Planks
+  - Birch Wood Planks
+  - Birch Wood Planks
+  - Birch Wood Planks
+  shapeless: 0
+  requirements:
+    Birch Wood Planks: -8
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Jungle Wood Planks
+  - Jungle Wood Planks
+  - Jungle Wood Planks
+  - Jungle Wood Planks
+  - 
+  - Jungle Wood Planks
+  - Jungle Wood Planks
+  - Jungle Wood Planks
+  - Jungle Wood Planks
+  shapeless: 0
+  requirements:
+    Jungle Wood Planks: -8
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Acacia Wood Planks
+  - Acacia Wood Planks
+  - Acacia Wood Planks
+  - Acacia Wood Planks
+  - 
+  - Acacia Wood Planks
+  - Acacia Wood Planks
+  - Acacia Wood Planks
+  - Acacia Wood Planks
+  shapeless: 0
+  requirements:
+    Acacia Wood Planks: -8
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Dark Oak Wood Planks
+  - Dark Oak Wood Planks
+  - Dark Oak Wood Planks
+  - Dark Oak Wood Planks
+  - 
+  - Dark Oak Wood Planks
+  - Dark Oak Wood Planks
+  - Dark Oak Wood Planks
+  - Dark Oak Wood Planks
+  shapeless: 0
+  requirements:
+    Dark Oak Wood Planks: -8
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Chest: 0
+Crafting Table:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - 
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Oak Wood Planks: -4
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Spruce Wood Planks
+  - Spruce Wood Planks
+  - 
+  - Spruce Wood Planks
+  - Spruce Wood Planks
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Spruce Wood Planks: -4
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Birch Wood Planks
+  - Birch Wood Planks
+  - 
+  - Birch Wood Planks
+  - Birch Wood Planks
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Birch Wood Planks: -4
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Jungle Wood Planks
+  - Jungle Wood Planks
+  - 
+  - Jungle Wood Planks
+  - Jungle Wood Planks
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Jungle Wood Planks: -4
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Acacia Wood Planks
+  - Acacia Wood Planks
+  - 
+  - Acacia Wood Planks
+  - Acacia Wood Planks
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Acacia Wood Planks: -4
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Dark Oak Wood Planks
+  - Dark Oak Wood Planks
+  - 
+  - Dark Oak Wood Planks
+  - Dark Oak Wood Planks
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Dark Oak Wood Planks: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Crafting Table: 0
+Furnace:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Cobblestone
+  - Cobblestone
+  - Cobblestone
+  - Cobblestone
+  - 
+  - Cobblestone
+  - Cobblestone
+  - Cobblestone
+  - Cobblestone
+  shapeless: 1
+  requirements:
+    Cobblestone: -8
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Furnace: 0
+Ladder:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Stick
+  - 
+  - Stick
+  - Stick
+  - Stick
+  - Stick
+  - Stick
+  - 
+  - Stick
+  shapeless: 0
+  requirements:
+    Stick: -7
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Ladder: 0
+Snow Block:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Snowball
+  - Snowball
+  - 
+  - Snowball
+  - Snowball
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Snowball: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Snow Block: 0
+Cactus:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cactus: 0
+Jukebox:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Diamond
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -8
+    Diamond: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Jukebox: 0
+Oak Fence:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Oak Wood Planks
+  - Stick
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Stick
+  - Oak Wood Planks
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -4
+    Stick: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Oak Fence: 0
+Stone Monster Egg:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Stone Monster Egg: 0
+Cobblestone Monster Egg:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cobblestone Monster Egg: 0
+Stone Brick Monster Egg:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Stone Brick Monster Egg: 0
+Mossy Stone Brick Monster Egg:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Mossy Stone Brick Monster Egg: 0
+Cracked Stone Brick Monster Egg:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cracked Stone Brick Monster Egg: 0
+Chiseled Stone Brick Monster Egg:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Chiseled Stone Brick Monster Egg: 0
+Iron Bars:
+- recipe_type: crafting
+  output: 16
+  recipe:
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Iron Ingot: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Iron Bars: 0
+Glass Pane:
+- recipe_type: crafting
+  output: 16
+  recipe:
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Glass: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Glass Pane: 0
+Vines:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Vines: 0
+Lily Pad:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Lily Pad: 0
+Nether Brick Fence:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Nether Brick
+  - Nether Brick
+  - Nether Brick
+  - Nether Brick
+  - Nether Brick
+  - Nether Brick
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Nether Brick: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Nether Brick Fence: 0
+Enchantment Table:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Book
+  - 
+  - Diamond
+  - Obsidian
+  - Diamond
+  - Obsidian
+  - Obsidian
+  - Obsidian
+  shapeless: 1
+  requirements:
+    Book: -1
+    Diamond: -2
+    Obsidian: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Enchantment Table: 0
+End Portal:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    End Portal: 0
+Ender Chest:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Obsidian
+  - Obsidian
+  - Obsidian
+  - Obsidian
+  - Eye of Ender
+  - Obsidian
+  - Obsidian
+  - Obsidian
+  - Obsidian
+  shapeless: 1
+  requirements:
+    Obsidian: -8
+    Eye of Ender: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Ender Chest: 0
+Anvil:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Block of Iron
+  - Block of Iron
+  - Block of Iron
+  - 
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  shapeless: 1
+  requirements:
+    Block of Iron: -3
+    Iron Ingot: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Anvil: 0
+White Stained Glass Pane:
+- recipe_type: crafting
+  output: 16
+  recipe:
+  - White Stained Glass
+  - White Stained Glass
+  - White Stained Glass
+  - White Stained Glass
+  - White Stained Glass
+  - White Stained Glass
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    White Stained Glass: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    White Stained Glass Pane: 0
+Orange Stained Glass Pane:
+- recipe_type: crafting
+  output: 16
+  recipe:
+  - Orange Stained Glass
+  - Orange Stained Glass
+  - Orange Stained Glass
+  - Orange Stained Glass
+  - Orange Stained Glass
+  - Orange Stained Glass
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Orange Stained Glass: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Orange Stained Glass Pane: 0
+Magenta Stained Glass Pane:
+- recipe_type: crafting
+  output: 16
+  recipe:
+  - Magenta Stained Glass
+  - Magenta Stained Glass
+  - Magenta Stained Glass
+  - Magenta Stained Glass
+  - Magenta Stained Glass
+  - Magenta Stained Glass
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Magenta Stained Glass: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Magenta Stained Glass Pane: 0
+Light Blue Stained Glass Pane:
+- recipe_type: crafting
+  output: 16
+  recipe:
+  - Light Blue Stained Glass
+  - Light Blue Stained Glass
+  - Light Blue Stained Glass
+  - Light Blue Stained Glass
+  - Light Blue Stained Glass
+  - Light Blue Stained Glass
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Light Blue Stained Glass: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Blue Stained Glass Pane: 0
+Yellow Stained Glass Pane:
+- recipe_type: crafting
+  output: 16
+  recipe:
+  - Yellow Stained Glass
+  - Yellow Stained Glass
+  - Yellow Stained Glass
+  - Yellow Stained Glass
+  - Yellow Stained Glass
+  - Yellow Stained Glass
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Yellow Stained Glass: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Yellow Stained Glass Pane: 0
+Lime Stained Glass Pane:
+- recipe_type: crafting
+  output: 16
+  recipe:
+  - Lime Stained Glass
+  - Lime Stained Glass
+  - Lime Stained Glass
+  - Lime Stained Glass
+  - Lime Stained Glass
+  - Lime Stained Glass
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Lime Stained Glass: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Lime Stained Glass Pane: 0
+Pink Stained Glass Pane:
+- recipe_type: crafting
+  output: 16
+  recipe:
+  - Pink Stained Glass
+  - Pink Stained Glass
+  - Pink Stained Glass
+  - Pink Stained Glass
+  - Pink Stained Glass
+  - Pink Stained Glass
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Pink Stained Glass: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Pink Stained Glass Pane: 0
+Gray Stained Glass Pane:
+- recipe_type: crafting
+  output: 16
+  recipe:
+  - Gray Stained Glass
+  - Gray Stained Glass
+  - Gray Stained Glass
+  - Gray Stained Glass
+  - Gray Stained Glass
+  - Gray Stained Glass
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Gray Stained Glass: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Gray Stained Glass Pane: 0
+Light Gray Stained Glass Pane:
+- recipe_type: crafting
+  output: 16
+  recipe:
+  - Light Gray Stained Glass
+  - Light Gray Stained Glass
+  - Light Gray Stained Glass
+  - Light Gray Stained Glass
+  - Light Gray Stained Glass
+  - Light Gray Stained Glass
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Light Gray Stained Glass: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Gray Stained Glass Pane: 0
+Cyan Stained Glass Pane:
+- recipe_type: crafting
+  output: 16
+  recipe:
+  - Cyan Stained Glass
+  - Cyan Stained Glass
+  - Cyan Stained Glass
+  - Cyan Stained Glass
+  - Cyan Stained Glass
+  - Cyan Stained Glass
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Cyan Stained Glass: -6
+Purple Stained Glass Pane:
+- recipe_type: crafting
+  output: 16
+  recipe:
+  - Purple Stained Glass
+  - Purple Stained Glass
+  - Purple Stained Glass
+  - Purple Stained Glass
+  - Purple Stained Glass
+  - Purple Stained Glass
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Purple Stained Glass: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Purple Stained Glass Pane: 0
+Blue Stained Glass Pane:
+- recipe_type: crafting
+  output: 16
+  recipe:
+  - Blue Stained Glass
+  - Blue Stained Glass
+  - Blue Stained Glass
+  - Blue Stained Glass
+  - Blue Stained Glass
+  - Blue Stained Glass
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Blue Stained Glass: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Blue Stained Glass Pane: 0
+Brown Stained Glass Pane:
+- recipe_type: crafting
+  output: 16
+  recipe:
+  - Brown Stained Glass
+  - Brown Stained Glass
+  - Brown Stained Glass
+  - Brown Stained Glass
+  - Brown Stained Glass
+  - Brown Stained Glass
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Brown Stained Glass: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Brown Stained Glass Pane: 0
+Green Stained Glass Pane:
+- recipe_type: crafting
+  output: 16
+  recipe:
+  - Green Stained Glass
+  - Green Stained Glass
+  - Green Stained Glass
+  - Green Stained Glass
+  - Green Stained Glass
+  - Green Stained Glass
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Green Stained Glass: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Green Stained Glass Pane: 0
+Red Stained Glass Pane:
+- recipe_type: crafting
+  output: 16
+  recipe:
+  - Red Stained Glass
+  - Red Stained Glass
+  - Red Stained Glass
+  - Red Stained Glass
+  - Red Stained Glass
+  - Red Stained Glass
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Red Stained Glass: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Red Stained Glass Pane: 0
+Black Stained Glass Pane:
+- recipe_type: crafting
+  output: 16
+  recipe:
+  - Black Stained Glass
+  - Black Stained Glass
+  - Black Stained Glass
+  - Black Stained Glass
+  - Black Stained Glass
+  - Black Stained Glass
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Black Stained Glass: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Black Stained Glass Pane: 0
+Acacia Leaves:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Acacia Leaves: 0
+Dark Oak Leaves:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Dark Oak Leaves: 0
+Slime Block:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Slimeball
+  - Slimeball
+  - Slimeball
+  - Slimeball
+  - Slimeball
+  - Slimeball
+  - Slimeball
+  - Slimeball
+  - Slimeball
+  shapeless: 1
+  requirements:
+    Slimeball: -9
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Slime Block: 0
+Carpet:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Wool
+  - Wool
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Wool: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Carpet: 0
+Orange Carpet:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Orange Wool
+  - Orange Wool
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Orange Wool: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Orange Carpet: 0
+Magenta Carpet:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Magenta Wool
+  - Magenta Wool
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Magenta Wool: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Magenta Carpet: 0
+Light Blue Carpet:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Light Blue Wool
+  - Light Blue Wool
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Light Blue Wool: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Blue Carpet: 0
+Yellow Carpet:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Yellow Wool
+  - Yellow Wool
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Yellow Wool: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Yellow Carpet: 0
+Lime Carpet:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Lime Wool
+  - Lime Wool
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Lime Wool: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Lime Carpet: 0
+Pink Carpet:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Pink Wool
+  - Pink Wool
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Pink Wool: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Pink Carpet: 0
+Gray Carpet:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Gray Wool
+  - Gray Wool
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Gray Wool: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Gray Carpet: 0
+Light Gray Carpet:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Light Gray Wool
+  - Light Gray Wool
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Light Gray Wool: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Gray Carpet: 0
+Cyan Carpet:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Cyan Wool
+  - Cyan Wool
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Cyan Wool: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cyan Carpet: 0
+Purple Carpet:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Purple Wool
+  - Purple Wool
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Purple Wool: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Purple Carpet: 0
+Blue Carpet:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Blue Wool
+  - Blue Wool
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Blue Wool: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Blue Carpet: 0
+Brown Carpet:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Brown Wool
+  - Brown Wool
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Brown Wool: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Brown Carpet: 0
+Green Carpet:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Green Wool
+  - Green Wool
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Green Wool: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Green Carpet: 0
+Red Carpet:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Red Wool
+  - Red Wool
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Red Wool: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Red Carpet: 0
+Black Carpet:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Black Wool
+  - Black Wool
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Black Wool: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Black Carpet: 0
+Sunflower:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Sunflower: 0
+Lilac:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Lilac: 0
+Double Tallgrass:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Double Tallgrass: 0
+Large Fern:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Large Fern: 0
+Rose Bush:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Rose Bush: 0
+Peony:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Peony: 0
+Spruce Fence:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Spruce Wood Planks
+  - Stick
+  - Spruce Wood Planks
+  - Spruce Wood Planks
+  - Stick
+  - Spruce Wood Planks
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Spruce Wood Planks: -4
+    Stick: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Spruce Fence: 0
+Birch Fence:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Birch Wood Planks
+  - Stick
+  - Birch Wood Planks
+  - Birch Wood Planks
+  - Stick
+  - Birch Wood Planks
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Birch Wood Planks: -4
+    Stick: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Birch Fence: 0
+Jungle Fence:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Jungle Wood Planks
+  - Stick
+  - Jungle Wood Planks
+  - Jungle Wood Planks
+  - Stick
+  - Jungle Wood Planks
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Jungle Wood Planks: -4
+    Stick: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Jungle Fence: 0
+Dark Oak Fence:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Dark Oak Wood Planks
+  - Stick
+  - Dark Oak Wood Planks
+  - Dark Oak Wood Planks
+  - Stick
+  - Dark Oak Wood Planks
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Dark Oak Wood Planks: -4
+    Stick: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Dark Oak Fence: 0
+Acacia Fence:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Acacia Wood Planks
+  - Stick
+  - Acacia Wood Planks
+  - Acacia Wood Planks
+  - Stick
+  - Acacia Wood Planks
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Acacia Wood Planks: -4
+    Stick: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Acacia Fence: 0
+End Rod:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Blaze Rod
+  - Popped Chorus Fruit
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Blaze Rod: -1
+    Popped Chorus Fruit: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    End Rod: 0
+Chorus Plant:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Chorus Plant: 0
+Chorus Flower:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Chorus Flower: 0
+Painting:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Stick
+  - Stick
+  - Stick
+  - Stick
+  - Wool
+  - Stick
+  - Stick
+  - Stick
+  - Stick
+  shapeless: 0
+  requirements:
+    Stick: -8
+    Wool: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Painting: 0
+Sign:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - 
+  - Stick
+  - 
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  shapeless: 0
+  requirements:
+    Stick: -1
+    Oak Wood Planks: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Sign: 0
+White Bed:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Wool
+  - Wool
+  - Wool
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -3
+    Wool: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    White Bed: 0
+Orange Bed:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Orange Wool
+  - Orange Wool
+  - Orange Wool
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -3
+    Orange Wool: -3
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - White Bed
+  - Orange Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  requirements:
+    White Bed: -1
+    Orange Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Orange Bed: 0
+MAgenta Bed:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Magenta Wool
+  - Magenta Wool
+  - Magenta Wool
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -3
+    Magenta Wool: -3
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - White Bed
+  - Magenta Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  requirements:
+    White Bed: -1
+    Magenta Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    MAgenta Bed: 0
+Light Blue Bed:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Light Blue Wool
+  - Light Blue Wool
+  - Light Blue Wool
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -3
+    Light Blue Wool: -3
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - White Bed
+  - Light Blue Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  requirements:
+    White Bed: -1
+    Light Blue Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Blue Bed: 0
+Yellow Bed:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Yellow Wool
+  - Yellow Wool
+  - Yellow Wool
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -3
+    Yellow Wool: -3
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - White Bed
+  - Dandelion Yellow
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  requirements:
+    White Bed: -1
+    Dandelion Yellow: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Yellow Bed: 0
+Lime Bed:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Lime Wool
+  - Lime Wool
+  - Lime Wool
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -3
+    Lime Wool: -3
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - White Bed
+  - Lime Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  requirements:
+    White Bed: -1
+    Lime Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Lime Bed: 0
+Pink Bed:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Pink Wool
+  - Pink Wool
+  - Pink Wool
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -3
+    Pink Wool: -3
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - White Bed
+  - Pink Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  requirements:
+    White Bed: -1
+    Pink Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Pink Bed: 0
+Gray Bed:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Gray Wool
+  - Gray Wool
+  - Gray Wool
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -3
+    Gray Wool: -3
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - White Bed
+  - Gray Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  requirements:
+    White Bed: -1
+    Gray Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Gray Bed: 0
+Light Gray Bed:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Light Gray Wool
+  - Light Gray Wool
+  - Light Gray Wool
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -3
+    Light Gray Wool: -3
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - White Bed
+  - Light Gray Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  requirements:
+    White Bed: -1
+    Light Gray Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Gray Bed: 0
+Cyan Bed:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Cyan Wool
+  - Cyan Wool
+  - Cyan Wool
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -3
+    Cyan Wool: -3
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - White Bed
+  - Cyan Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  requirements:
+    White Bed: -1
+    Cyan Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cyan Bed: 0
+Purple Bed:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Purple Wool
+  - Purple Wool
+  - Purple Wool
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -3
+    Purple Wool: -3
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - White Bed
+  - Purple Dye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  requirements:
+    White Bed: -1
+    Purple Dye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Purple Bed: 0
+Blue Bed:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Blue Wool
+  - Blue Wool
+  - Blue Wool
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -3
+    Blue Wool: -3
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - White Bed
+  - Lapis Lazuli
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  requirements:
+    White Bed: -1
+    Lapis Lazuli: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Blue Bed: 0
+Brown Bed:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Brown Wool
+  - Brown Wool
+  - Brown Wool
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -3
+    Brown Wool: -3
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - White Bed
+  - Cocoa Beans
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  requirements:
+    White Bed: -1
+    Cocoa Beans: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Brown Bed: 0
+Green Bed:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Green Wool
+  - Green Wool
+  - Green Wool
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -3
+    Green Wool: -3
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - White Bed
+  - Cactus Green
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  requirements:
+    White Bed: -1
+    Cactus Green: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Green Bed: 0
+Red Bed:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Red Wool
+  - Red Wool
+  - Red Wool
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -3
+    Red Wool: -3
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - White Bed
+  - Rose Red
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  requirements:
+    White Bed: -1
+    Rose Red: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Red Bed: 0
+Black Bed:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Black Wool
+  - Black Wool
+  - Black Wool
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -3
+    Black Wool: -3
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - White Bed
+  - Ink Sac
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  requirements:
+    White Bed: -1
+    Ink Sac: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Black Bed: 0
+Item Frame:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Stick
+  - Stick
+  - Stick
+  - Stick
+  - Leather
+  - Stick
+  - Stick
+  - Stick
+  - Stick
+  shapeless: 0
+  requirements:
+    Stick: -8
+    Leather: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Item Frame: 0
+Flower Pot:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Brick
+  - 
+  - Brick
+  - 
+  - Brick
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Brick: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Flower Pot: 0
+Skeleton Skull:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Skeleton Skull: 0
+Wither Skeleton Skull:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Wither Skeleton Skull: 0
+Zombie Head:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Zombie Head: 0
+Head:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Head: 0
+Creeper Head:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Creeper Head: 0
+Dragon Head:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Dragon Head: 0
+Armor Stand:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Stick
+  - Stone Slab
+  - Stick
+  - 
+  - Stick
+  - 
+  - Stick
+  - Stick
+  - Stick
+  shapeless: 0
+  requirements:
+    Stick: -6
+    Stone Slab: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Armor Stand: 0
+White Banner:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - Wool
+  - Wool
+  - Wool
+  - Wool
+  - Wool
+  - Wool
+  shapeless: 0
+  requirements:
+    Stick: -1
+    Wool: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    White Banner: 0
+Orange Banner:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - 
+  - 
+  - Orange Wool
+  - Orange Wool
+  - Orange Wool
+  - Orange Wool
+  - Orange Wool
+  - Orange Wool
+  shapeless: 0
+  requirements:
+    Orange Wool: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Orange Banner: 0
+Magenta Banner:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - 
+  - 
+  - Magenta Wool
+  - Magenta Wool
+  - Magenta Wool
+  - Magenta Wool
+  - Magenta Wool
+  - Magenta Wool
+  shapeless: 0
+  requirements:
+    Magenta Wool: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Magenta Banner: 0
+Light Blue Banner:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - 
+  - 
+  - Light Blue Wool
+  - Light Blue Wool
+  - Light Blue Wool
+  - Light Blue Wool
+  - Light Blue Wool
+  - Light Blue Wool
+  shapeless: 0
+  requirements:
+    Light Blue Wool: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Blue Banner: 0
+Yellow Banner:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - 
+  - 
+  - Yellow Wool
+  - Yellow Wool
+  - Yellow Wool
+  - Yellow Wool
+  - Yellow Wool
+  - Yellow Wool
+  shapeless: 0
+  requirements:
+    Yellow Wool: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Yellow Banner: 0
+Lime Banner:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - 
+  - 
+  - Lime Wool
+  - Lime Wool
+  - Lime Wool
+  - Lime Wool
+  - Lime Wool
+  - Lime Wool
+  shapeless: 0
+  requirements:
+    Lime Wool: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Lime Banner: 0
+Pink Banner:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - 
+  - 
+  - Pink Wool
+  - Pink Wool
+  - Pink Wool
+  - Pink Wool
+  - Pink Wool
+  - Pink Wool
+  shapeless: 0
+  requirements:
+    Pink Wool: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Pink Banner: 0
+Gray Banner:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - 
+  - 
+  - Gray Wool
+  - Gray Wool
+  - Gray Wool
+  - Gray Wool
+  - Gray Wool
+  - Gray Wool
+  shapeless: 0
+  requirements:
+    Gray Wool: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Gray Banner: 0
+Light Gray Banner:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - 
+  - 
+  - Light Gray Wool
+  - Light Gray Wool
+  - Light Gray Wool
+  - Light Gray Wool
+  - Light Gray Wool
+  - Light Gray Wool
+  shapeless: 0
+  requirements:
+    Light Gray Wool: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Gray Banner: 0
+Cyan Banner:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - 
+  - 
+  - Cyan Wool
+  - Cyan Wool
+  - Cyan Wool
+  - Cyan Wool
+  - Cyan Wool
+  - Cyan Wool
+  shapeless: 0
+  requirements:
+    Cyan Wool: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cyan Banner: 0
+Purple Banner:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - 
+  - 
+  - Purple Wool
+  - Purple Wool
+  - Purple Wool
+  - Purple Wool
+  - Purple Wool
+  - Purple Wool
+  shapeless: 0
+  requirements:
+    Purple Wool: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Purple Banner: 0
+Blue Banner:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - 
+  - 
+  - Blue Wool
+  - Blue Wool
+  - Blue Wool
+  - Blue Wool
+  - Blue Wool
+  - Blue Wool
+  shapeless: 0
+  requirements:
+    Blue Wool: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Blue Banner: 0
+Brown Banner:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - 
+  - 
+  - Brown Wool
+  - Brown Wool
+  - Brown Wool
+  - Brown Wool
+  - Brown Wool
+  - Brown Wool
+  shapeless: 0
+  requirements:
+    Brown Wool: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Brown Banner: 0
+Green Banner:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - 
+  - 
+  - Green Wool
+  - Green Wool
+  - Green Wool
+  - Green Wool
+  - Green Wool
+  - Green Wool
+  shapeless: 0
+  requirements:
+    Green Wool: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Green Banner: 0
+Red Banner:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - 
+  - 
+  - Red Wool
+  - Red Wool
+  - Red Wool
+  - Red Wool
+  - Red Wool
+  - Red Wool
+  shapeless: 0
+  requirements:
+    Red Wool: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Red Banner: 0
+Black Banner:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - 
+  - 
+  - Black Wool
+  - Black Wool
+  - Black Wool
+  - Black Wool
+  - Black Wool
+  - Black Wool
+  shapeless: 0
+  requirements:
+    Black Wool: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Black Banner: 0
+End Crystal:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Glass
+  - Ghast Tear
+  - Glass
+  - Glass
+  - Eye of Ender
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  shapeless: 0
+  requirements:
+    Glass: -7
+    Ghast Tear: -1
+    Eye of Ender: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    End Crystal: 0
+Dispenser:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Cobblestone
+  - Redstone
+  - Cobblestone
+  - Cobblestone
+  - Bow
+  - Cobblestone
+  - Cobblestone
+  - Cobblestone
+  - Cobblestone
+  shapeless: 0
+  requirements:
+    Cobblestone: -7
+    Redstone: -1
+    Bow: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Dispenser: 0
+Note Block:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Redstone
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -8
+    Redstone: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Note Block: 0
+Sticky Piston:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Piston
+  - 
+  - 
+  - Slimeball
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Piston: -1
+    Slimeball: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Sticky Piston: 0
+Piston:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Cobblestone
+  - Redstone
+  - Cobblestone
+  - Cobblestone
+  - Iron Ingot
+  - Cobblestone
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  shapeless: 0
+  requirements:
+    Cobblestone: -4
+    Redstone: -1
+    Iron Ingot: -1
+    Oak Wood Planks: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Piston: 0
+TNT:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Gunpowder
+  - Sand
+  - Gunpowder
+  - Sand
+  - Gunpowder
+  - Sand
+  - Gunpowder
+  - Sand
+  - Gunpowder
+  shapeless: 0
+  requirements:
+    Gunpowder: -5
+    Sand: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    TNT: 0
+Lever:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Cobblestone
+  - 
+  - 
+  - Stick
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Cobblestone: -1
+    Stick: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Lever: 0
+Stone Pressure Plate:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Stone
+  - Stone
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Stone: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Stone Pressure Plate: 0
+Wooden Pressure Plate:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Wooden Pressure Plate: 0
+Redstone Torch:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Stick
+  - 
+  - 
+  - Redstone
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Stick: -1
+    Redstone: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Redstone Torch: 0
+Stone Button:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Stone
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Stone: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Stone Button: 0
+Wooden Trapdoor:
+- recipe_type: crafting
+  output: 2
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Wooden Trapdoor: 0
+Oak Fence Gate:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Stick
+  - Oak Wood Planks
+  - Stick
+  - Stick
+  - Oak Wood Planks
+  - Stick
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Stick: -4
+    Oak Wood Planks: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Oak Fence Gate: 0
+Redstone Lamp:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Redstone
+  - 
+  - Redstone
+  - Glowstone
+  - Redstone
+  - 
+  - Redstone
+  - 
+  shapeless: 0
+  requirements:
+    Redstone: -4
+    Glowstone: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Redstone Lamp: 0
+Tripwire Hook:
+- recipe_type: crafting
+  output: 2
+  recipe:
+  - 
+  - Oak Wood Planks
+  - 
+  - 
+  - Stick
+  - 
+  - 
+  - Iron Ingot
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -1
+    Stick: -1
+    Iron Ingot: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Tripwire Hook: 0
+Wooden Button:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Oak Wood Planks: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Wooden Button: 0
+Trapped Chest:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Chest
+  - Tripwire Hook
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Chest: -1
+    Tripwire Hook: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Trapped Chest: 0
+Weighted Pressure Plate (Light):
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Gold Ingot
+  - Gold Ingot
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Gold Ingot: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Weighted Pressure Plate (Light): 0
+Weighted Pressure Plate (Heavy):
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Iron Ingot
+  - Iron Ingot
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Iron Ingot: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Weighted Pressure Plate (Heavy): 0
+Daylight Sensor:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Slab
+  - Oak Wood Slab
+  - Oak Wood Slab
+  - Nether Quartz
+  - Nether Quartz
+  - Nether Quartz
+  - Glass
+  - Glass
+  - Glass
+  shapeless: 0
+  requirements:
+    Oak Wood Slab: -3
+    Nether Quartz: -3
+    Glass: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Daylight Sensor: 0
+Block of Redstone:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Redstone
+  - Redstone
+  - Redstone
+  - Redstone
+  - Redstone
+  - Redstone
+  - Redstone
+  - Redstone
+  - Redstone
+  shapeless: 1
+  requirements:
+    Redstone: -9
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Block of Redstone: 0
+Hopper:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  - Chest
+  - Iron Ingot
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  shapeless: 0
+  requirements:
+    Iron Ingot: -5
+    Chest: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Hopper: 0
+Dropper:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Cobblestone
+  - Redstone
+  - Cobblestone
+  - Cobblestone
+  - 
+  - Cobblestone
+  - Cobblestone
+  - Cobblestone
+  - Cobblestone
+  shapeless: 0
+  requirements:
+    Cobblestone: -7
+    Redstone: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Dropper: 0
+Iron Trapdoor:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Iron Ingot
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  - Iron Ingot
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Iron Ingot: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Iron Trapdoor: 0
+Spruce Fence Gate:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Stick
+  - Spruce Wood Planks
+  - Stick
+  - Stick
+  - Spruce Wood Planks
+  - Stick
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Stick: -4
+    Spruce Wood Planks: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Spruce Fence Gate: 0
+Birch Fence Gate:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Stick
+  - Birch Wood Planks
+  - Stick
+  - Stick
+  - Birch Wood Planks
+  - Stick
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Stick: -4
+    Birch Wood Planks: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Birch Fence Gate: 0
+Jungle Fence Gate:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Stick
+  - Jungle Wood Planks
+  - Stick
+  - Stick
+  - Jungle Wood Planks
+  - Stick
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Stick: -4
+    Jungle Wood Planks: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Jungle Fence Gate: 0
+Dark Oak Fence Gate:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Stick
+  - Dark Oak Wood Planks
+  - Stick
+  - Stick
+  - Dark Oak Wood Planks
+  - Stick
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Stick: -4
+    Dark Oak Wood Planks: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Dark Oak Fence Gate: 0
+Acacia Fence Gate:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Stick
+  - Acacia Wood Planks
+  - Stick
+  - Stick
+  - Acacia Wood Planks
+  - Stick
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Stick: -4
+    Acacia Wood Planks: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Acacia Fence Gate: 0
+Oak Door:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - 
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - 
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Oak Door: 0
+Iron Door:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Iron Ingot
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  - Iron Ingot
+  - 
+  shapeless: 0
+  requirements:
+    Iron Ingot: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Iron Door: 0
+Redstone:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Redstone: 0
+Redstone Repeater:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Stone
+  - Stone
+  - Stone
+  - Redstone Torch
+  - Redstone
+  - Redstone Torch
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Stone: -3
+    Redstone Torch: -2
+    Redstone: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Redstone Repeater: 0
+Redstone Comparator:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Stone
+  - Stone
+  - Stone
+  - Redstone Torch
+  - Nether Quartz
+  - Redstone Torch
+  - 
+  - Redstone Torch
+  - 
+  shapeless: 0
+  requirements:
+    Stone: -3
+    Redstone Torch: -3
+    Nether Quartz: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Redstone Comparator: 0
+Spruce Door:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Spruce Wood Planks
+  - Spruce Wood Planks
+  - 
+  - Spruce Wood Planks
+  - Spruce Wood Planks
+  - 
+  - Spruce Wood Planks
+  - Spruce Wood Planks
+  - 
+  shapeless: 0
+  requirements:
+    Spruce Wood Planks: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Spruce Door: 0
+Birch Door:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Birch Wood Planks
+  - Birch Wood Planks
+  - 
+  - Birch Wood Planks
+  - Birch Wood Planks
+  - 
+  - Birch Wood Planks
+  - Birch Wood Planks
+  - 
+  shapeless: 0
+  requirements:
+    Birch Wood Planks: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Birch Door: 0
+Jungle Door:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Jungle Wood Planks
+  - Jungle Wood Planks
+  - 
+  - Jungle Wood Planks
+  - Jungle Wood Planks
+  - 
+  - Jungle Wood Planks
+  - Jungle Wood Planks
+  - 
+  shapeless: 0
+  requirements:
+    Jungle Wood Planks: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Jungle Door: 0
+Acacia Door:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Acacia Wood Planks
+  - Acacia Wood Planks
+  - 
+  - Acacia Wood Planks
+  - Acacia Wood Planks
+  - 
+  - Acacia Wood Planks
+  - Acacia Wood Planks
+  - 
+  shapeless: 0
+  requirements:
+    Acacia Wood Planks: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Acacia Door: 0
+Dark Oak Door:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Dark Oak Wood Planks
+  - Dark Oak Wood Planks
+  - 
+  - Dark Oak Wood Planks
+  - Dark Oak Wood Planks
+  - 
+  - Dark Oak Wood Planks
+  - Dark Oak Wood Planks
+  - 
+  shapeless: 0
+  requirements:
+    Dark Oak Wood Planks: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Dark Oak Door: 0
+Powered Rail:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Gold Ingot
+  - Redstone
+  - Gold Ingot
+  - Gold Ingot
+  - Stick
+  - Gold Ingot
+  - Gold Ingot
+  - 
+  - Gold Ingot
+  shapeless: 0
+  requirements:
+    Gold Ingot: -6
+    Redstone: -1
+    Stick: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Powered Rail: 0
+Detector Rail:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Iron Ingot
+  - Redstone
+  - Iron Ingot
+  - Iron Ingot
+  - Stone Pressure Plate
+  - Iron Ingot
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  shapeless: 0
+  requirements:
+    Iron Ingot: -6
+    Redstone: -1
+    Stone Pressure Plate: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Detector Rail: 0
+Rail:
+- recipe_type: crafting
+  output: 16
+  recipe:
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  - Iron Ingot
+  - Stick
+  - Iron Ingot
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  shapeless: 0
+  requirements:
+    Iron Ingot: -6
+    Stick: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Rail: 0
+Activator Rail:
+- recipe_type: crafting
+  output: 6
+  recipe:
+  - Iron Ingot
+  - Stick
+  - Iron Ingot
+  - Iron Ingot
+  - Redstone Torch
+  - Iron Ingot
+  - Iron Ingot
+  - Stick
+  - Iron Ingot
+  shapeless: 0
+  requirements:
+    Iron Ingot: -6
+    Stick: -2
+    Redstone Torch: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Activator Rail: 0
+Minecart:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Iron Ingot: -5
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Minecart: 0
+Saddle:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Saddle: 0
+Oak Boat:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - 
+  - Oak Wood Planks
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -5
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Oak Boat: 0
+Minecart with Chest:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Minecart
+  - 
+  - 
+  - Chest
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Minecart: -1
+    Chest: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Minecart with Chest: 0
+Minecart with Furnace:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Minecart
+  - 
+  - 
+  - Furnace
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Minecart: -1
+    Furnace: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Minecart with Furnace: 0
+Carrot on a Stick:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Carrot
+  - 
+  - Fishing Rod
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Carrot: -1
+    Fishing Rod: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Carrot on a Stick: 0
+Minecart with TNT:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Minecart
+  - 
+  - 
+  - TNT
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Minecart: -1
+    TNT: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Minecart with TNT: 0
+Minecart with Hopper:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Minecart
+  - 
+  - 
+  - Hopper
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Minecart: -1
+    Hopper: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Minecart with Hopper: 0
+Elytra:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Elytra: 0
+Spruce Boat:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Spruce Wood Planks
+  - Spruce Wood Planks
+  - Spruce Wood Planks
+  - Spruce Wood Planks
+  - 
+  - Spruce Wood Planks
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Spruce Wood Planks: -5
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Spruce Boat: 0
+Birch Boat:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Birch Wood Planks
+  - Birch Wood Planks
+  - Birch Wood Planks
+  - Birch Wood Planks
+  - 
+  - Birch Wood Planks
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Birch Wood Planks: -5
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Birch Boat: 0
+Jungle Boat:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Jungle Wood Planks
+  - Jungle Wood Planks
+  - Jungle Wood Planks
+  - Jungle Wood Planks
+  - 
+  - Jungle Wood Planks
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Jungle Wood Planks: -5
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Jungle Boat: 0
+Acacia Boat:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Acacia Wood Planks
+  - Acacia Wood Planks
+  - Acacia Wood Planks
+  - Acacia Wood Planks
+  - 
+  - Acacia Wood Planks
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Acacia Wood Planks: -5
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Acacia Boat: 0
+Dark Oak Boat:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Dark Oak Wood Planks
+  - Dark Oak Wood Planks
+  - Dark Oak Wood Planks
+  - Dark Oak Wood Planks
+  - 
+  - Dark Oak Wood Planks
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Dark Oak Wood Planks: -5
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Dark Oak Boat: 0
+Totem of Undying:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Totem of Undying: 0
+Shulker Shell:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Shulker Shell: 0
+Beacon:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Obsidian
+  - Obsidian
+  - Obsidian
+  - Glass
+  - Nether Star
+  - Glass
+  - Glass
+  - Glass
+  - Glass
+  shapeless: 0
+  requirements:
+    Obsidian: -3
+    Glass: -5
+    Nether Star: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Beacon: 0
+Bucket:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Iron Ingot: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Bucket: 0
+Water Bucket:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Water Bucket: 0
+Lava Bucket:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Lava Bucket: 0
+Snowball:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Snowball: 0
+Milk:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Milk: 0
+Paper:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Sugar Canes
+  - Sugar Canes
+  - Sugar Canes
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Sugar Canes: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Paper: 0
+Book:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Paper
+  - Leather
+  - Paper
+  - Paper
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Paper: -3
+    Leather: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Book: 0
+Slimeball:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Slimeball: 0
+- output: 9
+  recipe_type: crafting
+  recipe:
+  - 
+  - 
+  - 
+  - 
+  - Slime Block
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Slime Block: -1
+Bone:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Bone: 0
+Ender Pearl:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Ender Pearl: 0
+Eye of Ender:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Blaze Powder
+  - Ender Pearl
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Blaze Powder: -1
+    Ender Pearl: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Eye of Ender: 0
+Fire Charge:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Gunpowder
+  - 
+  - Blaze Powder
+  - Charcoal
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Gunpowder: -1
+    Blaze Powder: -1
+    Charcoal: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Fire Charge: 0
+Book and Quill:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Feather
+  - 
+  - Book
+  - Ink Sac
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Feather: -1
+    Book: -1
+    Ink Sac: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Book and Quill: 0
+Empty Map:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Paper
+  - Paper
+  - Paper
+  - Paper
+  - Compass
+  - Paper
+  - Paper
+  - Paper
+  - Paper
+  shapeless: 0
+  requirements:
+    Paper: -8
+    Compass: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Empty Map: 0
+Firework Star:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Firework Star: 0
+Iron Horse Armor:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Iron Horse Armor: 0
+Gold Horse Armor:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Gold Horse Armor: 0
+Diamond Horse Armor:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Diamond Horse Armor: 0
+Apple:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Apple: 0
+Mushroom Stew:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Red Mushroom
+  - Brown Mushroom
+  - Bowl
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Red Mushroom: -1
+    Brown Mushroom: -1
+    Bowl: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Mushroom Stew: 0
+Bread:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Wheat
+  - Wheat
+  - Wheat
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Wheat: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Bread: 0
+Raw Porkchop:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Raw Porkchop: 0
+Cooked Porkchop:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cooked Porkchop: 0
+Golden Apple:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  - Apple
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  shapeless: 0
+  requirements:
+    Gold Ingot: -8
+    Apple: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Golden Apple: 0
+Notch Apple:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Notch Apple: 0
+Raw Fish:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Raw Fish: 0
+Raw Salmon:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Raw Salmon: 0
+Clownfish:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Clownfish: 0
+Pufferfish:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Pufferfish: 0
+Cooked Fish:
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Raw Fish
+  - Fuel
+  requirements:
+    Raw Fish: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cooked Fish: 0
+Cooked Salmon:
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Raw Salmon
+  - Fuel
+  requirements:
+    Raw Salmon: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cooked Salmon: 0
+Cake:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Wheat
+  - Wheat
+  - Wheat
+  - Sugar
+  - Egg
+  - Sugar
+  - Milk
+  - Milk
+  - Milk
+  shapeless: 0
+  requirements:
+    Wheat: -3
+    Sugar: -2
+    Egg: -1
+    Milk: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cake: 0
+Cookie:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Wheat
+  - Cocoa Beans
+  - Wheat
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Wheat: -2
+    Cocoa Beans: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cookie: 0
+Melon Slice:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Melon Slice: 0
+Raw Beef:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Raw Beef: 0
+Steak:
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Raw Fish
+  - Fuel
+  requirements:
+    Raw Fish: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Steak: 0
+Raw Chicken:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Raw Chicken: 0
+Cooked Chicken:
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Raw Chicken
+  - Fuel
+  requirements:
+    Raw Chicken: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cooked Chicken: 0
+Rotten Flesh:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Rotten Flesh: 0
+Spider Eye:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Spider Eye: 0
+Carrot:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Carrot: 0
+Potato:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Potato: 0
+Baked Potato:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Baked Potato: 0
+Poisonous Potato:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Poisonous Potato: 0
+Pumpkin Pie:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Pumpkin
+  - Sugar
+  - Egg
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Pumpkin: -1
+    Sugar: -1
+    Egg: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Pumpkin Pie: 0
+Raw Rabbit:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Raw Rabbit: 0
+Cooked Rabbit:
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Raw Rabbit
+  - Fuel
+  requirements:
+    Raw Rabbit: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cooked Rabbit: 0
+Rabbit Stew:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Bowl
+  - 
+  - Carrot
+  - Baked Potato
+  - Brown Mushroom
+  - 
+  - Cooked Rabbit
+  - 
+  shapeless: 0
+  requirements:
+    Bowl: -1
+    Carrot: -1
+    Baked Potato: -1
+    Brown Mushroom: -1
+    Cooked Rabbit: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Rabbit Stew: 0
+Raw Mutton:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Raw Mutton: 0
+Cooked Mutton:
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Raw Mutton
+  - Fuel
+  requirements:
+    Raw Mutton: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cooked Mutton: 0
+Beetroot:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Beetroot: 0
+Beetroot Soup:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Bowl
+  - 
+  - Beetroot
+  - Beetroot
+  - Beetroot
+  - Beetroot
+  - Beetroot
+  - Beetroot
+  shapeless: 0
+  requirements:
+    Bowl: -1
+    Beetroot: -6
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Beetroot Soup: 0
+Iron Shovel:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Stick
+  - 
+  - 
+  - Iron Ingot
+  - 
+  shapeless: 0
+  requirements:
+    Stick: -2
+    Iron Ingot: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Iron Shovel: 0
+Iron Pickaxe:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Stick
+  - 
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  shapeless: 0
+  requirements:
+    Stick: -2
+    Iron Ingot: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Iron Pickaxe: 0
+Iron Axe:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Stick
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  - Iron Ingot
+  shapeless: 0
+  requirements:
+    Stick: -2
+    Iron Ingot: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Iron Axe: 0
+Flint and Steel:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Flint
+  - 
+  - Iron Ingot
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Flint: -1
+    Iron Ingot: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Flint and Steel: 0
+Wooden Shovel:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Stick
+  - 
+  - 
+  - Oak Wood Planks
+  - 
+  shapeless: 0
+  requirements:
+    Stick: -2
+    Oak Wood Planks: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Wooden Shovel: 0
+Wooden Pickaxe:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Stick
+  - 
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  shapeless: 0
+  requirements:
+    Stick: -2
+    Oak Wood Planks: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Wooden Pickaxe: 0
+Wooden Axe:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Stick
+  - Oak Wood Planks
+  - 
+  - Oak Wood Planks
+  - Oak Wood Planks
+  shapeless: 0
+  requirements:
+    Stick: -2
+    Oak Wood Planks: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Wooden Axe: 0
+Stone Shovel:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Stick
+  - 
+  - 
+  - Cobblestone
+  - 
+  shapeless: 0
+  requirements:
+    Stick: -2
+    Cobblestone: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Stone Shovel: 0
+Stone Pickaxe:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Stick
+  - 
+  - Cobblestone
+  - Cobblestone
+  - Cobblestone
+  shapeless: 0
+  requirements:
+    Stick: -2
+    Cobblestone: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Stone Pickaxe: 0
+Stone Axe:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Stick
+  - Cobblestone
+  - 
+  - Cobblestone
+  - Cobblestone
+  shapeless: 0
+  requirements:
+    Stick: -2
+    Cobblestone: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Stone Axe: 0
+Diamond Shovel:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Stick
+  - 
+  - 
+  - Diamond
+  - 
+  shapeless: 0
+  requirements:
+    Stick: -2
+    Diamond: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Diamond Shovel: 0
+Diamond Pickaxe:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Stick
+  - 
+  - Diamond
+  - Diamond
+  - Diamond
+  shapeless: 0
+  requirements:
+    Stick: -2
+    Diamond: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Diamond Pickaxe: 0
+Diamond Axe:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Stick
+  - Diamond
+  - 
+  - Diamond
+  - Diamond
+  shapeless: 0
+  requirements:
+    Stick: -2
+    Diamond: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Diamond Axe: 0
+Golden Shovel:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Stick
+  - 
+  - 
+  - Gold Ingot
+  - 
+  shapeless: 0
+  requirements:
+    Stick: -2
+    Gold Ingot: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Golden Shovel: 0
+Golden Pickaxe:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Stick
+  - 
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  shapeless: 0
+  requirements:
+    Stick: -2
+    Gold Ingot: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Golden Pickaxe: 0
+Golden Axe:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Stick
+  - Gold Ingot
+  - 
+  - Gold Ingot
+  - Gold Ingot
+  shapeless: 0
+  requirements:
+    Stick: -2
+    Gold Ingot: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Golden Axe: 0
+Wooden Hoe:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Stick
+  - 
+  - 
+  - Oak Wood Planks
+  - Oak Wood Planks
+  shapeless: 0
+  requirements:
+    Stick: -2
+    Oak Wood Planks: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Wooden Hoe: 0
+Stone Hoe:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Stick
+  - 
+  - 
+  - Cobblestone
+  - Cobblestone
+  shapeless: 0
+  requirements:
+    Stick: -2
+    Cobblestone: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Stone Hoe: 0
+Iron Hoe:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Stick
+  - 
+  - 
+  - Iron Ingot
+  - Iron Ingot
+  shapeless: 0
+  requirements:
+    Stick: -2
+    Iron Ingot: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Iron Hoe: 0
+Diamond Hoe:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Stick
+  - 
+  - 
+  - Diamond
+  - Diamond
+  shapeless: 0
+  requirements:
+    Stick: -2
+    Diamond: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Diamond Hoe: 0
+Golden Hoe:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Stick
+  - 
+  - 
+  - Gold Ingot
+  - Gold Ingot
+  shapeless: 0
+  requirements:
+    Stick: -2
+    Gold Ingot: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Golden Hoe: 0
+Compass:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  - Redstone
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  - 
+  shapeless: 0
+  requirements:
+    Iron Ingot: -4
+    Redstone: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Compass: 0
+Fishing Rod:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Stick
+  - 
+  - String
+  - 
+  - Stick
+  - String
+  - 
+  - 
+  - Stick
+  shapeless: 0
+  requirements:
+    Stick: -3
+    String: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Fishing Rod: 0
+Clock:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Gold Ingot
+  - 
+  - Gold Ingot
+  - Redstone
+  - Gold Ingot
+  - 
+  - Gold Ingot
+  - 
+  shapeless: 0
+  requirements:
+    Gold Ingot: -4
+    Redstone: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Clock: 0
+Shears:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Iron Ingot
+  - 
+  - 
+  - Iron Ingot
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Iron Ingot: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Shears: 0
+Lead:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - 
+  - String
+  - String
+  - Slimeball
+  - 
+  - String
+  - String
+  - 
+  shapeless: 0
+  requirements:
+    String: -4
+    Slimeball: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Lead: 0
+Name Tag:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Name Tag: 0
+Bow:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - String
+  - Stick
+  - 
+  - String
+  - 
+  - Stick
+  - String
+  - Stick
+  - 
+  shapeless: 0
+  requirements:
+    String: -3
+    Stick: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Bow: 0
+Arrow:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Arrow: 0
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - 
+  - Feather
+  - 
+  - 
+  - Stick
+  - 
+  - 
+  - Flint
+  - 
+  shapeless: 0
+  requirements:
+    Feather: -1
+    Stick: -1
+    Flint: -1
+Iron Sword:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Iron Ingot
+  - 
+  - 
+  - Iron Ingot
+  - 
+  shapeless: 0
+  requirements:
+    Stick: -1
+    Iron Ingot: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Iron Sword: 0
+Wooden Sword:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Oak Wood Planks
+  - 
+  - 
+  - Oak Wood Planks
+  - 
+  shapeless: 0
+  requirements:
+    Stick: -1
+    Oak Wood Planks: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Wooden Sword: 0
+Stone Sword:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Cobblestone
+  - 
+  - 
+  - Cobblestone
+  - 
+  shapeless: 0
+  requirements:
+    Stick: -1
+    Cobblestone: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Stone Sword: 0
+Diamond Sword:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Diamond
+  - 
+  - 
+  - Diamond
+  - 
+  shapeless: 0
+  requirements:
+    Stick: -1
+    Diamond: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Diamond Sword: 0
+Golden Sword:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Stick
+  - 
+  - 
+  - Gold Ingot
+  - 
+  - 
+  - Gold Ingot
+  - 
+  shapeless: 0
+  requirements:
+    Stick: -1
+    Gold Ingot: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Golden Sword: 0
+Leather Cap:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Leather
+  - 
+  - Leather
+  - Leather
+  - Leather
+  - Leather
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Leather: -5
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Leather Cap: 0
+Leather Tunic:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Leather
+  - Leather
+  - Leather
+  - Leather
+  - Leather
+  - Leather
+  - Leather
+  - 
+  - Leather
+  shapeless: 0
+  requirements:
+    Leather: -8
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Leather Tunic: 0
+Leather Pants:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Leather
+  - 
+  - Leather
+  - Leather
+  - 
+  - Leather
+  - Leather
+  - Leather
+  - Leather
+  shapeless: 0
+  requirements:
+    Leather: -7
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Leather Pants: 0
+Leather Boots:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Leather
+  - 
+  - Leather
+  - Leather
+  - 
+  - Leather
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Leather: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Leather Boots: 0
+Chain Helmet:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Chain Helmet: 0
+Chain Chestplate:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Chain Chestplate: 0
+Chain Leggings:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Chain Leggings: 0
+Chain Boots:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Chain Boots: 0
+Iron Helmet:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Iron Ingot: -5
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Iron Helmet: 0
+Iron Chestplate:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  shapeless: 1
+  requirements:
+    Iron Ingot: -8
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Iron Chestplate: 0
+Iron Leggings:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  shapeless: 1
+  requirements:
+    Iron Ingot: -7
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Iron Leggings: 0
+Iron Boots:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Iron Ingot: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Iron Boots: 0
+Diamond Helmet:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Diamond
+  - 
+  - Diamond
+  - Diamond
+  - Diamond
+  - Diamond
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Diamond: -5
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Diamond Helmet: 0
+Diamond Chestplate:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Diamond
+  - Diamond
+  - Diamond
+  - Diamond
+  - Diamond
+  - Diamond
+  - Diamond
+  - 
+  - Diamond
+  shapeless: 1
+  requirements:
+    Diamond: -8
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Diamond Chestplate: 0
+Diamond Leggings:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Diamond
+  - 
+  - Diamond
+  - Diamond
+  - 
+  - Diamond
+  - Diamond
+  - Diamond
+  - Diamond
+  shapeless: 1
+  requirements:
+    Diamond: -7
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Diamond Leggings: 0
+Diamond Boots:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Diamond
+  - 
+  - Diamond
+  - Diamond
+  - 
+  - Diamond
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Diamond: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Diamond Boots: 0
+Golden Helmet:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Gold Ingot
+  - 
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Gold Ingot: -5
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Golden Helmet: 0
+Golden Chestplate:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  - 
+  - Gold Ingot
+  shapeless: 1
+  requirements:
+    Gold Ingot: -8
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Golden Chestplate: 0
+Golden Leggings:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Gold Ingot
+  - 
+  - Gold Ingot
+  - Gold Ingot
+  - 
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  - Gold Ingot
+  shapeless: 1
+  requirements:
+    Gold Ingot: -7
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Golden Leggings: 0
+Golden Boots:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Gold Ingot
+  - 
+  - Gold Ingot
+  - Gold Ingot
+  - 
+  - Gold Ingot
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Gold Ingot: -4
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Golden Boots: 0
+Spectral Arrow:
+- recipe_type: crafting
+  output: 2
+  recipe:
+  - 
+  - Glowstone Dust
+  - 
+  - Glowstone Dust
+  - Arrow
+  - Glowstone Dust
+  - 
+  - Glowstone Dust
+  - 
+  shapeless: 0
+  requirements:
+    Glowstone Dust: -4
+    Arrow: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Spectral Arrow: 0
+Shield:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - 
+  - Oak Wood Planks
+  - 
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Oak Wood Planks
+  - Iron Ingot
+  - Oak Wood Planks
+  shapeless: 1
+  requirements:
+    Oak Wood Planks: -6
+    Iron Ingot: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Shield: 0
+Ghast Tear:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Ghast Tear: 0
+Water Bottle:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Water Bottle: 0
+Glass Bottle:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - 
+  - Glass
+  - 
+  - Glass
+  - 
+  - Glass
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Glass: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Glass Bottle: 0
+Fermented Spider Eye:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Brown Mushroom
+  - Sugar
+  - Spider Eye
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Brown Mushroom: -1
+    Sugar: -1
+    Spider Eye: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Fermented Spider Eye: 0
+Blaze Powder:
+- recipe_type: crafting
+  output: 2
+  recipe:
+  - Blaze Rod
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Blaze Rod: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Blaze Powder: 0
+Magma Cream:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Blaze Powder
+  - Slimeball
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Blaze Powder: -1
+    Slimeball: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Magma Cream: 0
+Brewing Stand:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Cobblestone
+  - Cobblestone
+  - Cobblestone
+  - 
+  - Blaze Rod
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Cobblestone: -3
+    Blaze Rod: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Brewing Stand: 0
+Cauldron:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  - Iron Ingot
+  - 
+  - Iron Ingot
+  shapeless: 0
+  requirements:
+    Iron Ingot: -7
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cauldron: 0
+Glistering Melon:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Gold Nugget
+  - Gold Nugget
+  - Gold Nugget
+  - Gold Nugget
+  - Melon Slice
+  - Gold Nugget
+  - Gold Nugget
+  - Gold Nugget
+  - Gold Nugget
+  shapeless: 0
+  requirements:
+    Gold Nugget: -8
+    Melon Slice: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Glistering Melon: 0
+Golden Carrot:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Gold Nugget
+  - Gold Nugget
+  - Gold Nugget
+  - Gold Nugget
+  - Carrot
+  - Gold Nugget
+  - Gold Nugget
+  - Gold Nugget
+  - Gold Nugget
+  shapeless: 1
+  requirements:
+    Gold Nugget: -8
+    Carrot: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Golden Carrot: 0
+Rabbit's Foot:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Rabbit's Foot: 0
+Dragon's Breath:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Dragon's Breath: 0
+Coal:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Coal: 0
+Charcoal:
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Oak Wood
+  - Fuel
+  requirements:
+    Oak Wood: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Charcoal: 0
+Diamond:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Diamond: 0
+Iron Ingot:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Iron Ingot: 0
+- output: 9
+  recipe:
+  - 
+  - 
+  - 
+  - 
+  - Block of Iron
+  - 
+  - 
+  - 
+  - 
+  recipe_type: crafting
+  shapeless: 1
+  requirements:
+    Block of Iron: -1
+- output: 9
+  recipe:
+  - Iron Nugget
+  - Iron Nugget
+  - Iron Nugget
+  - Iron Nugget
+  - Iron Nugget
+  - Iron Nugget
+  - Iron Nugget
+  - Iron Nugget
+  - Iron Nugget
+  recipe_type: crafting
+  shapeless: 1
+  requirements:
+    Iron Nugget: -9
+Gold Ingot:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Gold Ingot: 0
+- recipe_type: crafting
+  output: 9
+  recipe:
+  - 
+  - 
+  - 
+  - 
+  - Block of Gold
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Block of Gold: -1
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Gold Nugget
+  - Gold Nugget
+  - Gold Nugget
+  - Gold Nugget
+  - Gold Nugget
+  - Gold Nugget
+  - Gold Nugget
+  - Gold Nugget
+  - Gold Nugget
+  shapeless: 1
+  requirements:
+    Gold Nugget: -9
+Stick:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Oak Wood Planks
+  - 
+  - 
+  - Oak Wood Planks
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Stick: 0
+Bowl:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - 
+  - Oak Wood Planks
+  - 
+  - Oak Wood Planks
+  - 
+  - Oak Wood Planks
+  - 
+  - 
+  - 
+  shapeless: 0
+  requirements:
+    Oak Wood Planks: -3
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Bowl: 0
+String:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    String: 0
+Feather:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Feather: 0
+Gunpowder:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Gunpowder: 0
+Seeds:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Seeds: 0
+Wheat:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Wheat: 0
+Flint:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Flint: 0
+Leather:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Leather: 0
+Brick:
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Clay
+  - Fuel
+  requirements:
+    Clay: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Brick: 0
+Clay:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Clay: 0
+Sugar Canes:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Sugar Canes: 0
+Egg:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Egg: 0
+Glowstone Dust:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Glowstone Dust: 0
+Ink Sac:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Ink Sac: 0
+Rose Red:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Poppy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Poppy: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Rose Red: 0
+Cactus Green:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cactus Green: 0
+Cocoa Beans:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cocoa Beans: 0
+Lapis Lazuli:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Lapis Lazuli: 0
+Purple Dye:
+- recipe_type: crafting
+  output: 2
+  recipe:
+  - Lapis Lazuli
+  - Rose Red
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Lapis Lazuli: -1
+    Rose Red: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Purple Dye: 0
+Cyan Dye:
+- recipe_type: crafting
+  output: 2
+  recipe:
+  - Lapis Lazuli
+  - Cactus Green
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Lapis Lazuli: -1
+    Cactus Green: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Cyan Dye: 0
+Light Gray Dye:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Bone Meal
+  - Bone Meal
+  - Ink Sac
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Bone Meal: -2
+    Ink Sac: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Gray Dye: 0
+Gray Dye:
+- recipe_type: crafting
+  output: 2
+  recipe:
+  - Bone Meal
+  - Ink Sac
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Bone Meal: -1
+    Ink Sac: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Gray Dye: 0
+Pink Dye:
+- recipe_type: crafting
+  output: 2
+  recipe:
+  - Bone Meal
+  - Rose Red
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Bone Meal: -1
+    Rose Red: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Pink Dye: 0
+Lime Dye:
+- recipe_type: crafting
+  output: 2
+  recipe:
+  - Cactus Green
+  - Bone Meal
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Cactus Green: -1
+    Bone Meal: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Lime Dye: 0
+Dandelion Yellow:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Dandelion
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Dandelion: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Dandelion Yellow: 0
+Light Blue Dye:
+- recipe_type: crafting
+  output: 2
+  recipe:
+  - Lapis Lazuli
+  - Bone Meal
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Lapis Lazuli: -1
+    Bone Meal: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Light Blue Dye: 0
+Magenta Dye:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Rose Red
+  - Rose Red
+  - Lapis Lazuli
+  - Bone Meal
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Rose Red: -2
+    Lapis Lazuli: -1
+    Bone Meal: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Magenta Dye: 0
+Orange Dye:
+- recipe_type: crafting
+  output: 2
+  recipe:
+  - Dandelion Yellow
+  - Rose Red
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Dandelion Yellow: -1
+    Rose Red: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Orange Dye: 0
+Bone Meal:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - Bone
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Bone: -1
+- recipe_type: crafting
+  output: 9
+  recipe:
+  - Bone Block
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Bone Block: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Bone Meal: 0
+Sugar:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Sugar Canes
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Sugar Canes: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Sugar: 0
+Pumpkin Seeds:
+- recipe_type: crafting
+  output: 4
+  recipe:
+  - Pumpkin
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Pumpkin: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Pumpkin Seeds: 0
+Melon Seeds:
+- recipe_type: crafting
+  output: 1
+  recipe:
+  - Melon Slice
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Melon Slice: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Melon Seeds: 0
+Blaze Rod:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Blaze Rod: 0
+Gold Nugget:
+- recipe_type: crafting
+  output: 9
+  recipe:
+  - Gold Ingot
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Gold Ingot: -1
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Golden Helmet
+  - Fuel
+  requirements:
+    Golden Helmet: -1
+    Fuel: -1
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Golden Chestplate
+  - Fuel
+  requirements:
+    Golden Chestplate: -1
+    Fuel: -1
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Golden Leggings
+  - Fuel
+  requirements:
+    Golden Leggings: -1
+    Fuel: -1
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Golden Boots
+  - Fuel
+  requirements:
+    Golden Boots: -1
+    Fuel: -1
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Golden Sword
+  - Fuel
+  requirements:
+    Golden Sword: -1
+    Fuel: -1
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Golden Hoe
+  - Fuel
+  requirements:
+    Golden Hoe: -1
+    Fuel: -1
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Golden Axe
+  - Fuel
+  requirements:
+    Golden Axe: -1
+    Fuel: -1
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Golden Pickaxe
+  - Fuel
+  requirements:
+    Golden Pickaxe: -1
+    Fuel: -1
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Gold Horse Armor
+  - Fuel
+  requirements:
+    Gold Horse Armor: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Gold Nugget: 0
+Nether Wart:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Nether Wart: 0
+Emerald:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Emerald: 0
+- recipe_type: crafting
+  output: 9
+  recipe:
+  - Emerald Block
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Emerald Block: -1
+Nether Star:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Nether Star: 0
+Nether Brick:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Nether Brick: 0
+Nether Quartz:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Nether Quartz: 0
+Prismarine Shard:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Prismarine Shard: 0
+Prismarine Crystals:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Prismarine Crystals: 0
+Rabbit Hide:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Rabbit Hide: 0
+Chorus Fruit:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Chorus Fruit: 0
+Popped Chorus Fruit:
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Chorus Fruit
+  - Fuel
+  requirements:
+    Chorus Fruit: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Popped Chorus Fruit: 0
+Beetroot Seeds:
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Beetroot Seeds: 0
+Iron Nugget:
+- recipe_type: crafting
+  output: 9
+  recipe:
+  - Iron Ingot
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  shapeless: 1
+  requirements:
+    Iron Ingot: -1
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Iron Helmet
+  - Fuel
+  requirements:
+    Iron Helmet: -1
+    Fuel: -1
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Iron Chestplate
+  - Fuel
+  requirements:
+    Iron Chestplate: -1
+    Fuel: -1
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Iron Leggings
+  - Fuel
+  requirements:
+    Iron Leggings: -1
+    Fuel: -1
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Iron Boots
+  - Fuel
+  requirements:
+    Iron Boots: -1
+    Fuel: -1
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Iron Sword
+  - Fuel
+  requirements:
+    Iron Sword: -1
+    Fuel: -1
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Iron Hoe
+  - Fuel
+  requirements:
+    Iron Hoe: -1
+    Fuel: -1
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Iron Axe
+  - Fuel
+  requirements:
+    Iron Axe: -1
+    Fuel: -1
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Iron Pickaxe
+  - Fuel
+  requirements:
+    Iron Pickaxe: -1
+    Fuel: -1
+- output: 1
+  recipe_type: smelting
+  recipe:
+  - Iron Horse Armor
+  - Fuel
+  requirements:
+    Iron Horse Armor: -1
+    Fuel: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Iron Nugget: 0
+Firework:
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - 
+  - 
+  - 
+  - 
+  - Paper
+  - 
+  - Gunpowder
+  - Gunpowder
+  - Gunpowder
+  shapeless: 1
+  requirements:
+    Paper: -1
+    Gunpowder: -3
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - 
+  - 
+  - 
+  - 
+  - Paper
+  - 
+  - Gunpowder
+  - Gunpowder
+  - 
+  shapeless: 1
+  requirements:
+    Paper: -1
+    Gunpowder: -2
+- recipe_type: crafting
+  output: 3
+  recipe:
+  - 
+  - 
+  - 
+  - 
+  - Paper
+  - 
+  - 
+  - Gunpowder
+  - 
+  shapeless: 1
+  requirements:
+    Paper: -1
+    Gunpowder: -1
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Firework: 0
+Fuel:
+- recipe_type: as
+  output: 8
+  recipe:
+  - Coal
+  requirements:
+    Coal: -1
+- recipe_type: as
+  output: 8
+  recipe:
+  - Charcoal
+  requirements:
+    Charcoal: -1
+- recipe_type: as
+  output: 80
+  recipe:
+  - Block of Coal
+  requirements:
+    Block of Coal: -1
+- recipe_type: as
+  output: 100
+  recipe:
+  - Lava Bucket
+  requirements:
+    Lava Bucket: -1
+- recipe_type: as
+  output: 12
+  recipe:
+  - Blaze Rod
+  requirements:
+    Blaze Rod: -1
+- recipe_type: as
+  output: 1
+  recipe:
+  - Stick
+  - Stick
+  requirements:
+    Stick: -2
+- output: 1
+  recipe_type: raw_resource
+  requirements:
+    Fuel: 0
