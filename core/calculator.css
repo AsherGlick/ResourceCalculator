@@ -46,40 +46,60 @@ body {
 
 
 .search_bar {
-	padding-bottom: 2px;
+	padding-bottom: 10px;
 
+}
+
+.search_label_wrapper {
+	float:left;
+	padding: 5px 10px;
+	border: 2px solid #8b90a1;
+	border-right: 0;
+	background: #D8D9ED;
+	border-radius: 5px 0 0 5px;
 }
 .search_label {
-	float:left;
-}
-.search_box {
-	width: 100%;
-	box-sizing:border-box;
-	padding: 0;
-	padding-bottom: 2px;
-	padding-left: 2px;
-	margin: 0;
-	font-size: .9em;
-	color: #FFF;
-	text-shadow: 2px 2px 0 #000;
-
 }
 
 .search_box_wrapper {
     display: block;
     overflow: hidden;
 }
+.search_box {
+	width: 100%;
+	box-sizing:border-box;
+	padding: 5px;
+	margin: 0;
+	color: #000;
+	font-family: sans-serif;
+	background-color: #fff;
+	border: none;
+	border-top: 2px solid #8b90a1;
+	border-bottom: 2px solid #8b90a1;
+	font-size: 1em;
+}
+
+
 
 
 .hide_unused_wrapper {
 	float:right;
-	margin-left: 5px;
-	margin-right: 5px;
+	padding: 5px 10px;
+	border: 2px solid #8b90a1;
+	border-left: 0;
+	border-radius: 0 5px 5px 0;
+	background: #FFF;
+}
+.hide_unused_wrapper:hover {
+	background: #FFF;
 }
 
 .hide_unused_label {
 	cursor: pointer;
 }
+
+
+
 
 #item_list {
 	text-align: center;
@@ -373,29 +393,15 @@ a.internal_link {
 
 
 .menu_style {
-	/*border: 2px solid transparent;*/
 	background-color: #EEE;
 	background-clip: content-box;
-	/*border-image: url(/OutsetBorder.png) 2;*/
 }
 .item {
-	/*width: 64px;*/
-	/*height: 64px;*/
-	/*border: 4px solid transparent;*/
-	/*border-image: url(/astroneer_outset_border.png) 4 ;*/
 	background: #ccc;
-}
-.search_box {
-	/*border: 4px solid transparent;*/
-	/*border-image: url(/astroneer_outset_border.png) 4 ;*/
-	background-color: #ccc;
 }
 body {
 	font-family: sans-serif;
 }
 .desired_item_count {
-	font-family: sans-serif;
-}
-.search_box {
 	font-family: sans-serif;
 }
