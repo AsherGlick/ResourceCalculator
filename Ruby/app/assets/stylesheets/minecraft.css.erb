@@ -1,0 +1,1722 @@
+/*
+
+        Creating a sprite from following images:
+        
+        app/assets/images/items/minecraft/acaciaboat.png (32x32)
+        app/assets/images/items/minecraft/acaciadoor.png (32x32)
+        app/assets/images/items/minecraft/acaciafence.png (32x32)
+        app/assets/images/items/minecraft/acaciafencegate.png (32x32)
+        app/assets/images/items/minecraft/acacialeaves.png (32x32)
+        app/assets/images/items/minecraft/acaciasapling.png (32x32)
+        app/assets/images/items/minecraft/acaciawood.png (32x32)
+        app/assets/images/items/minecraft/acaciawoodplanks.png (32x32)
+        app/assets/images/items/minecraft/acaciawoodslab.png (32x32)
+        app/assets/images/items/minecraft/acaciawoodstairs.png (32x32)
+        app/assets/images/items/minecraft/activatorrail.png (32x32)
+        app/assets/images/items/minecraft/allium.png (32x32)
+        app/assets/images/items/minecraft/andesite.png (32x32)
+        app/assets/images/items/minecraft/anvil.png (32x32)
+        app/assets/images/items/minecraft/apple.png (32x32)
+        app/assets/images/items/minecraft/armorstand.png (32x32)
+        app/assets/images/items/minecraft/arrow.png (32x32)
+        app/assets/images/items/minecraft/awkwardpotion.png (32x32)
+        app/assets/images/items/minecraft/awkwardsplashpotion.png (32x32)
+        app/assets/images/items/minecraft/azurebluet.png (32x32)
+        app/assets/images/items/minecraft/bakedpotato.png (32x32)
+        app/assets/images/items/minecraft/bategg.png (32x32)
+        app/assets/images/items/minecraft/beacon.png (32x32)
+        app/assets/images/items/minecraft/bed.png (32x32)
+        app/assets/images/items/minecraft/bedrock.png (32x32)
+        app/assets/images/items/minecraft/beetroot.png (32x32)
+        app/assets/images/items/minecraft/beetrootseeds.png (32x32)
+        app/assets/images/items/minecraft/beetrootsoup.png (32x32)
+        app/assets/images/items/minecraft/birchboat.png (32x32)
+        app/assets/images/items/minecraft/birchdoor.png (32x32)
+        app/assets/images/items/minecraft/birchfence.png (32x32)
+        app/assets/images/items/minecraft/birchfencegate.png (32x32)
+        app/assets/images/items/minecraft/birchleaves.png (32x32)
+        app/assets/images/items/minecraft/birchsapling.png (32x32)
+        app/assets/images/items/minecraft/birchwood.png (32x32)
+        app/assets/images/items/minecraft/birchwoodplanks.png (32x32)
+        app/assets/images/items/minecraft/birchwoodslab.png (32x32)
+        app/assets/images/items/minecraft/birchwoodstairs.png (32x32)
+        app/assets/images/items/minecraft/blackbanner.png (32x32)
+        app/assets/images/items/minecraft/blackbed.png (32x32)
+        app/assets/images/items/minecraft/blackcarpet.png (32x32)
+        app/assets/images/items/minecraft/blackconcrete.png (32x32)
+        app/assets/images/items/minecraft/blackconcretepowder.png (32x32)
+        app/assets/images/items/minecraft/blackglazedterracotta.png (32x32)
+        app/assets/images/items/minecraft/blackshulkerbox.png (32x32)
+        app/assets/images/items/minecraft/blackstainedglass.png (32x32)
+        app/assets/images/items/minecraft/blackstainedglasspane.png (32x32)
+        app/assets/images/items/minecraft/blackterracotta.png (32x32)
+        app/assets/images/items/minecraft/blackwool.png (32x32)
+        app/assets/images/items/minecraft/blazeegg.png (32x32)
+        app/assets/images/items/minecraft/blazepowder.png (32x32)
+        app/assets/images/items/minecraft/blazerod.png (32x32)
+        app/assets/images/items/minecraft/blockofclay.png (32x32)
+        app/assets/images/items/minecraft/blockofcoal.png (32x32)
+        app/assets/images/items/minecraft/blockofdiamond.png (32x32)
+        app/assets/images/items/minecraft/blockofemerald.png (32x32)
+        app/assets/images/items/minecraft/blockofgold.png (32x32)
+        app/assets/images/items/minecraft/blockofiron.png (32x32)
+        app/assets/images/items/minecraft/blockofquartz.png (32x32)
+        app/assets/images/items/minecraft/blockofredstone.png (32x32)
+        app/assets/images/items/minecraft/bluebanner.png (32x32)
+        app/assets/images/items/minecraft/bluebed.png (32x32)
+        app/assets/images/items/minecraft/bluecarpet.png (32x32)
+        app/assets/images/items/minecraft/blueconcrete.png (32x32)
+        app/assets/images/items/minecraft/blueconcretepowder.png (32x32)
+        app/assets/images/items/minecraft/blueglazedterracotta.png (32x32)
+        app/assets/images/items/minecraft/blueorchid.png (32x32)
+        app/assets/images/items/minecraft/blueshulkerbox.png (32x32)
+        app/assets/images/items/minecraft/bluestainedglass.png (32x32)
+        app/assets/images/items/minecraft/bluestainedglasspane.png (32x32)
+        app/assets/images/items/minecraft/blueterracotta.png (32x32)
+        app/assets/images/items/minecraft/bluewool.png (32x32)
+        app/assets/images/items/minecraft/bone.png (32x32)
+        app/assets/images/items/minecraft/boneblock.png (32x32)
+        app/assets/images/items/minecraft/bonemeal.png (32x32)
+        app/assets/images/items/minecraft/book.png (32x32)
+        app/assets/images/items/minecraft/bookandquill.png (32x32)
+        app/assets/images/items/minecraft/bookshelf.png (32x32)
+        app/assets/images/items/minecraft/bottleoenchanting.png (32x32)
+        app/assets/images/items/minecraft/bow.png (32x32)
+        app/assets/images/items/minecraft/bowl.png (32x32)
+        app/assets/images/items/minecraft/bread.png (32x32)
+        app/assets/images/items/minecraft/brewingstand.png (32x32)
+        app/assets/images/items/minecraft/brick.png (32x32)
+        app/assets/images/items/minecraft/bricks.png (32x32)
+        app/assets/images/items/minecraft/bricksslab.png (32x32)
+        app/assets/images/items/minecraft/brickstairs.png (32x32)
+        app/assets/images/items/minecraft/brownbanner.png (32x32)
+        app/assets/images/items/minecraft/brownbed.png (32x32)
+        app/assets/images/items/minecraft/browncarpet.png (32x32)
+        app/assets/images/items/minecraft/brownconcrete.png (32x32)
+        app/assets/images/items/minecraft/brownconcretepowder.png (32x32)
+        app/assets/images/items/minecraft/brownglazedterracotta.png (32x32)
+        app/assets/images/items/minecraft/brownmushroom.png (32x32)
+        app/assets/images/items/minecraft/brownshulkerbox.png (32x32)
+        app/assets/images/items/minecraft/brownstainedglass.png (32x32)
+        app/assets/images/items/minecraft/brownstainedglasspane.png (32x32)
+        app/assets/images/items/minecraft/brownterracotta.png (32x32)
+        app/assets/images/items/minecraft/brownwool.png (32x32)
+        app/assets/images/items/minecraft/bucket.png (32x32)
+        app/assets/images/items/minecraft/cactus.png (32x32)
+        app/assets/images/items/minecraft/cactusgreen.png (32x32)
+        app/assets/images/items/minecraft/cake.png (32x32)
+        app/assets/images/items/minecraft/carpet.png (32x32)
+        app/assets/images/items/minecraft/carrot.png (32x32)
+        app/assets/images/items/minecraft/carrotonastick.png (32x32)
+        app/assets/images/items/minecraft/cauldron.png (32x32)
+        app/assets/images/items/minecraft/cavespideregg.png (32x32)
+        app/assets/images/items/minecraft/chainboots.png (32x32)
+        app/assets/images/items/minecraft/chainchestplate.png (32x32)
+        app/assets/images/items/minecraft/chainhelmet.png (32x32)
+        app/assets/images/items/minecraft/chainleggings.png (32x32)
+        app/assets/images/items/minecraft/charcoal.png (32x32)
+        app/assets/images/items/minecraft/chest.png (32x32)
+        app/assets/images/items/minecraft/chickenegg.png (32x32)
+        app/assets/images/items/minecraft/chiseledquartzblock.png (32x32)
+        app/assets/images/items/minecraft/chiseledredsandstone.png (32x32)
+        app/assets/images/items/minecraft/chiseledsandstone.png (32x32)
+        app/assets/images/items/minecraft/chiseledstonebrickmonsteregg.png (32x32)
+        app/assets/images/items/minecraft/chiseledstonebricks.png (32x32)
+        app/assets/images/items/minecraft/chorusflower.png (32x32)
+        app/assets/images/items/minecraft/chorusfruit.png (32x32)
+        app/assets/images/items/minecraft/chorusplant.png (32x32)
+        app/assets/images/items/minecraft/clay.png (32x32)
+        app/assets/images/items/minecraft/clock.png (32x32)
+        app/assets/images/items/minecraft/clownfish.png (32x32)
+        app/assets/images/items/minecraft/coal.png (32x32)
+        app/assets/images/items/minecraft/coalore.png (32x32)
+        app/assets/images/items/minecraft/coarsedirt.png (32x32)
+        app/assets/images/items/minecraft/cobblestone.png (32x32)
+        app/assets/images/items/minecraft/cobblestonemonsteregg.png (32x32)
+        app/assets/images/items/minecraft/cobblestoneslab.png (32x32)
+        app/assets/images/items/minecraft/cobblestonestairs.png (32x32)
+        app/assets/images/items/minecraft/cobblestonewall.png (32x32)
+        app/assets/images/items/minecraft/cobweb.png (32x32)
+        app/assets/images/items/minecraft/cocoabeans.png (32x32)
+        app/assets/images/items/minecraft/compass.png (32x32)
+        app/assets/images/items/minecraft/cookedchicken.png (32x32)
+        app/assets/images/items/minecraft/cookedfish.png (32x32)
+        app/assets/images/items/minecraft/cookedmutton.png (32x32)
+        app/assets/images/items/minecraft/cookedporkchop.png (32x32)
+        app/assets/images/items/minecraft/cookedrabbit.png (32x32)
+        app/assets/images/items/minecraft/cookedsalmon.png (32x32)
+        app/assets/images/items/minecraft/cookie.png (32x32)
+        app/assets/images/items/minecraft/cowegg.png (32x32)
+        app/assets/images/items/minecraft/crackedstonebrickmonsteregg.png (32x32)
+        app/assets/images/items/minecraft/crackedstonebricks.png (32x32)
+        app/assets/images/items/minecraft/craftingtable.png (32x32)
+        app/assets/images/items/minecraft/creeperegg.png (32x32)
+        app/assets/images/items/minecraft/creeperhead.png (32x32)
+        app/assets/images/items/minecraft/cyanbanner.png (32x32)
+        app/assets/images/items/minecraft/cyanbed.png (32x32)
+        app/assets/images/items/minecraft/cyancarpet.png (32x32)
+        app/assets/images/items/minecraft/cyanconcrete.png (32x32)
+        app/assets/images/items/minecraft/cyanconcretepowder.png (32x32)
+        app/assets/images/items/minecraft/cyandye.png (32x32)
+        app/assets/images/items/minecraft/cyanglazedterracotta.png (32x32)
+        app/assets/images/items/minecraft/cyanshulkerbox.png (32x32)
+        app/assets/images/items/minecraft/cyanstainedglass.png (32x32)
+        app/assets/images/items/minecraft/cyanstainedglasspane.png (32x32)
+        app/assets/images/items/minecraft/cyanterracotta.png (32x32)
+        app/assets/images/items/minecraft/cyanwool.png (32x32)
+        app/assets/images/items/minecraft/dandelion.png (32x32)
+        app/assets/images/items/minecraft/dandelionyellow.png (32x32)
+        app/assets/images/items/minecraft/darkoakboat.png (32x32)
+        app/assets/images/items/minecraft/darkoakdoor.png (32x32)
+        app/assets/images/items/minecraft/darkoakfence.png (32x32)
+        app/assets/images/items/minecraft/darkoakfencegate.png (32x32)
+        app/assets/images/items/minecraft/darkoakleaves.png (32x32)
+        app/assets/images/items/minecraft/darkoaksapling.png (32x32)
+        app/assets/images/items/minecraft/darkoakwood.png (32x32)
+        app/assets/images/items/minecraft/darkoakwoodplanks.png (32x32)
+        app/assets/images/items/minecraft/darkoakwoodslab.png (32x32)
+        app/assets/images/items/minecraft/darkoakwoodstairs.png (32x32)
+        app/assets/images/items/minecraft/darkprismarine.png (32x32)
+        app/assets/images/items/minecraft/daylightsensor.png (32x32)
+        app/assets/images/items/minecraft/deadbush.png (32x32)
+        app/assets/images/items/minecraft/detectorrail.png (32x32)
+        app/assets/images/items/minecraft/diamond.png (32x32)
+        app/assets/images/items/minecraft/diamondaxe.png (32x32)
+        app/assets/images/items/minecraft/diamondboots.png (32x32)
+        app/assets/images/items/minecraft/diamondchestplate.png (32x32)
+        app/assets/images/items/minecraft/diamondhelmet.png (32x32)
+        app/assets/images/items/minecraft/diamondhoe.png (32x32)
+        app/assets/images/items/minecraft/diamondhorsearmor.png (32x32)
+        app/assets/images/items/minecraft/diamondleggings.png (32x32)
+        app/assets/images/items/minecraft/diamondore.png (32x32)
+        app/assets/images/items/minecraft/diamondpickaxe.png (32x32)
+        app/assets/images/items/minecraft/diamondshovel.png (32x32)
+        app/assets/images/items/minecraft/diamondsword.png (32x32)
+        app/assets/images/items/minecraft/diorite.png (32x32)
+        app/assets/images/items/minecraft/dirt.png (32x32)
+        app/assets/images/items/minecraft/dispenser.png (32x32)
+        app/assets/images/items/minecraft/doubletallgrass.png (32x32)
+        app/assets/images/items/minecraft/dragonhead.png (32x32)
+        app/assets/images/items/minecraft/dragonsbreath.png (32x32)
+        app/assets/images/items/minecraft/dropper.png (32x32)
+        app/assets/images/items/minecraft/egg.png (32x32)
+        app/assets/images/items/minecraft/elytra.png (32x32)
+        app/assets/images/items/minecraft/emerald.png (32x32)
+        app/assets/images/items/minecraft/emeraldore.png (32x32)
+        app/assets/images/items/minecraft/emptymap.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook01.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook02.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook03.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook04.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook05.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook06.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook07.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook08.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook09.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook10.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook11.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook12.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook13.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook14.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook15.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook16.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook17.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook18.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook19.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook20.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook21.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook22.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook23.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook24.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook25.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook26.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook27.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook28.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook29.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook30.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook31.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook32.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook33.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook34.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook35.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook36.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook37.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook38.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook39.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook40.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook41.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook42.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook43.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook44.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook45.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook46.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook47.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook48.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook49.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook50.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook51.png (32x32)
+        app/assets/images/items/minecraft/enchantedbook52.png (32x32)
+        app/assets/images/items/minecraft/enchantmenttable.png (32x32)
+        app/assets/images/items/minecraft/endcrystal.png (32x32)
+        app/assets/images/items/minecraft/enderchest.png (32x32)
+        app/assets/images/items/minecraft/endermanegg.png (32x32)
+        app/assets/images/items/minecraft/endermiteegg.png (32x32)
+        app/assets/images/items/minecraft/enderpearl.png (32x32)
+        app/assets/images/items/minecraft/endportal.png (32x32)
+        app/assets/images/items/minecraft/endrod.png (32x32)
+        app/assets/images/items/minecraft/endstone.png (32x32)
+        app/assets/images/items/minecraft/endstonebricks.png (32x32)
+        app/assets/images/items/minecraft/eyeofender.png (32x32)
+        app/assets/images/items/minecraft/feather.png (32x32)
+        app/assets/images/items/minecraft/fermentedspidereye.png (32x32)
+        app/assets/images/items/minecraft/fern.png (32x32)
+        app/assets/images/items/minecraft/firecharge.png (32x32)
+        app/assets/images/items/minecraft/firework.png (32x32)
+        app/assets/images/items/minecraft/fireworkstar.png (32x32)
+        app/assets/images/items/minecraft/fishingrod.png (32x32)
+        app/assets/images/items/minecraft/flint.png (32x32)
+        app/assets/images/items/minecraft/flintandsteel.png (32x32)
+        app/assets/images/items/minecraft/flowerpot.png (32x32)
+        app/assets/images/items/minecraft/fuel.png (32x32)
+        app/assets/images/items/minecraft/furnace.png (32x32)
+        app/assets/images/items/minecraft/ghastegg.png (32x32)
+        app/assets/images/items/minecraft/ghasttear.png (32x32)
+        app/assets/images/items/minecraft/glass.png (32x32)
+        app/assets/images/items/minecraft/glassbottle.png (32x32)
+        app/assets/images/items/minecraft/glasspane.png (32x32)
+        app/assets/images/items/minecraft/glisteringmelon.png (32x32)
+        app/assets/images/items/minecraft/glowstone.png (32x32)
+        app/assets/images/items/minecraft/glowstonedust.png (32x32)
+        app/assets/images/items/minecraft/goldenapple.png (32x32)
+        app/assets/images/items/minecraft/goldenaxe.png (32x32)
+        app/assets/images/items/minecraft/goldenboots.png (32x32)
+        app/assets/images/items/minecraft/goldencarrot.png (32x32)
+        app/assets/images/items/minecraft/goldenchestplate.png (32x32)
+        app/assets/images/items/minecraft/goldenhelmet.png (32x32)
+        app/assets/images/items/minecraft/goldenhoe.png (32x32)
+        app/assets/images/items/minecraft/goldenleggings.png (32x32)
+        app/assets/images/items/minecraft/goldenpickaxe.png (32x32)
+        app/assets/images/items/minecraft/goldenshovel.png (32x32)
+        app/assets/images/items/minecraft/goldensword.png (32x32)
+        app/assets/images/items/minecraft/goldhorsearmor.png (32x32)
+        app/assets/images/items/minecraft/goldingot.png (32x32)
+        app/assets/images/items/minecraft/goldnugget.png (32x32)
+        app/assets/images/items/minecraft/goldore.png (32x32)
+        app/assets/images/items/minecraft/granite.png (32x32)
+        app/assets/images/items/minecraft/grass.png (32x32)
+        app/assets/images/items/minecraft/grassblock.png (32x32)
+        app/assets/images/items/minecraft/gravel.png (32x32)
+        app/assets/images/items/minecraft/graybanner.png (32x32)
+        app/assets/images/items/minecraft/graybed.png (32x32)
+        app/assets/images/items/minecraft/graycarpet.png (32x32)
+        app/assets/images/items/minecraft/grayconcrete.png (32x32)
+        app/assets/images/items/minecraft/grayconcretepowder.png (32x32)
+        app/assets/images/items/minecraft/graydye.png (32x32)
+        app/assets/images/items/minecraft/grayglazedterracotta.png (32x32)
+        app/assets/images/items/minecraft/grayshulkerbox.png (32x32)
+        app/assets/images/items/minecraft/graystainedglass.png (32x32)
+        app/assets/images/items/minecraft/graystainedglasspane.png (32x32)
+        app/assets/images/items/minecraft/grayterracotta.png (32x32)
+        app/assets/images/items/minecraft/graywool.png (32x32)
+        app/assets/images/items/minecraft/greenbanner.png (32x32)
+        app/assets/images/items/minecraft/greenbed.png (32x32)
+        app/assets/images/items/minecraft/greencarpet.png (32x32)
+        app/assets/images/items/minecraft/greenconcrete.png (32x32)
+        app/assets/images/items/minecraft/greenconcretepowder.png (32x32)
+        app/assets/images/items/minecraft/greenglazedterracotta.png (32x32)
+        app/assets/images/items/minecraft/greenshulkerbox.png (32x32)
+        app/assets/images/items/minecraft/greenstainedglass.png (32x32)
+        app/assets/images/items/minecraft/greenstainedglasspane.png (32x32)
+        app/assets/images/items/minecraft/greenterracotta.png (32x32)
+        app/assets/images/items/minecraft/greenwool.png (32x32)
+        app/assets/images/items/minecraft/guardianegg.png (32x32)
+        app/assets/images/items/minecraft/gunpowder.png (32x32)
+        app/assets/images/items/minecraft/haybale.png (32x32)
+        app/assets/images/items/minecraft/head.png (32x32)
+        app/assets/images/items/minecraft/hopper.png (32x32)
+        app/assets/images/items/minecraft/horseegg.png (32x32)
+        app/assets/images/items/minecraft/ice.png (32x32)
+        app/assets/images/items/minecraft/inksac.png (32x32)
+        app/assets/images/items/minecraft/ironaxe.png (32x32)
+        app/assets/images/items/minecraft/ironbars.png (32x32)
+        app/assets/images/items/minecraft/ironboots.png (32x32)
+        app/assets/images/items/minecraft/ironchestplate.png (32x32)
+        app/assets/images/items/minecraft/irondoor.png (32x32)
+        app/assets/images/items/minecraft/ironhelmet.png (32x32)
+        app/assets/images/items/minecraft/ironhoe.png (32x32)
+        app/assets/images/items/minecraft/ironhorsearmor.png (32x32)
+        app/assets/images/items/minecraft/ironingot.png (32x32)
+        app/assets/images/items/minecraft/ironleggings.png (32x32)
+        app/assets/images/items/minecraft/ironnugget.png (32x32)
+        app/assets/images/items/minecraft/ironore.png (32x32)
+        app/assets/images/items/minecraft/ironpickaxe.png (32x32)
+        app/assets/images/items/minecraft/ironshovel.png (32x32)
+        app/assets/images/items/minecraft/ironsword.png (32x32)
+        app/assets/images/items/minecraft/irontrapdoor.png (32x32)
+        app/assets/images/items/minecraft/itemframe.png (32x32)
+        app/assets/images/items/minecraft/jackolantern.png (32x32)
+        app/assets/images/items/minecraft/jukebox.png (32x32)
+        app/assets/images/items/minecraft/jungleboat.png (32x32)
+        app/assets/images/items/minecraft/jungledoor.png (32x32)
+        app/assets/images/items/minecraft/junglefence.png (32x32)
+        app/assets/images/items/minecraft/junglefencegate.png (32x32)
+        app/assets/images/items/minecraft/jungleleaves.png (32x32)
+        app/assets/images/items/minecraft/junglesapling.png (32x32)
+        app/assets/images/items/minecraft/junglewood.png (32x32)
+        app/assets/images/items/minecraft/junglewoodplanks.png (32x32)
+        app/assets/images/items/minecraft/junglewoodslab.png (32x32)
+        app/assets/images/items/minecraft/junglewoodstairs.png (32x32)
+        app/assets/images/items/minecraft/ladder.png (32x32)
+        app/assets/images/items/minecraft/lapislazuli.png (32x32)
+        app/assets/images/items/minecraft/lapislazuliblock.png (32x32)
+        app/assets/images/items/minecraft/lapislazuliore.png (32x32)
+        app/assets/images/items/minecraft/largefern.png (32x32)
+        app/assets/images/items/minecraft/lavabucket.png (32x32)
+        app/assets/images/items/minecraft/lead.png (32x32)
+        app/assets/images/items/minecraft/leather.png (32x32)
+        app/assets/images/items/minecraft/leatherboots.png (32x32)
+        app/assets/images/items/minecraft/leathercap.png (32x32)
+        app/assets/images/items/minecraft/leatherpants.png (32x32)
+        app/assets/images/items/minecraft/leathertunic.png (32x32)
+        app/assets/images/items/minecraft/lever.png (32x32)
+        app/assets/images/items/minecraft/lightbluebanner.png (32x32)
+        app/assets/images/items/minecraft/lightbluebed.png (32x32)
+        app/assets/images/items/minecraft/lightbluecarpet.png (32x32)
+        app/assets/images/items/minecraft/lightblueconcrete.png (32x32)
+        app/assets/images/items/minecraft/lightblueconcretepowder.png (32x32)
+        app/assets/images/items/minecraft/lightbluedye.png (32x32)
+        app/assets/images/items/minecraft/lightblueglazedterracotta.png (32x32)
+        app/assets/images/items/minecraft/lightblueshulkerbox.png (32x32)
+        app/assets/images/items/minecraft/lightbluestainedglass.png (32x32)
+        app/assets/images/items/minecraft/lightbluestainedglasspane.png (32x32)
+        app/assets/images/items/minecraft/lightblueterracotta.png (32x32)
+        app/assets/images/items/minecraft/lightbluewool.png (32x32)
+        app/assets/images/items/minecraft/lightgraybanner.png (32x32)
+        app/assets/images/items/minecraft/lightgraybed.png (32x32)
+        app/assets/images/items/minecraft/lightgraycarpet.png (32x32)
+        app/assets/images/items/minecraft/lightgrayconcrete.png (32x32)
+        app/assets/images/items/minecraft/lightgrayconcretepowder.png (32x32)
+        app/assets/images/items/minecraft/lightgraydye.png (32x32)
+        app/assets/images/items/minecraft/lightgrayglazedterracotta.png (32x32)
+        app/assets/images/items/minecraft/lightgrayshulkerbox.png (32x32)
+        app/assets/images/items/minecraft/lightgraystainedglass.png (32x32)
+        app/assets/images/items/minecraft/lightgraystainedglasspane.png (32x32)
+        app/assets/images/items/minecraft/lightgrayterracotta.png (32x32)
+        app/assets/images/items/minecraft/lightgraywool.png (32x32)
+        app/assets/images/items/minecraft/lilac.png (32x32)
+        app/assets/images/items/minecraft/lilypad.png (32x32)
+        app/assets/images/items/minecraft/limebanner.png (32x32)
+        app/assets/images/items/minecraft/limebed.png (32x32)
+        app/assets/images/items/minecraft/limecarpet.png (32x32)
+        app/assets/images/items/minecraft/limeconcrete.png (32x32)
+        app/assets/images/items/minecraft/limeconcretepowder.png (32x32)
+        app/assets/images/items/minecraft/limedye.png (32x32)
+        app/assets/images/items/minecraft/limeglazedterracotta.png (32x32)
+        app/assets/images/items/minecraft/limeshulkerbox.png (32x32)
+        app/assets/images/items/minecraft/limestainedglass.png (32x32)
+        app/assets/images/items/minecraft/limestainedglasspane.png (32x32)
+        app/assets/images/items/minecraft/limeterracotta.png (32x32)
+        app/assets/images/items/minecraft/limewool.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion01.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion02.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion03.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion04.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion05.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion06.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion07.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion08.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion09.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion10.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion11.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion12.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion13.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion14.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion15.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion16.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion17.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion18.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion19.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion20.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion21.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion22.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion23.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion24.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion25.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion26.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion27.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion28.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion29.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion30.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion31.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion32.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion33.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion34.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion35.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion36.png (32x32)
+        app/assets/images/items/minecraft/lingeringpotion37.png (32x32)
+        app/assets/images/items/minecraft/magentabanner.png (32x32)
+        app/assets/images/items/minecraft/magentabed.png (32x32)
+        app/assets/images/items/minecraft/magentacarpet.png (32x32)
+        app/assets/images/items/minecraft/magentaconcrete.png (32x32)
+        app/assets/images/items/minecraft/magentaconcretepowder.png (32x32)
+        app/assets/images/items/minecraft/magentadye.png (32x32)
+        app/assets/images/items/minecraft/magentaglazedterracotta.png (32x32)
+        app/assets/images/items/minecraft/magentashulkerbox.png (32x32)
+        app/assets/images/items/minecraft/magentastainedglass.png (32x32)
+        app/assets/images/items/minecraft/magentastainedglasspane.png (32x32)
+        app/assets/images/items/minecraft/magentaterracotta.png (32x32)
+        app/assets/images/items/minecraft/magentawool.png (32x32)
+        app/assets/images/items/minecraft/magmablock.png (32x32)
+        app/assets/images/items/minecraft/magmacream.png (32x32)
+        app/assets/images/items/minecraft/magmacubeegg.png (32x32)
+        app/assets/images/items/minecraft/melon.png (32x32)
+        app/assets/images/items/minecraft/melonseeds.png (32x32)
+        app/assets/images/items/minecraft/melonslice.png (32x32)
+        app/assets/images/items/minecraft/milk.png (32x32)
+        app/assets/images/items/minecraft/minecart.png (32x32)
+        app/assets/images/items/minecraft/minecartwithchest.png (32x32)
+        app/assets/images/items/minecraft/minecartwithfurnace.png (32x32)
+        app/assets/images/items/minecraft/minecartwithhopper.png (32x32)
+        app/assets/images/items/minecraft/minecartwithtnt.png (32x32)
+        app/assets/images/items/minecraft/mooshroomegg.png (32x32)
+        app/assets/images/items/minecraft/mossstone.png (32x32)
+        app/assets/images/items/minecraft/mossycobblestonewall.png (32x32)
+        app/assets/images/items/minecraft/mossystonebrickmonsteregg.png (32x32)
+        app/assets/images/items/minecraft/mossystonebricks.png (32x32)
+        app/assets/images/items/minecraft/mundanepotion.png (32x32)
+        app/assets/images/items/minecraft/mundanesplashpotion.png (32x32)
+        app/assets/images/items/minecraft/mushroomstew.png (32x32)
+        app/assets/images/items/minecraft/musicdisk01.png (32x32)
+        app/assets/images/items/minecraft/musicdisk02.png (32x32)
+        app/assets/images/items/minecraft/musicdisk03.png (32x32)
+        app/assets/images/items/minecraft/musicdisk04.png (32x32)
+        app/assets/images/items/minecraft/musicdisk05.png (32x32)
+        app/assets/images/items/minecraft/musicdisk06.png (32x32)
+        app/assets/images/items/minecraft/musicdisk07.png (32x32)
+        app/assets/images/items/minecraft/musicdisk08.png (32x32)
+        app/assets/images/items/minecraft/musicdisk09.png (32x32)
+        app/assets/images/items/minecraft/musicdisk10.png (32x32)
+        app/assets/images/items/minecraft/musicdisk11.png (32x32)
+        app/assets/images/items/minecraft/mycelium.png (32x32)
+        app/assets/images/items/minecraft/nametag.png (32x32)
+        app/assets/images/items/minecraft/netherbrick.png (32x32)
+        app/assets/images/items/minecraft/netherbrickblock.png (32x32)
+        app/assets/images/items/minecraft/netherbrickfence.png (32x32)
+        app/assets/images/items/minecraft/netherbrickslab.png (32x32)
+        app/assets/images/items/minecraft/netherbrickstairs.png (32x32)
+        app/assets/images/items/minecraft/netherquartz.png (32x32)
+        app/assets/images/items/minecraft/netherquartzore.png (32x32)
+        app/assets/images/items/minecraft/netherrack.png (32x32)
+        app/assets/images/items/minecraft/netherstar.png (32x32)
+        app/assets/images/items/minecraft/netherwart.png (32x32)
+        app/assets/images/items/minecraft/netherwartblock.png (32x32)
+        app/assets/images/items/minecraft/notchapple.png (32x32)
+        app/assets/images/items/minecraft/noteblock.png (32x32)
+        app/assets/images/items/minecraft/oakboat.png (32x32)
+        app/assets/images/items/minecraft/oakdoor.png (32x32)
+        app/assets/images/items/minecraft/oakfence.png (32x32)
+        app/assets/images/items/minecraft/oakfencegate.png (32x32)
+        app/assets/images/items/minecraft/oakleaves.png (32x32)
+        app/assets/images/items/minecraft/oaksapling.png (32x32)
+        app/assets/images/items/minecraft/oakwood.png (32x32)
+        app/assets/images/items/minecraft/oakwoodplanks.png (32x32)
+        app/assets/images/items/minecraft/oakwoodslab.png (32x32)
+        app/assets/images/items/minecraft/oakwoodstairs.png (32x32)
+        app/assets/images/items/minecraft/observer.png (32x32)
+        app/assets/images/items/minecraft/obsidian.png (32x32)
+        app/assets/images/items/minecraft/ocelotegg.png (32x32)
+        app/assets/images/items/minecraft/orangebanner.png (32x32)
+        app/assets/images/items/minecraft/orangebed.png (32x32)
+        app/assets/images/items/minecraft/orangecarpet.png (32x32)
+        app/assets/images/items/minecraft/orangeconcrete.png (32x32)
+        app/assets/images/items/minecraft/orangeconcretepowder.png (32x32)
+        app/assets/images/items/minecraft/orangedye.png (32x32)
+        app/assets/images/items/minecraft/orangeglazedterracotta.png (32x32)
+        app/assets/images/items/minecraft/orangeshulkerbox.png (32x32)
+        app/assets/images/items/minecraft/orangestainedglass.png (32x32)
+        app/assets/images/items/minecraft/orangestainedglasspane.png (32x32)
+        app/assets/images/items/minecraft/orangeterracotta.png (32x32)
+        app/assets/images/items/minecraft/orangetulip.png (32x32)
+        app/assets/images/items/minecraft/orangewool.png (32x32)
+        app/assets/images/items/minecraft/oxeyedaisy.png (32x32)
+        app/assets/images/items/minecraft/packedice.png (32x32)
+        app/assets/images/items/minecraft/painting.png (32x32)
+        app/assets/images/items/minecraft/paper.png (32x32)
+        app/assets/images/items/minecraft/peony.png (32x32)
+        app/assets/images/items/minecraft/pigegg.png (32x32)
+        app/assets/images/items/minecraft/pillarquartzblock.png (32x32)
+        app/assets/images/items/minecraft/pinkbanner.png (32x32)
+        app/assets/images/items/minecraft/pinkbed.png (32x32)
+        app/assets/images/items/minecraft/pinkcarpet.png (32x32)
+        app/assets/images/items/minecraft/pinkconcrete.png (32x32)
+        app/assets/images/items/minecraft/pinkconcretepowder.png (32x32)
+        app/assets/images/items/minecraft/pinkdye.png (32x32)
+        app/assets/images/items/minecraft/pinkglazedterracotta.png (32x32)
+        app/assets/images/items/minecraft/pinkshulkerbox.png (32x32)
+        app/assets/images/items/minecraft/pinkstainedglass.png (32x32)
+        app/assets/images/items/minecraft/pinkstainedglasspane.png (32x32)
+        app/assets/images/items/minecraft/pinkterracotta.png (32x32)
+        app/assets/images/items/minecraft/pinktulip.png (32x32)
+        app/assets/images/items/minecraft/pinkwool.png (32x32)
+        app/assets/images/items/minecraft/piston.png (32x32)
+        app/assets/images/items/minecraft/podzol.png (32x32)
+        app/assets/images/items/minecraft/poisonouspotato.png (32x32)
+        app/assets/images/items/minecraft/polarbearegg.png (32x32)
+        app/assets/images/items/minecraft/polishedandesite.png (32x32)
+        app/assets/images/items/minecraft/polisheddiorite.png (32x32)
+        app/assets/images/items/minecraft/polishedgranite.png (32x32)
+        app/assets/images/items/minecraft/poppedchorousfruit.png (32x32)
+        app/assets/images/items/minecraft/poppedchorusfruit.png (32x32)
+        app/assets/images/items/minecraft/poppy.png (32x32)
+        app/assets/images/items/minecraft/potato.png (32x32)
+        app/assets/images/items/minecraft/potionoffireresistance.png (32x32)
+        app/assets/images/items/minecraft/potionoffireresistance+.png (32x32)
+        app/assets/images/items/minecraft/potionofharming.png (32x32)
+        app/assets/images/items/minecraft/potionofharmingII.png (32x32)
+        app/assets/images/items/minecraft/potionofhealing.png (32x32)
+        app/assets/images/items/minecraft/potionofhealingII.png (32x32)
+        app/assets/images/items/minecraft/potionofinvisibility.png (32x32)
+        app/assets/images/items/minecraft/potionofinvisibility+.png (32x32)
+        app/assets/images/items/minecraft/potionofleaping.png (32x32)
+        app/assets/images/items/minecraft/potionofleaping+.png (32x32)
+        app/assets/images/items/minecraft/potionofleapingII.png (32x32)
+        app/assets/images/items/minecraft/potionofluck.png (32x32)
+        app/assets/images/items/minecraft/potionofnightvision.png (32x32)
+        app/assets/images/items/minecraft/potionofnightvision+.png (32x32)
+        app/assets/images/items/minecraft/potionofposion.png (32x32)
+        app/assets/images/items/minecraft/potionofposion+.png (32x32)
+        app/assets/images/items/minecraft/potionofposionII.png (32x32)
+        app/assets/images/items/minecraft/potionofregeneration.png (32x32)
+        app/assets/images/items/minecraft/potionofregeneration+.png (32x32)
+        app/assets/images/items/minecraft/potionofregenerationII.png (32x32)
+        app/assets/images/items/minecraft/potionofslowness.png (32x32)
+        app/assets/images/items/minecraft/potionofslowness+.png (32x32)
+        app/assets/images/items/minecraft/potionofstrength.png (32x32)
+        app/assets/images/items/minecraft/potionofstrength+.png (32x32)
+        app/assets/images/items/minecraft/potionofstrengthII.png (32x32)
+        app/assets/images/items/minecraft/potionofswiftness.png (32x32)
+        app/assets/images/items/minecraft/potionofswiftness+.png (32x32)
+        app/assets/images/items/minecraft/potionofswiftnessII.png (32x32)
+        app/assets/images/items/minecraft/potionofwaterbreathing.png (32x32)
+        app/assets/images/items/minecraft/potionofwaterbreathing+.png (32x32)
+        app/assets/images/items/minecraft/potionofweakness.png (32x32)
+        app/assets/images/items/minecraft/potionofweakness+.png (32x32)
+        app/assets/images/items/minecraft/poweredrail.png (32x32)
+        app/assets/images/items/minecraft/prismarine.png (32x32)
+        app/assets/images/items/minecraft/prismarinebricks.png (32x32)
+        app/assets/images/items/minecraft/prismarinecrystals.png (32x32)
+        app/assets/images/items/minecraft/prismarineshard.png (32x32)
+        app/assets/images/items/minecraft/pufferfish.png (32x32)
+        app/assets/images/items/minecraft/pumpkin.png (32x32)
+        app/assets/images/items/minecraft/pumpkinpie.png (32x32)
+        app/assets/images/items/minecraft/pumpkinseeds.png (32x32)
+        app/assets/images/items/minecraft/purplebanner.png (32x32)
+        app/assets/images/items/minecraft/purplebed.png (32x32)
+        app/assets/images/items/minecraft/purplecarpet.png (32x32)
+        app/assets/images/items/minecraft/purpleconcrete.png (32x32)
+        app/assets/images/items/minecraft/purpleconcretepowder.png (32x32)
+        app/assets/images/items/minecraft/purpledye.png (32x32)
+        app/assets/images/items/minecraft/purpleglazedterracotta.png (32x32)
+        app/assets/images/items/minecraft/purpleshulkerbox.png (32x32)
+        app/assets/images/items/minecraft/purplestainedglass.png (32x32)
+        app/assets/images/items/minecraft/purplestainedglasspane.png (32x32)
+        app/assets/images/items/minecraft/purpleterracotta.png (32x32)
+        app/assets/images/items/minecraft/purplewool.png (32x32)
+        app/assets/images/items/minecraft/purpurblock.png (32x32)
+        app/assets/images/items/minecraft/purpurpillar.png (32x32)
+        app/assets/images/items/minecraft/purpurslab.png (32x32)
+        app/assets/images/items/minecraft/purpurstairs.png (32x32)
+        app/assets/images/items/minecraft/quartzslab.png (32x32)
+        app/assets/images/items/minecraft/quartzstairs.png (32x32)
+        app/assets/images/items/minecraft/rabbitegg.png (32x32)
+        app/assets/images/items/minecraft/rabbithide.png (32x32)
+        app/assets/images/items/minecraft/rabbitsfoot.png (32x32)
+        app/assets/images/items/minecraft/rabbitstew.png (32x32)
+        app/assets/images/items/minecraft/rail.png (32x32)
+        app/assets/images/items/minecraft/rawbeef.png (32x32)
+        app/assets/images/items/minecraft/rawchicken.png (32x32)
+        app/assets/images/items/minecraft/rawfish.png (32x32)
+        app/assets/images/items/minecraft/rawmutton.png (32x32)
+        app/assets/images/items/minecraft/rawporkchop.png (32x32)
+        app/assets/images/items/minecraft/rawrabbit.png (32x32)
+        app/assets/images/items/minecraft/rawsalmon.png (32x32)
+        app/assets/images/items/minecraft/redbanner.png (32x32)
+        app/assets/images/items/minecraft/redbed.png (32x32)
+        app/assets/images/items/minecraft/redcarpet.png (32x32)
+        app/assets/images/items/minecraft/redconcrete.png (32x32)
+        app/assets/images/items/minecraft/redconcretepowder.png (32x32)
+        app/assets/images/items/minecraft/redglazedterracotta.png (32x32)
+        app/assets/images/items/minecraft/redmushroom.png (32x32)
+        app/assets/images/items/minecraft/rednetherbrick.png (32x32)
+        app/assets/images/items/minecraft/redsand.png (32x32)
+        app/assets/images/items/minecraft/redsandstone.png (32x32)
+        app/assets/images/items/minecraft/redsandstoneslab.png (32x32)
+        app/assets/images/items/minecraft/redsandstonestairs.png (32x32)
+        app/assets/images/items/minecraft/redshulkerbox.png (32x32)
+        app/assets/images/items/minecraft/redstainedglass.png (32x32)
+        app/assets/images/items/minecraft/redstainedglasspane.png (32x32)
+        app/assets/images/items/minecraft/redstone.png (32x32)
+        app/assets/images/items/minecraft/redstonecomparator.png (32x32)
+        app/assets/images/items/minecraft/redstonelamp.png (32x32)
+        app/assets/images/items/minecraft/redstoneore.png (32x32)
+        app/assets/images/items/minecraft/redstonerepeater.png (32x32)
+        app/assets/images/items/minecraft/redstonetorch.png (32x32)
+        app/assets/images/items/minecraft/redterracotta.png (32x32)
+        app/assets/images/items/minecraft/redtulip.png (32x32)
+        app/assets/images/items/minecraft/redwool.png (32x32)
+        app/assets/images/items/minecraft/rosebush.png (32x32)
+        app/assets/images/items/minecraft/rosered.png (32x32)
+        app/assets/images/items/minecraft/rottenflesh.png (32x32)
+        app/assets/images/items/minecraft/saddle.png (32x32)
+        app/assets/images/items/minecraft/sand.png (32x32)
+        app/assets/images/items/minecraft/sandstone.png (32x32)
+        app/assets/images/items/minecraft/sandstoneslab.png (32x32)
+        app/assets/images/items/minecraft/sandstonestairs.png (32x32)
+        app/assets/images/items/minecraft/sealantern.png (32x32)
+        app/assets/images/items/minecraft/seeds.png (32x32)
+        app/assets/images/items/minecraft/shears.png (32x32)
+        app/assets/images/items/minecraft/sheepegg.png (32x32)
+        app/assets/images/items/minecraft/shield.png (32x32)
+        app/assets/images/items/minecraft/shulkeregg.png (32x32)
+        app/assets/images/items/minecraft/shulkershell.png (32x32)
+        app/assets/images/items/minecraft/sign.png (32x32)
+        app/assets/images/items/minecraft/silverfishegg.png (32x32)
+        app/assets/images/items/minecraft/skeletonegg.png (32x32)
+        app/assets/images/items/minecraft/skeletonskull.png (32x32)
+        app/assets/images/items/minecraft/slightlydamagedanvil.png (32x32)
+        app/assets/images/items/minecraft/slimeball.png (32x32)
+        app/assets/images/items/minecraft/slimeblock.png (32x32)
+        app/assets/images/items/minecraft/slimeegg.png (32x32)
+        app/assets/images/items/minecraft/smoothredsandstone.png (32x32)
+        app/assets/images/items/minecraft/smoothsandstone.png (32x32)
+        app/assets/images/items/minecraft/snow.png (32x32)
+        app/assets/images/items/minecraft/snowball.png (32x32)
+        app/assets/images/items/minecraft/snowblock.png (32x32)
+        app/assets/images/items/minecraft/soulsand.png (32x32)
+        app/assets/images/items/minecraft/spectralarrow.png (32x32)
+        app/assets/images/items/minecraft/spideregg.png (32x32)
+        app/assets/images/items/minecraft/spidereye.png (32x32)
+        app/assets/images/items/minecraft/splashpotionoffireresistance.png (32x32)
+        app/assets/images/items/minecraft/splashpotionoffireresistance+.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofhealing.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofhealingII.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofinstantdamage.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofinstantdamageII.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofinvisibility.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofinvisibility+.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofleaping.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofleaping+.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofleapingII.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofluck.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofnightvision.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofnightvision+.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofposion.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofposion+.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofposionII.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofregeneration.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofregeneration+.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofregenerationII.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofslowness.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofslowness+.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofstrength.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofstrength+.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofstrengthII.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofswiftness.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofswiftness+.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofswiftnessII.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofwaterbreathing.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofwaterbreathing+.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofweakness.png (32x32)
+        app/assets/images/items/minecraft/splashpotionofweakness+.png (32x32)
+        app/assets/images/items/minecraft/splashuncraftablepotion.png (32x32)
+        app/assets/images/items/minecraft/splashwaterbottle.png (32x32)
+        app/assets/images/items/minecraft/sponge.png (32x32)
+        app/assets/images/items/minecraft/spruceboat.png (32x32)
+        app/assets/images/items/minecraft/sprucedoor.png (32x32)
+        app/assets/images/items/minecraft/sprucefence.png (32x32)
+        app/assets/images/items/minecraft/sprucefencegate.png (32x32)
+        app/assets/images/items/minecraft/spruceleaves.png (32x32)
+        app/assets/images/items/minecraft/sprucesapling.png (32x32)
+        app/assets/images/items/minecraft/sprucewood.png (32x32)
+        app/assets/images/items/minecraft/sprucewoodplanks.png (32x32)
+        app/assets/images/items/minecraft/sprucewoodslab.png (32x32)
+        app/assets/images/items/minecraft/sprucewoodstairs.png (32x32)
+        app/assets/images/items/minecraft/squidegg.png (32x32)
+        app/assets/images/items/minecraft/steak.png (32x32)
+        app/assets/images/items/minecraft/stick.png (32x32)
+        app/assets/images/items/minecraft/stickypiston.png (32x32)
+        app/assets/images/items/minecraft/stone.png (32x32)
+        app/assets/images/items/minecraft/stoneaxe.png (32x32)
+        app/assets/images/items/minecraft/stonebrick.png (32x32)
+        app/assets/images/items/minecraft/stonebrickmonsteregg.png (32x32)
+        app/assets/images/items/minecraft/stonebricksslab.png (32x32)
+        app/assets/images/items/minecraft/stonebrickstairs.png (32x32)
+        app/assets/images/items/minecraft/stonebutton.png (32x32)
+        app/assets/images/items/minecraft/stonehoe.png (32x32)
+        app/assets/images/items/minecraft/stonemonsteregg.png (32x32)
+        app/assets/images/items/minecraft/stonepickaxe.png (32x32)
+        app/assets/images/items/minecraft/stonepressureplate.png (32x32)
+        app/assets/images/items/minecraft/stoneshovel.png (32x32)
+        app/assets/images/items/minecraft/stoneslab.png (32x32)
+        app/assets/images/items/minecraft/stonesword.png (32x32)
+        app/assets/images/items/minecraft/string.png (32x32)
+        app/assets/images/items/minecraft/sugar.png (32x32)
+        app/assets/images/items/minecraft/sugarcanes.png (32x32)
+        app/assets/images/items/minecraft/sunflower.png (32x32)
+        app/assets/images/items/minecraft/terracotta.png (32x32)
+        app/assets/images/items/minecraft/thickpotion.png (32x32)
+        app/assets/images/items/minecraft/thicksplashpotion.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow01.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow02.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow03.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow04.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow05.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow06.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow07.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow08.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow09.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow10.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow11.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow12.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow13.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow14.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow15.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow16.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow17.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow18.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow19.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow20.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow21.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow22.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow23.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow24.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow25.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow26.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow27.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow28.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow29.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow30.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow31.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow32.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow33.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow34.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow35.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow36.png (32x32)
+        app/assets/images/items/minecraft/tippedarrow37.png (32x32)
+        app/assets/images/items/minecraft/tnt.png (32x32)
+        app/assets/images/items/minecraft/torch.png (32x32)
+        app/assets/images/items/minecraft/totemofundying.png (32x32)
+        app/assets/images/items/minecraft/trappedchest.png (32x32)
+        app/assets/images/items/minecraft/tripwirehook.png (32x32)
+        app/assets/images/items/minecraft/uncraftablepotion.png (32x32)
+        app/assets/images/items/minecraft/verydamagedanvil.png (32x32)
+        app/assets/images/items/minecraft/villageregg.png (32x32)
+        app/assets/images/items/minecraft/vines.png (32x32)
+        app/assets/images/items/minecraft/waterbottle.png (32x32)
+        app/assets/images/items/minecraft/waterbucket.png (32x32)
+        app/assets/images/items/minecraft/weightedpressureplateheavy.png (32x32)
+        app/assets/images/items/minecraft/weightedpressureplatelight.png (32x32)
+        app/assets/images/items/minecraft/wetsponge.png (32x32)
+        app/assets/images/items/minecraft/wheat.png (32x32)
+        app/assets/images/items/minecraft/whitebanner.png (32x32)
+        app/assets/images/items/minecraft/whitebed.png (32x32)
+        app/assets/images/items/minecraft/whiteconcrete.png (32x32)
+        app/assets/images/items/minecraft/whiteconcretepowder.png (32x32)
+        app/assets/images/items/minecraft/whiteglazedterracotta.png (32x32)
+        app/assets/images/items/minecraft/whiteshulkerbox.png (32x32)
+        app/assets/images/items/minecraft/whitestainedglass.png (32x32)
+        app/assets/images/items/minecraft/whitestainedglasspane.png (32x32)
+        app/assets/images/items/minecraft/whiteterracotta.png (32x32)
+        app/assets/images/items/minecraft/whitetulip.png (32x32)
+        app/assets/images/items/minecraft/whitewool.png (32x32)
+        app/assets/images/items/minecraft/witchegg.png (32x32)
+        app/assets/images/items/minecraft/witherskeletonskull.png (32x32)
+        app/assets/images/items/minecraft/wolfegg.png (32x32)
+        app/assets/images/items/minecraft/woodenaxe.png (32x32)
+        app/assets/images/items/minecraft/woodenbutton.png (32x32)
+        app/assets/images/items/minecraft/woodenhoe.png (32x32)
+        app/assets/images/items/minecraft/woodenpickaxe.png (32x32)
+        app/assets/images/items/minecraft/woodenpressureplate.png (32x32)
+        app/assets/images/items/minecraft/woodenshovel.png (32x32)
+        app/assets/images/items/minecraft/woodensword.png (32x32)
+        app/assets/images/items/minecraft/woodentrapdoor.png (32x32)
+        app/assets/images/items/minecraft/wool.png (32x32)
+        app/assets/images/items/minecraft/yellowbanner.png (32x32)
+        app/assets/images/items/minecraft/yellowbed.png (32x32)
+        app/assets/images/items/minecraft/yellowcarpet.png (32x32)
+        app/assets/images/items/minecraft/yellowconcrete.png (32x32)
+        app/assets/images/items/minecraft/yellowconcretepowder.png (32x32)
+        app/assets/images/items/minecraft/yellowglazedterracotta.png (32x32)
+        app/assets/images/items/minecraft/yellowshulkerbox.png (32x32)
+        app/assets/images/items/minecraft/yellowstainedglass.png (32x32)
+        app/assets/images/items/minecraft/yellowstainedglasspane.png (32x32)
+        app/assets/images/items/minecraft/yellowterracotta.png (32x32)
+        app/assets/images/items/minecraft/yellowwool.png (32x32)
+        app/assets/images/items/minecraft/zombieegg.png (32x32)
+        app/assets/images/items/minecraft/zombiehead.png (32x32)
+        app/assets/images/items/minecraft/zombiepigmanegg.png (32x32)
+
+        Output files:
+          app/assets/images/items/minecraft.png
+          app/assets/stylesheets/minecraft.css.erb
+
+        Output size:
+          960x928
+
+
+*/
+div.item_acaciaboat { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px 0px no-repeat; }
+div.item_acaciadoor { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px 0px no-repeat; }
+div.item_acaciafence { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -32px no-repeat; }
+div.item_acaciafencegate { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -32px no-repeat; }
+div.item_acacialeaves { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px 0px no-repeat; }
+div.item_acaciasapling { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -32px no-repeat; }
+div.item_acaciawood { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -64px no-repeat; }
+div.item_acaciawoodplanks { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -64px no-repeat; }
+div.item_acaciawoodslab { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -64px no-repeat; }
+div.item_acaciawoodstairs { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px 0px no-repeat; }
+div.item_activatorrail { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -32px no-repeat; }
+div.item_allium { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -64px no-repeat; }
+div.item_andesite { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -96px no-repeat; }
+div.item_anvil { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -96px no-repeat; }
+div.item_apple { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -96px no-repeat; }
+div.item_armorstand { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -96px no-repeat; }
+div.item_arrow { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px 0px no-repeat; }
+div.item_awkwardpotion { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -32px no-repeat; }
+div.item_awkwardsplashpotion { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -64px no-repeat; }
+div.item_azurebluet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -96px no-repeat; }
+div.item_bakedpotato { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -128px no-repeat; }
+div.item_bategg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -128px no-repeat; }
+div.item_beacon { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -128px no-repeat; }
+div.item_bed { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -128px no-repeat; }
+div.item_bedrock { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -128px no-repeat; }
+div.item_beetroot { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px 0px no-repeat; }
+div.item_beetrootseeds { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -32px no-repeat; }
+div.item_beetrootsoup { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -64px no-repeat; }
+div.item_birchboat { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -96px no-repeat; }
+div.item_birchdoor { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -128px no-repeat; }
+div.item_birchfence { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -160px no-repeat; }
+div.item_birchfencegate { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -160px no-repeat; }
+div.item_birchleaves { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -160px no-repeat; }
+div.item_birchsapling { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -160px no-repeat; }
+div.item_birchwood { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -160px no-repeat; }
+div.item_birchwoodplanks { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -160px no-repeat; }
+div.item_birchwoodslab { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px 0px no-repeat; }
+div.item_birchwoodstairs { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -32px no-repeat; }
+div.item_blackbanner { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -64px no-repeat; }
+div.item_blackbed { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -96px no-repeat; }
+div.item_blackcarpet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -128px no-repeat; }
+div.item_blackconcrete { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -160px no-repeat; }
+div.item_blackconcretepowder { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -192px no-repeat; }
+div.item_blackglazedterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -192px no-repeat; }
+div.item_blackshulkerbox { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -192px no-repeat; }
+div.item_blackstainedglass { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -192px no-repeat; }
+div.item_blackstainedglasspane { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -192px no-repeat; }
+div.item_blackterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -192px no-repeat; }
+div.item_blackwool { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -192px no-repeat; }
+div.item_blazeegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px 0px no-repeat; }
+div.item_blazepowder { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -32px no-repeat; }
+div.item_blazerod { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -64px no-repeat; }
+div.item_blockofclay { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -96px no-repeat; }
+div.item_blockofcoal { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -128px no-repeat; }
+div.item_blockofdiamond { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -160px no-repeat; }
+div.item_blockofemerald { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -192px no-repeat; }
+div.item_blockofgold { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -224px no-repeat; }
+div.item_blockofiron { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -224px no-repeat; }
+div.item_blockofquartz { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -224px no-repeat; }
+div.item_blockofredstone { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -224px no-repeat; }
+div.item_bluebanner { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -224px no-repeat; }
+div.item_bluebed { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -224px no-repeat; }
+div.item_bluecarpet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -224px no-repeat; }
+div.item_blueconcrete { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -224px no-repeat; }
+div.item_blueconcretepowder { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px 0px no-repeat; }
+div.item_blueglazedterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -32px no-repeat; }
+div.item_blueorchid { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -64px no-repeat; }
+div.item_blueshulkerbox { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -96px no-repeat; }
+div.item_bluestainedglass { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -128px no-repeat; }
+div.item_bluestainedglasspane { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -160px no-repeat; }
+div.item_blueterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -192px no-repeat; }
+div.item_bluewool { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -224px no-repeat; }
+div.item_bone { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -256px no-repeat; }
+div.item_boneblock { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -256px no-repeat; }
+div.item_bonemeal { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -256px no-repeat; }
+div.item_book { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -256px no-repeat; }
+div.item_bookandquill { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -256px no-repeat; }
+div.item_bookshelf { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -256px no-repeat; }
+div.item_bottleoenchanting { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -256px no-repeat; }
+div.item_bow { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -256px no-repeat; }
+div.item_bowl { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -256px no-repeat; }
+div.item_bread { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px 0px no-repeat; }
+div.item_brewingstand { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -32px no-repeat; }
+div.item_brick { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -64px no-repeat; }
+div.item_bricks { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -96px no-repeat; }
+div.item_bricksslab { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -128px no-repeat; }
+div.item_brickstairs { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -160px no-repeat; }
+div.item_brownbanner { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -192px no-repeat; }
+div.item_brownbed { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -224px no-repeat; }
+div.item_browncarpet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -256px no-repeat; }
+div.item_brownconcrete { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -288px no-repeat; }
+div.item_brownconcretepowder { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -288px no-repeat; }
+div.item_brownglazedterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -288px no-repeat; }
+div.item_brownmushroom { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -288px no-repeat; }
+div.item_brownshulkerbox { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -288px no-repeat; }
+div.item_brownstainedglass { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -288px no-repeat; }
+div.item_brownstainedglasspane { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -288px no-repeat; }
+div.item_brownterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -288px no-repeat; }
+div.item_brownwool { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -288px no-repeat; }
+div.item_bucket { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -288px no-repeat; }
+div.item_cactus { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px 0px no-repeat; }
+div.item_cactusgreen { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -32px no-repeat; }
+div.item_cake { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -64px no-repeat; }
+div.item_carpet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -96px no-repeat; }
+div.item_carrot { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -128px no-repeat; }
+div.item_carrotonastick { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -160px no-repeat; }
+div.item_cauldron { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -192px no-repeat; }
+div.item_cavespideregg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -224px no-repeat; }
+div.item_chainboots { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -256px no-repeat; }
+div.item_chainchestplate { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -288px no-repeat; }
+div.item_chainhelmet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -320px no-repeat; }
+div.item_chainleggings { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -320px no-repeat; }
+div.item_charcoal { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -320px no-repeat; }
+div.item_chest { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -320px no-repeat; }
+div.item_chickenegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -320px no-repeat; }
+div.item_chiseledquartzblock { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -320px no-repeat; }
+div.item_chiseledredsandstone { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -320px no-repeat; }
+div.item_chiseledsandstone { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -320px no-repeat; }
+div.item_chiseledstonebrickmonsteregg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -320px no-repeat; }
+div.item_chiseledstonebricks { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -320px no-repeat; }
+div.item_chorusflower { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -320px no-repeat; }
+div.item_chorusfruit { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px 0px no-repeat; }
+div.item_chorusplant { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -32px no-repeat; }
+div.item_clay { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -64px no-repeat; }
+div.item_clock { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -96px no-repeat; }
+div.item_clownfish { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -128px no-repeat; }
+div.item_coal { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -160px no-repeat; }
+div.item_coalore { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -192px no-repeat; }
+div.item_coarsedirt { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -224px no-repeat; }
+div.item_cobblestone { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -256px no-repeat; }
+div.item_cobblestonemonsteregg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -288px no-repeat; }
+div.item_cobblestoneslab { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -320px no-repeat; }
+div.item_cobblestonestairs { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -352px no-repeat; }
+div.item_cobblestonewall { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -352px no-repeat; }
+div.item_cobweb { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -352px no-repeat; }
+div.item_cocoabeans { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -352px no-repeat; }
+div.item_compass { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -352px no-repeat; }
+div.item_cookedchicken { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -352px no-repeat; }
+div.item_cookedfish { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -352px no-repeat; }
+div.item_cookedmutton { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -352px no-repeat; }
+div.item_cookedporkchop { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -352px no-repeat; }
+div.item_cookedrabbit { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -352px no-repeat; }
+div.item_cookedsalmon { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -352px no-repeat; }
+div.item_cookie { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -352px no-repeat; }
+div.item_cowegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px 0px no-repeat; }
+div.item_crackedstonebrickmonsteregg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -32px no-repeat; }
+div.item_crackedstonebricks { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -64px no-repeat; }
+div.item_craftingtable { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -96px no-repeat; }
+div.item_creeperegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -128px no-repeat; }
+div.item_creeperhead { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -160px no-repeat; }
+div.item_cyanbanner { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -192px no-repeat; }
+div.item_cyanbed { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -224px no-repeat; }
+div.item_cyancarpet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -256px no-repeat; }
+div.item_cyanconcrete { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -288px no-repeat; }
+div.item_cyanconcretepowder { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -320px no-repeat; }
+div.item_cyandye { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -352px no-repeat; }
+div.item_cyanglazedterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -384px no-repeat; }
+div.item_cyanshulkerbox { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -384px no-repeat; }
+div.item_cyanstainedglass { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -384px no-repeat; }
+div.item_cyanstainedglasspane { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -384px no-repeat; }
+div.item_cyanterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -384px no-repeat; }
+div.item_cyanwool { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -384px no-repeat; }
+div.item_dandelion { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -384px no-repeat; }
+div.item_dandelionyellow { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -384px no-repeat; }
+div.item_darkoakboat { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -384px no-repeat; }
+div.item_darkoakdoor { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -384px no-repeat; }
+div.item_darkoakfence { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -384px no-repeat; }
+div.item_darkoakfencegate { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -384px no-repeat; }
+div.item_darkoakleaves { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -384px no-repeat; }
+div.item_darkoaksapling { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px 0px no-repeat; }
+div.item_darkoakwood { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -32px no-repeat; }
+div.item_darkoakwoodplanks { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -64px no-repeat; }
+div.item_darkoakwoodslab { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -96px no-repeat; }
+div.item_darkoakwoodstairs { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -128px no-repeat; }
+div.item_darkprismarine { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -160px no-repeat; }
+div.item_daylightsensor { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -192px no-repeat; }
+div.item_deadbush { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -224px no-repeat; }
+div.item_detectorrail { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -256px no-repeat; }
+div.item_diamond { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -288px no-repeat; }
+div.item_diamondaxe { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -320px no-repeat; }
+div.item_diamondboots { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -352px no-repeat; }
+div.item_diamondchestplate { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -384px no-repeat; }
+div.item_diamondhelmet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -416px no-repeat; }
+div.item_diamondhoe { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -416px no-repeat; }
+div.item_diamondhorsearmor { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -416px no-repeat; }
+div.item_diamondleggings { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -416px no-repeat; }
+div.item_diamondore { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -416px no-repeat; }
+div.item_diamondpickaxe { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -416px no-repeat; }
+div.item_diamondshovel { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -416px no-repeat; }
+div.item_diamondsword { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -416px no-repeat; }
+div.item_diorite { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -416px no-repeat; }
+div.item_dirt { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -416px no-repeat; }
+div.item_dispenser { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -416px no-repeat; }
+div.item_doubletallgrass { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -416px no-repeat; }
+div.item_dragonhead { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -416px no-repeat; }
+div.item_dragonsbreath { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -416px no-repeat; }
+div.item_dropper { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px 0px no-repeat; }
+div.item_egg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -32px no-repeat; }
+div.item_elytra { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -64px no-repeat; }
+div.item_emerald { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -96px no-repeat; }
+div.item_emeraldore { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -128px no-repeat; }
+div.item_emptymap { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -160px no-repeat; }
+div.item_enchantedbook01 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -192px no-repeat; }
+div.item_enchantedbook02 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -224px no-repeat; }
+div.item_enchantedbook03 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -256px no-repeat; }
+div.item_enchantedbook04 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -288px no-repeat; }
+div.item_enchantedbook05 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -320px no-repeat; }
+div.item_enchantedbook06 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -352px no-repeat; }
+div.item_enchantedbook07 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -384px no-repeat; }
+div.item_enchantedbook08 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -416px no-repeat; }
+div.item_enchantedbook09 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -448px no-repeat; }
+div.item_enchantedbook10 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -448px no-repeat; }
+div.item_enchantedbook11 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -448px no-repeat; }
+div.item_enchantedbook12 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -448px no-repeat; }
+div.item_enchantedbook13 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -448px no-repeat; }
+div.item_enchantedbook14 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -448px no-repeat; }
+div.item_enchantedbook15 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -448px no-repeat; }
+div.item_enchantedbook16 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -448px no-repeat; }
+div.item_enchantedbook17 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -448px no-repeat; }
+div.item_enchantedbook18 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -448px no-repeat; }
+div.item_enchantedbook19 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -448px no-repeat; }
+div.item_enchantedbook20 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -448px no-repeat; }
+div.item_enchantedbook21 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -448px no-repeat; }
+div.item_enchantedbook22 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -448px no-repeat; }
+div.item_enchantedbook23 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -448px no-repeat; }
+div.item_enchantedbook24 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px 0px no-repeat; }
+div.item_enchantedbook25 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -32px no-repeat; }
+div.item_enchantedbook26 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -64px no-repeat; }
+div.item_enchantedbook27 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -96px no-repeat; }
+div.item_enchantedbook28 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -128px no-repeat; }
+div.item_enchantedbook29 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -160px no-repeat; }
+div.item_enchantedbook30 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -192px no-repeat; }
+div.item_enchantedbook31 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -224px no-repeat; }
+div.item_enchantedbook32 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -256px no-repeat; }
+div.item_enchantedbook33 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -288px no-repeat; }
+div.item_enchantedbook34 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -320px no-repeat; }
+div.item_enchantedbook35 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -352px no-repeat; }
+div.item_enchantedbook36 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -384px no-repeat; }
+div.item_enchantedbook37 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -416px no-repeat; }
+div.item_enchantedbook38 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -448px no-repeat; }
+div.item_enchantedbook39 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -480px no-repeat; }
+div.item_enchantedbook40 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -480px no-repeat; }
+div.item_enchantedbook41 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -480px no-repeat; }
+div.item_enchantedbook42 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -480px no-repeat; }
+div.item_enchantedbook43 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -480px no-repeat; }
+div.item_enchantedbook44 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -480px no-repeat; }
+div.item_enchantedbook45 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -480px no-repeat; }
+div.item_enchantedbook46 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -480px no-repeat; }
+div.item_enchantedbook47 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -480px no-repeat; }
+div.item_enchantedbook48 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -480px no-repeat; }
+div.item_enchantedbook49 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -480px no-repeat; }
+div.item_enchantedbook50 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -480px no-repeat; }
+div.item_enchantedbook51 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -480px no-repeat; }
+div.item_enchantedbook52 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -480px no-repeat; }
+div.item_enchantmenttable { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -480px no-repeat; }
+div.item_endcrystal { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -480px no-repeat; }
+div.item_enderchest { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px 0px no-repeat; }
+div.item_endermanegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -32px no-repeat; }
+div.item_endermiteegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -64px no-repeat; }
+div.item_enderpearl { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -96px no-repeat; }
+div.item_endportal { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -128px no-repeat; }
+div.item_endrod { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -160px no-repeat; }
+div.item_endstone { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -192px no-repeat; }
+div.item_endstonebricks { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -224px no-repeat; }
+div.item_eyeofender { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -256px no-repeat; }
+div.item_feather { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -288px no-repeat; }
+div.item_fermentedspidereye { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -320px no-repeat; }
+div.item_fern { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -352px no-repeat; }
+div.item_firecharge { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -384px no-repeat; }
+div.item_firework { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -416px no-repeat; }
+div.item_fireworkstar { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -448px no-repeat; }
+div.item_fishingrod { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -480px no-repeat; }
+div.item_flint { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -512px no-repeat; }
+div.item_flintandsteel { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -512px no-repeat; }
+div.item_flowerpot { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -512px no-repeat; }
+div.item_fuel { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -512px no-repeat; }
+div.item_furnace { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -512px no-repeat; }
+div.item_ghastegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -512px no-repeat; }
+div.item_ghasttear { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -512px no-repeat; }
+div.item_glass { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -512px no-repeat; }
+div.item_glassbottle { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -512px no-repeat; }
+div.item_glasspane { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -512px no-repeat; }
+div.item_glisteringmelon { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -512px no-repeat; }
+div.item_glowstone { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -512px no-repeat; }
+div.item_glowstonedust { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -512px no-repeat; }
+div.item_goldenapple { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -512px no-repeat; }
+div.item_goldenaxe { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -512px no-repeat; }
+div.item_goldenboots { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -512px no-repeat; }
+div.item_goldencarrot { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -512px no-repeat; }
+div.item_goldenchestplate { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px 0px no-repeat; }
+div.item_goldenhelmet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -32px no-repeat; }
+div.item_goldenhoe { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -64px no-repeat; }
+div.item_goldenleggings { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -96px no-repeat; }
+div.item_goldenpickaxe { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -128px no-repeat; }
+div.item_goldenshovel { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -160px no-repeat; }
+div.item_goldensword { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -192px no-repeat; }
+div.item_goldhorsearmor { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -224px no-repeat; }
+div.item_goldingot { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -256px no-repeat; }
+div.item_goldnugget { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -288px no-repeat; }
+div.item_goldore { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -320px no-repeat; }
+div.item_granite { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -352px no-repeat; }
+div.item_grass { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -384px no-repeat; }
+div.item_grassblock { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -416px no-repeat; }
+div.item_gravel { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -448px no-repeat; }
+div.item_graybanner { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -480px no-repeat; }
+div.item_graybed { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -512px no-repeat; }
+div.item_graycarpet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -544px no-repeat; }
+div.item_grayconcrete { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -544px no-repeat; }
+div.item_grayconcretepowder { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -544px no-repeat; }
+div.item_graydye { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -544px no-repeat; }
+div.item_grayglazedterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -544px no-repeat; }
+div.item_grayshulkerbox { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -544px no-repeat; }
+div.item_graystainedglass { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -544px no-repeat; }
+div.item_graystainedglasspane { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -544px no-repeat; }
+div.item_grayterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -544px no-repeat; }
+div.item_graywool { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -544px no-repeat; }
+div.item_greenbanner { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -544px no-repeat; }
+div.item_greenbed { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -544px no-repeat; }
+div.item_greencarpet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -544px no-repeat; }
+div.item_greenconcrete { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -544px no-repeat; }
+div.item_greenconcretepowder { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -544px no-repeat; }
+div.item_greenglazedterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -544px no-repeat; }
+div.item_greenshulkerbox { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -544px no-repeat; }
+div.item_greenstainedglass { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -544px no-repeat; }
+div.item_greenstainedglasspane { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px 0px no-repeat; }
+div.item_greenterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -32px no-repeat; }
+div.item_greenwool { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -64px no-repeat; }
+div.item_guardianegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -96px no-repeat; }
+div.item_gunpowder { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -128px no-repeat; }
+div.item_haybale { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -160px no-repeat; }
+div.item_head { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -192px no-repeat; }
+div.item_hopper { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -224px no-repeat; }
+div.item_horseegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -256px no-repeat; }
+div.item_ice { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -288px no-repeat; }
+div.item_inksac { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -320px no-repeat; }
+div.item_ironaxe { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -352px no-repeat; }
+div.item_ironbars { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -384px no-repeat; }
+div.item_ironboots { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -416px no-repeat; }
+div.item_ironchestplate { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -448px no-repeat; }
+div.item_irondoor { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -480px no-repeat; }
+div.item_ironhelmet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -512px no-repeat; }
+div.item_ironhoe { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -544px no-repeat; }
+div.item_ironhorsearmor { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -576px no-repeat; }
+div.item_ironingot { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -576px no-repeat; }
+div.item_ironleggings { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -576px no-repeat; }
+div.item_ironnugget { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -576px no-repeat; }
+div.item_ironore { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -576px no-repeat; }
+div.item_ironpickaxe { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -576px no-repeat; }
+div.item_ironshovel { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -576px no-repeat; }
+div.item_ironsword { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -576px no-repeat; }
+div.item_irontrapdoor { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -576px no-repeat; }
+div.item_itemframe { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -576px no-repeat; }
+div.item_jackolantern { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -576px no-repeat; }
+div.item_jukebox { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -576px no-repeat; }
+div.item_jungleboat { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -576px no-repeat; }
+div.item_jungledoor { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -576px no-repeat; }
+div.item_junglefence { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -576px no-repeat; }
+div.item_junglefencegate { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -576px no-repeat; }
+div.item_jungleleaves { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -576px no-repeat; }
+div.item_junglesapling { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -576px no-repeat; }
+div.item_junglewood { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -576px no-repeat; }
+div.item_junglewoodplanks { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px 0px no-repeat; }
+div.item_junglewoodslab { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -32px no-repeat; }
+div.item_junglewoodstairs { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -64px no-repeat; }
+div.item_ladder { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -96px no-repeat; }
+div.item_lapislazuli { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -128px no-repeat; }
+div.item_lapislazuliblock { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -160px no-repeat; }
+div.item_lapislazuliore { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -192px no-repeat; }
+div.item_largefern { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -224px no-repeat; }
+div.item_lavabucket { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -256px no-repeat; }
+div.item_lead { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -288px no-repeat; }
+div.item_leather { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -320px no-repeat; }
+div.item_leatherboots { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -352px no-repeat; }
+div.item_leathercap { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -384px no-repeat; }
+div.item_leatherpants { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -416px no-repeat; }
+div.item_leathertunic { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -448px no-repeat; }
+div.item_lever { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -480px no-repeat; }
+div.item_lightbluebanner { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -512px no-repeat; }
+div.item_lightbluebed { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -544px no-repeat; }
+div.item_lightbluecarpet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -576px no-repeat; }
+div.item_lightblueconcrete { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -608px no-repeat; }
+div.item_lightblueconcretepowder { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -608px no-repeat; }
+div.item_lightbluedye { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -608px no-repeat; }
+div.item_lightblueglazedterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -608px no-repeat; }
+div.item_lightblueshulkerbox { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -608px no-repeat; }
+div.item_lightbluestainedglass { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -608px no-repeat; }
+div.item_lightbluestainedglasspane { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -608px no-repeat; }
+div.item_lightblueterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -608px no-repeat; }
+div.item_lightbluewool { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -608px no-repeat; }
+div.item_lightgraybanner { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -608px no-repeat; }
+div.item_lightgraybed { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -608px no-repeat; }
+div.item_lightgraycarpet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -608px no-repeat; }
+div.item_lightgrayconcrete { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -608px no-repeat; }
+div.item_lightgrayconcretepowder { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -608px no-repeat; }
+div.item_lightgraydye { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -608px no-repeat; }
+div.item_lightgrayglazedterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -608px no-repeat; }
+div.item_lightgrayshulkerbox { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -608px no-repeat; }
+div.item_lightgraystainedglass { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -608px no-repeat; }
+div.item_lightgraystainedglasspane { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -608px no-repeat; }
+div.item_lightgrayterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -608px no-repeat; }
+div.item_lightgraywool { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px 0px no-repeat; }
+div.item_lilac { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -32px no-repeat; }
+div.item_lilypad { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -64px no-repeat; }
+div.item_limebanner { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -96px no-repeat; }
+div.item_limebed { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -128px no-repeat; }
+div.item_limecarpet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -160px no-repeat; }
+div.item_limeconcrete { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -192px no-repeat; }
+div.item_limeconcretepowder { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -224px no-repeat; }
+div.item_limedye { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -256px no-repeat; }
+div.item_limeglazedterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -288px no-repeat; }
+div.item_limeshulkerbox { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -320px no-repeat; }
+div.item_limestainedglass { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -352px no-repeat; }
+div.item_limestainedglasspane { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -384px no-repeat; }
+div.item_limeterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -416px no-repeat; }
+div.item_limewool { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -448px no-repeat; }
+div.item_lingeringpotion01 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -480px no-repeat; }
+div.item_lingeringpotion02 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -512px no-repeat; }
+div.item_lingeringpotion03 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -544px no-repeat; }
+div.item_lingeringpotion04 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -576px no-repeat; }
+div.item_lingeringpotion05 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -608px no-repeat; }
+div.item_lingeringpotion06 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -640px no-repeat; }
+div.item_lingeringpotion07 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -640px no-repeat; }
+div.item_lingeringpotion08 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -640px no-repeat; }
+div.item_lingeringpotion09 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -640px no-repeat; }
+div.item_lingeringpotion10 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -640px no-repeat; }
+div.item_lingeringpotion11 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -640px no-repeat; }
+div.item_lingeringpotion12 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -640px no-repeat; }
+div.item_lingeringpotion13 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -640px no-repeat; }
+div.item_lingeringpotion14 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -640px no-repeat; }
+div.item_lingeringpotion15 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -640px no-repeat; }
+div.item_lingeringpotion16 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -640px no-repeat; }
+div.item_lingeringpotion17 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -640px no-repeat; }
+div.item_lingeringpotion18 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -640px no-repeat; }
+div.item_lingeringpotion19 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -640px no-repeat; }
+div.item_lingeringpotion20 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -640px no-repeat; }
+div.item_lingeringpotion21 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -640px no-repeat; }
+div.item_lingeringpotion22 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -640px no-repeat; }
+div.item_lingeringpotion23 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -640px no-repeat; }
+div.item_lingeringpotion24 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -640px no-repeat; }
+div.item_lingeringpotion25 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -640px no-repeat; }
+div.item_lingeringpotion26 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -640px no-repeat; }
+div.item_lingeringpotion27 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px 0px no-repeat; }
+div.item_lingeringpotion28 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -32px no-repeat; }
+div.item_lingeringpotion29 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -64px no-repeat; }
+div.item_lingeringpotion30 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -96px no-repeat; }
+div.item_lingeringpotion31 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -128px no-repeat; }
+div.item_lingeringpotion32 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -160px no-repeat; }
+div.item_lingeringpotion33 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -192px no-repeat; }
+div.item_lingeringpotion34 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -224px no-repeat; }
+div.item_lingeringpotion35 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -256px no-repeat; }
+div.item_lingeringpotion36 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -288px no-repeat; }
+div.item_lingeringpotion37 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -320px no-repeat; }
+div.item_magentabanner { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -352px no-repeat; }
+div.item_magentabed { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -384px no-repeat; }
+div.item_magentacarpet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -416px no-repeat; }
+div.item_magentaconcrete { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -448px no-repeat; }
+div.item_magentaconcretepowder { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -480px no-repeat; }
+div.item_magentadye { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -512px no-repeat; }
+div.item_magentaglazedterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -544px no-repeat; }
+div.item_magentashulkerbox { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -576px no-repeat; }
+div.item_magentastainedglass { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -608px no-repeat; }
+div.item_magentastainedglasspane { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -640px no-repeat; }
+div.item_magentaterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -672px no-repeat; }
+div.item_magentawool { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -672px no-repeat; }
+div.item_magmablock { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -672px no-repeat; }
+div.item_magmacream { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -672px no-repeat; }
+div.item_magmacubeegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -672px no-repeat; }
+div.item_melon { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -672px no-repeat; }
+div.item_melonseeds { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -672px no-repeat; }
+div.item_melonslice { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -672px no-repeat; }
+div.item_milk { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -672px no-repeat; }
+div.item_minecart { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -672px no-repeat; }
+div.item_minecartwithchest { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -672px no-repeat; }
+div.item_minecartwithfurnace { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -672px no-repeat; }
+div.item_minecartwithhopper { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -672px no-repeat; }
+div.item_minecartwithtnt { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -672px no-repeat; }
+div.item_mooshroomegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -672px no-repeat; }
+div.item_mossstone { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -672px no-repeat; }
+div.item_mossycobblestonewall { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -672px no-repeat; }
+div.item_mossystonebrickmonsteregg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -672px no-repeat; }
+div.item_mossystonebricks { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -672px no-repeat; }
+div.item_mundanepotion { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -672px no-repeat; }
+div.item_mundanesplashpotion { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -672px no-repeat; }
+div.item_mushroomstew { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -672px no-repeat; }
+div.item_musicdisk01 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px 0px no-repeat; }
+div.item_musicdisk02 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -32px no-repeat; }
+div.item_musicdisk03 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -64px no-repeat; }
+div.item_musicdisk04 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -96px no-repeat; }
+div.item_musicdisk05 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -128px no-repeat; }
+div.item_musicdisk06 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -160px no-repeat; }
+div.item_musicdisk07 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -192px no-repeat; }
+div.item_musicdisk08 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -224px no-repeat; }
+div.item_musicdisk09 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -256px no-repeat; }
+div.item_musicdisk10 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -288px no-repeat; }
+div.item_musicdisk11 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -320px no-repeat; }
+div.item_mycelium { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -352px no-repeat; }
+div.item_nametag { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -384px no-repeat; }
+div.item_netherbrick { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -416px no-repeat; }
+div.item_netherbrickblock { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -448px no-repeat; }
+div.item_netherbrickfence { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -480px no-repeat; }
+div.item_netherbrickslab { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -512px no-repeat; }
+div.item_netherbrickstairs { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -544px no-repeat; }
+div.item_netherquartz { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -576px no-repeat; }
+div.item_netherquartzore { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -608px no-repeat; }
+div.item_netherrack { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -640px no-repeat; }
+div.item_netherstar { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -672px no-repeat; }
+div.item_netherwart { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -704px no-repeat; }
+div.item_netherwartblock { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -704px no-repeat; }
+div.item_notchapple { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -704px no-repeat; }
+div.item_noteblock { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -704px no-repeat; }
+div.item_oakboat { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -704px no-repeat; }
+div.item_oakdoor { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -704px no-repeat; }
+div.item_oakfence { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -704px no-repeat; }
+div.item_oakfencegate { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -704px no-repeat; }
+div.item_oakleaves { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -704px no-repeat; }
+div.item_oaksapling { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -704px no-repeat; }
+div.item_oakwood { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -704px no-repeat; }
+div.item_oakwoodplanks { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -704px no-repeat; }
+div.item_oakwoodslab { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -704px no-repeat; }
+div.item_oakwoodstairs { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -704px no-repeat; }
+div.item_observer { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -704px no-repeat; }
+div.item_obsidian { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -704px no-repeat; }
+div.item_ocelotegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -704px no-repeat; }
+div.item_orangebanner { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -704px no-repeat; }
+div.item_orangebed { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -704px no-repeat; }
+div.item_orangecarpet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -704px no-repeat; }
+div.item_orangeconcrete { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -704px no-repeat; }
+div.item_orangeconcretepowder { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -704px no-repeat; }
+div.item_orangedye { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -704px no-repeat; }
+div.item_orangeglazedterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px 0px no-repeat; }
+div.item_orangeshulkerbox { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -32px no-repeat; }
+div.item_orangestainedglass { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -64px no-repeat; }
+div.item_orangestainedglasspane { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -96px no-repeat; }
+div.item_orangeterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -128px no-repeat; }
+div.item_orangetulip { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -160px no-repeat; }
+div.item_orangewool { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -192px no-repeat; }
+div.item_oxeyedaisy { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -224px no-repeat; }
+div.item_packedice { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -256px no-repeat; }
+div.item_painting { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -288px no-repeat; }
+div.item_paper { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -320px no-repeat; }
+div.item_peony { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -352px no-repeat; }
+div.item_pigegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -384px no-repeat; }
+div.item_pillarquartzblock { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -416px no-repeat; }
+div.item_pinkbanner { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -448px no-repeat; }
+div.item_pinkbed { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -480px no-repeat; }
+div.item_pinkcarpet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -512px no-repeat; }
+div.item_pinkconcrete { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -544px no-repeat; }
+div.item_pinkconcretepowder { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -576px no-repeat; }
+div.item_pinkdye { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -608px no-repeat; }
+div.item_pinkglazedterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -640px no-repeat; }
+div.item_pinkshulkerbox { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -672px no-repeat; }
+div.item_pinkstainedglass { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -704px no-repeat; }
+div.item_pinkstainedglasspane { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -736px no-repeat; }
+div.item_pinkterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -736px no-repeat; }
+div.item_pinktulip { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -736px no-repeat; }
+div.item_pinkwool { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -736px no-repeat; }
+div.item_piston { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -736px no-repeat; }
+div.item_podzol { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -736px no-repeat; }
+div.item_poisonouspotato { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -736px no-repeat; }
+div.item_polarbearegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -736px no-repeat; }
+div.item_polishedandesite { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -736px no-repeat; }
+div.item_polisheddiorite { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -736px no-repeat; }
+div.item_polishedgranite { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -736px no-repeat; }
+div.item_poppedchorousfruit { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -736px no-repeat; }
+div.item_poppedchorusfruit { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -736px no-repeat; }
+div.item_poppy { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -736px no-repeat; }
+div.item_potato { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -736px no-repeat; }
+div.item_potionoffireresistance { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -736px no-repeat; }
+div.item_potionoffireresistance+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -736px no-repeat; }
+div.item_potionofharming { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -736px no-repeat; }
+div.item_potionofharmingII { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -736px no-repeat; }
+div.item_potionofhealing { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -736px no-repeat; }
+div.item_potionofhealingII { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -736px no-repeat; }
+div.item_potionofinvisibility { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -736px no-repeat; }
+div.item_potionofinvisibility+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -736px no-repeat; }
+div.item_potionofleaping { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -736px no-repeat; }
+div.item_potionofleaping+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px 0px no-repeat; }
+div.item_potionofleapingII { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -32px no-repeat; }
+div.item_potionofluck { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -64px no-repeat; }
+div.item_potionofnightvision { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -96px no-repeat; }
+div.item_potionofnightvision+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -128px no-repeat; }
+div.item_potionofposion { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -160px no-repeat; }
+div.item_potionofposion+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -192px no-repeat; }
+div.item_potionofposionII { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -224px no-repeat; }
+div.item_potionofregeneration { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -256px no-repeat; }
+div.item_potionofregeneration+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -288px no-repeat; }
+div.item_potionofregenerationII { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -320px no-repeat; }
+div.item_potionofslowness { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -352px no-repeat; }
+div.item_potionofslowness+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -384px no-repeat; }
+div.item_potionofstrength { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -416px no-repeat; }
+div.item_potionofstrength+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -448px no-repeat; }
+div.item_potionofstrengthII { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -480px no-repeat; }
+div.item_potionofswiftness { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -512px no-repeat; }
+div.item_potionofswiftness+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -544px no-repeat; }
+div.item_potionofswiftnessII { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -576px no-repeat; }
+div.item_potionofwaterbreathing { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -608px no-repeat; }
+div.item_potionofwaterbreathing+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -640px no-repeat; }
+div.item_potionofweakness { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -672px no-repeat; }
+div.item_potionofweakness+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -704px no-repeat; }
+div.item_poweredrail { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -736px no-repeat; }
+div.item_prismarine { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -768px no-repeat; }
+div.item_prismarinebricks { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -768px no-repeat; }
+div.item_prismarinecrystals { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -768px no-repeat; }
+div.item_prismarineshard { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -768px no-repeat; }
+div.item_pufferfish { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -768px no-repeat; }
+div.item_pumpkin { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -768px no-repeat; }
+div.item_pumpkinpie { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -768px no-repeat; }
+div.item_pumpkinseeds { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -768px no-repeat; }
+div.item_purplebanner { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -768px no-repeat; }
+div.item_purplebed { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -768px no-repeat; }
+div.item_purplecarpet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -768px no-repeat; }
+div.item_purpleconcrete { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -768px no-repeat; }
+div.item_purpleconcretepowder { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -768px no-repeat; }
+div.item_purpledye { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -768px no-repeat; }
+div.item_purpleglazedterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -768px no-repeat; }
+div.item_purpleshulkerbox { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -768px no-repeat; }
+div.item_purplestainedglass { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -768px no-repeat; }
+div.item_purplestainedglasspane { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -768px no-repeat; }
+div.item_purpleterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -768px no-repeat; }
+div.item_purplewool { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -768px no-repeat; }
+div.item_purpurblock { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -768px no-repeat; }
+div.item_purpurpillar { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -768px no-repeat; }
+div.item_purpurslab { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -768px no-repeat; }
+div.item_purpurstairs { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -768px no-repeat; }
+div.item_quartzslab { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -768px no-repeat; }
+div.item_quartzstairs { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px 0px no-repeat; }
+div.item_rabbitegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -32px no-repeat; }
+div.item_rabbithide { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -64px no-repeat; }
+div.item_rabbitsfoot { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -96px no-repeat; }
+div.item_rabbitstew { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -128px no-repeat; }
+div.item_rail { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -160px no-repeat; }
+div.item_rawbeef { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -192px no-repeat; }
+div.item_rawchicken { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -224px no-repeat; }
+div.item_rawfish { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -256px no-repeat; }
+div.item_rawmutton { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -288px no-repeat; }
+div.item_rawporkchop { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -320px no-repeat; }
+div.item_rawrabbit { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -352px no-repeat; }
+div.item_rawsalmon { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -384px no-repeat; }
+div.item_redbanner { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -416px no-repeat; }
+div.item_redbed { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -448px no-repeat; }
+div.item_redcarpet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -480px no-repeat; }
+div.item_redconcrete { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -512px no-repeat; }
+div.item_redconcretepowder { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -544px no-repeat; }
+div.item_redglazedterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -576px no-repeat; }
+div.item_redmushroom { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -608px no-repeat; }
+div.item_rednetherbrick { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -640px no-repeat; }
+div.item_redsand { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -672px no-repeat; }
+div.item_redsandstone { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -704px no-repeat; }
+div.item_redsandstoneslab { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -736px no-repeat; }
+div.item_redsandstonestairs { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -768px no-repeat; }
+div.item_redshulkerbox { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -800px no-repeat; }
+div.item_redstainedglass { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -800px no-repeat; }
+div.item_redstainedglasspane { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -800px no-repeat; }
+div.item_redstone { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -800px no-repeat; }
+div.item_redstonecomparator { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -800px no-repeat; }
+div.item_redstonelamp { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -800px no-repeat; }
+div.item_redstoneore { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -800px no-repeat; }
+div.item_redstonerepeater { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -800px no-repeat; }
+div.item_redstonetorch { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -800px no-repeat; }
+div.item_redterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -800px no-repeat; }
+div.item_redtulip { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -800px no-repeat; }
+div.item_redwool { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -800px no-repeat; }
+div.item_rosebush { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -800px no-repeat; }
+div.item_rosered { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -800px no-repeat; }
+div.item_rottenflesh { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -800px no-repeat; }
+div.item_saddle { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -800px no-repeat; }
+div.item_sand { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -800px no-repeat; }
+div.item_sandstone { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -800px no-repeat; }
+div.item_sandstoneslab { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -800px no-repeat; }
+div.item_sandstonestairs { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -800px no-repeat; }
+div.item_sealantern { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -800px no-repeat; }
+div.item_seeds { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -800px no-repeat; }
+div.item_shears { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -800px no-repeat; }
+div.item_sheepegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -800px no-repeat; }
+div.item_shield { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -800px no-repeat; }
+div.item_shulkeregg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -800px no-repeat; }
+div.item_shulkershell { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px 0px no-repeat; }
+div.item_sign { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -32px no-repeat; }
+div.item_silverfishegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -64px no-repeat; }
+div.item_skeletonegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -96px no-repeat; }
+div.item_skeletonskull { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -128px no-repeat; }
+div.item_slightlydamagedanvil { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -160px no-repeat; }
+div.item_slimeball { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -192px no-repeat; }
+div.item_slimeblock { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -224px no-repeat; }
+div.item_slimeegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -256px no-repeat; }
+div.item_smoothredsandstone { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -288px no-repeat; }
+div.item_smoothsandstone { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -320px no-repeat; }
+div.item_snow { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -352px no-repeat; }
+div.item_snowball { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -384px no-repeat; }
+div.item_snowblock { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -416px no-repeat; }
+div.item_soulsand { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -448px no-repeat; }
+div.item_spectralarrow { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -480px no-repeat; }
+div.item_spideregg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -512px no-repeat; }
+div.item_spidereye { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -544px no-repeat; }
+div.item_splashpotionoffireresistance { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -576px no-repeat; }
+div.item_splashpotionoffireresistance+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -608px no-repeat; }
+div.item_splashpotionofhealing { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -640px no-repeat; }
+div.item_splashpotionofhealingII { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -672px no-repeat; }
+div.item_splashpotionofinstantdamage { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -704px no-repeat; }
+div.item_splashpotionofinstantdamageII { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -736px no-repeat; }
+div.item_splashpotionofinvisibility { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -768px no-repeat; }
+div.item_splashpotionofinvisibility+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -800px no-repeat; }
+div.item_splashpotionofleaping { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -832px no-repeat; }
+div.item_splashpotionofleaping+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -832px no-repeat; }
+div.item_splashpotionofleapingII { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -832px no-repeat; }
+div.item_splashpotionofluck { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -832px no-repeat; }
+div.item_splashpotionofnightvision { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -832px no-repeat; }
+div.item_splashpotionofnightvision+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -832px no-repeat; }
+div.item_splashpotionofposion { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -832px no-repeat; }
+div.item_splashpotionofposion+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -832px no-repeat; }
+div.item_splashpotionofposionII { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -832px no-repeat; }
+div.item_splashpotionofregeneration { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -832px no-repeat; }
+div.item_splashpotionofregeneration+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -832px no-repeat; }
+div.item_splashpotionofregenerationII { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -832px no-repeat; }
+div.item_splashpotionofslowness { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -832px no-repeat; }
+div.item_splashpotionofslowness+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -832px no-repeat; }
+div.item_splashpotionofstrength { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -832px no-repeat; }
+div.item_splashpotionofstrength+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -832px no-repeat; }
+div.item_splashpotionofstrengthII { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -832px no-repeat; }
+div.item_splashpotionofswiftness { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -832px no-repeat; }
+div.item_splashpotionofswiftness+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -832px no-repeat; }
+div.item_splashpotionofswiftnessII { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -832px no-repeat; }
+div.item_splashpotionofwaterbreathing { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -832px no-repeat; }
+div.item_splashpotionofwaterbreathing+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -832px no-repeat; }
+div.item_splashpotionofweakness { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -832px no-repeat; }
+div.item_splashpotionofweakness+ { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -832px no-repeat; }
+div.item_splashuncraftablepotion { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -832px no-repeat; }
+div.item_splashwaterbottle { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -832px no-repeat; }
+div.item_sponge { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -832px no-repeat; }
+div.item_spruceboat { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px 0px no-repeat; }
+div.item_sprucedoor { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -32px no-repeat; }
+div.item_sprucefence { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -64px no-repeat; }
+div.item_sprucefencegate { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -96px no-repeat; }
+div.item_spruceleaves { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -128px no-repeat; }
+div.item_sprucesapling { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -160px no-repeat; }
+div.item_sprucewood { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -192px no-repeat; }
+div.item_sprucewoodplanks { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -224px no-repeat; }
+div.item_sprucewoodslab { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -256px no-repeat; }
+div.item_sprucewoodstairs { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -288px no-repeat; }
+div.item_squidegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -320px no-repeat; }
+div.item_steak { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -352px no-repeat; }
+div.item_stick { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -384px no-repeat; }
+div.item_stickypiston { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -416px no-repeat; }
+div.item_stone { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -448px no-repeat; }
+div.item_stoneaxe { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -480px no-repeat; }
+div.item_stonebrick { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -512px no-repeat; }
+div.item_stonebrickmonsteregg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -544px no-repeat; }
+div.item_stonebricksslab { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -576px no-repeat; }
+div.item_stonebrickstairs { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -608px no-repeat; }
+div.item_stonebutton { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -640px no-repeat; }
+div.item_stonehoe { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -672px no-repeat; }
+div.item_stonemonsteregg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -704px no-repeat; }
+div.item_stonepickaxe { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -736px no-repeat; }
+div.item_stonepressureplate { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -768px no-repeat; }
+div.item_stoneshovel { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -800px no-repeat; }
+div.item_stoneslab { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -832px no-repeat; }
+div.item_stonesword { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -864px no-repeat; }
+div.item_string { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -864px no-repeat; }
+div.item_sugar { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -864px no-repeat; }
+div.item_sugarcanes { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -864px no-repeat; }
+div.item_sunflower { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -864px no-repeat; }
+div.item_terracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -864px no-repeat; }
+div.item_thickpotion { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -864px no-repeat; }
+div.item_thicksplashpotion { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -864px no-repeat; }
+div.item_tippedarrow { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -864px no-repeat; }
+div.item_tippedarrow01 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -864px no-repeat; }
+div.item_tippedarrow02 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -864px no-repeat; }
+div.item_tippedarrow03 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -864px no-repeat; }
+div.item_tippedarrow04 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -864px no-repeat; }
+div.item_tippedarrow05 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -864px no-repeat; }
+div.item_tippedarrow06 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -864px no-repeat; }
+div.item_tippedarrow07 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -864px no-repeat; }
+div.item_tippedarrow08 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -864px no-repeat; }
+div.item_tippedarrow09 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -864px no-repeat; }
+div.item_tippedarrow10 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -864px no-repeat; }
+div.item_tippedarrow11 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -864px no-repeat; }
+div.item_tippedarrow12 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -864px no-repeat; }
+div.item_tippedarrow13 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -864px no-repeat; }
+div.item_tippedarrow14 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -864px no-repeat; }
+div.item_tippedarrow15 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -864px no-repeat; }
+div.item_tippedarrow16 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -864px no-repeat; }
+div.item_tippedarrow17 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -864px no-repeat; }
+div.item_tippedarrow18 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -864px no-repeat; }
+div.item_tippedarrow19 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -864px no-repeat; }
+div.item_tippedarrow20 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px 0px no-repeat; }
+div.item_tippedarrow21 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -32px no-repeat; }
+div.item_tippedarrow22 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -64px no-repeat; }
+div.item_tippedarrow23 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -96px no-repeat; }
+div.item_tippedarrow24 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -128px no-repeat; }
+div.item_tippedarrow25 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -160px no-repeat; }
+div.item_tippedarrow26 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -192px no-repeat; }
+div.item_tippedarrow27 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -224px no-repeat; }
+div.item_tippedarrow28 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -256px no-repeat; }
+div.item_tippedarrow29 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -288px no-repeat; }
+div.item_tippedarrow30 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -320px no-repeat; }
+div.item_tippedarrow31 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -352px no-repeat; }
+div.item_tippedarrow32 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -384px no-repeat; }
+div.item_tippedarrow33 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -416px no-repeat; }
+div.item_tippedarrow34 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -448px no-repeat; }
+div.item_tippedarrow35 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -480px no-repeat; }
+div.item_tippedarrow36 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -512px no-repeat; }
+div.item_tippedarrow37 { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -544px no-repeat; }
+div.item_tnt { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -576px no-repeat; }
+div.item_torch { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -608px no-repeat; }
+div.item_totemofundying { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -640px no-repeat; }
+div.item_trappedchest { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -672px no-repeat; }
+div.item_tripwirehook { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -704px no-repeat; }
+div.item_uncraftablepotion { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -736px no-repeat; }
+div.item_verydamagedanvil { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -768px no-repeat; }
+div.item_villageregg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -800px no-repeat; }
+div.item_vines { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -832px no-repeat; }
+div.item_waterbottle { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -864px no-repeat; }
+div.item_waterbucket { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) 0px -896px no-repeat; }
+div.item_weightedpressureplateheavy { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -32px -896px no-repeat; }
+div.item_weightedpressureplatelight { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -64px -896px no-repeat; }
+div.item_wetsponge { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -96px -896px no-repeat; }
+div.item_wheat { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -128px -896px no-repeat; }
+div.item_whitebanner { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -160px -896px no-repeat; }
+div.item_whitebed { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -192px -896px no-repeat; }
+div.item_whiteconcrete { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -224px -896px no-repeat; }
+div.item_whiteconcretepowder { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -256px -896px no-repeat; }
+div.item_whiteglazedterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -288px -896px no-repeat; }
+div.item_whiteshulkerbox { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -320px -896px no-repeat; }
+div.item_whitestainedglass { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -352px -896px no-repeat; }
+div.item_whitestainedglasspane { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -384px -896px no-repeat; }
+div.item_whiteterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -416px -896px no-repeat; }
+div.item_whitetulip { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -448px -896px no-repeat; }
+div.item_whitewool { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -480px -896px no-repeat; }
+div.item_witchegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -512px -896px no-repeat; }
+div.item_witherskeletonskull { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -544px -896px no-repeat; }
+div.item_wolfegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -576px -896px no-repeat; }
+div.item_woodenaxe { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -608px -896px no-repeat; }
+div.item_woodenbutton { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -640px -896px no-repeat; }
+div.item_woodenhoe { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -672px -896px no-repeat; }
+div.item_woodenpickaxe { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -704px -896px no-repeat; }
+div.item_woodenpressureplate { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -736px -896px no-repeat; }
+div.item_woodenshovel { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -768px -896px no-repeat; }
+div.item_woodensword { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -800px -896px no-repeat; }
+div.item_woodentrapdoor { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -832px -896px no-repeat; }
+div.item_wool { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -864px -896px no-repeat; }
+div.item_yellowbanner { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -896px -896px no-repeat; }
+div.item_yellowbed { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -928px 0px no-repeat; }
+div.item_yellowcarpet { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -928px -32px no-repeat; }
+div.item_yellowconcrete { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -928px -64px no-repeat; }
+div.item_yellowconcretepowder { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -928px -96px no-repeat; }
+div.item_yellowglazedterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -928px -128px no-repeat; }
+div.item_yellowshulkerbox { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -928px -160px no-repeat; }
+div.item_yellowstainedglass { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -928px -192px no-repeat; }
+div.item_yellowstainedglasspane { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -928px -224px no-repeat; }
+div.item_yellowterracotta { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -928px -256px no-repeat; }
+div.item_yellowwool { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -928px -288px no-repeat; }
+div.item_zombieegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -928px -320px no-repeat; }
+div.item_zombiehead { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -928px -352px no-repeat; }
+div.item_zombiepigmanegg { width: 32px; height: 32px; background: url(<%= asset_path 'items/minecraft.png'%>) -928px -384px no-repeat; }

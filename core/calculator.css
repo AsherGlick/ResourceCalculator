@@ -1,0 +1,401 @@
+body {
+	overflow-y: scroll;
+	background-color: #EFEFEF;
+
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	word-spacing: 5px;
+
+	overflow-x: hidden;
+}
+
+.content {
+}
+
+.desired_item {
+	float: left;
+	text-align: center;
+	position: relative;
+}
+
+
+.required_item {
+	float: left;
+	text-align: right;
+	vertical-align: middle;
+	font-size: .8em;
+	color: #FFF !important;
+	text-shadow: 2px 2px 0 #3F3F3F;
+}
+
+.desired_item_count {
+	width: 100%;
+	box-sizing: border-box;
+	background: transparent;
+	text-align: right;
+	position:absolute;
+	bottom: 0;
+	left: 0;
+	color: #FFF !important;
+	text-shadow: 2px 2px 0 #3F3F3F;
+	border:none;
+	padding-bottom: 2px;
+	-moz-appearance:textfield;
+}
+
+
+.search_bar {
+	padding-bottom: 2px;
+
+}
+.search_label {
+	float:left;
+}
+.search_box {
+	width: 100%;
+	box-sizing:border-box;
+	padding: 0;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	margin: 0;
+	font-size: .9em;
+	color: #FFF;
+	text-shadow: 2px 2px 0 #000;
+
+}
+
+.search_box_wrapper {
+    display: block;
+    overflow: hidden;
+}
+
+
+.hide_unused_wrapper {
+	float:right;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.hide_unused_label {
+	cursor: pointer;
+}
+
+#item_list {
+	text-align: center;
+}
+.chest_list {
+	overflow: hidden;
+	max-width: 324px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+
+	display: inline-block;
+	text-align: left;
+
+}
+
+.chest_list_title {
+	color: #404040;
+	padding-bottom: 6px;
+
+}
+
+
+#generatelist {
+
+}
+
+
+
+input[type=checkbox] + label.hide_unused_label {
+	color: rgba(0,0,0, .4);
+}
+input[type=checkbox]:checked + label.hide_unused_label {
+	color: rgba(0,0,0, 1);
+}
+
+
+.hide_unused_checkbox {
+	display: none;
+}
+
+
+
+#hover_name {
+	height: 1em;
+	position:absolute;
+    background: url(/HoverBackground.png);
+    background-clip: content-box;
+	border: 8px solid transparent;
+	border-image: url(/HoverBorder.png) 8;
+	color: #FFF;
+	line-height: .7;
+	text-shadow: #3f3f3f 2px 2px;
+	overflow: hidden;
+	white-space: nowrap;
+	pointer-events: none;
+	display: none;
+}
+
+#content_field {
+	overflow: hidden;
+	margin-bottom: 5px;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// recipe styling
+#hover_recipe {
+	position: absolute;
+	pointer-events: none;
+	display: none;
+}
+.crafting_layout {
+	position: absolute;
+	top: 22px;
+	left: 48px;
+	width: 108px;
+}
+.crafting_output {
+	position: absolute;
+	top: 50px;
+	left: 228px;
+
+    background-position: center; 
+	text-align: right;
+  	vertical-align: middle;
+
+  	padding: 8px;
+
+	font-size: .8em;
+
+	color: #FFF !important;
+	text-shadow: 2px 2px 0 #3F3F3F;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+#recipe_select {
+	position: absolute;
+	border: 1px solid #222;	
+	background-color: #EFEFEF;
+	display: none;
+}
+.recipe_selector_title {
+	padding: 4px;
+}
+.recipe_select_item {
+	padding: 4px;
+	cursor: pointer;
+	background-color: #C3C3C3;
+	position: relative
+}
+.recipe_select_item:hover {
+	background-color: #3498db;
+}
+.recipe_select_item_name {
+	padding: 8px;
+	float: left;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// Flow chart styling
+
+  #chart {
+    // height: 500px;
+  }
+
+  .node rect {
+    cursor: move;
+    fill-opacity: .9;
+    shape-rendering: crispEdges;
+  }
+
+  .node text {
+    pointer-events: none;
+    text-shadow: 0 1px 0 #fff;
+  }
+
+  .link {
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .2;
+  }
+
+  .link:hover {
+    stroke-opacity: .5;
+  }
+
+.header_bar {
+	overflow: hidden;
+	margin-bottom: 8px;
+}
+
+a {
+	text-decoration: none;
+}
+.home_button {
+	color: #000;
+	border-radius: 100px;
+	font-size: 1em;
+	float: left;
+	padding: 10px 20px;
+}
+.home_button:hover {
+	color: #FFF;
+	background-color: #222
+}
+
+
+
+#about_us_lightbox_background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0, 0, 0, 0.5);
+	display:none;
+
+}
+
+
+
+.generate_button {
+	height: 40px;
+	width: 400px;
+	outline: 2px solid black;
+	position: relative;
+	margin: 0;
+	display: inline-block;
+
+
+	background: url('/button_center.png') 0px 0px;
+
+	background-repeat: repeat;
+	padding: 0;
+	text-align: center;
+	color: white;
+	text-shadow: 3px 3px #4C4C4C;
+	border-bottom: 4px solid #565656;
+	border-right: 2px solid #565656;
+	border-left: 2px solid #AAA;
+	border-top: 2px solid #AAA;
+	box-sizing: border-box;
+	font-size: 16px;
+	margin-bottom: 5px;
+
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+
+	max-width: 100%;
+
+
+
+
+}
+
+.generate_button span {
+	position: relative;
+	line-height: 40px;
+	bottom: 3px;
+}
+
+.generate_button:hover {
+	border-bottom: 4px solid #59639A;
+	border-right: 2px solid #59639A;
+	border-left: 2px solid #BDC6FF;
+	border-top: 2px solid #BDC6FF;
+	background: url('/button_center.png') 0px -45px;
+	color: #FFFFA0;
+	cursor: pointer;
+}
+
+.advertisement {
+	width: 728px;
+	max-width: 100%;
+	height: 90px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 7px;
+}
+
+.instructions {
+	color: #888;
+	text-align: center;
+	margin-bottom: 7px;
+}
+
+
+.item_input_focused {
+	border-color: #F80 !important;
+	border-image: none !important;
+}
+
+// Hide the up and down buttons for the number input
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.psuedo_hidden {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+a.internal_link {
+	color: #222;
+	text-decoration: underline;
+	word-wrap: break-word;
+}
+
+.clear {
+	clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+.menu_style {
+	/*border: 2px solid transparent;*/
+	background-color: #EEE;
+	background-clip: content-box;
+	/*border-image: url(/OutsetBorder.png) 2;*/
+}
+.item {
+	/*width: 64px;*/
+	/*height: 64px;*/
+	/*border: 4px solid transparent;*/
+	/*border-image: url(/astroneer_outset_border.png) 4 ;*/
+	background: #ccc;
+}
+.search_box {
+	/*border: 4px solid transparent;*/
+	/*border-image: url(/astroneer_outset_border.png) 4 ;*/
+	background-color: #ccc;
+}
+body {
+	font-family: sans-serif;
+}
+.desired_item_count {
+	font-family: sans-serif;
+}
+.search_box {
+	font-family: sans-serif;
+}

@@ -1,0 +1,4 @@
+Jinja2==2.10
+MarkupSafe==1.0
+Pillow==5.2.0
+PyYAML==3.13
