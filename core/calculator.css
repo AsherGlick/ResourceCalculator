@@ -301,6 +301,7 @@ a {
 	background-color: #FFF;
 	transition: background-color 0.1s linear, color 0.1s linear;
 	display: inline-block;
+	cursor: pointer;
 }
 a:last-child .home_button {
 	border-radius: 0 5px 5px 0;

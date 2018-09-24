@@ -103,7 +103,9 @@ def create_calculator(resource_list):
 
     # Load in the yaml resources file
     with open(os.path.join("resource_lists", resource_list, "resources.yaml")) as f:
-        recipes = ordered_load(f, yaml.SafeLoader)
+        yaml_data = ordered_load(f, yaml.SafeLoader)
+    recipes = yaml_data["resources"]
+    authors = yaml_data["authors"]
 
     recipe_json = json.dumps(recipes)
 
