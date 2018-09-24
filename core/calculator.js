@@ -86,7 +86,13 @@
 
 			});
 			// console.log($.param(selected_items));
-			window.location.hash = $.param(selected_items);
+			if(history.pushState) {
+				history.pushState(null,null,'#'+$.param(selected_items))
+			}
+			else {
+				window.location.hash = $.param(selected_items);
+			}
+
 		}
 		// This function should only be called once on pageload and after the item elements are created
 		// loads the url into the item list then generates the results
