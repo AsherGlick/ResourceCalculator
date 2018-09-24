@@ -745,7 +745,9 @@
 
 						set_recipe_index(item_name, index);
 						find_loop_from_node(item_name);
-						recipe_selector.hide();
+						recipe_selector.css("opacity",0);
+						recipe_selector.css("pointer-events","none");
+
 
 					};
     			})(i));
@@ -767,7 +769,10 @@
 				recipe_item.appendTo(recipe_selector_list)
 			}
 
-			recipe_selector.show();
+			recipe_selector.css("opacity", 1);
+			recipe_selector.css("pointer-events","auto");
+
+
 
 			var menu_x_offset = -10;
 			var menu_y_offset = -10
@@ -792,7 +797,10 @@
 
 
 		$("#recipe_select").mouseleave(function() {
-			$("#recipe_select").hide();
+			$("#recipe_select").css("opacity",0);
+			$("#recipe_select").css("pointer-events","none");
+
+
 		})
 
 

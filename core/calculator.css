@@ -24,6 +24,7 @@ body {
 	transition: outline .1s linear;
 	border-top: 2px solid #CBCBCB;
 	border-left: 2px solid #CBCBCB;
+
 }
 
 .desired_item_input_focused {
@@ -41,6 +42,7 @@ body {
 	font-size: .8em;
 	color: #FFF !important;
 	text-shadow: 2px 2px 0 #3F3F3F;
+
 }
 
 .desired_item_count {
@@ -168,7 +170,7 @@ input[type=checkbox]:checked + label.hide_unused_label {
 	pointer-events: none;
 	/*display: none;*/
 	opacity: 0;
-	z-index: 2;
+	z-index: 3;
 	box-shadow: 2px 2px 5px 0 #000;
 	transition: opacity .1s linear;
 }
@@ -218,8 +220,16 @@ input[type=checkbox]:checked + label.hide_unused_label {
 	position: absolute;
 	border: 1px solid #222;
 	background-color: #EFEFEF;
-	display: none;
-	z-index: 3;
+	opacity: 0;
+	z-index: 2;
+	transition: opacity .1s linear;
+
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
 }
 .recipe_selector_title {
 	padding: 4px;
@@ -286,7 +296,6 @@ a {
 	border-radius: 5px 0 0 5px;
 	display: inline-block;
 	background-size: 100% auto;
-
 	transition: background-size 0.1s linear;
 }
 .home_button_logo:hover {
