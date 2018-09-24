@@ -755,13 +755,23 @@
 				$('<div/>').addClass('recipe_select_item_name').text(recipe_json[item_name][i]["recipe_type"]).appendTo(recipe_item)
 
 				for (var j in recipe_json[item_name][i]["requirements"]) {
-					// console.log(j)
-					var item = $('<div/>')
-						.addClass('required_item')
-						.addClass('item')
-						.addClass('item_' + filenameify(j))
-						.text(-recipe_json[item_name][i]["requirements"][j])
-						.appendTo(recipe_item)
+					(function(j) {
+						// console.log(j)
+						var item = $('<div/>')
+							.addClass('required_item')
+							.addClass('item')
+							.addClass('item_' + filenameify(j))
+							.text(-recipe_json[item_name][i]["requirements"][j])
+							.appendTo(recipe_item);
+
+						item.mouseover( function() {
+							$("#hover_name").text(j);
+							$("#hover_name").css("opacity",1);
+						});
+						item.mouseout( function() {
+							$("#hover_name").css("opacity",0);
+						});
+					})(j);
 				}
 
 				$('<div/>').addClass('clear').appendTo(recipe_item)
