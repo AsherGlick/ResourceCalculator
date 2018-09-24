@@ -54,10 +54,10 @@
 			// Enable item name hover text
 			item.mouseover( function() {
 				$("#hover_name").text(item.attr("mc_value"));
-				$("#hover_name").show();
+				$("#hover_name").css("opacity",1);
 			});
 			item.mouseout( function() {
-				$("#hover_name").hide();
+				$("#hover_name").css("opacity",0);
 			})
 		});
 
@@ -333,6 +333,15 @@
 			return resources;
 		}
 
+		function clear_item_counts() {
+			$(".desired_item").each(function() {
+				var field = $(this).find(".desired_item_count");
+				field.val("");
+				set_text_background(field);
+			});
+			generatelist();
+		}
+		$("#reset_item_count").click(clear_item_counts);
 
 
 		  //////////////////////////////////////////////////////////////////////////////

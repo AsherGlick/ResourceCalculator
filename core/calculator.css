@@ -159,20 +159,18 @@ input[type=checkbox]:checked + label.hide_unused_label {
 
 
 #hover_name {
-	height: 1em;
 	position:absolute;
-	background: url(/HoverBackground.png);
-	background-clip: content-box;
-	border: 8px solid transparent;
-	border-image: url(/HoverBorder.png) 8;
-	color: #FFF;
-	line-height: .7;
-	text-shadow: #3f3f3f 2px 2px;
-	overflow: hidden;
+	border-radius: 5px;
+	background: #FFF;
+	padding: 10px;
+	color: #000;
 	white-space: nowrap;
 	pointer-events: none;
-	display: none;
+	/*display: none;*/
+	opacity: 0;
 	z-index: 2;
+	box-shadow: 2px 2px 5px 0 #000;
+	transition: opacity .1s linear;
 }
 
 #content_field {
@@ -269,18 +267,44 @@ input[type=checkbox]:checked + label.hide_unused_label {
 
 .header_bar {
 	overflow: hidden;
-	margin-bottom: 8px;
+	margin-bottom: 40px;
+	text-align: center;
 }
 
 a {
 	text-decoration: none;
 }
+
+
+.home_button_logo {
+	background: url(/logo.png) no-repeat center center;
+	padding: 10px 12px;
+	border: 2px solid #8b90a1;
+	border-right: none;
+	border-radius: 5px 0 0 5px;
+	display: inline-block;
+	background-size: 100% auto;
+
+	transition: background-size 0.1s linear;
+}
+.home_button_logo:hover {
+	/*background: url(/logo2.png) no-repeat center 0;*/
+	background-size: 150%;
+}
+
 .home_button {
 	color: #000;
-	border-radius: 100px;
 	font-size: 1em;
-	float: left;
 	padding: 10px 20px;
+	border-top: 2px solid #8b90a1;
+	border-bottom: 2px solid #8b90a1;
+	background-color: #FFF;
+	transition: background-color 0.1s linear, color 0.1s linear;
+	display: inline-block;
+}
+a:last-child .home_button {
+	border-radius: 0 5px 5px 0;
+	border-right: 2px solid #8b90a1;
 }
 .home_button:hover {
 	color: #FFF;
@@ -305,7 +329,6 @@ a {
 .generate_button {
 	width: 400px;
 	border: 2px solid #000;
-
 	border-top-color: #cbcbcb;
 	border-left-color: #cbcbcb;
 	border-radius: 5px;
