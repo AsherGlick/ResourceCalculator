@@ -40,10 +40,10 @@
 			// Put an orage border around the item when the text box is focused
 			// This makes it more noticeable when an item is selected
 			item_input_box.focus(function() {
-				item.addClass("item_input_focused");
+				item.addClass("desired_item_input_focused");
 			});
 			item_input_box.blur(function() {
-				item.removeClass("item_input_focused")
+				item.removeClass("desired_item_input_focused")
 			});
 
 			// When doubleclicking open the recipe select menu
@@ -102,6 +102,7 @@
 					var id = decodeURIComponent(split[0]);
 					var value = decodeURIComponent(split[1]);
 					$("#"+id).val(value);
+					set_text_background($("#"+id));
 					console.log($("#andesite"));
 
 				}
@@ -882,6 +883,23 @@
 
 			return changes;
 		}
+
+		function set_text_background(textbox){
+			if ($(textbox).val() == ""){
+				$(textbox).css("background-color", "rgba(0,0,0,0)");
+			}
+			else {
+				$(textbox).css("background-color", "rgba(0,0,0,.5)");
+			}
+		}
+		$(".desired_item_count").focus(function() {
+			$(this).css("background-color", "rgba(0,0,0,.5)");
+			$(this).select();
+		});
+		$(".desired_item_count").blur(function() {
+			set_text_background(this);
+		});
+
 
 		// Run the load function to load arguments from the URL if they exist
 		load();

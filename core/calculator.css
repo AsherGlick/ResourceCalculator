@@ -17,7 +17,21 @@ body {
 	float: left;
 	text-align: center;
 	position: relative;
+	border: 2px solid black;
+	margin: 1px;
+	background: #CCC;
+	outline: solid 0px #F80;
+	transition: outline .1s linear;
+	border-top: 2px solid #CBCBCB;
+	border-left: 2px solid #CBCBCB;
 }
+
+.desired_item_input_focused {
+	outline: solid 6px #F80;
+	z-index: 1;
+}
+
+
 
 
 .required_item {
@@ -33,20 +47,22 @@ body {
 	width: 100%;
 	box-sizing: border-box;
 	background: transparent;
-	text-align: right;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
 	position:absolute;
 	bottom: 0;
 	left: 0;
 	color: #FFF !important;
-	text-shadow: 2px 2px 0 #3F3F3F;
 	border:none;
 	padding-bottom: 2px;
 	-moz-appearance:textfield;
+	height: 100%;
 }
 
 
 .search_bar {
-	padding-bottom: 10px;
+	margin-bottom: 10px;
 
 }
 
@@ -62,8 +78,8 @@ body {
 }
 
 .search_box_wrapper {
-    display: block;
-    overflow: hidden;
+	display: block;
+	overflow: hidden;
 }
 .search_box {
 	width: 100%;
@@ -145,8 +161,8 @@ input[type=checkbox]:checked + label.hide_unused_label {
 #hover_name {
 	height: 1em;
 	position:absolute;
-    background: url(/HoverBackground.png);
-    background-clip: content-box;
+	background: url(/HoverBackground.png);
+	background-clip: content-box;
 	border: 8px solid transparent;
 	border-image: url(/HoverBorder.png) 8;
 	color: #FFF;
@@ -156,11 +172,13 @@ input[type=checkbox]:checked + label.hide_unused_label {
 	white-space: nowrap;
 	pointer-events: none;
 	display: none;
+	z-index: 2;
 }
 
 #content_field {
-	overflow: hidden;
+	/*overflow: hidden;*/
 	margin-bottom: 5px;
+	/*padding: 6px;*/
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -182,11 +200,11 @@ input[type=checkbox]:checked + label.hide_unused_label {
 	top: 50px;
 	left: 228px;
 
-    background-position: center; 
+	background-position: center;
 	text-align: right;
-  	vertical-align: middle;
+	vertical-align: middle;
 
-  	padding: 8px;
+	padding: 8px;
 
 	font-size: .8em;
 
@@ -199,7 +217,7 @@ input[type=checkbox]:checked + label.hide_unused_label {
 ////////////////////////////////////////////////////////////////////////////////
 #recipe_select {
 	position: absolute;
-	border: 1px solid #222;	
+	border: 1px solid #222;
 	background-color: #EFEFEF;
 	display: none;
 }
@@ -225,28 +243,28 @@ input[type=checkbox]:checked + label.hide_unused_label {
 // Flow chart styling
 
   #chart {
-    // height: 500px;
+	// height: 500px;
   }
 
   .node rect {
-    cursor: move;
-    fill-opacity: .9;
-    shape-rendering: crispEdges;
+	cursor: move;
+	fill-opacity: .9;
+	shape-rendering: crispEdges;
   }
 
   .node text {
-    pointer-events: none;
-    text-shadow: 0 1px 0 #fff;
+	pointer-events: none;
+	text-shadow: 0 1px 0 #fff;
   }
 
   .link {
-    fill: none;
-    stroke: #000;
-    stroke-opacity: .2;
+	fill: none;
+	stroke: #000;
+	stroke-opacity: .2;
   }
 
   .link:hover {
-    stroke-opacity: .5;
+	stroke-opacity: .5;
   }
 
 .header_bar {
@@ -285,25 +303,23 @@ a {
 
 
 .generate_button {
-	height: 40px;
 	width: 400px;
-	outline: 2px solid black;
+	border: 2px solid #000;
+
+	border-top-color: #cbcbcb;
+	border-left-color: #cbcbcb;
+	border-radius: 5px;
+
 	position: relative;
 	margin: 0;
 	display: inline-block;
 
 
-	background: url('/button_center.png') 0px 0px;
+	background: #FFF;
 
 	background-repeat: repeat;
-	padding: 0;
+	padding: 10px;
 	text-align: center;
-	color: white;
-	text-shadow: 3px 3px #4C4C4C;
-	border-bottom: 4px solid #565656;
-	border-right: 2px solid #565656;
-	border-left: 2px solid #AAA;
-	border-top: 2px solid #AAA;
 	box-sizing: border-box;
 	font-size: 16px;
 	margin-bottom: 5px;
@@ -313,25 +329,13 @@ a {
 	transform: translateX(-50%);
 
 	max-width: 100%;
-
-
-
-
+	transition: background-color .1s linear;
 }
 
-.generate_button span {
-	position: relative;
-	line-height: 40px;
-	bottom: 3px;
-}
+
 
 .generate_button:hover {
-	border-bottom: 4px solid #59639A;
-	border-right: 2px solid #59639A;
-	border-left: 2px solid #BDC6FF;
-	border-top: 2px solid #BDC6FF;
-	background: url('/button_center.png') 0px -45px;
-	color: #FFFFA0;
+	background-color: #F80;
 	cursor: pointer;
 }
 
@@ -351,10 +355,7 @@ a {
 }
 
 
-.item_input_focused {
-	border-color: #F80 !important;
-	border-image: none !important;
-}
+
 
 // Hide the up and down buttons for the number input
 input[type=number]::-webkit-inner-spin-button,
