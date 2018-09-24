@@ -12,6 +12,18 @@
 		<script src = "/d3.js" type = "text/javascript"/></script>
 		<script src = "/sankey.js" type = "text/javascript"/></script>
 		<script src = "/calculator.js" type = "text/javascript"/></script>
+
+		<style>
+			.item {
+				width: {{ item_width }};
+				height: {{ item_height }};
+			}
+			{% for item_style in item_styles %}
+				.item_{{item_style}} {
+					{{item_styles[item_style]}}
+				}
+			{% endfor %}
+		</style>
 	</head>
 	<body>
 
@@ -36,7 +48,7 @@
 
 				<!-- Resource List -->
 				{% for resource in resources %}
-					<div class="desired_item item" style="{{ resource['css_offset'] }}" mc_value="{{ resource['mc_value'] }}">
+					<div class="desired_item item item_{{resource['simplename']}}" style="{{ resource['css_offset'] }}" mc_value="{{ resource['mc_value'] }}">
 						<input class="desired_item_count" type=number" id="{{ resource['simplename'] }}" />
 					</div>
 				{% endfor %}

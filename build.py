@@ -110,23 +110,24 @@ def create_calculator(resource_list):
     recipe_json = json.dumps(recipes)
 
     resources = []
+    item_styles = {}
     for recipe in recipes:
         resource = {}
         simple_name = re.sub(r'[^a-z]', '', recipe.lower())
-        resource["css_offset"] = "width: "+str(image_width)+"px; height: "+str(image_height)+"px; "
+        item_styles[simple_name] = "width: "+str(image_width)+"px; height: "+str(image_height)+"px; "
 
         if simple_name in resource_image_coordinates:
             x_coordinate, y_coordinate = resource_image_coordinates[simple_name]
-            resource["css_offset"] += "background: url("+resource_list+".png) "+str(-x_coordinate)+"px "+str(-y_coordinate)+"px no-repeat;"
+            item_styles[simple_name] += "background: url("+resource_list+".png) "+str(-x_coordinate)+"px "+str(-y_coordinate)+"px no-repeat;"
         else:
-            resource["css_offset"] += "background: #f0f;"
+            item_styles[simple_name] += "background: #f0f;"
             print("WARNING:", simple_name, "has a recipe but no image and will appear purple in the calculator")
 
         resource["mc_value"] = recipe
         resource["simplename"] = simple_name
         resources.append(resource)
 
-    output_from_parsed_template = template.render(resources=resources, recipe_json=recipe_json)
+    output_from_parsed_template = template.render(resources=resources, recipe_json=recipe_json, item_width=image_width, item_height=image_height, item_styles=item_styles)
 
 
 
