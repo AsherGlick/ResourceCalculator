@@ -113,10 +113,9 @@
 
 				}
 				$("#unused_hide_checkbox").prop("checked", true).change();
-				// filter_items();
 				generatelist();
-
 			}
+			$("#unused_hide_checkbox").change();
 		}
 
 
@@ -345,6 +344,10 @@
 				field.val("");
 				set_text_background(field);
 			});
+
+			$("#unused_hide_checkbox").prop('checked');
+
+			$("#unused_hide_checkbox").prop("checked", false).change();
 			generatelist();
 		}
 		$("#reset_item_count").click(clear_item_counts);
@@ -764,8 +767,7 @@
 				recipe_item.appendTo(recipe_selector_list)
 			}
 
-			$("#recipe_select").show();
-			// recipe_selector
+			recipe_selector.show();
 
 			var menu_x_offset = -10;
 			var menu_y_offset = -10
@@ -785,7 +787,7 @@
 			recipe_selector.offset ({
 				left:  left_offset,
 				top:   top_offset
-			})
+			});
 		}
 
 
