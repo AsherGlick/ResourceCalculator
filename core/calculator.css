@@ -36,13 +36,12 @@ body {
 
 
 .required_item {
-	float: left;
+	display: inline-block;
 	text-align: right;
 	vertical-align: middle;
 	font-size: .8em;
 	color: #FFF !important;
 	text-shadow: 2px 2px 0 #3F3F3F;
-
 }
 
 .desired_item_count {
@@ -218,10 +217,12 @@ input[type=checkbox]:checked + label.hide_unused_label {
 ////////////////////////////////////////////////////////////////////////////////*/
 #recipe_select {
 	position: absolute;
-	border: 1px solid #222;
-	background-color: #EFEFEF;
+	/*border: 1px solid #222;*/
+	background-color: #fff;
 	opacity: 0;
 	z-index: 2;
+	box-shadow: 2px 2px 5px 0 #000;
+	border-radius: 5px;
 	transition: opacity .1s linear;
 
 	-webkit-touch-callout: none; /* iOS Safari */
@@ -230,15 +231,18 @@ input[type=checkbox]:checked + label.hide_unused_label {
        -moz-user-select: none; /* Firefox */
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none;
+    padding-bottom: 5px;
 }
 .recipe_selector_title {
 	padding: 4px;
+	text-align: center;
+	font-weight: bold;
 }
 .recipe_select_item {
 	padding: 4px;
 	cursor: pointer;
-	background-color: #C3C3C3;
-	position: relative
+	background-color: #FFF;
+	/*position: relative;*/
 }
 .recipe_select_item:hover {
 	background-color: #3498db;

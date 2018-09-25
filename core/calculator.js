@@ -752,7 +752,7 @@
 					};
     			})(i));
 
-				$('<div/>').addClass('recipe_select_item_name').text(recipe_json[item_name][i]["recipe_type"]).appendTo(recipe_item)
+				var recipe_category = $('<div/>').addClass('recipe_select_item_name').text(recipe_json[item_name][i]["recipe_type"]);
 
 				for (var j in recipe_json[item_name][i]["requirements"]) {
 					(function(j) {
@@ -762,7 +762,7 @@
 							.addClass('item')
 							.addClass('item_' + filenameify(j))
 							.text(-recipe_json[item_name][i]["requirements"][j])
-							.appendTo(recipe_item);
+							.appendTo(recipe_category);
 
 						item.mouseover( function() {
 							$("#hover_name").text(j);
@@ -773,10 +773,9 @@
 						});
 					})(j);
 				}
-
-				$('<div/>').addClass('clear').appendTo(recipe_item)
-
-				recipe_item.appendTo(recipe_selector_list)
+				recipe_category.appendTo(recipe_item);
+				$('<div/>').addClass('clear').appendTo(recipe_item);
+				recipe_item.appendTo(recipe_selector_list);
 			}
 
 			recipe_selector.css("opacity", 1);
