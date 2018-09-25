@@ -88,6 +88,40 @@ def create_packed_image(resource_list):
     return (standard_width, standard_height, image_coordinates)
 
 
+
+def lint_recipe(resource_list, item_name, recipes):
+
+    required_keys = ["output", "recipe_type", "requirements"]
+    optional_keys = ["extra_data"]
+
+    valid_keys = required_keys + optional_keys
+
+    for i, recipe in enumerate(recipes):
+
+        recipe_keys = [x for x in recipe]
+
+        # Make sure all the required keys exist
+        for required_key in required_keys:
+            if required_key not in recipe_keys:
+                print(resource_list.upper()+":", "\""+required_key+"\" is not in", item_name, "recipe", i)
+
+        # Make sure that all the keys being used are valid keys
+        for recipe_key in recipe_keys:
+            if recipe_key not in valid_keys:
+                print(resource_list.upper()+":", "\""+recipe_key+"\" in", item_name, "recipe", i, "is not a valid key")
+
+        # Validate the keys are in the right order to promote uniformity in the templates
+        if (recipe_keys[0] != valid_keys[0]):
+            # print(item_name, "recipe", i, "should have the first element of the hash be \"output\"")
+            print(resource_list.upper()+":", "\"output\" should be the first key of", item_name, "recipe", i)
+        if (recipe_keys[1] != valid_keys[1]):
+            # print(item_name, "recipe", i, "should have the first element of the hash be \"output\"")
+            print(resource_list.upper()+":", "\"recipe_type\" should be the second key of", item_name, "recipe", i)
+        if (recipe_keys[2] != valid_keys[2]):
+            # print(item_name, "recipe", i, "should have the first element of the hash be \"output\"")
+            print(resource_list.upper()+":", "\"requirements\" should be the third key of", item_name, "recipe", i)
+
+
 def create_calculator(resource_list):
     calculator_folder = os.path.join("output", resource_list)
     if not os.path.exists(calculator_folder):
@@ -106,6 +140,10 @@ def create_calculator(resource_list):
         yaml_data = ordered_load(f, yaml.SafeLoader)
     recipes = yaml_data["resources"]
     authors = yaml_data["authors"]
+
+    # run some sanity checks on the recipes
+    for recipe in recipes:
+        lint_recipe(resource_list, recipe, recipes[recipe])
 
     recipe_json = json.dumps(recipes)
 
@@ -130,8 +168,6 @@ def create_calculator(resource_list):
     output_from_parsed_template = template.render(resources=resources, recipe_json=recipe_json, item_width=image_width, item_height=image_height, item_styles=item_styles)
 
 
-
-
     with open(os.path.join(calculator_folder, "index.html"), "w") as f:
         f.write(output_from_parsed_template)
 
@@ -142,6 +178,12 @@ def create_calculator(resource_list):
             print("WARNING:", simple_name, "has an image but no recipe and will not appear in the calculator")
 
 
+################################################################################
+# copy_common_resources
+#
+# This is a hacky function to copy over some files that should be accessable
+# by the code
+################################################################################
 def copy_common_resources():
     copyfile("core/calculator.css", "output/calculator.css")
     copyfile("core/calculator.js", "output/calculator.js")
@@ -150,13 +192,10 @@ def copy_common_resources():
     copyfile("core/thirdparty/sankey.js", "output/sankey.js")
 
 
-
-
-
 def main():
     if not os.path.exists("output"):
         os.makedirs("output")
-    # Create the astroneer calculator
+    # Create the calculators
     create_calculator("astroneer")
     create_calculator("minecraft")
     copy_common_resources()
