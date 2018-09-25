@@ -6,7 +6,7 @@
 		var global_recepies;
 
 
-
+		console.log("Test");
 
 		// Assign event handlers
 		$("#unused_hide_checkbox").change(function() {
@@ -756,16 +756,20 @@
 
 				for (var j in recipe_json[item_name][i]["requirements"]) {
 					(function(j) {
+
+						var quantity = -recipe_json[item_name][i]["requirements"][j];
+
 						// console.log(j)
 						var item = $('<div/>')
 							.addClass('required_item')
 							.addClass('item')
 							.addClass('item_' + filenameify(j))
-							.text(-recipe_json[item_name][i]["requirements"][j])
+							.text(quantity)
 							.appendTo(recipe_category);
 
 						item.mouseover( function() {
-							$("#hover_name").text(j);
+							$("#hover_name").text(quantity +"x "+j);
+							console.log("Test");
 							$("#hover_name").css("opacity",1);
 						});
 						item.mouseout( function() {
