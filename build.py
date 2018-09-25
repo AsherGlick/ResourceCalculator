@@ -8,6 +8,8 @@ import math
 from collections import OrderedDict
 from PIL import Image
 
+import subprocess
+
 ################################################################################
 # ordered_load
 #
@@ -81,9 +83,31 @@ def create_packed_image(resource_list):
 
     # save the new packed image file and all the coordinates of the images
     calculator_folder = os.path.join("output", resource_list)
-    result.save(os.path.join(calculator_folder, resource_list+".png"))
+    output_image_path = os.path.join(calculator_folder, resource_list+".png")
+    result.save(output_image_path)
 
-    # TODO: Compress the image after it has been exported, or before if possible
+    # # pngquant and optipng both seemed to compress the image further. Optipng only doing slightly more <.5% on average after receiving the pngquant image
+    # # convert however tended to tripple the size of the file, still under the original filesize but a terrible step in the pipeline
+    # size_0 = os.path.getsize(output_image_path)
+    # print(size_0)
+    subprocess.run(["pngquant", "--force", "--ext", ".png", "256", "--nofs", output_image_path])
+    # size_1 = os.path.getsize(output_image_path)
+    # subprocess.run(["convert", "-verbose", "-strip", output_image_path, output_image_path])
+    # size_2 = os.path.getsize(output_image_path)
+    # subprocess.run(["optipng", "-o7", output_image_path])
+    # size_3 = os.path.getsize(output_image_path)
+
+    # import time
+    # print("pngquaint", size_1, "(" + str(round(((size_1/size_0))*100, 1)) + "% of original)")
+    # time.sleep(1)
+    # print("imgmagick convert", size_2, "(" + str(round(((size_2/size_1))*100, 1)) + "% of last)", "(" + str(round(((size_2/size_0))*100, 1)) + "% of original)")
+    # time.sleep(1)
+    # print("optipng", size_3, "(" + str(round(((size_3/size_2))*100, 1)) + "% of last)", "(" + str(round(((size_3/size_0))*100, 1)) + "% of original)")
+    # system("pngquant --force --ext .png 256 --nofs app/assets/images/items/#{name}.png")
+    # system("convert -verbose -strip app/assets/images/items/#{name}.png app/assets/images/items/#{name}.png") # remove the sRGB data that pngquaint adds in versions < 2.6
+    # system("optipng -o7 app/assets/images/items/#{name}.png")
+
+
 
     return (standard_width, standard_height, image_coordinates)
 
