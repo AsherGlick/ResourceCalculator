@@ -15,8 +15,9 @@
 
 		<style>
 			.item {
-				width: {{ item_width }};
-				height: {{ item_height }};
+				width: {{ item_width }}px;
+				height: {{ item_height }}px;
+				background: #8a8a8a url("{{resource_list}}.png") 0 0 no-repeat;
 			}
 			{% for item_style in item_styles %}
 				.item_{{item_style}} {

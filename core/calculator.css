@@ -41,7 +41,11 @@ body {
 	vertical-align: middle;
 	font-size: .8em;
 	color: #FFF !important;
-	text-shadow: 2px 2px 0 #3F3F3F;
+	text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+	margin-left: 5px;
+	border: 2px solid black;
+	border-bottom: 2px solid #CBCBCB;
+	border-right: 2px solid #CBCBCB;
 }
 
 .desired_item_count {
@@ -293,18 +297,18 @@ a {
 
 
 .home_button_logo {
-	background: url(/logo.png) no-repeat center center;
+	background: #FFF url(/logo.png) no-repeat center center;
 	padding: 10px 12px;
 	border: 2px solid #8b90a1;
 	border-right: none;
 	border-radius: 5px 0 0 5px;
 	display: inline-block;
-	background-size: 100% auto;
+	background-size: 40px;
 	transition: background-size 0.1s linear;
 }
 .home_button_logo:hover {
 	/*background: url(/logo2.png) no-repeat center 0;*/
-	background-size: 150%;
+	background-size: 80%;
 }
 
 .home_button {
@@ -435,9 +439,6 @@ a.internal_link {
 .menu_style {
 	background-color: #EEE;
 	background-clip: content-box;
-}
-.item {
-	background: #ccc;
 }
 body {
 	font-family: sans-serif;

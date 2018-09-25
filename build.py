@@ -176,20 +176,22 @@ def create_calculator(resource_list):
     for recipe in recipes:
         resource = {}
         simple_name = re.sub(r'[^a-z]', '', recipe.lower())
-        item_styles[simple_name] = "width: "+str(image_width)+"px; height: "+str(image_height)+"px; "
+        # item_styles[simple_name] = "width: "+str(image_width)+"px; height: "+str(image_height)+"px; background: #8a8a8a url("+resource_list+".png) 0 0 no-repeat;"
+        # item_styles[simple_name] = ""
 
         if simple_name in resource_image_coordinates:
             x_coordinate, y_coordinate = resource_image_coordinates[simple_name]
-            item_styles[simple_name] += "background: url("+resource_list+".png) "+str(-x_coordinate)+"px "+str(-y_coordinate)+"px no-repeat;"
+            # item_styles[simple_name] += "background: #8a8a8a url("+resource_list+".png) "+str(-x_coordinate)+"px "+str(-y_coordinate)+"px no-repeat;"
+            item_styles[simple_name] = "background-position: "+str(-x_coordinate)+"px "+str(-y_coordinate)+"px;"
         else:
-            item_styles[simple_name] += "background: #f0f;"
+            item_styles[simple_name] = "background: #f0f; background-image: none;"
             print("WARNING:", simple_name, "has a recipe but no image and will appear purple in the calculator")
 
         resource["mc_value"] = recipe
         resource["simplename"] = simple_name
         resources.append(resource)
 
-    output_from_parsed_template = template.render(resources=resources, recipe_json=recipe_json, item_width=image_width, item_height=image_height, item_styles=item_styles)
+    output_from_parsed_template = template.render(resources=resources, recipe_json=recipe_json, item_width=image_width, item_height=image_height, item_styles=item_styles, resource_list=resource_list)
 
     with open(os.path.join(calculator_folder, "index.html"), "w") as f:
         f.write(output_from_parsed_template)
