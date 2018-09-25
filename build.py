@@ -230,6 +230,7 @@ def copy_common_resources():
     copyfile("core/thirdparty/d3.v4.min.js", "output/d3.js")
     copyfile("core/thirdparty/sankey.js", "output/sankey.js")
     copyfile("core/logo.png", "output/logo.png")
+    copyfile("core/.htaccess", "output/.htaccess")
 
 
 def main():
