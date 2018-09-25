@@ -5060,6 +5060,10 @@ resources:
       - null
       - null
       shapeless: 0
+  - output: 1
+    recipe_type: Raw Resource
+    requirements:
+      Cyan Stained Glass Pane: 0
   Purple Stained Glass Pane:
   - output: 16
     recipe_type: Crafting

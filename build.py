@@ -145,6 +145,20 @@ def lint_recipe(resource_list, item_name, recipes):
             # print(item_name, "recipe", i, "should have the first element of the hash be \"output\"")
             print(resource_list.upper()+":", "\"requirements\" should be the third key of", item_name, "recipe", i)
 
+    raw_resource_count = 0
+    for recipe in recipes:
+
+        if (recipe['recipe_type'] == "Raw Resource"):
+            if (recipe == OrderedDict([('output', 1), ('recipe_type', 'Raw Resource'), ('requirements', OrderedDict([(item_name, 0)]))])):
+                raw_resource_count += 1
+            else:
+                print(resource_list.upper()+":", item_name, "has an invalid \"Raw Resource\"")
+
+    if raw_resource_count == 0:
+        print(resource_list.upper()+":", item_name, "must have a \"Raw Resource\" which outputs 1 and has a requirement of 0 of itself")
+    elif raw_resource_count > 1:
+        print(resource_list.upper()+":", item_name, "must have only one \"Raw Resource\"")
+
 
 def create_calculator(resource_list):
     calculator_folder = os.path.join("output", resource_list)
