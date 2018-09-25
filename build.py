@@ -167,7 +167,6 @@ def create_calculator(resource_list):
 
     output_from_parsed_template = template.render(resources=resources, recipe_json=recipe_json, item_width=image_width, item_height=image_height, item_styles=item_styles)
 
-
     with open(os.path.join(calculator_folder, "index.html"), "w") as f:
         f.write(output_from_parsed_template)
 
@@ -196,8 +195,11 @@ def main():
     if not os.path.exists("output"):
         os.makedirs("output")
     # Create the calculators
-    create_calculator("astroneer")
-    create_calculator("minecraft")
+    d = './resource_lists'
+    for o in os.listdir(d):
+        if os.path.isdir(os.path.join(d, o)):
+            create_calculator(o)
     copy_common_resources()
+
 
 main()
