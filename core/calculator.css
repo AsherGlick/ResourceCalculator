@@ -431,7 +431,19 @@ a.internal_link {
 
 
 
-
+#about_us {
+	border: 2px solid #8B90A1;
+	padding: 10px;
+	border-radius: 5px;
+	background: #FFF;
+	width: 800px;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -20px;
+	margin-bottom: 30px;
+	display: none;
+}
 
 
 

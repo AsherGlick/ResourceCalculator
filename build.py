@@ -191,7 +191,7 @@ def create_calculator(resource_list):
         resource["simplename"] = simple_name
         resources.append(resource)
 
-    output_from_parsed_template = template.render(resources=resources, recipe_json=recipe_json, item_width=image_width, item_height=image_height, item_styles=item_styles, resource_list=resource_list)
+    output_from_parsed_template = template.render(resources=resources, recipe_json=recipe_json, item_width=image_width, item_height=image_height, item_styles=item_styles, resource_list=resource_list, authors=authors)
 
     with open(os.path.join(calculator_folder, "index.html"), "w") as f:
         f.write(output_from_parsed_template)
@@ -215,6 +215,7 @@ def copy_common_resources():
     copyfile("core/thirdparty/jquery-3.3.1.min.js", "output/jquery.js")
     copyfile("core/thirdparty/d3.v4.min.js", "output/d3.js")
     copyfile("core/thirdparty/sankey.js", "output/sankey.js")
+    copyfile("core/logo.png", "output/logo.png")
 
 
 def main():

@@ -22,6 +22,10 @@
 		});
 
 
+		$("#about_button").click(function() {
+			$("#about_us").slideToggle();
+		})
+
 		// Bind events to the item list elements
 		$(".desired_item").each(function() {
 			var item = $(this);
