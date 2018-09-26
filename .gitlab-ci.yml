@@ -9,6 +9,7 @@ stages:
 
 build-site:
   image: ubuntu:18.04
+  # image: python:3.6
   stage: build
   script:
     - apt-get update
@@ -16,6 +17,7 @@ build-site:
     - python3 --version
     - apt-get install python3-pip -y
     - pip3 install -r requirements.txt
+    - apt-get install pngquant -y
 
     # Build System Website
     - python3 build.py
