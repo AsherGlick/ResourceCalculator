@@ -3,73 +3,28 @@ stages:
   # - test
   - deploy
 
-deploy-aws:
-  image: ubuntu:16.04
-  services:
-    - docker:dind
-  stage: deploy
-  script:
-    - CLUSTER_NAME="ResourceCalculator"
-    - TASK_DEFINITION_FAMILY="ResourceCalculator"
-    - SERVICE_NAME="ResourceCalculator"
-    - export AWS_DEFAULT_REGION="us-east-1"
-    # # install the required applications
-    - apt-get update
-    - apt-get install -qq -y python-pip
-    - pip install awscli --ignore-installed six
-    - apt-get install -qq -y docker.io
-    - service docker start
-
-    # - mkdir ~/.aws
-    - "echo -e '[default]'\naws_access_key_id=$AWS_ACCESS_KEY_ID\naws_secret_access_key=$AWS_SECRET_ACCESS_KEY"
-
-    - pip --version
-    - docker --version
-    # Build and upload the image
-    - "`aws ecr get-login --region us-east-1`"
-    # - docker login -u AWS -p $DOCKER_REGISTRY_PASSWORD -e none $DOCKER_REGISTRY_URL
-    - docker build -t resourcecalculator .
-    - docker tag resourcecalculator:latest 879234386562.dkr.ecr.us-east-1.amazonaws.com/resourcecalculator:$CI_BUILD_ID
-    - docker push 879234386562.dkr.ecr.us-east-1.amazonaws.com/resourcecalculator:$CI_BUILD_ID
-    # Create a new task definition for the new docker container
-    - "TASK_DEFINITION=`sed -e 's@{{DOCKER_IMAGE}}@879234386562.dkr.ecr.us-east-1.amazonaws.com/resourcecalculator:'$CI_BUILD_ID'@g' task_definition.template.json`"
-    - aws ecs register-task-definition --container-definitions "$TASK_DEFINITION" --family $TASK_DEFINITION_FAMILY
-    # Deploy the new task definition to the running service
-    - aws ecs update-service --cluster $CLUSTER_NAME --service $SERVICE_NAME --task-definition $TASK_DEFINITION_FAMILY
-
-  only:
-    - NEVER_aws_deploy
-
-
 deploy-dreamhost-prod:
-  image: ubuntu:16.04
+  image: asherglick/webdeploy:20170802
   stage: deploy
   script:
-    # Install ssh-agent if not already installed, it is required by Docker.
-    # (change apt-get to yum if you use a CentOS-based image)
-    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
-
     # Run ssh-agent (inside the build environment)
     - eval $(ssh-agent -s)
-
-    # Add the SSH key stored in SSH_PRIVATE_KEY variable to the agent store
-    - ssh-add <(echo "$SSH_PRIVATE_KEY")
-
+    # Add the SSH key stored in the environment to the agent store
+    - ssh-add <(echo "$PROD_SSH_PRIVATE_KEY")
     # For Docker builds disable host key checking. Be aware that by adding that
-    # you are suspectible to man-in-the-middle attacks.
+    # you are susceptible to man-in-the-middle attacks.
     # WARNING: Use this only with the Docker executor, if you use it with shell
     # you will overwrite your user's SSH config.
     - mkdir -p ~/.ssh
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
     - ssh $PROD_USER@$PROD_HOST ls
-    # - ssh $PROD_USER@$PROD_HOST tree
-    # - ssh $PROD_USER@$PROD_HOST mkdir $CI_BUILD_ID
-    # - scp -r . $PROD_USER@$PROD_HOST:/home/$PROD_USER/resourcecalculator.com/
-    - apt-get install -y rsync
-    - rsync -rav -e ssh --include '*' --exclude='.git' --exclude='scripts' --exclude='.gitlab-ci.yml' . $PROD_USER@$PROD_HOST:/home/$PROD_USER/resourcecalculator.com/
-    # Prebuild all of the static resources
-    - ssh $PROD_USER@$PROD_HOST "source .zlogin; cd resourcecalculator.com; RAILS_ENV=production bundle install; RAILS_ENV=production bundle exec rake assets:precompile"
-    # Restart the passenger server
-    - ssh $PROD_USER@$PROD_HOST "touch resourcecalculator.com/tmp/restart.txt"
+
+    # Build System Website
+    - python3 build.py
+
+    # Sync over the files
+    # - rsync --recursive --archive --verbose -e ssh --exclude-from ".sync_exclusions" --include 'output/*' --delete . $PROD_USER@$PROD_HOST:/home/$PROD_USER/$DEPLOY_FOLDER/
+    - ls output/*
+
   only:
     - master
