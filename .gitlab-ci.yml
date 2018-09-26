@@ -13,6 +13,8 @@ build-site:
   script:
     - apt-get update
     - apt-get install python3 -y
+    - python3 --version
+    - apt-get install python3-pip
     - pip3 install -r requirements.txt
 
     # Build System Website
