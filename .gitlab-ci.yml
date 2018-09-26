@@ -2,9 +2,21 @@ variables:
   DEPLOY_FOLDER: "resourcecalculator.com"
 
 stages:
-  # - build
+  - build
   # - test
   - deploy
+
+
+build-site:
+  image: ubuntu:18.04
+  stage: build
+  script:
+    - apt-get install python3
+    - pip3 install -r requirements.txt
+
+    # Build System Website
+    - python3 build.py
+
 
 deploy-dreamhost-prod:
   image: asherglick/webdeploy:20170802
@@ -23,11 +35,6 @@ deploy-dreamhost-prod:
     - ssh $PROD_USER@$PROD_HOST ls
 
 
-    - apk add python3
-    - pip3 install -r requirements.txt
-
-    # Build System Website
-    - python3 build.py
 
     # Sync over the files
     # - rsync --recursive --archive --verbose -e ssh --exclude-from ".sync_exclusions" --include 'output/*' --delete . $PROD_USER@$PROD_HOST:/home/$PROD_USER/$DEPLOY_FOLDER/
