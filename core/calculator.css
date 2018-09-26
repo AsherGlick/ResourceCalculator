@@ -297,7 +297,7 @@ a {
 
 
 .home_button_logo {
-	background: #FFF url(/logo.png) no-repeat center center;
+	background: #FFF url(./logo.png) no-repeat center center;
 	padding: 10px 12px;
 	border: 2px solid #8b90a1;
 	border-right: none;
@@ -457,4 +457,53 @@ body {
 }
 .desired_item_count {
 	font-family: sans-serif;
+}
+
+
+
+
+
+
+
+/* Index Page Styles */
+.calculator_link_wrapper {
+	width: 300px;
+	height: 150px;
+	margin: 5px;
+	float: left;
+	border: 2px solid black;
+	border-top: 2px solid #CBCBCB;
+	border-left: 2px solid #CBCBCB;
+}
+.calculator_link {
+	height: 100%;
+	background:#FFF0;
+	/*display: inline-block;*/
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: font-size .1s linear, color .1s linear, background-color .1s linear;
+	font-size: 1em;
+	color: #0000;
+}
+.calculator_link:hover {
+	font-size: 2em;
+	color: #FFF;
+	background-color: #000;
+}
+.icon {
+	font-size: 2em;
+	text-align: center;
+	/*background-color: #FFF;*/
+    font-family: 'Comfortaa', cursive;
+    margin-bottom: 40px;
+}
+.icon img {
+	border: 2px solid black;
+		border-top: 2px solid #CBCBCB;
+	border-left: 2px solid #CBCBCB;
+	border-radius: 5px;
+	padding: 5px;
+	background: #FFF;
 }

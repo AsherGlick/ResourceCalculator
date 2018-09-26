@@ -217,6 +217,21 @@ def create_calculator(resource_list):
             print("WARNING:", simple_name, "has an image but no recipe and will not appear in the calculator")
 
 
+def create_index(directories):
+    for directory in directories:
+        copyfile("resource_lists/" + directory + "/icon.png", "output/"+directory+"/icon.png")
+        pass
+
+    # Configure and begin the jinja2 template parsing
+    env = Environment(loader=FileSystemLoader('core'))
+    template = env.get_template("index.html")
+
+    output_from_parsed_template = template.render(calculators=directories)
+
+
+    with open(os.path.join("output", "index.html"), "w") as f:
+        f.write(output_from_parsed_template)
+
 ################################################################################
 # copy_common_resources
 #
@@ -231,6 +246,7 @@ def copy_common_resources():
     copyfile("core/thirdparty/sankey.js", "output/sankey.js")
     copyfile("core/logo.png", "output/logo.png")
     copyfile("core/.htaccess", "output/.htaccess")
+    copyfile("core/add_game.png", "output/add_game.png")
 
 
 def main():
@@ -238,9 +254,13 @@ def main():
         os.makedirs("output")
     # Create the calculators
     d = './resource_lists'
+    calculator_directories = []
     for o in os.listdir(d):
         if os.path.isdir(os.path.join(d, o)):
             create_calculator(o)
+            calculator_directories.append(o)
+
+    create_index(calculator_directories)
     copy_common_resources()
 
 
