@@ -8,14 +8,10 @@ stages:
 
 
 build-site:
-  # image: ubuntu:18.04
   image: python:3.6
   stage: build
   script:
     - apt-get update
-    # - apt-get install python3 -y
-    # - python3 --version
-    # - apt-get install python3-pip -y
     - pip3 install -r requirements.txt
     - apt-get install pngquant -y
 
@@ -44,6 +40,10 @@ deploy-dreamhost-prod:
     # Sync over the files
     # - rsync --recursive --archive --verbose -e ssh --exclude-from ".sync_exclusions" --include 'output/*' --delete . $PROD_USER@$PROD_HOST:/home/$PROD_USER/$DEPLOY_FOLDER/
     - ls output/*
-
+  artifacts:
+    paths:
+    - output
+    # Expire after 1 hour
+    expire_in: 3600
   only:
     - master
