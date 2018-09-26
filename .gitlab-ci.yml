@@ -23,7 +23,7 @@ deploy-dreamhost-prod:
     - ssh $PROD_USER@$PROD_HOST ls
 
 
-    - apt-get install python3
+    - apk add python3
     - pip3 install -r requirements.txt
 
     # Build System Website
