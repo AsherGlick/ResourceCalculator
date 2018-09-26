@@ -17,7 +17,11 @@ build-site:
 
     # Build System Website
     - python3 build.py
-
+  artifacts:
+    paths:
+    - output
+    # Expire after 1 hour
+    expire_in: 1 hr
 
 deploy-dreamhost-prod:
   image: asherglick/webdeploy:20170802
@@ -40,10 +44,5 @@ deploy-dreamhost-prod:
     # Sync over the files
     # - rsync --recursive --archive --verbose -e ssh --exclude-from ".sync_exclusions" --include 'output/*' --delete . $PROD_USER@$PROD_HOST:/home/$PROD_USER/$DEPLOY_FOLDER/
     - ls output/*
-  artifacts:
-    paths:
-    - output
-    # Expire after 1 hour
-    expire_in: 1 hr
   only:
     - master
