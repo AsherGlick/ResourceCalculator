@@ -16,7 +16,7 @@ build-site:
     # - apt-get install python3 -y
     # - python3 --version
     # - apt-get install python3-pip -y
-    # - pip3 install -r requirements.txt
+    - pip3 install -r requirements.txt
     - apt-get install pngquant -y
 
     # Build System Website
