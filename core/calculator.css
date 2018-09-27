@@ -11,6 +11,8 @@ body {
 }
 
 .content {
+	margin-left: 8px;
+	margin-right: 8px;
 }
 
 .desired_item {
@@ -454,6 +456,10 @@ a.internal_link {
 }
 body {
 	font-family: sans-serif;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
 }
 .desired_item_count {
 	font-family: sans-serif;

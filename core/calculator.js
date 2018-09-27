@@ -506,7 +506,7 @@
 
 
 
-			width = $('body').width() - margin.left - margin.right,
+			width = $('#content').width() - margin.left - margin.right,
 			height = 800 - margin.top - margin.bottom;
 
 			var formatNumber = d3.format(",.0f"),
