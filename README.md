@@ -1,5 +1,6 @@
 ResourceCaluclator.com is a website that can be used to calculate required resources from a list of final requirements, and tell you how to get from the raw resources to the final resources.
 
+![Resource Calculation Screenshot](screenshot01.png "Resource Calculation Screenshot")
 
 
 Creating or Updating a Calculator
