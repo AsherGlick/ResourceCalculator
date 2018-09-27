@@ -228,7 +228,6 @@ def create_index(directories):
 
     output_from_parsed_template = template.render(calculators=directories)
 
-
     with open(os.path.join("output", "index.html"), "w") as f:
         f.write(output_from_parsed_template)
 
@@ -260,6 +259,7 @@ def main():
             create_calculator(o)
             calculator_directories.append(o)
 
+    calculator_directories.sort()
     create_index(calculator_directories)
     copy_common_resources()
 
