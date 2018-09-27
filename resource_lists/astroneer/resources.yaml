@@ -7,66 +7,79 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Coal: 0
+
   Compound:
   - output: 1
     recipe_type: "Raw Resource"
     requirements:
       Compound: 0
+
   Laterite:
   - output: 1
     recipe_type: "Raw Resource"
     requirements:
       Laterite: 0
+
   Malachite:
   - output: 1
     recipe_type: "Raw Resource"
     requirements:
       Malachite: 0
+
   Hydrazine:
   - output: 1
     recipe_type: "Raw Resource"
     requirements:
       Hydrazine: 0
+
   Hematite:
   - output: 1
     recipe_type: "Raw Resource"
     requirements:
       Hematite: 0
+
   Marble:
   - output: 1
     recipe_type: "Raw Resource"
     requirements:
       Marble: 0
+
   Lithium:
   - output: 1
     recipe_type: "Raw Resource"
     requirements:
       Lithium: 0
+
   Organic:
   - output: 1
     recipe_type: "Raw Resource"
     requirements:
       Organic: 0
+
   Oxygen:
   - output: 1
     recipe_type: "Raw Resource"
     requirements:
       Oxygen: 0
+
   Power:
   - output: 1
     recipe_type: "Raw Resource"
     requirements:
       Power: 0
+
   Resin:
   - output: 1
     recipe_type: "Raw Resource"
     requirements:
       Resin: 0
+
   Titanium:
   - output: 1
     recipe_type: "Raw Resource"
     requirements:
       Titanium: 0
+
   Aluminum:
   - output: 1
     recipe_type: "Raw Resource"
@@ -76,6 +89,7 @@ resources:
     recipe_type: Smelter
     requirements:
       Laterite: -1
+
   Copper:
   - output: 1
     recipe_type: "Raw Resource"
@@ -85,6 +99,7 @@ resources:
     recipe_type: Smelter
     requirements:
       Malachite: -1
+
   Tethers:
   - output: 1
     recipe_type: Backpack Printer
@@ -94,6 +109,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Tethers: 0
+
   Small Solar Panel:
   - output: 1
     recipe_type: Backpack Printer
@@ -103,6 +119,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Small Solar Panel: 0
+
   Small Wind Turbine:
   - output: 1
     recipe_type: Backpack Printer
@@ -112,6 +129,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Small Wind Turbine: 0
+
   Small Generator:
   - output: 1
     recipe_type: Backpack Printer
@@ -121,6 +139,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Small Generator: 0
+
   Small Battery:
   - output: 1
     recipe_type: Backpack Printer
@@ -130,6 +149,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Small Battery: 0
+
   Power Cells:
   - output: 1
     recipe_type: Backpack Printer
@@ -139,6 +159,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Power Cells: 0
+
   Tank:
   - output: 1
     recipe_type: Backpack Printer
@@ -148,6 +169,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Tank: 0
+
   Filters:
   - output: 1
     recipe_type: Backpack Printer
@@ -157,6 +179,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Filters: 0
+
   Narrow Mod:
   - output: 1
     recipe_type: Backpack Printer
@@ -166,6 +189,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Narrow Mod: 0
+
   Wide Mod:
   - output: 1
     recipe_type: Backpack Printer
@@ -175,6 +199,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Wide Mod: 0
+
   Inhibitor Mod:
   - output: 1
     recipe_type: Backpack Printer
@@ -184,6 +209,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Inhibitor Mod: 0
+
   Terrain Analyzer:
   - output: 1
     recipe_type: Backpack Printer
@@ -193,6 +219,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Terrain Analyzer: 0
+
   Dynamite:
   - output: 1
     recipe_type: Backpack Printer
@@ -202,6 +229,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Dynamite: 0
+
   Beacon:
   - output: 1
     recipe_type: Backpack Printer
@@ -211,6 +239,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Beacon: 0
+
   One-Seat:
   - output: 1
     recipe_type: Printer and Vehicle Bay
@@ -220,6 +249,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       One-Seat: 0
+
   Medium Storage:
   - output: 1
     recipe_type: Printer
@@ -229,6 +259,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Medium Storage: 0
+
   Medium Wind Turbine:
   - output: 1
     recipe_type: Printer
@@ -238,6 +269,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Medium Wind Turbine: 0
+
   Drill Head:
   - output: 1
     recipe_type: Printer
@@ -247,6 +279,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Drill Head: 0
+
   Medium Battery:
   - output: 1
     recipe_type: Printer
@@ -256,6 +289,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Medium Battery: 0
+
   Medium Generator:
   - output: 1
     recipe_type: Printer
@@ -265,6 +299,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Medium Generator: 0
+
   Habitat:
   - output: 1
     recipe_type: Printer
@@ -274,6 +309,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Habitat: 0
+
   Solar Panel:
   - output: 1
     recipe_type: Printer
@@ -283,6 +319,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Solar Panel: 0
+
   Winch:
   - output: 1
     recipe_type: Printer
@@ -292,11 +329,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Winch: 0
+
   Thruster:
   - output: 1
     recipe_type: "Raw Resource"
     requirements:
       Thruster: 0
+
   Research Station:
   - output: 1
     recipe_type: Large Platform
@@ -306,6 +345,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Research Station: 0
+
   Fuel Condenser:
   - output: 1
     recipe_type: Large Platform
@@ -315,6 +355,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Fuel Condenser: 0
+
   Medium Printer:
   - output: 1
     recipe_type: Large Platform
@@ -324,6 +365,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Medium Printer: 0
+
   Smelter:
   - output: 1
     recipe_type: Large Platform
@@ -333,6 +375,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Smelter: 0
+
   Vehicle Bay:
   - output: 1
     recipe_type: Large Platform
@@ -342,6 +385,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Vehicle Bay: 0
+
   Trade Platform:
   - output: 1
     recipe_type: Large Platform
@@ -351,6 +395,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Trade Platform: 0
+
   Three-Seat:
   - output: 1
     recipe_type: Vehicle Bay
@@ -360,6 +405,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Three-Seat: 0
+
   Large Storage:
   - output: 1
     recipe_type: Vehicle Bay
@@ -369,6 +415,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Large Storage: 0
+
   Crane:
   - output: 1
     recipe_type: Vehicle Bay
@@ -378,6 +425,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Crane: 0
+
   Medium Rover:
   - output: 1
     recipe_type: Vehicle Bay
@@ -387,6 +435,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Medium Rover: 0
+
   Large Rover:
   - output: 1
     recipe_type: Vehicle Bay
@@ -396,6 +445,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Large Rover: 0
+
   Shuttle:
   - output: 1
     recipe_type: Vehicle Bay
@@ -405,6 +455,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Shuttle: 0
+
   Large Shuttle:
   - output: 1
     recipe_type: Vehicle Bay

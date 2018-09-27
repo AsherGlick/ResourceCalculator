@@ -2,6 +2,7 @@
 authors:
   Asher: "https://aglick.com"
   Kevin: ""
+
 resources:
   Stone:
   - output: 1
@@ -17,6 +18,7 @@ resources:
       recipe:
       - Cobblestone
       - Fuel
+
   Granite:
   - output: 1
     recipe_type: Crafting
@@ -39,6 +41,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Granite: 0
+
   Polished Granite:
   - output: 4
     recipe_type: Crafting
@@ -60,6 +63,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Polished Granite: 0
+
   Diorite:
   - output: 2
     recipe_type: Crafting
@@ -82,6 +86,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Diorite: 0
+
   Polished Diorite:
   - output: 4
     recipe_type: Crafting
@@ -103,6 +108,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Polished Diorite: 0
+
   Andesite:
   - output: 2
     recipe_type: Crafting
@@ -125,6 +131,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Andesite: 0
+
   Polished Andesite:
   - output: 4
     recipe_type: Crafting
@@ -146,16 +153,19 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Polished Andesite: 0
+
   Grass Block:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Grass Block: 0
+
   Dirt:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Dirt: 0
+
   Coarse Dirt:
   - output: 4
     recipe_type: Crafting
@@ -178,16 +188,19 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Coarse Dirt: 0
+
   Podzol:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Podzol: 0
+
   Cobblestone:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Cobblestone: 0
+
   Oak Wood Planks:
   - output: 4
     recipe_type: Crafting
@@ -209,6 +222,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Oak Wood Planks: 0
+
   Spruce Wood Planks:
   - output: 4
     recipe_type: Crafting
@@ -230,6 +244,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Spruce Wood Planks: 0
+
   Birch Wood Planks:
   - output: 4
     recipe_type: Crafting
@@ -251,6 +266,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Birch Wood Planks: 0
+
   Jungle Wood Planks:
   - output: 4
     recipe_type: Crafting
@@ -272,6 +288,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Jungle Wood Planks: 0
+
   Acacia Wood Planks:
   - output: 4
     recipe_type: Crafting
@@ -293,6 +310,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Acacia Wood Planks: 0
+
   Dark Oak Wood Planks:
   - output: 4
     recipe_type: Crafting
@@ -314,61 +332,73 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Dark Oak Wood Planks: 0
+
   Bedrock:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Bedrock: 0
+
   Sand:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Sand: 0
+
   Red Sand:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Red Sand: 0
+
   Gravel:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Gravel: 0
+
   Gold Ore:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Gold Ore: 0
+
   Iron Ore:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Iron Ore: 0
+
   Coal Ore:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Coal Ore: 0
+
   Oak Wood:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Oak Wood: 0
+
   Spruce Wood:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Spruce Wood: 0
+
   Birch Wood:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Birch Wood: 0
+
   Jungle Wood:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Jungle Wood: 0
+
   Sponge:
   - output: 1
     recipe_type: Raw Resource
@@ -383,11 +413,13 @@ resources:
       recipe:
       - Wet Sponge
       - Fuel
+
   Wet Sponge:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Wet Sponge: 0
+
   Glass:
   - output: 1
     recipe_type: Smelting
@@ -411,11 +443,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Glass: 0
+
   Lapis Lazuli Ore:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Lapis Lazuli Ore: 0
+
   Lapis Lazuli Block:
   - output: 1
     recipe_type: Crafting
@@ -437,6 +471,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Lapis Lazuli Block: 0
+
   Sandstone:
   - output: 1
     recipe_type: Crafting
@@ -458,6 +493,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Sandstone: 0
+
   Chiseled Sandstone:
   - output: 1
     recipe_type: Crafting
@@ -479,6 +515,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Chiseled Sandstone: 0
+
   Smooth Sandstone:
   - output: 4
     recipe_type: Crafting
@@ -500,6 +537,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Smooth Sandstone: 0
+
   Wool:
   - output: 1
     recipe_type: Crafting
@@ -521,6 +559,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Wool: 0
+
   Orange Wool:
   - output: 1
     recipe_type: Raw Resource
@@ -543,6 +582,7 @@ resources:
       - null
       - null
       shapeless: 1
+
   Magenta Wool:
   - output: 1
     recipe_type: Crafting
@@ -565,6 +605,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Magenta Wool: 0
+
   Light Blue Wool:
   - output: 1
     recipe_type: Crafting
@@ -587,6 +628,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Blue Wool: 0
+
   Yellow Wool:
   - output: 1
     recipe_type: Crafting
@@ -609,6 +651,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Yellow Wool: 0
+
   Lime Wool:
   - output: 1
     recipe_type: Crafting
@@ -631,6 +674,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Lime Wool: 0
+
   Pink Wool:
   - output: 1
     recipe_type: Crafting
@@ -653,6 +697,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Pink Wool: 0
+
   Gray Wool:
   - output: 1
     recipe_type: Crafting
@@ -675,6 +720,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Gray Wool: 0
+
   Light Gray Wool:
   - output: 1
     recipe_type: Crafting
@@ -697,6 +743,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Gray Wool: 0
+
   Cyan Wool:
   - output: 1
     recipe_type: Crafting
@@ -719,6 +766,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cyan Wool: 0
+
   Purple Wool:
   - output: 1
     recipe_type: Crafting
@@ -741,6 +789,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Purple Wool: 0
+
   Blue Wool:
   - output: 1
     recipe_type: Crafting
@@ -763,6 +812,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Blue Wool: 0
+
   Brown Wool:
   - output: 1
     recipe_type: Crafting
@@ -785,6 +835,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Brown Wool: 0
+
   Green Wool:
   - output: 1
     recipe_type: Crafting
@@ -807,6 +858,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Green Wool: 0
+
   Red Wool:
   - output: 1
     recipe_type: Crafting
@@ -829,6 +881,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Red Wool: 0
+
   Black Wool:
   - output: 1
     recipe_type: Crafting
@@ -851,6 +904,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Black Wool: 0
+
   Block of Gold:
   - output: 1
     recipe_type: Crafting
@@ -872,6 +926,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Block of Gold: 0
+
   Block of Iron:
   - output: 1
     recipe_type: Crafting
@@ -893,6 +948,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Block of Iron: 0
+
   Stone Slab:
   - output: 6
     recipe_type: Crafting
@@ -914,6 +970,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Stone Slab: 0
+
   Sandstone Slab:
   - output: 6
     recipe_type: Crafting
@@ -935,6 +992,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Sandstone Slab: 0
+
   Cobblestone Slab:
   - output: 6
     recipe_type: Crafting
@@ -956,6 +1014,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cobblestone Slab: 0
+
   Bricks Slab:
   - output: 6
     recipe_type: Crafting
@@ -977,6 +1036,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Bricks Slab: 0
+
   Stone Bricks Slab:
   - output: 6
     recipe_type: Crafting
@@ -998,6 +1058,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Stone Bricks Slab: 0
+
   Nether Brick Slab:
   - output: 6
     recipe_type: Crafting
@@ -1019,6 +1080,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Nether Brick Slab: 0
+
   Quartz Slab:
   - output: 6
     recipe_type: Crafting
@@ -1040,6 +1102,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Quartz Slab: 0
+
   Bricks:
   - output: 1
     recipe_type: Crafting
@@ -1061,6 +1124,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Bricks: 0
+
   Bookshelf:
   - output: 1
     recipe_type: Crafting
@@ -1083,6 +1147,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Bookshelf: 0
+
   Moss Stone:
   - output: 1
     recipe_type: Crafting
@@ -1105,6 +1170,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Moss Stone: 0
+
   Obsidian:
   - output: 1
     recipe_type: Raw Resource
@@ -1117,6 +1183,7 @@ resources:
     extra_data:
       recipe:
       - Lava Bucket
+
   Oak Wood Stairs:
   - output: 4
     recipe_type: Crafting
@@ -1138,11 +1205,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Oak Wood Stairs: 0
+
   Diamond Ore:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Diamond Ore: 0
+
   Block of Diamond:
   - output: 1
     recipe_type: Crafting
@@ -1164,6 +1233,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Block of Diamond: 0
+
   Cobblestone Stairs:
   - output: 4
     recipe_type: Crafting
@@ -1185,21 +1255,25 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cobblestone Stairs: 0
+
   Redstone Ore:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Redstone Ore: 0
+
   Ice:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Ice: 0
+
   Snow:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Snow: 0
+
   Block of Clay:
   - output: 1
     recipe_type: Crafting
@@ -1221,21 +1295,25 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Block of Clay: 0
+
   Pumpkin:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Pumpkin: 0
+
   Netherrack:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Netherrack: 0
+
   Soul Sand:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Soul Sand: 0
+
   Glowstone:
   - output: 1
     recipe_type: Crafting
@@ -1257,6 +1335,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Glowstone: 0
+
   Jack o'Lantern:
   - output: 1
     recipe_type: Crafting
@@ -1279,6 +1358,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Jack o'Lantern: 0
+
   White Stained Glass:
   - output: 8
     recipe_type: Crafting
@@ -1301,6 +1381,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       White Stained Glass: 0
+
   Orange Stained Glass:
   - output: 8
     recipe_type: Crafting
@@ -1323,6 +1404,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Orange Stained Glass: 0
+
   Magenta Stained Glass:
   - output: 8
     recipe_type: Crafting
@@ -1345,6 +1427,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Magenta Stained Glass: 0
+
   Light Blue Stained Glass:
   - output: 8
     recipe_type: Crafting
@@ -1367,6 +1450,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Blue Stained Glass: 0
+
   Yellow Stained Glass:
   - output: 8
     recipe_type: Crafting
@@ -1389,6 +1473,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Yellow Stained Glass: 0
+
   Lime Stained Glass:
   - output: 8
     recipe_type: Crafting
@@ -1411,6 +1496,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Lime Stained Glass: 0
+
   Pink Stained Glass:
   - output: 8
     recipe_type: Crafting
@@ -1433,6 +1519,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Pink Stained Glass: 0
+
   Gray Stained Glass:
   - output: 8
     recipe_type: Crafting
@@ -1455,6 +1542,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Gray Stained Glass: 0
+
   Light Gray Stained Glass:
   - output: 8
     recipe_type: Crafting
@@ -1477,6 +1565,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Gray Stained Glass: 0
+
   Cyan Stained Glass:
   - output: 8
     recipe_type: Crafting
@@ -1499,6 +1588,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cyan Stained Glass: 0
+
   Purple Stained Glass:
   - output: 8
     recipe_type: Crafting
@@ -1521,6 +1611,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Purple Stained Glass: 0
+
   Blue Stained Glass:
   - output: 8
     recipe_type: Crafting
@@ -1543,6 +1634,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Blue Stained Glass: 0
+
   Brown Stained Glass:
   - output: 8
     recipe_type: Crafting
@@ -1565,6 +1657,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Brown Stained Glass: 0
+
   Green Stained Glass:
   - output: 8
     recipe_type: Crafting
@@ -1587,6 +1680,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Green Stained Glass: 0
+
   Red Stained Glass:
   - output: 8
     recipe_type: Crafting
@@ -1609,6 +1703,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Red Stained Glass: 0
+
   Black Stained Glass:
   - output: 8
     recipe_type: Crafting
@@ -1631,6 +1726,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Black Stained Glass: 0
+
   Stone Brick:
   - output: 4
     recipe_type: Crafting
@@ -1652,6 +1748,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Stone Brick: 0
+
   Mossy Stone Bricks:
   - output: 1
     recipe_type: Crafting
@@ -1674,6 +1771,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Mossy Stone Bricks: 0
+
   Cracked Stone Bricks:
   - output: 1
     recipe_type: Smelting
@@ -1688,6 +1786,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cracked Stone Bricks: 0
+
   Chiseled Stone Bricks:
   - output: 1
     recipe_type: Crafting
@@ -1709,6 +1808,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Chiseled Stone Bricks: 0
+
   Melon:
   - output: 1
     recipe_type: Crafting
@@ -1730,6 +1830,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Melon: 0
+
   Brick Stairs:
   - output: 4
     recipe_type: Crafting
@@ -1751,6 +1852,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Brick Stairs: 0
+
   Stone Brick Stairs:
   - output: 4
     recipe_type: Crafting
@@ -1772,11 +1874,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Stone Brick Stairs: 0
+
   Mycelium:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Mycelium: 0
+
   Nether Brick Block:
   - output: 1
     recipe_type: Crafting
@@ -1798,6 +1902,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Nether Brick Block: 0
+
   Nether Brick Stairs:
   - output: 4
     recipe_type: Crafting
@@ -1819,11 +1924,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Nether Brick Stairs: 0
+
   End Stone:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       End Stone: 0
+
   Oak Wood Slab:
   - output: 6
     recipe_type: Crafting
@@ -1845,6 +1952,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Oak Wood Slab: 0
+
   Spruce Wood Slab:
   - output: 6
     recipe_type: Crafting
@@ -1866,6 +1974,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Spruce Wood Slab: 0
+
   Birch Wood Slab:
   - output: 6
     recipe_type: Crafting
@@ -1887,6 +1996,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Birch Wood Slab: 0
+
   Jungle Wood Slab:
   - output: 6
     recipe_type: Crafting
@@ -1908,6 +2018,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Jungle Wood Slab: 0
+
   Acacia Wood Slab:
   - output: 6
     recipe_type: Crafting
@@ -1929,6 +2040,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Acacia Wood Slab: 0
+
   Dark Oak Wood Slab:
   - output: 6
     recipe_type: Crafting
@@ -1950,6 +2062,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Dark Oak Wood Slab: 0
+
   Sandstone Stairs:
   - output: 4
     recipe_type: Crafting
@@ -1971,11 +2084,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Sandstone Stairs: 0
+
   Emerald Ore:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Emerald Ore: 0
+
   Block of Emerald:
   - output: 1
     recipe_type: Crafting
@@ -1997,6 +2112,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Block of Emerald: 0
+
   Spruce Wood Stairs:
   - output: 4
     recipe_type: Crafting
@@ -2018,6 +2134,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Spruce Wood Stairs: 0
+
   Birch Wood Stairs:
   - output: 4
     recipe_type: Crafting
@@ -2039,6 +2156,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Birch Wood Stairs: 0
+
   Jungle Wood Stairs:
   - output: 4
     recipe_type: Crafting
@@ -2060,6 +2178,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Jungle Wood Stairs: 0
+
   Cobblestone Wall:
   - output: 6
     recipe_type: Crafting
@@ -2081,6 +2200,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cobblestone Wall: 0
+
   Mossy Cobblestone Wall:
   - output: 6
     recipe_type: Crafting
@@ -2102,11 +2222,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Mossy Cobblestone Wall: 0
+
   Nether Quartz Ore:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Nether Quartz Ore: 0
+
   Block of Quartz:
   - output: 1
     recipe_type: Crafting
@@ -2128,6 +2250,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Block of Quartz: 0
+
   Chiseled Quartz Block:
   - output: 1
     recipe_type: Crafting
@@ -2149,6 +2272,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Chiseled Quartz Block: 0
+
   Pillar Quartz Block:
   - output: 2
     recipe_type: Crafting
@@ -2170,6 +2294,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Pillar Quartz Block: 0
+
   Quartz Stairs:
   - output: 4
     recipe_type: Crafting
@@ -2191,6 +2316,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Quartz Stairs: 0
+
   White Terracotta:
   - output: 8
     recipe_type: Crafting
@@ -2213,6 +2339,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       White Terracotta: 0
+
   Orange Terracotta:
   - output: 8
     recipe_type: Crafting
@@ -2235,6 +2362,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Orange Terracotta: 0
+
   Magenta Terracotta:
   - output: 8
     recipe_type: Crafting
@@ -2257,6 +2385,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Magenta Terracotta: 0
+
   Light Blue Terracotta:
   - output: 8
     recipe_type: Crafting
@@ -2279,6 +2408,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Blue Terracotta: 0
+
   Yellow Terracotta:
   - output: 8
     recipe_type: Crafting
@@ -2301,6 +2431,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Yellow Terracotta: 0
+
   Lime Terracotta:
   - output: 8
     recipe_type: Crafting
@@ -2323,6 +2454,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Lime Terracotta: 0
+
   Pink Terracotta:
   - output: 8
     recipe_type: Crafting
@@ -2345,6 +2477,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Pink Terracotta: 0
+
   Gray Terracotta:
   - output: 8
     recipe_type: Crafting
@@ -2367,6 +2500,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Gray Terracotta: 0
+
   Light Gray Terracotta:
   - output: 8
     recipe_type: Crafting
@@ -2389,6 +2523,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Gray Terracotta: 0
+
   Cyan Terracotta:
   - output: 8
     recipe_type: Crafting
@@ -2411,6 +2546,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cyan Terracotta: 0
+
   Purple Terracotta:
   - output: 8
     recipe_type: Crafting
@@ -2433,6 +2569,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Purple Terracotta: 0
+
   Blue Terracotta:
   - output: 8
     recipe_type: Crafting
@@ -2455,6 +2592,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Blue Terracotta: 0
+
   Brown Terracotta:
   - output: 8
     recipe_type: Crafting
@@ -2477,6 +2615,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Brown Terracotta: 0
+
   Green Terracotta:
   - output: 8
     recipe_type: Crafting
@@ -2499,6 +2638,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Green Terracotta: 0
+
   Red Terracotta:
   - output: 8
     recipe_type: Crafting
@@ -2521,6 +2661,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Red Terracotta: 0
+
   Black Terracotta:
   - output: 8
     recipe_type: Crafting
@@ -2543,16 +2684,19 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Black Terracotta: 0
+
   Acacia Wood:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Acacia Wood: 0
+
   Dark Oak Wood:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Dark Oak Wood: 0
+
   Acacia Wood Stairs:
   - output: 4
     recipe_type: Crafting
@@ -2574,6 +2718,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Acacia Wood Stairs: 0
+
   Dark Oak Wood Stairs:
   - output: 4
     recipe_type: Crafting
@@ -2595,6 +2740,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Dark Oak Wood Stairs: 0
+
   Prismarine:
   - output: 1
     recipe_type: Crafting
@@ -2616,6 +2762,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Prismarine: 0
+
   Prismarine Bricks:
   - output: 1
     recipe_type: Crafting
@@ -2637,6 +2784,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Prismarine Bricks: 0
+
   Dark Prismarine:
   - output: 1
     recipe_type: Crafting
@@ -2659,6 +2807,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Dark Prismarine: 0
+
   Sea Lantern:
   - output: 1
     recipe_type: Crafting
@@ -2681,6 +2830,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Sea Lantern: 0
+
   Hay Bale:
   - output: 1
     recipe_type: Crafting
@@ -2702,6 +2852,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Hay Bale: 0
+
   Terracotta:
   - output: 1
     recipe_type: Smelting
@@ -2716,6 +2867,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Terracotta: 0
+
   Block of Coal:
   - output: 1
     recipe_type: Crafting
@@ -2737,11 +2889,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Block of Coal: 0
+
   Packed Ice:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Packed Ice: 0
+
   Red Sandstone:
   - output: 1
     recipe_type: Crafting
@@ -2763,6 +2917,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Red Sandstone: 0
+
   Chiseled Red Sandstone:
   - output: 1
     recipe_type: Crafting
@@ -2784,6 +2939,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Chiseled Red Sandstone: 0
+
   Smooth Red Sandstone:
   - output: 4
     recipe_type: Crafting
@@ -2805,6 +2961,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Smooth Red Sandstone: 0
+
   Red Sandstone Stairs:
   - output: 4
     recipe_type: Crafting
@@ -2826,6 +2983,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Red Sandstone Stairs: 0
+
   Red Sandstone Slab:
   - output: 6
     recipe_type: Crafting
@@ -2847,6 +3005,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Red Sandstone Slab: 0
+
   Purpur Block:
   - output: 4
     recipe_type: Crafting
@@ -2868,6 +3027,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Purpur Block: 0
+
   Purpur Pillar:
   - output: 1
     recipe_type: Crafting
@@ -2889,6 +3049,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Purpur Pillar: 0
+
   Purpur Stairs:
   - output: 4
     recipe_type: Crafting
@@ -2910,6 +3071,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Purpur Stairs: 0
+
   Purpur Slab:
   - output: 6
     recipe_type: Crafting
@@ -2931,6 +3093,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Purpur Slab: 0
+
   End Stone Bricks:
   - output: 4
     recipe_type: Crafting
@@ -2952,6 +3115,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       End Stone Bricks: 0
+
   Magma Block:
   - output: 1
     recipe_type: Crafting
@@ -2973,6 +3137,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Magma Block: 0
+
   Nether Wart Block:
   - output: 1
     recipe_type: Crafting
@@ -2994,6 +3159,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Nether Wart Block: 0
+
   Red Nether Brick:
   - output: 1
     recipe_type: Crafting
@@ -3016,6 +3182,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Red Nether Brick: 0
+
   Bone Block:
   - output: 1
     recipe_type: Crafting
@@ -3037,6 +3204,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Bone Block: 0
+
   Observer:
   - output: 1
     recipe_type: Crafting
@@ -3060,6 +3228,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Observer: 0
+
   White Shulker Box:
   - output: 1
     recipe_type: Crafting
@@ -3082,6 +3251,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       White Shulker Box: 0
+
   Orange Shulker Box:
   - output: 1
     recipe_type: Crafting
@@ -3104,6 +3274,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Orange Shulker Box: 0
+
   Magenta Shulker Box:
   - output: 1
     recipe_type: Crafting
@@ -3126,6 +3297,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Magenta Shulker Box: 0
+
   Light Blue Shulker Box:
   - output: 1
     recipe_type: Crafting
@@ -3148,6 +3320,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Blue Shulker Box: 0
+
   Yellow Shulker Box:
   - output: 1
     recipe_type: Crafting
@@ -3170,6 +3343,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Yellow Shulker Box: 0
+
   Lime Shulker Box:
   - output: 1
     recipe_type: Crafting
@@ -3192,6 +3366,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Lime Shulker Box: 0
+
   Pink Shulker Box:
   - output: 1
     recipe_type: Crafting
@@ -3214,6 +3389,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Pink Shulker Box: 0
+
   Gray Shulker Box:
   - output: 1
     recipe_type: Crafting
@@ -3236,6 +3412,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Gray Shulker Box: 0
+
   Light Gray Shulker Box:
   - output: 1
     recipe_type: Crafting
@@ -3258,6 +3435,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Gray Shulker Box: 0
+
   Cyan Shulker Box:
   - output: 1
     recipe_type: Crafting
@@ -3280,6 +3458,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cyan Shulker Box: 0
+
   Purple Shulker Box:
   - output: 1
     recipe_type: Crafting
@@ -3302,6 +3481,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Purple Shulker Box: 0
+
   Blue Shulker Box:
   - output: 1
     recipe_type: Crafting
@@ -3324,6 +3504,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Blue Shulker Box: 0
+
   Brown Shulker Box:
   - output: 1
     recipe_type: Crafting
@@ -3346,6 +3527,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Brown Shulker Box: 0
+
   Green Shulker Box:
   - output: 1
     recipe_type: Crafting
@@ -3368,6 +3550,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Green Shulker Box: 0
+
   Red Shulker Box:
   - output: 1
     recipe_type: Crafting
@@ -3390,6 +3573,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Red Shulker Box: 0
+
   Black Shulker Box:
   - output: 1
     recipe_type: Crafting
@@ -3412,6 +3596,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Black Shulker Box: 0
+
   White Glazed Terracotta:
   - output: 1
     recipe_type: Smelting
@@ -3426,6 +3611,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       White Glazed Terracotta: 0
+
   Orange Glazed Terracotta:
   - output: 1
     recipe_type: Smelting
@@ -3440,6 +3626,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Orange Glazed Terracotta: 0
+
   Magenta Glazed Terracotta:
   - output: 1
     recipe_type: Smelting
@@ -3454,6 +3641,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Magenta Glazed Terracotta: 0
+
   Light Blue Glazed Terracotta:
   - output: 1
     recipe_type: Smelting
@@ -3468,6 +3656,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Blue Glazed Terracotta: 0
+
   Yellow Glazed Terracotta:
   - output: 1
     recipe_type: Smelting
@@ -3482,6 +3671,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Yellow Glazed Terracotta: 0
+
   Lime Glazed Terracotta:
   - output: 1
     recipe_type: Smelting
@@ -3496,6 +3686,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Lime Glazed Terracotta: 0
+
   Pink Glazed Terracotta:
   - output: 1
     recipe_type: Smelting
@@ -3510,6 +3701,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Pink Glazed Terracotta: 0
+
   Gray Glazed Terracotta:
   - output: 1
     recipe_type: Smelting
@@ -3524,6 +3716,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Gray Glazed Terracotta: 0
+
   Light Gray Glazed Terracotta:
   - output: 1
     recipe_type: Smelting
@@ -3538,6 +3731,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Gray Glazed Terracotta: 0
+
   Cyan Glazed Terracotta:
   - output: 1
     recipe_type: Smelting
@@ -3552,6 +3746,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cyan Glazed Terracotta: 0
+
   Purple Glazed Terracotta:
   - output: 1
     recipe_type: Smelting
@@ -3566,6 +3761,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Purple Glazed Terracotta: 0
+
   Blue Glazed Terracotta:
   - output: 1
     recipe_type: Smelting
@@ -3580,6 +3776,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Blue Glazed Terracotta: 0
+
   Brown Glazed Terracotta:
   - output: 1
     recipe_type: Smelting
@@ -3594,6 +3791,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Brown Glazed Terracotta: 0
+
   Green Glazed Terracotta:
   - output: 1
     recipe_type: Smelting
@@ -3608,6 +3806,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Green Glazed Terracotta: 0
+
   Red Glazed Terracotta:
   - output: 1
     recipe_type: Smelting
@@ -3622,6 +3821,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Red Glazed Terracotta: 0
+
   Black Glazed Terracotta:
   - output: 1
     recipe_type: Smelting
@@ -3636,6 +3836,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Black Glazed Terracotta: 0
+
   White Concrete:
   - output: 1
     recipe_type: Add Water
@@ -3648,6 +3849,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       White Concrete: 0
+
   Orange Concrete:
   - output: 1
     recipe_type: Add Water
@@ -3660,6 +3862,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Orange Concrete: 0
+
   Magenta Concrete:
   - output: 1
     recipe_type: Add Water
@@ -3672,6 +3875,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Magenta Concrete: 0
+
   Light Blue Concrete:
   - output: 1
     recipe_type: Add Water
@@ -3684,6 +3888,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Blue Concrete: 0
+
   Yellow Concrete:
   - output: 1
     recipe_type: Add Water
@@ -3696,6 +3901,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Yellow Concrete: 0
+
   Lime Concrete:
   - output: 1
     recipe_type: Add Water
@@ -3708,6 +3914,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Lime Concrete: 0
+
   Pink Concrete:
   - output: 1
     recipe_type: Add Water
@@ -3720,6 +3927,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Pink Concrete: 0
+
   Gray Concrete:
   - output: 1
     recipe_type: Add Water
@@ -3732,6 +3940,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Gray Concrete: 0
+
   Light Gray Concrete:
   - output: 1
     recipe_type: Add Water
@@ -3744,6 +3953,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Gray Concrete: 0
+
   Cyan Concrete:
   - output: 1
     recipe_type: Add Water
@@ -3756,6 +3966,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cyan Concrete: 0
+
   Purple Concrete:
   - output: 1
     recipe_type: Add Water
@@ -3768,6 +3979,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Purple Concrete: 0
+
   Blue Concrete:
   - output: 1
     recipe_type: Add Water
@@ -3780,6 +3992,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Blue Concrete: 0
+
   Brown Concrete:
   - output: 1
     recipe_type: Add Water
@@ -3792,6 +4005,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Brown Concrete: 0
+
   Green Concrete:
   - output: 1
     recipe_type: Add Water
@@ -3804,6 +4018,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Green Concrete: 0
+
   Red Concrete:
   - output: 1
     recipe_type: Add Water
@@ -3816,6 +4031,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Red Concrete: 0
+
   Black Concrete:
   - output: 8
     recipe_type: Add Water
@@ -3828,6 +4044,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Black Concrete: 0
+
   White Concrete Powder:
   - output: 8
     recipe_type: Crafting
@@ -3851,6 +4068,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       White Concrete Powder: 0
+
   Orange Concrete Powder:
   - output: 8
     recipe_type: Crafting
@@ -3874,6 +4092,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Orange Concrete Powder: 0
+
   Magenta Concrete Powder:
   - output: 8
     recipe_type: Crafting
@@ -3897,6 +4116,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Magenta Concrete Powder: 0
+
   Light Blue Concrete Powder:
   - output: 8
     recipe_type: Crafting
@@ -3920,6 +4140,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Blue Concrete Powder: 0
+
   Yellow Concrete Powder:
   - output: 8
     recipe_type: Crafting
@@ -3943,6 +4164,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Yellow Concrete Powder: 0
+
   Lime Concrete Powder:
   - output: 8
     recipe_type: Crafting
@@ -3966,6 +4188,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Lime Concrete Powder: 0
+
   Pink Concrete Powder:
   - output: 8
     recipe_type: Crafting
@@ -3989,6 +4212,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Pink Concrete Powder: 0
+
   Gray Concrete Powder:
   - output: 8
     recipe_type: Crafting
@@ -4012,6 +4236,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Gray Concrete Powder: 0
+
   Light Gray Concrete Powder:
   - output: 8
     recipe_type: Crafting
@@ -4035,6 +4260,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Gray Concrete Powder: 0
+
   Cyan Concrete Powder:
   - output: 8
     recipe_type: Crafting
@@ -4058,6 +4284,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cyan Concrete Powder: 0
+
   Purple Concrete Powder:
   - output: 8
     recipe_type: Crafting
@@ -4081,6 +4308,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Purple Concrete Powder: 0
+
   Blue Concrete Powder:
   - output: 8
     recipe_type: Crafting
@@ -4104,6 +4332,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Blue Concrete Powder: 0
+
   Brown Concrete Powder:
   - output: 8
     recipe_type: Crafting
@@ -4127,6 +4356,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Brown Concrete Powder: 0
+
   Green Concrete Powder:
   - output: 8
     recipe_type: Crafting
@@ -4150,6 +4380,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Green Concrete Powder: 0
+
   Red Concrete Powder:
   - output: 8
     recipe_type: Crafting
@@ -4173,6 +4404,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Red Concrete Powder: 0
+
   Black Concrete Powder:
   - output: 8
     recipe_type: Crafting
@@ -4196,136 +4428,163 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Black Concrete Powder: 0
+
   Oak Sapling:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Oak Sapling: 0
+
   Spruce Sapling:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Spruce Sapling: 0
+
   Birch Sapling:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Birch Sapling: 0
+
   Jungle Sapling:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Jungle Sapling: 0
+
   Acacia Sapling:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Acacia Sapling: 0
+
   Dark Oak Sapling:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Dark Oak Sapling: 0
+
   Oak Leaves:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Oak Leaves: 0
+
   Spruce Leaves:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Spruce Leaves: 0
+
   Birch Leaves:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Birch Leaves: 0
+
   Jungle Leaves:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Jungle Leaves: 0
+
   Cobweb:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Cobweb: 0
+
   Grass:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Grass: 0
+
   Fern:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Fern: 0
+
   Dead Bush:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Dead Bush: 0
+
   Dandelion:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Dandelion: 0
+
   Poppy:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Poppy: 0
+
   Blue Orchid:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Blue Orchid: 0
+
   Allium:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Allium: 0
+
   Azure Bluet:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Azure Bluet: 0
+
   Red Tulip:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Red Tulip: 0
+
   Orange Tulip:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Orange Tulip: 0
+
   White Tulip:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       White Tulip: 0
+
   Pink Tulip:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Pink Tulip: 0
+
   Oxeye Daisy:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Oxeye Daisy: 0
+
   Brown Mushroom:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Brown Mushroom: 0
+
   Red Mushroom:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Red Mushroom: 0
+
   Torch:
   - output: 4
     recipe_type: Crafting
@@ -4365,6 +4624,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Torch: 0
+
   Chest:
   - output: 1
     recipe_type: Crafting
@@ -4466,6 +4726,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Chest: 0
+
   Crafting Table:
   - output: 1
     recipe_type: Crafting
@@ -4567,6 +4828,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Crafting Table: 0
+
   Furnace:
   - output: 1
     recipe_type: Crafting
@@ -4588,6 +4850,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Furnace: 0
+
   Ladder:
   - output: 3
     recipe_type: Crafting
@@ -4609,6 +4872,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Ladder: 0
+
   Snow Block:
   - output: 1
     recipe_type: Crafting
@@ -4630,11 +4894,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Snow Block: 0
+
   Cactus:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Cactus: 0
+
   Jukebox:
   - output: 1
     recipe_type: Crafting
@@ -4657,6 +4923,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Jukebox: 0
+
   Oak Fence:
   - output: 3
     recipe_type: Crafting
@@ -4679,36 +4946,43 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Oak Fence: 0
+
   Stone Monster Egg:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Stone Monster Egg: 0
+
   Cobblestone Monster Egg:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Cobblestone Monster Egg: 0
+
   Stone Brick Monster Egg:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Stone Brick Monster Egg: 0
+
   Mossy Stone Brick Monster Egg:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Mossy Stone Brick Monster Egg: 0
+
   Cracked Stone Brick Monster Egg:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Cracked Stone Brick Monster Egg: 0
+
   Chiseled Stone Brick Monster Egg:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Chiseled Stone Brick Monster Egg: 0
+
   Iron Bars:
   - output: 16
     recipe_type: Crafting
@@ -4730,6 +5004,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Iron Bars: 0
+
   Glass Pane:
   - output: 16
     recipe_type: Crafting
@@ -4751,16 +5026,19 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Glass Pane: 0
+
   Vines:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Vines: 0
+
   Lily Pad:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Lily Pad: 0
+
   Nether Brick Fence:
   - output: 6
     recipe_type: Crafting
@@ -4782,6 +5060,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Nether Brick Fence: 0
+
   Enchantment Table:
   - output: 1
     recipe_type: Crafting
@@ -4805,11 +5084,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Enchantment Table: 0
+
   End Portal:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       End Portal: 0
+
   Ender Chest:
   - output: 1
     recipe_type: Crafting
@@ -4832,6 +5113,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Ender Chest: 0
+
   Anvil:
   - output: 1
     recipe_type: Crafting
@@ -4854,6 +5136,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Anvil: 0
+
   White Stained Glass Pane:
   - output: 16
     recipe_type: Crafting
@@ -4875,6 +5158,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       White Stained Glass Pane: 0
+
   Orange Stained Glass Pane:
   - output: 16
     recipe_type: Crafting
@@ -4896,6 +5180,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Orange Stained Glass Pane: 0
+
   Magenta Stained Glass Pane:
   - output: 16
     recipe_type: Crafting
@@ -4917,6 +5202,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Magenta Stained Glass Pane: 0
+
   Light Blue Stained Glass Pane:
   - output: 16
     recipe_type: Crafting
@@ -4938,6 +5224,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Blue Stained Glass Pane: 0
+
   Yellow Stained Glass Pane:
   - output: 16
     recipe_type: Crafting
@@ -4959,6 +5246,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Yellow Stained Glass Pane: 0
+
   Lime Stained Glass Pane:
   - output: 16
     recipe_type: Crafting
@@ -4980,6 +5268,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Lime Stained Glass Pane: 0
+
   Pink Stained Glass Pane:
   - output: 16
     recipe_type: Crafting
@@ -5001,6 +5290,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Pink Stained Glass Pane: 0
+
   Gray Stained Glass Pane:
   - output: 16
     recipe_type: Crafting
@@ -5022,6 +5312,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Gray Stained Glass Pane: 0
+
   Light Gray Stained Glass Pane:
   - output: 16
     recipe_type: Crafting
@@ -5043,6 +5334,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Gray Stained Glass Pane: 0
+
   Cyan Stained Glass Pane:
   - output: 16
     recipe_type: Crafting
@@ -5064,6 +5356,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cyan Stained Glass Pane: 0
+
   Purple Stained Glass Pane:
   - output: 16
     recipe_type: Crafting
@@ -5085,6 +5378,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Purple Stained Glass Pane: 0
+
   Blue Stained Glass Pane:
   - output: 16
     recipe_type: Crafting
@@ -5106,6 +5400,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Blue Stained Glass Pane: 0
+
   Brown Stained Glass Pane:
   - output: 16
     recipe_type: Crafting
@@ -5127,6 +5422,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Brown Stained Glass Pane: 0
+
   Green Stained Glass Pane:
   - output: 16
     recipe_type: Crafting
@@ -5148,6 +5444,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Green Stained Glass Pane: 0
+
   Red Stained Glass Pane:
   - output: 16
     recipe_type: Crafting
@@ -5169,6 +5466,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Red Stained Glass Pane: 0
+
   Black Stained Glass Pane:
   - output: 16
     recipe_type: Crafting
@@ -5190,16 +5488,19 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Black Stained Glass Pane: 0
+
   Acacia Leaves:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Acacia Leaves: 0
+
   Dark Oak Leaves:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Dark Oak Leaves: 0
+
   Slime Block:
   - output: 1
     recipe_type: Crafting
@@ -5221,6 +5522,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Slime Block: 0
+
   Carpet:
   - output: 3
     recipe_type: Crafting
@@ -5242,6 +5544,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Carpet: 0
+
   Orange Carpet:
   - output: 3
     recipe_type: Crafting
@@ -5263,6 +5566,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Orange Carpet: 0
+
   Magenta Carpet:
   - output: 3
     recipe_type: Crafting
@@ -5284,6 +5588,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Magenta Carpet: 0
+
   Light Blue Carpet:
   - output: 3
     recipe_type: Crafting
@@ -5305,6 +5610,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Blue Carpet: 0
+
   Yellow Carpet:
   - output: 3
     recipe_type: Crafting
@@ -5326,6 +5632,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Yellow Carpet: 0
+
   Lime Carpet:
   - output: 3
     recipe_type: Crafting
@@ -5347,6 +5654,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Lime Carpet: 0
+
   Pink Carpet:
   - output: 3
     recipe_type: Crafting
@@ -5368,6 +5676,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Pink Carpet: 0
+
   Gray Carpet:
   - output: 3
     recipe_type: Crafting
@@ -5389,6 +5698,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Gray Carpet: 0
+
   Light Gray Carpet:
   - output: 3
     recipe_type: Crafting
@@ -5410,6 +5720,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Gray Carpet: 0
+
   Cyan Carpet:
   - output: 3
     recipe_type: Crafting
@@ -5431,6 +5742,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cyan Carpet: 0
+
   Purple Carpet:
   - output: 3
     recipe_type: Crafting
@@ -5452,6 +5764,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Purple Carpet: 0
+
   Blue Carpet:
   - output: 3
     recipe_type: Crafting
@@ -5473,6 +5786,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Blue Carpet: 0
+
   Brown Carpet:
   - output: 3
     recipe_type: Crafting
@@ -5494,6 +5808,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Brown Carpet: 0
+
   Green Carpet:
   - output: 3
     recipe_type: Crafting
@@ -5515,6 +5830,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Green Carpet: 0
+
   Red Carpet:
   - output: 3
     recipe_type: Crafting
@@ -5536,6 +5852,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Red Carpet: 0
+
   Black Carpet:
   - output: 3
     recipe_type: Crafting
@@ -5557,36 +5874,43 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Black Carpet: 0
+
   Sunflower:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Sunflower: 0
+
   Lilac:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Lilac: 0
+
   Double Tallgrass:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Double Tallgrass: 0
+
   Large Fern:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Large Fern: 0
+
   Rose Bush:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Rose Bush: 0
+
   Peony:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Peony: 0
+
   Spruce Fence:
   - output: 3
     recipe_type: Crafting
@@ -5609,6 +5933,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Spruce Fence: 0
+
   Birch Fence:
   - output: 3
     recipe_type: Crafting
@@ -5631,6 +5956,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Birch Fence: 0
+
   Jungle Fence:
   - output: 3
     recipe_type: Crafting
@@ -5653,6 +5979,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Jungle Fence: 0
+
   Dark Oak Fence:
   - output: 3
     recipe_type: Crafting
@@ -5675,6 +6002,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Dark Oak Fence: 0
+
   Acacia Fence:
   - output: 3
     recipe_type: Crafting
@@ -5697,6 +6025,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Acacia Fence: 0
+
   End Rod:
   - output: 4
     recipe_type: Crafting
@@ -5719,16 +6048,19 @@ resources:
     recipe_type: Raw Resource
     requirements:
       End Rod: 0
+
   Chorus Plant:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Chorus Plant: 0
+
   Chorus Flower:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Chorus Flower: 0
+
   Painting:
   - output: 1
     recipe_type: Crafting
@@ -5751,6 +6083,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Painting: 0
+
   Sign:
   - output: 3
     recipe_type: Crafting
@@ -5773,6 +6106,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Sign: 0
+
   White Bed:
   - output: 1
     recipe_type: Crafting
@@ -5795,6 +6129,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       White Bed: 0
+
   Orange Bed:
   - output: 1
     recipe_type: Crafting
@@ -5833,6 +6168,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Orange Bed: 0
+
   MAgenta Bed:
   - output: 1
     recipe_type: Crafting
@@ -5871,6 +6207,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       MAgenta Bed: 0
+
   Light Blue Bed:
   - output: 1
     recipe_type: Crafting
@@ -5909,6 +6246,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Blue Bed: 0
+
   Yellow Bed:
   - output: 1
     recipe_type: Crafting
@@ -5947,6 +6285,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Yellow Bed: 0
+
   Lime Bed:
   - output: 1
     recipe_type: Crafting
@@ -5985,6 +6324,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Lime Bed: 0
+
   Pink Bed:
   - output: 1
     recipe_type: Crafting
@@ -6023,6 +6363,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Pink Bed: 0
+
   Gray Bed:
   - output: 1
     recipe_type: Crafting
@@ -6061,6 +6402,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Gray Bed: 0
+
   Light Gray Bed:
   - output: 1
     recipe_type: Crafting
@@ -6099,6 +6441,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Gray Bed: 0
+
   Cyan Bed:
   - output: 1
     recipe_type: Crafting
@@ -6137,6 +6480,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cyan Bed: 0
+
   Purple Bed:
   - output: 1
     recipe_type: Crafting
@@ -6175,6 +6519,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Purple Bed: 0
+
   Blue Bed:
   - output: 1
     recipe_type: Crafting
@@ -6213,6 +6558,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Blue Bed: 0
+
   Brown Bed:
   - output: 1
     recipe_type: Crafting
@@ -6251,6 +6597,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Brown Bed: 0
+
   Green Bed:
   - output: 1
     recipe_type: Crafting
@@ -6289,6 +6636,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Green Bed: 0
+
   Red Bed:
   - output: 1
     recipe_type: Crafting
@@ -6327,6 +6675,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Red Bed: 0
+
   Black Bed:
   - output: 1
     recipe_type: Crafting
@@ -6365,6 +6714,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Black Bed: 0
+
   Item Frame:
   - output: 1
     recipe_type: Crafting
@@ -6387,6 +6737,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Item Frame: 0
+
   Flower Pot:
   - output: 1
     recipe_type: Crafting
@@ -6408,36 +6759,43 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Flower Pot: 0
+
   Skeleton Skull:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Skeleton Skull: 0
+
   Wither Skeleton Skull:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Wither Skeleton Skull: 0
+
   Zombie Head:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Zombie Head: 0
+
   Head:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Head: 0
+
   Creeper Head:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Creeper Head: 0
+
   Dragon Head:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Dragon Head: 0
+
   Armor Stand:
   - output: 1
     recipe_type: Crafting
@@ -6460,6 +6818,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Armor Stand: 0
+
   White Banner:
   - output: 1
     recipe_type: Crafting
@@ -6482,6 +6841,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       White Banner: 0
+
   Orange Banner:
   - output: 1
     recipe_type: Crafting
@@ -6503,6 +6863,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Orange Banner: 0
+
   Magenta Banner:
   - output: 1
     recipe_type: Crafting
@@ -6524,6 +6885,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Magenta Banner: 0
+
   Light Blue Banner:
   - output: 1
     recipe_type: Crafting
@@ -6545,6 +6907,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Blue Banner: 0
+
   Yellow Banner:
   - output: 1
     recipe_type: Crafting
@@ -6566,6 +6929,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Yellow Banner: 0
+
   Lime Banner:
   - output: 1
     recipe_type: Crafting
@@ -6587,6 +6951,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Lime Banner: 0
+
   Pink Banner:
   - output: 1
     recipe_type: Crafting
@@ -6608,6 +6973,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Pink Banner: 0
+
   Gray Banner:
   - output: 1
     recipe_type: Crafting
@@ -6629,6 +6995,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Gray Banner: 0
+
   Light Gray Banner:
   - output: 1
     recipe_type: Crafting
@@ -6650,6 +7017,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Gray Banner: 0
+
   Cyan Banner:
   - output: 1
     recipe_type: Crafting
@@ -6671,6 +7039,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cyan Banner: 0
+
   Purple Banner:
   - output: 1
     recipe_type: Crafting
@@ -6692,6 +7061,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Purple Banner: 0
+
   Blue Banner:
   - output: 1
     recipe_type: Crafting
@@ -6713,6 +7083,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Blue Banner: 0
+
   Brown Banner:
   - output: 1
     recipe_type: Crafting
@@ -6734,6 +7105,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Brown Banner: 0
+
   Green Banner:
   - output: 1
     recipe_type: Crafting
@@ -6755,6 +7127,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Green Banner: 0
+
   Red Banner:
   - output: 1
     recipe_type: Crafting
@@ -6776,6 +7149,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Red Banner: 0
+
   Black Banner:
   - output: 1
     recipe_type: Crafting
@@ -6797,6 +7171,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Black Banner: 0
+
   End Crystal:
   - output: 1
     recipe_type: Crafting
@@ -6820,6 +7195,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       End Crystal: 0
+
   Dispenser:
   - output: 1
     recipe_type: Crafting
@@ -6843,6 +7219,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Dispenser: 0
+
   Note Block:
   - output: 1
     recipe_type: Crafting
@@ -6865,6 +7242,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Note Block: 0
+
   Sticky Piston:
   - output: 1
     recipe_type: Crafting
@@ -6887,6 +7265,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Sticky Piston: 0
+
   Piston:
   - output: 1
     recipe_type: Crafting
@@ -6911,6 +7290,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Piston: 0
+
   TNT:
   - output: 1
     recipe_type: Crafting
@@ -6933,6 +7313,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       TNT: 0
+
   Lever:
   - output: 1
     recipe_type: Crafting
@@ -6955,6 +7336,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Lever: 0
+
   Stone Pressure Plate:
   - output: 1
     recipe_type: Crafting
@@ -6976,6 +7358,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Stone Pressure Plate: 0
+
   Wooden Pressure Plate:
   - output: 1
     recipe_type: Crafting
@@ -6997,6 +7380,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Wooden Pressure Plate: 0
+
   Redstone Torch:
   - output: 1
     recipe_type: Crafting
@@ -7019,6 +7403,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Redstone Torch: 0
+
   Stone Button:
   - output: 1
     recipe_type: Crafting
@@ -7040,6 +7425,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Stone Button: 0
+
   Wooden Trapdoor:
   - output: 2
     recipe_type: Crafting
@@ -7061,6 +7447,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Wooden Trapdoor: 0
+
   Oak Fence Gate:
   - output: 1
     recipe_type: Crafting
@@ -7083,6 +7470,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Oak Fence Gate: 0
+
   Redstone Lamp:
   - output: 1
     recipe_type: Crafting
@@ -7105,6 +7493,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Redstone Lamp: 0
+
   Tripwire Hook:
   - output: 2
     recipe_type: Crafting
@@ -7128,6 +7517,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Tripwire Hook: 0
+
   Wooden Button:
   - output: 1
     recipe_type: Crafting
@@ -7149,6 +7539,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Wooden Button: 0
+
   Trapped Chest:
   - output: 1
     recipe_type: Crafting
@@ -7171,6 +7562,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Trapped Chest: 0
+
   Weighted Pressure Plate (Light):
   - output: 1
     recipe_type: Crafting
@@ -7192,6 +7584,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Weighted Pressure Plate (Light): 0
+
   Weighted Pressure Plate (Heavy):
   - output: 1
     recipe_type: Crafting
@@ -7213,6 +7606,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Weighted Pressure Plate (Heavy): 0
+
   Daylight Sensor:
   - output: 1
     recipe_type: Crafting
@@ -7236,6 +7630,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Daylight Sensor: 0
+
   Block of Redstone:
   - output: 1
     recipe_type: Crafting
@@ -7257,6 +7652,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Block of Redstone: 0
+
   Hopper:
   - output: 1
     recipe_type: Crafting
@@ -7279,6 +7675,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Hopper: 0
+
   Dropper:
   - output: 1
     recipe_type: Crafting
@@ -7301,6 +7698,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Dropper: 0
+
   Iron Trapdoor:
   - output: 1
     recipe_type: Crafting
@@ -7322,6 +7720,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Iron Trapdoor: 0
+
   Spruce Fence Gate:
   - output: 1
     recipe_type: Crafting
@@ -7344,6 +7743,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Spruce Fence Gate: 0
+
   Birch Fence Gate:
   - output: 1
     recipe_type: Crafting
@@ -7366,6 +7766,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Birch Fence Gate: 0
+
   Jungle Fence Gate:
   - output: 1
     recipe_type: Crafting
@@ -7388,6 +7789,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Jungle Fence Gate: 0
+
   Dark Oak Fence Gate:
   - output: 1
     recipe_type: Crafting
@@ -7410,6 +7812,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Dark Oak Fence Gate: 0
+
   Acacia Fence Gate:
   - output: 1
     recipe_type: Crafting
@@ -7432,6 +7835,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Acacia Fence Gate: 0
+
   Oak Door:
   - output: 3
     recipe_type: Crafting
@@ -7453,6 +7857,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Oak Door: 0
+
   Iron Door:
   - output: 3
     recipe_type: Crafting
@@ -7474,11 +7879,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Iron Door: 0
+
   Redstone:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Redstone: 0
+
   Redstone Repeater:
   - output: 1
     recipe_type: Crafting
@@ -7502,6 +7909,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Redstone Repeater: 0
+
   Redstone Comparator:
   - output: 1
     recipe_type: Crafting
@@ -7525,6 +7933,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Redstone Comparator: 0
+
   Spruce Door:
   - output: 3
     recipe_type: Crafting
@@ -7546,6 +7955,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Spruce Door: 0
+
   Birch Door:
   - output: 3
     recipe_type: Crafting
@@ -7567,6 +7977,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Birch Door: 0
+
   Jungle Door:
   - output: 3
     recipe_type: Crafting
@@ -7588,6 +7999,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Jungle Door: 0
+
   Acacia Door:
   - output: 3
     recipe_type: Crafting
@@ -7609,6 +8021,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Acacia Door: 0
+
   Dark Oak Door:
   - output: 3
     recipe_type: Crafting
@@ -7630,6 +8043,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Dark Oak Door: 0
+
   Powered Rail:
   - output: 6
     recipe_type: Crafting
@@ -7653,6 +8067,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Powered Rail: 0
+
   Detector Rail:
   - output: 6
     recipe_type: Crafting
@@ -7676,6 +8091,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Detector Rail: 0
+
   Rail:
   - output: 16
     recipe_type: Crafting
@@ -7698,6 +8114,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Rail: 0
+
   Activator Rail:
   - output: 6
     recipe_type: Crafting
@@ -7721,6 +8138,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Activator Rail: 0
+
   Minecart:
   - output: 1
     recipe_type: Crafting
@@ -7742,11 +8160,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Minecart: 0
+
   Saddle:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Saddle: 0
+
   Oak Boat:
   - output: 1
     recipe_type: Crafting
@@ -7768,6 +8188,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Oak Boat: 0
+
   Minecart with Chest:
   - output: 1
     recipe_type: Crafting
@@ -7790,6 +8211,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Minecart with Chest: 0
+
   Minecart with Furnace:
   - output: 1
     recipe_type: Crafting
@@ -7812,6 +8234,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Minecart with Furnace: 0
+
   Carrot on a Stick:
   - output: 1
     recipe_type: Crafting
@@ -7834,6 +8257,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Carrot on a Stick: 0
+
   Minecart with TNT:
   - output: 1
     recipe_type: Crafting
@@ -7856,6 +8280,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Minecart with TNT: 0
+
   Minecart with Hopper:
   - output: 1
     recipe_type: Crafting
@@ -7878,11 +8303,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Minecart with Hopper: 0
+
   Elytra:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Elytra: 0
+
   Spruce Boat:
   - output: 1
     recipe_type: Crafting
@@ -7904,6 +8331,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Spruce Boat: 0
+
   Birch Boat:
   - output: 1
     recipe_type: Crafting
@@ -7925,6 +8353,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Birch Boat: 0
+
   Jungle Boat:
   - output: 1
     recipe_type: Crafting
@@ -7946,6 +8375,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Jungle Boat: 0
+
   Acacia Boat:
   - output: 1
     recipe_type: Crafting
@@ -7967,6 +8397,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Acacia Boat: 0
+
   Dark Oak Boat:
   - output: 1
     recipe_type: Crafting
@@ -7988,16 +8419,19 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Dark Oak Boat: 0
+
   Totem of Undying:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Totem of Undying: 0
+
   Shulker Shell:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Shulker Shell: 0
+
   Beacon:
   - output: 1
     recipe_type: Crafting
@@ -8021,6 +8455,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Beacon: 0
+
   Bucket:
   - output: 1
     recipe_type: Crafting
@@ -8042,26 +8477,31 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Bucket: 0
+
   Water Bucket:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Water Bucket: 0
+
   Lava Bucket:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Lava Bucket: 0
+
   Snowball:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Snowball: 0
+
   Milk:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Milk: 0
+
   Paper:
   - output: 3
     recipe_type: Crafting
@@ -8083,6 +8523,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Paper: 0
+
   Book:
   - output: 1
     recipe_type: Crafting
@@ -8105,6 +8546,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Book: 0
+
   Slimeball:
   - output: 1
     recipe_type: Raw Resource
@@ -8126,16 +8568,19 @@ resources:
       - null
       - null
       shapeless: 0
+
   Bone:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Bone: 0
+
   Ender Pearl:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Ender Pearl: 0
+
   Eye of Ender:
   - output: 1
     recipe_type: Crafting
@@ -8158,6 +8603,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Eye of Ender: 0
+
   Fire Charge:
   - output: 1
     recipe_type: Crafting
@@ -8181,6 +8627,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Fire Charge: 0
+
   Book and Quill:
   - output: 1
     recipe_type: Crafting
@@ -8204,6 +8651,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Book and Quill: 0
+
   Empty Map:
   - output: 1
     recipe_type: Crafting
@@ -8226,31 +8674,37 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Empty Map: 0
+
   Firework Star:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Firework Star: 0
+
   Iron Horse Armor:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Iron Horse Armor: 0
+
   Gold Horse Armor:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Gold Horse Armor: 0
+
   Diamond Horse Armor:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Diamond Horse Armor: 0
+
   Apple:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Apple: 0
+
   Mushroom Stew:
   - output: 1
     recipe_type: Crafting
@@ -8274,6 +8728,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Mushroom Stew: 0
+
   Bread:
   - output: 1
     recipe_type: Crafting
@@ -8295,16 +8750,19 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Bread: 0
+
   Raw Porkchop:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Raw Porkchop: 0
+
   Cooked Porkchop:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Cooked Porkchop: 0
+
   Golden Apple:
   - output: 1
     recipe_type: Crafting
@@ -8327,31 +8785,37 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Golden Apple: 0
+
   Notch Apple:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Notch Apple: 0
+
   Raw Fish:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Raw Fish: 0
+
   Raw Salmon:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Raw Salmon: 0
+
   Clownfish:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Clownfish: 0
+
   Pufferfish:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Pufferfish: 0
+
   Cooked Fish:
   - output: 1
     recipe_type: Smelting
@@ -8366,6 +8830,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cooked Fish: 0
+
   Cooked Salmon:
   - output: 1
     recipe_type: Smelting
@@ -8380,6 +8845,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cooked Salmon: 0
+
   Cake:
   - output: 1
     recipe_type: Crafting
@@ -8404,6 +8870,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cake: 0
+
   Cookie:
   - output: 1
     recipe_type: Crafting
@@ -8426,16 +8893,19 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cookie: 0
+
   Melon Slice:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Melon Slice: 0
+
   Raw Beef:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Raw Beef: 0
+
   Steak:
   - output: 1
     recipe_type: Smelting
@@ -8450,11 +8920,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Steak: 0
+
   Raw Chicken:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Raw Chicken: 0
+
   Cooked Chicken:
   - output: 1
     recipe_type: Smelting
@@ -8469,36 +8941,43 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cooked Chicken: 0
+
   Rotten Flesh:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Rotten Flesh: 0
+
   Spider Eye:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Spider Eye: 0
+
   Carrot:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Carrot: 0
+
   Potato:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Potato: 0
+
   Baked Potato:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Baked Potato: 0
+
   Poisonous Potato:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Poisonous Potato: 0
+
   Pumpkin Pie:
   - output: 1
     recipe_type: Crafting
@@ -8522,11 +9001,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Pumpkin Pie: 0
+
   Raw Rabbit:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Raw Rabbit: 0
+
   Cooked Rabbit:
   - output: 1
     recipe_type: Smelting
@@ -8541,6 +9022,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cooked Rabbit: 0
+
   Rabbit Stew:
   - output: 1
     recipe_type: Crafting
@@ -8566,11 +9048,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Rabbit Stew: 0
+
   Raw Mutton:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Raw Mutton: 0
+
   Cooked Mutton:
   - output: 1
     recipe_type: Smelting
@@ -8585,11 +9069,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cooked Mutton: 0
+
   Beetroot:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Beetroot: 0
+
   Beetroot Soup:
   - output: 1
     recipe_type: Crafting
@@ -8612,6 +9098,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Beetroot Soup: 0
+
   Iron Shovel:
   - output: 1
     recipe_type: Crafting
@@ -8634,6 +9121,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Iron Shovel: 0
+
   Iron Pickaxe:
   - output: 1
     recipe_type: Crafting
@@ -8656,6 +9144,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Iron Pickaxe: 0
+
   Iron Axe:
   - output: 1
     recipe_type: Crafting
@@ -8678,6 +9167,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Iron Axe: 0
+
   Flint and Steel:
   - output: 1
     recipe_type: Crafting
@@ -8700,6 +9190,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Flint and Steel: 0
+
   Wooden Shovel:
   - output: 1
     recipe_type: Crafting
@@ -8722,6 +9213,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Wooden Shovel: 0
+
   Wooden Pickaxe:
   - output: 1
     recipe_type: Crafting
@@ -8744,6 +9236,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Wooden Pickaxe: 0
+
   Wooden Axe:
   - output: 1
     recipe_type: Crafting
@@ -8766,6 +9259,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Wooden Axe: 0
+
   Stone Shovel:
   - output: 1
     recipe_type: Crafting
@@ -8788,6 +9282,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Stone Shovel: 0
+
   Stone Pickaxe:
   - output: 1
     recipe_type: Crafting
@@ -8810,6 +9305,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Stone Pickaxe: 0
+
   Stone Axe:
   - output: 1
     recipe_type: Crafting
@@ -8832,6 +9328,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Stone Axe: 0
+
   Diamond Shovel:
   - output: 1
     recipe_type: Crafting
@@ -8854,6 +9351,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Diamond Shovel: 0
+
   Diamond Pickaxe:
   - output: 1
     recipe_type: Crafting
@@ -8876,6 +9374,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Diamond Pickaxe: 0
+
   Diamond Axe:
   - output: 1
     recipe_type: Crafting
@@ -8898,6 +9397,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Diamond Axe: 0
+
   Golden Shovel:
   - output: 1
     recipe_type: Crafting
@@ -8920,6 +9420,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Golden Shovel: 0
+
   Golden Pickaxe:
   - output: 1
     recipe_type: Crafting
@@ -8942,6 +9443,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Golden Pickaxe: 0
+
   Golden Axe:
   - output: 1
     recipe_type: Crafting
@@ -8964,6 +9466,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Golden Axe: 0
+
   Wooden Hoe:
   - output: 1
     recipe_type: Crafting
@@ -8986,6 +9489,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Wooden Hoe: 0
+
   Stone Hoe:
   - output: 1
     recipe_type: Crafting
@@ -9008,6 +9512,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Stone Hoe: 0
+
   Iron Hoe:
   - output: 1
     recipe_type: Crafting
@@ -9030,6 +9535,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Iron Hoe: 0
+
   Diamond Hoe:
   - output: 1
     recipe_type: Crafting
@@ -9052,6 +9558,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Diamond Hoe: 0
+
   Golden Hoe:
   - output: 1
     recipe_type: Crafting
@@ -9074,6 +9581,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Golden Hoe: 0
+
   Compass:
   - output: 1
     recipe_type: Crafting
@@ -9096,6 +9604,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Compass: 0
+
   Fishing Rod:
   - output: 1
     recipe_type: Crafting
@@ -9118,6 +9627,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Fishing Rod: 0
+
   Clock:
   - output: 1
     recipe_type: Crafting
@@ -9140,6 +9650,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Clock: 0
+
   Shears:
   - output: 1
     recipe_type: Crafting
@@ -9161,6 +9672,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Shears: 0
+
   Lead:
   - output: 1
     recipe_type: Crafting
@@ -9183,11 +9695,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Lead: 0
+
   Name Tag:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Name Tag: 0
+
   Bow:
   - output: 1
     recipe_type: Crafting
@@ -9210,6 +9724,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Bow: 0
+
   Arrow:
   - output: 1
     recipe_type: Raw Resource
@@ -9233,6 +9748,7 @@ resources:
       - Flint
       - null
       shapeless: 0
+
   Iron Sword:
   - output: 1
     recipe_type: Crafting
@@ -9255,6 +9771,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Iron Sword: 0
+
   Wooden Sword:
   - output: 1
     recipe_type: Crafting
@@ -9277,6 +9794,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Wooden Sword: 0
+
   Stone Sword:
   - output: 1
     recipe_type: Crafting
@@ -9299,6 +9817,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Stone Sword: 0
+
   Diamond Sword:
   - output: 1
     recipe_type: Crafting
@@ -9321,6 +9840,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Diamond Sword: 0
+
   Golden Sword:
   - output: 1
     recipe_type: Crafting
@@ -9343,6 +9863,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Golden Sword: 0
+
   Leather Cap:
   - output: 1
     recipe_type: Crafting
@@ -9364,6 +9885,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Leather Cap: 0
+
   Leather Tunic:
   - output: 1
     recipe_type: Crafting
@@ -9385,6 +9907,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Leather Tunic: 0
+
   Leather Pants:
   - output: 1
     recipe_type: Crafting
@@ -9406,6 +9929,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Leather Pants: 0
+
   Leather Boots:
   - output: 1
     recipe_type: Crafting
@@ -9427,26 +9951,31 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Leather Boots: 0
+
   Chain Helmet:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Chain Helmet: 0
+
   Chain Chestplate:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Chain Chestplate: 0
+
   Chain Leggings:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Chain Leggings: 0
+
   Chain Boots:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Chain Boots: 0
+
   Iron Helmet:
   - output: 1
     recipe_type: Crafting
@@ -9468,6 +9997,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Iron Helmet: 0
+
   Iron Chestplate:
   - output: 1
     recipe_type: Crafting
@@ -9489,6 +10019,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Iron Chestplate: 0
+
   Iron Leggings:
   - output: 1
     recipe_type: Crafting
@@ -9510,6 +10041,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Iron Leggings: 0
+
   Iron Boots:
   - output: 1
     recipe_type: Crafting
@@ -9531,6 +10063,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Iron Boots: 0
+
   Diamond Helmet:
   - output: 1
     recipe_type: Crafting
@@ -9552,6 +10085,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Diamond Helmet: 0
+
   Diamond Chestplate:
   - output: 1
     recipe_type: Crafting
@@ -9573,6 +10107,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Diamond Chestplate: 0
+
   Diamond Leggings:
   - output: 1
     recipe_type: Crafting
@@ -9594,6 +10129,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Diamond Leggings: 0
+
   Diamond Boots:
   - output: 1
     recipe_type: Crafting
@@ -9615,6 +10151,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Diamond Boots: 0
+
   Golden Helmet:
   - output: 1
     recipe_type: Crafting
@@ -9636,6 +10173,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Golden Helmet: 0
+
   Golden Chestplate:
   - output: 1
     recipe_type: Crafting
@@ -9657,6 +10195,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Golden Chestplate: 0
+
   Golden Leggings:
   - output: 1
     recipe_type: Crafting
@@ -9678,6 +10217,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Golden Leggings: 0
+
   Golden Boots:
   - output: 1
     recipe_type: Crafting
@@ -9699,6 +10239,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Golden Boots: 0
+
   Spectral Arrow:
   - output: 2
     recipe_type: Crafting
@@ -9721,6 +10262,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Spectral Arrow: 0
+
   Shield:
   - output: 1
     recipe_type: Crafting
@@ -9743,16 +10285,19 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Shield: 0
+
   Ghast Tear:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Ghast Tear: 0
+
   Water Bottle:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Water Bottle: 0
+
   Glass Bottle:
   - output: 3
     recipe_type: Crafting
@@ -9774,6 +10319,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Glass Bottle: 0
+
   Fermented Spider Eye:
   - output: 1
     recipe_type: Crafting
@@ -9797,6 +10343,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Fermented Spider Eye: 0
+
   Blaze Powder:
   - output: 2
     recipe_type: Crafting
@@ -9818,6 +10365,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Blaze Powder: 0
+
   Magma Cream:
   - output: 1
     recipe_type: Crafting
@@ -9840,6 +10388,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Magma Cream: 0
+
   Brewing Stand:
   - output: 1
     recipe_type: Crafting
@@ -9862,6 +10411,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Brewing Stand: 0
+
   Cauldron:
   - output: 1
     recipe_type: Crafting
@@ -9883,6 +10433,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cauldron: 0
+
   Glistering Melon:
   - output: 1
     recipe_type: Crafting
@@ -9905,6 +10456,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Glistering Melon: 0
+
   Golden Carrot:
   - output: 1
     recipe_type: Crafting
@@ -9927,21 +10479,25 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Golden Carrot: 0
+
   Rabbit's Foot:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Rabbit's Foot: 0
+
   Dragon's Breath:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Dragon's Breath: 0
+
   Coal:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Coal: 0
+
   Charcoal:
   - output: 1
     recipe_type: Smelting
@@ -9956,11 +10512,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Charcoal: 0
+
   Diamond:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Diamond: 0
+
   Iron Ingot:
   - output: 1
     recipe_type: Raw Resource
@@ -9998,6 +10556,7 @@ resources:
       - Iron Nugget
       - Iron Nugget
       shapeless: 1
+
   Gold Ingot:
   - output: 1
     recipe_type: Raw Resource
@@ -10035,6 +10594,7 @@ resources:
       - Gold Nugget
       - Gold Nugget
       shapeless: 1
+
   Stick:
   - output: 4
     recipe_type: Crafting
@@ -10056,6 +10616,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Stick: 0
+
   Bowl:
   - output: 4
     recipe_type: Crafting
@@ -10077,41 +10638,49 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Bowl: 0
+
   String:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       String: 0
+
   Feather:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Feather: 0
+
   Gunpowder:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Gunpowder: 0
+
   Seeds:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Seeds: 0
+
   Wheat:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Wheat: 0
+
   Flint:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Flint: 0
+
   Leather:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Leather: 0
+
   Brick:
   - output: 1
     recipe_type: Smelting
@@ -10126,31 +10695,37 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Brick: 0
+
   Clay:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Clay: 0
+
   Sugar Canes:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Sugar Canes: 0
+
   Egg:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Egg: 0
+
   Glowstone Dust:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Glowstone Dust: 0
+
   Ink Sac:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Ink Sac: 0
+
   Rose Red:
   - output: 1
     recipe_type: Crafting
@@ -10172,21 +10747,25 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Rose Red: 0
+
   Cactus Green:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Cactus Green: 0
+
   Cocoa Beans:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Cocoa Beans: 0
+
   Lapis Lazuli:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Lapis Lazuli: 0
+
   Purple Dye:
   - output: 2
     recipe_type: Crafting
@@ -10209,6 +10788,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Purple Dye: 0
+
   Cyan Dye:
   - output: 2
     recipe_type: Crafting
@@ -10231,6 +10811,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Cyan Dye: 0
+
   Light Gray Dye:
   - output: 3
     recipe_type: Crafting
@@ -10253,6 +10834,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Gray Dye: 0
+
   Gray Dye:
   - output: 2
     recipe_type: Crafting
@@ -10275,6 +10857,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Gray Dye: 0
+
   Pink Dye:
   - output: 2
     recipe_type: Crafting
@@ -10297,6 +10880,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Pink Dye: 0
+
   Lime Dye:
   - output: 2
     recipe_type: Crafting
@@ -10319,6 +10903,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Lime Dye: 0
+
   Dandelion Yellow:
   - output: 1
     recipe_type: Crafting
@@ -10340,6 +10925,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Dandelion Yellow: 0
+
   Light Blue Dye:
   - output: 2
     recipe_type: Crafting
@@ -10362,6 +10948,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Light Blue Dye: 0
+
   Magenta Dye:
   - output: 4
     recipe_type: Crafting
@@ -10385,6 +10972,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Magenta Dye: 0
+
   Orange Dye:
   - output: 2
     recipe_type: Crafting
@@ -10407,6 +10995,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Orange Dye: 0
+
   Bone Meal:
   - output: 3
     recipe_type: Crafting
@@ -10444,6 +11033,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Bone Meal: 0
+
   Sugar:
   - output: 1
     recipe_type: Crafting
@@ -10465,6 +11055,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Sugar: 0
+
   Pumpkin Seeds:
   - output: 4
     recipe_type: Crafting
@@ -10486,6 +11077,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Pumpkin Seeds: 0
+
   Melon Seeds:
   - output: 1
     recipe_type: Crafting
@@ -10507,11 +11099,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Melon Seeds: 0
+
   Blaze Rod:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Blaze Rod: 0
+
   Gold Nugget:
   - output: 9
     recipe_type: Crafting
@@ -10614,11 +11208,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Gold Nugget: 0
+
   Nether Wart:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Nether Wart: 0
+
   Emerald:
   - output: 1
     recipe_type: Raw Resource
@@ -10640,41 +11236,49 @@ resources:
       - null
       - null
       shapeless: 1
+
   Nether Star:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Nether Star: 0
+
   Nether Brick:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Nether Brick: 0
+
   Nether Quartz:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Nether Quartz: 0
+
   Prismarine Shard:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Prismarine Shard: 0
+
   Prismarine Crystals:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Prismarine Crystals: 0
+
   Rabbit Hide:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Rabbit Hide: 0
+
   Chorus Fruit:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Chorus Fruit: 0
+
   Popped Chorus Fruit:
   - output: 1
     recipe_type: Smelting
@@ -10689,11 +11293,13 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Popped Chorus Fruit: 0
+
   Beetroot Seeds:
   - output: 1
     recipe_type: Raw Resource
     requirements:
       Beetroot Seeds: 0
+
   Iron Nugget:
   - output: 9
     recipe_type: Crafting
@@ -10796,6 +11402,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Iron Nugget: 0
+
   Firework:
   - output: 3
     recipe_type: Crafting
@@ -10852,6 +11459,7 @@ resources:
     recipe_type: Raw Resource
     requirements:
       Firework: 0
+
   Fuel:
   - output: 8
     recipe_type: as
