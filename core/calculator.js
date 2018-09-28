@@ -5,9 +5,6 @@
 	$(window).on("load", function(){
 		var global_recepies;
 
-
-		console.log("Test");
-
 		// Assign event handlers
 		$("#unused_hide_checkbox").change(function() {
 			if ($(this).prop('checked')) {
@@ -89,7 +86,6 @@
 				}
 
 			});
-			// console.log($.param(selected_items));
 			if(history.pushState) {
 				history.pushState(null,null,'#'+$.param(selected_items))
 			}
@@ -102,9 +98,6 @@
 		// loads the url into the item list then generates the results
 		function load() {
 			var arguments = decodeURIComponent(window.location.hash.substr(1));
-			// console.log("Loading");
-			// console.log(arguments);
-			// var obj = {};
 			if (arguments !== "") {
 				var pairs = arguments.split('&');
 				for(i in pairs){
@@ -215,7 +208,6 @@
 						}
 					}
 				}
-				// console.log(output_requirements);
 				requirements = output_requirements;
 			}
 
@@ -233,92 +225,8 @@
 				}
 			}
 
-			// console.log(resource_tracker);
 			generate_chart(resource_tracker, generation_totals);
-
-			// if (use_minecraft_customs) {
-			// 	generate_chest_list(raw_resources);
-			// }
-
 			generate_instructions(resource_tracker);
-
-
-			// function generate_chest_list(raw_resources){
-			// 	var chart = $("#item_list");
-			// 	chart.empty();
-			// 	// var cList = $('<ul/>');
-
-
-
-
-
-			// 	var chest;
-
-			// 	var items_in_chest = 0;
-
-			// 	// Fill output
-			// 	$.each(raw_resources, function(i) {
-
-			// 		function add_item(item_name, item_count) {
-			// 			if (items_in_chest === 0) {
-			// 				chest = $('<div/>');
-			// 				chest.addClass("chest_list");
-			// 				chest.addClass("menu_style");
-			// 				var title = $('<div/>');
-			// 				title.appendTo(chest);
-			// 				title.addClass('chest_list_title');
-			// 				title.text("Large Chest");
-			// 				chest.appendTo(chart);
-			// 			}
-			// 			var li = $('<div/>')
-			// 				.addClass('required_item')
-			// 				.addClass('item')
-			// 				.addClass('item_' + filenameify(item_name))
-			// 				.text(item_count)
-			// 				.appendTo(chest);
-			// 			// var aaa = $('<input/>')
-			// 			// 	.addClass('desired_item_count')
-			// 			// 	.attr('type','textbox')
-			// 			// 	.appendTo(li);
-
-			// 			li.mouseover( function() {
-			// 				$("#hover_name").show();
-			// 				$("#hover_name").text(i);
-			// 			});
-
-			// 			li.mouseout( function() {
-			// 				$("#hover_name").hide();
-			// 			});
-
-			// 			items_in_chest += 1;
-			// 			if (items_in_chest >= 6 * 9) {
-			// 				items_in_chest = 0;
-			// 			}
-			// 		}
-
-
-			// 		var count = raw_resources[i];
-			// 		while (count > 64) {
-			// 			add_item(i, 64);
-			// 			count -= 64
-			// 		}
-			// 		if (count > 0) {
-			// 			add_item(i,count);
-			// 		}
-			// 	});
-			// 	for (var i = 0; i < 9 * 6 - items_in_chest; i++) {
-			// 		var li = $('<div/>')
-			// 			.addClass('required_item')
-			// 			.addClass('item')
-			// 			// .css('background-image', 'url(items/' + filenameify(item_name) + '.png)')
-			// 			// .text(item_count)
-			// 			.appendTo(chest);
-			// 	}
-			// }
-
-			// // cList.appendTo(chart);
-
-
 		};
 
 		function craft_requirements(requirements) {
@@ -330,7 +238,6 @@
 			var resources = {};
 			$(".desired_item").each(function() {
 				var key = $(this).attr("mc_value");
-				// console.log(key);
 				var value = $(this).find(".desired_item_count").val();
 
 				if ($.isNumeric(value)) {
@@ -492,10 +399,6 @@
 		| that is displayed to the user                                                |
 		\******************************************************************************/
 		function generate_chart(generation_events, resource_totals) {
-
-			// console.log(resource_totals);
-			// console.log(generation_events);
-
 			var sankey = d3.sankey();
 			var margin = {
 				top: 10,
@@ -614,11 +517,6 @@
 					return b.dy - a.dy;
 				})
 				.on("mouseover", function() {
-					// console.log("Mouseover");
-					// console.log($(this).attr("source"))
-					// console.log($(this).attr("target"))
-					// console.log($(this).attr("quantity"))
-					// // console.log(this.getElementsByTagName("text")[0].textContent);
 					$('#hover_recipe').show();
 					set_recipe($(this).attr("target"), $(this).attr("source"), $(this).attr("quantity"));
 				})
@@ -641,12 +539,6 @@
 						this.parentNode.appendChild(this);
 					})
 					.on("drag", dragmove))
-
-				// .bind("dblclick", function() {})
-				
-
-
-
 
 
 
@@ -942,138 +834,7 @@
 			set_text_background(this);
 		});
 
-
 		// Run the load function to load arguments from the URL if they exist
 		load();
 	}); 
 })(jQuery);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function has_loop(recipe_json) {
-
-
-// 	var nodes = {};
-// 	for (var node in recipe_json)  {
-// 		// Add all the edges
-// 		nodes[node] = [];
-// 		for (var edge in get_recipe(node).requirements) {
-// 			// console.log(get_recipe(node).requirements[edge]);
-// 			if (-get_recipe(node).requirements[edge] > 0) {
-// 				nodes[node].push(edge);
-// 			}
-// 		}
-// 	}
-
-
-// 	console.log(nodes);
-
-
-// 	// Check all outgoing nodes to see if any have edges pointing to this one
-// 	function has_incoming_edge(query_node) {
-// 		for (var node in nodes) {
-// 			// console.log(nodes[node]);
-// 			for (var outgoing_node in nodes[node]) {
-// 				// console.log(query_node, nodes[node][outgoing_node])
-// 				if (nodes[node][outgoing_node] === query_node) {
-// 					// console.log("true", query_node);
-// 					return true;
-// 				}
-// 			}
-
-// 			// console.log("false");
-// 		}
-// 		return false;
-// 	}
-
-
-// 	// Get all the source node (nodes without incoiming edges)
-// 	function gather_source_nodes() {
-// 		var source_nodes = [];
-// 		for (var node in nodes) {
-// 			// console.log(node);
-// 			if (!has_incoming_edge(node)) {
-// 				source_nodes.push(node);
-// 			}
-// 		}
-// 		return source_nodes;
-// 	}
-
-
-
-
-
-// 	// Kahn Algorithm
-// 	var L = [], // TODO what is L
-// 	source_nodes = gather_source_nodes(),
-// 	node = null;
-
-
-// 	// return;
-// 	while (source_nodes.length > 0) {
-
-// 		// console.log(S[S.length-1]);
-// 		// console.log(S[381]);
-// 		// console.log(S[380]);
-// 		// console.log(S[382]);
-// 		// console.log(S.length);
-// 		// console.log(S);
-// 		node = source_nodes.pop(); // remove the first element of S and store it as n
-// 		// console.log("===");
-// 		// console.log(node);
-// 		// console.log("---");
-// 		// console.log("S.pop", n);
-
-
-// 		L.push(node); // Add the popped element to L
-
-// 		// var i = get_recipe(n).requirements.length; //n.links.length
-// 		// console.log(get_recipe(n).requirements);
-// 		// iterate over the count of i
-// 		// while (i--) {
-// 		var edges = nodes[node];
-// 		delete nodes[node];
-// 		for (var edge in edges) {
-
-// 			// console.log(edges[edge]);
-// 			// get_recipe(n).requirements.pop();
-// 			// node.requirements[key];
-
-// 			// if this node is now a source node add it to the source nodes list
-// 			if (!has_incoming_edge(edges[edge])){
-// 				source_nodes.push(edges[edge]);
-// 				// console.log(edges[edge], "no longer has incoming edges");
-// 			}
-// 		}
-// 	}	
-
-// 	// console.log(recipe_copy);
-
-// 	// var nodeWithEdge = _.find(nodes, function(node) {
-// 	//   return node.links.length !== 0;
-// 	// });
- 
-// 	var nodes_with_edges = [];
-
-// 	for (var node in nodes) {
-// 		if (nodes[node].length > 0) {
-// 			nodes_with_edges.push(node);
-// 		}
-// 	}
-
-
-// 	return nodes_with_edges;
-// }
