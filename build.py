@@ -60,7 +60,7 @@ def create_packed_image(resource_list):
             standard_height = height
             standard_width = width
         elif (standard_width != width or standard_height != height):
-            print("ERROR: All resource list item images must be the same size")
+            print("ERROR: All resource list item images for a single calculator must be the same size")
 
     # Sort the images, this is probably not nessasary but will allow for
     # differences between files to be noticed with less noise of random shifting of squares
@@ -159,6 +159,14 @@ def lint_recipe(resource_list, item_name, recipes):
     elif raw_resource_count > 1:
         print(resource_list.upper()+":", item_name, "must have only one \"Raw Resource\"")
 
+# Make sure each recipe requirement is another valid
+def ensure_valid_requirements(resources):
+    for resource in resources:
+        for recipe in resources[resource]:
+            for requirement in recipe["requirements"]:
+                if requirement not in resources:
+                    print ("ERROR: Invalid requirement for resource:", resource + ". \"" + requirement + "\" does not exist as a resource")
+
 
 def create_calculator(resource_list):
     calculator_folder = os.path.join("output", resource_list)
@@ -182,6 +190,7 @@ def create_calculator(resource_list):
     # run some sanity checks on the recipes
     for recipe in recipes:
         lint_recipe(resource_list, recipe, recipes[recipe])
+    ensure_valid_requirements(recipes)
 
     recipe_json = json.dumps(recipes)
 

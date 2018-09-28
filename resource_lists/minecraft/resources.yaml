@@ -1776,11 +1776,11 @@ resources:
   - output: 1
     recipe_type: Smelting
     requirements:
-      Stone Bricks: -1
+      Stone Brick: -1
       Fuel: -1
     extra_data:
       recipe:
-      - Stone Bricks
+      - Stone Brick
       - Fuel
   - output: 1
     recipe_type: Raw Resource
@@ -11223,10 +11223,10 @@ resources:
   - output: 9
     recipe_type: Crafting
     requirements:
-      Emerald Block: -1
+      Block of Emerald: -1
     extra_data:
       recipe:
-      - Emerald Block
+      - Block of Emerald
       - null
       - null
       - null
