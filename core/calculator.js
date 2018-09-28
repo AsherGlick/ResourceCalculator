@@ -1,9 +1,11 @@
-//= require d3.v4.min.js
-//= require sankey.js
+////////////////////////////////////////////////////////////////////////////////
+// calculator.js handles all of the javascript for the calculator page
+////////////////////////////////////////////////////////////////////////////////
 
 (function($) {
 	$(window).on("load", function(){
-		var global_recepies;
+		// Initialize the recipe list
+		var global_recepies = recipe_json;
 
 		// Assign event handlers
 		$("#unused_hide_checkbox").change(function() {
@@ -34,7 +36,7 @@
 			});
 
 			// Make the item counts save when modified
-			item_input_box.bind("propertychange chagne click keyup input paste", function() {
+			item_input_box.bind("propertychange change click keyup input paste", function() {
 				save();
 			});
 
@@ -61,10 +63,6 @@
 				$("#hover_name").css("opacity",0);
 			})
 		});
-
-
-
-		global_recepies = recipe_json;
 
 
 		function filenameify(rawname) {
@@ -105,7 +103,7 @@
 					var id = decodeURIComponent(split[0]);
 					var value = decodeURIComponent(split[1]);
 					$("#"+id).val(value);
-					set_text_background($("#"+id));
+					set_textbox_background($("#"+id));
 					console.log($("#andesite"));
 
 				}
@@ -253,7 +251,7 @@
 			$(".desired_item").each(function() {
 				var field = $(this).find(".desired_item_count");
 				field.val("");
-				set_text_background(field);
+				set_textbox_background(field);
 			});
 
 			$("#unused_hide_checkbox").prop('checked');
@@ -790,11 +788,25 @@
 
 
 			for (var i in recipe_changes){
-				console.log("Changing", recipe_changes[i], "to raw resource to avoid invinite loop");
+				console.log("Changing", recipe_changes[i], "to raw resource to avoid infinite loop");
 			}
 		}
 
 
+/******************************************************************************\
+| depth_first_search                                                           |
+|                                                                              |
+| Arguments
+| nodes - a list of nodes each with a list of directed edges representing their requirements
+| {
+| 	node1: [node2, node3, node4],
+| 	node2: []
+| 	node3: [node3, node4]
+| 	node4: [node1]
+| }
+| node - which node to search from (used for recursion)
+| match - which node, if found, would indicate a loop
+\******************************************************************************/
 		function depth_first_search(nodes, node, match) {
 			var changes = [];
 
@@ -813,12 +825,19 @@
 					changes = changes.concat(depth_first_search(nodes, nodes[node][i], match));
 				}
 			}
-
-
 			return changes;
 		}
 
-		function set_text_background(textbox){
+
+/******************************************************************************\
+| set_textbox_background                                                       |
+|                                                                              |
+| This function darkens the background of a textbox based on if the box has    |
+| any text in it. It is paired with a focus and blur trigger that causes the   |
+| background to go dark when clicked, and only go light again when the text    |
+| box is blank.                                                                |
+\******************************************************************************/
+		function set_textbox_background(textbox){
 			if ($(textbox).val() == ""){
 				$(textbox).css("background-color", "rgba(0,0,0,0)");
 			}
@@ -831,7 +850,7 @@
 			$(this).select();
 		});
 		$(".desired_item_count").blur(function() {
-			set_text_background(this);
+			set_textbox_background(this);
 		});
 
 		// Run the load function to load arguments from the URL if they exist
