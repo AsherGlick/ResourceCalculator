@@ -202,6 +202,18 @@
 				requirements = output_requirements;
 			}
 
+			for (var original_requirement in original_requirements) {
+				// console.log(get_recipe(original_requirement));
+				if (get_recipe(original_requirement).recipe_type === "Raw Resource") {
+					resource_tracker[original_requirement + "final"] = {
+						"source": original_requirement,
+						"target": "[Final] " + original_requirement,
+						"value": -original_requirements[original_requirement],
+					};
+				}
+			}
+
+
 			// This maps all extra items to an extra value
 			// It is done in order to get the right heights for items that produce more then they take
 			// TODO, it might be nice to have a special path instead of a node to represent "extra"
