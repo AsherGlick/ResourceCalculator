@@ -64,7 +64,9 @@ Compiling The Calculator
 On linux you will need to have python3 installed as well as several python depenencies found in requirements.txt
 ```
 sudo apt install python3 python3-pip pngquant
+sudo apt install npm
 sudo pip install -r requirements.txt
 python3 build.py
+sudo npm install -g eslint
 ```
-On windows you should be able install the same dependencies via pip though I am unsure how to use pngquant on windows, maybe the code will produce a warning if it cant find the binary and then continue on becuase compressing the images sheets while developing is not as nessasary.
+On windows you should be able install the same dependencies via pip and npm though I am unsure how to use pngquant on windows, `build.py` should work fine without being able to run the linter or the png compression however, and this will not effect your abilty to run a server on your own development computer

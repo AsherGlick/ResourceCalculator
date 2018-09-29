@@ -266,7 +266,7 @@
 		}
 
 		function generate_instructions(generation_events) {
-
+			return generation_events;
 		}
 
 		/******************************************************************************\
