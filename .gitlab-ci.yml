@@ -14,8 +14,8 @@ build-site:
     - apt-get update
     - pip3 install -r requirements.txt
     - apt-get install pngquant -y
-    - apt-get install nodejs -y
-    - npm install -g eslint
+    # - apt-get install npm -y
+    # - npm install -g eslint
 
     # Build System Website
     - python3 build.py
