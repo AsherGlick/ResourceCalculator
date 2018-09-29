@@ -30,7 +30,7 @@
 			var item_input_box = item.find(".desired_item_count");
 
 			// When clicking on the box focus the text box
-			item.click(function( event ) {
+			item.click(function() {
 				item_input_box.focus();
 			});
 
@@ -215,20 +215,28 @@
 					};
 					// Store the number of extra values for hover text on the chart
 					generation_totals["[Extra] " + key] = output_requirements[key];
+				}
+			}
 
+			// Make a copy of the resource_tracker to prevent updates while iterating
+			var resource_tracker_copy = JSON.parse(JSON.stringify(resource_tracker));
 
-					// Add in additional nodes to represent "final" when an desired item produces extra
-					if (key in original_requirements) {
-						var final_trakcer = key+"final";
-						resource_tracker[final_trakcer] = {
-							"source":key,
-							"target":"[Final] " + key,
-							"value": -original_requirements[key],
-						};
+			// Find any final resource that also feed into another resource and have it
+			// feed into an extra node. This prevents final resource from not appearing
+			// in the right hand column of the chart
+			for (var tracked_resource in resource_tracker_copy) {
+				var source = resource_tracker_copy[tracked_resource].source;
+				if (source in original_requirements) {
 
-						// Add in value of the non-extra resource
-						generation_totals["[Final] " + key] = -original_requirements[key];
-					}
+					var final_trakcer = source+"final";
+					resource_tracker[final_trakcer] = {
+						"source": source,
+						"target":"[Final] " + source,
+						"value": -original_requirements[source],
+					};
+
+					// Add in value of the non-extra resource
+					generation_totals["[Final] " + source] = -original_requirements[source];
 				}
 			}
 
@@ -278,8 +286,6 @@
 			};
 			var width = $("#content").width() - margin.left - margin.right;
 			var height = 800 - margin.top - margin.bottom;
-
-			var formatNumber = d3.format(",.0f");
 			var color = d3.scaleOrdinal(d3.schemeCategory20);
 
 			// Clear any old elements in the chart area
@@ -407,7 +413,7 @@
 					.subject(function(d) {
 						return d;
 					})
-					.on("start", function(d) {
+					.on("start", function() {
 						this.parentNode.appendChild(this);
 					})
 					.on("drag", dragmove));
@@ -512,7 +518,7 @@
 		$("#reset_item_count").click(clear_item_counts);
 
 		// Re-filter the items each time the search bar is modified
-		$("#item_filter").bind("propertychange change click keyup input paste", function(event){
+		$("#item_filter").bind("propertychange change click keyup input paste", function(){
 			filter_items();
 		});
 
@@ -521,7 +527,7 @@
 			var hide_unused = $("#unused_hide_checkbox").prop("checked");
 
 			// Loop through each item
-			$("#content_field").find(".desired_item").each(function(index) {
+			$("#content_field").find(".desired_item").each(function() {
 				var item_name = $(this).attr("mc_value").toLowerCase();
 				var item_count = $(this).find(".desired_item_count").val();
 
@@ -714,25 +720,6 @@
 		});
 
 
-
-
-		// About us lightbox
-		$("#about_us_lightbox").click(function (evt) {
-			evt.stopPropagation();
-		});
-		$("#about_us_lightbox_background").click(function(evt) {
-			$(this).hide();
-		});
-		$("#about_us_button").click(function(evt) {
-			$("#about_us_lightbox_background").show();
-		});
-
-
-
-
-
-
-
 		////////////////////////////////////////////////////////////////////////
 		/////////////////////// Selection and modification of raw resources/////
 		////////////////////////////////////////////////////////////////////////
@@ -791,7 +778,7 @@
 
 
 			for (var i in recipe_changes){
-				console.log("Changing", recipe_changes[i], "to raw resource to avoid infinite loop");
+				console.warn("Changing", recipe_changes[i], "to raw resource to avoid infinite loop");
 			}
 		}
 
