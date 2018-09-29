@@ -131,7 +131,8 @@
 
 
 		function generatelist() {
-			var requirements = gather_requirements();
+			var original_requirements = gather_requirements();
+			var requirements = JSON.parse(JSON.stringify(original_requirements));
 			var resource_tracker = {};
 			var generation_totals = {}; // the total number of each resource produce (ignoring any consumption)
 
@@ -209,11 +210,29 @@
 					var tracker_key = key+"extra";
 					resource_tracker[tracker_key] = {
 						"source":key,
-						"target":"extra",
+						"target":"[Extra] " + key,
 						"value":output_requirements[key],
 					};
+					// Store the number of extra values for hover text on the chart
+					generation_totals["[Extra] " + key] = output_requirements[key];
+
+
+					// Add in additional nodes to represent "final" when an desired item produces extra
+					if (key in original_requirements) {
+						var final_trakcer = key+"final";
+						resource_tracker[final_trakcer] = {
+							"source":key,
+							"target":"[Final] " + key,
+							"value": -original_requirements[key],
+						};
+
+						// Add in value of the non-extra resource
+						generation_totals["[Final] " + key] = -original_requirements[key];
+					}
 				}
 			}
+
+
 
 			generate_chart(resource_tracker, generation_totals);
 			generate_instructions(resource_tracker);
@@ -449,7 +468,12 @@
 				.attr("text-anchor", "end")
 				.attr("transform", null)
 				.text(function(d) {
-					return d.name;
+					if (d.name.startsWith("[Final]")){
+						return d.name.substr(8);
+					}
+					else {
+						return d.name;
+					}
 				})
 				.filter(function(d) {
 					return d.x < width / 2;
@@ -462,12 +486,6 @@
 				sankey.relayout();
 				link.attr("d", path);
 			}
-
-
-
-
-			$("#chart path[target='extra']").remove();
-			$("#chart g text:contains('extra')").parent().remove();
 		}
 
 
