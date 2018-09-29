@@ -3,6 +3,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 (function($) {
+	"use strict";
 	$(window).on("load", function(){
 
 		// Assign event handlers
@@ -93,9 +94,9 @@
 		// This function should only be called once on pageload and after the item elements are created
 		// loads the url into the item list then generates the results
 		function load() {
-			var arguments = decodeURIComponent(window.location.hash.substr(1));
-			if (arguments !== "") {
-				var pairs = arguments.split("&");
+			var uri_arguments = decodeURIComponent(window.location.hash.substr(1));
+			if (uri_arguments !== "") {
+				var pairs = uri_arguments.split("&");
 				for(var i in pairs){
 					var split = pairs[i].split("=");
 					var id = decodeURIComponent(split[0]);
@@ -472,8 +473,7 @@
 		function clear_item_counts() {
 			$(".desired_item").each(function() {
 				var field = $(this).find(".desired_item_count");
-				// field.val("");
-				field.val("1"); // HACK TO MAKE TESTING CHART LOGIC EASIER
+				field.val("");
 				set_textbox_background(field);
 			});
 
