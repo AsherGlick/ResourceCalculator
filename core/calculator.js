@@ -83,7 +83,7 @@
 
 			});
 			if(history.pushState) {
-				history.pushState(null,null,'#'+$.param(selected_items));
+				history.pushState(null,null,"#"+$.param(selected_items));
 			}
 			else {
 				window.location.hash = $.param(selected_items);
@@ -95,15 +95,13 @@
 		function load() {
 			var arguments = decodeURIComponent(window.location.hash.substr(1));
 			if (arguments !== "") {
-				var pairs = arguments.split('&');
+				var pairs = arguments.split("&");
 				for(var i in pairs){
-					var split = pairs[i].split('=');
+					var split = pairs[i].split("=");
 					var id = decodeURIComponent(split[0]);
 					var value = decodeURIComponent(split[1]);
 					$("#"+id).val(value);
 					set_textbox_background($("#"+id));
-					console.log($("#andesite"));
-
 				}
 				$("#unused_hide_checkbox").prop("checked", true).change();
 				generatelist();
@@ -112,9 +110,9 @@
 		}
 
 
-		  //////////////////////////////////////////////////////////////////////////////
-		 /////////////////////// Requirements Calculation Logic /////////////////////// 
-		//////////////////////////////////////////////////////////////////////////////  
+		////////////////////////////////////////////////////////////////////////////////
+		///////////////////////// Requirements Calculation Logic ///////////////////////
+		////////////////////////////////////////////////////////////////////////////////
 		$("#generatelist").click(generatelist);
 
 
@@ -131,14 +129,10 @@
 
 		function generatelist() {
 			var requirements = gather_requirements();
-			console.log("Requirements Outside");
-			console.log(requirements);
 			var resource_tracker = {};
 			var generation_totals = {}; // the total number of each resource produce (ignoring any consumption)
 
 			var raw_resources = {};
-
-			console.log(negative_requirements_exist(requirements));
 
 			// While we still have something that requires another resource to create
 			while(negative_requirements_exist(requirements)) {
@@ -223,9 +217,9 @@
 		}
 
 
-/******************************************************************************\
-| 
-\******************************************************************************/
+		/******************************************************************************\
+		|
+		\******************************************************************************/
 		function gather_requirements() {
 			var resources = {};
 			$(".desired_item").each(function() {
@@ -245,26 +239,23 @@
 
 		}
 
-/******************************************************************************\
-| generate_chart                                                               |
-|                                                                              |
-| This function is in charge of drawing the sankey chart onto the canvas       |
-|
-| Arguments
-|   generation_events -
-\******************************************************************************/
+		/******************************************************************************\
+		| generate_chart                                                               |
+		|                                                                              |
+		| This function is in charge of drawing the sankey chart onto the canvas       |
+		|
+		| Arguments
+		|   generation_events -
+		\******************************************************************************/
 		function generate_chart(generation_events, resource_totals) {
 			var margin = {
 				top: 10,
 				right: 1,
 				bottom: 10,
 				left: 1
-			},
-
-
-
-			width = $('#content').width() - margin.left - margin.right,
-			height = 800 - margin.top - margin.bottom;
+			};
+			var width = $("#content").width() - margin.left - margin.right;
+			var height = 800 - margin.top - margin.bottom;
 
 			var formatNumber = d3.format(",.0f"),
 				format = function(d) {
@@ -294,13 +285,13 @@
 			// Need piston
 			// 0: make sure this exists
 			// 1: make sure all of the sources exist
-			// 2: mapping 
+			// 2: mapping
 
 			// Add mapping to and from and the quantity for each element
 			// "tofrom":{"source":"from","target":"to","value":1}
 
 
-			
+
 			var nodes = [];
 			var inverted_nodes = {};
 			var links = [];
@@ -373,7 +364,7 @@
 					return b.dy - a.dy;
 				})
 				.on("mouseover", function() {
-					$('#hover_recipe').show();
+					$("#hover_recipe").show();
 					set_recipe($(this).attr("target"), $(this).attr("source"), $(this).attr("quantity"));
 				})
 				.on("mouseout", function() {
@@ -472,12 +463,12 @@
 
 
 
-  //////////////////////////////////////////////////////////////////////////////
- ///////////////////////////// Item Filter Logic ////////////////////////////// 
-//////////////////////////////////////////////////////////////////////////////  
-/******************************************************************************\
-|
-\******************************************************************************/
+		////////////////////////////////////////////////////////////////////////////////
+		////////////////////////////// Item Filter Logic ///////////////////////////////
+		////////////////////////////////////////////////////////////////////////////////
+		/******************************************************************************\
+		|
+		\******************************************************************************/
 		function clear_item_counts() {
 			$(".desired_item").each(function() {
 				var field = $(this).find(".desired_item_count");
@@ -486,7 +477,7 @@
 				set_textbox_background(field);
 			});
 
-			$("#unused_hide_checkbox").prop('checked');
+			$("#unused_hide_checkbox").prop("checked");
 
 			$("#unused_hide_checkbox").prop("checked", false).change();
 			generatelist();
@@ -500,11 +491,11 @@
 
 		function filter_items() {
 			var search_string = $("#item_filter").val().toLowerCase();
-			var hide_unused = $("#unused_hide_checkbox").prop('checked');
+			var hide_unused = $("#unused_hide_checkbox").prop("checked");
 
 			// Loop through each item
 			$("#content_field").find(".desired_item").each(function(index) {
-				var item_name = $(this).attr('mc_value').toLowerCase();
+				var item_name = $(this).attr("mc_value").toLowerCase();
 				var item_count = $(this).find(".desired_item_count").val();
 
 				// If the search string does not match hide the item
@@ -522,36 +513,36 @@
 
 
 
-		  //////////////////////////////////////////////////////////////////////////////
-		 ////////////////////////////// Hover Text Logic ////////////////////////////// 
-		//////////////////////////////////////////////////////////////////////////////  
+		////////////////////////////////////////////////////////////////////////////////
+		/////////////////////////////// Hover Text Logic ///////////////////////////////
+		////////////////////////////////////////////////////////////////////////////////
 		// How far away from the mouse should hte hoverbox be
 		var hover_x_offset = 10;
 		var hover_y_offset = -10;
-		$(document).on('mousemove', function(e){
+		$(document).on("mousemove", function(e){
 
 			// If the hoverbox is not hanging over the side of the screen when rendered, render normally
-			if ($(window).width() > $('#hover_name').outerWidth() + e.pageX + hover_x_offset) {
+			if ($(window).width() > $("#hover_name").outerWidth() + e.pageX + hover_x_offset) {
 
-				$('#hover_name').offset	({
-					 left:  e.pageX + hover_x_offset,
-					 top:   e.pageY + hover_y_offset
+				$("#hover_name").offset	({
+					left:  e.pageX + hover_x_offset,
+					top:   e.pageY + hover_y_offset
 				});
 			}
 			// If the hoverbox is hanging over the side of the screen then render on the other side of the mouse
 			else {
 
-				$('#hover_name').offset	({
-					left:  e.pageX - hover_x_offset - $('#hover_name').outerWidth(),
+				$("#hover_name").offset	({
+					left:  e.pageX - hover_x_offset - $("#hover_name").outerWidth(),
 					top:   e.pageY + hover_y_offset
 				});
 			}
 		});
 
 
-		  //////////////////////////////////////////////////////////////////////////////
-		 //////////////////////////// Hover Recipe Logic ///////////////////////////// 
-		//////////////////////////////////////////////////////////////////////////////  
+		////////////////////////////////////////////////////////////////////////////////
+		////////////////////////////// Hover Recipe Logic //////////////////////////////
+		////////////////////////////////////////////////////////////////////////////////
 		function set_recipe (target, source, source_quantity) {
 			var recipe = get_recipe(target);
 
@@ -562,9 +553,8 @@
 
 				for (var i in recipe.recipe) {
 					$("#crafting_slot_"+i).removeClass (function (index, className) {
-							return (className.match (/\bitem_[a-z0-9_]*/) || []).join(' ');
-					})
-					.addClass('item_' + filenameify(recipe.recipe[i]));
+						return (className.match (/\bitem_[a-z0-9_]*/) || []).join(" ");
+					}).addClass("item_" + filenameify(recipe.recipe[i]));
 
 					if (item_multiplier > 1 && recipe.recipe[i] != null) {
 						$("#crafting_slot_"+i).text(item_multiplier);
@@ -574,9 +564,8 @@
 					}
 				}
 				$("#crafting_output_image").removeClass (function (index, className) {
-						return (className.match (/\bitem_[a-z0-9_]*/) || []).join(' ');
-				})
-				.addClass('item_' + filenameify(target));
+					return (className.match (/\bitem_[a-z0-9_]*/) || []).join(" ");
+				}).addClass("item_" + filenameify(target));
 
 				if (recipe.output * item_multiplier > 1){
 					$("#crafting_output_image").text(recipe.output * item_multiplier);
@@ -586,25 +575,25 @@
 				}
 			}
 			else {
-				console.log("The recipe type for " + target + " has not been created yet");
+				console.error("The recipe type for " + target + " has not been created yet");
 			}
 		}
 
-		$(document).on('mousemove', function(e) {
+		$(document).on("mousemove", function(e) {
 
 
 			var left_offset = e.pageX + hover_x_offset;
 			var top_offset = e.pageY + hover_y_offset;
 
-			if ($(window).width() < $('#hover_recipe').outerWidth() + e.pageX + hover_x_offset ) {
-				left_offset = e.pageX - hover_x_offset - $('#hover_recipe').outerWidth();
+			if ($(window).width() < $("#hover_recipe").outerWidth() + e.pageX + hover_x_offset ) {
+				left_offset = e.pageX - hover_x_offset - $("#hover_recipe").outerWidth();
 			}
 
 			if ($(window).height() + $(document).scrollTop() < $("#hover_recipe").outerHeight() + e.pageY + hover_y_offset ) {
-				top_offset = e.pageY - hover_y_offset - $('#hover_recipe').outerHeight();
+				top_offset = e.pageY - hover_y_offset - $("#hover_recipe").outerHeight();
 			}
 
-			$('#hover_recipe').offset ({
+			$("#hover_recipe").offset ({
 				left:  left_offset,
 				top:   top_offset
 			});
@@ -618,59 +607,43 @@
 
 
 
-/******************************************************************************\
-|
-\******************************************************************************/
+		/******************************************************************************\
+		|
+		\******************************************************************************/
 		function switch_recipe(item_name, event) {
-			console.log("switch_recipe");
-
 			var recipe_selector = $("#recipe_select");
 			var recipe_selector_list = $("#recipe_selector_list");
 			recipe_selector_list.empty();
 
-
-			// recipe_name_list = ["Source Material"]
-			// for (var i in  {
-			// 	recipe_name_list.push("Recipe!")
-			// }
-
 			for (var i in recipe_json[item_name]) {
-				var recipe_item = $('<div/>');
+				var recipe_item = $("<div/>");
 				recipe_item.addClass("recipe_select_item");
-
-				// recipe_item.text(recipe_json[item_name][i]["recipe_type"])
 
 				recipe_item.click( (function(index) {
 					return function() {
-						console.log("Switching Recipe", index);
-
 						set_recipe_index(item_name, index);
 						find_loop_from_node(item_name);
 						recipe_selector.css("opacity",0);
 						recipe_selector.css("pointer-events","none");
-
-
 					};
 				})(i));
 
-				var recipe_category = $('<div/>').addClass('recipe_select_item_name').text(recipe_json[item_name][i].recipe_type);
+				var recipe_category = $("<div/>").addClass("recipe_select_item_name").text(recipe_json[item_name][i].recipe_type);
 
 				for (var j in recipe_json[item_name][i].requirements) {
 					(function(j) {
 
 						var quantity = -recipe_json[item_name][i].requirements[j];
 
-						// console.log(j)
-						var item = $('<div/>')
-							.addClass('required_item')
-							.addClass('item')
-							.addClass('item_' + filenameify(j))
+						var item = $("<div/>")
+							.addClass("required_item")
+							.addClass("item")
+							.addClass("item_" + filenameify(j))
 							.text(quantity)
 							.appendTo(recipe_category);
 
 						item.mouseover( function() {
 							$("#hover_name").text(quantity +"x "+j);
-							console.log("Test");
 							$("#hover_name").css("opacity",1);
 						});
 						item.mouseout( function() {
@@ -679,7 +652,7 @@
 					})(j);
 				}
 				recipe_category.appendTo(recipe_item);
-				$('<div/>').addClass('clear').appendTo(recipe_item);
+				$("<div/>").addClass("clear").appendTo(recipe_item);
 				recipe_item.appendTo(recipe_selector_list);
 			}
 
@@ -697,8 +670,6 @@
 			if ($(window).width() < recipe_selector.outerWidth() + event.pageX + menu_x_offset ) {
 				left_offset = event.pageX - menu_x_offset - recipe_selector.outerWidth();
 			}
-
-			console.log(recipe_selector.outerHeight());
 			if ($(window).height() + $(document).scrollTop() < recipe_selector.outerHeight() + event.pageY + menu_y_offset ) {
 				top_offset = event.pageY - menu_y_offset - recipe_selector.outerHeight();
 			}
@@ -719,7 +690,7 @@
 
 
 		// About us lightbox
-		$('#about_us_lightbox').click(function (evt) {
+		$("#about_us_lightbox").click(function (evt) {
 			evt.stopPropagation();
 		});
 		$("#about_us_lightbox_background").click(function(evt) {
@@ -771,7 +742,6 @@
 
 
 		function get_recipe(node_name) {
-			console.log(node_name);
 			return recipe_json[node_name][get_recipe_index(node_name)];
 		}
 
@@ -799,20 +769,20 @@
 		}
 
 
-/******************************************************************************\
-| depth_first_search                                                           |
-|                                                                              |
-| Arguments
-| nodes - a list of nodes each with a list of directed edges representing their requirements
-| {
-| 	node1: [node2, node3, node4],
-| 	node2: []
-| 	node3: [node3, node4]
-| 	node4: [node1]
-| }
-| node - which node to search from (used for recursion)
-| match - which node, if found, would indicate a loop
-\******************************************************************************/
+		/******************************************************************************\
+		| depth_first_search                                                           |
+		|                                                                              |
+		| Arguments
+		| nodes - a list of nodes each with a list of directed edges representing their requirements
+		| {
+		| 	node1: [node2, node3, node4],
+		| 	node2: []
+		| 	node3: [node3, node4]
+		| 	node4: [node1]
+		| }
+		| node - which node to search from (used for recursion)
+		| match - which node, if found, would indicate a loop
+		\******************************************************************************/
 		function depth_first_search(nodes, node, match) {
 			var changes = [];
 
@@ -822,7 +792,6 @@
 				if (nodes[node][i] === match) {
 					// Convert to source recipe
 					set_recipe_to_raw(node);
-					console.log("Changing to source");
 					// Return this node name as changed
 					return [node];
 				}
@@ -835,14 +804,14 @@
 		}
 
 
-/******************************************************************************\
-| set_textbox_background                                                       |
-|                                                                              |
-| This function darkens the background of a textbox based on if the box has    |
-| any text in it. It is paired with a focus and blur trigger that causes the   |
-| background to go dark when clicked, and only go light again when the text    |
-| box is blank.                                                                |
-\******************************************************************************/
+		/******************************************************************************\
+		| set_textbox_background                                                       |
+		|                                                                              |
+		| This function darkens the background of a textbox based on if the box has    |
+		| any text in it. It is paired with a focus and blur trigger that causes the   |
+		| background to go dark when clicked, and only go light again when the text    |
+		| box is blank.                                                                |
+		\******************************************************************************/
 		function set_textbox_background(textbox){
 			if ($(textbox).val() == ""){
 				$(textbox).css("background-color", "rgba(0,0,0,0)");
@@ -861,5 +830,5 @@
 
 		// Run the load function to load arguments from the URL if they exist
 		load();
-	}); 
+	});
 })(jQuery);
