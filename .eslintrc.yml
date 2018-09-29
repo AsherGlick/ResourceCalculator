@@ -1,0 +1,79 @@
+env:
+  browser: true
+extends: 'eslint:recommended'
+parserOptions:
+  ecmaVersion: 5
+rules:
+  indent:
+    - error
+    - tab
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - double
+  semi:
+    - error
+    - always
+  no-console:
+    - error
+    - allow: 
+      - warn
+      - error
+  no-trailing-spaces:
+    - error
+  strict:
+    - error
+  consistent-return:
+    - error
+  curly:
+    - error
+    - all
+  dot-location:
+    - error
+    - property
+  dot-notation:
+    - error
+  eqeqeq:
+    - error
+  no-global-assign:
+    - error
+  no-implicit-coercion:
+    - error
+  no-implicit-globals:
+    - error
+  no-implied-eval:
+    - error
+  # no-invalid-this:
+  #   - error
+  brace-style:
+    - error
+    - stroustrup
+  yoda:
+    - error
+    - never
+  array-bracket-spacing:
+    - error
+    - never
+  array-element-newline:
+    - error
+    - consistent
+  comma-dangle:
+    - error
+    - always-multiline
+  comma-spacing:
+    - error
+  comma-style:
+    - error
+    - last
+  eol-last:
+    - error
+    - always
+  func-style:
+    - error
+    - declaration
+globals:
+  recipe_json: true
+  jQuery: true
+  d3: true

@@ -50,22 +50,24 @@
 
 			// When doubleclicking open the recipe select menu
 			item.dblclick( function (event) {
-				switch_recipe(item.attr("mc_value") , event);
+				switch_recipe(item.attr("mc_value"), event);
 			});
 
 			// Enable item name hover text
 			item.mouseover( function() {
 				$("#hover_name").text(item.attr("mc_value"));
-				$("#hover_name").css("opacity",1);
+				$("#hover_name").css("opacity", 1);
 			});
 			item.mouseout( function() {
-				$("#hover_name").css("opacity",0);
+				$("#hover_name").css("opacity", 0);
 			});
 		});
 
 
 		function filenameify(rawname) {
-			if (rawname == null) return "";
+			if (rawname === null) {
+				return "";
+			}
 			return rawname.toLowerCase().replace(/[^a-z]/g, "");
 		}
 
@@ -84,7 +86,7 @@
 
 			});
 			if(history.pushState) {
-				history.pushState(null,null,"#"+$.param(selected_items));
+				history.pushState(null, null, "#"+$.param(selected_items));
 			}
 			else {
 				window.location.hash = $.param(selected_items);
@@ -167,7 +169,7 @@
 
 						// if this is a raw resource then add it to the raw resource list
 						if (recipe[requirement] === 0 && Object.keys(recipe).length === 1) {
-							if (raw_resources[requirement] == undefined) {
+							if (raw_resources[requirement] === undefined) {
 								raw_resources[requirement] = 0;
 							}
 							raw_resources[requirement] += produce_count * produces_count;
@@ -177,7 +179,7 @@
 						else {
 							$.each(recipe, function(item) {
 								// Set the recipe requirements as new output requirements
-								if (output_requirements[item] == undefined) {
+								if (output_requirements[item] === undefined) {
 									output_requirements[item] = 0;
 								}
 								output_requirements[item] += recipe[item] * produce_count;
@@ -188,7 +190,7 @@
 									resource_tracker[tracker_key] = {
 										"source":item,
 										"target":requirement,
-										"value":0
+										"value":0,
 									};
 								}
 								resource_tracker[tracker_key].value += recipe[item] * -produce_count;
@@ -208,7 +210,7 @@
 					resource_tracker[tracker_key] = {
 						"source":key,
 						"target":"extra",
-						"value":output_requirements[key]
+						"value":output_requirements[key],
 					};
 				}
 			}
@@ -253,16 +255,13 @@
 				top: 10,
 				right: 1,
 				bottom: 10,
-				left: 1
+				left: 1,
 			};
 			var width = $("#content").width() - margin.left - margin.right;
 			var height = 800 - margin.top - margin.bottom;
 
-			var formatNumber = d3.format(",.0f"),
-				format = function(d) {
-					return formatNumber(d) + " TWh";
-				},
-				color = d3.scaleOrdinal(d3.schemeCategory20);
+			var formatNumber = d3.format(",.0f");
+			var color = d3.scaleOrdinal(d3.schemeCategory20);
 
 			// Clear any old elements in the chart area
 			$("#chart").empty();
@@ -333,7 +332,7 @@
 				links.push({
 					"source":source_index,
 					"target":target_index,
-					"value":value
+					"value":value,
 				});
 
 
@@ -342,7 +341,7 @@
 
 			var energy = {
 				"nodes":nodes,
-				"links":links
+				"links":links,
 			};
 
 			sankey
@@ -355,9 +354,15 @@
 				.enter().append("path")
 				.attr("class", "link")
 				.attr("d", path)
-				.attr("rcalc:source", function(d) { return d.source.name; })
-				.attr("rcalc:target", function(d) { return d.target.name; })
-				.attr("rcalc:quantity", function(d) { return d.value; })
+				.attr("rcalc:source", function(d) {
+					return d.source.name;
+				})
+				.attr("rcalc:target", function(d) {
+					return d.target.name;
+				})
+				.attr("rcalc:quantity", function(d) {
+					return d.value;
+				})
 				.style("stroke-width", function(d) {
 					return Math.max(1, d.dy);
 				})
@@ -400,14 +405,18 @@
 						left_count += d.targetLinks[target_link].value;
 					}
 					// If this is the first element make it the full height
-					if (left_count === 0) { left_count = d.value; }
+					if (left_count === 0) {
+						left_count = d.value;
+					}
 
 					var right_count = 0; // sum source links
 					for (var source_link in d.sourceLinks) {
 						right_count += d.sourceLinks[source_link].value;
 					}
 					// If this is the last element make it the full height
-					if (right_count === 0) { right_count = d.value; }
+					if (right_count === 0) {
+						right_count = d.value;
+					}
 
 
 
@@ -526,7 +535,7 @@
 
 				$("#hover_name").offset	({
 					left:  e.pageX + hover_x_offset,
-					top:   e.pageY + hover_y_offset
+					top:   e.pageY + hover_y_offset,
 				});
 			}
 			// If the hoverbox is hanging over the side of the screen then render on the other side of the mouse
@@ -534,7 +543,7 @@
 
 				$("#hover_name").offset	({
 					left:  e.pageX - hover_x_offset - $("#hover_name").outerWidth(),
-					top:   e.pageY + hover_y_offset
+					top:   e.pageY + hover_y_offset,
 				});
 			}
 		});
@@ -556,7 +565,7 @@
 						return (className.match (/\bitem_[a-z0-9_]*/) || []).join(" ");
 					}).addClass("item_" + filenameify(recipe.recipe[i]));
 
-					if (item_multiplier > 1 && recipe.recipe[i] != null) {
+					if (item_multiplier > 1 && recipe.recipe[i] !== null) {
 						$("#crafting_slot_"+i).text(item_multiplier);
 					}
 					else {
@@ -595,7 +604,7 @@
 
 			$("#hover_recipe").offset ({
 				left:  left_offset,
-				top:   top_offset
+				top:   top_offset,
 			});
 		});
 
@@ -623,8 +632,8 @@
 					return function() {
 						set_recipe_index(item_name, index);
 						find_loop_from_node(item_name);
-						recipe_selector.css("opacity",0);
-						recipe_selector.css("pointer-events","none");
+						recipe_selector.css("opacity", 0);
+						recipe_selector.css("pointer-events", "none");
 					};
 				})(i));
 
@@ -644,10 +653,10 @@
 
 						item.mouseover( function() {
 							$("#hover_name").text(quantity +"x "+j);
-							$("#hover_name").css("opacity",1);
+							$("#hover_name").css("opacity", 1);
 						});
 						item.mouseout( function() {
-							$("#hover_name").css("opacity",0);
+							$("#hover_name").css("opacity", 0);
 						});
 					})(j);
 				}
@@ -657,7 +666,7 @@
 			}
 
 			recipe_selector.css("opacity", 1);
-			recipe_selector.css("pointer-events","auto");
+			recipe_selector.css("pointer-events", "auto");
 
 
 
@@ -676,14 +685,14 @@
 
 			recipe_selector.offset ({
 				left:  left_offset,
-				top:   top_offset
+				top:   top_offset,
 			});
 		}
 
 
 		$("#recipe_select").mouseleave(function() {
-			$("#recipe_select").css("opacity",0);
-			$("#recipe_select").css("pointer-events","none");
+			$("#recipe_select").css("opacity", 0);
+			$("#recipe_select").css("pointer-events", "none");
 		});
 
 
@@ -813,7 +822,7 @@
 		| box is blank.                                                                |
 		\******************************************************************************/
 		function set_textbox_background(textbox){
-			if ($(textbox).val() == ""){
+			if ($(textbox).val() === ""){
 				$(textbox).css("background-color", "rgba(0,0,0,0)");
 			}
 			else {
