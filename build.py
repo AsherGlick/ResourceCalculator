@@ -47,6 +47,7 @@ def create_packed_image(resource_list):
 
     standard_width = None
     standard_height = None
+    standard_image_reference = None
 
     images = []
     # resources = []
@@ -59,8 +60,10 @@ def create_packed_image(resource_list):
         if (standard_width is None and standard_height is None):
             standard_height = height
             standard_width = width
+            standard_image_reference = file
         elif (standard_width != width or standard_height != height):
             print("ERROR: All resource list item images for a single calculator must be the same size")
+            print("       " + file + " and " + standard_image_reference + " are not the same size")
 
     # Sort the images, this is probably not nessasary but will allow for
     # differences between files to be noticed with less noise of random shifting of squares
@@ -176,12 +179,45 @@ def ensure_valid_requirements(resources):
             for requirement in recipe["requirements"]:
                 if requirement not in resources:
                     print ("ERROR: Invalid requirement for resource:", resource + ". \"" + requirement + "\" does not exist as a resource")
+                elif recipe["requirements"][requirement] > 0:
+                    print ("ERROR: Invalid requirement for resource:", resource + ". \"" + requirement + "\" must be a negative number")
 
+def get_oldest_modified_time(path):
+    time_list = []
+    for file in os.listdir(path):
+        filepath = os.path.join(path, file)
+        if (os.path.isdir(filepath)):
+            time_list.append(get_oldest_modified_time(filepath))
+        else:
+            time_list.append(os.path.getctime(filepath))
+    return min(time_list)
+
+def get_newest_modified_time(path):
+    time_list = []
+    for file in os.listdir(path):
+        filepath = os.path.join(path, file)
+        if (os.path.isdir(filepath)):
+            time_list.append(get_newest_modified_time(filepath))
+        else:
+            time_list.append(os.path.getctime(filepath))
+    return max(time_list)
 
 def create_calculator(resource_list):
     calculator_folder = os.path.join("output", resource_list)
+    source_folder = os.path.join("resource_lists", resource_list)
     if not os.path.exists(calculator_folder):
         os.makedirs(calculator_folder)
+    else:
+        # newest = max(glob.iglob(calculator_folder, key=os.path.getctime)
+        # print(os.path.getctime(calculator_folder))
+        oldest_output = get_oldest_modified_time(calculator_folder)
+        newest_resource = get_newest_modified_time(source_folder)
+        newest_corelib = get_newest_modified_time("core")
+        newest_build_script = os.path.getctime("build.py")
+        if oldest_output > max(newest_resource, newest_corelib, newest_build_script):
+            print("Skipping",resource_list,"Nothing has changed since the last build")
+            return
+
     print(calculator_folder)
 
     # Create a packed image of all the item images
@@ -269,7 +305,6 @@ def copy_common_resources():
 
 def main():
     lint_javascript()
-
 
     if not os.path.exists("output"):
         os.makedirs("output")
