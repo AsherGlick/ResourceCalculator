@@ -7,7 +7,7 @@ from shutil import copyfile
 import math
 from collections import OrderedDict
 from PIL import Image
-
+import htmlmin
 import subprocess
 
 ################################################################################
@@ -288,8 +288,10 @@ def create_calculator(resource_list):
     # Generate the calculator from a template
     output_from_parsed_template = template.render(resources=resources, recipe_json=recipe_json, item_width=image_width, item_height=image_height, item_styles=item_styles, resource_list=resource_list, authors=authors, content_width_css=content_width_css)
 
+    minified = htmlmin.minify(output_from_parsed_template, remove_comments=True, remove_empty_space=True)
+
     with open(os.path.join(calculator_folder, "index.html"), "w") as f:
-        f.write(output_from_parsed_template)
+        f.write(minified)
 
     # Sanity Check Warning, is there an image that does not have a recipe
     simple_resources = [x["simplename"] for x in resources]
