@@ -4,7 +4,7 @@
 		<title>ResourceCalculator</title>
 
 		<link rel="stylesheet" href="../calculator.css">
-		<meta charset="UTF-8"> 
+		<meta charset="UTF-8">
 		<meta name="HandheldFriendly" content="true" />
 		<meta name="MobileOptimized" content="320" />
 		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no" />
@@ -24,6 +24,11 @@
 					{{item_styles[item_style]}}
 				}
 			{% endfor %}
+			{{ content_width_css }}
+			.resource_content {
+				margin-left: auto;
+				margin-right: auto;
+			}
 		</style>
 	</head>
 	<body>
@@ -54,18 +59,20 @@
 						<label class="search_label" for="item_filter">Filter:</label>
 					</div>
 					<span class="search_box_wrapper">
-						<input type="text" class="search_box" id="item_filter" /> 
+						<input type="text" class="search_box" id="item_filter" />
 					</span>
 				</div>
 
-				<!-- Resource List -->
-				{% for resource in resources %}
-					<div class="desired_item item item_{{resource['simplename']}}" style="{{ resource['css_offset'] }}" mc_value="{{ resource['mc_value'] }}">
-						<input class="desired_item_count" type=number" id="{{ resource['simplename'] }}" />
-					</div>
-				{% endfor %}
+				<div class="resource_content">
+					<!-- Resource List -->
+					{% for resource in resources %}
+						<div class="desired_item item item_{{resource['simplename']}}" style="{{ resource['css_offset'] }}" mc_value="{{ resource['mc_value'] }}">
+							<input class="desired_item_count" type=number" id="{{ resource['simplename'] }}" />
+						</div>
+					{% endfor %}
+					<div style="clear:both"></div>
+				</div>
 			</div>
-			<div style="clear:both"></div>
 
 			<!-- Instruction on how to use the site, maybe should be a popup modal on first visit -->
 			<div class="instructions">

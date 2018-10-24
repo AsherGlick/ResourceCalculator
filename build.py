@@ -260,7 +260,33 @@ def create_calculator(resource_list):
         resource["simplename"] = simple_name
         resources.append(resource)
 
-    output_from_parsed_template = template.render(resources=resources, recipe_json=recipe_json, item_width=image_width, item_height=image_height, item_styles=item_styles, resource_list=resource_list, authors=authors)
+    # Generate some css to allow us to center the list
+    content_width_css = ""
+    media_padding = 40 # This give a slight padding from the edges, useful for avoiding intersection with scroll bars
+    if "row_group_count" in yaml_data:
+        row_group_count = yaml_data["row_group_count"]
+    else:
+        row_group_count = 1
+
+    iteration = 1
+    image_width_with_padding = image_width + 6 #TODO: This will need to be updated if custom styling is added to the calculator
+    while iteration * row_group_count * image_width_with_padding < 3840:
+        content_width = iteration * row_group_count * image_width_with_padding
+        screen_max = (iteration+1) * row_group_count * image_width_with_padding
+        new_css = "@media only screen and (max-width: "+ str(screen_max+media_padding-1) +"px) and (min-width:" + str(content_width+media_padding)+ "px) { .resource_content { width: " + str(content_width) + "px}  }"
+        content_width_css += new_css
+        iteration += 1
+    # When the width is less then a single group we still want the list to be centered
+    for i in range(1,row_group_count):
+        content_width = i * image_width_with_padding
+        screen_max = (i+1) * image_width_with_padding
+        new_css = "@media only screen and (max-width: "+ str(screen_max+media_padding-1) +"px) and (min-width:" + str(content_width+media_padding)+ "px) { .resource_content { width: " + str(content_width) + "px}  }"
+        content_width_css += new_css
+
+
+
+    # Generate the calculator from a template
+    output_from_parsed_template = template.render(resources=resources, recipe_json=recipe_json, item_width=image_width, item_height=image_height, item_styles=item_styles, resource_list=resource_list, authors=authors, content_width_css=content_width_css)
 
     with open(os.path.join(calculator_folder, "index.html"), "w") as f:
         f.write(output_from_parsed_template)
