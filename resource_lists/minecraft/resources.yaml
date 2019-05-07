@@ -5652,7 +5652,7 @@ resources:
   - output: 1
     recipe_type: Crafting
     requirements:
-      Cocoa Beans: 1
+      Cocoa Beans: -1
     extra_data:
       recipe:
       - Cocoa Beans
