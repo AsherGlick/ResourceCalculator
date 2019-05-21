@@ -255,7 +255,7 @@
 
 
 			generate_chart(resource_tracker, generation_totals);
-			generate_instructions(resource_tracker);
+			generate_instructions(resource_tracker, generation_totals);
 		}
 
 
@@ -277,9 +277,187 @@
 			return resources;
 		}
 
-		function generate_instructions(generation_events) {
-			return generation_events;
+		function generate_instructions(edges, generation_totals) {
+			var node_columns = get_node_columns(edges);
+
+			var instructions = $("<div/>");
+			var column_count = 0;
+
+			$("<div/>").attr("id", "text_instructions_title").text("Base Ingredients").appendTo(instructions);
+			// List out raw resource numbers
+			for (var node in node_columns){
+				if (node_columns[node] == 0) {
+
+
+					var line_wrapper = $("<div/>");
+					line_wrapper.addClass("instruction_wrapper");
+					var base_ingredients = text_item_object(generation_totals[node], node)
+					base_ingredients.appendTo(line_wrapper);
+					line_wrapper.appendTo(instructions);
+
+				}
+
+				// Track the largest column as the max column count
+				if (node_columns[node] >= column_count) {
+					column_count = node_columns[node]+1;
+				}
+			}
+
+			$("<div/>").attr("id", "text_instructions_title").text("Text Instructions [Beta]").appendTo(instructions);
+
+			// Create the step by step instructions
+			for (var i = 1; i < column_count; i++) {
+				for (var node in node_columns) {
+					if (node_columns[node] == i) {
+
+						var line_wrapper = $("<div/>").addClass("instruction_wrapper");
+
+						// Build the input item sub string
+						var inputs = [];
+						for (var edge in edges){
+							// If this is pointing into the resource we are currently trying to craft
+							if (edges[edge].target == node) {
+								// inputs += edges[edge].value + " " + edges[edge].source;
+								inputs.push(edges[edge]);
+							}
+						}
+
+						// Skip null crafting edges (they are used only for the graph)
+						if (inputs.length == 1 && (inputs[0].target.startsWith("[Final]") || inputs[0].target.startsWith("[Extra]"))) {
+							continue;
+						}
+
+						// Build the instruction row
+						$("<span/>").text("Craft ").appendTo(line_wrapper);
+
+						for (var input_index = 0; input_index < inputs.length; input_index++){
+							if (input_index > 0 && input_index < inputs.length-1 && inputs.length > 2) {
+								$("<span/>").text(", ").appendTo(line_wrapper);
+							}
+							else if (input_index > 0 && input_index == inputs.length-1 && inputs.length > 2) {
+								$("<span/>").text(", and ").appendTo(line_wrapper);
+							}
+							else if (input_index > 0 && input_index == inputs.length-1 && inputs.length == 2) {
+								$("<span/>").text(" and ").appendTo(line_wrapper);
+							}
+							text_item_object(inputs[input_index].value, inputs[input_index].source).appendTo(line_wrapper);
+						}
+
+						$("<span/>").text(" into ").appendTo(line_wrapper);
+						text_item_object(generation_totals[node], node).appendTo(line_wrapper);
+
+
+						line_wrapper.appendTo(instructions);
+
+					}
+				}
+				var line_break = $("<div/>");
+				line_break.addClass("instruction_line_break");
+				line_break.appendTo(instructions);
+			}
+
+			// Delete any old instructions
+			var text_instructions = document.getElementById("text_instructions");
+			while (text_instructions.firstChild) {
+				text_instructions.removeChild(text_instructions.firstChild);
+			}
+
+			// Add the new instruction list to the page
+			instructions.appendTo($("#text_instructions"));
+
 		}
+		function text_item_object(count, name){
+			var item_object = $("<div/>");
+			item_object.addClass("instruction_item");
+
+			var count_object = $("<div/>");
+			count_object.addClass("instruction_item_count");
+			count_object.text(count);
+			count_object.appendTo(item_object);
+
+			var space_object = $("<span/>");
+			space_object.text(" ");
+			space_object.appendTo(item_object);
+
+			var name_object = $("<div/>");
+			name_object.addClass("instruction_item_name");
+			name_object.text(name);
+			name_object.appendTo(item_object);
+
+			return item_object;
+		}
+
+		// This function groups the list of nodes into ones that should share
+		// the same column within the generated graph
+		function get_node_columns(edges) {
+			var nodes = [];
+
+			// Start by getting a list of all the nodes
+			for (var edge in edges){
+				if (nodes.indexOf(edges[edge].source) == -1) {
+					nodes.push(edges[edge].source);
+				}
+				if (nodes.indexOf(edges[edge].target) == -1) {
+					nodes.push(edges[edge].target);
+				}
+			}
+
+			// Recursively populate the child count and parent counts via javascript closure magic
+			var child_counts = {};
+			var parent_counts = {};
+			for (var node in nodes)  {
+				function populate_child_count(node){
+					if (!(node in child_counts)) {
+						child_counts[node] = 0;
+						for (var edge in edges){
+							if (edges[edge].source == node) {
+								// make sure that this child has the correct child count
+								populate_child_count(edges[edge].target)
+								// If this child's child count is larger then any other child's thus far save it as the longest
+								if (child_counts[edges[edge].target]+1 > child_counts[node]){
+									child_counts[node] = child_counts[edges[edge].target]+1;
+								}
+							}
+						}
+					}
+				}
+				function populate_parent_count(node){
+					if (!(node in parent_counts)) {
+						parent_counts[node] = 0;
+						for (var edge in edges){
+							if (edges[edge].target == node) {
+								// make sure that this child has the correct child count
+								populate_parent_count(edges[edge].source)
+								// If this child's child count is larger then any other child's thus far save it as the longest
+								if (parent_counts[edges[edge].source]+1 > parent_counts[node]){
+									parent_counts[node] = parent_counts[edges[edge].source]+1;
+								}
+							}
+						}
+					}
+				}
+				populate_child_count(nodes[node]);
+				populate_parent_count(nodes[node]);
+			}
+
+			var max_column_index = 0;
+			for (var node in parent_counts) {
+				if (parent_counts[node] > max_column_index) {
+					max_column_index = parent_counts[node];
+				}
+			}
+
+			// Snap all final results to the rightmost column
+			for (var node in child_counts) {
+				if (child_counts[node] == 0) {
+					parent_counts[node] = max_column_index
+				}
+			}
+
+			return parent_counts;
+		}
+
+
 
 		/******************************************************************************\
 		| generate_chart                                                               |
