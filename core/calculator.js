@@ -6,7 +6,10 @@
 (function($) {"use strict";$(window).on("load", function(){
 // Closure wrapper for the script file
 
-// Assign event handlers
+
+/******************************************************************************\
+| "Hide Unused" "Show Unused" Button Logic                                     |
+\******************************************************************************/
 $("#unused_hide_checkbox").change(function() {
 	if ($(this).prop("checked")) {
 		$("label[for='"+$(this).attr("id")+"']")
@@ -20,11 +23,15 @@ $("#unused_hide_checkbox").change(function() {
 });
 
 
+/******************************************************************************\
+| "About Us" Button Logic                                                      |
+\******************************************************************************/
 $("#about_button").click(function() {
 	$("#about_us").slideToggle();
 });
 
-// Bind events to the item list elements
+
+// Bind events to the item list elements // TODO THIS FUNCTION NEEDS A BETTER COMMENT
 $(".desired_item").each(function() {
 	var item = $(this);
 	var item_input_box = item.find(".desired_item_count");
@@ -63,7 +70,9 @@ $(".desired_item").each(function() {
 	});
 });
 
-
+////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////// // TODO THIS FUNCTION NEEDS A BETTER PLACE TO LIVE
+////////////////////////////////////////////////////////////////////////////////
 function filenameify(rawname) {
 	if (rawname === null) {
 		return "";
@@ -71,7 +80,18 @@ function filenameify(rawname) {
 	return rawname.toLowerCase().replace(/[^a-z]/g, "");
 }
 
-// This function changes the url hash whenever an item is added or removed
+
+////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////// Save and Load /////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+/******************************************************************************\
+| save()                                                                       |
+|                                                                              |
+| This function saves the current state of the resource requirement list to    |
+| the URI hash so that it can be shared with other users or so the page can be |
+| refreshed without losing current information.                                |
+\******************************************************************************/
 function save() {
 	var selected_items = {};
 	$(".desired_item").each(function() {
@@ -93,8 +113,16 @@ function save() {
 	}
 
 }
-// This function should only be called once on pageload and after the item elements are created
-// loads the url into the item list then generates the results
+
+
+/******************************************************************************\
+| load()                                                                       |
+|                                                                              |
+| This function is an inverse to save() and reads the state of the resource    |
+| requirement list from the UIR hash. In addition it will automatically call   |
+| generatelist() to save the user from having to click the button for a saved  |
+| list.                                                                        |
+\******************************************************************************/
 function load() {
 	var uri_arguments = decodeURIComponent(window.location.hash.substr(1));
 	if (uri_arguments !== "") {
@@ -277,6 +305,9 @@ function gather_requirements() {
 	return resources;
 }
 
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////// Text Instruction Creation ///////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 function generate_instructions(edges, generation_totals) {
 	var node_columns = get_node_columns(edges);
 
@@ -458,6 +489,9 @@ function get_node_columns(edges) {
 }
 
 
+////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////// Chart Creation ////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 /******************************************************************************\
 | generate_chart                                                               |
