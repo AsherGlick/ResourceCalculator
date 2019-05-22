@@ -6,21 +6,26 @@
 (function($) {"use strict";$(window).on("load", function(){
 // Closure wrapper for the script file
 
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////// Header Bar Logics ///////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 /******************************************************************************\
-| "Hide Unused" "Show Unused" Button Logic                                     |
+| "Reset Item Counts" Button Logic                                             |
 \******************************************************************************/
-$("#unused_hide_checkbox").change(function() {
-	if ($(this).prop("checked")) {
-		$("label[for='"+$(this).attr("id")+"']")
-			.text("Show Unused");
-	}
-	else {
-		$("label[for='"+$(this).attr("id")+"']")
-			.text("Hide Unused");
-	}
-	filter_items();
-});
+function clear_item_counts() {
+	$(".desired_item").each(function() {
+		var field = $(this).find(".desired_item_count");
+		field.val("");
+		set_textbox_background(field);
+	});
+
+	$("#unused_hide_checkbox").prop("checked");
+
+	$("#unused_hide_checkbox").prop("checked", false).change();
+	generatelist();
+}
+$("#reset_item_count").click(clear_item_counts);
 
 
 /******************************************************************************\
@@ -69,6 +74,49 @@ $(".desired_item").each(function() {
 		$("#hover_name").css("opacity", 0);
 	});
 });
+
+/******************************************************************************\
+| Search Bar filter logic
+\******************************************************************************/
+function filter_items() {
+	var search_string = $("#item_filter").val().toLowerCase();
+	var hide_unused = $("#unused_hide_checkbox").prop("checked");
+
+	// Loop through each item
+	$("#content_field").find(".desired_item").each(function() {
+		var item_name = $(this).attr("mc_value").toLowerCase();
+		var item_count = $(this).find(".desired_item_count").val();
+
+		// If the search string does not match hide the item
+		// If the item count is not greated then 0 and hide unused is true hide
+		if (item_name.indexOf(search_string) === -1 || !(item_count > 0 || !hide_unused)) {
+			$(this).hide();
+		}
+		else {
+			$(this).show();
+		}
+	});
+}
+$("#item_filter").bind("propertychange change click keyup input paste", function(){
+	filter_items();
+});
+
+
+/******************************************************************************\
+| "Hide Unused" "Show Unused" Button Logic                                     |
+\******************************************************************************/
+$("#unused_hide_checkbox").change(function() {
+	if ($(this).prop("checked")) {
+		$("label[for='"+$(this).attr("id")+"']")
+			.text("Show Unused");
+	}
+	else {
+		$("label[for='"+$(this).attr("id")+"']")
+			.text("Hide Unused");
+	}
+	filter_items();
+});
+
 
 ////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////// // TODO THIS FUNCTION NEEDS A BETTER PLACE TO LIVE
@@ -717,57 +765,6 @@ function generate_chart(generation_events, resource_totals) {
 		link.attr("d", path);
 	}
 }
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////// Item Filter Logic ///////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-/******************************************************************************\
-|
-\******************************************************************************/
-function clear_item_counts() {
-	$(".desired_item").each(function() {
-		var field = $(this).find(".desired_item_count");
-		field.val("");
-		set_textbox_background(field);
-	});
-
-	$("#unused_hide_checkbox").prop("checked");
-
-	$("#unused_hide_checkbox").prop("checked", false).change();
-	generatelist();
-}
-$("#reset_item_count").click(clear_item_counts);
-
-// Re-filter the items each time the search bar is modified
-$("#item_filter").bind("propertychange change click keyup input paste", function(){
-	filter_items();
-});
-
-function filter_items() {
-	var search_string = $("#item_filter").val().toLowerCase();
-	var hide_unused = $("#unused_hide_checkbox").prop("checked");
-
-	// Loop through each item
-	$("#content_field").find(".desired_item").each(function() {
-		var item_name = $(this).attr("mc_value").toLowerCase();
-		var item_count = $(this).find(".desired_item_count").val();
-
-		// If the search string does not match hide the item
-		// If the item count is not greated then 0 and hide unused is true hide
-		if (item_name.indexOf(search_string) === -1 || !(item_count > 0 || !hide_unused)) {
-			$(this).hide();
-		}
-		else {
-			$(this).show();
-		}
-
-	});
-}
-
-
 
 
 ////////////////////////////////////////////////////////////////////////////////
