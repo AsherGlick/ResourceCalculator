@@ -6,6 +6,14 @@ authors:
 index_page_display_name: "Minecraft"
 # row_group_count: 0
 
+recipe_types:
+  Crafting: "Craft {IN_ITEMS} into {OUT_ITEM}"
+  Smelting: "Use a furnace to smelt {IN_ITEMS} into {OUT_ITEM} using {ITEM Fuel}"
+  Add Water: "Pour water onto {IN_ITEMS} to turn it into {OUT_ITEM}"
+  right-click: "Right click on {IN_ITEMS} to turn it into {OUT_ITEM}"
+  as: "Treat {IN_ITEMS} as {OUT_ITEM}"
+
+
 resources:
 
   Smooth Stone:
@@ -5772,10 +5780,6 @@ resources:
 
   Orange Wool:
   - output: 1
-    recipe_type: Raw Resource
-    requirements:
-      Orange Wool: 0
-  - output: 1
     recipe_type: Crafting
     requirements:
       White Wool: -1
@@ -5792,6 +5796,10 @@ resources:
       - null
       - null
       shapeless: 1
+  - output: 1
+    recipe_type: Raw Resource
+    requirements:
+      Orange Wool: 0
 
   Magenta Wool:
   - output: 1

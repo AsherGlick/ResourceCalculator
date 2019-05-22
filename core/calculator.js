@@ -389,45 +389,11 @@ function generate_instructions(edges, generation_totals) {
 		for (var node in node_columns) {
 			if (node_columns[node] == i) {
 
-				var line_wrapper = $("<div/>").addClass("instruction_wrapper");
-
-				// Build the input item sub string
-				var inputs = [];
-				for (var edge in edges){
-					// If this is pointing into the resource we are currently trying to craft
-					if (edges[edge].target == node) {
-						// inputs += edges[edge].value + " " + edges[edge].source;
-						inputs.push(edges[edge]);
-					}
-				}
-
-				// Skip null crafting edges (they are used only for the graph)
-				if (inputs.length == 1 && (inputs[0].target.startsWith("[Final]") || inputs[0].target.startsWith("[Extra]"))) {
+				if (node.startsWith("[Final]") || node.startsWith("[Extra]")){
 					continue;
 				}
 
-				// Build the instruction row
-				$("<span/>").text("Craft ").appendTo(line_wrapper);
-
-				for (var input_index = 0; input_index < inputs.length; input_index++){
-					if (input_index > 0 && input_index < inputs.length-1 && inputs.length > 2) {
-						$("<span/>").text(", ").appendTo(line_wrapper);
-					}
-					else if (input_index > 0 && input_index == inputs.length-1 && inputs.length > 2) {
-						$("<span/>").text(", and ").appendTo(line_wrapper);
-					}
-					else if (input_index > 0 && input_index == inputs.length-1 && inputs.length == 2) {
-						$("<span/>").text(" and ").appendTo(line_wrapper);
-					}
-					text_item_object(inputs[input_index].value, inputs[input_index].source).appendTo(line_wrapper);
-				}
-
-				$("<span/>").text(" into ").appendTo(line_wrapper);
-				text_item_object(generation_totals[node], node).appendTo(line_wrapper);
-
-
-				line_wrapper.appendTo(instructions);
-
+				build_instruction_line(edges, node, generation_totals).appendTo(instructions);
 			}
 		}
 		var line_break = $("<div/>");
@@ -445,6 +411,22 @@ function generate_instructions(edges, generation_totals) {
 	instructions.appendTo($("#text_instructions"));
 
 }
+
+function build_instruction_line(edges, item_name, generation_totals) {
+	// Build the input item sub string
+	var inputs = {};
+	for (var edge in edges){
+		// If this is pointing into the resource we are currently trying to craft
+		if (edges[edge].target == item_name) {
+			inputs[edges[edge].source] = edges[edge].value;
+		}
+	}
+
+	var recipe_type = get_recipe(item_name).recipe_type;
+
+	return recipe_type_functions[recipe_type](inputs, item_name, generation_totals[item_name], text_item_object);
+}
+
 function text_item_object(count, name){
 	var item_object = $("<div/>");
 	item_object.addClass("instruction_item");

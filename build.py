@@ -185,6 +185,22 @@ def ensure_valid_requirements(resources):
                 elif recipe["requirements"][requirement] > 0:
                     print ("ERROR: Invalid requirement for resource:", resource + ". \"" + requirement + "\" must be a negative number")
 
+def ensure_valid_recipe_types(calculator_name, item_list, recipe_types):
+    found_recipe_types = []
+    for item in item_list:
+        for recipe in item_list[item]:
+            recipe_type = recipe["recipe_type"]
+            # add this to the list of found recipe types to later check to make sure all the recipe_types in the list are used
+            if recipe_type not in found_recipe_types and recipe_type != "Raw Resource":
+                found_recipe_types.append(recipe_type)
+            # check if this recipe exists in the recipe type list
+            if recipe_type not in recipe_types and recipe_type != "Raw Resource":
+                print(calculator_name.upper()+":", item + " has an undefined resource_type" + ": \"" + recipe_type + "\"")
+
+    for recipe_type in recipe_types:
+        if recipe_type not in found_recipe_types:
+            print(calculator_name.upper()+":", "Unused recipe_type \""+recipe_type+"\"")
+
 
 ################################################################################
 # get_oldest_modified_time
@@ -257,11 +273,14 @@ def create_calculator_page(calculator_name):
         yaml_data = ordered_load(f, yaml.SafeLoader)
     recipes = yaml_data["resources"]
     authors = yaml_data["authors"]
+    recipe_types = yaml_data["recipe_types"]
 
     # run some sanity checks on the recipes
     for recipe in recipes:
         lint_recipe(calculator_name, recipe, recipes[recipe])
     ensure_valid_requirements(recipes)
+    ensure_valid_recipe_types(calculator_name, recipes, recipe_types)
+    recipe_type_format_functions = generate_recipe_type_format_functions(calculator_name, recipe_types)
 
     recipe_json = json.dumps(recipes)
 
@@ -307,7 +326,7 @@ def create_calculator_page(calculator_name):
 
 
     # Generate the calculator from a template
-    output_from_parsed_template = template.render(resources=resources, recipe_json=recipe_json, item_width=image_width, item_height=image_height, item_styles=item_styles, resource_list=calculator_name, authors=authors, content_width_css=content_width_css)
+    output_from_parsed_template = template.render(resources=resources, recipe_json=recipe_json, item_width=image_width, item_height=image_height, item_styles=item_styles, resource_list=calculator_name, authors=authors, content_width_css=content_width_css, recipe_type_format_functions=recipe_type_format_functions)
 
     minified = htmlmin.minify(output_from_parsed_template, remove_comments=True, remove_empty_space=True)
 
@@ -320,6 +339,76 @@ def create_calculator_page(calculator_name):
         if simple_name not in simple_resources:
             print("WARNING:", simple_name, "has an image but no recipe and will not appear in the calculator")
 
+
+
+
+# [{
+#         "name":
+#         "tokenized_inputs": []
+#         "input_chunks": [
+#             {
+#                 "type":"text",
+#                 "text":"Craft"
+#             },
+#             {
+#                 "type":"output"
+#             }
+#             {
+#                 "type":"all_other_inputs"
+#             }
+#             {
+#                 "type":"tokenized_input",
+#                 "name":"Fuel"
+#             }
+#         ]
+#     }]
+def generate_recipe_type_format_functions(calculator_name, recipe_types):
+    recipe_type_format_functions = []
+
+    for recipe_type in recipe_types:
+        recipe_type_format_string = recipe_types[recipe_type]
+
+        all_chunks = re.split('({[^}]+})', recipe_type_format_string)
+
+        tokenized_inputs = []
+        input_chunks = []
+
+        for chunk in all_chunks:
+            if len(chunk) < 1:
+                continue
+
+            if chunk.startswith("{") and chunk.endswith("}"):
+                chunk = chunk[1:-1]
+
+                if chunk == "IN_ITEMS":
+                    input_chunks.append({"type":"all_other_inputs"})
+                elif chunk == "OUT_ITEM":
+                    input_chunks.append({"type":"output"})
+                elif chunk.startswith("ITEM"):
+                    tokenized_item_name = chunk[5:]
+                    input_chunks.append({"type":"tokenized_input", "name":tokenized_item_name})
+                    tokenized_inputs.append(tokenized_item_name)
+                    # TODO: some linting here can be done to make sure that all recipe_types that have this tokenized item have the item
+                else:
+                    print("UNKNOWN IDENTIFIER IN FORMAT STRING") # TODO makethis error message better
+
+
+            else:
+                input_chunks.append({"type":"text", "text":chunk})
+
+
+        format_function = {
+            "name": recipe_type,
+            "tokenized_inputs": json.dumps(tokenized_inputs),
+            "input_chunks": input_chunks
+        }
+
+        recipe_type_format_functions.append(format_function)
+
+
+
+
+    return recipe_type_format_functions
 
 ################################################################################
 # create_index_page

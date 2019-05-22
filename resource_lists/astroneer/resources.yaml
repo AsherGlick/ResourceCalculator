@@ -6,6 +6,13 @@ authors:
 index_page_display_name: "Astroneer"
 # row_group_count: 0
 
+recipe_types:
+  Backpack Printer: "Use a Backpack Printer to turn {IN_ITEMS} into {OUT_ITEM}"
+  Smelter: "Use a Smelter to turn {IN_ITEMS} into {OUT_ITEM}"
+  Large Platform: "Use a Large Platform to turn {IN_ITEMS} into {OUT_ITEM}"
+  Printer: "Use a Printer to turn {IN_ITEMS} into {OUT_ITEM}"
+  Vehicle Bay: "Use a Vehicle Bay to turn {IN_ITEMS} into {OUT_ITEM}"
+  Printer and Vehicle Bay: "Use a Printer and Vehicle Bay to turn {IN_ITEMS} into {OUT_ITEM}"
 
 resources:
   Coal:
