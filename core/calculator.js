@@ -668,7 +668,7 @@ function generate_chart(generation_events, resource_totals) {
 		})
 		.on("mouseover", function() {
 			$("#hover_recipe").show();
-			set_recipe($(this).attr("target"), $(this).attr("source"), $(this).attr("quantity"));
+			// set_recipe($(this).attr("target"), $(this).attr("source"), $(this).attr("quantity")); // TODO: When re-adding hover recipes/info on the sankey chart
 		})
 		.on("mouseout", function() {
 			$("#hover_recipe").hide();
@@ -797,69 +797,72 @@ $(document).on("mousemove", function(e){
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////// Hover Recipe Logic //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-function set_recipe (target, source, source_quantity) {
-	var recipe = get_recipe(target);
+// function set_recipe (target, source, source_quantity) {
+// 	var recipe = get_recipe(target);
 
-	var source_item_count = -recipe.requirements[source];
-	var item_multiplier = source_quantity / source_item_count;
+// 	var source_item_count = -recipe.requirements[source];
+// 	var item_multiplier = source_quantity / source_item_count;
 
-	if (recipe.recipe_type === "crafting") {
+// 	if (recipe.recipe_type === "crafting") {
 
-		for (var i in recipe.recipe) {
-			$("#crafting_slot_"+i).removeClass (function (index, className) {
-				return (className.match (/\bitem_[a-z0-9_]*/) || []).join(" ");
-			}).addClass("item_" + filenameify(recipe.recipe[i]));
+// 		for (var i in recipe.recipe) {
+// 			$("#crafting_slot_"+i).removeClass (function (index, className) {
+// 				return (className.match (/\bitem_[a-z0-9_]*/) || []).join(" ");
+// 			}).addClass("item_" + filenameify(recipe.recipe[i]));
 
-			if (item_multiplier > 1 && recipe.recipe[i] !== null) {
-				$("#crafting_slot_"+i).text(item_multiplier);
-			}
-			else {
-				$("#crafting_slot_"+i).text("");
-			}
-		}
-		$("#crafting_output_image").removeClass (function (index, className) {
-			return (className.match (/\bitem_[a-z0-9_]*/) || []).join(" ");
-		}).addClass("item_" + filenameify(target));
+// 			if (item_multiplier > 1 && recipe.recipe[i] !== null) {
+// 				$("#crafting_slot_"+i).text(item_multiplier);
+// 			}
+// 			else {
+// 				$("#crafting_slot_"+i).text("");
+// 			}
+// 		}
+// 		$("#crafting_output_image").removeClass (function (index, className) {
+// 			return (className.match (/\bitem_[a-z0-9_]*/) || []).join(" ");
+// 		}).addClass("item_" + filenameify(target));
 
-		if (recipe.output * item_multiplier > 1){
-			$("#crafting_output_image").text(recipe.output * item_multiplier);
-		}
-		else {
-			$("#crafting_output_image").text("");
-		}
-	}
-	else {
-		console.error("The recipe type for " + target + " has not been created yet");
-	}
-}
+// 		if (recipe.output * item_multiplier > 1){
+// 			$("#crafting_output_image").text(recipe.output * item_multiplier);
+// 		}
+// 		else {
+// 			$("#crafting_output_image").text("");
+// 		}
+// 	}
+// 	else {
+// 		console.error("The recipe type for " + target + " has not been created yet");
+// 	}
+// }
 
-$(document).on("mousemove", function(e) {
-
-
-	var left_offset = e.pageX + hover_x_offset;
-	var top_offset = e.pageY + hover_y_offset;
-
-	if ($(window).width() < $("#hover_recipe").outerWidth() + e.pageX + hover_x_offset ) {
-		left_offset = e.pageX - hover_x_offset - $("#hover_recipe").outerWidth();
-	}
-
-	if ($(window).height() + $(document).scrollTop() < $("#hover_recipe").outerHeight() + e.pageY + hover_y_offset ) {
-		top_offset = e.pageY - hover_y_offset - $("#hover_recipe").outerHeight();
-	}
-
-	$("#hover_recipe").offset ({
-		left:  left_offset,
-		top:   top_offset,
-	});
-});
+// $(document).on("mousemove", function(e) {
 
 
+// 	var left_offset = e.pageX + hover_x_offset;
+// 	var top_offset = e.pageY + hover_y_offset;
+
+// 	if ($(window).width() < $("#hover_recipe").outerWidth() + e.pageX + hover_x_offset ) {
+// 		left_offset = e.pageX - hover_x_offset - $("#hover_recipe").outerWidth();
+// 	}
+
+// 	if ($(window).height() + $(document).scrollTop() < $("#hover_recipe").outerHeight() + e.pageY + hover_y_offset ) {
+// 		top_offset = e.pageY - hover_y_offset - $("#hover_recipe").outerHeight();
+// 	}
+
+// 	$("#hover_recipe").offset ({
+// 		left:  left_offset,
+// 		top:   top_offset,
+// 	});
+// });
 
 
 
 
 
 
+
+
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////// Recipe Switching ///////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 /******************************************************************************\
 |
@@ -1038,7 +1041,13 @@ function depth_first_search(nodes, node, match) {
 	return changes;
 }
 
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
+// TODO: This seems very related to the function loop at the top that is not
+// well commented, see if we can combine these two things together in a
+// reasonable way. Or split up the other loop to be like this one
 /******************************************************************************\
 | set_textbox_background                                                       |
 |                                                                              |
