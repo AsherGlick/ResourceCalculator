@@ -329,16 +329,37 @@ def create_calculator_page(calculator_name):
 def create_index_page(directories):
     for directory in directories:
         copyfile("resource_lists/" + directory + "/icon.png", "output/"+directory+"/icon.png")
-        pass
+
 
     # Configure and begin the jinja2 template parsing
     env = Environment(loader=FileSystemLoader('core'))
     template = env.get_template("index.html")
 
-    output_from_parsed_template = template.render(calculators=directories)
+    calculators = []
+    for directory in directories:
+        calculator_data = {
+            "path": directory,
+            "display_name": calculator_display_name(directory)
+        }
+
+        calculators.append(calculator_data)
+
+    output_from_parsed_template = template.render(calculators=calculators)
 
     with open(os.path.join("output", "index.html"), "w") as f:
         f.write(output_from_parsed_template)
+
+
+################################################################################
+# calculator_display_name
+#
+# Reads the resources yaml file and grabs the display name of that calculator
+################################################################################
+def calculator_display_name(calculator_name):
+    with open(os.path.join("resource_lists", calculator_name, "resources.yaml")) as f:
+        yaml_data = ordered_load(f, yaml.SafeLoader)
+    return yaml_data["index_page_display_name"]
+
 
 ################################################################################
 # copy_common_resources

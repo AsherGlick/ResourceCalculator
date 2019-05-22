@@ -1,6 +1,12 @@
+---
 authors:
   Asher: "https://aglick.com"
   Kevin: ""
+
+index_page_display_name: "Astroneer"
+# row_group_count: 0
+
+
 resources:
   Coal:
   - output: 1

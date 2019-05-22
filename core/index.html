@@ -20,9 +20,9 @@
 
 
 		{% for calculator in calculators %}
-			<a href="./{{calculator}}"><div class="calculator_link_wrapper" style="background-image: url('{{calculator}}/icon.png')"><div class="calculator_link" >{{calculator}}</div></div></a>
+			<a href="./{{calculator.path}}"><div class="calculator_link_wrapper" style="background-image: url('{{calculator.path}}/icon.png')"><div class="calculator_link" >{{calculator.display_name}}</div></div></a>
 		{% endfor %}
-		<a href="https://github.com/AsherGlick/ResourceCalculator/blob/master/README.md"><div class="calculator_link_wrapper" style="background-image: url('add_game.png')"><div class="calculator_link">Add New Game</div></div></a>
+		<a href="https://github.com/AsherGlick/ResourceCalculator/blob/master/README.md"><div class="calculator_link_wrapper" style="background-image: url('add_game.png')"><div class="calculator_link">Add a<br>New Game</div></div></a>
 
 	</body>
 </html>
