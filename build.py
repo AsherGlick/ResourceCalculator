@@ -274,12 +274,20 @@ def create_calculator_page(calculator_name):
     recipes = yaml_data["resources"]
     authors = yaml_data["authors"]
     recipe_types = yaml_data["recipe_types"]
+    stack_sizes = None
+    if "stack_sizes" in yaml_data:
+        stack_sizes = yaml_data["stack_sizes"]
+    default_stack_size = None
+    if "default_stack_size" in yaml_data:
+        default_stack_size = yaml_data["default_stack_size"]
+
 
     # run some sanity checks on the recipes
     for recipe in recipes:
         lint_recipe(calculator_name, recipe, recipes[recipe])
     ensure_valid_requirements(recipes)
     ensure_valid_recipe_types(calculator_name, recipes, recipe_types)
+    #TODO: Add linting for stack sizes here
     recipe_type_format_functions = generate_recipe_type_format_functions(calculator_name, recipe_types)
 
     recipe_json = json.dumps(recipes)
@@ -324,9 +332,22 @@ def create_calculator_page(calculator_name):
         new_css = "@media only screen and (max-width: "+ str(screen_max+media_padding-1) +"px) and (min-width:" + str(content_width+media_padding)+ "px) { .resource_content { width: " + str(content_width) + "px}  }"
         content_width_css += new_css
 
+    stack_sizes_json = json.dumps(stack_sizes)
 
     # Generate the calculator from a template
-    output_from_parsed_template = template.render(resources=resources, recipe_json=recipe_json, item_width=image_width, item_height=image_height, item_styles=item_styles, resource_list=calculator_name, authors=authors, content_width_css=content_width_css, recipe_type_format_functions=recipe_type_format_functions)
+    output_from_parsed_template = template.render(
+                                    resources=resources,
+                                    recipe_json=recipe_json,
+                                    item_width=image_width,
+                                    item_height=image_height,
+                                    item_styles=item_styles,
+                                    resource_list=calculator_name,
+                                    authors=authors,
+                                    content_width_css=content_width_css,
+                                    recipe_type_format_functions=recipe_type_format_functions,
+                                    stack_sizes=stack_sizes,
+                                    default_stack_size= default_stack_size,
+                                    stack_sizes_json=stack_sizes_json)
 
     minified = htmlmin.minify(output_from_parsed_template, remove_comments=True, remove_empty_space=True)
 

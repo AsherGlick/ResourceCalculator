@@ -103,6 +103,21 @@
 			<div id="item_list"><!-- Chart Here --></div>
 			<div style="clear: both"></div>
 			<div id="chart"><!-- Sankey Chart --></div>
+			{% if stack_sizes != None %}
+				<div class="stack_sizes">
+					Show items in units of:
+					{% for stack_size in stack_sizes %}
+						<!-- <div class="stack_size_selector"> -->
+						<input type="radio" name="unit_name" id="Units {{stack_size}}" value="{{stack_size}}" {% if default_stack_size == stack_size %}checked{% endif %}><label for="Units {{stack_size}}">{{stack_sizes[stack_size].plural}}</label>
+						<!-- </div> -->
+					{% endfor %}
+					<input type="radio" name="unit_name" id="Units Single" value="" {% if default_stack_size == None %}checked{% endif %}><label for="Units Single">Single</label>
+
+					<!-- <div class="stack_size_selector">
+						Single
+					</div> -->
+				</div>
+			{% endif %}
 			<div id="text_instructions"></div>
 		</div>
 
@@ -144,7 +159,6 @@
 		</script>
 
 		<script>
-
 			var recipe_type_functions = {
 				{% for recipe_type in recipe_type_format_functions %}
 					"{{recipe_type.name}}":function(inputs, output, output_count, text_item_object) {
@@ -193,6 +207,9 @@
 					},
 				{% endfor %}
 			};
+		</script>
+		<script>
+				var stack_sizes = {{stack_sizes_json}};
 		</script>
 
 

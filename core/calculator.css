@@ -545,3 +545,35 @@ body {
 .instruction_line_break{
 	height: 1em;
 }
+.small_unit_name {
+	font-size: .7em;
+}
+
+
+.stack_sizes {
+	margin-top: 15px;
+}
+
+.stack_sizes input[type=radio] {
+	display: none;
+}
+
+.stack_sizes input[type="radio"]+label {
+	padding: 5px;
+	margin-right: 5px;
+	border: 1px solid #444;
+	border-radius: 5px;
+	cursor:pointer;
+	transition: background-color 0.1s linear, color 0.1s linear;
+
+}
+
+.stack_sizes input[type="radio"]:checked+label {
+	background: #444;
+	color: #FFF;
+}
+
+.stack_sizes input[type="radio"]+label:hover {
+	background: #000;
+	color: #FFF;
+}

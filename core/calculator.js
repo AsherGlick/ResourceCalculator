@@ -35,6 +35,9 @@ $("#about_button").click(function() {
 	$("#about_us").slideToggle();
 });
 
+$('input[name=unit_name]').click(function() {
+	generatelist();
+})
 
 // Bind events to the item list elements // TODO THIS FUNCTION NEEDS A BETTER COMMENT
 $(".desired_item").each(function() {
@@ -427,14 +430,65 @@ function build_instruction_line(edges, item_name, generation_totals) {
 	return recipe_type_functions[recipe_type](inputs, item_name, generation_totals[item_name], text_item_object);
 }
 
+
+function build_unit_value_list(number, unit_name) {
+	console.log(number, unit_name);
+	if (number == 0) {
+		return []
+	}
+	if (unit_name == null) {
+		return [{"name":null,"count":number}];
+	}
+
+	var unit = stack_sizes[unit_name];
+	var unit_size = unit["quantity_multiplier"];
+	var quotient = Math.floor(number/unit_size);
+	var remainder = number % unit_size;
+
+	var value_list = []
+
+	if (quotient > 0) {
+		var value_list_element = {}
+		if (quotient > 1) value_list_element["name"] = unit["plural"];
+		else {value_list_element["name"] = unit_name}
+		value_list_element["count"] = quotient;
+		value_list = [value_list_element]
+
+	}
+
+	// recurse down all the other possible units until
+	value_list = value_list.concat(build_unit_value_list(remainder, unit["extends_from"]))
+
+	return value_list;
+}
+
 function text_item_object(count, name){
 	var item_object = $("<div/>");
 	item_object.addClass("instruction_item");
 
-	var count_object = $("<div/>");
-	count_object.addClass("instruction_item_count");
-	count_object.text(count);
-	count_object.appendTo(item_object);
+
+	var units = $('input[name=unit_name]:checked').val()
+	if (units !== "" && units !== undefined) {
+		var unit_value_list = build_unit_value_list(count, units);
+
+		var count_object = $("<div/>");
+		count_object.addClass("instruction_item_count");
+		var join_plus_character = "";
+		for (var i = 0; i < unit_value_list.length; i++){
+			$("<span/>").text(join_plus_character + unit_value_list[i]["count"]).appendTo(count_object);
+			if (unit_value_list[i]["name"] !== null) {
+				$("<span/>").text("("+unit_value_list[i]["name"]+")").addClass("small_unit_name").appendTo(count_object);
+			}
+			join_plus_character="+";
+		}
+		count_object.appendTo(item_object);
+	}
+	else {
+		var count_object = $("<div/>");
+		count_object.addClass("instruction_item_count");
+		count_object.text(count);
+		count_object.appendTo(item_object);
+	}
 
 	var space_object = $("<span/>");
 	space_object.text(" ");

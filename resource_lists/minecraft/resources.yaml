@@ -13,6 +13,23 @@ recipe_types:
   right-click: "Right click on {IN_ITEMS} to turn it into {OUT_ITEM}"
   as: "Treat {IN_ITEMS} as {OUT_ITEM}"
 
+stack_sizes:
+  Double Chest:
+    quantity_multiplier: 3456 #9x6x64
+    plural: "Double Chests"
+    extends_from: "Stack"
+
+  Shulker Box:
+    quantity_multiplier: 1728 # 9x3x64
+    plural: "Shulker Boxes"
+    extends_from: "Stack"
+
+  Stack:
+    quantity_multiplier: 64
+    plural: "Stacks"
+    extends_from: null
+
+default_stack_size: "Stack"
 
 resources:
 
