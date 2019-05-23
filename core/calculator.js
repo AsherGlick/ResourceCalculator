@@ -951,12 +951,12 @@ function set_recipe_to_raw(node_name) {
 	// console.log("Setting as raw resource");
 
 	for (var i in recipe_json[node_name]){
-		if (recipe_json[node_name][i].recipe_type === "raw_resource"){
+		if (recipe_json[node_name][i].recipe_type === "Raw Resource"){
 			set_recipe_index(node_name, i);
 			return;
 		}
 	}
-	alert("ERROR SETTING RAW RESOURCE RECIPE");
+	alert("ERROR: Failed to set raw resource for " + node_name);
 }
 
 
