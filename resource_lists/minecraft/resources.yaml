@@ -2320,6 +2320,38 @@ resources:
   - output: 4
     recipe_type: Crafting
     requirements:
+      Oak Log: -1
+    extra_data:
+      recipe:
+      - null
+      - null
+      - null
+      - null
+      - Oak Log
+      - null
+      - null
+      - null
+      - null
+      shapeless: 1
+  - output: 4
+    recipe_type: Crafting
+    requirements:
+      Stripped Oak Log: -1
+    extra_data:
+      recipe:
+      - null
+      - null
+      - null
+      - null
+      - Stripped Oak Log
+      - null
+      - null
+      - null
+      - null
+      shapeless: 1
+  - output: 4
+    recipe_type: Crafting
+    requirements:
       Oak Wood: -1
     extra_data:
       recipe:
@@ -2355,6 +2387,38 @@ resources:
       Oak Wood Planks: 0
 
   Spruce Wood Planks:
+  - output: 4
+    recipe_type: Crafting
+    requirements:
+      Spruce Log: -1
+    extra_data:
+      recipe:
+      - null
+      - null
+      - null
+      - null
+      - Spruce Log
+      - null
+      - null
+      - null
+      - null
+      shapeless: 1
+  - output: 4
+    recipe_type: Crafting
+    requirements:
+      Stripped Spruce Log: -1
+    extra_data:
+      recipe:
+      - null
+      - null
+      - null
+      - null
+      - Stripped Spruce Log
+      - null
+      - null
+      - null
+      - null
+      shapeless: 1
   - output: 4
     recipe_type: Crafting
     requirements:
@@ -2396,6 +2460,38 @@ resources:
   - output: 4
     recipe_type: Crafting
     requirements:
+      Birch Log: -1
+    extra_data:
+      recipe:
+      - null
+      - null
+      - null
+      - null
+      - Birch Log
+      - null
+      - null
+      - null
+      - null
+      shapeless: 1
+  - output: 4
+    recipe_type: Crafting
+    requirements:
+      Stripped Birch Log: -1
+    extra_data:
+      recipe:
+      - null
+      - null
+      - null
+      - null
+      - Stripped Birch Log
+      - null
+      - null
+      - null
+      - null
+      shapeless: 1
+  - output: 4
+    recipe_type: Crafting
+    requirements:
       Birch Wood: -1
     extra_data:
       recipe:
@@ -2431,6 +2527,38 @@ resources:
       Birch Wood Planks: 0
 
   Jungle Wood Planks:
+  - output: 4
+    recipe_type: Crafting
+    requirements:
+      Jungle Log: -1
+    extra_data:
+      recipe:
+      - null
+      - null
+      - null
+      - null
+      - Jungle Log
+      - null
+      - null
+      - null
+      - null
+      shapeless: 1
+  - output: 4
+    recipe_type: Crafting
+    requirements:
+      Stripped Jungle Log: -1
+    extra_data:
+      recipe:
+      - null
+      - null
+      - null
+      - null
+      - Stripped Jungle Log
+      - null
+      - null
+      - null
+      - null
+      shapeless: 1
   - output: 4
     recipe_type: Crafting
     requirements:
@@ -2472,6 +2600,38 @@ resources:
   - output: 4
     recipe_type: Crafting
     requirements:
+      Acacia Log: -1
+    extra_data:
+      recipe:
+      - null
+      - null
+      - null
+      - null
+      - Acacia Log
+      - null
+      - null
+      - null
+      - null
+      shapeless: 1
+  - output: 4
+    recipe_type: Crafting
+    requirements:
+      Stripped Acacia Log: -1
+    extra_data:
+      recipe:
+      - null
+      - null
+      - null
+      - null
+      - Stripped Acacia Log
+      - null
+      - null
+      - null
+      - null
+      shapeless: 1
+  - output: 4
+    recipe_type: Crafting
+    requirements:
       Acacia Wood: -1
     extra_data:
       recipe:
@@ -2507,6 +2667,38 @@ resources:
       Acacia Wood Planks: 0
 
   Dark Oak Wood Planks:
+  - output: 4
+    recipe_type: Crafting
+    requirements:
+      Dark Oak Log: -1
+    extra_data:
+      recipe:
+      - null
+      - null
+      - null
+      - null
+      - Dark Oak Log
+      - null
+      - null
+      - null
+      - null
+      shapeless: 1
+  - output: 4
+    recipe_type: Crafting
+    requirements:
+      Stripped Dark Oak Log: -1
+    extra_data:
+      recipe:
+      - null
+      - null
+      - null
+      - null
+      - Stripped Dark Oak Log
+      - null
+      - null
+      - null
+      - null
+      shapeless: 1
   - output: 4
     recipe_type: Crafting
     requirements:
