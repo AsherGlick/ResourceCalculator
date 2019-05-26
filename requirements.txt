@@ -1,5 +1,5 @@
 htmlmin==0.1.12
-Jinja2==2.10
+Jinja2==2.10.1
 MarkupSafe==1.0
-Pillow==5.2.0
-PyYAML==3.13
+Pillow==6.0.0
+PyYAML==5.1
