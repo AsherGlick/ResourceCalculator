@@ -1,24 +1,25 @@
-# Caching
-<filesMatch "\.(html|htm|js|css)$">
-  FileETag None
-  <ifModule mod_headers.c>
-     Header unset ETag
-     Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
-     Header set Pragma "no-cache"
-     Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
-  </ifModule>
-</filesMatch>
-# End Caching
-
 # Turn on mod_rewrite
 RewriteEngine On
 
-# Serve pre-compressed Brotli assets
-RewriteCond %{HTTP:Accept-Encoding} br
-RewriteCond %{REQUEST_FILENAME}.br -f
-RewriteRule ^(.*)$ $1.br [L]
+# AddEncoding allows you to have certain browsers uncompress information on the fly.
+AddEncoding gzip .gz
 
-# Serve pre-compressed gzip assets
-RewriteCond %{HTTP:Accept-Encoding} gzip
-RewriteCond %{REQUEST_FILENAME}.gz -f
-RewriteRule ^(.*)$ $1.gz [L]
+#Serve gzip compressed CSS files if they exist and the client accepts gzip.
+RewriteCond %{HTTP:Accept-encoding} gzip
+RewriteCond %{REQUEST_FILENAME}\.gz -s
+RewriteRule ^(.*)\.css $1\.css\.gz [QSA]
+
+# Serve gzip compressed JS files if they exist and the client accepts gzip.
+RewriteCond %{HTTP:Accept-encoding} gzip
+RewriteCond %{REQUEST_FILENAME}\.gz -s
+RewriteRule ^(.*)\.js $1\.js\.gz [QSA]
+
+# Serve gzip compressed HTML files if they exist and the client accepts gzip.
+RewriteCond %{HTTP:Accept-encoding} gzip
+RewriteCond %{REQUEST_FILENAME}\.gz -s
+RewriteRule ^(.*)\.html $1\.html\.gz [QSA]
+
+# Serve correct content types, and prevent mod_deflate double gzip.
+RewriteRule \.css\.gz$ - [T=text/css,E=no-gzip:1]
+RewriteRule \.js\.gz$ - [T=text/javascript,E=no-gzip:1]
+RewriteRule \.html\.gz$ - [T=text/html,E=no-gzip:1]

@@ -9,7 +9,7 @@ from collections import OrderedDict
 from PIL import Image
 import htmlmin
 import subprocess
-import brotli
+# import brotlix
 import gzip
 
 ################################################################################
@@ -578,20 +578,28 @@ def calculator_display_name(calculator_name):
 
 
 def pre_compress_output_files():
-    ignored_files = [".htaccess"]
+    # ignored_files = [".htaccess"]
+    textfile_extensions = [".html", ".css", ".js"]
     for (root, dirs, files) in os.walk("output"):
         for file in files:
-            if file in ignored_files or file.endswith(".br") or file.endswith(".gz"):
-                continue
-            filepath = os.path.join(root,file)
+            # if file in ignored_files or file.endswith(".br") or file.endswith(".gz"):
+            #     continue
+            if ends_with_any(file, textfile_extensions):
+                filepath = os.path.join(root,file)
 
-            # Brotli Compression
-            with open(filepath, 'rb') as infile, open(filepath+".br", "bw") as outfile:
-                outfile.write(brotli.compress(infile.read()))
+                # # Brotli Compression
+                # with open(filepath, 'rb') as infile, open(filepath+".br", "bw") as outfile:
+                #     outfile.write(brotli.compress(infile.read()))
 
-            # Gzip Compression
-            with open(filepath, 'rb') as infile, gzip.open(filepath+".gz", 'wb') as outfile:
-                shutil.copyfileobj(infile, outfile)
+                # Gzip Compression
+                with open(filepath, 'rb') as infile, gzip.open(filepath+".gz", 'wb') as outfile:
+                    shutil.copyfileobj(infile, outfile)
+
+def ends_with_any(string, endings):
+    for ending in endings:
+        if string.endswith(ending):
+            return True
+    return False
 
 ################################################################################
 # copy_common_resources
