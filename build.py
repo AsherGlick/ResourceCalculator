@@ -125,6 +125,16 @@ def uglify_copyfile(in_file, out_file):
         print("        Falling back to regular copy")
         copyfile(in_file, out_file)
 
+def uglify_js_string(js_string):
+    try:
+        result = subprocess.run(["./node_modules/.bin/uglifyjs", "--mangle", "--compress"], input=js_string.encode("utf-8"), stdout=subprocess.PIPE)
+        return result.stdout.decode("utf-8")
+    # except OSError as e:
+    except e:
+        print("WARNING: Javascript compression failed")
+        print("        ", e)
+
+
 ################################################################################
 # lint_recipe
 #
@@ -279,7 +289,7 @@ def create_calculator_page(calculator_name):
     template = env.get_template("calculator.html")
 
     # Load in the yaml resources file
-    with open(os.path.join("resource_lists", calculator_name, "resources.yaml")) as f:
+    with open(os.path.join("resource_lists", calculator_name, "resources.yaml"), 'r', encoding="utf_8") as f:
         yaml_data = ordered_load(f, yaml.SafeLoader)
     recipes = yaml_data["resources"]
     authors = yaml_data["authors"]
@@ -300,7 +310,8 @@ def create_calculator_page(calculator_name):
     #TODO: Add linting for stack sizes here
     recipe_type_format_functions = generate_recipe_type_format_functions(calculator_name, recipe_types)
 
-    recipe_json = json.dumps(recipes)
+    # recipe_js = json.dumps(recipes)
+    recipe_js = mini_js_data(recipes)
 
     resources = []
     item_styles = {}
@@ -347,7 +358,7 @@ def create_calculator_page(calculator_name):
     # Generate the calculator from a template
     output_from_parsed_template = template.render(
                                     resources=resources,
-                                    recipe_json=recipe_json,
+                                    recipe_json=recipe_js,
                                     item_width=image_width,
                                     item_height=image_height,
                                     item_styles=item_styles,
@@ -361,7 +372,7 @@ def create_calculator_page(calculator_name):
 
     minified = htmlmin.minify(output_from_parsed_template, remove_comments=True, remove_empty_space=True)
 
-    with open(os.path.join(calculator_folder, "index.html"), "w") as f:
+    with open(os.path.join(calculator_folder, "index.html"), "w", encoding="utf_8") as f:
         f.write(minified)
 
     # Sanity Check Warning, is there an image that does not have a recipe
@@ -466,9 +477,87 @@ def create_index_page(directories):
 
     output_from_parsed_template = template.render(calculators=calculators)
 
-    with open(os.path.join("output", "index.html"), "w") as f:
+    with open(os.path.join("output", "index.html"), "w", encoding="utf_8") as f:
         f.write(output_from_parsed_template)
 
+
+
+
+def mini_js_data(data):
+
+    javascript_reverser = """
+    var recipe_json = function () {
+        var data = {{data}};
+        var tokens = {{tokens}};
+        return _uncompress(data, tokens);
+    }();
+    function _uncompress(data, tokens){
+        // console.log("FUNCTION START: ", tokens);
+        if (typeof data === "object"){ 
+            // Array
+            if (Array.isArray(data)) {
+                for (var i in data) {
+                    data[i] = _uncompress(data[i], tokens)
+                }
+                return data
+            }
+            // Dictonary
+            else {
+                var new_data = {};
+                for (var i in data) {
+                    new_data[_uncompress(i, tokens)] = _uncompress(data[i], tokens)
+                }
+                return new_data
+            }
+        }
+        // Scalar
+        else {
+            // console.log(tokens);
+            return tokens[data]
+        }
+    }
+    """
+
+
+    tokens = []
+    (packed_data, tokens) = _mini_js_data(data, tokens)
+    packed_json = Environment().from_string(javascript_reverser).render(
+        data=json.dumps(packed_data),
+        tokens=json.dumps(tokens),
+        )
+    uglified_packed_json = uglify_js_string(packed_json)
+
+
+    # Do a simple check to make sure our compression is not increasing the size
+    uglified_raw_json = uglify_js_string("var recipe_json = " + json.dumps(data))
+    if len(uglified_raw_json) > len(uglified_packed_json):
+        return uglified_packed_json
+    else:
+        return uglified_raw_json
+
+
+def _mini_js_data(data, tokens):
+    if isinstance(data, dict):
+        new_data = {}
+        for i in data:
+            # Key Replacement
+            if i not in tokens:
+                tokens.append(i)
+            key_token_index = tokens.index(i)
+
+            (element, tokens) = _mini_js_data(data[i],tokens)
+            new_data[key_token_index] = element
+    elif isinstance(data, list):
+        new_data = []
+        for i in data:
+            (element, tokens) = _mini_js_data(i, tokens)
+            new_data.append(element)
+    else:
+        if data not in tokens:
+            tokens.append(data)
+        new_data = tokens.index(data)
+    return (new_data, tokens)
+    
 
 ################################################################################
 # calculator_display_name
@@ -476,7 +565,7 @@ def create_index_page(directories):
 # Reads the resources yaml file and grabs the display name of that calculator
 ################################################################################
 def calculator_display_name(calculator_name):
-    with open(os.path.join("resource_lists", calculator_name, "resources.yaml")) as f:
+    with open(os.path.join("resource_lists", calculator_name, "resources.yaml"), 'r', encoding="utf_8") as f:
         yaml_data = ordered_load(f, yaml.SafeLoader)
     return yaml_data["index_page_display_name"]
 
