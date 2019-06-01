@@ -1,3 +1,4 @@
+# Caching
 <filesMatch "\.(html|htm|js|css)$">
   FileETag None
   <ifModule mod_headers.c>
@@ -7,3 +8,10 @@
      Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
   </ifModule>
 </filesMatch>
+# End Caching
+
+#Gzip
+<ifmodule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript text/javascript
+</ifmodule>
+#End Gzip
