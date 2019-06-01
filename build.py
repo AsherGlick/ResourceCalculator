@@ -256,6 +256,7 @@ def get_newest_modified_time(path):
     return max(time_list)
 
 
+
 ################################################################################
 # create_calculator_page
 #
@@ -308,7 +309,7 @@ def create_calculator_page(calculator_name):
     ensure_valid_requirements(recipes)
     ensure_valid_recipe_types(calculator_name, recipes, recipe_types)
     #TODO: Add linting for stack sizes here
-    recipe_type_format_functions = generate_recipe_type_format_functions(calculator_name, recipe_types)
+    recipe_type_format_js = uglify_js_string(generate_recipe_type_format_js(calculator_name, recipe_types))
 
     # recipe_js = json.dumps(recipes)
     recipe_js = mini_js_data(recipes)
@@ -363,9 +364,9 @@ def create_calculator_page(calculator_name):
                                     item_height=image_height,
                                     item_styles=item_styles,
                                     resource_list=calculator_name,
+                                    recipe_type_format_js=recipe_type_format_js,
                                     authors=authors,
                                     content_width_css=content_width_css,
-                                    recipe_type_format_functions=recipe_type_format_functions,
                                     stack_sizes=stack_sizes,
                                     default_stack_size= default_stack_size,
                                     stack_sizes_json=stack_sizes_json)
@@ -404,7 +405,7 @@ def create_calculator_page(calculator_name):
 #             }
 #         ]
 #     }]
-def generate_recipe_type_format_functions(calculator_name, recipe_types):
+def generate_recipe_type_format_js(calculator_name, recipe_types):
     recipe_type_format_functions = []
 
     for recipe_type in recipe_types:
@@ -445,12 +446,16 @@ def generate_recipe_type_format_functions(calculator_name, recipe_types):
             "input_chunks": input_chunks
         }
 
+
         recipe_type_format_functions.append(format_function)
 
+    env = Environment(loader=FileSystemLoader('core'))
+    template = env.get_template("_recipe_type_display_functions.js")
+
+    return template.render(recipe_type_format_functions=recipe_type_format_functions)
 
 
-
-    return recipe_type_format_functions
+    # return recipe_type_format_functions
 
 ################################################################################
 # create_index_page
