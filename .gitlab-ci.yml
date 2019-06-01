@@ -8,13 +8,10 @@ stages:
 
 
 build-site:
-  image: python:3.6
+  image: asherglick/webbuild:20190601
   stage: build
   script:
-    - apt-get update
     - pip3 install -r requirements.txt
-    - apt-get install pngquant -y
-    - apt-get install npm -y
     - npm install
 
     # Build System Website
