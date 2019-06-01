@@ -42,6 +42,6 @@ deploy-dreamhost-prod:
 
     # Sync over the files
     - rsync --recursive --archive --verbose -e ssh --delete output/ $PROD_USER@$PROD_HOST:/home/$PROD_USER/$DEPLOY_FOLDER/
-    - ssh $PROD_USER@$PROD_HOST tree
+    - ssh $PROD_USER@$PROD_HOST "cd $DEPLOY_FOLDER; tree -a"
   only:
     - master
