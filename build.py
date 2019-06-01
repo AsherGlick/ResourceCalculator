@@ -3,12 +3,14 @@ import re
 import os
 from jinja2 import Environment, FileSystemLoader
 import yaml
-from shutil import copyfile
+import shutil
 import math
 from collections import OrderedDict
 from PIL import Image
 import htmlmin
 import subprocess
+import brotli
+import gzip
 
 ################################################################################
 # ordered_load
@@ -123,7 +125,7 @@ def uglify_copyfile(in_file, out_file):
         print("WARNING: Javascript compression failed")
         print("        ", e)
         print("        Falling back to regular copy")
-        copyfile(in_file, out_file)
+        shutil.copyfile(in_file, out_file)
 
 def uglify_js_string(js_string):
     try:
@@ -464,7 +466,7 @@ def generate_recipe_type_format_js(calculator_name, recipe_types):
 ################################################################################
 def create_index_page(directories):
     for directory in directories:
-        copyfile("resource_lists/" + directory + "/icon.png", "output/"+directory+"/icon.png")
+        shutil.copyfile("resource_lists/" + directory + "/icon.png", "output/"+directory+"/icon.png")
 
 
     # Configure and begin the jinja2 template parsing
@@ -575,6 +577,22 @@ def calculator_display_name(calculator_name):
     return yaml_data["index_page_display_name"]
 
 
+def pre_compress_output_files():
+    ignored_files = [".htaccess"]
+    for (root, dirs, files) in os.walk("output"):
+        for file in files:
+            if file in ignored_files or file.endswith(".br") or file.endswith(".gz"):
+                continue
+            filepath = os.path.join(root,file)
+
+            # Brotli Compression
+            with open(filepath, 'rb') as infile, open(filepath+".br", "bw") as outfile:
+                outfile.write(brotli.compress(infile.read()))
+
+            # Gzip Compression
+            with open(filepath, 'rb') as infile, gzip.open(filepath+".gz", 'wb') as outfile:
+                shutil.copyfileobj(infile, outfile)
+
 ################################################################################
 # copy_common_resources
 #
@@ -582,14 +600,14 @@ def calculator_display_name(calculator_name):
 # by the code
 ################################################################################
 def copy_common_resources():
-    copyfile("core/calculator.css", "output/calculator.css")
+    shutil.copyfile("core/calculator.css", "output/calculator.css")
     uglify_copyfile("core/calculator.js", "output/calculator.js")
-    copyfile("core/thirdparty/jquery-3.3.1.min.js", "output/jquery.js")
-    copyfile("core/thirdparty/d3.v4.min.js", "output/d3.js")
-    copyfile("core/thirdparty/sankey.js", "output/sankey.js")
-    copyfile("core/logo.png", "output/logo.png")
-    copyfile("core/.htaccess", "output/.htaccess")
-    copyfile("core/add_game.png", "output/add_game.png")
+    shutil.copyfile("core/thirdparty/jquery-3.3.1.min.js", "output/jquery.js")
+    shutil.copyfile("core/thirdparty/d3.v4.min.js", "output/d3.js")
+    shutil.copyfile("core/thirdparty/sankey.js", "output/sankey.js")
+    shutil.copyfile("core/logo.png", "output/logo.png")
+    shutil.copyfile("core/.htaccess", "output/.htaccess")
+    shutil.copyfile("core/add_game.png", "output/add_game.png")
 
 
 def main():
@@ -608,6 +626,7 @@ def main():
     calculator_directories.sort()
     create_index_page(calculator_directories)
     copy_common_resources()
+    pre_compress_output_files()
 
 
 main()
