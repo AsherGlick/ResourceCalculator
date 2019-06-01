@@ -109,11 +109,21 @@ def create_packed_image(calculator_name):
 ################################################################################
 def lint_javascript():
     try:
-        subprocess.run(["eslint", "core/calculator.js"])
+        subprocess.run(["./node_modules/.bin/eslint", "core/calculator.js"])
     except OSError as e:
         print("WARNING: Javascript linting failed")
         print("        ", e)
 
+
+def uglify_copyfile(in_file, out_file):
+    try:
+        subprocess.run(["./node_modules/.bin/uglifyjs", "--mangle", "--compress", "-o", out_file, in_file])
+    # except OSError as e:
+    except e:
+        print("WARNING: Javascript compression failed")
+        print("        ", e)
+        print("        Falling back to regular copy")
+        copyfile(in_file, out_file)
 
 ################################################################################
 # lint_recipe
@@ -479,7 +489,7 @@ def calculator_display_name(calculator_name):
 ################################################################################
 def copy_common_resources():
     copyfile("core/calculator.css", "output/calculator.css")
-    copyfile("core/calculator.js", "output/calculator.js")
+    uglify_copyfile("core/calculator.js", "output/calculator.js")
     copyfile("core/thirdparty/jquery-3.3.1.min.js", "output/jquery.js")
     copyfile("core/thirdparty/d3.v4.min.js", "output/d3.js")
     copyfile("core/thirdparty/sankey.js", "output/sankey.js")

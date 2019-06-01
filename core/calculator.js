@@ -35,9 +35,9 @@ $("#about_button").click(function() {
 	$("#about_us").slideToggle();
 });
 
-$('input[name=unit_name]').click(function() {
+$("input[name=unit_name]").click(function() {
 	generatelist();
-})
+});
 
 // Bind events to the item list elements // TODO THIS FUNCTION NEEDS A BETTER COMMENT
 $(".desired_item").each(function() {
@@ -368,12 +368,12 @@ function generate_instructions(edges, generation_totals) {
 	$("<div/>").attr("id", "text_instructions_title").text("Base Ingredients").appendTo(instructions);
 	// List out raw resource numbers
 	for (var node in node_columns){
-		if (node_columns[node] == 0) {
+		if (node_columns[node] === 0) {
 
 
 			var line_wrapper = $("<div/>");
 			line_wrapper.addClass("instruction_wrapper");
-			var base_ingredients = text_item_object(generation_totals[node], node)
+			var base_ingredients = text_item_object(generation_totals[node], node);
 			base_ingredients.appendTo(line_wrapper);
 			line_wrapper.appendTo(instructions);
 
@@ -390,7 +390,7 @@ function generate_instructions(edges, generation_totals) {
 	// Create the step by step instructions
 	for (var i = 1; i < column_count; i++) {
 		for (var node in node_columns) {
-			if (node_columns[node] == i) {
+			if (node_columns[node] === i) {
 
 				if (node.startsWith("[Final]") || node.startsWith("[Extra]")){
 					continue;
@@ -420,7 +420,7 @@ function build_instruction_line(edges, item_name, generation_totals) {
 	var inputs = {};
 	for (var edge in edges){
 		// If this is pointing into the resource we are currently trying to craft
-		if (edges[edge].target == item_name) {
+		if (edges[edge].target === item_name) {
 			inputs[edges[edge].source] = edges[edge].value;
 		}
 	}
@@ -432,32 +432,35 @@ function build_instruction_line(edges, item_name, generation_totals) {
 
 
 function build_unit_value_list(number, unit_name) {
-	console.log(number, unit_name);
-	if (number == 0) {
-		return []
+	if (number === 0) {
+		return [];
 	}
-	if (unit_name == null) {
-		return [{"name":null,"count":number}];
+	if (unit_name === null) {
+		return [{"name":null, "count":number}];
 	}
 
 	var unit = stack_sizes[unit_name];
-	var unit_size = unit["quantity_multiplier"];
+	var unit_size = unit.quantity_multiplier;
 	var quotient = Math.floor(number/unit_size);
 	var remainder = number % unit_size;
 
-	var value_list = []
+	var value_list = [];
 
 	if (quotient > 0) {
-		var value_list_element = {}
-		if (quotient > 1) value_list_element["name"] = unit["plural"];
-		else {value_list_element["name"] = unit_name}
-		value_list_element["count"] = quotient;
-		value_list = [value_list_element]
+		var value_list_element = {};
+		if (quotient > 1) {
+			value_list_element.name = unit.plural;
+		}
+		else {
+			value_list_element.name = unit_name;
+		}
+		value_list_element.count = quotient;
+		value_list = [value_list_element];
 
 	}
 
 	// recurse down all the other possible units until
-	value_list = value_list.concat(build_unit_value_list(remainder, unit["extends_from"]))
+	value_list = value_list.concat(build_unit_value_list(remainder, unit.extends_from));
 
 	return value_list;
 }
@@ -467,7 +470,7 @@ function text_item_object(count, name){
 	item_object.addClass("instruction_item");
 
 
-	var units = $('input[name=unit_name]:checked').val()
+	var units = $("input[name=unit_name]:checked").val();
 	if (units !== "" && units !== undefined) {
 		var unit_value_list = build_unit_value_list(count, units);
 
@@ -475,9 +478,9 @@ function text_item_object(count, name){
 		count_object.addClass("instruction_item_count");
 		var join_plus_character = "";
 		for (var i = 0; i < unit_value_list.length; i++){
-			$("<span/>").text(join_plus_character + unit_value_list[i]["count"]).appendTo(count_object);
-			if (unit_value_list[i]["name"] !== null) {
-				$("<span/>").text("("+unit_value_list[i]["name"]+")").addClass("small_unit_name").appendTo(count_object);
+			$("<span/>").text(join_plus_character + unit_value_list[i].count).appendTo(count_object);
+			if (unit_value_list[i].name !== null) {
+				$("<span/>").text("("+unit_value_list[i].name+")").addClass("small_unit_name").appendTo(count_object);
 			}
 			join_plus_character="+";
 		}
@@ -509,10 +512,10 @@ function get_node_columns(edges) {
 
 	// Start by getting a list of all the nodes
 	for (var edge in edges){
-		if (nodes.indexOf(edges[edge].source) == -1) {
+		if (nodes.indexOf(edges[edge].source) === -1) {
 			nodes.push(edges[edge].source);
 		}
-		if (nodes.indexOf(edges[edge].target) == -1) {
+		if (nodes.indexOf(edges[edge].target) === -1) {
 			nodes.push(edges[edge].target);
 		}
 	}
@@ -520,37 +523,39 @@ function get_node_columns(edges) {
 	// Recursively populate the child count and parent counts via javascript closure magic
 	var child_counts = {};
 	var parent_counts = {};
+
+	function populate_child_count(node){
+		if (!(node in child_counts)) {
+			child_counts[node] = 0;
+			for (var edge in edges){
+				if (edges[edge].source === node) {
+					// make sure that this child has the correct child count
+					populate_child_count(edges[edge].target);
+					// If this child's child count is larger then any other child's thus far save it as the longest
+					if (child_counts[edges[edge].target]+1 > child_counts[node]){
+						child_counts[node] = child_counts[edges[edge].target]+1;
+					}
+				}
+			}
+		}
+	}
+	function populate_parent_count(node){
+		if (!(node in parent_counts)) {
+			parent_counts[node] = 0;
+			for (var edge in edges){
+				if (edges[edge].target === node) {
+					// make sure that this child has the correct child count
+					populate_parent_count(edges[edge].source);
+					// If this child's child count is larger then any other child's thus far save it as the longest
+					if (parent_counts[edges[edge].source]+1 > parent_counts[node]){
+						parent_counts[node] = parent_counts[edges[edge].source]+1;
+					}
+				}
+			}
+		}
+	}
+
 	for (var node in nodes)  {
-		function populate_child_count(node){
-			if (!(node in child_counts)) {
-				child_counts[node] = 0;
-				for (var edge in edges){
-					if (edges[edge].source == node) {
-						// make sure that this child has the correct child count
-						populate_child_count(edges[edge].target)
-						// If this child's child count is larger then any other child's thus far save it as the longest
-						if (child_counts[edges[edge].target]+1 > child_counts[node]){
-							child_counts[node] = child_counts[edges[edge].target]+1;
-						}
-					}
-				}
-			}
-		}
-		function populate_parent_count(node){
-			if (!(node in parent_counts)) {
-				parent_counts[node] = 0;
-				for (var edge in edges){
-					if (edges[edge].target == node) {
-						// make sure that this child has the correct child count
-						populate_parent_count(edges[edge].source)
-						// If this child's child count is larger then any other child's thus far save it as the longest
-						if (parent_counts[edges[edge].source]+1 > parent_counts[node]){
-							parent_counts[node] = parent_counts[edges[edge].source]+1;
-						}
-					}
-				}
-			}
-		}
 		populate_child_count(nodes[node]);
 		populate_parent_count(nodes[node]);
 	}
@@ -564,8 +569,8 @@ function get_node_columns(edges) {
 
 	// Snap all final results to the rightmost column
 	for (var node in child_counts) {
-		if (child_counts[node] == 0) {
-			parent_counts[node] = max_column_index
+		if (child_counts[node] === 0) {
+			parent_counts[node] = max_column_index;
 		}
 	}
 
