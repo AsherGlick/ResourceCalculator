@@ -109,12 +109,12 @@ body {
 	float:right;
 	padding: 5px 10px;
 	border: 2px solid #8b90a1;
-	border-left: 0;
 	border-radius: 0 5px 5px 0;
 	background: #FFF;
+	transition: background-color 0.1s linear, color 0.1s linear;
 }
 .hide_unused_wrapper:hover {
-	background: #FFF;
+	background: #D8D9ED;
 }
 
 .hide_unused_label {
@@ -149,14 +149,6 @@ body {
 
 }
 
-
-
-input[type=checkbox] + label.hide_unused_label {
-	color: rgba(0,0,0, .4);
-}
-input[type=checkbox]:checked + label.hide_unused_label {
-	color: rgba(0,0,0, 1);
-}
 
 
 .hide_unused_checkbox {
@@ -394,7 +386,7 @@ a:last-child .home_button {
 }
 
 .instructions {
-	color: #888;
+	color: #000;
 	text-align: center;
 	margin-bottom: 7px;
 }
