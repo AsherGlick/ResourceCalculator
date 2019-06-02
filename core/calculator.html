@@ -67,8 +67,7 @@
 					<!-- Resource List -->
 					{% for resource in resources %}
 						<div class="desired_item item item_{{resource['simplename']}}" style="{{ resource['css_offset'] }}" mc_value="{{ resource['mc_value'] }}">
-							<label for="{{ resource['simplename'] }}" class='hide'>{{ resource['mc_value' ]}}</label>
-							<input class="desired_item_count" type=number id="{{ resource['simplename'] }}" />
+							<input aria-label="{{ resource['mc_value'] }}" class="desired_item_count" type=number id="{{ resource['simplename'] }}" />
 						</div>
 					{% endfor %}
 					<div style="clear:both"></div>
