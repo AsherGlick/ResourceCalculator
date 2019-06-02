@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<title>ResourceCalculator</title>
 
@@ -67,7 +67,8 @@
 					<!-- Resource List -->
 					{% for resource in resources %}
 						<div class="desired_item item item_{{resource['simplename']}}" style="{{ resource['css_offset'] }}" mc_value="{{ resource['mc_value'] }}">
-							<input class="desired_item_count" type=number" id="{{ resource['simplename'] }}" />
+							<label for="{{ resource['simplename'] }}" class='hide'>{{ resource['mc_value' ]}}</label>
+							<input class="desired_item_count" type=number id="{{ resource['simplename'] }}" />
 						</div>
 					{% endfor %}
 					<div style="clear:both"></div>
