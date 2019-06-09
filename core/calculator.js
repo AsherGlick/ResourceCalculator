@@ -577,6 +577,30 @@ function get_node_columns(edges) {
 	return parent_counts;
 }
 
+function get_columns(edges) {
+	var node_columns = get_node_columns(edges);
+
+	// deterimine how many columns there should be
+	var column_count = 0;
+	for (var node in node_columns) {
+		if (node_columns[node]+1 > column_count) {
+			column_count = node_columns[node]+1;
+		}
+	}
+
+	// Create an array of those columns
+	var columns = Array(column_count);
+	for (var i = 0; i < column_count; i++){
+		columns[i] = []
+	}
+
+	for (var node in node_columns) {
+		columns[node_columns[node]].push(node);
+	}
+
+	return columns
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////// Chart Creation ////////////////////////////////
@@ -590,222 +614,396 @@ function get_node_columns(edges) {
 | Arguments
 |   generation_events -
 \******************************************************************************/
-function generate_chart(generation_events, resource_totals) {
+function generate_chart(edges, node_quantities) {
+
 	var margin = {
 		top: 10,
 		right: 1,
 		bottom: 10,
-		left: 1,
-	};
+		left: 1
+	}
+	var node_padding = 10;
 	var width = $("#content").width() - margin.left - margin.right;
 	var height = 800 - margin.top - margin.bottom;
-	var color = d3.scaleOrdinal(d3.schemeCategory20);
 
-	// Clear any old elements in the chart area
+	var columns = get_columns(edges);
+	// console.log(columns);
+	console.log(nodes);
+
+	// Create a representation of node objects
+	var nodes = {};
+	for (var column_id in columns) {
+		for (var node_id in columns[column_id]) {
+			var node_name = columns[column_id][node_id]
+			// console.log(node);
+			nodes[node_name] = {
+				"input": get_input_size(edges, node_name),
+				"output": node_quantities[node_name],
+				"size": Math.max(node_quantities[node_name], get_input_size(edges, node_name)),
+				"column": Number(column_id),
+				"passthrough": false,
+				"incoming_edges":[],
+				"outgoing_edges":[]
+			}
+		}
+	}
+
+	// Assign All Edges to the nodes
+	for (var edge_id in edges) {
+		var edge = edges[edge_id];
+
+		nodes[edge.target].incoming_edges.push(edge_id);
+		nodes[edge.source].outgoing_edges.push(edge_id);
+		edge.target_column = nodes[edge.target].column;
+		edge.source_column = nodes[edge.source].column;
+	}
+
+
+	var new_edges = {}
+	// Now we need to see if there are any mid-nodes
+	for (var edge_id in edges){
+		// console.log(edge);
+		var edge = edges[edge_id];
+		edge.passthrough_nodes = []
+
+		var source_column_index = edge.source_column;
+		var target_column_index = edge.target_column;
+
+		// var next_node_id = edge.target;
+		// var previous_node_id = edge.source;
+		for (var passthrough_column_index=source_column_index+1; passthrough_column_index<target_column_index; passthrough_column_index+=1) {
+			var passthrough_node_id = edge_id + "_" + passthrough_column_index;
+			// var passthrough_edge_id = edge_id + "_" + passthrough_column_index;
+			// new_edges[passthrough_edge_id] = {
+			// 	"source": previous_node_id,
+			// 	"target": passthrough_node_id,
+			// 	"value": edge.value,
+			// 	"source_column": passthrough_column_index-1,
+			// 	"target_column": passthrough_column_index,
+			// 	"sub_edges": [],
+			// 	"parent_edge": edge_id
+			// }
+
+			// // Add this new sub edge as a sub_edge to the parent
+			edge.passthrough_nodes.push(passthrough_node_id);
+
+			// Fix the previous node to have this edge pointing out of it instead of the parent edge?
+
+			nodes[passthrough_node_id] = {
+				"size": edge.value,
+				"passthrough_node_index": edge.passthrough_nodes.length,
+				"size": edge.value,
+				"column":passthrough_column_index,
+				"passthrough": true
+			};
+			columns[passthrough_column_index].push(passthrough_node_id);
+		}
+	}
+
+
+
+	// console.log(nodes);
+	// console.log(columns);
+	// console.log(edges);
+
+
+	// Calculate the scale of a single item based on the tallest column of items
+	var value_scale = 9999;
+	for (var column in columns) {
+		var height_for_values = height + node_padding;
+		var values = 0
+		for (var node_index in columns[column]) {
+			var node = nodes[columns[column][node_index]];
+			height_for_values -= node_padding;
+			values += node.size;
+		}
+
+		var column_scale = height_for_values / values;
+		if (value_scale > column_scale) {
+			value_scale = column_scale
+		}
+	}
+	console.log(value_scale);
+
+	// Determine Y Heights ?
+
+	layout_chart(columns, nodes, edges, node_padding, width, height, value_scale)
+}
+
+function layout_chart(columns, nodes, edges, node_padding, width, height, value_scale) {
 	$("#chart").empty();
 
-	// Create the new SVG image that will contain the sankey graph
-	var svg = d3.select("#chart").append("svg")
-		.attr("width", width + margin.left + margin.right)
-		.attr("height", height + margin.top + margin.bottom)
-		.append("g")
-		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-	var sankey = d3.sankey()
-		.nodeWidth(20)
-		.nodePadding(10)
-		.size([width, height]);
-
-	var path = sankey.link();
-
-	// d3.json("energy.json", function(energy) {
-
-	// Need piston
-	// 0: make sure this exists
-	// 1: make sure all of the sources exist
-	// 2: mapping
-
-	// Add mapping to and from and the quantity for each element
-	// "tofrom":{"source":"from","target":"to","value":1}
+	// var svg = $("<svg/>");
+	var svg = $(document.createElementNS("http://www.w3.org/2000/svg", "svg"));
 
 
+	for (var column_index in columns) {
+		var running_y = 0;
+		var x = 300 * column_index;
+		for (var node_index in columns[column_index]) { 
+		
+			var node = nodes[columns[column_index][node_index]];
 
-	var nodes = [];
-	var inverted_nodes = {};
-	var links = [];
+			// Build the node
+			if (!node.passthrough) {
+				var left_height = node.input * value_scale;
+				var full_height = node.size * value_scale;
+				var right_height = node.output * value_scale;
+				if (column_index == 0) {
+					console.log("changing left height");
+					left_height = full_height;
+				}
+
+				var node_width = 20;
+
+				var d = "M 0,0 L 0,"+left_height+" "+node_width/3+","+left_height+" "+node_width/3+","+full_height+" "+node_width*2/3+","+full_height+" "+node_width*2/3+","+right_height+" "+node_width+","+right_height+" "+node_width+",0 Z";
+
+				var node_g = $(document.createElementNS("http://www.w3.org/2000/svg", "g")).attr("transform","translate("+x+","+running_y+")");
+
+				$(document.createElementNS("http://www.w3.org/2000/svg", "path")).attr("d", d).attr("style", "fill: rgb(214, 39, 40); stroke: rgb(105, 19, 20);").appendTo(node_g);
+				node_g.appendTo(svg);
+			}
+
+			running_y += full_height + node_padding;
 
 
 
-
-	for (var key in generation_events) {
-		var resource = generation_events[key];
-
-
-		var source = resource.source;
-		var target = resource.target;
-
-		var value = resource.value;
-
-
-		var source_index;
-		if (source in inverted_nodes) {
-			source_index = inverted_nodes[source];
 		}
-		else {
-			source_index = nodes.length;
-			nodes.push({"name":source});
-			inverted_nodes[source] = source_index;
-		}
-
-		var target_index;
-		if (target in inverted_nodes) {
-			target_index = inverted_nodes[target];
-		}
-		else {
-			target_index = nodes.length;
-			nodes.push({"name":target});
-			inverted_nodes[target] = target_index;
-		}
-
-		links.push({
-			"source":source_index,
-			"target":target_index,
-			"value":value,
-		});
-
-
 	}
 
-
-	var energy = {
-		"nodes":nodes,
-		"links":links,
-	};
-
-	sankey
-		.nodes(energy.nodes)
-		.links(energy.links)
-		.layout(32);
-
-	var link = svg.append("g").selectAll(".link")
-		.data(energy.links)
-		.enter().append("path")
-		.attr("class", "link")
-		.attr("d", path)
-		.attr("rcalc:source", function(d) {
-			return d.source.name;
-		})
-		.attr("rcalc:target", function(d) {
-			return d.target.name;
-		})
-		.attr("rcalc:quantity", function(d) {
-			return d.value;
-		})
-		.style("stroke-width", function(d) {
-			return Math.max(1, d.dy);
-		})
-		.sort(function(a, b) {
-			return b.dy - a.dy;
-		})
-		.on("mouseover", function() {
-			$("#hover_recipe").show();
-			// set_recipe($(this).attr("target"), $(this).attr("source"), $(this).attr("quantity")); // TODO: When re-adding hover recipes/info on the sankey chart
-		})
-		.on("mouseout", function() {
-			$("#hover_recipe").hide();
-		});
-
-	var node = svg.append("g").selectAll(".node")
-		.data(energy.nodes)
-		.enter().append("g")
-		.attr("class", "node")
-		.attr("transform", function(d) {
-			return "translate(" + d.x + "," + d.y + ")";
-		})
-		.call(d3.drag()
-			.subject(function(d) {
-				return d;
-			})
-			.on("start", function() {
-				this.parentNode.appendChild(this);
-			})
-			.on("drag", dragmove));
-
-
-
-	node.append("path")
-		.attr("d", function(d) {
-
-
-
-			var left_count = 0; // sum target links
-			for (var target_link in d.targetLinks) {
-				left_count += d.targetLinks[target_link].value;
-			}
-			// If this is the first element make it the full height
-			if (left_count === 0) {
-				left_count = d.value;
-			}
-
-			var right_count = 0; // sum source links
-			for (var source_link in d.sourceLinks) {
-				right_count += d.sourceLinks[source_link].value;
-			}
-			// If this is the last element make it the full height
-			if (right_count === 0) {
-				right_count = d.value;
-			}
-
-
-
-			var left_height = d.dy * (left_count / d.value);
-			var full_height = d.dy;
-			var right_height = d.dy * (right_count / d.value);
-			var width = d.dx;
-			return "M 0,0 L 0,"+left_height+" "+width/3+","+left_height+" "+width/3+","+full_height+" "+width*2/3+","+full_height+" "+width*2/3+","+right_height+" "+width+","+right_height+" "+width+",0 Z";
-		})
-		.style("fill", function(d) {
-			return d.color = color(d.name.replace(/ .*/, ""));
-		})
-		.style("stroke", function(d) {
-			return d3.rgb(d.color).darker(2);
-		})
-		.append("title")
-		.text(function(d) {
-			// console.log(d);
-			// return d.name + "\n" + format(d.value);
-			return resource_totals[d.name] + " " + d.name;
-		});
-
-
-	node.append("text")
-		.attr("x", -6)
-		.attr("y", function(d) {
-			return d.dy / 2;
-		})
-		.attr("dy", ".35em")
-		.attr("text-anchor", "end")
-		.attr("transform", null)
-		.text(function(d) {
-			if (d.name.startsWith("[Final]")){
-				return d.name.substr(8);
-			}
-			else {
-				return d.name;
-			}
-		})
-		.filter(function(d) {
-			return d.x < width / 2;
-		})
-		.attr("x", 6 + sankey.nodeWidth())
-		.attr("text-anchor", "start");
-
-	function dragmove(d) {
-		d3.select(this).attr("transform", "translate(" + d.x + "," + (d.y = Math.max(0, Math.min(height - d.dy, d3.event.y))) + ")");
-		sankey.relayout();
-		link.attr("d", path);
-	}
+	svg.appendTo($("#chart")).attr("width", width).attr("height", height);
 }
+
+
+
+
+function get_input_size(edges, output){
+
+	var inputs_size = 0
+	for (var edge in edges){
+		if (edges[edge].target === output) {
+			inputs_size += edges[edge].value;
+		}
+	}
+	return inputs_size;
+}
+
+// function generate_chart(generation_events, resource_totals) {
+// 	var margin = {
+// 		top: 10,
+// 		right: 1,
+// 		bottom: 10,
+// 		left: 1,
+// 	};
+// 	var width = $("#content").width() - margin.left - margin.right;
+// 	var height = 800 - margin.top - margin.bottom;
+// 	var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+// 	// Clear any old elements in the chart area
+// 	$("#chart").empty();
+
+// 	// Create the new SVG image that will contain the sankey graph
+// 	var svg = d3.select("#chart").append("svg")
+// 		.attr("width", width + margin.left + margin.right)
+// 		.attr("height", height + margin.top + margin.bottom)
+// 		.append("g")
+// 		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// 	var sankey = d3.sankey()
+// 		.nodeWidth(20)
+// 		.nodePadding(10)
+// 		.size([width, height]);
+
+// 	var path = sankey.link();
+
+// 	// d3.json("energy.json", function(energy) {
+
+// 	// Need piston
+// 	// 0: make sure this exists
+// 	// 1: make sure all of the sources exist
+// 	// 2: mapping
+
+// 	// Add mapping to and from and the quantity for each element
+// 	// "tofrom":{"source":"from","target":"to","value":1}
+
+
+
+// 	var nodes = [];
+// 	var inverted_nodes = {};
+// 	var links = [];
+
+
+
+
+// 	for (var key in generation_events) {
+// 		var resource = generation_events[key];
+
+
+// 		var source = resource.source;
+// 		var target = resource.target;
+
+// 		var value = resource.value;
+
+
+// 		var source_index;
+// 		if (source in inverted_nodes) {
+// 			source_index = inverted_nodes[source];
+// 		}
+// 		else {
+// 			source_index = nodes.length;
+// 			nodes.push({"name":source});
+// 			inverted_nodes[source] = source_index;
+// 		}
+
+// 		var target_index;
+// 		if (target in inverted_nodes) {
+// 			target_index = inverted_nodes[target];
+// 		}
+// 		else {
+// 			target_index = nodes.length;
+// 			nodes.push({"name":target});
+// 			inverted_nodes[target] = target_index;
+// 		}
+
+// 		links.push({
+// 			"source":source_index,
+// 			"target":target_index,
+// 			"value":value,
+// 		});
+
+
+// 	}
+
+
+// 	var energy = {
+// 		"nodes":nodes,
+// 		"links":links,
+// 	};
+
+// 	sankey
+// 		.nodes(energy.nodes)
+// 		.links(energy.links)
+// 		.layout(32);
+
+// 	var link = svg.append("g").selectAll(".link")
+// 		.data(energy.links)
+// 		.enter().append("path")
+// 		.attr("class", "link")
+// 		.attr("d", path)
+// 		.attr("rcalc:source", function(d) {
+// 			return d.source.name;
+// 		})
+// 		.attr("rcalc:target", function(d) {
+// 			return d.target.name;
+// 		})
+// 		.attr("rcalc:quantity", function(d) {
+// 			return d.value;
+// 		})
+// 		.style("stroke-width", function(d) {
+// 			return Math.max(1, d.dy);
+// 		})
+// 		.sort(function(a, b) {
+// 			return b.dy - a.dy;
+// 		})
+// 		.on("mouseover", function() {
+// 			$("#hover_recipe").show();
+// 			// set_recipe($(this).attr("target"), $(this).attr("source"), $(this).attr("quantity")); // TODO: When re-adding hover recipes/info on the sankey chart
+// 		})
+// 		.on("mouseout", function() {
+// 			$("#hover_recipe").hide();
+// 		});
+
+// 	var node = svg.append("g").selectAll(".node")
+// 		.data(energy.nodes)
+// 		.enter().append("g")
+// 		.attr("class", "node")
+// 		.attr("transform", function(d) {
+// 			return "translate(" + d.x + "," + d.y + ")";
+// 		})
+// 		.call(d3.drag()
+// 			.subject(function(d) {
+// 				return d;
+// 			})
+// 			.on("start", function() {
+// 				this.parentNode.appendChild(this);
+// 			})
+// 			.on("drag", dragmove));
+
+
+
+// 	node.append("path")
+// 		.attr("d", function(d) {
+
+
+
+// 			var left_count = 0; // sum target links
+// 			for (var target_link in d.targetLinks) {
+// 				left_count += d.targetLinks[target_link].value;
+// 			}
+// 			// If this is the first element make it the full height
+// 			if (left_count === 0) {
+// 				left_count = d.value;
+// 			}
+
+// 			var right_count = 0; // sum source links
+// 			for (var source_link in d.sourceLinks) {
+// 				right_count += d.sourceLinks[source_link].value;
+// 			}
+// 			// If this is the last element make it the full height
+// 			if (right_count === 0) {
+// 				right_count = d.value;
+// 			}
+
+
+
+// 			var left_height = d.dy * (left_count / d.value);
+// 			var full_height = d.dy;
+// 			var right_height = d.dy * (right_count / d.value);
+// 			var width = d.dx;
+// 			return "M 0,0 L 0,"+left_height+" "+width/3+","+left_height+" "+width/3+","+full_height+" "+width*2/3+","+full_height+" "+width*2/3+","+right_height+" "+width+","+right_height+" "+width+",0 Z";
+// 		})
+// 		.style("fill", function(d) {
+// 			return d.color = color(d.name.replace(/ .*/, ""));
+// 		})
+// 		.style("stroke", function(d) {
+// 			return d3.rgb(d.color).darker(2);
+// 		})
+// 		.append("title")
+// 		.text(function(d) {
+// 			// console.log(d);
+// 			// return d.name + "\n" + format(d.value);
+// 			return resource_totals[d.name] + " " + d.name;
+// 		});
+
+
+// 	node.append("text")
+// 		.attr("x", -6)
+// 		.attr("y", function(d) {
+// 			return d.dy / 2;
+// 		})
+// 		.attr("dy", ".35em")
+// 		.attr("text-anchor", "end")
+// 		.attr("transform", null)
+// 		.text(function(d) {
+// 			if (d.name.startsWith("[Final]")){
+// 				return d.name.substr(8);
+// 			}
+// 			else {
+// 				return d.name;
+// 			}
+// 		})
+// 		.filter(function(d) {
+// 			return d.x < width / 2;
+// 		})
+// 		.attr("x", 6 + sankey.nodeWidth())
+// 		.attr("text-anchor", "start");
+
+// 	function dragmove(d) {
+// 		d3.select(this).attr("transform", "translate(" + d.x + "," + (d.y = Math.max(0, Math.min(height - d.dy, d3.event.y))) + ")");
+// 		sankey.relayout();
+// 		link.attr("d", path);
+// 	}
+// }
 
 
 ////////////////////////////////////////////////////////////////////////////////
