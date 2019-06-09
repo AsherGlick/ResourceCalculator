@@ -904,8 +904,9 @@ function generate_chart(edges, node_quantities) {
 			for (var i = column.length-1; i >= 0; i--) {
 				var node = nodes[column[i]];
 
-				var delta_y = top_of_previous_node - (node.y + node.size + node_padding);
+				var delta_y = top_of_previous_node - (node.y + node.height + node_padding);
 				if (delta_y < 0) {
+					console.log("Pushing Up:", delta_y);
 					node.y += delta_y;
 				}
 
@@ -914,7 +915,7 @@ function generate_chart(edges, node_quantities) {
 		}
 	}
 
-	set_node_positions(1, columns, nodes, edges, value_scale, node_padding, height);
+	set_node_positions(32, columns, nodes, edges, value_scale, node_padding, height);
 
 	////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////
@@ -959,6 +960,10 @@ function layout_chart(columns, nodes, edges, node_padding, width, height, value_
 				node_g.appendTo(svg);
 			}
 		}
+	}
+
+	for (var edge_index in edges) {
+		
 	}
 
 	svg.appendTo($("#chart")).attr("width", width).attr("height", height);
