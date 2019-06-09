@@ -906,7 +906,7 @@ function generate_chart(edges, node_quantities) {
 
 				var delta_y = top_of_previous_node - (node.y + node.height + node_padding);
 				if (delta_y < 0) {
-					console.log("Pushing Up:", delta_y);
+					// console.log("Pushing Up:", delta_y);
 					node.y += delta_y;
 				}
 
@@ -929,14 +929,15 @@ function generate_chart(edges, node_quantities) {
 
 function layout_chart(columns, nodes, edges, node_padding, width, height, value_scale) {
 	var node_width = 20;
+	var node_spacing = 320;
 
 	$("#chart").empty();
 
 	var svg = $(document.createElementNS("http://www.w3.org/2000/svg", "svg"));
 
-
+	// Draw all of the node lines
 	for (var column_index in columns) {
-		var x = 300 * column_index;
+		var x = node_spacing * column_index;
 		for (var node_index in columns[column_index]) { 
 		
 			var node = nodes[columns[column_index][node_index]];
@@ -962,7 +963,38 @@ function layout_chart(columns, nodes, edges, node_padding, width, height, value_
 		}
 	}
 
+	// Draw all of the edge Lines
 	for (var edge_index in edges) {
+		var edge = edges[edge_index];
+		var line_thickness = edge.value * value_scale;
+
+		var node_g = $(document.createElementNS("http://www.w3.org/2000/svg", "g")).attr("transform","translate("+0+","+0+")");
+
+		var start_node = nodes[edges[edge_index].source];
+		var end_node = nodes[edges[edge_index].target];
+
+		var mid_x_mod = (node_spacing-node_width)/2;
+
+		var start_x = start_node.column*node_spacing +node_width;
+		var start_y = start_node.y + line_thickness/2;
+
+		var d="M"+start_x+","+start_y+"C"+(start_x+mid_x_mod)+","+start_y+" ";
+
+		for (var passthrough_node_index in edges[edge_index].passthrough_nodes) {
+			var passthrough_node = nodes[edges[edge_index].passthrough_nodes[passthrough_node_index]];
+			var passthrough_x = passthrough_node.column*node_spacing;
+			var passthrough_y = passthrough_node.y + line_thickness/2	;
+
+			d += (passthrough_x-mid_x_mod)+","+passthrough_y+" "+passthrough_x+","+passthrough_y+"C"+(passthrough_x + mid_x_mod)+","+passthrough_y+" ";
+		}
+
+		var end_x = end_node.column*node_spacing;
+		var end_y = end_node.y + line_thickness/2;
+
+		d+=(end_x-mid_x_mod)+","+end_y+" "+end_x+","+end_y;
+
+		$(document.createElementNS("http://www.w3.org/2000/svg", "path")).attr("d", d).attr("style", "stroke-width: "+line_thickness+ "px;").attr("class", "link").appendTo(node_g);
+		node_g.appendTo(svg);
 		
 	}
 
