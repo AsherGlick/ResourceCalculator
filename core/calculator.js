@@ -746,10 +746,11 @@ function generate_chart(edges, node_quantities) {
 
 		// TODO: Should this really be called as there are no colissions at the start
 		resolve_node_collisions(columns, nodes, node_padding, svg_height);
+		resolve_node_collisions(columns, nodes, node_padding, svg_height);
 
 		for (var alpha = 1; iterations > 0; --iterations) {
-			// relax_columns_right_to_left(alpha *= .99, columns);
-			// resolve_node_collisions(columns, node_padding, svg_height);
+			relax_columns_right_to_left(alpha *= .99, columns, nodes, edges);
+			resolve_node_collisions(columns, nodes, node_padding, svg_height);
 			relax_columns_left_to_right(alpha, columns, nodes, edges);
 			resolve_node_collisions(columns, nodes, node_padding, svg_height);
 		}
@@ -763,13 +764,11 @@ function generate_chart(edges, node_quantities) {
 				for (var source_id in node.incoming_edges) {
 					var edge = edges[node.incoming_edges[source_id]];
 
-					console.log(edge);
 					var source_node = nodes[edge.source];
 					if (edge.passthrough_nodes.length) {
 						// console.log("incoming edge is a passthrough");
 						source_node = nodes[edge.passthrough_nodes[edge.passthrough_nodes.length-1]]
 					}
-					console.log(source_node);
 					sum += y_midpoint(source_node) * edge.value; 
 				}
 			}
@@ -802,16 +801,67 @@ function generate_chart(edges, node_quantities) {
 			}
 		}
 
-		console.log("Relaxing Left to Right");
 		for (var column_index in columns) {
 			if (column_index == 0) {continue;}
 			for (var node_index in columns[column_index]) {
 				var node = nodes[columns[column_index][node_index]];
 				var y = weighted_source_sum(node) / raw_source_sum(node);	
-				// console.log("Wighte Sum:",weighted_source_sum(node));
-				// console.log("Raw Source Sum:", raw_source_sum(node));
-				// console.log("y:", y);
-				// console.log("Y-midpoint:", y_midpoint(node));
+				node.y += (y - y_midpoint(node)) * alpha;
+			}
+		}
+
+	}
+	function relax_columns_right_to_left(alpha, columns, nodes, edges) {
+		function weighted_target_sum(node) {
+			var sum = 0;
+			if (node.passthrough === false) {
+				// console.log(node);
+				for (var target_id in node.outgoing_edges) {
+					var edge = edges[node.outgoing_edges[target_id]];
+
+					var target_node = nodes[edge.target];
+					if (edge.passthrough_nodes.length) {
+						// console.log("incoming edge is a passthrough");
+						target_node = nodes[edge.passthrough_nodes[0]]
+					}
+					sum += y_midpoint(target_node) * edge.value; 
+				}
+			}
+			else {
+				var passthrough_edge = edges[node.passthrough_edge_id];
+				// console.log(passthrough_edge);
+				if (node.passthrough_node_index === passthrough_edge.passthrough_nodes.length-1) {
+					sum = y_midpoint(nodes[passthrough_edge.target]) * passthrough_edge.value;
+				}
+				else {
+					sum = y_midpoint(nodes[passthrough_edge.passthrough_nodes[node.passthrough_node_index+1]]) * passthrough_edge.value;
+				}
+				// console.log(sum)
+			}
+			return sum;
+		}
+		function raw_target_sum(node) {
+			// If the node is not a passthroguh then return the sum of all of 
+			// the source edges
+			if (node.passthrough === false) {
+				var sum = 0
+				for (var target_id in node.outgoing_edges) {
+					sum += edges[node.outgoing_edges[target_id]].value
+				}
+				return sum;
+			}
+			// If this is a passthrough node then both the target and source
+			// edges will be the same size as the node
+			else {
+				return node.size
+			}
+		}
+		columns = columns.slice().reverse();
+		for (var column_index in columns) {
+			if (column_index == 0) {continue;}
+			for (var node_index in columns[column_index]) {
+				var node = nodes[columns[column_index][node_index]];
+				var y = weighted_target_sum(node) / raw_target_sum(node);	
 				node.y += (y - y_midpoint(node)) * alpha;
 			}
 		}
@@ -841,15 +891,11 @@ function generate_chart(edges, node_quantities) {
 				// Check to see if there is an overlap and fix it if so
 				var delta_y = bottom_of_previous_node - node.y;
 				if (delta_y > 0) {
-					console.log("nodey-pre:", node.y);
 					node.y += delta_y;
-					console.log("nodey-post:", node.y);
-					console.log("Adjusting down", delta_y);
 				}
 
 				// Set the bottom of this node to be the bottom of the previous node for the next cycle
 				bottom_of_previous_node = node.y + node.height + node_padding;
-				console.log(bottom_of_previous_node);
 			}
 
 			// If any node is overlapping push it upwards
@@ -861,7 +907,6 @@ function generate_chart(edges, node_quantities) {
 				var delta_y = top_of_previous_node - (node.y + node.size + node_padding);
 				if (delta_y < 0) {
 					node.y += delta_y;
-					console.log("Adjusting Up");
 				}
 
 				top_of_previous_node = node.y;
