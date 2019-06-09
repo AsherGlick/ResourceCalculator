@@ -628,7 +628,7 @@ function generate_chart(edges, node_quantities) {
 
 	var columns = get_columns(edges);
 	// console.log(columns);
-	console.log(nodes);
+	// console.log(nodes);
 
 	// Create a representation of node objects
 	var nodes = {};
@@ -685,17 +685,17 @@ function generate_chart(edges, node_quantities) {
 			// }
 
 			// // Add this new sub edge as a sub_edge to the parent
-			edge.passthrough_nodes.push(passthrough_node_id);
 
 			// Fix the previous node to have this edge pointing out of it instead of the parent edge?
 
 			nodes[passthrough_node_id] = {
 				"size": edge.value,
 				"passthrough_node_index": edge.passthrough_nodes.length,
-				"size": edge.value,
+				"passthrough_edge_id": edge_id,
 				"column":passthrough_column_index,
 				"passthrough": true
 			};
+			edge.passthrough_nodes.push(passthrough_node_id);
 			columns[passthrough_column_index].push(passthrough_node_id);
 		}
 	}
@@ -723,22 +723,173 @@ function generate_chart(edges, node_quantities) {
 			value_scale = column_scale
 		}
 	}
-	console.log(value_scale);
 
 	// Determine Y Heights ?
+
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+
+	function set_node_positions(iterations, columns, nodes, edges, value_scale, node_padding, svg_height) {
+
+		// Calculate Node Heights and Positions
+		for (var column_index in columns) {
+			var running_y = 0;
+			for (var node_index in columns[column_index]) {
+				var node = nodes[columns[column_index][node_index]];
+				node.height = node.size * value_scale;
+				node.y = running_y;
+				running_y += node.height + node_padding;
+			}
+		}
+
+		// TODO: Should this really be called as there are no colissions at the start
+		resolve_node_collisions(columns, nodes, node_padding, svg_height);
+
+		for (var alpha = 1; iterations > 0; --iterations) {
+			// relax_columns_right_to_left(alpha *= .99, columns);
+			// resolve_node_collisions(columns, node_padding, svg_height);
+			relax_columns_left_to_right(alpha, columns, nodes, edges);
+			resolve_node_collisions(columns, nodes, node_padding, svg_height);
+		}
+	}
+
+	function relax_columns_left_to_right(alpha, columns, nodes, edges) {
+		function weighted_source_sum(node) {
+			var sum = 0;
+			if (node.passthrough === false) {
+				// console.log(node);
+				for (var source_id in node.incoming_edges) {
+					var edge = edges[node.incoming_edges[source_id]];
+
+					console.log(edge);
+					var source_node = nodes[edge.source];
+					if (edge.passthrough_nodes.length) {
+						// console.log("incoming edge is a passthrough");
+						source_node = nodes[edge.passthrough_nodes[edge.passthrough_nodes.length-1]]
+					}
+					console.log(source_node);
+					sum += y_midpoint(source_node) * edge.value; 
+				}
+			}
+			else {
+				var passthrough_edge = edges[node.passthrough_edge_id];
+				if (node.passthrough_node_index === 0) {
+					sum = y_midpoint(nodes[passthrough_edge.source]) * passthrough_edge.value;
+				}
+				else {
+					sum = y_midpoint(nodes[passthrough_edge.passthrough_nodes[node.passthrough_node_index-1]]) * passthrough_edge.value;
+				}
+				// console.log(sum)
+			}
+			return sum;
+		}
+		function raw_source_sum(node) {
+			// If the node is not a passthroguh then return the sum of all of 
+			// the source edges
+			if (node.passthrough === false) {
+				var sum = 0
+				for (var source_id in node.incoming_edges) {
+					sum += edges[node.incoming_edges[source_id]].value
+				}
+				return sum;
+			}
+			// If this is a passthrough node then both the target and source
+			// edges will be the same size as the node
+			else {
+				return node.size
+			}
+		}
+
+		console.log("Relaxing Left to Right");
+		for (var column_index in columns) {
+			if (column_index == 0) {continue;}
+			for (var node_index in columns[column_index]) {
+				var node = nodes[columns[column_index][node_index]];
+				var y = weighted_source_sum(node) / raw_source_sum(node);	
+				// console.log("Wighte Sum:",weighted_source_sum(node));
+				// console.log("Raw Source Sum:", raw_source_sum(node));
+				// console.log("y:", y);
+				// console.log("Y-midpoint:", y_midpoint(node));
+				node.y += (y - y_midpoint(node)) * alpha;
+			}
+		}
+
+	}
+
+	function y_midpoint(node) {
+		return node.y + node.height / 2;
+	}
+
+	function resolve_node_collisions(columns, nodes, node_padding, svg_height) {
+		function y_comp(a, b) {
+			return nodes[a].y - nodes[b].y;
+		}
+
+		// Sort all the nodes in the array based on their visual order
+		for (var column_index in columns) {
+			var column = columns[column_index];
+			column.sort(y_comp);
+		
+
+			// If any node is overlapping the previous node push it downwards 
+			var bottom_of_previous_node = 0;
+			for (var i = 0; i < column.length; i++) {
+				var node = nodes[column[i]];
+
+				// Check to see if there is an overlap and fix it if so
+				var delta_y = bottom_of_previous_node - node.y;
+				if (delta_y > 0) {
+					console.log("nodey-pre:", node.y);
+					node.y += delta_y;
+					console.log("nodey-post:", node.y);
+					console.log("Adjusting down", delta_y);
+				}
+
+				// Set the bottom of this node to be the bottom of the previous node for the next cycle
+				bottom_of_previous_node = node.y + node.height + node_padding;
+				console.log(bottom_of_previous_node);
+			}
+
+			// If any node is overlapping push it upwards
+			// maybe this can include node padding as we dont need a padding on the bottom
+			var top_of_previous_node = svg_height;
+			for (var i = column.length-1; i >= 0; i--) {
+				var node = nodes[column[i]];
+
+				var delta_y = top_of_previous_node - (node.y + node.size + node_padding);
+				if (delta_y < 0) {
+					node.y += delta_y;
+					console.log("Adjusting Up");
+				}
+
+				top_of_previous_node = node.y;
+			}
+		}
+	}
+
+	set_node_positions(1, columns, nodes, edges, value_scale, node_padding, height);
+
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+
 
 	layout_chart(columns, nodes, edges, node_padding, width, height, value_scale)
 }
 
 function layout_chart(columns, nodes, edges, node_padding, width, height, value_scale) {
+	var node_width = 20;
+
 	$("#chart").empty();
 
-	// var svg = $("<svg/>");
 	var svg = $(document.createElementNS("http://www.w3.org/2000/svg", "svg"));
 
 
 	for (var column_index in columns) {
-		var running_y = 0;
 		var x = 300 * column_index;
 		for (var node_index in columns[column_index]) { 
 		
@@ -754,20 +905,14 @@ function layout_chart(columns, nodes, edges, node_padding, width, height, value_
 					left_height = full_height;
 				}
 
-				var node_width = 20;
 
 				var d = "M 0,0 L 0,"+left_height+" "+node_width/3+","+left_height+" "+node_width/3+","+full_height+" "+node_width*2/3+","+full_height+" "+node_width*2/3+","+right_height+" "+node_width+","+right_height+" "+node_width+",0 Z";
 
-				var node_g = $(document.createElementNS("http://www.w3.org/2000/svg", "g")).attr("transform","translate("+x+","+running_y+")");
+				var node_g = $(document.createElementNS("http://www.w3.org/2000/svg", "g")).attr("transform","translate("+x+","+node.y+")");
 
 				$(document.createElementNS("http://www.w3.org/2000/svg", "path")).attr("d", d).attr("style", "fill: rgb(214, 39, 40); stroke: rgb(105, 19, 20);").appendTo(node_g);
 				node_g.appendTo(svg);
 			}
-
-			running_y += full_height + node_padding;
-
-
-
 		}
 	}
 
