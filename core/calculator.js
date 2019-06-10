@@ -963,6 +963,64 @@ function layout_chart(columns, nodes, edges, node_padding, width, height, value_
 		}
 	}
 
+	// Determine offset of all the edge connections
+	function source_y(edge_id) {
+		var edge = edges[edge_id];
+		// if this is a passthrough edge get the last passthrough node instead of the source
+		if (edge.passthrough_nodes.length > 0) {
+			return nodes[edge.passthrough_nodes[edge.passthrough_nodes.length-1]].y;
+		}
+		else {
+			return nodes[edge.source].y
+		}
+	}
+	function source_y_comp(a, b) {
+		return source_y(a) - source_y(b);
+	}
+
+	function target_y(edge_id) {
+		var edge = edges[edge_id];
+		// if this is a passthrough edge get the first passthrough node instead of the target
+		// console.log(edge);
+		if (edge.passthrough_nodes.length > 0) {
+			return nodes[edge.passthrough_nodes[0]].y;
+		}
+		else {
+			return nodes[edge.target].y
+		}
+	}
+	function target_y_comp(a, b) {
+		return target_y(a).y - target_y(b).y;
+	}
+	for (var node_id in nodes) {
+		var node = nodes[node_id];
+		if (node.passthrough === false) {
+			// console.log(node.incoming_edges, node.outgoing_edges);
+			console.log(node_id);
+			node.incoming_edges.sort(source_y_comp);
+			node.outgoing_edges.sort(target_y_comp);
+
+			var running_edge_height = 0;
+			for (var edge_id in node.incoming_edges) {
+				var edge = edges[node.incoming_edges[edge_id]];
+				// if (node_id == "Piston") {
+					// console.log(node.incoming_edges[edge_id], ":", running_edge_height, edge.value * value_scale);
+				// }
+
+				// console.log(edge.target_y_offset);
+				edge.target_y_offset = running_edge_height;
+				running_edge_height += edge.value * value_scale;
+			}
+			running_edge_height = 0;
+			for (var edge_id in node.outgoing_edges) {
+				var edge = edges[node.outgoing_edges[edge_id]];
+				edge.source_y_offset = running_edge_height;
+				running_edge_height += edge.value * value_scale;
+			}
+		}
+	}
+
+
 	// Draw all of the edge Lines
 	for (var edge_index in edges) {
 		var edge = edges[edge_index];
@@ -976,7 +1034,7 @@ function layout_chart(columns, nodes, edges, node_padding, width, height, value_
 		var mid_x_mod = (node_spacing-node_width)/2;
 
 		var start_x = start_node.column*node_spacing +node_width;
-		var start_y = start_node.y + line_thickness/2;
+		var start_y = start_node.y + edge.source_y_offset + line_thickness/2;
 
 		var d="M"+start_x+","+start_y+"C"+(start_x+mid_x_mod)+","+start_y+" ";
 
@@ -989,7 +1047,7 @@ function layout_chart(columns, nodes, edges, node_padding, width, height, value_
 		}
 
 		var end_x = end_node.column*node_spacing;
-		var end_y = end_node.y + line_thickness/2;
+		var end_y = end_node.y + edge.target_y_offset + line_thickness/2;
 
 		d+=(end_x-mid_x_mod)+","+end_y+" "+end_x+","+end_y;
 
