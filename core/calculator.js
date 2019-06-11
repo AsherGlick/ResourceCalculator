@@ -1004,7 +1004,7 @@ function layout_chart(columns, nodes, edges, node_padding, width, height, value_
 		}
 	}
 	function target_y_comp(a, b) {
-		return target_y(a).y - target_y(b).y;
+		return target_y(a) - target_y(b);
 	}
 	for (var node_id in nodes) {
 		var node = nodes[node_id];
