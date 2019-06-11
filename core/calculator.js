@@ -746,7 +746,6 @@ function generate_chart(edges, node_quantities) {
 
 		// TODO: Should this really be called as there are no colissions at the start
 		resolve_node_collisions(columns, nodes, node_padding, svg_height);
-		resolve_node_collisions(columns, nodes, node_padding, svg_height);
 
 		for (var alpha = 1; iterations > 0; --iterations) {
 			relax_columns_right_to_left(alpha *= .99, columns, nodes, edges);
@@ -836,7 +835,6 @@ function generate_chart(edges, node_quantities) {
 				else {
 					sum = y_midpoint(nodes[passthrough_edge.passthrough_nodes[node.passthrough_node_index+1]]) * passthrough_edge.value;
 				}
-				// console.log(sum)
 			}
 			return sum;
 		}
@@ -904,13 +902,13 @@ function generate_chart(edges, node_quantities) {
 			for (var i = column.length-1; i >= 0; i--) {
 				var node = nodes[column[i]];
 
-				var delta_y = top_of_previous_node - (node.y + node.height + node_padding);
+				var delta_y = top_of_previous_node - (node.y + node.height);
 				if (delta_y < 0) {
 					// console.log("Pushing Up:", delta_y);
 					node.y += delta_y;
 				}
 
-				top_of_previous_node = node.y;
+				top_of_previous_node = node.y - node_padding;
 			}
 		}
 	}
@@ -924,17 +922,22 @@ function generate_chart(edges, node_quantities) {
 	////////////////////////////////////////////////////////////////////////////
 
 
-	layout_chart(columns, nodes, edges, node_padding, width, height, value_scale)
+	layout_chart(columns, nodes, edges, node_padding, width, height, value_scale, margin)
 }
 
-function layout_chart(columns, nodes, edges, node_padding, width, height, value_scale) {
+function layout_chart(columns, nodes, edges, node_padding, width, height, value_scale, margin) {
+	console.log(nodes);
 	var node_width = 20;
-	var node_spacing = 320;
+
+	var column_count = columns.length
+	// var node_spacing = (width - columns.length*node_width) / (columns.length-1);
+	var node_spacing = (width-node_width) / (columns.length-1);
+
 
 	$("#chart").empty();
 
 	var svg = $(document.createElementNS("http://www.w3.org/2000/svg", "svg"));
-
+	var padding_g = $(document.createElementNS("http://www.w3.org/2000/svg", "g")).attr("transform", "translate("+margin.left+","+margin.top+")").appendTo(svg);
 	// Draw all of the node lines
 	for (var column_index in columns) {
 		var x = node_spacing * column_index;
@@ -958,7 +961,7 @@ function layout_chart(columns, nodes, edges, node_padding, width, height, value_
 				var node_g = $(document.createElementNS("http://www.w3.org/2000/svg", "g")).attr("transform","translate("+x+","+node.y+")");
 
 				$(document.createElementNS("http://www.w3.org/2000/svg", "path")).attr("d", d).attr("style", "fill: rgb(214, 39, 40); stroke: rgb(105, 19, 20);").appendTo(node_g);
-				node_g.appendTo(svg);
+				node_g.appendTo(padding_g);
 			}
 		}
 	}
@@ -1052,11 +1055,15 @@ function layout_chart(columns, nodes, edges, node_padding, width, height, value_
 		d+=(end_x-mid_x_mod)+","+end_y+" "+end_x+","+end_y;
 
 		$(document.createElementNS("http://www.w3.org/2000/svg", "path")).attr("d", d).attr("style", "stroke-width: "+line_thickness+ "px;").attr("class", "link").appendTo(node_g);
-		node_g.appendTo(svg);
+		node_g.appendTo(padding_g);
 		
 	}
 
-	svg.appendTo($("#chart")).attr("width", width).attr("height", height);
+
+	var chart_width = width + margin.left + margin.right;
+	var chart_height = height + margin.top + margin.bottom;
+
+	svg.appendTo($("#chart")).attr("width", chart_width).attr("height", chart_height);
 }
 
 
