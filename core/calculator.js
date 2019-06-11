@@ -744,12 +744,8 @@ function generate_chart(edges, node_quantities) {
 			}
 		}
 
-		// TODO: Should this really be called as there are no colissions at the start
-		resolve_node_collisions(columns, nodes, node_padding, svg_height);
-
 		for (var alpha = 1; iterations > 0; --iterations) {
 			relax_columns_right_to_left(alpha *= .99, columns, nodes, edges);
-			resolve_node_collisions(columns, nodes, node_padding, svg_height);
 			relax_columns_left_to_right(alpha, columns, nodes, edges);
 			resolve_node_collisions(columns, nodes, node_padding, svg_height);
 		}
@@ -759,13 +755,11 @@ function generate_chart(edges, node_quantities) {
 		function weighted_source_sum(node) {
 			var sum = 0;
 			if (node.passthrough === false) {
-				// console.log(node);
 				for (var source_id in node.incoming_edges) {
 					var edge = edges[node.incoming_edges[source_id]];
 
 					var source_node = nodes[edge.source];
 					if (edge.passthrough_nodes.length) {
-						// console.log("incoming edge is a passthrough");
 						source_node = nodes[edge.passthrough_nodes[edge.passthrough_nodes.length-1]]
 					}
 					sum += y_midpoint(source_node) * edge.value; 
@@ -779,7 +773,6 @@ function generate_chart(edges, node_quantities) {
 				else {
 					sum = y_midpoint(nodes[passthrough_edge.passthrough_nodes[node.passthrough_node_index-1]]) * passthrough_edge.value;
 				}
-				// console.log(sum)
 			}
 			return sum;
 		}
@@ -925,6 +918,75 @@ function generate_chart(edges, node_quantities) {
 	layout_chart(columns, nodes, edges, node_padding, width, height, value_scale, margin)
 }
 
+
+function hexToRgb(hex) {
+	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+	return result ? {
+		r: parseInt(result[1], 16),
+		g: parseInt(result[2], 16),
+		b: parseInt(result[3], 16)
+	} : null;
+}
+
+function color_darken(color) {
+	var k = 0.49;
+
+
+	console.log(color.r, color.r * k, Math.round(color.r*k));
+
+	return {
+		r: Math.round(color.r * k),
+		g: Math.round(color.g * k),
+		b: Math.round(color.b * k)
+	}
+}
+
+function color_string(color){
+	return "rgb("+color.r+","+color.g+","+color.b+")"
+}
+
+
+var all_colors = [
+	hexToRgb("1f77b4"),
+	hexToRgb("aec7e8"),
+	hexToRgb("ff7f0e"),
+	hexToRgb("ffbb78"),
+	hexToRgb("2ca02c"),
+	hexToRgb("98df8a"),
+	hexToRgb("d62728"),
+	hexToRgb("ff9896"),
+	hexToRgb("9467bd"),
+	hexToRgb("c5b0d5"),
+	hexToRgb("8c564b"),
+	hexToRgb("c49c94"),
+	hexToRgb("e377c2"),
+	hexToRgb("f7b6d2"),
+	hexToRgb("bcbd22"),
+	hexToRgb("dbdb8d"),
+	hexToRgb("17becf"),
+	hexToRgb("9edae5"),
+	hexToRgb("7f7f7f"),
+	hexToRgb("c7c7c7"),
+];
+
+var selected_colors = {};
+function get_color(key) {
+	key = key.replace(/^\[Extra\] /, "")
+	key = key.replace(/^\[Final\] /, "")
+	key = key.replace(/ .*/, "")
+
+	var index = selected_colors[key];
+	if (index === undefined) {
+		// console.log(selected_colors.length, all_colors.length)
+		index = Object.keys(selected_colors).length % all_colors.length
+		selected_colors[key] = index
+	}
+
+	return all_colors[index];
+}
+
+
+
 function layout_chart(columns, nodes, edges, node_padding, width, height, value_scale, margin) {
 	console.log(nodes);
 	var node_width = 20;
@@ -941,6 +1003,7 @@ function layout_chart(columns, nodes, edges, node_padding, width, height, value_
 	var edges_g = $(document.createElementNS("http://www.w3.org/2000/svg", "g")).appendTo(padding_g);
 	var nodes_g = $(document.createElementNS("http://www.w3.org/2000/svg", "g")).appendTo(padding_g);
 	// Draw all of the node lines
+
 	for (var column_index in columns) {
 		var x = node_spacing * column_index;
 		for (var node_index in columns[column_index]) { 
@@ -962,7 +1025,12 @@ function layout_chart(columns, nodes, edges, node_padding, width, height, value_
 
 				var node_g = $(document.createElementNS("http://www.w3.org/2000/svg", "g")).attr("transform","translate("+x+","+node.y+")").attr("class","node");
 
-				$(document.createElementNS("http://www.w3.org/2000/svg", "path")).attr("d", d).attr("style", "fill: rgb(214, 39, 40); stroke: rgb(105, 19, 20);").appendTo(node_g);
+
+				var fill_color = get_color(node_id);
+				var edge_color = color_darken(fill_color);
+
+
+				$(document.createElementNS("http://www.w3.org/2000/svg", "path")).attr("d", d).attr("style", "fill: "+color_string(fill_color)+"; stroke: "+color_string(edge_color)+";").appendTo(node_g);
 
 				var text_offset = node_width + 6;
 				var text_anchor = "start";
