@@ -938,12 +938,14 @@ function layout_chart(columns, nodes, edges, node_padding, width, height, value_
 
 	var svg = $(document.createElementNS("http://www.w3.org/2000/svg", "svg"));
 	var padding_g = $(document.createElementNS("http://www.w3.org/2000/svg", "g")).attr("transform", "translate("+margin.left+","+margin.top+")").appendTo(svg);
+	var edges_g = $(document.createElementNS("http://www.w3.org/2000/svg", "g")).appendTo(padding_g);
+	var nodes_g = $(document.createElementNS("http://www.w3.org/2000/svg", "g")).appendTo(padding_g);
 	// Draw all of the node lines
 	for (var column_index in columns) {
 		var x = node_spacing * column_index;
 		for (var node_index in columns[column_index]) { 
-		
-			var node = nodes[columns[column_index][node_index]];
+			var node_id = columns[column_index][node_index]
+			var node = nodes[node_id];
 
 			// Build the node
 			if (!node.passthrough) {
@@ -958,10 +960,19 @@ function layout_chart(columns, nodes, edges, node_padding, width, height, value_
 
 				var d = "M 0,0 L 0,"+left_height+" "+node_width/3+","+left_height+" "+node_width/3+","+full_height+" "+node_width*2/3+","+full_height+" "+node_width*2/3+","+right_height+" "+node_width+","+right_height+" "+node_width+",0 Z";
 
-				var node_g = $(document.createElementNS("http://www.w3.org/2000/svg", "g")).attr("transform","translate("+x+","+node.y+")");
+				var node_g = $(document.createElementNS("http://www.w3.org/2000/svg", "g")).attr("transform","translate("+x+","+node.y+")").attr("class","node");
 
 				$(document.createElementNS("http://www.w3.org/2000/svg", "path")).attr("d", d).attr("style", "fill: rgb(214, 39, 40); stroke: rgb(105, 19, 20);").appendTo(node_g);
-				node_g.appendTo(padding_g);
+
+				var text_offset = node_width + 6;
+				var text_anchor = "start";
+				if (column_index >= columns.length/2){
+					text_offset = -6;
+					text_anchor = "end";
+				}
+
+				$(document.createElementNS("http://www.w3.org/2000/svg", "text")).attr("x", text_offset).attr("y", full_height/2).attr("dy",".35em").attr("text-anchor", text_anchor).text(node_id).appendTo(node_g);
+				node_g.appendTo(nodes_g);
 			}
 		}
 	}
@@ -1055,7 +1066,7 @@ function layout_chart(columns, nodes, edges, node_padding, width, height, value_
 		d+=(end_x-mid_x_mod)+","+end_y+" "+end_x+","+end_y;
 
 		$(document.createElementNS("http://www.w3.org/2000/svg", "path")).attr("d", d).attr("style", "stroke-width: "+line_thickness+ "px;").attr("class", "link").appendTo(node_g);
-		node_g.appendTo(padding_g);
+		node_g.appendTo(edges_g);
 		
 	}
 
