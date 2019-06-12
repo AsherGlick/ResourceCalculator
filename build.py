@@ -119,7 +119,7 @@ def lint_javascript():
 
 def uglify_copyfile(in_file, out_file):
     try:
-        subprocess.run(["./node_modules/.bin/uglifyjs", "--mangle", "--compress", "-o", out_file, in_file])
+        subprocess.run(["./node_modules/.bin/terser", "--mangle", "--compress", "-o", out_file, in_file])
     # except OSError as e:
     except e:
         print("WARNING: Javascript compression failed")
@@ -129,7 +129,7 @@ def uglify_copyfile(in_file, out_file):
 
 def uglify_js_string(js_string):
     try:
-        result = subprocess.run(["./node_modules/.bin/uglifyjs", "--mangle", "--compress"], input=js_string.encode("utf-8"), stdout=subprocess.PIPE)
+        result = subprocess.run(["./node_modules/.bin/terser", "--mangle", "--compress"], input=js_string.encode("utf-8"), stdout=subprocess.PIPE)
         return result.stdout.decode("utf-8")
     # except OSError as e:
     except e:
