@@ -178,7 +178,7 @@ function load() {
 	var uri_arguments = decodeURIComponent(window.location.hash.substr(1));
 	if (uri_arguments !== "") {
 		var pairs = uri_arguments.split("&");
-		for(var i in pairs){
+		for(let i in pairs){
 			var split = pairs[i].split("=");
 			var id = decodeURIComponent(split[0]);
 			var value = decodeURIComponent(split[1]);
@@ -200,7 +200,7 @@ $("#generatelist").click(generatelist);
 
 
 function negative_requirements_exist(requirements) {
-	for (var requirement in requirements){
+	for (let requirement in requirements){
 		if (requirements[requirement] < 0) {
 			return true;
 		}
@@ -225,7 +225,7 @@ function generatelist() {
 		var output_requirements = JSON.parse(JSON.stringify(requirements));
 
 		// For each negative requirement get it's base resources
-		for (var requirement in requirements){
+		for (let requirement in requirements){
 			if (requirements[requirement] < 0) {
 
 
@@ -281,7 +281,7 @@ function generatelist() {
 		requirements = output_requirements;
 	}
 
-	for (var original_requirement in original_requirements) {
+	for (let original_requirement in original_requirements) {
 		// console.log(get_recipe(original_requirement));
 		if (get_recipe(original_requirement).recipe_type === "Raw Resource") {
 			resource_tracker[original_requirement + "final"] = {
@@ -296,7 +296,7 @@ function generatelist() {
 	// This maps all extra items to an extra value
 	// It is done in order to get the right heights for items that produce more then they take
 	// TODO, it might be nice to have a special path instead of a node to represent "extra"
-	for (var key in output_requirements) {
+	for (let key in output_requirements) {
 		if (output_requirements[key] > 0) {
 			var tracker_key = key+"extra";
 			resource_tracker[tracker_key] = {
@@ -315,7 +315,7 @@ function generatelist() {
 	// Find any final resource that also feed into another resource and have it
 	// feed into an extra node. This prevents final resource from not appearing
 	// in the right hand column of the chart
-	for (var tracked_resource in resource_tracker_copy) {
+	for (let tracked_resource in resource_tracker_copy) {
 		var source = resource_tracker_copy[tracked_resource].source;
 		if (source in original_requirements) {
 
@@ -367,7 +367,7 @@ function generate_instructions(edges, generation_totals) {
 
 	$("<div/>").attr("id", "text_instructions_title").text("Base Ingredients").appendTo(instructions);
 	// List out raw resource numbers
-	for (var node in node_columns){
+	for (let node in node_columns){
 		if (node_columns[node] === 0) {
 
 
@@ -388,8 +388,8 @@ function generate_instructions(edges, generation_totals) {
 	$("<div/>").attr("id", "text_instructions_title").text("Text Instructions [Beta]").appendTo(instructions);
 
 	// Create the step by step instructions
-	for (var i = 1; i < column_count; i++) {
-		for (var node in node_columns) {
+	for (let i = 1; i < column_count; i++) {
+		for (let node in node_columns) {
 			if (node_columns[node] === i) {
 
 				if (node.startsWith("[Final]") || node.startsWith("[Extra]")){
@@ -418,7 +418,7 @@ function generate_instructions(edges, generation_totals) {
 function build_instruction_line(edges, item_name, generation_totals) {
 	// Build the input item sub string
 	var inputs = {};
-	for (var edge in edges){
+	for (let edge in edges){
 		// If this is pointing into the resource we are currently trying to craft
 		if (edges[edge].target === item_name) {
 			inputs[edges[edge].source] = edges[edge].value;
@@ -474,10 +474,10 @@ function text_item_object(count, name){
 	if (units !== "" && units !== undefined) {
 		var unit_value_list = build_unit_value_list(count, units);
 
-		var count_object = $("<div/>");
+		let count_object = $("<div/>");
 		count_object.addClass("instruction_item_count");
 		var join_plus_character = "";
-		for (var i = 0; i < unit_value_list.length; i++){
+		for (let i = 0; i < unit_value_list.length; i++){
 			$("<span/>").text(join_plus_character + unit_value_list[i].count).appendTo(count_object);
 			if (unit_value_list[i].name !== null) {
 				$("<span/>").text("("+unit_value_list[i].name+")").addClass("small_unit_name").appendTo(count_object);
@@ -487,7 +487,7 @@ function text_item_object(count, name){
 		count_object.appendTo(item_object);
 	}
 	else {
-		var count_object = $("<div/>");
+		let count_object = $("<div/>");
 		count_object.addClass("instruction_item_count");
 		count_object.text(count);
 		count_object.appendTo(item_object);
@@ -511,7 +511,7 @@ function get_node_columns(edges) {
 	var nodes = [];
 
 	// Start by getting a list of all the nodes
-	for (var edge in edges){
+	for (let edge in edges){
 		if (nodes.indexOf(edges[edge].source) === -1) {
 			nodes.push(edges[edge].source);
 		}
@@ -527,7 +527,7 @@ function get_node_columns(edges) {
 	function populate_child_count(node){
 		if (!(node in child_counts)) {
 			child_counts[node] = 0;
-			for (var edge in edges){
+			for (let edge in edges){
 				if (edges[edge].source === node) {
 					// make sure that this child has the correct child count
 					populate_child_count(edges[edge].target);
@@ -542,7 +542,7 @@ function get_node_columns(edges) {
 	function populate_parent_count(node){
 		if (!(node in parent_counts)) {
 			parent_counts[node] = 0;
-			for (var edge in edges){
+			for (let edge in edges){
 				if (edges[edge].target === node) {
 					// make sure that this child has the correct child count
 					populate_parent_count(edges[edge].source);
@@ -555,26 +555,50 @@ function get_node_columns(edges) {
 		}
 	}
 
-	for (var node in nodes)  {
+	for (let node in nodes)  {
 		populate_child_count(nodes[node]);
 		populate_parent_count(nodes[node]);
 	}
 
 	var max_column_index = 0;
-	for (var node in parent_counts) {
+	for (let node in parent_counts) {
 		if (parent_counts[node] > max_column_index) {
 			max_column_index = parent_counts[node];
 		}
 	}
 
 	// Snap all final results to the rightmost column
-	for (var node in child_counts) {
+	for (let node in child_counts) {
 		if (child_counts[node] === 0) {
 			parent_counts[node] = max_column_index;
 		}
 	}
 
 	return parent_counts;
+}
+
+function get_columns(edges) {
+	var node_columns = get_node_columns(edges);
+
+	// deterimine how many columns there should be
+	var column_count = 0;
+	for (let node in node_columns) {
+		if (node_columns[node]+1 > column_count) {
+			column_count = node_columns[node]+1;
+		}
+	}
+
+	// Create an array of those columns
+	var columns = Array(column_count);
+	for (let i = 0; i < column_count; i++){
+		columns[i] = [];
+	}
+
+	for (let node in node_columns) {
+		columns[node_columns[node]].push(node);
+	}
+
+	return columns;
 }
 
 
@@ -590,221 +614,559 @@ function get_node_columns(edges) {
 | Arguments
 |   generation_events -
 \******************************************************************************/
-function generate_chart(generation_events, resource_totals) {
+function generate_chart(edges, node_quantities) {
+
+	// Set the margins for the area that the nodes and edges can take up
 	var margin = {
 		top: 10,
 		right: 1,
 		bottom: 10,
 		left: 1,
 	};
-	var width = $("#content").width() - margin.left - margin.right;
+
+	// Reset the colors that have already been selected so we can get repeatable graphs
+	selected_colors = {};
+
+	// Set the space betwen the bottom of one node and the top of the one below it to 10px
+	var node_padding = 10;
+
+	// Calculate the widthe and the height of the area that the nodes and edges can take up
 	var height = 800 - margin.top - margin.bottom;
-	var color = d3.scaleOrdinal(d3.schemeCategory20);
 
-	// Clear any old elements in the chart area
-	$("#chart").empty();
+	// Get the matrix of nodes, sorted into an array of columns
+	var columns = get_columns(edges);
 
-	// Create the new SVG image that will contain the sankey graph
-	var svg = d3.select("#chart").append("svg")
-		.attr("width", width + margin.left + margin.right)
-		.attr("height", height + margin.top + margin.bottom)
-		.append("g")
-		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-	var sankey = d3.sankey()
-		.nodeWidth(20)
-		.nodePadding(10)
-		.size([width, height]);
-
-	var path = sankey.link();
-
-	// d3.json("energy.json", function(energy) {
-
-	// Need piston
-	// 0: make sure this exists
-	// 1: make sure all of the sources exist
-	// 2: mapping
-
-	// Add mapping to and from and the quantity for each element
-	// "tofrom":{"source":"from","target":"to","value":1}
-
-
-
-	var nodes = [];
-	var inverted_nodes = {};
-	var links = [];
-
-
-
-
-	for (var key in generation_events) {
-		var resource = generation_events[key];
-
-
-		var source = resource.source;
-		var target = resource.target;
-
-		var value = resource.value;
-
-
-		var source_index;
-		if (source in inverted_nodes) {
-			source_index = inverted_nodes[source];
+	// Create a representation of node objects
+	var nodes = {};
+	for (let column_id in columns) {
+		for (let node_id in columns[column_id]) {
+			var node_name = columns[column_id][node_id];
+			// console.log(node);
+			nodes[node_name] = {
+				"input": get_input_size(edges, node_name),
+				"output": node_quantities[node_name],
+				"size": Math.max(node_quantities[node_name], get_input_size(edges, node_name)),
+				"column": Number(column_id),
+				"passthrough": false,
+				"incoming_edges":[],
+				"outgoing_edges":[],
+			};
 		}
-		else {
-			source_index = nodes.length;
-			nodes.push({"name":source});
-			inverted_nodes[source] = source_index;
-		}
-
-		var target_index;
-		if (target in inverted_nodes) {
-			target_index = inverted_nodes[target];
-		}
-		else {
-			target_index = nodes.length;
-			nodes.push({"name":target});
-			inverted_nodes[target] = target_index;
-		}
-
-		links.push({
-			"source":source_index,
-			"target":target_index,
-			"value":value,
-		});
-
-
 	}
 
+	// Assign all edges to the nodes depending if the edge connects as a source
+	// or as a target for the given node. Also cache which column the node is
+	// in for the next step of finding edges that span multiple columns
+	for (let edge_id in edges) {
+		let edge = edges[edge_id];
 
-	var energy = {
-		"nodes":nodes,
-		"links":links,
-	};
+		nodes[edge.target].incoming_edges.push(edge_id);
+		nodes[edge.source].outgoing_edges.push(edge_id);
+		edge.target_column = nodes[edge.target].column;
+		edge.source_column = nodes[edge.source].column;
+	}
 
-	sankey
-		.nodes(energy.nodes)
-		.links(energy.links)
-		.layout(32);
+	// Find edges that span multiple columns and create fake nodes for them in
+	// the columns they pass over. This allows us to weight the edges so they
+	// wont be overlapped by a node in that column
+	for (let edge_id in edges){
+		let edge = edges[edge_id];
+		edge.passthrough_nodes = [];
 
-	var link = svg.append("g").selectAll(".link")
-		.data(energy.links)
-		.enter().append("path")
-		.attr("class", "link")
-		.attr("d", path)
-		.attr("rcalc:source", function(d) {
-			return d.source.name;
-		})
-		.attr("rcalc:target", function(d) {
-			return d.target.name;
-		})
-		.attr("rcalc:quantity", function(d) {
-			return d.value;
-		})
-		.style("stroke-width", function(d) {
-			return Math.max(1, d.dy);
-		})
-		.sort(function(a, b) {
-			return b.dy - a.dy;
-		})
-		.on("mouseover", function() {
-			$("#hover_recipe").show();
-			// set_recipe($(this).attr("target"), $(this).attr("source"), $(this).attr("quantity")); // TODO: When re-adding hover recipes/info on the sankey chart
-		})
-		.on("mouseout", function() {
-			$("#hover_recipe").hide();
-		});
+		var source_column_index = edge.source_column;
+		var target_column_index = edge.target_column;
 
-	var node = svg.append("g").selectAll(".node")
-		.data(energy.nodes)
-		.enter().append("g")
-		.attr("class", "node")
-		.attr("transform", function(d) {
-			return "translate(" + d.x + "," + d.y + ")";
-		})
-		.call(d3.drag()
-			.subject(function(d) {
-				return d;
-			})
-			.on("start", function() {
-				this.parentNode.appendChild(this);
-			})
-			.on("drag", dragmove));
+		for (let passthrough_column_index=source_column_index+1; passthrough_column_index<target_column_index; passthrough_column_index+=1) {
+			var passthrough_node_id = edge_id + "_" + passthrough_column_index;
 
+			nodes[passthrough_node_id] = {
+				"size": edge.value,
+				"passthrough_node_index": edge.passthrough_nodes.length,
+				"passthrough_edge_id": edge_id,
+				"column":passthrough_column_index,
+				"passthrough": true,
+			};
+			edge.passthrough_nodes.push(passthrough_node_id);
+			columns[passthrough_column_index].push(passthrough_node_id);
+		}
+	}
 
+	// Calculate the scale of a single item based on the tallest column of items
+	// such that that column fits within the alloted height of the chart
+	var value_scale = 9999;
+	for (let column in columns) {
+		var height_for_values = height + node_padding;
+		var values = 0;
+		for (let node_index in columns[column]) {
+			var node = nodes[columns[column][node_index]];
+			height_for_values -= node_padding;
+			values += node.size;
+		}
 
-	node.append("path")
-		.attr("d", function(d) {
+		var column_scale = height_for_values / values;
+		if (value_scale > column_scale) {
+			value_scale = column_scale;
+		}
+	}
 
+	// Calculate the positions of the nodes in each column based on the nodes
+	// in other columns. We do 32 iterations of the internal process to achieve
+	// very good positions
+	set_node_positions(32, columns, nodes, edges, value_scale, node_padding, height);
+
+	// Make the call to draw the chart itself now that numbers have been calculated
+	layout_chart(columns, nodes, edges, height, value_scale, margin);
+}
 
 
-			var left_count = 0; // sum target links
-			for (var target_link in d.targetLinks) {
-				left_count += d.targetLinks[target_link].value;
+function set_node_positions(iterations, columns, nodes, edges, value_scale, node_padding, svg_height) {
+	// Calculate Node Heights and Positions
+	for (let column_index in columns) {
+		var running_y = 0;
+		for (let node_index in columns[column_index]) {
+			var node = nodes[columns[column_index][node_index]];
+			node.height = node.size * value_scale;
+			node.y = running_y;
+			running_y += node.height + node_padding;
+		}
+	}
+
+	// Run the relaxation algorithms forwards and backwards
+	for (let alpha = 1; iterations > 0; --iterations) {
+		relax_columns_right_to_left(alpha *= .99, columns, nodes, edges);
+		relax_columns_left_to_right(alpha, columns, nodes, edges);
+		resolve_node_collisions(columns, nodes, node_padding, svg_height);
+	}
+}
+
+function relax_columns_left_to_right(alpha, columns, nodes, edges) {
+	function weighted_source_sum(node) {
+		var sum = 0;
+		if (node.passthrough === false) {
+			for (let source_id in node.incoming_edges) {
+				var edge = edges[node.incoming_edges[source_id]];
+
+				var source_node = nodes[edge.source];
+				if (edge.passthrough_nodes.length) {
+					source_node = nodes[edge.passthrough_nodes[edge.passthrough_nodes.length-1]];
+				}
+				sum += y_midpoint(source_node) * edge.value;
 			}
-			// If this is the first element make it the full height
-			if (left_count === 0) {
-				left_count = d.value;
-			}
-
-			var right_count = 0; // sum source links
-			for (var source_link in d.sourceLinks) {
-				right_count += d.sourceLinks[source_link].value;
-			}
-			// If this is the last element make it the full height
-			if (right_count === 0) {
-				right_count = d.value;
-			}
-
-
-
-			var left_height = d.dy * (left_count / d.value);
-			var full_height = d.dy;
-			var right_height = d.dy * (right_count / d.value);
-			var width = d.dx;
-			return "M 0,0 L 0,"+left_height+" "+width/3+","+left_height+" "+width/3+","+full_height+" "+width*2/3+","+full_height+" "+width*2/3+","+right_height+" "+width+","+right_height+" "+width+",0 Z";
-		})
-		.style("fill", function(d) {
-			return d.color = color(d.name.replace(/ .*/, ""));
-		})
-		.style("stroke", function(d) {
-			return d3.rgb(d.color).darker(2);
-		})
-		.append("title")
-		.text(function(d) {
-			// console.log(d);
-			// return d.name + "\n" + format(d.value);
-			return resource_totals[d.name] + " " + d.name;
-		});
-
-
-	node.append("text")
-		.attr("x", -6)
-		.attr("y", function(d) {
-			return d.dy / 2;
-		})
-		.attr("dy", ".35em")
-		.attr("text-anchor", "end")
-		.attr("transform", null)
-		.text(function(d) {
-			if (d.name.startsWith("[Final]")){
-				return d.name.substr(8);
+		}
+		else {
+			var passthrough_edge = edges[node.passthrough_edge_id];
+			if (node.passthrough_node_index === 0) {
+				sum = y_midpoint(nodes[passthrough_edge.source]) * passthrough_edge.value;
 			}
 			else {
-				return d.name;
+				sum = y_midpoint(nodes[passthrough_edge.passthrough_nodes[node.passthrough_node_index-1]]) * passthrough_edge.value;
 			}
-		})
-		.filter(function(d) {
-			return d.x < width / 2;
-		})
-		.attr("x", 6 + sankey.nodeWidth())
-		.attr("text-anchor", "start");
-
-	function dragmove(d) {
-		d3.select(this).attr("transform", "translate(" + d.x + "," + (d.y = Math.max(0, Math.min(height - d.dy, d3.event.y))) + ")");
-		sankey.relayout();
-		link.attr("d", path);
+		}
+		return sum;
 	}
+	function raw_source_sum(node) {
+		// If the node is not a passthroguh then return the sum of all of
+		// the source edges
+		if (node.passthrough === false) {
+			var sum = 0;
+			for (let source_id in node.incoming_edges) {
+				sum += edges[node.incoming_edges[source_id]].value;
+			}
+			return sum;
+		}
+		// If this is a passthrough node then both the target and source
+		// edges will be the same size as the node
+		else {
+			return node.size;
+		}
+	}
+
+	for (let column_index in columns) {
+		if (Number(column_index) === 0) {
+			continue;
+		}
+		for (let node_index in columns[column_index]) {
+			var node = nodes[columns[column_index][node_index]];
+			var y = weighted_source_sum(node) / raw_source_sum(node);
+			node.y += (y - y_midpoint(node)) * alpha;
+		}
+	}
+
+}
+function relax_columns_right_to_left(alpha, columns, nodes, edges) {
+	function weighted_target_sum(node) {
+		var sum = 0;
+		if (node.passthrough === false) {
+			for (let target_id in node.outgoing_edges) {
+				var edge = edges[node.outgoing_edges[target_id]];
+
+				var target_node = nodes[edge.target];
+				if (edge.passthrough_nodes.length) {
+					target_node = nodes[edge.passthrough_nodes[0]];
+				}
+				sum += y_midpoint(target_node) * edge.value;
+			}
+		}
+		else {
+			var passthrough_edge = edges[node.passthrough_edge_id];
+			if (node.passthrough_node_index === passthrough_edge.passthrough_nodes.length-1) {
+				sum = y_midpoint(nodes[passthrough_edge.target]) * passthrough_edge.value;
+			}
+			else {
+				sum = y_midpoint(nodes[passthrough_edge.passthrough_nodes[node.passthrough_node_index+1]]) * passthrough_edge.value;
+			}
+		}
+		return sum;
+	}
+	function raw_target_sum(node) {
+		// If the node is not a passthroguh then return the sum of all of
+		// the source edges
+		if (node.passthrough === false) {
+			var sum = 0;
+			for (let target_id in node.outgoing_edges) {
+				sum += edges[node.outgoing_edges[target_id]].value;
+			}
+			return sum;
+		}
+		// If this is a passthrough node then both the target and source
+		// edges will be the same size as the node
+		else {
+			return node.size;
+		}
+	}
+	columns = columns.slice().reverse();
+	for (let column_index in columns) {
+		if (Number(column_index) === 0) {
+			continue;
+		}
+		for (let node_index in columns[column_index]) {
+			var node = nodes[columns[column_index][node_index]];
+			var y = weighted_target_sum(node) / raw_target_sum(node);
+			node.y += (y - y_midpoint(node)) * alpha;
+		}
+	}
+
+}
+
+function y_midpoint(node) {
+	return node.y + node.height / 2;
+}
+
+function resolve_node_collisions(columns, nodes, node_padding, svg_height) {
+	function y_comp(a, b) {
+		return nodes[a].y - nodes[b].y;
+	}
+
+	// Sort all the nodes in the array based on their visual order
+	for (let column_index in columns) {
+		var column = columns[column_index];
+		column.sort(y_comp);
+
+		// If any node is overlapping the previous node push it downwards
+		var bottom_of_previous_node = 0;
+		for (let i = 0; i < column.length; i++) {
+			let node = nodes[column[i]];
+
+			// Check to see if there is an overlap and fix it if so
+			let delta_y = bottom_of_previous_node - node.y;
+			if (delta_y > 0) {
+				node.y += delta_y;
+			}
+
+			// Set the bottom of this node to be the bottom of the previous node for the next cycle
+			bottom_of_previous_node = node.y + node.height + node_padding;
+		}
+
+		// If any node is overlapping push it upwards
+		// maybe this can include node padding as we dont need a padding on the bottom
+		var top_of_previous_node = svg_height;
+		for (let i = column.length-1; i >= 0; i--) {
+			let node = nodes[column[i]];
+
+			let delta_y = top_of_previous_node - (node.y + node.height);
+			if (delta_y < 0) {
+				// console.log("Pushing Up:", delta_y);
+				node.y += delta_y;
+			}
+
+			top_of_previous_node = node.y - node_padding;
+		}
+	}
+}
+
+
+
+
+function hexToRgb(hex) {
+	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+	return result ? {
+		r: parseInt(result[1], 16),
+		g: parseInt(result[2], 16),
+		b: parseInt(result[3], 16),
+	} : null;
+}
+
+function color_darken(color) {
+	var k = 0.49;
+
+	return {
+		r: Math.round(color.r * k),
+		g: Math.round(color.g * k),
+		b: Math.round(color.b * k),
+	};
+}
+
+function color_string(color){
+	return "rgb("+color.r+","+color.g+","+color.b+")";
+}
+
+
+/******************************************************************************\
+| get_color
+|
+| This function supplies a color for a node to use as it's fill color. The
+| color is determined by the first word in the string, excluding a [Extra] or
+| [Final] prefix. The first time that key is presented to the function a new
+| color is chosen for that key, each subsiquent call after the first  with the
+| same key will return the same color but this is not necessarily the case for
+| a new chart generation.
+\******************************************************************************/
+var all_colors = [
+	hexToRgb("1f77b4"),
+	hexToRgb("aec7e8"),
+	hexToRgb("ff7f0e"),
+	hexToRgb("ffbb78"),
+	hexToRgb("2ca02c"),
+	hexToRgb("98df8a"),
+	hexToRgb("d62728"),
+	hexToRgb("ff9896"),
+	hexToRgb("9467bd"),
+	hexToRgb("c5b0d5"),
+	hexToRgb("8c564b"),
+	hexToRgb("c49c94"),
+	hexToRgb("e377c2"),
+	hexToRgb("f7b6d2"),
+	hexToRgb("bcbd22"),
+	hexToRgb("dbdb8d"),
+	hexToRgb("17becf"),
+	hexToRgb("9edae5"),
+	hexToRgb("7f7f7f"),
+	hexToRgb("c7c7c7"),
+];
+var selected_colors = {};
+function get_color(key) {
+	// Strip out Extra and Final prefixes
+	key = key.replace(/^\[Extra\] /, "");
+	key = key.replace(/^\[Final\] /, "");
+
+	// Strip out everything past the first word
+	key = key.replace(/ .*/, "");
+
+	// Lookup or set the color that is attached to this key
+	var index = selected_colors[key];
+	if (index === undefined) {
+		index = Object.keys(selected_colors).length % all_colors.length;
+		selected_colors[key] = index;
+	}
+
+	return all_colors[index];
+}
+
+
+
+/******************************************************************************\
+| layout_chart
+|
+| draw the chart itself
+\******************************************************************************/
+var cached_chart_data = {};
+function layout_chart(columns, nodes, edges, height, value_scale, margin) {
+	cached_chart_data = {
+		columns: columns,
+		nodes: nodes,
+		edges: edges,
+		height: height,
+		value_scale: value_scale,
+		margin: margin,
+	};
+	relayout_chart();
+}
+window.onresize = function() {
+	relayout_chart();
+}
+function relayout_chart(){
+	if (Object.keys(cached_chart_data).length === 0) {
+		return;
+	}
+	var columns = cached_chart_data.columns;
+	var nodes = cached_chart_data.nodes;
+	var edges = cached_chart_data.edges;
+	var height = cached_chart_data.height;
+	var value_scale = cached_chart_data.value_scale;
+	var margin = cached_chart_data.margin;
+
+
+	var width = $("#content").width() - margin.left - margin.right;
+
+	var node_width = 20;
+
+	// Determine the space between the left hand side of each node column
+	var node_spacing = (width-node_width) / (columns.length-1);
+
+	// Empty the chart immediately
+	$("#chart").empty();
+
+	// Create the new SVG object that will represent our chart
+	var svg = $(document.createElementNS("http://www.w3.org/2000/svg", "svg"));
+	var padding_g = $(document.createElementNS("http://www.w3.org/2000/svg", "g")).attr("transform", "translate("+margin.left+","+margin.top+")").appendTo(svg);
+	// Create the group that will hold all of the edges to make sure they show up below nodes
+	var edges_g = $(document.createElementNS("http://www.w3.org/2000/svg", "g")).appendTo(padding_g);
+	// Create the group that will hold all the nodes after edges to make sure nodes show up on top
+	var nodes_g = $(document.createElementNS("http://www.w3.org/2000/svg", "g")).appendTo(padding_g);
+
+	// Draw all of the node lines
+	for (let column_index in columns) {
+		var x = node_spacing * column_index;
+		for (let node_index in columns[column_index]) {
+			var node_id = columns[column_index][node_index];
+			let node = nodes[node_id];
+
+			// Build the node
+			if (!node.passthrough) {
+				var left_height = node.input * value_scale;
+				var full_height = node.size * value_scale;
+				var right_height = node.output * value_scale;
+				if (Number(column_index) === 0) {
+					left_height = full_height;
+				}
+
+
+				let d = "M 0,0 L 0,"+left_height+" "+node_width/3+","+left_height+" "+node_width/3+","+full_height+" "+node_width*2/3+","+full_height+" "+node_width*2/3+","+right_height+" "+node_width+","+right_height+" "+node_width+",0 Z";
+
+				let node_g = $(document.createElementNS("http://www.w3.org/2000/svg", "g")).attr("transform", "translate("+x+","+node.y+")").attr("class", "node");
+
+
+				var fill_color = get_color(node_id);
+				var edge_color = color_darken(fill_color);
+
+
+				$(document.createElementNS("http://www.w3.org/2000/svg", "path")).attr("d", d).attr("style", "fill: "+color_string(fill_color)+"; stroke: "+color_string(edge_color)+";").appendTo(node_g);
+
+				var text_offset = node_width + 6;
+				var text_anchor = "start";
+				if (column_index >= columns.length/2){
+					text_offset = -6;
+					text_anchor = "end";
+				}
+
+				$(document.createElementNS("http://www.w3.org/2000/svg", "text")).attr("x", text_offset).attr("y", full_height/2).attr("dy", ".35em").attr("text-anchor", text_anchor).text(node_id).appendTo(node_g);
+				node_g.appendTo(nodes_g);
+			}
+		}
+	}
+
+	// Determine offset of all the edge connections
+	function source_y(edge_id) {
+		var edge = edges[edge_id];
+		// if this is a passthrough edge get the last passthrough node instead of the source
+		if (edge.passthrough_nodes.length > 0) {
+			return nodes[edge.passthrough_nodes[edge.passthrough_nodes.length-1]].y;
+		}
+		else {
+			return nodes[edge.source].y;
+		}
+	}
+	function source_y_comp(a, b) {
+		return source_y(a) - source_y(b);
+	}
+
+	function target_y(edge_id) {
+		var edge = edges[edge_id];
+		// if this is a passthrough edge get the first passthrough node instead of the target
+		if (edge.passthrough_nodes.length > 0) {
+			return nodes[edge.passthrough_nodes[0]].y;
+		}
+		else {
+			return nodes[edge.target].y;
+		}
+	}
+	function target_y_comp(a, b) {
+		return target_y(a) - target_y(b);
+	}
+	for (let node_id in nodes) {
+		let node = nodes[node_id];
+		if (node.passthrough === false) {
+			node.incoming_edges.sort(source_y_comp);
+			node.outgoing_edges.sort(target_y_comp);
+
+			var running_edge_height = 0;
+			for (let edge_id in node.incoming_edges) {
+				let edge = edges[node.incoming_edges[edge_id]];
+				edge.target_y_offset = running_edge_height;
+				running_edge_height += edge.value * value_scale;
+			}
+			running_edge_height = 0;
+			for (let edge_id in node.outgoing_edges) {
+				let edge = edges[node.outgoing_edges[edge_id]];
+				edge.source_y_offset = running_edge_height;
+				running_edge_height += edge.value * value_scale;
+			}
+		}
+	}
+
+
+	// Draw all of the edge Lines
+	for (let edge_index in edges) {
+		var edge = edges[edge_index];
+		var line_thickness = edge.value * value_scale;
+
+		let node_g = $(document.createElementNS("http://www.w3.org/2000/svg", "g")).attr("transform", "translate("+0+","+0+")");
+
+		var start_node = nodes[edges[edge_index].source];
+		var end_node = nodes[edges[edge_index].target];
+
+		var mid_x_mod = (node_spacing-node_width)/2;
+
+		var start_x = start_node.column*node_spacing +node_width;
+		var start_y = start_node.y + edge.source_y_offset + line_thickness/2;
+
+		let d="M"+start_x+","+start_y+"C"+(start_x+mid_x_mod)+","+start_y+" ";
+
+		for (let passthrough_node_index in edges[edge_index].passthrough_nodes) {
+			var passthrough_node = nodes[edges[edge_index].passthrough_nodes[passthrough_node_index]];
+			var passthrough_x = passthrough_node.column*node_spacing;
+			var passthrough_y = passthrough_node.y + line_thickness/2	;
+
+			d += (passthrough_x-mid_x_mod)+","+passthrough_y+" "+passthrough_x+","+passthrough_y+"C"+(passthrough_x + mid_x_mod)+","+passthrough_y+" ";
+		}
+
+		var end_x = end_node.column*node_spacing;
+		var end_y = end_node.y + edge.target_y_offset + line_thickness/2;
+
+		d+=(end_x-mid_x_mod)+","+end_y+" "+end_x+","+end_y;
+
+		$(document.createElementNS("http://www.w3.org/2000/svg", "path")).attr("d", d).attr("style", "stroke-width: "+line_thickness+ "px;").attr("class", "link").appendTo(node_g);
+		node_g.appendTo(edges_g);
+	}
+
+	var chart_width = width + margin.left + margin.right;
+	var chart_height = height + margin.top + margin.bottom;
+
+	svg.appendTo($("#chart")).attr("width", chart_width).attr("height", chart_height);
+}
+
+
+
+
+function get_input_size(edges, output){
+
+	var inputs_size = 0;
+	for (let edge in edges){
+		if (edges[edge].target === output) {
+			inputs_size += edges[edge].value;
+		}
+	}
+	return inputs_size;
 }
 
 
@@ -846,7 +1208,7 @@ $(document).on("mousemove", function(e){
 
 // 	if (recipe.recipe_type === "crafting") {
 
-// 		for (var i in recipe.recipe) {
+// 		for (let i in recipe.recipe) {
 // 			$("#crafting_slot_"+i).removeClass (function (index, className) {
 // 				return (className.match (/\bitem_[a-z0-9_]*/) || []).join(" ");
 // 			}).addClass("item_" + filenameify(recipe.recipe[i]));
@@ -913,7 +1275,7 @@ function switch_recipe(item_name, event) {
 	var recipe_selector_list = $("#recipe_selector_list");
 	recipe_selector_list.empty();
 
-	for (var i in recipe_json[item_name]) {
+	for (let i in recipe_json[item_name]) {
 		var recipe_item = $("<div/>");
 		recipe_item.addClass("recipe_select_item");
 
@@ -928,7 +1290,7 @@ function switch_recipe(item_name, event) {
 
 		var recipe_category = $("<div/>").addClass("recipe_select_item_name").text(recipe_json[item_name][i].recipe_type);
 
-		for (var j in recipe_json[item_name][i].requirements) {
+		for (let j in recipe_json[item_name][i].requirements) {
 			(function(j) {
 
 				var quantity = -recipe_json[item_name][i].requirements[j];
@@ -1009,7 +1371,7 @@ function get_recipe_index(node_name) {
 function set_recipe_to_raw(node_name) {
 	// console.log("Setting as raw resource");
 
-	for (var i in recipe_json[node_name]){
+	for (let i in recipe_json[node_name]){
 		if (recipe_json[node_name][i].recipe_type === "Raw Resource"){
 			set_recipe_index(node_name, i);
 			return;
@@ -1027,10 +1389,10 @@ function get_recipe(node_name) {
 function find_loop_from_node(start_node) {
 	// Generate Light Node Mapping
 	var nodes = {};
-	for (var node in recipe_json)  {
+	for (let node in recipe_json)  {
 		// Add all the edges
 		nodes[node] = [];
-		for (var edge in get_recipe(node).requirements) {
+		for (let edge in get_recipe(node).requirements) {
 			// console.log(get_recipe(node).requirements[edge]);
 			if (-get_recipe(node).requirements[edge] > 0) {
 				nodes[node].push(edge);
@@ -1042,7 +1404,7 @@ function find_loop_from_node(start_node) {
 	var recipe_changes = depth_first_search(nodes, start_node, start_node);
 
 
-	for (var i in recipe_changes){
+	for (let i in recipe_changes){
 		console.warn("Changing", recipe_changes[i], "to raw resource to avoid infinite loop");
 	}
 }
@@ -1066,7 +1428,7 @@ function depth_first_search(nodes, node, match) {
 	var changes = [];
 
 	// loop through recipe requirements
-	for (var i in nodes[node]) {
+	for (let i in nodes[node]) {
 		// if a requirement is the original node then change this item to a soruce and report back
 		if (nodes[node][i] === match) {
 			// Convert to source recipe

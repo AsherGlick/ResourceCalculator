@@ -119,7 +119,7 @@ def lint_javascript():
 
 def uglify_copyfile(in_file, out_file):
     try:
-        subprocess.run(["./node_modules/.bin/uglifyjs", "--mangle", "--compress", "-o", out_file, in_file])
+        subprocess.run(["./node_modules/.bin/terser", "--mangle", "--compress", "-o", out_file, in_file])
     # except OSError as e:
     except e:
         print("WARNING: Javascript compression failed")
@@ -129,7 +129,7 @@ def uglify_copyfile(in_file, out_file):
 
 def uglify_js_string(js_string):
     try:
-        result = subprocess.run(["./node_modules/.bin/uglifyjs", "--mangle", "--compress"], input=js_string.encode("utf-8"), stdout=subprocess.PIPE)
+        result = subprocess.run(["./node_modules/.bin/terser", "--mangle", "--compress"], input=js_string.encode("utf-8"), stdout=subprocess.PIPE)
         return result.stdout.decode("utf-8")
     # except OSError as e:
     except e:
@@ -611,8 +611,6 @@ def copy_common_resources():
     shutil.copyfile("core/calculator.css", "output/calculator.css")
     uglify_copyfile("core/calculator.js", "output/calculator.js")
     shutil.copyfile("core/thirdparty/jquery-3.3.1.min.js", "output/jquery.js")
-    shutil.copyfile("core/thirdparty/d3.v4.min.js", "output/d3.js")
-    shutil.copyfile("core/thirdparty/sankey.js", "output/sankey.js")
     shutil.copyfile("core/logo.png", "output/logo.png")
     shutil.copyfile("core/.htaccess", "output/.htaccess")
     shutil.copyfile("core/add_game.png", "output/add_game.png")
