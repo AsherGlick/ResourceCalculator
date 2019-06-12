@@ -631,7 +631,6 @@ function generate_chart(edges, node_quantities) {
 	var node_padding = 10;
 
 	// Calculate the widthe and the height of the area that the nodes and edges can take up
-	var width = $("#content").width() - margin.left - margin.right;
 	var height = 800 - margin.top - margin.bottom;
 
 	// Get the matrix of nodes, sorted into an array of columns
@@ -716,7 +715,7 @@ function generate_chart(edges, node_quantities) {
 	set_node_positions(32, columns, nodes, edges, value_scale, node_padding, height);
 
 	// Make the call to draw the chart itself now that numbers have been calculated
-	layout_chart(columns, nodes, edges, node_padding, width, height, value_scale, margin);
+	layout_chart(columns, nodes, edges, height, value_scale, margin);
 }
 
 
@@ -980,7 +979,35 @@ function get_color(key) {
 |
 | draw the chart itself
 \******************************************************************************/
-function layout_chart(columns, nodes, edges, node_padding, width, height, value_scale, margin) {
+var cached_chart_data = {};
+function layout_chart(columns, nodes, edges, height, value_scale, margin) {
+	cached_chart_data = {
+		columns: columns,
+		nodes: nodes,
+		edges: edges,
+		height: height,
+		value_scale: value_scale,
+		margin: margin,
+	};
+	relayout_chart();
+}
+window.onresize = function() {
+	relayout_chart();
+}
+function relayout_chart(){
+	if (Object.keys(cached_chart_data).length === 0) {
+		return;
+	}
+	var columns = cached_chart_data.columns;
+	var nodes = cached_chart_data.nodes;
+	var edges = cached_chart_data.edges;
+	var height = cached_chart_data.height;
+	var value_scale = cached_chart_data.value_scale;
+	var margin = cached_chart_data.margin;
+
+
+	var width = $("#content").width() - margin.left - margin.right;
+
 	var node_width = 20;
 
 	// Determine the space between the left hand side of each node column
