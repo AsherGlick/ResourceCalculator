@@ -614,6 +614,7 @@ def copy_common_resources():
     shutil.copyfile("core/logo.png", "output/logo.png")
     shutil.copyfile("core/.htaccess", "output/.htaccess")
     shutil.copyfile("core/add_game.png", "output/add_game.png")
+    shutil.copyfile("core/ads.txt", "output/ads.txt")
 
 
 def main():
