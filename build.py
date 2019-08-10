@@ -11,6 +11,7 @@ import htmlmin
 import subprocess
 # import brotlix
 import gzip
+import sys
 
 
 ################################################################################
@@ -656,6 +657,11 @@ def copy_common_resources():
 
 
 def main():
+    calculator_page_sublist = []
+    if len(sys.argv) > 1:
+        calculator_page_sublist = sys.argv[1:]
+        print("Only building", ", ".join(calculator_page_sublist))
+
     lint_javascript()
 
     if not os.path.exists("output"):
@@ -665,8 +671,9 @@ def main():
     calculator_directories = []
     for o in os.listdir(d):
         if os.path.isdir(os.path.join(d, o)):
-            create_calculator_page(o)
-            calculator_directories.append(o)
+            if calculator_page_sublist == [] or o in calculator_page_sublist:
+                create_calculator_page(o)
+                calculator_directories.append(o)
 
     calculator_directories.sort()
     create_index_page(calculator_directories)
