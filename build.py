@@ -141,7 +141,7 @@ def uglify_js_string(js_string):
 # lint_recipe
 #
 # This function takes in the name of the calculator, an item name, and the list
-# of recipies to ensure that the given item's recipes all follow a set of
+# of recipes to ensure that the given item's recipes all follow a set of
 # patterns in order to make sure that all recipe lists are uniform in style
 # and contents. In addition it makes sure that all of the required elements of
 # a recipe are present and that no additional unknown elements are present.
@@ -259,81 +259,7 @@ def get_newest_modified_time(path):
 
 
 
-################################################################################
-# create_calculator_page
-#
-# This function takes in a the name of a caluclator resource list and creates
-# the html page and resource for it. If no files have been changed for the
-# calculator since the last time it was created then the creation will be skipped
-################################################################################
-def create_calculator_page(calculator_name):
-    calculator_folder = os.path.join("output", calculator_name)
-    source_folder = os.path.join("resource_lists", calculator_name)
-    if not os.path.exists(calculator_folder):
-        os.makedirs(calculator_folder)
-    else:
-        # newest = max(glob.iglob(calculator_folder, key=os.path.getctime)
-        # print(os.path.getctime(calculator_folder))
-        oldest_output = get_oldest_modified_time(calculator_folder)
-        newest_resource = get_newest_modified_time(source_folder)
-        newest_corelib = get_newest_modified_time("core")
-        newest_build_script = os.path.getctime("build.py")
-        if oldest_output > max(newest_resource, newest_corelib, newest_build_script):
-            print("Skipping",calculator_name,"Nothing has changed since the last build")
-            return
-
-    print(calculator_folder)
-
-    # Create a packed image of all the item images
-    image_width, image_height, resource_image_coordinates = create_packed_image(calculator_name)
-
-    # Configure and begin the jinja2 template parsing
-    env = Environment(loader=FileSystemLoader('core'))
-    template = env.get_template("calculator.html")
-
-    # Load in the yaml resources file
-    with open(os.path.join("resource_lists", calculator_name, "resources.yaml"), 'r', encoding="utf_8") as f:
-        yaml_data = ordered_load(f, yaml.SafeLoader)
-    recipes = yaml_data["resources"]
-    authors = yaml_data["authors"]
-    recipe_types = yaml_data["recipe_types"]
-    stack_sizes = None
-    if "stack_sizes" in yaml_data:
-        stack_sizes = yaml_data["stack_sizes"]
-    default_stack_size = None
-    if "default_stack_size" in yaml_data:
-        default_stack_size = yaml_data["default_stack_size"]
-
-
-    # run some sanity checks on the recipes
-    for recipe in recipes:
-        lint_recipe(calculator_name, recipe, recipes[recipe])
-    ensure_valid_requirements(recipes)
-    ensure_valid_recipe_types(calculator_name, recipes, recipe_types)
-    #TODO: Add linting for stack sizes here
-    recipe_type_format_js = uglify_js_string(generate_recipe_type_format_js(calculator_name, recipe_types))
-
-    # recipe_js = json.dumps(recipes)
-    recipe_js = mini_js_data(recipes)
-
-    resources = []
-    item_styles = {}
-    for recipe in recipes:
-        resource = {}
-        simple_name = re.sub(r'[^a-z]', '', recipe.lower())
-
-        if simple_name in resource_image_coordinates:
-            x_coordinate, y_coordinate = resource_image_coordinates[simple_name]
-            item_styles[simple_name] = "background-position: "+str(-x_coordinate)+"px "+str(-y_coordinate)+"px;"
-        else:
-            item_styles[simple_name] = "background: #f0f; background-image: none;"
-            print("WARNING:", simple_name, "has a recipe but no image and will appear purple in the calculator")
-
-        resource["mc_value"] = recipe
-        resource["simplename"] = simple_name
-        resources.append(resource)
-
-    # Generate some css to allow us to center the list
+def generate_content_width_css(image_width, yaml_data):
     content_width_css = ""
     media_padding = 40 # This give a slight padding from the edges, useful for avoiding intersection with scroll bars
     if "row_group_count" in yaml_data:
@@ -356,21 +282,139 @@ def create_calculator_page(calculator_name):
         new_css = "@media only screen and (max-width: "+ str(screen_max+media_padding-1) +"px) and (min-width:" + str(content_width+media_padding)+ "px) { .resource_content { width: " + str(content_width) + "px}  }"
         content_width_css += new_css
 
+    return content_width_css
+
+
+def get_simple_name(name):
+    return re.sub(r'[^a-z]', '', name.lower())
+
+
+################################################################################
+# generate_resource_html_data
+#
+#
+################################################################################
+def generate_resource_html_data(recipes):
+    resources = []
+    item_styles = {}
+    for recipe in recipes:
+        resource = {}
+        simple_name = get_simple_name(recipe)
+        resource["mc_value"] = recipe
+        resource["simplename"] = simple_name
+        resources.append(resource)
+    return resources
+
+
+################################################################################
+# generate_resource_offset_classes
+#
+# 
+################################################################################
+def generate_resource_offset_classes(recipes, resource_image_coordinates):
+    item_styles = {}
+    for recipe in recipes:
+        simple_name = get_simple_name(recipe)
+
+        if simple_name in resource_image_coordinates:
+            x_coordinate, y_coordinate = resource_image_coordinates[simple_name]
+            item_styles[simple_name] = "background-position: "+str(-x_coordinate)+"px "+str(-y_coordinate)+"px;"
+        else:
+            item_styles[simple_name] = "background: #f0f; background-image: none;"
+            print("WARNING:", simple_name, "has a recipe but no image and will appear purple in the calculator")
+
+    return item_styles
+
+
+################################################################################
+# create_calculator_page
+#
+# This function takes in a the name of a caluclator resource list and creates
+# the html page and resource for it. If no files have been changed for the
+# calculator since the last time it was created then the creation will be skipped
+################################################################################
+def create_calculator_page(calculator_name):
+    calculator_folder = os.path.join("output", calculator_name)
+    source_folder = os.path.join("resource_lists", calculator_name)
+    if not os.path.exists(calculator_folder):
+        os.makedirs(calculator_folder)
+    else:
+        oldest_output = get_oldest_modified_time(calculator_folder)
+        newest_resource = get_newest_modified_time(source_folder)
+        newest_corelib = get_newest_modified_time("core")
+        newest_build_script = os.path.getctime("build.py")
+        if oldest_output > max(newest_resource, newest_corelib, newest_build_script):
+            print("Skipping",calculator_name,"Nothing has changed since the last build")
+            return
+
+    print(calculator_folder)
+
+    # Create a packed image of all the item images
+    image_width, image_height, resource_image_coordinates = create_packed_image(calculator_name)
+
+    # Load in the yaml resources file
+    with open(os.path.join("resource_lists", calculator_name, "resources.yaml"), 'r', encoding="utf_8") as f:
+        yaml_data = ordered_load(f, yaml.SafeLoader)
+
+    recipes = yaml_data["resources"]
+
+    authors = yaml_data["authors"]
+
+    recipe_types = yaml_data["recipe_types"]
+
+    stack_sizes = None
+    if "stack_sizes" in yaml_data:
+        stack_sizes = yaml_data["stack_sizes"]
+
+    default_stack_size = None
+    if "default_stack_size" in yaml_data:
+        default_stack_size = yaml_data["default_stack_size"]
+
+
+    # run some sanity checks on the recipes
+    for recipe in recipes:
+        lint_recipe(calculator_name, recipe, recipes[recipe])
+    ensure_valid_requirements(recipes)
+    ensure_valid_recipe_types(calculator_name, recipes, recipe_types)
+    #TODO: Add linting for stack sizes here
+    recipe_type_format_js = uglify_js_string(generate_recipe_type_format_js(calculator_name, recipe_types))
+
+    # recipe_js = json.dumps(recipes)
+    recipe_js = mini_js_data(recipes)
+
+    resources = generate_resource_html_data(recipes)
+
+    item_styles = generate_resource_offset_classes(recipes, resource_image_coordinates)
+
+    # Generate some css to allow us to center the list
+    content_width_css = generate_content_width_css(image_width, yaml_data)
+
     stack_sizes_json = json.dumps(stack_sizes)
 
     # Generate the calculator from a template
+    env = Environment(loader=FileSystemLoader('core'))
+    template = env.get_template("calculator.html")
     output_from_parsed_template = template.render(
+                                    # A simplified list used for creating the item selector HTML
                                     resources=resources,
+                                    # the javascript/json object used for calculations
                                     recipe_json=recipe_js,
+                                    # The size and positions of the image
                                     item_width=image_width,
                                     item_height=image_height,
                                     item_styles=item_styles,
+                                    # The name of the calculator
                                     resource_list=calculator_name,
+                                    # Javascript formatting functions for recipe instructions # TODO this should be made into format strings to save space
                                     recipe_type_format_js=recipe_type_format_js,
+                                    # The list of authors and emails to display in the authors sections
                                     authors=authors,
+                                    # Additional CSS to center the list when resizing
                                     content_width_css=content_width_css,
+                                    # Used to build the stack size selector UI
                                     stack_sizes=stack_sizes,
                                     default_stack_size= default_stack_size,
+                                    # Used to do calculations to divide counts into stacks
                                     stack_sizes_json=stack_sizes_json)
 
     minified = htmlmin.minify(output_from_parsed_template, remove_comments=True, remove_empty_space=True)
