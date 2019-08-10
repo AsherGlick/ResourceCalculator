@@ -12,6 +12,7 @@ import subprocess
 # import brotlix
 import gzip
 
+
 ################################################################################
 # ordered_load
 #
@@ -25,6 +26,7 @@ import gzip
 def ordered_load(stream, Loader=yaml.Loader, object_pairs_hook=OrderedDict):
     class OrderedLoader(Loader):
         pass
+
     def construct_mapping(loader, node):
         loader.flatten_mapping(node)
         return object_pairs_hook(loader.construct_pairs(node))
@@ -76,20 +78,20 @@ def create_packed_image(calculator_name):
     # should be for the final packed image.
     # Programmers note: This was a lot of fun to figure out and derrived strangely
     columns = math.ceil(math.sqrt(standard_height * len(images) / standard_width))
-    result_width = standard_width*columns
-    result_height = standard_height*math.ceil((len(images)/columns))
+    result_width = standard_width * columns
+    result_height = standard_height * math.ceil((len(images) / columns))
 
     # Create a new output file and write all the images to spots in the file
     result = Image.new('RGBA', (result_width, result_height))
     for index, (name, image) in enumerate(images):
-        x_coordinate = (index % columns)*standard_height
-        y_coordinate = math.floor(index/columns)*standard_width
+        x_coordinate = (index % columns) * standard_height
+        y_coordinate = math.floor(index / columns) * standard_width
         image_coordinates[name] = (x_coordinate, y_coordinate)
         result.paste(im=image, box=(x_coordinate, y_coordinate))
 
     # save the new packed image file and all the coordinates of the images
     calculator_folder = os.path.join("output", calculator_name)
-    output_image_path = os.path.join(calculator_folder, calculator_name+".png")
+    output_image_path = os.path.join(calculator_folder, calculator_name + ".png")
     result.save(output_image_path)
 
     # Attempt to compress the image but do not exit on failure
@@ -127,6 +129,7 @@ def uglify_copyfile(in_file, out_file):
         print("        Falling back to regular copy")
         shutil.copyfile(in_file, out_file)
 
+
 def uglify_js_string(js_string):
     try:
         result = subprocess.run(["./node_modules/.bin/terser", "--mangle", "--compress"], input=js_string.encode("utf-8"), stdout=subprocess.PIPE)
@@ -160,23 +163,23 @@ def lint_recipe(calculator_name, item_name, recipes):
         # Make sure all the required keys exist
         for required_key in required_keys:
             if required_key not in recipe_keys:
-                print(calculator_name.upper()+":", "\""+required_key+"\" is not in", item_name, "recipe", i)
+                print(calculator_name.upper() + ":", "\"" + required_key + "\" is not in", item_name, "recipe", i)
 
         # Make sure that all the keys being used are valid keys
         for recipe_key in recipe_keys:
             if recipe_key not in valid_keys:
-                print(calculator_name.upper()+":", "\""+recipe_key+"\" in", item_name, "recipe", i, "is not a valid key")
+                print(calculator_name.upper() + ":", "\"" + recipe_key + "\" in", item_name, "recipe", i, "is not a valid key")
 
         # Validate the keys are in the right order to promote uniformity in the templates
         if (recipe_keys[0] != valid_keys[0]):
             # print(item_name, "recipe", i, "should have the first element of the hash be \"output\"")
-            print(calculator_name.upper()+":", "\"output\" should be the first key of", item_name, "recipe", i)
+            print(calculator_name.upper() + ":", "\"output\" should be the first key of", item_name, "recipe", i)
         if (recipe_keys[1] != valid_keys[1]):
             # print(item_name, "recipe", i, "should have the first element of the hash be \"output\"")
-            print(calculator_name.upper()+":", "\"recipe_type\" should be the second key of", item_name, "recipe", i)
+            print(calculator_name.upper() + ":", "\"recipe_type\" should be the second key of", item_name, "recipe", i)
         if (recipe_keys[2] != valid_keys[2]):
             # print(item_name, "recipe", i, "should have the first element of the hash be \"output\"")
-            print(calculator_name.upper()+":", "\"requirements\" should be the third key of", item_name, "recipe", i)
+            print(calculator_name.upper() + ":", "\"requirements\" should be the third key of", item_name, "recipe", i)
 
     raw_resource_count = 0
     for recipe in recipes:
@@ -185,12 +188,12 @@ def lint_recipe(calculator_name, item_name, recipes):
             if (recipe == OrderedDict([('output', 1), ('recipe_type', 'Raw Resource'), ('requirements', OrderedDict([(item_name, 0)]))])):
                 raw_resource_count += 1
             else:
-                print(calculator_name.upper()+":", item_name, "has an invalid \"Raw Resource\"")
+                print(calculator_name.upper() + ":", item_name, "has an invalid \"Raw Resource\"")
 
     if raw_resource_count == 0:
-        print(calculator_name.upper()+":", item_name, "must have a \"Raw Resource\" which outputs 1 and has a requirement of 0 of itself")
+        print(calculator_name.upper() + ":", item_name, "must have a \"Raw Resource\" which outputs 1 and has a requirement of 0 of itself")
     elif raw_resource_count > 1:
-        print(calculator_name.upper()+":", item_name, "must have only one \"Raw Resource\"")
+        print(calculator_name.upper() + ":", item_name, "must have only one \"Raw Resource\"")
 
 
 ################################################################################
@@ -203,9 +206,10 @@ def ensure_valid_requirements(resources):
         for recipe in resources[resource]:
             for requirement in recipe["requirements"]:
                 if requirement not in resources:
-                    print ("ERROR: Invalid requirement for resource:", resource + ". \"" + requirement + "\" does not exist as a resource")
+                    print("ERROR: Invalid requirement for resource:", resource + ". \"" + requirement + "\" does not exist as a resource")
                 elif recipe["requirements"][requirement] > 0:
-                    print ("ERROR: Invalid requirement for resource:", resource + ". \"" + requirement + "\" must be a negative number")
+                    print("ERROR: Invalid requirement for resource:", resource + ". \"" + requirement + "\" must be a negative number")
+
 
 def ensure_valid_recipe_types(calculator_name, item_list, recipe_types):
     found_recipe_types = []
@@ -217,11 +221,11 @@ def ensure_valid_recipe_types(calculator_name, item_list, recipe_types):
                 found_recipe_types.append(recipe_type)
             # check if this recipe exists in the recipe type list
             if recipe_type not in recipe_types and recipe_type != "Raw Resource":
-                print(calculator_name.upper()+":", item + " has an undefined resource_type" + ": \"" + recipe_type + "\"")
+                print(calculator_name.upper() + ":", item + " has an undefined resource_type" + ": \"" + recipe_type + "\"")
 
     for recipe_type in recipe_types:
         if recipe_type not in found_recipe_types:
-            print(calculator_name.upper()+":", "Unused recipe_type \""+recipe_type+"\"")
+            print(calculator_name.upper() + ":", "Unused recipe_type \"" + recipe_type + "\"")
 
 
 ################################################################################
@@ -258,28 +262,27 @@ def get_newest_modified_time(path):
     return max(time_list)
 
 
-
 def generate_content_width_css(image_width, yaml_data):
     content_width_css = ""
-    media_padding = 40 # This give a slight padding from the edges, useful for avoiding intersection with scroll bars
+    media_padding = 40  # This give a slight padding from the edges, useful for avoiding intersection with scroll bars
     if "row_group_count" in yaml_data:
         row_group_count = yaml_data["row_group_count"]
     else:
         row_group_count = 1
 
     iteration = 1
-    image_width_with_padding = image_width + 6 #TODO: This will need to be updated if custom styling is added to the calculator
+    image_width_with_padding = image_width + 6  # TODO: This will need to be updated if custom styling is added to the calculator
     while iteration * row_group_count * image_width_with_padding < 3840:
         content_width = iteration * row_group_count * image_width_with_padding
-        screen_max = (iteration+1) * row_group_count * image_width_with_padding
-        new_css = "@media only screen and (max-width: "+ str(screen_max+media_padding-1) +"px) and (min-width:" + str(content_width+media_padding)+ "px) { .resource_content { width: " + str(content_width) + "px}  }"
+        screen_max = (iteration + 1) * row_group_count * image_width_with_padding
+        new_css = "@media only screen and (max-width: " + str(screen_max + media_padding - 1) + "px) and (min-width:" + str(content_width + media_padding) + "px) { .resource_content { width: " + str(content_width) + "px}  }"
         content_width_css += new_css
         iteration += 1
     # When the width is less then a single group we still want the list to be centered
-    for i in range(1,row_group_count):
+    for i in range(1, row_group_count):
         content_width = i * image_width_with_padding
-        screen_max = (i+1) * image_width_with_padding
-        new_css = "@media only screen and (max-width: "+ str(screen_max+media_padding-1) +"px) and (min-width:" + str(content_width+media_padding)+ "px) { .resource_content { width: " + str(content_width) + "px}  }"
+        screen_max = (i + 1) * image_width_with_padding
+        new_css = "@media only screen and (max-width: " + str(screen_max + media_padding - 1) + "px) and (min-width:" + str(content_width + media_padding) + "px) { .resource_content { width: " + str(content_width) + "px}  }"
         content_width_css += new_css
 
     return content_width_css
@@ -309,7 +312,7 @@ def generate_resource_html_data(recipes):
 ################################################################################
 # generate_resource_offset_classes
 #
-# 
+#
 ################################################################################
 def generate_resource_offset_classes(recipes, resource_image_coordinates):
     item_styles = {}
@@ -318,7 +321,7 @@ def generate_resource_offset_classes(recipes, resource_image_coordinates):
 
         if simple_name in resource_image_coordinates:
             x_coordinate, y_coordinate = resource_image_coordinates[simple_name]
-            item_styles[simple_name] = "background-position: "+str(-x_coordinate)+"px "+str(-y_coordinate)+"px;"
+            item_styles[simple_name] = "background-position: " + str(-x_coordinate) + "px " + str(-y_coordinate) + "px;"
         else:
             item_styles[simple_name] = "background: #f0f; background-image: none;"
             print("WARNING:", simple_name, "has a recipe but no image and will appear purple in the calculator")
@@ -344,7 +347,7 @@ def create_calculator_page(calculator_name):
         newest_corelib = get_newest_modified_time("core")
         newest_build_script = os.path.getctime("build.py")
         if oldest_output > max(newest_resource, newest_corelib, newest_build_script):
-            print("Skipping",calculator_name,"Nothing has changed since the last build")
+            print("Skipping", calculator_name, "Nothing has changed since the last build")
             return
 
     print(calculator_folder)
@@ -370,13 +373,12 @@ def create_calculator_page(calculator_name):
     if "default_stack_size" in yaml_data:
         default_stack_size = yaml_data["default_stack_size"]
 
-
     # run some sanity checks on the recipes
     for recipe in recipes:
         lint_recipe(calculator_name, recipe, recipes[recipe])
     ensure_valid_requirements(recipes)
     ensure_valid_recipe_types(calculator_name, recipes, recipe_types)
-    #TODO: Add linting for stack sizes here
+    # TODO: Add linting for stack sizes here
     recipe_type_format_js = uglify_js_string(generate_recipe_type_format_js(calculator_name, recipe_types))
 
     # recipe_js = json.dumps(recipes)
@@ -395,27 +397,27 @@ def create_calculator_page(calculator_name):
     env = Environment(loader=FileSystemLoader('core'))
     template = env.get_template("calculator.html")
     output_from_parsed_template = template.render(
-                                    # A simplified list used for creating the item selector HTML
-                                    resources=resources,
-                                    # the javascript/json object used for calculations
-                                    recipe_json=recipe_js,
-                                    # The size and positions of the image
-                                    item_width=image_width,
-                                    item_height=image_height,
-                                    item_styles=item_styles,
-                                    # The name of the calculator
-                                    resource_list=calculator_name,
-                                    # Javascript formatting functions for recipe instructions # TODO this should be made into format strings to save space
-                                    recipe_type_format_js=recipe_type_format_js,
-                                    # The list of authors and emails to display in the authors sections
-                                    authors=authors,
-                                    # Additional CSS to center the list when resizing
-                                    content_width_css=content_width_css,
-                                    # Used to build the stack size selector UI
-                                    stack_sizes=stack_sizes,
-                                    default_stack_size= default_stack_size,
-                                    # Used to do calculations to divide counts into stacks
-                                    stack_sizes_json=stack_sizes_json)
+        # A simplified list used for creating the item selector HTML
+        resources=resources,
+        # the javascript/json object used for calculations
+        recipe_json=recipe_js,
+        # The size and positions of the image
+        item_width=image_width,
+        item_height=image_height,
+        item_styles=item_styles,
+        # The name of the calculator
+        resource_list=calculator_name,
+        # Javascript formatting functions for recipe instructions # TODO this should be made into format strings to save space
+        recipe_type_format_js=recipe_type_format_js,
+        # The list of authors and emails to display in the authors sections
+        authors=authors,
+        # Additional CSS to center the list when resizing
+        content_width_css=content_width_css,
+        # Used to build the stack size selector UI
+        stack_sizes=stack_sizes,
+        default_stack_size=default_stack_size,
+        # Used to do calculations to divide counts into stacks
+        stack_sizes_json=stack_sizes_json)
 
     minified = htmlmin.minify(output_from_parsed_template, remove_comments=True, remove_empty_space=True)
 
@@ -427,8 +429,6 @@ def create_calculator_page(calculator_name):
     for simple_name in resource_image_coordinates:
         if simple_name not in simple_resources:
             print("WARNING:", simple_name, "has an image but no recipe and will not appear in the calculator")
-
-
 
 
 # [{
@@ -470,28 +470,25 @@ def generate_recipe_type_format_js(calculator_name, recipe_types):
                 chunk = chunk[1:-1]
 
                 if chunk == "IN_ITEMS":
-                    input_chunks.append({"type":"all_other_inputs"})
+                    input_chunks.append({"type": "all_other_inputs"})
                 elif chunk == "OUT_ITEM":
-                    input_chunks.append({"type":"output"})
+                    input_chunks.append({"type": "output"})
                 elif chunk.startswith("ITEM"):
                     tokenized_item_name = chunk[5:]
-                    input_chunks.append({"type":"tokenized_input", "name":tokenized_item_name})
+                    input_chunks.append({"type": "tokenized_input", "name": tokenized_item_name})
                     tokenized_inputs.append(tokenized_item_name)
                     # TODO: some linting here can be done to make sure that all recipe_types that have this tokenized item have the item
                 else:
-                    print("UNKNOWN IDENTIFIER IN FORMAT STRING") # TODO makethis error message better
-
+                    print("UNKNOWN IDENTIFIER IN FORMAT STRING")  # TODO makethis error message better
 
             else:
-                input_chunks.append({"type":"text", "text":chunk})
-
+                input_chunks.append({"type": "text", "text": chunk})
 
         format_function = {
             "name": recipe_type,
             "tokenized_inputs": json.dumps(tokenized_inputs),
             "input_chunks": input_chunks
         }
-
 
         recipe_type_format_functions.append(format_function)
 
@@ -500,8 +497,8 @@ def generate_recipe_type_format_js(calculator_name, recipe_types):
 
     return template.render(recipe_type_format_functions=recipe_type_format_functions)
 
-
     # return recipe_type_format_functions
+
 
 ################################################################################
 # create_index_page
@@ -510,8 +507,7 @@ def generate_recipe_type_format_js(calculator_name, recipe_types):
 ################################################################################
 def create_index_page(directories):
     for directory in directories:
-        shutil.copyfile("resource_lists/" + directory + "/icon.png", "output/"+directory+"/icon.png")
-
+        shutil.copyfile("resource_lists/" + directory + "/icon.png", "output/" + directory + "/icon.png")
 
     # Configure and begin the jinja2 template parsing
     env = Environment(loader=FileSystemLoader('core'))
@@ -532,8 +528,6 @@ def create_index_page(directories):
         f.write(output_from_parsed_template)
 
 
-
-
 def mini_js_data(data):
 
     javascript_reverser = """
@@ -544,7 +538,7 @@ def mini_js_data(data):
     }();
     function _uncompress(data, tokens){
         // console.log("FUNCTION START: ", tokens);
-        if (typeof data === "object"){ 
+        if (typeof data === "object"){
             // Array
             if (Array.isArray(data)) {
                 for (var i in data) {
@@ -569,15 +563,13 @@ def mini_js_data(data):
     }
     """
 
-
     tokens = []
     (packed_data, tokens) = _mini_js_data(data, tokens)
     packed_json = Environment().from_string(javascript_reverser).render(
         data=json.dumps(packed_data),
         tokens=json.dumps(tokens),
-        )
+    )
     uglified_packed_json = uglify_js_string(packed_json)
-
 
     # Do a simple check to make sure our compression is not increasing the size
     uglified_raw_json = uglify_js_string("var recipe_json = " + json.dumps(data))
@@ -596,7 +588,7 @@ def _mini_js_data(data, tokens):
                 tokens.append(i)
             key_token_index = tokens.index(i)
 
-            (element, tokens) = _mini_js_data(data[i],tokens)
+            (element, tokens) = _mini_js_data(data[i], tokens)
             new_data[key_token_index] = element
     elif isinstance(data, list):
         new_data = []
@@ -608,7 +600,7 @@ def _mini_js_data(data, tokens):
             tokens.append(data)
         new_data = tokens.index(data)
     return (new_data, tokens)
-    
+
 
 ################################################################################
 # calculator_display_name
@@ -629,21 +621,23 @@ def pre_compress_output_files():
             # if file in ignored_files or file.endswith(".br") or file.endswith(".gz"):
             #     continue
             if ends_with_any(file, textfile_extensions):
-                filepath = os.path.join(root,file)
+                filepath = os.path.join(root, file)
 
                 # # Brotli Compression
                 # with open(filepath, 'rb') as infile, open(filepath+".br", "bw") as outfile:
                 #     outfile.write(brotli.compress(infile.read()))
 
                 # Gzip Compression
-                with open(filepath, 'rb') as infile, gzip.open(filepath+".gz", 'wb') as outfile:
+                with open(filepath, 'rb') as infile, gzip.open(filepath + ".gz", 'wb') as outfile:
                     shutil.copyfileobj(infile, outfile)
+
 
 def ends_with_any(string, endings):
     for ending in endings:
         if string.endswith(ending):
             return True
     return False
+
 
 ################################################################################
 # copy_common_resources
