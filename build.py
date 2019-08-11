@@ -150,7 +150,7 @@ def uglify_js_string(js_string):
 # and contents. In addition it makes sure that all of the required elements of
 # a recipe are present and that no additional unknown elements are present.
 ################################################################################
-def lint_recipe(calculator_name, item_name, recipes):
+def lint_recipes(calculator_name, item_name, recipes):
 
     required_keys = ["output", "recipe_type", "requirements"]
     optional_keys = ["extra_data"]
@@ -182,19 +182,62 @@ def lint_recipe(calculator_name, item_name, recipes):
             # print(item_name, "recipe", i, "should have the first element of the hash be \"output\"")
             print(calculator_name.upper() + ":", "\"requirements\" should be the third key of", item_name, "recipe", i)
 
+
+
+    # Check that every resource has a raw recipe
     raw_resource_count = 0
     for recipe in recipes:
-
         if (recipe['recipe_type'] == "Raw Resource"):
             if (recipe == OrderedDict([('output', 1), ('recipe_type', 'Raw Resource'), ('requirements', OrderedDict([(item_name, 0)]))])):
                 raw_resource_count += 1
             else:
                 print(calculator_name.upper() + ":", item_name, "has an invalid \"Raw Resource\"")
 
+    # Lint that every resource has a raw resource and only one
     if raw_resource_count == 0:
         print(calculator_name.upper() + ":", item_name, "must have a \"Raw Resource\" which outputs 1 and has a requirement of 0 of itself")
     elif raw_resource_count > 1:
         print(calculator_name.upper() + ":", item_name, "must have only one \"Raw Resource\"")
+
+
+def lint_resources(calculator_name, resources, recipe_types):
+    valid_keys = OrderedDict([
+        ("custom_simplename", False),
+        ("recipes", True)
+    ])
+
+    for resource in resources:
+        resource_keys = [x for x in resources[resource]]
+
+        # Check that all required keys are in the resource
+        for valid_key in valid_keys:
+            if valid_keys[valid_key] and valid_key not in resource_keys:
+                print(calculator_name.upper() + ":", "\"" + valid_key + "\" is not in", resource)
+
+        # Check that all keys are required or optional
+        for resource_key in resource_keys:
+            if resource_key not in valid_keys.keys():
+                print(calculator_name.upper() + ":", "\"" + resource_key + "\" in", resource, "is not a valid key")
+
+        lint_recipes(calculator_name, resource, resources[resource]["recipes"])
+
+    ensure_valid_requirements(resources)
+    ensure_valid_recipe_types(calculator_name, resources, recipe_types)
+    ensure_unique_simple_names(calculator_name, resources)
+
+
+def ensure_unique_simple_names(calculator_name, resources):
+    simple_names = {}
+
+    for resource in resources:
+        simple_name = get_simple_name(resource, resources)
+        if simple_name not in simple_names:
+            simple_names[simple_name] = []
+        simple_names[simple_name].append(resource)
+
+    for simple_name in simple_names:
+        if len(simple_names[simple_name]) > 1:
+            print(calculator_name.upper() + ":", ", ".join(simple_names[simple_name]), "all share the same simple name", simple_name)
 
 
 ################################################################################
@@ -204,7 +247,7 @@ def lint_recipe(calculator_name, item_name, recipes):
 ################################################################################
 def ensure_valid_requirements(resources):
     for resource in resources:
-        for recipe in resources[resource]:
+        for recipe in resources[resource]["recipes"]:
             for requirement in recipe["requirements"]:
                 if requirement not in resources:
                     print("ERROR: Invalid requirement for resource:", resource + ". \"" + requirement + "\" does not exist as a resource")
@@ -212,17 +255,17 @@ def ensure_valid_requirements(resources):
                     print("ERROR: Invalid requirement for resource:", resource + ". \"" + requirement + "\" must be a negative number")
 
 
-def ensure_valid_recipe_types(calculator_name, item_list, recipe_types):
+def ensure_valid_recipe_types(calculator_name, resources, recipe_types):
     found_recipe_types = []
-    for item in item_list:
-        for recipe in item_list[item]:
+    for resource in resources:
+        for recipe in resources[resource]["recipes"]:
             recipe_type = recipe["recipe_type"]
             # add this to the list of found recipe types to later check to make sure all the recipe_types in the list are used
             if recipe_type not in found_recipe_types and recipe_type != "Raw Resource":
                 found_recipe_types.append(recipe_type)
             # check if this recipe exists in the recipe type list
             if recipe_type not in recipe_types and recipe_type != "Raw Resource":
-                print(calculator_name.upper() + ":", item + " has an undefined resource_type" + ": \"" + recipe_type + "\"")
+                print(calculator_name.upper() + ":", resource + " has an undefined resource_type" + ": \"" + recipe_type + "\"")
 
     for recipe_type in recipe_types:
         if recipe_type not in found_recipe_types:
@@ -289,8 +332,10 @@ def generate_content_width_css(image_width, yaml_data):
     return content_width_css
 
 
-def get_simple_name(name):
-    return re.sub(r'[^a-z]', '', name.lower())
+def get_simple_name(resource, resources):
+    if "custom_simplename" in resources[resource]:
+        return resources[resource]["custom_simplename"]
+    return re.sub(r'[^a-z]', '', resource.lower())
 
 
 ################################################################################
@@ -298,16 +343,15 @@ def get_simple_name(name):
 #
 #
 ################################################################################
-def generate_resource_html_data(recipes):
-    resources = []
-    item_styles = {}
-    for recipe in recipes:
-        resource = {}
-        simple_name = get_simple_name(recipe)
-        resource["mc_value"] = recipe
-        resource["simplename"] = simple_name
-        resources.append(resource)
-    return resources
+def generate_resource_html_data(resources):
+    resources_html_data = []
+    for resource in resources:
+        resource_html_data = {}
+        simple_name = get_simple_name(resource, resources)
+        resource_html_data["mc_value"] = resource
+        resource_html_data["simplename"] = simple_name
+        resources_html_data.append(resource_html_data)
+    return resources_html_data
 
 
 ################################################################################
@@ -315,10 +359,10 @@ def generate_resource_html_data(recipes):
 #
 #
 ################################################################################
-def generate_resource_offset_classes(recipes, resource_image_coordinates):
+def generate_resource_offset_classes(resources, resource_image_coordinates):
     item_styles = {}
-    for recipe in recipes:
-        simple_name = get_simple_name(recipe)
+    for resource in resources:
+        simple_name = get_simple_name(resource, resources)
 
         if simple_name in resource_image_coordinates:
             x_coordinate, y_coordinate = resource_image_coordinates[simple_name]
@@ -328,6 +372,10 @@ def generate_resource_offset_classes(recipes, resource_image_coordinates):
             print("WARNING:", simple_name, "has a recipe but no image and will appear purple in the calculator")
 
     return item_styles
+
+
+def get_recipes_only(resources):
+    return {resource: resources[resource]["recipes"] for resource in resources}
 
 
 ################################################################################
@@ -360,7 +408,7 @@ def create_calculator_page(calculator_name):
     with open(os.path.join("resource_lists", calculator_name, "resources.yaml"), 'r', encoding="utf_8") as f:
         yaml_data = ordered_load(f, yaml.SafeLoader)
 
-    recipes = yaml_data["resources"]
+    resources = yaml_data["resources"]
 
     authors = yaml_data["authors"]
 
@@ -374,20 +422,16 @@ def create_calculator_page(calculator_name):
     if "default_stack_size" in yaml_data:
         default_stack_size = yaml_data["default_stack_size"]
 
-    # run some sanity checks on the recipes
-    for recipe in recipes:
-        lint_recipe(calculator_name, recipe, recipes[recipe])
-    ensure_valid_requirements(recipes)
-    ensure_valid_recipe_types(calculator_name, recipes, recipe_types)
+    # run some sanity checks on the resources
+    lint_resources(calculator_name, resources, recipe_types)
     # TODO: Add linting for stack sizes here
     recipe_type_format_js = uglify_js_string(generate_recipe_type_format_js(calculator_name, recipe_types))
 
-    # recipe_js = json.dumps(recipes)
-    recipe_js = mini_js_data(recipes)
+    recipe_js = mini_js_data(get_recipes_only(resources))
 
-    resources = generate_resource_html_data(recipes)
+    html_resource_data = generate_resource_html_data(resources)
 
-    item_styles = generate_resource_offset_classes(recipes, resource_image_coordinates)
+    item_styles = generate_resource_offset_classes(resources, resource_image_coordinates)
 
     # Generate some css to allow us to center the list
     content_width_css = generate_content_width_css(image_width, yaml_data)
@@ -399,7 +443,7 @@ def create_calculator_page(calculator_name):
     template = env.get_template("calculator.html")
     output_from_parsed_template = template.render(
         # A simplified list used for creating the item selector HTML
-        resources=resources,
+        resources=html_resource_data,
         # the javascript/json object used for calculations
         recipe_json=recipe_js,
         # The size and positions of the image
@@ -426,7 +470,7 @@ def create_calculator_page(calculator_name):
         f.write(minified)
 
     # Sanity Check Warning, is there an image that does not have a recipe
-    simple_resources = [x["simplename"] for x in resources]
+    simple_resources = [x["simplename"] for x in html_resource_data]
     for simple_name in resource_image_coordinates:
         if simple_name not in simple_resources:
             print("WARNING:", simple_name, "has an image but no recipe and will not appear in the calculator")
