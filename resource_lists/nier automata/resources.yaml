@@ -1,0 +1,2581 @@
+---
+authors:
+  Asher: "https://aglick.com"
+
+index_page_display_name: "Nier Automata"
+row_group_count: 4
+beta_page: false
+
+recipe_types:
+  Upgrade: "Upgrade {IN_ITEMS} into {OUT_ITEM}"
+  Weapon Buy: "Buy {OUT_ITEM} for {IN_ITEMS} from a weapon shop"
+
+
+# stack_sizes:
+#   Stack:
+#     quantity_multiplier: 64
+#     plural: "Stacks"
+#     extends_from: null
+
+# default_stack_size: "Stack"
+
+
+
+# Resize images to W:100 H:53
+
+resources:
+  # Beastbane
+  Beastbane Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Weapon Buy
+      requirements:
+        G: -10000
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Beastbane Lv 1: 0
+  Beastbane Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Beastbane Lv 1: -1
+        G: -2500
+        Copper Ore: -5
+        Stretched Coil: -3
+        Pyrite: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Beastbane Lv 2: 0
+  Beastbane Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Beastbane Lv 2: -1
+        G: -5000
+        Iron Ore: -5
+        Silver Ore: -5
+        Stripped Screw: -3
+        Meteorite Shard: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Beastbane Lv 3: 0
+  Beastbane Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Beastbane Lv 3: -1
+        Gold Ore: -2
+        Stripped Screw: -5
+        Pristine Screw: -3
+        Machine Arm: -2
+        Meteorite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Beastbane Lv 4: 0
+
+  # Engine Blade
+  Engine Blade Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Engine Blade Lv 1: 0
+  Engine Blade Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Engine Blade Lv 1: -1
+        Rusted Clump: -5
+        Broken Circuit: -5
+        Pearl: -3
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Engine Blade Lv 2: 0
+  Engine Blade Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Engine Blade Lv 2: -1
+        Dented Plate: -4
+        Titanium Alloy: -3
+        Broken Battery: -3
+        Black Pearl: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Engine Blade Lv 3: 0
+  Engine Blade Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Engine Blade Lv 3: -1
+        Memory Alloy: -2
+        Broken Battery: -5
+        Large Battery: -3
+        Machine Arm: -2
+        Moldavite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Engine Blade Lv 4: 0
+
+  # Faith
+  Faith Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Faith Lv 1: 0
+  Faith Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Faith Lv 1: -1
+        Rusted Clump: -5
+        Warped Wire: -3
+        Pyrite: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Faith Lv 2: 0
+  Faith Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Faith Lv 2: -1
+        Dented Plate: -4
+        Titanium Alloy: -3
+        Broken Battery: -3
+        Meteorite Shard: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Faith Lv 3: 0
+  Faith Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Faith Lv 3: -1
+        Gold Ore: -2
+        Rusty Bolt: -5
+        New Bolt: -3
+        Machine Arm: -2
+        Meteorite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Faith Lv 4: 0
+
+  # Type-40 Sword
+  Type-40 Sword Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-40 Sword Lv 1: 0
+  Type-40 Sword Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-40 Sword Lv 1: -1
+        G: -2500
+        Rusted Clump: -5
+        Broken Circuit: -5
+        Pearl: -3
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-40 Sword Lv 2: 0
+  Type-40 Sword Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-40 Sword Lv 2: -1
+        G: -5000
+        Dented Plate: -4
+        Titanium Alloy: -3
+        Broken Battery: -3
+        Black Pearl: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-40 Sword Lv 3: 0
+  Type-40 Sword Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-40 Sword Lv 3: -1
+        G: -10000
+        Memory Alloy: -2
+        Broken Battery: -5
+        Large Battery: -3
+        Machine Arm: -2
+        Meteorite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-40 Sword Lv 4: 0
+
+  # Type-3 Sword
+  Type-3 Sword Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Weapon Buy
+      requirements:
+        G: -20000
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-3 Sword Lv 1: 0
+  Type-3 Sword Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-3 Sword Lv 1: -1
+        Copper Ore: -5
+        Broken Key: -5
+        Crystal: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-3 Sword Lv 2: 0
+  Type-3 Sword Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-3 Sword Lv 2: -1
+        Iron Ore: -4
+        Silver Ore: -3
+        Rusty Bolt: -3
+        Amber: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-3 Sword Lv 3: 0
+  Type-3 Sword Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-3 Sword Lv 3: -1
+        Gold Ore: -2
+        Rusty Bolt: -5
+        New Bolt: -3
+        Machine Arm: -2
+        Meteorite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-3 Sword Lv 4: 0
+
+  # Ancient Overlord
+  Ancient Overlord Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Weapon Buy
+      requirements:
+        G: -15000
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Ancient Overlord Lv 1: 0
+  Ancient Overlord Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Ancient Overlord Lv 1: -1
+        Rusted Clump: -5
+        Broken Circuit: -5
+        Warped Wire: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Ancient Overlord Lv 2: 0
+  Ancient Overlord Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Ancient Overlord Lv 2: -1
+        Dented Plate: -4
+        Titanium Alloy: -3
+        Small Gear: -3
+        Amber: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Ancient Overlord Lv 3: 0
+  Ancient Overlord Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Ancient Overlord Lv 3: -1
+        Memory Alloy: -2
+        Small Gear: -5
+        Large Gear: -3
+        Machine Arm: -2
+        Meteorite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Ancient Overlord Lv 4: 0
+
+  # Virtuous Contract
+  Virtuous Contract Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Virtuous Contract Lv 1: 0
+  Virtuous Contract Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Virtuous Contract Lv 1: -1
+        G: -2500
+        Rusted Clump: -5
+        Beast Hide: -5
+        Crystal: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Virtuous Contract Lv 2: 0
+  Virtuous Contract Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Virtuous Contract Lv 2: -1
+        G: -5000
+        Dented Plate: -4
+        Titanium Alloy: -3
+        Severed Cable: -3
+        Amber: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Virtuous Contract Lv 3: 0
+  Virtuous Contract Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Virtuous Contract Lv 3: -1
+        Memory Alloy: -2
+        Severed Cable: -5
+        Pristine Cable: -3
+        Machine Arm: -2
+        Moldavite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Virtuous Contract Lv 4: 0
+
+  # Cruel Oath
+  Cruel Oath Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cruel Oath Lv 1: 0
+  Cruel Oath Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Cruel Oath Lv 1: -1
+        Rusted Clump: -5
+        Beast Hide: -5
+        Crystal: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cruel Oath Lv 2: 0
+  Cruel Oath Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Cruel Oath Lv 2: -1
+        Iron Ore: -4
+        Silver Ore: -3
+        Small Gear: -3
+        Amber: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cruel Oath Lv 3: 0
+  Cruel Oath Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Cruel Oath Lv 3: -1
+        Gold Ore: -2
+        Small Gear: -5
+        Large Gear: -3
+        Machine Arm: -2
+        Moldavite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cruel Oath Lv 4: 0
+
+  # YoRHa-issue Blade
+  YoRHa-issue Blade Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        YoRHa-issue Blade Lv 1: 0
+  YoRHa-issue Blade Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        YoRHa-issue Blade Lv 1: -1
+        Rusted Clump: -5
+        Stretched Coil: -5
+        Broken Key: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        YoRHa-issue Blade Lv 2: 0
+  YoRHa-issue Blade Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        YoRHa-issue Blade Lv 2: -1
+        Dented Plate: -4
+        Titanium Alloy: -3
+        Rusty Bolt: -3
+        Pyrite: -3
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        YoRHa-issue Blade Lv 3: 0
+  YoRHa-issue Blade Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        YoRHa-issue Blade Lv 3: -1
+        Memory Alloy: -2
+        Rusty Bolt: -5
+        New Bolt: -3
+        Machine Arm: -2
+        Moldavite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        YoRHa-issue Blade Lv 4: 0
+
+  # Phoenix Dagger
+  Phoenix Dagger Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Phoenix Dagger Lv 1: 0
+  Phoenix Dagger Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Phoenix Dagger Lv 1: -1
+        Rusted Clump: -5
+        Broken Circuit: -5
+        Pearl: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Phoenix Dagger Lv 2: 0
+  Phoenix Dagger Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Phoenix Dagger Lv 2: -1
+        Dented Plate: -4
+        Titanium Alloy: -3
+        Crushed Nut: -3
+        Black Pearl: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Phoenix Dagger Lv 3: 0
+  Phoenix Dagger Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Phoenix Dagger Lv 3: -1
+        Memory Alloy: -2
+        Crushed Nut: -3
+        Clean Nut: -3
+        Machine Arm: -2
+        Meteorite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Phoenix Dagger Lv 4: 0
+
+  # Machine Sword
+  Machine Sword Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Weapon Buy
+      requirements:
+        G: -15000
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Sword Lv 1: 0
+  Machine Sword Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Machine Sword Lv 1: -1
+        Copper Ore: -5
+        Broken Key: -5
+        Crystal: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Sword Lv 2: 0
+  Machine Sword Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Machine Sword Lv 2: -1
+        Iron Ore: -4
+        Silver Ore: -3
+        Dented Socket: -3
+        Amber: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Sword Lv 3: 0
+  Machine Sword Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Machine Sword Lv 3: -1
+        Gold Ore: -4
+        Dented Socket: -5
+        Sturdy Socket: -3
+        Machine Arm: -2
+        Moldavite: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Sword Lv 4: 0
+
+  # Iron Pipe
+  Iron Pipe Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Iron Pipe Lv 1: 0
+  Iron Pipe Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Iron Pipe Lv 1: -1
+        G: -2500
+        Copper Ore: -5
+        Broken Key: -5
+        Crystal: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Iron Pipe Lv 2: 0
+  Iron Pipe Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Iron Pipe Lv 2: -1
+        G: -5000
+        Iron Ore: -4
+        Silver Ore: -3
+        Small Gear: -3
+        Amber: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Iron Pipe Lv 3: 0
+  Iron Pipe Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Iron Pipe Lv 3: -1
+        G: -10000
+        Gold Ore: -2
+        Small Gear: -5
+        Large Gear: -3
+        Machine Arm: -2
+        Moldavite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Iron Pipe Lv 4: 0
+
+  # Cypress Stick
+  Cypress Stick Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cypress Stick Lv 1: 0
+  Cypress Stick Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Cypress Stick Lv 1: -1
+        Copper Ore: -5
+        Broken Key: -5
+        Stretched Coil: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cypress Stick Lv 2: 0
+  Cypress Stick Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Cypress Stick Lv 2: -1
+        Iron Ore: -4
+        Silver Ore: -3
+        Severed Cable: -3
+        Pyrite: -3
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cypress Stick Lv 3: 0
+  Cypress Stick Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Cypress Stick Lv 3: -1
+        Gold Ore: -2
+        Severed Cable: -5
+        Pristine Cable: -3
+        Machine Arm: -2
+        Moldavite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cypress Stick Lv 4: 0
+
+  # Iron Will
+  Iron Will Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Iron Will Lv 1: 0
+  Iron Will Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Iron Will Lv 1: -1
+        Rusted Clump: -5
+        Broken Key: -5
+        Pyrite: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Iron Will Lv 2: 0
+  Iron Will Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Iron Will Lv 2: -1
+        Dented Plate: -4
+        Titanium Alloy: -3
+        Broken Battery: -3
+        Meteorite Shard: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Iron Will Lv 3: 0
+  Iron Will Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Iron Will Lv 3: -1
+        Memory Alloy: -2
+        Broken Battery: -5
+        Large Battery: -3
+        Machine Torso: -2
+        Meteorite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Iron Will Lv 4: 0
+
+  # Fang of the Twins
+  Fang of the Twins Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Fang of the Twins Lv 1: 0
+  Fang of the Twins Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Fang of the Twins Lv 1: -1
+        Copper Ore: -5
+        Broken Key: -5
+        Crystal: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Fang of the Twins Lv 2: 0
+  Fang of the Twins Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Fang of the Twins Lv 2: -1
+        Iron Ore: -4
+        Silver Ore: -3
+        Severed Cable: -3
+        Amber: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Fang of the Twins Lv 3: 0
+  Fang of the Twins Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Fang of the Twins Lv 3: -1
+        Gold Ore: -2
+        Severed Cable: -5
+        Pristine Cable: -3
+        Machine Torso: -2
+        Moldavite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Fang of the Twins Lv 4: 0
+
+  # Beastlord
+  Beastlord Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Weapon Buy
+      requirements:
+        G: -10000
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Beastlord Lv 1: 0
+  Beastlord Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Beastlord Lv 1: -1
+        Copper Ore: -5
+        Pyrite: -5
+        Warped Wire: -3
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Beastlord Lv 2: 0
+  Beastlord Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Beastlord Lv 2: -1
+        Iron Ore: -4
+        Silver Ore: -3
+        Stripped Screw: -3
+        Meteorite Shard: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Beastlord Lv 3: 0
+  Beastlord Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Beastlord Lv 3: -1
+        Gold Ore: -2
+        Stripped Screw: -5
+        Pristine Screw: -3
+        Machine Torso: -2
+        Meteorite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Beastlord Lv 4: 0
+
+  # Phoenix Sword
+  Phoenix Sword Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Phoenix Sword Lv 1: 0
+  Phoenix Sword Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Phoenix Sword Lv 1: -1
+        Rusted Clump: -5
+        Broken Circuit: -5
+        Pearl: -3
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Phoenix Sword Lv 2: 0
+  Phoenix Sword Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Phoenix Sword Lv 2: -1
+        Dented Plate: -4
+        Titanium Alloy: -3
+        Crushed Nut: -3
+        Black Pearl: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Phoenix Sword Lv 3: 0
+  Phoenix Sword Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Phoenix Sword Lv 3: -1
+        Memory Alloy: -2
+        Crushed Nut: -5
+        Clean Nut: -3
+        Machine Torso: -2
+        Meteorite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Phoenix Sword Lv 4: 0
+
+  # Type-40 Blade
+  Type-40 Blade Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-40 Blade Lv 1: 0
+  Type-40 Blade Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-40 Blade Lv 1: -1
+        G: -2500
+        Rusted Clump: -5
+        Broken Circuit: -5
+        Pearl: -3
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-40 Blade Lv 2: 0
+  Type-40 Blade Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-40 Blade Lv 2: -1
+        G: -5000
+        Dented Plate: -4
+        Titanium Alloy: -3
+        Broken Battery: -3
+        Black Pearl: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-40 Blade Lv 3: 0
+  Type-40 Blade Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-40 Blade Lv 3: -1
+        G: -10000
+        Memory Alloy: -2
+        Broken Battery: -5
+        Large Battery: -3
+        Machine Torso: -2
+        Meteorite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-40 Blade Lv 4: 0
+
+  # Type-3 Blade
+  Type-3 Blade Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Weapon Buy
+      requirements:
+        G: -20000
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-3 Blade Lv 1: 0
+  Type-3 Blade Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-3 Blade Lv 1: -1
+        Copper Ore: -5
+        Broken Key: -5
+        Crystal: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-3 Blade Lv 2: 0
+  Type-3 Blade Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-3 Blade Lv 2: -1
+        Iron Ore: -4
+        Silver Ore: -3
+        Rusty Bolt: -3
+        Amber: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-3 Blade Lv 3: 0
+  Type-3 Blade Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-3 Blade Lv 3: -1
+        Gold Ore: -2
+        Rusty Bolt: -5
+        New Bolt: -3
+        Machine Torso: -2
+        Meteorite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-3 Blade Lv 4: 0
+
+  # Virtuous Treaty
+  Virtuous Treaty Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Virtuous Treaty Lv 1: 0
+  Virtuous Treaty Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Virtuous Treaty Lv 1: -1
+        G: -2500
+        Rusted Clump: -5
+        Beast Hide: -5
+        Crystal: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Virtuous Treaty Lv 2: 0
+  Virtuous Treaty Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Virtuous Treaty Lv 2: -1
+        G: -5000
+        Dented Plate: -4
+        Titanium Alloy: -3
+        Warped Wire: -5
+        Amber: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Virtuous Treaty Lv 3: 0
+  Virtuous Treaty Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Virtuous Treaty Lv 3: -1
+        G: -10000
+        Memory Alloy: -2
+        Severed Cable: -5
+        Pristine Cable: -3
+        Machine Torso: -2
+        Moldavite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Virtuous Treaty Lv 4: 0
+
+  # Cruel Blood Oath
+  Cruel Blood Oath Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cruel Blood Oath Lv 1: 0
+  Cruel Blood Oath Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Cruel Blood Oath Lv 1: -1
+        G: -2500
+        Copper Ore: -5
+        Beast Hide: -5
+        Stretched Coil: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cruel Blood Oath Lv 2: 0
+  Cruel Blood Oath Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Cruel Blood Oath Lv 2: -1
+        G: -5000
+        Dented Plate: -4
+        Titanium Alloy: -3
+        Small Gear: -3
+        Amber: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cruel Blood Oath Lv 3: 0
+  Cruel Blood Oath Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Cruel Blood Oath Lv 3: -1
+        G: -10000
+        Memory Alloy: -2
+        Small Gear: -5
+        Large Gear: -3
+        Machine Arm: -2
+        Meteorite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cruel Blood Oath Lv 4: 0
+
+  # Machine Axe
+  Machine Axe Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Weapon Buy
+      requirements:
+        G: -15000
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Axe Lv 1: 0
+  Machine Axe Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Machine Axe Lv 1: -1
+        G: -2500
+        Copper Ore: -5
+        Broken Key: -5
+        Crystal: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Axe Lv 2: 0
+  Machine Axe Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Machine Axe Lv 2: -1
+        G: -5000
+        Iron Ore: -4
+        Silver Ore: -3
+        Dented Socket: -3
+        Amber: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Axe Lv 3: 0
+  Machine Axe Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Machine Axe Lv 3: -1
+        G: -10000
+        Gold Ore: -2
+        Dented Socket: -5
+        Sturdy Socket: -3
+        Machine Torso: -2
+        Moldavite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Axe Lv 4: 0
+
+  # Beastcurse
+  Beastcurse Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Beastcurse Lv 1: 0
+  Beastcurse Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Beastcurse Lv 1: -1
+        G: -2500
+        Copper Ore: -5
+        Stretched Coil: -3
+        Pyrite: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Beastcurse Lv 2: 0
+  Beastcurse Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Beastcurse Lv 2: -1
+        G: -5000
+        Iron Ore: -4
+        Silver Ore: -3
+        Stripped Screw: -3
+        Meteorite Shard: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Beastcurse Lv 3: 0
+  Beastcurse Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Beastcurse Lv 3: -1
+        G: -10000
+        Gold Ore: -2
+        Stripped Screw: -5
+        Pristine Screw: -3
+        Machine Leg: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Beastcurse Lv 4: 0
+
+  # Dragoon Lance
+  Dragoon Lance Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Dragoon Lance Lv 1: 0
+  Dragoon Lance Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Dragoon Lance Lv 1: -1
+        G: -2500
+        Rusted Clump: -5
+        Broken Circuit: -5
+        Warped Wire: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Dragoon Lance Lv 2: 0
+  Dragoon Lance Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Dragoon Lance Lv 2: -1
+        G: -5000
+        Dented Plate: -4
+        Titanium Alloy: -3
+        Crushed Nut: -3
+        Pyrite: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Dragoon Lance Lv 3: 0
+  Dragoon Lance Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Dragoon Lance Lv 3: -1
+        G: -10000
+        Memory Alloy: -2
+        Crushed Nut: -5
+        Clean Nut: -3
+        Machine Leg: -2
+        Meteorite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Dragoon Lance Lv 4: 0
+
+  # Phoenix Lance
+  Phoenix Lance Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Phoenix Lance Lv 1: 0
+  Phoenix Lance Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Phoenix Lance Lv 1: -1
+        G: -2500
+        Rusted Clump: -5
+        Broken Circuit: -5
+        Pearl: -3
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Phoenix Lance Lv 2: 0
+  Phoenix Lance Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Phoenix Lance Lv 2: -1
+        G: -5000
+        Dented Plate: -4
+        Titanium Alloy: -3
+        Crushed Nut: -3
+        Black Pearl: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Phoenix Lance Lv 3: 0
+  Phoenix Lance Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Phoenix Lance Lv 3: -1
+        G: -10000
+        Memory Alloy: -2
+        Crushed Nut: -5
+        Clean Nut: -3
+        Machine Leg: -2
+        Moldavite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Phoenix Lance Lv 4: 0
+
+  # Type-40 Lance
+  Type-40 Lance Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-40 Lance Lv 1: 0
+  Type-40 Lance Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-40 Lance Lv 1: -1
+        G: -2500
+        Rusted Clump: -5
+        Broken Circuit: -5
+        Pearl: -3
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-40 Lance Lv 2: 0
+  Type-40 Lance Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-40 Lance Lv 2: -1
+        G: -5000
+        Dented Plate: -4
+        Titanium Alloy: -3
+        Broken Battery: -3
+        Black Pearl: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-40 Lance Lv 3: 0
+  Type-40 Lance Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-40 Lance Lv 3: -1
+        G: -10000
+        Memory Alloy: -2
+        Broken Battery: -5
+        Large Battery: -3
+        Machine Leg: -2
+        Meteorite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-40 Lance Lv 4: 0
+
+  # Type-3 Lance
+  Type-3 Lance Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-3 Lance Lv 1: 0
+  Type-3 Lance Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-3 Lance Lv 1: -1
+        G: -2500
+        Copper Ore: -5
+        Broken Key: -5
+        Crystal: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-3 Lance Lv 2: 0
+  Type-3 Lance Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-3 Lance Lv 2: -1
+        G: -5000
+        Iron Ore: -4
+        Silver Ore: -3
+        Rusty Bolt: -3
+        Amber: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-3 Lance Lv 3: 0
+  Type-3 Lance Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-3 Lance Lv 3: -1
+        G: -10000
+        Gold Ore: -2
+        Rusty Bolt: -5
+        New Bolt: -3
+        Machine Leg: -2
+        Meteorite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-3 Lance Lv 4: 0
+
+  # Spear of the Usurper
+  Spear of the Usurper Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Spear of the Usurper Lv 1: 0
+  Spear of the Usurper Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Spear of the Usurper Lv 1: -1
+        G: -2500
+        Copper Ore: -5
+        Broken Key: -5
+        Stretched Coil: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Spear of the Usurper Lv 2: 0
+  Spear of the Usurper Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Spear of the Usurper Lv 2: -1
+        G: -5000
+        Iron Ore: -4
+        Silver Ore: -3
+        Rusty Bolt: -3
+        Pyrite: -3
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Spear of the Usurper Lv 3: 0
+  Spear of the Usurper Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Spear of the Usurper Lv 3: -1
+        G: -10000
+        Gold Ore: -2
+        Rusty Bolt: -5
+        New Bolt: -3
+        Machine Leg: -2
+        Moldavite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Spear of the Usurper Lv 4: 0
+
+  # Virtuous Dignity
+  Virtuous Dignity Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Virtuous Dignity Lv 1: 0
+  Virtuous Dignity Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Virtuous Dignity Lv 1: -1
+        G: -2500
+        Rusted Clump: -5
+        Beast Hide: -5
+        Crystal: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Virtuous Dignity Lv 2: 0
+  Virtuous Dignity Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Virtuous Dignity Lv 2: -1
+        G: -5000
+        Dented Plate: -4
+        Titanium Alloy: -3
+        Warped Wire: -5
+        Amber: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Virtuous Dignity Lv 3: 0
+  Virtuous Dignity Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Virtuous Dignity Lv 3: -1
+        G: -10000
+        Memory Alloy: -2
+        Severed Cable: -5
+        Pristine Cable: -3
+        Machine Leg: -2
+        Moldavite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Virtuous Dignity Lv 4: 0
+
+  # Cruel Arrogance
+  Cruel Arrogance Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cruel Arrogance Lv 1: 0
+  Cruel Arrogance Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Cruel Arrogance Lv 1: -1
+        Copper Ore: -5
+        Beast Hide: -5
+        Stretched Coil: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cruel Arrogance Lv 2: 0
+  Cruel Arrogance Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Cruel Arrogance Lv 2: -1
+        Iron Ore: -4
+        Silver Ore: -3
+        Small Gear: -3
+        Pyrite: -3
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cruel Arrogance Lv 3: 0
+  Cruel Arrogance Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Cruel Arrogance Lv 3: -1
+        Gold Ore: -2
+        Small Gear: -5
+        Large Gear: -3
+        Machine Leg: -2
+        Moldavite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cruel Arrogance Lv 4: 0
+
+  # Machine Spear
+  Machine Spear Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Weapon Buy
+      requirements:
+        G: -15000
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Spear Lv 1: 0
+  Machine Spear Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Machine Spear Lv 1: -1
+        Copper Ore: -5
+        Broken Key: -5
+        Crystal: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Spear Lv 2: 0
+  Machine Spear Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Machine Spear Lv 2: -1
+        Iron Ore: -4
+        Silver Ore: -3
+        Dented Socket: -3
+        Amber: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Spear Lv 3: 0
+  Machine Spear Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Machine Spear Lv 3: -1
+        Gold Ore: -2
+        Dented Socket: -5
+        Sturdy Socket: -3
+        Machine Leg: -2
+        Moldavite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Spear Lv 4: 0
+
+  # Angel's Folly
+  Angel's Folly Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Weapon Buy
+      requirements:
+        G: -20000
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Angel's Folly Lv 1: 0
+  Angel's Folly Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Angel's Folly Lv 1: -1
+        G: -2500
+        Rusted Clump: -5
+        Warped Wire: -3
+        Pyrite: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Angel's Folly Lv 2: 0
+  Angel's Folly Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Angel's Folly Lv 2: -1
+        G: -5000
+        Dented Plate: -4
+        Titanium Alloy: -3
+        Stripped Screw: -3
+        Meteorite Shard: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Angel's Folly Lv 3: 0
+  Angel's Folly Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Angel's Folly Lv 3: -1
+        G: -10000
+        Memory Alloy: -2
+        Stripped Screw: -5
+        Pristine Screw: -3
+        Machine Head: -2
+        Meteorite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Angel's Folly Lv 4: 0
+
+  # Demon's Cry
+  Demon's Cry Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Demon's Cry Lv 1: 0
+  Demon's Cry Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Demon's Cry Lv 1: -1
+        Copper Ore: -5
+        Stretched Coil: -3
+        Pearl: -3
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Demon's Cry Lv 2: 0
+  Demon's Cry Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Demon's Cry Lv 2: -1
+        Iron Ore: -4
+        Silver Ore: -3
+        Small Gear: -3
+        Black Pearl: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Demon's Cry Lv 3: 0
+  Demon's Cry Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Demon's Cry Lv 3: -1
+        Gold Ore: -2
+        Small Gear: -5
+        Large Gear: -3
+        Machine Head: -2
+        Meteorite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Demon's Cry Lv 4: 0
+
+  # Type-40 Fists
+  Type-40 Fists Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-40 Fists Lv 1: 0
+  Type-40 Fists Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-40 Fists Lv 1: -1
+        Rusted Clump: -5
+        Broken Circuit: -5
+        Pearl: -3
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-40 Fists Lv 2: 0
+  Type-40 Fists Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-40 Fists Lv 2: -1
+        Dented Plate: -4
+        Titanium Alloy: -3
+        Broken Battery: -3
+        Black Pearl: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-40 Fists Lv 3: 0
+  Type-40 Fists Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-40 Fists Lv 3: -1
+        Memory Alloy: -2
+        Broken Battery: -5
+        Large Battery: -3
+        Machine Head: -2
+        Meteorite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-40 Fists Lv 4: 0
+
+  # Type-3 Fists
+  Type-3 Fists Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Weapon Buy
+      requirements:
+        G: -20000
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-3 Fists Lv 1: 0
+  Type-3 Fists Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-3 Fists Lv 1: -1
+        G: -2500
+        Copper Ore: -5
+        Broken Key: -5
+        Crystal: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-3 Fists Lv 2: 0
+  Type-3 Fists Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-3 Fists Lv 2: -1
+        G: -5000
+        Iron Ore: -4
+        Silver Ore: -3
+        Rusty Bolt: -3
+        Amber: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-3 Fists Lv 3: 0
+  Type-3 Fists Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Type-3 Fists Lv 3: -1
+        G: -10000
+        Gold Ore: -2
+        Rusty Bolt: -5
+        New Bolt: -3
+        Machine Head: -2
+        Meteorite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Type-3 Fists Lv 4: 0
+
+  # Virtuous Grief
+  Virtuous Grief Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Virtuous Grief Lv 1: 0
+  Virtuous Grief Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Virtuous Grief Lv 1: -1
+        Rusted Clump: -5
+        Beast Hide: -5
+        Crystal: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Virtuous Grief Lv 2: 0
+  Virtuous Grief Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Virtuous Grief Lv 2: -1
+        Dented Plate: -4
+        Titanium Alloy: -3
+        Severed Cable: -3
+        Amber: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Virtuous Grief Lv 3: 0
+  Virtuous Grief Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Virtuous Grief Lv 3: -1
+        Memory Alloy: -2
+        Severed Cable: -5
+        Pristine Cable: -3
+        Machine Head: -2
+        Moldavite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Virtuous Grief Lv 4: 0
+
+  # Cruel Lament
+  Cruel Lament Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cruel Lament Lv 1: 0
+  Cruel Lament Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Cruel Lament Lv 1: -1
+        Copper Ore: -5
+        Beast Hide: -5
+        Warped Wire: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cruel Lament Lv 2: 0
+  Cruel Lament Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Cruel Lament Lv 2: -1
+        Iron Ore: -4
+        Silver Ore: -3
+        Small Gear: -3
+        Pyrite: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cruel Lament Lv 3: 0
+  Cruel Lament Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Cruel Lament Lv 3: -1
+        Gold Ore: -2
+        Small Gear: -5
+        Large Gear: -3
+        Machine Head: -2
+        Moldavite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cruel Lament Lv 4: 0
+
+  # Machine Heads
+  Machine Heads Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Weapon Buy
+      requirements:
+        G: -10000
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Heads Lv 1: 0
+  Machine Heads Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Machine Heads Lv 1: -1
+        Copper Ore: -5
+        Broken Key: -5
+        Crystal: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Heads Lv 2: 0
+  Machine Heads Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Machine Heads Lv 2: -1
+        Iron Ore: -4
+        Silver Ore: -3
+        Dented Socket: -3
+        Amber: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Heads Lv 3: 0
+  Machine Heads Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Machine Heads Lv 3: -1
+        Gold Ore: -4
+        Dented Socket: -5
+        Sturdy Socket: -3
+        Machine Head: -2
+        Moldavite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Heads Lv 4: 0
+
+  # Emil Heads
+  Emil Heads Lv 1:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Emil Heads Lv 1: 0
+  Emil Heads Lv 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Emil Heads Lv 1: -1
+        Rusted Clump: -5
+        Broken Key: -5
+        Crystal: -5
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Emil Heads Lv 2: 0
+  Emil Heads Lv 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Emil Heads Lv 2: -1
+        Dented Plate: -4
+        Titanium Alloy: -3
+        Severed Cable: -3
+        Amber: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Emil Heads Lv 3: 0
+  Emil Heads Lv 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Emil Heads Lv 3: -1
+        Memory Alloy: -2
+        Severed Cable: -5
+        Pristine Cable: -3
+        Machine Head: -2
+        Moldavite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Emil Heads Lv 4: 0
+
+
+
+
+
+
+
+
+
+  ##############################################################################
+  # Materials
+  ##############################################################################
+  Amber:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Amber: 0
+
+  Ancient Mask:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Ancient Mask: 0
+
+  Beast Hide:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Beast Hide: 0
+
+  Black Pearl:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Black Pearl: 0
+
+  Boar Meat:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Boar Meat: 0
+
+  Broken Battery:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Broken Battery: 0
+
+  Broken Circuit:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Broken Circuit: 0
+
+  Broken Key:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Broken Key: 0
+
+  Copper Ore:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Copper Ore: 0
+
+  Clean Nut:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Clean Nut: 0
+
+  Complex Gadget:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Complex Gadget: 0
+
+  Crushed Nut:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Crushed Nut: 0
+
+  Crystal:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Crystal: 0
+
+  Drab Bracelet:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Drab Bracelet: 0
+
+  Dented Plate:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Dented Plate: 0
+
+  Dented Socket:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Dented Socket: 0
+
+  Dye:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Dye: 0
+
+  Eagle Eggs:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Eagle Eggs: 0
+
+  Elaborate Gadget:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Elaborate Gadget: 0
+
+  Filler Metal:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Filler Metal: 0
+
+  Giant Egg:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Giant Egg: 0
+
+  Gold Ore:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Gold Ore: 0
+
+  Iron Ore:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Iron Ore: 0
+
+  Large Battery:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Battery: 0
+
+  Large Gear:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Gear: 0
+
+  Lovely Choker:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Lovely Choker: 0
+
+  Machine Arm:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Arm: 0
+
+  Machine Core:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Core: 0
+
+  Machine Head:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Head: 0
+
+  Machine Leg:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Leg: 0
+
+  Machine Oil:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Oil: 0
+
+  Machine Torso:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Machine Torso: 0
+
+  Memory Alloy:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Memory Alloy: 0
+
+  Meteorite:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Meteorite: 0
+
+  Meteorite Shard:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Meteorite Shard: 0
+
+  Moldavite:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Moldavite: 0
+
+  Moose Meat:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Moose Meat: 0
+
+  Mushroom:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Mushroom: 0
+
+  Natural Rubber:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Natural Rubber: 0
+
+  New Bolt:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        New Bolt: 0
+
+  Pearl:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Pearl: 0
+
+  Plant Seed:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Plant Seed: 0
+
+  Popola's Booze:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Popola's Booze: 0
+
+  Powerup Part L:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Powerup Part L: 0
+
+  Powerup Part M:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Powerup Part M: 0
+
+  Powerup Part S:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Powerup Part S: 0
+
+  Precious Earrings:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Precious Earrings: 0
+
+  Pristine Cable:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Pristine Cable: 0
+
+  Pristine Screw:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Pristine Screw: 0
+
+  Pure Water:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Pure Water: 0
+
+  Pyrite:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Pyrite: 0
+
+  Rusted Clump:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Rusted Clump: 0
+
+  Rusty Bolt:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Rusty Bolt: 0
+
+  Severed Cable:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Severed Cable: 0
+
+  Shattered Earrings:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Shattered Earrings: 0
+
+  Silver Ore:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Silver Ore: 0
+
+  Simple Gadget:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Simple Gadget: 0
+
+  Small Gear:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Small Gear: 0
+
+  Stretched Coil:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Stretched Coil: 0
+
+  Stripped Screw:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Stripped Screw: 0
+
+  Sturdy Socket:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Sturdy Socket: 0
+
+  Tanning Agent:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Tanning Agent: 0
+
+  Tech Manual:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Tech Manual: 0
+
+  Thick Dictionary:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Thick Dictionary: 0
+
+  Titanium Alloy:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Titanium Alloy: 0
+
+  Torn Book:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Torn Book: 0
+
+  Tree Sap:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Tree Sap: 0
+
+  Tree Seed:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Tree Seed: 0
+
+  Viscous Oil:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Viscous Oil: 0
+
+  Warped Wire:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Warped Wire: 0
+
+
+
+
+  ##############################################################################
+  # Currency
+  ##############################################################################
+  G:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        G: 0
