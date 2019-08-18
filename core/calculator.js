@@ -128,7 +128,7 @@ function filenameify(rawname) {
 	if (rawname === null) {
 		return "";
 	}
-	return rawname.toLowerCase().replace(/[^a-z]/g, "");
+	return rawname.toLowerCase().replace(/[^a-z0=9]/g, "");
 }
 
 

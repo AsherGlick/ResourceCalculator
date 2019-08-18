@@ -85,8 +85,8 @@ def create_packed_image(calculator_name):
     # Create a new output file and write all the images to spots in the file
     result = Image.new('RGBA', (result_width, result_height))
     for index, (name, image) in enumerate(images):
-        x_coordinate = (index % columns) * standard_height
-        y_coordinate = math.floor(index / columns) * standard_width
+        x_coordinate = (index % columns) * standard_width
+        y_coordinate = math.floor(index / columns) * standard_height
         image_coordinates[name] = (x_coordinate, y_coordinate)
         result.paste(im=image, box=(x_coordinate, y_coordinate))
 
@@ -286,6 +286,8 @@ def get_oldest_modified_time(path):
             time_list.append(get_oldest_modified_time(filepath))
         else:
             time_list.append(os.path.getctime(filepath))
+    if len(time_list) == 0:
+        return 0
     return min(time_list)
 
 
@@ -335,7 +337,7 @@ def generate_content_width_css(image_width, yaml_data):
 def get_simple_name(resource, resources):
     if "custom_simplename" in resources[resource]:
         return resources[resource]["custom_simplename"]
-    return re.sub(r'[^a-z]', '', resource.lower())
+    return re.sub(r'[^a-z0-9]', '', resource.lower())
 
 
 ################################################################################
