@@ -3,7 +3,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 // Closure wrapper for the script file
-(function($) {"use strict";$(window).on("load", function(){
+(function($) {
+"use strict";$(window).on("load", function(){
 // Closure wrapper for the script file
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -993,7 +994,7 @@ function layout_chart(columns, nodes, edges, height, value_scale, margin) {
 }
 window.onresize = function() {
 	relayout_chart();
-}
+};
 function relayout_chart(){
 	if (Object.keys(cached_chart_data).length === 0) {
 		return;
@@ -1479,5 +1480,6 @@ $(".desired_item_count").blur(function() {
 load();
 
 // Closure wrapper for the script file
-});})(jQuery);
+});
+})(jQuery);
 // Closure wrapper for the script file

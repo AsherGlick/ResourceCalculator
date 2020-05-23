@@ -401,7 +401,7 @@ def create_calculator_page(calculator_name):
             print("Skipping", calculator_name, "Nothing has changed since the last build")
             return
 
-    print(calculator_folder)
+    print("Generating", calculator_name, "into", calculator_folder)
 
     # Create a packed image of all the item images
     image_width, image_height, resource_image_coordinates = create_packed_image(calculator_name)
