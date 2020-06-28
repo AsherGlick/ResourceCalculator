@@ -1,532 +1,474 @@
 ---
 authors:
-  Asher: "https://aglick.com"
-  Kevin: ""
+  org_AMS: ""
 
 index_page_display_name: "Astroneer"
 # row_group_count: 0
 
 recipe_types:
   Backpack Printer: "Use a Backpack Printer to turn {IN_ITEMS} into {OUT_ITEM}"
-  Smelter: "Use a Smelter to turn {IN_ITEMS} into {OUT_ITEM}"
-  Large Platform: "Use a Large Platform to turn {IN_ITEMS} into {OUT_ITEM}"
-  Printer: "Use a Printer to turn {IN_ITEMS} into {OUT_ITEM}"
-  Vehicle Bay: "Use a Vehicle Bay to turn {IN_ITEMS} into {OUT_ITEM}"
-  Printer and Vehicle Bay: "Use a Printer and Vehicle Bay to turn {IN_ITEMS} into {OUT_ITEM}"
+  Small Printer: "Use a Small Printer to turn {IN_ITEMS} into {OUT_ITEM}"
+  Medium Printer: "Use a Medium Printer to turn {IN_ITEMS} into {OUT_ITEM}"
+  Large Printer:  "Use a Large Printer to turn {IN_ITEMS} into {OUT_ITEM}"
+  Chemistry Lab: "Use a Chemistry Lab to turn {IN_ITEMS} into {OUT_ITEM}"
+  Smelting Furnace: "Use a Smelting Furnace to turn {IN_ITEMS} into {OUT_ITEM}"
+  Assemble: "Assemble {IN_ITEMS} to have {OUT_ITEM}"
 
 resources:
-  Coal:
+# Raw Resource
+  Resin:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
-        Coal: 0
-
+        Resin: 0
   Compound:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Raw Resource
       requirements:
         Compound: 0
+  Lithium:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Lithium: 0
+  Ammonium:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Ammonium: 0
+  Graphite:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Graphite: 0
+
+# gaz
+  Hydrogen:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Hydrogen: 0
+  Nitrogen:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Nitrogen: 0
+  Methane:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Methane: 0
+  Argon:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Argon: 0
+
+# raffined resourses
+  Organic:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Organic: 0
+  Carbon:
+    recipes:
+    - output: 1
+      recipe_type: Smelting Furnace
+      requirements:
+        Organic: -1
+
+
+  Clay:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Clay: 0
+  Ceramic:
+    recipes:
+    - output: 1
+      recipe_type: Smelting Furnace
+      requirements:
+        Clay: -1
+
+  Quartz:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Quartz: 0
+  Glass:
+    recipes:
+    - output: 1
+      recipe_type: Smelting Furnace
+      requirements:
+        Quartz: -1
 
   Laterite:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Raw Resource
       requirements:
         Laterite: 0
+  Aluminum:
+    recipes:
+    - output: 1
+      recipe_type: Smelting Furnace
+      requirements:
+        Laterite: -1
 
   Malachite:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Raw Resource
       requirements:
         Malachite: 0
-
-  Hydrazine:
+  Copper:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Smelting Furnace
       requirements:
-        Hydrazine: 0
+        Malachite: -1
 
   Hematite:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Raw Resource
       requirements:
         Hematite: 0
-
-  Marble:
+  Iron:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Smelting Furnace
       requirements:
-        Marble: 0
+        Hematite: -1
 
-  Lithium:
+  Titanite:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Raw Resource
       requirements:
-        Lithium: 0
-
-  Organic:
-    recipes:
-    - output: 1
-      recipe_type: "Raw Resource"
-      requirements:
-        Organic: 0
-
-  Oxygen:
-    recipes:
-    - output: 1
-      recipe_type: "Raw Resource"
-      requirements:
-        Oxygen: 0
-
-  Power:
-    recipes:
-    - output: 1
-      recipe_type: "Raw Resource"
-      requirements:
-        Power: 0
-
-  Resin:
-    recipes:
-    - output: 1
-      recipe_type: "Raw Resource"
-      requirements:
-        Resin: 0
-
+        Titanite: 0
   Titanium:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Smelting Furnace
       requirements:
-        Titanium: 0
+        Titanite: -1
 
-  Aluminum:
+  Wolframite:
     recipes:
-    - output: 1
-      recipe_type: "Raw Resource"
-      requirements:
-        Aluminum: 0
-    - output: 1
-      recipe_type: Smelter
-      requirements:
-        Laterite: -1
-
-  Copper:
-    recipes:
-    - output: 1
-      recipe_type: "Raw Resource"
-      requirements:
-        Copper: 0
-    - output: 1
-      recipe_type: Smelter
-      requirements:
-        Malachite: -1
-
-  Tethers:
-    recipes:
-    - output: 1
-      recipe_type: Backpack Printer
-      requirements:
-        Compound: -1
     - output: 1
       recipe_type: Raw Resource
       requirements:
-        Tethers: 0
-
-  Small Solar Panel:
+        Wolframite: 0
+  Tungsten:
     recipes:
     - output: 1
-      recipe_type: Backpack Printer
+      recipe_type: Smelting Furnace
       requirements:
-        Compound: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Small Solar Panel: 0
+        Wolframite: -1
 
-  Small Wind Turbine:
+# composite resource
+  Hydrazine:
     recipes:
     - output: 1
-      recipe_type: Backpack Printer
+      recipe_type: Chemistry Lab
+      requirements:
+        Ammonium: -2
+        Hydrogen: -1
+  Rubber:
+    recipes:
+    - output: 1
+      recipe_type: Chemistry Lab
+      requirements:
+        Organic: -1
+        Resin: -1
+  Aluminum Alloy:
+    recipes:
+    - output: 1
+      recipe_type: Chemistry Lab
       requirements:
         Aluminum: -1
+        Copper: -1
+  Plastic:
+    recipes:
     - output: 1
-      recipe_type: Raw Resource
+      recipe_type: Chemistry Lab
       requirements:
-        Small Wind Turbine: 0
+        Compound: -1
+        Carbon: -1
+  Diamond:
+    recipes:
+    - output: 1
+      recipe_type: Chemistry Lab
+      requirements:
+        Graphene: -2
+  Graphene:
+    recipes:
+    - output: 1
+      recipe_type: Chemistry Lab
+      requirements:
+        Graphite: -1
+        Hydrazine: -1
+  Titanium Alloy:
+    recipes:
+    - output: 1
+      recipe_type: Chemistry Lab
+      requirements:
+        Titanium: -1
+        Nitrogen: -1
+        Graphene: -1
+  Silicone:
+    recipes:
+    - output: 1
+      recipe_type: Chemistry Lab
+      requirements:
+        Resin: -1
+        Methane: -1
+        Quartz: -1
+  Steel:
+    recipes:
+    - output: 1
+      recipe_type: Chemistry Lab
+      requirements:
+        Carbon: -1
+        Argon: -1
+        Iron: -1
 
-  Small Generator:
+
+# crafting
+  Small Printer:
     recipes:
     - output: 1
       recipe_type: Backpack Printer
       requirements:
-        Copper: -1
+        Compound: -1
+  Medium Printer:
+    recipes:
     - output: 1
-      recipe_type: Raw Resource
+      recipe_type: Small Printer
       requirements:
-        Small Generator: 0
+        Compound: -2
+  Large Printer:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Compound: -3
+  Smelting Furnace:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Resin: -2
+        Compound: -1
+  Atmospheric Condenser:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Plastic: -1
+        Glass: -1
+        Iron: -1
+  Chemistry Lab:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Tungsten: -1
+        Glass: -1
+        Ceramic: -1
 
+# small objects
   Small Battery:
     recipes:
     - output: 1
       recipe_type: Backpack Printer
       requirements:
         Lithium: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Small Battery: 0
 
-  Power Cells:
+# object
+  Oxygenator:
     recipes:
     - output: 1
-      recipe_type: Backpack Printer
-      requirements:
-        Compound: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Power Cells: 0
-
-  Tank:
-    recipes:
-    - output: 1
-      recipe_type: Backpack Printer
-      requirements:
-        Compound: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tank: 0
-
-  Filters:
-    recipes:
-    - output: 1
-      recipe_type: Backpack Printer
-      requirements:
-        Compound: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Filters: 0
-
-  Narrow Mod:
-    recipes:
-    - output: 1
-      recipe_type: Backpack Printer
-      requirements:
-        Copper: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Narrow Mod: 0
-
-  Wide Mod:
-    recipes:
-    - output: 1
-      recipe_type: Backpack Printer
-      requirements:
-        Copper: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Wide Mod: 0
-
-  Inhibitor Mod:
-    recipes:
-    - output: 1
-      recipe_type: Backpack Printer
-      requirements:
-        Copper: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Inhibitor Mod: 0
-
-  Terrain Analyzer:
-    recipes:
-    - output: 1
-      recipe_type: Backpack Printer
+      recipe_type: Small Printer
       requirements:
         Aluminum: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Terrain Analyzer: 0
-
-  Dynamite:
+        Ceramic: -1
+  Medium Canister:
     recipes:
     - output: 1
-      recipe_type: Backpack Printer
+      recipe_type: Small Printer
       requirements:
-        Aluminum: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Dynamite: 0
+        Plastic: -1
+        Glass: -1
 
-  Beacon:
+# Storage
+  Large Storage Silo B:
     recipes:
     - output: 1
-      recipe_type: Backpack Printer
+      recipe_type: Medium Printer
       requirements:
-        Compound: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Beacon: 0
-
-  One-Seat:
+        Steel: -3
+  Medium Storage Silo:
     recipes:
     - output: 1
-      recipe_type: Printer and Vehicle Bay
-      requirements:
-        Compound: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        One-Seat: 0
-
-  Medium Storage:
-    recipes:
-    - output: 1
-      recipe_type: Printer
-      requirements:
-        Compound: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Medium Storage: 0
-
-  Medium Wind Turbine:
-    recipes:
-    - output: 1
-      recipe_type: Printer
-      requirements:
-        Aluminum: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Medium Wind Turbine: 0
-
-  Drill Head:
-    recipes:
-    - output: 1
-      recipe_type: Printer
-      requirements:
-        Aluminum: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Drill Head: 0
-
-  Medium Battery:
-    recipes:
-    - output: 1
-      recipe_type: Printer
-      requirements:
-        Lithium: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Medium Battery: 0
-
-  Medium Generator:
-    recipes:
-    - output: 1
-      recipe_type: Printer
-      requirements:
-        Copper: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Medium Generator: 0
-
-  Habitat:
-    recipes:
-    - output: 1
-      recipe_type: Printer
-      requirements:
-        Compound: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Habitat: 0
-
-  Solar Panel:
-    recipes:
-    - output: 1
-      recipe_type: Printer
-      requirements:
-        Compound: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Solar Panel: 0
-
-  Winch:
-    recipes:
-    - output: 1
-      recipe_type: Printer
+      recipe_type: Small Printer
       requirements:
         Titanium: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Winch: 0
-
-  Thruster:
-    recipes:
-    - output: 1
-      recipe_type: "Raw Resource"
-      requirements:
-        Thruster: 0
-
-  Research Station:
-    recipes:
-    - output: 1
-      recipe_type: Large Platform
-      requirements:
-        Compound: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Research Station: 0
-
-  Fuel Condenser:
-    recipes:
-    - output: 1
-      recipe_type: Large Platform
-      requirements:
-        Copper: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Fuel Condenser: 0
-
-  Medium Printer:
-    recipes:
-    - output: 1
-      recipe_type: Large Platform
-      requirements:
-        Copper: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Medium Printer: 0
-
-  Smelter:
-    recipes:
-    - output: 1
-      recipe_type: Large Platform
-      requirements:
-        Compound: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Smelter: 0
-
-  Vehicle Bay:
-    recipes:
-    - output: 1
-      recipe_type: Large Platform
-      requirements:
-        Aluminum: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Vehicle Bay: 0
-
-  Trade Platform:
-    recipes:
-    - output: 1
-      recipe_type: Large Platform
-      requirements:
-        Aluminum: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trade Platform: 0
-
-  Three-Seat:
-    recipes:
-    - output: 1
-      recipe_type: Vehicle Bay
-      requirements:
-        Copper: -4
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Three-Seat: 0
-
   Large Storage:
     recipes:
     - output: 1
-      recipe_type: Vehicle Bay
+      recipe_type: Medium Printer
       requirements:
-        Compound: -4
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Large Storage: 0
-
-  Crane:
+        Ceramic : -3
+  Large Platform B:
     recipes:
     - output: 1
-      recipe_type: Vehicle Bay
+      recipe_type: Medium Printer
       requirements:
-        Copper: -4
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Crane: 0
-
-  Medium Rover:
+        Resin : -3
+  Extra Large Platform C:
     recipes:
     - output: 1
-      recipe_type: Vehicle Bay
+      recipe_type: Large Printer
+      requirements:
+        Steel: -2
+        Iron: -1
+
+# Land vehicles
+  Rover Seat:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
       requirements:
         Compound: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Medium Rover: 0
-
   Large Rover:
     recipes:
     - output: 1
-      recipe_type: Vehicle Bay
+      recipe_type: Large Printer
       requirements:
-        Aluminum: -4
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Large Rover: 0
-
-  Shuttle:
+        Rubber: -2
+        Aluminum Alloy: -2
+  Drill Strength 3:
     recipes:
     - output: 1
-      recipe_type: Vehicle Bay
+      recipe_type: Small Printer
       requirements:
-        Compound: -2
+        Titanium Alloy: -1
+        Diamond: -1
+  Paver:
+    recipes:
     - output: 1
-      recipe_type: Raw Resource
+      recipe_type: Small Printer
       requirements:
-        Shuttle: 0
+        Aluminum Alloy: -1
+        Silicone: -1
 
+# Space vehicules
   Large Shuttle:
     recipes:
     - output: 1
-      recipe_type: Vehicle Bay
+      recipe_type: Large Printer
       requirements:
-        Copper: -4
+        Titanium Alloy: -2
+        Ceramic: -2
+  Hydrazine Thruster:
+    recipes:
     - output: 1
-      recipe_type: Raw Resource
+      recipe_type: Small Printer
       requirements:
-        Large Shuttle: 0
+        Tungsten: -1
+        Steel: -1
+
+# perso
+  My Rover:
+    recipes:
+    - output: 1
+      recipe_type: Assemble
+      requirements:
+        Large Rover: -2
+        Max Storage: -3
+        Rover Seat: -1
+        Oxygenator: -1
+        Medium Canister: -1
+        Drill Strength 3: -1
+        Paver: -1
+    - output: 1
+      recipe_type: Assemble
+      requirements:
+        Large Rover: -1
+        Max Storage: -1
+        Max Storage Split: -1
+        Rover Seat: -1
+        Oxygenator: -1
+        Medium Canister: -1
+        Drill Strength 3: -1
+        Paver: -1
+
+  My Shuttle:
+    recipes:
+    - output: 1
+      recipe_type: Assemble
+      requirements:
+        Large Shuttle: -1
+        Hydrazine Thruster: -1
+
+  My machines:
+    recipes:
+    - output: 1
+      recipe_type: Assemble
+      requirements:
+        Small Printer: -1
+        Medium Printer: -1
+        Smelting Furnace: -1
+        Atmospheric Condenser: -1
+        Chemistry Lab: -1
+        Extra Large Platform C: -1
+    - output: 1
+      recipe_type: Assemble
+      requirements:
+        Small Printer: -1
+        Medium Printer: -1
+        Smelting Furnace: -1
+        Atmospheric Condenser: -1
+        Chemistry Lab: -1
+        Large Platform B: -4
+
+  Other Planete Make Rover:
+    recipes:
+    - output: 1
+      recipe_type: Assemble
+      requirements:
+        Small Printer: -1
+        Medium Printer: -1
+        Large Printer: -1
+        Large Platform B: -1
+        Large Rover: -1
+
+# Max Storage
+  Max Storage:
+    recipes:
+    - output: 1
+      recipe_type: Assemble
+      requirements:
+        Large Storage Silo B: -1
+        Medium Storage Silo: -12
+  Max Storage Split:
+    recipes:
+    - output: 1
+      recipe_type: Assemble
+      requirements:
+        Large Storage: -1
+        Medium Storage Silo: -2
