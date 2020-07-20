@@ -19,3 +19,5 @@ venv/
 output/
 
 node_modules/
+
+resource_lists/astroneer/new_items
