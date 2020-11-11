@@ -171,7 +171,7 @@ function save() {
 | load()                                                                       |
 |                                                                              |
 | This function is an inverse to save() and reads the state of the resource    |
-| requirement list from the UIR hash. In addition it will automatically call   |
+| requirement list from the URI hash. In addition it will automatically call   |
 | generatelist() to save the user from having to click the button for a saved  |
 | list.                                                                        |
 \******************************************************************************/
