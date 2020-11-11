@@ -66,6 +66,7 @@
 					{% for resource in resources %}
 						<div class="desired_item item item_{{resource['simplename']}}" mc_value="{{ resource['mc_value'] }}">
 							<input aria-label="{{ resource['mc_value'] }}" class="desired_item_count" type=number id="{{ resource['simplename'] }}" />
+							<input class="desired_item_recipe" type=hidden />
 						</div>
 					{% endfor %}
 					<div style="clear:both"></div>

@@ -66,7 +66,7 @@ $(".desired_item").each(function() {
 
 	// When doubleclicking open the recipe select menu
 	item.dblclick( function (event) {
-		switch_recipe(item.attr("mc_value"), event);
+		switch_recipe(item, event);
 	});
 
 	// Enable item name hover text
@@ -149,11 +149,17 @@ function save() {
 	$(".desired_item").each(function() {
 		var key = $(this).find(".desired_item_count").attr("id");
 		// console.log(key);
-		var value = $(this).find(".desired_item_count").val();
+		var count = $(this).find(".desired_item_count").val();
+		var recipe = $(this).find(".desired_item_recipe").val();
 
-		if ($.isNumeric(value)) {
+		if ($.isNumeric(count)) {
 			// Set the value as negative to indicate they are needed
-			selected_items[key] = value;
+			selected_items[key] = count;
+		}
+
+		if (recipe) {
+			// Set the value as negative to indicate they are needed
+			selected_items[key + "__recipe"] = recipe;
 		}
 
 	});
@@ -183,8 +189,19 @@ function load() {
 			var split = pairs[i].split("=");
 			var id = decodeURIComponent(split[0]);
 			var value = decodeURIComponent(split[1]);
-			$("#"+id).val(value);
-			set_textbox_background($("#"+id));
+			if (id.endsWith("__recipe")) {
+				id = id.replace("__recipe", "");
+				var item = $("#"+id).closest(".item");
+				var item_name = item.attr("mc_value");
+				var recipe_index = recipe_json[item_name].findIndex(recipe => recipe.hash === value);
+				if (recipe_index !== -1) {
+					set_recipe_index(item, item_name, recipe_index);
+				}
+			}
+			else {
+				$("#"+id).val(value);
+				set_textbox_background($("#"+id));
+			}
 		}
 		$("#unused_hide_checkbox").prop("checked", true).change();
 		generatelist();
@@ -1271,7 +1288,8 @@ $(document).on("mousemove", function(e){
 /******************************************************************************\
 |
 \******************************************************************************/
-function switch_recipe(item_name, event) {
+function switch_recipe(item, event) {
+	var item_name = item.attr("mc_value");
 	var recipe_selector = $("#recipe_select");
 	var recipe_selector_list = $("#recipe_selector_list");
 	recipe_selector_list.empty();
@@ -1282,7 +1300,7 @@ function switch_recipe(item_name, event) {
 
 		recipe_item.click( (function(index) {
 			return function() {
-				set_recipe_index(item_name, index);
+				set_recipe_index(item, item_name, index);
 				find_loop_from_node(item_name);
 				recipe_selector.css("opacity", 0);
 				recipe_selector.css("pointer-events", "none");
@@ -1354,11 +1372,14 @@ $("#recipe_select").mouseleave(function() {
 
 var alternate_recipe_selections = {};
 
-function set_recipe_index(node_name, recipe_index) {
+function set_recipe_index(node, node_name, recipe_index) {
 	alternate_recipe_selections[node_name] = recipe_index;
 	if (recipe_index === 0) {
 		delete alternate_recipe_selections[node_name];
 	}
+
+	$(node).find(".desired_item_recipe").val(recipe_json[node_name][recipe_index].hash);
+	save();
 }
 
 function get_recipe_index(node_name) {
@@ -1369,12 +1390,12 @@ function get_recipe_index(node_name) {
 		return alternate_recipe_selections[node_name];
 	}
 }
-function set_recipe_to_raw(node_name) {
+function set_recipe_to_raw(node, node_name) {
 	// console.log("Setting as raw resource");
 
 	for (let i in recipe_json[node_name]){
 		if (recipe_json[node_name][i].recipe_type === "Raw Resource"){
-			set_recipe_index(node_name, i);
+			set_recipe_index(node, node_name, i);
 			return;
 		}
 	}
@@ -1433,7 +1454,7 @@ function depth_first_search(nodes, node, match) {
 		// if a requirement is the original node then change this item to a soruce and report back
 		if (nodes[node][i] === match) {
 			// Convert to source recipe
-			set_recipe_to_raw(node);
+			set_recipe_to_raw(nodes[node]);
 			// Return this node name as changed
 			return [node];
 		}
