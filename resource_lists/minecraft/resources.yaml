@@ -17052,3 +17052,39 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Dead Horn Coral Fan: 0
+
+  Basalt:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Basalt: 0
+  Polished Basalt:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Basalt: -1
+      extra_data:
+        recipe:
+        - Basalt
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Basalt: -4
+      extra_data:
+        recipe:
+        - Basalt
+        - Basalt
+        - null
+        - Basalt
+        - Basalt
+        - null
+        - null
+        - null
+        - null
+        shapeless: 0
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Dead Horn Coral Fan: 0
