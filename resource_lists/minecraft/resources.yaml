@@ -12,6 +12,7 @@ recipe_types:
   Add Water: "Pour water onto {IN_ITEMS} to turn it into {OUT_ITEM}"
   right-click: "Right click on {IN_ITEMS} to turn it into {OUT_ITEM}"
   as: "Treat {IN_ITEMS} as {OUT_ITEM}"
+  Cutting: "Use a stonecutter to cut {IN_ITEMS} into {OUT_ITEM}"
 
 stack_sizes:
   Double Chest:
@@ -89,6 +90,13 @@ resources:
         
   Stone Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Stone: -1
+      extra_data:
+        recipe:
+        - Stone
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -142,6 +150,13 @@ resources:
 
   Cobblestone Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Cobblestone: -1
+      extra_data:
+        recipe:
+        - Cobblestone
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -235,6 +250,13 @@ resources:
         
   Mossy Cobblestone Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Mossy Cobblestone: -1
+      extra_data:
+        recipe:
+        - Mossy Cobblestone
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -325,8 +347,15 @@ resources:
       requirements:
         Stone Bricks: 0
 
-  Stone Bricks Stairs:
+  Stone Brick Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Stone Bricks: -1
+      extra_data:
+        recipe:
+        - Stone Bricks
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -346,9 +375,9 @@ resources:
     - output: 1
       recipe_type: Raw Resource
       requirements:
-        Stone Bricks Stairs: 0
+        Stone Brick Stairs: 0
 
-  Stone Bricks Slab:
+  Stone Brick Slab:
     recipes:
     - output: 6
       recipe_type: Crafting
@@ -369,7 +398,7 @@ resources:
     - output: 1
       recipe_type: Raw Resource
       requirements:
-        Stone Bricks Slab: 0
+        Stone Brick Slab: 0
 
   Stone Bricks Wall:
     recipes:
@@ -415,14 +444,14 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Stone Bricks Slab: -2
+        Stone Brick Slab: -2
       extra_data:
         recipe:
         - null
-        - Stone Bricks Slab
+        - Stone Brick Slab
         - null
         - null
-        - Stone Bricks Slab
+        - Stone Brick Slab
         - null
         - null
         - null
@@ -457,8 +486,15 @@ resources:
       requirements:
         Mossy Stone Bricks: 0
         
-  Mossy Stone Bricks Stairs:
+  Mossy Stone Brick Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Mossy Stone Bricks: -1
+      extra_data:
+        recipe:
+        - Mossy Stone Bricks
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -478,9 +514,9 @@ resources:
     - output: 1
       recipe_type: Raw Resource
       requirements:
-        Mossy Stone Bricks Stairs: 0
+        Mossy Stone Brick Stairs: 0
 
-  Mossy Stone Bricks Slab:
+  Mossy Stone Brick Slab:
     recipes:
     - output: 6
       recipe_type: Crafting
@@ -501,7 +537,7 @@ resources:
     - output: 1
       recipe_type: Raw Resource
       requirements:
-        Mossy Stone Bricks Slab: 0
+        Mossy Stone Brick Slab: 0
 
   Mossy Stone Bricks Wall:
     recipes:
@@ -529,6 +565,10 @@ resources:
   Granite:
     recipes:
     - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Granite: 0
+    - output: 1
       recipe_type: Crafting
       requirements:
         Diorite: -1
@@ -545,13 +585,16 @@ resources:
         - null
         - null
         shapeless: 1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Granite: 0
         
   Granite Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Granite: -1
+      extra_data:
+        recipe:
+        - Granite
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -644,6 +687,13 @@ resources:
         
   Polished Granite Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Granite: -1
+      extra_data:
+        recipe:
+        - Granite
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -690,6 +740,10 @@ resources:
 
   Diorite:
     recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Diorite: 0
     - output: 2
       recipe_type: Crafting
       requirements:
@@ -707,13 +761,16 @@ resources:
         - null
         - null
         shapeless: 0
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Diorite: 0
         
   Diorite Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Diorite: -1
+      extra_data:
+        recipe:
+        - Diorite
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -806,6 +863,13 @@ resources:
         
   Polished Diorite Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Diorite: -1
+      extra_data:
+        recipe:
+        - Diorite
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -852,6 +916,10 @@ resources:
 
   Andesite:
     recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Andesite: 0
     - output: 2
       recipe_type: Crafting
       requirements:
@@ -869,13 +937,16 @@ resources:
         - null
         - null
         shapeless: 1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Andesite: 0
         
   Andesite Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Andesite: -1
+      extra_data:
+        recipe:
+        - Andesite
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -968,6 +1039,13 @@ resources:
         
   Polished Andesite Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Andesite: -1
+      extra_data:
+        recipe:
+        - Andesite
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1035,7 +1113,7 @@ resources:
       requirements:
         Bricks: 0
 
-  Bricks Slab:
+  Brick Slab:
     recipes:
     - output: 6
       recipe_type: Crafting
@@ -1056,7 +1134,7 @@ resources:
     - output: 1
       recipe_type: Raw Resource
       requirements:
-        Bricks Slab: 0
+        Brick Slab: 0
 
   Bricks Wall:
     recipes:
@@ -1106,6 +1184,13 @@ resources:
         
   Prismarine Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Prismarine: -1
+      extra_data:
+        recipe:
+        - Prismarine
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1196,8 +1281,15 @@ resources:
       requirements:
         Prismarine Bricks: 0
         
-  Prismarine Bricks Stairs:
+  Prismarine Brick Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Prismarine Bricks: -1
+      extra_data:
+        recipe:
+        - Prismarine Bricks
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1217,9 +1309,9 @@ resources:
     - output: 1
       recipe_type: Raw Resource
       requirements:
-        Prismarine Bricks Stairs: 0
+        Prismarine Brick Stairs: 0
 
-  Prismarine Bricks Slab:
+  Prismarine Brick Slab:
     recipes:
     - output: 6
       recipe_type: Crafting
@@ -1240,7 +1332,7 @@ resources:
     - output: 1
       recipe_type: Raw Resource
       requirements:
-        Prismarine Bricks Slab: 0
+        Prismarine Brick Slab: 0
 
   Dark Prismarine:
     recipes:
@@ -1291,6 +1383,13 @@ resources:
         
   Dark Prismarine Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Dark Prismarine: -1
+      extra_data:
+        recipe:
+        - Dark Prismarine
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1315,6 +1414,10 @@ resources:
   Sandstone:
     recipes:
     - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Sandstone: 0
+    - output: 1
       recipe_type: Crafting
       requirements:
         Sand: -4
@@ -1330,13 +1433,16 @@ resources:
         - null
         - null
         shapeless: 0
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Sandstone: 0
 
   Sandstone Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Sandstone: -1
+      extra_data:
+        recipe:
+        - Sandstone
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1491,6 +1597,13 @@ resources:
         
   Smooth Sandstone Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Sandstone: -1
+      extra_data:
+        recipe:
+        - Sandstone
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1560,6 +1673,13 @@ resources:
 
   Red Sandstone Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Red Sandstone: -1
+      extra_data:
+        recipe:
+        - Red Sandstone
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1714,6 +1834,13 @@ resources:
         
   Smooth Red Sandstone Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Red Sandstone: -1
+      extra_data:
+        recipe:
+        - Red Sandstone
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1783,6 +1910,13 @@ resources:
 
   Nether Brick Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Nether Brick: -1
+      extra_data:
+        recipe:
+        - Nether Brick
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1899,6 +2033,13 @@ resources:
         
   Red Nether Brick Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+       Red Nether Brick : -1
+      extra_data:
+        recipe:
+        - Red Nether Brick
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1991,6 +2132,13 @@ resources:
 
   Quartz Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+       Block of Quartz : -1
+      extra_data:
+        recipe:
+        - Block of Quartz
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -2085,6 +2233,13 @@ resources:
 
   Smooth Quartz Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+       Block of Quartz : -1
+      extra_data:
+        recipe:
+        - Block of Quartz
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -2198,8 +2353,15 @@ resources:
       requirements:
         End Stone Bricks: 0
         
-  End Stone Bricks Stairs:
+  End Stone Brick Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+       End Stone Bricks : -1
+      extra_data:
+        recipe:
+        - End Stone Bricks
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -2219,9 +2381,9 @@ resources:
     - output: 1
       recipe_type: Raw Resource
       requirements:
-        End Stone Bricks Stairs: 0
+        End Stone Brick Stairs: 0
 
-  End Stone Bricks Slab:
+  End Stone Brick Slab:
     recipes:
     - output: 6
       recipe_type: Crafting
@@ -2242,7 +2404,7 @@ resources:
     - output: 1
       recipe_type: Raw Resource
       requirements:
-        End Stone Bricks Slab: 0
+        End Stone Brick Slab: 0
 
   End Stone Bricks Wall:
     recipes:
@@ -2292,6 +2454,13 @@ resources:
 
   Purpur Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+       Purpur Block : -1
+      extra_data:
+        recipe:
+        - Purpur Block
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -5169,6 +5338,13 @@ resources:
 
   Brick Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+       Bricks : -1
+      extra_data:
+        recipe:
+        - Bricks
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -6252,6 +6428,10 @@ resources:
   White Wool:
     recipes:
     - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        White Wool: 0
+    - output: 1
       recipe_type: Crafting
       requirements:
         String: -4
@@ -6267,10 +6447,6 @@ resources:
         - null
         - null
         shapeless: 0
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        White Wool: 0
 
   Orange Wool:
     recipes:
@@ -16876,3 +17052,278 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Dead Horn Coral Fan: 0
+
+  Basalt:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Basalt: 0
+
+  Polished Basalt:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Basalt: -1
+      extra_data:
+        recipe:
+        - Basalt
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Basalt: -4
+      extra_data:
+        recipe:
+        - Basalt
+        - Basalt
+        - null
+        - Basalt
+        - Basalt
+        - null
+        - null
+        - null
+        - null
+        shapeless: 0
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Dead Horn Coral Fan: 0
+
+  Smooth Basalt:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Smooth Basalt: 0
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Basalt: -1
+        Fuel: -1
+      extra_data:
+        recipe:
+        - Basalt
+        - FuelStone:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Stone: 0
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Cobblestone: -1
+        Fuel: -1
+      extra_data:
+        recipe:
+        - Cobblestone
+        - Fuel
+        
+  Blackstone:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Blackstone: 0
+
+  Blackstone Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+      extra_data:
+        recipe:
+        - Blackstone
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Blackstone: -6
+      extra_data:
+        recipe:
+        - Blackstone
+        - Blackstone
+        - Blackstone
+        - null
+        - Blackstone
+        - Blackstone
+        - null
+        - null
+        - Blackstone
+        shapeless: 0
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Blackstone Stairs: 0
+
+  Blackstone Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Blackstone: -3
+      extra_data:
+        recipe:
+        - Blackstone
+        - Blackstone
+        - Blackstone
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        shapeless: 0
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Blackstone Slab: 0
+
+  Polished Blackstone:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+      extra_data:
+        recipe:
+        - Blackstone
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Blackstone: 0
+
+  Polished Blackstone Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+      extra_data:
+        recipe:
+        - Blackstone
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Polished Blackstone: -6
+      extra_data:
+        recipe:
+        - Polished Blackstone
+        - Polished Blackstone
+        - Polished Blackstone
+        - null
+        - Polished Blackstone
+        - Polished Blackstone
+        - null
+        - null
+        - Polished Blackstone
+        shapeless: 0
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Polished Blackstone Stairs: 0
+
+  Polished Blackstone Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Polished Blackstone: -3
+      extra_data:
+        recipe:
+        - Polished Blackstone
+        - Polished Blackstone
+        - Polished Blackstone
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        shapeless: 0
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Polished Blackstone Slab: 0
+
+  Polished Blackstone Bricks:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+      extra_data:
+        recipe:
+        - Blackstone
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Blackstone Bricks: 0
+
+  Polished Blackstone Brick Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+      extra_data:
+        recipe:
+        - Blackstone
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Polished Blackstone Bricks: -6
+      extra_data:
+        recipe:
+        - Polished Blackstone Bricks
+        - Polished Blackstone Bricks
+        - Polished Blackstone Bricks
+        - null
+        - Polished Blackstone Bricks
+        - Polished Blackstone Bricks
+        - null
+        - null
+        - Polished Blackstone Bricks
+        shapeless: 0
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Polished Blackstone Brick Stairs: 0
+
+  Polished Blackstone Brick Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Polished Blackstone Bricks: -3
+      extra_data:
+        recipe:
+        - Polished Blackstone Bricks
+        - Polished Blackstone Bricks
+        - Polished Blackstone Bricks
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        shapeless: 0
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Polished Blackstone Brick Slab: 0
+
+  Chiseled Polished Blackstone:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+      extra_data:
+        recipe:
+        - Blackstone
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Blackstone Bricks: 0
