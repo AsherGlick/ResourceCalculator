@@ -12,7 +12,7 @@ recipe_types:
   Add Water: "Pour water onto {IN_ITEMS} to turn it into {OUT_ITEM}"
   right-click: "Right click on {IN_ITEMS} to turn it into {OUT_ITEM}"
   as: "Treat {IN_ITEMS} as {OUT_ITEM}"
-  Cutting: "Use a Stone Cutter to cut {IN_ITEMS} into {OUT_ITEM}"
+  Cutting: "Use a Stonecutter to cut {IN_ITEMS} into {OUT_ITEM}"
 
 stack_sizes:
   Double Chest:
@@ -17059,7 +17059,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Basalt: 0
-        
+
   Polished Basalt:
     recipes:
     - output: 1
@@ -17179,3 +17179,204 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Blackstone Slab: 0
+
+  Polished Blackstone:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+      extra_data:
+        recipe:
+        - Blackstone
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Blackstone: 0
+
+  Polished Blackstone Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+      extra_data:
+        recipe:
+        - Blackstone
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Polished Blackstone: -6
+      extra_data:
+        recipe:
+        - Polished Blackstone
+        - Polished Blackstone
+        - Polished Blackstone
+        - null
+        - Polished Blackstone
+        - Polished Blackstone
+        - null
+        - null
+        - Polished Blackstone
+        shapeless: 0
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Polished Blackstone Stairs: 0
+
+  Polished Blackstone Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Polished Blackstone: -3
+      extra_data:
+        recipe:
+        - Polished Blackstone
+        - Polished Blackstone
+        - Polished Blackstone
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        shapeless: 0
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Polished Blackstone Slab: 0
+
+  Polished Blackstone Bricks:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+      extra_data:
+        recipe:
+        - Blackstone
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Blackstone Bricks: 0
+
+  Polished Blackstone Bricks Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+      extra_data:
+        recipe:
+        - Blackstone
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Polished Blackstone Bricks: -6
+      extra_data:
+        recipe:
+        - Polished Blackstone Bricks
+        - Polished Blackstone Bricks
+        - Polished Blackstone Bricks
+        - null
+        - Polished Blackstone Bricks
+        - Polished Blackstone Bricks
+        - null
+        - null
+        - Polished Blackstone Bricks
+        shapeless: 0
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Polished Blackstone Bricks Stairs: 0
+
+  Polished Blackstone Bricks Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Polished Blackstone Bricks: -3
+      extra_data:
+        recipe:
+        - Polished Blackstone Bricks
+        - Polished Blackstone Bricks
+        - Polished Blackstone Bricks
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        shapeless: 0
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Polished Blackstone Bricks Slab: 0
+
+  Chiseled Polished Blackstone:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+      extra_data:
+        recipe:
+        - Blackstone
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Blackstone Bricks: 0
+
+  Chiseled Polished Blackstone Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+      extra_data:
+        recipe:
+        - Blackstone
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Chiseled Polished Blackstone: -6
+      extra_data:
+        recipe:
+        - Chiseled Polished Blackstone
+        - Chiseled Polished Blackstone
+        - Chiseled Polished Blackstone
+        - null
+        - Chiseled Polished Blackstone
+        - Chiseled Polished Blackstone
+        - null
+        - null
+        - Chiseled Polished Blackstone
+        shapeless: 0
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Chiseled Polished Blackstone Stairs: 0
+
+  Chiseled Polished Blackstone Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Chiseled Polished Blackstone: -3
+      extra_data:
+        recipe:
+        - Chiseled Polished Blackstone
+        - Chiseled Polished Blackstone
+        - Chiseled Polished Blackstone
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        shapeless: 0
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Chiseled Polished Blackstone Slab: 0
