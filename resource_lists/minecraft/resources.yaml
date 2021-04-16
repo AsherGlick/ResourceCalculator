@@ -16,12 +16,12 @@ recipe_types:
 
 stack_sizes:
   Double Chest:
-    quantity_multiplier: 3456 #9x6x64
+    quantity_multiplier: 54 # 9x6 Stacks
     plural: "Double Chests"
     extends_from: "Stack"
 
   Shulker Box:
-    quantity_multiplier: 1728 # 9x3x64
+    quantity_multiplier: 27 # 9x3 Stacks
     plural: "Shulker Boxes"
     extends_from: "Stack"
 

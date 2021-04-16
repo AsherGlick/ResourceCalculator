@@ -432,7 +432,7 @@ function build_instruction_line(edges, item_name, generation_totals) {
 }
 
 
-function build_unit_value_list(number, unit_name) {
+function build_unit_value_list(number, unit_name, item_name) {
 	if (number === 0) {
 		return [];
 	}
@@ -441,7 +441,7 @@ function build_unit_value_list(number, unit_name) {
 	}
 
 	var unit = stack_sizes[unit_name];
-	var unit_size = unit.quantity_multiplier;
+	var unit_size = get_unit_size(unit_name, item_name);
 	var quotient = Math.floor(number/unit_size);
 	var remainder = number % unit_size;
 
@@ -461,10 +461,31 @@ function build_unit_value_list(number, unit_name) {
 	}
 
 	// recurse down all the other possible units until
-	value_list = value_list.concat(build_unit_value_list(remainder, unit.extends_from));
+	value_list = value_list.concat(build_unit_value_list(remainder, unit.extends_from, item_name));
 
 	return value_list;
 }
+
+////////////////////////////////////////////////////////////////////////////////
+// Gets the base number of items that would fit in a particular unit accounting
+// for the units that it is based off of.
+////////////////////////////////////////////////////////////////////////////////
+function get_unit_size(unit_name, item_name) {
+	var multiplier = stack_sizes[unit_name].quantity_multiplier;
+
+	// Check for unique sizes for this particular item
+	if ("custom_multiplier" in stack_sizes[unit_name] && item_name in stack_sizes[unit_name].custom_multiplier) {
+		multiplier = stack_sizes[unit_name].custom_multiplier[item_name];
+	}
+
+	// Chain sizes from extended size
+	if (stack_sizes[unit_name].extends_from !== null) {
+		multiplier = multiplier * get_unit_size(stack_sizes[unit_name].extends_from, item_name);
+	}
+
+	return multiplier;
+}
+
 
 function text_item_object(count, name){
 	var item_object = $("<div/>");
@@ -473,7 +494,7 @@ function text_item_object(count, name){
 
 	var units = $("input[name=unit_name]:checked").val();
 	if (units !== "" && units !== undefined) {
-		var unit_value_list = build_unit_value_list(count, units);
+		var unit_value_list = build_unit_value_list(count, units, name);
 
 		let count_object = $("<div/>");
 		count_object.addClass("instruction_item_count");
