@@ -13,6 +13,8 @@ import subprocess
 import gzip
 import sys
 
+_SKIP_JS_COMPRESSION = False
+
 
 ################################################################################
 # ordered_load
@@ -121,6 +123,9 @@ def lint_javascript():
 
 
 def uglify_copyfile(in_file, out_file):
+    if _SKIP_JS_COMPRESSION:
+        shutil.copyfile(in_file, out_file)
+        return
     try:
         subprocess.run(["./node_modules/.bin/terser", "--mangle", "--compress", "-o", out_file, in_file])
     # except OSError as e:
@@ -132,6 +137,8 @@ def uglify_copyfile(in_file, out_file):
 
 
 def uglify_js_string(js_string):
+    if _SKIP_JS_COMPRESSION:
+        return js_string
     try:
         result = subprocess.run(["./node_modules/.bin/terser", "--mangle", "--compress"], input=js_string.encode("utf-8"), stdout=subprocess.PIPE)
         return result.stdout.decode("utf-8")
