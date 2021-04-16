@@ -48,7 +48,7 @@ For ease of reading we will allways have the key order be `output`, `recipe_type
 
 items/[itemname].png
 -----------
-For each itme in your resources.yaml file you will need to have an image for that resource. If an image is missing then the build process will submit a warning and fill that space with a purple color indicating it does not have an icon.
+For each item in your resources.yaml file you will need to have an image for that resource. If an image is missing then the build process will submit a warning and fill that space with a purple color indicating it does not have an icon.
 The icons can be any size, even rectangular, but they all must be the same size as each other for a given calculator.
 The file names of each file should be the resource name in all lower case with no spaces or punctuation. For Example:  
 *"Pink Stained Glass Pane"* becomes *[pinkstainedglasspane.png](resource_lists/minecraft/items/pinkstainedglass.png)*  
