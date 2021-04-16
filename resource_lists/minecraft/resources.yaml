@@ -17088,7 +17088,7 @@ resources:
     - output: 1
       recipe_type: Raw Resource
       requirements:
-        Dead Horn Coral Fan: 0
+        Polished Basalt: 0
 
   Smooth Basalt:
     recipes:
@@ -17109,7 +17109,7 @@ resources:
     - output: 1
       recipe_type: Raw Resource
       requirements:
-        Stone: 0
+        Smooth Basalt: 0
     - output: 1
       recipe_type: Smelting
       requirements:
@@ -17192,7 +17192,7 @@ resources:
     - output: 1
       recipe_type: Raw Resource
       requirements:
-        Blackstone: 0
+        Polished Blackstone: 0
 
   Polished Blackstone Stairs:
     recipes:
@@ -17259,7 +17259,7 @@ resources:
     - output: 1
       recipe_type: Raw Resource
       requirements:
-        Blackstone Bricks: 0
+        Polished Blackstone Bricks: 0
 
   Polished Blackstone Brick Stairs:
     recipes:
@@ -17326,4 +17326,4 @@ resources:
     - output: 1
       recipe_type: Raw Resource
       requirements:
-        Blackstone Bricks: 0
+        Chiseled Polished Blackstone: 0
