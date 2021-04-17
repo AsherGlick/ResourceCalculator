@@ -1,6 +1,7 @@
 Brotli==1.0.7
+csscompressor==0.9.5
 htmlmin==0.1.12
 Jinja2==2.11.3
-MarkupSafe==1.*
+MarkupSafe==1.1.1
 Pillow==8.1.1
 PyYAML==5.4

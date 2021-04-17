@@ -15,6 +15,7 @@ import sys
 
 from pylib.json_data_compressor import mini_js_data
 from pylib.uglifyjs import uglify_copyfile, uglify_js_string
+from pylib.webminify import minify_css_blocks
 
 ################################################################################
 # ordered_load
@@ -481,6 +482,7 @@ def create_calculator_page(calculator_name):
         stack_sizes_json=stack_sizes_json)
 
     minified = htmlmin.minify(output_from_parsed_template, remove_comments=True, remove_empty_space=True)
+    minified = minify_css_blocks(minified)
 
     with open(os.path.join(calculator_folder, "index.html"), "w", encoding="utf_8") as f:
         f.write(minified)
