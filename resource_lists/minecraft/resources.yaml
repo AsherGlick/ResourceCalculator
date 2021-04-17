@@ -15053,6 +15053,48 @@ resources:
         recipe:
         - Stick
         - Stick
+    - output: 1.5
+      recipe_type: as
+      requirements:
+        Oak Planks: -1
+      extra_data:
+        recipe:
+        - Oak Planks
+    - output: 1.5
+      recipe_type: as
+      requirements:
+        Birch Planks: -1
+      extra_data:
+        recipe:
+        - Birch Planks
+    - output: 1.5
+      recipe_type: as
+      requirements:
+        Spruce Planks: -1
+      extra_data:
+        recipe:
+        - Spruce Planks
+    - output: 1.5
+      recipe_type: as
+      requirements:
+        Jungle Planks: -1
+      extra_data:
+        recipe:
+        - Jungle Planks
+    - output: 1.5
+      recipe_type: as
+      requirements:
+        Acacia Planks: -1
+      extra_data:
+        recipe:
+        - Acacia Planks
+    - output: 1.5
+      recipe_type: as
+      requirements:
+        Dark Oak Planks: -1
+      extra_data:
+        recipe:
+        - Dark Oak Planks
     - output: 1
       recipe_type: Raw Resource
       requirements:
