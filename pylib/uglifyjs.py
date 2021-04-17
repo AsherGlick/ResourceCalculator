@@ -1,4 +1,5 @@
 import subprocess
+import shutil
 
 _SKIP_JS_COMPRESSION = False
 

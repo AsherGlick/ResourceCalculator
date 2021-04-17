@@ -19,7 +19,7 @@ def minify_css_blocks(html_code: str) -> List[Tuple[int,int]]:
 		start_match = start_tag.search(remaining_code, last_location)
 
 		# If there are no more start style tags exit loop
-		if (start_match == None):
+		if (start_match is None):
 			break;
 
 		# Grab the character directly after the match
@@ -30,7 +30,7 @@ def minify_css_blocks(html_code: str) -> List[Tuple[int,int]]:
 
 		# Find Close Tag
 		end_match = end_tag.search(remaining_code, last_location)
-		if end_match == None:
+		if end_match is None:
 			print("ERROR IN CALCULATOR TEMPLATE: No Closing </style> tag found")
 			break			
 
