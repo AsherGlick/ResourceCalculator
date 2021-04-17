@@ -1,7 +1,7 @@
 from pylib.uglifyjs import uglify_js_string
 from jinja2 import Environment
 import json
-from typing import Dict
+from typing import Dict, Optional
 
 
 ################################################################################
@@ -58,7 +58,7 @@ def mini_js_data(data: any):
     }
     """
 
-    (packed_data, tokens) = _mini_js_data2(data)
+    (packed_data, tokens) = _mini_js_data(data)
     packed_json = Environment().from_string(javascript_reverser).render(
         data=json.dumps(packed_data),
         tokens=json.dumps(tokens),
@@ -126,7 +126,9 @@ def replace_data(data: any, token_map: Dict[any, int]) -> any:
 # of a particular token so that we can know which ones are the most used and 
 # which ones are the least used.
 ################################################################################
-def get_token_counts(data: any, tokens: Dict[any, int]={}) -> Dict[any, int]:
+def get_token_counts(data: any, tokens: Optional[Dict[any, int]]=None) -> Dict[any, int]:
+    if tokens == None:
+        tokens = {}
     # If this node is a dictionary process each key of it and recurse the values
     if isinstance(data, dict):
         for i in data:
