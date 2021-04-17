@@ -9,12 +9,12 @@ from collections import OrderedDict
 from PIL import Image
 import htmlmin
 import subprocess
-# import brotlix
 import gzip
 import sys
 
-_SKIP_JS_COMPRESSION = False
 
+from pylib.json_data_compressor import mini_js_data
+from pylib.uglifyjs import uglify_copyfile, uglify_js_string
 
 ################################################################################
 # ordered_load
@@ -119,32 +119,6 @@ def lint_javascript():
         subprocess.run(["./node_modules/.bin/eslint", "core/calculator.js"])
     except OSError as e:
         print("WARNING: Javascript linting failed")
-        print("        ", e)
-
-
-def uglify_copyfile(in_file, out_file):
-    if _SKIP_JS_COMPRESSION:
-        shutil.copyfile(in_file, out_file)
-        return
-    try:
-        subprocess.run(["./node_modules/.bin/terser", "--mangle", "--compress", "-o", out_file, in_file])
-    # except OSError as e:
-    except e:
-        print("WARNING: Javascript compression failed")
-        print("        ", e)
-        print("        Falling back to regular copy")
-        shutil.copyfile(in_file, out_file)
-
-
-def uglify_js_string(js_string):
-    if _SKIP_JS_COMPRESSION:
-        return js_string
-    try:
-        result = subprocess.run(["./node_modules/.bin/terser", "--mangle", "--compress"], input=js_string.encode("utf-8"), stdout=subprocess.PIPE)
-        return result.stdout.decode("utf-8")
-    # except OSError as e:
-    except e:
-        print("WARNING: Javascript compression failed")
         print("        ", e)
 
 
@@ -434,7 +408,8 @@ def create_calculator_page(calculator_name):
         newest_resource = get_newest_modified_time(source_folder)
         newest_corelib = get_newest_modified_time("core")
         newest_build_script = os.path.getctime("build.py")
-        if oldest_output > max(newest_resource, newest_corelib, newest_build_script):
+        newest_build_lib = get_newest_modified_time("pylib")
+        if oldest_output > max(newest_resource, newest_corelib, newest_build_script, newest_build_lib):
             print("Skipping", calculator_name, "Nothing has changed since the last build")
             return
 
@@ -612,80 +587,6 @@ def create_index_page(directories):
 
     with open(os.path.join("output", "index.html"), "w", encoding="utf_8") as f:
         f.write(output_from_parsed_template)
-
-
-def mini_js_data(data):
-
-    javascript_reverser = """
-    var recipe_json = function () {
-        var data = {{data}};
-        var tokens = {{tokens}};
-        return _uncompress(data, tokens);
-    }();
-    function _uncompress(data, tokens){
-        // console.log("FUNCTION START: ", tokens);
-        if (typeof data === "object"){
-            // Array
-            if (Array.isArray(data)) {
-                for (var i in data) {
-                    data[i] = _uncompress(data[i], tokens)
-                }
-                return data
-            }
-            // Dictonary
-            else {
-                var new_data = {};
-                for (var i in data) {
-                    new_data[_uncompress(i, tokens)] = _uncompress(data[i], tokens)
-                }
-                return new_data
-            }
-        }
-        // Scalar
-        else {
-            // console.log(tokens);
-            return tokens[data]
-        }
-    }
-    """
-
-    tokens = []
-    (packed_data, tokens) = _mini_js_data(data, tokens)
-    packed_json = Environment().from_string(javascript_reverser).render(
-        data=json.dumps(packed_data),
-        tokens=json.dumps(tokens),
-    )
-    uglified_packed_json = uglify_js_string(packed_json)
-
-    # Do a simple check to make sure our compression is not increasing the size
-    uglified_raw_json = uglify_js_string("var recipe_json = " + json.dumps(data))
-    if len(uglified_raw_json) > len(uglified_packed_json):
-        return uglified_packed_json
-    else:
-        return uglified_raw_json
-
-
-def _mini_js_data(data, tokens):
-    if isinstance(data, dict):
-        new_data = {}
-        for i in data:
-            # Key Replacement
-            if i not in tokens:
-                tokens.append(i)
-            key_token_index = tokens.index(i)
-
-            (element, tokens) = _mini_js_data(data[i], tokens)
-            new_data[key_token_index] = element
-    elif isinstance(data, list):
-        new_data = []
-        for i in data:
-            (element, tokens) = _mini_js_data(i, tokens)
-            new_data.append(element)
-    else:
-        if data not in tokens:
-            tokens.append(data)
-        new_data = tokens.index(data)
-    return (new_data, tokens)
 
 
 ################################################################################
