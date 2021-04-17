@@ -346,7 +346,7 @@ def generate_resource_html_data(resources):
     for resource in resources:
         resource_html_data = {}
         simple_name = get_simple_name(resource, resources)
-        resource_html_data["mc_value"] = resource
+        resource_html_data["aria_label"] = resource
         resource_html_data["simplename"] = simple_name
         resources_html_data.append(resource_html_data)
     return resources_html_data

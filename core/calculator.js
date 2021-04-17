@@ -66,12 +66,12 @@ $(".desired_item").each(function() {
 
 	// When doubleclicking open the recipe select menu
 	item.dblclick( function (event) {
-		switch_recipe(item.attr("mc_value"), event);
+		switch_recipe(item.find("input").attr("aria-label"), event);
 	});
 
 	// Enable item name hover text
 	item.mouseover( function() {
-		$("#hover_name").text(item.attr("mc_value"));
+		$("#hover_name").text(item.find("input").attr("aria-label"));
 		$("#hover_name").css("opacity", 1);
 	});
 	item.mouseout( function() {
@@ -88,7 +88,7 @@ function filter_items() {
 
 	// Loop through each item
 	$("#content_field").find(".desired_item").each(function() {
-		var item_name = $(this).attr("mc_value").toLowerCase();
+		var item_name = $(this).find("input").attr("aria-label").toLowerCase();
 		var item_count = $(this).find(".desired_item_count").val();
 
 		// If the search string does not match hide the item
@@ -345,7 +345,7 @@ function generatelist() {
 function gather_requirements() {
 	var resources = {};
 	$(".desired_item").each(function() {
-		var key = $(this).attr("mc_value");
+		var key = $(this).find("input").attr("aria-label");
 		var value = $(this).find(".desired_item_count").val();
 
 		if ($.isNumeric(value)) {
