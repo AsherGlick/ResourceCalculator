@@ -474,8 +474,8 @@ function get_unit_size(unit_name, item_name) {
 	var multiplier = stack_sizes[unit_name].quantity_multiplier;
 
 	// Check for unique sizes for this particular item
-	if ("custom_multiplier" in stack_sizes[unit_name] && item_name in stack_sizes[unit_name].custom_multiplier) {
-		multiplier = stack_sizes[unit_name].custom_multiplier[item_name];
+	if ("custom_multipliers" in stack_sizes[unit_name] && item_name in stack_sizes[unit_name].custom_multipliers) {
+		multiplier = stack_sizes[unit_name].custom_multipliers[item_name];
 	}
 
 	// Chain sizes from extended size

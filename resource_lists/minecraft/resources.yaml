@@ -4687,6 +4687,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Oak Sign: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Spruce Sign:
     recipes:
@@ -4711,6 +4713,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Spruce Sign: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Birch Sign:
     recipes:
@@ -4735,6 +4739,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Birch Sign: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Jungle Sign:
     recipes:
@@ -4759,6 +4765,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Jungle Sign: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Acacia Sign:
     recipes:
@@ -4783,6 +4791,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Acacia Sign: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Dark Oak Sign:
     recipes:
@@ -4807,6 +4817,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Dark Oak Sign: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Oak Boat:
     recipes:
@@ -9215,6 +9227,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         White Banner: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Orange Banner:
     recipes:
@@ -9239,6 +9253,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Orange Banner: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Magenta Banner:
     recipes:
@@ -9263,6 +9279,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Magenta Banner: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Light Blue Banner:
     recipes:
@@ -9287,6 +9305,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Light Blue Banner: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Yellow Banner:
     recipes:
@@ -9311,6 +9331,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Yellow Banner: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Lime Banner:
     recipes:
@@ -9335,6 +9357,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Lime Banner: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Pink Banner:
     recipes:
@@ -9359,6 +9383,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Pink Banner: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Gray Banner:
     recipes:
@@ -9383,6 +9409,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Gray Banner: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Light Gray Banner:
     recipes:
@@ -9407,6 +9435,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Light Gray Banner: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Cyan Banner:
     recipes:
@@ -9431,6 +9461,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cyan Banner: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Purple Banner:
     recipes:
@@ -9455,6 +9487,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Purple Banner: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Blue Banner:
     recipes:
@@ -9479,6 +9513,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Blue Banner: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Brown Banner:
     recipes:
@@ -9503,6 +9539,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Brown Banner: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Green Banner:
     recipes:
@@ -9527,6 +9565,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Green Banner: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Red Banner:
     recipes:
@@ -9551,6 +9591,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Red Banner: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Black Banner:
     recipes:
@@ -9575,6 +9617,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Black Banner: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   White Bed:
     recipes:
@@ -12049,6 +12093,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Bucket: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Water Bucket:
     recipes:
@@ -12070,6 +12116,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Snowball: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Milk:
     recipes:
@@ -12161,6 +12209,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ender Pearl: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Eye of Ender:
     recipes:
@@ -14444,6 +14494,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Egg: 0
+    custom_stack_multipliers:
+      Stack: 16
 
   Glowstone Dust:
     recipes:
