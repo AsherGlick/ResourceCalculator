@@ -493,27 +493,35 @@ function text_item_object(count, name){
 
 
 	var units = $("input[name=unit_name]:checked").val();
+
+	let count_object = $("<div/>");
+	count_object.addClass("instruction_item_count");
+	count_object.text(count);
+
 	if (units !== "" && units !== undefined) {
 		var unit_value_list = build_unit_value_list(count, units, name);
 
-		let count_object = $("<div/>");
-		count_object.addClass("instruction_item_count");
 		var join_plus_character = "";
+		var smalltext = " (";
 		for (let i = 0; i < unit_value_list.length; i++){
-			$("<span/>").text(join_plus_character + unit_value_list[i].count).appendTo(count_object);
+			smalltext += join_plus_character + unit_value_list[i].count;
+
 			if (unit_value_list[i].name !== null) {
-				$("<span/>").text("("+unit_value_list[i].name+")").addClass("small_unit_name").appendTo(count_object);
+				smalltext += " " + unit_value_list[i].name;
 			}
-			join_plus_character="+";
+			join_plus_character=" + ";
 		}
+		smalltext += ")";
+
+		// If there is more then one unit, or only one that is not default
+		if (unit_value_list.length > 1 || unit_value_list[0].name !== null) {
+			$("<span/>").addClass("small_unit_name").text(smalltext).appendTo(count_object);
+		}
+
 		count_object.appendTo(item_object);
 	}
-	else {
-		let count_object = $("<div/>");
-		count_object.addClass("instruction_item_count");
-		count_object.text(count);
-		count_object.appendTo(item_object);
-	}
+
+	count_object.appendTo(item_object);
 
 	var space_object = $("<span/>");
 	space_object.text(" ");
