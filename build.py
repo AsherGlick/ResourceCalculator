@@ -13,6 +13,8 @@ import subprocess
 import gzip
 import sys
 
+_SKIP_JS_COMPRESSION = False
+
 
 ################################################################################
 # ordered_load
@@ -121,6 +123,9 @@ def lint_javascript():
 
 
 def uglify_copyfile(in_file, out_file):
+    if _SKIP_JS_COMPRESSION:
+        shutil.copyfile(in_file, out_file)
+        return
     try:
         subprocess.run(["./node_modules/.bin/terser", "--mangle", "--compress", "-o", out_file, in_file])
     # except OSError as e:
@@ -132,6 +137,8 @@ def uglify_copyfile(in_file, out_file):
 
 
 def uglify_js_string(js_string):
+    if _SKIP_JS_COMPRESSION:
+        return js_string
     try:
         result = subprocess.run(["./node_modules/.bin/terser", "--mangle", "--compress"], input=js_string.encode("utf-8"), stdout=subprocess.PIPE)
         return result.stdout.decode("utf-8")
@@ -200,10 +207,11 @@ def lint_recipes(calculator_name, item_name, recipes):
         print(calculator_name.upper() + ":", item_name, "must have only one \"Raw Resource\"")
 
 
-def lint_resources(calculator_name, resources, recipe_types):
+def lint_resources(calculator_name, resources, recipe_types, stack_sizes):
     valid_keys = OrderedDict([
         ("custom_simplename", False),
-        ("recipes", True)
+        ("custom_stack_multipliers", False),
+        ("recipes", True),
     ])
 
     for resource in resources:
@@ -221,9 +229,23 @@ def lint_resources(calculator_name, resources, recipe_types):
 
         lint_recipes(calculator_name, resource, resources[resource]["recipes"])
 
+        if "custom_stack_multipliers" in resources[resource]:
+            lint_custom_stack_multipliers(calculator_name, resource, resources[resource]["custom_stack_multipliers"], stack_sizes)
+
     ensure_valid_requirements(resources)
     ensure_valid_recipe_types(calculator_name, resources, recipe_types)
     ensure_unique_simple_names(calculator_name, resources)
+
+
+def lint_custom_stack_multipliers(calculator_name, item_name, custom_stack_multipliers, stack_sizes):
+    for stack_name in custom_stack_multipliers:
+        custom_size = custom_stack_multipliers[stack_name]
+
+        if stack_name not in stack_sizes:
+            print(calculator_name.upper() + ":","custom_stack_size \""+stack_name+"\" for", item_name, "is not a valid stack size. (" + ", ".join([x for x in stack_sizes]) + ")" )
+
+        if custom_size < 1:
+            print(calculator_name.upper() + ":","custom_stack_size \""+stack_name+"\" for", item_name, "cannot be less than 1.")
 
 
 def ensure_unique_simple_names(calculator_name, resources):
@@ -380,6 +402,21 @@ def get_recipes_only(resources):
     return {resource: resources[resource]["recipes"] for resource in resources}
 
 
+def merge_custom_multipliers(stack_sizes, resources):
+    for resource in resources:
+        if "custom_stack_multipliers" in resources[resource]:
+            custom_sizes = resources[resource]["custom_stack_multipliers"]
+            for custom_size_name in custom_sizes:
+                custom_size = custom_sizes[custom_size_name]
+
+                if "custom_multipliers" not in stack_sizes[custom_size_name]:
+                    stack_sizes[custom_size_name]["custom_multipliers"] = OrderedDict()
+
+                stack_sizes[custom_size_name]["custom_multipliers"][resource] = custom_size
+
+    return stack_sizes
+
+
 ################################################################################
 # create_calculator_page
 #
@@ -401,7 +438,7 @@ def create_calculator_page(calculator_name):
             print("Skipping", calculator_name, "Nothing has changed since the last build")
             return
 
-    print(calculator_folder)
+    print("Generating", calculator_name, "into", calculator_folder)
 
     # Create a packed image of all the item images
     image_width, image_height, resource_image_coordinates = create_packed_image(calculator_name)
@@ -425,7 +462,7 @@ def create_calculator_page(calculator_name):
         default_stack_size = yaml_data["default_stack_size"]
 
     # run some sanity checks on the resources
-    lint_resources(calculator_name, resources, recipe_types)
+    lint_resources(calculator_name, resources, recipe_types, stack_sizes)
     # TODO: Add linting for stack sizes here
     recipe_type_format_js = uglify_js_string(generate_recipe_type_format_js(calculator_name, recipe_types))
 
@@ -437,6 +474,8 @@ def create_calculator_page(calculator_name):
 
     # Generate some css to allow us to center the list
     content_width_css = generate_content_width_css(image_width, yaml_data)
+
+    stack_sizes = merge_custom_multipliers(stack_sizes, resources)
 
     stack_sizes_json = json.dumps(stack_sizes)
 

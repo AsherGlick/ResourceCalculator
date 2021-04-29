@@ -3,7 +3,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 // Closure wrapper for the script file
-(function($) {"use strict";$(window).on("load", function(){
+(function($) {
+"use strict";$(window).on("load", function(){
 // Closure wrapper for the script file
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -431,7 +432,7 @@ function build_instruction_line(edges, item_name, generation_totals) {
 }
 
 
-function build_unit_value_list(number, unit_name) {
+function build_unit_value_list(number, unit_name, item_name) {
 	if (number === 0) {
 		return [];
 	}
@@ -440,7 +441,7 @@ function build_unit_value_list(number, unit_name) {
 	}
 
 	var unit = stack_sizes[unit_name];
-	var unit_size = unit.quantity_multiplier;
+	var unit_size = get_unit_size(unit_name, item_name);
 	var quotient = Math.floor(number/unit_size);
 	var remainder = number % unit_size;
 
@@ -460,10 +461,31 @@ function build_unit_value_list(number, unit_name) {
 	}
 
 	// recurse down all the other possible units until
-	value_list = value_list.concat(build_unit_value_list(remainder, unit.extends_from));
+	value_list = value_list.concat(build_unit_value_list(remainder, unit.extends_from, item_name));
 
 	return value_list;
 }
+
+////////////////////////////////////////////////////////////////////////////////
+// Gets the base number of items that would fit in a particular unit accounting
+// for the units that it is based off of.
+////////////////////////////////////////////////////////////////////////////////
+function get_unit_size(unit_name, item_name) {
+	var multiplier = stack_sizes[unit_name].quantity_multiplier;
+
+	// Check for unique sizes for this particular item
+	if ("custom_multipliers" in stack_sizes[unit_name] && item_name in stack_sizes[unit_name].custom_multipliers) {
+		multiplier = stack_sizes[unit_name].custom_multipliers[item_name];
+	}
+
+	// Chain sizes from extended size
+	if (stack_sizes[unit_name].extends_from !== null) {
+		multiplier = multiplier * get_unit_size(stack_sizes[unit_name].extends_from, item_name);
+	}
+
+	return multiplier;
+}
+
 
 function text_item_object(count, name){
 	var item_object = $("<div/>");
@@ -471,27 +493,35 @@ function text_item_object(count, name){
 
 
 	var units = $("input[name=unit_name]:checked").val();
-	if (units !== "" && units !== undefined) {
-		var unit_value_list = build_unit_value_list(count, units);
 
-		let count_object = $("<div/>");
-		count_object.addClass("instruction_item_count");
+	let count_object = $("<div/>");
+	count_object.addClass("instruction_item_count");
+	count_object.text(count);
+
+	if (units !== "" && units !== undefined) {
+		var unit_value_list = build_unit_value_list(count, units, name);
+
 		var join_plus_character = "";
+		var smalltext = " (";
 		for (let i = 0; i < unit_value_list.length; i++){
-			$("<span/>").text(join_plus_character + unit_value_list[i].count).appendTo(count_object);
+			smalltext += join_plus_character + unit_value_list[i].count;
+
 			if (unit_value_list[i].name !== null) {
-				$("<span/>").text("("+unit_value_list[i].name+")").addClass("small_unit_name").appendTo(count_object);
+				smalltext += " " + unit_value_list[i].name;
 			}
-			join_plus_character="+";
+			join_plus_character=" + ";
 		}
+		smalltext += ")";
+
+		// If there is more then one unit, or only one that is not default
+		if (unit_value_list.length > 1 || unit_value_list[0].name !== null) {
+			$("<span/>").addClass("small_unit_name").text(smalltext).appendTo(count_object);
+		}
+
 		count_object.appendTo(item_object);
 	}
-	else {
-		let count_object = $("<div/>");
-		count_object.addClass("instruction_item_count");
-		count_object.text(count);
-		count_object.appendTo(item_object);
-	}
+
+	count_object.appendTo(item_object);
 
 	var space_object = $("<span/>");
 	space_object.text(" ");
@@ -993,7 +1023,7 @@ function layout_chart(columns, nodes, edges, height, value_scale, margin) {
 }
 window.onresize = function() {
 	relayout_chart();
-}
+};
 function relayout_chart(){
 	if (Object.keys(cached_chart_data).length === 0) {
 		return;
@@ -1479,5 +1509,6 @@ $(".desired_item_count").blur(function() {
 load();
 
 // Closure wrapper for the script file
-});})(jQuery);
+});
+})(jQuery);
 // Closure wrapper for the script file
