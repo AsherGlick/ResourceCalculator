@@ -15315,16 +15315,15 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Oak Wood Planks: -3
-        Oak Fence: -4
+        Oak Wood Planks: -7
       extra_data:
         recipe:
-        - Oak Fence
+        - Oak Wood Planks
         - null
-        - Oak Fence
-        - Oak Fence
+        - Oak Wood Planks
+        - Oak Wood Planks
         - null
-        - Oak Fence
+        - Oak Wood Planks
         - Oak Wood Planks
         - Oak Wood Planks
         - Oak Wood Planks
@@ -15332,16 +15331,15 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Birch Wood Planks: -3
-        Birch Fence: -4
+        Birch Wood Planks: -7
       extra_data:
         recipe:
-        - Birch Fence
+        - Birch Wood Planks
         - null
-        - Birch Fence
-        - Birch Fence
+        - Birch Wood Planks
+        - Birch Wood Planks
         - null
-        - Birch Fence
+        - Birch Wood Planks
         - Birch Wood Planks
         - Birch Wood Planks
         - Birch Wood Planks
@@ -15349,16 +15347,15 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Dark Oak Wood Planks: -3
-        Dark Oak Fence: -4
+        Dark Oak Wood Planks: -7
       extra_data:
         recipe:
-        - Dark Oak Fence
+        - Dark Oak Wood Planks
         - null
-        - Dark Oak Fence
-        - Dark Oak Fence
+        - Dark Oak Wood Planks
+        - Dark Oak Wood Planks
         - null
-        - Dark Oak Fence
+        - Dark Oak Wood Planks
         - Dark Oak Wood Planks
         - Dark Oak Wood Planks
         - Dark Oak Wood Planks
@@ -15366,16 +15363,15 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Acacia Wood Planks: -3
-        Acacia Fence: -4
+        Acacia Wood Planks: -7
       extra_data:
         recipe:
-        - Acacia Fence
+        - Acacia Wood Planks
         - null
-        - Acacia Fence
-        - Acacia Fence
+        - Acacia Wood Planks
+        - Acacia Wood Planks
         - null
-        - Acacia Fence
+        - Acacia Wood Planks
         - Acacia Wood Planks
         - Acacia Wood Planks
         - Acacia Wood Planks
@@ -15383,16 +15379,15 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Spruce Wood Planks: -3
-        Spruce Fence: -4
+        Spruce Wood Planks: -7
       extra_data:
         recipe:
-        - Spruce Fence
+        - Spruce Wood Planks
         - null
-        - Spruce Fence
-        - Spruce Fence
+        - Spruce Wood Planks
+        - Spruce Wood Planks
         - null
-        - Spruce Fence
+        - Spruce Wood Planks
         - Spruce Wood Planks
         - Spruce Wood Planks
         - Spruce Wood Planks
@@ -15400,16 +15395,15 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Jungle Wood Planks: -3
-        Jungle Fence: -4
+        Jungle Wood Planks: -7
       extra_data:
         recipe:
-        - Jungle Fence
+        - Jungle Wood Planks
         - null
-        - Jungle Fence
-        - Jungle Fence
+        - Jungle Wood Planks
+        - Jungle Wood Planks
         - null
-        - Jungle Fence
+        - Jungle Wood Planks
         - Jungle Wood Planks
         - Jungle Wood Planks
         - Jungle Wood Planks
