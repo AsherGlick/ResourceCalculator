@@ -51,7 +51,7 @@ items/[itemname].png
 For each item in your resources.yaml file you will need to have an image for that resource. If an image is missing then the build process will submit a warning and fill that space with a purple color indicating it does not have an icon.
 The icons can be any size, even rectangular, but they all must be the same size as each other for a given calculator.
 The file names of each file should be the resource name in all lower case with no spaces or punctuation. For Example:  
-*"Pink Stained Glass Pane"* becomes *[pinkstainedglasspane.png](resource_lists/minecraft/items/pinkstainedglass.png)*  
+*"Pink Stained Glass Pane"* becomes *[pinkstainedglasspane.png](resource_lists/minecraft/items/pinkstainedglasspane.png)*  
 *"Jack 'o Lantern"* becomes *[jackolantern.png](resource_lists/minecraft/items/jackolantern.png)*  
 
 icon.png
@@ -69,3 +69,12 @@ npm install
 python3 build.py
 ```
 On windows you should be able install the same dependencies via pip and npm though I am unsure how to use pngquant on windows, `build.py` should work without being able to run the png compression however.
+
+You can also run the calculator locally in Docker by running:
+
+```
+docker build . -t resourcecalculator
+docker run -dit --name resourcecalculator -p 8080:80 resourcecalculator
+```
+
+This creates a local docker container, that compiles the current working directory, starts the container and exposes it locally at `127.0.0.1:8080`. To test changes, stop and delete the container and re-run the two commands.
