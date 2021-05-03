@@ -422,10 +422,7 @@ a.internal_link {
 
 
 
-
-
-
-#about_us {
+#about_us, #inventory_import_export {
 	border: 2px solid #8B90A1;
 	padding: 10px;
 	border-radius: 5px;
@@ -439,8 +436,29 @@ a.internal_link {
 	display: none;
 }
 
+#inventory_import_export {
+	text-align: center;
+	box-sizing: border-box;
+}
 
+.inventory_import_export_textarea {
+	width: 100%;
+	display: block;
+	box-sizing: border-box;
+	min-height: 200px;
+	min-height: 20vh;
+}
 
+#inventory_amount_input_wrapper {
+	box-sizing: border-box;
+	text-align: center;
+}
+
+#inventory_amount_input {
+	text-align: center;
+	box-sizing: border-box;
+	width: calc(100% - 10px);
+}
 
 .menu_style {
 	background-color: #EEE;

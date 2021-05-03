@@ -30,18 +30,29 @@
 		</style>
 	</head>
 	<body>
-
 		<div class="header_bar">
-			<a href="/" onClick="window.location.hash=''; window.location.reload()"><div class="home_button_logo">&nbsp;</div></a><a href="#" id="reset_item_count"><div class="home_button"> Reset Item Counts</div></a><a href="mailto:admin@resourcecalculator.com?Subject=Resource%20Calculator%20Issue"><div class="home_button">Report An Issue</div></a><a href="https://github.com/AsherGlick/ResourceCalculator/blob/master/README.md"><div class="home_button">Contribute</div></a><a><div id="about_button" class="home_button">About</div></a><!--<a><div id="share_button" class="home_button">Share</div></a>-->
+			<a href="/" onClick="window.location.hash=''; window.location.reload()"><div class="home_button_logo">&nbsp;</div></a>
+			<a href="#" id="reset_item_count"><div class="home_button"> Reset Item Counts</div></a>
+			<a href="mailto:admin@resourcecalculator.com?Subject=Resource%20Calculator%20Issue"><div class="home_button">Report An Issue</div></a>
+			<a href="https://github.com/AsherGlick/ResourceCalculator/blob/master/README.md"><div class="home_button">Contribute</div></a>
+			<a><div id="inventory_import_export_button" class="home_button">Inventory</div></a>
+			<a><div id="about_button" class="home_button">About</div></a>
+			<!--<a><div id="share_button" class="home_button">Share</div></a>-->
 		</div>
 
+		<div id="inventory_import_export">
+			<textarea id="inventory_import_text" class="inventory_import_export_textarea" placeholder="Inventory as JSON object" ></textarea>
+			<br />
+			<input type="button" id="inventory_import_button" title="Load Inventory from JSON-Textbox" value="Load Inventory from JSON-Textbox"/>&nbsp;
+			<input type="button" id="inventory_export_button" title="Save Inventory to JSON-Textbox" value="Save Inventory to JSON-Textbox"/>
+		</div>
 		<div id="about_us">
 			Resource Calculator is an open source project to allow players to easily calculate how many raw resources they need in order to construct the items they want.
 			It was originally created by Asher Glick. You can help keep Resource Calculator up to date or add resources for new games by clicking on the Contribute button above. <br><br> The resources and recipes for the <b>{{resource_list}} calculator</b> were created and updated by<br>
 			{% for author in authors %}
 
 
-				- <a {% if authors[author] != "" %}href="{{authors[author]}}"{% endif %}>{{ author }}</a><br>
+			- <a {% if authors[author] != "" %}href="{{authors[author]}}"{% endif %}>{{ author }}</a><br>
 			{% endfor %}
 		</div>
 
@@ -75,7 +86,7 @@
 			<!-- Instruction on how to use the site, maybe should be a popup modal on first visit -->
 			<div class="instructions">
 				<b>1)</b> Click on an item above. <b>2)</b> Enter in the amount that item you want. <b>3)</b> Click the <u>Calculate Resources</u> button below.<br>
-				Double click an item to change the recipe used to make that item. Then click <u>Calculate Resources</u> again.
+				Double click an item to change the recipe used to make that item or change the amount you already own of that item. Then click <u>Calculate Resources</u> again.
 			</div>
 
 			<!-- Advertisement -->
@@ -133,6 +144,12 @@
 				All Recipes
 			</div>
 			<div id="recipe_selector_list"></div>
+			<div class="recipe_selector_title">
+				Inventory Amount
+			</div>
+			<div id="inventory_amount_input_wrapper">
+				<input type="number" id="inventory_amount_input"/>
+			</div>
 		</div>
 
 
