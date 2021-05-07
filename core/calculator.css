@@ -454,6 +454,16 @@ a.internal_link {
 	min-height: 20vh;
 }
 
+.inventory_import_error {
+	color: red;
+	font-weight: bold;
+	text-align: center;
+}
+
+.hidden {
+	display: none;
+}
+
 #inventory_amount_input_wrapper {
 	box-sizing: border-box;
 	text-align: center;

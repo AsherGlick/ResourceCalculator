@@ -27,8 +27,7 @@ function clear_item_counts() {
 	generatelist();
 }
 $("#reset_item_count").click(clear_item_counts);
-$("#inventory_import_button").click(import_inventory_from_textbox);
-$("#inventory_export_button").click(export_inventory_to_textbox);
+$("#inventory_import_text").change(import_inventory_from_textbox);
 
 /******************************************************************************\
 | "About Us" Button Logic                                                      |
@@ -226,11 +225,25 @@ function import_inventory_from_localstorage() {
 	let inventoryContent = JSON.parse(localStorage.getItem("[" + calculatorName + " Inventory]"));
 	inventory = inventoryContent ? inventoryContent : {};
 	inventory = remove_null_entries(inventory);
+	export_inventory_to_textbox();
 	return inventory;
 }
 
 function import_inventory_from_textbox(){
-	inventory = JSON.parse($("#inventory_import_text").val());
+	var text = $("#inventory_import_text").val();
+	if (text.trim().length > 0){
+		try {
+			inventory = JSON.parse(text);
+			$("#inventory_import_error").addClass("hidden");
+		}
+		catch (exception) {
+			$("#inventory_import_error").removeClass("hidden");
+		}
+	}
+	else {
+		inventory = {};
+	}
+
 	inventory = remove_null_entries(inventory);
 	export_inventory_to_localstorage();
 }
