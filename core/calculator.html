@@ -35,17 +35,10 @@
 			<a href="#" id="reset_item_count"><div class="home_button"> Reset Item Counts</div></a>
 			<a href="mailto:admin@resourcecalculator.com?Subject=Resource%20Calculator%20Issue"><div class="home_button">Report An Issue</div></a>
 			<a href="https://github.com/AsherGlick/ResourceCalculator/blob/master/README.md"><div class="home_button">Contribute</div></a>
-			<a><div id="inventory_import_export_button" class="home_button">Inventory</div></a>
 			<a><div id="about_button" class="home_button">About</div></a>
 			<!--<a><div id="share_button" class="home_button">Share</div></a>-->
 		</div>
 
-		<div id="inventory_import_export">
-			<textarea id="inventory_import_text" class="inventory_import_export_textarea" placeholder="Inventory as JSON object" ></textarea>
-			<br />
-			<input type="button" id="inventory_import_button" title="Load Inventory from JSON-Textbox" value="Load Inventory from JSON-Textbox"/>&nbsp;
-			<input type="button" id="inventory_export_button" title="Save Inventory to JSON-Textbox" value="Save Inventory to JSON-Textbox"/>
-		</div>
 		<div id="about_us">
 			Resource Calculator is an open source project to allow players to easily calculate how many raw resources they need in order to construct the items they want.
 			It was originally created by Asher Glick. You can help keep Resource Calculator up to date or add resources for new games by clicking on the Contribute button above. <br><br> The resources and recipes for the <b>{{resource_list}} calculator</b> were created and updated by<br>
@@ -59,6 +52,14 @@
 
 		<div id="content" class="content">
 			<div id="content_field" class="menu_style">
+				<div id="inventory_import_export">
+					<input type="button" class="inventory_import_export_toggle" title="X" value="X"/>
+					<textarea id="inventory_import_text" class="inventory_import_export_textarea" placeholder="Inventory as JSON object" ></textarea>
+					<br />
+					<input type="button" id="inventory_import_button" title="Load Inventory from JSON-Textbox" value="Load Inventory from JSON-Textbox"/>&nbsp;
+					<input type="button" id="inventory_export_button" title="Save Inventory to JSON-Textbox" value="Save Inventory to JSON-Textbox"/>
+				</div>
+				<input type="button" class="inventory_import_export_toggle" title="Show/Hide Inventory as Text" value="Show/Hide Inventory as Text"/>
 				<div class="search_bar">
 					<div class='hide_unused_wrapper'>
 						<input type="checkbox" id="unused_hide_checkbox" class="hide_unused_checkbox" />

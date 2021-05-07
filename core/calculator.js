@@ -33,7 +33,7 @@ $("#inventory_export_button").click(export_inventory_to_textbox);
 /******************************************************************************\
 | "About Us" Button Logic                                                      |
 \******************************************************************************/
-$("#inventory_import_export_button").click(function() {
+$(".inventory_import_export_toggle").click(function() {
 	$("#inventory_import_export").slideToggle();
 });
 
