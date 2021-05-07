@@ -15585,98 +15585,98 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Oak Wood Planks: -7
+        Oak Wood Slab: -7
       extra_data:
         recipe:
-        - Oak Wood Planks
+        - Oak Wood Slab
         - null
-        - Oak Wood Planks
-        - Oak Wood Planks
+        - Oak Wood Slab
+        - Oak Wood Slab
         - null
-        - Oak Wood Planks
-        - Oak Wood Planks
-        - Oak Wood Planks
-        - Oak Wood Planks
+        - Oak Wood Slab
+        - Oak Wood Slab
+        - Oak Wood Slab
+        - Oak Wood Slab
         shapeless: 0
     - output: 1
       recipe_type: Crafting
       requirements:
-        Birch Wood Planks: -7
+        Birch Wood Slab: -7
       extra_data:
         recipe:
-        - Birch Wood Planks
+        - Birch Wood Slab
         - null
-        - Birch Wood Planks
-        - Birch Wood Planks
+        - Birch Wood Slab
+        - Birch Wood Slab
         - null
-        - Birch Wood Planks
-        - Birch Wood Planks
-        - Birch Wood Planks
-        - Birch Wood Planks
+        - Birch Wood Slab
+        - Birch Wood Slab
+        - Birch Wood Slab
+        - Birch Wood Slab
         shapeless: 0
     - output: 1
       recipe_type: Crafting
       requirements:
-        Dark Oak Wood Planks: -7
+        Dark Oak Wood Slab: -7
       extra_data:
         recipe:
-        - Dark Oak Wood Planks
+        - Dark Oak Wood Slab
         - null
-        - Dark Oak Wood Planks
-        - Dark Oak Wood Planks
+        - Dark Oak Wood Slab
+        - Dark Oak Wood Slab
         - null
-        - Dark Oak Wood Planks
-        - Dark Oak Wood Planks
-        - Dark Oak Wood Planks
-        - Dark Oak Wood Planks
+        - Dark Oak Wood Slab
+        - Dark Oak Wood Slab
+        - Dark Oak Wood Slab
+        - Dark Oak Wood Slab
         shapeless: 0
     - output: 1
       recipe_type: Crafting
       requirements:
-        Acacia Wood Planks: -7
+        Acacia Wood Slab: -7
       extra_data:
         recipe:
-        - Acacia Wood Planks
+        - Acacia Wood Slab
         - null
-        - Acacia Wood Planks
-        - Acacia Wood Planks
+        - Acacia Wood Slab
+        - Acacia Wood Slab
         - null
-        - Acacia Wood Planks
-        - Acacia Wood Planks
-        - Acacia Wood Planks
-        - Acacia Wood Planks
+        - Acacia Wood Slab
+        - Acacia Wood Slab
+        - Acacia Wood Slab
+        - Acacia Wood Slab
         shapeless: 0
     - output: 1
       recipe_type: Crafting
       requirements:
-        Spruce Wood Planks: -7
+        Spruce Wood Slab: -7
       extra_data:
         recipe:
-        - Spruce Wood Planks
+        - Spruce Wood Slab
         - null
-        - Spruce Wood Planks
-        - Spruce Wood Planks
+        - Spruce Wood Slab
+        - Spruce Wood Slab
         - null
-        - Spruce Wood Planks
-        - Spruce Wood Planks
-        - Spruce Wood Planks
-        - Spruce Wood Planks
+        - Spruce Wood Slab
+        - Spruce Wood Slab
+        - Spruce Wood Slab
+        - Spruce Wood Slab
         shapeless: 0
     - output: 1
       recipe_type: Crafting
       requirements:
-        Jungle Wood Planks: -7
+        Jungle Wood Slab: -7
       extra_data:
         recipe:
-        - Jungle Wood Planks
+        - Jungle Wood Slab
         - null
-        - Jungle Wood Planks
-        - Jungle Wood Planks
+        - Jungle Wood Slab
+        - Jungle Wood Slab
         - null
-        - Jungle Wood Planks
-        - Jungle Wood Planks
-        - Jungle Wood Planks
-        - Jungle Wood Planks
+        - Jungle Wood Slab
+        - Jungle Wood Slab
+        - Jungle Wood Slab
+        - Jungle Wood Slab
         shapeless: 0
     - output: 1
       recipe_type: Raw Resource
