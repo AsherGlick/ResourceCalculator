@@ -242,6 +242,7 @@ function import_inventory_from_textbox(){
 	}
 	else {
 		inventory = {};
+		$("#inventory_import_error").addClass("hidden");
 	}
 
 	inventory = remove_null_entries(inventory);
@@ -296,22 +297,22 @@ function generatelist() {
 		// For each negative requirement get it's base resources
 		for (let requirement in requirements){
 			if (requirements[requirement] < 0) {
-				var recipe = get_recipe(requirement);
-				var recipe_requirements = recipe.requirements;
-				var recipe_output = recipe.output;
+				let recipe = get_recipe(requirement);
+				let recipe_requirements = recipe.requirements;
+				let recipe_output = recipe.output;
 
 				if (remaining_inventory_items[requirement] > 0) {
-					var owned = remaining_inventory_items[requirement];
-					var needed = Math.abs(requirements[requirement]);
-					var recipes_from_owned = Math.floor(owned / recipe_output);
-					var overshot_from_owned = owned % recipe_output;
-					var extra_from_produce = needed % recipe_output;
+					let owned = remaining_inventory_items[requirement];
+					let needed = Math.abs(requirements[requirement]);
+					let recipes_from_owned = Math.floor(owned / recipe_output);
+					let overshot_from_owned = owned % recipe_output;
+					let extra_from_produce = needed % recipe_output;
 
 					if (overshot_from_owned < extra_from_produce){
 						recipes_from_owned--;
 					}
 
-					var usable_count =  Math.min(needed, extra_from_produce + recipes_from_owned*recipe_output);
+					let usable_count =  Math.min(needed, extra_from_produce + recipes_from_owned * recipe_output);
 
 					remaining_inventory_items[requirement] -= usable_count;
 					output_requirements[requirement] += usable_count;
@@ -323,12 +324,12 @@ function generatelist() {
 
 					used_from_inventory[requirement] += usable_count;
 
-					let tracker_key = requirement+requirement + inventory_label_suffix;
+					let tracker_key = requirement + requirement + inventory_label_suffix;
 					if (!(tracker_key in resource_tracker)) {
 						resource_tracker[tracker_key] = {
-							"source":requirement + inventory_label_suffix,
-							"target":requirement,
-							"value":0,
+							"source": requirement + inventory_label_suffix,
+							"target": requirement,
+							"value": 0,
 						};
 					}
 
@@ -344,12 +345,12 @@ function generatelist() {
 					// console.log("using " + usable_count + " " + requirement + " from inventory.");
 				}
 
-				var required_count = -requirements[requirement];
+				let required_count = -requirements[requirement];
 				// Figure out the minimum number of a given requirement can be produced
 				// to fit the quantity of that requirement needed.
 				// EG: if a recipe produces 4 of an item but you only need 3
 				//     then you must produce 4 of that item with 1 left over
-				var produce_count = Math.ceil(required_count/recipe_output);
+				let produce_count = Math.ceil(required_count / recipe_output);
 				output_requirements[requirement] += produce_count * recipe_output;
 
 				// Add the quantity of the item created to the generation_totals
@@ -357,6 +358,7 @@ function generatelist() {
 				if (!(requirement in generation_totals)) {
 					generation_totals[requirement] = 0;
 				}
+
 				generation_totals[requirement] += produce_count * recipe_output;
 
 				// if this is a raw resource then add it to the raw resource list
@@ -364,6 +366,7 @@ function generatelist() {
 					if (raw_resources[requirement] === undefined) {
 						raw_resources[requirement] = 0;
 					}
+
 					raw_resources[requirement] += produce_count * recipe_output;
 				}
 
@@ -432,10 +435,10 @@ function generatelist() {
 		var source = resource_tracker_copy[tracked_resource].source;
 		if (source in original_requirements) {
 
-			var final_tracker = source+"final";
+			var final_tracker = source + "final";
 			resource_tracker[final_tracker] = {
 				"source": source,
-				"target":"[Final] " + source,
+				"target": "[Final] " + source,
 				"value": -original_requirements[source],
 			};
 
@@ -568,10 +571,9 @@ function build_instruction_line(edges, item_name, generation_totals) {
 }
 
 function build_instruction_inventory_line(edges, item_name) {
-	// Build the input item sub string
-	var amount_to_take = 0;
+	let amount_to_take = 0;
 	for (let edge in edges){
-		// If this is pointing into the resource we are currently trying to craft
+		// If this is pointing into the resource we are currently trying to take from the inventory.
 		if (edges[edge].target === item_name && (edges[edge].source.endsWith(inventory_label_suffix))) {
 			amount_to_take = edges[edge].value;
 			break;
@@ -583,7 +585,6 @@ function build_instruction_inventory_line(edges, item_name) {
 	}
 
 	let line_wrapper = $("<div/>").addClass("instruction_wrapper");
-	// Raw Text
 	$("<span/>").text("Take ").appendTo(line_wrapper);
 
 	text_item_object(amount_to_take, item_name).appendTo(line_wrapper);
@@ -833,15 +834,12 @@ function generate_chart(edges, node_quantities, used_from_inventory) {
 	var nodes = {};
 	for (let column_id in columns) {
 		for (let node_id in columns[column_id]) {
-			var node_name = columns[column_id][node_id];
+			let node_name = columns[column_id][node_id];
 
 			let input = get_input_size(edges, node_name);
 			let output;
-			let size;
 			if (node_name.endsWith(inventory_label_suffix)) {
-				let inventory_item_count = used_from_inventory[node_name.replace(inventory_label_suffix, "")];
-				output = inventory_item_count;
-				size = inventory_item_count;
+				output = used_from_inventory[node_name.replace(inventory_label_suffix, "")];
 			}
 			else {
 				output = node_quantities[node_name];
@@ -851,7 +849,7 @@ function generate_chart(edges, node_quantities, used_from_inventory) {
 				output += used_from_inventory[node_name];
 			}
 
-			size = Math.max(output, input);
+			let size = Math.max(output, input);
 
 			// console.log(node);
 			nodes[node_name] = {
@@ -1553,10 +1551,9 @@ function switch_recipe(item_name, event) {
 }
 
 function switch_inventory_amount_input(item_name) {
-	let item_amount_in_inventory = inventory[item_name];
 	let inventory_amount_input = $("#inventory_amount_input");
 	inventory_amount_input.data("item_name", item_name);
-	inventory_amount_input.val(item_amount_in_inventory);
+	inventory_amount_input.val(inventory[item_name]);
 }
 
 $("#recipe_select").mouseleave(function() {
@@ -1566,9 +1563,7 @@ $("#recipe_select").mouseleave(function() {
 
 $("#inventory_amount_input").change(function(){
 	let inventory_amount_input = $("#inventory_amount_input");
-	let value = inventory_amount_input.val();
-	let item_name = inventory_amount_input.data("item_name");
-	inventory[item_name] = value - 0; // easy string-to-int conversion
+	inventory[inventory_amount_input.data("item_name")] = inventory_amount_input.val() - 0; // easy string-to-int conversion
 	export_inventory_to_localstorage();
 	export_inventory_to_textbox();
 });

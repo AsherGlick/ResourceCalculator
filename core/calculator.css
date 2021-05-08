@@ -450,7 +450,6 @@ a.internal_link {
 	width: 100%;
 	display: block;
 	box-sizing: border-box;
-	min-height: 200px;
 	min-height: 20vh;
 }
 
