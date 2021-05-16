@@ -12,6 +12,7 @@ import subprocess
 # import brotlix
 import gzip
 import sys
+import hashlib
 
 _SKIP_JS_COMPRESSION = False
 
@@ -465,6 +466,11 @@ def create_calculator_page(calculator_name):
     lint_resources(calculator_name, resources, recipe_types, stack_sizes)
     # TODO: Add linting for stack sizes here
     recipe_type_format_js = uglify_js_string(generate_recipe_type_format_js(calculator_name, recipe_types))
+
+    # Give each recipe a unique ID, so that the UI can use it to save state without relying on recipe order
+    for resource in resources.values():
+        for recipe in resource['recipes']:
+            recipe['hash'] = hashlib.md5(f"{ (recipe['recipe_type'], recipe.get('extra_data', None)) }".encode('utf-8')).hexdigest()
 
     recipe_js = mini_js_data(get_recipes_only(resources))
 
