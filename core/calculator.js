@@ -447,6 +447,12 @@ function generatelist() {
 		}
 	}
 
+	for (let tracked_resource in resource_tracker) {
+		if (resource_tracker[tracked_resource].value === 0) {
+			delete resource_tracker[tracked_resource];
+		}
+	}
+
 	generate_chart(resource_tracker, generation_totals, used_from_inventory);
 	generate_instructions(resource_tracker, generation_totals);
 }
@@ -841,8 +847,11 @@ function generate_chart(edges, node_quantities, used_from_inventory) {
 			if (node_name.endsWith(inventory_label_suffix)) {
 				output = used_from_inventory[node_name.replace(inventory_label_suffix, "")];
 			}
-			else {
+			else if (node_quantities[node_name] !== undefined) {
 				output = node_quantities[node_name];
+			}
+			else {
+				output = 0;
 			}
 
 			if (used_from_inventory[node_name] !== undefined) {
