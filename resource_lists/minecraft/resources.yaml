@@ -14273,6 +14273,15 @@ resources:
         recipe:
         - Oak Wood
         - Fuel
+     - output: 1
+      recipe_type: Smelting
+      requirements:
+        Oak Log: -1
+        Fuel: -1
+      extra_data:
+        recipe:
+        - Oak Log
+        - Fuel
     - output: 1
       recipe_type: Raw Resource
       requirements:
