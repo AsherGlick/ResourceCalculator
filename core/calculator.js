@@ -308,8 +308,13 @@ function generatelist() {
 					let overshot_from_owned = owned % recipe_output;
 					let extra_from_produce = needed % recipe_output;
 
-					if (overshot_from_owned < extra_from_produce){
-						recipes_from_owned--;
+					if (overshot_from_owned < extra_from_produce) {
+						if (recipes_from_owned > 0) {
+							recipes_from_owned--;
+						}
+						else {
+							extra_from_produce = 0;
+						}
 					}
 
 					// Only take so much from inventory, that no [Extra] will be crafted.
