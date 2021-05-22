@@ -14273,7 +14273,7 @@ resources:
         recipe:
         - Oak Wood
         - Fuel
-     - output: 1
+    - output: 1
       recipe_type: Smelting
       requirements:
         Oak Log: -1
