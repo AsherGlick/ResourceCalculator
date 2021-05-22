@@ -854,10 +854,7 @@ function generate_chart(edges, node_quantities, used_from_inventory) {
 
 			let input = get_input_size(edges, node_name);
 			let output;
-			if (node_name.endsWith(inventory_label_suffix)) {
-				output = used_from_inventory[node_name.replace(inventory_label_suffix, "")];
-			}
-			else if (node_quantities[node_name] !== undefined) {
+			if (node_quantities[node_name] !== undefined) {
 				output = node_quantities[node_name];
 			}
 			else {
