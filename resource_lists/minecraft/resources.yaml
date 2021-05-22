@@ -14316,7 +14316,7 @@ resources:
         - null
         - null
         shapeless: 1
-    - output: 9
+    - output: 1
       recipe_type: Crafting
       requirements:
         Iron Nugget: -9
