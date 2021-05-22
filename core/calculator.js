@@ -574,6 +574,10 @@ function build_instruction_line(edges, item_name, generation_totals) {
 
 	var recipe_type = get_recipe(item_name).recipe_type;
 
+	if (recipe_type_functions[recipe_type] === undefined) {
+		return $("<div/>");
+	}
+
 	return recipe_type_functions[recipe_type](inputs, item_name, generation_totals[item_name], text_item_object);
 }
 
