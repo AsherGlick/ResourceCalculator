@@ -312,6 +312,7 @@ function generatelist() {
 						recipes_from_owned--;
 					}
 
+					// Only take so much from inventory, that no [Extra] will be crafted.
 					let usable_count =  Math.min(needed, extra_from_produce + recipes_from_owned * recipe_output);
 
 					remaining_inventory_items[requirement] -= usable_count;
