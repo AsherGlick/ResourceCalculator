@@ -420,12 +420,7 @@ a.internal_link {
 	clear: both;
 }
 
-
-
-
-
-
-#about_us {
+#about_us, #inventory_import_export {
 	border: 2px solid #8B90A1;
 	padding: 10px;
 	border-radius: 5px;
@@ -439,13 +434,51 @@ a.internal_link {
 	display: none;
 }
 
+#inventory_import_export {
+	text-align: center;
+	box-sizing: border-box;
+}
 
+.inventory_import_export_toggle {
+	display: block;
+	margin-left: auto;
+	margin-right: 0;
+	margin-bottom: 10px;
+}
 
+.inventory_import_export_textarea {
+	width: 100%;
+	display: block;
+	box-sizing: border-box;
+	min-height: 20vh;
+}
+
+.inventory_import_error {
+	color: red;
+	font-weight: bold;
+	text-align: center;
+}
+
+.hidden {
+	display: none;
+}
+
+#inventory_amount_input_wrapper {
+	box-sizing: border-box;
+	text-align: center;
+}
+
+#inventory_amount_input {
+	text-align: center;
+	box-sizing: border-box;
+	width: calc(100% - 10px);
+}
 
 .menu_style {
 	background-color: #EEE;
 	background-clip: content-box;
 }
+
 body {
 	font-family: sans-serif;
 	margin-left: 0;
@@ -453,6 +486,7 @@ body {
 	padding-left: 0;
 	padding-right: 0;
 }
+
 .desired_item_count {
 	font-family: sans-serif;
 }

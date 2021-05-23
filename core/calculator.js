@@ -27,11 +27,15 @@ function clear_item_counts() {
 	generatelist();
 }
 $("#reset_item_count").click(clear_item_counts);
-
+$("#inventory_import_text").change(import_inventory_from_textbox);
 
 /******************************************************************************\
 | "About Us" Button Logic                                                      |
 \******************************************************************************/
+$(".inventory_import_export_toggle").click(function() {
+	$("#inventory_import_export").slideToggle();
+});
+
 $("#about_button").click(function() {
 	$("#about_us").slideToggle();
 });
@@ -67,6 +71,7 @@ $(".desired_item").each(function() {
 	// When doubleclicking open the recipe select menu
 	item.dblclick( function (event) {
 		switch_recipe(item.attr("mc_value"), event);
+		switch_inventory_amount_input(item.attr("mc_value"));
 	});
 
 	// Enable item name hover text
@@ -164,6 +169,26 @@ function save() {
 		window.location.hash = $.param(selected_items);
 	}
 
+	export_inventory_to_localstorage();
+}
+
+var inventory = {};
+var inventory_label_suffix = " [from Inventory]";
+function export_inventory_to_localstorage(input) {
+	if (!input) {
+		input = inventory;
+	}
+
+	input = remove_null_entries(input);
+
+	input = input ? input : {};
+	let calculatorName = window.location.pathname.replaceAll("/", "");
+	localStorage.setItem("[" + calculatorName + " Inventory]", JSON.stringify(input));
+}
+
+function export_inventory_to_textbox() {
+	inventory = remove_null_entries(inventory);
+	$("#inventory_import_text").val(JSON.stringify(inventory ? inventory : {}, null, 1));
 }
 
 
@@ -171,11 +196,14 @@ function save() {
 | load()                                                                       |
 |                                                                              |
 | This function is an inverse to save() and reads the state of the resource    |
-| requirement list from the UIR hash. In addition it will automatically call   |
+| requirement list from the URI hash. In addition it will automatically call   |
 | generatelist() to save the user from having to click the button for a saved  |
 | list.                                                                        |
 \******************************************************************************/
 function load() {
+	import_inventory_from_localstorage();
+	export_inventory_to_textbox();
+
 	var uri_arguments = decodeURIComponent(window.location.hash.substr(1));
 	if (uri_arguments !== "") {
 		var pairs = uri_arguments.split("&");
@@ -192,6 +220,44 @@ function load() {
 	$("#unused_hide_checkbox").change();
 }
 
+function import_inventory_from_localstorage() {
+	let calculatorName = window.location.pathname.replaceAll("/", "");
+	let inventoryContent = JSON.parse(localStorage.getItem("[" + calculatorName + " Inventory]"));
+	inventory = inventoryContent ? inventoryContent : {};
+	inventory = remove_null_entries(inventory);
+	export_inventory_to_textbox();
+	return inventory;
+}
+
+function import_inventory_from_textbox(){
+	var text = $("#inventory_import_text").val();
+	if (text.trim().length > 0){
+		try {
+			inventory = JSON.parse(text);
+			$("#inventory_import_error").addClass("hidden");
+		}
+		catch (exception) {
+			$("#inventory_import_error").removeClass("hidden");
+		}
+	}
+	else {
+		inventory = {};
+		$("#inventory_import_error").addClass("hidden");
+	}
+
+	inventory = remove_null_entries(inventory);
+	export_inventory_to_localstorage();
+}
+
+function remove_null_entries(item_collection) {
+	for (var item_name in item_collection) {
+		if (!item_collection[item_name]){
+			delete item_collection[item_name];
+		}
+	}
+
+	return item_collection;
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////// Requirements Calculation Logic ///////////////////////
@@ -216,6 +282,9 @@ function generatelist() {
 	var resource_tracker = {};
 	var generation_totals = {}; // the total number of each resource produce (ignoring any consumption)
 
+	var remaining_inventory_items = JSON.parse(JSON.stringify(inventory));
+	var used_from_inventory = {};
+
 	var raw_resources = {};
 
 	// While we still have something that requires another resource to create
@@ -228,45 +297,96 @@ function generatelist() {
 		// For each negative requirement get it's base resources
 		for (let requirement in requirements){
 			if (requirements[requirement] < 0) {
+				let recipe = get_recipe(requirement);
+				let recipe_requirements = recipe.requirements;
+				let recipe_output = recipe.output;
 
+				if (remaining_inventory_items[requirement] > 0) {
+					let owned = remaining_inventory_items[requirement];
+					let needed = Math.abs(requirements[requirement]);
+					let recipes_from_owned = Math.floor(owned / recipe_output);
+					let overshot_from_owned = owned % recipe_output;
+					let extra_from_produce = needed % recipe_output;
 
-				var recipe = get_recipe(requirement).requirements;
-				var produces_count = get_recipe(requirement).output;
-				var required_count = -requirements[requirement];
+					if (overshot_from_owned < extra_from_produce) {
+						if (recipes_from_owned > 0) {
+							recipes_from_owned--;
+						}
+						else {
+							extra_from_produce = 0;
+						}
+					}
 
+					// Only take so much from inventory, that no [Extra] will be crafted.
+					let usable_count =  Math.min(needed, extra_from_produce + recipes_from_owned * recipe_output);
+
+					remaining_inventory_items[requirement] -= usable_count;
+					output_requirements[requirement] += usable_count;
+					requirements[requirement] += usable_count;
+
+					if (used_from_inventory[requirement] === undefined) {
+						used_from_inventory[requirement] = 0;
+					}
+
+					used_from_inventory[requirement] += usable_count;
+
+					let tracker_key = requirement + requirement + inventory_label_suffix;
+					if (!(tracker_key in resource_tracker)) {
+						resource_tracker[tracker_key] = {
+							"source": requirement + inventory_label_suffix,
+							"target": requirement,
+							"value": 0,
+						};
+					}
+
+					resource_tracker[tracker_key].value += usable_count;
+
+					let inventory_key = requirement + inventory_label_suffix;
+					if (!(inventory_key in generation_totals)) {
+						generation_totals[inventory_key] = 0;
+					}
+
+					generation_totals[inventory_key] += usable_count;
+
+					// console.log("using " + usable_count + " " + requirement + " from inventory.");
+				}
+
+				let required_count = -requirements[requirement];
 				// Figure out the minimum number of a given requirement can be produced
 				// to fit the quantity of that requirement needed.
 				// EG: if a recipe produces 4 of an item but you only need 3
 				//     then you must produce 4 of that item with 1 left over
-				var produce_count = Math.ceil(required_count/produces_count);
-				output_requirements[requirement] += produce_count * produces_count;
+				let produce_count = Math.ceil(required_count / recipe_output);
+				output_requirements[requirement] += produce_count * recipe_output;
 
 				// Add the quantity of the item created to the generation_totals
 				// This is used to keep track of how many of any item in the crafting process are produced
 				if (!(requirement in generation_totals)) {
 					generation_totals[requirement] = 0;
 				}
-				generation_totals[requirement] += produce_count * produces_count;
+
+				generation_totals[requirement] += produce_count * recipe_output;
 
 				// if this is a raw resource then add it to the raw resource list
-				if (recipe[requirement] === 0 && Object.keys(recipe).length === 1) {
+				if (recipe_requirements[requirement] === 0 && Object.keys(recipe_requirements).length === 1) {
 					if (raw_resources[requirement] === undefined) {
 						raw_resources[requirement] = 0;
 					}
-					raw_resources[requirement] += produce_count * produces_count;
+
+					raw_resources[requirement] += produce_count * recipe_output;
 				}
 
-				// If this is not a raw resource, track the change the  and modify the output requirements
+				// If this is not a raw resource, track the change the and modify the output requirements
 				else {
-					$.each(recipe, function(item) {
+					$.each(recipe_requirements, function(item) {
 						// Set the recipe requirements as new output requirements
 						if (output_requirements[item] === undefined) {
 							output_requirements[item] = 0;
 						}
-						output_requirements[item] += recipe[item] * produce_count;
+						output_requirements[item] += recipe_requirements[item] * produce_count;
 
 						// Add the recipe's conversion
-						var tracker_key = requirement+item;
+						let tracker_key = requirement+item;
 						if (!(tracker_key in resource_tracker)) {
 							resource_tracker[tracker_key] = {
 								"source":item,
@@ -274,13 +394,15 @@ function generatelist() {
 								"value":0,
 							};
 						}
-						resource_tracker[tracker_key].value += recipe[item] * -produce_count;
+						resource_tracker[tracker_key].value += recipe_requirements[item] * -produce_count;
 					});
 				}
 			}
 		}
 		requirements = output_requirements;
 	}
+
+	// console.log("Used from inventory:", used_from_inventory);
 
 	for (let original_requirement in original_requirements) {
 		// console.log(get_recipe(original_requirement));
@@ -292,7 +414,6 @@ function generatelist() {
 			};
 		}
 	}
-
 
 	// This maps all extra items to an extra value
 	// It is done in order to get the right heights for items that produce more then they take
@@ -320,10 +441,10 @@ function generatelist() {
 		var source = resource_tracker_copy[tracked_resource].source;
 		if (source in original_requirements) {
 
-			var final_trakcer = source+"final";
-			resource_tracker[final_trakcer] = {
+			var final_tracker = source + "final";
+			resource_tracker[final_tracker] = {
 				"source": source,
-				"target":"[Final] " + source,
+				"target": "[Final] " + source,
 				"value": -original_requirements[source],
 			};
 
@@ -332,12 +453,15 @@ function generatelist() {
 		}
 	}
 
+	for (let tracked_resource in resource_tracker) {
+		if (resource_tracker[tracked_resource].value === 0) {
+			delete resource_tracker[tracked_resource];
+		}
+	}
 
-
-	generate_chart(resource_tracker, generation_totals);
+	generate_chart(resource_tracker, generation_totals, used_from_inventory);
 	generate_instructions(resource_tracker, generation_totals);
 }
-
 
 /******************************************************************************\
 |
@@ -366,23 +490,41 @@ function generate_instructions(edges, generation_totals) {
 	var instructions = $("<div/>");
 	var column_count = 0;
 
-	$("<div/>").attr("id", "text_instructions_title").text("Base Ingredients").appendTo(instructions);
+	var inventory_resources = [];
+	var needed_resources = [];
 	// List out raw resource numbers
 	for (let node in node_columns){
 		if (node_columns[node] === 0) {
-
-
 			var line_wrapper = $("<div/>");
 			line_wrapper.addClass("instruction_wrapper");
-			var base_ingredients = text_item_object(generation_totals[node], node);
+			let is_inventory = node.endsWith(inventory_label_suffix);
+			var base_ingredients = text_item_object(generation_totals[node], node.replace(inventory_label_suffix, ""));
 			base_ingredients.appendTo(line_wrapper);
-			line_wrapper.appendTo(instructions);
 
+			if (is_inventory) {
+				inventory_resources.push(line_wrapper);
+			}
+			else {
+				needed_resources.push(line_wrapper);
+			}
 		}
 
 		// Track the largest column as the max column count
 		if (node_columns[node] >= column_count) {
 			column_count = node_columns[node]+1;
+		}
+	}
+
+
+	$("<div/>").attr("id", "text_instructions_title").text((inventory_resources.length > 0 ? "Missing " : "") + "Base Ingredients").appendTo(instructions);
+	for (let needed_resource in needed_resources) {
+		needed_resources[needed_resource].appendTo(instructions);
+	}
+
+	if (inventory_resources.length > 0) {
+		$("<div/>").attr("id", "text_instructions_title").text("Already Owned Base Ingredients").appendTo(instructions);
+		for (let inventory_resource in inventory_resources) {
+			inventory_resources[inventory_resource].appendTo(instructions);
 		}
 	}
 
@@ -398,8 +540,13 @@ function generate_instructions(edges, generation_totals) {
 				}
 
 				build_instruction_line(edges, node, generation_totals).appendTo(instructions);
+				let instruction_inventory_line = build_instruction_inventory_line(edges, node);
+				if (instruction_inventory_line) {
+					instruction_inventory_line.appendTo(instructions);
+				}
 			}
 		}
+
 		var line_break = $("<div/>");
 		line_break.addClass("instruction_line_break");
 		line_break.appendTo(instructions);
@@ -417,20 +564,49 @@ function generate_instructions(edges, generation_totals) {
 }
 
 function build_instruction_line(edges, item_name, generation_totals) {
+	if (!generation_totals[item_name]) {
+		return $("<div/>");
+	}
+
 	// Build the input item sub string
 	var inputs = {};
 	for (let edge in edges){
 		// If this is pointing into the resource we are currently trying to craft
-		if (edges[edge].target === item_name) {
+		if (edges[edge].target === item_name && !(edges[edge].source.endsWith(inventory_label_suffix))) {
 			inputs[edges[edge].source] = edges[edge].value;
 		}
 	}
 
 	var recipe_type = get_recipe(item_name).recipe_type;
 
+	if (recipe_type_functions[recipe_type] === undefined) {
+		return $("<div/>");
+	}
+
 	return recipe_type_functions[recipe_type](inputs, item_name, generation_totals[item_name], text_item_object);
 }
 
+function build_instruction_inventory_line(edges, item_name) {
+	let amount_to_take = 0;
+	for (let edge in edges){
+		// If this is pointing into the resource we are currently trying to take from the inventory.
+		if (edges[edge].target === item_name && (edges[edge].source.endsWith(inventory_label_suffix))) {
+			amount_to_take = edges[edge].value;
+			break;
+		}
+	}
+
+	if (!amount_to_take) {
+		return null;
+	}
+
+	let line_wrapper = $("<div/>").addClass("instruction_wrapper");
+	$("<span/>").text("Take ").appendTo(line_wrapper);
+
+	text_item_object(amount_to_take, item_name).appendTo(line_wrapper);
+	$("<span/>").text(" from inventory.").appendTo(line_wrapper);
+	return line_wrapper;
+}
 
 function build_unit_value_list(number, unit_name, item_name) {
 	if (number === 0) {
@@ -489,6 +665,10 @@ function get_unit_size(unit_name, item_name) {
 
 function text_item_object(count, name){
 	var item_object = $("<div/>");
+	if (!count) {
+		return item_object;
+	}
+
 	item_object.addClass("instruction_item");
 
 
@@ -644,7 +824,7 @@ function get_columns(edges) {
 | Arguments
 |   generation_events -
 \******************************************************************************/
-function generate_chart(edges, node_quantities) {
+function generate_chart(edges, node_quantities, used_from_inventory) {
 
 	// Set the margins for the area that the nodes and edges can take up
 	var margin = {
@@ -670,12 +850,28 @@ function generate_chart(edges, node_quantities) {
 	var nodes = {};
 	for (let column_id in columns) {
 		for (let node_id in columns[column_id]) {
-			var node_name = columns[column_id][node_id];
+			let node_name = columns[column_id][node_id];
+
+			let input = get_input_size(edges, node_name);
+			let output;
+			if (node_quantities[node_name] !== undefined) {
+				output = node_quantities[node_name];
+			}
+			else {
+				output = 0;
+			}
+
+			if (used_from_inventory[node_name] !== undefined) {
+				output += used_from_inventory[node_name];
+			}
+
+			let size = Math.max(output, input);
+
 			// console.log(node);
 			nodes[node_name] = {
-				"input": get_input_size(edges, node_name),
-				"output": node_quantities[node_name],
-				"size": Math.max(node_quantities[node_name], get_input_size(edges, node_name)),
+				"input": input,
+				"output": output,
+				"size": size,
 				"column": Number(column_id),
 				"passthrough": false,
 				"incoming_edges":[],
@@ -795,7 +991,7 @@ function relax_columns_left_to_right(alpha, columns, nodes, edges) {
 		return sum;
 	}
 	function raw_source_sum(node) {
-		// If the node is not a passthroguh then return the sum of all of
+		// If the node is not a passthrough then return the sum of all of
 		// the source edges
 		if (node.passthrough === false) {
 			var sum = 0;
@@ -849,7 +1045,7 @@ function relax_columns_right_to_left(alpha, columns, nodes, edges) {
 		return sum;
 	}
 	function raw_target_sum(node) {
-		// If the node is not a passthroguh then return the sum of all of
+		// If the node is not a passthrough then return the sum of all of
 		// the source edges
 		if (node.passthrough === false) {
 			var sum = 0;
@@ -1203,7 +1399,7 @@ function get_input_size(edges, output){
 ////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////// Hover Text Logic ///////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-// How far away from the mouse should hte hoverbox be
+// How far away from the mouse should the hoverbox be
 var hover_x_offset = 10;
 var hover_y_offset = -10;
 $(document).on("mousemove", function(e){
@@ -1370,12 +1566,23 @@ function switch_recipe(item_name, event) {
 	});
 }
 
+function switch_inventory_amount_input(item_name) {
+	let inventory_amount_input = $("#inventory_amount_input");
+	inventory_amount_input.data("item_name", item_name);
+	inventory_amount_input.val(inventory[item_name]);
+}
 
 $("#recipe_select").mouseleave(function() {
 	$("#recipe_select").css("opacity", 0);
 	$("#recipe_select").css("pointer-events", "none");
 });
 
+$("#inventory_amount_input").change(function(){
+	let inventory_amount_input = $("#inventory_amount_input");
+	inventory[inventory_amount_input.data("item_name")] = inventory_amount_input.val() - 0; // easy string-to-int conversion
+	export_inventory_to_localstorage();
+	export_inventory_to_textbox();
+});
 
 ////////////////////////////////////////////////////////////////////////
 /////////////////////// Selection and modification of raw resources/////
