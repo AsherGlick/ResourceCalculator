@@ -55,7 +55,7 @@ $(".desired_item").each(function() {
 		save();
 	});
 
-	// Put an orage border around the item when the text box is focused
+	// Put an orange border around the item when the text box is focused
 	// This makes it more noticeable when an item is selected
 	item_input_box.focus(function() {
 		item.addClass("desired_item_input_focused");
@@ -92,7 +92,7 @@ function filter_items() {
 		var item_count = $(this).find(".desired_item_count").val();
 
 		// If the search string does not match hide the item
-		// If the item count is not greated then 0 and hide unused is true hide
+		// If the item count is not greater than 0 and hide unused is true hide
 		if (item_name.indexOf(search_string) === -1 || !(item_count > 0 || !hide_unused)) {
 			$(this).hide();
 		}
@@ -610,7 +610,7 @@ function get_node_columns(edges) {
 function get_columns(edges) {
 	var node_columns = get_node_columns(edges);
 
-	// deterimine how many columns there should be
+	// determine how many columns there should be
 	var column_count = 0;
 	for (let node in node_columns) {
 		if (node_columns[node]+1 > column_count) {
@@ -657,10 +657,10 @@ function generate_chart(edges, node_quantities) {
 	// Reset the colors that have already been selected so we can get repeatable graphs
 	selected_colors = {};
 
-	// Set the space betwen the bottom of one node and the top of the one below it to 10px
+	// Set the space between the bottom of one node and the top of the one below it to 10px
 	var node_padding = 10;
 
-	// Calculate the widthe and the height of the area that the nodes and edges can take up
+	// Calculate the width and the height of the area that the nodes and edges can take up
 	var height = 800 - margin.top - margin.bottom;
 
 	// Get the matrix of nodes, sorted into an array of columns
@@ -722,7 +722,7 @@ function generate_chart(edges, node_quantities) {
 	}
 
 	// Calculate the scale of a single item based on the tallest column of items
-	// such that that column fits within the alloted height of the chart
+	// such that that column fits within the allotted height of the chart
 	var value_scale = 9999;
 	for (let column in columns) {
 		var height_for_values = height + node_padding;
@@ -957,7 +957,7 @@ function color_string(color){
 | This function supplies a color for a node to use as it's fill color. The
 | color is determined by the first word in the string, excluding a [Extra] or
 | [Final] prefix. The first time that key is presented to the function a new
-| color is chosen for that key, each subsiquent call after the first  with the
+| color is chosen for that key, each subsequent call after the first  with the
 | same key will return the same color but this is not necessarily the case for
 | a new chart generation.
 \******************************************************************************/
@@ -1459,7 +1459,7 @@ function depth_first_search(nodes, node, match) {
 
 	// loop through recipe requirements
 	for (let i in nodes[node]) {
-		// if a requirement is the original node then change this item to a soruce and report back
+		// if a requirement is the original node then change this item to a source and report back
 		if (nodes[node][i] === match) {
 			// Convert to source recipe
 			set_recipe_to_raw(node);

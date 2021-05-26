@@ -74,13 +74,13 @@ def create_packed_image(calculator_name):
             print("ERROR: All resource list item images for a single calculator must be the same size")
             print("       " + file + " and " + standard_image_reference + " are not the same size")
 
-    # Sort the images, this is probably not nessasary but will allow for
+    # Sort the images, this is probably not necessary but will allow for
     # differences between files to be noticed with less noise of random shifting of squares
     images.sort(key=lambda x: x[0])
 
     # Use our special math function to determine what the number of columns
     # should be for the final packed image.
-    # Programmers note: This was a lot of fun to figure out and derrived strangely
+    # Programmers note: This was a lot of fun to figure out and derived strangely
     columns = math.ceil(math.sqrt(standard_height * len(images) / standard_width))
     result_width = standard_width * columns
     result_height = standard_height * math.ceil((len(images) / columns))
@@ -395,7 +395,7 @@ def merge_custom_multipliers(stack_sizes, resources):
 ################################################################################
 # create_calculator_page
 #
-# This function takes in a the name of a caluclator resource list and creates
+# This function takes in a the name of a calculator resource list and creates
 # the html page and resource for it. If no files have been changed for the
 # calculator since the last time it was created then the creation will be skipped
 ################################################################################
