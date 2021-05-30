@@ -11,11 +11,18 @@ import htmlmin
 import subprocess
 import gzip
 import sys
-
+import time
+import argparse
 
 from pylib.json_data_compressor import mini_js_data
 from pylib.uglifyjs import uglify_copyfile, uglify_js_string
 from pylib.webminify import minify_css_blocks
+
+
+FLAG_skip_js_lint = False
+FLAG_skip_index = False
+FLAG_skip_gz_compression = False
+FLAG_skip_uglify_js = False
 
 ################################################################################
 # ordered_load
@@ -392,6 +399,18 @@ def merge_custom_multipliers(stack_sizes, resources):
     return stack_sizes
 
 
+def delete_output_folder_files(calculator_folder: str, calculator_name: str) -> None:
+    delete_if_exists(os.path.join(calculator_folder, "index.html"))
+    delete_if_exists(os.path.join(calculator_folder, "index.html.gz"))
+    delete_if_exists(os.path.join(calculator_folder, "icon.png"))
+    delete_if_exists(os.path.join(calculator_folder, calculator_name+".png"))
+def delete_if_exists(filepath: str) -> bool:
+    if os.path.exists(filepath):
+        os.remove(filepath)
+        return True
+    return False
+
+
 ################################################################################
 # create_calculator_page
 #
@@ -399,22 +418,30 @@ def merge_custom_multipliers(stack_sizes, resources):
 # the html page and resource for it. If no files have been changed for the
 # calculator since the last time it was created then the creation will be skipped
 ################################################################################
-def create_calculator_page(calculator_name):
+def create_calculator_page(calculator_name, force:bool=False, print_skip_text:bool = True):
     calculator_folder = os.path.join("output", calculator_name)
     source_folder = os.path.join("resource_lists", calculator_name)
     if not os.path.exists(calculator_folder):
         os.makedirs(calculator_folder)
-    else:
+    elif not force:
         oldest_output = get_oldest_modified_time(calculator_folder)
         newest_resource = get_newest_modified_time(source_folder)
         newest_corelib = get_newest_modified_time("core")
         newest_build_script = os.path.getctime("build.py")
         newest_build_lib = get_newest_modified_time("pylib")
         if oldest_output > max(newest_resource, newest_corelib, newest_build_script, newest_build_lib):
-            print("Skipping", calculator_name, "Nothing has changed since the last build")
+            # Allow not printing the skip text for polling with the --watch flag
+            if print_skip_text:
+                print("Skipping", calculator_name, "Nothing has changed since the last build")
             return
 
+    start_time = time.time()
+
+    delete_output_folder_files(calculator_folder, calculator_name)
+
     print("Generating", calculator_name, "into", calculator_folder)
+
+
 
     # Create a packed image of all the item images
     image_width, image_height, resource_image_coordinates = create_packed_image(calculator_name)
@@ -440,7 +467,10 @@ def create_calculator_page(calculator_name):
     # run some sanity checks on the resources
     lint_resources(calculator_name, resources, recipe_types, stack_sizes)
     # TODO: Add linting for stack sizes here
-    recipe_type_format_js = uglify_js_string(generate_recipe_type_format_js(calculator_name, recipe_types))
+
+    recipe_type_format_js = generate_recipe_type_format_js(calculator_name, recipe_types)
+    if not FLAG_skip_uglify_js:
+        recipe_type_format_js = uglify_js_string(recipe_type_format_js)
 
     recipe_js = mini_js_data(get_recipes_only(resources))
 
@@ -492,6 +522,10 @@ def create_calculator_page(calculator_name):
     for simple_name in resource_image_coordinates:
         if simple_name not in simple_resources:
             print("WARNING:", simple_name, "has an image but no recipe and will not appear in the calculator")
+
+
+    end_time = time.time()
+    print("  Generated in %.3f seconds" % (end_time - start_time))
 
 
 # [{
@@ -631,12 +665,18 @@ def ends_with_any(string, endings):
 ################################################################################
 # copy_common_resources
 #
-# This is a hacky function to copy over some files that should be accessable
+# This is a hacky function to copy over some files that should be accessible
 # by the code
 ################################################################################
+def _uglify_copyfile(in_file: str, out_file: str) -> None:
+    if FLAG_skip_uglify_js:
+        shutil.copyfile(in_file, out_file)
+    else:
+        uglify_copyfile(in_file, out_file)
+
 def copy_common_resources():
     shutil.copyfile("core/calculator.css", "output/calculator.css")
-    uglify_copyfile("core/calculator.js", "output/calculator.js")
+    _uglify_copyfile("core/calculator.js", "output/calculator.js")
     shutil.copyfile("core/thirdparty/jquery-3.3.1.min.js", "output/jquery.js")
     shutil.copyfile("core/logo.png", "output/logo.png")
     shutil.copyfile("core/.htaccess", "output/.htaccess")
@@ -645,28 +685,87 @@ def copy_common_resources():
 
 
 def main():
+    parser = argparse.ArgumentParser(
+        description = 'Compile resourcecalculator.com html pages.'
+    )
+
+    parser.add_argument('--watch', action='store_true')
+    parser.add_argument('--no-jslint', action='store_true')
+    parser.add_argument('--no-uglify-js', action='store_true')
+    parser.add_argument('--no-gz', action='store_true')
+    parser.add_argument('--no-index', action='store_true')
+    parser.add_argument('--force', action='store_true')
+    parser.add_argument('limit_files', nargs='*')
+
+
+    global FLAG_skip_index
+    global FLAG_skip_js_lint
+    global FLAG_skip_gz_compression
+    global FLAG_skip_uglify_js
+
+    args = parser.parse_args()
+    if (args.watch):
+        pass
+
+
+    if args.no_jslint:
+        FLAG_skip_js_lint = True
+    if args.no_uglify_js:
+        FLAG_skip_uglify_js = True
+    if args.no_gz:
+        FLAG_skip_gz_compression = True
+    if args.no_index:
+        FLAG_skip_index = True
+
+
     calculator_page_sublist = []
-    if len(sys.argv) > 1:
-        calculator_page_sublist = sys.argv[1:]
+    if len(args.limit_files) >= 1:
+        FLAG_skip_index = True
+        calculator_page_sublist = args.limit_files
         print("Only building", ", ".join(calculator_page_sublist))
 
-    lint_javascript()
+    if not FLAG_skip_js_lint:
+        lint_javascript()
 
     if not os.path.exists("output"):
         os.makedirs("output")
-    # Create the calculators
-    d = './resource_lists'
-    calculator_directories = []
-    for o in os.listdir(d):
-        if os.path.isdir(os.path.join(d, o)):
-            if calculator_page_sublist == [] or o in calculator_page_sublist:
-                create_calculator_page(o)
-                calculator_directories.append(o)
 
-    calculator_directories.sort()
-    create_index_page(calculator_directories)
-    copy_common_resources()
-    pre_compress_output_files()
+    while True:
+        # Create the calculators
+        d = './resource_lists'
+        calculator_directories = []
+        for o in os.listdir(d):
+            if os.path.isdir(os.path.join(d, o)):
+                if calculator_page_sublist == [] or o in calculator_page_sublist:
+                    create_calculator_page(o, args.force, not args.watch)
+                    calculator_directories.append(o)
+
+        if not FLAG_skip_index:
+            calculator_directories.sort()
+            create_index_page(calculator_directories)
+
+        copy_common_resources()
+
+        if not FLAG_skip_gz_compression:
+            pre_compress_output_files()
+
+
+        if args.watch:
+            # If the watch argument is given then poll for changes of the files
+            # polling is used instead of something like inotify because change
+            # events are not propagated for volumes being run on docker for
+            # windows. If ever a nicer solution for handling this appears this
+            # code can be changed to support it.
+            #
+            # NOTE: With this polling method there is a race condition that is
+            # possible to hit rather if saving frequently. If a file is
+            # updated during its generation, after it has been read but before
+            # the first file is written then it will not be detected in the
+            # next pass-through.
+            time.sleep(.5)
+            continue
+        else:
+            break
 
 
 main()

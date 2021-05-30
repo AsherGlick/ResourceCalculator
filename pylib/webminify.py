@@ -37,8 +37,6 @@ def minify_css_blocks(html_code: str) -> List[Tuple[int,int]]:
 		# Minify the CSS and add it to the html code
 		css = html_code[start_location:end_match.span()[0]]
 		min_css = csscompressor.compress(css)
-		print(len(css))
-		print(len(min_css))
 
 		new_html_code += min_css
 
