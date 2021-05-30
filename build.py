@@ -1,24 +1,23 @@
-import json
-import re
-import os
-from jinja2 import Environment, FileSystemLoader
-import yaml
-import shutil
-import math
-from collections import OrderedDict
-from PIL import Image
-import htmlmin
-import subprocess
-import gzip
-import sys
-import time
 import argparse
+import gzip
+import htmlmin
+import json
+import math
+import os
+import re
+import shutil
+import subprocess
+import time
+import yaml
+from collections import OrderedDict
+from jinja2 import Environment, FileSystemLoader
+from PIL import Image
 
 from pylib.json_data_compressor import mini_js_data
 from pylib.uglifyjs import uglify_copyfile, uglify_js_string
 from pylib.webminify import minify_css_blocks
 
-
+# CLI Argument Flags
 FLAG_skip_js_lint = False
 FLAG_skip_index = False
 FLAG_skip_gz_compression = False
