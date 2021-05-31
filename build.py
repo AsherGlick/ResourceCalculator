@@ -22,6 +22,8 @@ FLAG_skip_js_lint = False
 FLAG_skip_index = False
 FLAG_skip_gz_compression = False
 FLAG_skip_uglify_js = False
+FLAG_skip_image_compress = False
+FLAG_force_image = False
 
 ################################################################################
 # ordered_load
@@ -64,21 +66,18 @@ def create_packed_image(calculator_name):
     standard_height = None
     standard_image_reference = None
 
-    images = []
-    # resources = []
+    images:List[Tuple[str,str]] = []
 
     for file in os.listdir(resource_image_folder):
-        image = Image.open(os.path.join(resource_image_folder, file))
-        images.append((os.path.os.path.splitext(file)[0], image))
-        width, height = image.size
-        # Validate that all images are the same size
-        if (standard_width is None and standard_height is None):
-            standard_height = height
-            standard_width = width
-            standard_image_reference = file
-        elif (standard_width != width or standard_height != height):
-            print("ERROR: All resource list item images for a single calculator must be the same size")
-            print("       " + file + " and " + standard_image_reference + " are not the same size")
+        images.append((
+            os.path.os.path.splitext(file)[0],
+            os.path.join(resource_image_folder, file)
+        ))
+
+    # Open first image to get a standard
+    first_image = Image.open(images[0][1])
+    standard_width, standard_height = first_image.size
+    standard_image_reference = images[0][1]
 
     # Sort the images, this is probably not necessary but will allow for
     # differences between files to be noticed with less noise of random shifting of squares
@@ -91,25 +90,53 @@ def create_packed_image(calculator_name):
     result_width = standard_width * columns
     result_height = standard_height * math.ceil((len(images) / columns))
 
-    # Create a new output file and write all the images to spots in the file
-    result = Image.new('RGBA', (result_width, result_height))
+    # Determine where each image should go
     for index, (name, image) in enumerate(images):
         x_coordinate = (index % columns) * standard_width
         y_coordinate = math.floor(index / columns) * standard_height
         image_coordinates[name] = (x_coordinate, y_coordinate)
-        result.paste(im=image, box=(x_coordinate, y_coordinate))
 
-    # save the new packed image file and all the coordinates of the images
+
+    # Create a new output file and write all the images to spots in the file
     calculator_folder = os.path.join("output", calculator_name)
     output_image_path = os.path.join(calculator_folder, calculator_name + ".png")
-    result.save(output_image_path)
 
-    # Attempt to compress the image but do not exit on failure
-    try:
-        subprocess.run(["pngquant", "--force", "--ext", ".png", "256", "--nofs", output_image_path])
-    except OSError as e:
-        print("WARNING: PNG Compression Failed")
-        print("        ", e)
+    should_create_image = True
+
+    if os.path.exists(output_image_path):
+        newest_file = max(
+            os.path.getctime("build.py"), # Check generator code modification
+            get_newest_modified_time("pylib"), # Check generator code modification
+            get_newest_modified_time(resource_image_folder), # Check source image modification
+        )
+        should_create_image = newest_file > os.path.getctime(output_image_path)
+
+    # Create or skip creation of the packed image
+    if should_create_image or FLAG_force_image:
+
+        # Create the new packed image file and all the coordinates of the images
+        result = Image.new('RGBA', (result_width, result_height))
+        for image_name, image_path in images:
+            image = Image.open(image_path)
+            width, height = image.size
+
+            if (standard_width != width or standard_height != height):
+                print("ERROR: All resource list item images for a single calculator must be the same size")
+                print("       " + image_path + " and " + standard_image_reference + " are not the same size")
+
+            x_coordinate, y_coordinate = image_coordinates[image_name]
+            result.paste(im=image, box=(x_coordinate, y_coordinate))
+        result.save(output_image_path)
+
+        # Attempt to compress the image but do not exit on failure
+        if not FLAG_skip_image_compress:
+            try:
+                subprocess.run(["pngquant", "--force", "--ext", ".png", "256", "--nofs", output_image_path])
+            except OSError as e:
+                print("WARNING: PNG Compression Failed")
+                print("        ", e)
+    else:
+        print("  Skipping image generation because no source images have changed since last generated")
 
     return (standard_width, standard_height, image_coordinates)
 
@@ -398,16 +425,16 @@ def merge_custom_multipliers(stack_sizes, resources):
     return stack_sizes
 
 
-def delete_output_folder_files(calculator_folder: str, calculator_name: str) -> None:
-    delete_if_exists(os.path.join(calculator_folder, "index.html"))
-    delete_if_exists(os.path.join(calculator_folder, "index.html.gz"))
-    delete_if_exists(os.path.join(calculator_folder, "icon.png"))
-    delete_if_exists(os.path.join(calculator_folder, calculator_name+".png"))
-def delete_if_exists(filepath: str) -> bool:
-    if os.path.exists(filepath):
-        os.remove(filepath)
-        return True
-    return False
+def touch_output_folder_files(calculator_folder: str, timestamp: int = 0) -> None:
+    if timestamp == 0:
+        timestamp = int(time.time())
+
+    for file in os.listdir(calculator_folder):
+        filepath = os.path.join(calculator_folder, file)
+        if (os.path.isdir(filepath)):
+            get_oldest_modified_time(filepath, timestamp)
+        else:
+            os.utime(filepath, (timestamp, timestamp))
 
 
 ################################################################################
@@ -436,7 +463,7 @@ def create_calculator_page(calculator_name, force:bool=False, print_skip_text:bo
 
     start_time = time.time()
 
-    delete_output_folder_files(calculator_folder, calculator_name)
+    # delete_output_folder_files(calculator_folder, calculator_name)
 
     print("Generating", calculator_name, "into", calculator_folder)
 
@@ -522,6 +549,9 @@ def create_calculator_page(calculator_name, force:bool=False, print_skip_text:bo
         if simple_name not in simple_resources:
             print("WARNING:", simple_name, "has an image but no recipe and will not appear in the calculator")
 
+    # Touch the created time of all the files in the output folder to prevent
+    # re-triggering generation on outdated files that were intentionally skipped
+    touch_output_folder_files(calculator_folder)
 
     end_time = time.time()
     print("  Generated in %.3f seconds" % (end_time - start_time))
@@ -693,7 +723,9 @@ def main():
     parser.add_argument('--no-uglify-js', action='store_true')
     parser.add_argument('--no-gz', action='store_true')
     parser.add_argument('--no-index', action='store_true')
-    parser.add_argument('--force', action='store_true')
+    parser.add_argument('--no-image-compress', action='store_true')
+    parser.add_argument('--force-html', action='store_true')
+    parser.add_argument('--force-image', action='store_true')
     parser.add_argument('limit_files', nargs='*')
 
 
@@ -701,6 +733,8 @@ def main():
     global FLAG_skip_js_lint
     global FLAG_skip_gz_compression
     global FLAG_skip_uglify_js
+    global FLAG_skip_image_compress
+    global FLAG_force_image
 
     args = parser.parse_args()
     if (args.watch):
@@ -713,8 +747,12 @@ def main():
         FLAG_skip_uglify_js = True
     if args.no_gz:
         FLAG_skip_gz_compression = True
+    if args.no_image_compress:
+        FLAG_skip_image_compress = True
     if args.no_index:
         FLAG_skip_index = True
+    if args.force_image:
+        FLAG_force_image = True
 
 
     calculator_page_sublist = []
@@ -736,7 +774,7 @@ def main():
         for o in os.listdir(d):
             if os.path.isdir(os.path.join(d, o)):
                 if calculator_page_sublist == [] or o in calculator_page_sublist:
-                    create_calculator_page(o, args.force, not args.watch)
+                    create_calculator_page(o, args.force_html, not args.watch)
                     calculator_directories.append(o)
 
         if not FLAG_skip_index:
