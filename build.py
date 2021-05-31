@@ -12,7 +12,7 @@ import yaml
 from collections import OrderedDict
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image
-from typing import Tuple, List
+from typing import Any, Dict, TextIO, Tuple, Type, List
 
 from pylib.json_data_compressor import mini_js_data
 from pylib.uglifyjs import uglify_copyfile, uglify_js_string
@@ -37,8 +37,8 @@ FLAG_force_image = False
 #
 # https://stackoverflow.com/questions/5121931/in-python-how-can-you-load-yaml-mappings-as-ordereddicts
 ################################################################################
-def ordered_load(stream, Loader=yaml.Loader, object_pairs_hook=OrderedDict):
-    class OrderedLoader(Loader):
+def ordered_load(stream: TextIO, object_pairs_hook:Type[object]=OrderedDict) -> Dict[Any, Any]:
+    class OrderedLoader(yaml.SafeLoader):
         pass
 
     def construct_mapping(loader, node):
@@ -473,7 +473,7 @@ def create_calculator_page(
 
     # Load in the yaml resources file
     with open(os.path.join("resource_lists", calculator_name, "resources.yaml"), 'r', encoding="utf_8") as f:
-        yaml_data = ordered_load(f, yaml.SafeLoader)
+        yaml_data = ordered_load(f)
 
     resources = yaml_data["resources"]
 
@@ -660,7 +660,7 @@ def create_index_page(directories):
 ################################################################################
 def calculator_display_name(calculator_name):
     with open(os.path.join("resource_lists", calculator_name, "resources.yaml"), 'r', encoding="utf_8") as f:
-        yaml_data = ordered_load(f, yaml.SafeLoader)
+        yaml_data = ordered_load(f)
     return yaml_data["index_page_display_name"]
 
 
@@ -709,7 +709,7 @@ def _uglify_copyfile(in_file: str, out_file: str) -> None:
         uglify_copyfile(in_file, out_file)
 
 
-def copy_common_resources():
+def copy_common_resources() -> None:
     shutil.copyfile("core/calculator.css", "output/calculator.css")
     _uglify_copyfile("core/calculator.js", "output/calculator.js")
     shutil.copyfile("core/thirdparty/jquery-3.3.1.min.js", "output/jquery.js")
@@ -719,7 +719,7 @@ def copy_common_resources():
     shutil.copyfile("core/ads.txt", "output/ads.txt")
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser(
         description='Compile resourcecalculator.com html pages.'
     )
