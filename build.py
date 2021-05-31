@@ -12,6 +12,7 @@ import yaml
 from collections import OrderedDict
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image
+from typing import Tuple, List
 
 from pylib.json_data_compressor import mini_js_data
 from pylib.uglifyjs import uglify_copyfile, uglify_js_string
@@ -24,6 +25,7 @@ FLAG_skip_gz_compression = False
 FLAG_skip_uglify_js = False
 FLAG_skip_image_compress = False
 FLAG_force_image = False
+
 
 ################################################################################
 # ordered_load
@@ -66,7 +68,7 @@ def create_packed_image(calculator_name):
     standard_height = None
     standard_image_reference = None
 
-    images:List[Tuple[str,str]] = []
+    images: List[Tuple[str, str]] = []
 
     for file in os.listdir(resource_image_folder):
         images.append((
@@ -96,7 +98,6 @@ def create_packed_image(calculator_name):
         y_coordinate = math.floor(index / columns) * standard_height
         image_coordinates[name] = (x_coordinate, y_coordinate)
 
-
     # Create a new output file and write all the images to spots in the file
     calculator_folder = os.path.join("output", calculator_name)
     output_image_path = os.path.join(calculator_folder, calculator_name + ".png")
@@ -105,9 +106,9 @@ def create_packed_image(calculator_name):
 
     if os.path.exists(output_image_path):
         newest_file = max(
-            os.path.getctime("build.py"), # Check generator code modification
-            get_newest_modified_time("pylib"), # Check generator code modification
-            get_newest_modified_time(resource_image_folder), # Check source image modification
+            os.path.getctime("build.py"),  # Check generator code modification
+            get_newest_modified_time("pylib"),  # Check generator code modification
+            get_newest_modified_time(resource_image_folder),  # Check source image modification
         )
         should_create_image = newest_file > os.path.getctime(output_image_path)
 
@@ -197,8 +198,6 @@ def lint_recipes(calculator_name, item_name, recipes):
             # print(item_name, "recipe", i, "should have the first element of the hash be \"output\"")
             print(calculator_name.upper() + ":", "\"requirements\" should be the third key of", item_name, "recipe", i)
 
-
-
     # Check that every resource has a raw recipe
     raw_resource_count = 0
     for recipe in recipes:
@@ -250,10 +249,10 @@ def lint_custom_stack_multipliers(calculator_name, item_name, custom_stack_multi
         custom_size = custom_stack_multipliers[stack_name]
 
         if stack_name not in stack_sizes:
-            print(calculator_name.upper() + ":","custom_stack_size \""+stack_name+"\" for", item_name, "is not a valid stack size. (" + ", ".join([x for x in stack_sizes]) + ")" )
+            print(calculator_name.upper() + ":", "custom_stack_size \"" + stack_name + "\" for", item_name, "is not a valid stack size. (" + ", ".join([x for x in stack_sizes]) + ")")
 
         if custom_size < 1:
-            print(calculator_name.upper() + ":","custom_stack_size \""+stack_name+"\" for", item_name, "cannot be less than 1.")
+            print(calculator_name.upper() + ":", "custom_stack_size \"" + stack_name + "\" for", item_name, "cannot be less than 1.")
 
 
 def ensure_unique_simple_names(calculator_name, resources):
@@ -444,7 +443,11 @@ def touch_output_folder_files(calculator_folder: str, timestamp: int = 0) -> Non
 # the html page and resource for it. If no files have been changed for the
 # calculator since the last time it was created then the creation will be skipped
 ################################################################################
-def create_calculator_page(calculator_name, force:bool=False, print_skip_text:bool = True):
+def create_calculator_page(
+    calculator_name: str,
+    force: bool = False,
+    print_skip_text: bool = True
+):
     calculator_folder = os.path.join("output", calculator_name)
     source_folder = os.path.join("resource_lists", calculator_name)
     if not os.path.exists(calculator_folder):
@@ -463,11 +466,7 @@ def create_calculator_page(calculator_name, force:bool=False, print_skip_text:bo
 
     start_time = time.time()
 
-    # delete_output_folder_files(calculator_folder, calculator_name)
-
     print("Generating", calculator_name, "into", calculator_folder)
-
-
 
     # Create a packed image of all the item images
     image_width, image_height, resource_image_coordinates = create_packed_image(calculator_name)
@@ -665,26 +664,32 @@ def calculator_display_name(calculator_name):
     return yaml_data["index_page_display_name"]
 
 
-def pre_compress_output_files():
-    # ignored_files = [".htaccess"]
+################################################################################
+# pre_compress_output_files
+#
+# Walks through the output directory and compresses any file with a .html, .css
+# or .js extension with gz so that Apache can serve its compressed state
+# automatically.
+################################################################################
+def pre_compress_output_files() -> None:
     textfile_extensions = [".html", ".css", ".js"]
     for (root, dirs, files) in os.walk("output"):
         for file in files:
-            # if file in ignored_files or file.endswith(".br") or file.endswith(".gz"):
-            #     continue
             if ends_with_any(file, textfile_extensions):
                 filepath = os.path.join(root, file)
-
-                # # Brotli Compression
-                # with open(filepath, 'rb') as infile, open(filepath+".br", "bw") as outfile:
-                #     outfile.write(brotli.compress(infile.read()))
 
                 # Gzip Compression
                 with open(filepath, 'rb') as infile, gzip.open(filepath + ".gz", 'wb') as outfile:
                     shutil.copyfileobj(infile, outfile)
 
 
-def ends_with_any(string, endings):
+################################################################################
+# ends_with_any
+#
+# A helper function to check to see if a string ends with any element of a
+# list of strings.
+################################################################################
+def ends_with_any(string: str, endings: List[str]) -> bool:
     for ending in endings:
         if string.endswith(ending):
             return True
@@ -703,6 +708,7 @@ def _uglify_copyfile(in_file: str, out_file: str) -> None:
     else:
         uglify_copyfile(in_file, out_file)
 
+
 def copy_common_resources():
     shutil.copyfile("core/calculator.css", "output/calculator.css")
     _uglify_copyfile("core/calculator.js", "output/calculator.js")
@@ -715,7 +721,7 @@ def copy_common_resources():
 
 def main():
     parser = argparse.ArgumentParser(
-        description = 'Compile resourcecalculator.com html pages.'
+        description='Compile resourcecalculator.com html pages.'
     )
 
     parser.add_argument('--watch', action='store_true')
@@ -728,7 +734,6 @@ def main():
     parser.add_argument('--force-image', action='store_true')
     parser.add_argument('limit_files', nargs='*')
 
-
     global FLAG_skip_index
     global FLAG_skip_js_lint
     global FLAG_skip_gz_compression
@@ -739,7 +744,6 @@ def main():
     args = parser.parse_args()
     if (args.watch):
         pass
-
 
     if args.no_jslint:
         FLAG_skip_js_lint = True
@@ -753,7 +757,6 @@ def main():
         FLAG_skip_index = True
     if args.force_image:
         FLAG_force_image = True
-
 
     calculator_page_sublist = []
     if len(args.limit_files) >= 1:
@@ -785,7 +788,6 @@ def main():
 
         if not FLAG_skip_gz_compression:
             pre_compress_output_files()
-
 
         if args.watch:
             # If the watch argument is given then poll for changes of the files

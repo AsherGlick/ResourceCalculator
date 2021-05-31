@@ -1,5 +1,6 @@
-import subprocess
 import shutil
+import subprocess
+
 
 ################################################################################
 # Uglify Copyfile calls an uglification process on an entire file and writes
@@ -8,7 +9,7 @@ import shutil
 def uglify_copyfile(in_file: str, out_file: str) -> None:
     try:
         subprocess.run(["./node_modules/.bin/terser", "--mangle", "--compress", "-o", out_file, in_file])
-    except e:
+    except Exception as e:
         print("WARNING: Javascript compression failed")
         print("        ", e)
         print("        Falling back to regular copy")
@@ -23,6 +24,6 @@ def uglify_js_string(js_string: str) -> str:
     try:
         result = subprocess.run(["./node_modules/.bin/terser", "--mangle", "--compress"], input=js_string.encode("utf-8"), stdout=subprocess.PIPE)
         return result.stdout.decode("utf-8")
-    except e:
+    except Exception as e:
         print("WARNING: Javascript compression failed")
         print("        ", e)
