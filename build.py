@@ -1,6 +1,6 @@
 import argparse
 import gzip
-import htmlmin
+import htmlmin  # type: ignore
 import json
 import math
 import os
@@ -11,7 +11,7 @@ import time
 import yaml
 from collections import OrderedDict
 from jinja2 import Environment, FileSystemLoader
-from PIL import Image
+from PIL import Image  # type: ignore
 from typing import Any, Dict, TextIO, Tuple, Type, List
 
 from pylib.json_data_compressor import mini_js_data
@@ -37,14 +37,14 @@ FLAG_force_image = False
 #
 # https://stackoverflow.com/questions/5121931/in-python-how-can-you-load-yaml-mappings-as-ordereddicts
 ################################################################################
-def ordered_load(stream: TextIO, object_pairs_hook:Type[object]=OrderedDict) -> Dict[Any, Any]:
+def ordered_load(stream: TextIO, object_pairs_hook: Type[object] = OrderedDict) -> Any:
     class OrderedLoader(yaml.SafeLoader):
         pass
 
-    def construct_mapping(loader, node):
+    def construct_mapping(loader, node):  # type: ignore
         loader.flatten_mapping(node)
-        return object_pairs_hook(loader.construct_pairs(node))
-    OrderedLoader.add_constructor(
+        return object_pairs_hook(loader.construct_pairs(node))  # type: ignore
+    OrderedLoader.add_constructor(  # type: ignore
         yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG,
         construct_mapping)
     return yaml.load(stream, OrderedLoader)
@@ -58,11 +58,11 @@ def ordered_load(stream: TextIO, object_pairs_hook:Type[object]=OrderedDict) -> 
 # css can be written to load all of the images from the same file instead of
 # making a large number of get requests for the file
 ################################################################################
-def create_packed_image(calculator_name):
+def create_packed_image(calculator_name: str) -> Tuple[int, int, Dict[str, Tuple[int, int]]]:
 
     resource_image_folder = os.path.join("resource_lists", calculator_name, "items")
 
-    image_coordinates = {}
+    image_coordinates: Dict[str, Tuple[int, int]] = {}
 
     standard_width = None
     standard_height = None
@@ -72,7 +72,7 @@ def create_packed_image(calculator_name):
 
     for file in os.listdir(resource_image_folder):
         images.append((
-            os.path.os.path.splitext(file)[0],
+            os.path.splitext(file)[0],
             os.path.join(resource_image_folder, file)
         ))
 
@@ -118,15 +118,15 @@ def create_packed_image(calculator_name):
         # Create the new packed image file and all the coordinates of the images
         result = Image.new('RGBA', (result_width, result_height))
         for image_name, image_path in images:
-            image = Image.open(image_path)
-            width, height = image.size
+            image_object = Image.open(image_path)
+            width, height = image_object.size
 
             if (standard_width != width or standard_height != height):
                 print("ERROR: All resource list item images for a single calculator must be the same size")
                 print("       " + image_path + " and " + standard_image_reference + " are not the same size")
 
             x_coordinate, y_coordinate = image_coordinates[image_name]
-            result.paste(im=image, box=(x_coordinate, y_coordinate))
+            result.paste(im=image_object, box=(x_coordinate, y_coordinate))
         result.save(output_image_path)
 
         # Attempt to compress the image but do not exit on failure
@@ -149,7 +149,7 @@ def create_packed_image(calculator_name):
 # file. If the linting process fails then a warning will be thrown but the
 # process will not be ended.
 ################################################################################
-def lint_javascript():
+def lint_javascript() -> None:
     try:
         subprocess.run(["./node_modules/.bin/eslint", "core/calculator.js"])
     except OSError as e:
@@ -166,8 +166,7 @@ def lint_javascript():
 # and contents. In addition it makes sure that all of the required elements of
 # a recipe are present and that no additional unknown elements are present.
 ################################################################################
-def lint_recipes(calculator_name, item_name, recipes):
-
+def lint_recipes(calculator_name: str, item_name: str, recipes: List) -> None:
     required_keys = ["output", "recipe_type", "requirements"]
     optional_keys = ["extra_data"]
 
@@ -326,7 +325,7 @@ def get_oldest_modified_time(path):
 # This function takes in a directory and finds the newest modification time of
 # any file in that directory
 ################################################################################
-def get_newest_modified_time(path):
+def get_newest_modified_time(path: str) -> float:
     time_list = []
     for file in os.listdir(path):
         filepath = os.path.join(path, file)
