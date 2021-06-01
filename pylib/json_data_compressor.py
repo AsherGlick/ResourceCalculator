@@ -1,7 +1,8 @@
-from pylib.uglifyjs import uglify_js_string
-from jinja2 import Environment
 import json
+from jinja2 import Environment
 from typing import Dict, Optional
+
+from pylib.uglifyjs import uglify_js_string
 
 
 ################################################################################
@@ -19,7 +20,7 @@ from typing import Dict, Optional
 # as they might change from "5" to "52" as the integer 5 will be in the 52nd
 # index of the tokens. To combat this in the general case there is an escape
 # for when we have minified to a larger binary then the original.
-# 
+#
 # We do not compress the tokens further then this deduplication because the
 # final file will likely be gzipped and doing more compression here would be
 # redundant and only server to make things more complex.
@@ -90,7 +91,7 @@ def _mini_js_data(data):
     token_map = {token: index for (index, token) in enumerate(sorted_tokens)}
 
     new_data = replace_data(data, token_map)
-    
+
     return new_data, sorted_tokens
 
 
@@ -121,13 +122,14 @@ def replace_data(data: any, token_map: Dict[any, int]) -> any:
 
     return (new_data)
 
+
 ################################################################################
 # This function goes through the datastructure and counts up all the instances
-# of a particular token so that we can know which ones are the most used and 
+# of a particular token so that we can know which ones are the most used and
 # which ones are the least used.
 ################################################################################
-def get_token_counts(data: any, tokens: Optional[Dict[any, int]]=None) -> Dict[any, int]:
-    if tokens == None:
+def get_token_counts(data: any, tokens: Optional[Dict[any, int]] = None) -> Dict[any, int]:
+    if tokens is None:
         tokens = {}
     # If this node is a dictionary process each key of it and recurse the values
     if isinstance(data, dict):
