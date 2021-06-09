@@ -1,0 +1,2076 @@
+---
+authors:
+  Asher: "https://aglick.com"
+  Kevin: "kroden3d@gmail.com"
+  Marc: "https://github.com/mmodrow"
+
+index_page_display_name: "Minecraft"
+
+game_version: 1.17
+
+recipe_types:
+  Crafting: "Craft {IN_ITEMS} into {OUT_ITEM}"
+  Smelting: "Use a furnace to smelt {IN_ITEMS} into {OUT_ITEM} using {ITEM Fuel}"
+  Add Water: "Pour water onto {IN_ITEMS} to turn it into {OUT_ITEM}"
+  Right Click: "Right click on {IN_ITEMS} to turn it into {OUT_ITEM}" # TODO Is this still used now that we have Strip
+  Strip: "Right click with an Axe"
+  As: "Treat {IN_ITEMS} as {OUT_ITEM}"
+  Cutting: "Use a stonecutter to cut {IN_ITEMS} into {OUT_ITEM}"
+  Oxidation: "Place {IN_ITEMS} down as blocks until they oxidize into {OUT_ITEM}"
+
+stack_sizes:
+  Double Chest:
+    quantity_multiplier: 54 # 9x6 Stacks
+    plural: "Double Chests"
+    extends_from: "Stack"
+
+  Shulker Box:
+    quantity_multiplier: 27 # 9x3 Stacks
+    plural: "Shulker Boxes"
+    extends_from: "Stack"
+
+  Stack:
+    quantity_multiplier: 64
+    plural: "Stacks"
+    extends_from: null
+
+default_stack_size: "Stack"
+
+resources:
+  Stone:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Cobblestone: -1
+        Fuel: -1
+
+  Granite:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Diorite: -1
+        Nether Quartz: -1
+
+  Polished Granite:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Granite: -4
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Granite: -1
+    - recipe_type: Raw Resource
+
+  Diorite:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Nether Quartz: -2
+        Cobblestone: -2
+
+  Polished Diorite:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Diorite: -4
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Diorite: -1
+    - recipe_type: Raw Resource
+
+  Andesite:
+    recipes:
+    - recipe_type: Raw Resource
+
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Diorite: -1
+        Cobblestone: -1
+
+  Polished Andesite:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Andesite: -4
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Andesite: -1
+    - recipe_type: Raw Resource
+
+  Deepslate:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Cobbled Deepslate: -1
+    - recipe_type: Raw Resource
+
+  Cobbled Deepslate:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Polished Deepslate:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Cobbled Deepslate: -4
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Cobbled Deepslate: -1
+    - recipe_type: Raw Resource
+
+  Calcite:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Tuff:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dripstone Block:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Pointed Dripstone: -4
+
+  Grass Block:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dirt:
+    recipes:
+    - recipe_type: Raw Resource
+      
+
+  Coarse Dirt:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Gravel: -2
+        Dirt: -2
+    - recipe_type: Raw Resource
+
+  Podzol:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Rooted Dirt:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Crimson Nylium:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Warped Nylium:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Cobblestone:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Oak Planks:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Oak Log: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stripped Oak Log: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Oak Wood: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stripped Oak Wood: -1
+    - recipe_type: Raw Resource
+
+  Spruce Planks:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Spruce Log: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stripped Spruce Log: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Spruce Wood: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stripped Spruce Wood: -1
+    - recipe_type: Raw Resource
+
+  Birch Planks:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Birch Log: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stripped Birch Log: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Birch Wood: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stripped Birch Wood: -1
+    - recipe_type: Raw Resource
+
+  Jungle Planks:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Jungle Log: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stripped Jungle Log: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Jungle Wood: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stripped Jungle Wood: -1
+    - recipe_type: Raw Resource
+
+  Acacia Planks:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Acacia Log: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stripped Acacia Log: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Acacia Wood: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stripped Acacia Wood: -1
+    - recipe_type: Raw Resource
+
+  Dark Oak Planks:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Dark Oak Log: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stripped Dark Oak Log: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Dark Oak Wood: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stripped Dark Oak Wood: -1
+    - recipe_type: Raw Resource
+
+  Crimson Planks:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Crimson Stem: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stripped Crimson Stem: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Crimson Hyphae: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stripped Crimson Hyphae: -1
+    - recipe_type: Raw Resource
+
+  Warped Planks:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Warped Stem: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stripped Warped Stem: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Warped Hyphae: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stripped Warped Hyphae: -1
+    - recipe_type: Raw Resource
+
+  Oak Sapling:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Spruce Sapling:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Birch Sapling:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Jungle Sapling:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Acacia Sapling:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dark Oak Sapling:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bedrock:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Sand:
+    recipes:
+    - recipe_type: Raw Resource
+  
+  Red Sand:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Gravel:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Coal Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Deepslate Coal Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Iron Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Deepslate Iron Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Copper Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Deepslate Copper Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  # Page 2 # DELETE ME
+
+  Gold Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Deepslate Gold Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Redstone Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Deepslate Redstone Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Emerald Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Deepslate Emerald Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Lapis Lazuli Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Deepslate Lapis Lazuli Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Diamond Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Deepslate Diamond Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Nether Gold Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Nether Quartz Ore:
+    recipes:
+    - recipe_type: Raw Resource
+  
+  Ancient Debris:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Block of Coal:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Coal: -9
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Block of Coal: 0
+
+  Block of Raw Iron:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Raw Iron: -9
+    - recipe_type: Raw Resource
+
+  Block of Raw Copper:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Raw Copper: -9
+    - recipe_type: Raw Resource
+
+  Block of Raw Gold:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Raw Gold: -9
+    - recipe_type: Raw Resource
+
+  Block of Amethyst:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Amethyst Shard: -4
+    - recipe_type: Raw Resource
+
+  Budding Amethyst:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Block of Iron:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -9
+    - recipe_type: Raw Resource
+
+  Block of Copper:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Copper Ingot: -9
+    - recipe_type: Raw Resource
+
+  Block of Gold:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Gold Ingot: -9
+    - recipe_type: Raw Resource
+
+  Block of Diamond:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Diamond: -9
+    - recipe_type: Raw Resource
+
+  Block of Netherite:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Netherite Ingot: -9
+    - recipe_type: Raw Resource
+
+  Exposed Copper:
+    recipes:
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Block of Copper: -1
+    - recipe_type: Raw Resource
+
+  Weathered Copper:
+    recipes:
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Block of Copper: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Exposed Copper: -1
+    - recipe_type: Raw Resource
+
+  Oxidized Copper:
+    recipes:
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Block of Copper: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Exposed Copper: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Weathered Copper: -1
+    - recipe_type: Raw Resource
+
+  Cut Copper:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Block of Copper: -4
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Block of Copper: -1
+    - recipe_type: Raw Resource
+
+  Exposed Cut Copper:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Exposed Copper: -4
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Exposed Copper: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Cut Copper: -1
+    - recipe_type: Raw Resource
+
+  Weathered Cut Copper:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Weathered Copper: -4
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Weathered Copper: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Cut Copper: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Exposed Cut Copper: -1
+    - recipe_type: Raw Resource
+
+  Oxidized Cut Copper:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Oxidized Copper: -4
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Oxidized Copper: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Cut Copper: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Exposed Cut Copper: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Weathered Cut Copper: -1
+    - recipe_type: Raw Resource
+
+  Cut Copper Stairs:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Cut Copper: -6
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Block of Copper: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Cut Copper: -1
+    - recipe_type: Raw Resource
+
+  Exposed Cut Copper Stairs:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Exposed Cut Copper: -6
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Exposed Copper: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Exposed Cut Copper: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Cut Copper Stairs: -1
+    - recipe_type: Raw Resource
+
+  Weathered Cut Copper Stairs:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Weathered Cut Copper: -6
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Weathered Copper: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Weathered Cut Copper: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Cut Copper Stairs: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Exposed Cut Copper Stairs: -1
+    - recipe_type: Raw Resource
+
+  Oxidized Cut Copper Stairs:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Oxidized Cut Copper: -6
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Oxidized Copper: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Oxidized Cut Copper: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Cut Copper Stairs: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Exposed Cut Copper Stairs: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Weathered Cut Copper Stairs: -1
+    - recipe_type: Raw Resource
+
+  Cut Copper Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Cut Copper: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Block of Copper: -1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Cut Copper: -1
+    - recipe_type: Raw Resource
+
+  Exposed Cut Copper Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Exposed Cut Copper: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Exposed Copper: -1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Exposed Cut Copper: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Cut Copper Slab: -1
+    - recipe_type: Raw Resource
+
+  Weathered Cut Copper Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Weathered Cut Copper: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Weathered Copper: -1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Weathered Cut Copper: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Cut Copper Slab: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Exposed Cut Copper Slab: -1
+    - recipe_type: Raw Resource
+
+  Oxidized Cut Copper Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Oxidized Cut Copper: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Oxidized Copper: -1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Oxidized Cut Copper: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Cut Copper Slab: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Exposed Cut Copper Slab: -1
+    - output: 1
+      recipe_type: Oxidization
+      requirements:
+        Weathered Cut Copper Slab: -1
+    - recipe_type: Raw Resource
+
+  Waxed Block of Copper:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Block of Copper: -1
+        Honecomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Exposed Copper:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Exposed Copper: -1
+        Honecomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Weathered Copper:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Weathered Copper: -1
+        Honecomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Oxidized Copper:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oxidized Copper: -1
+        Honecomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Cut Copper:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Waxed Block of Copper: -4
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Waxed Block of Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cut Copper: -1
+        Honecomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Exposed Cut Copper:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Waxed Exposed Copper: -4
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Waxed Exposed Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Exposed Cut Copper: -1
+        Honecomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Weathered Cut Copper:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Waxed Weathered Copper: -4
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Waxed Weathered Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Weathered Cut Copper: -1
+        Honecomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Oxidized Cut Copper:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Waxed Oxidized Copper: -4
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Waxed Oxidized Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oxidized Cut Copper: -1
+        Honecomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Cut Copper Stairs:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Waxed Cut Copper: -6
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Waxed Block of Copper: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Waxed Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cut Copper Stairs: -1
+        Honecomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Exposed Cut Copper Stairs:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Waxed Exposed Cut Copper: -6
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Waxed Exposed Copper: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Waxed Exposed Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Exposed Cut Copper Stairs: -1
+        Honecomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Weathered Cut Copper Stairs:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Waxed Weathered Cut Copper: -6
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Waxed Weathered Copper: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Waxed Weathered Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Weathered Cut Copper Stairs: -1
+        Honecomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Oxidized Cut Copper Stairs:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Waxed Oxidized Cut Copper: -6
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Waxed Oxidized Copper: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Waxed Oxidized Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oxidized Cut Copper Stairs: -1
+        Honecomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Cut Copper Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Waxed Cut Copper: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Waxed Block of Copper: -1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Waxed Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cut Copper Slab: -1
+        Honecomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Exposed Cut Copper Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Waxed Exposed Cut Copper: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Waxed Exposed Copper: -1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Waxed Exposed Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Exposed Cut Copper Slab: -1
+        Honecomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Weathered Cut Copper Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Waxed Weathered Cut Copper: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Waxed Weathered Copper: -1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Waxed Weathered Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Weathered Cut Copper Slab: -1
+        Honecomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Oxidized Cut Copper Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Waxed Oxidized Cut Copper: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Waxed Oxidized Copper: -1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Waxed Oxidized Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oxidized Cut Copper Slab: -1
+        Honecomb: -1
+    - recipe_type: Raw Resource
+
+  Oak Log:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Spruce Log:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Birch Log:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Jungle Log:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Acacia Log:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dark Oak Log:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Crimson Stem:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Warped Stem:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Stripped Oak Log:
+    recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Oak Log: -1
+    - recipe_type: Raw Resource
+
+  Stripped Spruce Log:
+    recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Spruce Log: -1
+    - recipe_type: Raw Resource
+
+  Stripped Birch Log:
+    recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Birch Log: -1
+    - recipe_type: Raw Resource
+
+  Stripped Jungle Log:
+    recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Jungle Log: -1
+    - recipe_type: Raw Resource
+
+  Stripped Acacia Log:
+    recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Acacia Log: -1
+    - recipe_type: Raw Resource
+
+  Stripped Dark Oak Log:
+    recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Dark Oak Log: -1
+    - recipe_type: Raw Resource
+
+  Stripped Crimson Stem:
+    recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Crimson Stem: -1
+    - recipe_type: Raw Resource
+
+  Stripped Warped Stem:
+    recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Warped Stem: -1
+    - recipe_type: Raw Resource
+
+  Stripped Oak Wood:
+    recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Oak Wood: -1
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Stripped Oak Log: -4
+    - recipe_type: Raw Resource
+
+  Stripped Spruce Wood:
+    recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Spruce Wood: -1
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Stripped Spruce Log: -4
+    - recipe_type: Raw Resource
+
+  Stripped Birch Wood:
+    recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Birch Wood: -1
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Stripped Birch Log: -4
+    - recipe_type: Raw Resource
+
+  Stripped Jungle Wood:
+    recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Jungle Wood: -1
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Stripped Jungle Log: -4
+    - recipe_type: Raw Resource
+
+  Stripped Acacia Wood:
+    recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Acacia Wood: -1
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Stripped Acacia Log: -4
+    - recipe_type: Raw Resource
+
+  Stripped Dark Oak Wood:
+    recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Dark Oak Wood: -1
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Stripped Dark Oak Log: -4
+    - recipe_type: Raw Resource
+
+  Stripped Crimson Hyphae:
+    recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Crimson Stem: -1
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Stripped Crimson Stem: -4
+    - recipe_type: Raw Resource
+
+  Stripped Warped Hyphae:
+    recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Warped Stem: -1
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Stripped Warped Stem: -4
+    - recipe_type: Raw Resource
+
+  Oak Wood:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Oak Log: -4
+    - recipe_type: Raw Resource
+
+  Spruce Wood:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Spruce Log: -4
+    - recipe_type: Raw Resource
+
+  Birch Wood:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Birch Log: -4
+    - recipe_type: Raw Resource
+
+  Jungle Wood:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Jungle Log: -4
+    - recipe_type: Raw Resource
+
+  Acacia Wood:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Acacia Log: -4
+    - recipe_type: Raw Resource
+
+  Dark Oak Wood:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Dark Oak Log: -4
+    - recipe_type: Raw Resource
+
+  Crimson Hyphae:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Crimson Stem: -4
+    - recipe_type: Raw Resource
+
+  Warped Hyphae:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Warped Stem: -4
+    - recipe_type: Raw Resource
+
+  Oak Leaves:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Spruce Leaves:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Birch Leaves:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Jungle Leaves:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Acacia Leaves:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dark Oak Leaves:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Azalea Leaves:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Flowering Azalea Leaves:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Sponge:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Wet Sponge: -1
+        Fuel: -1
+
+  Wet Sponge:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Glass:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Sand: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Red Sand: -1
+        Fuel: -1
+      extra_data:
+        recipe:
+        - Red Sand
+        - Fuel
+    - recipe_type: Raw Resource
+
+  Tinted Glass:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Glass: -1
+        Amethyst Shard: -4
+    - recipe_type: Raw Resource
+
+  Block of Lapis Lazuli:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Lapis Lazuli: -9
+    - recipe_type: Raw Resource
+
+  Sandstone:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Sand: -4
+
+
+  Chiseled Sandstone:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Sandstone Slab: -2
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Sandstone: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Chiseled Sandstone: 0
+
+  Cut Sandstone:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Sandstone: -4
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Sandstone: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Cut Sandstone: 0
+
+  Cobweb:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Grass:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Fern:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Azalea:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Flowering Azalea:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dead Bush:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Seagrass:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Sea Pickle:
+    recipes:
+    - recipe_type: Raw Resource
+
+
+  White Wool:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        String: -4
+
+  Orange Wool:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Wool: -1
+        Orange Dye: -1
+    - recipe_type: Raw Resource
+
+  Magenta Wool:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Wool: -1
+        Magenta Dye: -1
+    - recipe_type: Raw Resource
+
+  Light Blue Wool:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Wool: -1
+        Light Blue Dye: -1
+    - recipe_type: Raw Resource
+
+  Yellow Wool:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Wool: -1
+        Yellow Dye: -1
+    - recipe_type: Raw Resource
+
+  Lime Wool:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Wool: -1
+        Lime Dye: -1
+    - recipe_type: Raw Resource
+
+  Pink Wool:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Wool: -1
+        Pink Dye: -1
+    - recipe_type: Raw Resource
+
+  Gray Wool:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Wool: -1
+        Gray Dye: -1
+    - recipe_type: Raw Resource
+
+  Light Gray Wool:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Wool: -1
+        Light Gray Dye: -1
+    - recipe_type: Raw Resource
+
+  Cyan Wool:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Wool: -1
+        Cyan Dye: -1
+    - recipe_type: Raw Resource
+
+  Purple Wool:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Wool: -1
+        Purple Dye: -1
+    - recipe_type: Raw Resource
+
+  Blue Wool:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Wool: -1
+        Blue Dye: -1
+    - recipe_type: Raw Resource
+
+  Brown Wool:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Wool: -1
+        Brown Dye: -1
+    - recipe_type: Raw Resource
+
+  Green Wool:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Wool: -1
+        Green Dye: -1
+    - recipe_type: Raw Resource
+
+  Red Wool:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Wool: -1
+        Red Dye: -1
+    - recipe_type: Raw Resource
+
+  Black Wool:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Wool: -1
+        Black Dye: -1
+    - recipe_type: Raw Resource
+
+  Dandelion:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Poppy:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Blue Orchid:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Allium:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Azure Bluet:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Red Tulip:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Orange Tulip:
+    recipes:
+    - recipe_type: Raw Resource
+
+  White Tulip:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Pink Tulip:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Oxeye Daisy:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Cornflower:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Lily of the Valley:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Wither Rose:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Spore Blossom:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Brown Mushroom:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Red Mushroom:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Crimson Fungus:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Warped Fungus:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Crimson Roots:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Warped Roots:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Nether Sprouts:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Weeping Vines:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Twisting Vines:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Sugar Cane:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Kelp:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Moss Carpet:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Moss Block: -2
+    - recipe_type: Raw Resource
+
+  Moss Block:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Hanging Roots:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Big Dripleaf:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Small Dripleaf:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bamboo:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Oak Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Oak Plank: -3
+    - recipe_type: Raw Resource
+
+  Spruce Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Spruce Plank: -3
+    - recipe_type: Raw Resource
+
+  Birch Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Birch Plank: -3
+    - recipe_type: Raw Resource
+
+  Jungle Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Jungle Plank: -3
+    - recipe_type: Raw Resource
+
+  Acacia Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Acacia Plank: -3
+    - recipe_type: Raw Resource
+
+  Dark Oak Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Dark Oak Plank: -3
+    - recipe_type: Raw Resource
+
+  Crimson Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Crimson Plank: -3
+    - recipe_type: Raw Resource
+
+  Warped Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Warped Plank: -3
+    - recipe_type: Raw Resource
+
+  Stone Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Stone: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Stone Slab: -1
+    - recipe_type: Raw Resource
+
+  Smooth Stone Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Smooth Stone: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Smooth Stone: -1
+    - recipe_type: Raw Resource
+
+  Sandstone Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Sandstone: -3
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Chiseled Sandstone: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Sandstone: -1
+    - recipe_type: Raw Resource
+
+  Cut Sandstone Slab:
+    recipes:
+    - output: 6
+      recipy_type: Crafting
+      requirements:
+        Cut Sandstone: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Cut Sandstone: -1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Sandstone: -1
+    - recipe_type: Raw Resource
+
+  Cobblestone Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Cobblestone: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Cobblestone: -1
+    - recipe_type: Raw Resource
+
+  Brick Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Bricks: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Bricks: -1
+    - recipe_type: Raw Resource
+
+  Stone Brick Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Stone Bricks: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Stone: -1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Stone Bricks: -1
+    - recipe_type: Raw Resource
+
+  Nether Brick Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Nether Bricks: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Nether Bricks: -1
+    - recipe_type: Raw Resource
+
+  Quartz Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Block of Quartz: -3
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Smooth Quartz Block: -3
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Chiseled Quartz Block: -3
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Quartz Bricks: -3
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Quartz Pillar: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Block of Quartz: -1
+    - recipe_type: Raw Resource
+
+  Red Sandstone Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Red Sandstone: -3
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Chiseled Red Sandstone: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Red Sandstone: -1
+    - recipe_type: Raw Resource
+
+  Cut Red Sandstone Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Cut Red Sandstone: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Red Sandstone: -1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Cut Red Sandstone: -1
+    - recipe_type: Raw Resource
+
+  Purpur Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Purpur Block: -3
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Purpur Pillar: -3
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Purpur Block: -1
+    - recipe_type: Raw Resource
+
+  Prismarine Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Prismarine: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Prismarine: -1
+    - recipe_type: Raw Resource
+
+  Prismarine Brick Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Prismarine Bricks: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Prismarine Bricks: -1
+    - recipe_type: Raw Resource
+
+  Dark Prismarine Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Dark Prismarine: -3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Dark Prismarine: -1
+    - recipe_type: Raw Resource
+
+
+  Smooth Quartz Block:
