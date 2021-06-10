@@ -6,17 +6,49 @@ authors:
 
 index_page_display_name: "Minecraft"
 
-game_version: 1.17
+game_version: Java 1.17
+
+banner_message: "Now updated to 1.17!"
 
 recipe_types:
   Crafting: "Craft {IN_ITEMS} into {OUT_ITEM}"
   Smelting: "Use a furnace to smelt {IN_ITEMS} into {OUT_ITEM} using {ITEM Fuel}"
   Add Water: "Pour water onto {IN_ITEMS} to turn it into {OUT_ITEM}"
   Right Click: "Right click on {IN_ITEMS} to turn it into {OUT_ITEM}" # TODO Is this still used now that we have Strip
-  Strip: "Right click with an Axe"
+  Strip: "Right click on {IN_ITEMS} with an Axe to strip it into {OUT_ITEM}"
+  Till: "Right click on {In_ITEMS} with a Hoe to till it into {OUT_ITEM}"
+  Carve: "Right click on {IN_ITEMS} with Sheers to carve it into {OUT_ITEM}" # TODO Is this used for anything other then pumkins
+  Shovel: "Right click on {IN_ITEMS} with a Shovel to shovel it into {OUT_ITEM}"
   As: "Treat {IN_ITEMS} as {OUT_ITEM}"
   Cutting: "Use a stonecutter to cut {IN_ITEMS} into {OUT_ITEM}"
   Oxidation: "Place {IN_ITEMS} down as blocks until they oxidize into {OUT_ITEM}"
+  Anvil: "Use an anvil to upgrade {IN_ITEMS} into {OUT_ITEM}"
+
+requirement_groups:
+  Any Planks:
+    - Oak Planks
+    - Spruce Planks
+    - Birch Planks
+    - Jungle Planks
+    - Acacia Planks
+    - Dark Oak Planks
+    - Crimson Planks
+    - Warped Planks
+
+  Any Slab:
+    - Oak Slab
+    - Spruce Slab
+    - Birch Slab
+    - Jungle Slab
+    - Acacia Slab
+    - Dark Oak Slab
+    - Crimson Slab
+    - Warped Slab
+
+  Any Stone:
+    - Cobblestone
+    - Blackstone
+    - Cobbled Deepslate
 
 stack_sizes:
   Double Chest:
@@ -2072,5 +2104,6732 @@ resources:
         Dark Prismarine: -1
     - recipe_type: Raw Resource
 
-
   Smooth Quartz Block:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Block of Quartz: -1
+    - recipe_type: Raw Resource
+
+  Smooth Red Sandstone:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Red Sandstone: -1
+    - recipe_type: Raw Resource
+
+  Smooth Sandstone:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Sandstone: -1
+    - recipe_type: Raw Resource
+
+  Smooth Stone:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Stone: -1
+    - recipe_type: Raw Resource
+
+  Bricks:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Brick: -4
+    - recipe_type: Raw Resource
+
+  Bookshelf:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Plank: -6
+        Book: -3
+    - recipe_type: Raw Resource
+
+  Mossy Cobblestone:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cobblestone: -1
+        Vines: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cobblestone: -1
+        Moss Block: -1
+    - recipe_type: Raw Resource
+
+  Obsidian:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Add Water
+      requirements:
+        Lava Bucket: -1
+
+  Torch:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Charcoal: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Coal: -1
+    - recipe_type: Raw Resource
+
+  End Rod:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Blaze Rod: -1
+        Popped Chorus Fruit: -1
+    - recipe_type: Raw Resource
+
+  Chorus Plant:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Chorus Flower:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Purpur Block:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Popped Chorus Fruit: -4
+    - recipe_type: Raw Resource
+
+  Purpur Pillar:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Purpur Slab: -2
+    - recipe_type: Raw Resource
+  
+  Purpur Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Purpur Block : -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Purpur Block: -6
+    - recipe_type: Raw Resource
+
+  Oak Stairs:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Oak Planks: -6
+    - recipe_type: Raw Resource
+
+  Chest:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -8
+    - recipe_type: Raw Resource
+
+  Crafting Table:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -4
+    - recipe_type: Raw Resource
+
+  Farmland:
+    recipes:
+    - output: 1
+      recipe_type: Till
+      requirements:
+        Dirt: -1
+    - output: 1
+      recipe_type: Till
+      requirements:
+        Grass Block: -1
+    - output: 1
+      recipe_type: Till
+      requirements:
+        Dirt Path: -1
+    - recipe_type: Raw Resource
+
+  Furnace:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Stone: -8
+    - recipe_type: Raw Resource
+
+  Ladder:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Stick: -7
+    - recipe_type: Raw Resource
+
+  Cobblestone Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Cobblestone: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Cobblestone: -6
+    - recipe_type: Raw Resource
+
+
+  Snow:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Snow Block: -3
+    - recipe_type: Raw Resource
+
+  Ice:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Snow Block:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Snowball: -4
+    - recipe_type: Raw Resource
+
+  Cactus:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Clay:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Clay Ball: -4
+    - recipe_type: Raw Resource
+
+  Jukebox:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -8
+        Diamond: -1
+    - recipe_type: Raw Resource
+
+  Oak Fence:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Oak Plank: -4
+        Stick: 2
+    - recipe_type: Raw Resource
+
+  Spruce Fence:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Spruce Plank: -4
+        Stick: 2
+    - recipe_type: Raw Resource
+
+  Birch Fence:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Birch Plank: -4
+        Stick: 2
+    - recipe_type: Raw Resource
+
+  Jungle Fence:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Jungle Plank: -4
+        Stick: 2
+    - recipe_type: Raw Resource
+
+  Acacia Fence:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Acacia Plank: -4
+        Stick: 2
+    - recipe_type: Raw Resource
+
+  Dark Oak Fence:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Dark Oak Plank: -4
+        Stick: 2
+    - recipe_type: Raw Resource
+
+  Crimson Fence:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Crimson Plank: -4
+        Stick: 2
+    - recipe_type: Raw Resource
+
+  Warped Fence:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Warped Plank: -4
+        Stick: 2
+    - recipe_type: Raw Resource  
+
+  Pumpkin:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Carved Pumpkin:
+    recipes:
+    - output: 1
+      recipe_type: Carve
+      requirements:
+        Pumpkin: -1
+    - recipe_type: Raw Resource
+
+  Jack o'Lantern:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Torch: -1
+        Pumpkin: -1
+    - recipe_type: Raw Resource
+
+  Netherrack:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Soul Sand:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Basalt:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Polished Basalt:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Basalt: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Basalt: -4
+    - recipe_type: Raw Resource
+
+  Smooth Basalt:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Cobblestone: -1
+        Fuel: -1
+
+  Soul Torch:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Charcoal: -1
+        Soul Sand: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Coal: -1
+        Soul Sand: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Charcoal: -1
+        Soul Soil: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Coal: -1
+        Soul Soil: -1
+    - recipe_type: Raw Resource
+
+  Glowstone:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Glowstone Dust: -4
+    - recipe_type: Raw Resource
+
+  Infested Stone:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Infested Cobblestone:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Infested Stone Bricks:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Infested Mossy Stone Bricks:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Infested Cracked Stone Bricks:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Infested Chiseled Stone Bricks:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Infested Deepslate:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Stone Bricks:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stone: -4
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Stone: -1
+    - recipe_type: Raw Resource
+
+  Mossy Stone Bricks:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stone Bricks: -1
+        Vines: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stone Bricks: -1
+        Moss Block: -1
+    - recipe_type: Raw Resource
+
+  Cracked Stone Bricks:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Stone Bricks: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Chiseled Stone Bricks:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stone Brick Slab: -2
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Stone Bricks: -1
+    - recipe_type: Raw Resource
+
+  Deepslate Bricks:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Polished Deepslate: -4
+    - recipe_type: Raw Resource
+
+  Cracked Deepslate Bricks:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Deepslate Bricks: -1
+    - recipe_type: Raw Resource
+
+  Deepslate Tiles:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Deepslate Brick: -4
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Deepslate Brick: -1
+    - recipe_type: Raw Resource
+
+  Cracked Deepslate Tiles:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Deepslate Tiles: -1
+    - recipe_type: Raw Resource
+
+  Chiseled Deepslate:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cobbled Deepslate Slab: -2
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Cobbled Deepslate: -1
+    - recipe_type: Raw Resource
+
+  Brown Mushroom Block:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Red Mushroom Block:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Mushroom Stem:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Iron Bars:
+    recipes:
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -6
+    - recipe_type: Raw Resource
+
+  Chain:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -1
+        Iron Nugget: -2
+    - recipe_type: Raw Resource
+
+  Glass Pane:
+    recipes:
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Glass: -6
+    - recipe_type: Raw Resource
+
+  Melon:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Melon Slice: -9
+    - recipe_type: Raw Resource
+
+  Vines:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Glow Lichen:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Brick Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Bricks : -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Bricks: -6
+    - recipe_type: Raw Resource
+
+  Stone Brick Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Stone Bricks: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stone Bricks: -6
+    - recipe_type: Raw Resource
+
+  Mycelium:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Lily Pad:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Nether Bricks:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Nether Brick: -4
+    - recipe_type: Raw Resource
+
+  Cracked Nether Bricks:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Nether Bricks: -1
+    - recipe_type: Raw Resource
+
+  Chiseled Nether Bricks:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Nether Brick Slab: -2
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Nether Bricks: -1
+    - recipe_type: Raw Resource
+
+  Nether Brick Fence:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Nether Bricks: -4
+        Nether Brick: -2
+    - recipe_type: Raw Resource
+
+  Nether Brick Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Nether Brick: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Nether Brick Block: -6
+    - recipe_type: Raw Resource
+
+  Enchanting Table:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Book: -1
+        Diamond: -2
+        Obsidian: -4
+    - recipe_type: Raw Resource
+
+  End Portal Frame:
+    recipes:
+    - recipe_type: Raw Resource
+
+  End Stone:
+    recipes:
+    - recipe_type: Raw Resource
+
+  End Stone Bricks:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        End Stone: -4
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        End Stone: -1
+    - recipe_type: Raw Resource
+
+  Sandstone Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Sandstone: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Sandstone: -6
+    - recipe_type: Raw Resource
+
+  Ender Chest:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Obsidian: -8
+        Eye of Ender: -1
+    - recipe_type: Raw Resource
+ 
+  Block of Emerald:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Emerald: -9
+    - recipe_type: Raw Resource
+
+  Spruce Stairs:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Spruce Planks: -6
+    - recipe_type: Raw Resource
+
+  Birch Stairs:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Birch Planks: -6
+    - recipe_type: Raw Resource
+
+  Jungle Stairs:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Jungle Planks: -6
+    - recipe_type: Raw Resource
+
+  Crimson Stairs:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Crimson Planks: -6
+    - recipe_type: Raw Resource
+
+  Warped Stairs:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Warped Planks: -6
+    - recipe_type: Raw Resource
+
+  Beacon:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Obsidian: -3
+        Glass: -5
+        Nether Star: -1
+    - recipe_type: Raw Resource
+
+  Cobblestone Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Cobblestone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Cobblestone: -6
+    - recipe_type: Raw Resource
+
+  Mossy Cobblestone Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Mossy Cobblestone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Mossy Cobblestone: -6
+    - recipe_type: Raw Resource
+
+  Brick Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Bricks: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Bricks: -6
+    - recipe_type: Raw Resource
+
+  Prismarine Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Prismarine: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Prismarine: -6
+    - recipe_type: Raw Resource
+
+  Red Sandstone Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Red Sandstone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Red Sandstone: -6
+    - recipe_type: Raw Resource
+
+  Mossy Stone Brick Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Mossy Stone Bricks: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Mossy Stone Bricks: -6
+    - recipe_type: Raw Resource
+
+  Granite Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Granite: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Granite: -6
+    - recipe_type: Raw Resource
+
+  Stone Brick Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Stone Bricks: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Stone Bricks: -6'
+    - recipe_type: Raw Resource
+
+  Nether Brick Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Nether Bricks: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Nether Bricks: -6
+    - recipe_type: Raw Resource
+
+  Andesite Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Andesite: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Andesite: -6
+    - recipe_type: Raw Resource
+
+  Red Nether Brick Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Red Nether Bricks: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Red Nether Bricks: -6
+    - recipe_type: Raw Resource
+
+  Sandstone Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Sandstone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Sandstone: -6
+    - recipe_type: Raw Resource
+
+  End Stone Brick Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        End Stone Bricks: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        End Stone Bricks: -6
+    - recipe_type: Raw Resource
+
+  Diorite Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Diorite: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Diorite: -6
+    - recipe_type: Raw Resource
+  
+  Blacktone Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Blackstone: -6
+    - recipe_type: Raw Resource
+  
+  Polished Blackstone Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Blackstone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Polished Blackstone: -6
+    - recipe_type: Raw Resource
+  
+  Polished Blackstone Brick Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Blackstone: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Blackstone Bricks: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Polished Blackstone Bricks: -6
+    - recipe_type: Raw Resource
+  
+  Cobbled Deepslate Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Cobbled Deepslate: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Cobbled Deepslate: -6
+    - recipe_type: Raw Resource
+  
+  Polished Deepslate Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Cobbled Deepslate: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Deepslate: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Polished Deepslate: -6
+    - recipe_type: Raw Resource
+  
+  Deepslate Brick Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Cobbled Deepslate: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Deepslate: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Deepslate Bricks: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Deepslate Bricks: -6
+    - recipe_type: Raw Resource
+  
+  Deepslate Tile Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Cobbled Deepslate: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Deepslate: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Deepslate Bricks: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Deepslate Tiles: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Deepslate Tiles: -6
+    - recipe_type: Raw Resource
+
+  Anvil:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Block of Iron: -3
+        Iron Ingot: -4
+    - recipe_type: Raw Resource
+
+  Chiseled Quartz Block:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Block of Quartz: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Quartz Slab: -2
+    - recipe_type: Raw Resource
+
+  Block of Quartz:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Nether Quartz: -4
+    - recipe_type: Raw Resource
+
+  Quartz Bricks:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Block of Quartz: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Block of Quartz: -4
+    - recipe_type: Raw Resource
+
+  Quartz Pillar:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Block of Quartz: -1
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Block of Quartz: -2
+    - recipe_type: Raw Resource
+
+  Quartz Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Block of Quartz : -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Block of Quartz: -6
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Pillar Quartz Block: -6
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Chiseled Quartz Block: -6
+    - recipe_type: Raw Resource
+
+  White Terracotta:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Terracotta: -8
+        White Dye: -1
+    - recipe_type: Raw Resource
+
+  Orange Terracotta:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Terracotta: -8
+        Orange Dye: -1
+    - recipe_type: Raw Resource
+
+  Magenta Terracotta:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Terracotta: -8
+        Magenta Dye: -1
+    - recipe_type: Raw Resource
+
+  Light Blue Terracotta:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Terracotta: -8
+        Light Blue Dye: -1
+    - recipe_type: Raw Resource
+
+  Yellow Terracotta:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Terracotta: -8
+        Yellow Dye: -1
+    - recipe_type: Raw Resource
+
+  Lime Terracotta:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Terracotta: -8
+        Lime Dye: -1
+    - recipe_type: Raw Resource
+
+  Pink Terracotta:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Terracotta: -8
+        Pink Dye: -1
+    - recipe_type: Raw Resource
+
+  Gray Terracotta:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Terracotta: -8
+        Gray Dye: -1
+    - recipe_type: Raw Resource
+
+  Light Gray Terracotta:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Terracotta: -8
+        Light Gray Dye: -1
+    - recipe_type: Raw Resource
+
+  Cyan Terracotta:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Terracotta: -8
+        Cyan Dye: -1
+    - recipe_type: Raw Resource
+
+  Purple Terracotta:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Terracotta: -8
+        Purple Dye: -1
+    - recipe_type: Raw Resource
+
+  Blue Terracotta:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Terracotta: -8
+        Blue Dye: -1
+    - recipe_type: Raw Resource
+
+  Brown Terracotta:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Terracotta: -8
+        Brown Dye: -1
+    - recipe_type: Raw Resource
+
+  Green Terracotta:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Terracotta: -8
+        Green Dye: -1
+    - recipe_type: Raw Resource
+
+  Red Terracotta:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Terracotta: -8
+        Red Dye: -1
+    - recipe_type: Raw Resource
+
+  Black Terracotta:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Terracotta: -8
+        Black Dye: -1
+    - recipe_type: Raw Resource
+
+  Hay Bale:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Wheat: -9
+    - recipe_type: Raw Resource
+
+  White Carpet:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        White Wool: -2
+    - recipe_type: Raw Resource
+
+  Orange Carpet:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Orange Wool: -2
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        White Carpet: -8
+        Orange Dye: -1
+    - recipe_type: Raw Resource
+
+  Magenta Carpet:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Magenta Wool: -2
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        White Carpet: -8
+        Magenta Dye: -1
+    - recipe_type: Raw Resource
+
+  Light Blue Carpet:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Light Blue Wool: -2
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        White Carpet: -8
+        Light Blue Dye: -1
+    - recipe_type: Raw Resource
+
+  Yellow Carpet:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Yellow Wool: -2
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        White Carpet: -8
+        Yellow Dye: -1
+    - recipe_type: Raw Resource
+
+  Lime Carpet:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Lime Wool: -2
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        White Carpet: -8
+        Lime Dye: -1
+    - recipe_type: Raw Resource
+
+  Pink Carpet:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Pink Wool: -2
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        White Carpet: -8
+        Pink Dye: -1
+    - recipe_type: Raw Resource
+
+  Gray Carpet:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Gray Wool: -2
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        White Carpet: -8
+        Gray Dye: -1
+    - recipe_type: Raw Resource
+
+  Light Gray Carpet:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Light Gray Wool: -2
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        White Carpet: -8
+        Light Gray Dye: -1
+    - recipe_type: Raw Resource
+
+  Cyan Carpet:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Cyan Wool: -2
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        White Carpet: -8
+        Cyan Dye: -1 
+    - recipe_type: Raw Resource
+
+  Purple Carpet:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Purple Wool: -2
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        White Carpet: -8
+        Purple Dye: -1 
+    - recipe_type: Raw Resource
+
+  Blue Carpet:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Blue Wool: -2
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        White Carpet: -8
+        Blue Dye: -1 
+    - recipe_type: Raw Resource
+
+  Brown Carpet:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Brown Wool: -2
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        White Carpet: -8
+        Brown Dye: -1 
+    - recipe_type: Raw Resource
+
+  Green Carpet:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Green Wool: -2
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        White Carpet: -8
+        Green Dye: -1 
+    - recipe_type: Raw Resource
+
+  Red Carpet:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Red Wool: -2
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        White Carpet: -8
+        Red Dye: -1 
+    - recipe_type: Raw Resource
+
+  Black Carpet:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Black Wool: -2
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        White Carpet: -8
+        Black Dye: -1 
+    - recipe_type: Raw Resource
+
+  Terracotta:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Clay: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Packed Ice:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Ice: -9
+    - recipe_type: Raw Resource
+
+  Acacia Stairs:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Acacia Wood Planks: -6
+    - recipe_type: Raw Resource
+
+  Dark Oak Wood Stairs:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Dark Oak Wood Planks: -6
+    - recipe_type: Raw Resource
+
+  Dirt Path:
+    recipes:
+    - output: 1
+      recipe_type: Shovel
+      requirements:
+        Coarse Dirt: -1
+    - output: 1
+      recipe_type: Shovel
+      requirements:
+        Mycelium: -1
+    - output: 1
+      recipe_type: Shovel
+      requirements:
+        Podzol: -1
+    - output: 1
+      recipe_type: Shovel
+      requirements:
+        Grass Block: -1
+    - output: 1
+      recipe_type: Shovel
+      requirements:
+        Rooted Dirt: -1
+    - recipe_type: Raw Resource
+
+  Sunflower:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Lilac:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Rose Bush:
+    recipes:
+    - recipe_type: Raw Resource
+  Peony:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Tallgrass:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Large Fern:
+    recipes:
+    - recipe_type: Raw Resource
+
+  White Stained Glass:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Glass: -8
+        White Dye: -1
+    - recipe_type: Raw Resource
+
+  Orange Stained Glass:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Glass: -8
+        Orange Dye: -1
+    - recipe_type: Raw Resource
+
+  Magenta Stained Glass:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Glass: -8
+        Magenta Dye: -1
+    - recipe_type: Raw Resource
+
+  Light Blue Stained Glass:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Glass: -8
+        Light Blue Dye: -1
+    - recipe_type: Raw Resource
+
+  Yellow Stained Glass:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Glass: -8
+        Yellow Dye: -1
+    - recipe_type: Raw Resource
+
+  Lime Stained Glass:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Glass: -8
+        Lime Dye: -1
+    - recipe_type: Raw Resource
+
+  Pink Stained Glass:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Glass: -8
+        Pink Dye: -1
+    - recipe_type: Raw Resource
+
+  Gray Stained Glass:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Glass: -8
+        Gray Dye: -1
+    - recipe_type: Raw Resource
+
+  Light Gray Stained Glass:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Glass: -8
+        Light Gray Dye: -1
+    - recipe_type: Raw Resource
+
+  Cyan Stained Glass:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Glass: -8
+        Cyan Dye: -1
+    - recipe_type: Raw Resource
+
+  Purple Stained Glass:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Glass: -8
+        Purple Dye: -1
+    - recipe_type: Raw Resource
+
+  Blue Stained Glass:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Glass: -8
+        Blue Dye: -1
+    - recipe_type: Raw Resource
+
+  Brown Stained Glass:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Glass: -8
+        Brown Dye: -1
+    - recipe_type: Raw Resource
+
+  Green Stained Glass:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Glass: -8
+        Green Dye: -1
+    - recipe_type: Raw Resource
+
+  Red Stained Glass:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Glass: -8
+        Red Dye: -1
+    - recipe_type: Raw Resource
+
+  Black Stained Glass:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Glass: -8
+        Black Dye: -1
+    - recipe_type: Raw Resource
+
+  White Stained Glass Pane:
+    recipes:
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        White Stained Glass: -6
+    - recipe_type: Raw Resource
+
+  Orange Stained Glass Pane:
+    recipes:
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Orange Stained Glass: -6
+    - recipe_type: Raw Resource
+
+  Magenta Stained Glass Pane:
+    recipes:
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Magenta Stained Glass: -6
+    - recipe_type: Raw Resource
+
+  Light Blue Stained Glass Pane:
+    recipes:
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Light Blue Stained Glass: -6
+    - recipe_type: Raw Resource
+
+  Yellow Stained Glass Pane:
+    recipes:
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Yellow Stained Glass: -6
+    - recipe_type: Raw Resource
+
+  Lime Stained Glass Pane:
+    recipes:
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Lime Stained Glass: -6
+    - recipe_type: Raw Resource
+
+  Pink Stained Glass Pane:
+    recipes:
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Pink Stained Glass: -6
+    - recipe_type: Raw Resource
+
+  Gray Stained Glass Pane:
+    recipes:
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Gray Stained Glass: -6
+    - recipe_type: Raw Resource
+
+  Light Gray Stained Glass Pane:
+    recipes:
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Light Gray Stained Glass: -6
+    - recipe_type: Raw Resource
+
+  Cyan Stained Glass Pane:
+    recipes:
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Cyan Stained Glass: -6
+    - recipe_type: Raw Resource
+
+  Purple Stained Glass Pane:
+    recipes:
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Purple Stained Glass: -6
+    - recipe_type: Raw Resource
+
+  Blue Stained Glass Pane:
+    recipes:
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Blue Stained Glass: -6
+    - recipe_type: Raw Resource
+
+  Brown Stained Glass Pane:
+    recipes:
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Brown Stained Glass: -6
+    - recipe_type: Raw Resource
+
+  Green Stained Glass Pane:
+    recipes:
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Green Stained Glass: -6
+    - recipe_type: Raw Resource
+
+  Red Stained Glass Pane:
+    recipes:
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Red Stained Glass: -6
+    - recipe_type: Raw Resource
+
+  Black Stained Glass Pane:
+    recipes:
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Black Stained Glass: -6
+    - recipe_type: Raw Resource
+
+  Prismarine:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Prismarine Shard: -4
+    - recipe_type: Raw Resource
+
+  Prismarine Bricks:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Prismarine Shard: -9
+    - recipe_type: Raw Resource
+
+  Dark Prismarine:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Prismarine Shard: -8
+        Ink Sac: -1
+    - recipe_type: Raw Resource
+
+  Prismarine Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Prismarine: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Prismarine: -6
+    - recipe_type: Raw Resource
+
+  Prismarine Brick Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Prismarine Bricks: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Prismarine Bricks: -6
+    - recipe_type: Raw Resource
+
+  Dark Prismarine Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Dark Prismarine: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Dark Prismarine: -6
+    - recipe_type: Raw Resource
+
+  Sea Lantern:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Prismarine Shard: -4
+        Prismarine Crystals: -5
+    - recipe_type: Raw Resource
+
+  Red Sandstone:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Red Sand: -4
+    - recipe_type: Raw Resource
+
+  Chiseled Red Sandstone:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Red Sandstone: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Red Sandstone Slab: -2
+    - recipe_type: Raw Resource
+
+  Cut Red Sandstone:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Red Sandstone: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Red Sandstone: -4
+    - recipe_type: Raw Resource
+
+  Magma Block:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Magma Cream: -4
+    - recipe_type: Raw Resource
+  
+  Nether Wart Block:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Nether Wart: -9
+    - recipe_type: Raw Resource
+
+  Warped Wart Block:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Red Nether Bricks:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Nether Brick: -2
+        Nether Wart: -2
+    - recipe_type: Raw Resource
+  
+  Bone Block:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bone Meal: -9
+    - output: 1
+      recipe_type: Raw Resource
+
+  Shulker Box:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Shulker Shell: -2
+        Chest: -1
+    - recipe_type: Raw Resource
+
+  White Shulker Box:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Purple Shulker Box: -1
+        White Dye: -1
+    - recipe_type: Raw Resource
+
+  Orange Shulker Box:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Purple Shulker Box: -1
+        Orange Dye: -1
+    - recipe_type: Raw Resource
+
+  Magenta Shulker Box:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Purple Shulker Box: -1
+        Magenta Dye: -1
+    - recipe_type: Raw Resource
+
+  Light Blue Shulker Box:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Purple Shulker Box: -1
+        Light Blue Dye: -1
+    - recipe_type: Raw Resource
+
+  Yellow Shulker Box:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Purple Shulker Box: -1
+        Yellow Dye: -1
+    - recipe_type: Raw Resource
+
+  Lime Shulker Box:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Purple Shulker Box: -1
+        Lime Dye: -1
+    - recipe_type: Raw Resource
+
+  Pink Shulker Box:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Purple Shulker Box: -1
+        Pink Dye: -1
+    - recipe_type: Raw Resource
+
+  Gray Shulker Box:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Purple Shulker Box: -1
+        Gray Dye: -1
+    - recipe_type: Raw Resource
+
+  Light Gray Shulker Box:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Purple Shulker Box: -1
+        Light Gray Dye: -1
+    - recipe_type: Raw Resource
+
+  Cyan Shulker Box:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Purple Shulker Box: -1
+        Cyan Dye: -1
+    - recipe_type: Raw Resource
+
+  Purple Shulker Box:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Shulker Shell: -2
+        Chest: -1
+    - recipe_type: Raw Resource
+
+  Blue Shulker Box:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Purple Shulker Box: -1
+        Blue Dye: -1
+    - recipe_type: Raw Resource
+
+  Brown Shulker Box:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Purple Shulker Box: -1
+        Brown Dye: -1
+    - recipe_type: Raw Resource
+
+  Green Shulker Box:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Purple Shulker Box: -1
+        Green Dye: -1
+    - recipe_type: Raw Resource
+
+  Red Shulker Box:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Purple Shulker Box: -1
+        Red Dye: -1
+    - recipe_type: Raw Resource
+
+  Black Shulker Box:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Purple Shulker Box: -1
+        Black Dye: -1
+    - recipe_type: Raw Resource
+
+
+
+
+
+  White Glazed Terracotta:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        White Terracotta: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Orange Glazed Terracotta:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Orange Terracotta: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Magenta Glazed Terracotta:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Magenta Terracotta: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Light Blue Glazed Terracotta:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Light Blue Terracotta: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Yellow Glazed Terracotta:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Yellow Terracotta: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Lime Glazed Terracotta:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Lime Terracotta: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Pink Glazed Terracotta:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Pink Terracotta: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Gray Glazed Terracotta:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Gray Terracotta: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Light Gray Glazed Terracotta:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Light Gray Terracotta: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Cyan Glazed Terracotta:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Cyan Terracotta: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Purple Glazed Terracotta:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Purple Terracotta: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Blue Glazed Terracotta:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Blue Terracotta: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Brown Glazed Terracotta:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Brown Terracotta: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Green Glazed Terracotta:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Green Terracotta: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Red Glazed Terracotta:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Red Terracotta: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Black Glazed Terracotta:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Black Terracotta: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  White Concrete:
+    recipes:
+    - output: 1
+      recipe_type: Add Water
+      requirements:
+        White Concrete Powder: -1
+    - recipe_type: Raw Resource
+
+  Orange Concrete:
+    recipes:
+    - output: 1
+      recipe_type: Add Water
+      requirements:
+        Orange Concrete Powder: -1
+    - recipe_type: Raw Resource
+
+  Magenta Concrete:
+    recipes:
+    - output: 1
+      recipe_type: Add Water
+      requirements:
+        Magenta Concrete Powder: -1
+    - recipe_type: Raw Resource
+
+  Light Blue Concrete:
+    recipes:
+    - output: 1
+      recipe_type: Add Water
+      requirements:
+        Light Blue Concrete Powder: -1
+    - recipe_type: Raw Resource
+
+  Yellow Concrete:
+    recipes:
+    - output: 1
+      recipe_type: Add Water
+      requirements:
+        Yellow Concrete Powder: -1
+    - recipe_type: Raw Resource
+
+  Lime Concrete:
+    recipes:
+    - output: 1
+      recipe_type: Add Water
+      requirements:
+        Lime Concrete Powder: -1
+    - recipe_type: Raw Resource
+
+  Pink Concrete:
+    recipes:
+    - output: 1
+      recipe_type: Add Water
+      requirements:
+        Pink Concrete Powder: -1
+    - recipe_type: Raw Resource
+
+  Gray Concrete:
+    recipes:
+    - output: 1
+      recipe_type: Add Water
+      requirements:
+        Gray Concrete Powder: -1
+    - recipe_type: Raw Resource
+
+  Light Gray Concrete:
+    recipes:
+    - output: 1
+      recipe_type: Add Water
+      requirements:
+        Light Gray Concrete Powder: -1
+    - recipe_type: Raw Resource
+
+  Cyan Concrete:
+    recipes:
+    - output: 1
+      recipe_type: Add Water
+      requirements:
+        Cyan Concrete Powder: -1
+    - recipe_type: Raw Resource
+
+  Purple Concrete:
+    recipes:
+    - output: 1
+      recipe_type: Add Water
+      requirements:
+        Purple Concrete Powder: -1
+    - recipe_type: Raw Resource
+
+  Blue Concrete:
+    recipes:
+    - output: 1
+      recipe_type: Add Water
+      requirements:
+        Blue Concrete Powder: -1
+    - recipe_type: Raw Resource
+
+  Brown Concrete:
+    recipes:
+    - output: 1
+      recipe_type: Add Water
+      requirements:
+        Brown Concrete Powder: -1
+    - recipe_type: Raw Resource
+
+  Green Concrete:
+    recipes:
+    - output: 1
+      recipe_type: Add Water
+      requirements:
+        Green Concrete Powder: -1
+    - recipe_type: Raw Resource
+
+  Red Concrete:
+    recipes:
+    - output: 1
+      recipe_type: Add Water
+      requirements:
+        Red Concrete Powder: -1
+    - recipe_type: Raw Resource
+
+  Black Concrete:
+    recipes:
+    - output: 8
+      recipe_type: Add Water
+      requirements:
+        Black Concrete Powder: -1
+    - recipe_type: Raw Resource
+
+  White Concrete Powder:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Sand: -4
+        Gravel: -4
+        White Dye: -1
+    - output: 1
+      recipe_type: Raw Resource
+
+  Orange Concrete Powder:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Sand: -4
+        Gravel: -4
+        Orange Dye: -1
+    - recipe_type: Raw Resource
+
+  Magenta Concrete Powder:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Sand: -4
+        Gravel: -4
+        Magenta Dye: -1
+    - recipe_type: Raw Resource
+
+  Light Blue Concrete Powder:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Sand: -4
+        Gravel: -4
+        Light Blue Dye: -1
+    - recipe_type: Raw Resource
+
+  Yellow Concrete Powder:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Sand: -4
+        Gravel: -4
+        Yellow Dye: -1
+    - recipe_type: Raw Resource
+
+  Lime Concrete Powder:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Sand: -4
+        Gravel: -4
+        Lime Dye: -1
+    - recipe_type: Raw Resource
+
+  Pink Concrete Powder:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Sand: -4
+        Gravel: -4
+        Pink Dye: -1
+    - recipe_type: Raw Resource
+
+  Gray Concrete Powder:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Sand: -4
+        Gravel: -4
+        Gray Dye: -1
+    - recipe_type: Raw Resource
+
+  Light Gray Concrete Powder:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Sand: -4
+        Gravel: -4
+    - recipe_type: Raw Resource
+
+  Cyan Concrete Powder:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Sand: -4
+        Gravel: -4
+        Cyan Dye: -1
+    - recipe_type: Raw Resource
+
+  Purple Concrete Powder:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Sand: -4
+        Gravel: -4
+        Purple Dye: -1
+    - recipe_type: Raw Resource
+
+  Blue Concrete Powder:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Sand: -4
+        Gravel: -4
+        Blue Dye: -1
+    - recipe_type: Raw Resource
+
+  Brown Concrete Powder:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Sand: -4
+        Gravel: -4
+        Brown Dye: -1
+    - recipe_type: Raw Resource
+
+  Green Concrete Powder:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Sand: -4
+        Gravel: -4
+        Green Dye: -1
+    - recipe_type: Raw Resource
+
+  Red Concrete Powder:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Sand: -4
+        Gravel: -4
+        Red Dye: -1
+    - recipe_type: Raw Resource
+
+  Black Concrete Powder:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Sand: -4
+        Gravel: -4
+        Black Dye: -1
+    - recipe_type: Raw Resource
+
+  Turtle Egg:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dead Tube Coral Block:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dead Brain Coral Block:
+    recipes:
+    - recipe_type: Raw Resource
+  
+  Dead Bubble Coral Block:
+    recipes:
+    - recipe_type: Raw Resource
+  
+  Dead Fire Coral Block:
+    recipes:
+    - recipe_type: Raw Resource
+  
+  Dead Horn Coral Block:
+    recipes:
+    - recipe_type: Raw Resource
+  
+  Tube Coral Block:
+    recipes:
+    - recipe_type: Raw Resource
+  
+  Brain Coral Block:
+    recipes:
+    - recipe_type: Raw Resource
+  
+  Bubble Coral Block:
+    recipes:
+    - recipe_type: Raw Resource
+  
+  Fire Coral Block:
+    recipes:
+    - recipe_type: Raw Resource
+  
+  Horn Coral Block:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Tube Coral:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Brain Coral:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bubble Coral:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Fire Coral:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Horn Coral:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dead Brain Coral:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dead Bubble Coral:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dead Fire Coral:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dead Horn Coral:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dead Tube Coral:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Tube Coral Fan:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Brain Coral Fan:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bubble Coral Fan:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Fire Coral Fan:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Horn Coral Fan:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dead Tube Coral Fan:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dead Brain Coral Fan:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dead Bubble Coral Fan:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dead Fire Coral Fan:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dead Horn Coral Fan:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Blue Ice:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Packed Ice: -9
+    - recipe_type: Raw Resource
+
+  Conduit:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Nautilus Shell: -8
+        Heart of the Sea: -1
+    - recipe_type: Raw Resource
+
+  Polished Granite Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Granite: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Granite: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Polished Granite: -6
+    - recipe_type: Raw Resource
+
+  Smooth Red Sandstone Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Red Sandstone: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Smooth Red Sandstone: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Smooth Red Sandstone: -6
+    - recipe_type: Raw Resource
+
+  Mossy Stone Brick Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Mossy Stone Bricks: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Mossy Stone Bricks: -6
+    - recipe_type: Raw Resource
+
+  Polished Diorite Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Diorite: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Diorite: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Polished Diorite: -6
+    - recipe_type: Raw Resource
+
+  Mossy Cobblestone Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Mossy Cobblestone: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Mossy Cobblestone: -6
+    - recipe_type: Raw Resource
+
+  End Stone Brick Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+       End Stone Bricks : -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        End Stone Bricks: -6
+    - recipe_type: Raw Resource
+
+  Stone Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Stone: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stone: -6
+    - recipe_type: Raw Resource
+
+  Smooth Sandstone Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Smooth Sandstone: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Smooth Sandstone: -6
+    - recipe_type: Raw Resource
+
+  Smooth Quartz Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Block of Quartz : -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Smooth Quartz Block: -6
+    - recipe_type: Raw Resource
+
+  Granite Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Granite: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Granite: -6
+    - recipe_type: Raw Resource
+
+  Andesite Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Andesite: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Andesite: -6
+    - recipe_type: Raw Resource
+
+  Red Nether Brick Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+       Red Nether Brick : -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Red Nether Brick: -6
+    - recipe_type: Raw Resource
+
+  Polished Andesite Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Andesite: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Polished Andesite: -6
+    - recipe_type: Raw Resource
+
+  Diorite Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Diorite: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Diorite: -6
+    - recipe_type: Raw Resource
+
+  Cobbled Deepslate Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Cobbled Deepslate: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Cobbled Deepslate: -6
+    - recipe_type: Raw Resource
+
+  Polished Deepslate Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Deepslate: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Polished Deepslate: -6
+    - recipe_type: Raw Resource
+
+  Deepslate Brick Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Deepslate Brick: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Deepslate Brick: -6
+    - recipe_type: Raw Resource
+
+  Deepslate Tile Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Deepslate Tile: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Deepslate Tile: -6
+    - recipe_type: Raw Resource
+
+  Polished Granite Slab:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Granite: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Polished Granite: -3
+    - recipe_type: Raw Resource
+
+  Smooth Sandstone Slab:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Smooth Sandstone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Smooth Sandstone: -3
+    - recipe_type: Raw Resource
+
+  Mossy Stone Brick Slab:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Mossy Stone Bricks: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Mossy Stone Bricks: -3
+    - recipe_type: Raw Resource
+
+  Polished Diorite Slab:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Diorite: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Polished Diorite: -3
+    - recipe_type: Raw Resource
+
+  Mossy Cobblestone Slab:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Mossy Cobblestone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Mossy Cobblestone: -3
+    - recipe_type: Raw Resource
+
+  End Stone Brick Slab:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        End Stone Bricks: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        End Stone Bricks: -3
+    - recipe_type: Raw Resource
+
+  Smooth Sandstone Slab:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Smooth Sandstone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Smooth sandstone: -3
+    - recipe_type: Raw Resource
+
+  Smooth Quartz Slab:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Smooth Quartz: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Smooth Quartz: -3
+    - recipe_type: Raw Resource
+
+  Granite Slab:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Granite: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Granite: -3
+    - recipe_type: Raw Resource
+
+  Andesite Slab:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Andesite: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Andesite: -3
+    - recipe_type: Raw Resource
+
+  Red Nether Brick Slab:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Red Nether Bricks: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Red Nether Bricks: -3
+    - recipe_type: Raw Resource
+
+  Polished Andesite Slab:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Andesite: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Polished Andesite: -3
+    - recipe_type: Raw Resource
+
+  Diorite Slab:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Diorite: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Diorite: -3
+    - recipe_type: Raw Resource
+
+  Cobbled Deepslate Slab:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Cobbled Deepslate: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Cobbled Deepslate: -3
+    - recipe_type: Raw Resource
+
+  Polished Deepslate Slab:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Deepslate: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Polished Deepslate: -3
+    - recipe_type: Raw Resource
+
+  Deepslate Brick Slab:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Deepslate Bricks: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Deepslate Bricks: -3
+    - recipe_type: Raw Resource
+
+  Deepslate Tile Slab:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Deepslate Tile: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Deepslate Tile: -3
+    - recipe_type: Raw Resource
+
+  Scaffolding:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Bamboo: -6
+        String: -1
+    - recipe_type: Raw Resource
+
+  Redstone:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Block of Redstone: -1
+
+  Redstone Torch:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Redstone: -1
+    - recipe_type: Raw Resource
+
+  Block of Redstone:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Redstone: -9
+    - recipe_type: Raw Resource
+
+  Redstone Repeater:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stone: -3
+        Redstone Torch: -2
+        Redstone: -1
+    - recipe_type: Raw Resource
+
+  Redstone Comparator:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stone: -3
+        Redstone Torch: -3
+        Nether Quartz: -1
+    - recipe_type: Raw Resource
+
+  Piston:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cobblestone: -4
+        Redstone: -1
+        Iron Ingot: -1
+        Oak Wood Planks: -3
+    - recipe_type: Raw Resource
+
+  Sticky Piston:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Piston: -1
+        Slimeball: -1
+    - recipe_type: Raw Resource
+
+  Slime Block:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Slimeball: -9
+    - recipe_type: Raw Resource
+
+  Honey Block:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Honey Bottle: -4  # TODO: Empty Glass Bottles Are Also Produced Here
+    - recipe_type: Raw Resource
+
+  Observer:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cobblestone: -6
+        Redstone: -2
+        Nether Quartz: -1
+    - recipe_type: Raw Resource
+
+  Hopper:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -5
+        Chest: -1
+    - recipe_type: Raw Resource
+
+  Dispenser:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cobblestone: -7
+        Redstone: -1
+        Bow: -1
+    - recipe_type: Raw Resource
+
+  Dropper:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cobblestone: -7
+        Redstone: -1
+    - output: 1
+      recipe_type: Raw Resource
+
+  Lectern:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Slab: -4
+        Bookshelf: -1
+    - recipe_type: Raw Resource
+
+  Target:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Redstone Dust: -4
+        Hay Bale: -1
+    - recipe_type: Raw Resource
+
+  Lever:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cobblestone: -1
+        Stick: -1
+    - recipe_type: Raw Resource
+
+  Lightning Rod:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Copper Ingot: -3
+
+  Daylight Detector:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Slab: -3
+        Nether Quartz: -3
+        Glass: -3
+    - recipe_type: Raw Resource
+
+  Tripwire Hook:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -1
+        Stick: -1
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Trapped Chest:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Chest: -1
+        Tripwire Hook: -1
+    - recipe_type: Raw Resource
+
+  TNT:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Gunpowder: -5
+        Sand: -4
+    - recipe_type: Raw Resource
+
+  Redstone Lamp:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Redstone: -4
+        Glowstone: -1
+    - recipe_type: Raw Resource
+
+  Note Block:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oak Wood Planks: -8
+        Redstone: -1
+    - recipe_type: Raw Resource
+
+  Stone Button:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stone: -1
+    - recipe_type: Raw Resource
+
+  Polished Blackstone Button:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Polished Blackstone: -1
+    - recipe_type: Raw Resource
+
+  Oak Button:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oak Plank: -1
+    - recipe_type: Raw Resource
+
+  Spruce Button:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Spruce Plank: -1
+    - recipe_type: Raw Resource
+
+  Birch Button:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Birch Plank: -1
+    - recipe_type: Raw Resource
+
+  Jungle Button:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Jungle Plank: -1
+    - recipe_type: Raw Resource
+
+  Acacia Button:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Acacia Plank: -1
+    - recipe_type: Raw Resource
+
+  Dark Oak Button:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Dark Oak Plank: -1
+    - recipe_type: Raw Resource
+
+  Crimson Button:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crimson Plank: -1
+    - recipe_type: Raw Resource
+
+  Warped Button:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Warped Plank: -1
+    - recipe_type: Raw Resource
+
+  Stone Pressure Plate:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stone: -2
+    - recipe_type: Raw Resource
+
+  Polished Blackstone Pressure Plate:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Polished Blackstone: -2
+    - recipe_type: Raw Resource
+
+  Light Weighted Pressure Plate:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Gold Ingot: -2
+    - recipe_type: Raw Resource
+
+  Heavy Weighted Pressure Plate:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -2
+    - recipe_type: Raw Resource
+
+  Oak Pressure Plate:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oak Plank: -2
+    - recipe_type: Raw Resource
+
+  Spruce Pressure Plate:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Spruce Plank: -2
+    - recipe_type: Raw Resource
+
+  Birch Pressure Plate:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Birch Plank: -2
+    - recipe_type: Raw Resource
+
+  Jungle Pressure Plate:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Jungle Plank: -2
+    - recipe_type: Raw Resource
+
+  Acacia Pressure Plate:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Acacia Plank: -2
+    - recipe_type: Raw Resource
+
+  Dark Oak Pressure Plate:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Dark Oak Plank: -2
+    - recipe_type: Raw Resource
+
+  Crimson Pressure Plate:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crimson Plank: -2
+    - recipe_type: Raw Resource
+
+  Warped Pressure Plate:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Warped Plank: -2
+    - recipe_type: Raw Resource
+
+  Iron Door:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -6
+    - recipe_type: Raw Resource
+
+  Oak Door:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Oak Plank: -6
+    - recipe_type: Raw Resource
+
+  Spruce Door:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Spruce Plank: -6
+    - recipe_type: Raw Resource
+
+  Birch Door:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Birch Plank: -6
+    - recipe_type: Raw Resource
+
+  Jungle Door:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Jungle Plank: -6
+    - recipe_type: Raw Resource
+
+  Acacia Door:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Acacia Plank: -6
+    - recipe_type: Raw Resource
+
+  Dark Oak Door:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Dark Oak Plank: -6
+    - recipe_type: Raw Resource
+
+  Crimson Door:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Crimson Plank: -6
+    - recipe_type: Raw Resource
+
+  Warped Door:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Warped Plank: -6
+    - recipe_type: Raw Resource
+
+  Iron Trapdoor:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -4
+    - recipe_type: Raw Resource
+
+  Oak Trapdoor:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Oak Plank: -6
+    - recipe_type: Raw Resource
+
+  Spruce Trapdoor:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Spruce Plank: -6
+    - recipe_type: Raw Resource
+
+  Birch Trapdoor:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Birch Plank: -6
+    - recipe_type: Raw Resource
+
+  Jungle Trapdoor:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Jungle Plank: -6
+    - recipe_type: Raw Resource
+
+  Acacia Trapdoor:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Acacia Plank: -6
+    - recipe_type: Raw Resource
+
+  Dark Oak Trapdoor:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Dark Oak Plank: -6
+    - recipe_type: Raw Resource
+
+  Crimson Trapdoor:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Crimson Plank: -6
+    - recipe_type: Raw Resource
+
+  Warped Trapdoor:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Warped Plank: -6
+    - recipe_type: Raw Resource
+
+  Oak Fence Gate:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Stick: -4
+        Oak Plank: -2
+    - recipe_type: Raw Resource
+
+  Spruce Fence Gate:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Stick: -4
+        Spruce Plank: -2
+    - recipe_type: Raw Resource
+
+  Birch Fence Gate:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Stick: -4
+        Birch Plank: -2
+    - recipe_type: Raw Resource
+
+  Jungle Fence Gate:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Stick: -4
+        Jungle Plank: -2
+    - recipe_type: Raw Resource
+
+  Acacia Fence Gate:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Stick: -4
+        Acacia Plank: -2
+    - recipe_type: Raw Resource
+
+  Dark Oak Fence Gate:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Stick: -4
+        Dark Oak Plank: -2
+    - recipe_type: Raw Resource
+
+  Crimson Fence Gate:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Stick: -4
+        Crimson Plank: -2
+    - recipe_type: Raw Resource
+
+  Warped Fence Gate:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Stick: -4
+        Warped Plank: -2
+    - recipe_type: Raw Resource
+
+  Powered Rail:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Gold Ingot: -6
+        Redstone: -1
+        Stick: -1
+    - recipe_type: Raw Resource
+
+  Rail:
+    recipes:
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+
+  Activator Rail:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -6
+        Stick: -2
+        Redstone Torch: -1
+    - recipe_type: Raw Resource
+
+  Saddle:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Minecart:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -5
+    - recipe_type: Raw Resource
+
+  Minecart with Chest:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Minecart: -1
+        Chest: -1
+    - recipe_type: Raw Resource
+
+  Minecart with Furnace:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Minecart: -1
+        Furnace: -1
+    - recipe_type: Raw Resource
+  
+  Minecart with TNT:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Minecart: -1
+        TNT: -1
+    - recipe_type: Raw Resource
+
+  Minecart with Hopper:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Minecart: -1
+        Hopper: -1
+    - recipe_type: Raw Resource
+
+  Carrot on a Stick:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Carrot: -1
+        Fishing Rod: -1
+    - recipe_type: Raw Resource
+  
+  Warped Fungus on a Stick:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Warped Fungus: -1
+        Fishing Rod: -1
+    - recipe_type: Raw Resource
+
+  Elytra:
+    recipes:
+    - recipe_type: Raw Resource
+  
+  Oak Boat:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oak Plank: -5
+    - recipe_type: Raw Resource
+
+  Spruce Boat:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Spruce Plank: -5
+    - recipe_type: Raw Resource
+
+  Birch Boat:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Birch Plank: -5
+    - recipe_type: Raw Resource
+
+  Jungle Boat:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Jungle Plank: -5
+    - recipe_type: Raw Resource
+
+  Acacia Boat:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Acacia Plank: -5
+    - recipe_type: Raw Resource
+
+  Dark Oak Boat:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Dark Oak Plank: -5
+    - recipe_type: Raw Resource
+
+  Turtle Shell:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Scute: -5
+    - recipe_type: Raw Resource
+
+  Scute:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Flint and Steel:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Flint: -1
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Apple:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bow:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        String: -3
+        Stick: -3
+    - recipe_type: Raw Resource
+
+  Arrow:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Feather: -1
+        Stick: -1
+        Flint: -1
+
+  Coal:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Charcoal:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Any Log: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Any Wood: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Any Stripped Log: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Any Stripped Wood: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Diamond:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Emerald:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Block of Emerald: -1
+
+  Lapis Lazuli:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Nether Quartz:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Amethyst Shard:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Raw Iron:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Block of Raw Iron: -1
+
+  Iron Ingot:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Block of Iron: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Nugget: -9
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Iron Ore: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Deepslate Iron Ore: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Raw Iron: -1
+
+  Raw Copper:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Block of Raw Copper: -1
+
+  Copper Ingot:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Block of Copper: -1
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Waxed Block of Copper: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Copper Ore: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Deepslate Copper Ore: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Raw Copper: -1
+
+  Raw Gold:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 0
+      recipe_type: Crafting
+      requirements:
+        Block of Raw Gold: -1
+
+  Gold Ingot:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Block of Gold: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Gold Nugget: -9
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Gold Ore: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Nether Gold Ore: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Deepslate Gold Ore: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Raw Gold: -1
+
+  Netherite Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Gold Ingot: -4
+        Netherite Scrap: -4
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Block of Netherite: -1
+    - recipe_type: Raw Resource
+
+  Netherite Scrap:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Ancient Debris
+    - recipe_type: Raw Resource
+
+  Wooden Sword:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Any Planks: -2
+    - recipe_type: Raw Resource
+
+  Wooden Shovel:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Any Planks: -1
+    - recipe_type: Raw Resource
+
+  Wooden Pickaxe:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Any Planks: -3
+    - recipe_type: Raw Resource
+
+  Wooden Axe:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Any Planks: -3
+    - recipe_type: Raw Resource
+
+  Wooden Hoe:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Any Planks: -2
+    - recipe_type: Raw Resource
+
+  Stone Sword:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Any Stone: -2
+    - recipe_type: Raw Resource
+
+  Stone Shovel:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Any Stone: -1
+    - recipe_type: Raw Resource
+
+  Stone Pickaxe:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Any Stone: -3
+    - recipe_type: Raw Resource
+
+  Stone Axe:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Any Stone: -3
+    - recipe_type: Raw Resource
+
+  Stone Hoe:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Any Stone: -2
+    - recipe_type: Raw Resource
+
+  Golden Sword:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Gold Ingot: -2
+    - recipe_type: Raw Resource
+
+  Golden Shovel:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Gold Ingot: -1
+    - recipe_type: Raw Resource
+
+  Golden Pickaxe:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Gold Ingot: -3
+    - recipe_type: Raw Resource
+
+  Golden Axe:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Gold Ingot: -3
+    - recipe_type: Raw Resource
+
+  Golden Hoe:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Gold Ingot: -2
+    - recipe_type: Raw Resource
+
+  Iron Sword:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Iron Ingot: -2
+    - recipe_type: Raw Resource
+
+  Iron Shovel:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+ 
+  Iron Pickaxe:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Iron Ingot: -3
+    - recipe_type: Raw Resource
+
+  Iron Axe:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Iron Ingot: -3
+    - recipe_type: Raw Resource
+
+  Iron Hoe:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Iron Ingot: -2
+    - recipe_type: Raw Resource
+
+  Diamond Sword:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Diamond: -2
+    - recipe_type: Raw Resource
+
+  Diamond Shovel:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Diamond: -1
+    - recipe_type: Raw Resource
+
+  Diamond Pickaxe:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Diamond: -3
+    - recipe_type: Raw Resource
+
+  Diamond Axe:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Diamond: -3
+    - recipe_type: Raw Resource
+
+  Diamond Hoe:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Diamond: -2
+    - recipe_type: Raw Resource
+
+  Netherite Sword:
+    recipes:
+    - output: 1
+      recipe_type: Anvil
+      requirements:
+        Diamond Sword: -1
+        Netherite Ingot: -1
+    - recipe_type: Raw Resource
+
+  Netherite Shovel:
+    recipes:
+    - output: 1
+      recipe_type: Anvil
+      requirements:
+        Diamond Shovel: -1
+        Netherite Ingot: -1
+    - recipe_type: Raw Resource
+
+  Netherite Pickaxe:
+    recipes:
+    - output: 1
+      recipe_type: Anvil
+      requirements:
+        Diamond Pickaxe: -1
+        Netherite Ingot: -1
+    - recipe_type: Raw Resource
+
+  Netherite Axe:
+    recipes:
+    - output: 1
+      recipe_type: Anvil
+      requirements:
+        Diamond Axe: -1
+        Netherite Ingot: -1
+    - recipe_type: Raw Resource
+
+  Netherite Hoe:
+    recipes:
+    - output: 1
+      recipe_type: Anvil
+      requirements:
+        Diamond Hoe: -1
+        Netherite Ingot: -1
+    - recipe_type: Raw Resource
+
+  Stick:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -2
+    - recipe_type: Raw Resource
+
+  Bowl:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -3
+    - recipe_type: Raw Resource
+
+  Mushroom Stew:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Red Mushroom: -1
+        Brown Mushroom: -1
+        Bowl: -1
+    - recipe_type: Raw Resource
+
+String:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Feather:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Gunpowder:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Seeds:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Wheat:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bread:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Wheat: -3
+    - recipe_type: Raw Resource
+
+Leather Cap:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Leather: -5
+    - recipe_type: Raw Resource
+
+  Leather Tunic:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Leather: -8
+    - recipe_type: Raw Resource
+
+  Leather Pants:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Leather: -7
+    - recipe_type: Raw Resource
+
+  Leather Boots:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Leather: -4
+    - recipe_type: Raw Resource
+
+  Chainmail Helmet:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Chainmail Chestplate:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Chainmail Leggings:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Chainmail Boots:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Iron Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -5
+    - recipe_type: Raw Resource
+
+  Iron Chestplate:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -8
+    - recipe_type: Raw Resource
+
+  Iron Leggings:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -7
+    - recipe_type: Raw Resource
+
+  Iron Boots:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -4
+    - recipe_type: Raw Resource
+
+  Diamond Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Diamond: -5
+    - recipe_type: Raw Resource
+      
+  Diamond Chestplate:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Diamond: -8
+    - recipe_type: Raw Resource
+
+  Diamond Leggings:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Diamond: -7
+    - recipe_type: Raw Resource
+
+  Diamond Boots:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Diamond: -4
+    - recipe_type: Raw Resource
+
+  Golden Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Gold Ingot: -5
+    - recipe_type: Raw Resource
+
+  Golden Chestplate:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Gold Ingot: -8
+    - recipe_type: Raw Resource
+
+  Golden Leggings:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Gold Ingot: -7
+    - recipe_type: Raw Resource
+
+  Golden Boots:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Gold Ingot: -4
+    - recipe_type: Raw Resource
+
+  Netherite Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Anvil
+      requirements:
+        Diamond Helmet: -1
+        Netherite Ingot: -1
+    - recipe_type: Raw Resource
+
+  Netherite Chestplate:
+    recipes:
+    - output: 1
+      recipe_type: Anvil
+      requirements:
+        Diamond Chestplate: -1
+        Netherite Ingot: -1
+    - recipe_type: Raw Resource
+
+  Netherite Leggings:
+    recipes:
+    - output: 1
+      recipe_type: Anvil
+      requirements:
+        Diamond Leggings: -1
+        Netherite Ingot: -1
+    - recipe_type: Raw Resource
+
+  Netherite Boots:
+    recipes:
+    - output: 1
+      recipe_type: Anvil
+      requirements:
+        Diamond Boots: -1
+        Netherite Ingot: -1
+    - recipe_type: Raw Resource
+
+  Flint: 
+    - recipe_type: Raw Resource
+
+  Raw Porkchop:
+    - recipe_type: Raw Resource
+
+  Cooked Porkchop:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Raw Porkchop: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Painting:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -8
+        White Wool: -1
+    - recipe_type: Raw Resource
+
+  Golden Apple:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Gold Ingot: -8
+        Apple: -1
+    - recipe_type: Raw Resource
+
+  Enchanted Golden Apple:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Oak Sign:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Oak Plank: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+
+  Spruce Sign:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Spruce Plank: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+
+  Birch Sign:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Birch Plank: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+
+  Jungle Sign:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Jungle Plank: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+
+  Acacia Sign:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Acacia Plank: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+
+  Dark Oak Sign:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Dark Oak Plank: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+
+  Crimson Sign:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Crimson Plank: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+
+  Warped Sign:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Warped Plank: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+
+  Bucket:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -3
+    - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
+
+  Water Bucket: # TODO: Should this have a recipe?
+    recipes:
+    - recipe_type: Raw Resource
+
+  Lava Bucket: # TODO Should this have a recipe?
+    recipes:
+    - recipe_type: Raw Resource
+
+  Powder Snow Bucket: # TODO Should this have a recipe?
+    recipes:
+    - recipe_type: Raw Resource
+
+  Snowball:
+    recipes:
+    - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
+
+  Leather:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Milk Bucket:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bucket of Pufferfish:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bucket of Salmon:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bucket of Cod:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bucket of Tropical Fish:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bucket of Axolotl:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Brick:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Clay: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Clay Ball:
+    - recipe_type: Raw Resource
+
+  Dried Kelp Block:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Dried Kelp: -9
+    - recipe_type: Raw Resource
+
+  Paper:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Sugar Canes: -3
+    - recipe_type: Raw Resource
+
+  Book:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Paper: -3
+        Leather: -1
+    - recipe_type: Raw Resource
+  
+  Slimeball:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Slime Block: -1
+
+  Egg:
+    recipes:
+    - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
+
+  Compass:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -4
+        Redstone: -1
+    - recipe_type: Raw Resource
+
+  Fishing Rod:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -3
+        String: -2
+    - recipe_type: Raw Resource
+
+  Clock:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Gold Ingot: -4
+        Redstone: -1
+    - recipe_type: Raw Resource
+
+  Spyglass:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Amethyst Shard: -1
+        Copper Ingot: -2
+    - recipe_type: Raw Resource
+
+  Glowstone Dust:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Raw Cod:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Raw Salmon:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Tropical fish:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Pufferfish:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Cooked Cod:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Raw Cod: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Cooked Salmon:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Raw Salmon: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Ink Sac:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Glow Ink Sac:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Cocoa Beans:
+    recipes:
+    - recipe_type: Raw Resource
+
+  White Dye:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bone Meal: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Lily of the Valley: -1
+    - recipe_type: Raw Resource
+
+  Orange Dye:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Yellow Dye: -1
+        Red Dye: -1
+    - recipe_type: Raw Resource
+
+  Magenta Dye:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Red Dye: -2
+        Blue Dye: -1
+        White Dye: -1
+    - recipe_type: Raw Resource
+
+  Light Blue Dye:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Blue Dye: -1
+        White Dye: -1
+    - recipe_type: Raw Resource
+
+  Yellow Dye:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Dandelion: -1
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Sunflower: -1
+    - recipe_type: Raw Resource
+
+  Lime Dye:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Green Dye: -1
+        White Dye: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Sea Pickle: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Pink Dye:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        White Dye: -1
+        Red Dye: -1
+    - recipe_type: Raw Resource
+
+  Gray Dye:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        White Dye: -1
+        Black Dye: -1
+    - recipe_type: Raw Resource
+
+  Light Gray Dye:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        White Dye: -2
+        Black Dye: -1
+    - recipe_type: Raw Resource
+
+  Cyan Dye:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Blue Dye: -1
+        Green Dye: -1
+    - recipe_type: Raw Resource
+
+  Purple Dye:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Blue Dye: -1
+        Red Dye: -1
+    - recipe_type: Raw Resource
+
+  Blue Dye:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cornflower: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Lapis Lazuli: -1
+    - recipe_type: Raw Resource
+
+  Brown Dye:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cocoa Beans: -1
+    - recipe_type: Raw Resource
+
+  Green Dye:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Cactus: -1
+        Fuel: -1
+      extra_data:
+        recipe:
+        - Cactus
+        - Fuel
+    - recipe_type: Raw Resource
+
+  Red Dye:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Poppy: -1
+    - recipe_type: Raw Resource
+
+  Black Dye:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Ink Sac: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Wither Rose: -1
+    - recipe_type: Raw Resource
+
+  Bone Meal:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Bone: -1
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Bone Block: -1
+    - recipe_type: Raw Resource
+
+  Bone:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Sugar:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Sugar Canes: -1
+    - recipe_type: Raw Resource
+
+  Cake:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Wheat: -3
+        Sugar: -2
+        Egg: -1
+        Milk: -3
+    - recipe_type: Raw Resource
+
+  White Bed:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -3
+        White Wool: -3
+    - recipe_type: Raw Resource
+
+  Orange Bed:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -3
+        Orange Wool: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Bed: -1
+        Orange Dye: -1
+    - recipe_type: Raw Resource
+
+  MAgenta Bed:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -3
+        Magenta Wool: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Bed: -1
+        Magenta Dye: -1
+    - recipe_type: Raw Resource
+
+  Light Blue Bed:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -3
+        Light Blue Wool: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Bed: -1
+        Light Blue Dye: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Light Blue Bed: 0
+
+  Yellow Bed:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oak Wood Planks: -3
+        Yellow Wool: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Bed: -1
+        Yellow Dye: -1
+    - recipe_type: Raw Resource
+
+  Lime Bed:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -3
+        Lime Wool: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Bed: -1
+        Lime Dye: -1
+    - recipe_type: Raw Resource
+
+  Pink Bed:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -3
+        Pink Wool: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Bed: -1
+        Pink Dye: -1
+    - recipe_type: Raw Resource
+
+  Gray Bed:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -3
+        Gray Wool: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Bed: -1
+        Gray Dye: -1
+    - recipe_type: Raw Resource
+
+  Light Gray Bed:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -3
+        Light Gray Wool: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Bed: -1
+        Light Gray Dye: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Light Gray Bed: 0
+
+  Cyan Bed:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -3
+        Cyan Wool: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Bed: -1
+        Cyan Dye: -1
+    - recipe_type: Raw Resource
+
+  Purple Bed:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -3
+        Purple Wool: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Bed: -1
+        Purple Dye: -1
+    - recipe_type: Raw Resource
+
+  Blue Bed:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -3
+        Blue Wool: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Bed: -1
+        Blue Dye: -1
+    - recipe_type: Raw Resource
+
+  Brown Bed:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -3
+        Brown Wool: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Bed: -1
+        Brown Dye: -1
+    - recipe_type: Raw Resource
+
+  Green Bed:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -3
+        Green Wool: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Bed: -1
+        Green Dye: -1
+    - recipe_type: Raw Resource
+
+  Red Bed:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -3
+        Red Wool: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Bed: -1
+        Red Dye: -1
+    - recipe_type: Raw Resource
+
+  Black Bed:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -3
+        Black Wool: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        White Bed: -1
+        Black Dye: -1
+    - recipe_type: Raw Resource
+
+  Cookie:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Wheat: -2
+        Cocoa Beans: -1
+    - recipe_type: Raw Resource
+
+  Shears:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -2
+    - recipe_type: Raw Resource
+
+  Melon Slice:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dried Kelp:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Kelp: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Pumpkin Seeds:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Pumpkin: -1
+    - recipe_type: Raw Resource
+
+  Melon Seeds:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Melon Slice: -1
+    - recipe_type: Raw Resource
+
+  Raw Beef:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Steak:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Raw Beef: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Raw Chicken:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Cooked Chicken:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Raw Chicken: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Rotten Flesh:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Ender Pearl:
+    recipes:
+    - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
+
+  Blaze Rod:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Ghast Tear:
+    recipes:
+    - recipe_type: Raw Resource
+
+
+  Gold Nugget:
+    recipes:
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Gold Ingot: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Golden Helmet: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Golden Chestplate: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Golden Leggings: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Golden Boots: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Golden Sword: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Golden Hoe: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Golden Axe: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Golden Pickaxe: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Gold Horse Armor: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Nether Wart:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Water Bottle:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Glass Bottle:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Glass: -3
+    - recipe_type: Raw Resource
+
+  Spider Eye:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Fermented Spider Eye:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Brown Mushroom: -1
+        Sugar: -1
+        Spider Eye: -1
+    - recipe_type: Raw Resource
+
+  Blaze Powder:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Blaze Rod: -1
+    - recipe_type: Raw Resource
+
+  Magma Cream:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Blaze Powder: -1
+        Slimeball: -1
+    - recipe_type: Raw Resource
+
+  Brewing Stand:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cobblestone: -3
+        Blaze Rod: -1
+    - recipe_type: Raw Resource
+
+  Cauldron:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -7
+    - recipe_type: Raw Resource
+
+  Eye of Ender:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Blaze Powder: -1
+        Ender Pearl: -1
+    - recipe_type: Raw Resource
+  
+  Glistering Melon:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Gold Nugget: -8
+        Melon Slice: -1
+    - recipe_type: Raw Resource
+
+  Bottle o' Enchanting:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Fire Charge:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Gunpowder: -1
+        Blaze Powder: -1
+        Charcoal: -1
+    - recipe_type: Raw Resource
+
+  Book and Quill:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Feather: -1
+        Book: -1
+        Ink Sac: -1
+    - recipe_type: Raw Resource
+
+  Item Frame:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -8
+        Leather: -1
+    - recipe_type: Raw Resource
+
+  Glow Item Frame:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Glow Ink Sac: -1
+        Item Frame: -1
+    - recipe_type: Raw Resource
+
+  Flower Pot:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Brick: -3
+    - recipe_type: Raw Resource
+
+  Carrot:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Potato:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Baked Potato:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Poisonous Potato:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Empty Map:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Paper: -8
+        Compass: -1
+    - recipe_type: Raw Resource
+
+  Golden Carrot:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Gold Nugget: -8
+        Carrot: -1
+    - recipe_type: Raw Resource
+
+  Skeleton Skull:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Wither Skeleton Skull:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Head:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Zombie Head:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Creeper Head:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dragon Head:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Nether Star:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Pumpkin Pie:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Pumpkin: -1
+        Sugar: -1
+        Egg: -1
+    - recipe_type: Raw Resource
+
+  Firework:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Paper: -1
+        Gunpowder: -3
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Paper: -1
+        Gunpowder: -2
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Paper: -1
+        Gunpowder: -1
+    - recipe_type: Raw Resource
+
+  Firework Star:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Nether Brick:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Prismarine Shard:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Prismarine Crystals:
+    recipes:
+    - recipe_type: Raw Resource
+  
+  Raw Rabbit:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Cooked Rabbit:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Raw Rabbit: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Rabbit Stew:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: -1
+        Carrot: -1
+        Baked Potato: -1
+        Brown Mushroom: -1
+        Cooked Rabbit: -1
+    - recipe_type: Raw Resource
+
+  Rabbit's Foot:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Rabbit Hide:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Armor Stand:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -6
+        Smooth Stone Slab: -1
+    - recipe_type: Raw Resource
+
+  Iron Horse Armor:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Gold Horse Armor:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Diamond Horse Armor:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Leather Horse Armor:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Leather: -7
+    - recipe_type: Raw Resource
+
+  Lead:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        String: -4
+        Slimeball: -1
+    - recipe_type: Raw Resource
+
+  Name Tag:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Raw Mutton:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Cooked Mutton:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Raw Mutton: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  White Banner:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        White Wool: -6
+    - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
+
+  Orange Banner:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Orange Wool: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
+
+  Magenta Banner:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Magenta Wool: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
+
+  Light Blue Banner:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Light Blue Wool: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
+
+  Yellow Banner:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Yellow Wool: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
+
+  Lime Banner:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Lime Wool: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
+
+  Pink Banner:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Pink Wool: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
+
+  Gray Banner:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Gray Wool: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
+
+  Light Gray Banner:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Light Gray Wool: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
+
+  Cyan Banner:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cyan Wool: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
+
+  Purple Banner:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Purple Wool: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
+
+  Blue Banner:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Blue Wool: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
+
+  Brown Banner:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Brown Wool: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
+
+  Green Banner:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Green Wool: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
+
+  Red Banner:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Red Wool: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
+
+  Black Banner:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Black Wool: -6
+        Stick: -1
+    - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
+
+  End Crystal:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Glass: -7
+        Ghast Tear: -1
+        Eye of Ender: -1
+    - recipe_type: Raw Resource
+
+  Chorus Fruit:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Popped Chorus Fruit:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Chorus Fruit: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Beetroot:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Beetroot Seeds:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Beetroot Soup:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: -1
+        Beetroot: -6
+    - recipe_type: Raw Resource
+  
+  Dragon's Breath:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Spectral Arrow:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Glowstone Dust: -4
+        Arrow: -1
+    - recipe_type: Raw Resource
+
+  Shield:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oak Wood Planks: -6
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Totem of Undying:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Shulker Shell:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Iron Nugget:
+    recipes:
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Iron Helmet: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Iron Chestplate: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Iron Leggings: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Iron Boots: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Iron Sword: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Iron Hoe: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Iron Axe: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Iron Pickaxe: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Iron Horse Armor: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Trident:
+    recipes:
+    - recipe_type: Raw Resource
+
+  
+  Nautilus Shell:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Phantom Membrane:
+    recipes:
+    - recipe_type: Raw Resource
+  
+  Heart of the Sea:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Crossbow:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -1
+        String: -2
+        Stick: -3
+        Tripwire Hook: -1
+    - recipe_type: Raw Resource
+
+  Loom:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Planks: -2
+        String: -2
+    - recipe_type: Raw Resource
+
+  Composter:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Slab: -7
+    - recipe_type: Raw Resource
+
+  Barrel:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Slab: -2
+        Any Planks: -6
+    - recipe_type: Raw Resource
+
+  Smoker:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Furnace: -1
+        Any Log: -4
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Furnace: -1
+        Any Wood: -4
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Furnace: -1
+        Any Stripped Log: -4
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Furnace: -1
+        Any Stripped Wood: -4
+    - recipe_type: Raw Resource
+
+  Blast Furnace:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -5
+        Furnace: -1
+        Smooth Stone: -3
+    - recipe_type: Raw Resource
+
+  Cartography Table:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Paper: -2
+        Any Planks: -4
+    - recipe_type: Raw Resource
+
+  Fletching Table:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Flint: -2
+        Any Planks: -4
+    - recipe_type: Raw Resource
+
+  Grindstone:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stone Slab: -1
+        Any Planks: -2
+        Stick: -2
+    - recipe_type: Raw Resource
+
+  Smithing Table:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -2
+        Any Planks: -4
+    - recipe_type: Raw Resource
+
+  Stonecutter:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -1
+        Stone: -3
+    - recipe_type: Raw Resource
+
+  Bell:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Lantern:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Nugget: -8
+        Torch: -1
+    - recipe_type: Raw Resource
+  
+  Soul Lantern:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Nugget: -8
+        Soul Torch: -1
+    - recipe_type: Raw Resource
+
+  Sweet Berries:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Sweet Berries: 0
+
+  Glow Berries:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Campfire:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -3
+        Coal: -1
+        Any Log: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -3
+        Charcoal: -1
+        Any Log: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -3
+        Coal: -1
+        Any Wood: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -3
+        Charcoal: -1
+        Any Wood: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -3
+        Coal: -1
+        Any Stripped Log: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -3
+        Charcoal: -1
+        Any Stripped Log: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -3
+        Coal: -1
+        Any Stripped Wood: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -3
+        Charcoal: -1
+        Any Stripped Wood: -3
+    - recipe_type: Raw Resource
+
+  Soul Campfire:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -3
+        Soul Sand: -1
+        Any Log: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -3
+        Soul Soil: -1
+        Any Log: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -3
+        Soul Sand: -1
+        Any Wood: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -3
+        Soul Soil: -1
+        Any Wood: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -3
+        Soul Sand: -1
+        Any Stripped Log: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -3
+        Soul Soil: -1
+        Any Stripped Log: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -3
+        Soul Sand: -1
+        Any Stripped Wood: -3
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -3
+        Soul Soil: -1
+        Any Stripped Wood: -3
+    - recipe_type: Raw Resource
+
+  Shroomlight:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Honeycomb:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bee Hive:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bee Nest:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Plank: -6
+        Honeycomb: -3
+    - recipe_type: Raw Resource
+
+  Honey Bottle:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Honey Block: -1
+        Glass Bottle: -4
+
+  Honeycomb Block:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Honeycomb: -4
+    - recipe_type: Raw Resource
+
+  Lodestone:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Chiseled Stone Bricks: -8
+        Netherite Ingot: -1
+
+  Crying Obsidian:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Blackstone:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Blackstone Slab:
+    recipes:
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Blackstone: -3
+    - recipe_type: Raw Resource
+
+  Blackstone Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Blackstone: -6
+    - recipe_type: Raw Resource
+
+  Guilded Blackstone:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Polished Blackstone:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Blackstone: -4
+    - recipe_type: Raw Resource
+
+  Polished Blackstone Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Polished Blackstone: -3
+    - recipe_type: Raw Resource
+
+  Polished Blackstone Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Polished Blackstone: -6
+    - recipe_type: Raw Resource
+
+  Chiseled Polished Blackstone:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Polished Blackstone Slab: -2
+    - recipe_type: Raw Resource
+
+  Polished Blackstone Bricks:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Polished Blackstone: -4
+    - recipe_type: Raw Resource
+
+  Polished Blackstone Brick Slab:
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Polished Blackstone Bricks: -3
+    - recipe_type: Raw Resource
+
+  Polished Blackstone Brick Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Polished Blackstone Bricks: -6
+    - recipe_type: Raw Resource
+
+  Cracked Polished Blackstone Bricks:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Polished Blackstone Bricks: -1
+        Fuel: -1
+    - recipe_type: Raw Resource
+
+  Respawn Anchor:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crying Obsidian: -6
+        Glowstone: -3
+    - recipe_type: Raw Resource
+
+  Candle:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        String: -1
+        Honeycomb: -1
+
+  White Candle:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Candle: -1
+        White Dye: -1
+    - recipe_type: Raw Resource
+
+  Orange Candle:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Candle: -1
+        Orange Dye: -1
+    - recipe_type: Raw Resource
+
+  Magenta Candle:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Candle: -1
+        Magenta Dye: -1
+    - recipe_type: Raw Resource
+
+  Light Blue Candle:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Candle: -1
+        Light Blue Dye: -1
+    - recipe_type: Raw Resource
+
+  Yellow Candle:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Candle: -1
+        Yellow Dye: -1
+    - recipe_type: Raw Resource
+
+  Lime Candle:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Candle: -1
+        Lime Dye: -1
+    - recipe_type: Raw Resource
+
+  Pink Candle:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Candle: -1
+        Pink Dye: -1
+    - recipe_type: Raw Resource
+
+  Gray Candle:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Candle: -1
+        Gray Dye: -1
+    - recipe_type: Raw Resource
+
+  Light Gray Candle:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Candle: -1
+        Light Gray Dye: -1
+    - recipe_type: Raw Resource
+
+  Cyan Candle:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Candle: -1
+        Cyan Dye: -1
+    - recipe_type: Raw Resource
+
+  Purple Candle:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Candle: -1
+        Purple Dye: -1
+    - recipe_type: Raw Resource
+
+  Blue Candle:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Candle: -1
+        Blue Dye: -1
+    - recipe_type: Raw Resource
+
+  Brown Candle:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Candle: -1
+        Brown Dye: -1
+    - recipe_type: Raw Resource
+
+  Green Candle:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Candle: -1
+        Green Dye: -1
+    - recipe_type: Raw Resource
+
+  Red Candle:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Candle: -1
+        Red Dye: -1
+    - recipe_type: Raw Resource
+
+  Black Candle:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Candle: -1
+        Black Dye: -1
+    - recipe_type: Raw Resource
+
+  Small Amethyst Bud:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Medium Amethyst Bud:
+    recipes:
+    - recipe_type: Raw Resource
+  
+  Large Amethyst Bud:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Amethyst Cluster:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Pointed Dripstone:
+    recipes:
+    - recipe_type: Raw Resource
