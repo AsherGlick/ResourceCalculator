@@ -1,4 +1,5 @@
-from PIL import Image
+from PIL import Image # type:ignore
+from typing import List, Dict
 import shutil
 
 letters = {
@@ -11,7 +12,7 @@ letters = {
     "192525253e":"g",
     "fe1020201e":"h",
     "be":"i",
-    "06010101BE":"j", # No minecraft item has a lower case j in it, this is manually added
+    "06010101BE":"j",  # No minecraft item has a lower case j in it, this is manually added
     "fe081422":"k",
     "fc02":"l",
     "3e2018201e":"m",
@@ -51,10 +52,10 @@ letters = {
     "fc020202fc":"U",
     "f00c020cf0":"V",
     "fe040804fe":"W",
-    "8E5020508E":"X", # No minecraft item has a capital X in it so this is manually added
+    "8E5020508E":"X",  # No minecraft item has a capital X in it so this is manually added
     "80403e4080":"Y",
     "868a92a2c2":"Z",
-    "c0":"'",
+    "c0":"'", # This is needed for things like "Jack o'Lantern"
 
     # JUNK CHARACTERS
     "ff": "",
@@ -64,24 +65,36 @@ letters = {
     "ffffffffff": "",
 }
 
+
+################################################################################
+# Converts an array of booleans into a hex string assuming each bool represents
+# a 1 or 0 in a bytes.
+#
 # from https://stackoverflow.com/questions/25583312
-def bool_array_to_hex(bool_array):
+################################################################################
+def bool_array_to_hex(bool_array: List[bool]) -> str:
     zero_one = map(int, bool_array)
     n = int(''.join(map(str, zero_one)), 2)
     return '{:02x}'.format(n)
 
 
-duplicate_names = {}
+# Keep track of any duplicate names so we can append an integer suffix
+duplicate_names: Dict[str,int] = {}
 
 
-def main():
-    # for image_index in range(0, 44):
+################################################################################
+# Run through each file generated with dice_screenshots.sh and attempt to read
+# the text screenshot to rename the icon screenshot. Duplicate names will be
+# appended with a _2 or _3 etc.
+################################################################################
+def main() -> None:
     for image_index in range(0, 1350):
         text_image_filename = "image_text/" + str(image_index) + ".png"
         block_image_filename = "diced_images/" + str(image_index) + ".png"
 
         decoded_name = decode_image_text(text_image_filename)
 
+        # Convert to lowercase and strip symbols
         decoded_name = decoded_name.lower()
         decoded_name = decoded_name.replace("'", "")
 
@@ -96,21 +109,40 @@ def main():
 
         shutil.copyfile(block_image_filename, target_file_name)
 
+
 ################################################################################
+# Read the text-image file and attempt to decode the letters. This is done by
+# looking at one column at a time and from top to bottom converting each pixel
+# into a 1 or a 0. White pixels become 1's and black pixels becomes 0's. This
+# data is then converted into a hexadecimal string and added to the character
+# identifier. When a column of all black pixels is found the character
+# identifier is used to look up what character it is from the `letters` map.
+# The mapped character is then added to the output string and the character
+# identifier is reset for the next character.
 #
+# Because there is some noise data at the end we filter out anything that is
+# longer then 10 pixels wide. We also have a set of "bad" characters in the
+# `letters` map which usually correspond to vertical white lines of varying
+# widths.
+#
+# This decoder does not handles spaces currently because it has not been a
+# required feature, because spaces get stripped out later in the pipeline.
 ################################################################################
-def decode_image_text(filename):
+def decode_image_text(filename: str) -> str:
 
     has_error = False
 
-    letter_hexes = []
+    letter_hexes: List[str] = []
 
-    letter_rows = []
+    letter_rows: List[str] = []
 
     with Image.open(filename) as im:
         pixels = im.load()
         width, height = im.size
 
+        # Iterate over all the columns and rows, but skip each other row/column
+        # because all the pixels in the text screenshots are 2x2 blocks of
+        # color because minecraft is at GUI scale 2.
         for x in range(0,width,2):
             column_bits = []
             for y in range(0,height,2):
@@ -130,7 +162,7 @@ def decode_image_text(filename):
                 letter_rows.append(column)
 
 
-    decoded_letters = []
+    decoded_letters: List[str] = []
 
     for letterhex in letter_hexes:
         if letterhex == "":
@@ -151,4 +183,5 @@ def decode_image_text(filename):
     return "".join(decoded_letters)
 
 
+# Run the OCR renamer
 main()
