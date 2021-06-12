@@ -188,7 +188,7 @@ def slab():
         indent_print("  - output: 6")
         indent_print("    recipe_type: Crafting")
         indent_print("    requirements:")
-        indent_print("      {}: -3".format(mrep("{} Plank".format(wood_type))))
+        indent_print("      {}: -3".format(mrep("{} Planks".format(wood_type))))
 
         indent_print("  - recipe_type: Raw Resource")
         print_chunk()
@@ -202,8 +202,8 @@ def fence():
         indent_print("  - output: 3")
         indent_print("    recipe_type: Crafting")
         indent_print("    requirements:")
-        indent_print("      {}: -4".format(mrep("{} Plank".format(wood_type))))
-        indent_print("      Stick: 2")
+        indent_print("      {}: -4".format(mrep("{} Planks".format(wood_type))))
+        indent_print("      Stick: -2")
 
         indent_print("  - recipe_type: Raw Resource")
         print_chunk()
@@ -217,7 +217,7 @@ def button():
         indent_print("  - output: 1")
         indent_print("    recipe_type: Crafting")
         indent_print("    requirements:")
-        indent_print("      {}: -1".format(mrep("{} Plank".format(wood_type))))
+        indent_print("      {}: -1".format(mrep("{} Planks".format(wood_type))))
 
         indent_print("  - recipe_type: Raw Resource")
         print_chunk()
@@ -231,7 +231,7 @@ def pressure_plate():
         indent_print("  - output: 1")
         indent_print("    recipe_type: Crafting")
         indent_print("    requirements:")
-        indent_print("      {}: -2".format(mrep("{} Plank".format(wood_type))))
+        indent_print("      {}: -2".format(mrep("{} Planks".format(wood_type))))
 
         indent_print("  - recipe_type: Raw Resource")
         print_chunk()
@@ -245,7 +245,7 @@ def door():
         indent_print("  - output: 3")
         indent_print("    recipe_type: Crafting")
         indent_print("    requirements:")
-        indent_print("      {}: -6".format(mrep("{} Plank".format(wood_type))))
+        indent_print("      {}: -6".format(mrep("{} Planks".format(wood_type))))
 
         indent_print("  - recipe_type: Raw Resource")
         print_chunk()
@@ -259,7 +259,7 @@ def trapdoor():
         indent_print("  - output: 2")
         indent_print("    recipe_type: Crafting")
         indent_print("    requirements:")
-        indent_print("      {}: -6".format(mrep("{} Plank".format(wood_type))))
+        indent_print("      {}: -6".format(mrep("{} Planks".format(wood_type))))
 
         indent_print("  - recipe_type: Raw Resource")
         print_chunk()
@@ -274,7 +274,7 @@ def fencegate():
         indent_print("    recipe_type: Crafting")
         indent_print("    requirements:")
         indent_print("      Stick: -4")
-        indent_print("      {}: -2".format(mrep("{} Plank".format(wood_type))))
+        indent_print("      {}: -2".format(mrep("{} Planks".format(wood_type))))
 
         indent_print("  - recipe_type: Raw Resource")
         print_chunk()
@@ -287,7 +287,7 @@ def boat():
         indent_print("  - output: 1")
         indent_print("    recipe_type: Crafting")
         indent_print("    requirements:")
-        indent_print("      {}: -5".format(mrep("{} Plank".format(wood_type))))
+        indent_print("      {}: -5".format(mrep("{} Planks".format(wood_type))))
 
         indent_print("  - recipe_type: Raw Resource")
         print_chunk()
@@ -301,7 +301,7 @@ def sign():
         indent_print("  - output: 3")
         indent_print("    recipe_type: Crafting")
         indent_print("    requirements:")
-        indent_print("      {}: -6".format(mrep("{} Plank".format(wood_type))))
+        indent_print("      {}: -6".format(mrep("{} Planks".format(wood_type))))
         indent_print("      Stick: -1")
 
         indent_print("  - recipe_type: Raw Resource")
