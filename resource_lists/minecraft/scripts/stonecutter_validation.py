@@ -5,7 +5,10 @@
 # blocks. This will then take that list and make sure those other blocks do 
 # have recipes that include each of these source blocks.
 
-stonecutter_results = {
+import yaml
+from typing import Dict, List
+
+stonecutter_results: Dict[str, List[str]] = {
 	"Andesite": [
 		"Andesite Slab",
 		"Andesite Stairs",
@@ -116,7 +119,7 @@ stonecutter_results = {
 		"Oxidized Cut Copper Stairs",
 	],
 	"Polished Andesite": [
-		"Polished Andedsite Slab",
+		"Polished Andesite Slab",
 		"Polished Andesite Stairs",
 	],
 	"Polished Blackstone": [
@@ -154,7 +157,7 @@ stonecutter_results = {
 	"Red Nether Bricks": [
 		"Red Nether Brick Slab",
 		"Red Nether Brick Stairs",
-		"Red nether Brick Wall",
+		"Red Nether Brick Wall",
 	],
 	"Red Sandstone": [
 		"Chiseled Red Sandstone",
@@ -230,3 +233,50 @@ stonecutter_results = {
 }
 
 
+
+
+
+
+inverted_stonecutter_results = {}
+
+for source_block in stonecutter_results:
+	for result_block in stonecutter_results[source_block]:
+		if result_block not in inverted_stonecutter_results:
+			inverted_stonecutter_results[result_block] = []
+		inverted_stonecutter_results[result_block].append(source_block)
+
+with open("../resources.yaml") as f:
+	resources = yaml.safe_load(f.read())["resources"]
+	# print(resources)
+	# for resource in resources:
+		# print(resource)
+
+
+for resource in inverted_stonecutter_results:
+	quantity = 1
+	if resource.endswith("Slab"):
+		quantity = 2
+	# print(resource)
+	if resource not in resources:
+		print("{} not found in resources.yaml".format(resource))
+
+	recipes = resources[resource]["recipes"]
+	# print(recipes)
+
+
+	for crafted_from in inverted_stonecutter_results[resource]:
+		target_recipe = {'output': quantity, 'recipe_type': 'Cutting', 'requirements': {crafted_from: -1}}
+
+		found = False
+		for recipe in recipes:
+			if target_recipe == recipe:
+				found = True
+
+		if not found:
+			print("Could not find cutting recipe to create \"{}\" from \"{}\"".format(resource, crafted_from))
+			print("ADD RECIPE:")
+			print("    - output: {}".format(str(quantity)))
+			print("      recipe_type: Cutting")
+			print("      requirements:")
+			print("        {}: -1".format(crafted_from))
+			print("")

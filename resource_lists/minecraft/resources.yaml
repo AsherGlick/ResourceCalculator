@@ -1943,7 +1943,7 @@ resources:
     - output: 2
       recipe_type: Cutting
       requirements:
-        Stone Slab: -1
+        Stone: -1
     - recipe_type: Raw Resource
 
   Smooth Stone Slab:
@@ -2112,7 +2112,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Purpur Pillar: -3
-    - output: 1
+    - output: 2
       recipe_type: Cutting
       requirements:
         Purpur Block: -1
@@ -2266,6 +2266,10 @@ resources:
 
   Purpur Pillar:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Purpur Block: -1
     - output: 1
       recipe_type: Crafting
       requirements:
@@ -2632,6 +2636,10 @@ resources:
     - output: 1
       recipe_type: Cutting
       requirements:
+        Stone: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
         Stone Bricks: -1
     - recipe_type: Raw Resource
 
@@ -2753,6 +2761,10 @@ resources:
     - output: 1
       recipe_type: Cutting
       requirements:
+        Stone: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
         Stone Bricks: -1
     - output: 4
       recipe_type: Crafting
@@ -2802,7 +2814,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Nether Bricks: -4
-        Nether Brick: -2
+        Nether Bricks: -2
     - recipe_type: Raw Resource
 
   Nether Brick Stairs:
@@ -2810,7 +2822,7 @@ resources:
     - output: 1
       recipe_type: Cutting
       requirements:
-        Nether Brick: -1
+        Nether Bricks: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -3015,6 +3027,10 @@ resources:
     - output: 1
       recipe_type: Cutting
       requirements:
+        Stone: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
         Stone Bricks: -1
     - output: 6
       recipe_type: Crafting
@@ -3072,6 +3088,10 @@ resources:
 
   End Stone Brick Wall:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        End Stone: -1
     - output: 1
       recipe_type: Cutting
       requirements:
@@ -4949,6 +4969,10 @@ resources:
     - output: 1
       recipe_type: Cutting
       requirements:
+        End Stone: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
        End Stone Bricks : -1
     - output: 4
       recipe_type: Crafting
@@ -4986,6 +5010,10 @@ resources:
       recipe_type: Cutting
       requirements:
         Block of Quartz : -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Smooth Quartz Block: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -5034,6 +5062,10 @@ resources:
       recipe_type: Cutting
       requirements:
         Andesite: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Andesite: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -5102,7 +5134,11 @@ resources:
 
   Polished Granite Slab:
     recipes:
-    - output: 1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Granite: -1
+    - output: 2
       recipe_type: Cutting
       requirements:
         Polished Granite: -1
@@ -5114,7 +5150,7 @@ resources:
 
   Smooth Red Sandstone Slab:
     recipes:
-    - output: 1
+    - output: 2
       recipe_type: Cutting
       requirements:
         Smooth Red Sandstone: -1
@@ -5126,7 +5162,7 @@ resources:
 
   Mossy Stone Brick Slab:
     recipes:
-    - output: 1
+    - output: 2
       recipe_type: Cutting
       requirements:
         Mossy Stone Bricks: -1
@@ -5138,7 +5174,11 @@ resources:
 
   Polished Diorite Slab:
     recipes:
-    - output: 1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Diorite: -1
+    - output: 2
       recipe_type: Cutting
       requirements:
         Polished Diorite: -1
@@ -5150,7 +5190,7 @@ resources:
 
   Mossy Cobblestone Slab:
     recipes:
-    - output: 1
+    - output: 2
       recipe_type: Cutting
       requirements:
         Mossy Cobblestone: -1
@@ -5162,7 +5202,11 @@ resources:
 
   End Stone Brick Slab:
     recipes:
-    - output: 1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        End Stone: -1
+    - output: 2
       recipe_type: Cutting
       requirements:
         End Stone Bricks: -1
@@ -5174,7 +5218,7 @@ resources:
 
   Smooth Sandstone Slab:
     recipes:
-    - output: 1
+    - output: 2
       recipe_type: Cutting
       requirements:
         Smooth Sandstone: -1
@@ -5198,7 +5242,7 @@ resources:
 
   Granite Slab:
     recipes:
-    - output: 1
+    - output: 2
       recipe_type: Cutting
       requirements:
         Granite: -1
@@ -5210,7 +5254,7 @@ resources:
 
   Andesite Slab:
     recipes:
-    - output: 1
+    - output: 2
       recipe_type: Cutting
       requirements:
         Andesite: -1
@@ -5222,7 +5266,7 @@ resources:
 
   Red Nether Brick Slab:
     recipes:
-    - output: 1
+    - output: 2
       recipe_type: Cutting
       requirements:
         Red Nether Bricks: -1
@@ -5234,7 +5278,11 @@ resources:
 
   Polished Andesite Slab:
     recipes:
-    - output: 1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Andesite: -1
+    - output: 2
       recipe_type: Cutting
       requirements:
         Polished Andesite: -1
@@ -5246,7 +5294,7 @@ resources:
 
   Diorite Slab:
     recipes:
-    - output: 1
+    - output: 2
       recipe_type: Cutting
       requirements:
         Diorite: -1
@@ -5258,7 +5306,7 @@ resources:
 
   Cobbled Deepslate Slab:
     recipes:
-    - output: 1
+    - output: 2
       recipe_type: Cutting
       requirements:
         Cobbled Deepslate: -1
@@ -5270,7 +5318,7 @@ resources:
 
   Polished Deepslate Slab:
     recipes:
-    - output: 1
+    - output: 2
       recipe_type: Cutting
       requirements:
         Polished Deepslate: -1
@@ -5282,7 +5330,7 @@ resources:
 
   Deepslate Brick Slab:
     recipes:
-    - output: 1
+    - output: 2
       recipe_type: Cutting
       requirements:
         Deepslate Bricks: -1
@@ -5294,7 +5342,7 @@ resources:
 
   Deepslate Tile Slab:
     recipes:
-    - output: 1
+    - output: 2
       recipe_type: Cutting
       requirements:
         Deepslate Tiles: -1
@@ -8661,6 +8709,14 @@ resources:
 
   Polished Blackstone Slab:
     recipes:
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Polished Blackstone: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -8673,6 +8729,10 @@ resources:
       recipe_type: Cutting
       requirements:
         Blackstone: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Blackstone: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -8686,6 +8746,10 @@ resources:
       requirements:
         Blackstone: -1
     - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Blackstone: -1
+    - output: 1
       recipe_type: Crafting
       requirements:
         Polished Blackstone Slab: -2
@@ -8697,6 +8761,10 @@ resources:
       recipe_type: Cutting
       requirements:
         Blackstone: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Blackstone: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -8705,6 +8773,14 @@ resources:
 
   Polished Blackstone Brick Slab:
     recipes:
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Blackstone: -1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Polished Blackstone: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -8717,6 +8793,10 @@ resources:
       recipe_type: Cutting
       requirements:
         Blackstone: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Blackstone: -1
     - output: 4
       recipe_type: Crafting
       requirements:
