@@ -14,14 +14,13 @@ recipe_types:
   Crafting: "Craft {IN_ITEMS} into {OUT_ITEM}"
   Smelting: "Use a furnace to smelt {IN_ITEMS} into {OUT_ITEM} using {ITEM Fuel}"
   Add Water: "Pour water onto {IN_ITEMS} to turn it into {OUT_ITEM}"
-  Right Click: "Right click on {IN_ITEMS} to turn it into {OUT_ITEM}" # TODO Is this still used now that we have Strip
   Strip: "Right click on {IN_ITEMS} with an Axe to strip it into {OUT_ITEM}"
-  Till: "Right click on {In_ITEMS} with a Hoe to till it into {OUT_ITEM}"
-  Carve: "Right click on {IN_ITEMS} with Sheers to carve it into {OUT_ITEM}" # TODO Is this used for anything other then pumkins
+  Till: "Right click on {IN_ITEMS} with a Hoe to till it into {OUT_ITEM}"
+  Carve: "Right click on {IN_ITEMS} with Sheers to carve it into {OUT_ITEM}"
   Shovel: "Right click on {IN_ITEMS} with a Shovel to shovel it into {OUT_ITEM}"
   As: "Treat {IN_ITEMS} as {OUT_ITEM}"
   Cutting: "Use a stonecutter to cut {IN_ITEMS} into {OUT_ITEM}"
-  Oxidation: "Place {IN_ITEMS} down as blocks until they oxidize into {OUT_ITEM}"
+  Oxidization: "Place {IN_ITEMS} down as blocks until they oxidize into {OUT_ITEM}"
   Anvil: "Use an anvil to upgrade {IN_ITEMS} into {OUT_ITEM}"
 
 requirement_groups:
@@ -44,6 +43,57 @@ requirement_groups:
     - Dark Oak Slab
     - Crimson Slab
     - Warped Slab
+
+  Any Log:
+    - Oak Log
+    - Spruce Log
+    - Birch Log
+    - Jungle Log
+    - Acacia Log
+    - Dark Oak Log
+    - Crimson Stem
+    - Warped Stem
+
+  Any Stripped Log:
+    - Stripped Oak Log
+    - Stripped Spruce Log
+    - Stripped Birch Log
+    - Stripped Jungle Log
+    - Stripped Acacia Log
+    - Stripped Dark Oak Log
+    - Stripped Crimson Stem
+    - Stripped Warped Stem
+
+  Any Wood:
+    - Oak Wood
+    - Spruce Wood
+    - Birch Wood
+    - Jungle Wood
+    - Acacia Wood
+    - Dark Wood 
+    - Crimson Hyphae
+    - Warped Hyphae
+
+  Any Stripped Wood:
+    - Stripped Oak Wood
+    - Stripped Spruce Wood
+    - Stripped Birch Wood
+    - Stripped Jungle Wood
+    - Stripped Acacia Wood
+    - Stripped Dark Wood 
+    - Stripped Crimson Hyphae
+    - Stripped Warped Hyphae
+
+  Any Stripped Wood:
+    - Stripped Oak Log
+    - Stripped Spruce Log
+    - Stripped Birch Log
+    - Stripped Jungle Log
+    - Stripped Acacia Log
+    - Stripped Dark Oak Log
+    - Stripped Crimson Stem
+    - Stripped Warped Stem
+
 
   Any Stone:
     - Cobblestone
@@ -875,7 +925,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Block of Copper: -1
-        Honecomb: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Exposed Copper:
@@ -884,7 +934,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Exposed Copper: -1
-        Honecomb: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Weathered Copper:
@@ -893,7 +943,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Weathered Copper: -1
-        Honecomb: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Oxidized Copper:
@@ -902,7 +952,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Oxidized Copper: -1
-        Honecomb: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Cut Copper:
@@ -919,7 +969,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Cut Copper: -1
-        Honecomb: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Exposed Cut Copper:
@@ -936,7 +986,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Exposed Cut Copper: -1
-        Honecomb: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Weathered Cut Copper:
@@ -953,7 +1003,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Weathered Cut Copper: -1
-        Honecomb: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Oxidized Cut Copper:
@@ -970,7 +1020,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Oxidized Cut Copper: -1
-        Honecomb: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Cut Copper Stairs:
@@ -991,7 +1041,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Cut Copper Stairs: -1
-        Honecomb: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Exposed Cut Copper Stairs:
@@ -1012,7 +1062,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Exposed Cut Copper Stairs: -1
-        Honecomb: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Weathered Cut Copper Stairs:
@@ -1033,7 +1083,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Weathered Cut Copper Stairs: -1
-        Honecomb: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Oxidized Cut Copper Stairs:
@@ -1054,7 +1104,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Oxidized Cut Copper Stairs: -1
-        Honecomb: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Cut Copper Slab:
@@ -1075,7 +1125,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Cut Copper Slab: -1
-        Honecomb: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Exposed Cut Copper Slab:
@@ -1096,7 +1146,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Exposed Cut Copper Slab: -1
-        Honecomb: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Weathered Cut Copper Slab:
@@ -1117,7 +1167,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Weathered Cut Copper Slab: -1
-        Honecomb: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Oxidized Cut Copper Slab:
@@ -1138,7 +1188,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Oxidized Cut Copper Slab: -1
-        Honecomb: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Oak Log:
@@ -1825,7 +1875,7 @@ resources:
     - output: 6
       recipe_type: Crafting
       requirements:
-        Oak Plank: -3
+        Oak Planks: -3
     - recipe_type: Raw Resource
 
   Spruce Slab:
@@ -1833,7 +1883,7 @@ resources:
     - output: 6
       recipe_type: Crafting
       requirements:
-        Spruce Plank: -3
+        Spruce Planks: -3
     - recipe_type: Raw Resource
 
   Birch Slab:
@@ -1841,7 +1891,7 @@ resources:
     - output: 6
       recipe_type: Crafting
       requirements:
-        Birch Plank: -3
+        Birch Planks: -3
     - recipe_type: Raw Resource
 
   Jungle Slab:
@@ -1849,7 +1899,7 @@ resources:
     - output: 6
       recipe_type: Crafting
       requirements:
-        Jungle Plank: -3
+        Jungle Planks: -3
     - recipe_type: Raw Resource
 
   Acacia Slab:
@@ -1857,7 +1907,7 @@ resources:
     - output: 6
       recipe_type: Crafting
       requirements:
-        Acacia Plank: -3
+        Acacia Planks: -3
     - recipe_type: Raw Resource
 
   Dark Oak Slab:
@@ -1865,7 +1915,7 @@ resources:
     - output: 6
       recipe_type: Crafting
       requirements:
-        Dark Oak Plank: -3
+        Dark Oak Planks: -3
     - recipe_type: Raw Resource
 
   Crimson Slab:
@@ -1873,7 +1923,7 @@ resources:
     - output: 6
       recipe_type: Crafting
       requirements:
-        Crimson Plank: -3
+        Crimson Planks: -3
     - recipe_type: Raw Resource
 
   Warped Slab:
@@ -1881,7 +1931,7 @@ resources:
     - output: 6
       recipe_type: Crafting
       requirements:
-        Warped Plank: -3
+        Warped Planks: -3
     - recipe_type: Raw Resource
 
   Stone Slab:
@@ -2149,7 +2199,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Plank: -6
+        Any Planks: -6
         Book: -3
     - recipe_type: Raw Resource
 
@@ -2349,8 +2399,8 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Oak Plank: -4
-        Stick: 2
+        Oak Planks: -4
+        Stick: -2
     - recipe_type: Raw Resource
 
   Spruce Fence:
@@ -2358,8 +2408,8 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Spruce Plank: -4
-        Stick: 2
+        Spruce Planks: -4
+        Stick: -2
     - recipe_type: Raw Resource
 
   Birch Fence:
@@ -2367,8 +2417,8 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Birch Plank: -4
-        Stick: 2
+        Birch Planks: -4
+        Stick: -2
     - recipe_type: Raw Resource
 
   Jungle Fence:
@@ -2376,8 +2426,8 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Jungle Plank: -4
-        Stick: 2
+        Jungle Planks: -4
+        Stick: -2
     - recipe_type: Raw Resource
 
   Acacia Fence:
@@ -2385,8 +2435,8 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Acacia Plank: -4
-        Stick: 2
+        Acacia Planks: -4
+        Stick: -2
     - recipe_type: Raw Resource
 
   Dark Oak Fence:
@@ -2394,8 +2444,8 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Dark Oak Plank: -4
-        Stick: 2
+        Dark Oak Planks: -4
+        Stick: -2
     - recipe_type: Raw Resource
 
   Crimson Fence:
@@ -2403,8 +2453,8 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Crimson Plank: -4
-        Stick: 2
+        Crimson Planks: -4
+        Stick: -2
     - recipe_type: Raw Resource
 
   Warped Fence:
@@ -2412,8 +2462,8 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Warped Plank: -4
-        Stick: 2
+        Warped Planks: -4
+        Stick: -2
     - recipe_type: Raw Resource  
 
   Pumpkin:
@@ -2438,6 +2488,10 @@ resources:
     - recipe_type: Raw Resource
 
   Netherrack:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Soul Soil:
     recipes:
     - recipe_type: Raw Resource
 
@@ -2602,11 +2656,11 @@ resources:
     - output: 4
       recipe_type: Crafting
       requirements:
-        Deepslate Brick: -4
+        Deepslate Bricks: -4
     - output: 1
       recipe_type: Cutting
       requirements:
-        Deepslate Brick: -1
+        Deepslate Bricks: -1
     - recipe_type: Raw Resource
 
   Cracked Deepslate Tiles:
@@ -2760,7 +2814,7 @@ resources:
     - output: 4
       recipe_type: Crafting
       requirements:
-        Nether Brick Block: -6
+        Nether Bricks: -6
     - recipe_type: Raw Resource
 
   Enchanting Table:
@@ -2965,7 +3019,7 @@ resources:
     - output: 6
       recipe_type: Crafting
       requirements:
-        Stone Bricks: -6'
+        Stone Bricks: -6
     - recipe_type: Raw Resource
 
   Nether Brick Wall:
@@ -3040,7 +3094,7 @@ resources:
         Diorite: -6
     - recipe_type: Raw Resource
   
-  Blacktone Wall:
+  Blackstone Wall:
     recipes:
     - output: 1
       recipe_type: Cutting
@@ -3226,7 +3280,7 @@ resources:
     - output: 4
       recipe_type: Crafting
       requirements:
-        Pillar Quartz Block: -6
+        Quartz Pillar: -6
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -3610,15 +3664,15 @@ resources:
     - output: 4
       recipe_type: Crafting
       requirements:
-        Acacia Wood Planks: -6
+        Acacia Planks: -6
     - recipe_type: Raw Resource
 
-  Dark Oak Wood Stairs:
+  Dark Oak Stairs:
     recipes:
     - output: 4
       recipe_type: Crafting
       requirements:
-        Dark Oak Wood Planks: -6
+        Dark Oak Planks: -6
     - recipe_type: Raw Resource
 
   Dirt Path:
@@ -4967,11 +5021,11 @@ resources:
     - output: 1
       recipe_type: Cutting
       requirements:
-       Red Nether Brick : -1
+       Red Nether Bricks: -1
     - output: 4
       recipe_type: Crafting
       requirements:
-        Red Nether Brick: -6
+        Red Nether Bricks: -6
     - recipe_type: Raw Resource
 
   Polished Andesite Stairs:
@@ -5027,11 +5081,11 @@ resources:
     - output: 1
       recipe_type: Cutting
       requirements:
-        Deepslate Brick: -1
+        Deepslate Bricks: -1
     - output: 4
       recipe_type: Crafting
       requirements:
-        Deepslate Brick: -6
+        Deepslate Bricks: -6
     - recipe_type: Raw Resource
 
   Deepslate Tile Stairs:
@@ -5039,11 +5093,11 @@ resources:
     - output: 1
       recipe_type: Cutting
       requirements:
-        Deepslate Tile: -1
+        Deepslate Tiles: -1
     - output: 4
       recipe_type: Crafting
       requirements:
-        Deepslate Tile: -6
+        Deepslate Tiles: -6
     - recipe_type: Raw Resource
 
   Polished Granite Slab:
@@ -5127,19 +5181,19 @@ resources:
     - output: 6
       recipe_type: Crafting
       requirements:
-        Smooth sandstone: -3
+        Smooth Sandstone: -3
     - recipe_type: Raw Resource
 
   Smooth Quartz Slab:
     recipes:
-    - output: 1
+    - output: 2
       recipe_type: Cutting
       requirements:
-        Smooth Quartz: -1
+        Smooth Quartz Block: -1
     - output: 6
       recipe_type: Crafting
       requirements:
-        Smooth Quartz: -3
+        Smooth Quartz Block: -3
     - recipe_type: Raw Resource
 
   Granite Slab:
@@ -5243,11 +5297,11 @@ resources:
     - output: 1
       recipe_type: Cutting
       requirements:
-        Deepslate Tile: -1
+        Deepslate Tiles: -1
     - output: 6
       recipe_type: Crafting
       requirements:
-        Deepslate Tile: -3
+        Deepslate Tiles: -3
     - recipe_type: Raw Resource
 
   Scaffolding:
@@ -5259,7 +5313,7 @@ resources:
         String: -1
     - recipe_type: Raw Resource
 
-  Redstone:
+  Redstone Dust:
     recipes:
     - recipe_type: Raw Resource
     - output: 9
@@ -5273,7 +5327,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: -1
-        Redstone: -1
+        Redstone Dust: -1
     - recipe_type: Raw Resource
 
   Block of Redstone:
@@ -5281,7 +5335,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Redstone: -9
+        Redstone Dust: -9
     - recipe_type: Raw Resource
 
   Redstone Repeater:
@@ -5291,7 +5345,7 @@ resources:
       requirements:
         Stone: -3
         Redstone Torch: -2
-        Redstone: -1
+        Redstone Dust: -1
     - recipe_type: Raw Resource
 
   Redstone Comparator:
@@ -5310,9 +5364,9 @@ resources:
       recipe_type: Crafting
       requirements:
         Cobblestone: -4
-        Redstone: -1
+        Redstone Dust: -1
         Iron Ingot: -1
-        Oak Wood Planks: -3
+        Any Planks: -3
     - recipe_type: Raw Resource
 
   Sticky Piston:
@@ -5346,7 +5400,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Cobblestone: -6
-        Redstone: -2
+        Redstone Dust: -2
         Nether Quartz: -1
     - recipe_type: Raw Resource
 
@@ -5365,7 +5419,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Cobblestone: -7
-        Redstone: -1
+        Redstone Dust: -1
         Bow: -1
     - recipe_type: Raw Resource
 
@@ -5375,7 +5429,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Cobblestone: -7
-        Redstone: -1
+        Redstone Dust: -1
     - output: 1
       recipe_type: Raw Resource
 
@@ -5412,6 +5466,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Copper Ingot: -3
+    - recipe_type: Raw Resource
 
   Daylight Detector:
     recipes:
@@ -5456,7 +5511,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Redstone: -4
+        Redstone Dust: -4
         Glowstone: -1
     - recipe_type: Raw Resource
 
@@ -5465,8 +5520,8 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Oak Wood Planks: -8
-        Redstone: -1
+        Any Planks: -8
+        Redstone Dust: -1
     - recipe_type: Raw Resource
 
   Stone Button:
@@ -5490,7 +5545,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Oak Plank: -1
+        Oak Planks: -1
     - recipe_type: Raw Resource
 
   Spruce Button:
@@ -5498,7 +5553,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Spruce Plank: -1
+        Spruce Planks: -1
     - recipe_type: Raw Resource
 
   Birch Button:
@@ -5506,7 +5561,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Birch Plank: -1
+        Birch Planks: -1
     - recipe_type: Raw Resource
 
   Jungle Button:
@@ -5514,7 +5569,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Jungle Plank: -1
+        Jungle Planks: -1
     - recipe_type: Raw Resource
 
   Acacia Button:
@@ -5522,7 +5577,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Acacia Plank: -1
+        Acacia Planks: -1
     - recipe_type: Raw Resource
 
   Dark Oak Button:
@@ -5530,7 +5585,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Dark Oak Plank: -1
+        Dark Oak Planks: -1
     - recipe_type: Raw Resource
 
   Crimson Button:
@@ -5538,7 +5593,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Crimson Plank: -1
+        Crimson Planks: -1
     - recipe_type: Raw Resource
 
   Warped Button:
@@ -5546,7 +5601,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Warped Plank: -1
+        Warped Planks: -1
     - recipe_type: Raw Resource
 
   Stone Pressure Plate:
@@ -5586,7 +5641,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Oak Plank: -2
+        Oak Planks: -2
     - recipe_type: Raw Resource
 
   Spruce Pressure Plate:
@@ -5594,7 +5649,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Spruce Plank: -2
+        Spruce Planks: -2
     - recipe_type: Raw Resource
 
   Birch Pressure Plate:
@@ -5602,7 +5657,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Birch Plank: -2
+        Birch Planks: -2
     - recipe_type: Raw Resource
 
   Jungle Pressure Plate:
@@ -5610,7 +5665,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Jungle Plank: -2
+        Jungle Planks: -2
     - recipe_type: Raw Resource
 
   Acacia Pressure Plate:
@@ -5618,7 +5673,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Acacia Plank: -2
+        Acacia Planks: -2
     - recipe_type: Raw Resource
 
   Dark Oak Pressure Plate:
@@ -5626,7 +5681,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Dark Oak Plank: -2
+        Dark Oak Planks: -2
     - recipe_type: Raw Resource
 
   Crimson Pressure Plate:
@@ -5634,7 +5689,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Crimson Plank: -2
+        Crimson Planks: -2
     - recipe_type: Raw Resource
 
   Warped Pressure Plate:
@@ -5642,7 +5697,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Warped Plank: -2
+        Warped Planks: -2
     - recipe_type: Raw Resource
 
   Iron Door:
@@ -5658,7 +5713,7 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Oak Plank: -6
+        Oak Planks: -6
     - recipe_type: Raw Resource
 
   Spruce Door:
@@ -5666,7 +5721,7 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Spruce Plank: -6
+        Spruce Planks: -6
     - recipe_type: Raw Resource
 
   Birch Door:
@@ -5674,7 +5729,7 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Birch Plank: -6
+        Birch Planks: -6
     - recipe_type: Raw Resource
 
   Jungle Door:
@@ -5682,7 +5737,7 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Jungle Plank: -6
+        Jungle Planks: -6
     - recipe_type: Raw Resource
 
   Acacia Door:
@@ -5690,7 +5745,7 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Acacia Plank: -6
+        Acacia Planks: -6
     - recipe_type: Raw Resource
 
   Dark Oak Door:
@@ -5698,7 +5753,7 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Dark Oak Plank: -6
+        Dark Oak Planks: -6
     - recipe_type: Raw Resource
 
   Crimson Door:
@@ -5706,7 +5761,7 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Crimson Plank: -6
+        Crimson Planks: -6
     - recipe_type: Raw Resource
 
   Warped Door:
@@ -5714,7 +5769,7 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Warped Plank: -6
+        Warped Planks: -6
     - recipe_type: Raw Resource
 
   Iron Trapdoor:
@@ -5730,7 +5785,7 @@ resources:
     - output: 2
       recipe_type: Crafting
       requirements:
-        Oak Plank: -6
+        Oak Planks: -6
     - recipe_type: Raw Resource
 
   Spruce Trapdoor:
@@ -5738,7 +5793,7 @@ resources:
     - output: 2
       recipe_type: Crafting
       requirements:
-        Spruce Plank: -6
+        Spruce Planks: -6
     - recipe_type: Raw Resource
 
   Birch Trapdoor:
@@ -5746,7 +5801,7 @@ resources:
     - output: 2
       recipe_type: Crafting
       requirements:
-        Birch Plank: -6
+        Birch Planks: -6
     - recipe_type: Raw Resource
 
   Jungle Trapdoor:
@@ -5754,7 +5809,7 @@ resources:
     - output: 2
       recipe_type: Crafting
       requirements:
-        Jungle Plank: -6
+        Jungle Planks: -6
     - recipe_type: Raw Resource
 
   Acacia Trapdoor:
@@ -5762,7 +5817,7 @@ resources:
     - output: 2
       recipe_type: Crafting
       requirements:
-        Acacia Plank: -6
+        Acacia Planks: -6
     - recipe_type: Raw Resource
 
   Dark Oak Trapdoor:
@@ -5770,7 +5825,7 @@ resources:
     - output: 2
       recipe_type: Crafting
       requirements:
-        Dark Oak Plank: -6
+        Dark Oak Planks: -6
     - recipe_type: Raw Resource
 
   Crimson Trapdoor:
@@ -5778,7 +5833,7 @@ resources:
     - output: 2
       recipe_type: Crafting
       requirements:
-        Crimson Plank: -6
+        Crimson Planks: -6
     - recipe_type: Raw Resource
 
   Warped Trapdoor:
@@ -5786,7 +5841,7 @@ resources:
     - output: 2
       recipe_type: Crafting
       requirements:
-        Warped Plank: -6
+        Warped Planks: -6
     - recipe_type: Raw Resource
 
   Oak Fence Gate:
@@ -5795,7 +5850,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: -4
-        Oak Plank: -2
+        Oak Planks: -2
     - recipe_type: Raw Resource
 
   Spruce Fence Gate:
@@ -5804,7 +5859,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: -4
-        Spruce Plank: -2
+        Spruce Planks: -2
     - recipe_type: Raw Resource
 
   Birch Fence Gate:
@@ -5813,7 +5868,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: -4
-        Birch Plank: -2
+        Birch Planks: -2
     - recipe_type: Raw Resource
 
   Jungle Fence Gate:
@@ -5822,7 +5877,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: -4
-        Jungle Plank: -2
+        Jungle Planks: -2
     - recipe_type: Raw Resource
 
   Acacia Fence Gate:
@@ -5831,7 +5886,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: -4
-        Acacia Plank: -2
+        Acacia Planks: -2
     - recipe_type: Raw Resource
 
   Dark Oak Fence Gate:
@@ -5840,7 +5895,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: -4
-        Dark Oak Plank: -2
+        Dark Oak Planks: -2
     - recipe_type: Raw Resource
 
   Crimson Fence Gate:
@@ -5849,7 +5904,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: -4
-        Crimson Plank: -2
+        Crimson Planks: -2
     - recipe_type: Raw Resource
 
   Warped Fence Gate:
@@ -5858,7 +5913,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: -4
-        Warped Plank: -2
+        Warped Planks: -2
     - recipe_type: Raw Resource
 
   Powered Rail:
@@ -5867,7 +5922,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Gold Ingot: -6
-        Redstone: -1
+        Redstone Dust: -1
         Stick: -1
     - recipe_type: Raw Resource
 
@@ -5877,7 +5932,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Iron Ingot: -6
-        Redstone: -1
+        Redstone Dust: -1
         Stone Pressure Plate: -1
     - recipe_type: Raw Resource
 
@@ -5975,7 +6030,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Oak Plank: -5
+        Oak Planks: -5
     - recipe_type: Raw Resource
 
   Spruce Boat:
@@ -5983,7 +6038,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Spruce Plank: -5
+        Spruce Planks: -5
     - recipe_type: Raw Resource
 
   Birch Boat:
@@ -5991,7 +6046,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Birch Plank: -5
+        Birch Planks: -5
     - recipe_type: Raw Resource
 
   Jungle Boat:
@@ -5999,7 +6054,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Jungle Plank: -5
+        Jungle Planks: -5
     - recipe_type: Raw Resource
 
   Acacia Boat:
@@ -6007,7 +6062,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Acacia Plank: -5
+        Acacia Planks: -5
     - recipe_type: Raw Resource
 
   Dark Oak Boat:
@@ -6015,10 +6070,11 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Dark Oak Plank: -5
+        Dark Oak Planks: -5
     - recipe_type: Raw Resource
 
   Turtle Shell:
+    recipes:
     - output: 1
       recipe_type: Crafting
       requirements:
@@ -6231,7 +6287,7 @@ resources:
     - output: 1
       recipe_type: Smelting
       requirements:
-        Ancient Debris
+        Ancient Debris: -1
     - recipe_type: Raw Resource
 
   Wooden Sword:
@@ -6542,7 +6598,7 @@ resources:
     recipes:
     - recipe_type: Raw Resource
 
-  Seeds:
+  Wheat Seeds:
     recipes:
     - recipe_type: Raw Resource
 
@@ -6738,13 +6794,16 @@ resources:
         Netherite Ingot: -1
     - recipe_type: Raw Resource
 
-  Flint: 
+  Flint:
+    recipes:
     - recipe_type: Raw Resource
 
   Raw Porkchop:
+    recipes:
     - recipe_type: Raw Resource
 
   Cooked Porkchop:
+    recipes:
     - output: 1
       recipe_type: Smelting
       requirements:
@@ -6779,7 +6838,7 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Oak Plank: -6
+        Oak Planks: -6
         Stick: -1
     - recipe_type: Raw Resource
 
@@ -6788,7 +6847,7 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Spruce Plank: -6
+        Spruce Planks: -6
         Stick: -1
     - recipe_type: Raw Resource
 
@@ -6797,7 +6856,7 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Birch Plank: -6
+        Birch Planks: -6
         Stick: -1
     - recipe_type: Raw Resource
 
@@ -6806,7 +6865,7 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Jungle Plank: -6
+        Jungle Planks: -6
         Stick: -1
     - recipe_type: Raw Resource
 
@@ -6815,7 +6874,7 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Acacia Plank: -6
+        Acacia Planks: -6
         Stick: -1
     - recipe_type: Raw Resource
 
@@ -6824,7 +6883,7 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Dark Oak Plank: -6
+        Dark Oak Planks: -6
         Stick: -1
     - recipe_type: Raw Resource
 
@@ -6833,7 +6892,7 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Crimson Plank: -6
+        Crimson Planks: -6
         Stick: -1
     - recipe_type: Raw Resource
 
@@ -6842,7 +6901,7 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Warped Plank: -6
+        Warped Planks: -6
         Stick: -1
     - recipe_type: Raw Resource
 
@@ -6912,6 +6971,7 @@ resources:
     - recipe_type: Raw Resource
 
   Clay Ball:
+    recipes:
     - recipe_type: Raw Resource
 
   Dried Kelp Block:
@@ -6927,7 +6987,7 @@ resources:
     - output: 3
       recipe_type: Crafting
       requirements:
-        Sugar Canes: -3
+        Sugar Cane: -3
     - recipe_type: Raw Resource
 
   Book:
@@ -6959,7 +7019,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Iron Ingot: -4
-        Redstone: -1
+        Redstone Dust: -1
     - recipe_type: Raw Resource
 
   Fishing Rod:
@@ -6977,7 +7037,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Gold Ingot: -4
-        Redstone: -1
+        Redstone Dust: -1
     - recipe_type: Raw Resource
 
   Spyglass:
@@ -7224,7 +7284,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Sugar Canes: -1
+        Sugar Cane: -1
     - recipe_type: Raw Resource
 
   Cake:
@@ -7235,7 +7295,7 @@ resources:
         Wheat: -3
         Sugar: -2
         Egg: -1
-        Milk: -3
+        Milk Bucket: -3
     - recipe_type: Raw Resource
 
   White Bed:
@@ -7297,7 +7357,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Oak Wood Planks: -3
+        Any Planks: -3
         Yellow Wool: -3
     - output: 1
       recipe_type: Crafting
@@ -7603,7 +7663,7 @@ resources:
     - output: 1
       recipe_type: Smelting
       requirements:
-        Gold Horse Armor: -1
+        Golden Horse Armor: -1
         Fuel: -1
     - recipe_type: Raw Resource
 
@@ -7680,7 +7740,7 @@ resources:
         Ender Pearl: -1
     - recipe_type: Raw Resource
   
-  Glistering Melon:
+  Glistering Melon Slice:
     recipes:
     - output: 1
       recipe_type: Crafting
@@ -7781,7 +7841,7 @@ resources:
     recipes:
     - recipe_type: Raw Resource
 
-  Head:
+  Player Head:
     recipes:
     - recipe_type: Raw Resource
 
@@ -7811,7 +7871,7 @@ resources:
         Egg: -1
     - recipe_type: Raw Resource
 
-  Firework:
+  Firework Rocket:
     recipes:
     - output: 3
       recipe_type: Crafting
@@ -7892,7 +7952,7 @@ resources:
     recipes:
     - recipe_type: Raw Resource
 
-  Gold Horse Armor:
+  Golden Horse Armor:
     recipes:
     - recipe_type: Raw Resource
 
@@ -8168,7 +8228,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Oak Wood Planks: -6
+        Any Planks: -6
         Iron Ingot: -1
     - recipe_type: Raw Resource
 
@@ -8521,7 +8581,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Plank: -6
+        Any Planks: -6
         Honeycomb: -3
     - recipe_type: Raw Resource
 
@@ -8549,6 +8609,7 @@ resources:
       requirements:
         Chiseled Stone Bricks: -8
         Netherite Ingot: -1
+    - recipe_type: Raw Resource
 
   Crying Obsidian:
     recipes:
@@ -8582,7 +8643,7 @@ resources:
         Blackstone: -6
     - recipe_type: Raw Resource
 
-  Guilded Blackstone:
+  Gilded Blackstone:
     recipes:
     - recipe_type: Raw Resource
 
@@ -8687,6 +8748,7 @@ resources:
       requirements:
         String: -1
         Honeycomb: -1
+    - recipe_type: Raw Resource
 
   White Candle:
     recipes:
@@ -8855,31 +8917,31 @@ resources:
   Fuel:
     recipes:
     - output: 8
-      recipe_type: as
+      recipe_type: As
       requirements:
         Coal: -1
     - output: 8
-      recipe_type: as
+      recipe_type: As
       requirements:
         Charcoal: -1
     - output: 80
-      recipe_type: as
+      recipe_type: As
       requirements:
         Block of Coal: -1
     - output: 100
-      recipe_type: as
+      recipe_type: As
       requirements:
         Lava Bucket: -1
     - output: 12
-      recipe_type: as
+      recipe_type: As
       requirements:
         Blaze Rod: -1
     - output: 1
-      recipe_type: as
+      recipe_type: As
       requirements:
         Stick: -2
     - output: 3
-      recipe_type: as
+      recipe_type: As
       requirements:
         Any Planks: -2
     - recipe_type: Raw Resource
