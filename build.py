@@ -224,10 +224,16 @@ def lint_resources(calculator_name, resources, recipe_types, stack_sizes):
 
         # Check that all keys are required or optional
         for resource_key in resource_keys:
+            if type(resource_key) is not str:
+                print("TODOERROR: Cannot use non-string {} as key for {}".format(str(resource_key), resource))
+                continue
             if resource_key not in valid_keys.keys():
                 print(calculator_name.upper() + ":", "\"" + resource_key + "\" in", resource, "is not a valid key")
 
-        lint_recipes(calculator_name, resource, resources[resource]["recipes"])
+        if "recipes" not in resources[resource]:
+            print("TODOERROR: recipes not in resource", resource)
+        else:
+            lint_recipes(calculator_name, resource, resources[resource]["recipes"])
 
         if "custom_stack_multipliers" in resources[resource]:
             lint_custom_stack_multipliers(calculator_name, resource, resources[resource]["custom_stack_multipliers"], stack_sizes)
@@ -269,10 +275,15 @@ def ensure_unique_simple_names(calculator_name, resources):
 ################################################################################
 def ensure_valid_requirements(resources):
     for resource in resources:
+        if (type(resources[resource]) is not OrderedDict):
+            print("ERROR invalid resources for", resource)
+            continue
         for recipe in resources[resource]["recipes"]:
             for requirement in recipe["requirements"]:
                 if requirement not in resources:
                     print("ERROR: Invalid requirement for resource:", resource + ". \"" + requirement + "\" does not exist as a resource")
+                elif type(recipe["requirements"][requirement]) is not int:
+                    print("ERROR: cannot use {} as a requirement value for {}".format(recipe["requirements"][requirement], resource))
                 elif recipe["requirements"][requirement] > 0:
                     print("ERROR: Invalid requirement for resource:", resource + ". \"" + requirement + "\" must be a negative number")
 
@@ -280,6 +291,9 @@ def ensure_valid_requirements(resources):
 def ensure_valid_recipe_types(calculator_name, resources, recipe_types):
     found_recipe_types = []
     for resource in resources:
+        if (type(resources[resource]) is not OrderedDict):
+            print("ERROR invalid resources for", resource)
+            continue
         for recipe in resources[resource]["recipes"]:
             recipe_type = recipe["recipe_type"]
             # add this to the list of found recipe types to later check to make sure all the recipe_types in the list are used
@@ -416,6 +430,42 @@ def merge_custom_multipliers(stack_sizes, resources):
 
     return stack_sizes
 
+def fill_default_resources(resources: OrderedDict) -> OrderedDict:
+    for resource in resources:
+        
+        if "recipes" not in resources[resource]:
+            print("TODOERROR: recipes not found in resource {}".format(resource))
+            continue
+        for i, recipe in enumerate(resources[resource]['recipes']):
+            if "recipe_type" not in recipe:
+                print("TODOERROR: No recipe_type found in a recipe for resource {}".format(resource))
+                continue
+            if recipe["recipe_type"] == "Raw Resource":
+                resources[resource]['recipes'][i] = OrderedDict([('output', 1), ('recipe_type', 'Raw Resource'), ('requirements', OrderedDict([(resource, 0)]))])
+        # break
+    return resources
+
+def fill_default_requirement_groups(resources, requirement_groups):
+    # print(requirement_groups)
+    # exit()
+    for resource in resources:
+        if "recipes" not in resources[resource]:
+            print("TODOERROR: recipes not found in resource {}".format(resource))
+            continue
+        for i, recipe in enumerate(resources[resource]['recipes']):
+            if "requirements" not in recipe:
+                print("TODOERROR: No requirements found in a recipe for resource {}".format(resource))
+                continue
+            # Create a copy of the keys so we can iterate over them and mutate them
+            requirement_list = [requirement for requirement in recipe["requirements"]]
+
+            # Iterate over the requirements and replace any that are part of requirement groups
+            for requirement in requirement_list:
+                if requirement in requirement_groups:
+                    value = recipe["requirements"][requirement]
+                    del recipe["requirements"][requirement]
+                    recipe["requirements"][requirement_groups[requirement][0]] = value
+    return resources
 
 ################################################################################
 # create_calculator_page
@@ -448,6 +498,11 @@ def create_calculator_page(calculator_name):
         yaml_data = ordered_load(f, yaml.SafeLoader)
 
     resources = yaml_data["resources"]
+
+    resource = fill_default_resources(resources)
+
+    if "requirement_groups" in yaml_data:
+        resource = fill_default_requirement_groups(resources, yaml_data["requirement_groups"])
 
     authors = yaml_data["authors"]
 
@@ -565,7 +620,7 @@ def generate_recipe_type_format_js(calculator_name, recipe_types):
                     tokenized_inputs.append(tokenized_item_name)
                     # TODO: some linting here can be done to make sure that all recipe_types that have this tokenized item have the item
                 else:
-                    print("UNKNOWN IDENTIFIER IN FORMAT STRING")  # TODO makethis error message better
+                    print("UNKNOWN IDENTIFIER IN FORMAT STRING", chunk)  # TODO makethis error message better
 
             else:
                 input_chunks.append({"type": "text", "text": chunk})
