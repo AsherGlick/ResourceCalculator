@@ -9,7 +9,7 @@ import shutil
 import subprocess
 import time
 import yaml
-from collections import OrderedDict
+from typing import OrderedDict
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image  # type: ignore
 from typing import Any, Dict, TextIO, Tuple, Type, List
@@ -17,6 +17,9 @@ from typing import Any, Dict, TextIO, Tuple, Type, List
 from pylib.json_data_compressor import mini_js_data
 from pylib.uglifyjs import uglify_copyfile, uglify_js_string
 from pylib.webminify import minify_css_blocks
+from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, TokenError
+from pylib.yaml_token_load import ordered_load
+
 
 # CLI Argument Flags
 FLAG_skip_js_lint = False
@@ -25,29 +28,6 @@ FLAG_skip_gz_compression = False
 FLAG_skip_uglify_js = False
 FLAG_skip_image_compress = False
 FLAG_force_image = False
-
-
-################################################################################
-# ordered_load
-#
-# This function will load in the yaml recipe file but maintain the order of the
-# items. This allows us to simplify the file definition making it easier for
-# humans to use while also allowing us to set the order of the items for easy
-# grouping
-#
-# https://stackoverflow.com/questions/5121931/in-python-how-can-you-load-yaml-mappings-as-ordereddicts
-################################################################################
-def ordered_load(stream: TextIO, object_pairs_hook: Type[object] = OrderedDict) -> Any:
-    class OrderedLoader(yaml.SafeLoader):
-        pass
-
-    def construct_mapping(loader, node):  # type: ignore
-        loader.flatten_mapping(node)
-        return object_pairs_hook(loader.construct_pairs(node))  # type: ignore
-    OrderedLoader.add_constructor(  # type: ignore
-        yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG,
-        construct_mapping)
-    return yaml.load(stream, OrderedLoader)
 
 
 ################################################################################
@@ -213,7 +193,7 @@ def lint_recipes(calculator_name: str, item_name: str, recipes: List) -> None:
         print(calculator_name.upper() + ":", item_name, "must have only one \"Raw Resource\"")
 
 
-def lint_resources(calculator_name, resources, recipe_types, stack_sizes):
+def lint_resources(calculator_name: str, resources: OrderedDict[str, Resource], recipe_types: OrderedDict[str, str], stack_sizes: OrderedDict[str, StackSize]) -> List[TokenError]:
     valid_keys = OrderedDict([
         ("custom_simplename", False),
         ("custom_stack_multipliers", False),
@@ -436,41 +416,40 @@ def merge_custom_multipliers(stack_sizes, resources):
 
     return stack_sizes
 
-def fill_default_resources(resources: OrderedDict) -> OrderedDict:
+################################################################################
+# expand_raw_resource allow for the syntactic candy of only defining a a
+# `recipe_type` value for raw resources and not having to define the entire
+# construct because it is a trivial construct.
+################################################################################
+def expand_raw_resource(resources: OrderedDict[str, Resource]) -> OrderedDict[str, Resource]:
     for resource in resources:
-        
-        if "recipes" not in resources[resource]:
-            print("TODOERROR: recipes not found in resource {}".format(resource))
-            continue
-        for i, recipe in enumerate(resources[resource]['recipes']):
-            if "recipe_type" not in recipe:
-                print("TODOERROR: No recipe_type found in a recipe for resource {}".format(resource))
-                continue
-            if recipe["recipe_type"] == "Raw Resource":
-                resources[resource]['recipes'][i] = OrderedDict([('output', 1), ('recipe_type', 'Raw Resource'), ('requirements', OrderedDict([(resource, 0)]))])
-        # break
+        for i, recipe in enumerate(resources[resource].recipes):
+            if recipe.recipe_type == "Raw Resource" and recipe.output == 0 and len(recipe.requirements) == 0:
+                resources[resource].recipes[i].output = 1
+                resources[resource].recipes[i].requirements = OrderedDict([(resource, 0)])
     return resources
 
-def fill_default_requirement_groups(resources, requirement_groups):
-    # print(requirement_groups)
-    # exit()
+
+################################################################################
+# fill_default_requirement_groups replaces any uses of a requirement group with
+# the first item within that requirement group. This is an interim solution
+# while the requirement group feature is separately fleshed out. It has been
+# included in this state because there is some simplicity value to being able
+# to include the data structure in the resource_list.yaml file.
+################################################################################
+def fill_default_requirement_groups(resources: OrderedDict[str, Resource], requirement_groups: OrderedDict[str, List[str]]) -> OrderedDict[str, Resource]:
     for resource in resources:
-        if "recipes" not in resources[resource]:
-            print("TODOERROR: recipes not found in resource {}".format(resource))
-            continue
-        for i, recipe in enumerate(resources[resource]['recipes']):
-            if "requirements" not in recipe:
-                print("TODOERROR: No requirements found in a recipe for resource {}".format(resource))
-                continue
+        for i, recipe in enumerate(resources[resource].recipes):
+            
             # Create a copy of the keys so we can iterate over them and mutate them
-            requirement_list = [requirement for requirement in recipe["requirements"]]
+            requirement_list: List[str] = [requirement for requirement in recipe.requirements]
 
             # Iterate over the requirements and replace any that are part of requirement groups
             for requirement in requirement_list:
                 if requirement in requirement_groups:
-                    value = recipe["requirements"][requirement]
-                    del recipe["requirements"][requirement]
-                    recipe["requirements"][requirement_groups[requirement][0]] = value
+                    value = recipe.requirements[requirement]
+                    del recipe.requirements[requirement]
+                    recipe.requirements[requirement_groups[requirement][0]] = value
     return resources
 
 def touch_output_folder_files(calculator_folder: str, timestamp: int = 0) -> None:
@@ -497,6 +476,7 @@ def create_calculator_page(
     force: bool = False,
     print_skip_text: bool = True
 ):
+    errors = []
     calculator_folder = os.path.join("output", calculator_name)
     source_folder = os.path.join("resource_lists", calculator_name)
     if not os.path.exists(calculator_folder):
@@ -521,30 +501,49 @@ def create_calculator_page(
     image_width, image_height, resource_image_coordinates = create_packed_image(calculator_name)
 
     # Load in the yaml resources file
-    with open(os.path.join("resource_lists", calculator_name, "resources.yaml"), 'r', encoding="utf_8") as f:
+    resource_list_file = os.path.join("resource_lists", calculator_name, "resources.yaml")
+    with open(resource_list_file, 'r', encoding="utf_8") as f:
         yaml_data = ordered_load(f)
+        resource_list = ResourceList()
+        errors += resource_list.parse(yaml_data)
 
-    resources = yaml_data["resources"]
+    if len(errors) > 0:
+        with open(resource_list_file, 'r', encoding="utf_8") as f:
+            fulltext = f.read()
+            fulltext_lines = fulltext.split("\n")
 
-    resource = fill_default_resources(resources)
+        for error in errors:
+            error.print_error(fulltext_lines)
 
-    if "requirement_groups" in yaml_data:
-        resource = fill_default_requirement_groups(resources, yaml_data["requirement_groups"])
 
-    authors = yaml_data["authors"]
+    resources: OrderedDict[str, Resource] = resource_list.resources
 
-    recipe_types = yaml_data["recipe_types"]
+    resources = expand_raw_resource(resources)
 
-    stack_sizes = None
-    if "stack_sizes" in yaml_data:
-        stack_sizes = yaml_data["stack_sizes"]
+    resources = fill_default_requirement_groups(resources, resource_list.requirement_groups)
+
+    authors: OrderedDict[str, str] = resource_list.authors
+
+    recipe_types: OrderedDict[str, str] = resource_list.recipe_types
+
+
+
+    stack_sizes: OrderedDict[str, StackSize] = resource_list.stack_sizes
+
+    #  = None
+    # if "stack_sizes" in yaml_data:
+    #     stack_sizes = yaml_data["stack_sizes"]
+    # run some sanity checks on the resources
+
+    lint_resources(calculator_name, resources, recipe_types, stack_sizes)
+
+    exit()
+
 
     default_stack_size = None
     if "default_stack_size" in yaml_data:
         default_stack_size = yaml_data["default_stack_size"]
 
-    # run some sanity checks on the resources
-    lint_resources(calculator_name, resources, recipe_types, stack_sizes)
     # TODO: Add linting for stack sizes here
 
     recipe_type_format_js = generate_recipe_type_format_js(calculator_name, recipe_types)
