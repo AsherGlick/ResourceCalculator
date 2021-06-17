@@ -1,6 +1,5 @@
 import csscompressor  # type: ignore
 import re
-from typing import Tuple, List
 
 
 def minify_css_blocks(html_code: str) -> str:

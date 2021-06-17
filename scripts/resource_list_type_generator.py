@@ -1,19 +1,23 @@
 import sys
 from typing import List
 
+
 class Variable():
-    def __init__(self,
+    def __init__(
+        self,
         name: str,
-        type: str, # This is incorrect but I dont know yet what it should be yet
-        default: str, # This is probably redunatnt
+        type: str,
+        default: str,
         # required: bool = False,
-    ):
+    ) -> None:
         self.name = name
         self.type = type
         self.default = default
 
 
 def generate_class(classname: str, variables: List[Variable]) -> None:
+    print()
+    print()
     print("# Class Generated with resource_list_type_generator.py")
     print("class {}():".format(classname))
     print("    def __init__(self) -> None:")
@@ -31,7 +35,7 @@ def generate_class(classname: str, variables: List[Variable]) -> None:
     print("        for invalid_key in _get_invalid_keys(tuple_tree, self.valid_keys):")
     print("            errors.append(TokenError(\"Found Invalid {name} key, valid {name} keys are {{}}\".format(str(self.valid_keys)), Token().from_yaml_scalar_node(invalid_key.token)))".format(name=classname))
     print("")
-    print("        tokenless_keys = {k.value:v for k, v in tuple_tree.items()}")
+    print("        tokenless_keys = {k.value: v for k, v in tuple_tree.items()}")
 
     for variable in variables:
         varblock = []
@@ -43,7 +47,7 @@ def generate_class(classname: str, variables: List[Variable]) -> None:
         if variable.type == "str":
             varblock.append("            {name} = tokenless_keys[\"{name}\"]")
             varblock.append("            if type({name}.value) != str:")
-            varblock.append("                errors.append(TokenError(\"{name} should be a string not a {{}}\".format(str(type({name}.value))), Token().from_yaml_scalar_node({name}.token)))  ")
+            varblock.append("                errors.append(TokenError(\"{name} should be a string not a {{}}\".format(str(type({name}.value))), Token().from_yaml_scalar_node({name}.token)))")
             varblock.append("")
             varblock.append("            self.{name} = str({name}.value)")
         elif variable.type == "Optional[str]":
@@ -70,10 +74,10 @@ def generate_class(classname: str, variables: List[Variable]) -> None:
                 varblock.append("")
                 varblock.append("                self.{name}[str(key.value)] = int(value.value)")
             elif variable.type == "OrderedDict[str, StackSize]":
-                varblock += subobject_parse("StackSize");
+                varblock += subobject_parse("StackSize")
 
             elif variable.type == "OrderedDict[str, Resource]":
-                varblock += subobject_parse("Resource");
+                varblock += subobject_parse("Resource")
 
             elif variable.type == "OrderedDict[str, List[str]]":
                 varblock.append("                item_list: List[str] = []")
@@ -91,12 +95,10 @@ def generate_class(classname: str, variables: List[Variable]) -> None:
             varblock.append("")
             varblock.append("            self.{name} = int({name}.value)")
         elif variable.type == "List[Recipe]":
-            varblock.append("            item_list: List[str] = []")
             varblock.append("            for item in tokenless_keys['{name}']:")
             varblock.append("                recipe = Recipe()")
             varblock.append("                errors += recipe.parse(item)")
             varblock.append("                self.{name}.append(recipe)")
-            # varblock.append("            self.{name}[str(key.value)] = item_list")
 
         else:
             print("UNKNOWN VARIABLE TYPE", variable.type, file=sys.stderr)
@@ -104,19 +106,20 @@ def generate_class(classname: str, variables: List[Variable]) -> None:
         print("\n".join(varblock).format(name=variable.name))
 
     print("        return errors")
-
+    print()
     print("    def to_primitive(self) -> Any:")
     print("        return {")
     for variable in variables:
         print("            \"{name}\": get_primitive(self.{name}),".format(name=variable.name))
     print("        }")
 
+
 def subobject_parse(object_name: str) -> List[str]:
     chunk = []
-    chunk.append("                "+object_name+"_subobject = "+object_name+"()")
-    chunk.append("                errors += "+object_name+"_subobject.parse(value)")
+    chunk.append("                " + object_name + "_subobject = " + object_name + "()")
+    chunk.append("                errors += " + object_name + "_subobject.parse(value)")
     chunk.append("")
-    chunk.append("                self.{name}[str(key.value)] = "+object_name+"_subobject")
+    chunk.append("                self.{name}[str(key.value)] = " + object_name + "_subobject")
     return chunk
 
 
@@ -195,7 +198,9 @@ generate_class(
             type="Optional[str]",
             default="None"
         ),
-        Variable( # This is actually a piece of data that is filled in via Resource.custom_stack_multipliers but it lives here for lookup
+        # custom_multipliers is a piece of data that is filled in via
+        # Resource.custom_stack_multipliers, but it lives here for lookup
+        Variable(
             name="custom_multipliers",
             type="OrderedDict[str, int]",
             default="OrderedDict()",

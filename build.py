@@ -8,11 +8,10 @@ import re
 import shutil
 import subprocess
 import time
-import yaml
 from typing import OrderedDict
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image  # type: ignore
-from typing import Any, Dict, TextIO, Tuple, Type, List, Set
+from typing import Dict, Tuple, List, Set
 
 from pylib.json_data_compressor import mini_js_data
 from pylib.uglifyjs import uglify_copyfile, uglify_js_string
@@ -147,7 +146,6 @@ def lint_javascript() -> None:
 # a recipe are present and that no additional unknown elements are present.
 ################################################################################
 def lint_recipes(calculator_name: str, item_name: str, recipes: List[Recipe]) -> List[TokenError]:
-# def lint_recipes(calculator_name: str, item_name: str, item_token: Token, recipes: List[Recipe]) -> None:
     errors: List[TokenError] = []
 
     # Check that every resource has a raw recipe
@@ -169,6 +167,7 @@ def lint_recipes(calculator_name: str, item_name: str, recipes: List[Recipe]) ->
         errors.append(TokenError(item_name + " must have only one \"Raw Resource\"", Token()))
 
     return errors
+
 
 ################################################################################
 #
@@ -260,6 +259,7 @@ def ensure_unique_simple_names(calculator_name: str, resources: OrderedDict[str,
 
     return errors
 
+
 ################################################################################
 #
 ################################################################################
@@ -320,7 +320,7 @@ def get_newest_modified_time(path: str) -> float:
 def generate_content_width_css(image_width: int, resource_list: ResourceList) -> str:
     content_width_css = ""
     media_padding = 40  # This give a slight padding from the edges, useful for avoiding intersection with scroll bars
-    
+
     row_group_count = resource_list.row_group_count
 
     iteration = 1
@@ -413,6 +413,7 @@ def merge_custom_multipliers(stack_sizes: OrderedDict[str, StackSize], resources
 
     return stack_sizes
 
+
 ################################################################################
 # expand_raw_resource allow for the syntactic candy of only defining a a
 # `recipe_type` value for raw resources and not having to define the entire
@@ -437,7 +438,6 @@ def expand_raw_resource(resources: OrderedDict[str, Resource]) -> OrderedDict[st
 def fill_default_requirement_groups(resources: OrderedDict[str, Resource], requirement_groups: OrderedDict[str, List[str]]) -> OrderedDict[str, Resource]:
     for resource in resources:
         for i, recipe in enumerate(resources[resource].recipes):
-            
             # Create a copy of the keys so we can iterate over them and mutate them
             requirement_list: List[str] = [requirement for requirement in recipe.requirements]
 
@@ -448,6 +448,7 @@ def fill_default_requirement_groups(resources: OrderedDict[str, Resource], requi
                     del recipe.requirements[requirement]
                     recipe.requirements[requirement_groups[requirement][0]] = value
     return resources
+
 
 def touch_output_folder_files(calculator_folder: str, timestamp: int = 0) -> None:
     if timestamp == 0:
@@ -513,25 +514,15 @@ def create_calculator_page(
         for error in errors:
             error.print_error(fulltext_lines)
 
-
     resources: OrderedDict[str, Resource] = resource_list.resources
-
     resources = expand_raw_resource(resources)
-
     resources = fill_default_requirement_groups(resources, resource_list.requirement_groups)
 
     authors: OrderedDict[str, str] = resource_list.authors
 
     recipe_types: OrderedDict[str, str] = resource_list.recipe_types
 
-
-
     stack_sizes: OrderedDict[str, StackSize] = resource_list.stack_sizes
-
-    #  = None
-    # if "stack_sizes" in yaml_data:
-    #     stack_sizes = yaml_data["stack_sizes"]
-    # run some sanity checks on the resources
 
     errors += lint_resources(calculator_name, resources, recipe_types, stack_sizes)
 
@@ -543,7 +534,6 @@ def create_calculator_page(
     if not FLAG_skip_uglify_js:
         recipe_type_format_js = uglify_js_string(recipe_type_format_js)
 
-    
     recipe_js = mini_js_data(get_primitive(get_recipes_only(resources)))
 
     html_resource_data = generate_resource_html_data(resources)

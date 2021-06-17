@@ -9,7 +9,13 @@ from .yaml_token_load import TokenBundle
 #
 ################################################################################
 class Token():
-    def __init__(self, start_line: int=0, end_line: int=0, start_column: int=0, end_column: int=0) -> None:
+    def __init__(
+            self,
+            start_line: int = 0,
+            end_line: int = 0,
+            start_column: int = 0,
+            end_column: int = 0
+    ) -> None:
         self.start_line: int = start_line
         self.end_line: int = end_line
         self.start_column: int = end_column
@@ -35,31 +41,39 @@ class TokenError():
         start_column = self.token.start_column
         end_column = self.token.end_column
 
-        print("Line \033[92m{}\033[0m: {}".format(
-            str(start_line_number+1),
-            self.error_string,
-        ))
+        if start_line_number == end_line_number:
+            print("Line \033[92m{}\033[0m: {}".format(
+                str(start_line_number + 1),
+                self.error_string,
+            ))
 
-        print(" │{}\033[91m{}\033[0m{}".format(
-            raw_text[start_line_number][0:start_column],
-            raw_text[start_line_number][start_column:end_column],
-            raw_text[start_line_number][end_column:],
-        ))
+            print(" │{}\033[91m{}\033[0m{}".format(
+                raw_text[start_line_number][0:start_column],
+                raw_text[start_line_number][start_column:end_column],
+                raw_text[start_line_number][end_column:],
+            ))
 
-        print(" │" + " "*(start_column) + "\033[91m"+ "^"*(end_column-start_column) + "\033[0m")
+            print(" │{}\033[91m{}\033[0m".format(
+                " " * (start_column),
+                "^" * (end_column - start_column),
+            ))
+
+        else:
+            print("Multi Line Error (Printing Not Yet Supported)")
+
 
 ################################################################################
 # A helper function to call the "to_primitive()" function on a nested series
 # of classes in order to return an object that can easily be serialized.
 ################################################################################
 def get_primitive(obj: Any) -> Any:
-    if type(obj) == list:        
+    if type(obj) == list:
         return [get_primitive(x) for x in obj]
     elif type(obj) == dict:
-        return { k: get_primitive(v) for k, v in obj.items() }
+        return {k: get_primitive(v) for k, v in obj.items()}
     elif type(obj) == OrderedDict:
         return OrderedDict([(k, get_primitive(v)) for k, v in obj.items()])
-    elif hasattr(obj,"to_primitive"):
+    elif hasattr(obj, "to_primitive"):
         return obj.to_primitive()
     else:
         return obj
@@ -68,7 +82,7 @@ def get_primitive(obj: Any) -> Any:
 ################################################################################
 #
 ################################################################################
-def _get_invalid_keys(data: Any, valid_keys: List[str]) -> List[TokenBundle]: 
+def _get_invalid_keys(data: Any, valid_keys: List[str]) -> List[TokenBundle]:
     invalid_keys: List[TokenBundle] = []
 
     for key in data:
@@ -105,7 +119,7 @@ class ResourceList():
         for invalid_key in _get_invalid_keys(tuple_tree, self.valid_keys):
             errors.append(TokenError("Found Invalid ResourceList key, valid ResourceList keys are {}".format(str(self.valid_keys)), Token().from_yaml_scalar_node(invalid_key.token)))
 
-        tokenless_keys = {k.value:v for k, v in tuple_tree.items()}
+        tokenless_keys = {k.value: v for k, v in tuple_tree.items()}
 
         # Load authors into a typed object
         if 'authors' in tokenless_keys:
@@ -122,7 +136,7 @@ class ResourceList():
         if 'index_page_display_name' in tokenless_keys:
             index_page_display_name = tokenless_keys["index_page_display_name"]
             if type(index_page_display_name.value) != str:
-                errors.append(TokenError("index_page_display_name should be a string not a {}".format(str(type(index_page_display_name.value))), Token().from_yaml_scalar_node(index_page_display_name.token)))  
+                errors.append(TokenError("index_page_display_name should be a string not a {}".format(str(type(index_page_display_name.value))), Token().from_yaml_scalar_node(index_page_display_name.token)))
 
             self.index_page_display_name = str(index_page_display_name.value)
 
@@ -152,7 +166,7 @@ class ResourceList():
         if 'default_stack_size' in tokenless_keys:
             default_stack_size = tokenless_keys["default_stack_size"]
             if type(default_stack_size.value) != str:
-                errors.append(TokenError("default_stack_size should be a string not a {}".format(str(type(default_stack_size.value))), Token().from_yaml_scalar_node(default_stack_size.token)))  
+                errors.append(TokenError("default_stack_size should be a string not a {}".format(str(type(default_stack_size.value))), Token().from_yaml_scalar_node(default_stack_size.token)))
 
             self.default_stack_size = str(default_stack_size.value)
 
@@ -171,7 +185,7 @@ class ResourceList():
         if 'game_version' in tokenless_keys:
             game_version = tokenless_keys["game_version"]
             if type(game_version.value) != str:
-                errors.append(TokenError("game_version should be a string not a {}".format(str(type(game_version.value))), Token().from_yaml_scalar_node(game_version.token)))  
+                errors.append(TokenError("game_version should be a string not a {}".format(str(type(game_version.value))), Token().from_yaml_scalar_node(game_version.token)))
 
             self.game_version = str(game_version.value)
 
@@ -179,7 +193,7 @@ class ResourceList():
         if 'banner_message' in tokenless_keys:
             banner_message = tokenless_keys["banner_message"]
             if type(banner_message.value) != str:
-                errors.append(TokenError("banner_message should be a string not a {}".format(str(type(banner_message.value))), Token().from_yaml_scalar_node(banner_message.token)))  
+                errors.append(TokenError("banner_message should be a string not a {}".format(str(type(banner_message.value))), Token().from_yaml_scalar_node(banner_message.token)))
 
             self.banner_message = str(banner_message.value)
 
@@ -204,6 +218,7 @@ class ResourceList():
 
             self.row_group_count = int(row_group_count.value)
         return errors
+
     def to_primitive(self) -> Any:
         return {
             "authors": get_primitive(self.authors),
@@ -217,6 +232,8 @@ class ResourceList():
             "requirement_groups": get_primitive(self.requirement_groups),
             "row_group_count": get_primitive(self.row_group_count),
         }
+
+
 # Class Generated with resource_list_type_generator.py
 class StackSize():
     def __init__(self) -> None:
@@ -234,7 +251,7 @@ class StackSize():
         for invalid_key in _get_invalid_keys(tuple_tree, self.valid_keys):
             errors.append(TokenError("Found Invalid StackSize key, valid StackSize keys are {}".format(str(self.valid_keys)), Token().from_yaml_scalar_node(invalid_key.token)))
 
-        tokenless_keys = {k.value:v for k, v in tuple_tree.items()}
+        tokenless_keys = {k.value: v for k, v in tuple_tree.items()}
 
         # Load quantity_multiplier into a typed object
         if 'quantity_multiplier' in tokenless_keys:
@@ -248,7 +265,7 @@ class StackSize():
         if 'plural' in tokenless_keys:
             plural = tokenless_keys["plural"]
             if type(plural.value) != str:
-                errors.append(TokenError("plural should be a string not a {}".format(str(type(plural.value))), Token().from_yaml_scalar_node(plural.token)))  
+                errors.append(TokenError("plural should be a string not a {}".format(str(type(plural.value))), Token().from_yaml_scalar_node(plural.token)))
 
             self.plural = str(plural.value)
 
@@ -272,6 +289,7 @@ class StackSize():
 
                 self.custom_multipliers[str(key.value)] = int(value.value)
         return errors
+
     def to_primitive(self) -> Any:
         return {
             "quantity_multiplier": get_primitive(self.quantity_multiplier),
@@ -279,6 +297,8 @@ class StackSize():
             "extends_from": get_primitive(self.extends_from),
             "custom_multipliers": get_primitive(self.custom_multipliers),
         }
+
+
 # Class Generated with resource_list_type_generator.py
 class Resource():
     def __init__(self) -> None:
@@ -295,11 +315,10 @@ class Resource():
         for invalid_key in _get_invalid_keys(tuple_tree, self.valid_keys):
             errors.append(TokenError("Found Invalid Resource key, valid Resource keys are {}".format(str(self.valid_keys)), Token().from_yaml_scalar_node(invalid_key.token)))
 
-        tokenless_keys = {k.value:v for k, v in tuple_tree.items()}
+        tokenless_keys = {k.value: v for k, v in tuple_tree.items()}
 
         # Load recipes into a typed object
         if 'recipes' in tokenless_keys:
-            item_list: List[str] = []
             for item in tokenless_keys['recipes']:
                 recipe = Recipe()
                 errors += recipe.parse(item)
@@ -320,16 +339,19 @@ class Resource():
         if 'custom_simplename' in tokenless_keys:
             custom_simplename = tokenless_keys["custom_simplename"]
             if type(custom_simplename.value) != str:
-                errors.append(TokenError("custom_simplename should be a string not a {}".format(str(type(custom_simplename.value))), Token().from_yaml_scalar_node(custom_simplename.token)))  
+                errors.append(TokenError("custom_simplename should be a string not a {}".format(str(type(custom_simplename.value))), Token().from_yaml_scalar_node(custom_simplename.token)))
 
             self.custom_simplename = str(custom_simplename.value)
         return errors
+
     def to_primitive(self) -> Any:
         return {
             "recipes": get_primitive(self.recipes),
             "custom_stack_multipliers": get_primitive(self.custom_stack_multipliers),
             "custom_simplename": get_primitive(self.custom_simplename),
         }
+
+
 # Class Generated with resource_list_type_generator.py
 class Recipe():
     def __init__(self) -> None:
@@ -346,7 +368,7 @@ class Recipe():
         for invalid_key in _get_invalid_keys(tuple_tree, self.valid_keys):
             errors.append(TokenError("Found Invalid Recipe key, valid Recipe keys are {}".format(str(self.valid_keys)), Token().from_yaml_scalar_node(invalid_key.token)))
 
-        tokenless_keys = {k.value:v for k, v in tuple_tree.items()}
+        tokenless_keys = {k.value: v for k, v in tuple_tree.items()}
 
         # Load output into a typed object
         if 'output' in tokenless_keys:
@@ -360,7 +382,7 @@ class Recipe():
         if 'recipe_type' in tokenless_keys:
             recipe_type = tokenless_keys["recipe_type"]
             if type(recipe_type.value) != str:
-                errors.append(TokenError("recipe_type should be a string not a {}".format(str(type(recipe_type.value))), Token().from_yaml_scalar_node(recipe_type.token)))  
+                errors.append(TokenError("recipe_type should be a string not a {}".format(str(type(recipe_type.value))), Token().from_yaml_scalar_node(recipe_type.token)))
 
             self.recipe_type = str(recipe_type.value)
 
@@ -375,6 +397,7 @@ class Recipe():
 
                 self.requirements[str(key.value)] = int(value.value)
         return errors
+
     def to_primitive(self) -> Any:
         return {
             "output": get_primitive(self.output),
