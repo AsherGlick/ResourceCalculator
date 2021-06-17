@@ -328,14 +328,24 @@ def generate_content_width_css(image_width: int, resource_list: ResourceList) ->
     while iteration * row_group_count * image_width_with_padding < 3840:
         content_width = iteration * row_group_count * image_width_with_padding
         screen_max = (iteration + 1) * row_group_count * image_width_with_padding
-        new_css = "@media only screen and (max-width: " + str(screen_max + media_padding - 1) + "px) and (min-width:" + str(content_width + media_padding) + "px) { .resource_content { width: " + str(content_width) + "px}  }"
+        new_css = "@media only screen and (max-width: {}px) and (min-width:{}px) {{ .resource_content {{ width: {}px}}  }}".format(
+            str(screen_max + media_padding - 1),
+            str(content_width + media_padding),
+            str(content_width),
+        )
+
         content_width_css += new_css
         iteration += 1
     # When the width is less then a single group we still want the list to be centered
     for i in range(1, row_group_count):
         content_width = i * image_width_with_padding
         screen_max = (i + 1) * image_width_with_padding
-        new_css = "@media only screen and (max-width: " + str(screen_max + media_padding - 1) + "px) and (min-width:" + str(content_width + media_padding) + "px) { .resource_content { width: " + str(content_width) + "px}  }"
+        new_css = "@media only screen and (max-width: {}px) and (min-width:{}px) {{ .resource_content {{ width: {}px}}  }}".format(
+            str(screen_max + media_padding - 1),
+            str(content_width + media_padding),
+            str(content_width),
+        )
+
         content_width_css += new_css
 
     return content_width_css
