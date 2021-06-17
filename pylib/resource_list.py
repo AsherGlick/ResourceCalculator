@@ -18,7 +18,7 @@ class Token():
     ) -> None:
         self.start_line: int = start_line
         self.end_line: int = end_line
-        self.start_column: int = end_column
+        self.start_column: int = start_column
         self.end_column: int = end_column
 
     def from_yaml_scalar_node(self, token: yaml.nodes.ScalarNode) -> 'Token':
