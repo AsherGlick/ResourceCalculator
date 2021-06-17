@@ -1,9 +1,9 @@
-import csscompressor
+import csscompressor  # type: ignore
 import re
 from typing import Tuple, List
 
 
-def minify_css_blocks(html_code: str) -> List[Tuple[int, int]]:
+def minify_css_blocks(html_code: str) -> str:
     remaining_code = html_code
 
     start_tag = re.compile(r"<\s*style[^>]*>")

@@ -49,63 +49,64 @@ def ordered_load(stream: TextIO, object_pairs_hook: Type[object] = OrderedDict) 
 
 
     # Tokenized Load
-    OrderedLoader.add_constructor(
+    OrderedLoader.add_constructor(  # type: ignore
         'tag:yaml.org,2002:null',
         tuple_null_constructor)
 
-    OrderedLoader.add_constructor(
+    OrderedLoader.add_constructor(  # type: ignore
         'tag:yaml.org,2002:bool',
         placeholder_constructor)  # TODO: Maybe Add TokenBundle Wrapper
         # SafeConstructor.construct_yaml_bool)
 
-    OrderedLoader.add_constructor(
+    OrderedLoader.add_constructor(  # type: ignore
         'tag:yaml.org,2002:int',
         tupe_int_constructor)
 
-    OrderedLoader.add_constructor(
+    OrderedLoader.add_constructor(  # type: ignore
         'tag:yaml.org,2002:float',
         placeholder_constructor)  # TODO: Maybe Add TokenBundle Wrapper
         # SafeConstructor.construct_yaml_float)
 
-    OrderedLoader.add_constructor(
+    OrderedLoader.add_constructor(  # type: ignore
         'tag:yaml.org,2002:binary',
         placeholder_constructor)  # TODO: Maybe Add TokenBundle Wrapper
         # SafeConstructor.construct_yaml_binary)
 
-    OrderedLoader.add_constructor(
+    OrderedLoader.add_constructor(  # type: ignore
         'tag:yaml.org,2002:timestamp',
         placeholder_constructor)  # TODO: Maybe Add TokenBundle Wrapper
         # SafeConstructor.construct_yaml_timestamp)
 
-    OrderedLoader.add_constructor(
+    OrderedLoader.add_constructor(  # type: ignore
         'tag:yaml.org,2002:omap',
         placeholder_constructor)  # TODO: Maybe Add TokenBundle Wrapper
         # SafeConstructor.construct_yaml_omap)
 
-    OrderedLoader.add_constructor(
+    OrderedLoader.add_constructor(  # type: ignore
         'tag:yaml.org,2002:pairs',
         placeholder_constructor)  # TODO: Maybe Add TokenBundle Wrapper
         # SafeConstructor.construct_yaml_pairs)
 
-    OrderedLoader.add_constructor(
+    OrderedLoader.add_constructor(  # type: ignore
         'tag:yaml.org,2002:set',
         placeholder_constructor)  # TODO: Maybe Add TokenBundle Wrapper
         # SafeConstructor.construct_yaml_set)
 
-    OrderedLoader.add_constructor(
+    OrderedLoader.add_constructor(  # type: ignore
         'tag:yaml.org,2002:str',
         tuple_string_constructor)
 
     # No need to overwrite the Array and Map nodes
-    # OrderedLoader.add_constructor(
+    # OrderedLoader.add_constructor(  # type: ignore
     #         'tag:yaml.org,2002:seq',
     #         SafeConstructor.construct_yaml_seq)
 
-    # OrderedLoader.add_constructor(
+    # OrderedLoader.add_constructor(  # type: ignore
     #         'tag:yaml.org,2002:map',
     #         SafeConstructor.construct_yaml_map)
 
-    OrderedLoader.add_constructor(None,
+    OrderedLoader.add_constructor(  # type: ignore
+        None,
         placeholder_constructor)  # TODO: Maybe Add TokenBundle Wrapper
         # SafeConstructor.construct_undefined)
 
