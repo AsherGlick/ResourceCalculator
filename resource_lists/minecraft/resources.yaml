@@ -1504,10 +1504,6 @@ resources:
       requirements:
         Red Sand: -1
         Fuel: -1
-      extra_data:
-        recipe:
-        - Red Sand
-        - Fuel
     - recipe_type: Raw Resource
 
   Tinted Glass:
@@ -7285,10 +7281,6 @@ resources:
       requirements:
         Cactus: -1
         Fuel: -1
-      extra_data:
-        recipe:
-        - Cactus
-        - Fuel
     - recipe_type: Raw Resource
 
   Red Dye:

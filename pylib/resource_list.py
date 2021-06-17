@@ -8,17 +8,32 @@ from .yaml_token_load import TokenBundle
 ################################################################################
 #
 ################################################################################
+class Token():
+    def __init__(self, start_line: int=0, end_line: int=0, start_column: int=0, end_column: int=0) -> None:
+        self.start_line: int = start_line
+        self.end_line: int = end_line
+        self.start_column: int = end_column
+        self.end_column: int = end_column
+
+    def from_yaml_scalar_node(self, token: yaml.nodes.ScalarNode) -> 'Token':
+        self.start_line = token.start_mark.line
+        self.end_line = token.end_mark.line
+        self.start_column = token.start_mark.column
+        self.end_column = token.end_mark.column
+        return self
+
+
 class TokenError():
-    def __init__(self, error_string: str, token: yaml.nodes.ScalarNode) -> None:
+    def __init__(self, error_string: str, token: Token) -> None:
         self.error_string: str = error_string
-        self.token: yaml.nodes.ScalarNode = token
+        self.token: Token = token
 
     def print_error(self, raw_text: List[str]) -> None:
-        start_line_number = self.token.start_mark.line
-        end_line_number = self.token.end_mark.line
+        start_line_number = self.token.start_line
+        end_line_number = self.token.end_line
 
-        start_column = self.token.start_mark.column
-        end_column = self.token.end_mark.column
+        start_column = self.token.start_column
+        end_column = self.token.end_column
 
         print("Line \033[92m{}\033[0m: {}".format(
             str(start_line_number+1),
@@ -33,270 +48,21 @@ class TokenError():
 
         print(" │" + " "*(start_column) + "\033[91m"+ "^"*(end_column-start_column) + "\033[0m")
 
-
 ################################################################################
-#
+# A helper function to call the "to_primitive()" function on a nested series
+# of classes in order to return an object that can easily be serialized.
 ################################################################################
-class ResourceList():
-    def __init__(self) -> None:
-        self.authors: OrderedDict[str, str] = OrderedDict()
-        self.index_page_display_name: str = ""
-        self.recipe_types: OrderedDict[str, str] = OrderedDict()
-        self.stack_sizes: OrderedDict[str, StackSize] = OrderedDict()
-        self.default_stack_size: str = ""
-        self.resources: OrderedDict[str, Resource] = OrderedDict()
-        self.game_version: str = ""
-        self.banner_message: str = ""
-        self.requirement_groups: OrderedDict[str, List[str]] = OrderedDict()
-
-        # This is a bit of a hack to identify all the variables declared
-        # previously to avoid having to keep to lists of objects in-sync
-        self.valid_keys = [attr for attr in dir(self) if not callable(getattr(self, attr)) and not attr.startswith("__")]
-
-    def parse(self, tuple_tree: Any) -> List[TokenError]:
-        errors: List[TokenError] = []
-
-        # invalid keys
-        for invalid_key in _get_invalid_keys(tuple_tree, self.valid_keys):
-            errors.append(TokenError("Found invalid resource_list key, valid resource_list are " + str(self.valid_keys), invalid_key.token))
-
-        tokenless_keys = {k.value:v  for k,v in tuple_tree.items()}
-
-        # Load the authors field into a typed object
-        if "authors" in tokenless_keys:
-            for author, link in tokenless_keys["authors"].items():
-                if type(author.value) != str:
-                    errors.append(TokenError("Author should be a string not a " + str(type(author.value)), author.token))
-
-                if type(link.value) != str:
-                    errors.append(TokenError("Author Link should be a string not a " + str(type(link.value)), link.token))
-
-                self.authors[str(author.value)] = str(link.value)
-
-        # load the index page display name into a typed object
-        if "index_page_display_name" in tokenless_keys:
-            index_page_display_name = tokenless_keys["index_page_display_name"]
-            if type(index_page_display_name.value) != str:
-                errors.append(TokenError("index_page_display_name should be a string not a " + str(type(index_page_display_name.value)), index_page_display_name.token))
-            self.index_page_display_name = str(index_page_display_name)
-        else:
-            # TOOD better tokenless errors
-            print("ERROR: Missing Key index_page_display_name")
-
-        # Load the recipe type strings into a typed object
-        if "recipe_types" in tokenless_keys:
-            for recipe_type, text in tokenless_keys["recipe_types"].items():
-                if type(recipe_type.value) != str:
-                    errors.append(TokenError("Recipe Type name should be a string not a " + str(type(recipe_type.value)), recipe_type.token))
-
-                if type(text.value) != str:
-                    errors.append(TokenError("Recipe Type instructions should be a string not a " + str(type(text.value)), text.token))
-
-                self.recipe_types[str(recipe_type.value)] = str(text.value)
-        else:
-            # TODO better tokenless errors
-            print("ERROR: Missing key recipe_types")
-
-
-        # Load stack sizes
-        if "stack_sizes" in tokenless_keys:
-            for stack_name, stack_data in tokenless_keys["stack_sizes"].items():
-                if type(stack_name.value) != str:
-                    errors.append(TokenError("Stack Size name should be a string not a " + str(type(stack_name.value)), stack_name.token))
-
-                stack_size = StackSize()
-                errors += stack_size.parse(stack_data)
-
-                self.stack_sizes[str(stack_name.value)] = stack_size
-
-        if "default_stack_size" in tokenless_keys:
-            default_stack_size = tokenless_keys["default_stack_size"]
-            if type(default_stack_size.value) != str:
-                errors.append(TokenError("default_stack_size should be a string not a " + str(type(default_stack_size.value)), default_stack_size.token))
-            self.default_stack_size = str(default_stack_size)
-
-        
-        if "resources" in tokenless_keys:
-            for resource_name, resource_data in tokenless_keys["resources"].items():
-                if type(resource_name.value) != str:
-                    errors.append(TokenError("Stack Size name should be a string not a " + str(type(resource_name.value)), resource_name.token))
-
-                resource = Resource()
-                errors += resource.parse(resource_data)
-
-                self.resources[str(resource_name.value)] = resource
-
-        if "game_version" in tokenless_keys:
-            game_version = tokenless_keys["game_version"]
-            if type(game_version.value) != str:
-                errors.append(TokenError("game_version should be a string not a " + str(type(game_version.value)), game_version.token))
-            self.game_version = str(game_version)
-
-
-        if "banner_message" in tokenless_keys:
-            banner_message = tokenless_keys["banner_message"]
-            if type(banner_message.value) != str:
-                errors.append(TokenError("banner_message should be a string not a " + str(type(banner_message.value)), banner_message.token))
-            self.banner_message = str(banner_message)
-
-
-        if "requirement_groups" in tokenless_keys:
-            for requirement_group, item_list in tokenless_keys["requirement_groups"].items():
-                if type(requirement_group.value) != str:
-                    errors.append(TokenError("Requirement Group name should be a string not a " + str(type(requirement_group.value)), requirement_group.token))
-
-                requirement_group_items: List[str] = []
-                for item in item_list:
-                    if type(item.value) != str:
-                        errors.append(TokenError("Requirement Group item should be a string not a " + str(type(item.value)), item.token))
-
-                    requirement_group_items.append(str(item.value))
-                self.requirement_groups[str(requirement_group.value)] = requirement_group_items
-        return errors
-
-
-################################################################################
-#
-################################################################################
-class StackSize():
-    def __init__(self) -> None:
-        self.quantity_multiplier: int = 0
-        self.plural: str = ""
-        self.extends_from: Optional[str] = None
-
-        # This is a bit of a hack to identify all the variables declared
-        # previously to avoid having to keep to lists of objects in-sync
-        self.valid_keys = [attr for attr in dir(self) if not callable(getattr(self, attr)) and not attr.startswith("__")]
-
-
-    def parse(self, tuple_tree: Any) -> List[TokenError]:
-        errors: List[TokenError] = []
-
-        # invalid keys
-        for invalid_key in _get_invalid_keys(tuple_tree, self.valid_keys):
-            errors.append(TokenError("Found invalid resource_list key, valid resource_list are " + str(self.valid_keys), invalid_key[1]))
-
-        tokenless_keys = {k.value:v  for k,v in tuple_tree.items()}
-
-        if "quantity_multiplier" in tokenless_keys:
-            quantity_multiplier = tokenless_keys["quantity_multiplier"]
-            if type(quantity_multiplier.value) != int:
-                errors.append(TokenError("quantity_multiplier should be a int not a " + str(type(quantity_multiplier.value)), quantity_multiplier.token))
-            self.quantity_multiplier = int(quantity_multiplier.value)
-        else:
-            # TODO better tokenless errors
-            print("ERROR: Missing key quantity_multiplier")
-
-        if "plural" in tokenless_keys:
-            plural = tokenless_keys["plural"]
-            if type(plural.value) != str:
-                errors.append(TokenError("plural should be a string not a " + str(type(plural.value)), plural.token))
-            self.plural = str(plural.value)
-        else:
-            # TODO better tokenless errors
-            print("ERROR: Missing key plural")
-
-        if "extends_from" in tokenless_keys:
-            extends_from = tokenless_keys["extends_from"]
-
-            if extends_from.value is not None:
-                if type(extends_from.value) != str:
-                    errors.append(TokenError("extends_from should be a string not a " + str(type(extends_from.value)), extends_from.token))
-                self.extends_from = str(extends_from.value)
-        else:
-            # TODO better tokenless errors
-            print("ERROR: Missing key extends_from")
-
-        return errors
-
-
-################################################################################
-#
-################################################################################
-class Resource():
-    def __init__(self) -> None:
-        self.recipes: List[Recipe] = []
-        self.custom_stack_multipliers: OrderedDict[str, int] = OrderedDict()
-
-        # This is a bit of a hack to identify all the variables declared
-        # previously to avoid having to keep to lists of objects in-sync
-        self.valid_keys = [attr for attr in dir(self) if not callable(getattr(self, attr)) and not attr.startswith("__")]
-
-    def parse(self, tuple_tree: Any) -> List[TokenError]:
-        errors: List[TokenError] = []
-
-        # invalid keys
-        for invalid_key in _get_invalid_keys(tuple_tree, self.valid_keys):
-            errors.append(TokenError("Found invalid resource_list key, valid resource_list are " + str(self.valid_keys), invalid_key[1]))
-
-        tokenless_keys = {k.value:v  for k,v in tuple_tree.items()}
-
-        if "recipes" in tokenless_keys:
-            for recipe_data in tokenless_keys["recipes"]:
-                recipe = Recipe()
-                errors += recipe.parse(recipe_data)
-                self.recipes.append(recipe)
-
-        if "custom_stack_multipliers" in tokenless_keys:
-            for custom_stack, stack_quantity in tokenless_keys["custom_stack_multipliers"].items():
-                if type(custom_stack.value) != str:
-                    errors.append(TokenError("Custom Stack name should be a string not a " + str(type(custom_stack.value)), custom_stack.token))
-
-                if type(stack_quantity.value) != int:
-                    errors.append(TokenError("Stack Quantity should be an int not a " + str(type(stack_quantity.value)), stack_quantity.token))
-
-                self.custom_stack_multipliers[str(custom_stack.value)] = int(stack_quantity.value)
-
-        return errors
-
-
-################################################################################
-#
-################################################################################
-class Recipe():
-    def __init__(self) -> None:
-        self.output: int = 0
-        self.recipe_type: str = ""
-        self.requirements: OrderedDict[str, int] = OrderedDict()
-        self.extra_data = None # DEPRICATED FIELD
-
-        # This is a bit of a hack to identify all the variables declared
-        # previously to avoid having to keep to lists of objects in-sync
-        self.valid_keys = [attr for attr in dir(self) if not callable(getattr(self, attr)) and not attr.startswith("__")]
-
-    def parse(self, tuple_tree: Any) -> List[TokenError]:
-        errors: List[TokenError] = []
-
-        # invalid keys
-        for invalid_key in _get_invalid_keys(tuple_tree, self.valid_keys):
-            errors.append(TokenError("Found invalid resource_list key, valid resource_list are " + str(self.valid_keys), invalid_key[1]))
-
-        tokenless_keys = {k.value:v  for k,v in tuple_tree.items()}
-
-        if "output" in tokenless_keys:
-            output = tokenless_keys["output"]
-            if type(output.value) != int:
-                errors.append(TokenError("output should be an int not a " + str(type(output.value)), output.token))
-            self.output = int(output.value)
-
-        if "recipe_type" in tokenless_keys:
-            recipe_type = tokenless_keys["recipe_type"]
-            if type(recipe_type.value) != str:
-                errors.append(TokenError("recipe_type should be a string not a " + str(type(recipe_type.value)), recipe_type.token))
-            self.recipe_type = str(recipe_type.value)
-
-        if "requirements" in tokenless_keys:
-            for item, quantity in tokenless_keys["requirements"].items():
-                if type(item.value) != str:
-                    errors.append(TokenError("Custom Stack name should be a string not a " + str(type(item.value)), item.token))
-
-                if type(quantity.value) != int:
-                    errors.append(TokenError("Stack Quantity should be an int not a " + str(type(quantity.value)), quantity.token))
-
-                self.requirements[str(item.value)] = int(quantity.value)
-
-
-        return errors
+def get_primitive(obj: Any) -> Any:
+    if type(obj) == list:        
+        return [get_primitive(x) for x in obj]
+    elif type(obj) == dict:
+        return { k: get_primitive(v) for k, v in obj.items() }
+    elif type(obj) == OrderedDict:
+        return OrderedDict([(k, get_primitive(v)) for k, v in obj.items()])
+    elif hasattr(obj,"to_primitive"):
+        return obj.to_primitive()
+    else:
+        return obj
 
 
 ################################################################################
@@ -310,3 +76,308 @@ def _get_invalid_keys(data: Any, valid_keys: List[str]) -> List[TokenBundle]:
             invalid_keys.append(key)
 
     return invalid_keys
+
+
+################################################################################
+################################ Generated Code ################################
+################################################################################
+
+# Class Generated with resource_list_type_generator.py
+class ResourceList():
+    def __init__(self) -> None:
+        self.authors: OrderedDict[str, str] = OrderedDict()
+        self.index_page_display_name: str = ""
+        self.recipe_types: OrderedDict[str, str] = OrderedDict()
+        self.stack_sizes: OrderedDict[str, StackSize] = OrderedDict()
+        self.default_stack_size: str = ""
+        self.resources: OrderedDict[str, Resource] = OrderedDict()
+        self.game_version: str = ""
+        self.banner_message: str = ""
+        self.requirement_groups: OrderedDict[str, List[str]] = OrderedDict()
+        self.row_group_count: int = 1
+
+        self.valid_keys = ['authors', 'index_page_display_name', 'recipe_types', 'stack_sizes', 'default_stack_size', 'resources', 'game_version', 'banner_message', 'requirement_groups', 'row_group_count']
+
+    def parse(self, tuple_tree: Any) -> List[TokenError]:
+        errors: List[TokenError] = []
+
+        # Create error for invalid keys
+        for invalid_key in _get_invalid_keys(tuple_tree, self.valid_keys):
+            errors.append(TokenError("Found Invalid ResourceList key, valid ResourceList keys are {}".format(str(self.valid_keys)), Token().from_yaml_scalar_node(invalid_key.token)))
+
+        tokenless_keys = {k.value:v for k, v in tuple_tree.items()}
+
+        # Load authors into a typed object
+        if 'authors' in tokenless_keys:
+            for key, value in tokenless_keys["authors"].items():
+                if type(key.value) != str:
+                    errors.append(TokenError("authors key should be a string not a {}".format(str(type(key.value))), Token().from_yaml_scalar_node(key.token)))
+
+                if type(value.value) != str:
+                    errors.append(TokenError("authors value should be a string not a {}".format(str(type(value.value))), Token().from_yaml_scalar_node(value.token)))
+
+                self.authors[str(key.value)] = str(value.value)
+
+        # Load index_page_display_name into a typed object
+        if 'index_page_display_name' in tokenless_keys:
+            index_page_display_name = tokenless_keys["index_page_display_name"]
+            if type(index_page_display_name.value) != str:
+                errors.append(TokenError("index_page_display_name should be a string not a {}".format(str(type(index_page_display_name.value))), Token().from_yaml_scalar_node(index_page_display_name.token)))  
+
+            self.index_page_display_name = str(index_page_display_name.value)
+
+        # Load recipe_types into a typed object
+        if 'recipe_types' in tokenless_keys:
+            for key, value in tokenless_keys["recipe_types"].items():
+                if type(key.value) != str:
+                    errors.append(TokenError("recipe_types key should be a string not a {}".format(str(type(key.value))), Token().from_yaml_scalar_node(key.token)))
+
+                if type(value.value) != str:
+                    errors.append(TokenError("recipe_types value should be a string not a {}".format(str(type(value.value))), Token().from_yaml_scalar_node(value.token)))
+
+                self.recipe_types[str(key.value)] = str(value.value)
+
+        # Load stack_sizes into a typed object
+        if 'stack_sizes' in tokenless_keys:
+            for key, value in tokenless_keys["stack_sizes"].items():
+                if type(key.value) != str:
+                    errors.append(TokenError("stack_sizes key should be a string not a {}".format(str(type(key.value))), Token().from_yaml_scalar_node(key.token)))
+
+                StackSize_subobject = StackSize()
+                errors += StackSize_subobject.parse(value)
+
+                self.stack_sizes[str(key.value)] = StackSize_subobject
+
+        # Load default_stack_size into a typed object
+        if 'default_stack_size' in tokenless_keys:
+            default_stack_size = tokenless_keys["default_stack_size"]
+            if type(default_stack_size.value) != str:
+                errors.append(TokenError("default_stack_size should be a string not a {}".format(str(type(default_stack_size.value))), Token().from_yaml_scalar_node(default_stack_size.token)))  
+
+            self.default_stack_size = str(default_stack_size.value)
+
+        # Load resources into a typed object
+        if 'resources' in tokenless_keys:
+            for key, value in tokenless_keys["resources"].items():
+                if type(key.value) != str:
+                    errors.append(TokenError("resources key should be a string not a {}".format(str(type(key.value))), Token().from_yaml_scalar_node(key.token)))
+
+                Resource_subobject = Resource()
+                errors += Resource_subobject.parse(value)
+
+                self.resources[str(key.value)] = Resource_subobject
+
+        # Load game_version into a typed object
+        if 'game_version' in tokenless_keys:
+            game_version = tokenless_keys["game_version"]
+            if type(game_version.value) != str:
+                errors.append(TokenError("game_version should be a string not a {}".format(str(type(game_version.value))), Token().from_yaml_scalar_node(game_version.token)))  
+
+            self.game_version = str(game_version.value)
+
+        # Load banner_message into a typed object
+        if 'banner_message' in tokenless_keys:
+            banner_message = tokenless_keys["banner_message"]
+            if type(banner_message.value) != str:
+                errors.append(TokenError("banner_message should be a string not a {}".format(str(type(banner_message.value))), Token().from_yaml_scalar_node(banner_message.token)))  
+
+            self.banner_message = str(banner_message.value)
+
+        # Load requirement_groups into a typed object
+        if 'requirement_groups' in tokenless_keys:
+            for key, value in tokenless_keys["requirement_groups"].items():
+                if type(key.value) != str:
+                    errors.append(TokenError("requirement_groups key should be a string not a {}".format(str(type(key.value))), Token().from_yaml_scalar_node(key.token)))
+
+                item_list: List[str] = []
+                for item in value:
+                    if type(item.value) != str:
+                        errors.append(TokenError("requirement_groups element should be a string not a {}".format(str(type(item.value))), Token().from_yaml_scalar_node(item.token)))
+                    item_list.append(str(item.value))
+                self.requirement_groups[str(key.value)] = item_list
+
+        # Load row_group_count into a typed object
+        if 'row_group_count' in tokenless_keys:
+            row_group_count = tokenless_keys["row_group_count"]
+            if type(row_group_count.value) != int:
+                errors.append(TokenError("row_group_count should be an int not a {}".format(str(type(row_group_count.value))), Token().from_yaml_scalar_node(row_group_count.token)))
+
+            self.row_group_count = int(row_group_count.value)
+        return errors
+    def to_primitive(self) -> Any:
+        return {
+            "authors": get_primitive(self.authors),
+            "index_page_display_name": get_primitive(self.index_page_display_name),
+            "recipe_types": get_primitive(self.recipe_types),
+            "stack_sizes": get_primitive(self.stack_sizes),
+            "default_stack_size": get_primitive(self.default_stack_size),
+            "resources": get_primitive(self.resources),
+            "game_version": get_primitive(self.game_version),
+            "banner_message": get_primitive(self.banner_message),
+            "requirement_groups": get_primitive(self.requirement_groups),
+            "row_group_count": get_primitive(self.row_group_count),
+        }
+# Class Generated with resource_list_type_generator.py
+class StackSize():
+    def __init__(self) -> None:
+        self.quantity_multiplier: int = 0
+        self.plural: str = ""
+        self.extends_from: Optional[str] = None
+        self.custom_multipliers: OrderedDict[str, int] = OrderedDict()
+
+        self.valid_keys = ['quantity_multiplier', 'plural', 'extends_from', 'custom_multipliers']
+
+    def parse(self, tuple_tree: Any) -> List[TokenError]:
+        errors: List[TokenError] = []
+
+        # Create error for invalid keys
+        for invalid_key in _get_invalid_keys(tuple_tree, self.valid_keys):
+            errors.append(TokenError("Found Invalid StackSize key, valid StackSize keys are {}".format(str(self.valid_keys)), Token().from_yaml_scalar_node(invalid_key.token)))
+
+        tokenless_keys = {k.value:v for k, v in tuple_tree.items()}
+
+        # Load quantity_multiplier into a typed object
+        if 'quantity_multiplier' in tokenless_keys:
+            quantity_multiplier = tokenless_keys["quantity_multiplier"]
+            if type(quantity_multiplier.value) != int:
+                errors.append(TokenError("quantity_multiplier should be an int not a {}".format(str(type(quantity_multiplier.value))), Token().from_yaml_scalar_node(quantity_multiplier.token)))
+
+            self.quantity_multiplier = int(quantity_multiplier.value)
+
+        # Load plural into a typed object
+        if 'plural' in tokenless_keys:
+            plural = tokenless_keys["plural"]
+            if type(plural.value) != str:
+                errors.append(TokenError("plural should be a string not a {}".format(str(type(plural.value))), Token().from_yaml_scalar_node(plural.token)))  
+
+            self.plural = str(plural.value)
+
+        # Load extends_from into a typed object
+        if 'extends_from' in tokenless_keys:
+            extends_from = tokenless_keys["extends_from"]
+            if extends_from.value is not None:
+                if type(extends_from.value) != str:
+                    errors.append(TokenError("extends_from should be a string not a {}".format(str(type(extends_from.value))), Token().from_yaml_scalar_node(extends_from.token)))
+
+                self.extends_from = str(extends_from.value)
+
+        # Load custom_multipliers into a typed object
+        if 'custom_multipliers' in tokenless_keys:
+            for key, value in tokenless_keys["custom_multipliers"].items():
+                if type(key.value) != str:
+                    errors.append(TokenError("custom_multipliers key should be a string not a {}".format(str(type(key.value))), Token().from_yaml_scalar_node(key.token)))
+
+                if type(value.value) != int:
+                    errors.append(TokenError("custom_multipliers value should be an int not a {}".format(str(type(value.value))), Token().from_yaml_scalar_node(value.token)))
+
+                self.custom_multipliers[str(key.value)] = int(value.value)
+        return errors
+    def to_primitive(self) -> Any:
+        return {
+            "quantity_multiplier": get_primitive(self.quantity_multiplier),
+            "plural": get_primitive(self.plural),
+            "extends_from": get_primitive(self.extends_from),
+            "custom_multipliers": get_primitive(self.custom_multipliers),
+        }
+# Class Generated with resource_list_type_generator.py
+class Resource():
+    def __init__(self) -> None:
+        self.recipes: List[Recipe] = []
+        self.custom_stack_multipliers: OrderedDict[str, int] = OrderedDict()
+        self.custom_simplename: str = ""
+
+        self.valid_keys = ['recipes', 'custom_stack_multipliers', 'custom_simplename']
+
+    def parse(self, tuple_tree: Any) -> List[TokenError]:
+        errors: List[TokenError] = []
+
+        # Create error for invalid keys
+        for invalid_key in _get_invalid_keys(tuple_tree, self.valid_keys):
+            errors.append(TokenError("Found Invalid Resource key, valid Resource keys are {}".format(str(self.valid_keys)), Token().from_yaml_scalar_node(invalid_key.token)))
+
+        tokenless_keys = {k.value:v for k, v in tuple_tree.items()}
+
+        # Load recipes into a typed object
+        if 'recipes' in tokenless_keys:
+            item_list: List[str] = []
+            for item in tokenless_keys['recipes']:
+                recipe = Recipe()
+                errors += recipe.parse(item)
+                self.recipes.append(recipe)
+
+        # Load custom_stack_multipliers into a typed object
+        if 'custom_stack_multipliers' in tokenless_keys:
+            for key, value in tokenless_keys["custom_stack_multipliers"].items():
+                if type(key.value) != str:
+                    errors.append(TokenError("custom_stack_multipliers key should be a string not a {}".format(str(type(key.value))), Token().from_yaml_scalar_node(key.token)))
+
+                if type(value.value) != int:
+                    errors.append(TokenError("custom_stack_multipliers value should be an int not a {}".format(str(type(value.value))), Token().from_yaml_scalar_node(value.token)))
+
+                self.custom_stack_multipliers[str(key.value)] = int(value.value)
+
+        # Load custom_simplename into a typed object
+        if 'custom_simplename' in tokenless_keys:
+            custom_simplename = tokenless_keys["custom_simplename"]
+            if type(custom_simplename.value) != str:
+                errors.append(TokenError("custom_simplename should be a string not a {}".format(str(type(custom_simplename.value))), Token().from_yaml_scalar_node(custom_simplename.token)))  
+
+            self.custom_simplename = str(custom_simplename.value)
+        return errors
+    def to_primitive(self) -> Any:
+        return {
+            "recipes": get_primitive(self.recipes),
+            "custom_stack_multipliers": get_primitive(self.custom_stack_multipliers),
+            "custom_simplename": get_primitive(self.custom_simplename),
+        }
+# Class Generated with resource_list_type_generator.py
+class Recipe():
+    def __init__(self) -> None:
+        self.output: int = 0
+        self.recipe_type: str = ""
+        self.requirements: OrderedDict[str, int] = OrderedDict()
+
+        self.valid_keys = ['output', 'recipe_type', 'requirements']
+
+    def parse(self, tuple_tree: Any) -> List[TokenError]:
+        errors: List[TokenError] = []
+
+        # Create error for invalid keys
+        for invalid_key in _get_invalid_keys(tuple_tree, self.valid_keys):
+            errors.append(TokenError("Found Invalid Recipe key, valid Recipe keys are {}".format(str(self.valid_keys)), Token().from_yaml_scalar_node(invalid_key.token)))
+
+        tokenless_keys = {k.value:v for k, v in tuple_tree.items()}
+
+        # Load output into a typed object
+        if 'output' in tokenless_keys:
+            output = tokenless_keys["output"]
+            if type(output.value) != int:
+                errors.append(TokenError("output should be an int not a {}".format(str(type(output.value))), Token().from_yaml_scalar_node(output.token)))
+
+            self.output = int(output.value)
+
+        # Load recipe_type into a typed object
+        if 'recipe_type' in tokenless_keys:
+            recipe_type = tokenless_keys["recipe_type"]
+            if type(recipe_type.value) != str:
+                errors.append(TokenError("recipe_type should be a string not a {}".format(str(type(recipe_type.value))), Token().from_yaml_scalar_node(recipe_type.token)))  
+
+            self.recipe_type = str(recipe_type.value)
+
+        # Load requirements into a typed object
+        if 'requirements' in tokenless_keys:
+            for key, value in tokenless_keys["requirements"].items():
+                if type(key.value) != str:
+                    errors.append(TokenError("requirements key should be a string not a {}".format(str(type(key.value))), Token().from_yaml_scalar_node(key.token)))
+
+                if type(value.value) != int:
+                    errors.append(TokenError("requirements value should be an int not a {}".format(str(type(value.value))), Token().from_yaml_scalar_node(value.token)))
+
+                self.requirements[str(key.value)] = int(value.value)
+        return errors
+    def to_primitive(self) -> Any:
+        return {
+            "output": get_primitive(self.output),
+            "recipe_type": get_primitive(self.recipe_type),
+            "requirements": get_primitive(self.requirements),
+        }
