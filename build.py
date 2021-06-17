@@ -506,14 +506,6 @@ def create_calculator_page(
         resource_list = ResourceList()
         errors += resource_list.parse(yaml_data)
 
-    if len(errors) > 0:
-        with open(resource_list_file, 'r', encoding="utf_8") as f:
-            fulltext = f.read()
-            fulltext_lines = fulltext.split("\n")
-
-        for error in errors:
-            error.print_error(fulltext_lines)
-
     resources: OrderedDict[str, Resource] = resource_list.resources
     resources = expand_raw_resource(resources)
     resources = fill_default_requirement_groups(resources, resource_list.requirement_groups)
@@ -588,6 +580,14 @@ def create_calculator_page(
     # Touch the created time of all the files in the output folder to prevent
     # re-triggering generation on outdated files that were intentionally skipped
     touch_output_folder_files(calculator_folder)
+
+    if len(errors) > 0:
+        with open(resource_list_file, 'r', encoding="utf_8") as f:
+            fulltext = f.read()
+            fulltext_lines = fulltext.split("\n")
+
+        for error in errors:
+            error.print_error(fulltext_lines)
 
     end_time = time.time()
     print("  Generated in %.3f seconds" % (end_time - start_time))

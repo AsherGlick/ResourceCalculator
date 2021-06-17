@@ -4159,8 +4159,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Bone Meal: -9
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Shulker Box:
     recipes:
@@ -4595,8 +4594,7 @@ resources:
         Sand: -4
         Gravel: -4
         White Dye: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Orange Concrete Powder:
     recipes:
@@ -5474,8 +5472,7 @@ resources:
       requirements:
         Cobblestone: -7
         Redstone Dust: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Lectern:
     recipes:
