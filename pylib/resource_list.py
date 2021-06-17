@@ -28,6 +28,28 @@ class Token():
         self.end_column = token.end_mark.column
         return self
 
+    def __str__(self) -> str:
+        return self.__repr__()
+
+    def __repr__(self) -> str:
+        return "Token({}, {}, {}, {})".format(
+            str(self.start_line),
+            str(self.end_line),
+            str(self.start_column),
+            str(self.end_column),
+        )
+
+    def __eq__(self, other: Any) -> bool:
+        if type(other) != Token:
+            return False
+
+        if (other.start_line == self.start_line
+            and other.end_line == self.end_line
+            and other.start_column == self.start_column
+            and other.end_column == self.end_column):
+            return True
+        return False
+
 
 class TokenError():
     def __init__(self, error_string: str, token: Token) -> None:
@@ -60,6 +82,19 @@ class TokenError():
 
         else:
             print("Multi Line Error (Printing Not Yet Supported)")
+
+    def __str__(self) -> str:
+        return self.__repr__()
+
+    def __repr__(self) -> str:
+        return "TokenError(" + repr(self.error_string) + ", " + str(self.token) + ")"
+
+    def __eq__(self, other: Any) -> bool:
+        if type(other) != TokenError:
+            return False
+        if self.error_string == other.error_string and self.token == other.token:
+            return True
+        return False
 
 
 ################################################################################

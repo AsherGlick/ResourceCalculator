@@ -1,0 +1,22 @@
+---
+authors:
+  TesterPerson: "testerperson@example.com"
+  BOT: "bot.example.com"
+
+index_page_display_name: -1
+
+recipe_types:
+  Crafting: "Craft {IN_ITEMS} into {OUT_ITEM}"
+
+resources:
+  MyResource:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        MySubResource: -1
+
+  MySubResource:
+    recipes:
+      - recipe_type: Raw Resource
