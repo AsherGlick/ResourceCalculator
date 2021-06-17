@@ -27,3 +27,4 @@ def uglify_js_string(js_string: str) -> str:
     except Exception as e:
         print("WARNING: Javascript compression failed")
         print("        ", e)
+    return js_string
