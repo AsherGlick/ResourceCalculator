@@ -399,10 +399,16 @@ def generate_resource_offset_classes(resources: OrderedDict[str, Resource], reso
     return item_styles
 
 
+################################################################################
+#
+################################################################################
 def get_recipes_only(resources: OrderedDict[str, Resource]) -> Dict[str, List[Recipe]]:
     return {resource: resources[resource].recipes for resource in resources}
 
 
+################################################################################
+#
+################################################################################
 def merge_custom_multipliers(stack_sizes: OrderedDict[str, StackSize], resources: OrderedDict[str, Resource]) -> OrderedDict[str, StackSize]:
     for resource in resources:
         custom_sizes = resources[resource].custom_stack_multipliers
@@ -496,7 +502,9 @@ def create_calculator_page(
     print("Generating", calculator_name, "into", calculator_folder)
 
     # Create a packed image of all the item images
-    # int,       int,          Dict[str, Tuple[int, int]]
+    image_width: int
+    image_height: int
+    resource_image_coordinates: Dict[str, Tuple[int, int]]
     image_width, image_height, resource_image_coordinates = create_packed_image(calculator_name)
 
     # Load in the yaml resources file
@@ -847,6 +855,7 @@ def main() -> None:
             continue
         else:
             break
+
 
 if __name__ == "__main__":
     main()
