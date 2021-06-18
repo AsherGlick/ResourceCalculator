@@ -25,7 +25,7 @@ from pylib.uglifyjs import uglify_js_string
 # final file will likely be gzipped and doing more compression here would be
 # redundant and only server to make things more complex.
 ################################################################################
-def mini_js_data(data: Any) -> Any:
+def mini_js_data(data: Any) -> str:
     # This is a javascript function that gets prepended to the data so that it
     # can be decompressed on-load.
     javascript_reverser = """
