@@ -43,10 +43,12 @@ class Token():
         if type(other) != Token:
             return False
 
-        if (other.start_line == self.start_line
+        if (
+            other.start_line == self.start_line
             and other.end_line == self.end_line
             and other.start_column == self.start_column
-            and other.end_column == self.end_column):
+            and other.end_column == self.end_column
+        ):
             return True
         return False
 

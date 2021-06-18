@@ -6,3 +6,4 @@ Jinja2==3.0.1
 mypy==0.902
 Pillow==8.2.0
 PyYAML==5.4.1
+types-PyYAML==5.4.3
