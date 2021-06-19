@@ -1,6 +1,6 @@
 import json
 from jinja2 import Environment
-from typing import Dict, Optional
+from typing import Dict, Optional, Any, Tuple
 
 from pylib.uglifyjs import uglify_js_string
 
@@ -25,7 +25,7 @@ from pylib.uglifyjs import uglify_js_string
 # final file will likely be gzipped and doing more compression here would be
 # redundant and only server to make things more complex.
 ################################################################################
-def mini_js_data(data: any):
+def mini_js_data(data: Any) -> str:
     # This is a javascript function that gets prepended to the data so that it
     # can be decompressed on-load.
     javascript_reverser = """
@@ -85,7 +85,7 @@ def mini_js_data(data: any):
 # From basic testing this showed to give ~8% further decrease in size from
 # using basically random indecies
 ################################################################################
-def _mini_js_data(data):
+def _mini_js_data(data: Any) -> Tuple[Any, Any]:
     token_counts = get_token_counts(data)
     sorted_tokens = [k for k, v in sorted(token_counts.items(), key=lambda item: item[1], reverse=True)]
     token_map = {token: index for (index, token) in enumerate(sorted_tokens)}
@@ -99,28 +99,30 @@ def _mini_js_data(data):
 # This function goes through the datastructure and replaces all the tokens with
 # their index as desribed in the token_map
 ################################################################################
-def replace_data(data: any, token_map: Dict[any, int]) -> any:
+def replace_data(data: Any, token_map: Dict[Any, int]) -> Any:
     # If this node is a dictionary process each key of it and recurse the values
     if isinstance(data, dict):
-        new_data = {}
+        new_dict = {}
         for i in data:
             # Key Replacement
             key_token_index = token_map[i]
 
             # Value replacement
             element = replace_data(data[i], token_map)
-            new_data[key_token_index] = element
-
+            new_dict[key_token_index] = element
+        return new_dict
     # If this node is a list recuse each element of it
     elif isinstance(data, list):
-        new_data = []
+        new_list = []
         for i in data:
             element = replace_data(i, token_map)
-            new_data.append(element)
+            new_list.append(element)
+        return new_list
     else:
         new_data = token_map[data]
+        return new_data
 
-    return (new_data)
+    # return (new_data)
 
 
 ################################################################################
@@ -128,7 +130,7 @@ def replace_data(data: any, token_map: Dict[any, int]) -> any:
 # of a particular token so that we can know which ones are the most used and
 # which ones are the least used.
 ################################################################################
-def get_token_counts(data: any, tokens: Optional[Dict[any, int]] = None) -> Dict[any, int]:
+def get_token_counts(data: Any, tokens: Optional[Dict[Any, int]] = None) -> Dict[Any, int]:
     if tokens is None:
         tokens = {}
     # If this node is a dictionary process each key of it and recurse the values

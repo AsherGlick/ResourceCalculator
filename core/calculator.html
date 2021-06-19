@@ -119,7 +119,8 @@
 						<input type="radio" name="unit_name" id="Units {{stack_size}}" value="{{stack_size}}" {% if default_stack_size == stack_size %}checked{% endif %}><label for="Units {{stack_size}}">{{stack_sizes[stack_size].plural}}</label>
 						<!-- </div> -->
 					{% endfor %}
-					<input type="radio" name="unit_name" id="Units Single" value="" {% if default_stack_size == None %}checked{% endif %}><label for="Units Single">Single</label>
+					<input type="radio" name="unit_name" id="Units Single" value="" {% if default_stack_size == "" %}checked{% endif %}><label for="Units Single">Single</label>
+
 
 					<!-- <div class="stack_size_selector">
 						Single
