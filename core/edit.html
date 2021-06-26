@@ -1,0 +1,178 @@
+<html>
+	<head>
+		<style type="text/css">
+			body {
+				font-family: sans-serif;
+				line-height: 2em;
+			}
+
+			.resource_list {
+				margin-left: auto;
+				margin-right: auto;
+				width:  800px;
+			}
+
+			.resource {
+				background: #CCC;
+				margin-top: 2px;
+				cursor: pointer;
+				padding: 10px;
+			}
+
+			.edit {
+				float: right;
+			}
+			input[type=text] {
+				border: none;
+				font-size: 1em;
+				height: 1.5em;
+			}
+			.item_name {
+				border: none;
+			}
+/*			.resource:hover {
+				background: #AAA;
+			}
+*/			.breakdown {
+				background-color: #ccc;
+				/*padding-top: 10px;*/
+				overflow: hidden;
+				/*border: 1px solid black;*/
+				/*background: #BBB;*/
+			}
+
+			.zeroheight {
+/*				height: 0;
+				padding: 0;
+				margin: 0;*/
+			}
+
+			.drag_order {
+				display: inline-block;
+			}
+
+			.ordering_value {
+				display: inline-block;
+				width: 35px;
+				text-align: center;
+			}
+
+			.recipe{
+				margin-left: 10px;
+				border-left: 10px solid #e1a579;
+				/*padding: 10px;*/
+				margin-bottom: 10px;
+				padding-left: 10px;
+				/*background: #;*/
+			}
+			.recipe_requirement {
+				margin-left: 10px;
+			}
+
+
+			.integermod_button {
+				display:  inline-block;
+				width: 1.5em;
+				background: #DDD;
+				line-height: 1.5em;
+				text-align: center;
+				z-index: -1;	
+			}
+
+			.requirement_list {
+				/*display: inline-block;*/
+				border-left: 10px solid #54bd52;
+
+			}
+
+		</style>
+
+		<datalist id="recipetypelist">
+			<option value="Crafting">
+		</datalist>
+		<datalist id="itemnamelist">
+		</datalist>
+
+		<div style="display: none">
+			<div id="resource" class="resource">
+				<div class="drag_order"></div>
+				<input id="ordering_index" class="ordering_value" type="text" />
+				<label for="name">Name:</label> <input id="name" type="text" class="item_name" />
+				<div class="edit">edit</div>
+				<!-- <div class="save hidden">save</div> -->
+				<div id="breakdown" class="breakdown zeroheight">
+					Recipes: <div id="recipe_list"></div>
+					<!-- Custom Stack Sizes: <span id="custom_stack_sizes"></span> -->
+
+				</div>
+			</div>
+			<div id="recipe" class="recipe">
+				Type: <input id="recipe_type" type="text" list="recipetypelist" /><br>
+				Output: <div class="integermod_button">-</div><input id="recipe_output_quantity" class="ordering_value" type="text"><div class="integermod_button">+</div><br>
+				Ingredients:<div id="requirement_list" class=requirement_list></div>
+			</div>
+			<div id="recipe_requirement" class="recipe_requirement">
+				<input id="requirement_name" type="text">
+				<div class="integermod_button">-</div><input id="requirement_value" class="ordering_value" type="text"><div class="integermod_button">+</div>
+			</div>
+		</div>
+
+	</head>
+	<body>
+		<input placeholder="search">
+		<div id="resource_list" class="resource_list">
+		</div>
+	</body>
+	<script>{{ resource_list_json }}</script>
+	<script>
+
+		let breakdown_elem = document.getElementById("breakdown");
+		function open_resources(name, elem) {
+			console.log("clicked", name, elem);
+			// breakdown_elem.parentNode.removeChild(breakdown_elem);
+			// elem.parentNode.insertBefore(breakdown_elem, elem.nextSibling);
+			elem.querySelector("#breakdown").classList.toggle("zeroheight");
+		}
+
+		let resource_elem = document.getElementById("resource");
+		let resource_list_elem = document.getElementById("resource_list");
+		let recipe_elem = document.getElementById("recipe");
+		let recipe_requirement_elem = document.getElementById("recipe_requirement");
+
+		let index = 1;
+		for (let key in recipe_json) {
+			!function(key) {
+				let cloned_resource_elem = resource_elem.cloneNode(true);
+				cloned_resource_elem.querySelector("#name").value = key;
+				cloned_resource_elem.querySelector("#ordering_index").value = index;
+				let recipe_list_elem = cloned_resource_elem.querySelector("#recipe_list")
+				index += 1;
+				cloned_resource_elem.addEventListener("click", function() {
+					open_resources(key, cloned_resource_elem);
+				})
+
+				for (let recipe_index in recipe_json[key]) {
+					let recipe = recipe_json[key][recipe_index];
+					// console.log(recipe.requirements);
+					let cloned_recipe_elem = recipe_elem.cloneNode(true);
+					cloned_recipe_elem.querySelector("#recipe_type").value = recipe.recipe_type;
+					cloned_recipe_elem.querySelector("#recipe_output_quantity").value = recipe.output;
+					let requirement_list = cloned_recipe_elem.querySelector("#requirement_list")
+					for (let requirement_name in recipe.requirements){
+						let cloned_requirement_elem = recipe_requirement_elem.cloneNode(true);
+
+						cloned_requirement_elem.querySelector("#requirement_value").value = recipe.requirements[requirement_name];
+						cloned_requirement_elem.querySelector("#requirement_name").value = requirement_name;
+
+						requirement_list.appendChild(cloned_requirement_elem);
+
+					}
+					recipe_list_elem.appendChild(cloned_recipe_elem);
+				}
+
+
+				resource_list_elem.appendChild(cloned_resource_elem);
+			}(key)
+		}
+	</script>
+</html>

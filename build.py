@@ -534,7 +534,8 @@ def create_calculator_page(
     if not FLAG_skip_uglify_js:
         recipe_type_format_js = uglify_js_string(recipe_type_format_js)
 
-    recipe_js = mini_js_data(get_primitive(get_recipes_only(resources)))
+    recipe_js_data = mini_js_data(get_primitive(get_recipes_only(resources)), "recipe_json")
+    resource_list_js_data = mini_js_data(get_primitive(resource_list), "resource_list_json")
 
     html_resource_data = generate_resource_html_data(resources)
 
@@ -549,12 +550,12 @@ def create_calculator_page(
 
     # Generate the calculator from a template
     env = Environment(loader=FileSystemLoader('core'))
-    template = env.get_template("calculator.html")
-    output_from_parsed_template = template.render(
+    calculator_template = env.get_template("calculator.html")
+    rendered_calculator = calculator_template.render(
         # A simplified list used for creating the item selector HTML
         resources=html_resource_data,
         # the javascript/json object used for calculations
-        recipe_json=recipe_js,
+        recipe_json=recipe_js_data,
         # The size and positions of the image
         item_width=image_width,
         item_height=image_height,
@@ -573,11 +574,24 @@ def create_calculator_page(
         # Used to do calculations to divide counts into stacks
         stack_sizes_json=stack_sizes_json)
 
-    minified = htmlmin.minify(output_from_parsed_template, remove_comments=True, remove_empty_space=True)
-    minified = minify_css_blocks(minified)
+    minified_calculator = htmlmin.minify(rendered_calculator, remove_comments=True, remove_empty_space=True)
+    minified_calculator = minify_css_blocks(minified_calculator)
 
     with open(os.path.join(calculator_folder, "index.html"), "w", encoding="utf_8") as f:
-        f.write(minified)
+        f.write(minified_calculator)
+
+
+    editor_template = env.get_template("edit.html")
+    rendered_editor = editor_template.render(
+        resource_list_json=resource_list_js_data
+    )
+
+    minified_editor = rendered_editor
+    # minified_editor = htmlmin.minify(rendered_editor, remove_comments=True, remove_empty_space=True)
+    # minified_editor = minify_css_blocks(minified_editor)
+
+    with open(os.path.join(calculator_folder, "edit.html"), "w", encoding="utf_8") as f:
+        f.write(minified_editor)
 
     # Sanity Check Warning, is there an image that does not have a recipe
     simple_resources = [x["simplename"] for x in html_resource_data]
