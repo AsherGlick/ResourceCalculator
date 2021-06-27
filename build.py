@@ -14,7 +14,7 @@ from PIL import Image  # type: ignore
 from typing import Dict, Tuple, List, Set
 
 from pylib.json_data_compressor import mini_js_data
-from pylib.uglifyjs import uglify_copyfile, uglify_js_string
+from pylib.uglifyjs import uglify_copyfile, uglify_js_string, set_skip_uglify_flag
 from pylib.webminify import minify_css_blocks
 from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, TokenError, Token, get_primitive
 from pylib.yaml_token_load import ordered_load
@@ -24,7 +24,6 @@ from pylib.yaml_token_load import ordered_load
 FLAG_skip_js_lint = False
 FLAG_skip_index = False
 FLAG_skip_gz_compression = False
-FLAG_skip_uglify_js = False
 FLAG_skip_image_compress = False
 FLAG_force_image = False
 
@@ -531,8 +530,7 @@ def create_calculator_page(
     # TODO: Add linting for stack sizes here
 
     recipe_type_format_js = generate_recipe_type_format_js(calculator_name, recipe_types)
-    if not FLAG_skip_uglify_js:
-        recipe_type_format_js = uglify_js_string(recipe_type_format_js)
+    recipe_type_format_js = uglify_js_string(recipe_type_format_js)
 
     recipe_js_data = mini_js_data(get_primitive(get_recipes_only(resources)), "recipe_json")
     resource_list_js_data = mini_js_data(get_primitive(resource_list), "resource_list_json")
@@ -579,7 +577,6 @@ def create_calculator_page(
 
     with open(os.path.join(calculator_folder, "index.html"), "w", encoding="utf_8") as f:
         f.write(minified_calculator)
-
 
     editor_template = env.get_template("edit.html")
     rendered_editor = editor_template.render(
@@ -766,16 +763,9 @@ def ends_with_any(string: str, endings: List[str]) -> bool:
 # This is a hacky function to copy over some files that should be accessible
 # by the code
 ################################################################################
-def _uglify_copyfile(in_file: str, out_file: str) -> None:
-    if FLAG_skip_uglify_js:
-        shutil.copyfile(in_file, out_file)
-    else:
-        uglify_copyfile(in_file, out_file)
-
-
 def copy_common_resources() -> None:
     shutil.copyfile("core/calculator.css", "output/calculator.css")
-    _uglify_copyfile("core/calculator.js", "output/calculator.js")
+    uglify_copyfile("core/calculator.js", "output/calculator.js")
     shutil.copyfile("core/thirdparty/jquery-3.3.1.min.js", "output/jquery.js")
     shutil.copyfile("core/logo.png", "output/logo.png")
     shutil.copyfile("core/.htaccess", "output/.htaccess")
@@ -788,20 +778,23 @@ def main() -> None:
         description='Compile resourcecalculator.com html pages.'
     )
 
-    parser.add_argument('--watch', action='store_true')
-    parser.add_argument('--no-jslint', action='store_true')
-    parser.add_argument('--no-uglify-js', action='store_true')
-    parser.add_argument('--no-gz', action='store_true')
-    parser.add_argument('--no-index', action='store_true')
-    parser.add_argument('--no-image-compress', action='store_true')
-    parser.add_argument('--force-html', action='store_true')
-    parser.add_argument('--force-image', action='store_true')
-    parser.add_argument('limit_files', nargs='*')
+    parser.add_argument('limit_files', nargs='*', help="Speed up dev-builds by only building a specific set of one or more calculators")
+
+    parser.add_argument('--watch', action='store_true', help="Watch source files and automatically rebuild when they change")
+    parser.add_argument('--fast', action='store_true', help="Enable all speed up flags for dev builds")
+
+    parser.add_argument('--no-jslint', action='store_true', help="Speed up dev-builds by skipping linting javascript files")
+    parser.add_argument('--no-uglify-js', action='store_true', help="Speed up dev-builds by skipping javascript compression")
+    parser.add_argument('--no-gz', action='store_true', help="Speed up dev-builds by skipping gz text compression")
+    parser.add_argument('--no-index', action='store_true', help="Speed up dev-builds by skipping building the index page")
+    parser.add_argument('--no-image-compress', action='store_true', help="Speed up dev-builds by skipping the image compresson")
+
+    parser.add_argument('--force-html', action='store_true', help="Force the html pages to be rebuilt even if they are newer then their source files")
+    parser.add_argument('--force-image', action='store_true', help="Force images to be rebuilt even if they are newer then their source files")
 
     global FLAG_skip_index
     global FLAG_skip_js_lint
     global FLAG_skip_gz_compression
-    global FLAG_skip_uglify_js
     global FLAG_skip_image_compress
     global FLAG_force_image
 
@@ -809,16 +802,21 @@ def main() -> None:
     if (args.watch):
         pass
 
-    if args.no_jslint:
+    if args.no_jslint or args.draft:
         FLAG_skip_js_lint = True
-    if args.no_uglify_js:
-        FLAG_skip_uglify_js = True
-    if args.no_gz:
+
+    if args.no_uglify_js or args.draft:
+        set_skip_uglify_flag()
+
+    if args.no_gz or args.draft:
         FLAG_skip_gz_compression = True
-    if args.no_image_compress:
+
+    if args.no_image_compress or args.draft:
         FLAG_skip_image_compress = True
-    if args.no_index:
+
+    if args.no_index or args.draft:
         FLAG_skip_index = True
+
     if args.force_image:
         FLAG_force_image = True
 
@@ -871,5 +869,19 @@ def main() -> None:
             break
 
 
+PROFILE = False
 if __name__ == "__main__":
-    main()
+
+    if PROFILE:
+        import cProfile
+        import pstats
+
+        with cProfile.Profile() as pr:
+            main()
+
+        stats = pstats.Stats(pr)
+        stats.sort_stats(pstats.SortKey.TIME)
+        stats.dump_stats(filename="profiledata.prof")
+        # Useful to use snakeviz to display profile data `snakeviz profiledata.prof`
+    else:
+        main()

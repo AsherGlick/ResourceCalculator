@@ -14,12 +14,15 @@ coverage run -m unittest discover -s . -p '*_test.py'
 # A bad attempt at integration tests by running the calculator builder over
 # everything. This will need to be changed in the future but is fine as an
 # interim solution.
-mv output output.bak
-coverage run -a build.py
-coverage run -a build.py --force-html
-coverage run -a build.py
-rm -r output/
-mv output.bak output
+
+if [ ! -z ${var+x} ]; then
+	mv output output.bak
+	coverage run -a build.py
+	coverage run -a build.py --force-html
+	coverage run -a build.py
+	rm -r output/
+	mv output.bak output
+fi
 
 # Print Code Coverage
 coverage report -m --omit='venv/*'
