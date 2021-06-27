@@ -139,8 +139,12 @@
 		let recipe_elem = document.getElementById("recipe");
 		let recipe_requirement_elem = document.getElementById("recipe_requirement");
 
+		// console.log(resource_list_json);
+
 		let index = 1;
-		for (let key in recipe_json) {
+		// for (let key in recipe_json) {
+		for (let key in resource_list_json.resources) {
+			// console.log(key);
 			!function(key) {
 				let cloned_resource_elem = resource_elem.cloneNode(true);
 				cloned_resource_elem.querySelector("#name").value = key;
@@ -150,10 +154,10 @@
 				cloned_resource_elem.addEventListener("click", function() {
 					open_resources(key, cloned_resource_elem);
 				})
-
-				for (let recipe_index in recipe_json[key]) {
-					let recipe = recipe_json[key][recipe_index];
-					// console.log(recipe.requirements);
+				// console.log(resource_list_json.resources[key]);
+				for (let recipe_index in resource_list_json.resources[key].recipes) {
+					let recipe = resource_list_json.resources[key].recipes[recipe_index];
+					// console.log(recipe);
 					let cloned_recipe_elem = recipe_elem.cloneNode(true);
 					cloned_recipe_elem.querySelector("#recipe_type").value = recipe.recipe_type;
 					cloned_recipe_elem.querySelector("#recipe_output_quantity").value = recipe.output;
