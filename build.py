@@ -8,6 +8,7 @@ import re
 import shutil
 import subprocess
 import time
+from dataclasses import dataclass
 from typing import OrderedDict
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image  # type: ignore
@@ -26,6 +27,41 @@ FLAG_skip_index = False
 FLAG_skip_gz_compression = False
 FLAG_skip_image_compress = False
 FLAG_force_image = False
+
+
+################################################################################
+# A simple caching layer for loading and parsing resource lists. This is used
+# in normal runs in order to rebuild the index page without re-parsing the
+# entire yaml file for each calculator. It is also useful for --watch when not
+# editing a resource list.
+################################################################################
+@dataclass
+class CachedResourceList():
+    resource_list: ResourceList
+    timestamp: int
+    errors: List[TokenError]
+resource_list_cache:Dict[str, CachedResourceList] = {}
+def load_resource_list(filepath: str) -> Tuple[ResourceList, List[TokenError]]:
+    global resource_list_cache
+    last_modified_time = os.path.getctime(filepath)
+
+    if (filepath not in resource_list_cache or resource_list_cache[filepath].timestamp > last_modified_time):
+        errors: List[TokenError] = []
+
+        with open(filepath, 'r', encoding="utf_8") as f:
+            yaml_data = ordered_load(f)
+            resource_list = ResourceList()
+            errors += resource_list.parse(yaml_data)
+
+        resource_list_cache[filepath] = CachedResourceList(
+            resource_list=resource_list,
+            timestamp=last_modified_time,
+            errors=errors
+        )
+    else:
+        print("  Using Cached", filepath)
+
+    return (resource_list_cache[filepath].resource_list, resource_list_cache[filepath].errors)
 
 
 ################################################################################
@@ -508,10 +544,8 @@ def create_calculator_page(
 
     # Load in the yaml resources file
     resource_list_file = os.path.join("resource_lists", calculator_name, "resources.yaml")
-    with open(resource_list_file, 'r', encoding="utf_8") as f:
-        yaml_data = ordered_load(f)
-        resource_list = ResourceList()
-        errors += resource_list.parse(yaml_data)
+    resource_list, parse_errors = load_resource_list(resource_list_file)
+    errors += parse_errors
 
     resources: OrderedDict[str, Resource] = resource_list.resources
     resources = expand_raw_resource(resources)
@@ -718,10 +752,7 @@ def create_index_page(directories: List[str]) -> None:
 #       maybe there can be some caching that happens here.
 ################################################################################
 def calculator_display_name(calculator_name: str) -> str:
-    with open(os.path.join("resource_lists", calculator_name, "resources.yaml"), 'r', encoding="utf_8") as f:
-        yaml_data = ordered_load(f)
-        resource_list = ResourceList()
-        resource_list.parse(yaml_data)
+    resource_list, parse_errors = load_resource_list(resource_list_file)
     return resource_list.index_page_display_name
 
 
