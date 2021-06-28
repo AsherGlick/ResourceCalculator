@@ -781,7 +781,7 @@ def main() -> None:
     parser.add_argument('limit_files', nargs='*', help="Speed up dev-builds by only building a specific set of one or more calculators")
 
     parser.add_argument('--watch', action='store_true', help="Watch source files and automatically rebuild when they change")
-    parser.add_argument('--fast', action='store_true', help="Enable all speed up flags for dev builds")
+    parser.add_argument('--draft', action='store_true', help="Enable all speed up flags for dev builds")
 
     parser.add_argument('--no-jslint', action='store_true', help="Speed up dev-builds by skipping linting javascript files")
     parser.add_argument('--no-uglify-js', action='store_true', help="Speed up dev-builds by skipping javascript compression")
