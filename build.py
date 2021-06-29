@@ -12,7 +12,7 @@ from dataclasses import dataclass
 from typing import OrderedDict
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image  # type: ignore
-from typing import Dict, Tuple, List, Set
+from typing import Dict, Tuple, List, Set, Any
 
 from pylib.json_data_compressor import mini_js_data
 from pylib.uglifyjs import uglify_copyfile, uglify_js_string, set_skip_uglify_flag
@@ -38,9 +38,13 @@ FLAG_force_image = False
 @dataclass
 class CachedResourceList():
     resource_list: ResourceList
-    timestamp: int
+    timestamp: float
     errors: List[TokenError]
-resource_list_cache:Dict[str, CachedResourceList] = {}
+
+
+resource_list_cache: Dict[str, CachedResourceList] = {}
+
+
 def load_resource_list(filepath: str) -> Tuple[ResourceList, List[TokenError]]:
     global resource_list_cache
     last_modified_time = os.path.getctime(filepath)
@@ -503,6 +507,32 @@ def touch_output_folder_files(calculator_folder: str, timestamp: int = 0) -> Non
             os.utime(filepath, (timestamp, timestamp))
 
 
+# Temporary file to update the resource file to the new format that does not
+# use ordered dictionaries and instead uses arrays of dictionaries
+def hack_update_version(data: Any) -> Any:
+    new_authors = []
+    for author in data["authors"]:
+        new_authors.append({author: data["authors"][author]})
+    data["authors"] = new_authors
+
+    new_resources = []
+    resource_id_count = 1
+    for resource in data["resources"]:
+        new_resource = {
+            "name": resource,
+            "id": resource_id_count,
+        }
+
+        for key in data["resources"][resource]:
+            new_resource[key] = data["resources"][resource][key]
+
+        new_resources.append(new_resource)
+        resource_id_count += 1
+    data["resources"] = new_resources
+
+    return data
+
+
 ################################################################################
 # create_calculator_page
 #
@@ -567,7 +597,6 @@ def create_calculator_page(
     recipe_type_format_js = uglify_js_string(recipe_type_format_js)
 
     recipe_js_data = mini_js_data(get_primitive(get_recipes_only(resources)), "recipe_json")
-    resource_list_js_data = mini_js_data(get_primitive(resource_list), "resource_list_json")
 
     html_resource_data = generate_resource_html_data(resources)
 
@@ -612,9 +641,15 @@ def create_calculator_page(
     with open(os.path.join(calculator_folder, "index.html"), "w", encoding="utf_8") as f:
         f.write(minified_calculator)
 
+    resource_list_js_data = mini_js_data(hack_update_version(get_primitive(resource_list)), "resource_list_json")
+
     editor_template = env.get_template("edit.html")
     rendered_editor = editor_template.render(
-        resource_list_json=resource_list_js_data
+        resource_list_json=resource_list_js_data,
+        element_height=59,  # should be automatically generated from the image height? width? or should be static
+        element_count=989,  # should be automatically generated from the number of resources
+        total_height=59 * 989,
+        buffer_element_count=2,
     )
 
     minified_editor = rendered_editor
@@ -752,6 +787,7 @@ def create_index_page(directories: List[str]) -> None:
 #       maybe there can be some caching that happens here.
 ################################################################################
 def calculator_display_name(calculator_name: str) -> str:
+    resource_list_file = os.path.join("resource_lists", calculator_name, "resources.yaml")
     resource_list, parse_errors = load_resource_list(resource_list_file)
     return resource_list.index_page_display_name
 

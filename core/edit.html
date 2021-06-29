@@ -4,31 +4,74 @@
 			body {
 				font-family: sans-serif;
 				line-height: 2em;
+				background:  #EFEFEF;
 			}
 
 			.resource_list {
 				margin-left: auto;
 				margin-right: auto;
 				width:  800px;
+				min-height: {{total_height}}px; /* {{total_height}}={{element_height}}*{{element_count}} */
 			}
 
 			.resource {
-				background: #CCC;
-				margin-top: 2px;
-				cursor: pointer;
-				padding: 10px;
+				background: #D8D9ED;
+				margin-bottom: 5px;
+				display: flex;
+				border-radius: 5px;
+				border: 2px solid #8b90a1;
+			}
+
+
+			.ordering_drag {
+				width: 50px;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				cursor: grab;
+			}
+			.ordering_index {
+				display: inline-flex;
+				align-items: center;
+			}
+			.resource_label {
+				display: inline-flex;
+				align-items: center;
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+			.resource_name {
+				display: inline-flex;
+				align-items: center;
+				flex-grow: 1;
+				min-height: 50px;
+
 			}
 
 			.edit {
-				float: right;
+				display: inline-flex;
+				cursor: pointer;
+				padding-left: 10px;
+				padding-right: 10px;
+				align-items: center;
+				border-radius: 3px;
+				transition: background-color 0.1s linear, color 0.1s linear;
 			}
+			.edit:hover {
+				background: #A6A9DF;
+			}
+
+
 			input[type=text] {
 				border: none;
 				font-size: 1em;
-				height: 1.5em;
+				/*height: 1.5em;*/
 			}
 			.item_name {
 				border: none;
+				width: 100%;
+				height: 40px;
+				padding-left: 10px;
 			}
 /*			.resource:hover {
 				background: #AAA;
@@ -95,17 +138,20 @@
 
 		<div style="display: none">
 			<div id="resource" class="resource">
-				<div class="drag_order"></div>
-				<input id="ordering_index" class="ordering_value" type="text" />
-				<label for="name">Name:</label> <input id="name" type="text" class="item_name" />
+				<div class="ordering_drag">|||</div>
+				<div class="ordering_index"><input id="ordering_index" class="ordering_value" type="text" /></div>
+				<div class="resource_label"><label for="name">Name:</label></div>
+				<div class="resource_name"><input id="name" type="text" class="item_name" /></div>
 				<div class="edit">edit</div>
+			</div>
+
 				<!-- <div class="save hidden">save</div> -->
 				<div id="breakdown" class="breakdown zeroheight">
 					Recipes: <div id="recipe_list"></div>
 					<!-- Custom Stack Sizes: <span id="custom_stack_sizes"></span> -->
-
 				</div>
-			</div>
+
+
 			<div id="recipe" class="recipe">
 				Type: <input id="recipe_type" type="text" list="recipetypelist" /><br>
 				Output: <div class="integermod_button">-</div><input id="recipe_output_quantity" class="ordering_value" type="text"><div class="integermod_button">+</div><br>
@@ -121,6 +167,7 @@
 	<body>
 		<input placeholder="search">
 		<div id="resource_list" class="resource_list">
+			<div id="resource_list_offset_padding"></div>
 		</div>
 	</body>
 	<script>{{ resource_list_json }}</script>
@@ -134,49 +181,107 @@
 			elem.querySelector("#breakdown").classList.toggle("zeroheight");
 		}
 
-		let resource_elem = document.getElementById("resource");
-		let resource_list_elem = document.getElementById("resource_list");
-		let recipe_elem = document.getElementById("recipe");
-		let recipe_requirement_elem = document.getElementById("recipe_requirement");
 
-		// console.log(resource_list_json);
+		////////////////////////////////////////////////////////////////////////
+		// Speed optimization where only the visible rows are added to the DOM
+		// this is a useful speedup for both inital page load and also page
+		// use. This concept was suggusted by Google Page Insights linking to
+		// https://web.dev/dom-size/ which suggusted modules for Vue and React.
+		// Neither of which are used on this site and instead this basic js
+		// function was written instead.
+		//
+		// TODO: A slight optimization might want to be considered where a box
+		// that appears in both the old and the new element list is re-used.
+		// This is not a speed optimization nessasarily but it will prevent the
+		// text input from being blured due to the old text input being
+		// destroyed and replaced with a new text input.
+		////////////////////////////////////////////////////////////////////////
+		let active_resource_elements = [];
+		function redraw_resouce_elements() {
+			for (let i in active_resource_elements) {
+				let active_resource_element = active_resource_elements[i];
+				active_resource_element.parentNode.removeChild(active_resource_element);
+			}
+			active_resource_elements = [];
 
-		let index = 1;
-		// for (let key in recipe_json) {
-		for (let key in resource_list_json.resources) {
-			// console.log(key);
-			!function(key) {
-				let cloned_resource_elem = resource_elem.cloneNode(true);
-				cloned_resource_elem.querySelector("#name").value = key;
-				cloned_resource_elem.querySelector("#ordering_index").value = index;
-				let recipe_list_elem = cloned_resource_elem.querySelector("#recipe_list")
-				index += 1;
-				cloned_resource_elem.addEventListener("click", function() {
-					open_resources(key, cloned_resource_elem);
-				})
-				// console.log(resource_list_json.resources[key]);
-				for (let recipe_index in resource_list_json.resources[key].recipes) {
-					let recipe = resource_list_json.resources[key].recipes[recipe_index];
-					// console.log(recipe);
-					let cloned_recipe_elem = recipe_elem.cloneNode(true);
-					cloned_recipe_elem.querySelector("#recipe_type").value = recipe.recipe_type;
-					cloned_recipe_elem.querySelector("#recipe_output_quantity").value = recipe.output;
-					let requirement_list = cloned_recipe_elem.querySelector("#requirement_list")
-					for (let requirement_name in recipe.requirements){
-						let cloned_requirement_elem = recipe_requirement_elem.cloneNode(true);
+			let resource_elem = document.getElementById("resource");
+			let resource_list_elem = document.getElementById("resource_list");
+			let recipe_elem = document.getElementById("recipe");
+			let recipe_requirement_elem = document.getElementById("recipe_requirement");
+			let resource_list_offset_padding_elem = document.getElementById("resource_list_offset_padding");
 
-						cloned_requirement_elem.querySelector("#requirement_value").value = recipe.requirements[requirement_name];
-						cloned_requirement_elem.querySelector("#requirement_name").value = requirement_name;
+			let ordering_index = 1;
+			
+			let window_height = window.innerHeight 
+								|| document.documentElement.clientHeight
+								|| document.body.clientHeight;
+			 
+			let start_index = Math.max(Math.floor((document.body.scrollTop - resource_list_elem.offsetTop) / {{element_height}}) - {{buffer_element_count}}, 0);
+			let end_index =   Math.min(Math.floor((document.body.scrollTop - resource_list_elem.offsetTop + window_height) / {{element_height}}) + {{buffer_element_count}}, {{element_count}})
 
-						requirement_list.appendChild(cloned_requirement_elem);
+			for (let i = start_index; i < end_index; i++) {
+				!function(key) {
+					let name = resource_list_json.resources[key].name;
+					
+					let cloned_resource_elem = resource_elem.cloneNode(true);
+					cloned_resource_elem.querySelector("#name").value = name;
+					cloned_resource_elem.querySelector("#ordering_index").value = key+1;
+					cloned_resource_elem.array_index = key;
+					resource_list_elem.appendChild(cloned_resource_elem);
+					active_resource_elements.push(cloned_resource_elem);
+				}(i)
+			}
+			resource_list_offset_padding.style.height = {{element_height}} * start_index;
 
-					}
-					recipe_list_elem.appendChild(cloned_recipe_elem);
-				}
-
-
-				resource_list_elem.appendChild(cloned_resource_elem);
-			}(key)
 		}
+
+
+		document.addEventListener('scroll', function(e) {
+			// TOOD: A speed optimization might want to be considered where if the
+			// scroll has not exceeded one object height since the last render then
+			// the objects are not re-rendered.
+			redraw_resouce_elements();
+		});
+		window.addEventListener('resize', function(e) {
+			redraw_resouce_elements();
+		});
+		redraw_resouce_elements();
+
+
+				// let recipe_list_elem = cloned_resource_elem.querySelector("#recipe_list")
+				// ordering_index += 1;
+				// cloned_resource_elem.addEventListener("click", function() {
+				// 	open_resources(key, cloned_resource_elem);
+				// })
+				// // console.log(resource_list_json.resources[key]);
+				// for (let recipe_index in resource_list_json.resources[key].recipes) {
+				// 	let recipe = resource_list_json.resources[key].recipes[recipe_index];
+				// 	// console.log(recipe);
+				// 	let cloned_recipe_elem = recipe_elem.cloneNode(true);
+				// 	cloned_recipe_elem.querySelector("#recipe_type").value = recipe.recipe_type;
+				// 	cloned_recipe_elem.querySelector("#recipe_output_quantity").value = recipe.output;
+				// 	let requirement_list = cloned_recipe_elem.querySelector("#requirement_list")
+				// 	for (let requirement_name in recipe.requirements){
+				// 		let cloned_requirement_elem = recipe_requirement_elem.cloneNode(true);
+
+				// 		cloned_requirement_elem.querySelector("#requirement_value").value = recipe.requirements[requirement_name];
+				// 		cloned_requirement_elem.querySelector("#requirement_name").value = requirement_name;
+
+				// 		requirement_list.appendChild(cloned_requirement_elem);
+
+				// 	}
+				// 	recipe_list_elem.appendChild(cloned_recipe_elem);
+				// }
+
+
+
+				// // Only Generate the elements that we need to
+				// window_height = window.innerHeight 
+				// 				|| document.documentElement.clientHeight
+				// 				|| document.body.clientHeight;
+				// if (cloned_resource_elem.offsetTop > window_height + document.body.scrollTop) {
+				// 	return true;
+				// }
+				// return false;
 	</script>
 </html>
