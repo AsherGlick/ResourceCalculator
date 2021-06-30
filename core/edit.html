@@ -57,6 +57,8 @@
 				margin-left: auto;
 				margin-right: auto;
 				max-width:  800px;
+				display: flex;
+				flex-direction: column;
 				min-height: {{total_height}}px;
 			}
 
@@ -66,8 +68,12 @@
 				display: flex;
 				border-radius: 5px;
 				border: 2px solid #9bb998;
+				height: 50px;
 			}
-
+			.resource_anim_out{
+				transition: margin-top .2s;
+				margin-top: 0;
+			}
 
 			.ordering_drag {
 				margin-left: 10px;
@@ -92,7 +98,6 @@
 				display: inline-flex;
 				align-items: center;
 				flex-grow: 1;
-				min-height: 50px;
 				margin-left: 10px;
 			}
 			/*@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {*/
@@ -286,6 +291,8 @@
 		// 	filter_items();
 		// });
 
+		const element_height = {{element_height}};
+		const buffer_element_count = {{buffer_element_count}};
 
 
 		////////////////////////////////////////////////////////////////////////
@@ -303,7 +310,7 @@
 		// destroyed and replaced with a new text input.
 		////////////////////////////////////////////////////////////////////////
 		let active_resource_elements = [];
-		function redraw_resouce_elements() {
+		function redraw_resouce_elements(animate_out_index=undefined, animate_in_index=undefined) {
 			for (let i in active_resource_elements) {
 				let active_resource_element = active_resource_elements[i];
 				active_resource_element.parentNode.removeChild(active_resource_element);
@@ -322,18 +329,31 @@
 								|| document.documentElement.clientHeight
 								|| document.body.clientHeight;
 			 
-			let start_index = Math.max(Math.floor((document.body.scrollTop - resource_list_elem.offsetTop) / {{element_height}}) - {{buffer_element_count}}, 0);
-			let end_index =   Math.min(Math.floor((document.body.scrollTop - resource_list_elem.offsetTop + window_height) / {{element_height}}) + {{buffer_element_count}}, resource_list_json.resources.length)
-
+			let start_index = Math.max(Math.floor((document.body.scrollTop - resource_list_elem.offsetTop) / element_height) - buffer_element_count, 0);
+			let end_index =   Math.min(Math.floor((document.body.scrollTop - resource_list_elem.offsetTop + window_height) / element_height) + buffer_element_count, resource_list_json.resources.length)
 
 			// item_name.indexOf(search_string) === -1
 
 			for (let i = start_index; i < end_index; i++) {
-				!function(key) {
+				(function(key) {
 					let name = resource_list_json.resources[key].name;
 					
 					let cloned_resource_elem = resource_elem.cloneNode(true);
 					cloned_resource_elem.querySelector("#name").value = name;
+
+					if (key == animate_out_index){
+						cloned_resource_elem.style.marginTop = element_height+"px";
+						cloned_resource_elem.style.transition = "margin-top .2s";
+						setTimeout(function(){cloned_resource_elem.style.marginTop = "0";},1);
+						// cloned_resource_elem.classList.add("resource_anim_out");
+					}
+					if (key == animate_in_index){
+						cloned_resource_elem.style.marginTop = -element_height+"px";
+						cloned_resource_elem.style.zIndex = "-1";
+						cloned_resource_elem.style.transition = "margin-top .2s";
+						setTimeout(function(){cloned_resource_elem.style.marginTop = "0";},1);
+					}
+
 					let ordering_index_elem = cloned_resource_elem.querySelector("#ordering_index");
 					ordering_index_elem.value = key+1;
 					ordering_index_elem.addEventListener("change", function(e,a,b,c) {
@@ -351,7 +371,7 @@
 							// Move Item to New Location
 							resource_list_json.resources.splice(parsed-1, 0, resource_list_json.resources.splice(key, 1)[0]);
 						}
-						redraw_resouce_elements();
+						redraw_resouce_elements(key, parsed-1); // TODO: Replace this with an animation of some sort.
 					});
 					ordering_index_elem.addEventListener("focus", function(a,b,c) {
 						// console.log("focus", a, b, c, this);
@@ -361,10 +381,9 @@
 					cloned_resource_elem.array_index = key;
 					resource_list_elem.appendChild(cloned_resource_elem);
 					active_resource_elements.push(cloned_resource_elem);
-				}(i)
+				})(i)
 			}
-			resource_list_offset_padding.style.height = {{element_height}} * start_index;
-
+			resource_list_offset_padding.style.height = element_height * start_index;
 		}
 
 
