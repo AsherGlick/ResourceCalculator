@@ -5,47 +5,101 @@
 				font-family: sans-serif;
 				line-height: 2em;
 				background:  #EFEFEF;
+				margin: 0;
+				padding: 0;
 			}
+
+
+.search_bar {
+	margin: 10px;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.search_label_wrapper {
+	float:left;
+	padding: 5px 10px;
+	border: 2px solid #8b90a1;
+	border-right: 0;
+	background: #D8D9ED;
+	border-radius: 5px 0 0 5px;
+	line-height: initial;
+}
+.search_label {
+}
+
+.search_box_wrapper {
+	display: block;
+	overflow: hidden;
+}
+.search_box {
+	width: 100%;
+	box-sizing:border-box;
+	padding: 5px;
+	margin: 0;
+	color: #000;
+	font-family: sans-serif;
+	background-color: #fff;
+	border: none;
+	border-top: 2px solid #8b90a1;
+	border-bottom: 2px solid #8b90a1;
+	border-right: 2px solid #8b90a1;
+	font-size: 1em;
+	border-radius: 0 5px 5px 0;
+}
+
+
+
+
 
 			.resource_list {
 				margin-left: auto;
 				margin-right: auto;
-				width:  800px;
-				min-height: {{total_height}}px; /* {{total_height}}={{element_height}}*{{element_count}} */
+				max-width:  800px;
+				min-height: {{total_height}}px;
 			}
 
 			.resource {
-				background: #D8D9ED;
+				background: #d8e8db;
 				margin-bottom: 5px;
 				display: flex;
 				border-radius: 5px;
-				border: 2px solid #8b90a1;
+				border: 2px solid #9bb998;
 			}
 
 
 			.ordering_drag {
-				width: 50px;
+				margin-left: 10px;
 				display: inline-flex;
 				align-items: center;
 				justify-content: center;
+				font-size: 1.5em;
 				cursor: grab;
+				display: none; /* TODO: implement drag and drop eventually */;
 			}
 			.ordering_index {
 				display: inline-flex;
 				align-items: center;
+				margin-left: 10px;
 			}
 			.resource_label {
 				display: inline-flex;
 				align-items: center;
 				margin-left: 10px;
-				margin-right: 10px;
 			}
 			.resource_name {
 				display: inline-flex;
 				align-items: center;
 				flex-grow: 1;
 				min-height: 50px;
-
+				margin-left: 10px;
+			}
+			/*@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {*/
+			@media only screen and (max-width : 480px) {
+				.resource_label {
+					display: none;
+				}
 			}
 
 			.edit {
@@ -58,19 +112,23 @@
 				transition: background-color 0.1s linear, color 0.1s linear;
 			}
 			.edit:hover {
-				background: #A6A9DF;
+				background: #A2D7AB;
 			}
+			
 
-
-			input[type=text] {
+			input {
+				font-size: 1em;
+			}
+/*			input[type=text] {
 				border: none;
 				font-size: 1em;
-				/*height: 1.5em;*/
-			}
+			}*/
 			.item_name {
 				border: none;
 				width: 100%;
-				height: 40px;
+				/*height: 40px;*/
+				padding: 5px 10px;
+
 				padding-left: 10px;
 			}
 /*			.resource:hover {
@@ -98,8 +156,13 @@
 				display: inline-block;
 				width: 35px;
 				text-align: center;
-			}
+				background:  inherit;
+				border: none;
 
+			}
+			.ordering_value:focus {
+				background: #FFF;
+			}
 			.recipe{
 				margin-left: 10px;
 				border-left: 10px solid #e1a579;
@@ -138,7 +201,7 @@
 
 		<div style="display: none">
 			<div id="resource" class="resource">
-				<div class="ordering_drag">|||</div>
+				<div class="ordering_drag">&#8597;</div>
 				<div class="ordering_index"><input id="ordering_index" class="ordering_value" type="text" /></div>
 				<div class="resource_label"><label for="name">Name:</label></div>
 				<div class="resource_name"><input id="name" type="text" class="item_name" /></div>
@@ -165,7 +228,21 @@
 
 	</head>
 	<body>
-		<input placeholder="search">
+		<!-- <input placeholder="search"> -->
+		
+		<div class="search_bar">
+			<!-- <div class="hide_unused_wrapper">
+				<input type="checkbox" id="unused_hide_checkbox" class="hide_unused_checkbox">
+				<label class="hide_unused_label" for="unused_hide_checkbox">Hide Unused</label>
+			</div> -->
+			<div class="search_label_wrapper">
+				<label class="search_label" for="item_filter">Filter:</label>
+			</div>
+			<span class="search_box_wrapper">
+			<input type="text" class="search_box" id="item_filter"></span>
+		</div>
+
+
 		<div id="resource_list" class="resource_list">
 			<div id="resource_list_offset_padding"></div>
 		</div>
@@ -177,9 +254,38 @@
 		function open_resources(name, elem) {
 			console.log("clicked", name, elem);
 			// breakdown_elem.parentNode.removeChild(breakdown_elem);
-			// elem.parentNode.insertBefore(breakdown_elem, elem.nextSibling);
+			// elem.parentNode.insertBefore(breakdown_elem, elem.nextSibling);``
 			elem.querySelector("#breakdown").classList.toggle("zeroheight");
 		}
+
+
+
+		// function filter_items() {
+		// 	// var search_string = $("#item_filter").val().toLowerCase();
+		// 	let search_string = document.getElementById("item_filter").value.toLowerCase();
+		// 	// var hide_unused = $("#unused_hide_checkbox").prop("checked");
+
+		// 	// Loop through each item
+		// 	for (let resource in )
+
+		// 	$("#content_field").find(".desired_item").each(function() {
+		// 		var item_name = $(this).find("input").attr("aria-label").toLowerCase();
+		// 		var item_count = $(this).find(".desired_item_count").val();
+
+		// 		// If the search string does not match hide the item
+		// 		// If the item count is not greater than 0 and hide unused is true hide
+		// 		if (item_name.indexOf(search_string) === -1 || !(item_count > 0 || !hide_unused)) {
+		// 			$(this).hide();
+		// 		}
+		// 		else {
+		// 			$(this).show();
+		// 		}
+		// 	});
+		// }
+		// $("#item_filter").bind("propertychange change click keyup input paste", function(){
+		// 	filter_items();
+		// });
+
 
 
 		////////////////////////////////////////////////////////////////////////
@@ -217,7 +323,10 @@
 								|| document.body.clientHeight;
 			 
 			let start_index = Math.max(Math.floor((document.body.scrollTop - resource_list_elem.offsetTop) / {{element_height}}) - {{buffer_element_count}}, 0);
-			let end_index =   Math.min(Math.floor((document.body.scrollTop - resource_list_elem.offsetTop + window_height) / {{element_height}}) + {{buffer_element_count}}, {{element_count}})
+			let end_index =   Math.min(Math.floor((document.body.scrollTop - resource_list_elem.offsetTop + window_height) / {{element_height}}) + {{buffer_element_count}}, resource_list_json.resources.length)
+
+
+			// item_name.indexOf(search_string) === -1
 
 			for (let i = start_index; i < end_index; i++) {
 				!function(key) {
@@ -225,7 +334,30 @@
 					
 					let cloned_resource_elem = resource_elem.cloneNode(true);
 					cloned_resource_elem.querySelector("#name").value = name;
-					cloned_resource_elem.querySelector("#ordering_index").value = key+1;
+					let ordering_index_elem = cloned_resource_elem.querySelector("#ordering_index");
+					ordering_index_elem.value = key+1;
+					ordering_index_elem.addEventListener("change", function(e,a,b,c) {
+						// console.log("Value Changed", e);
+						console.log(this.value);
+						const parsed = parseInt(this.value);
+						if (!isNaN(parsed)) {
+							if (parsed < 1) {
+								parsed = 1;
+							}
+							if (parsed > resource_list_json.resources.length) {
+								parsed = resource_list_json.resources.length
+							}
+
+							// Move Item to New Location
+							resource_list_json.resources.splice(parsed-1, 0, resource_list_json.resources.splice(key, 1)[0]);
+						}
+						redraw_resouce_elements();
+					});
+					ordering_index_elem.addEventListener("focus", function(a,b,c) {
+						// console.log("focus", a, b, c, this);
+						this.setSelectionRange(0, this.value.length)
+					})
+
 					cloned_resource_elem.array_index = key;
 					resource_list_elem.appendChild(cloned_resource_elem);
 					active_resource_elements.push(cloned_resource_elem);
