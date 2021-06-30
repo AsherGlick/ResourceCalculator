@@ -57,18 +57,20 @@
 				margin-left: auto;
 				margin-right: auto;
 				max-width:  800px;
-				display: flex;
-				flex-direction: column;
+				position: relative;
 				min-height: {{total_height}}px;
 			}
 
 			.resource {
 				background: #d8e8db;
-				margin-bottom: 5px;
 				display: flex;
 				border-radius: 5px;
 				border: 2px solid #9bb998;
-				height: 50px;
+				min-height: 50px;
+				position: absolute;
+				width: 100%;
+				box-sizing: border-box;
+				transition: top .2s;
 			}
 			.resource_anim_out{
 				transition: margin-top .2s;
@@ -233,13 +235,8 @@
 
 	</head>
 	<body>
-		<!-- <input placeholder="search"> -->
 		
 		<div class="search_bar">
-			<!-- <div class="hide_unused_wrapper">
-				<input type="checkbox" id="unused_hide_checkbox" class="hide_unused_checkbox">
-				<label class="hide_unused_label" for="unused_hide_checkbox">Hide Unused</label>
-			</div> -->
 			<div class="search_label_wrapper">
 				<label class="search_label" for="item_filter">Filter:</label>
 			</div>
@@ -248,9 +245,7 @@
 		</div>
 
 
-		<div id="resource_list" class="resource_list">
-			<div id="resource_list_offset_padding"></div>
-		</div>
+		<div id="resource_list" class="resource_list"></div>
 	</body>
 	<script>{{ resource_list_json }}</script>
 	<script>
@@ -258,8 +253,6 @@
 		let breakdown_elem = document.getElementById("breakdown");
 		function open_resources(name, elem) {
 			console.log("clicked", name, elem);
-			// breakdown_elem.parentNode.removeChild(breakdown_elem);
-			// elem.parentNode.insertBefore(breakdown_elem, elem.nextSibling);``
 			elem.querySelector("#breakdown").classList.toggle("zeroheight");
 		}
 
@@ -321,7 +314,6 @@
 			let resource_list_elem = document.getElementById("resource_list");
 			let recipe_elem = document.getElementById("recipe");
 			let recipe_requirement_elem = document.getElementById("recipe_requirement");
-			let resource_list_offset_padding_elem = document.getElementById("resource_list_offset_padding");
 
 			let ordering_index = 1;
 			
@@ -341,25 +333,26 @@
 					let cloned_resource_elem = resource_elem.cloneNode(true);
 					cloned_resource_elem.querySelector("#name").value = name;
 
-					if (key == animate_out_index){
-						cloned_resource_elem.style.marginTop = element_height+"px";
-						cloned_resource_elem.style.transition = "margin-top .2s";
-						setTimeout(function(){cloned_resource_elem.style.marginTop = "0";},1);
-						// cloned_resource_elem.classList.add("resource_anim_out");
+					cloned_resource_elem.style.top = element_height * key;
+
+					// If receiving animation indices then animate anything between them
+					if (key >= animate_out_index && key < animate_in_index) {
+						cloned_resource_elem.style.top = (key+1) * element_height + "px";
+						setTimeout(function(){cloned_resource_elem.style.top = key * element_height + "px";},1);
 					}
-					if (key == animate_in_index){
-						cloned_resource_elem.style.marginTop = -element_height+"px";
-						cloned_resource_elem.style.zIndex = "-1";
-						cloned_resource_elem.style.transition = "margin-top .2s";
-						setTimeout(function(){cloned_resource_elem.style.marginTop = "0";},1);
+					else if (key <= animate_out_index && key > animate_in_index) {
+						cloned_resource_elem.style.top = (key-1) * element_height + "px";
+						setTimeout(function(){cloned_resource_elem.style.top = key * element_height + "px";},1);
+					}
+					else if (key == animate_in_index){
+						cloned_resource_elem.style.top = animate_out_index * element_height + "px";
+						setTimeout(function(){cloned_resource_elem.style.top = key * element_height + "px";},1);
 					}
 
 					let ordering_index_elem = cloned_resource_elem.querySelector("#ordering_index");
 					ordering_index_elem.value = key+1;
 					ordering_index_elem.addEventListener("change", function(e,a,b,c) {
-						// console.log("Value Changed", e);
-						console.log(this.value);
-						const parsed = parseInt(this.value);
+						let parsed = parseInt(this.value);
 						if (!isNaN(parsed)) {
 							if (parsed < 1) {
 								parsed = 1;
@@ -371,10 +364,9 @@
 							// Move Item to New Location
 							resource_list_json.resources.splice(parsed-1, 0, resource_list_json.resources.splice(key, 1)[0]);
 						}
-						redraw_resouce_elements(key, parsed-1); // TODO: Replace this with an animation of some sort.
+						redraw_resouce_elements(key, parsed-1);
 					});
 					ordering_index_elem.addEventListener("focus", function(a,b,c) {
-						// console.log("focus", a, b, c, this);
 						this.setSelectionRange(0, this.value.length)
 					})
 
@@ -383,7 +375,6 @@
 					active_resource_elements.push(cloned_resource_elem);
 				})(i)
 			}
-			resource_list_offset_padding.style.height = element_height * start_index;
 		}
 
 

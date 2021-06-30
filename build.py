@@ -646,7 +646,7 @@ def create_calculator_page(
     editor_template = env.get_template("edit.html")
     rendered_editor = editor_template.render(
         resource_list_json=resource_list_js_data,
-        element_height=59,  # should be automatically generated from the image height? width? or should be static
+        element_height=55,  # should be automatically generated from the image height? width? or should be static
         element_count=989,  # should be automatically generated from the number of resources
         total_height=59 * 989,
         buffer_element_count=2,
