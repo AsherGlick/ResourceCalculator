@@ -4,7 +4,6 @@ authors:
 
 index_page_display_name: "Nier Automata"
 row_group_count: 4
-beta_page: false
 
 recipe_types:
   Upgrade: "Upgrade {IN_ITEMS} into {OUT_ITEM}"
