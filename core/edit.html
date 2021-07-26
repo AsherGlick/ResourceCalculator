@@ -1,6 +1,9 @@
 <html>
 	<head>
+		<meta charset="utf-8">
+
 		<style type="text/css">
+
 			body {
 				font-family: sans-serif;
 				line-height: 2em;
@@ -53,6 +56,22 @@
 
 
 
+:root {
+	--background-color1: #DDD;
+	--border-color1: #BBB;
+	--button-hover-color1: #A2D7AB;
+
+	--background-color2: #CCC;
+	--border-color2: #AAA;
+
+	--background-color3: #BBB;
+	--border-color3: #999;
+
+
+}
+
+
+
 			.resource_list {
 				margin-left: auto;
 				margin-right: auto;
@@ -62,15 +81,16 @@
 			}
 
 			.resource {
-				background: #d8e8db;
+				background: var(--background-color1);
 				display: flex;
 				border-radius: 5px;
-				border: 2px solid #9bb998;
+				/*border: 2px solid #9bb998;*/
+				border: 2px solid var(--border-color1);
 				min-height: 50px;
 				position: absolute;
 				width: 100%;
 				box-sizing: border-box;
-				transition: top .2s;
+				transition: top .2s, box-shadow .2s;
 			}
 			.resource_anim_out{
 				transition: margin-top .2s;
@@ -119,7 +139,7 @@
 				transition: background-color 0.1s linear, color 0.1s linear;
 			}
 			.edit:hover {
-				background: #A2D7AB;
+				background: var(--button-hover-color1);
 			}
 			
 
@@ -159,6 +179,11 @@
 				display: inline-block;
 			}
 
+			.recipe_value {
+				display: inline-block;
+				width: 35px;
+				text-align: center;
+			}
 			.ordering_value {
 				display: inline-block;
 				width: 35px;
@@ -178,15 +203,33 @@
 			}
 
 			.recipe{
-				margin-left: 10px;
-				border-left: 10px solid #e1a579;
+				/*margin-left: 10px;*/
+				/*border-left: 10px solid #e1a579;*/
 				/*padding: 10px;*/
 				margin-bottom: 10px;
-				padding-left: 10px;
-				/*background: #;*/
+				padding: 10px;
+				border: 2px solid var(--border-color2);
+				border-radius: 5px;
+				background: var(--background-color2);
 			}
 			.recipe_requirement {
-				margin-left: 10px;
+				/*margin-left: 10px;*/
+				border:  2px solid var(--border-color3);
+				/*border-radius: 5px;*/
+				padding:  5px;
+				background-color: var(--background-color3);
+				border-bottom-width: 0;
+
+			}
+			.recipe_requirement:last-of-type {
+				/*border-bottom-width: 2px;*/
+				/*border-radius:  0 0 5px 5px;*/
+			}
+			.recipe_requirement:first-of-type {
+				border-radius: 5px 5px 0 0;
+			}
+			.recipe_requirement:only-of-type {
+				border-radius: 5px 5px 0 0 ;
 			}
 
 
@@ -201,8 +244,99 @@
 
 			.requirement_list {
 				/*display: inline-block;*/
-				border-left: 10px solid #54bd52;
+				/*border-left: 10px solid #54bd52;*/
+				/*margin-bottom: 10px;*/
 
+			}
+
+			#modal_grayout {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0,0,0,0);
+				/* The background is defined in javascript to be (0,0,0,0.5)*/
+				transition: background-color .2s;
+				pointer-events: none;
+				/*overflow-y: scroll;*/
+			}
+			#resource_data_modal {
+				width: 100%;
+				position: absolute;
+				top: 225px;
+				left: 0;
+				z-index: 1;
+				display: none;
+				/*padding-top: 10px;*/
+			}
+			#resource_data_list {
+				max-width: 750px;
+				background: #FFF;
+				margin-left: auto;
+				margin-right: auto;
+				border: 2px solid #9bb998;
+				border-top: 0;
+				box-sizing: border-box;
+				border-radius: 0 0 5px 5px;
+				background: var(--background-color1);
+				box-shadow: 10px 10px 10px rgba(0,0,0,.7);
+				padding: 10px;
+				/*padding-top: 10px;*/
+				text-align: center;	
+			}
+
+			.delete_button {
+				display:  inline-block;
+				background: rgba(0,0,0,.1);
+				border: 2px solid rgba(0,0,0,.2);
+				padding: 0 5px;
+				cursor: pointer;
+				transition: background-color .2s;
+
+			}
+			.delete_button:hover {
+				background: rgb(215, 80, 80);
+				color: #500;
+			}
+
+			.create_button {
+				display:  inline-block;
+				border: 2px solid black;
+				padding: 0 5px;
+				cursor: pointer;
+				transition: background-color .2s;
+				border-radius: 3px;
+			}
+			.create_button:hover {
+				background: rgb(80, 215, 80);
+				color: #050;
+			}
+
+
+			#create_item_input {
+				width: 100%;
+				box-sizing: border-box;
+				background-color: var(--background-color3);
+				display:  inline-block;
+				border: 2px solid var(--border-color3);
+				padding: 0 5px;
+				cursor: pointer;
+				transition: background-color .2s;
+				border-radius: 0 0 5px 5px;
+			}
+			#create_item_input:hover {
+				background: rgb(80, 215, 80);
+				color: #050;
+			}
+			#delete_requirement {
+				margin-left: 20px;
+			}
+
+
+			.recipe_section_title {
+				margin-top: 10px;
+				line-height: 0;
 			}
 
 		</style>
@@ -223,39 +357,53 @@
 			</div>
 
 				<!-- <div class="save hidden">save</div> -->
-				<div id="breakdown" class="breakdown zeroheight">
-					Recipes: <div id="recipe_list"></div>
-					<!-- Custom Stack Sizes: <span id="custom_stack_sizes"></span> -->
-				</div>
-
+	
 
 			<div id="recipe" class="recipe">
-				Type: <input id="recipe_type" type="text" list="recipetypelist" /><br>
-				Output: <div class="integermod_button">-</div><input id="recipe_output_quantity" class="ordering_value" type="text"><div class="integermod_button">+</div><br>
-				Ingredients:<div id="requirement_list" class=requirement_list></div>
+				<div class="delete_button" id="delete_recipe" style="width: 100%; box-sizing: border-box">Delete Recipe</div>
+				<div class="recipe_section_title">Recipe Type:</div><input id="recipe_type" type="dropdown" list="recipetypelist" /><br>
+				<div class="recipe_section_title">Output Amount:</div><!-- <div class="integermod_button">-</div> --><input id="recipe_output_quantity" class="recipe_value" type="text"><!-- <div class="integermod_button">+</div> --><br>
+				<div class="recipe_section_title">Input Resources:</div><div id="requirement_list" class=requirement_list></div>
+				<div id="create_item_input">Add Input</div>
 			</div>
+
 			<div id="recipe_requirement" class="recipe_requirement">
-				<input id="requirement_name" type="text">
-				<div class="integermod_button">-</div><input id="requirement_value" class="ordering_value" type="text"><div class="integermod_button">+</div>
+				Name: <input id="requirement_name" type="text">
+				<!-- <div class="integermod_button">-</div> --> Quantity: <input id="requirement_value" class="recipe_value" type="text"><!-- <div class="integermod_button">+</div> -->
+				<div class="delete_button" id="delete_requirement">Delete</div>
 			</div>
 		</div>
 
 	</head>
 	<body>
-		
-		<div class="search_bar">
+<!-- 		<div class="search_bar">
 			<div class="search_label_wrapper">
 				<label class="search_label" for="item_filter">Filter:</label>
 			</div>
 			<span class="search_box_wrapper">
 			<input type="text" class="search_box" id="item_filter"></span>
+		</div> -->
+
+
+		<div id="resource_list" class="resource_list">
+			<div id="resource_data_modal">
+				<div id="resource_data_list">
+					<div class="delete_button" id="delete_item" style="width: 100%; box-sizing:border-box; margin-top: 15px;">Delete Item</div>
+					<!-- <b>Image</b>: <input type="file" /> <div id="resource_image"></div> -->
+					<b>Recipes</b>: <div id="resource_recipes">Resource 1<br>Resource 2</div>
+					<!-- Custom Stack Sizes: <div id="resource_stack_sizes">Stack1: <input><br>Stack2: <input></div> -->
+					<div class="create_button" style="width: 100%; box-sizing:border-box; margin-top: 15px;">New Recipe</div>
+
+				</div>
+			</div>
 		</div>
-
-
-		<div id="resource_list" class="resource_list"></div>
+		<div id="modal_grayout"></div>
 	</body>
 	<script>{{ resource_list_json }}</script>
 	<script>
+		let resource_data_modal_elem = document.getElementById("resource_data_modal");
+
+
 
 		let breakdown_elem = document.getElementById("breakdown");
 		function open_resources(name, elem) {
@@ -264,6 +412,12 @@
 		}
 
 
+
+		function show_resource_edit_modal(resource_index) {
+			document.getElementById("resource_data_modal").style.display = "block";
+
+			document.body.style.overflow = "hidden"; // Disable scrolling the main page
+		}
 
 		// function filter_items() {
 		// 	// var search_string = $("#item_filter").val().toLowerCase();
@@ -293,7 +447,8 @@
 
 		const element_height = {{element_height}};
 		const buffer_element_count = {{buffer_element_count}};
-
+		const recipe_elem = document.getElementById("recipe");
+		const recipe_requirement_elem = document.getElementById("recipe_requirement");
 
 		////////////////////////////////////////////////////////////////////////
 		// Speed optimization where only the visible rows are added to the DOM
@@ -310,7 +465,14 @@
 		// destroyed and replaced with a new text input.
 		////////////////////////////////////////////////////////////////////////
 		let active_resource_elements = [];
-		function redraw_resouce_elements(animate_out_index=undefined, animate_in_index=undefined) {
+		let editing_index = -1;
+		let editing_elem = undefined;
+		function redraw_resouce_elements({animate_reorder_from_index=undefined, animate_reorder_to_index=undefined, animate_in_editing=false, animate_out_editing=false}) {
+
+			// let animate_out_index = args["animate_out_index"];
+
+
+
 			for (let i in active_resource_elements) {
 				let active_resource_element = active_resource_elements[i];
 				active_resource_element.parentNode.removeChild(active_resource_element);
@@ -319,8 +481,7 @@
 
 			let resource_elem = document.getElementById("resource");
 			let resource_list_elem = document.getElementById("resource_list");
-			let recipe_elem = document.getElementById("recipe");
-			let recipe_requirement_elem = document.getElementById("recipe_requirement");
+
 
 			let ordering_index = 1;
 			
@@ -333,7 +494,7 @@
 
 			// item_name.indexOf(search_string) === -1
 
-			for (let i = start_index; i < end_index; i++) {
+			for (let i = end_index-1; i >= start_index ; i--) {
 				(function(key) {
 					let name = resource_list_json.resources[key].name;
 					
@@ -342,23 +503,24 @@
 
 					cloned_resource_elem.style.top = element_height * key;
 
+					// Setup the ordering textbox
 					// If receiving animation indices then animate anything between them
-					if (key >= animate_out_index && key < animate_in_index) {
+					if (key >= animate_reorder_from_index && key < animate_reorder_to_index) {
 						cloned_resource_elem.style.top = (key+1) * element_height + "px";
 						setTimeout(function(){cloned_resource_elem.style.top = key * element_height + "px";},1);
 					}
-					else if (key <= animate_out_index && key > animate_in_index) {
+					else if (key <= animate_reorder_from_index && key > animate_reorder_to_index) {
 						cloned_resource_elem.style.top = (key-1) * element_height + "px";
 						setTimeout(function(){cloned_resource_elem.style.top = key * element_height + "px";},1);
 					}
-					else if (key == animate_in_index){
-						cloned_resource_elem.style.top = animate_out_index * element_height + "px";
+					else if (key == animate_reorder_to_index){
+						cloned_resource_elem.style.top = animate_reorder_from_index * element_height + "px";
 						setTimeout(function(){cloned_resource_elem.style.top = key * element_height + "px";},1);
 					}
 
 					let ordering_index_elem = cloned_resource_elem.querySelector("#ordering_index");
 					ordering_index_elem.value = key+1;
-					ordering_index_elem.addEventListener("change", function(e,a,b,c) {
+					ordering_index_elem.addEventListener("change", function(e) {
 						let parsed = parseInt(this.value);
 						if (!isNaN(parsed)) {
 							if (parsed < 1) {
@@ -371,30 +533,119 @@
 							// Move Item to New Location
 							resource_list_json.resources.splice(parsed-1, 0, resource_list_json.resources.splice(key, 1)[0]);
 						}
-						redraw_resouce_elements(key, parsed-1);
+						redraw_resouce_elements({
+							animate_reorder_from_index: key,
+							animate_reorder_to_index: parsed-1
+						});
 					});
-					ordering_index_elem.addEventListener("focus", function(a,b,c) {
+					ordering_index_elem.addEventListener("focus", function(e) {
 						this.setSelectionRange(0, this.value.length)
 					})
 
-					cloned_resource_elem.array_index = key;
+					// Setup The Edit Button
+					let edit_resource_elem = cloned_resource_elem.querySelector(".edit");
+					edit_resource_elem.addEventListener("click", function(e) {
+						// show_resource_edit_modal(key);
+						// this.parentNode.style.boxShadow = "10px 10px 10px black";
+						// this.parentNode.style.zIndex = "1";
+						// editing_index = key;
+						enable_modal_background(key)
+						redraw_resouce_elements({});
+					});
+
+					// Setup the editing styles if this is being edited
+					if (key === editing_index) {
+						cloned_resource_elem.style.boxShadow = "10px 10px 10px rgba(0,0,0,.7)";
+						cloned_resource_elem.style.zIndex = 2;
+						editing_elem = cloned_resource_elem;
+					}
+
 					resource_list_elem.appendChild(cloned_resource_elem);
 					active_resource_elements.push(cloned_resource_elem);
 				})(i)
 			}
 		}
-
-
 		document.addEventListener('scroll', function(e) {
 			// TOOD: A speed optimization might want to be considered where if the
 			// scroll has not exceeded one object height since the last render then
 			// the objects are not re-rendered.
-			redraw_resouce_elements();
+			redraw_resouce_elements({});
 		});
 		window.addEventListener('resize', function(e) {
-			redraw_resouce_elements();
+			redraw_resouce_elements({});
 		});
-		redraw_resouce_elements();
+
+		let modal_grayout_elem = document.getElementById("modal_grayout");
+		modal_grayout_elem.addEventListener("click", function() {
+			disable_modal_background();
+		})
+		function enable_modal_background(index){
+			// Use pointer events and background here instead of display
+			// so we can get a slight animated transition of the gray appearing
+			// and disappearing.
+			modal_grayout_elem.style.pointerEvents = "auto";
+			modal_grayout_elem.style.background = "rgba(0,0,0,.5)";
+			resource_data_modal_elem.style.display="block";
+			editing_index = index;
+			resource_data_modal_elem.style.top = (index +1) * element_height -10;
+
+
+			let resource_recipes_elem = document.getElementById("resource_recipes");
+			// Clear all of the recipes
+			while (resource_recipes_elem.lastChild) {
+				resource_recipes_elem.removeChild(resource_recipes_elem.lastChild);
+			}
+
+
+			for (let i in resource_list_json.resources[index].recipes) {
+				let recipe = resource_list_json.resources[index].recipes[i];
+				let cloned_recipe_elem = recipe_elem.cloneNode(true);
+				cloned_recipe_elem.querySelector("#recipe_type").value = recipe.recipe_type;
+				cloned_recipe_elem.querySelector("#recipe_output_quantity").value = recipe.output;
+				let requirement_list = cloned_recipe_elem.querySelector("#requirement_list")
+
+
+				function add_new_item_input_row(name, quantity) {
+					let cloned_requirement_elem = recipe_requirement_elem.cloneNode(true);
+
+					cloned_requirement_elem.querySelector("#requirement_value").value = quantity;
+					cloned_requirement_elem.querySelector("#requirement_name").value = name;
+					cloned_requirement_elem.querySelector("#delete_requirement").addEventListener("click", function(e) {
+						cloned_requirement_elem.remove();
+					})
+					requirement_list.appendChild(cloned_requirement_elem);
+				}
+
+
+
+				for (let requirement_name in recipe.requirements){
+					add_new_item_input_row(requirement_name, recipe.requirements[requirement_name]);
+				}
+
+				cloned_recipe_elem.querySelector("#create_item_input").addEventListener("click", function(e) {
+					add_new_item_input_row("", 0);
+				});
+
+				resource_recipes_elem.appendChild(cloned_recipe_elem);
+			}
+
+		}
+		function disable_modal_background(){
+			// Use pointer events and background here instead of display
+			// so we can get a slight animated transition of the gray appearing
+			// and disappearing.
+			modal_grayout_elem.style.pointerEvents = "none";
+			modal_grayout_elem.style.background = "rgba(0,0,0,0)";
+
+			resource_data_modal_elem.style.display="none";
+			editing_elem.style.boxShadow = "none";
+			editing_elem = undefined;
+			editing_index = -1;
+		}
+
+
+
+		redraw_resouce_elements({});
 
 
 				// let recipe_list_elem = cloned_resource_elem.querySelector("#recipe_list")
