@@ -346,7 +346,7 @@ def get_oldest_modified_time(path: str) -> float:
 # any file in that directory
 ################################################################################
 def get_newest_modified_time(path: str) -> float:
-    time_list = []
+    time_list = [os.path.getctime(path)]
     for file in os.listdir(path):
         filepath = os.path.join(path, file)
         if (os.path.isdir(filepath)):
