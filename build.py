@@ -8,13 +8,14 @@ import re
 import shutil
 import subprocess
 import time
+from dataclasses import dataclass
 from typing import OrderedDict
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image  # type: ignore
-from typing import Dict, Tuple, List, Set
+from typing import Dict, Tuple, List, Set, Any
 
 from pylib.json_data_compressor import mini_js_data
-from pylib.uglifyjs import uglify_copyfile, uglify_js_string
+from pylib.uglifyjs import uglify_copyfile, uglify_js_string, set_skip_uglify_flag
 from pylib.webminify import minify_css_blocks
 from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, TokenError, Token, get_primitive
 from pylib.yaml_token_load import ordered_load
@@ -24,9 +25,47 @@ from pylib.yaml_token_load import ordered_load
 FLAG_skip_js_lint = False
 FLAG_skip_index = False
 FLAG_skip_gz_compression = False
-FLAG_skip_uglify_js = False
 FLAG_skip_image_compress = False
 FLAG_force_image = False
+
+
+################################################################################
+# A simple caching layer for loading and parsing resource lists. This is used
+# in normal runs in order to rebuild the index page without re-parsing the
+# entire yaml file for each calculator. It is also useful for --watch when not
+# editing a resource list.
+################################################################################
+@dataclass
+class CachedResourceList():
+    resource_list: ResourceList
+    timestamp: float
+    errors: List[TokenError]
+
+
+resource_list_cache: Dict[str, CachedResourceList] = {}
+
+
+def load_resource_list(filepath: str) -> Tuple[ResourceList, List[TokenError]]:
+    global resource_list_cache
+    last_modified_time = os.path.getctime(filepath)
+
+    if (filepath not in resource_list_cache or resource_list_cache[filepath].timestamp > last_modified_time):
+        errors: List[TokenError] = []
+
+        with open(filepath, 'r', encoding="utf_8") as f:
+            yaml_data = ordered_load(f)
+            resource_list = ResourceList()
+            errors += resource_list.parse(yaml_data)
+
+        resource_list_cache[filepath] = CachedResourceList(
+            resource_list=resource_list,
+            timestamp=last_modified_time,
+            errors=errors
+        )
+    else:
+        print("  Using Cached", filepath)
+
+    return (resource_list_cache[filepath].resource_list, resource_list_cache[filepath].errors)
 
 
 ################################################################################
@@ -307,7 +346,7 @@ def get_oldest_modified_time(path: str) -> float:
 # any file in that directory
 ################################################################################
 def get_newest_modified_time(path: str) -> float:
-    time_list = []
+    time_list = [os.path.getctime(path)]
     for file in os.listdir(path):
         filepath = os.path.join(path, file)
         if (os.path.isdir(filepath)):
@@ -468,6 +507,32 @@ def touch_output_folder_files(calculator_folder: str, timestamp: int = 0) -> Non
             os.utime(filepath, (timestamp, timestamp))
 
 
+# Temporary file to update the resource file to the new format that does not
+# use ordered dictionaries and instead uses arrays of dictionaries
+def hack_update_version(data: Any) -> Any:
+    new_authors = []
+    for author in data["authors"]:
+        new_authors.append({author: data["authors"][author]})
+    data["authors"] = new_authors
+
+    new_resources = []
+    resource_id_count = 1
+    for resource in data["resources"]:
+        new_resource = {
+            "name": resource,
+            "id": resource_id_count,
+        }
+
+        for key in data["resources"][resource]:
+            new_resource[key] = data["resources"][resource][key]
+
+        new_resources.append(new_resource)
+        resource_id_count += 1
+    data["resources"] = new_resources
+
+    return data
+
+
 ################################################################################
 # create_calculator_page
 #
@@ -509,10 +574,8 @@ def create_calculator_page(
 
     # Load in the yaml resources file
     resource_list_file = os.path.join("resource_lists", calculator_name, "resources.yaml")
-    with open(resource_list_file, 'r', encoding="utf_8") as f:
-        yaml_data = ordered_load(f)
-        resource_list = ResourceList()
-        errors += resource_list.parse(yaml_data)
+    resource_list, parse_errors = load_resource_list(resource_list_file)
+    errors += parse_errors
 
     resources: OrderedDict[str, Resource] = resource_list.resources
     resources = expand_raw_resource(resources)
@@ -531,10 +594,9 @@ def create_calculator_page(
     # TODO: Add linting for stack sizes here
 
     recipe_type_format_js = generate_recipe_type_format_js(calculator_name, recipe_types)
-    if not FLAG_skip_uglify_js:
-        recipe_type_format_js = uglify_js_string(recipe_type_format_js)
+    recipe_type_format_js = uglify_js_string(recipe_type_format_js)
 
-    recipe_js = mini_js_data(get_primitive(get_recipes_only(resources)))
+    recipe_js_data = mini_js_data(get_primitive(get_recipes_only(resources)), "recipe_json")
 
     html_resource_data = generate_resource_html_data(resources)
 
@@ -549,12 +611,12 @@ def create_calculator_page(
 
     # Generate the calculator from a template
     env = Environment(loader=FileSystemLoader('core'))
-    template = env.get_template("calculator.html")
-    output_from_parsed_template = template.render(
+    calculator_template = env.get_template("calculator.html")
+    rendered_calculator = calculator_template.render(
         # A simplified list used for creating the item selector HTML
         resources=html_resource_data,
         # the javascript/json object used for calculations
-        recipe_json=recipe_js,
+        recipe_json=recipe_js_data,
         # The size and positions of the image
         item_width=image_width,
         item_height=image_height,
@@ -573,11 +635,29 @@ def create_calculator_page(
         # Used to do calculations to divide counts into stacks
         stack_sizes_json=stack_sizes_json)
 
-    minified = htmlmin.minify(output_from_parsed_template, remove_comments=True, remove_empty_space=True)
-    minified = minify_css_blocks(minified)
+    minified_calculator = htmlmin.minify(rendered_calculator, remove_comments=True, remove_empty_space=True)
+    minified_calculator = minify_css_blocks(minified_calculator)
 
     with open(os.path.join(calculator_folder, "index.html"), "w", encoding="utf_8") as f:
-        f.write(minified)
+        f.write(minified_calculator)
+
+    resource_list_js_data = mini_js_data(hack_update_version(get_primitive(resource_list)), "resource_list_json")
+
+    editor_template = env.get_template("edit.html")
+
+    rendered_editor = editor_template.render(
+        resource_list_json=resource_list_js_data,
+        element_height=55,  # should be automatically generated from the image height? width? or should be static
+        total_height=55 * 989,  # Should be implemented in-javascript
+        buffer_element_count=2,
+    )
+
+    minified_editor = rendered_editor
+    # minified_editor = htmlmin.minify(rendered_editor, remove_comments=True, remove_empty_space=True)
+    # minified_editor = minify_css_blocks(minified_editor)
+
+    with open(os.path.join(calculator_folder, "edit.html"), "w", encoding="utf_8") as f:
+        f.write(minified_editor)
 
     # Sanity Check Warning, is there an image that does not have a recipe
     simple_resources = [x["simplename"] for x in html_resource_data]
@@ -707,10 +787,8 @@ def create_index_page(directories: List[str]) -> None:
 #       maybe there can be some caching that happens here.
 ################################################################################
 def calculator_display_name(calculator_name: str) -> str:
-    with open(os.path.join("resource_lists", calculator_name, "resources.yaml"), 'r', encoding="utf_8") as f:
-        yaml_data = ordered_load(f)
-        resource_list = ResourceList()
-        resource_list.parse(yaml_data)
+    resource_list_file = os.path.join("resource_lists", calculator_name, "resources.yaml")
+    resource_list, parse_errors = load_resource_list(resource_list_file)
     return resource_list.index_page_display_name
 
 
@@ -752,16 +830,9 @@ def ends_with_any(string: str, endings: List[str]) -> bool:
 # This is a hacky function to copy over some files that should be accessible
 # by the code
 ################################################################################
-def _uglify_copyfile(in_file: str, out_file: str) -> None:
-    if FLAG_skip_uglify_js:
-        shutil.copyfile(in_file, out_file)
-    else:
-        uglify_copyfile(in_file, out_file)
-
-
 def copy_common_resources() -> None:
     shutil.copyfile("core/calculator.css", "output/calculator.css")
-    _uglify_copyfile("core/calculator.js", "output/calculator.js")
+    uglify_copyfile("core/calculator.js", "output/calculator.js")
     shutil.copyfile("core/thirdparty/jquery-3.3.1.min.js", "output/jquery.js")
     shutil.copyfile("core/logo.png", "output/logo.png")
     shutil.copyfile("core/.htaccess", "output/.htaccess")
@@ -774,20 +845,23 @@ def main() -> None:
         description='Compile resourcecalculator.com html pages.'
     )
 
-    parser.add_argument('--watch', action='store_true')
-    parser.add_argument('--no-jslint', action='store_true')
-    parser.add_argument('--no-uglify-js', action='store_true')
-    parser.add_argument('--no-gz', action='store_true')
-    parser.add_argument('--no-index', action='store_true')
-    parser.add_argument('--no-image-compress', action='store_true')
-    parser.add_argument('--force-html', action='store_true')
-    parser.add_argument('--force-image', action='store_true')
-    parser.add_argument('limit_files', nargs='*')
+    parser.add_argument('limit_files', nargs='*', help="Speed up dev-builds by only building a specific set of one or more calculators")
+
+    parser.add_argument('--watch', action='store_true', help="Watch source files and automatically rebuild when they change")
+    parser.add_argument('--draft', action='store_true', help="Enable all speed up flags for dev builds")
+
+    parser.add_argument('--no-jslint', action='store_true', help="Speed up dev-builds by skipping linting javascript files")
+    parser.add_argument('--no-uglify-js', action='store_true', help="Speed up dev-builds by skipping javascript compression")
+    parser.add_argument('--no-gz', action='store_true', help="Speed up dev-builds by skipping gz text compression")
+    parser.add_argument('--no-index', action='store_true', help="Speed up dev-builds by skipping building the index page")
+    parser.add_argument('--no-image-compress', action='store_true', help="Speed up dev-builds by skipping the image compresson")
+
+    parser.add_argument('--force-html', action='store_true', help="Force the html pages to be rebuilt even if they are newer then their source files")
+    parser.add_argument('--force-image', action='store_true', help="Force images to be rebuilt even if they are newer then their source files")
 
     global FLAG_skip_index
     global FLAG_skip_js_lint
     global FLAG_skip_gz_compression
-    global FLAG_skip_uglify_js
     global FLAG_skip_image_compress
     global FLAG_force_image
 
@@ -795,16 +869,21 @@ def main() -> None:
     if (args.watch):
         pass
 
-    if args.no_jslint:
+    if args.no_jslint or args.draft:
         FLAG_skip_js_lint = True
-    if args.no_uglify_js:
-        FLAG_skip_uglify_js = True
-    if args.no_gz:
+
+    if args.no_uglify_js or args.draft:
+        set_skip_uglify_flag()
+
+    if args.no_gz or args.draft:
         FLAG_skip_gz_compression = True
-    if args.no_image_compress:
+
+    if args.no_image_compress or args.draft:
         FLAG_skip_image_compress = True
-    if args.no_index:
+
+    if args.no_index or args.draft:
         FLAG_skip_index = True
+
     if args.force_image:
         FLAG_force_image = True
 
@@ -857,5 +936,19 @@ def main() -> None:
             break
 
 
+PROFILE = False
 if __name__ == "__main__":
-    main()
+
+    if PROFILE:
+        import cProfile
+        import pstats
+
+        with cProfile.Profile() as pr:
+            main()
+
+        stats = pstats.Stats(pr)
+        stats.sort_stats(pstats.SortKey.TIME)
+        stats.dump_stats(filename="profiledata.prof")
+        # Useful to use snakeviz to display profile data `snakeviz profiledata.prof`
+    else:
+        main()

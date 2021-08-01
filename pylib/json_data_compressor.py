@@ -25,11 +25,11 @@ from pylib.uglifyjs import uglify_js_string
 # final file will likely be gzipped and doing more compression here would be
 # redundant and only server to make things more complex.
 ################################################################################
-def mini_js_data(data: Any) -> str:
+def mini_js_data(data: Any, variable_name: str) -> str:
     # This is a javascript function that gets prepended to the data so that it
     # can be decompressed on-load.
     javascript_reverser = """
-    var recipe_json = function () {
+    var {{variable_name}} = function () {
         var data = {{data}};
         var tokens = {{tokens}};
         return _uncompress(data, tokens);
@@ -61,6 +61,7 @@ def mini_js_data(data: Any) -> str:
 
     (packed_data, tokens) = _mini_js_data(data)
     packed_json = Environment().from_string(javascript_reverser).render(
+        variable_name=variable_name,
         data=json.dumps(packed_data),
         tokens=json.dumps(tokens),
     )
