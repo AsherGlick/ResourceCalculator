@@ -644,11 +644,11 @@ def create_calculator_page(
     resource_list_js_data = mini_js_data(hack_update_version(get_primitive(resource_list)), "resource_list_json")
 
     editor_template = env.get_template("edit.html")
+
     rendered_editor = editor_template.render(
         resource_list_json=resource_list_js_data,
         element_height=55,  # should be automatically generated from the image height? width? or should be static
-        element_count=989,  # should be automatically generated from the number of resources
-        total_height=59 * 989,
+        total_height=55 * 989,  # Should be implemented in-javascript
         buffer_element_count=2,
     )
 
