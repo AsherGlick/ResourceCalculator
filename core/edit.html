@@ -13,64 +13,58 @@
 			}
 
 
-.search_bar {
-	margin: 10px;
-	max-width: 800px;
-	margin-left: auto;
-	margin-right: auto;
-}
+			.search_bar {
+				margin: 10px;
+				max-width: 800px;
+				margin-left: auto;
+				margin-right: auto;
+			}
 
-.search_label_wrapper {
-	float:left;
-	padding: 5px 10px;
-	border: 2px solid #8b90a1;
-	border-right: 0;
-	background: #D8D9ED;
-	border-radius: 5px 0 0 5px;
-	line-height: initial;
-}
-.search_label {
-}
+			.search_label_wrapper {
+				float:left;
+				padding: 5px 10px;
+				border: 2px solid #8b90a1;
+				border-right: 0;
+				background: #D8D9ED;
+				border-radius: 5px 0 0 5px;
+				line-height: initial;
+			}
+			.search_label {
+			}
 
-.search_box_wrapper {
-	display: block;
-	overflow: hidden;
-}
-.search_box {
-	width: 100%;
-	box-sizing:border-box;
-	padding: 5px;
-	margin: 0;
-	color: #000;
-	font-family: sans-serif;
-	background-color: #fff;
-	border: none;
-	border-top: 2px solid #8b90a1;
-	border-bottom: 2px solid #8b90a1;
-	border-right: 2px solid #8b90a1;
-	font-size: 1em;
-	border-radius: 0 5px 5px 0;
-}
+			.search_box_wrapper {
+				display: block;
+				overflow: hidden;
+			}
+			.search_box {
+				width: 100%;
+				box-sizing:border-box;
+				padding: 5px;
+				margin: 0;
+				color: #000;
+				font-family: sans-serif;
+				background-color: #fff;
+				border: none;
+				border-top: 2px solid #8b90a1;
+				border-bottom: 2px solid #8b90a1;
+				border-right: 2px solid #8b90a1;
+				font-size: 1em;
+				border-radius: 0 5px 5px 0;
+			}
 
+			:root {
+				--background-color1: #DDD;
+				--border-color1: #BBB;
+				--button-hover-color1: #A2D7AB;
 
+				--background-color2: #CCC;
+				--border-color2: #AAA;
 
-
-
-:root {
-	--background-color1: #DDD;
-	--border-color1: #BBB;
-	--button-hover-color1: #A2D7AB;
-
-	--background-color2: #CCC;
-	--border-color2: #AAA;
-
-	--background-color3: #BBB;
-	--border-color3: #999;
+				--background-color3: #BBB;
+				--border-color3: #999;
 
 
-}
-
-
+			}
 
 			.resource_list {
 				margin-left: auto;
@@ -167,12 +161,6 @@
 				overflow: hidden;
 				/*border: 1px solid black;*/
 				/*background: #BBB;*/
-			}
-
-			.zeroheight {
-/*				height: 0;
-				padding: 0;
-				margin: 0;*/
 			}
 
 			.drag_order {
@@ -336,7 +324,23 @@
 
 			.recipe_section_title {
 				margin-top: 10px;
-				line-height: 0;
+				line-height: 1.5em;
+			}
+
+			#create_recipe {
+				width: 100%;
+				box-sizing: border-box;
+				background-color: var(--background-color2);
+				display:  inline-block;
+				border: 2px solid var(--border-color2);
+				padding: 0 5px;
+				cursor: pointer;
+				transition: background-color .2s;
+				border-radius: 5px;
+			}
+			#create_recipe:hover {
+				background: rgb(80, 215, 80);
+				color: #050;
 			}
 
 		</style>
@@ -392,7 +396,7 @@
 					<!-- <b>Image</b>: <input type="file" /> <div id="resource_image"></div> -->
 					<b>Recipes</b>: <div id="resource_recipes">Resource 1<br>Resource 2</div>
 					<!-- Custom Stack Sizes: <div id="resource_stack_sizes">Stack1: <input><br>Stack2: <input></div> -->
-					<div class="create_button" style="width: 100%; box-sizing:border-box; margin-top: 15px;">New Recipe</div>
+					<div id="create_recipe">New Recipe</div>
 
 				</div>
 			</div>
@@ -406,11 +410,6 @@
 
 
 		let breakdown_elem = document.getElementById("breakdown");
-		function open_resources(name, elem) {
-			console.log("clicked", name, elem);
-			elem.querySelector("#breakdown").classList.toggle("zeroheight");
-		}
-
 
 
 		function show_resource_edit_modal(resource_index) {
@@ -565,6 +564,8 @@
 				})(i)
 			}
 		}
+
+
 		document.addEventListener('scroll', function(e) {
 			// TOOD: A speed optimization might want to be considered where if the
 			// scroll has not exceeded one object height since the last render then
@@ -579,29 +580,14 @@
 		modal_grayout_elem.addEventListener("click", function() {
 			disable_modal_background();
 		})
-		function enable_modal_background(index){
-			// Use pointer events and background here instead of display
-			// so we can get a slight animated transition of the gray appearing
-			// and disappearing.
-			modal_grayout_elem.style.pointerEvents = "auto";
-			modal_grayout_elem.style.background = "rgba(0,0,0,.5)";
-			resource_data_modal_elem.style.display="block";
-			editing_index = index;
-			resource_data_modal_elem.style.top = (index +1) * element_height -10;
+
+		let resource_recipes_elem = document.getElementById("resource_recipes");
 
 
-			let resource_recipes_elem = document.getElementById("resource_recipes");
-			// Clear all of the recipes
-			while (resource_recipes_elem.lastChild) {
-				resource_recipes_elem.removeChild(resource_recipes_elem.lastChild);
-			}
-
-
-			for (let i in resource_list_json.resources[index].recipes) {
-				let recipe = resource_list_json.resources[index].recipes[i];
+			function add_new_recipe_input(recipe_type, recipe_output, recipe_requirements) {
 				let cloned_recipe_elem = recipe_elem.cloneNode(true);
-				cloned_recipe_elem.querySelector("#recipe_type").value = recipe.recipe_type;
-				cloned_recipe_elem.querySelector("#recipe_output_quantity").value = recipe.output;
+				cloned_recipe_elem.querySelector("#recipe_type").value = recipe_type;
+				cloned_recipe_elem.querySelector("#recipe_output_quantity").value = recipe_output;
 				let requirement_list = cloned_recipe_elem.querySelector("#requirement_list")
 
 
@@ -618,19 +604,98 @@
 
 
 
-				for (let requirement_name in recipe.requirements){
-					add_new_item_input_row(requirement_name, recipe.requirements[requirement_name]);
+				for (let requirement_name in recipe_requirements){
+					add_new_item_input_row(requirement_name, recipe_requirements[requirement_name]);
 				}
 
 				cloned_recipe_elem.querySelector("#create_item_input").addEventListener("click", function(e) {
 					add_new_item_input_row("", 0);
 				});
 
+				cloned_recipe_elem.querySelector("#delete_recipe").addEventListener("click", function(e) {
+					e.target.parentNode.remove();
+				});
+
 				resource_recipes_elem.appendChild(cloned_recipe_elem);
 			}
 
+
+
+		function enable_modal_background(index){
+			active_index = index
+			// Use pointer events and background here instead of display
+			// so we can get a slight animated transition of the gray appearing
+			// and disappearing.
+			modal_grayout_elem.style.pointerEvents = "auto";
+			modal_grayout_elem.style.background = "rgba(0,0,0,.5)";
+			resource_data_modal_elem.style.display="block";
+			editing_index = index;
+			resource_data_modal_elem.style.top = (index +1) * element_height -10;
+
+
+			// Clear all of the recipes
+			while (resource_recipes_elem.lastChild) {
+				resource_recipes_elem.removeChild(resource_recipes_elem.lastChild);
+			}
+
+			for (let i in resource_list_json.resources[index].recipes) {
+				let recipe = resource_list_json.resources[index].recipes[i];
+				add_new_recipe_input(recipe.recipe_type, recipe.output, recipe.requirements);
+			}
+
+		}
+
+		document.getElementById("create_recipe").addEventListener("click", function() {
+			console.log("add recipe");
+			add_new_recipe_input("", 1, {})
+		});
+
+		document.getElementById("delete_item").addEventListener("click", function() {
+			let deleted_item = editing_index;
+			resource_list_json.resources.splice(deleted_item, 1)
+			redraw_resouce_elements({
+				animate_reorder_from_index: deleted_item,
+				animate_reorder_to_index: resource_list_json.resources.length,
+			});
+			disable_modal_background();
+		});
+
+
+		function build_recipes_from_modal() {
+			let resource_data_list_elem = document.getElementById("resource_data_list");
+			let recipe_elements = resource_data_list_elem.querySelectorAll(".recipe");			
+			let recipes = [];
+			for (let i = 0; i < recipe_elements.length; i++) {
+				recipes.push(build_data_from_recipe_elem(recipe_elements[i]))
+			}
+			return recipes
+		}
+
+		function build_data_from_recipe_elem(recipe_element) {
+			let recipe_type = recipe_element.querySelector("#recipe_type").value;
+			let output = parseInt(recipe_element.querySelector("#recipe_output_quantity").value);
+			let requirement_list_elem = recipe_element.querySelector("#requirement_list");
+
+			console.log(requirement_list_elem);
+			let requirement_elems = requirement_list_elem.querySelectorAll(".recipe_requirement");
+			let requirements = {}
+			for (let i = 0; i < requirement_elems.length; i++) {
+				let requirement_name = requirement_elems[i].querySelector("#requirement_name").value
+				let requirement_value = parseInt(requirement_elems[i].querySelector("#requirement_value").value)
+				requirements[requirement_name] = requirement_value
+			}
+
+			return {
+				"output": output,
+				"recipe_type": recipe_type,
+				"requirements": requirements,
+			}
 		}
 		function disable_modal_background(){
+
+			let built_recipes = build_recipes_from_modal()
+			resource_list_json.resources[editing_index].recipes = built_recipes;
+
 			// Use pointer events and background here instead of display
 			// so we can get a slight animated transition of the gray appearing
 			// and disappearing.
@@ -645,43 +710,8 @@
 
 
 
+		// Initial Draw
 		redraw_resouce_elements({});
 
-
-				// let recipe_list_elem = cloned_resource_elem.querySelector("#recipe_list")
-				// ordering_index += 1;
-				// cloned_resource_elem.addEventListener("click", function() {
-				// 	open_resources(key, cloned_resource_elem);
-				// })
-				// // console.log(resource_list_json.resources[key]);
-				// for (let recipe_index in resource_list_json.resources[key].recipes) {
-				// 	let recipe = resource_list_json.resources[key].recipes[recipe_index];
-				// 	// console.log(recipe);
-				// 	let cloned_recipe_elem = recipe_elem.cloneNode(true);
-				// 	cloned_recipe_elem.querySelector("#recipe_type").value = recipe.recipe_type;
-				// 	cloned_recipe_elem.querySelector("#recipe_output_quantity").value = recipe.output;
-				// 	let requirement_list = cloned_recipe_elem.querySelector("#requirement_list")
-				// 	for (let requirement_name in recipe.requirements){
-				// 		let cloned_requirement_elem = recipe_requirement_elem.cloneNode(true);
-
-				// 		cloned_requirement_elem.querySelector("#requirement_value").value = recipe.requirements[requirement_name];
-				// 		cloned_requirement_elem.querySelector("#requirement_name").value = requirement_name;
-
-				// 		requirement_list.appendChild(cloned_requirement_elem);
-
-				// 	}
-				// 	recipe_list_elem.appendChild(cloned_recipe_elem);
-				// }
-
-
-
-				// // Only Generate the elements that we need to
-				// window_height = window.innerHeight 
-				// 				|| document.documentElement.clientHeight
-				// 				|| document.body.clientHeight;
-				// if (cloned_resource_elem.offsetTop > window_height + document.body.scrollTop) {
-				// 	return true;
-				// }
-				// return false;
 	</script>
 </html>
