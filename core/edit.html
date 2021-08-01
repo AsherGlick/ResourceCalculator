@@ -388,6 +388,7 @@
 			<input type="text" class="search_box" id="item_filter"></span>
 		</div> -->
 
+		<div style="margin-left: auto; margin-right: auto; max-width: 800px;">Welcome to the early alpha version of the web-editor. More elements of functionality and usability will be exposed over time as we get usage feedback. In order to edit a value scroll to the item you want to change and click the "edit" button. You can also re order items by clicking on their number and typing in a new number. Once you are done click the "Export" button below to download output data.<br><br><a href="#" onclick="save()">Export</a><br><br></div>
 
 		<div id="resource_list" class="resource_list">
 			<div id="resource_data_modal">
@@ -405,6 +406,20 @@
 	</body>
 	<script>{{ resource_list_json }}</script>
 	<script>
+
+		function save() {
+			var data = JSON.stringify(resource_list_json);
+			var c = document.createElement("a");
+			c.download = "data.json";
+
+			var t = new Blob([data], {
+				type: "text/plain"
+			});
+			c.href = window.URL.createObjectURL(t);
+			c.click();
+		}
+
+
 		let resource_data_modal_elem = document.getElementById("resource_data_modal");
 
 
