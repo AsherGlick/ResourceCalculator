@@ -17,8 +17,11 @@ def tuple_null_constructor(loader: Any, node: yaml.nodes.ScalarNode) -> TokenBun
     return TokenBundle(loader.construct_yaml_null(node), node)
 
 
-def tupe_int_constructor(loader: Any, node: yaml.nodes.ScalarNode) -> TokenBundle:
+def tuple_int_constructor(loader: Any, node: yaml.nodes.ScalarNode) -> TokenBundle:
     return TokenBundle(loader.construct_yaml_int(node), node)
+
+def tuple_bool_constructor(loader: Any, node: yaml.nodes.ScalarNode) -> TokenBundle:
+    return TokenBundle(loader.construct_yaml_bool(node), node)
 
 
 def placeholder_constructor(loader: Any, node: yaml.nodes.ScalarNode) -> None:
@@ -55,13 +58,12 @@ def ordered_load(stream: TextIO, object_pairs_hook: Type[object] = OrderedDict) 
 
     OrderedLoader.add_constructor(  # type: ignore
         'tag:yaml.org,2002:bool',
-        placeholder_constructor  # TODO: Maybe Add TokenBundle Wrapper
-        # SafeConstructor.construct_yaml_bool)
+        tuple_bool_constructor
     )
 
     OrderedLoader.add_constructor(  # type: ignore
         'tag:yaml.org,2002:int',
-        tupe_int_constructor
+        tuple_int_constructor
     )
 
     OrderedLoader.add_constructor(  # type: ignore
