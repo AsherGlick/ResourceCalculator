@@ -404,13 +404,14 @@
 		</div>
 		<div id="modal_grayout"></div>
 	</body>
+	<script src = "../yaml_export.js" type = "text/javascript"/></script>
 	<script>{{ resource_list_json }}</script>
 	<script>
 
 		function save() {
-			var data = JSON.stringify(resource_list_json);
+			var data = write_ResourceList(resource_list_json);
 			var c = document.createElement("a");
-			c.download = "data.json";
+			c.download = "data.yaml";
 
 			var t = new Blob([data], {
 				type: "text/plain"
