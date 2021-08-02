@@ -44,7 +44,7 @@ function write_ResourceList(object, indented=0){
         output += indent + "recipe_types:"
         output += "\n";
         for (let dict_key in object["recipe_types"]) {
-            output += indent + tab + dict_key + ": " + object["recipe_types"][dict_key] + "\n";
+            output += indent + tab + dict_key + ": \"" + object["recipe_types"][dict_key] + "\"\n";
         }
     }
     if ("requirement_groups" in object) {

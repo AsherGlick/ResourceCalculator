@@ -441,7 +441,7 @@ def generate_javascript_writer(classname: str, variables: List[Variable]) -> str
 
             # TODO we can probably split up the key and value pairs here to make logic cleaner
             if variable.type == "Dict[str, str]":
-                varblock.append('            output += indent + tab + dict_key + ": " + object["{name}"][dict_key] + "\\n";')
+                varblock.append('            output += indent + tab + dict_key + ": \\"" + object["{name}"][dict_key] + "\\"\\n";')
             elif variable.type == "Dict[str, int]":
                 varblock.append('              output += indent + tab + dict_key + ": " + object["{name}"][dict_key] + "\\n";')
             elif variable.type == "Dict[str, StackSize]":
