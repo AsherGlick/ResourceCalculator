@@ -1,0 +1,1304 @@
+---
+authors:
+  Asher: "https://aglick.com"
+
+index_page_display_name: "Moonlighter"
+  
+recipe_types:
+  Smith: "Buy {OUT_ITEM} for {IN_ITEMS} from Vulcan's Forge"
+  Wooden Hat: "Buy {OUT_ITEM} for {IN_ITEMS} from The Wooden Hat"
+  Retailer: "Buy {OUT_ITEM} for {IN_ITEMS} from Le Retailer"
+
+resources:
+
+  # Fabric Bandana #############################################################
+  Fabric Bandana:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Fabric: -4
+        Water Sphere: -2
+        Foundry Rests: -3
+        Gold: -4000
+    - recipe_type: Raw Resource
+
+  Fabric Bandana II:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Fabric Bandana: -1
+        Straw: -3
+        Magic Wood: -5
+        Gold: -44000
+    - recipe_type: Raw Resource
+
+  Fabric Bandana III:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Fabric Bandana II: -1
+        Desert Rope: -3
+        Fireproof Cloth: -5
+        Gold: -96000
+    - recipe_type: Raw Resource
+
+  Fabric Bandana IV:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Fabric Bandana III: -1
+        Treated Wood: -2
+        Wires: -2
+        Gold: -192000
+    - recipe_type: Raw Resource
+
+  # Iron Helmet ################################################################
+  Iron Helmet:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Iron Bar: -6
+        Teethstone: -4
+        Foundry Rests: -3
+        Gold: -4000
+    - recipe_type: Raw Resource
+
+  Iron Helmet II:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Iron Helmet: -1
+        Strong Leaves: -4
+        Preserved Root: -2
+        Gold: -44000
+    - recipe_type: Raw Resource
+
+  Iron Helmet III:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Iron Helmet II: -1
+        Magnetite: -4
+        Insulating Dust: -2
+        Gold: -96000
+    - recipe_type: Raw Resource
+
+  Iron Helmet IV:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Iron Helmet III: -1
+        Wolfram Rock: -2
+        Gold Strands: -2
+        Gold: -192000
+    - recipe_type: Raw Resource
+
+  # Steel Helmet ###############################################################
+  Steel Helmet:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Hardened Steel: -6
+        Iron Bar: -12
+        Foundry Rests: -3
+        Gold: -4000
+    - recipe_type: Raw Resource
+
+  Steel Helmet II:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Steel Helmet: -1
+        Ancient Wood: -2
+        Magic Wood: -5
+        Gold: -44000
+    - recipe_type: Raw Resource
+
+  Steel Helmet III:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Steel Helmet II: -1
+        Desert Steel Ingot: -1
+        Flammable Dust: -4
+        Gold: -96000
+    - recipe_type: Raw Resource
+
+  Steel Helmet IV:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Steel Helmet III: -1
+        Wolfram Rock: -2
+        Copper Reel: -2
+        Gold: -192000
+    - recipe_type: Raw Resource
+
+  # Fabric Chestplate ##########################################################
+  Fabric Chestplate:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Fabric: -4
+        Water Sphere: -2
+        Foundry Rests: -3
+        Gold: -4000
+    - recipe_type: Raw Resource
+
+  Fabric Chestplate II:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Fabric Chestplate: -1
+        Straw: -3
+        Magic Wood: -5
+        Gold: -44000
+    - recipe_type: Raw Resource
+
+  Fabric Chestplate III:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Fabric Chestplate II: -1
+        Desert Rope: -3
+        Fireproof Cloth: -5
+        Gold: -96000
+    - recipe_type: Raw Resource
+
+  Fabric Chestplate IV:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Fabric Chestplate III: -1
+        Treated Wood: -2
+        Wires: -2
+        Gold: -192000
+    - recipe_type: Raw Resource
+
+  # Iron Chestplate ############################################################
+  Iron Chestplate:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Iron Bar: -6
+        Teethstone: -4
+        Foundry Rests: -3
+        Gold: -4000
+    - recipe_type: Raw Resource
+
+  Iron Chestplate II:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Iron Chestplate: -1
+        Strong Leaves: -4
+        Preserved Root: -2
+        Gold: -44000
+    - recipe_type: Raw Resource
+
+  Iron Chestplate III:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Iron Chestplate II: -1
+        Magnetite: -4
+        Insulating Dust: -2
+        Gold: -96000
+    - recipe_type: Raw Resource
+
+  Iron Chestplate IV:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Iron Chestplate III: -1
+        Wolfram Rock: -2
+        Gold Strands: -2
+        Gold: -192000
+    - recipe_type: Raw Resource
+
+  # Steel Chestplate ###########################################################
+  Steel Chestplate:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Hardened Steel: -6
+        Iron Bar: -12
+        Foundry Rests: -3
+        Gold: -4000
+    - recipe_type: Raw Resource
+
+  Steel Chestplate II:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Steel Chestplate: -1
+        Ancient Wood: -2
+        Magic Wood: -5
+        Gold: -44000
+    - recipe_type: Raw Resource
+
+  Steel Chestplate III:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Steel Chestplate II: -1
+        Desert Steel Ingot: -1
+        Flammable Dust: -4
+        Gold: -96000
+    - recipe_type: Raw Resource
+
+  Steel Chestplate IV:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Steel Chestplate III: -1
+        Wolfram Rock: -2
+        Copper Reel: -2
+        Gold: -192000
+    - recipe_type: Raw Resource
+
+  # Fabric Boots ###############################################################
+  Fabric Boots:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Fabric: -4
+        Water Sphere: -2
+        Foundry Rests: -3
+        Gold: -4000
+    - recipe_type: Raw Resource
+
+  Fabric Boots II:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Fabric Boots: -1
+        Straw: -3
+        Magic Wood: -5
+        Gold: -44000
+    - recipe_type: Raw Resource
+
+  Fabric Boots III:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Fabric Boots II: -1
+        Desert Rope: -3
+        Fireproof Cloth: -5
+        Gold: -96000
+    - recipe_type: Raw Resource
+
+  Fabric Boots IV:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Fabric Boots III: -1
+        Treated Wood: -2
+        Wires: -2
+        Gold: -192000
+    - recipe_type: Raw Resource
+
+  # Iron Boots #################################################################
+  Iron Boots:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Iron Bar: -6
+        Teethstone: -4
+        Foundry Rests: -3
+        Gold: -4000
+    - recipe_type: Raw Resource
+
+  Iron Boots II:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Iron Boots: -1
+        Strong Leaves: -4
+        Preserved Root: -2
+        Gold: -44000
+    - recipe_type: Raw Resource
+
+  Iron Boots III:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Iron Boots II: -1
+        Magnetite: -4
+        Insulating Dust: -2
+        Gold: -96000
+    - recipe_type: Raw Resource
+
+  Iron Boots IV:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Iron Boots III: -1
+        Wolfram Rock: -2
+        Gold Strands: -2
+        Gold: -192000
+    - recipe_type: Raw Resource
+
+  # Steel Boots ################################################################
+  Steel Boots:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Hardened Steel: -6
+        Iron Bar: -12
+        Foundry Rests: -3
+        Gold: -4000
+    - recipe_type: Raw Resource
+
+  Steel Boots II:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Steel Boots: -1
+        Ancient Wood: -2
+        Magic Wood: -5
+        Gold: -44000
+    - recipe_type: Raw Resource
+
+  Steel Boots III:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Steel Boots II: -1
+        Desert Steel Ingot: -1
+        Flammable Dust: -4
+        Gold: -96000
+    - recipe_type: Raw Resource
+
+  Steel Boots IV:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Steel Boots III: -1
+        Wolfram Rock: -2
+        Copper Reel: -2
+        Gold: -192000
+    - recipe_type: Raw Resource
+
+
+  # Sword and Shields ##########################################################
+
+  Training Short Sword:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Teethstone: -10
+        Foundry Rests: -4
+        Iron Bar: -6
+        Gold: -1000
+    - recipe_type: Raw Resource
+
+  Soldier Short Sword:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Training Short Sword: -1
+        Hardened Steel: -5
+        Rune Tool: -1
+        Gold: -4000
+    - recipe_type: Raw Resource
+
+  Knight Short Sword:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Soldier Short Sword: -1
+        Ancient Wood: -3
+        Old Bulb: -2
+        Gold: -64000
+    - recipe_type: Raw Resource
+
+  Commander Short Sword:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Knight Short Sword: -1
+        Desert Steel Ingot: -2
+        Thermo Magnetic Engine: -3
+        Gold: -256000
+    - recipe_type: Raw Resource
+
+  King Short Sword:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Commander Short Sword: -1
+        Copper Reel: -2
+        Welding Gun: -3
+        Gold: -512000
+    - recipe_type: Raw Resource
+
+  Rusty Short Sword:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Training Short Sword: -1
+        Whetstone: -10
+        Golem Chisel: -4
+        Gold: -4000
+    - recipe_type: Raw Resource
+
+  Venom Short Sword:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Rusty Short Sword: -1
+        Ancient Wood: -4
+        Pure Acid: -5
+        Gold: -64000
+    - recipe_type: Raw Resource
+
+  Reborn Short Sword:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Venom Short Sword: -1
+        Fire Gem: -4
+        Thermo Magnetic Engine: -3
+        Gold: -256000
+    - recipe_type: Raw Resource
+
+  Vampire Short Sword:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Reborn Short Sword: -1
+        Triple Cell Battery: -2
+        Conductor Metal: -4
+        Gold: -512000
+    - recipe_type: Raw Resource
+
+  # Big Swords #################################################################
+  Training Big Sword:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Teethstone: -10
+        Vine: -15
+        Broken Sword: -5
+        Gold: -1000
+    - recipe_type: Raw Resource
+
+  Buster Big Sword:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Training Big Sword: -1
+        Hardened Steel: -5
+        Rune Tool: -1
+        Gold: -4000
+    - recipe_type: Raw Resource
+
+  Wild Big Sword:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Buster Big Sword: -1
+        Ancient Wood: -3
+        Old Bulb: -2
+        Gold: -64000
+    - recipe_type: Raw Resource
+
+  Vulcan Big Sword:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Wild Big Sword: -1
+        Desert Steel Ingot: -2
+        Thermo Magnetic Engine: -3
+        Gold: -256000
+    - recipe_type: Raw Resource
+
+  Fusion Big Sword:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Vulcan Big Sword: -1
+        Copper Reel: -2
+        Welding Gun: -3
+        Gold: -512000
+    - recipe_type: Raw Resource
+
+  Rock Big Sword:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Training Big Sword: -1
+        Whetstone: -10
+        Golem Chisel: -4
+        Gold: -4000
+    - recipe_type: Raw Resource
+
+  Toxic Big Sword:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Rock Big Sword: -1
+        Ancient Wood: -4
+        Pure Acid: -5
+        Gold: -64000
+    - recipe_type: Raw Resource
+
+  Blaze Big Sword:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Toxic Big Sword: -1
+        Fire Gem: -4
+        Thermo Magnetic Engine: -3
+        Gold: -256000
+    - recipe_type: Raw Resource
+
+  Storm Big Sword:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Blaze Big Sword: -1
+        Triple Cell Battery: -2
+        Conductor Metal: -4
+        Gold: -512000
+    - recipe_type: Raw Resource
+
+  # Spears #####################################################################
+  Training Spear:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Foundry Rests: -4
+        Iron Bar: -8
+        Teethstone: -4
+        Gold: -1000
+    - recipe_type: Raw Resource
+
+  Warrior Spear:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Training Spear: -1
+        Hardened Steel: -5
+        Rune Tool: -1
+        Gold: -4000
+    - recipe_type: Raw Resource
+
+  Wood's Spear:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Warrior Spear: -1
+        Ancient Wood: -3
+        Old Bulb: -2
+        Gold: -64000
+    - recipe_type: Raw Resource
+
+  Monkey Spear:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Wood's Spear: -1
+        Desert Steel Ingot: -2
+        Thermo Magnetic Engine: -3
+        Gold: -256000
+    - recipe_type: Raw Resource
+
+  Fighter Spear:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Monkey Spear: -1
+        Copper Reel: -2
+        Welding Gun: -3
+        Gold: -512000
+    - recipe_type: Raw Resource
+
+  Golem Drill Spear:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Training Spear: -1
+        Whetstone: -10
+        Golem Chisel: -4
+        Gold: -4000
+    - recipe_type: Raw Resource
+
+  Venom Sting Spear:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Golem Drill Spear: -1
+        Ancient Wood: -4
+        Pure Acid: -5
+        Gold: -64000
+    - recipe_type: Raw Resource
+
+  Hell Spear:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Venom Sting Spear: -1
+        Fire Gem: -4
+        Thermo Magnetic Engine: -3
+        Gold: -256000
+    - recipe_type: Raw Resource
+
+  Lightning Rod Spear:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Hell Spear: -1
+        Triple Cell Battery: -2
+        Conductor Metal: -4
+        Gold: -512000
+    - recipe_type: Raw Resource
+
+
+
+  # Gloves ###################################################################
+  Training Gloves:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Teethstone: -4
+        Iron Bar: -5
+        Foundry Rests: -4
+        Gold: -1000
+    - recipe_type: Raw Resource
+
+  Fighter Gloves:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Training Gloves: -1
+        Hardened Steel: -5
+        Rune Tool: -1
+        Gold: -4000
+    - recipe_type: Raw Resource
+
+  Forest Spirit Gloves:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Fighter Gloves: -1
+        Ancient Wood: -3
+        Old Bulb: -2
+        Gold: -64000
+    - recipe_type: Raw Resource
+
+  Captian Gloves:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Forest Spirit Gloves: -1
+        Desert Steel Ingot: -2
+        Thermo Magnetic Engine: -3
+        Gold: -256000
+    - recipe_type: Raw Resource
+
+  Star Platinum Gloves:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Captian Gloves: -1
+        Copper Reel: -2
+        Welding Gun: -3
+        Gold: -512000
+    - recipe_type: Raw Resource
+
+  Rough Gloves:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Training Gloves: -1
+        Whetstone: -10
+        Golem Chisel: -4
+        Gold: -4000
+    - recipe_type: Raw Resource
+
+  Venom Twins Gloves:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Rough Gloves: -1
+        Ancient Wood: -4
+        Pure Acid: -5
+        Gold: -64000
+    - recipe_type: Raw Resource
+
+  Flame Gloves:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Venom Twins Gloves: -1
+        Fire Gem: -4
+        Thermo Magnetic Engine: -3
+        Gold: -256000
+    - recipe_type: Raw Resource
+
+  Thunder Gloves:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Flame Gloves: -1
+        Triple Cell Battery: -2
+        Conductor Metal: -4
+        Gold: -512000
+    - recipe_type: Raw Resource
+
+
+  # Bows #######################################################################
+  Training Bow:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Foundry Rests: -4
+        Iron Bar: -6
+        Root: -10
+        Gold: -1000
+    - recipe_type: Raw Resource
+
+  Hunter Bow:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Training Bow: -1
+        Hardened Steel: -5
+        Rune Tool: -1
+        Gold: -4000
+    - recipe_type: Raw Resource
+
+  Natural Bow:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Hunter Bow: -1
+        Ancient Wood: -3
+        Old Bulb: -2
+        Gold: -64000
+    - recipe_type: Raw Resource
+
+  Soldier Bow:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Natural Bow: -1
+        Desert Steel Ingot: -2
+        Thermo Magnetic Engine: -3
+        Gold: -256000
+    - recipe_type: Raw Resource
+
+  Exeter Bow:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Soldier Bow: -1
+        Copper Reel: -2
+        Welding Gun: -3
+        Gold: -512000
+    - recipe_type: Raw Resource
+
+  Catapult Bow:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Training Bow: -1
+        Whetstone: -10
+        Golem Chisel: -4
+        Gold: -4000
+    - recipe_type: Raw Resource
+
+  Poison Bow:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Catapult Bow: -1
+        Ancient Wood: -4
+        Pure Acid: -5
+        Gold: -64000
+    - recipe_type: Raw Resource
+
+  Flamethrower Bow:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Poison Bow: -1
+        Fire Gem: -4
+        Thermo Magnetic Engine: -3
+        Gold: -256000
+    - recipe_type: Raw Resource
+
+  Lightning Bow:
+    recipes:
+    - recipe_type: Smith
+      output: 1
+      requirements:
+        Flamethrower Bow: -1
+        Triple Cell Battery: -2
+        Conductor Metal: -4
+        Gold: -512000
+    - recipe_type: Raw Resource
+
+
+  # Potions ####################################################################
+  HP Potion I:
+    recipes:
+      - recipe_type: Wooden Hat
+        output: 1
+        requirements:
+          Rich Jelly: -1
+          Gold: -125
+      - recipe_type: Wooden Hat
+        output: 1
+        requirements:
+          Gold: -400
+      - recipe_type: Raw Resource
+
+  HP Potion II:
+    recipes:
+      - recipe_type: Wooden Hat
+        output: 1
+        requirements:
+          Rich Jelly: -1
+          Venom Jelly: -1
+          Gold: -800
+      - recipe_type: Wooden Hat
+        output: 1
+        requirements:
+          Gold: -2500
+      - recipe_type: Raw Resource
+
+  HP Potion III:
+    recipes:
+      - recipe_type: Wooden Hat
+        output: 1
+        requirements:
+          Rich Jelly: -1
+          Fire Jelly: -1
+          Gold: -3000
+      - recipe_type: Wooden Hat
+        output: 1
+        requirements:
+          Gold: -8000
+      - recipe_type: Raw Resource
+
+  HP Potion IV:
+    recipes:
+      - recipe_type: Wooden Hat
+        output: 1
+        requirements:
+          Rich Jelly: -1
+          Electric Jelly: -1
+          Gold: -8000
+      - recipe_type: Wooden Hat
+        output: 1
+        requirements:
+          Gold: -16000
+      - recipe_type: Raw Resource
+
+  Hyper Potion:
+    recipes:
+      - recipe_type: Wooden Hat
+        output: 1
+        requirements:
+          Venom Jelly: -1
+          Fire Jelly: -1
+          Electric Jelly: -1
+          Gold: -20520
+      - recipe_type: Raw Resource
+
+
+
+
+
+
+
+  ##############################################################################
+  # Resources
+  ##############################################################################
+
+  Broken Sword:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -675
+
+  Fabric:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -1125
+
+  Foundry Rests:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -675
+
+  Hardened Steel:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -1350
+
+  Rune Tool:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -6750
+
+  Golem Chisel:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -2250
+
+  Iron Bar:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -112
+
+  Root:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -22
+
+  Teethstone:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -22
+
+  Vine:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Vine: -675
+
+  Water Sphere:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -450
+
+  Whetstone:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -67
+
+  Ancient Wood:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -4500
+
+  Old Bulb:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -9000
+
+  Preserved Root:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -2700
+
+  Straw:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -2250
+
+  Strong Leaves:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -1800
+
+  Magic Wood:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -450
+
+  Pure Acid:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -1800
+
+  Desert Steel Ingot:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -33750
+
+  Thermo Magnetic Engine:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -41400
+
+  Desert Rope:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -2025
+
+  Fire Gem:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -7650
+
+  Fireproof Cloth:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -5175
+
+  Flammable Dust:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -1800
+
+  Insulating Dust:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -9225
+
+  Magnetite:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -3600
+
+  Gold Strands:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -9450
+
+  Wires:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -11475
+
+  Conductor Metal:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -2025
+
+  Treated Wood:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -23175
+
+  Triple Cell Battery:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -45000
+
+  Copper Reel:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -33750
+
+  Wolfram Rock:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -28575
+
+  Welding Gun:
+    recipes:
+      - recipe_type: Raw Resource
+      - recipe_type: Retailer
+        output: 1
+        requirements:
+          Gold: -52452
+
+  Rich Jelly:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Venom Jelly:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Fire Jelly:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Electric Jelly:
+    recipes:
+      - recipe_type: Raw Resource
+
+  ##############################################################################
+  # Currency
+  ##############################################################################
+  Gold:
+    recipes:
+    - recipe_type: Raw Resource
+    currency: true
