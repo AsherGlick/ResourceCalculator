@@ -132,7 +132,7 @@ def _get_invalid_keys(data: Any, valid_keys: List[str]) -> List[TokenBundle]:
 ################################################################################
 ################################ Generated Code ################################
 ################################################################################
-
+# BEGINGENERATOR
 # Class Generated with resource_list_type_generator.py
 class ResourceList():
     def __init__(self) -> None:
@@ -441,3 +441,4 @@ class Recipe():
             "recipe_type": get_primitive(self.recipe_type),
             "requirements": get_primitive(self.requirements),
         }
+# ENDGENERATOR
