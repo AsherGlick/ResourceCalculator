@@ -120,7 +120,7 @@ function write_Resource(object, indented=0){
     let output = "";
     const tab = "  ";
     let indent = tab.repeat(indented);
-    const key_list = ["name","id","recipes","custom_stack_multipliers","custom_simplename"];
+    const key_list = ["name","id","recipes","custom_stack_multipliers","custom_simplename","currency"];
     const key_set = new Set(key_list);
     let key_names = Object.keys(object);
     for (var i in key_names) {
@@ -154,6 +154,14 @@ function write_Resource(object, indented=0){
     if ("custom_simplename" in object) {
         output += indent + "custom_simplename:"
         output += " \"" + object["custom_simplename"] + "\"\n";
+    }
+    if ("currency" in object) {
+        output += indent + "currency:"
+        if (object["currency"]) {
+            output += " true\n";
+        } else {
+            output += " false\n";
+        }
     }
     return output;
 }

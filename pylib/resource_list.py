@@ -342,8 +342,9 @@ class Resource():
         self.recipes: List[Recipe] = []
         self.custom_stack_multipliers: OrderedDict[str, int] = OrderedDict()
         self.custom_simplename: str = ""
+        self.currency: bool = False
 
-        self.valid_keys = ['recipes', 'custom_stack_multipliers', 'custom_simplename']
+        self.valid_keys = ['recipes', 'custom_stack_multipliers', 'custom_simplename', 'currency']
 
     def parse(self, tuple_tree: Any) -> List[TokenError]:
         errors: List[TokenError] = []
@@ -379,6 +380,14 @@ class Resource():
                 errors.append(TokenError("custom_simplename should be a string not a {}".format(str(type(custom_simplename.value))), Token().from_yaml_scalar_node(custom_simplename.token)))
 
             self.custom_simplename = str(custom_simplename.value)
+
+        # Load currency into a typed object
+        if 'currency' in tokenless_keys:
+            currency = tokenless_keys["currency"]
+            if type(currency.value) != bool:
+                errors.append(TokenError("currency should be a bool not a {}".format(str(type(currency.value))), Token().from_yaml_scalar_node(currency.token)))
+
+            self.currency = bool(currency.value)
         return errors
 
     def to_primitive(self) -> Any:
@@ -386,6 +395,7 @@ class Resource():
             "recipes": get_primitive(self.recipes),
             "custom_stack_multipliers": get_primitive(self.custom_stack_multipliers),
             "custom_simplename": get_primitive(self.custom_simplename),
+            "currency": get_primitive(self.currency),
         }
 
 

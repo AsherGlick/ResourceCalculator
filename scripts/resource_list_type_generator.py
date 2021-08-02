@@ -109,6 +109,11 @@ def main() -> None:
                     type="str",
                     default='""',
                 ),
+                Variable(
+                    name="currency",
+                    type="bool",
+                    default="False"
+                ),
             ]
         ),
 
@@ -262,6 +267,11 @@ def main() -> None:
                     name="custom_simplename",
                     type="str",
                     default='""',
+                ),
+                Variable(
+                    name="currency",
+                    type="bool",
+                    default="False"
                 ),
             ]
         ),
@@ -422,8 +432,12 @@ def generate_javascript_writer(classname: str, variables: List[Variable]) -> str
             varblock.append('        output += " \\"" + object["{name}"] + "\\"\\n";')
         elif variable.type == "int":
             varblock.append('        output += " " + object[\"{name}\"] + "\\n";')
-        # elif variable.type == "bool":
-        #     varblock.append('        output += " " + object[\"{name}\"] + "\\n";')
+        elif variable.type == "bool":
+            varblock.append('        if (object[\"{name}\"]) {{')
+            varblock.append('            output += " true\\n";')
+            varblock.append('        }} else {{')
+            varblock.append('            output += " false\\n";')
+            varblock.append('        }}')
         elif variable.type == "Optional[str]":
             varblock.append('        if (object["{name}"] == null) {{')
             varblock.append('            output += " null\\n";')
