@@ -1,6 +1,9 @@
-Brotli==1.0.7
+coverage==5.5
+csscompressor==0.9.5
+flake8==3.9.2
 htmlmin==0.1.12
-Jinja2==2.11.3
-MarkupSafe==1.*
+Jinja2==3.0.1
+mypy==0.902
 Pillow==8.2.0
-PyYAML==5.4
+PyYAML==5.4.1
+types-PyYAML==5.4.3

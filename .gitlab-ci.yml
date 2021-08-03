@@ -1,14 +1,14 @@
 variables:
   DEPLOY_FOLDER: "resourcecalculator.com"
+  DEV_DEPLOY_FOLDER: "beta.resourcecalculator.com"
 
 stages:
   - build
   # - test
   - deploy
 
-
 build-site:
-  image: asherglick/webbuild:20190601
+  image: asherglick/webbuild:20210731
   stage: build
   script:
     - pip3 install -r requirements.txt
@@ -22,7 +22,7 @@ build-site:
     # Expire after 1 hour
     expire_in: 1 hr
 
-deploy-dreamhost-prod:
+deploy-prod:
   image: asherglick/webdeploy:20170802
   stage: deploy
   script:
@@ -38,10 +38,30 @@ deploy-dreamhost-prod:
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
     - ssh $PROD_USER@$PROD_HOST ls
 
-
-
     # Sync over the files
     - rsync --recursive --archive --verbose -e ssh --delete output/ $PROD_USER@$PROD_HOST:/home/$PROD_USER/$DEPLOY_FOLDER/
     - ssh $PROD_USER@$PROD_HOST "cd $DEPLOY_FOLDER; tree -a"
   only:
     - master
+
+deploy-dev:
+  image: asherglick/webdeploy:20170802
+  stage: deploy
+  script:
+    # Run ssh-agent (inside the build environment)
+    - eval $(ssh-agent -s)
+    # Add the SSH key stored in the environment to the agent store
+    - ssh-add <(echo "$DEV_SSH_PRIVATE_KEY")
+    # For Docker builds disable host key checking. Be aware that by adding that
+    # you are susceptible to man-in-the-middle attacks.
+    # WARNING: Use this only with the Docker executor, if you use it with shell
+    # you will overwrite your user's SSH config.
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - ssh $DEV_USER@$DEV_HOST ls
+
+    # Sync over the files
+    - rsync --recursive --archive --verbose -e ssh --delete output/ $DEV_USER@$DEV_HOST:/home/$DEV_USER/$DEV_DEPLOY_FOLDER/
+    - ssh $DEV_USER@$DEV_HOST "cd $DEV_DEPLOY_FOLDER; tree -a"
+  only:
+    - dev

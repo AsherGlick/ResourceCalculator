@@ -1,0 +1,733 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<style type="text/css">
+
+			body {
+				font-family: sans-serif;
+				line-height: 2em;
+				background:  #EFEFEF;
+				margin: 0;
+				padding: 0;
+			}
+
+
+			.search_bar {
+				margin: 10px;
+				max-width: 800px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			.search_label_wrapper {
+				float:left;
+				padding: 5px 10px;
+				border: 2px solid #8b90a1;
+				border-right: 0;
+				background: #D8D9ED;
+				border-radius: 5px 0 0 5px;
+				line-height: initial;
+			}
+			.search_label {
+			}
+
+			.search_box_wrapper {
+				display: block;
+				overflow: hidden;
+			}
+			.search_box {
+				width: 100%;
+				box-sizing:border-box;
+				padding: 5px;
+				margin: 0;
+				color: #000;
+				font-family: sans-serif;
+				background-color: #fff;
+				border: none;
+				border-top: 2px solid #8b90a1;
+				border-bottom: 2px solid #8b90a1;
+				border-right: 2px solid #8b90a1;
+				font-size: 1em;
+				border-radius: 0 5px 5px 0;
+			}
+
+			:root {
+				--background-color1: #DDD;
+				--border-color1: #BBB;
+				--button-hover-color1: #A2D7AB;
+
+				--background-color2: #CCC;
+				--border-color2: #AAA;
+
+				--background-color3: #BBB;
+				--border-color3: #999;
+
+
+			}
+
+			.resource_list {
+				margin-left: auto;
+				margin-right: auto;
+				max-width:  800px;
+				position: relative;
+				min-height: {{total_height}}px;
+			}
+
+			.resource {
+				background: var(--background-color1);
+				display: flex;
+				border-radius: 5px;
+				/*border: 2px solid #9bb998;*/
+				border: 2px solid var(--border-color1);
+				min-height: 50px;
+				position: absolute;
+				width: 100%;
+				box-sizing: border-box;
+				transition: top .2s, box-shadow .2s;
+			}
+			.resource_anim_out{
+				transition: margin-top .2s;
+				margin-top: 0;
+			}
+
+			.ordering_drag {
+				margin-left: 10px;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1.5em;
+				cursor: grab;
+				display: none; /* TODO: implement drag and drop eventually */;
+			}
+			.ordering_index {
+				display: inline-flex;
+				align-items: center;
+				margin-left: 10px;
+			}
+			.resource_label {
+				display: inline-flex;
+				align-items: center;
+				margin-left: 10px;
+			}
+			.resource_name {
+				display: inline-flex;
+				align-items: center;
+				flex-grow: 1;
+				margin-left: 10px;
+			}
+			/*@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {*/
+			@media only screen and (max-width : 480px) {
+				.resource_label {
+					display: none;
+				}
+			}
+
+			.edit {
+				display: inline-flex;
+				cursor: pointer;
+				padding-left: 10px;
+				padding-right: 10px;
+				align-items: center;
+				border-radius: 3px;
+				transition: background-color 0.1s linear, color 0.1s linear;
+			}
+			.edit:hover {
+				background: var(--button-hover-color1);
+			}
+			
+
+			input {
+				font-size: 1em;
+			}
+/*			input[type=text] {
+				border: none;
+				font-size: 1em;
+			}*/
+			.item_name {
+				border: none;
+				width: 100%;
+				/*height: 40px;*/
+				padding: 5px 10px;
+
+				padding-left: 10px;
+			}
+/*			.resource:hover {
+				background: #AAA;
+			}
+*/			.breakdown {
+				background-color: #ccc;
+				/*padding-top: 10px;*/
+				overflow: hidden;
+				/*border: 1px solid black;*/
+				/*background: #BBB;*/
+			}
+
+			.drag_order {
+				display: inline-block;
+			}
+
+			.recipe_value {
+				display: inline-block;
+				width: 35px;
+				text-align: center;
+			}
+			.ordering_value {
+				display: inline-block;
+				width: 35px;
+				text-align: center;
+				background:  inherit;
+				border: none;
+				color: #296634;
+
+			}
+			.ordering_value:hover {
+				background: #A2D7AB;
+				color: #000;
+			}
+			.ordering_value:focus {
+				background: #FFF;
+				color: #000;
+			}
+
+			.recipe{
+				/*margin-left: 10px;*/
+				/*border-left: 10px solid #e1a579;*/
+				/*padding: 10px;*/
+				margin-bottom: 10px;
+				padding: 10px;
+				border: 2px solid var(--border-color2);
+				border-radius: 5px;
+				background: var(--background-color2);
+			}
+			.recipe_requirement {
+				/*margin-left: 10px;*/
+				border:  2px solid var(--border-color3);
+				/*border-radius: 5px;*/
+				padding:  5px;
+				background-color: var(--background-color3);
+				border-bottom-width: 0;
+
+			}
+			.recipe_requirement:last-of-type {
+				/*border-bottom-width: 2px;*/
+				/*border-radius:  0 0 5px 5px;*/
+			}
+			.recipe_requirement:first-of-type {
+				border-radius: 5px 5px 0 0;
+			}
+			.recipe_requirement:only-of-type {
+				border-radius: 5px 5px 0 0 ;
+			}
+
+
+			.integermod_button {
+				display:  inline-block;
+				width: 1.5em;
+				background: #DDD;
+				line-height: 1.5em;
+				text-align: center;
+				z-index: -1;	
+			}
+
+			.requirement_list {
+				/*display: inline-block;*/
+				/*border-left: 10px solid #54bd52;*/
+				/*margin-bottom: 10px;*/
+
+			}
+
+			#modal_grayout {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0,0,0,0);
+				/* The background is defined in javascript to be (0,0,0,0.5)*/
+				transition: background-color .2s;
+				pointer-events: none;
+				/*overflow-y: scroll;*/
+			}
+			#resource_data_modal {
+				width: 100%;
+				position: absolute;
+				top: 225px;
+				left: 0;
+				z-index: 1;
+				display: none;
+				/*padding-top: 10px;*/
+			}
+			#resource_data_list {
+				max-width: 750px;
+				background: #FFF;
+				margin-left: auto;
+				margin-right: auto;
+				border: 2px solid #9bb998;
+				border-top: 0;
+				box-sizing: border-box;
+				border-radius: 0 0 5px 5px;
+				background: var(--background-color1);
+				box-shadow: 10px 10px 10px rgba(0,0,0,.7);
+				padding: 10px;
+				/*padding-top: 10px;*/
+				text-align: center;	
+			}
+
+			.delete_button {
+				display:  inline-block;
+				background: rgba(0,0,0,.1);
+				border: 2px solid rgba(0,0,0,.2);
+				padding: 0 5px;
+				cursor: pointer;
+				transition: background-color .2s;
+
+			}
+			.delete_button:hover {
+				background: rgb(215, 80, 80);
+				color: #500;
+			}
+
+			.create_button {
+				display:  inline-block;
+				border: 2px solid black;
+				padding: 0 5px;
+				cursor: pointer;
+				transition: background-color .2s;
+				border-radius: 3px;
+			}
+			.create_button:hover {
+				background: rgb(80, 215, 80);
+				color: #050;
+			}
+
+
+			#create_item_input {
+				width: 100%;
+				box-sizing: border-box;
+				background-color: var(--background-color3);
+				display:  inline-block;
+				border: 2px solid var(--border-color3);
+				padding: 0 5px;
+				cursor: pointer;
+				transition: background-color .2s;
+				border-radius: 0 0 5px 5px;
+			}
+			#create_item_input:hover {
+				background: rgb(80, 215, 80);
+				color: #050;
+			}
+			#delete_requirement {
+				margin-left: 20px;
+			}
+
+
+			.recipe_section_title {
+				margin-top: 10px;
+				line-height: 1.5em;
+			}
+
+			#create_recipe {
+				width: 100%;
+				box-sizing: border-box;
+				background-color: var(--background-color2);
+				display:  inline-block;
+				border: 2px solid var(--border-color2);
+				padding: 0 5px;
+				cursor: pointer;
+				transition: background-color .2s;
+				border-radius: 5px;
+			}
+			#create_recipe:hover {
+				background: rgb(80, 215, 80);
+				color: #050;
+			}
+
+		</style>
+
+		<datalist id="recipetypelist">
+			<option value="Crafting">
+		</datalist>
+		<datalist id="itemnamelist">
+		</datalist>
+
+		<div style="display: none">
+			<div id="resource" class="resource">
+				<div class="ordering_drag">&#8597;</div>
+				<div class="ordering_index"><input id="ordering_index" class="ordering_value" type="text" /></div>
+				<div class="resource_label"><label for="name">Name:</label></div>
+				<div class="resource_name"><input id="name" type="text" class="item_name" /></div>
+				<div class="edit">edit</div>
+			</div>
+
+				<!-- <div class="save hidden">save</div> -->
+	
+
+			<div id="recipe" class="recipe">
+				<div class="delete_button" id="delete_recipe" style="width: 100%; box-sizing: border-box">Delete Recipe</div>
+				<div class="recipe_section_title">Recipe Type:</div><input id="recipe_type" type="dropdown" list="recipetypelist" /><br>
+				<div class="recipe_section_title">Output Amount:</div><!-- <div class="integermod_button">-</div> --><input id="recipe_output_quantity" class="recipe_value" type="text"><!-- <div class="integermod_button">+</div> --><br>
+				<div class="recipe_section_title">Input Resources:</div><div id="requirement_list" class=requirement_list></div>
+				<div id="create_item_input">Add Input</div>
+			</div>
+
+			<div id="recipe_requirement" class="recipe_requirement">
+				Name: <input id="requirement_name" type="text">
+				<!-- <div class="integermod_button">-</div> --> Quantity: <input id="requirement_value" class="recipe_value" type="text"><!-- <div class="integermod_button">+</div> -->
+				<div class="delete_button" id="delete_requirement">Delete</div>
+			</div>
+		</div>
+
+	</head>
+	<body>
+<!-- 		<div class="search_bar">
+			<div class="search_label_wrapper">
+				<label class="search_label" for="item_filter">Filter:</label>
+			</div>
+			<span class="search_box_wrapper">
+			<input type="text" class="search_box" id="item_filter"></span>
+		</div> -->
+
+		<div style="margin-left: auto; margin-right: auto; max-width: 800px;">Welcome to the early alpha version of the web-editor. More elements of functionality and usability will be exposed over time as we get usage feedback. In order to edit a value scroll to the item you want to change and click the "edit" button. You can also re order items by clicking on their number and typing in a new number. Once you are done click the "Export" button below to download output data.<br><br><a href="#" onclick="save()">Export</a><br><br></div>
+
+		<div id="resource_list" class="resource_list">
+			<div id="resource_data_modal">
+				<div id="resource_data_list">
+					<div class="delete_button" id="delete_item" style="width: 100%; box-sizing:border-box; margin-top: 15px;">Delete Item</div>
+					<!-- <b>Image</b>: <input type="file" /> <div id="resource_image"></div> -->
+					<b>Recipes</b>: <div id="resource_recipes">Resource 1<br>Resource 2</div>
+					<!-- Custom Stack Sizes: <div id="resource_stack_sizes">Stack1: <input><br>Stack2: <input></div> -->
+					<div id="create_recipe">New Recipe</div>
+
+				</div>
+			</div>
+		</div>
+		<div id="modal_grayout"></div>
+	</body>
+	<script src = "../yaml_export.js" type = "text/javascript"/></script>
+	<script>{{ resource_list_json }}</script>
+	<script>
+
+		function save() {
+			var data = write_ResourceList(resource_list_json);
+			var c = document.createElement("a");
+			c.download = "data.yaml";
+
+			var t = new Blob([data], {
+				type: "text/plain"
+			});
+			c.href = window.URL.createObjectURL(t);
+			c.click();
+		}
+
+
+		let resource_data_modal_elem = document.getElementById("resource_data_modal");
+
+
+
+		let breakdown_elem = document.getElementById("breakdown");
+
+
+		function show_resource_edit_modal(resource_index) {
+			document.getElementById("resource_data_modal").style.display = "block";
+
+			document.body.style.overflow = "hidden"; // Disable scrolling the main page
+		}
+
+		// function filter_items() {
+		// 	// var search_string = $("#item_filter").val().toLowerCase();
+		// 	let search_string = document.getElementById("item_filter").value.toLowerCase();
+		// 	// var hide_unused = $("#unused_hide_checkbox").prop("checked");
+
+		// 	// Loop through each item
+		// 	for (let resource in )
+
+		// 	$("#content_field").find(".desired_item").each(function() {
+		// 		var item_name = $(this).find("input").attr("aria-label").toLowerCase();
+		// 		var item_count = $(this).find(".desired_item_count").val();
+
+		// 		// If the search string does not match hide the item
+		// 		// If the item count is not greater than 0 and hide unused is true hide
+		// 		if (item_name.indexOf(search_string) === -1 || !(item_count > 0 || !hide_unused)) {
+		// 			$(this).hide();
+		// 		}
+		// 		else {
+		// 			$(this).show();
+		// 		}
+		// 	});
+		// }
+		// $("#item_filter").bind("propertychange change click keyup input paste", function(){
+		// 	filter_items();
+		// });
+
+		const element_height = {{element_height}};
+		const buffer_element_count = {{buffer_element_count}};
+		const recipe_elem = document.getElementById("recipe");
+		const recipe_requirement_elem = document.getElementById("recipe_requirement");
+
+		////////////////////////////////////////////////////////////////////////
+		// Speed optimization where only the visible rows are added to the DOM
+		// this is a useful speedup for both inital page load and also page
+		// use. This concept was suggusted by Google Page Insights linking to
+		// https://web.dev/dom-size/ which suggusted modules for Vue and React.
+		// Neither of which are used on this site and instead this basic js
+		// function was written instead.
+		//
+		// TODO: A slight optimization might want to be considered where a box
+		// that appears in both the old and the new element list is re-used.
+		// This is not a speed optimization nessasarily but it will prevent the
+		// text input from being blured due to the old text input being
+		// destroyed and replaced with a new text input.
+		////////////////////////////////////////////////////////////////////////
+		let active_resource_elements = [];
+		let editing_index = -1;
+		let editing_elem = undefined;
+		function redraw_resouce_elements({animate_reorder_from_index=undefined, animate_reorder_to_index=undefined, animate_in_editing=false, animate_out_editing=false}) {
+
+			// let animate_out_index = args["animate_out_index"];
+
+
+
+			for (let i in active_resource_elements) {
+				let active_resource_element = active_resource_elements[i];
+				active_resource_element.parentNode.removeChild(active_resource_element);
+			}
+			active_resource_elements = [];
+
+			let resource_elem = document.getElementById("resource");
+			let resource_list_elem = document.getElementById("resource_list");
+
+
+			let ordering_index = 1;
+			
+			let window_height = window.innerHeight 
+								|| document.documentElement.clientHeight
+								|| document.body.clientHeight;
+			 
+			let start_index = Math.max(Math.floor((document.body.scrollTop - resource_list_elem.offsetTop) / element_height) - buffer_element_count, 0);
+			let end_index =   Math.min(Math.floor((document.body.scrollTop - resource_list_elem.offsetTop + window_height) / element_height) + buffer_element_count, resource_list_json.resources.length)
+
+			// item_name.indexOf(search_string) === -1
+
+			for (let i = end_index-1; i >= start_index ; i--) {
+				(function(key) {
+					let name = resource_list_json.resources[key].name;
+					
+					let cloned_resource_elem = resource_elem.cloneNode(true);
+					cloned_resource_elem.querySelector("#name").value = name;
+
+					cloned_resource_elem.style.top = element_height * key;
+
+					// Setup the ordering textbox
+					// If receiving animation indices then animate anything between them
+					if (key >= animate_reorder_from_index && key < animate_reorder_to_index) {
+						cloned_resource_elem.style.top = (key+1) * element_height + "px";
+						setTimeout(function(){cloned_resource_elem.style.top = key * element_height + "px";},1);
+					}
+					else if (key <= animate_reorder_from_index && key > animate_reorder_to_index) {
+						cloned_resource_elem.style.top = (key-1) * element_height + "px";
+						setTimeout(function(){cloned_resource_elem.style.top = key * element_height + "px";},1);
+					}
+					else if (key == animate_reorder_to_index){
+						cloned_resource_elem.style.top = animate_reorder_from_index * element_height + "px";
+						setTimeout(function(){cloned_resource_elem.style.top = key * element_height + "px";},1);
+					}
+
+					let ordering_index_elem = cloned_resource_elem.querySelector("#ordering_index");
+					ordering_index_elem.value = key+1;
+					ordering_index_elem.addEventListener("change", function(e) {
+						let parsed = parseInt(this.value);
+						if (!isNaN(parsed)) {
+							if (parsed < 1) {
+								parsed = 1;
+							}
+							if (parsed > resource_list_json.resources.length) {
+								parsed = resource_list_json.resources.length
+							}
+
+							// Move Item to New Location
+							resource_list_json.resources.splice(parsed-1, 0, resource_list_json.resources.splice(key, 1)[0]);
+						}
+						redraw_resouce_elements({
+							animate_reorder_from_index: key,
+							animate_reorder_to_index: parsed-1
+						});
+					});
+					ordering_index_elem.addEventListener("focus", function(e) {
+						this.setSelectionRange(0, this.value.length)
+					})
+
+					// Setup The Edit Button
+					let edit_resource_elem = cloned_resource_elem.querySelector(".edit");
+					edit_resource_elem.addEventListener("click", function(e) {
+						// show_resource_edit_modal(key);
+						// this.parentNode.style.boxShadow = "10px 10px 10px black";
+						// this.parentNode.style.zIndex = "1";
+						// editing_index = key;
+						enable_modal_background(key)
+						redraw_resouce_elements({});
+					});
+
+					// Setup the editing styles if this is being edited
+					if (key === editing_index) {
+						cloned_resource_elem.style.boxShadow = "10px 10px 10px rgba(0,0,0,.7)";
+						cloned_resource_elem.style.zIndex = 2;
+						editing_elem = cloned_resource_elem;
+					}
+
+					resource_list_elem.appendChild(cloned_resource_elem);
+					active_resource_elements.push(cloned_resource_elem);
+				})(i)
+			}
+		}
+
+
+		document.addEventListener('scroll', function(e) {
+			// TOOD: A speed optimization might want to be considered where if the
+			// scroll has not exceeded one object height since the last render then
+			// the objects are not re-rendered.
+			redraw_resouce_elements({});
+		});
+		window.addEventListener('resize', function(e) {
+			redraw_resouce_elements({});
+		});
+
+		let modal_grayout_elem = document.getElementById("modal_grayout");
+		modal_grayout_elem.addEventListener("click", function() {
+			disable_modal_background();
+		})
+
+		let resource_recipes_elem = document.getElementById("resource_recipes");
+
+
+			function add_new_recipe_input(recipe_type, recipe_output, recipe_requirements) {
+				let cloned_recipe_elem = recipe_elem.cloneNode(true);
+				cloned_recipe_elem.querySelector("#recipe_type").value = recipe_type;
+				cloned_recipe_elem.querySelector("#recipe_output_quantity").value = recipe_output;
+				let requirement_list = cloned_recipe_elem.querySelector("#requirement_list")
+
+
+				function add_new_item_input_row(name, quantity) {
+					let cloned_requirement_elem = recipe_requirement_elem.cloneNode(true);
+
+					cloned_requirement_elem.querySelector("#requirement_value").value = quantity;
+					cloned_requirement_elem.querySelector("#requirement_name").value = name;
+					cloned_requirement_elem.querySelector("#delete_requirement").addEventListener("click", function(e) {
+						cloned_requirement_elem.remove();
+					})
+					requirement_list.appendChild(cloned_requirement_elem);
+				}
+
+
+
+				for (let requirement_name in recipe_requirements){
+					add_new_item_input_row(requirement_name, recipe_requirements[requirement_name]);
+				}
+
+				cloned_recipe_elem.querySelector("#create_item_input").addEventListener("click", function(e) {
+					add_new_item_input_row("", 0);
+				});
+
+				cloned_recipe_elem.querySelector("#delete_recipe").addEventListener("click", function(e) {
+					e.target.parentNode.remove();
+				});
+
+				resource_recipes_elem.appendChild(cloned_recipe_elem);
+			}
+
+
+
+		function enable_modal_background(index){
+			active_index = index
+			// Use pointer events and background here instead of display
+			// so we can get a slight animated transition of the gray appearing
+			// and disappearing.
+			modal_grayout_elem.style.pointerEvents = "auto";
+			modal_grayout_elem.style.background = "rgba(0,0,0,.5)";
+			resource_data_modal_elem.style.display="block";
+			editing_index = index;
+			resource_data_modal_elem.style.top = (index +1) * element_height -10;
+
+
+			// Clear all of the recipes
+			while (resource_recipes_elem.lastChild) {
+				resource_recipes_elem.removeChild(resource_recipes_elem.lastChild);
+			}
+
+			for (let i in resource_list_json.resources[index].recipes) {
+				let recipe = resource_list_json.resources[index].recipes[i];
+				add_new_recipe_input(recipe.recipe_type, recipe.output, recipe.requirements);
+			}
+
+		}
+
+		document.getElementById("create_recipe").addEventListener("click", function() {
+			console.log("add recipe");
+			add_new_recipe_input("", 1, {})
+		});
+
+		document.getElementById("delete_item").addEventListener("click", function() {
+			let deleted_item = editing_index;
+			resource_list_json.resources.splice(deleted_item, 1)
+			redraw_resouce_elements({
+				animate_reorder_from_index: deleted_item,
+				animate_reorder_to_index: resource_list_json.resources.length,
+			});
+			disable_modal_background();
+		});
+
+
+		function build_recipes_from_modal() {
+			let resource_data_list_elem = document.getElementById("resource_data_list");
+			let recipe_elements = resource_data_list_elem.querySelectorAll(".recipe");			
+			let recipes = [];
+			for (let i = 0; i < recipe_elements.length; i++) {
+				recipes.push(build_data_from_recipe_elem(recipe_elements[i]))
+			}
+			return recipes
+		}
+
+		function build_data_from_recipe_elem(recipe_element) {
+			let recipe_type = recipe_element.querySelector("#recipe_type").value;
+			let output = parseInt(recipe_element.querySelector("#recipe_output_quantity").value);
+			let requirement_list_elem = recipe_element.querySelector("#requirement_list");
+
+			console.log(requirement_list_elem);
+			let requirement_elems = requirement_list_elem.querySelectorAll(".recipe_requirement");
+			let requirements = {}
+			for (let i = 0; i < requirement_elems.length; i++) {
+				let requirement_name = requirement_elems[i].querySelector("#requirement_name").value
+				let requirement_value = parseInt(requirement_elems[i].querySelector("#requirement_value").value)
+				requirements[requirement_name] = requirement_value
+			}
+
+			return {
+				"output": output,
+				"recipe_type": recipe_type,
+				"requirements": requirements,
+			}
+		}
+		function disable_modal_background(){
+
+			let built_recipes = build_recipes_from_modal()
+			resource_list_json.resources[editing_index].recipes = built_recipes;
+
+			// Use pointer events and background here instead of display
+			// so we can get a slight animated transition of the gray appearing
+			// and disappearing.
+			modal_grayout_elem.style.pointerEvents = "none";
+			modal_grayout_elem.style.background = "rgba(0,0,0,0)";
+
+			resource_data_modal_elem.style.display="none";
+			editing_elem.style.boxShadow = "none";
+			editing_elem = undefined;
+			editing_index = -1;
+		}
+
+
+
+		// Initial Draw
+		redraw_resouce_elements({});
+
+	</script>
+</html>
