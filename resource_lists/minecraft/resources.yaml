@@ -7007,7 +7007,7 @@ resources:
     - output: 1
       recipe_type: Smelting
       requirements:
-        Clay: -1
+        Clay Ball: -1
         Fuel: -1
     - recipe_type: Raw Resource
 
