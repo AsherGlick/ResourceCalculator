@@ -7562,7 +7562,7 @@ resources:
 
   Cookie:
     recipes:
-    - output: 1
+    - output: 8
       recipe_type: Crafting
       requirements:
         Wheat: -2
