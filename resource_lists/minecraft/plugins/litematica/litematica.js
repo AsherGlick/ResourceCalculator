@@ -1,14 +1,16 @@
 function convertMaterialListToRequestHash(inputString) {
     // unify line endings
     inputString = inputString.replace(/\r\n/gm, "\n")
-        // remove preface lines
-        .replace(/^(.*\n){5}/, "")
-        // remove delimiter lines
-        .replace(/(\r?\n|^)\+-+\+-+\+-+\+-+\+(\r?\n|$)/gm, "$1")
-        // remove all lines without numbers between the pipes (aka headlines)
-        .replace(/(\r?\n|^)\|[^0-9]+\|(\r?\n|$)/gm, "$1")
+        // remove leading spaces
+        .replace(/(\n|^)\s+/gm, "$1")
+        // remove trailing spaces
+        .replace(/\s+(\n|$)/gm, "$1")
+        // remove illegal characters (see build.py get_simple_name function)
+        .toLowerCase().replaceAll(/[^a-z0-9|\n]/gm, "")
+        // remove non-item lines
+        .replace(/(\n|^)(?!\|(\S+)\|(\d+)\|(\d+)\|(\d+)\|)(.*?)(\n|$)/gm, "")
         // convert into csv
-        .replace(/\| +(.+?) +\| +(\d+) +\| +(\d+) +\| +(\d+) +\|/gm, "$1;$2;$3;$4")
+        .replace(/(\n|^)\|(.+?)\|(\d+)\|(\d+)\|(\d+)\|(\n|$)/gm, "$1$2;$3;$4;$5$6")
         // remove leading & trailing blank lines
         .trim();
 
@@ -16,7 +18,7 @@ function convertMaterialListToRequestHash(inputString) {
     var items = inputString.split("\n");
     var totals = items.map((item) => {
         var itemTotal = item.split(";");
-        return [itemTotal[0].trim().toLowerCase().replaceAll(/[^a-z0-9]/gm, ""), itemTotal[1]].join("=");
+        return [itemTotal[0], itemTotal[1]].join("=");
     });
 
     var totalsQuery = "#" + totals.join("&");
