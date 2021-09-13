@@ -1,0 +1,21 @@
+.left {
+    display: inline-block;
+    width: 45%;
+    padding-right: 15px;
+}
+
+.right {
+    display: inline-block;
+    width: 45%;
+    word-break: break-word;
+    text-align: right;
+    vertical-align: top;
+    padding-left: 5px;
+}
+
+#input {
+    font-family: monospace;
+    white-space: pre;
+    overflow-x: auto;
+    width: 100%;
+}
