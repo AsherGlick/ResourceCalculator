@@ -672,6 +672,8 @@ def create_calculator_page(
     # re-triggering generation on outdated files that were intentionally skipped
     touch_output_folder_files(calculator_folder)
 
+    publish_calculator_plugins(calculator_folder, source_folder)
+
     if len(errors) > 0:
         with open(resource_list_file, 'r', encoding="utf_8") as f:
             fulltext = f.read()
@@ -683,6 +685,14 @@ def create_calculator_page(
     end_time = time.time()
     print("  Generated in %.3f seconds" % (end_time - start_time))
 
+def publish_calculator_plugins(
+    calculator_folder: str,
+    source_folder: str
+)  -> None:
+    plugin_output_folder = os.path.join(calculator_folder, "plugins")
+    plugin_source_folder = os.path.join(source_folder, "plugins")
+    if os.path.exists(plugin_source_folder):
+        shutil.copytree(plugin_source_folder, plugin_output_folder) 
 
 # [{
 #         "name":
