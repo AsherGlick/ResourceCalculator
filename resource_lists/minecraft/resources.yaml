@@ -8611,15 +8611,14 @@ resources:
 
   Bee Hive:
     recipes:
-    - recipe_type: Raw Resource
-
-  Bee Nest:
-    recipes:
     - output: 1
       recipe_type: Crafting
       requirements:
         Any Planks: -6
         Honeycomb: -3
+    - recipe_type: Raw Resource
+
+  Bee Nest:
     - recipe_type: Raw Resource
 
   Honey Bottle:
