@@ -1,7 +1,8 @@
 .left {
     display: inline-block;
     width: 45%;
-    padding-right: 15px;
+    padding-right: 10;
+    margin-left: calc(5% - 10px);
 }
 
 .right {
@@ -10,12 +11,31 @@
     word-break: break-word;
     text-align: right;
     vertical-align: top;
-    padding-left: 5px;
+    padding-left: 10px;
+    margin-right: calc(5% - 10);
 }
 
-#input {
+#input,
+#output {
     font-family: monospace;
     white-space: pre;
     overflow-x: auto;
     width: 100%;
+    padding: 5px 10px;
+    border: 2px solid #8b90a1;
+    border-top: 0;
+    background: #FFF;
+    border-radius: 0 0 5px 5px;
+    display: inline-block;
+}
+
+#inputLabel,
+#outputLabel {
+    padding: 5px 10px 10px;
+    border: 2px solid #8b90a1;
+    border-bottom: 0;
+    background: #D8D9ED;
+    border-radius: 5px 5px 0 0;
+    width: calc(100% - 24px);
+    display: inline-block;
 }

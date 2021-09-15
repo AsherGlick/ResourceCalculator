@@ -2,26 +2,31 @@
 
 <head>
     <script src="./litematica.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../../../calculator.css">
     <link type="text/css" rel="stylesheet" href="./litematica.css" />
 </head>
 
 <body>
     <div class="left">
-        <label for="input">Input</label><br />
-        <textarea name="input" id="input" rows="20" wrap="off">
-            +------+-------+---------+-----------+
-            | Material List for schematic ###### |
-            +------+-------+---------+-----------+
-            | Item | Total | Missing | Available |
-            +------+-------+---------+-----------+
-            | Name | 1     | 1       | 0         |
-            +------+-------+---------+-----------+
-            | Item | Total | Missing | Available |
-            +------+-------+---------+-----------+
-        </textarea><br />
-        <label for="loadInputFile">Load Input File</label><input name="loadInputFile" type="file" id="loadInputFile" />
+        <p>
+            <label for="input" id="inputLabel">Input</label><br />
+            <textarea name="input" id="input" rows="20" wrap="off">
++------+-------+---------+-----------+
+| Material List for schematic ###### |
++------+-------+---------+-----------+
+| Item | Total | Missing | Available |
++------+-------+---------+-----------+
+| Name | 1     | 1       | 0         |
++------+-------+---------+-----------+
+| Item | Total | Missing | Available |
++------+-------+---------+-----------+
+            </textarea>
+        </p>
+        <p>
+            <input name="loadInputFile" type="file" id="loadInputFile" class="generate_button" />
+        </p>
     </div>
-    <div class="right">Output<br />
+    <div class="right"><span id="outputLabel">Output</span><br />
         <a id="output" />
     </div>
 </body>
