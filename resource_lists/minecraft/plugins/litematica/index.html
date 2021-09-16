@@ -7,10 +7,12 @@
 </head>
 
 <body>
+    <div class="top">
+        <h1>Litematica Material List Import</h1>
+    </div>
     <div class="left">
-        <p>
-            <label for="input" id="inputLabel">Input</label><br />
-            <textarea name="input" id="input" rows="20" wrap="off">
+        <label for="input" id="inputLabel">Input</label>
+        <textarea name="input" id="input" rows="20" wrap="off">
 +------+-------+---------+-----------+
 | Material List for schematic ###### |
 +------+-------+---------+-----------+
@@ -21,13 +23,11 @@
 | Item | Total | Missing | Available |
 +------+-------+---------+-----------+
             </textarea>
-        </p>
-        <p>
-            <input name="loadInputFile" type="file" id="loadInputFile" class="generate_button" />
-        </p>
+        <input name="loadInputFile" type="file" id="loadInputFile" class="generate_button" />
     </div>
-    <div class="right"><span id="outputLabel">Output</span><br />
-        <a id="output" />
+    <div class="right">
+        <span id="outputLabel">Output</span>
+        <a id="output"></a>
     </div>
 </body>
 
