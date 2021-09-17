@@ -6,18 +6,18 @@ function convertMaterialListToRequestHash(inputString) {
         // remove trailing spaces
         .replace(/\s+(\n|$)/gm, "$1")
         // remove illegal characters (see build.py get_simple_name function)
-        .toLowerCase().replaceAll(/[^a-z0-9|\n]/gm, "")
+        .toLowerCase().replaceAll(/[^a-z0-9|,\n]/gm, "")
         // remove non-item lines
-        .replace(/(\n|^)(?!\|(\S+)\|(\d+)\|(\d+)\|(\d+)\|)(.*?)(\n|$)/gm, "")
+        .replace(/(\n|^)(?!\|(\S+)\|(\d+)\|(\d+)\|(\d+)\||[a-z0-9]+,\d+,\d+,\d+)(.*?)(\n|$)/gm, "")
         // convert into csv
-        .replace(/(\n|^)\|(.+?)\|(\d+)\|(\d+)\|(\d+)\|(\n|$)/gm, "$1$2;$3;$4;$5$6")
+        .replace(/(\n|^)\|(.+?)\|(\d+)\|(\d+)\|(\d+)\|(\n|$)/gm, "$1$2,$3,$4,$5$6")
         // remove leading & trailing blank lines
         .trim();
 
     // convert each line into a "name=##"-format with the totals as value
     var items = inputString.split("\n");
     var totals = items.map((item) => {
-        var itemTotal = item.split(";");
+        var itemTotal = item.split(",");
         return [itemTotal[0], itemTotal[1]].join("=");
     });
 
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("loadInputFile").addEventListener('change', function() {
         var file = document.getElementById("loadInputFile").files[0];
 
-        if (file.name.match(/\.(txt)$/)) {
+        if (file.name.match(/\.(txt|csv)$/)) {
             var reader = new FileReader();
 
             reader.onload = function() {
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             reader.readAsText(file);
         } else {
-            alert("File not supported, .txt files only");
+            alert("File not supported, .txt or .csv files only");
         }
     });
 
