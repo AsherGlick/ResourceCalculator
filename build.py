@@ -27,6 +27,7 @@ FLAG_skip_index = False
 FLAG_skip_gz_compression = False
 FLAG_skip_image_compress = False
 FLAG_force_image = False
+FLAG_no_plugins = False
 
 
 ################################################################################
@@ -672,6 +673,8 @@ def create_calculator_page(
     # re-triggering generation on outdated files that were intentionally skipped
     touch_output_folder_files(calculator_folder)
 
+    publish_calculator_plugins(calculator_folder, source_folder)
+
     if len(errors) > 0:
         with open(resource_list_file, 'r', encoding="utf_8") as f:
             fulltext = f.read()
@@ -683,6 +686,25 @@ def create_calculator_page(
     end_time = time.time()
     print("  Generated in %.3f seconds" % (end_time - start_time))
 
+def publish_calculator_plugins(
+    calculator_folder: str,
+    source_folder: str
+)  -> None:
+    plugin_output_folder = os.path.join(calculator_folder, "plugins")
+    plugin_source_folder = os.path.join(source_folder, "plugins")
+
+    if os.path.exists(plugin_source_folder) and not FLAG_no_plugins:
+        should_publish_plugins = True
+
+        if os.path.exists(plugin_output_folder):
+            newest_file = max(
+                os.path.getctime("build.py"),  # Check generator code modification
+                get_newest_modified_time(plugin_source_folder),  # Check source plugin modification
+            )
+            should_publish_plugins = newest_file > os.path.getctime(plugin_output_folder)
+
+        if should_publish_plugins:
+            shutil.copytree(plugin_source_folder, plugin_output_folder) 
 
 # [{
 #         "name":
@@ -859,6 +881,7 @@ def main() -> None:
     parser.add_argument('--no-gz', action='store_true', help="Speed up dev-builds by skipping gz text compression")
     parser.add_argument('--no-index', action='store_true', help="Speed up dev-builds by skipping building the index page")
     parser.add_argument('--no-image-compress', action='store_true', help="Speed up dev-builds by skipping the image compresson")
+    parser.add_argument('--no-plugins', action='store_true', help="Skip plugin publication to get only the plain calculators")
 
     parser.add_argument('--force-html', action='store_true', help="Force the html pages to be rebuilt even if they are newer then their source files")
     parser.add_argument('--force-image', action='store_true', help="Force images to be rebuilt even if they are newer then their source files")
@@ -868,6 +891,7 @@ def main() -> None:
     global FLAG_skip_gz_compression
     global FLAG_skip_image_compress
     global FLAG_force_image
+    global FLAG_no_plugins
 
     args = parser.parse_args()
     if (args.watch):
@@ -890,6 +914,9 @@ def main() -> None:
 
     if args.force_image:
         FLAG_force_image = True
+
+    if args.no_plugins or args.draft:
+        FLAG_no_plugins = True
 
     calculator_page_sublist = []
     if len(args.limit_files) >= 1:

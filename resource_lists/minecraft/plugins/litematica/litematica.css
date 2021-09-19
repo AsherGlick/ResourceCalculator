@@ -1,0 +1,65 @@
+.top {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-top: 1em;
+}
+
+.left {
+    display: inline-block;
+    width: 45%;
+    padding-right: 10;
+    margin-left: calc(5% - 10px);
+}
+
+.right {
+    display: inline-block;
+    width: 45%;
+    word-break: break-word;
+    text-align: right;
+    vertical-align: top;
+    padding-left: 10px;
+    margin-right: calc(3% - 10px);
+}
+
+#input,
+#output {
+    font-family: monospace;
+    overflow-x: auto;
+    padding: 5px 10px;
+    border: 2px solid #8b90a1;
+    border-top: 0;
+    background: #FFF;
+    border-radius: 0 0 5px 5px;
+    display: block;
+}
+
+#input {
+    width: 100%;
+    white-space: pre;
+}
+
+#output {
+    white-space: normal;
+}
+
+#inputLabel,
+#outputLabel {
+    padding: 5px 10px 10px;
+    border: 2px solid #8b90a1;
+    border-bottom: 0;
+    background: #D8D9ED;
+    border-radius: 5px 5px 0 0;
+    width: calc(100% - 24px);
+    display: block;
+}
+
+#loadInputFile {
+    margin-top: 15px;
+    width: 100%;
+}
