@@ -658,7 +658,7 @@ function generate_instructions(edges: { [key: string]: ResourceEdge }, generatio
 					continue;
 				}
 
-				build_instruction_line(edges, node, generation_totals).appendTo(instructions);
+				instructions.appendChild(build_instruction_line(edges, node, generation_totals));
 				let instruction_inventory_line: HTMLElement = build_instruction_inventory_line(edges, node);
 				if (instruction_inventory_line) {
 					instructions.appendChild(instruction_inventory_line)
@@ -685,7 +685,7 @@ function build_instruction_line(
 	edges: { [key: string]: ResourceEdge},
 	item_name: string,
 	generation_totals: { [key: string]: number}
-) {
+): HTMLDivElement {
 	if (!generation_totals[item_name]) {
 		return document.createElement("div");
 	}
@@ -1669,13 +1669,13 @@ let hover_y_offset: number = -10;
 document.addEventListener("mousemove", function(e: MouseEvent){
 	// If the hoverbox is not hanging over the side of the screen when rendered, render normally
 	if (window.innerWidth > hover_name_elem.offsetWidth + e.pageX + hover_x_offset) {
-		hover_name_elem.style.left = (e.pageX + hover_x_offset).toString();
-		hover_name_elem.style.top = (e.pageY + hover_y_offset).toString();
+		hover_name_elem.style.left = (e.pageX + hover_x_offset).toString() + "px";
+		hover_name_elem.style.top = (e.pageY + hover_y_offset).toString() + "px";
 	}
 	// If the hoverbox is hanging over the side of the screen then render on the other side of the mouse
 	else {
-		hover_name_elem.style.left = (e.pageX - hover_x_offset - hover_name_elem.offsetWidth).toString();
-		hover_name_elem.style.top = (e.pageY + hover_y_offset).toString();
+		hover_name_elem.style.left = (e.pageX - hover_x_offset - hover_name_elem.offsetWidth).toString() + "px";
+		hover_name_elem.style.top = (e.pageY + hover_y_offset).toString() + "px";
 	}
 });
 
@@ -1795,7 +1795,7 @@ function switch_recipe(item_name: string, event: MouseEvent) {
 				});
 			})(j);
 		}
-		recipe_category.appendChild(recipe_item);
+		recipe_item.appendChild(recipe_category);
 
 		let clear_div = document.createElement("div");
 		clear_div.classList.add("clear");
@@ -1824,13 +1824,17 @@ function switch_recipe(item_name: string, event: MouseEvent) {
 		top_offset = event.pageY - menu_y_offset - recipe_selector.offsetHeight;
 	}
 
-	recipe_selector.style.top = top_offset.toString();
-	recipe_selector.style.left = left_offset.toString();
+	recipe_selector.style.top = top_offset.toString() + "px";
+	recipe_selector.style.left = left_offset.toString() + "px";
 }
 
 function switch_inventory_amount_input(item_name: string) {
 	inventory_amount_input_elem.setAttribute("item_name", item_name); //???
-	inventory_amount_input_elem.value = inventory[item_name].toString();
+	if (inventory[item_name] === undefined) {
+		inventory_amount_input_elem.value = "0";
+	} else {
+		inventory_amount_input_elem.value = inventory[item_name].toString();
+	}
 }
 
 recipe_select_elem.addEventListener("mouseleave", function() {
