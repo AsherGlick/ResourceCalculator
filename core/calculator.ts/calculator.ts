@@ -1,4 +1,4 @@
-declare var recipe_json: any;
+declare var recipe_json: {[key: string]: {output: number, recipe_type: string, requirements: {[key:string]:number}}[]};
 declare var recipe_type_functions: any;
 declare var stack_sizes: any;
 
@@ -483,7 +483,7 @@ function generatelist() {
 
 				// If this is not a raw resource, track the change the and modify the output requirements
 				else {
-					for (let item of recipe_requirements) {
+					for (let item of Object.keys(recipe_requirements)) {
 
 						// Set the recipe requirements as new output requirements
 						if (output_requirements[item] === undefined) {
@@ -659,8 +659,8 @@ function generate_instructions(edges: { [key: string]: ResourceEdge }, generatio
 				}
 
 				instructions.appendChild(build_instruction_line(edges, node, generation_totals));
-				let instruction_inventory_line: HTMLElement = build_instruction_inventory_line(edges, node);
-				if (instruction_inventory_line) {
+				let instruction_inventory_line = build_instruction_inventory_line(edges, node);
+				if (instruction_inventory_line !== null) {
 					instructions.appendChild(instruction_inventory_line)
 				}
 			}
@@ -711,7 +711,7 @@ function build_instruction_line(
 function build_instruction_inventory_line(
 	edges: { [key: string]: ResourceEdge },
 	item_name: string
-): HTMLElement {
+): HTMLElement | null{
 	let amount_to_take: number = 0;
 	for (let edge in edges){
 		// If this is pointing into the resource we are currently trying to take from the inventory.
@@ -721,7 +721,12 @@ function build_instruction_inventory_line(
 		}
 	}
 
-	let line_wrapper = document.createElement("div")
+	if (!amount_to_take) {
+		return null;
+	}
+
+
+	let line_wrapper = document.createElement("div");
 	line_wrapper.classList.add("instruction_wrapper");
 
 	let prefix = document.createElement("span");
@@ -733,6 +738,7 @@ function build_instruction_inventory_line(
 	let suffix = document.createElement("span");
 	suffix.textContent = " from inventory."
 	line_wrapper.appendChild(suffix);
+
 	return line_wrapper;
 }
 
@@ -926,7 +932,7 @@ function get_node_columns(edges: { [key: string]: ResourceEdge }) {
 	return parent_counts;
 }
 
-function get_columns(edges: { [key: string]: ResourceEdge }): { [key: number]: string[] } {
+function get_columns(edges: { [key: string]: ResourceEdge }): string[][] {
 	let node_columns: { [key: string]: number } = get_node_columns(edges);
 
 	// determine how many columns there should be
@@ -938,7 +944,7 @@ function get_columns(edges: { [key: string]: ResourceEdge }): { [key: number]: s
 	}
 
 	// Create an array of those columns
-	let columns: { [key: number]: string[] } = Array(column_count);
+	let columns: string[][] = Array(column_count);
 	for (let i = 0; i < column_count; i++){
 		columns[i] = [];
 	}
@@ -1033,7 +1039,7 @@ function generate_chart(
 	var height = 800 - margin.top - margin.bottom;
 
 	// Get the matrix of nodes, sorted into an array of columns
-	let columns: { [key: number]: string[] } = get_columns(edges);
+	let columns: string[][] = get_columns(edges);
 
 	// Create a representation of node objects
 	var nodes: { [key: string]: ResourceNode} = {};
@@ -1073,8 +1079,6 @@ function generate_chart(
 
 		nodes[edge.target].incoming_edges.push(edge_id);
 		nodes[edge.source].outgoing_edges.push(edge_id);
-		//edge.target_column = ;
-		// edge.source_column = ;
 	}
 
 	// Find edges that span multiple columns and create fake nodes for them in
@@ -1084,8 +1088,8 @@ function generate_chart(
 		let edge = edges[edge_id];
 		edge.passthrough_nodes = [];
 
-		let source_column_index = nodes[edge.target].column; //edge.source_column;
-		let target_column_index = nodes[edge.source].column; //edge.target_column;
+		let source_column_index = nodes[edge.source].column;
+		let target_column_index = nodes[edge.target].column;
 
 		for (let passthrough_column_index = source_column_index+1; passthrough_column_index<target_column_index; passthrough_column_index+=1) {
 			var passthrough_node_id: string = edge_id + "_" + passthrough_column_index;
@@ -1132,7 +1136,7 @@ function generate_chart(
 
 function set_node_positions(
 	iterations: number,
-	columns: {[key: number]: string[] },
+	columns: string[][],
 	nodes: {[key: string]: ResourceNode},
 	edges: {[key: string]: ResourceEdge},
 	value_scale: number,
@@ -1160,7 +1164,7 @@ function set_node_positions(
 
 function relax_columns_left_to_right(
 	alpha:number,
-	columns: {[key: number]: string[] },
+	columns: string[][],
 	nodes: {[key: string]: ResourceNode},
 	edges: {[key: string]: ResourceEdge},
 ) {
@@ -1219,7 +1223,7 @@ function relax_columns_left_to_right(
 }
 function relax_columns_right_to_left(
 	alpha:number,
-	columns: {[key: number]: string[] },
+	columns: string[][],
 	nodes: {[key: string]: ResourceNode},
 	edges: {[key: string]: ResourceEdge},
 ) {
@@ -1263,7 +1267,9 @@ function relax_columns_right_to_left(
 			return node.size;
 		}
 	}
-		for (let column_index in Object.keys(columns).reverse()) {
+
+	columns = columns.slice().reverse();
+	for (let column_index in columns) {
 		if (Number(column_index) === 0) {
 			continue;
 		}
@@ -1281,7 +1287,7 @@ function y_midpoint(node: ResourceNode): number {
 }
 
 function resolve_node_collisions(
-	columns: { [key: number]: string[] },
+	columns: string[][],
 	nodes: {[key: string]: ResourceNode},
 	node_padding: number,
 	svg_height: number,
@@ -1318,7 +1324,6 @@ function resolve_node_collisions(
 
 			let delta_y = top_of_previous_node - (node.y + node.height);
 			if (delta_y < 0) {
-				// console.log("Pushing Up:", delta_y);
 				node.y += delta_y;
 			}
 
@@ -1417,7 +1422,7 @@ function get_color(key: string) {
 | draw the chart itself
 \******************************************************************************/
 class CachedChartData {
-	columns: { [key: number]: string[] } = {};
+	columns: string[][] = [];
 	nodes: { [key: string]: ResourceNode } = {};
 	edges: { [key: string]: ResourceEdge } = {};
 	height: number = 0;
@@ -1426,7 +1431,7 @@ class CachedChartData {
 }
 var cached_chart_data: CachedChartData;
 function layout_chart(
-	columns: { [key: number]: string[] },
+	columns: string[][],
 	nodes: { [key: string]: ResourceNode },
 	edges: { [key: string]: ResourceEdge } ,
 	height: number,
@@ -1468,7 +1473,7 @@ function relayout_chart(){
 	var node_width = 20;
 
 	// Determine the space between the left hand side of each node column
-	var node_spacing: number = (width-node_width) / (Object.keys(columns).length - 1);
+	var node_spacing: number = (width-node_width) / (columns.length - 1);
 
 	// Empty the chart immediately
 	while (chart_elem.lastChild) {
@@ -1527,7 +1532,7 @@ function relayout_chart(){
 
 				var text_offset = node_width + 6;
 				var text_anchor = "start";
-				if (column_index >= Object.keys(columns).length/2){
+				if (column_index >= columns.length/2){
 					text_offset = -6;
 					text_anchor = "end";
 				}
@@ -1639,8 +1644,8 @@ function relayout_chart(){
 	var chart_height = height + margin.top + margin.bottom;
 
 
-	chart_elem.setAttribute("width", chart_width.toString());
-	chart_elem.setAttribute("height", chart_height.toString());
+	svg.setAttribute("width", chart_width.toString());
+	svg.setAttribute("height", chart_height.toString());
 	chart_elem.appendChild(svg);
 }
 
@@ -1880,7 +1885,6 @@ function get_recipe_index(node_name: string) {
 	}
 }
 function set_recipe_to_raw(node_name: string) {
-	// console.log("Setting as raw resource");
 
 	for (let i = 0; i < recipe_json[node_name].length; i++){
 		if (recipe_json[node_name][i].recipe_type === "Raw Resource"){
@@ -1904,7 +1908,6 @@ function find_loop_from_node(start_node: string) {
 		// Add all the edges
 		nodes[node] = [];
 		for (let edge in get_recipe(node).requirements) {
-			// console.log(get_recipe(node).requirements[edge]);
 			if (-get_recipe(node).requirements[edge] > 0) {
 				nodes[node].push(edge);
 			}
