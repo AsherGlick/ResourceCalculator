@@ -43,14 +43,14 @@ var recipe_type_functions = {
 							middle_and.textContent = " and ";
 							line_wrapper.appendChild(middle_and);
 						}
-						text_item_object(all_other_inputs[input_index].quantity, all_other_inputs[input_index].name).appendTo(line_wrapper);
+						line_wrapper.appendChild(text_item_object(all_other_inputs[input_index].quantity, all_other_inputs[input_index].name));
 					}
 				{% elif input_chunk.type == "tokenized_input" %}
 					// Tokenized Input
-					text_item_object(inputs["{{input_chunk.name}}"], "{{input_chunk.name}}").appendTo(line_wrapper);
+					line_wrapper.appendChild(text_item_object(inputs["{{input_chunk.name}}"], "{{input_chunk.name}}"));
 				{% elif input_chunk.type == "output" %}
 					// Output Text
-					text_item_object(output_count, output).appendTo(line_wrapper);
+					line_wrapper.appendChild(text_item_object(output_count, output));
 				{% endif %}
 			{% endfor %}
 
