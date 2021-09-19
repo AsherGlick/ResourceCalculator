@@ -162,7 +162,7 @@ function filter_items() {
 			(<HTMLInputElement>item).style.display = "none";
 		}
 		else {
-			(<HTMLInputElement>item).style.display = "auto";
+			(<HTMLInputElement>item).style.display = "block";
 		}
 	});
 }
