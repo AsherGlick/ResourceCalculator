@@ -4,25 +4,27 @@ declare var stack_sizes: any;
 
 
 // Polyfills
+// startsWith and endsWith are not supported until es2015 but provide a large
+// amount of readability in the code so are polyfilled here.
 interface String {
     endsWith(searchString: string, endPosition?: number): boolean;
-    startsWith(searchString: string, position?: number): boolean;
+    startsWith(searchString: string, startPosition?: number): boolean;
 }
 if (!String.prototype.endsWith) {
-  String.prototype.endsWith = function(search, this_len) {
-    if (this_len === undefined || this_len > this.length) {
-      this_len = this.length;
-    }
-    return this.substring(this_len - search.length, this_len) === search;
-  };
+ 	String.prototype.endsWith = function(searchString, endPosition) {
+		if (endPosition === undefined || endPosition > this.length) {
+			endPosition = this.length;
+		}
+		return this.substring(endPosition - searchString.length, endPosition) === searchString;
+	};
 }
 if (!String.prototype.startsWith) {
-    Object.defineProperty(String.prototype, 'startsWith', {
-        value: function(search, rawPos) {
-            var pos = rawPos > 0 ? rawPos|0 : 0;
-            return this.substring(pos, pos + search.length) === search;
-        }
-    });
+	String.prototype.startsWith = function(searchString, startPosition) {
+		if(startPosition === undefined || startPosition <= 0) {
+			startPosition = 0;
+		}
+		return this.substring(startPosition, startPosition + searchString.length) === searchString;
+    };
 }
 
 
@@ -35,6 +37,16 @@ if (!String.prototype.startsWith) {
 "use strict";
 // Closure wrapper for the script file
 
+
+/// DOM Gathering ///
+const inventory_import_text_elem = <HTMLInputElement>document.getElementById("inventory_import_text");
+const hover_name_elem: HTMLElement = document.getElementById("hover_name")!;
+const reset_item_count_elem: HTMLElement = document.getElementById("reset_item_count")!;
+const text_instructions_elem = document.getElementById("text_instructions")!;
+const hide_unused_checkbox_elem: HTMLInputElement = <HTMLInputElement>document.getElementById("unused_hide_checkbox");
+const hide_unused_checkbox_label_elem: HTMLElement = document.getElementById("unused_hide_checkbox_label")!;
+const recipe_selector_list_elem = document.getElementById("recipe_selector_list")!;
+const recipe_select_elem = document.getElementById("recipe_select")!;
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////// Header Bar Logics ///////////////////////////////
@@ -58,8 +70,8 @@ function clear_item_counts() {
 	generatelist();
 }
 
-document.getElementById("reset_item_count").addEventListener("click", clear_item_counts);
-document.getElementById("inventory_import_text").addEventListener("change", clear_item_counts);
+reset_item_count_elem.addEventListener("click", clear_item_counts);
+inventory_import_text_elem.addEventListener("change", clear_item_counts);
 
 /******************************************************************************\
 | "About Us" Button Logic                                                      |
@@ -72,17 +84,20 @@ document.getElementById("inventory_import_text").addEventListener("change", clea
 // 	$("#about_us").slideToggle();
 // }); // TODO: Re enable when desired
 
-document.querySelector("input[name=unit_name]").addEventListener("click", function() {
-	generatelist();
-})
-
-const hover_name_elem: HTMLElement = document.getElementById("hover_name");
+// TODO: We should not need to regenerate the calculator every time a stack size
+// button is clicked. This is especially visible if the calculator has not yet
+// been generated.
+document.querySelectorAll("input[name=unit_name]").forEach(function(stack_size_button) {
+	stack_size_button.addEventListener("click", function() {
+		generatelist();
+	});
+});
 
 // Bind events to the item list elements // TODO THIS FUNCTION NEEDS A BETTER COMMENT
 function initilize_all_items() {
 	document.querySelectorAll(".desired_item").forEach((item) => {
 		let item_input_box = <HTMLInputElement>item.querySelector(".desired_item_count");
-		// let item_label = item_input_box.getAttribute("aria-label"); // TOOD use this in later event listeners instead of re-lookup the element
+		let item_label = item_input_box.getAttribute("aria-label")!;
 
 		// When clicking on the box focus the text box
 		item.addEventListener("click", function() {
@@ -112,13 +127,13 @@ function initilize_all_items() {
 
 		// When doubleclicking open the recipe select menu
 		item.addEventListener("dblclick", function (event) {
-			switch_recipe(item.querySelector("input").getAttribute("aria-label"), event);
-			switch_inventory_amount_input(item.querySelector("input").getAttribute("aria-label"));
+			switch_recipe(item_label, <MouseEvent>event);
+			switch_inventory_amount_input(item_label);
 		});
 
 		// Enable item name hover text
 		item.addEventListener("mouseover", function() {
-			hover_name_elem.textContent = item.querySelector("input").getAttribute("aria-label");
+			hover_name_elem.textContent = item_label;
 			hover_name_elem.style.opacity = "1";
 		});
 		item.addEventListener("mouseout", function() {
@@ -137,17 +152,17 @@ function filter_items() {
 	let hide_unused = hide_unused_checkbox_elem.checked;
 
 	// Loop through each item
-	document.querySelectorAll(".desired_item").forEach(function(item: HTMLElement) {
-		let item_name = item.querySelector("input").getAttribute("aria-label").toLowerCase();
+	document.querySelectorAll(".desired_item").forEach(function(item) {
+		let item_name = item.querySelector("input")!.getAttribute("aria-label")!.toLowerCase();
 		let item_count: number = parseInt((<HTMLInputElement>item.querySelector(".desired_item_count")).value);
 
 		// If the search string does not match hide the item
 		// If the item count is not greater than 0 and hide unused is true hide
 		if (item_name.indexOf(search_string) === -1 || !(item_count > 0 || !hide_unused)) {
-			item.style.display = "none";
+			(<HTMLInputElement>item).style.display = "none";
 		}
 		else {
-			item.style.display = "auto";
+			(<HTMLInputElement>item).style.display = "auto";
 		}
 	});
 }
@@ -165,9 +180,6 @@ item_filter_elem.addEventListener("paste", filter_items);
 /******************************************************************************\
 | "Hide Unused" "Show Unused" Button Logic                                     |
 \******************************************************************************/
-let hide_unused_checkbox_elem: HTMLInputElement = <HTMLInputElement>document.getElementById("unused_hide_checkbox");
-let hide_unused_checkbox_label_elem: HTMLElement = document.getElementById("unused_hide_checkbox_label");
-
 hide_unused_checkbox_elem.addEventListener("change", function() {
 	if (this.checked) {
 		hide_unused_checkbox_label_elem.textContent = "Show Unused";
@@ -205,7 +217,7 @@ function save() {
 	let selected_items: {[key: string]: number} = {};
 
 	document.querySelectorAll(".desired_item").forEach(function(item) {
-		let key: string = item.querySelector(".desired_item_count").id;
+		let key: string = item.querySelector(".desired_item_count")!.id;
 		let value: string = (<HTMLInputElement>item.querySelector(".desired_item_count")).value;
 
 		let int_value: number = parseInt(value);
@@ -216,7 +228,7 @@ function save() {
 	// TODO: We probably want to do something here with replace state instead of
 	// push state if possible.
 	if(history.pushState) {
-		history.pushState(null, null, "#" + to_url_params(selected_items));
+		history.pushState(null, "", "#" + to_url_params(selected_items));
 	}
 	else {
 		window.location.hash = to_url_params(selected_items);
@@ -237,9 +249,9 @@ function to_url_params(source: {[key: string]: number}): string {
 
 
 
-let inventory = {};
+let inventory: { [key: string]: number} = {};
 let inventory_label_suffix = " [from Inventory]";
-function export_inventory_to_localstorage() { // TODO: Define Any
+function export_inventory_to_localstorage() {
 	let input = inventory;
 
 	input = remove_null_entries(input);
@@ -289,49 +301,51 @@ function load() {
 
 function import_inventory_from_localstorage() {
 	let calculatorName = window.location.pathname.replace(/\//g, "");
-	let inventoryContent = JSON.parse(localStorage.getItem("[" + calculatorName + " Inventory]"));
-	inventory = inventoryContent ? inventoryContent : {};
+	let inventoryContent = JSON.parse(localStorage.getItem("[" + calculatorName + " Inventory]") || "{}");
 	inventory = remove_null_entries(inventory);
 	export_inventory_to_textbox();
 	return inventory;
 }
 
 
-const inventory_import_text_elem = <HTMLInputElement>document.getElementById("inventory_import_text");
+const inventory_import_error_elem = document.getElementById("inventory_import_error")!;
+
 function import_inventory_from_textbox(){
 	let text: string = inventory_import_text_elem.value;
 	if (text.trim().length > 0){
 		try {
 			inventory = JSON.parse(text);
-			document.getElementById("inventory_import_error").classList.add("hidden");
+			inventory_import_error_elem.classList.add("hidden");
 		}
 		catch (exception) {
-			document.getElementById("inventory_import_error").classList.remove("hidden");
+			inventory_import_error_elem.classList.remove("hidden");
 		}
 	}
 	else {
 		inventory = {};
-		document.getElementById("inventory_import_error").classList.add("hidden");
+		inventory_import_error_elem.classList.add("hidden");
 	}
 
 	inventory = remove_null_entries(inventory);
 	export_inventory_to_localstorage();
 }
 
-function remove_null_entries(item_collection) {
-	for (var item_name in item_collection) {
+
+
+function remove_null_entries<T>(item_collection: {[key: string]:T}): {[key: string]:T}{
+	for (let item_name in item_collection) {
 		if (!item_collection[item_name]){
 			delete item_collection[item_name];
 		}
 	}
-
 	return item_collection;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////// Requirements Calculation Logic ///////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-document.getElementById("generatelist").addEventListener("click", generatelist);
+const generate_list_button_elem = document.getElementById("generatelist")!;
+generate_list_button_elem.addEventListener("click", generatelist);
 
 
 
@@ -351,9 +365,10 @@ class ResourceEdge {
 	public target: string;
 	public value: number;
 
-	public target_column?: number; // temporarily used later on
-	public source_column?: number; // temporarily used later on
-	public passthrough_nodes?: string[]; // temporarily used later on
+	public passthrough_nodes: string[] = []; // temporarily used later on
+
+	public source_y_offset: number = 0; // temporarily used later for positioning
+	public target_y_offset: number = 0; // temporarily used later for positioning
 
 
 	constructor(source: string, target: string, value: number) {
@@ -363,16 +378,19 @@ class ResourceEdge {
 	}
 }
 
+
+
+
 function generatelist() {
 	var original_requirements: { [key: string]: number } = gather_requirements();
 	var requirements: { [key: string]: number } = JSON.parse(JSON.stringify(original_requirements));
 	var resource_tracker: { [key: string]: ResourceEdge } = {};
-	var generation_totals = {}; // the total number of each resource produce (ignoring any consumption)
+	var generation_totals: { [key: string]: number} = {}; // the total number of each resource produce (ignoring any consumption)
 
 	var remaining_inventory_items = JSON.parse(JSON.stringify(inventory));
-	var used_from_inventory = {};
+	var used_from_inventory: { [key: string]: number } = {};
 
-	var raw_resources = {};
+	var raw_resources: { [key: string]: number } = {};
 
 	// While we still have something that requires another resource to create
 	while(negative_requirements_exist(requirements)) {
@@ -476,11 +494,11 @@ function generatelist() {
 						// Add the recipe's conversion
 						let tracker_key = requirement+item;
 						if (!(tracker_key in resource_tracker)) {
-							resource_tracker[tracker_key] = {
-								"source":item,
-								"target":requirement,
-								"value":0,
-							};
+							resource_tracker[tracker_key] = new ResourceEdge(
+								item,
+								requirement,
+								0,
+							);
 						}
 						resource_tracker[tracker_key].value += recipe_requirements[item] * -produce_count;
 					};
@@ -495,11 +513,11 @@ function generatelist() {
 	for (let original_requirement in original_requirements) {
 		// console.log(get_recipe(original_requirement));
 		if (get_recipe(original_requirement).recipe_type === "Raw Resource") {
-			resource_tracker[original_requirement + "final"] = {
-				"source": original_requirement,
-				"target": "[Final] " + original_requirement,
-				"value": -original_requirements[original_requirement],
-			};
+			resource_tracker[original_requirement + "final"] = new ResourceEdge(
+				original_requirement,
+				"[Final] " + original_requirement,
+				-original_requirements[original_requirement],
+			);
 		}
 	}
 
@@ -509,11 +527,11 @@ function generatelist() {
 	for (let key in output_requirements) {
 		if (output_requirements[key] > 0) {
 			var tracker_key = key+"extra";
-			resource_tracker[tracker_key] = {
-				"source":key,
-				"target":"[Extra] " + key,
-				"value":output_requirements[key],
-			};
+			resource_tracker[tracker_key] = new ResourceEdge(
+				key,
+				"[Extra] " + key,
+				output_requirements[key],
+			);
 			// Store the number of extra values for hover text on the chart
 			generation_totals["[Extra] " + key] = output_requirements[key];
 		}
@@ -530,11 +548,11 @@ function generatelist() {
 		if (source in original_requirements) {
 
 			var final_tracker = source + "final";
-			resource_tracker[final_tracker] = {
-				"source": source,
-				"target": "[Final] " + source,
-				"value": -original_requirements[source],
-			};
+			resource_tracker[final_tracker] = new ResourceEdge(
+				source,
+				"[Final] " + source,
+				-original_requirements[source],
+			);
 
 			// Add in value of the non-extra resource
 			generation_totals["[Final] " + source] = -original_requirements[source];
@@ -558,7 +576,7 @@ function gather_requirements(): { [key: string]: number } {
 	var resources: { [key: string]:number } = {};
 
 	document.querySelectorAll(".desired_item").forEach((elem) => {
-		let key: string = elem.querySelector("input").getAttribute("aria-label");
+		let key: string = elem.querySelector("input")!.getAttribute("aria-label")!;
 		let value: string = (<HTMLInputElement>elem.querySelector(".desired_item_count")).value;
 
 		let numeric_value = parseInt(value);
@@ -574,14 +592,14 @@ function gather_requirements(): { [key: string]: number } {
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////// Text Instruction Creation ///////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-function generate_instructions(edges: { [key: string]: ResourceEdge }, generation_totals) {
+function generate_instructions(edges: { [key: string]: ResourceEdge }, generation_totals: { [key: string]: number }) {
 	var node_columns = get_node_columns(edges);
 
 	var instructions: HTMLElement = document.createElement("div");
 	var column_count = 0;
 
-	var inventory_resources = [];
-	var needed_resources = [];
+	var inventory_resources: HTMLDivElement[] = [];
+	var needed_resources: HTMLDivElement[] = [];
 	// List out raw resource numbers
 	for (let node in node_columns){
 		if (node_columns[node] === 0) {
@@ -610,7 +628,7 @@ function generate_instructions(edges: { [key: string]: ResourceEdge }, generatio
 	base_ingredients_title_elem.textContent = (inventory_resources.length > 0 ? "Missing " : "") + "Base Ingredients";
 	instructions.appendChild(base_ingredients_title_elem);
 	for (let needed_resource in needed_resources) {
-		needed_resources[needed_resource].appendTo(instructions);
+		instructions.appendChild(needed_resources[needed_resource]);
 	}
 
 
@@ -621,14 +639,14 @@ function generate_instructions(edges: { [key: string]: ResourceEdge }, generatio
 		instructions.appendChild(inventory_resources_title);
 
 		for (let inventory_resource in inventory_resources) {
-			inventory_resources[inventory_resource].appendTo(instructions);
+			instructions.appendChild(inventory_resources[inventory_resource]);
 		}
 	}
 
 	// Text Instructions for crafting
 	let text_instructions_title = document.createElement("div");
-	text_instructions.id = "text_instructions_title"; // TODO: this should be a class now that it effects multiple elements
-	text_instructions.textContent = "Text Instructions [Beta]";
+	text_instructions_title.id = "text_instructions_title"; // TODO: this should be a class now that it effects multiple elements
+	text_instructions_title.textContent = "Text Instructions [Beta]";
 	instructions.appendChild(text_instructions_title);
 
 	// Create the step by step instructions
@@ -654,23 +672,26 @@ function generate_instructions(edges: { [key: string]: ResourceEdge }, generatio
 	}
 
 	// Delete any old instructions
-	var text_instructions = document.getElementById("text_instructions");
-	while (text_instructions.firstChild) {
-		text_instructions.removeChild(text_instructions.firstChild);
+	while (text_instructions_elem.firstChild) {
+		text_instructions_elem.removeChild(text_instructions_elem.firstChild);
 	}
 
 	// Add the new instruction list to the page
-	text_instructions.appendChild(instructions);
+	text_instructions_elem.appendChild(instructions);
 
 }
 
-function build_instruction_line(edges, item_name, generation_totals) {
+function build_instruction_line(
+	edges: { [key: string]: ResourceEdge},
+	item_name: string,
+	generation_totals: { [key: string]: number}
+) {
 	if (!generation_totals[item_name]) {
 		return document.createElement("div");
 	}
 
 	// Build the input item sub string
-	var inputs = {};
+	var inputs: {[key: string]:number} = {};
 	for (let edge in edges){
 		// If this is pointing into the resource we are currently trying to craft
 		if (edges[edge].target === item_name && !(edges[edge].source.endsWith(inventory_label_suffix))) {
@@ -687,18 +708,17 @@ function build_instruction_line(edges, item_name, generation_totals) {
 	return recipe_type_functions[recipe_type](inputs, item_name, generation_totals[item_name], text_item_object);
 }
 
-function build_instruction_inventory_line(edges: { [key: string]: ResourceEdge }, item_name: string): HTMLElement {
-	let amount_to_take = 0;
+function build_instruction_inventory_line(
+	edges: { [key: string]: ResourceEdge },
+	item_name: string
+): HTMLElement {
+	let amount_to_take: number = 0;
 	for (let edge in edges){
 		// If this is pointing into the resource we are currently trying to take from the inventory.
 		if (edges[edge].target === item_name && (edges[edge].source.endsWith(inventory_label_suffix))) {
 			amount_to_take = edges[edge].value;
 			break;
 		}
-	}
-
-	if (!amount_to_take) {
-		return null;
 	}
 
 	let line_wrapper = document.createElement("div")
@@ -717,16 +737,20 @@ function build_instruction_inventory_line(edges: { [key: string]: ResourceEdge }
 }
 
 class ValueListElem {
-	name: string;
-	count: number
+	name: string = "";
+	count: number;
+
+	constructor (count: number) {
+		this.count = count
+	}
 }
 
-function build_unit_value_list(number: number, unit_name: string, item_name: string) {
+function build_unit_value_list(number: number, unit_name: string, item_name: string): ValueListElem[] {
 	if (number === 0) {
 		return [];
 	}
 	if (unit_name === null) {
-		return [{"name":null, "count":number}];
+		return [new ValueListElem(number)];
 	}
 
 	var unit = stack_sizes[unit_name];
@@ -734,17 +758,16 @@ function build_unit_value_list(number: number, unit_name: string, item_name: str
 	var quotient = Math.floor(number/unit_size);
 	var remainder = number % unit_size;
 
-	var value_list = [];
+	var value_list: ValueListElem[] = [];
 
 	if (quotient > 0) {
-		let value_list_element = new ValueListElem();
+		let value_list_element = new ValueListElem(quotient);
 		if (quotient > 1) {
 			value_list_element.name = unit.plural;
 		}
 		else {
 			value_list_element.name = unit_name;
 		}
-		value_list_element.count = quotient;
 		value_list = [value_list_element];
 
 	}
@@ -776,7 +799,7 @@ function get_unit_size(unit_name: string, item_name: string): number {
 }
 
 
-function text_item_object(count, name){
+function text_item_object(count: number, name: string): HTMLDivElement{
 	var item_object = document.createElement("div");
 	if (!count) {
 		return item_object;
@@ -789,7 +812,7 @@ function text_item_object(count, name){
 
 	let count_object = document.createElement("div");
 	count_object.classList.add("instruction_item_count");
-	count_object.textContent = count;
+	count_object.textContent = count.toString();
 
 	if (units !== "" && units !== undefined) {
 		var unit_value_list = build_unit_value_list(count, units, name);
@@ -847,8 +870,8 @@ function get_node_columns(edges: { [key: string]: ResourceEdge }) {
 	}
 
 	// Recursively populate the child count and parent counts via javascript closure magic
-	var child_counts: { [key: number]: number } = {};
-	var parent_counts: { [key: number]: number } = {};
+	var child_counts: { [key: string]: number } = {};
+	var parent_counts: { [key: string]: number } = {};
 
 	function populate_child_count(node: string){
 		if (!(node in child_counts)) {
@@ -903,12 +926,11 @@ function get_node_columns(edges: { [key: string]: ResourceEdge }) {
 	return parent_counts;
 }
 
-function get_columns(edges: { [key: string]: ResourceEdge }) {
-	let node_columns = get_node_columns(edges);
-	// { [key: number]: number}
+function get_columns(edges: { [key: string]: ResourceEdge }): { [key: number]: string[] } {
+	let node_columns: { [key: string]: number } = get_node_columns(edges);
 
 	// determine how many columns there should be
-	var column_count = 0;
+	let column_count = 0;
 	for (let node in node_columns) {
 		if (node_columns[node] + 1 > column_count) {
 			column_count = node_columns[node] + 1;
@@ -916,7 +938,7 @@ function get_columns(edges: { [key: string]: ResourceEdge }) {
 	}
 
 	// Create an array of those columns
-	var columns = Array(column_count);
+	let columns: { [key: number]: string[] } = Array(column_count);
 	for (let i = 0; i < column_count; i++){
 		columns[i] = [];
 	}
@@ -933,6 +955,52 @@ function get_columns(edges: { [key: string]: ResourceEdge }) {
 //////////////////////////////// Chart Creation ////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
+class ResourceNode {
+	public input: number = 0;
+	public output: number = 0;
+	public size: number = 0;
+	public column: number = 0;
+	public passthrough: boolean = false;
+	public passthrough_node_index: number | null = null; // TODO: Confirm this is correct
+	public incoming_edges: string[] = []; // List of edge key ids
+	public outgoing_edges: string[] = []; // List of edge key ids
+
+	public passthrough_edge_id: string = ""; // todo: figure out how this should be used
+
+	// Size and positions
+	public height: number = 0;
+	public y: number = 0;
+
+	node(input: number, output: number, size: number, column: number): ResourceNode {
+		this.input = input;
+		this.output = output;
+		this.size = size;
+		this.column = column;
+		return this
+	}
+
+	passthrough_node(
+		size: number,
+		column: number,
+		passthrough_node_index: number,
+		passthrough_edge_id: string,
+	): ResourceNode{
+		this.size = size;
+		this.column = column
+		this.passthrough_node_index = passthrough_node_index;
+		this.passthrough_edge_id = passthrough_edge_id;
+		this.passthrough = true;
+		return this;
+	}
+}
+
+interface RectangleMargin {
+	top: number,
+	right: number,
+	bottom: number,
+	left: number,
+}
+
 /******************************************************************************\
 | generate_chart                                                               |
 |                                                                              |
@@ -941,10 +1009,14 @@ function get_columns(edges: { [key: string]: ResourceEdge }) {
 | Arguments
 |   generation_events -
 \******************************************************************************/
-function generate_chart(edges: { [key: string]: ResourceEdge }, node_quantities, used_from_inventory) {
+function generate_chart(
+	edges: { [key: string]: ResourceEdge },
+	node_quantities: { [key: string]: number },
+	used_from_inventory: { [key: string]: number },
+) {
 
 	// Set the margins for the area that the nodes and edges can take up
-	var margin = {
+	var margin: RectangleMargin = {
 		top: 10,
 		right: 1,
 		bottom: 10,
@@ -952,7 +1024,7 @@ function generate_chart(edges: { [key: string]: ResourceEdge }, node_quantities,
 	};
 
 	// Reset the colors that have already been selected so we can get repeatable graphs
-	selected_colors = {};
+	color_lookup_cache = {};
 
 	// Set the space between the bottom of one node and the top of the one below it to 10px
 	var node_padding = 10;
@@ -961,10 +1033,10 @@ function generate_chart(edges: { [key: string]: ResourceEdge }, node_quantities,
 	var height = 800 - margin.top - margin.bottom;
 
 	// Get the matrix of nodes, sorted into an array of columns
-	let columns = get_columns(edges);
+	let columns: { [key: number]: string[] } = get_columns(edges);
 
 	// Create a representation of node objects
-	var nodes = {};
+	var nodes: { [key: string]: ResourceNode} = {};
 	for (let column_id in columns) {
 		for (let node_id in columns[column_id]) {
 			let node_name = columns[column_id][node_id];
@@ -984,16 +1056,12 @@ function generate_chart(edges: { [key: string]: ResourceEdge }, node_quantities,
 
 			let size = Math.max(output, input);
 
-			// console.log(node);
-			nodes[node_name] = {
-				"input": input,
-				"output": output,
-				"size": size,
-				"column": Number(column_id),
-				"passthrough": false,
-				"incoming_edges":[],
-				"outgoing_edges":[],
-			};
+			nodes[node_name] = new ResourceNode().node(
+				input,
+				output,
+				size,
+				Number(column_id),
+			);
 		}
 	}
 
@@ -1005,8 +1073,8 @@ function generate_chart(edges: { [key: string]: ResourceEdge }, node_quantities,
 
 		nodes[edge.target].incoming_edges.push(edge_id);
 		nodes[edge.source].outgoing_edges.push(edge_id);
-		edge.target_column = nodes[edge.target].column;
-		edge.source_column = nodes[edge.source].column;
+		//edge.target_column = ;
+		// edge.source_column = ;
 	}
 
 	// Find edges that span multiple columns and create fake nodes for them in
@@ -1016,19 +1084,19 @@ function generate_chart(edges: { [key: string]: ResourceEdge }, node_quantities,
 		let edge = edges[edge_id];
 		edge.passthrough_nodes = [];
 
-		var source_column_index = edge.source_column;
-		var target_column_index = edge.target_column;
+		let source_column_index = nodes[edge.target].column; //edge.source_column;
+		let target_column_index = nodes[edge.source].column; //edge.target_column;
 
-		for (let passthrough_column_index=source_column_index+1; passthrough_column_index<target_column_index; passthrough_column_index+=1) {
+		for (let passthrough_column_index = source_column_index+1; passthrough_column_index<target_column_index; passthrough_column_index+=1) {
 			var passthrough_node_id: string = edge_id + "_" + passthrough_column_index;
 
-			nodes[passthrough_node_id] = {
-				"size": edge.value,
-				"passthrough_node_index": edge.passthrough_nodes.length,
-				"passthrough_edge_id": edge_id,
-				"column":passthrough_column_index,
-				"passthrough": true,
-			};
+			nodes[passthrough_node_id] = new ResourceNode().passthrough_node(
+				edge.value,
+				passthrough_column_index,
+				edge.passthrough_nodes.length,
+				edge_id,
+			);
+
 			edge.passthrough_nodes.push(passthrough_node_id);
 			columns[passthrough_column_index].push(passthrough_node_id);
 		}
@@ -1062,7 +1130,15 @@ function generate_chart(edges: { [key: string]: ResourceEdge }, node_quantities,
 }
 
 
-function set_node_positions(iterations, columns, nodes, edges, value_scale, node_padding, svg_height) {
+function set_node_positions(
+	iterations: number,
+	columns: {[key: number]: string[] },
+	nodes: {[key: string]: ResourceNode},
+	edges: {[key: string]: ResourceEdge},
+	value_scale: number,
+	node_padding: number,
+	svg_height: number,
+) {
 	// Calculate Node Heights and Positions
 	for (let column_index in columns) {
 		var running_y = 0;
@@ -1082,10 +1158,15 @@ function set_node_positions(iterations, columns, nodes, edges, value_scale, node
 	}
 }
 
-function relax_columns_left_to_right(alpha, columns, nodes, edges) {
-	function weighted_source_sum(node) {
+function relax_columns_left_to_right(
+	alpha:number,
+	columns: {[key: number]: string[] },
+	nodes: {[key: string]: ResourceNode},
+	edges: {[key: string]: ResourceEdge},
+) {
+	function weighted_source_sum(node: ResourceNode): number {
 		var sum = 0;
-		if (node.passthrough === false) {
+		if (node.passthrough_node_index === null) {
 			for (let source_id in node.incoming_edges) {
 				var edge = edges[node.incoming_edges[source_id]];
 
@@ -1107,7 +1188,7 @@ function relax_columns_left_to_right(alpha, columns, nodes, edges) {
 		}
 		return sum;
 	}
-	function raw_source_sum(node) {
+	function raw_source_sum(node: ResourceNode): number {
 		// If the node is not a passthrough then return the sum of all of
 		// the source edges
 		if (node.passthrough === false) {
@@ -1136,10 +1217,15 @@ function relax_columns_left_to_right(alpha, columns, nodes, edges) {
 	}
 
 }
-function relax_columns_right_to_left(alpha, columns, nodes, edges) {
-	function weighted_target_sum(node) {
+function relax_columns_right_to_left(
+	alpha:number,
+	columns: {[key: number]: string[] },
+	nodes: {[key: string]: ResourceNode},
+	edges: {[key: string]: ResourceEdge},
+) {
+	function weighted_target_sum(node: ResourceNode): number {
 		var sum = 0;
-		if (node.passthrough === false) {
+		if (node.passthrough_node_index === null) {
 			for (let target_id in node.outgoing_edges) {
 				var edge = edges[node.outgoing_edges[target_id]];
 
@@ -1161,7 +1247,7 @@ function relax_columns_right_to_left(alpha, columns, nodes, edges) {
 		}
 		return sum;
 	}
-	function raw_target_sum(node) {
+	function raw_target_sum(node: ResourceNode): number {
 		// If the node is not a passthrough then return the sum of all of
 		// the source edges
 		if (node.passthrough === false) {
@@ -1177,8 +1263,7 @@ function relax_columns_right_to_left(alpha, columns, nodes, edges) {
 			return node.size;
 		}
 	}
-	columns = columns.slice().reverse();
-	for (let column_index in columns) {
+		for (let column_index in Object.keys(columns).reverse()) {
 		if (Number(column_index) === 0) {
 			continue;
 		}
@@ -1191,12 +1276,17 @@ function relax_columns_right_to_left(alpha, columns, nodes, edges) {
 
 }
 
-function y_midpoint(node) {
+function y_midpoint(node: ResourceNode): number {
 	return node.y + node.height / 2;
 }
 
-function resolve_node_collisions(columns, nodes, node_padding, svg_height) {
-	function y_comp(a, b) {
+function resolve_node_collisions(
+	columns: { [key: number]: string[] },
+	nodes: {[key: string]: ResourceNode},
+	node_padding: number,
+	svg_height: number,
+) {
+	function y_comp(a: string, b: string) {
 		return nodes[a].y - nodes[b].y;
 	}
 
@@ -1238,18 +1328,22 @@ function resolve_node_collisions(columns, nodes, node_padding, svg_height) {
 }
 
 
+interface Color {
+	r: number;
+	b: number;
+	g: number;
+}
 
-
-function hexToRgb(hex) {
+function hexToRgb(hex: string): Color {
 	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 	return result ? {
 		r: parseInt(result[1], 16),
 		g: parseInt(result[2], 16),
 		b: parseInt(result[3], 16),
-	} : null;
+	} : {r: 0, b: 0, g:0};
 }
 
-function color_darken(color) {
+function color_darken(color: Color): Color {
 	var k = 0.49;
 
 	return {
@@ -1259,7 +1353,7 @@ function color_darken(color) {
 	};
 }
 
-function color_string(color){
+function color_string(color: Color): string{
 	return "rgb("+color.r+","+color.g+","+color.b+")";
 }
 
@@ -1274,7 +1368,7 @@ function color_string(color){
 | same key will return the same color but this is not necessarily the case for
 | a new chart generation.
 \******************************************************************************/
-var all_colors = [
+const all_colors = [
 	hexToRgb("1f77b4"),
 	hexToRgb("aec7e8"),
 	hexToRgb("ff7f0e"),
@@ -1296,8 +1390,8 @@ var all_colors = [
 	hexToRgb("7f7f7f"),
 	hexToRgb("c7c7c7"),
 ];
-var selected_colors = {};
-function get_color(key) {
+let color_lookup_cache: { [key: string]:number } = {};
+function get_color(key: string) {
 	// Strip out Extra and Final prefixes
 	key = key.replace(/^\[Extra\] /, "");
 	key = key.replace(/^\[Final\] /, "");
@@ -1306,10 +1400,10 @@ function get_color(key) {
 	key = key.replace(/ .*/, "");
 
 	// Lookup or set the color that is attached to this key
-	var index = selected_colors[key];
+	var index = color_lookup_cache[key];
 	if (index === undefined) {
-		index = Object.keys(selected_colors).length % all_colors.length;
-		selected_colors[key] = index;
+		index = Object.keys(color_lookup_cache).length % all_colors.length;
+		color_lookup_cache[key] = index;
 	}
 
 	return all_colors[index];
@@ -1323,15 +1417,22 @@ function get_color(key) {
 | draw the chart itself
 \******************************************************************************/
 class CachedChartData {
-	columns: any[];
-	nodes;
-	edges;
-	height;
-	value_scale;
-	margin;
+	columns: { [key: number]: string[] } = {};
+	nodes: { [key: string]: ResourceNode } = {};
+	edges: { [key: string]: ResourceEdge } = {};
+	height: number = 0;
+	value_scale: number = 0;
+	margin: RectangleMargin = {top: 0, right: 0, bottom: 0, left: 0};
 }
 var cached_chart_data: CachedChartData;
-function layout_chart(columns: any[], nodes, edges, height, value_scale, margin) {
+function layout_chart(
+	columns: { [key: number]: string[] },
+	nodes: { [key: string]: ResourceNode },
+	edges: { [key: string]: ResourceEdge } ,
+	height: number,
+	value_scale: number,
+	margin: RectangleMargin
+) {
 	cached_chart_data = {
 		columns: columns,
 		nodes: nodes,
@@ -1346,8 +1447,8 @@ window.onresize = function() {
 	relayout_chart();
 };
 
-const chart_elem: HTMLElement = document.getElementById("chart");
-const content_elem: HTMLElement = document.getElementById("content");
+const chart_elem: HTMLElement = document.getElementById("chart")!;
+const content_elem: HTMLElement = document.getElementById("content")!;
 
 
 function relayout_chart(){
@@ -1367,10 +1468,10 @@ function relayout_chart(){
 	var node_width = 20;
 
 	// Determine the space between the left hand side of each node column
-	var node_spacing: number = (width-node_width) / (columns.length-1);
+	var node_spacing: number = (width-node_width) / (Object.keys(columns).length - 1);
 
 	// Empty the chart immediately
-	while (chart_elem.firstChild) {
+	while (chart_elem.lastChild) {
 		chart_elem.removeChild(chart_elem.lastChild);
 	}
 
@@ -1391,7 +1492,8 @@ function relayout_chart(){
 
 
 	// Draw all of the node lines
-	for (let column_index = 0; column_index < columns.length; column_index++) {
+	for (let column_index_string in columns) {
+		let column_index = parseInt(column_index_string);
 		var x = node_spacing * column_index;
 		for (let node_index in columns[column_index]) {
 			var node_id = columns[column_index][node_index];
@@ -1425,7 +1527,7 @@ function relayout_chart(){
 
 				var text_offset = node_width + 6;
 				var text_anchor = "start";
-				if (column_index >= columns.length/2){
+				if (column_index >= Object.keys(columns).length/2){
 					text_offset = -6;
 					text_anchor = "end";
 				}
@@ -1444,7 +1546,7 @@ function relayout_chart(){
 	}
 
 	// Determine offset of all the edge connections
-	function source_y(edge_id) {
+	function source_y(edge_id: string) {
 		var edge = edges[edge_id];
 		// if this is a passthrough edge get the last passthrough node instead of the source
 		if (edge.passthrough_nodes.length > 0) {
@@ -1454,11 +1556,11 @@ function relayout_chart(){
 			return nodes[edge.source].y;
 		}
 	}
-	function source_y_comp(a, b) {
+	function source_y_comp(a: string, b: string) {
 		return source_y(a) - source_y(b);
 	}
 
-	function target_y(edge_id) {
+	function target_y(edge_id: string) {
 		var edge = edges[edge_id];
 		// if this is a passthrough edge get the first passthrough node instead of the target
 		if (edge.passthrough_nodes.length > 0) {
@@ -1468,7 +1570,7 @@ function relayout_chart(){
 			return nodes[edge.target].y;
 		}
 	}
-	function target_y_comp(a, b) {
+	function target_y_comp(a: string, b: string) {
 		return target_y(a) - target_y(b);
 	}
 	for (let node_id in nodes) {
@@ -1537,15 +1639,15 @@ function relayout_chart(){
 	var chart_height = height + margin.top + margin.bottom;
 
 
-	chart_elem.setAttribute("width", chart_width);
-	chart_elem.setAttribute("height", chart_height);
+	chart_elem.setAttribute("width", chart_width.toString());
+	chart_elem.setAttribute("height", chart_height.toString());
 	chart_elem.appendChild(svg);
 }
 
 
 
 
-function get_input_size(edges, output){
+function get_input_size(edges: { [key: string]: ResourceEdge }, output: string): number{
 
 	var inputs_size = 0;
 	for (let edge in edges){
@@ -1561,8 +1663,8 @@ function get_input_size(edges, output){
 /////////////////////////////// Hover Text Logic ///////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 // How far away from the mouse should the hoverbox be
-var hover_x_offset = 10;
-var hover_y_offset = -10;
+let hover_x_offset: number = 10;
+let hover_y_offset: number = -10;
 
 document.addEventListener("mousemove", function(e: MouseEvent){
 	// If the hoverbox is not hanging over the side of the screen when rendered, render normally
@@ -1643,16 +1745,16 @@ document.addEventListener("mousemove", function(e: MouseEvent){
 /////////////////////////////// Recipe Switching ///////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
+
 /******************************************************************************\
 |
 \******************************************************************************/
-function switch_recipe(item_name: string, event) {
+function switch_recipe(item_name: string, event: MouseEvent) {
 	var recipe_selector = recipe_select_elem;
-	var recipe_selector_list = document.getElementById("recipe_selector_list");
 
 	// Clear the recipe selector list
-	while (recipe_selector_list.firstChild) {
-		recipe_selector_list.removeChild(recipe_selector_list.lastChild);
+	while (recipe_selector_list_elem.lastChild) {
+		recipe_selector_list_elem.removeChild(recipe_selector_list_elem.lastChild);
 	}
 
 	for (let i = 0; i < recipe_json[item_name].length; i++) {
@@ -1699,7 +1801,7 @@ function switch_recipe(item_name: string, event) {
 		clear_div.classList.add("clear");
 		recipe_item.appendChild(clear_div)
 
-		recipe_selector_list.appendChild(recipe_item);
+		recipe_selector_list_elem.appendChild(recipe_item);
 	}
 
 	recipe_selector.style.opacity = "1";
@@ -1722,16 +1824,15 @@ function switch_recipe(item_name: string, event) {
 		top_offset = event.pageY - menu_y_offset - recipe_selector.offsetHeight;
 	}
 
-	recipe_selector.style.top = top_offset;
-	recipe_selector.style.left = left_offset;
+	recipe_selector.style.top = top_offset.toString();
+	recipe_selector.style.left = left_offset.toString();
 }
 
 function switch_inventory_amount_input(item_name: string) {
-	inventory_amount_input_elem.setAttribute("item_name", item_name);
-	inventory_amount_input_elem.value = inventory[item_name];
+	inventory_amount_input_elem.setAttribute("item_name", item_name); //???
+	inventory_amount_input_elem.value = inventory[item_name].toString();
 }
 
-let recipe_select_elem = document.getElementById("recipe_select");
 recipe_select_elem.addEventListener("mouseleave", function() {
 	recipe_select_elem.style.opacity = "0";
 	recipe_select_elem.style.pointerEvents = "none";
@@ -1740,16 +1841,24 @@ recipe_select_elem.addEventListener("mouseleave", function() {
 let inventory_amount_input_elem = <HTMLInputElement>document.getElementById("inventory_amount_input");
 
 inventory_amount_input_elem.addEventListener("change", function(){
-	inventory[inventory_amount_input_elem.getAttribute("item_name")] = parseInt(inventory_amount_input_elem.value);
-	export_inventory_to_localstorage();
-	export_inventory_to_textbox();
+	let item_name = inventory_amount_input_elem.getAttribute("item_name");
+	if (item_name === null) {
+		// TODO: create a nicer method of identification where this can never
+		// be true. Some sort of closure that has this value set already.
+		console.error("No actively selected item name");
+	}
+	else {
+		inventory[item_name] = parseInt(inventory_amount_input_elem.value);
+		export_inventory_to_localstorage();
+		export_inventory_to_textbox();
+	}
 });
 
 ////////////////////////////////////////////////////////////////////////
 /////////////////////// Selection and modification of raw resources/////
 ////////////////////////////////////////////////////////////////////////
 
-var alternate_recipe_selections = {};
+var alternate_recipe_selections: { [key: string]: number}  = {};
 
 function set_recipe_index(node_name: string, recipe_index: number) {
 	alternate_recipe_selections[node_name] = recipe_index;
@@ -1784,9 +1893,9 @@ function get_recipe(node_name: string) {
 	return recipe_json[node_name][get_recipe_index(node_name)];
 }
 
-function find_loop_from_node(start_node) {
+function find_loop_from_node(start_node: string) {
 	// Generate Light Node Mapping
-	var nodes = {};
+	var nodes: {[key: string]: string[]} = {};
 	for (let node in recipe_json)  {
 		// Add all the edges
 		nodes[node] = [];
@@ -1822,8 +1931,8 @@ function find_loop_from_node(start_node) {
 | node - which node to search from (used for recursion)
 | match - which node, if found, would indicate a loop
 \******************************************************************************/
-function depth_first_search(nodes, node, match) {
-	var changes = [];
+function depth_first_search(nodes:{[key: string]: string[]} , node: string, match: string): string[] {
+	let changes: string[] = [];
 
 	// loop through recipe requirements
 	for (let i in nodes[node]) {
