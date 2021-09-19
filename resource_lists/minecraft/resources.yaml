@@ -7562,7 +7562,7 @@ resources:
 
   Cookie:
     recipes:
-    - output: 1
+    - output: 8
       recipe_type: Crafting
       requirements:
         Wheat: -2
@@ -8611,15 +8611,15 @@ resources:
 
   Bee Hive:
     recipes:
-    - recipe_type: Raw Resource
-
-  Bee Nest:
-    recipes:
     - output: 1
       recipe_type: Crafting
       requirements:
         Any Planks: -6
         Honeycomb: -3
+    - recipe_type: Raw Resource
+
+  Bee Nest:
+    recipes:
     - recipe_type: Raw Resource
 
   Honey Bottle:
