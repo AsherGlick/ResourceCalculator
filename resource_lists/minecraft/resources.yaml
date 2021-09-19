@@ -5887,7 +5887,7 @@ resources:
 
   Oak Fence Gate:
     recipes:
-    - output: 2
+    - output: 1
       recipe_type: Crafting
       requirements:
         Stick: -4
@@ -5896,7 +5896,7 @@ resources:
 
   Spruce Fence Gate:
     recipes:
-    - output: 2
+    - output: 1
       recipe_type: Crafting
       requirements:
         Stick: -4
@@ -5905,7 +5905,7 @@ resources:
 
   Birch Fence Gate:
     recipes:
-    - output: 2
+    - output: 1
       recipe_type: Crafting
       requirements:
         Stick: -4
@@ -5914,7 +5914,7 @@ resources:
 
   Jungle Fence Gate:
     recipes:
-    - output: 2
+    - output: 1
       recipe_type: Crafting
       requirements:
         Stick: -4
@@ -5923,7 +5923,7 @@ resources:
 
   Acacia Fence Gate:
     recipes:
-    - output: 2
+    - output: 1
       recipe_type: Crafting
       requirements:
         Stick: -4
@@ -5932,7 +5932,7 @@ resources:
 
   Dark Oak Fence Gate:
     recipes:
-    - output: 2
+    - output: 1
       recipe_type: Crafting
       requirements:
         Stick: -4
@@ -5941,7 +5941,7 @@ resources:
 
   Crimson Fence Gate:
     recipes:
-    - output: 2
+    - output: 1
       recipe_type: Crafting
       requirements:
         Stick: -4
@@ -5950,7 +5950,7 @@ resources:
 
   Warped Fence Gate:
     recipes:
-    - output: 2
+    - output: 1
       recipe_type: Crafting
       requirements:
         Stick: -4
@@ -7007,7 +7007,7 @@ resources:
     - output: 1
       recipe_type: Smelting
       requirements:
-        Clay: -1
+        Clay Ball: -1
         Fuel: -1
     - recipe_type: Raw Resource
 

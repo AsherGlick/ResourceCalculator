@@ -837,7 +837,6 @@ def copy_common_resources() -> None:
     shutil.copyfile("core/calculator.css", "output/calculator.css")
     uglify_copyfile("core/calculator.js", "output/calculator.js")
     uglify_copyfile("core/yaml_export.js", "output/yaml_export.js")
-    shutil.copyfile("core/thirdparty/jquery-3.3.1.min.js", "output/jquery.js")
     shutil.copyfile("core/logo.png", "output/logo.png")
     shutil.copyfile("core/.htaccess", "output/.htaccess")
     shutil.copyfile("core/add_game.png", "output/add_game.png")
