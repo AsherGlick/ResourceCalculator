@@ -650,14 +650,14 @@ if (!String.prototype.startsWith) {
             var smalltext = " (";
             for (var i = 0; i < unit_value_list.length; i++) {
                 smalltext += join_plus_character + unit_value_list[i].count;
-                if (unit_value_list[i].name !== null) {
+                if (unit_value_list[i].name !== "") {
                     smalltext += " " + unit_value_list[i].name;
                 }
                 join_plus_character = " + ";
             }
             smalltext += ")";
             // If there is more then one unit, or only one that is not default
-            if (unit_value_list.length > 1 || unit_value_list[0].name !== null) {
+            if (unit_value_list.length > 1 || unit_value_list[0].name !== "") {
                 var small_unit_elem = document.createElement("span");
                 small_unit_elem.classList.add("small_unit_name");
                 small_unit_elem.textContent = smalltext;

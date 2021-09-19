@@ -775,7 +775,6 @@ function build_unit_value_list(number: number, unit_name: string, item_name: str
 			value_list_element.name = unit_name;
 		}
 		value_list = [value_list_element];
-
 	}
 
 	// recurse down all the other possible units until
@@ -828,7 +827,7 @@ function text_item_object(count: number, name: string): HTMLDivElement{
 		for (let i = 0; i < unit_value_list.length; i++){
 			smalltext += join_plus_character + unit_value_list[i].count;
 
-			if (unit_value_list[i].name !== null) {
+			if (unit_value_list[i].name !== "") {
 				smalltext += " " + unit_value_list[i].name;
 			}
 			join_plus_character=" + ";
@@ -836,7 +835,7 @@ function text_item_object(count: number, name: string): HTMLDivElement{
 		smalltext += ")";
 
 		// If there is more then one unit, or only one that is not default
-		if (unit_value_list.length > 1 || unit_value_list[0].name !== null) {
+		if (unit_value_list.length > 1 || unit_value_list[0].name !== "") {
 			let small_unit_elem = document.createElement("span");
 			small_unit_elem.classList.add("small_unit_name");
 			small_unit_elem.textContent = smalltext;
