@@ -23,7 +23,7 @@ from pylib.yaml_token_load import ordered_load
 
 
 # CLI Argument Flags
-FLAG_skip_js_lint = False
+# FLAG_skip_js_lint = False
 FLAG_skip_index = False
 FLAG_skip_gz_compression = False
 FLAG_skip_image_compress = False
@@ -690,7 +690,7 @@ def create_calculator_page(
 def publish_calculator_plugins(
     calculator_folder: str,
     source_folder: str
-)  -> None:
+) -> None:
     plugin_output_folder = os.path.join(calculator_folder, "plugins")
     plugin_source_folder = os.path.join(source_folder, "plugins")
 
@@ -705,7 +705,7 @@ def publish_calculator_plugins(
             should_publish_plugins = newest_file > os.path.getctime(plugin_output_folder)
 
         if should_publish_plugins:
-            shutil.copytree(plugin_source_folder, plugin_output_folder) 
+            shutil.copytree(plugin_source_folder, plugin_output_folder, dirs_exist_ok=True)
 
 # [{
 #         "name":
@@ -850,6 +850,10 @@ def ends_with_any(string: str, endings: List[str]) -> bool:
     return False
 
 
+def build_typescript(folder: str) -> None:
+    subprocess.run(["node_modules/.bin/tsc", "--project", "core/calculator.ts"])
+
+
 ################################################################################
 # copy_common_resources
 #
@@ -858,6 +862,7 @@ def ends_with_any(string: str, endings: List[str]) -> bool:
 ################################################################################
 def copy_common_resources() -> None:
     shutil.copyfile("core/calculator.css", "output/calculator.css")
+    build_typescript("core/calculator.ts/")
     uglify_copyfile("core/calculator.js", "output/calculator.js")
     uglify_copyfile("core/yaml_export.js", "output/yaml_export.js")
     shutil.copyfile("core/logo.png", "output/logo.png")
@@ -876,7 +881,7 @@ def main() -> None:
     parser.add_argument('--watch', action='store_true', help="Watch source files and automatically rebuild when they change")
     parser.add_argument('--draft', action='store_true', help="Enable all speed up flags for dev builds")
 
-    parser.add_argument('--no-jslint', action='store_true', help="Speed up dev-builds by skipping linting javascript files")
+    # parser.add_argument('--no-jslint', action='store_true', help="Speed up dev-builds by skipping linting javascript files")
     parser.add_argument('--no-uglify-js', action='store_true', help="Speed up dev-builds by skipping javascript compression")
     parser.add_argument('--no-gz', action='store_true', help="Speed up dev-builds by skipping gz text compression")
     parser.add_argument('--no-index', action='store_true', help="Speed up dev-builds by skipping building the index page")
@@ -887,7 +892,7 @@ def main() -> None:
     parser.add_argument('--force-image', action='store_true', help="Force images to be rebuilt even if they are newer then their source files")
 
     global FLAG_skip_index
-    global FLAG_skip_js_lint
+    # global FLAG_skip_js_lint
     global FLAG_skip_gz_compression
     global FLAG_skip_image_compress
     global FLAG_force_image
@@ -897,8 +902,8 @@ def main() -> None:
     if (args.watch):
         pass
 
-    if args.no_jslint or args.draft:
-        FLAG_skip_js_lint = True
+    # if args.no_jslint or args.draft:
+        # FLAG_skip_js_lint = True
 
     if args.no_uglify_js or args.draft:
         set_skip_uglify_flag()
@@ -924,8 +929,8 @@ def main() -> None:
         calculator_page_sublist = args.limit_files
         print("Only building", ", ".join(calculator_page_sublist))
 
-    if not FLAG_skip_js_lint:
-        lint_javascript()
+    # if not FLAG_skip_js_lint:
+    #     lint_javascript()
 
     if not os.path.exists("output"):
         os.makedirs("output")
