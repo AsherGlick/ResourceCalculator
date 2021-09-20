@@ -4,6 +4,7 @@ import htmlmin  # type: ignore
 import json
 import math
 import os
+
 import re
 import shutil
 import subprocess
@@ -27,7 +28,7 @@ FLAG_skip_index = False
 FLAG_skip_gz_compression = False
 FLAG_skip_image_compress = False
 FLAG_force_image = False
-FLAG_no_plugins = False
+FLAG_skip_plugins = False
 
 
 ################################################################################
@@ -693,7 +694,7 @@ def publish_calculator_plugins(
     plugin_output_folder = os.path.join(calculator_folder, "plugins")
     plugin_source_folder = os.path.join(source_folder, "plugins")
 
-    if os.path.exists(plugin_source_folder) and not FLAG_no_plugins:
+    if os.path.exists(plugin_source_folder) and not FLAG_skip_plugins:
         should_publish_plugins = True
 
         if os.path.exists(plugin_output_folder):
@@ -890,7 +891,7 @@ def main() -> None:
     global FLAG_skip_gz_compression
     global FLAG_skip_image_compress
     global FLAG_force_image
-    global FLAG_no_plugins
+    global FLAG_skip_plugins
 
     args = parser.parse_args()
     if (args.watch):
@@ -915,7 +916,7 @@ def main() -> None:
         FLAG_force_image = True
 
     if args.no_plugins or args.draft:
-        FLAG_no_plugins = True
+        FLAG_skip_plugins = True
 
     calculator_page_sublist = []
     if len(args.limit_files) >= 1:
