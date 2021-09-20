@@ -1456,7 +1456,7 @@ const content_elem: HTMLElement = document.getElementById("content")!;
 
 
 function relayout_chart(){
-	if (Object.keys(cached_chart_data).length === 0) {
+	if (cached_chart_data === undefined) {
 		return;
 	}
 	let columns = cached_chart_data.columns;
