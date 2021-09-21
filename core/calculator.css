@@ -250,6 +250,20 @@ body {
 	float: left;
 }
 
+.inventory_value_field {
+	width: 100%;
+	box-sizing:border-box;
+	padding: 5px;
+	margin: 0;
+	color: #000;
+	font-family: sans-serif;
+	background-color: #fff;
+	border: 2px solid #8b90a1;
+	font-size: 1em;
+	-moz-appearance: textfield;
+	border-radius: 5px;
+}
+
 /*////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 // Flow chart styling*/

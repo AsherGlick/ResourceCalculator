@@ -47,6 +47,7 @@ const hide_unused_checkbox_elem: HTMLInputElement = <HTMLInputElement>document.g
 const hide_unused_checkbox_label_elem: HTMLElement = document.getElementById("unused_hide_checkbox_label")!;
 const recipe_selector_list_elem = document.getElementById("recipe_selector_list")!;
 const recipe_select_elem = document.getElementById("recipe_select")!;
+const inventory_amount_input_elem = <HTMLInputElement>document.getElementById("inventory_amount_input");
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////// Header Bar Logics ///////////////////////////////
@@ -1846,7 +1847,6 @@ recipe_select_elem.addEventListener("mouseleave", function() {
 	recipe_select_elem.style.pointerEvents = "none";
 });
 
-let inventory_amount_input_elem = <HTMLInputElement>document.getElementById("inventory_amount_input");
 
 inventory_amount_input_elem.addEventListener("change", function(){
 	let item_name = inventory_amount_input_elem.getAttribute("item_name");
@@ -1861,6 +1861,11 @@ inventory_amount_input_elem.addEventListener("change", function(){
 		export_inventory_to_textbox();
 	}
 });
+
+inventory_amount_input_elem.addEventListener("focus", function() {
+	this.select();
+});
+
 
 ////////////////////////////////////////////////////////////////////////
 /////////////////////// Selection and modification of raw resources/////
