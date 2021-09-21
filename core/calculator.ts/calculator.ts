@@ -102,6 +102,8 @@ function initilize_all_items() {
 
 		// When clicking on the box focus the text box
 		item.addEventListener("click", function() {
+			item_input_box.style.display = "block";
+			console.log("showing item");
 			item_input_box.focus();
 		});
 
@@ -290,6 +292,7 @@ function load() {
 			var value = decodeURIComponent(split[1]);
 			let desired_item = <HTMLInputElement>document.getElementById(id);
 			desired_item.value = value;
+			desired_item.style.display = "block";
 			set_textbox_background(desired_item);
 		}
 		// check the hide unused checkbox

@@ -26,7 +26,7 @@ body {
 	transition: outline .1s linear;
 	border-top: 2px solid #CBCBCB;
 	border-left: 2px solid #CBCBCB;
-
+	cursor: text;
 }
 
 .desired_item_input_focused {
@@ -268,9 +268,7 @@ body {
 ////////////////////////////////////////////////////////////////////////////////
 // Flow chart styling*/
 
-  #chart {
-	// height: 500px;
-  }
+  #chart {}
 
   .node rect {
 	cursor: move;
@@ -503,6 +501,7 @@ body {
 
 .desired_item_count {
 	font-family: sans-serif;
+	display: none;
 }
 
 
