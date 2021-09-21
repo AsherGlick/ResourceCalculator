@@ -29,7 +29,7 @@
 	</head>
 	<body>
 		<div class="header_bar">
-			<a href="/" onClick="window.location.hash=''; window.location.reload()"><div class="home_button_logo">&nbsp;</div></a>
+			<a href="/" onClick="window.location.hash=''; window.location.reload()" aria-label="Home"><div class="home_button_logo">&nbsp;</div></a>
 			<a href="#" id="reset_item_count"><div class="home_button"> Reset Item Counts</div></a>
 			<a href="mailto:admin@resourcecalculator.com?Subject=Resource%20Calculator%20Issue"><div class="home_button">Report An Issue</div></a>
 			<a href="https://github.com/AsherGlick/ResourceCalculator/blob/master/README.md"><div class="home_button">Contribute</div></a>
@@ -101,7 +101,7 @@
 			</div>
 
 			<!-- The button that the user will press to generate the sankey chart -->
-			<div class="generate_button" id="generatelist">
+			<div class="generate_button" id="generatelist" tabindex="0">
 			    <span>Calculate Resources</span>
 			</div>
 
@@ -146,7 +146,7 @@
 				Inventory Amount
 			</div>
 			<div id="inventory_amount_input_wrapper">
-				<input type="number" id="inventory_amount_input"/>
+				<input type="number" id="inventory_amount_input" aria-label="Inventory Amount" class="inventory_value_field"/>
 			</div>
 		</div>
 
