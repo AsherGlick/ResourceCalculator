@@ -25,3 +25,8 @@ package-lock.json
 __pycache__/
 
 profiledata.prof
+
+
+# Generated js from typescript
+core/calculator.js
+core/calculator.js.map

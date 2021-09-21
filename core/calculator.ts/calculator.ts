@@ -47,6 +47,7 @@ const hide_unused_checkbox_elem: HTMLInputElement = <HTMLInputElement>document.g
 const hide_unused_checkbox_label_elem: HTMLElement = document.getElementById("unused_hide_checkbox_label")!;
 const recipe_selector_list_elem = document.getElementById("recipe_selector_list")!;
 const recipe_select_elem = document.getElementById("recipe_select")!;
+const inventory_amount_input_elem = <HTMLInputElement>document.getElementById("inventory_amount_input");
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////// Header Bar Logics ///////////////////////////////
@@ -101,6 +102,8 @@ function initilize_all_items() {
 
 		// When clicking on the box focus the text box
 		item.addEventListener("click", function() {
+			item_input_box.style.display = "block";
+			console.log("showing item");
 			item_input_box.focus();
 		});
 
@@ -289,6 +292,7 @@ function load() {
 			var value = decodeURIComponent(split[1]);
 			let desired_item = <HTMLInputElement>document.getElementById(id);
 			desired_item.value = value;
+			desired_item.style.display = "block";
 			set_textbox_background(desired_item);
 		}
 		// check the hide unused checkbox
@@ -593,6 +597,16 @@ function gather_requirements(): { [key: string]: number } {
 ////////////////////////// Text Instruction Creation ///////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 function generate_instructions(edges: { [key: string]: ResourceEdge }, generation_totals: { [key: string]: number }) {
+	// Delete any old instructions
+	while (text_instructions_elem.firstChild) {
+		text_instructions_elem.removeChild(text_instructions_elem.firstChild);
+	}
+
+	// Exit early if there is nothing to generate
+	if (Object.keys(generation_totals).length === 0) {
+		return;
+	}
+
 	var node_columns = get_node_columns(edges);
 
 	var instructions: HTMLElement = document.createElement("div");
@@ -669,11 +683,6 @@ function generate_instructions(edges: { [key: string]: ResourceEdge }, generatio
 		var line_break = document.createElement("div");
 		line_break.classList.add("instruction_line_break");
 		instructions.appendChild(line_break);
-	}
-
-	// Delete any old instructions
-	while (text_instructions_elem.firstChild) {
-		text_instructions_elem.removeChild(text_instructions_elem.firstChild);
 	}
 
 	// Add the new instruction list to the page
@@ -1019,6 +1028,15 @@ function generate_chart(
 	node_quantities: { [key: string]: number },
 	used_from_inventory: { [key: string]: number },
 ) {
+
+	if(Object.keys(node_quantities).length === 0) {
+		console.log("Nothing to render");
+
+		// clear cache
+		cached_chart_data = undefined;
+		relayout_chart();
+		return;
+	}
 
 	// Set the margins for the area that the nodes and edges can take up
 	var margin: RectangleMargin = {
@@ -1428,7 +1446,7 @@ class CachedChartData {
 	value_scale: number = 0;
 	margin: RectangleMargin = {top: 0, right: 0, bottom: 0, left: 0};
 }
-var cached_chart_data: CachedChartData;
+let cached_chart_data: CachedChartData|undefined;
 function layout_chart(
 	columns: string[][],
 	nodes: { [key: string]: ResourceNode },
@@ -1456,9 +1474,16 @@ const content_elem: HTMLElement = document.getElementById("content")!;
 
 
 function relayout_chart(){
-	if (Object.keys(cached_chart_data).length === 0) {
+	// Empty the chart immediately.
+	while (chart_elem.lastChild) {
+		chart_elem.removeChild(chart_elem.lastChild);
+	}
+
+	// If there is no chart to render, then stop early.
+	if (cached_chart_data === undefined) {
 		return;
 	}
+
 	let columns = cached_chart_data.columns;
 	var nodes = cached_chart_data.nodes;
 	var edges = cached_chart_data.edges;
@@ -1474,10 +1499,6 @@ function relayout_chart(){
 	// Determine the space between the left hand side of each node column
 	var node_spacing: number = (width-node_width) / (columns.length - 1);
 
-	// Empty the chart immediately
-	while (chart_elem.lastChild) {
-		chart_elem.removeChild(chart_elem.lastChild);
-	}
 
 
 	// Create the new SVG object that will represent our chart
@@ -1846,7 +1867,6 @@ recipe_select_elem.addEventListener("mouseleave", function() {
 	recipe_select_elem.style.pointerEvents = "none";
 });
 
-let inventory_amount_input_elem = <HTMLInputElement>document.getElementById("inventory_amount_input");
 
 inventory_amount_input_elem.addEventListener("change", function(){
 	let item_name = inventory_amount_input_elem.getAttribute("item_name");
@@ -1861,6 +1881,11 @@ inventory_amount_input_elem.addEventListener("change", function(){
 		export_inventory_to_textbox();
 	}
 });
+
+inventory_amount_input_elem.addEventListener("focus", function() {
+	this.select();
+});
+
 
 ////////////////////////////////////////////////////////////////////////
 /////////////////////// Selection and modification of raw resources/////
