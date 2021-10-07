@@ -677,7 +677,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Block of Copper: -4
-    - output: 1
+    - output: 4
       recipe_type: Cutting
       requirements:
         Block of Copper: -1
@@ -689,7 +689,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Exposed Copper: -4
-    - output: 1
+    - output: 4
       recipe_type: Cutting
       requirements:
         Exposed Copper: -1
@@ -705,7 +705,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Weathered Copper: -4
-    - output: 1
+    - output: 4
       recipe_type: Cutting
       requirements:
         Weathered Copper: -1
@@ -725,7 +725,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Oxidized Copper: -4
-    - output: 1
+    - output: 4
       recipe_type: Cutting
       requirements:
         Oxidized Copper: -1
@@ -961,7 +961,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Waxed Block of Copper: -4
-    - output: 1
+    - output: 4
       recipe_type: Cutting
       requirements:
         Waxed Block of Copper: -1
@@ -978,7 +978,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Waxed Exposed Copper: -4
-    - output: 1
+    - output: 4
       recipe_type: Cutting
       requirements:
         Waxed Exposed Copper: -1
@@ -995,7 +995,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Waxed Weathered Copper: -4
-    - output: 1
+    - output: 4
       recipe_type: Cutting
       requirements:
         Waxed Weathered Copper: -1
@@ -1012,7 +1012,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Waxed Oxidized Copper: -4
-    - output: 1
+    - output: 4
       recipe_type: Cutting
       requirements:
         Waxed Oxidized Copper: -1
