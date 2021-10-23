@@ -77,5 +77,3 @@ globals:
   recipe_json: true
   recipe_type_functions: true
   stack_sizes: true
-  jQuery: true
-  d3: true

@@ -2,7 +2,8 @@
   "dependencies": {},
   "devDependencies": {
     "eslint": "^5.16.0",
-    "terser": "^4.0.0"
+    "terser": "^4.0.0",
+    "typescript": "^4.4.3"
   },
   "license": "SEE LICENSE IN /LICENSE",
   "repository": "https://github.com/AsherGlick/ResourceCalculator"

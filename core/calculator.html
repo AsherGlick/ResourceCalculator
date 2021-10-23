@@ -8,8 +8,6 @@
 		<meta name="HandheldFriendly" content="true" />
 		<meta name="MobileOptimized" content="320" />
 		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no" />
-		<script src = "../jquery.js" type = "text/javascript"/></script>
-		<script src = "../calculator.js" type = "text/javascript"/></script>
 
 		<style>
 			.item {
@@ -31,7 +29,7 @@
 	</head>
 	<body>
 		<div class="header_bar">
-			<a href="/" onClick="window.location.hash=''; window.location.reload()"><div class="home_button_logo">&nbsp;</div></a>
+			<a href="/" onClick="window.location.hash=''; window.location.reload()" aria-label="Home"><div class="home_button_logo">&nbsp;</div></a>
 			<a href="#" id="reset_item_count"><div class="home_button"> Reset Item Counts</div></a>
 			<a href="mailto:admin@resourcecalculator.com?Subject=Resource%20Calculator%20Issue"><div class="home_button">Report An Issue</div></a>
 			<a href="https://github.com/AsherGlick/ResourceCalculator/blob/master/README.md"><div class="home_button">Contribute</div></a>
@@ -52,16 +50,16 @@
 
 		<div id="content" class="content">
 			<div id="content_field" class="menu_style">
-				<!--<div id="inventory_import_export">
+				<div id="inventory_import_export">
 					<input type="button" class="inventory_import_export_toggle" title="&#9587;" value="&#9587;"/>
 					<textarea id="inventory_import_text" class="inventory_import_export_textarea" placeholder="Inventory as JSON object" ></textarea>
 					<p id="inventory_import_error" class="inventory_import_error hidden">ERROR: The inventory is no valid JSON. The inventory has not been updated.</p>
 				</div>
-				<input type="button" class="inventory_import_export_toggle" title="Show/Hide Inventory as Text" value="Show/Hide Inventory as Text"/>-->
+				<!-- <input type="button" class="inventory_import_export_toggle" title="Show/Hide Inventory as Text" value="Show/Hide Inventory as Text"/> -->
 				<div class="search_bar">
 					<div class='hide_unused_wrapper'>
 						<input type="checkbox" id="unused_hide_checkbox" class="hide_unused_checkbox" />
-						<label class="hide_unused_label" for="unused_hide_checkbox">Hide Unused</label>
+						<label class="hide_unused_label" for="unused_hide_checkbox" id="unused_hide_checkbox_label">Hide Unused</label>
 					</div>
 					<div class="search_label_wrapper">
 						<label class="search_label" for="item_filter">Filter:</label>
@@ -103,7 +101,7 @@
 			</div>
 
 			<!-- The button that the user will press to generate the sankey chart -->
-			<div class="generate_button" id="generatelist">
+			<div class="generate_button" id="generatelist" tabindex="0">
 			    <span>Calculate Resources</span>
 			</div>
 
@@ -148,7 +146,7 @@
 				Inventory Amount
 			</div>
 			<div id="inventory_amount_input_wrapper">
-				<input type="number" id="inventory_amount_input"/>
+				<input type="number" id="inventory_amount_input" aria-label="Inventory Amount" class="inventory_value_field"/>
 			</div>
 		</div>
 
@@ -172,7 +170,6 @@
 		<script>{{ recipe_json }}</script>
 		<script>{{recipe_type_format_js}}</script>
 		<script>var stack_sizes = {{stack_sizes_json}};</script>
-
-
+		<script src = "../calculator.js" type = "text/javascript"/></script>
 	</body>
 </html>
