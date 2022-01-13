@@ -4,6 +4,6 @@ flake8==3.9.2
 htmlmin==0.1.12
 Jinja2==3.0.1
 mypy==0.902
-Pillow==8.3.2
+Pillow==9.0.0
 PyYAML==5.4.1
 types-PyYAML==5.4.3
