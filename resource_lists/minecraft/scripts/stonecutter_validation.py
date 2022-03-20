@@ -5,6 +5,11 @@
 # blocks. This will then take that list and make sure those other blocks do 
 # have recipes that include each of these source blocks.
 
+# TODO: This is no longer 100% accurate because of how output quantity is
+# assumed to be 1 unless they are slabs which are 2. As of 1.18 this is broken
+# for copper blocks and the waxed / weathered variants when converting them
+# into cut copper slabs. In this craft 8 are produced instead.
+
 import yaml
 from typing import Dict, List
 
@@ -233,10 +238,6 @@ stonecutter_results: Dict[str, List[str]] = {
 }
 
 
-
-
-
-
 inverted_stonecutter_results = {}
 
 for source_block in stonecutter_results:
@@ -245,24 +246,20 @@ for source_block in stonecutter_results:
 			inverted_stonecutter_results[result_block] = []
 		inverted_stonecutter_results[result_block].append(source_block)
 
+
 with open("../resources.yaml") as f:
 	resources = yaml.safe_load(f.read())["resources"]
-	# print(resources)
-	# for resource in resources:
-		# print(resource)
 
 
 for resource in inverted_stonecutter_results:
+	# TODO: This is no longer 100% accurate, see note at top of file.
 	quantity = 1
 	if resource.endswith("Slab"):
 		quantity = 2
-	# print(resource)
 	if resource not in resources:
 		print("{} not found in resources.yaml".format(resource))
 
 	recipes = resources[resource]["recipes"]
-	# print(recipes)
-
 
 	for crafted_from in inverted_stonecutter_results[resource]:
 		target_recipe = {'output': quantity, 'recipe_type': 'Cutting', 'requirements': {crafted_from: -1}}
