@@ -87,12 +87,12 @@ duplicate_names: Dict[str,int] = {}
 # the text screenshot to rename the icon screenshot. Duplicate names will be
 # appended with a _2 or _3 etc.
 ################################################################################
-def main() -> None:
-    for image_index in range(0, 1350):
+def main(ui_size: int, image_quantity: int) -> None:
+    for image_index in range(image_quantity):
         text_image_filename = "image_text/" + str(image_index) + ".png"
         block_image_filename = "diced_images/" + str(image_index) + ".png"
 
-        decoded_name = decode_image_text(text_image_filename)
+        decoded_name = decode_image_text(text_image_filename, ui_size)
 
         # Convert to lowercase and strip symbols
         decoded_name = decoded_name.lower()
@@ -103,7 +103,7 @@ def main() -> None:
             decoded_name = decoded_name + "_" + str(duplicate_names[decoded_name])
 
         else:
-            duplicate_names[decoded_name] = 2
+            duplicate_names[decoded_name] = 1
 
         target_file_name = "named_images/" + decoded_name + ".png"
 
@@ -128,7 +128,7 @@ def main() -> None:
 # This decoder does not handles spaces currently because it has not been a
 # required feature, because spaces get stripped out later in the pipeline.
 ################################################################################
-def decode_image_text(filename: str) -> str:
+def decode_image_text(filename: str, ui_size: int) -> str:
 
     has_error = False
 
@@ -143,9 +143,9 @@ def decode_image_text(filename: str) -> str:
         # Iterate over all the columns and rows, but skip each other row/column
         # because all the pixels in the text screenshots are 2x2 blocks of
         # color because minecraft is at GUI scale 2.
-        for x in range(0,width,2):
+        for x in range(0,width,ui_size):
             column_bits = []
-            for y in range(0,height,2):
+            for y in range(0,height,ui_size):
                 
                 color = pixels[x,y]
                 if color > 128:
@@ -176,12 +176,18 @@ def decode_image_text(filename: str) -> str:
             decoded_letters.append(letters[letterhex])
 
         else:
-            print("Unknown Hex {} after {}?".format(letterhex, "".join(decoded_letters)))
+            print("Unknown Hex {} after {}? ({})".format(letterhex, "".join(decoded_letters), filename))
             decoded_letters.append("_")
             has_error = True
+
+    if len(decoded_letters) == 0:
+        print("Zero Length Name {}".format(filename))
 
     return "".join(decoded_letters)
 
 
 # Run the OCR renamer
-main()
+main(
+    ui_size=4,
+    image_quantity=1395,
+)
