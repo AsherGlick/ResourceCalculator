@@ -2809,8 +2809,8 @@ resources:
     - output: 6
       recipe_type: Crafting
       requirements:
-        Nether Brick: -4
-        Nether Bricks: -2
+        Nether Bricks: -4
+        Nether Brick: -2
     - recipe_type: Raw Resource
 
   Nether Brick Stairs:
