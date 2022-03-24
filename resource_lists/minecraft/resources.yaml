@@ -2809,7 +2809,7 @@ resources:
     - output: 6
       recipe_type: Crafting
       requirements:
-        Nether Bricks: -4
+        Nether Brick: -4
         Nether Bricks: -2
     - recipe_type: Raw Resource
 
