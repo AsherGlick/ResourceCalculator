@@ -2810,7 +2810,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Nether Bricks: -4
-        Nether Bricks: -2
+        Nether Brick: -2
     - recipe_type: Raw Resource
 
   Nether Brick Stairs:
