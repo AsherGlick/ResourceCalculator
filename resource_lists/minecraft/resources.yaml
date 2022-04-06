@@ -7286,6 +7286,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Poppy: -1
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Rose Bush: -1    
     - recipe_type: Raw Resource
 
   Black Dye:
@@ -7933,6 +7937,11 @@ resources:
 
   Nether Brick:
     recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Netherrack: -1
+        Fuel: -1
     - recipe_type: Raw Resource
 
   Prismarine Shard:
