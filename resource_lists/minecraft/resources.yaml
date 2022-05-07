@@ -4580,7 +4580,7 @@ resources:
 
   Black Concrete:
     recipes:
-    - output: 8
+    - output: 1
       recipe_type: Add Water
       requirements:
         Black Concrete Powder: -1
@@ -4673,6 +4673,7 @@ resources:
       requirements:
         Sand: -4
         Gravel: -4
+        Light Gray Dye: -1
     - recipe_type: Raw Resource
 
   Cyan Concrete Powder:
