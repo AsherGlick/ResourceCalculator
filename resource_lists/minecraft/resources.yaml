@@ -162,6 +162,25 @@ requirement_groups:
   - Red Sand
   - Sand
 
+  Any Shulker Box:
+  - Shulker Box
+  - Black Shulker Box
+  - Blue Shulker Box
+  - Brown Shulker Box
+  - Cyan Shulker Box
+  - Gray Shulker Box
+  - Green Shulker Box
+  - Light Blue Shulker Box
+  - Light Gray Shulker Box
+  - Lime Shulker Box
+  - Magenta Shulker Box
+  - Orange Shulker Box
+  - Pink Shulker Box
+  - Purple Shulker Box
+  - Red Shulker Box
+  - White Shulker Box
+  - Yellow Shulker Box
+
   Any Slab:
   - Acacia Slab
   - Birch Slab
@@ -4471,7 +4490,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Purple Shulker Box: -1
+        Any Shulker Box: -1
         White Dye: -1
     - recipe_type: Raw Resource
 
@@ -4480,7 +4499,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Purple Shulker Box: -1
+        Any Shulker Box: -1
         Orange Dye: -1
     - recipe_type: Raw Resource
 
@@ -4489,7 +4508,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Purple Shulker Box: -1
+        Any Shulker Box: -1
         Magenta Dye: -1
     - recipe_type: Raw Resource
 
@@ -4498,7 +4517,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Purple Shulker Box: -1
+        Any Shulker Box: -1
         Light Blue Dye: -1
     - recipe_type: Raw Resource
 
@@ -4507,7 +4526,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Purple Shulker Box: -1
+        Any Shulker Box: -1
         Yellow Dye: -1
     - recipe_type: Raw Resource
 
@@ -4516,7 +4535,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Purple Shulker Box: -1
+        Any Shulker Box: -1
         Lime Dye: -1
     - recipe_type: Raw Resource
 
@@ -4525,7 +4544,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Purple Shulker Box: -1
+        Any Shulker Box: -1
         Pink Dye: -1
     - recipe_type: Raw Resource
 
@@ -4534,7 +4553,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Purple Shulker Box: -1
+        Any Shulker Box: -1
         Gray Dye: -1
     - recipe_type: Raw Resource
 
@@ -4543,7 +4562,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Purple Shulker Box: -1
+        Any Shulker Box: -1
         Light Gray Dye: -1
     - recipe_type: Raw Resource
 
@@ -4552,7 +4571,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Purple Shulker Box: -1
+        Any Shulker Box: -1
         Cyan Dye: -1
     - recipe_type: Raw Resource
 
@@ -4561,8 +4580,8 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Shulker Shell: -2
-        Chest: -1
+        Any Shulker Box: -1
+        Purple Dye: -1
     - recipe_type: Raw Resource
 
   Blue Shulker Box:
@@ -4570,7 +4589,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Purple Shulker Box: -1
+        Any Shulker Box: -1
         Blue Dye: -1
     - recipe_type: Raw Resource
 
@@ -4579,7 +4598,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Purple Shulker Box: -1
+        Any Shulker Box: -1
         Brown Dye: -1
     - recipe_type: Raw Resource
 
@@ -4588,7 +4607,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Purple Shulker Box: -1
+        Any Shulker Box: -1
         Green Dye: -1
     - recipe_type: Raw Resource
 
@@ -4597,7 +4616,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Purple Shulker Box: -1
+        Any Shulker Box: -1
         Red Dye: -1
     - recipe_type: Raw Resource
 
@@ -4606,7 +4625,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Purple Shulker Box: -1
+        Any Shulker Box: -1
         Black Dye: -1
     - recipe_type: Raw Resource
 
