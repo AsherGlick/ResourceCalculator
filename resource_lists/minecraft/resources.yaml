@@ -3908,6 +3908,10 @@ resources:
     - output: 1
       recipe_type: Shovel
       requirements:
+        Dirt: -1
+    - output: 1
+      recipe_type: Shovel
+      requirements:
         Coarse Dirt: -1
     - output: 1
       recipe_type: Shovel

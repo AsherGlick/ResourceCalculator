@@ -16,6 +16,7 @@ from recipe_item import RecipeItem
 import custom_recipes_carving
 import custom_recipes_stripping
 import custom_recipes_tilling
+import custom_recipes_shoveling
 
 # A map between the minecraft tag names and the resource calculator resource
 # goup names.
@@ -187,6 +188,7 @@ def main() -> None:
     recipes += custom_recipes_carving.recipes()
     recipes += custom_recipes_stripping.recipes([id_to_name_map[x] for x in all_tags["minecraft:logs"]])
     recipes += custom_recipes_tilling.recipes()
+    recipes += custom_recipes_shoveling.recipes()
 
     # Calculate all of the used tags/requirement groups.
     used_tags: Set[str] = set([])
@@ -242,7 +244,7 @@ def parse_recipe_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> List
         # This will likely be a manual process.
         return []
     elif input_struct["type"] == "minecraft:crafting_special_firework_rocket":
-        # TODO: Add the recipes to craft colored shulker boxes
+        # TODO: Add the recipes to craft firework rockets
         # This will likely be a manual process.
         return []
     elif input_struct["type"] in [
@@ -749,10 +751,6 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, 
 
             # TODO: Automate add water recipes
             if resource_recipe.recipe_type == "Add Water":
-                continue
-
-            # TODO: Automate shovel recipes
-            if resource_recipe.recipe_type == "Shovel":
                 continue
 
             has_matching_recipe = False
