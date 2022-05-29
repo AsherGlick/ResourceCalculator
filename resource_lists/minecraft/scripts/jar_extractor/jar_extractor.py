@@ -19,6 +19,7 @@ import custom_recipes_tilling
 import custom_recipes_shoveling
 import custom_recipes_water
 import custom_recipes_shulker_box_coloring
+import custom_recipes_fireworks
 
 # A map between the minecraft tag names and the resource calculator resource
 # goup names.
@@ -246,9 +247,7 @@ def parse_recipe_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> List
     elif input_struct["type"] == "minecraft:crafting_special_shulkerboxcoloring":
         return custom_recipes_shulker_box_coloring.recipes()
     elif input_struct["type"] == "minecraft:crafting_special_firework_rocket":
-        # TODO: Add the recipes to craft firework rockets
-        # This will likely be a manual process.
-        return []
+        return custom_recipes_fireworks.recipes()
     elif input_struct["type"] in [
         "minecraft:crafting_special_armordye",
         "minecraft:crafting_special_bannerduplicate",
@@ -733,10 +732,6 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, 
 
         # Ignore our custom resource of fuel
         if resource == "Fuel":
-            continue
-
-        # TODO: Add firework rocket recipes
-        if resource == "Firework Rocket":
             continue
 
         for resource_recipe in resource_recipes[resource].recipes:
