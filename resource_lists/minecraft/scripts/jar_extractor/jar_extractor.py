@@ -5,7 +5,6 @@ sys.path.append("../../../../")
 from pylib.yaml_token_load import ordered_load
 from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, TokenError, Token, get_primitive
 
-from dataclasses import dataclass
 from io import BytesIO
 from typing import Dict, Any, List, Set, Union
 import json
@@ -13,6 +12,9 @@ import os
 import re
 import zipfile
 import yaml
+from recipe_item import RecipeItem
+import custom_recipes_carving
+
 
 requirement_groups: Dict[str, str] = {
     "minecraft:planks": "Any Planks",
@@ -142,15 +144,6 @@ def parse_tagfile(jarfile: zipfile.ZipFile, tag_filename: str) -> List[str]:
 
     return tags
 
-
-@dataclass
-class RecipeItem():
-    name: str
-    output: int
-    recipe_type: str
-    requirements: Dict[str, int]
-
-
 def main() -> None:
     jar_location = sys.argv[1]
 
@@ -179,6 +172,9 @@ def main() -> None:
 
     finally:
         zipped_file.close()
+
+
+    recipes += custom_recipes_carving.recipes()
 
     groups: Dict[str, List[str]] = {}
 
@@ -602,6 +598,7 @@ def get_item_name_from_item_dict(itemdict: Union[Dict[str, str], List[Dict[str,s
         raise ValueError("Itemdict should contain one key, either 'item' or 'tag'" + str(itemdict))
 
     if "tag" in itemdict:
+        # TODO: this should be able to calculated before it is needed not stored in a global here.
         global used_tags
         used_tags.add(itemdict["tag"])
         return requirement_groups[itemdict["tag"]]
@@ -748,11 +745,6 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, 
             # TODO: Automate Strip recipes
             if resource_recipe.recipe_type == "Strip":
                 continue
-
-            # TODO: Automate Carving recipes
-            if resource_recipe.recipe_type == "Carve":
-                continue
-
 
             has_matching_recipe = False
             for jar_recipe in jar_recipes:
