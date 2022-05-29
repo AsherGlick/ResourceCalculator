@@ -1,3 +1,10 @@
+import sys
+
+# Include the standard resource list parsing library
+sys.path.append("../../../../")
+from pylib.yaml_token_load import ordered_load
+from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, TokenError, Token, get_primitive
+
 from dataclasses import dataclass
 from io import BytesIO
 from typing import Dict, Any, List, Set, Union
@@ -6,7 +13,6 @@ import os
 import re
 import zipfile
 import yaml
-import sys
 
 requirement_groups: Dict[str, str] = {
 	"minecraft:planks": "Any Planks",
@@ -606,22 +612,32 @@ def get_item_name_from_item_dict(itemdict: Union[Dict[str, str], List[Dict[str,s
 
 
 
+################################################################################
+############################### Recipe Validation ##############################
+################################################################################
+
+################################################################################
+# validate_resources
+#
+# Validates that multiple aspects of the resources.yaml file are correct.
+################################################################################
+def validate_resources(recipes:List[RecipeItem], groups: Dict[str, List[str]]) -> None:
+
+	errors = []
+	with open("../../resources.yaml", 'r', encoding="utf_8") as f:
+		yaml_data = ordered_load(f)
+		resource_list = ResourceList()
+		errors += resource_list.parse(yaml_data)
+
+	validate_recipes(recipes, resource_list.resources)
+	validate_requirement_groups(groups, resource_list.requirement_groups)
 
 
 ################################################################################
-# Recipe Validation
+# print_recipee_yaml
+#
+# A helper function for converting a RecipeItem into a yaml output
 ################################################################################
-def validate_resources(recipes:List[RecipeItem], groups: Dict[str, List[str]]):
-
-	with open("../../resources.yaml") as f:
-		data = yaml.safe_load(f)
-
-
-	validate_recipes(recipes, data["resources"])
-	validate_requirement_groups(groups, data["requirement_groups"])
-
-
-
 def print_recipe_yaml(recipe: RecipeItem):
 	print("    - output: " + str(recipe.output))
 	print("      recipe_type: " + recipe.recipe_type)
@@ -630,39 +646,43 @@ def print_recipe_yaml(recipe: RecipeItem):
 		print("        " + requirement + ": " + str(- recipe.requirements[requirement]))
 
 
-
-# Return true if the yaml recipe and the RecipeItem recipe are the same
-# Return false if they differ.
-def is_matching_recipe(jar_recipe: RecipeItem, resource_recipe) -> bool:
-	# Raw Resource is not checked in this script and has an elided syntax in
-	# the yaml so properly processing it will add extra un-needed complexity
-	if resource_recipe["recipe_type"] == "Raw Resource":
-		return False
-
-	if jar_recipe.output != resource_recipe["output"]:
+################################################################################
+# is_matching_recipe
+#
+# A helper function for comparing recipes to see if they are the same or not
+################################################################################
+def is_matching_recipe(jar_recipe: RecipeItem, resource_recipe: Recipe) -> bool:
+	if jar_recipe.output != resource_recipe.output:
 		return False
 	
-	if jar_recipe.recipe_type != resource_recipe["recipe_type"]:
+	if jar_recipe.recipe_type != resource_recipe.recipe_type:
 		return False
 
 
 	for requirement in jar_recipe.requirements:
-		if requirement not in resource_recipe["requirements"]:
+		if requirement not in resource_recipe.requirements:
 			return False
 
-		if jar_recipe.requirements[requirement] != -resource_recipe["requirements"][requirement]:
+		if jar_recipe.requirements[requirement] != -resource_recipe.requirements[requirement]:
 			return False
 
-	for requirement in resource_recipe["requirements"]:
+	for requirement in resource_recipe.requirements:
 		if requirement not in jar_recipe.requirements:
 			return False
 
-		if jar_recipe.requirements[requirement] != -resource_recipe["requirements"][requirement]:
+		if jar_recipe.requirements[requirement] != -resource_recipe.requirements[requirement]:
 			return False
 
 	return True
 
-def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes):
+################################################################################
+# validate_recipes
+#
+# Validate that all of the recipes parsed from the jar file are stored in the
+# resources.yaml file and make sure that all of the recipes in the resources.yaml
+# file are one that have been parsed from the jar file.
+################################################################################
+def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, Resource]):
 
 	# Validate all jar recipes are in the resource recipes
 	for jar_recipe in jar_recipes:
@@ -677,7 +697,7 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes):
 			print("")
 			continue
 
-		item_resource_recipes = resource_recipes[jar_recipe.name]['recipes']
+		item_resource_recipes: List[Recipe] = resource_recipes[jar_recipe.name].recipes
 
 		has_matching_recipe = False
 		for resource_recipe in item_resource_recipes:
@@ -689,8 +709,6 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes):
 			print("YAML Missing Recipe for \"" +jar_recipe.name + "\"")
 			print_recipe_yaml(jar_recipe)
 			continue
-
-
 
 	# Validate all resource recipes are in jar recipes
 	for resource in resource_recipes:
@@ -707,32 +725,32 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes):
 		if resource == "Firework Rocket":
 			continue
 
-		for resource_recipe in resource_recipes[resource]["recipes"]:
-			if resource_recipe["recipe_type"] == "Raw Resource":
+		for resource_recipe in resource_recipes[resource].recipes:
+			if resource_recipe.recipe_type == "Raw Resource":
 				continue
 
 			# TODO: Automate oxidization recipes				
-			if resource_recipe["recipe_type"] == "Oxidization":
+			if resource_recipe.recipe_type == "Oxidization":
 				continue
 
 			# TODO: Automate add water recipes
-			if resource_recipe["recipe_type"] == "Add Water":
+			if resource_recipe.recipe_type == "Add Water":
 				continue
 
 			# TODO: Automate shovel recipes
-			if resource_recipe["recipe_type"] == "Shovel":
+			if resource_recipe.recipe_type == "Shovel":
 				continue
 
 			# TODO: Automate Till recipes
-			if resource_recipe["recipe_type"] == "Till":
+			if resource_recipe.recipe_type == "Till":
 				continue
 
 			# TODO: Automate Strip recipes
-			if resource_recipe["recipe_type"] == "Strip":
+			if resource_recipe.recipe_type == "Strip":
 				continue
 
 			# TODO: Automate Carving recipes
-			if resource_recipe["recipe_type"] == "Carve":
+			if resource_recipe.recipe_type == "Carve":
 				continue
 
 
@@ -747,7 +765,7 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes):
 				print(yaml.dump(resource_recipe))
 
 
-def validate_requirement_groups(groups: Dict[str, List[str]], resource_requirement_groups):
+def validate_requirement_groups(groups: Dict[str, List[str]], resource_requirement_groups:Dict[str, List[str]]):
 	output = {}
 
 	for group in sorted(groups.keys()):
@@ -755,7 +773,7 @@ def validate_requirement_groups(groups: Dict[str, List[str]], resource_requireme
 
 	# TODO: this should actually validate against existing data instead of just
 	# printing out what the entire correct data is.
-	print(yaml.dump(output))
+	# print(yaml.dump(output))
 	
 
 main()
