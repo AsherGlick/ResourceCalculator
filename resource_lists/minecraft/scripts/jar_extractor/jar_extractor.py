@@ -95,7 +95,6 @@ resource_calculator_tag_groups: Dict[str, List[str]] = {
         'minecraft:purpur_block',
         'minecraft:purpur_pillar',
     ]
-
 }
 
 
@@ -751,15 +750,36 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, 
                 print(resource_recipe.to_yaml())
 
 
-def validate_requirement_groups(groups: Dict[str, List[str]], resource_requirement_groups:Dict[str, List[str]]) -> None:
+################################################################################
+# validate_requirement_groups
+#
+# Validate that the requirement groups inside the resources.yaml file are
+# all correct and that all of the generated resource groups are present.
+################################################################################
+def validate_requirement_groups(
+    groups: Dict[str, List[str]],
+    resource_requirement_groups:Dict[str, List[str]]
+) -> None:
     output = {}
 
     for group in sorted(groups.keys()):
         output[tagname_to_requirement_group[group]] = [id_to_name_map[x] for x in groups[group]]
 
-    # TODO: this should actually validate against existing data instead of just
-    # printing out what the entire correct data is.
-    # print(yaml.dump(output))
-    
+    # Validate all groups are requirement groups
+    for group in output:
+        if group not in resource_requirement_groups:
+            print("Missing Requirement Group")
+            print(yaml.dump({group:output[group]}))
+
+        for item in output[group]:
+            if item not in resource_requirement_groups[group]:
+                print("Requirement Group has incorrect elements. Should be:")
+                print(yaml.dump({group:output[group]}))
+
+    # Validate all requirement groups are groups
+    for group in resource_requirement_groups:
+        if group not in output:
+            print("Extra Requirement Group Found")
+            print(yaml.dump({group:resource_requirement_groups[group]}))
 
 main()
