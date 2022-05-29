@@ -15,7 +15,7 @@ import yaml
 from recipe_item import RecipeItem
 import custom_recipes_carving
 import custom_recipes_stripping
-
+import custom_recipes_tilling
 
 # A map between the minecraft tag names and the resource calculator resource
 # goup names.
@@ -186,6 +186,7 @@ def main() -> None:
     # Add any custom recipes that are not included in the jar.
     recipes += custom_recipes_carving.recipes()
     recipes += custom_recipes_stripping.recipes([id_to_name_map[x] for x in all_tags["minecraft:logs"]])
+    recipes += custom_recipes_tilling.recipes()
 
     # Calculate all of the used tags/requirement groups.
     used_tags: Set[str] = set([])
@@ -752,10 +753,6 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, 
 
             # TODO: Automate shovel recipes
             if resource_recipe.recipe_type == "Shovel":
-                continue
-
-            # TODO: Automate Till recipes
-            if resource_recipe.recipe_type == "Till":
                 continue
 
             has_matching_recipe = False
