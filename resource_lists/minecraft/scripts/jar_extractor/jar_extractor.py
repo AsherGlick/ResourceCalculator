@@ -20,6 +20,7 @@ import custom_recipes_shoveling
 import custom_recipes_water
 import custom_recipes_shulker_box_coloring
 import custom_recipes_fireworks
+import custom_recipes_oxidation
 
 # A map between the minecraft tag names and the resource calculator resource
 # goup names.
@@ -194,6 +195,7 @@ def main() -> None:
     recipes += custom_recipes_tilling.recipes()
     recipes += custom_recipes_shoveling.recipes()
     recipes += custom_recipes_water.recipes()
+    recipes += custom_recipes_oxidation.recipes()
 
     # Calculate all of the used tags/requirement groups.
     used_tags: Set[str] = set([])
@@ -736,10 +738,6 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, 
 
         for resource_recipe in resource_recipes[resource].recipes:
             if resource_recipe.recipe_type == "Raw Resource":
-                continue
-
-            # TODO: Automate oxidization recipes                
-            if resource_recipe.recipe_type == "Oxidization":
                 continue
 
             has_matching_recipe = False

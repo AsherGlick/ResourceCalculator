@@ -20,7 +20,7 @@ recipe_types:
   Shovel: "Right click on {IN_ITEMS} with a Shovel to shovel it into {OUT_ITEM}"
   As: "Treat {IN_ITEMS} as {OUT_ITEM}"
   Cutting: "Use a stonecutter to cut {IN_ITEMS} into {OUT_ITEM}"
-  Oxidization: "Place {IN_ITEMS} down as blocks until they oxidize into {OUT_ITEM}"
+  Oxidation: "Place {IN_ITEMS} down as blocks until they oxidize into {OUT_ITEM}"
   Smithing Table: "Use a smithing table to upgrade {IN_ITEMS} into {OUT_ITEM}"
 
 requirement_groups:
@@ -907,7 +907,7 @@ resources:
   Exposed Copper:
     recipes:
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Block of Copper: -1
     - recipe_type: Raw Resource
@@ -915,11 +915,11 @@ resources:
   Weathered Copper:
     recipes:
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Block of Copper: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Exposed Copper: -1
     - recipe_type: Raw Resource
@@ -927,15 +927,15 @@ resources:
   Oxidized Copper:
     recipes:
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Block of Copper: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Exposed Copper: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Weathered Copper: -1
     - recipe_type: Raw Resource
@@ -963,7 +963,7 @@ resources:
       requirements:
         Exposed Copper: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Cut Copper: -1
     - recipe_type: Raw Resource
@@ -979,11 +979,11 @@ resources:
       requirements:
         Weathered Copper: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Cut Copper: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Exposed Cut Copper: -1
     - recipe_type: Raw Resource
@@ -999,15 +999,15 @@ resources:
       requirements:
         Oxidized Copper: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Cut Copper: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Exposed Cut Copper: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Weathered Cut Copper: -1
     - recipe_type: Raw Resource
@@ -1044,7 +1044,7 @@ resources:
       requirements:
         Exposed Cut Copper: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Cut Copper Stairs: -1
     - recipe_type: Raw Resource
@@ -1064,11 +1064,11 @@ resources:
       requirements:
         Weathered Cut Copper: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Cut Copper Stairs: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Exposed Cut Copper Stairs: -1
     - recipe_type: Raw Resource
@@ -1088,15 +1088,15 @@ resources:
       requirements:
         Oxidized Cut Copper: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Cut Copper Stairs: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Exposed Cut Copper Stairs: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Weathered Cut Copper Stairs: -1
     - recipe_type: Raw Resource
@@ -1132,7 +1132,7 @@ resources:
       requirements:
         Exposed Cut Copper: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Cut Copper Slab: -1
     - recipe_type: Raw Resource
@@ -1152,11 +1152,11 @@ resources:
       requirements:
         Weathered Cut Copper: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Cut Copper Slab: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Exposed Cut Copper Slab: -1
     - recipe_type: Raw Resource
@@ -1176,15 +1176,15 @@ resources:
       requirements:
         Oxidized Cut Copper: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Cut Copper Slab: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Exposed Cut Copper Slab: -1
     - output: 1
-      recipe_type: Oxidization
+      recipe_type: Oxidation
       requirements:
         Weathered Cut Copper Slab: -1
     - recipe_type: Raw Resource
