@@ -1615,7 +1615,7 @@ resources:
     - output: 1
       recipe_type: Strip
       requirements:
-        Crimson Stem: -1
+        Crimson Hyphae: -1
     - output: 3
       recipe_type: Crafting
       requirements:
@@ -1627,7 +1627,7 @@ resources:
     - output: 1
       recipe_type: Strip
       requirements:
-        Warped Stem: -1
+        Warped Hyphae: -1
     - output: 3
       recipe_type: Crafting
       requirements:
@@ -9705,6 +9705,10 @@ resources:
 
   Stripped Mangrove Wood:
     recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Mangrove Wood: -1
     - output: 3
       recipe_type: Crafting
       requirements:
@@ -9713,6 +9717,10 @@ resources:
 
   Stripped Mangrove Log:
     recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Mangrove Log: -1
     - recipe_type: Raw Resource
 
   Mangrove Log:
