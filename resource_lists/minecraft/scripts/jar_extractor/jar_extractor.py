@@ -151,7 +151,7 @@ class RecipeItem():
     requirements: Dict[str, int]
 
 
-def main():
+def main() -> None:
     jar_location = sys.argv[1]
 
     zipped_file = zipfile.ZipFile(jar_location, 'r')
@@ -188,7 +188,7 @@ def main():
     validate_resources(recipes, groups)
 
 
-def get_tag_from_itemdict_list(ingredient_list: List) -> Dict[str,str]:
+def get_tag_from_itemdict_list(ingredient_list: List[Dict[str, str]]) -> Dict[str,str]:
 
     compact_list = sorted([x["item"] for x in ingredient_list])
 
@@ -623,7 +623,7 @@ def get_item_name_from_item_dict(itemdict: Union[Dict[str, str], List[Dict[str,s
 ################################################################################
 def validate_resources(recipes:List[RecipeItem], groups: Dict[str, List[str]]) -> None:
 
-    errors = []
+    errors: List[TokenError] = []
     with open("../../resources.yaml", 'r', encoding="utf_8") as f:
         yaml_data = ordered_load(f)
         resource_list = ResourceList()
@@ -638,7 +638,7 @@ def validate_resources(recipes:List[RecipeItem], groups: Dict[str, List[str]]) -
 #
 # A helper function for converting a RecipeItem into a yaml output
 ################################################################################
-def print_recipe_yaml(recipe: RecipeItem):
+def print_recipe_yaml(recipe: RecipeItem) -> None:
     print("    - output: " + str(recipe.output))
     print("      recipe_type: " + recipe.recipe_type)
     print("      requirements:")
@@ -682,7 +682,7 @@ def is_matching_recipe(jar_recipe: RecipeItem, resource_recipe: Recipe) -> bool:
 # resources.yaml file and make sure that all of the recipes in the resources.yaml
 # file are one that have been parsed from the jar file.
 ################################################################################
-def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, Resource]):
+def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, Resource]) -> None:
 
     # Validate all jar recipes are in the resource recipes
     for jar_recipe in jar_recipes:
@@ -765,7 +765,7 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, 
                 print(yaml.dump(resource_recipe))
 
 
-def validate_requirement_groups(groups: Dict[str, List[str]], resource_requirement_groups:Dict[str, List[str]]):
+def validate_requirement_groups(groups: Dict[str, List[str]], resource_requirement_groups:Dict[str, List[str]]) -> None:
     output = {}
 
     for group in sorted(groups.keys()):
