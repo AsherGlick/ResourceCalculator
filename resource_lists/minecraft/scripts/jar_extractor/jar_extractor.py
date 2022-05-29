@@ -15,67 +15,67 @@ import zipfile
 import yaml
 
 requirement_groups: Dict[str, str] = {
-	"minecraft:planks": "Any Planks",
-	"minecraft:wooden_slabs": "Any Slab",
-	"minecraft:logs": "Any Log",
-	"minecraft:stone_crafting_materials": "Any Stone",
-	"minecraft:sand": "Any Sand",
-	"minecraft:logs_that_burn": "Any Log That Burns",
-	"minecraft:acacia_logs": "Any Acacia Log",
-	"minecraft:birch_logs": "Any Birch Log",
-	"minecraft:crimson_stems": "Any Crimson Stem",
-	"minecraft:dark_oak_logs": "Any Dark Oak Log",
-	"minecraft:oak_logs": "Any Oak Log",
-	"minecraft:jungle_logs": "Any Jungle Log",
-	"minecraft:mangrove_logs": "Any Mangrove Log",
-	"minecraft:spruce_logs": "Any Spruce Log",
-	"minecraft:warped_stems": "Any Warped Stem",
-	"minecraft:coals": "Any Coal",
-	"minecraft:wool": "Any Wool",
-	"minecraft:soul_fire_base_blocks": "Any Soul Fire Base Block",
-	"minecraft:stone_tool_materials": "Any Stone Tool Material",
+    "minecraft:planks": "Any Planks",
+    "minecraft:wooden_slabs": "Any Slab",
+    "minecraft:logs": "Any Log",
+    "minecraft:stone_crafting_materials": "Any Stone",
+    "minecraft:sand": "Any Sand",
+    "minecraft:logs_that_burn": "Any Log That Burns",
+    "minecraft:acacia_logs": "Any Acacia Log",
+    "minecraft:birch_logs": "Any Birch Log",
+    "minecraft:crimson_stems": "Any Crimson Stem",
+    "minecraft:dark_oak_logs": "Any Dark Oak Log",
+    "minecraft:oak_logs": "Any Oak Log",
+    "minecraft:jungle_logs": "Any Jungle Log",
+    "minecraft:mangrove_logs": "Any Mangrove Log",
+    "minecraft:spruce_logs": "Any Spruce Log",
+    "minecraft:warped_stems": "Any Warped Stem",
+    "minecraft:coals": "Any Coal",
+    "minecraft:wool": "Any Wool",
+    "minecraft:soul_fire_base_blocks": "Any Soul Fire Base Block",
+    "minecraft:stone_tool_materials": "Any Stone Tool Material",
 
-	# Corrisponding names for the custom resource_calculator_tag_groups
-	"resourcecalculator:yellow_sandstone": "Any Yellow Sandstone",
-	"resourcecalculator:uncut_yellow_sandstone": "Any Uncut Yellow Sandstone",
-	"resourcecalculator:red_sandstone": "Any Red Sandstone",
-	"resourcecalculator:uncut_red_sandstone": "Any Uncut Red Sandstone",
-	"resourcecalculator:unsmooth_quartz_block": "Any Unsmooth Quartz Block",
-	"resourcecalculator:purpur_block": "Any Purpur Block",
+    # Corrisponding names for the custom resource_calculator_tag_groups
+    "resourcecalculator:yellow_sandstone": "Any Yellow Sandstone",
+    "resourcecalculator:uncut_yellow_sandstone": "Any Uncut Yellow Sandstone",
+    "resourcecalculator:red_sandstone": "Any Red Sandstone",
+    "resourcecalculator:uncut_red_sandstone": "Any Uncut Red Sandstone",
+    "resourcecalculator:unsmooth_quartz_block": "Any Unsmooth Quartz Block",
+    "resourcecalculator:purpur_block": "Any Purpur Block",
 }
 
 resource_calculator_tag_groups: Dict[str, List[str]] = {
-	"resourcecalculator:yellow_sandstone": [
-		'minecraft:chiseled_sandstone',
-		'minecraft:cut_sandstone',
-		'minecraft:sandstone',
-	],
-	"resourcecalculator:uncut_yellow_sandstone": [
-		'minecraft:chiseled_sandstone',
-		'minecraft:sandstone',
-	],
+    "resourcecalculator:yellow_sandstone": [
+        'minecraft:chiseled_sandstone',
+        'minecraft:cut_sandstone',
+        'minecraft:sandstone',
+    ],
+    "resourcecalculator:uncut_yellow_sandstone": [
+        'minecraft:chiseled_sandstone',
+        'minecraft:sandstone',
+    ],
 
-	"resourcecalculator:red_sandstone": [
-		'minecraft:chiseled_red_sandstone',
-		'minecraft:cut_red_sandstone',
-		'minecraft:red_sandstone',
-	],
+    "resourcecalculator:red_sandstone": [
+        'minecraft:chiseled_red_sandstone',
+        'minecraft:cut_red_sandstone',
+        'minecraft:red_sandstone',
+    ],
 
-	"resourcecalculator:uncut_red_sandstone": [
-		'minecraft:chiseled_red_sandstone',
-		'minecraft:red_sandstone',
-	],
+    "resourcecalculator:uncut_red_sandstone": [
+        'minecraft:chiseled_red_sandstone',
+        'minecraft:red_sandstone',
+    ],
 
-	"resourcecalculator:unsmooth_quartz_block": [
-		'minecraft:chiseled_quartz_block',
-		'minecraft:quartz_block',
-		'minecraft:quartz_pillar',
-	],
+    "resourcecalculator:unsmooth_quartz_block": [
+        'minecraft:chiseled_quartz_block',
+        'minecraft:quartz_block',
+        'minecraft:quartz_pillar',
+    ],
 
-	"resourcecalculator:purpur_block": [
-		'minecraft:purpur_block',
-		'minecraft:purpur_pillar',
-	]
+    "resourcecalculator:purpur_block": [
+        'minecraft:purpur_block',
+        'minecraft:purpur_pillar',
+    ]
 
 }
 
@@ -91,22 +91,22 @@ used_tags: Set[str] = set([])
 # Parse all of the tagfiles
 ################################################################################
 def get_all_tags(jarfile: zipfile.ZipFile) -> Dict[str, List[str]]:
-	all_tags: Dict[str, List[str]] = {}
+    all_tags: Dict[str, List[str]] = {}
 
-	file_list = jarfile.infolist()
-	for file in file_list:
-		filename = file.filename
+    file_list = jarfile.infolist()
+    for file in file_list:
+        filename = file.filename
 
-		if filename.startswith("data/minecraft/tags/blocks") \
-			or filename.startswith("data/minecraft/tags/items"):
-				key = os.path.splitext(os.path.basename(filename))[0]
+        if filename.startswith("data/minecraft/tags/blocks") \
+            or filename.startswith("data/minecraft/tags/items"):
+                key = os.path.splitext(os.path.basename(filename))[0]
 
-				all_tags["minecraft:"+key] = sorted(list(set(parse_tagfile(jarfile, filename))))
+                all_tags["minecraft:"+key] = sorted(list(set(parse_tagfile(jarfile, filename))))
 
-	for tag in resource_calculator_tag_groups:
-		all_tags[tag] = resource_calculator_tag_groups[tag]
+    for tag in resource_calculator_tag_groups:
+        all_tags[tag] = resource_calculator_tag_groups[tag]
 
-	return all_tags
+    return all_tags
 
 
 ################################################################################
@@ -115,220 +115,220 @@ def get_all_tags(jarfile: zipfile.ZipFile) -> Dict[str, List[str]]:
 # file then recursively open that file and add its contents to this tag.
 ################################################################################
 def parse_tagfile(jarfile: zipfile.ZipFile, tag_filename: str) -> List[str]:
-	tags: List[str] = []
+    tags: List[str] = []
 
-	files = set([x.filename for x in jarfile.infolist()])
+    files = set([x.filename for x in jarfile.infolist()])
 
-	tagfile_data = json.load(BytesIO(jarfile.read(tag_filename)))
+    tagfile_data = json.load(BytesIO(jarfile.read(tag_filename)))
 
-	assert(len(tagfile_data) == 1)
-	assert("values" in tagfile_data)
-	assert(type(tagfile_data["values"] == list))
+    assert(len(tagfile_data) == 1)
+    assert("values" in tagfile_data)
+    assert(type(tagfile_data["values"] == list))
 
-	for tag in tagfile_data["values"]:
-		assert(type(tag) == str)
+    for tag in tagfile_data["values"]:
+        assert(type(tag) == str)
 
-		if tag.startswith("#"):
-			blocksfile = "data/minecraft/tags/blocks/" + tag[11:] + ".json"
-			itemsfile = "data/minecraft/tags/items/" + tag[11:] + ".json"
+        if tag.startswith("#"):
+            blocksfile = "data/minecraft/tags/blocks/" + tag[11:] + ".json"
+            itemsfile = "data/minecraft/tags/items/" + tag[11:] + ".json"
 
-			if blocksfile in files:
-				tags += parse_tagfile(jarfile, blocksfile)
-			elif itemsfile in files:
-				tags += parse_tagfile(jarfile, itemsfile)
+            if blocksfile in files:
+                tags += parse_tagfile(jarfile, blocksfile)
+            elif itemsfile in files:
+                tags += parse_tagfile(jarfile, itemsfile)
 
-		else:
-			tags.append(tag)
+        else:
+            tags.append(tag)
 
-	return tags
+    return tags
 
 
 @dataclass
 class RecipeItem():
-	name: str
-	output: int
-	recipe_type: str
-	requirements: Dict[str, int]
+    name: str
+    output: int
+    recipe_type: str
+    requirements: Dict[str, int]
 
 
 def main():
-	jar_location = sys.argv[1]
+    jar_location = sys.argv[1]
 
-	zipped_file = zipfile.ZipFile(jar_location, 'r')
+    zipped_file = zipfile.ZipFile(jar_location, 'r')
 
-	global id_to_name_map
-	id_to_name_map = get_item_id_translations(zipped_file)
+    global id_to_name_map
+    id_to_name_map = get_item_id_translations(zipped_file)
 
-	global all_tags
-	all_tags = get_all_tags(zipped_file)
+    global all_tags
+    all_tags = get_all_tags(zipped_file)
 
 
-	recipes:List[RecipeItem] = []
+    recipes:List[RecipeItem] = []
 
-	try:
-		file_list = zipped_file.infolist()
-		for zipped_item in file_list:
-			filename = zipped_item.filename
+    try:
+        file_list = zipped_file.infolist()
+        for zipped_item in file_list:
+            filename = zipped_item.filename
 
-			if not filename.startswith("data/minecraft/recipes"):
-				continue
+            if not filename.startswith("data/minecraft/recipes"):
+                continue
 
-			recipe_data = BytesIO(zipped_file.read(filename))
+            recipe_data = BytesIO(zipped_file.read(filename))
 
-			recipes += parse_recipe_data(json.load(recipe_data), id_to_name_map)
+            recipes += parse_recipe_data(json.load(recipe_data), id_to_name_map)
 
-	finally:
-		zipped_file.close()
+    finally:
+        zipped_file.close()
 
-	groups: Dict[str, List[str]] = {}
+    groups: Dict[str, List[str]] = {}
 
-	for tag in used_tags:
-		groups[tag] = all_tags[tag]
+    for tag in used_tags:
+        groups[tag] = all_tags[tag]
 
-	validate_resources(recipes, groups)
+    validate_resources(recipes, groups)
 
 
 def get_tag_from_itemdict_list(ingredient_list: List) -> Dict[str,str]:
 
-	compact_list = sorted([x["item"] for x in ingredient_list])
+    compact_list = sorted([x["item"] for x in ingredient_list])
 
-	for tag, value in all_tags.items():
-		if value == compact_list:
-			return {"tag": tag}
+    for tag, value in all_tags.items():
+        if value == compact_list:
+            return {"tag": tag}
 
-	raise ValueError("No matching tag for" + str(compact_list))
+    raise ValueError("No matching tag for" + str(compact_list))
 
 
 
 def parse_recipe_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> List[RecipeItem]:
 
-	if "type" not in input_struct:
-		raise ValueError("Cannot find recipe's type")
+    if "type" not in input_struct:
+        raise ValueError("Cannot find recipe's type")
 
-	if input_struct["type"] == "minecraft:crafting_shaped":
-		return parse_shaped_data(input_struct, id_to_name_map)
-	elif input_struct["type"] == "minecraft:crafting_shapeless":
-		return parse_shapeless_data(input_struct, id_to_name_map)
-	elif input_struct["type"] == "minecraft:smelting":
-		return parse_smelting_data(input_struct, id_to_name_map)
-	elif input_struct["type"] == "minecraft:blasting":
-		return parse_blasting_data(input_struct, id_to_name_map)
-	elif input_struct["type"] == "minecraft:smoking":
-		return parse_smoking_data(input_struct, id_to_name_map)
-	elif input_struct["type"] == "minecraft:smithing":
-		return parse_smithing_data(input_struct, id_to_name_map)
-	elif input_struct["type"] == "minecraft:campfire_cooking":
-		return parse_campfire_data(input_struct, id_to_name_map)
-	elif input_struct["type"] == "minecraft:stonecutting":
-		return parse_stonecutting_data(input_struct, id_to_name_map)
-	elif input_struct["type"] == "minecraft:crafting_special_shulkerboxcoloring":
-		# TODO: Add the recipes to craft colored shulker boxes
-		# This will likely be a manual process.
-		return []
-	elif input_struct["type"] == "minecraft:crafting_special_firework_rocket":
-		# TODO: Add the recipes to craft colored shulker boxes
-		# This will likely be a manual process.
-		return []
-	elif input_struct["type"] in [
-		"minecraft:crafting_special_armordye",
-		"minecraft:crafting_special_bannerduplicate",
-		"minecraft:crafting_special_bookcloning",
-		"minecraft:crafting_special_firework_star",
-		"minecraft:crafting_special_firework_star_fade",
-		"minecraft:crafting_special_mapcloning",
-		"minecraft:crafting_special_mapextending",
-		"minecraft:crafting_special_repairitem",
-		"minecraft:crafting_special_shielddecoration",
-		"minecraft:crafting_special_suspiciousstew",
-		"minecraft:crafting_special_tippedarrow",
-	]:
-		return []
-	else:
-		raise ValueError(input_struct)
+    if input_struct["type"] == "minecraft:crafting_shaped":
+        return parse_shaped_data(input_struct, id_to_name_map)
+    elif input_struct["type"] == "minecraft:crafting_shapeless":
+        return parse_shapeless_data(input_struct, id_to_name_map)
+    elif input_struct["type"] == "minecraft:smelting":
+        return parse_smelting_data(input_struct, id_to_name_map)
+    elif input_struct["type"] == "minecraft:blasting":
+        return parse_blasting_data(input_struct, id_to_name_map)
+    elif input_struct["type"] == "minecraft:smoking":
+        return parse_smoking_data(input_struct, id_to_name_map)
+    elif input_struct["type"] == "minecraft:smithing":
+        return parse_smithing_data(input_struct, id_to_name_map)
+    elif input_struct["type"] == "minecraft:campfire_cooking":
+        return parse_campfire_data(input_struct, id_to_name_map)
+    elif input_struct["type"] == "minecraft:stonecutting":
+        return parse_stonecutting_data(input_struct, id_to_name_map)
+    elif input_struct["type"] == "minecraft:crafting_special_shulkerboxcoloring":
+        # TODO: Add the recipes to craft colored shulker boxes
+        # This will likely be a manual process.
+        return []
+    elif input_struct["type"] == "minecraft:crafting_special_firework_rocket":
+        # TODO: Add the recipes to craft colored shulker boxes
+        # This will likely be a manual process.
+        return []
+    elif input_struct["type"] in [
+        "minecraft:crafting_special_armordye",
+        "minecraft:crafting_special_bannerduplicate",
+        "minecraft:crafting_special_bookcloning",
+        "minecraft:crafting_special_firework_star",
+        "minecraft:crafting_special_firework_star_fade",
+        "minecraft:crafting_special_mapcloning",
+        "minecraft:crafting_special_mapextending",
+        "minecraft:crafting_special_repairitem",
+        "minecraft:crafting_special_shielddecoration",
+        "minecraft:crafting_special_suspiciousstew",
+        "minecraft:crafting_special_tippedarrow",
+    ]:
+        return []
+    else:
+        raise ValueError(input_struct)
 
 
 
 def parse_shaped_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> List[RecipeItem]:
-	# We are going to ignore the "group" field that contains data about similar
-	# recipes. EG: Deepslate Coal Ore and Coal Ore are both part of the Coal group
-	if "group" in input_struct:
-		del input_struct["group"]
+    # We are going to ignore the "group" field that contains data about similar
+    # recipes. EG: Deepslate Coal Ore and Coal Ore are both part of the Coal group
+    if "group" in input_struct:
+        del input_struct["group"]
 
-	assert(sorted(input_struct.keys()) == ['key', 'pattern', 'result', 'type'])
+    assert(sorted(input_struct.keys()) == ['key', 'pattern', 'result', 'type'])
 
-	count: int = 1
-	if "count" in input_struct["result"]:
-		count = input_struct["result"]["count"]
-		del input_struct["result"]["count"]
+    count: int = 1
+    if "count" in input_struct["result"]:
+        count = input_struct["result"]["count"]
+        del input_struct["result"]["count"]
 
-	result = get_item_name_from_item_dict(input_struct["result"], id_to_name_map)
-
-
-
-	# Sanity check that " " is an emtpy space for all recipe patterns
-	if " " in input_struct["key"]:
-		raise ValueError("Found ' ' as a key in a shaped recipe, it should be air and a null space")
-
-	pattern = "".join(input_struct['pattern'])
-
-	ingredients: Dict[str, int] = {}
-	for character in pattern:
-		if character == " ":
-			continue
-
-		itemdict = input_struct["key"][character]
-
-		item_name = get_item_name_from_item_dict(itemdict, id_to_name_map)
-		if item_name not in ingredients:
-			ingredients[item_name] = 0
-
-		ingredients[item_name] += 1
-
-	recipe_item = RecipeItem(
-		name=result,
-		output=count,
-		recipe_type="Crafting",
-		requirements=ingredients
-	)
+    result = get_item_name_from_item_dict(input_struct["result"], id_to_name_map)
 
 
-	return [recipe_item]
+
+    # Sanity check that " " is an emtpy space for all recipe patterns
+    if " " in input_struct["key"]:
+        raise ValueError("Found ' ' as a key in a shaped recipe, it should be air and a null space")
+
+    pattern = "".join(input_struct['pattern'])
+
+    ingredients: Dict[str, int] = {}
+    for character in pattern:
+        if character == " ":
+            continue
+
+        itemdict = input_struct["key"][character]
+
+        item_name = get_item_name_from_item_dict(itemdict, id_to_name_map)
+        if item_name not in ingredients:
+            ingredients[item_name] = 0
+
+        ingredients[item_name] += 1
+
+    recipe_item = RecipeItem(
+        name=result,
+        output=count,
+        recipe_type="Crafting",
+        requirements=ingredients
+    )
+
+
+    return [recipe_item]
 
 
 
 def parse_shapeless_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> List[RecipeItem]:
-	# We are going to ignore the "group" field that contains data about similar
-	# recipes. EG: Deepslate Coal Ore and Coal Ore are both part of the Coal group
-	if "group" in input_struct:
-		del input_struct["group"]
+    # We are going to ignore the "group" field that contains data about similar
+    # recipes. EG: Deepslate Coal Ore and Coal Ore are both part of the Coal group
+    if "group" in input_struct:
+        del input_struct["group"]
 
-	assert(sorted(input_struct.keys()) == ['ingredients', 'result', 'type'])
+    assert(sorted(input_struct.keys()) == ['ingredients', 'result', 'type'])
 
-	count: int = 1
-	if "count" in input_struct["result"]:
-		count = input_struct["result"]["count"]
-		del input_struct["result"]["count"]
+    count: int = 1
+    if "count" in input_struct["result"]:
+        count = input_struct["result"]["count"]
+        del input_struct["result"]["count"]
 
-	result = get_item_name_from_item_dict(input_struct["result"], id_to_name_map)
+    result = get_item_name_from_item_dict(input_struct["result"], id_to_name_map)
 
-	ingredients: Dict[str, int] = {}
-	for ingredient in input_struct["ingredients"]:
-		item_name = get_item_name_from_item_dict(ingredient, id_to_name_map)
-		if item_name not in ingredients:
-			ingredients[item_name] = 0
+    ingredients: Dict[str, int] = {}
+    for ingredient in input_struct["ingredients"]:
+        item_name = get_item_name_from_item_dict(ingredient, id_to_name_map)
+        if item_name not in ingredients:
+            ingredients[item_name] = 0
 
-		ingredients[item_name] += 1
-
-
-	recipe_item = RecipeItem(
-		name=result,
-		output=count,
-		recipe_type="Crafting",
-		requirements=ingredients
-	)
+        ingredients[item_name] += 1
 
 
-	return [recipe_item]
+    recipe_item = RecipeItem(
+        name=result,
+        output=count,
+        recipe_type="Crafting",
+        requirements=ingredients
+    )
+
+
+    return [recipe_item]
 
 
 
@@ -336,229 +336,229 @@ def parse_shapeless_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> L
 
 # TODO: Figure out how to merge these into the regular recipe list
 def parse_campfire_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> List[RecipeItem]:
-	# We are going to ignore the "group" field that contains data about similar
-	# recipes. EG: Deepslate Coal Ore and Coal Ore are both part of the Coal group
-	if "group" in input_struct:
-		del input_struct["group"]
+    # We are going to ignore the "group" field that contains data about similar
+    # recipes. EG: Deepslate Coal Ore and Coal Ore are both part of the Coal group
+    if "group" in input_struct:
+        del input_struct["group"]
 
-	# We are going to ignore the "experience" field that indicates how much exp
-	# the player is awarded via crafting.
-	if "experience" in input_struct:
-		del input_struct["experience"]
+    # We are going to ignore the "experience" field that indicates how much exp
+    # the player is awarded via crafting.
+    if "experience" in input_struct:
+        del input_struct["experience"]
 
-	assert(sorted(input_struct.keys()) == ['cookingtime', 'ingredient', 'result', 'type'])
+    assert(sorted(input_struct.keys()) == ['cookingtime', 'ingredient', 'result', 'type'])
 
-	cooking_time = input_struct["cookingtime"]
-	if cooking_time != 600:
-		raise ValueError("Non 600 cooking time, a feature is needed to convert this value into a correct fuel value")
+    cooking_time = input_struct["cookingtime"]
+    if cooking_time != 600:
+        raise ValueError("Non 600 cooking time, a feature is needed to convert this value into a correct fuel value")
 
-	result: str = input_struct["result"]
-	ingredients = input_struct["ingredient"]
+    result: str = input_struct["result"]
+    ingredients = input_struct["ingredient"]
 
-	# Convert any single values into a single element list to take avantage of
-	# common processing
-	if type(ingredients) == dict:
-		ingredients = [ingredients]
+    # Convert any single values into a single element list to take avantage of
+    # common processing
+    if type(ingredients) == dict:
+        ingredients = [ingredients]
 
-	recipe_items: List[RecipeItem] = []
+    recipe_items: List[RecipeItem] = []
 
-	for ingredient in ingredients:
+    for ingredient in ingredients:
 
-		ingredient_name = get_item_name_from_item_dict(ingredient, id_to_name_map)
+        ingredient_name = get_item_name_from_item_dict(ingredient, id_to_name_map)
 
-		recipe_items.append(RecipeItem(
-			name=id_to_name_map[result],
-			output=1,
-			recipe_type="Campfire",
-			requirements={
-				ingredient_name : 1
-			}
-		))
+        recipe_items.append(RecipeItem(
+            name=id_to_name_map[result],
+            output=1,
+            recipe_type="Campfire",
+            requirements={
+                ingredient_name : 1
+            }
+        ))
 
-	# TODO: Hold off of sending Campfire Recipes just yet because they might all
-	# be exactly the same as smelting recipes but just for food and not require coal.
-	return [] #recipe_items
+    # TODO: Hold off of sending Campfire Recipes just yet because they might all
+    # be exactly the same as smelting recipes but just for food and not require coal.
+    return [] #recipe_items
 
 # TODO: Figure out how to merge these into the regular recipe list
 def parse_smoking_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> List[RecipeItem]:
-	# We are going to ignore the "group" field that contains data about similar
-	# recipes. EG: Deepslate Coal Ore and Coal Ore are both part of the Coal group
-	if "group" in input_struct:
-		del input_struct["group"]
+    # We are going to ignore the "group" field that contains data about similar
+    # recipes. EG: Deepslate Coal Ore and Coal Ore are both part of the Coal group
+    if "group" in input_struct:
+        del input_struct["group"]
 
-	# We are going to ignore the "experience" field that indicates how much exp
-	# the player is awarded via crafting.
-	if "experience" in input_struct:
-		del input_struct["experience"]
+    # We are going to ignore the "experience" field that indicates how much exp
+    # the player is awarded via crafting.
+    if "experience" in input_struct:
+        del input_struct["experience"]
 
-	assert(sorted(input_struct.keys()) == ['cookingtime', 'ingredient', 'result', 'type'])
+    assert(sorted(input_struct.keys()) == ['cookingtime', 'ingredient', 'result', 'type'])
 
-	cooking_time = input_struct["cookingtime"]
-	if cooking_time != 100:
-		raise ValueError("Non 100 cooking time, a feature is needed to convert this value into a correct fuel value")
+    cooking_time = input_struct["cookingtime"]
+    if cooking_time != 100:
+        raise ValueError("Non 100 cooking time, a feature is needed to convert this value into a correct fuel value")
 
-	result: str = input_struct["result"]
-	ingredients = input_struct["ingredient"]
+    result: str = input_struct["result"]
+    ingredients = input_struct["ingredient"]
 
-	# Convert any single values into a single element list to take avantage of
-	# common processing
-	if type(ingredients) == dict:
-		ingredients = [ingredients]
+    # Convert any single values into a single element list to take avantage of
+    # common processing
+    if type(ingredients) == dict:
+        ingredients = [ingredients]
 
-	recipe_items: List[RecipeItem] = []
+    recipe_items: List[RecipeItem] = []
 
-	for ingredient in ingredients:
+    for ingredient in ingredients:
 
-		ingredient_name = get_item_name_from_item_dict(ingredient, id_to_name_map)
+        ingredient_name = get_item_name_from_item_dict(ingredient, id_to_name_map)
 
-		recipe_items.append(RecipeItem(
-			name=id_to_name_map[result],
-			output=1,
-			recipe_type="Smoking",
-			requirements={
-				ingredient_name : 1
-			}
-		))
+        recipe_items.append(RecipeItem(
+            name=id_to_name_map[result],
+            output=1,
+            recipe_type="Smoking",
+            requirements={
+                ingredient_name : 1
+            }
+        ))
 
-	# TODO: Hold off of sending Smoking Recipes just yet because they might all
-	# be exactly the same as smelting recipes but just for food.
-	return [] #recipe_items
+    # TODO: Hold off of sending Smoking Recipes just yet because they might all
+    # be exactly the same as smelting recipes but just for food.
+    return [] #recipe_items
 
 
 # TODO: Figure out how to merge these into the regular recipe list
 def parse_blasting_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> List[RecipeItem]:
 
-	# We are going to ignore the "group" field that contains data about similar
-	# recipes. EG: Deepslate Coal Ore and Coal Ore are both part of the Coal group
-	if "group" in input_struct:
-		del input_struct["group"]
+    # We are going to ignore the "group" field that contains data about similar
+    # recipes. EG: Deepslate Coal Ore and Coal Ore are both part of the Coal group
+    if "group" in input_struct:
+        del input_struct["group"]
 
-	# We are going to ignore the "experience" field that indicates how much exp
-	# the player is awarded via crafting.
-	if "experience" in input_struct:
-		del input_struct["experience"]
+    # We are going to ignore the "experience" field that indicates how much exp
+    # the player is awarded via crafting.
+    if "experience" in input_struct:
+        del input_struct["experience"]
 
-	assert(sorted(input_struct.keys()) == ['cookingtime', 'ingredient', 'result', 'type'])
+    assert(sorted(input_struct.keys()) == ['cookingtime', 'ingredient', 'result', 'type'])
 
-	cooking_time = input_struct["cookingtime"]
-	if cooking_time != 100:
-		raise ValueError("Non 100 cooking time, a feature is needed to convert this value into a correct fuel value")
+    cooking_time = input_struct["cookingtime"]
+    if cooking_time != 100:
+        raise ValueError("Non 100 cooking time, a feature is needed to convert this value into a correct fuel value")
 
-	result: str = input_struct["result"]
-	ingredients = input_struct["ingredient"]
+    result: str = input_struct["result"]
+    ingredients = input_struct["ingredient"]
 
-	# Convert any single values into a single element list to take avantage of
-	# common processing
-	if type(ingredients) == dict:
-		ingredients = [ingredients]
+    # Convert any single values into a single element list to take avantage of
+    # common processing
+    if type(ingredients) == dict:
+        ingredients = [ingredients]
 
-	recipe_items: List[RecipeItem] = []
+    recipe_items: List[RecipeItem] = []
 
-	for ingredient in ingredients:
+    for ingredient in ingredients:
 
-		ingredient_name = get_item_name_from_item_dict(ingredient, id_to_name_map)
+        ingredient_name = get_item_name_from_item_dict(ingredient, id_to_name_map)
 
-		recipe_items.append(RecipeItem(
-			name=id_to_name_map[result],
-			output=1,
-			recipe_type="Blasting",
-			requirements={
-				ingredient_name : 1,
-				"Fuel": 1,
-			}
-		))
+        recipe_items.append(RecipeItem(
+            name=id_to_name_map[result],
+            output=1,
+            recipe_type="Blasting",
+            requirements={
+                ingredient_name : 1,
+                "Fuel": 1,
+            }
+        ))
 
-	# TODO: Hold off of sending Blasting Recipes just yet because they might all
-	# be exactly the same as smelting but just for ores/stones/etc recipes.
-	return [] #recipe_items
+    # TODO: Hold off of sending Blasting Recipes just yet because they might all
+    # be exactly the same as smelting but just for ores/stones/etc recipes.
+    return [] #recipe_items
 
 ################################################################################
 # Parse the Smelting Recipes
 ################################################################################
 def parse_smelting_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> List[RecipeItem]:
 
-	# We are going to ignore the "group" field that contains data about similar
-	# recipes. EG: Deepslate Coal Ore and Coal Ore are both part of the Coal group
-	if "group" in input_struct:
-		del input_struct["group"]
+    # We are going to ignore the "group" field that contains data about similar
+    # recipes. EG: Deepslate Coal Ore and Coal Ore are both part of the Coal group
+    if "group" in input_struct:
+        del input_struct["group"]
 
-	# We are going to ignore the "experience" field that indicates how much exp
-	# the player is awarded via crafting.
-	if "experience" in input_struct:
-		del input_struct["experience"]
+    # We are going to ignore the "experience" field that indicates how much exp
+    # the player is awarded via crafting.
+    if "experience" in input_struct:
+        del input_struct["experience"]
 
-	assert(sorted(input_struct.keys()) == ['cookingtime', 'ingredient', 'result', 'type'])
+    assert(sorted(input_struct.keys()) == ['cookingtime', 'ingredient', 'result', 'type'])
 
-	cooking_time = input_struct["cookingtime"]
-	if cooking_time != 200:
-		raise ValueError("Non 200 cooking time, a feature is needed to convert this value into a correct fuel value")
+    cooking_time = input_struct["cookingtime"]
+    if cooking_time != 200:
+        raise ValueError("Non 200 cooking time, a feature is needed to convert this value into a correct fuel value")
 
-	result: str = input_struct["result"]
-	ingredients = input_struct["ingredient"]
+    result: str = input_struct["result"]
+    ingredients = input_struct["ingredient"]
 
-	# Convert any single values into a single element list to take avantage of
-	# common processing
-	if type(ingredients) == dict:
-		ingredients = [ingredients]
+    # Convert any single values into a single element list to take avantage of
+    # common processing
+    if type(ingredients) == dict:
+        ingredients = [ingredients]
 
-	recipe_items: List[RecipeItem] = []
+    recipe_items: List[RecipeItem] = []
 
-	for ingredient in ingredients:
+    for ingredient in ingredients:
 
-		ingredient_name = get_item_name_from_item_dict(ingredient, id_to_name_map)
+        ingredient_name = get_item_name_from_item_dict(ingredient, id_to_name_map)
 
-		recipe_items.append(RecipeItem(
-			name=id_to_name_map[result],
-			output=1,
-			recipe_type="Smelting",
-			requirements={
-				ingredient_name : 1,
-				"Fuel": 1,
-			}
-		))
+        recipe_items.append(RecipeItem(
+            name=id_to_name_map[result],
+            output=1,
+            recipe_type="Smelting",
+            requirements={
+                ingredient_name : 1,
+                "Fuel": 1,
+            }
+        ))
 
-	return recipe_items
+    return recipe_items
 
 
 # Parse the anvil recipe types into a recipe item
 def parse_smithing_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> List[RecipeItem]:
-	assert(sorted(input_struct.keys()) == ['addition', 'base', 'result', 'type'])
+    assert(sorted(input_struct.keys()) == ['addition', 'base', 'result', 'type'])
 
-	addition: str = get_item_name_from_item_dict(input_struct["addition"], id_to_name_map)
-	base: str = get_item_name_from_item_dict(input_struct["base"], id_to_name_map)
-	result: str = get_item_name_from_item_dict(input_struct["result"], id_to_name_map)
+    addition: str = get_item_name_from_item_dict(input_struct["addition"], id_to_name_map)
+    base: str = get_item_name_from_item_dict(input_struct["base"], id_to_name_map)
+    result: str = get_item_name_from_item_dict(input_struct["result"], id_to_name_map)
 
-	recipe_item = RecipeItem(
-		name=result,
-		output=1,
-		recipe_type="Smithing Table",
-		requirements={
-			base : 1,
-			addition : 1,
-		}
-	)
+    recipe_item = RecipeItem(
+        name=result,
+        output=1,
+        recipe_type="Smithing Table",
+        requirements={
+            base : 1,
+            addition : 1,
+        }
+    )
 
-	return [recipe_item]
+    return [recipe_item]
 
 ################################################################################
 # Parse the stonecutting recipe type into a recipe item
 ################################################################################
 def parse_stonecutting_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> List[RecipeItem]:
-	assert(sorted(input_struct.keys()) == ['count', 'ingredient', 'result', 'type'])
+    assert(sorted(input_struct.keys()) == ['count', 'ingredient', 'result', 'type'])
 
-	count:int = input_struct["count"]
-	ingredient:str = get_item_name_from_item_dict(input_struct["ingredient"], id_to_name_map)
-	result: str = input_struct["result"]
+    count:int = input_struct["count"]
+    ingredient:str = get_item_name_from_item_dict(input_struct["ingredient"], id_to_name_map)
+    result: str = input_struct["result"]
 
-	recipe_item = RecipeItem(
-		name=id_to_name_map[result],
-		output=count,
-		recipe_type="Cutting",
-		requirements={
-			ingredient : 1
-		}
-	)
-	return [recipe_item]
+    recipe_item = RecipeItem(
+        name=id_to_name_map[result],
+        output=count,
+        recipe_type="Cutting",
+        requirements={
+            ingredient : 1
+        }
+    )
+    return [recipe_item]
 
 
 ################################################################################
@@ -568,47 +568,47 @@ def parse_stonecutting_data(input_struct: Any, id_to_name_map: Dict[str, str]) -
 ################################################################################
 def get_item_id_translations(jarfile: zipfile.ZipFile) -> Dict[str, str]:
 
-	block_tn_prefix = "block.minecraft."
-	item_tn_prefix = "item.minecraft."
-	id_prefix = "minecraft:"
-	translations = json.load(BytesIO(jarfile.read("assets/minecraft/lang/en_us.json")))
+    block_tn_prefix = "block.minecraft."
+    item_tn_prefix = "item.minecraft."
+    id_prefix = "minecraft:"
+    translations = json.load(BytesIO(jarfile.read("assets/minecraft/lang/en_us.json")))
 
 
-	item_id_translations: Dict[str, str] = {}
-	for key, value in translations.items():
-		if re.match("^" + block_tn_prefix + "[a-z_0-9]+$", key):
-			item_id_translations[key.replace(block_tn_prefix, id_prefix)] = value
+    item_id_translations: Dict[str, str] = {}
+    for key, value in translations.items():
+        if re.match("^" + block_tn_prefix + "[a-z_0-9]+$", key):
+            item_id_translations[key.replace(block_tn_prefix, id_prefix)] = value
 
-		elif re.match("^" + item_tn_prefix + "[a-z_0-9]+$", key):
-			item_id_translations[key.replace(item_tn_prefix, id_prefix)] = value
+        elif re.match("^" + item_tn_prefix + "[a-z_0-9]+$", key):
+            item_id_translations[key.replace(item_tn_prefix, id_prefix)] = value
 
-	return item_id_translations
+    return item_id_translations
 
 
 # Helper function for unwrapping items
 def get_item_name_from_item_dict(itemdict: Union[Dict[str, str], List[Dict[str,str]]], id_to_name_map: Dict[str, str]) -> str:
-	# Sometimes the items that can be parsed are actually lists. This is a pretty
-	# bad design decision on minecraft's part but it likely the result of legacy
-	# code from a time before when they had item tags and they have not yet returned
-	# to clean up all the recipes. We will do that for them, and tags that are
-	# not present yet are manually created inside the resource_calculator_tag_groups
-	# variable.
-	if isinstance(itemdict, list):
-		itemdict = get_tag_from_itemdict_list(itemdict)
+    # Sometimes the items that can be parsed are actually lists. This is a pretty
+    # bad design decision on minecraft's part but it likely the result of legacy
+    # code from a time before when they had item tags and they have not yet returned
+    # to clean up all the recipes. We will do that for them, and tags that are
+    # not present yet are manually created inside the resource_calculator_tag_groups
+    # variable.
+    if isinstance(itemdict, list):
+        itemdict = get_tag_from_itemdict_list(itemdict)
 
-	# We expect that the dict given to us at this point is a single element dict
-	# containing the key "item" or "tag".
-	if len(itemdict) > 1:
-		raise ValueError("Itemdict should contain one key, either 'item' or 'tag'" + str(itemdict))
+    # We expect that the dict given to us at this point is a single element dict
+    # containing the key "item" or "tag".
+    if len(itemdict) > 1:
+        raise ValueError("Itemdict should contain one key, either 'item' or 'tag'" + str(itemdict))
 
-	if "tag" in itemdict:
-		global used_tags
-		used_tags.add(itemdict["tag"])
-		return requirement_groups[itemdict["tag"]]
-	elif "item" in itemdict:
-		return id_to_name_map[itemdict["item"]]
+    if "tag" in itemdict:
+        global used_tags
+        used_tags.add(itemdict["tag"])
+        return requirement_groups[itemdict["tag"]]
+    elif "item" in itemdict:
+        return id_to_name_map[itemdict["item"]]
 
-	raise ValueError("Itemdict should contain a key of either 'item' or 'tag' but contains neither" + str(itemdict))
+    raise ValueError("Itemdict should contain a key of either 'item' or 'tag' but contains neither" + str(itemdict))
 
 
 
@@ -623,14 +623,14 @@ def get_item_name_from_item_dict(itemdict: Union[Dict[str, str], List[Dict[str,s
 ################################################################################
 def validate_resources(recipes:List[RecipeItem], groups: Dict[str, List[str]]) -> None:
 
-	errors = []
-	with open("../../resources.yaml", 'r', encoding="utf_8") as f:
-		yaml_data = ordered_load(f)
-		resource_list = ResourceList()
-		errors += resource_list.parse(yaml_data)
+    errors = []
+    with open("../../resources.yaml", 'r', encoding="utf_8") as f:
+        yaml_data = ordered_load(f)
+        resource_list = ResourceList()
+        errors += resource_list.parse(yaml_data)
 
-	validate_recipes(recipes, resource_list.resources)
-	validate_requirement_groups(groups, resource_list.requirement_groups)
+    validate_recipes(recipes, resource_list.resources)
+    validate_requirement_groups(groups, resource_list.requirement_groups)
 
 
 ################################################################################
@@ -639,11 +639,11 @@ def validate_resources(recipes:List[RecipeItem], groups: Dict[str, List[str]]) -
 # A helper function for converting a RecipeItem into a yaml output
 ################################################################################
 def print_recipe_yaml(recipe: RecipeItem):
-	print("    - output: " + str(recipe.output))
-	print("      recipe_type: " + recipe.recipe_type)
-	print("      requirements:")
-	for requirement in recipe.requirements:
-		print("        " + requirement + ": " + str(- recipe.requirements[requirement]))
+    print("    - output: " + str(recipe.output))
+    print("      recipe_type: " + recipe.recipe_type)
+    print("      requirements:")
+    for requirement in recipe.requirements:
+        print("        " + requirement + ": " + str(- recipe.requirements[requirement]))
 
 
 ################################################################################
@@ -652,28 +652,28 @@ def print_recipe_yaml(recipe: RecipeItem):
 # A helper function for comparing recipes to see if they are the same or not
 ################################################################################
 def is_matching_recipe(jar_recipe: RecipeItem, resource_recipe: Recipe) -> bool:
-	if jar_recipe.output != resource_recipe.output:
-		return False
-	
-	if jar_recipe.recipe_type != resource_recipe.recipe_type:
-		return False
+    if jar_recipe.output != resource_recipe.output:
+        return False
+    
+    if jar_recipe.recipe_type != resource_recipe.recipe_type:
+        return False
 
 
-	for requirement in jar_recipe.requirements:
-		if requirement not in resource_recipe.requirements:
-			return False
+    for requirement in jar_recipe.requirements:
+        if requirement not in resource_recipe.requirements:
+            return False
 
-		if jar_recipe.requirements[requirement] != -resource_recipe.requirements[requirement]:
-			return False
+        if jar_recipe.requirements[requirement] != -resource_recipe.requirements[requirement]:
+            return False
 
-	for requirement in resource_recipe.requirements:
-		if requirement not in jar_recipe.requirements:
-			return False
+    for requirement in resource_recipe.requirements:
+        if requirement not in jar_recipe.requirements:
+            return False
 
-		if jar_recipe.requirements[requirement] != -resource_recipe.requirements[requirement]:
-			return False
+        if jar_recipe.requirements[requirement] != -resource_recipe.requirements[requirement]:
+            return False
 
-	return True
+    return True
 
 ################################################################################
 # validate_recipes
@@ -684,96 +684,96 @@ def is_matching_recipe(jar_recipe: RecipeItem, resource_recipe: Recipe) -> bool:
 ################################################################################
 def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, Resource]):
 
-	# Validate all jar recipes are in the resource recipes
-	for jar_recipe in jar_recipes:
-		if jar_recipe.name not in resource_recipes:
-			print("Cannot find recipes for", jar_recipe.name)
-			print("Expecting")
-			print("  " + jar_recipe.name + ":")
-			print("    recipes:")
-			print_recipe_yaml(jar_recipe)
-			print("    - recipe_type: Raw Resource")
+    # Validate all jar recipes are in the resource recipes
+    for jar_recipe in jar_recipes:
+        if jar_recipe.name not in resource_recipes:
+            print("Cannot find recipes for", jar_recipe.name)
+            print("Expecting")
+            print("  " + jar_recipe.name + ":")
+            print("    recipes:")
+            print_recipe_yaml(jar_recipe)
+            print("    - recipe_type: Raw Resource")
 
-			print("")
-			continue
+            print("")
+            continue
 
-		item_resource_recipes: List[Recipe] = resource_recipes[jar_recipe.name].recipes
+        item_resource_recipes: List[Recipe] = resource_recipes[jar_recipe.name].recipes
 
-		has_matching_recipe = False
-		for resource_recipe in item_resource_recipes:
-			if is_matching_recipe(jar_recipe, resource_recipe):
-				has_matching_recipe = True
-				break
+        has_matching_recipe = False
+        for resource_recipe in item_resource_recipes:
+            if is_matching_recipe(jar_recipe, resource_recipe):
+                has_matching_recipe = True
+                break
 
-		if not has_matching_recipe:
-			print("YAML Missing Recipe for \"" +jar_recipe.name + "\"")
-			print_recipe_yaml(jar_recipe)
-			continue
+        if not has_matching_recipe:
+            print("YAML Missing Recipe for \"" +jar_recipe.name + "\"")
+            print_recipe_yaml(jar_recipe)
+            continue
 
-	# Validate all resource recipes are in jar recipes
-	for resource in resource_recipes:
+    # Validate all resource recipes are in jar recipes
+    for resource in resource_recipes:
 
-		# Ignore our custom resource of fuel
-		if resource == "Fuel":
-			continue
+        # Ignore our custom resource of fuel
+        if resource == "Fuel":
+            continue
 
-		# TODO: Add shulker box coloring recipes
-		if resource.endswith("Shulker Box"):
-			continue
+        # TODO: Add shulker box coloring recipes
+        if resource.endswith("Shulker Box"):
+            continue
 
-		# TODO: Add firework rocket recipes
-		if resource == "Firework Rocket":
-			continue
+        # TODO: Add firework rocket recipes
+        if resource == "Firework Rocket":
+            continue
 
-		for resource_recipe in resource_recipes[resource].recipes:
-			if resource_recipe.recipe_type == "Raw Resource":
-				continue
+        for resource_recipe in resource_recipes[resource].recipes:
+            if resource_recipe.recipe_type == "Raw Resource":
+                continue
 
-			# TODO: Automate oxidization recipes				
-			if resource_recipe.recipe_type == "Oxidization":
-				continue
+            # TODO: Automate oxidization recipes                
+            if resource_recipe.recipe_type == "Oxidization":
+                continue
 
-			# TODO: Automate add water recipes
-			if resource_recipe.recipe_type == "Add Water":
-				continue
+            # TODO: Automate add water recipes
+            if resource_recipe.recipe_type == "Add Water":
+                continue
 
-			# TODO: Automate shovel recipes
-			if resource_recipe.recipe_type == "Shovel":
-				continue
+            # TODO: Automate shovel recipes
+            if resource_recipe.recipe_type == "Shovel":
+                continue
 
-			# TODO: Automate Till recipes
-			if resource_recipe.recipe_type == "Till":
-				continue
+            # TODO: Automate Till recipes
+            if resource_recipe.recipe_type == "Till":
+                continue
 
-			# TODO: Automate Strip recipes
-			if resource_recipe.recipe_type == "Strip":
-				continue
+            # TODO: Automate Strip recipes
+            if resource_recipe.recipe_type == "Strip":
+                continue
 
-			# TODO: Automate Carving recipes
-			if resource_recipe.recipe_type == "Carve":
-				continue
+            # TODO: Automate Carving recipes
+            if resource_recipe.recipe_type == "Carve":
+                continue
 
 
-			has_matching_recipe = False
-			for jar_recipe in jar_recipes:
-				if jar_recipe.name == resource and is_matching_recipe(jar_recipe, resource_recipe):
-					has_matching_recipe = True
-					break
+            has_matching_recipe = False
+            for jar_recipe in jar_recipes:
+                if jar_recipe.name == resource and is_matching_recipe(jar_recipe, resource_recipe):
+                    has_matching_recipe = True
+                    break
 
-			if not has_matching_recipe:
-				print("Found Extra Yaml Recipe \""+resource+"\"")
-				print(yaml.dump(resource_recipe))
+            if not has_matching_recipe:
+                print("Found Extra Yaml Recipe \""+resource+"\"")
+                print(yaml.dump(resource_recipe))
 
 
 def validate_requirement_groups(groups: Dict[str, List[str]], resource_requirement_groups:Dict[str, List[str]]):
-	output = {}
+    output = {}
 
-	for group in sorted(groups.keys()):
-		output[requirement_groups[group]] = [id_to_name_map[x] for x in groups[group]]
+    for group in sorted(groups.keys()):
+        output[requirement_groups[group]] = [id_to_name_map[x] for x in groups[group]]
 
-	# TODO: this should actually validate against existing data instead of just
-	# printing out what the entire correct data is.
-	# print(yaml.dump(output))
-	
+    # TODO: this should actually validate against existing data instead of just
+    # printing out what the entire correct data is.
+    # print(yaml.dump(output))
+    
 
 main()
