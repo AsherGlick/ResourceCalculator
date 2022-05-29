@@ -451,4 +451,15 @@ class Recipe():
             "recipe_type": get_primitive(self.recipe_type),
             "requirements": get_primitive(self.requirements),
         }
+
+
+    def to_yaml(self) -> str:
+        lines: List[str] = []
+        lines.append("    - output: " + str(self.output))
+        lines.append("      recipe_type: " + str(self.recipe_type))
+        lines.append("      requirements:")
+        for requirement, value in self.requirements.items():
+            lines.append("        " + requirement + ": " + str(value))
+        return "\n".join(lines)
+
 # ENDGENERATOR

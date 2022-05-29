@@ -762,7 +762,7 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, 
 
             if not has_matching_recipe:
                 print("Found Extra Yaml Recipe \""+resource+"\"")
-                print(yaml.dump(resource_recipe))
+                print(resource_recipe.to_yaml())
 
 
 def validate_requirement_groups(groups: Dict[str, List[str]], resource_requirement_groups:Dict[str, List[str]]) -> None:
