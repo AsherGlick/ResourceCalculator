@@ -16,7 +16,11 @@ from recipe_item import RecipeItem
 import custom_recipes_carving
 
 
-requirement_groups: Dict[str, str] = {
+# A map between the minecraft tag names and the resource calculator resource
+# goup names.
+
+
+tagname_to_requirement_group: Dict[str, str] = {
     "minecraft:planks": "Any Planks",
     "minecraft:wooden_slabs": "Any Slab",
     "minecraft:logs": "Any Log",
@@ -46,6 +50,12 @@ requirement_groups: Dict[str, str] = {
     "resourcecalculator:purpur_block": "Any Purpur Block",
 }
 
+requirement_group_to_tagname: Dict[str, str] = { v:k for k, v in tagname_to_requirement_group.items() }
+
+# Additional groups that are not defined by minecraft but defined instead using
+# the array schema where an item's resource is an array of items instead of
+# a single one, indicating any of those items may be used. This is added to
+# all_tags in the get_all_tags() function.
 resource_calculator_tag_groups: Dict[str, List[str]] = {
     "resourcecalculator:yellow_sandstone": [
         'minecraft:chiseled_sandstone',
@@ -84,7 +94,6 @@ resource_calculator_tag_groups: Dict[str, List[str]] = {
 
 all_tags: Dict[str, List[str]] = {}
 id_to_name_map: Dict[str, str] = {}
-used_tags: Set[str] = set([])
 
 
 
@@ -156,8 +165,8 @@ def main() -> None:
     all_tags = get_all_tags(zipped_file)
 
 
+    # Build the recipe list from all of the recipe objects in the jar.
     recipes:List[RecipeItem] = []
-
     try:
         file_list = zipped_file.infolist()
         for zipped_item in file_list:
@@ -173,14 +182,22 @@ def main() -> None:
     finally:
         zipped_file.close()
 
-
+    # Add any custom recipes that are not included in the jar.
     recipes += custom_recipes_carving.recipes()
 
-    groups: Dict[str, List[str]] = {}
+    # Calculate all of the used tags/requirement groups.
+    used_tags: Set[str] = set([])
+    for recipe in recipes:
+        for requirement in recipe.requirements:
+            if requirement in requirement_group_to_tagname:
+                used_tags.add(requirement_group_to_tagname[requirement])
 
+    # Build the contents of each used requirement group.
+    groups: Dict[str, List[str]] = {}
     for tag in used_tags:
         groups[tag] = all_tags[tag]
 
+    # Validate the `resources.yaml` file against the data parsed.
     validate_resources(recipes, groups)
 
 
@@ -598,10 +615,7 @@ def get_item_name_from_item_dict(itemdict: Union[Dict[str, str], List[Dict[str,s
         raise ValueError("Itemdict should contain one key, either 'item' or 'tag'" + str(itemdict))
 
     if "tag" in itemdict:
-        # TODO: this should be able to calculated before it is needed not stored in a global here.
-        global used_tags
-        used_tags.add(itemdict["tag"])
-        return requirement_groups[itemdict["tag"]]
+        return tagname_to_requirement_group[itemdict["tag"]]
     elif "item" in itemdict:
         return id_to_name_map[itemdict["item"]]
 
@@ -761,7 +775,7 @@ def validate_requirement_groups(groups: Dict[str, List[str]], resource_requireme
     output = {}
 
     for group in sorted(groups.keys()):
-        output[requirement_groups[group]] = [id_to_name_map[x] for x in groups[group]]
+        output[tagname_to_requirement_group[group]] = [id_to_name_map[x] for x in groups[group]]
 
     # TODO: this should actually validate against existing data instead of just
     # printing out what the entire correct data is.
