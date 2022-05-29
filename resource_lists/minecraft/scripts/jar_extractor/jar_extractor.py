@@ -18,6 +18,7 @@ import custom_recipes_stripping
 import custom_recipes_tilling
 import custom_recipes_shoveling
 import custom_recipes_water
+import custom_recipes_shulker_box_coloring
 
 # A map between the minecraft tag names and the resource calculator resource
 # goup names.
@@ -43,6 +44,7 @@ tagname_to_requirement_group: Dict[str, str] = {
     "minecraft:wool": "Any Wool",
     "minecraft:soul_fire_base_blocks": "Any Soul Fire Base Block",
     "minecraft:stone_tool_materials": "Any Stone Tool Material",
+    "minecraft:shulker_boxes": "Any Shulker Box",
 
     # Corrisponding names for the custom resource_calculator_tag_groups
     "resourcecalculator:yellow_sandstone": "Any Yellow Sandstone",
@@ -242,9 +244,7 @@ def parse_recipe_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> List
     elif input_struct["type"] == "minecraft:stonecutting":
         return parse_stonecutting_data(input_struct, id_to_name_map)
     elif input_struct["type"] == "minecraft:crafting_special_shulkerboxcoloring":
-        # TODO: Add the recipes to craft colored shulker boxes
-        # This will likely be a manual process.
-        return []
+        return custom_recipes_shulker_box_coloring.recipes()
     elif input_struct["type"] == "minecraft:crafting_special_firework_rocket":
         # TODO: Add the recipes to craft firework rockets
         # This will likely be a manual process.
@@ -733,10 +733,6 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, 
 
         # Ignore our custom resource of fuel
         if resource == "Fuel":
-            continue
-
-        # TODO: Add shulker box coloring recipes
-        if resource.endswith("Shulker Box"):
             continue
 
         # TODO: Add firework rocket recipes
