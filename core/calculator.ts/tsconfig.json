@@ -10,7 +10,7 @@
 		"strict": true,
 		"downlevelIteration": true,
 		"noImplicitAny": true,
-	    "strictNullChecks": true
+		"strictNullChecks": true
 	},
 	"files": [
 		"calculator.ts"
