@@ -1,0 +1,540 @@
+---
+authors:
+  Ben: "https://benjaminvreeland.com"
+
+# Based on
+# https://theforest.fandom.com/wiki/Crafting
+# https://theforest.fandom.com/wiki/Upgrades
+# https://theforest.fandom.com/wiki/Building
+
+index_page_display_name: "The Forest"
+
+recipe_types:
+  Crafting: "Use your inventory to turn {IN_ITEMS} into {OUT_ITEM}"
+#  Upgrading: ""Use your inventory to upgrade {IN_ITEMS} into {OUT_ITEM}""
+#  Building: "Place a blueprint and fill to turn {IN_ITEMS} into {OUT_ITEM}"
+
+requirement_groups:
+  Any Arrows:
+    - Arrows
+    - Bone Arrows
+    - Modern Arrows
+    - Poisoned Arrows
+    - Incendiary Arrows
+
+resources:
+  Stick:
+    recipes:
+      - recipe_type: Raw Resource
+  Rock:
+    recipes:
+      - recipe_type: Raw Resource
+  Cloth:
+    recipes:
+      - recipe_type: Raw Resource
+  Rope:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cloth: -7
+    - recipe_type: Raw Resource
+  Electrical Tape:
+    recipes:
+      - recipe_type: Raw Resource
+  Skull:
+    recipes:
+      - recipe_type: Raw Resource
+  Bone:
+    recipes:
+      - recipe_type: Raw Resource
+  Booze:
+    recipes:
+      - recipe_type: Raw Resource
+  Feather:
+    recipes:
+      - recipe_type: Raw Resource
+  Sap:
+    recipes:
+      - recipe_type: Raw Resource
+  Leaf:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Twinberries:
+    recipes:
+      - recipe_type: Raw Resource
+  Snowberries:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Amanita Mushroom:
+    recipes:
+      - recipe_type: Raw Resource
+  Jack Mushroom:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Lizard Skin:
+    recipes:
+      - recipe_type: Raw Resource
+  Raccoon Skin:
+    recipes:
+      - recipe_type: Raw Resource
+  Boar Skin:
+    recipes:
+      - recipe_type: Raw Resource
+  Deer Skin:
+    recipes:
+      - recipe_type: Raw Resource
+  Rabbit Fur:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Head:
+    recipes:
+      - recipe_type: Raw Resource
+  Arm:
+    recipes:
+      - recipe_type: Raw Resource
+  Leg:
+    recipes:
+      - recipe_type: Raw Resource
+
+##### Weapons #####
+
+  Crafted Axe:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Rock: -1
+        Rope: -1
+    - recipe_type: Raw Resource
+
+  Slingshot:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Cloth: -1
+        Electrical Tape: -1
+    - recipe_type: Raw Resource
+
+  Crafted Bow:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Cloth: -1
+        Rope: -1
+    - recipe_type: Raw Resource
+
+  Crafted Club:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Skull: -1
+    - recipe_type: Raw Resource
+
+  Upgraded Stick:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Cloth: -1
+    - recipe_type: Raw Resource
+
+  Upgraded Rock:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Rock: -1
+        Cloth: -1
+    - recipe_type: Raw Resource
+
+  Weak Spear:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+    - recipe_type: Raw Resource
+
+  Upgraded Spear:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Weak Spear: -1
+        Cloth: -2
+        Bone: -3
+    - recipe_type: Raw Resource
+
+  Incendiary Spear:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Upgraded Spear: -1
+        Cloth: -1
+        Booze: -1
+    - recipe_type: Raw Resource
+
+  Gun Part 1:
+    recipes:
+      - recipe_type: Raw Resource
+  Gun Part 2:
+    recipes:
+      - recipe_type: Raw Resource
+  Gun Part 3:
+    recipes:
+      - recipe_type: Raw Resource
+  Gun Part 4:
+    recipes:
+      - recipe_type: Raw Resource
+  Gun Part 5:
+    recipes:
+      - recipe_type: Raw Resource
+  Gun Part 6:
+    recipes:
+      - recipe_type: Raw Resource
+  Gun Part 7:
+    recipes:
+      - recipe_type: Raw Resource
+  Gun Part 8:
+    recipes:
+      - recipe_type: Raw Resource
+  Flintlock Pistol:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Gun Part 1: -1
+        Gun Part 2: -1
+        Gun Part 3: -1
+        Gun Part 4: -1
+        Gun Part 5: -1
+        Gun Part 6: -1
+        Gun Part 7: -1
+        Gun Part 8: -1
+    - recipe_type: Raw Resource
+
+##### Arrows #####
+
+  Arrows:
+    recipes:
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Feather: -5
+    - recipe_type: Raw Resource
+
+  Bone Arrows:
+    recipes:
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Feather: -5
+        Bone: -5
+    - recipe_type: Raw Resource
+
+  Modern Arrows:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Incendiary Arrows:
+    recipes:
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Any Arrows: -5
+        Cloth: -1
+        Booze: -1
+    - recipe_type: Raw Resource
+
+  Poisoned Arrows:
+    recipes:
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Any Arrows: -5
+        Amanita Mushroom: -1
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Any Arrows: -5
+        Jack Mushroom: -1
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Any Arrows: -5
+        Twinberries: -4
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Any Arrows: -5
+        Snowberries: -4
+    - recipe_type: Raw Resource
+
+##### Projectiles #####
+
+  Molotov:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cloth: -1
+        Booze: -1
+    - recipe_type: Raw Resource
+
+  Circuit Board:
+    recipes:
+      - recipe_type: Raw Resource
+  Coins:
+    recipes:
+      - recipe_type: Raw Resource
+  Wrist Watch:
+    recipes:
+      - recipe_type: Raw Resource
+  Explosive:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Booze: -1
+        Circuit Board: -1
+        Coins: -1
+        Wrist Watch: -1
+        Electrical Tape: -1
+    - recipe_type: Raw Resource
+
+  Head Bomb:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Explosive: -1
+        Head: -1
+    - recipe_type: Raw Resource
+
+  Sticky Explosive:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Explosive: -1
+        Sap: -1
+    - recipe_type: Raw Resource
+
+##### Clothing & Armor #####
+
+  Lizard Skin Armor:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Lizard Skin: -1
+    - recipe_type: Raw Resource
+
+  Stealth Armor:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Lizard Skin: -1
+        Leaf: -15
+    - recipe_type: Raw Resource
+
+  Bone Armor:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bone: -6
+        Cloth: -3
+    - recipe_type: Raw Resource
+
+  Snowshoes:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -5
+        Rope: -2
+    - recipe_type: Raw Resource
+
+  Rabbit Fur Boots:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Rabbit Fur: -3
+        Rope: -2
+    - recipe_type: Raw Resource
+
+  Warmsuit:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Raccoon Skin: -1
+        Boar Skin: -4
+        Deer Skin: -6
+        Rabbit Fur: -1
+        Cloth: -2
+        Rope: -2
+    - recipe_type: Raw Resource
+
+##### Storage #####
+
+  Water Skin:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Deer Skin: -2
+        Rope: -1
+    - recipe_type: Raw Resource
+
+  Pouch:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Rabbit Fur: -2
+    - recipe_type: Raw Resource
+
+  Stick Bag:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Rabbit Fur: -1
+        Rope: -2
+        Cloth: -3
+    - recipe_type: Raw Resource
+
+  Rock Bag:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Boar Skin: -1
+        Rope: -3
+        Cloth: -1
+    - recipe_type: Raw Resource
+
+  Small Rock Bag:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Rabbit Fur: -1
+        Rope: -1
+    - recipe_type: Raw Resource
+
+  Spear Bag:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Boar Skin: -2
+        Deer Skin: -2
+        Cloth: -2
+        Rope: -3
+    - recipe_type: Raw Resource
+
+##### Other #####
+
+  Repair Tool:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -2
+        Rock: -1
+        Cloth: -2
+        Sap: -10
+    - recipe_type: Raw Resource
+
+  Aloe:
+    recipes:
+      - recipe_type: Raw Resource
+  Marigold:
+    recipes:
+      - recipe_type: Raw Resource
+  Chicory:
+    recipes:
+      - recipe_type: Raw Resource
+  Coneflower:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Health Mix:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Aloe: -1
+        Marigold: -1
+    - recipe_type: Raw Resource
+  Health Mix Plus:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Aloe: -1
+        Marigold: -1
+        Coneflower: -1
+    - recipe_type: Raw Resource
+
+  Energy Mix:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Chicory: -1
+        Coneflower: -1
+    - recipe_type: Raw Resource
+  Energy Mix Plus:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Chicory: -1
+        Coneflower: -1
+        Aloe: -1
+    - recipe_type: Raw Resource
+
+  Toy Head:
+    recipes:
+      - recipe_type: Raw Resource
+  Toy Torso:
+    recipes:
+      - recipe_type: Raw Resource
+  Toy Arm:
+    recipes:
+      - recipe_type: Raw Resource
+  Toy Leg:
+    recipes:
+      - recipe_type: Raw Resource
+  Timmy's Toy:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Toy Head: -1
+        Toy Torso: -1
+        Toy Arm: -2
+        Toy Leg: -2
+    - recipe_type: Raw Resource
