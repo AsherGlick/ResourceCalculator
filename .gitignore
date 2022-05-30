@@ -30,3 +30,6 @@ profiledata.prof
 # Generated js from typescript
 core/calculator.js
 core/calculator.js.map
+
+# The virtual environment created from the docker containers
+venv_docker/
