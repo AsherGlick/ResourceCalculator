@@ -12,7 +12,9 @@ index_page_display_name: "The Forest"
 recipe_types:
   Crafting: "Use your inventory to turn {IN_ITEMS} into {OUT_ITEM}"
   Upgrading: "Use your inventory to add {OUT_ITEM} to a weapon using {IN_ITEMS} (the weapon will not be consumed, not all weapons are applicable, terms and conditions may apply)"
-#  Building: "Place a blueprint and fill to turn {IN_ITEMS} into {OUT_ITEM}"
+  Building: "Place a blueprint and fill to turn {IN_ITEMS} into {OUT_ITEM}"
+
+## TODO: optional getting raw resource from source (corpse -> chop, burn)?
 
 resources:
   Stick:
@@ -53,6 +55,9 @@ resources:
     recipes:
       - recipe_type: Raw Resource
   Leaf:
+    recipes:
+      - recipe_type: Raw Resource
+  Log:
     recipes:
       - recipe_type: Raw Resource
 
@@ -891,10 +896,317 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
+##### Buildings #####
+  Variable Log Amount:
+    recipes:
+      - recipe_type: Raw Resource
+  Variable Stick Amount:
+    recipes:
+      - recipe_type: Raw Resource
+  Variable Rock Amount:
+    recipes:
+      - recipe_type: Raw Resource
+  Variable Bone Amount:
+    recipes:
+      - recipe_type: Raw Resource
+  Variable Rope Amount:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Boar Head:
+    custom_simplename: headboar
+    recipes:
+      - recipe_type: Raw Resource
+  Crocodile Head:
+    custom_simplename: headcrocodile
+    recipes:
+      - recipe_type: Raw Resource
+  Deer Head:
+    custom_simplename: headdeer
+    recipes:
+      - recipe_type: Raw Resource
+  Goose Head:
+    custom_simplename: headgoose
+    recipes:
+      - recipe_type: Raw Resource
+  Lizard Head:
+    custom_simplename: headlizard
+    recipes:
+      - recipe_type: Raw Resource
+  Rabbit Head:
+    custom_simplename: headrabbit
+    recipes:
+      - recipe_type: Raw Resource
+  Raccoon Head:
+    custom_simplename: headraccoon
+    recipes:
+      - recipe_type: Raw Resource
+  Seagull Head:
+    custom_simplename: headseagull
+    recipes:
+      - recipe_type: Raw Resource
+  Shark Head:
+    custom_simplename: headshark
+    recipes:
+      - recipe_type: Raw Resource
+  Squirrel Head:
+    custom_simplename: headsquirrel
+    recipes:
+      - recipe_type: Raw Resource
+  Tortoise Head:
+    custom_simplename: headtortoise
+    recipes:
+      - recipe_type: Raw Resource
+  Armsy Head:
+    custom_simplename: headarmsy
+    recipes:
+      - recipe_type: Raw Resource
+  Cowman Head:
+    custom_simplename: headcowman
+    recipes:
+      - recipe_type: Raw Resource
+  Mutant Baby Head:
+    custom_simplename: headmutantbaby
+    recipes:
+      - recipe_type: Raw Resource
+  Virginia Head:
+    custom_simplename: headvirginia
+    recipes:
+      - recipe_type: Raw Resource
+
+### Fires ###
+
+  Basic Fire:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Leaf: -7
+        Stick: -2
+    - recipe_type: Raw Resource
+  Fire Pit:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Leaf: -7
+        Stick: -4
+        Rock: -7
+    - recipe_type: Raw Resource
+  Standing Fire:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Leaf: -7
+        Stick: -4
+        Rock: -3
+    - recipe_type: Raw Resource
+  Bonfire:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Leaf: -20
+        Stick: -10
+        Log: -5
+    - recipe_type: Raw Resource
+
+### Shelters ###
+
+  Temporary Shelter:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Leaf: -26
+        Stick: -14
+    - recipe_type: Raw Resource
+  Hunting Shelter:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -7
+        Rock: -6
+        Log: -7
+    - recipe_type: Raw Resource
+  Small Cabin:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Log: -13
+    - recipe_type: Raw Resource
+  Log Cabin:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Log: -82
+        Variable Log Amount: -1
+    - recipe_type: Raw Resource
+
+### Food & Water ###
+
+  Rabbit Cage:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -13
+    - recipe_type: Raw Resource
+  Water Collector:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -4
+        Turtle Shell: -1
+    - recipe_type: Raw Resource
+  Garden:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Log: -2
+        Variable Log Amount: -1
+    - recipe_type: Raw Resource
+  Drying Rack:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -5
+    - recipe_type: Raw Resource
+
+### Storage ###
+
+  Small Stick Holder:
+    custom_simplename: stickholdersmall
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -6
+    - recipe_type: Raw Resource
+  Large Stick Holder:
+    custom_simplename: stickholderlarge
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -24
+    - recipe_type: Raw Resource
+
+  Small Log Holder:
+    custom_simplename: logholdersmall
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -16
+    - recipe_type: Raw Resource
+  Large Log Holder:
+    custom_simplename: logholderlarge
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -24
+    - recipe_type: Raw Resource
+
+  Small Rock Holder:
+    custom_simplename: rockholdersmall
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -8
+    - recipe_type: Raw Resource
+  Large Rock Holder:
+    custom_simplename: rockholderlarge
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -20
+    - recipe_type: Raw Resource
+
+  Log Sled:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -21
+    - recipe_type: Raw Resource
+  Weapon Rack:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -10
+    - recipe_type: Raw Resource
+  Explosives Holder:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -8
+        Log: -1
+    - recipe_type: Raw Resource
+
+  Small Cabinet:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Log: -7
+    - recipe_type: Raw Resource
+  Large Cabinet:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Log: -8
+    - recipe_type: Raw Resource
+
+  Skin Rack:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -20
+    - recipe_type: Raw Resource
+  Armor Rack:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -37
+    - recipe_type: Raw Resource
+
+  Bone Basket:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -21
+    - recipe_type: Raw Resource
+  Arrow Basket:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -25
+    - recipe_type: Raw Resource
+
+### Custom ###
 
 
 
+### Elevated ###
 
 
 
-## TODO: optional getting raw resource from source (corpse -> chop, burn)?
+### Basic ###
