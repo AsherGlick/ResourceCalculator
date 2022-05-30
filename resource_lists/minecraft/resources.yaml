@@ -9581,3 +9581,63 @@ resources:
         Paper: -1
         Oxeye Daisy: -1
     - recipe_type: Raw Resource
+
+  Bucket of Tadpole:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Frogspawn:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Goat Horn:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Mangrove Leaves:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Mangrove Propagule:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Ochre Froglight:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Pearlescent Froglight:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Petrified Oak Slab:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Reinforced Deepslate:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Sculk:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Sculk Catalyst:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Sculk Sensor:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Sculk Shrieker:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Sculk Vein:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Verdant Froglight:
+    recipes:
+    - recipe_type: Raw Resource
