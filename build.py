@@ -855,7 +855,8 @@ def ends_with_any(string: str, endings: List[str]) -> bool:
 
 
 def build_typescript(folder: str) -> None:
-    subprocess.run(["node_modules/.bin/tsc", "--project", "core/calculator.ts"])
+    if (os.path.getctime("core/calculator.ts/calculator.ts") > os.path.getctime("core/calculator.js")):
+        subprocess.run(["node_modules/.bin/tsc", "--project", "core/calculator.ts"])
 
 
 ################################################################################
