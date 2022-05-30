@@ -4,7 +4,6 @@ authors:
 
 # Based on
 # https://theforest.fandom.com/wiki/Crafting
-# https://theforest.fandom.com/wiki/Upgrades
 # https://theforest.fandom.com/wiki/Building
 
 index_page_display_name: "The Forest"
@@ -12,9 +11,7 @@ index_page_display_name: "The Forest"
 recipe_types:
   Crafting: "Use your inventory to turn {IN_ITEMS} into {OUT_ITEM}"
   Upgrading: "Use your inventory to add {OUT_ITEM} to a weapon using {IN_ITEMS} (the weapon will not be consumed, not all weapons are applicable, terms and conditions may apply)"
-  Building: "Place a blueprint and fill to turn {IN_ITEMS} into {OUT_ITEM}"
-
-## TODO: optional getting raw resource from source (corpse -> chop, burn)?
+  Building: "Place blueprint(s) and fill to turn {IN_ITEMS} into {OUT_ITEM}"
 
 resources:
   Stick:
@@ -1400,7 +1397,7 @@ resources:
 
 ### Furniture ###
 
-  Bench:
+  Wood Bench:
     recipes:
     - output: 1
       recipe_type: Building
@@ -1586,55 +1583,396 @@ resources:
         Virginia Head: -1
     - recipe_type: Raw Resource
 
+  Wall Weapon Rack:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -2
+    - recipe_type: Raw Resource
+  Ground Weapon Holder:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Log: -1
+    - recipe_type: Raw Resource
+
+  Wall Planter:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -25
+    - recipe_type: Raw Resource
+
+  Bone Chandelier:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Bone: -26
+        Skull: -8
+        Cloth: -5
+    - recipe_type: Raw Resource
+
+  Bone Frame:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Bone: -4
+        Rabbit Fur: -1
+    - recipe_type: Raw Resource
+  Stick Frame:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -4
+        Rabbit Fur: -1
+    - recipe_type: Raw Resource
+
+  Birdhouse:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Log: -1
+        Stick: -4
+    - recipe_type: Raw Resource
+
 ### Small Traps ###
 
+  Animal Trap:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -31
+    - recipe_type: Raw Resource
+  Fish Trap:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -28
+        Rope: -2
+    - recipe_type: Raw Resource
 
+  Leaf Pile Trap:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Leaf: -50
+    - recipe_type: Raw Resource
 
-
+  Molotov Wire Trap:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -1
+        Cloth: -3
+        Molotov: -1
+    - recipe_type: Raw Resource
+  Explosives Wire Trap:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -1
+        Cloth: -2
+        Explosive: -1
+    - recipe_type: Raw Resource
 
 ### Advanced Traps ###
 
-
-
-
+  Deadfall Trap:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -3
+        Log: -3
+    - recipe_type: Raw Resource
+  Happy Birthday Trap:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -20
+        Rock: -2
+        Rope: -2
+        Log: -4
+    - recipe_type: Raw Resource
+  Rope Swing Trap:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Rock: -10
+        Rope: -1
+        Log: -6
+    - recipe_type: Raw Resource
+  Noose Trap:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -2
+        Rope: -1
+        Log: -5
+    - recipe_type: Raw Resource
 
 ### Defensive Structures ###
 
+  Defensive Spikes:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Log: -9
+    - recipe_type: Raw Resource
 
+  Defensive Walls:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Variable Log Amount: -1
+    - recipe_type: Raw Resource
+  Defensive Wall Spikes:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Variable Stick Amount: -1
+        Variable Rock Amount: -1
+    - recipe_type: Raw Resource
 
-
-
-### Decorations ###
-
-
-
-
+  Catapult:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -15
+        Rope: -1
+        Log: -5
+    - recipe_type: Raw Resource
 
 ### Boats ###
 
+  Small Raft:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -4
+        Rope: -4
+        Log: -7
+    - recipe_type: Raw Resource
+  House Boat:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -4
+        Rope: -4
+        Log: -40
+    - recipe_type: Raw Resource
+  Large Raft:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -32
+        Log: -57
+    - recipe_type: Raw Resource
 
-
-
+  Dock:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Variable Log Amount: -1
+    - recipe_type: Raw Resource
 
 ### Effigies ###
 
+  Custom Effigy:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -2
+        Rock: -3
+    - recipe_type: Raw Resource
 
+  Small Effigy:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -4
+        Rock: -3
+        Arm: -3
+        Leg: -2
+        Head: -3
+    - recipe_type: Raw Resource
+  Large Effigy:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -10
+        Rock: -6
+        Arm: -9
+        Leg: -4
+        Head: -9
+    - recipe_type: Raw Resource
 
-
+  Arm Effigy:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -4
+        Rock: -3
+        Arm: -7
+    - recipe_type: Raw Resource
 
 ### Schematic Buildings ###
 
+  Tower:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -22
+        Log: -317
+        Variable Log Amount: -1
+    - recipe_type: Raw Resource
+  Glider:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Bone: -6
+        Rabbit Fur: -8
+        Rope: -8
+        Arm: -2
+        Head: -1
+        Stick: -32
+    - recipe_type: Raw Resource
 
+  Log Track:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Variable Stick Amount: -1
+        Variable Log Amount: -1
+    - recipe_type: Raw Resource
 
-
+  Coffin:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -1
+        Log: -11
+    - recipe_type: Raw Resource
+  Cross:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -48
+        Log: -34
+        Rock: -18
+    - recipe_type: Raw Resource
+  Church:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -5
+        Log: -82
+        Variable Log Amount: -1
+    - recipe_type: Raw Resource
 
 ### Special ###
 
-
-
-
+  SOS Sign:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Rock: -34
+    - recipe_type: Raw Resource
 
 ### End Game Buildings ###
 
+  Timmy Standing:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -38
+        Cloth: -1
+    - recipe_type: Raw Resource
+  Timmy Sitting:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -38
+        Cloth: -1
+        Log: -1
+    - recipe_type: Raw Resource
 
+  Wife Standing:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -38
+        Cloth: -1
+    - recipe_type: Raw Resource
+  Wife Sitting:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -38
+        Cloth: -1
+        Log: -1
+    - recipe_type: Raw Resource
 
+  Car:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -121
+        Log: -47
+    - recipe_type: Raw Resource
+  Dog:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -20
+        Log: -1
+        Cloth: -1
+    - recipe_type: Raw Resource
+  TV:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -8
+        Log: -3
+    - recipe_type: Raw Resource
