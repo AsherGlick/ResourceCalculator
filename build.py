@@ -347,9 +347,12 @@ def get_oldest_modified_time(path: str) -> float:
 # This function takes in a directory and finds the newest modification time of
 # any file in that directory
 ################################################################################
-def get_newest_modified_time(path: str) -> float:
+def get_newest_modified_time(path: str, ignore: List[str] = []) -> float:
     time_list = [os.path.getctime(path)]
     for file in os.listdir(path):
+        if file in ignore:
+            continue
+
         filepath = os.path.join(path, file)
         if (os.path.isdir(filepath)):
             time_list.append(get_newest_modified_time(filepath))
@@ -558,9 +561,10 @@ def create_calculator_page(
     elif not force:
         oldest_output = get_oldest_modified_time(calculator_folder)
         newest_resource = get_newest_modified_time(source_folder)
-        newest_corelib = get_newest_modified_time("core")
+        newest_corelib = get_newest_modified_time("core", ignore=["calculator.js", "calculator.js.map"])
         newest_build_script = os.path.getctime("build.py")
         newest_build_lib = get_newest_modified_time("pylib")
+
         if oldest_output > max(newest_resource, newest_corelib, newest_build_script, newest_build_lib):
             # Allow not printing the skip text for polling with the --watch flag
             if print_skip_text:
