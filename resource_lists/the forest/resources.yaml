@@ -410,7 +410,6 @@ resources:
         Gun Part 8: -1
     - recipe_type: Raw Resource
   Old Gun Ammo:
-    custom_simplename: gunammo
     recipes:
       - recipe_type: Raw Resource
 
@@ -726,7 +725,7 @@ resources:
 
 # Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Upgraded Rock, Crafted Club, Upgraded Stick, Machete, Tennis Racket, Club
   Damage Upgrade+:
-    custom_simplename: damageplusupgrade
+    custom_simplename: damageupgradeplus
     recipes:
     - output: 1
       recipe_type: Upgrading
@@ -871,7 +870,6 @@ resources:
     recipes:
       - recipe_type: Raw Resource
   Timmy's Toy:
-    custom_simplename: toy
     recipes:
     - output: 1
       recipe_type: Crafting
@@ -914,63 +912,48 @@ resources:
       - recipe_type: Raw Resource
 
   Boar Head:
-    custom_simplename: headboar
     recipes:
       - recipe_type: Raw Resource
   Crocodile Head:
-    custom_simplename: headcrocodile
     recipes:
       - recipe_type: Raw Resource
   Deer Head:
-    custom_simplename: headdeer
     recipes:
       - recipe_type: Raw Resource
   Goose Head:
-    custom_simplename: headgoose
     recipes:
       - recipe_type: Raw Resource
   Lizard Head:
-    custom_simplename: headlizard
     recipes:
       - recipe_type: Raw Resource
   Rabbit Head:
-    custom_simplename: headrabbit
     recipes:
       - recipe_type: Raw Resource
   Raccoon Head:
-    custom_simplename: headraccoon
     recipes:
       - recipe_type: Raw Resource
   Seagull Head:
-    custom_simplename: headseagull
     recipes:
       - recipe_type: Raw Resource
   Shark Head:
-    custom_simplename: headshark
     recipes:
       - recipe_type: Raw Resource
   Squirrel Head:
-    custom_simplename: headsquirrel
     recipes:
       - recipe_type: Raw Resource
   Tortoise Head:
-    custom_simplename: headtortoise
     recipes:
       - recipe_type: Raw Resource
   Armsy Head:
-    custom_simplename: headarmsy
     recipes:
       - recipe_type: Raw Resource
   Cowman Head:
-    custom_simplename: headcowman
     recipes:
       - recipe_type: Raw Resource
   Mutant Baby Head:
-    custom_simplename: headmutantbaby
     recipes:
       - recipe_type: Raw Resource
   Virginia Head:
-    custom_simplename: headvirginia
     recipes:
       - recipe_type: Raw Resource
 
@@ -1083,7 +1066,6 @@ resources:
 ### Storage ###
 
   Small Stick Holder:
-    custom_simplename: stickholdersmall
     recipes:
     - output: 1
       recipe_type: Building
@@ -1091,7 +1073,6 @@ resources:
         Stick: -6
     - recipe_type: Raw Resource
   Large Stick Holder:
-    custom_simplename: stickholderlarge
     recipes:
     - output: 1
       recipe_type: Building
@@ -1100,7 +1081,6 @@ resources:
     - recipe_type: Raw Resource
 
   Small Log Holder:
-    custom_simplename: logholdersmall
     recipes:
     - output: 1
       recipe_type: Building
@@ -1108,7 +1088,6 @@ resources:
         Stick: -16
     - recipe_type: Raw Resource
   Large Log Holder:
-    custom_simplename: logholderlarge
     recipes:
     - output: 1
       recipe_type: Building
@@ -1117,7 +1096,6 @@ resources:
     - recipe_type: Raw Resource
 
   Small Rock Holder:
-    custom_simplename: rockholdersmall
     recipes:
     - output: 1
       recipe_type: Building
@@ -1125,7 +1103,6 @@ resources:
         Stick: -8
     - recipe_type: Raw Resource
   Large Rock Holder:
-    custom_simplename: rockholderlarge
     recipes:
     - output: 1
       recipe_type: Building
@@ -1203,10 +1180,461 @@ resources:
 
 ### Custom ###
 
+  Custom Foundation:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Variable Log Amount: -1
+    - recipe_type: Raw Resource
+  Custom Floor:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Variable Log Amount: -1
+    - recipe_type: Raw Resource
+  Custom Wall:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Variable Log Amount: -1
+    - recipe_type: Raw Resource
+  Custom Roof:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Variable Log Amount: -1
+    - recipe_type: Raw Resource
+  Custom Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Variable Log Amount: -1
+    - recipe_type: Raw Resource
 
+  Hole Cutter:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Platform:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Variable Log Amount: -1
+    - recipe_type: Raw Resource
+  Side Platform:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Log: -6
+    - recipe_type: Raw Resource
+  Gazebo:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -60
+        Log: -30
+        Variable Log Amount: -1
+    - recipe_type: Raw Resource
+
+  Rock Wall:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Variable Rock Amount: -1
+    - recipe_type: Raw Resource
+  Rock Path:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Variable Rock Amount: -1
+    - recipe_type: Raw Resource
+  Stick Fence:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Variable Stick Amount: -1
+    - recipe_type: Raw Resource
+  Bone Fence:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Variable Bone Amount: -1
+    - recipe_type: Raw Resource
 
 ### Elevated ###
 
-
+  Treehouse:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Log: -35
+    - recipe_type: Raw Resource
+  Alpine Treehouse:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -18
+        Log: -29
+    - recipe_type: Raw Resource
+  Tree Platform:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Log: -14
+    - recipe_type: Raw Resource
+  Tree Bridge:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Variable Log Amount: -1
+    - recipe_type: Raw Resource
 
 ### Basic ###
+
+  Basic Wall:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Log: -5
+    - recipe_type: Raw Resource
+  Simple Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Log: -5
+    - recipe_type: Raw Resource
+  Wall with Door:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Log: -5
+    - recipe_type: Raw Resource
+  Wall with Window:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Log: -5
+    - recipe_type: Raw Resource
+
+### Utility ###
+
+  Stick Marker:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -2
+        Rock: -2
+        Cloth: -1
+    - recipe_type: Raw Resource
+  Wood Target:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -4
+        Log: -1
+    - recipe_type: Raw Resource
+  Climbing Rope:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Rope: -1
+    - recipe_type: Raw Resource
+  Sap Collector:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -2
+        Rope: -1
+        Old Pot: -1
+    - recipe_type: Raw Resource
+
+  Freestanding Zipline:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Log: -10
+        Variable Rope Amount: -1
+    - recipe_type: Raw Resource
+  Tree Zipline:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -2
+        Variable Rope Amount: -1
+    - recipe_type: Raw Resource
+
+  Crane:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Rope: -6
+        Variable Log Amount: -1
+    - recipe_type: Raw Resource
+
+### Furniture ###
+
+  Bench:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Log: -2
+    - recipe_type: Raw Resource
+  Small Bed:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -17
+        Rope: -1
+        Rabbit Fur: -4
+    - recipe_type: Raw Resource
+  Table:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Log: -5
+    - recipe_type: Raw Resource
+  Chair:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -30
+        Deer Skin: -2
+    - recipe_type: Raw Resource
+  Fireplace:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Rock: -68
+        Log: -2
+    - recipe_type: Raw Resource
+  Couch:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Log: -5
+        Stick: -12
+        Deer Skin: -7
+    - recipe_type: Raw Resource
+  Side Table:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Log: -3
+    - recipe_type: Raw Resource
+  Bone Chair:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Bone: -31
+    - recipe_type: Raw Resource
+
+### Decorations ###
+
+  Deer Skin Decoration:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Deer Skin: -1
+    - recipe_type: Raw Resource
+  Rabbit Fur Decoration:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Rabbit Fur: -1
+    - recipe_type: Raw Resource
+
+  Skull Lamp:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -3
+        Skull: -1
+        Sap: -5
+    - recipe_type: Raw Resource
+  Ceiling Skull Lamp:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Rope: -1
+        Skull: -1
+        Sap: -1
+    - recipe_type: Raw Resource
+
+  Decorative Skull:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -1
+        Skull: -1
+    - recipe_type: Raw Resource
+  Head Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -1
+        Boar Head: -1
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -1
+        Crocodile Head: -1
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -1
+        Deer Head: -1
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -1
+        Goose Head: -1
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -1
+        Lizard Head: -1
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -1
+        Rabbit Head: -1
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -1
+        Raccoon Head: -1
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -1
+        Seagull Head: -1
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -1
+        Shark Head: -1
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -1
+        Squirrel Head: -1
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -1
+        Tortoise Head: -1
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -1
+        Armsy Head: -1
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -1
+        Cowman Head: -1
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -1
+        Mutant Baby Head: -1
+    - output: 1
+      recipe_type: Building
+      requirements:
+        Stick: -1
+        Virginia Head: -1
+    - recipe_type: Raw Resource
+
+### Small Traps ###
+
+
+
+
+
+### Advanced Traps ###
+
+
+
+
+
+### Defensive Structures ###
+
+
+
+
+
+### Decorations ###
+
+
+
+
+
+### Boats ###
+
+
+
+
+
+### Effigies ###
+
+
+
+
+
+### Schematic Buildings ###
+
+
+
+
+
+### Special ###
+
+
+
+
+
+### End Game Buildings ###
+
+
+
