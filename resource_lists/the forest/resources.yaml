@@ -11,16 +11,8 @@ index_page_display_name: "The Forest"
 
 recipe_types:
   Crafting: "Use your inventory to turn {IN_ITEMS} into {OUT_ITEM}"
-#  Upgrading: ""Use your inventory to upgrade {IN_ITEMS} into {OUT_ITEM}""
+  Upgrading: "Use your inventory to add {OUT_ITEM} to a weapon using {IN_ITEMS} (the weapon will not be consumed, not all weapons are applicable, terms and conditions may apply)"
 #  Building: "Place a blueprint and fill to turn {IN_ITEMS} into {OUT_ITEM}"
-
-requirement_groups:
-  Any Arrows:
-    - Arrows
-    - Bone Arrows
-    - Modern Arrows
-    - Poisoned Arrows
-    - Incendiary Arrows
 
 resources:
   Stick:
@@ -42,9 +34,6 @@ resources:
   Electrical Tape:
     recipes:
       - recipe_type: Raw Resource
-  Skull:
-    recipes:
-      - recipe_type: Raw Resource
   Bone:
     recipes:
       - recipe_type: Raw Resource
@@ -54,6 +43,9 @@ resources:
   Feather:
     recipes:
       - recipe_type: Raw Resource
+  Tooth:
+    recipes:
+      - recipe_type: Raw Resource
   Sap:
     recipes:
       - recipe_type: Raw Resource
@@ -61,17 +53,35 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  Twinberries:
+  Blackberries:
+    recipes:
+      - recipe_type: Raw Resource
+  Blueberries:
     recipes:
       - recipe_type: Raw Resource
   Snowberries:
+    recipes:
+      - recipe_type: Raw Resource
+  Twinberries:
     recipes:
       - recipe_type: Raw Resource
 
   Amanita Mushroom:
     recipes:
       - recipe_type: Raw Resource
+  Chanterelle Mushroom:
+    recipes:
+      - recipe_type: Raw Resource
+  Deer Mushroom:
+    recipes:
+      - recipe_type: Raw Resource
   Jack Mushroom:
+    recipes:
+      - recipe_type: Raw Resource
+  Liberty Cap Mushroom:
+    recipes:
+      - recipe_type: Raw Resource
+  Puff Mushroom:
     recipes:
       - recipe_type: Raw Resource
 
@@ -91,6 +101,9 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
+  Skull:
+    recipes:
+      - recipe_type: Raw Resource
   Head:
     recipes:
       - recipe_type: Raw Resource
@@ -122,6 +135,9 @@ resources:
         Cloth: -1
         Electrical Tape: -1
     - recipe_type: Raw Resource
+  Small Rock:
+    recipes:
+      - recipe_type: Raw Resource
 
   Crafted Bow:
     recipes:
@@ -132,6 +148,128 @@ resources:
         Cloth: -1
         Rope: -1
     - recipe_type: Raw Resource
+
+  Modern Bow:
+    recipes:
+      - recipe_type: Raw Resource
+
+### Arrows ###
+
+  Arrows:
+    recipes:
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Feather: -5
+    - recipe_type: Raw Resource
+
+  Incendiary Arrows:
+    recipes:
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Arrows: -5
+        Cloth: -1
+        Booze: -1
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Bone Arrows: -5
+        Cloth: -1
+        Booze: -1
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Poisoned Arrows: -5
+        Cloth: -1
+        Booze: -1
+    - recipe_type: Raw Resource
+
+  Poisoned Arrows:
+    recipes:
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Arrows: -5
+        Amanita Mushroom: -1
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Arrows: -5
+        Jack Mushroom: -1
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Arrows: -5
+        Twinberries: -4
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Arrows: -5
+        Snowberries: -4
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Bone Arrows: -5
+        Amanita Mushroom: -1
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Bone Arrows: -5
+        Jack Mushroom: -1
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Bone Arrows: -5
+        Twinberries: -4
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Bone Arrows: -5
+        Snowberries: -4
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Incendiary Arrows: -5
+        Amanita Mushroom: -1
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Incendiary Arrows: -5
+        Jack Mushroom: -1
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Incendiary Arrows: -5
+        Twinberries: -4
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Incendiary Arrows: -5
+        Snowberries: -4
+    - recipe_type: Raw Resource
+
+  Bone Arrows:
+    recipes:
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Feather: -5
+        Bone: -5
+    - recipe_type: Raw Resource
+
+  Modern Arrows:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Crossbow:
+    recipes:
+      - recipe_type: Raw Resource
+  Crossbow Bolt:
+    recipes:
+      - recipe_type: Raw Resource
 
   Crafted Club:
     recipes:
@@ -226,65 +364,10 @@ resources:
         Gun Part 7: -1
         Gun Part 8: -1
     - recipe_type: Raw Resource
-
-##### Arrows #####
-
-  Arrows:
-    recipes:
-    - output: 5
-      recipe_type: Crafting
-      requirements:
-        Stick: -1
-        Feather: -5
-    - recipe_type: Raw Resource
-
-  Bone Arrows:
-    recipes:
-    - output: 5
-      recipe_type: Crafting
-      requirements:
-        Stick: -1
-        Feather: -5
-        Bone: -5
-    - recipe_type: Raw Resource
-
-  Modern Arrows:
+  Old Gun Ammo:
+    custom_simplename: gunammo
     recipes:
       - recipe_type: Raw Resource
-
-  Incendiary Arrows:
-    recipes:
-    - output: 5
-      recipe_type: Crafting
-      requirements:
-        Any Arrows: -5
-        Cloth: -1
-        Booze: -1
-    - recipe_type: Raw Resource
-
-  Poisoned Arrows:
-    recipes:
-    - output: 5
-      recipe_type: Crafting
-      requirements:
-        Any Arrows: -5
-        Amanita Mushroom: -1
-    - output: 5
-      recipe_type: Crafting
-      requirements:
-        Any Arrows: -5
-        Jack Mushroom: -1
-    - output: 5
-      recipe_type: Crafting
-      requirements:
-        Any Arrows: -5
-        Twinberries: -4
-    - output: 5
-      recipe_type: Crafting
-      requirements:
-        Any Arrows: -5
-        Snowberries: -4
-    - recipe_type: Raw Resource
 
 ##### Projectiles #####
 
@@ -296,6 +379,10 @@ resources:
         Cloth: -1
         Booze: -1
     - recipe_type: Raw Resource
+
+  Dynamite:
+    recipes:
+      - recipe_type: Raw Resource
 
   Circuit Board:
     recipes:
@@ -363,6 +450,10 @@ resources:
         Bone: -6
         Cloth: -3
     - recipe_type: Raw Resource
+
+  Creepy Armor:
+    recipes:
+      - recipe_type: Raw Resource
 
   Snowshoes:
     recipes:
@@ -443,6 +534,15 @@ resources:
         Rope: -1
     - recipe_type: Raw Resource
 
+  Quiver:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Rabbit Fur: -3
+        Rope: -1
+    - recipe_type: Raw Resource
+
   Spear Bag:
     recipes:
     - output: 1
@@ -488,7 +588,8 @@ resources:
         Aloe: -1
         Marigold: -1
     - recipe_type: Raw Resource
-  Health Mix Plus:
+  Health Mix+:
+    custom_simplename: healthmixplus
     recipes:
     - output: 1
       recipe_type: Crafting
@@ -506,7 +607,8 @@ resources:
         Chicory: -1
         Coneflower: -1
     - recipe_type: Raw Resource
-  Energy Mix Plus:
+  Energy Mix+:
+    custom_simplename: energymixplus
     recipes:
     - output: 1
       recipe_type: Crafting
@@ -529,6 +631,7 @@ resources:
     recipes:
       - recipe_type: Raw Resource
   Timmy's Toy:
+    custom_simplename: toy
     recipes:
     - output: 1
       recipe_type: Crafting
@@ -538,3 +641,142 @@ resources:
         Toy Arm: -2
         Toy Leg: -2
     - recipe_type: Raw Resource
+
+##### Upgrades #####
+
+  Plane Axe:
+    recipes:
+      - recipe_type: Raw Resource
+  Rusty Axe:
+    recipes:
+      - recipe_type: Raw Resource
+  Modern Axe:
+    recipes:
+      - recipe_type: Raw Resource
+  Climbing Axe:
+    recipes:
+      - recipe_type: Raw Resource
+  Machete:
+    recipes:
+      - recipe_type: Raw Resource
+  Tennis Racket:
+    recipes:
+      - recipe_type: Raw Resource
+  Club:
+    recipes:
+      - recipe_type: Raw Resource
+  Katana:
+    recipes:
+      - recipe_type: Raw Resource
+  Chainsaw:
+    recipes:
+      - recipe_type: Raw Resource
+  Fuel:
+    recipes:
+      - recipe_type: Raw Resource
+
+# Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Crafted Club, Upgraded Stick, Machete, Tennis Racket, Club
+  Speed Upgrade:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Feather: -1
+        Sap: -1
+    - recipe_type: Raw Resource
+
+# Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Crafted Club, Upgraded Stick, Machete, Tennis Racket, Club
+  Damage Upgrade:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Tooth: -1
+        Sap: -1
+    - recipe_type: Raw Resource
+
+# Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Upgraded Rock, Crafted Club, Upgraded Stick, Machete, Tennis Racket, Club
+  Damage Upgrade+:
+    custom_simplename: damageplusupgrade
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Booze: -1
+        Sap: -1
+    - recipe_type: Raw Resource
+
+# Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Upgraded Rock, Crafted Club, Club, Upgraded Stick
+  Fire Upgrade:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Cloth: -1
+    - recipe_type: Raw Resource
+
+# Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Upgraded Spear, Incendiary Spear, Katana, Machete
+  Poison Upgrade:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Amanita Mushroom: -1
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Jack Mushroom: -1
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Twinberries: -4
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Snowberries: -4
+    - recipe_type: Raw Resource
+
+  Plastic Torch:
+    recipes:
+      - recipe_type: Raw Resource
+# Chainsaw, Modern Bow, Crafted Bow, Flintlock Pistol
+  Light Upgrade:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Plastic Torch: -1
+        Electrical Tape: -1
+    - recipe_type: Raw Resource
+
+  Flare:
+    recipes:
+      - recipe_type: Raw Resource
+  Flare Gun:
+    recipes:
+      - recipe_type: Raw Resource
+# Flare Gun
+  Flare Gun Ammo:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Flare: -1
+    - recipe_type: Raw Resource
+
+  Rebreather:
+    recipes:
+      - recipe_type: Raw Resource
+  Air Canister:
+    recipes:
+      - recipe_type: Raw Resource
+
+
+
+
+
+
+
+
+
+## TODO: optional getting raw resource from source (corpse -> chop, burn)?
