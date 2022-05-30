@@ -34,6 +34,9 @@ resources:
   Electrical Tape:
     recipes:
       - recipe_type: Raw Resource
+  Cash:
+    recipes:
+      - recipe_type: Raw Resource
   Bone:
     recipes:
       - recipe_type: Raw Resource
@@ -85,6 +88,37 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
+### Food ###
+
+  Small Meat:
+    recipes:
+      - recipe_type: Raw Resource
+  Meat:
+    recipes:
+      - recipe_type: Raw Resource
+  Rabbit Meat:
+    recipes:
+      - recipe_type: Raw Resource
+  Lizard Meat:
+    recipes:
+      - recipe_type: Raw Resource
+  Fish:
+    recipes:
+      - recipe_type: Raw Resource
+  Oyster:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Soda:
+    recipes:
+      - recipe_type: Raw Resource
+  Snack:
+    recipes:
+      - recipe_type: Raw Resource
+  Meds:
+    recipes:
+      - recipe_type: Raw Resource
+
   Lizard Skin:
     recipes:
       - recipe_type: Raw Resource
@@ -100,11 +134,17 @@ resources:
   Rabbit Fur:
     recipes:
       - recipe_type: Raw Resource
+  Turtle Shell:
+    recipes:
+      - recipe_type: Raw Resource
 
   Skull:
     recipes:
       - recipe_type: Raw Resource
   Head:
+    recipes:
+      - recipe_type: Raw Resource
+  Torso:
     recipes:
       - recipe_type: Raw Resource
   Arm:
@@ -380,6 +420,10 @@ resources:
         Booze: -1
     - recipe_type: Raw Resource
 
+  Hairspray:
+    recipes:
+      - recipe_type: Raw Resource
+
   Dynamite:
     recipes:
       - recipe_type: Raw Resource
@@ -618,29 +662,9 @@ resources:
         Aloe: -1
     - recipe_type: Raw Resource
 
-  Toy Head:
+  Seeds:
     recipes:
       - recipe_type: Raw Resource
-  Toy Torso:
-    recipes:
-      - recipe_type: Raw Resource
-  Toy Arm:
-    recipes:
-      - recipe_type: Raw Resource
-  Toy Leg:
-    recipes:
-      - recipe_type: Raw Resource
-  Timmy's Toy:
-    custom_simplename: toy
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Toy Head: -1
-        Toy Torso: -1
-        Toy Arm: -2
-        Toy Leg: -2
-    - recipe_type: Raw Resource
 
 ##### Upgrades #####
 
@@ -671,7 +695,7 @@ resources:
   Chainsaw:
     recipes:
       - recipe_type: Raw Resource
-  Fuel:
+  Fuel Can:
     recipes:
       - recipe_type: Raw Resource
 
@@ -739,6 +763,9 @@ resources:
   Plastic Torch:
     recipes:
       - recipe_type: Raw Resource
+  Batteries:
+    recipes:
+      - recipe_type: Raw Resource
 # Chainsaw, Modern Bow, Crafted Bow, Flintlock Pistol
   Light Upgrade:
     recipes:
@@ -764,6 +791,47 @@ resources:
         Flare: -1
     - recipe_type: Raw Resource
 
+  Backpack:
+    recipes:
+      - recipe_type: Raw Resource
+  Survival Guide:
+    recipes:
+      - recipe_type: Raw Resource
+  Lighter:
+    recipes:
+      - recipe_type: Raw Resource
+  Metal Tray:
+    recipes:
+      - recipe_type: Raw Resource
+  Walkie-Talkie:
+    recipes:
+      - recipe_type: Raw Resource
+  Passenger Manifest:
+    recipes:
+      - recipe_type: Raw Resource
+  Old Photo:
+    recipes:
+      - recipe_type: Raw Resource
+  Timmy Drawing:
+    recipes:
+      - recipe_type: Raw Resource
+  Cave Map:
+    recipes:
+      - recipe_type: Raw Resource
+  Compass:
+    recipes:
+      - recipe_type: Raw Resource
+  Pedometer:
+    recipes:
+      - recipe_type: Raw Resource
+  Old Pot:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Clothing Outfit:
+    recipes:
+      - recipe_type: Raw Resource
+
   Rebreather:
     recipes:
       - recipe_type: Raw Resource
@@ -771,7 +839,57 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
+  Cassette Player:
+    recipes:
+      - recipe_type: Raw Resource
+  Cassette Tape:
+    recipes:
+      - recipe_type: Raw Resource
 
+  Camcorder:
+    recipes:
+      - recipe_type: Raw Resource
+  Video Tape:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Toy Head:
+    recipes:
+      - recipe_type: Raw Resource
+  Toy Torso:
+    recipes:
+      - recipe_type: Raw Resource
+  Toy Arm:
+    recipes:
+      - recipe_type: Raw Resource
+  Toy Leg:
+    recipes:
+      - recipe_type: Raw Resource
+  Timmy's Toy:
+    custom_simplename: toy
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Toy Head: -1
+        Toy Torso: -1
+        Toy Arm: -2
+        Toy Leg: -2
+    - recipe_type: Raw Resource
+
+  Keycard:
+    recipes:
+      - recipe_type: Raw Resource
+  Gold Keycard:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Artifact Key:
+    recipes:
+      - recipe_type: Raw Resource
+  Artifact Ball:
+    recipes:
+      - recipe_type: Raw Resource
 
 
 
