@@ -11,12 +11,12 @@ from pylib.uglifyjs import uglify_js_string
 # of the resources required in a recipe there are a lot of duplicated strings
 # in our data structure. This library creates a javascript string that
 # represents the same data but in a much smaller footprint by extracting all of
-# the keys and values in an an object and replacing them with indecies.
+# the keys and values in an an object and replacing them with indices.
 #
 # This is also dramatically reduces the size when having constantly named keys.
 #
 # A downside to this simple compression model is that even small integers need
-# to be swapped out for indecies. So it is possible some keys will become larger
+# to be swapped out for indices. So it is possible some keys will become larger
 # as they might change from "5" to "52" as the integer 5 will be in the 52nd
 # index of the tokens. To combat this in the general case there is an escape
 # for when we have minified to a larger binary then the original.
@@ -68,7 +68,7 @@ def mini_js_data(data: Any, variable_name: str) -> str:
     uglified_packed_json = uglify_js_string(packed_json)
 
     # Do a simple sanity check to make sure our compression is not increasing the size
-    uglified_raw_json = uglify_js_string("var recipe_json = " + json.dumps(data))
+    uglified_raw_json = uglify_js_string("var " + variable_name + " = " + json.dumps(data))
     if len(uglified_raw_json) > len(uglified_packed_json):
         return uglified_packed_json
     else:
@@ -78,13 +78,13 @@ def mini_js_data(data: Any, variable_name: str) -> str:
 ################################################################################
 # This function counts up all the token instances and assigned a lower index
 # to the most used tokens. This is so we can have the most used tokens use the
-# indecies with the smallest character counts. Eg: If "null" is present 100
+# indices with the smallest character counts. Eg: If "null" is present 100
 # times in the datastructure, if we give it an index of 1 it will only take up
 # 100 characters, but if we give it an index of 12 it will take up 200
 # characters.
 #
 # From basic testing this showed to give ~8% further decrease in size from
-# using basically random indecies
+# using basically random indices
 ################################################################################
 def _mini_js_data(data: Any) -> Tuple[Any, Any]:
     token_counts = get_token_counts(data)
@@ -98,7 +98,7 @@ def _mini_js_data(data: Any) -> Tuple[Any, Any]:
 
 ################################################################################
 # This function goes through the datastructure and replaces all the tokens with
-# their index as desribed in the token_map
+# their index as described in the token_map
 ################################################################################
 def replace_data(data: Any, token_map: Dict[Any, int]) -> Any:
     # If this node is a dictionary process each key of it and recurse the values

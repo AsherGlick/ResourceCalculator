@@ -1,14 +1,14 @@
+declare var resource_simple_names: {[key: string]: string};
 declare var recipe_json: {[key: string]: {output: number, recipe_type: string, requirements: {[key:string]:number}}[]};
 declare var recipe_type_functions: any;
 declare var stack_sizes: any;
-
 
 // Polyfills
 // startsWith and endsWith are not supported until es2015 but provide a large
 // amount of readability in the code so are polyfilled here.
 interface String {
-    endsWith(searchString: string, endPosition?: number): boolean;
-    startsWith(searchString: string, startPosition?: number): boolean;
+		endsWith(searchString: string, endPosition?: number): boolean;
+		startsWith(searchString: string, startPosition?: number): boolean;
 }
 if (!String.prototype.endsWith) {
  	String.prototype.endsWith = function(searchString, endPosition) {
@@ -24,7 +24,7 @@ if (!String.prototype.startsWith) {
 			startPosition = 0;
 		}
 		return this.substring(startPosition, startPosition + searchString.length) === searchString;
-    };
+		};
 }
 
 
@@ -192,17 +192,6 @@ hide_unused_checkbox_elem.addEventListener("change", function() {
 	}
 	filter_items();
 });
-
-
-////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////// // TODO THIS FUNCTION NEEDS A BETTER PLACE TO LIVE
-////////////////////////////////////////////////////////////////////////////////
-function filenameify(rawname: string): string {
-	if (rawname === null) {
-		return "";
-	}
-	return rawname.toLowerCase().replace(/[^a-z0=9]/g, "");
-}
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -1807,7 +1796,7 @@ function switch_recipe(item_name: string, event: MouseEvent) {
 				let item_elem = document.createElement("div");
 				item_elem.classList.add("required_item");
 				item_elem.classList.add("item");
-				item_elem.classList.add("item_" + filenameify(j));
+				item_elem.classList.add("item_" + resource_simple_names[j]);
 				item_elem.textContent = quantity.toString();
 				recipe_category.appendChild(item_elem);
 

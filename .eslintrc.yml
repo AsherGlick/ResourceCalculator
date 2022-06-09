@@ -18,7 +18,7 @@ rules:
     - always
   no-console:
     - error
-    - allow: 
+    - allow:
       - warn
       - error
   no-trailing-spaces:
@@ -74,6 +74,7 @@ rules:
     - error
     - declaration
 globals:
+  resource_simple_names: true
   recipe_json: true
   recipe_type_functions: true
   stack_sizes: true
