@@ -512,8 +512,9 @@ body {
 
 /* Index Page Styles */
 .calculator_link_wrapper {
-	width: 300px;
-	height: 150px;
+	/* 460 by 215 is the height of the Steam thumbnail so it's easy to drop in */
+	width: 460px;
+	height: 215px;
 	margin: 5px;
 	float: left;
 	border: 2px solid black;

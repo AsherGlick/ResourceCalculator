@@ -783,7 +783,7 @@ def generate_recipe_type_format_js(calculator_name: str, recipe_types: OrderedDi
 ################################################################################
 def create_index_page(directories: List[str]) -> None:
     for directory in directories:
-        shutil.copyfile("resource_lists/" + directory + "/icon.png", "output/" + directory + "/icon.png")
+        shutil.copyfile("resource_lists/" + directory + "/icon.jpg", "output/" + directory + "/icon.jpg")
 
     # Configure and begin the jinja2 template parsing
     env = Environment(loader=FileSystemLoader('core'))
