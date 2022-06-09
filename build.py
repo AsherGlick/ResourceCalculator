@@ -403,6 +403,14 @@ def get_simple_name(resource: str, resources: OrderedDict[str, Resource]) -> str
         return resources[resource].custom_simplename
     return re.sub(r'[^a-z0-9]', '', resource.lower())
 
+def get_simple_names(resources: OrderedDict[str, Resource]) -> Dict[str, str]:
+    simple_names = {}
+
+    for resource in resources:
+        simple_names[resource] = get_simple_name(resource, resources);
+
+    return simple_names
+
 
 ################################################################################
 # generate_resource_html_data
@@ -598,6 +606,8 @@ def create_calculator_page(
 
     # TODO: Add linting for stack sizes here
 
+    resource_simple_names_js_data = mini_js_data(get_primitive(get_simple_names(resources)), "resource_simple_names")
+
     recipe_type_format_js = generate_recipe_type_format_js(calculator_name, recipe_types)
     recipe_type_format_js = uglify_js_string(recipe_type_format_js)
 
@@ -622,6 +632,8 @@ def create_calculator_page(
         resources=html_resource_data,
         # the javascript/json object used for calculations
         recipe_json=recipe_js_data,
+        # names for proper image mapping
+        resource_simple_names=resource_simple_names_js_data,
         # The size and positions of the image
         item_width=image_width,
         item_height=image_height,
