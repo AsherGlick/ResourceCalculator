@@ -1,0 +1,205 @@
+---
+authors:
+  Ben: "https://benjaminvreeland.com"
+
+index_page_display_name: "Super Motherload"
+
+recipe_types:
+  Smelter 1: "Mine {IN_ITEMS} to smelt {OUT_ITEM}"
+  Smelter 2: "Mine {IN_ITEMS} to smelt {OUT_ITEM} (level 2 smelter required)"
+  Smelter 3: "Mine {IN_ITEMS} to smelt {OUT_ITEM} (level 3 smelter required)"
+  Smelter 4: "Mine {IN_ITEMS} to smelt {OUT_ITEM} (level 4 smelter required)"
+  Smelter 5: "Mine {IN_ITEMS} to smelt {OUT_ITEM} (level 5 smelter required)"
+  Smelter 6: "Mine {IN_ITEMS} to smelt {OUT_ITEM} (level 6 smelter required)"
+
+resources:
+## Basic
+  Bronzium:
+    recipes:
+      - recipe_type: Raw Resource
+  Silverium:
+    recipes:
+      - recipe_type: Raw Resource
+  Goldium:
+    recipes:
+      - recipe_type: Raw Resource
+  Ironium:
+    recipes:
+      - recipe_type: Raw Resource
+  Platinium:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Explodium:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Emerald:
+    recipes:
+      - recipe_type: Raw Resource
+  Ruby:
+    recipes:
+      - recipe_type: Raw Resource
+  Diamond:
+    recipes:
+      - recipe_type: Raw Resource
+  Amazonite:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Electronium:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Unobtainium:
+    recipes:
+      - recipe_type: Raw Resource
+
+## Level 1 Smelting
+  Sterling Silver:
+    recipes:
+    - output: 1
+      recipe_type: Smelter 1
+      requirements:
+        Bronzium: -1
+        Silverium: -1
+    - recipe_type: Raw Resource
+  Rare Earth Magnet:
+    recipes:
+    - output: 1
+      recipe_type: Smelter 1
+      requirements:
+        Ironium: -1
+        Platinium: -1
+    - recipe_type: Raw Resource
+  Katana Gold:
+    recipes:
+    - output: 1
+      recipe_type: Smelter 1
+      requirements:
+        Bronzium: -1
+        Goldium: -1
+    - recipe_type: Raw Resource
+  White Gold:
+    recipes:
+    - output: 1
+      recipe_type: Smelter 1
+      requirements:
+        Sterling Silver: -1
+        Goldium: -1
+    - recipe_type: Raw Resource
+
+## Level 2 Smelting (no bombs)
+  Green Diamond:
+    recipes:
+    - output: 1
+      recipe_type: Smelter 2
+      requirements:
+        Emerald: -1
+        Diamond: -1
+    - recipe_type: Raw Resource
+  Red Diamond:
+    recipes:
+    - output: 1
+      recipe_type: Smelter 2
+      requirements:
+        Ruby: -1
+        Diamond: -1
+    - recipe_type: Raw Resource
+  Blue Diamond:
+    recipes:
+    - output: 1
+      recipe_type: Smelter 2
+      requirements:
+        Amazonite: -1
+        Diamond: -1
+    - recipe_type: Raw Resource
+
+## Level 3 Smelting (no bombs)
+  Forest Stone:
+    recipes:
+    - output: 1
+      recipe_type: Smelter 3
+      requirements:
+        Emerald: -1
+        Amazonite: -1
+    - recipe_type: Raw Resource
+  Fire Stone:
+    recipes:
+    - output: 1
+      recipe_type: Smelter 3
+      requirements:
+        Ruby: -1
+        Amazonite: -1
+    - recipe_type: Raw Resource
+  Lightning Stone:
+    recipes:
+    - output: 1
+      recipe_type: Smelter 3
+      requirements:
+        Electronium: -1
+        Amazonite: -1
+    - recipe_type: Raw Resource
+  Aether Stone:
+    recipes:
+    - output: 1
+      recipe_type: Smelter 3
+      requirements:
+        Lightning Stone: -1
+        Unobtainium: -1
+    - recipe_type: Raw Resource
+
+## Bombs
+  TNT Bomb:
+    recipes:
+    - output: 1
+      recipe_type: Smelter 2
+      requirements:
+        Explodium: -1
+        Explodium: -1
+    - recipe_type: Raw Resource
+
+  C4 Bomb:
+    recipes:
+    - output: 1
+      recipe_type: Smelter 3
+      requirements:
+        Explodium: -1
+        Goldium: -1
+    - recipe_type: Raw Resource
+
+  T Bomb:
+    recipes:
+    - output: 1
+      recipe_type: Smelter 4
+      requirements:
+        Explodium: -1
+        Emerald: -1
+    - recipe_type: Raw Resource
+  Shaft Bomb:
+    recipes:
+    - output: 1
+      recipe_type: Smelter 4
+      requirements:
+        Explodium: -1
+        Ruby: -1
+    - recipe_type: Raw Resource
+
+  Electron Bomb:
+    recipes:
+    - output: 1
+      recipe_type: Smelter 5
+      requirements:
+        Explodium: -1
+        Electronium: -1
+    - recipe_type: Raw Resource
+
+  Nuke:
+    recipes:
+    - output: 1
+      recipe_type: Smelter 6
+      requirements:
+        Explodium: -1
+        Unobtainium: -1
+    - recipe_type: Raw Resource
+
