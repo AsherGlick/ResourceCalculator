@@ -186,11 +186,30 @@ resources:
         Dollars: -500000
     - recipe_type: Raw Resource
 
-## Basic
-  Dollars:
+## Store
+  Reserve Fuel:
     recipes:
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buying
+      requirements:
+        Dollars: -100000
+    - recipe_type: Raw Resource
+  Repair Kit:
+    recipes:
+    - output: 1
+      recipe_type: Buying
+      requirements:
+        Dollars: -75000
+    - recipe_type: Raw Resource
+  Teleporter:
+    recipes:
+    - output: 1
+      recipe_type: Buying
+      requirements:
+        Dollars: -150000
+    - recipe_type: Raw Resource
 
+## Basic
   Bronzium:
     recipes:
       - recipe_type: Raw Resource
@@ -229,5 +248,9 @@ resources:
       - recipe_type: Raw Resource
 
   Unobtainium:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Dollars:
     recipes:
       - recipe_type: Raw Resource
