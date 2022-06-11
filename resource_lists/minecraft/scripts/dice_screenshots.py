@@ -146,9 +146,9 @@ def main(
 
 
 main(
-	ui_size = 4,
+	ui_size = 2,
 	screen_width = 1920,
 	screen_height = 1080,
 	screen_offset_top = 37, # how many pixels the title bar takes up (not fullscreen)
-	page_count = 30,
+	page_count = 31,
 )
