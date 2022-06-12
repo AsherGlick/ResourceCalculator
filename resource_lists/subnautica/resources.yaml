@@ -875,3 +875,165 @@ resources:
         Titanium: -3
         Wiring Kit: -1
     - recipe_type: Raw Resource
+
+
+## Vehicle Upgrade Console
+
+# Common
+  Hull Reinforcement:
+    recipes:
+    - output: 1
+      recipe_type: Vehicle Upgrade
+      requirements:
+        Titanium: -3
+        Lithium: -1
+        Diamond: -4
+    - recipe_type: Raw Resource
+  Engine Efficiency Module:
+    recipes:
+    - output: 1
+      recipe_type: Vehicle Upgrade
+      requirements:
+        Computer Chip: -1
+        Polyaniline: -1
+    - recipe_type: Raw Resource
+  Storage Module:
+    recipes:
+    - output: 1
+      recipe_type: Vehicle Upgrade
+      requirements:
+        Titanium: -3
+        Lithium: -1
+    - recipe_type: Raw Resource
+
+# Seamoth
+  Seamoth Depth Module MK1:
+    recipes:
+    - output: 1
+      recipe_type: Vehicle Upgrade
+      requirements:
+        Titanium Ingot: -1
+        Glass: -2
+    - recipe_type: Raw Resource
+  Seamoth Solar Charger:
+    recipes:
+    - output: 1
+      recipe_type: Vehicle Upgrade
+      requirements:
+        Advanced Wiring Kit: -1
+        Enameled Glass: -1
+    - recipe_type: Raw Resource
+  Seamoth Perimeter Defense System:
+    recipes:
+    - output: 1
+      recipe_type: Vehicle Upgrade
+      requirements:
+        Polyaniline: -1
+        Wiring Kit: -1
+    - recipe_type: Raw Resource
+  Seamoth Torpedo System:
+    recipes:
+    - output: 1
+      recipe_type: Vehicle Upgrade
+      requirements:
+        Titanium: -3
+        Lithium: -1
+        Aerogel: -1
+    - recipe_type: Raw Resource
+  Seamoth Sonar:
+    recipes:
+    - output: 1
+      recipe_type: Vehicle Upgrade
+      requirements:
+        Copper Wire: -1
+        Magnetite: -2
+    - recipe_type: Raw Resource
+
+# Prawn Suit
+  Prawn Suit Depth Module MK1:
+    recipes:
+    - output: 1
+      recipe_type: Vehicle Upgrade
+      requirements:
+        Plasteel Ingot: -1
+        Nickel Ore: -3
+        Ruby: -2
+    - recipe_type: Raw Resource
+  Prawn Suit Thermal Reactor:
+    recipes:
+    - output: 1
+      recipe_type: Vehicle Upgrade
+      requirements:
+        Kyanite: -2
+        Polyaniline: -2
+        Wiring Kit: -1
+    - recipe_type: Raw Resource
+  Prawn Suit Jump Jet Upgrade:
+    recipes:
+    - output: 1
+      recipe_type: Vehicle Upgrade
+      requirements:
+        Nickel Ore: -2
+        Crystalline Sulfur: -3
+        Titanium: -5
+        Lithium: -1
+    - recipe_type: Raw Resource
+  Prawn Suit Propulsion Cannon:
+    recipes:
+    - output: 1
+      recipe_type: Vehicle Upgrade
+      requirements:
+        Computer Chip: -1
+        Titanium: -5
+        Lithium: -1
+        Magnetite: -2
+    - recipe_type: Raw Resource
+  Prawn Suit Grappling Arm:
+    recipes:
+    - output: 1
+      recipe_type: Vehicle Upgrade
+      requirements:
+        Advanced Wiring Kit: -1
+        Titanium: -5
+        Lithium: -1
+        Benzene: -1
+    - recipe_type: Raw Resource
+  Prawn Suit Drill Arm:
+    recipes:
+    - output: 1
+      recipe_type: Vehicle Upgrade
+      requirements:
+        Titanium: -5
+        Lithium: -1
+        Diamond: -4
+    - recipe_type: Raw Resource
+  Prawn Suit Torpedo Arm:
+    recipes:
+    - output: 1
+      recipe_type: Vehicle Upgrade
+      requirements:
+        Titanium: -5
+        Lithium: -1
+        Aerogel: -1
+    - recipe_type: Raw Resource
+
+# Torpedoes
+  Vortex Torpedo:
+    recipes:
+    - output: 1
+      recipe_type: Vehicle Upgrade
+      requirements:
+        Titanium: -1
+        Magnetite: -1
+    - recipe_type: Raw Resource
+  Gas Torpedo:
+    recipes:
+    - output: 1
+      recipe_type: Vehicle Upgrade
+      requirements:
+        Titanium: -1
+        Gas Pod: -1
+    - recipe_type: Raw Resource
+
+
+
