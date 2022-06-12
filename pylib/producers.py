@@ -27,6 +27,8 @@ class Producer():
 
     # To take advantage of hot retriggering of some expensive-to-start javascript commands like tsc
     # self_watch_function: Optional[Callable[], Any]
+
+    # TODO: This should probably be a generator function too...
     categories: List[str]
 
     # an alternative for "function" that will be called if this step is to be skipped

@@ -1,24 +1,21 @@
-import shutil
-import subprocess
 import htmlmin  # type: ignore
 from pylib.producers import Producer
-from typing import List, Tuple, OrderedDict, Dict, Set
+from typing import List, Tuple, OrderedDict, Dict
 import re
 import os
-from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, TokenError, Token, get_primitive
-from pylib.yaml_token_load import ordered_load
+from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, get_primitive
 from jinja2 import Environment, FileSystemLoader
 import json
 from pylib.uglifyjs import uglify_js_string
 from pylib.json_data_compressor import mini_js_data
 from pylib.webminify import minify_css_blocks
-
+import pickle
 
 def calculator_producers() -> List[Producer]:
     return [
         Producer(
             input_path_patterns=[
-                "^resource_lists/([a-z ]+)/resources.yaml$",
+                "^cache/([a-z ]+)/resources.pickle$",
                 "^cache/([a-z ]+)/packed_image_layout.json$",
                 # "^core/calculator.html$", # TODO: Figure out how to support having a dependency that does not contain required information
             ],
@@ -49,7 +46,7 @@ def calculator_output_paths(path: str, match: re.Match) -> List[str]:
 # ################################################################################
 def calculator_function(input_file: str, match: re.Match, output_files: List[str]) -> None:
     calculator_name: str = match.group(1)
-    resource_list_file = os.path.join("resource_lists", calculator_name, "resources.yaml")
+    resource_list_file = os.path.join("cache", calculator_name, "resources.pickle")
     image_metadata_file = os.path.join("cache", calculator_name, "packed_image_layout.json")
     input_files = [resource_list_file, image_metadata_file]
 
@@ -61,73 +58,37 @@ def calculator_function(input_file: str, match: re.Match, output_files: List[str
     
     calculator_index_html_filepath = output_files[0]
 
-    errors = []
-    # calculator_folder = os.path.join("output", calculator_name)
-    # source_folder = os.path.join("resource_lists", calculator_name)
-    # if not os.path.exists(calculator_folder):
-    #     os.makedirs(calculator_folder)
-    # elif not force:
-    #     oldest_output = get_oldest_modified_time(calculator_folder)
-    #     newest_resource = get_newest_modified_time(source_folder)
-    #     newest_corelib = get_newest_modified_time("core", ignore=["calculator.js", "calculator.js.map"])
-    #     newest_build_script = os.path.getctime("build.py")
-    #     newest_build_lib = get_newest_modified_time("pylib")
-
-    #     if oldest_output > max(newest_resource, newest_corelib, newest_build_script, newest_build_lib):
-    #         # Allow not printing the skip text for polling with the --watch flag
-    #         if print_skip_text:
-    #             print("Skipping", calculator_name, "Nothing has changed since the last build")
-    #         return
-
-    # start_time = time.time()
-
     print("Generating", calculator_name, "into", calculator_index_html_filepath)
 
-#     # Create a packed image of all the item images
-#     image_width: int
-#     image_height: int
-#     resource_image_coordinates: Dict[str, Tuple[int, int]]
-#     image_width, image_height, resource_image_coordinates = create_packed_image(calculator_name)
-    
     with open(image_metadata_file) as f:
         image_metadata = json.load(f)
         image_width = image_metadata["standard_width"]
         image_height = image_metadata["standard_height"]
         resource_image_coordinates = image_metadata["image_coordinates"]
 
-    # Load in the yaml resources file
-    resource_list, parse_errors = load_resource_list(resource_list_file)
-    errors += parse_errors # todo: seperate out the resource list parsing and linting and just load this from json
-
-    resources: OrderedDict[str, Resource] = resource_list.resources
-    resources = expand_raw_resource(resources) # TODO: Move to linter
-    resources = fill_default_requirement_groups(resources, resource_list.requirement_groups) # TODO: Move to linter/importer producer
-
-    authors: OrderedDict[str, str] = resource_list.authors
-
-    recipe_types: OrderedDict[str, str] = resource_list.recipe_types
+    # Load and validate the type of the resource list data
+    with open(resource_list_file, 'rb') as f:
+        resource_list = pickle.load(f)
+        if not isinstance(resource_list, ResourceList):
+            raise ValueError("Pickled Resource List File is not a valid ResourceList class")
 
     stack_sizes: OrderedDict[str, StackSize] = resource_list.stack_sizes
 
-    errors += lint_resources(calculator_name, resources, recipe_types, stack_sizes) # TODO: Move to linter/importer producer
-
     default_stack_size: str = resource_list.default_stack_size
 
-    # TODO: Add linting for stack sizes in linter/importer producer
-
-    recipe_type_format_js = generate_recipe_type_format_js(calculator_name, recipe_types)
+    recipe_type_format_js = generate_recipe_type_format_js(calculator_name, resource_list.recipe_types)
     recipe_type_format_js = uglify_js_string(recipe_type_format_js)
 
-    recipe_js_data = mini_js_data(get_primitive(get_recipes_only(resources)), "recipe_json")
+    recipe_js_data = mini_js_data(get_primitive(get_recipes_only(resource_list.resources)), "recipe_json")
 
-    html_resource_data = generate_resource_html_data(resources)
+    html_resource_data = generate_resource_html_data(resource_list.resources)
 
-    item_styles = generate_resource_offset_classes(resources, resource_image_coordinates)
+    item_styles = generate_resource_offset_classes(resource_list.resources, resource_image_coordinates)
 
     # Generate some css to allow us to center the list
     content_width_css = generate_content_width_css(image_width, resource_list)
 
-    stack_sizes = merge_custom_multipliers(stack_sizes, resources)
+    stack_sizes = merge_custom_multipliers(stack_sizes, resource_list.resources)
 
     stack_sizes_json = json.dumps(get_primitive(stack_sizes))
 
@@ -148,7 +109,7 @@ def calculator_function(input_file: str, match: re.Match, output_files: List[str
         # Javascript formatting functions for recipe instructions # TODO this should be made into format strings to save space
         recipe_type_format_js=recipe_type_format_js,
         # The list of authors and emails to display in the authors sections
-        authors=authors,
+        authors=resource_list.authors,
         # Additional CSS to center the list when resizing
         content_width_css=content_width_css,
         # Used to build the stack size selector UI
@@ -205,210 +166,6 @@ def calculator_function(input_file: str, match: re.Match, output_files: List[str
 
 #     end_time = time.time()
 #     print("  Generated in %.3f seconds" % (end_time - start_time))
-
-
-
-
-def load_resource_list(filepath: str) -> Tuple[ResourceList, List[TokenError]]:
-    errors: List[TokenError] = []
-
-    with open(filepath, 'r', encoding="utf_8") as f:
-        yaml_data = ordered_load(f)
-        resource_list = ResourceList()
-        errors += resource_list.parse(yaml_data)
-
-    return (resource_list, errors)
-
-
-# TODO: Move to linter/importer producer
-################################################################################
-# expand_raw_resource allow for the syntactic candy of only defining a a
-# `recipe_type` value for raw resources and not having to define the entire
-# construct because it is a trivial construct.
-################################################################################
-def expand_raw_resource(resources: OrderedDict[str, Resource]) -> OrderedDict[str, Resource]:
-    for resource in resources:
-        for i, recipe in enumerate(resources[resource].recipes):
-            if recipe.recipe_type == "Raw Resource" and recipe.output == 0 and len(recipe.requirements) == 0:
-                resources[resource].recipes[i].output = 1
-                resources[resource].recipes[i].requirements = OrderedDict([(resource, 0)])
-    return resources
-
-
-# TODO: Move to linter/importer producer
-################################################################################
-# fill_default_requirement_groups replaces any uses of a requirement group with
-# the first item within that requirement group. This is an interim solution
-# while the requirement group feature is separately fleshed out. It has been
-# included in this state because there is some simplicity value to being able
-# to include the data structure in the resource_list.yaml file.
-################################################################################
-def fill_default_requirement_groups(resources: OrderedDict[str, Resource], requirement_groups: OrderedDict[str, List[str]]) -> OrderedDict[str, Resource]:
-    for resource in resources:
-        for i, recipe in enumerate(resources[resource].recipes):
-            # Create a copy of the keys so we can iterate over them and mutate them
-            requirement_list: List[str] = [requirement for requirement in recipe.requirements]
-
-            # Iterate over the requirements and replace any that are part of requirement groups
-            for requirement in requirement_list:
-                if requirement in requirement_groups:
-                    value = recipe.requirements[requirement]
-                    del recipe.requirements[requirement]
-                    recipe.requirements[requirement_groups[requirement][0]] = value
-    return resources
-
-
-# TODO: Move to linter/importer producer
-################################################################################
-#
-################################################################################
-def lint_resources(
-    calculator_name: str,
-    resources: OrderedDict[str, Resource],
-    recipe_types: OrderedDict[str, str],
-    stack_sizes: OrderedDict[str, StackSize]
-) -> List[TokenError]:
-    errors: List[TokenError] = []
-    for resource in resources:
-        errors += lint_recipes(calculator_name, resource, resources[resource].recipes)
-        errors += lint_custom_stack_multipliers(calculator_name, resource, resources[resource].custom_stack_multipliers, stack_sizes)
-
-    errors += ensure_valid_requirements(resources)
-    errors += ensure_valid_recipe_types(calculator_name, resources, recipe_types)
-    errors += ensure_unique_simple_names(calculator_name, resources)
-
-    return errors
-
-
-# TODO: Move to linter/importer producer
-################################################################################
-# lint_recipe
-#
-# This function takes in the name of the calculator, an item name, and the list
-# of recipes to ensure that the given item's recipes all follow a set of
-# patterns in order to make sure that all recipe lists are uniform in style
-# and contents. In addition it makes sure that all of the required elements of
-# a recipe are present and that no additional unknown elements are present.
-################################################################################
-def lint_recipes(calculator_name: str, item_name: str, recipes: List[Recipe]) -> List[TokenError]:
-    errors: List[TokenError] = []
-
-    # Check that every resource has a raw recipe
-    raw_resource_count = 0
-    for recipe in recipes:
-        if (recipe.recipe_type == "Raw Resource"):
-            if (recipe.output == 1 and recipe.requirements == OrderedDict([(item_name, 0)])):
-                raw_resource_count += 1
-            else:
-                # TODO: Have a better token associated with this error
-                errors.append(TokenError(item_name + " has an invalid \"Raw Resource\"", Token()))
-
-    # Lint that every resource has a raw resource and only one
-    if raw_resource_count == 0:
-        # TODO: Have a better token associated with this error
-        errors.append(TokenError(item_name + " must have a \"Raw Resource\" which outputs 1 and has a requirement of 0 of itself", Token()))
-    elif raw_resource_count > 1:
-        # TODO: Have a better token associated with this error
-        errors.append(TokenError(item_name + " must have only one \"Raw Resource\"", Token()))
-
-    return errors
-
-
-# TODO: Move to linter/importer producer
-################################################################################
-#
-################################################################################
-def lint_custom_stack_multipliers(
-    calculator_name: str,
-    item_name: str,
-    custom_stack_multipliers: OrderedDict[str, int],
-    stack_sizes: OrderedDict[str, StackSize]
-) -> List[TokenError]:
-    errors: List[TokenError] = []
-    for stack_name in custom_stack_multipliers:
-        custom_size = custom_stack_multipliers[stack_name]
-
-        if stack_name not in stack_sizes:
-            # TODO: Have a better token associated with this error
-            errors.append(TokenError("custom_stack_size \"" + stack_name + "\" for" + item_name + "is not a valid stack size. (" + ", ".join([x for x in stack_sizes]) + ")", Token()))
-
-        if custom_size < 1:
-            # TODO: Have a better token associated with this error
-            errors.append(TokenError("custom_stack_size \"" + stack_name + "\" for" + item_name + "cannot be less than 1.", Token()))
-
-    return errors
-
-
-
-
-# TODO: Move to linter/importer producer
-################################################################################
-# ensure_valid_requirements
-#
-# Make sure each recipe requirement is another existing item in the resource list
-################################################################################
-def ensure_valid_requirements(resources: OrderedDict[str, Resource]) -> List[TokenError]:
-    errors: List[TokenError] = []
-    for resource in resources:
-        for recipe in resources[resource].recipes:
-            for requirement in recipe.requirements:
-                if requirement not in resources:
-                    # TODO: Have a better token associated with this error
-                    errors.append(TokenError("ERROR: Invalid requirement for resource:" + resource + ". \"" + requirement + "\" does not exist as a resource", Token()))
-                elif recipe.requirements[requirement] > 0:
-                    # TODO: Have a better token associated with this error
-                    errors.append(TokenError("ERROR: Invalid requirement for resource:" + resource + ". \"" + requirement + "\" must be a negative number", Token()))
-    return errors
-
-
-# TODO: Move to linter/importer producer
-################################################################################
-#
-################################################################################
-def ensure_valid_recipe_types(calculator_name: str, resources: OrderedDict[str, Resource], recipe_types: OrderedDict[str, str]) -> List[TokenError]:
-    used_recipe_types: Set[str] = set()
-    errors: List[TokenError] = []
-
-    for resource in resources:
-        for recipe in resources[resource].recipes:
-            recipe_type: str = recipe.recipe_type
-
-            # add this to the list of found recipe types to later check to make sure all the recipe_types in the list are used
-            if recipe_type != "Raw Resource":
-                used_recipe_types.add(recipe_type)
-
-            # check if this recipe exists in the recipe type list
-            if recipe_type not in recipe_types and recipe_type != "Raw Resource":
-                # TODO: Have a better token associated with this error
-                errors.append(TokenError(resource + " has an undefined resource_type" + ": \"" + recipe_type + "\"", Token()))
-
-    for recipe_type in recipe_types:
-        if recipe_type not in used_recipe_types:
-            errors.append(TokenError("Unused recipe_type \"" + recipe_type + "\"", Token()))
-
-    return errors
-
-
-# TODO: Move to linter/importer producer
-################################################################################
-#
-################################################################################
-def ensure_unique_simple_names(calculator_name: str, resources: OrderedDict[str, Resource]) -> List[TokenError]:
-    errors: List[TokenError] = []
-    simple_names: Dict[str, List[str]] = {}
-
-    for resource in resources:
-        simple_name: str = get_simple_name(resource, resources)
-        if simple_name not in simple_names:
-            simple_names[simple_name] = []
-        simple_names[simple_name].append(resource)
-
-    for simple_name in simple_names:
-        if len(simple_names[simple_name]) > 1:
-            # TODO: Have a better token associated with this error
-            errors.append(TokenError(", ".join(simple_names[simple_name]) + "all share the same simple name" + simple_name, Token()))
-
-    return errors
 
 
 

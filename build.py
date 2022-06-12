@@ -1,10 +1,5 @@
 import argparse
-import gzip
-import htmlmin  # type: ignore
-import json
-import math
 import os
-
 import re
 import shutil
 import subprocess
@@ -12,18 +7,16 @@ import time
 from dataclasses import dataclass
 from typing import OrderedDict
 from jinja2 import Environment, FileSystemLoader
-from PIL import Image  # type: ignore
-from typing import Dict, Tuple, List, Set, Any
-
-from pylib.json_data_compressor import mini_js_data
-from pylib.uglifyjs import uglify_copyfile, uglify_js_producer, uglify_js_string, set_skip_uglify_flag
-from pylib.webminify import minify_css_blocks
-from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, TokenError, Token, get_primitive
+from typing import Dict, Tuple, List, Any
+from pylib.uglifyjs import uglify_js_producer, set_skip_uglify_flag
+from pylib.resource_list import ResourceList, Resource, TokenError
 from pylib.yaml_token_load import ordered_load
 from pylib.producers import Producer, build_producer_calls
 from pylib.typescript_producer import typescript_producer
 from pylib.imagepack import item_image_producers
 from pylib.calculator_producer import calculator_producers
+from pylib.yaml_linter_producer import resource_list_parser_producers
+from pylib.gz_compressor_producer import gz_compressor_producers
 
 # CLI Argument Flags
 # FLAG_skip_js_lint = False
@@ -313,39 +306,6 @@ def calculator_display_name(calculator_name: str) -> str:
 
 
 ################################################################################
-# pre_compress_output_files
-#
-# Walks through the output directory and compresses any file with a .html, .css
-# or .js extension with gz so that Apache can serve its compressed state
-# automatically.
-################################################################################
-def pre_compress_output_files() -> None:
-    textfile_extensions = [".html", ".css", ".js"]
-    for (root, dirs, files) in os.walk("output"):
-        for file in files:
-            if ends_with_any(file, textfile_extensions):
-                filepath = os.path.join(root, file)
-
-                # Gzip Compression
-                with open(filepath, 'rb') as infile, gzip.open(filepath + ".gz", 'wb') as outfile:
-                    shutil.copyfileobj(infile, outfile)
-
-
-################################################################################
-# ends_with_any
-#
-# A helper function to check to see if a string ends with any element of a
-# list of strings.
-################################################################################
-def ends_with_any(string: str, endings: List[str]) -> bool:
-    for ending in endings:
-        if string.endswith(ending):
-            return True
-    return False
-
-
-
-################################################################################
 # core_resource_producers
 #
 # Create the producers definitions for all of the core resources found in the
@@ -369,7 +329,7 @@ def core_resource_producers() -> List[Producer]:
     # JS files to be minified
     uglify_js_files = [
         "cache/calculator.js",
-        "output/yaml_export.js",
+        "core/yaml_export.js",
     ]
 
     core_producers: List[Producer] = []
@@ -477,9 +437,12 @@ def main() -> None:
     producers: List[Producer] = []
 
 
-    # producers += image_producers() # HMMM some data needs to be retained and transfered to later phases? The combined image stuff needs to produce some output data.
+    producers += resource_list_parser_producers()
     producers += item_image_producers()
     producers += calculator_producers()
+    producers += core_resource_producers()
+
+    producers += gz_compressor_producers()
 
     # # Create the calculators
     # d = './resource_lists'
@@ -497,7 +460,6 @@ def main() -> None:
     # if not FLAG_skip_gz_compression:
     #     pre_compress_output_files()
 
-    producers += core_resource_producers()
 
     build_producer_calls(producers, ["venv_docker", "venv", ".git", "node_modules"])
 
