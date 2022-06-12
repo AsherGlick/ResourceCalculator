@@ -19,7 +19,7 @@ def item_image_producers() -> List[Producer]:
         ),
 
         Producer(
-            input_path_patterns=["^cache/([a-z ]+)/items/packed_image.png$"],
+            input_path_patterns=["^cache/([a-z ]+)/packed_image.png$"],
             output_paths=image_compress_output_paths,
             function=image_compress_function,
             categories=["image", "compress", "imagecompress"]
@@ -47,7 +47,6 @@ def image_pack_output_paths(path: str, match: re.Match) -> List[str]:
 # # making a large number of get requests for the file
 # ################################################################################
 # def create_packed_image(calculator_name: str) -> Tuple[int, int, Dict[str, Tuple[int, int]]]:
-
 def image_pack_function(input_file: str, match: re.Match, output_files: List[str]) -> None:
 
     if len(output_files) != 2:
@@ -95,23 +94,6 @@ def image_pack_function(input_file: str, match: re.Match, output_files: List[str
         y_coordinate = math.floor(index / columns) * standard_height
         image_coordinates[name] = (x_coordinate, y_coordinate)
 
-    # # Create a new output file and write all the images to spots in the file
-    # calculator_folder = os.path.join("output", calculator_name)
-    # output_image_path = os.path.join(calculator_folder, calculator_name + ".png")
-
-    # should_create_image = True
-
-    # if os.path.exists(output_image_path):
-#         newest_file = max(
-#             os.path.getctime("build.py"),  # Check generator code modification
-#             get_newest_modified_time("pylib"),  # Check generator code modification
-#             get_newest_modified_time(resource_image_folder),  # Check source image modification
-#         )
-#         should_create_image = newest_file > os.path.getctime(output_image_path)
-
-#     # Create or skip creation of the packed image
-#     if should_create_image or FLAG_force_image:
-
     # Create the new packed image file and all the coordinates of the images
     result = Image.new('RGBA', (result_width, result_height))
     for image_name, image_path in images:
@@ -126,32 +108,13 @@ def image_pack_function(input_file: str, match: re.Match, output_files: List[str
         result.paste(im=image_object, box=(x_coordinate, y_coordinate))
     result.save(output_image_path)
 
-
-    # Write the ata
+    # Write the metadata for the packed image that will be used for later phases
     with open(output_data_path, 'w') as f:
         json.dump({
             "standard_width": standard_width,
             "standard_height": standard_height,
             "image_coordinates": image_coordinates
         }, f)
-
-
-#     # image_width, image_height, resource_image_coordinates
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def image_compress_output_paths(path: str, match: re.Match) -> List[str]:
@@ -165,8 +128,6 @@ def image_compress_output_paths(path: str, match: re.Match) -> List[str]:
 
 
 def image_compress_function(input_file: str, match: re.Match, output_files: List[str]) -> None:
-    # TODO: Acutally compress the file. This should become the "skip"/"fast" function
-
     # Sanity check that there is only one output
     if len(output_files) != 1:
         raise ValueError("Must copy " + input_file + " to only one location not" + str(output_files))
@@ -175,9 +136,18 @@ def image_compress_function(input_file: str, match: re.Match, output_files: List
     # Copy the file
     shutil.copyfile(input_file, output_file)
 
-        # try:
-        #     subprocess.run(["pngquant", "--force", "--ext", ".png", "256", "--nofs", output_image_path])
-        # except OSError as e:
-        #     print("WARNING: PNG Compression Failed")
-        #     print("        ", e)
+    try:
+        subprocess.run(["pngquant", "--force", "--ext", ".png", "256", "--nofs", output_file])
+    except OSError as e:
+        print("WARNING: PNG Compression Failed. This is non-critical in a development environment")
+        print("        ", e)
 
+
+def image_copy_function(input_file: str, match: re.Match, output_files: List[str]) -> None:
+    # Sanity check that there is only one output
+    if len(output_files) != 1:
+        raise ValueError("Must copy " + input_file + " to only one location not" + str(output_files))
+    output_file = output_files[0]
+
+    # Copy the file
+    shutil.copyfile(input_file, output_file)
