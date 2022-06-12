@@ -359,6 +359,7 @@ def core_resource_producers() -> List[Producer]:
         "core/.htaccess",
         "core/add_game.png",
         "core/ads.txt",
+        "core/favicon.ico",
     ]
 
     ts_directories = [
