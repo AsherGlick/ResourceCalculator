@@ -6,7 +6,7 @@ index_page_display_name: "Breath of<br>the Wild"
 row_group_count: 5
 
 recipe_types:
-  Great Fairy: "Give {IN_ITEMS} to the Great Fary to get {OUT_ITEM}"
+  Great Fairy: "Give {IN_ITEMS} to the Great Fairy to get {OUT_ITEM}"
   Buying: "Buy {OUT_ITEM} for {IN_ITEMS}"
 
 resources:
