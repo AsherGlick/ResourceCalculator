@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"outDir": "../",
+		"outDir": "../../cache",
 		"sourceMap": true,
 		"module": "commonjs",
 		"target": "es5",
