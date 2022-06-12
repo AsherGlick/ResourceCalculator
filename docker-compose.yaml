@@ -1,5 +1,3 @@
-# docker-compose up
-# sudo -E docker-compose up
 version: "3"
 
 services:
@@ -17,8 +15,4 @@ services:
     user: "${UID}:${GID}"
     volumes:
       - "./:/usr/src/app"
-    # command: ["--watch", "minecraft", "breath of the wild", "moonlighter", "nier automata"]
-
-
-
-
+    command: "${arguments}"
