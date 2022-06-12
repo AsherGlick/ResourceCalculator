@@ -16,11 +16,13 @@ from PIL import Image  # type: ignore
 from typing import Dict, Tuple, List, Set, Any
 
 from pylib.json_data_compressor import mini_js_data
-from pylib.uglifyjs import uglify_copyfile, uglify_js_string, set_skip_uglify_flag
+from pylib.uglifyjs import uglify_copyfile, uglify_js_producer, uglify_js_string, set_skip_uglify_flag
 from pylib.webminify import minify_css_blocks
 from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, TokenError, Token, get_primitive
 from pylib.yaml_token_load import ordered_load
-
+from pylib.producers import Producer, build_producer_calls
+from pylib.typescript_producer import typescript_producer
+from pylib.imagepack import item_image_producers
 
 # CLI Argument Flags
 # FLAG_skip_js_lint = False
@@ -70,96 +72,6 @@ def load_resource_list(filepath: str) -> Tuple[ResourceList, List[TokenError]]:
     return (resource_list_cache[filepath].resource_list, resource_list_cache[filepath].errors)
 
 
-################################################################################
-# create_packed_image
-#
-# This function will take all the files within the resource_lists/[list]/items
-# and create a single packed image of them. Then return the coordinates so that
-# css can be written to load all of the images from the same file instead of
-# making a large number of get requests for the file
-################################################################################
-def create_packed_image(calculator_name: str) -> Tuple[int, int, Dict[str, Tuple[int, int]]]:
-
-    resource_image_folder = os.path.join("resource_lists", calculator_name, "items")
-
-    image_coordinates: Dict[str, Tuple[int, int]] = {}
-
-    standard_width = None
-    standard_height = None
-    standard_image_reference = None
-
-    images: List[Tuple[str, str]] = []
-
-    for file in os.listdir(resource_image_folder):
-        images.append((
-            os.path.splitext(file)[0],
-            os.path.join(resource_image_folder, file)
-        ))
-
-    # Open first image to get a standard
-    first_image = Image.open(images[0][1])
-    standard_width, standard_height = first_image.size
-    standard_image_reference = images[0][1]
-
-    # Sort the images, this is probably not necessary but will allow for
-    # differences between files to be noticed with less noise of random shifting of squares
-    images.sort(key=lambda x: x[0])
-
-    # Use our special math function to determine what the number of columns
-    # should be for the final packed image.
-    # Programmers note: This was a lot of fun to figure out and derived strangely
-    columns = math.ceil(math.sqrt(standard_height * len(images) / standard_width))
-    result_width = standard_width * columns
-    result_height = standard_height * math.ceil((len(images) / columns))
-
-    # Determine where each image should go
-    for index, (name, image) in enumerate(images):
-        x_coordinate = (index % columns) * standard_width
-        y_coordinate = math.floor(index / columns) * standard_height
-        image_coordinates[name] = (x_coordinate, y_coordinate)
-
-    # Create a new output file and write all the images to spots in the file
-    calculator_folder = os.path.join("output", calculator_name)
-    output_image_path = os.path.join(calculator_folder, calculator_name + ".png")
-
-    should_create_image = True
-
-    if os.path.exists(output_image_path):
-        newest_file = max(
-            os.path.getctime("build.py"),  # Check generator code modification
-            get_newest_modified_time("pylib"),  # Check generator code modification
-            get_newest_modified_time(resource_image_folder),  # Check source image modification
-        )
-        should_create_image = newest_file > os.path.getctime(output_image_path)
-
-    # Create or skip creation of the packed image
-    if should_create_image or FLAG_force_image:
-
-        # Create the new packed image file and all the coordinates of the images
-        result = Image.new('RGBA', (result_width, result_height))
-        for image_name, image_path in images:
-            image_object = Image.open(image_path)
-            width, height = image_object.size
-
-            if (standard_width != width or standard_height != height):
-                print("ERROR: All resource list item images for a single calculator must be the same size")
-                print("       " + image_path + " and " + standard_image_reference + " are not the same size")
-
-            x_coordinate, y_coordinate = image_coordinates[image_name]
-            result.paste(im=image_object, box=(x_coordinate, y_coordinate))
-        result.save(output_image_path)
-
-        # Attempt to compress the image but do not exit on failure
-        if not FLAG_skip_image_compress:
-            try:
-                subprocess.run(["pngquant", "--force", "--ext", ".png", "256", "--nofs", output_image_path])
-            except OSError as e:
-                print("WARNING: PNG Compression Failed")
-                print("        ", e)
-    else:
-        print("  Skipping image generation because no source images have changed since last generated")
-
-    return (standard_width, standard_height, image_coordinates)
 
 
 ################################################################################
@@ -854,26 +766,76 @@ def ends_with_any(string: str, endings: List[str]) -> bool:
     return False
 
 
-def build_typescript(folder: str) -> None:
-    if (os.path.getctime("core/calculator.ts/calculator.ts") > os.path.getctime("core/calculator.js")):
-        subprocess.run(["node_modules/.bin/tsc", "--project", "core/calculator.ts"])
+
+
+def calculator_page_producers() -> List[Producer]:
+
+    # create_calculator_page(o, args.force_html, not args.watch)
+
+    return []
 
 
 ################################################################################
-# copy_common_resources
+# core_resource_producers
 #
-# This is a hacky function to copy over some files that should be accessible
-# by the code
+# Create the producers definitions for all of the core resources found in the
+# `./core` folder.
 ################################################################################
-def copy_common_resources() -> None:
-    shutil.copyfile("core/calculator.css", "output/calculator.css")
-    build_typescript("core/calculator.ts/")
-    uglify_copyfile("core/calculator.js", "output/calculator.js")
-    uglify_copyfile("core/yaml_export.js", "output/yaml_export.js")
-    shutil.copyfile("core/logo.png", "output/logo.png")
-    shutil.copyfile("core/.htaccess", "output/.htaccess")
-    shutil.copyfile("core/add_game.png", "output/add_game.png")
-    shutil.copyfile("core/ads.txt", "output/ads.txt")
+def core_resource_producers() -> List[Producer]:
+    # Files that should be copied out of the "core" folder
+    copyfiles = [
+        "core/calculator.css",
+        "core/logo.png",
+        "core/.htaccess",
+        "core/add_game.png",
+        "core/ads.txt",
+    ]
+
+    ts_directories = [
+        "core/src"
+    ]
+
+    # JS files to be minified
+    uglify_js_files = [
+        "cache/calculator.js",
+        "output/yaml_export.js",
+    ]
+
+    core_producers: List[Producer] = []
+
+    for copyfile in copyfiles:
+        core_producers.append(Producer(
+            input_path_patterns=[ "^" + copyfile + "$"],
+            output_paths=Producer.static_output(os.path.join("output", os.path.basename(copyfile))),
+            function=producer_copyfile,
+            categories=["core"]
+        ))
+
+    # Add the core typescript file
+    for ts_directory in ts_directories:
+        core_producers += typescript_producer(ts_directory, ["core"])
+
+    for uglify_js_file in uglify_js_files:
+        core_producers.append(
+            uglify_js_producer(
+                input_file=uglify_js_file,
+                output_file=os.path.join("output", os.path.basename(uglify_js_file)),
+                categories=["core"]
+            )
+        )
+
+    return core_producers
+
+    
+def producer_copyfile(input_file: str, match: re.Match, output_files: List[str]) -> None:
+    # Sanity check that there is only one output
+    if len(output_files) != 1:
+        raise ValueError("Must copy " + input_file + " to only one location not" + str(output_files))
+    output_file = output_files[0]
+
+    # Copy the file
+    shutil.copyfile(input_file, output_file)
+
 
 
 def main() -> None:
@@ -937,44 +899,53 @@ def main() -> None:
     # if not FLAG_skip_js_lint:
     #     lint_javascript()
 
-    if not os.path.exists("output"):
-        os.makedirs("output")
+    # if not os.path.exists("output"):
+    #     os.makedirs("output")
 
-    while True:
-        # Create the calculators
-        d = './resource_lists'
-        calculator_directories: List[str] = []
-        for o in os.listdir(d):
-            if os.path.isdir(os.path.join(d, o)):
-                if calculator_page_sublist == [] or o in calculator_page_sublist:
-                    create_calculator_page(o, args.force_html, not args.watch)
-                    calculator_directories.append(o)
 
-        if not FLAG_skip_index:
-            calculator_directories.sort()
-            create_index_page(calculator_directories)
+    producers: List[Producer] = []
 
-        copy_common_resources()
 
-        if not FLAG_skip_gz_compression:
-            pre_compress_output_files()
+    # producers += image_producers() # HMMM some data needs to be retained and transfered to later phases? The combined image stuff needs to produce some output data.
+    producers += item_image_producers()
+    producers += calculator_page_producers()
 
-        if args.watch:
-            # If the watch argument is given then poll for changes of the files
-            # polling is used instead of something like inotify because change
-            # events are not propagated for volumes being run on docker for
-            # windows. If ever a nicer solution for handling this appears this
-            # code can be changed to support it.
-            #
-            # NOTE: With this polling method there is a race condition that is
-            # possible to hit rather if saving frequently. If a file is
-            # updated during its generation, after it has been read but before
-            # the first file is written then it will not be detected in the
-            # next pass-through.
-            time.sleep(.5)
-            continue
-        else:
-            break
+    # # Create the calculators
+    # d = './resource_lists'
+    # calculator_directories: List[str] = []
+    # for o in os.listdir(d):
+    #     if os.path.isdir(os.path.join(d, o)):
+    #         if calculator_page_sublist == [] or o in calculator_page_sublist:
+    #             create_calculator_page(o, args.force_html, not args.watch)
+    #             calculator_directories.append(o)
+
+    # if not FLAG_skip_index:
+    #     calculator_directories.sort()
+    #     create_index_page(calculator_directories)
+
+    # if not FLAG_skip_gz_compression:
+    #     pre_compress_output_files()
+
+    producers += core_resource_producers()
+
+    build_producer_calls(producers, ["venv_docker", "venv", ".git", "node_modules"])
+
+    # if args.watch:
+    #     # If the watch argument is given then poll for changes of the files
+    #     # polling is used instead of something like inotify because change
+    #     # events are not propagated for volumes being run on docker for
+    #     # windows. If ever a nicer solution for handling this appears this
+    #     # code can be changed to support it.
+    #     #
+    #     # NOTE: With this polling method there is a race condition that is
+    #     # possible to hit rather if saving frequently. If a file is
+    #     # updated during its generation, after it has been read but before
+    #     # the first file is written then it will not be detected in the
+    #     # next pass-through.
+    #     time.sleep(.5)
+    #     continue
+    # else:
+    #     break
 
 
 PROFILE = False

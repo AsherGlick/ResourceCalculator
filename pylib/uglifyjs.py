@@ -1,5 +1,8 @@
 import shutil
 import subprocess
+from pylib.producers import Producer
+from typing import List
+import re
 
 _skip_uglify = False
 
@@ -16,7 +19,12 @@ def set_skip_uglify_flag() -> None:
 # Uglify Copyfile calls an uglification process on an entire file and writes
 # the output to a new file.
 ################################################################################
-def uglify_copyfile(in_file: str, out_file: str) -> None:
+def uglify_copyfile(in_file: str, match: re.Match, out_files: List[str]) -> None:
+    if len(out_files) != 1:
+        raise ValueError("Must copy " +in_file+" to only one location not" + str(out_files))
+
+    out_file = out_files[0]
+
     if _skip_uglify:
         shutil.copyfile(in_file, out_file)
         return
@@ -45,3 +53,12 @@ def uglify_js_string(js_string: str) -> str:
         print("WARNING: Javascript compression failed")
         print("        ", e)
     return js_string
+
+
+def uglify_js_producer(input_file: str, output_file: str, categories: List[str]) -> Producer:
+    return Producer(
+        input_path_patterns=["^"+input_file+"$"],
+        output_paths=Producer.static_output(output_file),
+        function=uglify_copyfile,
+        categories=categories
+    )
