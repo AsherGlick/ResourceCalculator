@@ -1035,5 +1035,149 @@ resources:
         Gas Pod: -1
     - recipe_type: Raw Resource
 
+## Modification Station
+
+  Thermoblade:
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Survival Knife: -1
+        Battery: -1
+    - recipe_type: Raw Resource
+  Lightweight High Capacity Tank:
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        High Capacity O₂ Tank: -1
+        Plasteel Ingot: -1
+    - recipe_type: Raw Resource
+  Ultra High Capacity Tank:
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        High Capacity O₂ Tank: -1
+        Lithium: -4
+    - recipe_type: Raw Resource
+  Ultra Glide Fins:
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Fins: -1
+        Silicone Rubber: -2
+        Titanium: -1
+        Lithium: -1
+    - recipe_type: Raw Resource
+  Swim Charge Fins:
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Fins: -1
+        Polyaniline: -1
+        Wiring Kit: -1
+    - recipe_type: Raw Resource
+  Repulsion Cannon:
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Propulsion Cannon: -1
+        Computer Chip: -1
+        Magnetite: -2
+    - recipe_type: Raw Resource
+
+  Cyclops Depth Module MK2:
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Cyclops Depth Module MK1: -1
+        Plasteel Ingot: -1
+        Nickel Ore: -3
+    - recipe_type: Raw Resource
+  Cyclops Depth Module MK3:
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Cyclops Depth Module MK2: -1
+        Plasteel Ingot: -1
+        Kyanite: -3
+    - recipe_type: Raw Resource
+  Prawn Suit Depth Module MK2:
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Prawn Suit Depth Module MK1: -1
+        Titanium: -5
+        Lithium: -2
+        Kyanite: -3
+    - recipe_type: Raw Resource
+  Seamoth Depth Module MK2:
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Seamoth Depth Module MK1: -1
+        Plasteel Ingot: -1
+        Magnetite: -2
+        Enameled Glass: -1
+    - recipe_type: Raw Resource
+  Seamoth Depth Module MK3:
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Seamoth Depth Module MK2: -1
+        Plasteel Ingot: -1
+        Ruby: -3
+    - recipe_type: Raw Resource
+
+## Scanner Room
+  Scanner Room HUD Chip:
+    recipes:
+    - output: 1
+      recipe_type: Scanner Room
+      requirements:
+        Computer Chip: -1
+        Magnetite: -1
+    - recipe_type: Raw Resource
+  Camera Drone:
+    recipes:
+    - output: 1
+      recipe_type: Scanner Room
+      requirements:
+        Computer Chip: -1
+        Battery: -1
+        Glass: -1
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Scanner Room Range Upgrade:
+    recipes:
+    - output: 1
+      recipe_type: Scanner Room
+      requirements:
+        Copper Ore: -1
+        Magnetite: -1
+    - recipe_type: Raw Resource
+  Scanner Room Speed Upgrade:
+    recipes:
+    - output: 1
+      recipe_type: Scanner Room
+      requirements:
+        Silver Ore: -1
+        Gold: -1
+    - recipe_type: Raw Resource
+
+## Cyclops
+
+
+
+
 
 
