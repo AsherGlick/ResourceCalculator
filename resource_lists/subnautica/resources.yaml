@@ -18,9 +18,10 @@ recipe_types:
   Fabricator: "Use a Fabricator to turn {IN_ITEMS} into {OUT_ITEM}"
   Modification Station: "Use a Modification Station to turn {IN_ITEMS} into {OUT_ITEM}"
   Scanner Room: "Use a Scanner Room Fabricator to turn {IN_ITEMS} into {OUT_ITEM}"
-  Cyclops Upgrade: "Use a Cyclops Upgrade Fabricator to turn {IN_ITEMS} into {OUT_ITEM}"
+  Cyclops Fabricator: "Use a Cyclops Upgrade Fabricator to turn {IN_ITEMS} into {OUT_ITEM}"
   Mobile Vehicle Bay: "Use a Mobile Vehicle Bay to turn {IN_ITEMS} into {OUT_ITEM}"
   Vehicle Upgrade: "Use a Vehicle Upgrade Console to turn {IN_ITEMS} into {OUT_ITEM}"
+  Neptune Launch Platform: "Use the Neptune Launch Platform to turn {IN_ITEMS} into {OUT_ITEM}"
   Build: "Use a Habitat Builder to turn {IN_ITEMS} into {OUT_ITEM}"
 
 resources:
@@ -1175,6 +1176,159 @@ resources:
     - recipe_type: Raw Resource
 
 ## Cyclops
+  Cyclops Depth Module MK1:
+    recipes:
+    - output: 1
+      recipe_type: Cyclops Fabricator
+      requirements:
+        Plasteel Ingot: -1
+        Ruby: -3
+    - recipe_type: Raw Resource
+  Cyclops Engine Efficiency Module:
+    recipes:
+    - output: 1
+      recipe_type: Cyclops Fabricator
+      requirements:
+        Computer Chip: -1
+        Benzene: -1
+        Polyaniline: -1
+    - recipe_type: Raw Resource
+  Cyclops Thermal Reactor Module:
+    recipes:
+    - output: 1
+      recipe_type: Cyclops Fabricator
+      requirements:
+        Polyaniline: -2
+        Kyanite: -4
+        Wiring Kit: -1
+    - recipe_type: Raw Resource
+  Cyclops Sonar Upgrade:
+    recipes:
+    - output: 1
+      recipe_type: Cyclops Fabricator
+      requirements:
+        Computer Chip: -1
+        Magnetite: -3
+    - recipe_type: Raw Resource
+  Cyclops Fire Suppression System:
+    recipes:
+    - output: 1
+      recipe_type: Cyclops Fabricator
+      requirements:
+        Aerogel: -2
+        Crystalline Sulfur: -2
+    - recipe_type: Raw Resource
+  Cyclops Docking Bay Repair Module:
+    recipes:
+    - output: 1
+      recipe_type: Cyclops Fabricator
+      requirements:
+        Repair Tool: -1
+        Copper Wire: -1
+    - recipe_type: Raw Resource
+  Cyclops Decoy Tube Upgrade:
+    recipes:
+    - output: 1
+      recipe_type: Cyclops Fabricator
+      requirements:
+        Titanium: -3
+        Lithium: -2
+        Aerogel: -1
+    - recipe_type: Raw Resource
+  Cyclops Shield Generator:
+    recipes:
+    - output: 1
+      recipe_type: Cyclops Fabricator
+      requirements:
+        Advanced Wiring Kit: -1
+        Polyaniline: -1
+        Power Cell: -1
+    - recipe_type: Raw Resource
+
+## Mobile Vehicle Bay
+  Seamoth:
+    recipes:
+    - output: 1
+      recipe_type: Mobile Vehicle Bay
+      requirements:
+        Titanium Ingot: -1
+        Power Cell: -1
+        Glass: -2
+        Lubricant: -1
+        Lead: -1
+    - recipe_type: Raw Resource
+  Cyclops:
+    recipes:
+    - output: 1
+      recipe_type: Mobile Vehicle Bay
+      requirements:
+        Plasteel Ingot: -3
+        Enameled Glass: -3
+        Lubricant: -1
+        Advanced Wiring Kit: -1
+        Lead: -3
+    - recipe_type: Raw Resource
+  Prawn Suit:
+    recipes:
+    - output: 1
+      recipe_type: Mobile Vehicle Bay
+      requirements:
+        Plasteel Ingot: -2
+        Aerogel: -2
+        Enameled Glass: -1
+        Diamond: -2
+        Lead: -2
+    - recipe_type: Raw Resource
+  Neptune Launch Platform:
+    recipes:
+    - output: 1
+      recipe_type: Mobile Vehicle Bay
+      requirements:
+        Lead: -4
+        Titanium Ingot: -2
+        Computer Chip: -1
+    - recipe_type: Raw Resource
+
+# Neptune Launch Platform
+  Neptune Gantry:
+    recipes:
+    - output: 1
+      recipe_type: Neptune Launch Platform
+      requirements:
+        Plasteel Ingot: -1
+        Copper Wire: -1
+        Lubricant: -1
+    - recipe_type: Raw Resource
+  Neptune Boosters:
+    recipes:
+    - output: 1
+      recipe_type: Neptune Launch Platform
+      requirements:
+        Plasteel Ingot: -1
+        Nickel Ore: -3
+        Aerogel: -2
+        Wiring Kit: -1
+    - recipe_type: Raw Resource
+  Neptune Fuel Reserve:
+    recipes:
+    - output: 1
+      recipe_type: Neptune Launch Platform
+      requirements:
+        Plasteel Ingot: -1
+        Crystalline Sulfur: -4
+        Kyanite: -4
+        Ion Power Cell: -2
+    - recipe_type: Raw Resource
+  Neptune Cockpit:
+    recipes:
+    - output: 1
+      recipe_type: Neptune Launch Platform
+      requirements:
+        Cyclops Shield Generator: -1
+        Plasteel Ingot: -1
+        Enameled Glass: -1
+        Computer Chip: -1
+    - recipe_type: Raw Resource
 
 
 
