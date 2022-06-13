@@ -5,10 +5,10 @@ import shutil
 import subprocess
 import time
 from dataclasses import dataclass
-from typing import OrderedDict
+from typing import OrderedDict, Union, TypedDict, TypeVar
 from jinja2 import Environment, FileSystemLoader
-from typing import Dict, Tuple, List, Any
-from pylib.uglifyjs import uglify_js_producer, set_skip_uglify_flag
+from typing import Dict, Tuple, List, Any, TypedDict
+from pylib.uglifyjs import uglify_js_producer
 from pylib.resource_list import ResourceList, Resource, TokenError
 from pylib.yaml_token_load import ordered_load
 from pylib.producers import Producer
@@ -294,8 +294,8 @@ def core_resource_producers() -> List[Producer]:
         "core/favicon.ico",
     ]
 
-    ts_directories = [
-        "core/src"
+    ts_project_configs = [
+        "core/src/tsconfig.json"
     ]
 
     # JS files to be minified
@@ -316,18 +316,18 @@ def core_resource_producers() -> List[Producer]:
             )
         )
 
-    # # Add the core typescript file
-    # for ts_directory in ts_directories:
-    #     core_producers += typescript_producer(ts_directory, ["core"])
+    # Add the core typescript file
+    for ts_project_config in ts_project_configs:
+        core_producers += typescript_producer(ts_project_config, ["core"])
 
-    # for uglify_js_file in uglify_js_files:
-    #     core_producers.append(
-    #         uglify_js_producer(
-    #             input_file=uglify_js_file,
-    #             output_file=os.path.join("output", os.path.basename(uglify_js_file)),
-    #             categories=["core"]
-    #         )
-    #     )
+    for uglify_js_file in uglify_js_files:
+        core_producers.append(
+            uglify_js_producer(
+                input_file=uglify_js_file,
+                output_file=os.path.join("output", os.path.basename(uglify_js_file)),
+                categories=["core"]
+            )
+        )
 
     return core_producers
 
@@ -384,8 +384,8 @@ def main() -> None:
     # if args.no_jslint or args.draft:
         # FLAG_skip_js_lint = True
 
-    if args.no_uglify_js or args.draft:
-        set_skip_uglify_flag()
+    # if args.no_uglify_js or args.draft:
+    #     set_skip_uglify_flag()
 
     if args.no_gz or args.draft:
         FLAG_skip_gz_compression = True
@@ -454,6 +454,46 @@ def main() -> None:
     #     continue
     # else:
     #     break
+
+# @dataclass
+# class ADataclassType:
+#     input_file: str
+#     input_files: List[str]
+
+# class ATypedDictClass(TypedDict):
+#     input_file: str
+#     input_files: List[str]
+
+# class AnotherTYpedDictClass(TypedDict):
+#     output_file: str
+#     output_files: List[str]
+
+# def main2():
+#     print("hello world")
+
+#     a_dataclass_type:ADataclassType = ADataclassType(input_file="file", input_files=["file1", "file2"])
+#     a_typeddict_type:ATypedDictClass = ATypedDictClass(input_file="file", input_files=["file1", "file2"])
+
+
+#     print(a_dataclass_type)
+#     # print(a_dataclass_type["input_file"])
+
+#     print(a_typeddict_type)
+#     astr: str = a_typeddict_type["input_file"]
+#     print(astr)
+
+#     afunction(a_typeddict_type)
+
+
+# T = TypeVar("T", bound=TypedDict)
+
+# def afunction (argone: T) -> T:
+#     print(isinstance(argone, dict))
+#     print(argone)
+
+#     output_files = AnotherTYpedDictClass(output_file="f", output_files=["a", "b"])
+
+#     return output_files
 
 
 PROFILE = False

@@ -7,8 +7,34 @@ import os
 import sys
 
 
+
+
+
+
+# def core_categories(input_files: InputFileDatatype) -> List[str]:
+#     return ["core", input_files["input"]]
+
+# def core_resource_paths(index: int, regex: str, match: re.Match) -> Tuple[InputFileDatatype, OutputFileDatatype]:
+#     return ({
+#             "input": match.group(0)
+#         },{
+#             "output": os.path.join("output", os.path.basename(match.group(0)))
+#         })
+    
+# def producer_copyfile(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
+
+
+
+
+
+from typing import TypedDict
+
+
 InputFileDatatype = Dict[str, Union[str, List[str]]]
-OutputFileDatatype = Dict[str, str]
+OutputFileDatatype = Dict[str, Union[str, List[str]]]
+
+T = TypeVar("T", bound=TypedDict)
+
 
 class Creator:
     input_paths: InputFileDatatype
@@ -70,9 +96,9 @@ class Creator:
             if isinstance(output_path, str):
                 flat_output_paths.append(output_path)
 
-            # elif isinstance(input_path, list) and all([isinstance(x, str) for x in input_path]):
-            #     for sub_input_path in self.input_path:
-            #         self._flat_input_paths.add(sub_input_path)
+            elif isinstance(output_path, list) and all([isinstance(x, str) for x in output_path]):
+                for sub_output_path in output_path:
+                    flat_output_paths.append(sub_output_path)
 
             else:
                 raise TypeError("Expected either a string but got", output_path)

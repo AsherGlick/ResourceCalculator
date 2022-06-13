@@ -1,33 +1,18 @@
 import shutil
 import subprocess
-from pylib.producers import Producer
-from typing import List
+from pylib.producers import Producer, InputFileDatatype, OutputFileDatatype
+from typing import List, Callable, Tuple
 import re
-
-_skip_uglify = False
-
-
-################################################################################
-# Helper function to flip the skip uglify flag that will bypass this module
-################################################################################
-def set_skip_uglify_flag() -> None:
-    global _skip_uglify
-    _skip_uglify = True
+import os
 
 
 ################################################################################
 # Uglify Copyfile calls an uglification process on an entire file and writes
 # the output to a new file.
 ################################################################################
-def uglify_copyfile(in_file: str, match: re.Match, out_files: List[str]) -> None:
-    if len(out_files) != 1:
-        raise ValueError("Must copy " +in_file+" to only one location not" + str(out_files))
-
-    out_file = out_files[0]
-
-    if _skip_uglify:
-        shutil.copyfile(in_file, out_file)
-        return
+def uglify_copyfile(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
+    in_file: str = input_files["input"]
+    out_file: str = output_files["output"]
 
     try:
         subprocess.run(["./node_modules/.bin/terser", "--mangle", "--compress", "-o", out_file, in_file])
@@ -43,9 +28,6 @@ def uglify_copyfile(in_file: str, match: re.Match, out_files: List[str]) -> None
 # string, which is then returned.
 ################################################################################
 def uglify_js_string(js_string: str) -> str:
-    if _skip_uglify:
-        return js_string
-
     try:
         result = subprocess.run(["./node_modules/.bin/terser", "--mangle", "--compress"], input=js_string.encode("utf-8"), stdout=subprocess.PIPE)
         return result.stdout.decode("utf-8")
@@ -55,10 +37,40 @@ def uglify_js_string(js_string: str) -> str:
     return js_string
 
 
+################################################################################
+#
+################################################################################
 def uglify_js_producer(input_file: str, output_file: str, categories: List[str]) -> Producer:
     return Producer(
         input_path_patterns=["^"+input_file+"$"],
-        output_paths=Producer.static_output(output_file),
+        paths=uglify_paths,
         function=uglify_copyfile,
-        categories=categories
+        categories=uglify_categories(categories)
     )
+
+
+################################################################################
+#
+################################################################################
+def uglify_categories(parent_categories: List[str]) -> Callable[[InputFileDatatype], List[str]]:
+    def category_list(input_files: InputFileDatatype) -> List[str]:
+        # flat_input_paths: List[str] = input_files["inputs"]
+
+        categories = []
+        categories += parent_categories
+        categories.append("minifyjs")
+        # categories += flat_input_paths
+
+        return categories
+    return category_list
+
+
+################################################################################
+#
+################################################################################
+def uglify_paths(index: int, regex: str, match: re.Match) -> Tuple[InputFileDatatype, OutputFileDatatype]:
+    return ({
+            "input": match.group(0)
+        },{
+            "output": os.path.join("output", os.path.basename(match.group(0)))
+        })

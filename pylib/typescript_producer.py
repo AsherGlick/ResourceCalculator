@@ -1,8 +1,8 @@
-from pylib.producers import Producer
+from pylib.producers import Producer, InputFileDatatype, OutputFileDatatype
 import json
 import os
 import subprocess
-from typing import List
+from typing import List, Tuple, Callable
 import re
 
 
@@ -12,16 +12,70 @@ import re
 # Build the producers list for compiling typescript to javascript given a
 # particular tsconfig.json file.
 ################################################################################
-def typescript_producer(typescript_directory: str, categories: List[str]) -> List[Producer]:
+def typescript_producer(ts_project_config: str, categories: List[str]) -> List[Producer]:
 
-    input_directory_pattern = "^" + typescript_directory + "$"
+    input_directory_pattern = "^" + ts_project_config + "$"
 
-    return [Producer(
-        input_path_patterns=[input_directory_pattern],
-        output_paths=output_files,
-        function=build_typescript,
-        categories=categories
-    )]
+    return [
+        Producer(
+            input_path_patterns=[input_directory_pattern],
+            paths=typescript_resource_paths,
+            function=build_typescript,
+            categories=typescript_categories(categories)
+        )
+    ]
+
+def typescript_categories(parent_categories: List[str]) -> Callable[[InputFileDatatype], List[str]]:
+    def category_list(input_files: InputFileDatatype) -> List[str]:
+        # flat_input_paths: List[str] = input_files["inputs"]
+
+        categories = []
+        categories += parent_categories
+        categories.append("typescript")
+        # categories += flat_input_paths
+
+        return categories
+    return category_list
+
+def typescript_resource_paths(index: int, regex: str, match: re.Match) -> Tuple[InputFileDatatype, OutputFileDatatype]:
+    tsconfig_path = match.group(0)
+    input_folder = os.path.dirname(tsconfig_path)
+    
+    # Get the list of files and the typescript output directory
+    with open(tsconfig_path) as f:
+        tsconfig = json.load(f)
+
+    files: List[str] = tsconfig["files"]
+    output_directory: str = tsconfig["compilerOptions"]["outDir"]
+
+    output_paths = []
+    input_paths = []
+
+    for file in files:
+
+        output_path = os.path.normpath(os.path.join(input_folder, output_directory, file))
+
+        if output_path.endswith(".ts"):
+            output_path = output_path[:-3] + ".js"
+        else:
+            raise ValueError("Expected only typescript files as input")
+
+        input_path = os.path.join(input_folder, file)
+
+        output_paths.append(output_path)
+        input_paths.append(input_path)
+
+
+    return ({
+            "inputs": input_paths,
+            "tsconfig_file": tsconfig_path
+        },{
+            "outputs": output_paths
+        })
+    
+# def producer_copyfile(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
+
+
 
 
 def output_files(input_path: str, match: re.Match) -> List[str]:
@@ -56,5 +110,10 @@ def output_files(input_path: str, match: re.Match) -> List[str]:
 #
 # Call the tsc 
 ################################################################################
-def build_typescript(folder: str, match: re.Match, output_files: List[str]) -> None:
-    subprocess.run(["node_modules/.bin/tsc", "--project", folder])
+def build_typescript(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
+    tsconfig_file = input_files["tsconfig_file"]
+    if not isinstance(tsconfig_file, str):
+        raise ValueError
+
+    typescript_folder = os.path.dirname(tsconfig_file)
+    subprocess.run(["node_modules/.bin/tsc", "--project", typescript_folder])
