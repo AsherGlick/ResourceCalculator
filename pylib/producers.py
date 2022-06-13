@@ -5,10 +5,17 @@ import heapq
 import re
 import os
 import sys
+from typing import TypedDict
 
 
 
+# Convenience Class for anything with a single input or output file
+class SingleFile(TypedDict):
+    file: str
 
+# Convenience Class for anything with a single group of input or output files
+class MultiFile(TypedDict):
+    files: List[str]
 
 
 # def core_categories(input_files: InputFileDatatype) -> List[str]:
@@ -27,16 +34,15 @@ import sys
 
 
 
-from typing import TypedDict
 
 
-InputFileDatatype = Dict[str, Union[str, List[str]]]
-OutputFileDatatype = Dict[str, Union[str, List[str]]]
+# InputFileDatatype = Dict[str, Union[str, List[str]]]
+# OutputFileDatatype = Dict[str, Union[str, List[str]]]
 
-T = TypeVar("T", bound=TypedDict)
+InputFileDatatype = TypeVar("InputFileDatatype", bound=TypedDict)
+OutputFileDatatype = TypeVar("OutputFileDatatype", bound=TypedDict)
 
-
-class Creator:
+class Creator(Generic[InputFileDatatype, OutputFileDatatype]):
     input_paths: InputFileDatatype
     _input_paths_set: Set[str]
     output_paths: OutputFileDatatype
@@ -117,7 +123,7 @@ class Creator:
         self.function(self.input_paths, self.output_paths)
 
 @dataclass
-class Producer:
+class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
     # A list of file regex matches. If a file is changed that matches one of
     # these regex matches then this producer will trigger 
     input_path_patterns: List[str]

@@ -17,7 +17,7 @@ from pylib.imagepack import item_image_producers
 from pylib.calculator_producer import calculator_producers
 from pylib.yaml_linter_producer import resource_list_parser_producers
 from pylib.gz_compressor_producer import gz_compressor_producers
-from pylib.producers import InputFileDatatype, OutputFileDatatype, Studio
+from pylib.producers import Studio, SingleFile
 
 # CLI Argument Flags
 # FLAG_skip_js_lint = False
@@ -331,23 +331,26 @@ def core_resource_producers() -> List[Producer]:
 
     return core_producers
 
-def core_categories(input_files: InputFileDatatype) -> List[str]:
-    return ["core", input_files["input"]]
 
-def core_resource_paths(index: int, regex: str, match: re.Match) -> Tuple[InputFileDatatype, OutputFileDatatype]:
-    return ({
-            "input": match.group(0)
+def core_categories(input_files: SingleFile) -> List[str]:
+    return ["core", input_files["file"]]
+
+def core_resource_paths(index: int, regex: str, match: re.Match) -> Tuple[SingleFile, SingleFile]:
+    return (
+        {
+            "file": match.group(0)
         },{
-            "output": os.path.join("output", os.path.basename(match.group(0)))
-        })
+            "file": os.path.join("output", os.path.basename(match.group(0)))
+        }
+    )
     
-def producer_copyfile(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-    input_file: str = input_files["input"]
-    output_file: str = output_files["output"]
+def producer_copyfile(input_files: SingleFile, output_files: SingleFile) -> None:
+    input_file: str = input_files["file"]
+    output_file: str = output_files["file"]
 
     # Copy the file
     shutil.copyfile(input_file, output_file)
-    pass
+
 
 
 def main() -> None:

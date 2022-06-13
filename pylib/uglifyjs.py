@@ -1,6 +1,6 @@
 import shutil
 import subprocess
-from pylib.producers import Producer, InputFileDatatype, OutputFileDatatype
+from pylib.producers import Producer, SingleFile
 from typing import List, Callable, Tuple
 import re
 import os
@@ -10,9 +10,9 @@ import os
 # Uglify Copyfile calls an uglification process on an entire file and writes
 # the output to a new file.
 ################################################################################
-def uglify_copyfile(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-    in_file: str = input_files["input"]
-    out_file: str = output_files["output"]
+def uglify_copyfile(input_files: SingleFile, output_files: SingleFile) -> None:
+    in_file: str = input_files["file"]
+    out_file: str = output_files["file"]
 
     try:
         subprocess.run(["./node_modules/.bin/terser", "--mangle", "--compress", "-o", out_file, in_file])
@@ -52,8 +52,8 @@ def uglify_js_producer(input_file: str, output_file: str, categories: List[str])
 ################################################################################
 #
 ################################################################################
-def uglify_categories(parent_categories: List[str]) -> Callable[[InputFileDatatype], List[str]]:
-    def category_list(input_files: InputFileDatatype) -> List[str]:
+def uglify_categories(parent_categories: List[str]) -> Callable[[SingleFile], List[str]]:
+    def category_list(input_files: SingleFile) -> List[str]:
         # flat_input_paths: List[str] = input_files["inputs"]
 
         categories = []
@@ -68,9 +68,9 @@ def uglify_categories(parent_categories: List[str]) -> Callable[[InputFileDataty
 ################################################################################
 #
 ################################################################################
-def uglify_paths(index: int, regex: str, match: re.Match) -> Tuple[InputFileDatatype, OutputFileDatatype]:
+def uglify_paths(index: int, regex: str, match: re.Match) -> Tuple[SingleFile, SingleFile]:
     return ({
-            "input": match.group(0)
+            "file": match.group(0)
         },{
-            "output": os.path.join("output", os.path.basename(match.group(0)))
+            "file": os.path.join("output", os.path.basename(match.group(0)))
         })

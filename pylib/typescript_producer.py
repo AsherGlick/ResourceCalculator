@@ -1,10 +1,14 @@
-from pylib.producers import Producer, InputFileDatatype, OutputFileDatatype
+from pylib.producers import Producer, MultiFile
 import json
 import os
 import subprocess
-from typing import List, Tuple, Callable
+from typing import List, Tuple, Callable, TypedDict
 import re
 
+
+class TypescriptInputFiles(TypedDict):
+    inputs: List[str]
+    tsconfig_file: str
 
 ################################################################################
 # typescript_producer
@@ -25,8 +29,8 @@ def typescript_producer(ts_project_config: str, categories: List[str]) -> List[P
         )
     ]
 
-def typescript_categories(parent_categories: List[str]) -> Callable[[InputFileDatatype], List[str]]:
-    def category_list(input_files: InputFileDatatype) -> List[str]:
+def typescript_categories(parent_categories: List[str]) -> Callable[[TypescriptInputFiles], List[str]]:
+    def category_list(input_files: TypescriptInputFiles) -> List[str]:
         # flat_input_paths: List[str] = input_files["inputs"]
 
         categories = []
@@ -37,7 +41,7 @@ def typescript_categories(parent_categories: List[str]) -> Callable[[InputFileDa
         return categories
     return category_list
 
-def typescript_resource_paths(index: int, regex: str, match: re.Match) -> Tuple[InputFileDatatype, OutputFileDatatype]:
+def typescript_resource_paths(index: int, regex: str, match: re.Match) -> Tuple[TypescriptInputFiles, MultiFile]:
     tsconfig_path = match.group(0)
     input_folder = os.path.dirname(tsconfig_path)
     
@@ -70,7 +74,7 @@ def typescript_resource_paths(index: int, regex: str, match: re.Match) -> Tuple[
             "inputs": input_paths,
             "tsconfig_file": tsconfig_path
         },{
-            "outputs": output_paths
+            "files": output_paths
         })
     
 # def producer_copyfile(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
@@ -110,10 +114,8 @@ def output_files(input_path: str, match: re.Match) -> List[str]:
 #
 # Call the tsc 
 ################################################################################
-def build_typescript(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
+def build_typescript(input_files: TypescriptInputFiles, output_files: MultiFile) -> None:
     tsconfig_file = input_files["tsconfig_file"]
-    if not isinstance(tsconfig_file, str):
-        raise ValueError
 
     typescript_folder = os.path.dirname(tsconfig_file)
     subprocess.run(["node_modules/.bin/tsc", "--project", typescript_folder])
