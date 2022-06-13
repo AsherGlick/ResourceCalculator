@@ -11,12 +11,13 @@ from typing import Dict, Tuple, List, Any
 from pylib.uglifyjs import uglify_js_producer, set_skip_uglify_flag
 from pylib.resource_list import ResourceList, Resource, TokenError
 from pylib.yaml_token_load import ordered_load
-from pylib.producers import Producer, build_producer_calls
+from pylib.producers import Producer
 from pylib.typescript_producer import typescript_producer
 from pylib.imagepack import item_image_producers
 from pylib.calculator_producer import calculator_producers
 from pylib.yaml_linter_producer import resource_list_parser_producers
 from pylib.gz_compressor_producer import gz_compressor_producers
+from pylib.producers import InputFileDatatype, OutputFileDatatype, Studio
 
 # CLI Argument Flags
 # FLAG_skip_js_lint = False
@@ -212,35 +213,6 @@ def touch_output_folder_files(calculator_folder: str, timestamp: int = 0) -> Non
             os.utime(filepath, (timestamp, timestamp))
 
 
-# Temporary file to update the resource file to the new format that does not
-# use ordered dictionaries and instead uses arrays of dictionaries
-def hack_update_version(data: Any) -> Any:
-    new_authors = []
-    for author in data["authors"]:
-        new_authors.append({
-            "name":author,
-            "link":data["authors"][author]
-        })
-    data["authors"] = new_authors
-
-    new_resources = []
-    resource_id_count = 1
-    for resource in data["resources"]:
-        new_resource = {
-            "name": resource,
-            "id": resource_id_count,
-        }
-
-        for key in data["resources"][resource]:
-            new_resource[key] = data["resources"][resource][key]
-
-        new_resources.append(new_resource)
-        resource_id_count += 1
-    data["resources"] = new_resources
-
-    return data
-
-
 def publish_calculator_plugins(
     calculator_folder: str,
     source_folder: str
@@ -335,38 +307,47 @@ def core_resource_producers() -> List[Producer]:
     core_producers: List[Producer] = []
 
     for copyfile in copyfiles:
-        core_producers.append(Producer(
-            input_path_patterns=[ "^" + copyfile + "$"],
-            output_paths=Producer.static_output(os.path.join("output", os.path.basename(copyfile))),
-            function=producer_copyfile,
-            categories=["core"]
-        ))
-
-    # Add the core typescript file
-    for ts_directory in ts_directories:
-        core_producers += typescript_producer(ts_directory, ["core"])
-
-    for uglify_js_file in uglify_js_files:
         core_producers.append(
-            uglify_js_producer(
-                input_file=uglify_js_file,
-                output_file=os.path.join("output", os.path.basename(uglify_js_file)),
-                categories=["core"]
+            Producer(
+                input_path_patterns=[ "^" + copyfile + "$"],
+                paths=core_resource_paths,
+                function=producer_copyfile,
+                categories=core_categories
             )
         )
 
+    # # Add the core typescript file
+    # for ts_directory in ts_directories:
+    #     core_producers += typescript_producer(ts_directory, ["core"])
+
+    # for uglify_js_file in uglify_js_files:
+    #     core_producers.append(
+    #         uglify_js_producer(
+    #             input_file=uglify_js_file,
+    #             output_file=os.path.join("output", os.path.basename(uglify_js_file)),
+    #             categories=["core"]
+    #         )
+    #     )
+
     return core_producers
 
+def core_categories(input_files: InputFileDatatype) -> List[str]:
+    return ["core", input_files["input"]]
+
+def core_resource_paths(index: int, regex: str, match: re.Match) -> Tuple[InputFileDatatype, OutputFileDatatype]:
+    return ({
+            "input": match.group(0)
+        },{
+            "output": os.path.join("output", os.path.basename(match.group(0)))
+        })
     
-def producer_copyfile(input_file: str, match: re.Match, output_files: List[str]) -> None:
-    # Sanity check that there is only one output
-    if len(output_files) != 1:
-        raise ValueError("Must copy " + input_file + " to only one location not" + str(output_files))
-    output_file = output_files[0]
+def producer_copyfile(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
+    input_file: str = input_files["input"]
+    output_file: str = output_files["output"]
 
     # Copy the file
     shutil.copyfile(input_file, output_file)
-
+    pass
 
 
 def main() -> None:
@@ -437,21 +418,13 @@ def main() -> None:
     producers: List[Producer] = []
 
 
-    producers += resource_list_parser_producers()
-    producers += item_image_producers()
-    producers += calculator_producers()
+    # producers += resource_list_parser_producers()
+    # producers += item_image_producers()
+    # producers += calculator_producers()
+    # producers += calculator_editor_producers()
     producers += core_resource_producers()
+    # producers += gz_compressor_producers()
 
-    producers += gz_compressor_producers()
-
-    # # Create the calculators
-    # d = './resource_lists'
-    # calculator_directories: List[str] = []
-    # for o in os.listdir(d):
-    #     if os.path.isdir(os.path.join(d, o)):
-    #         if calculator_page_sublist == [] or o in calculator_page_sublist:
-    #             create_calculator_page(o, args.force_html, not args.watch)
-    #             calculator_directories.append(o)
 
     # if not FLAG_skip_index:
     #     calculator_directories.sort()
@@ -461,7 +434,9 @@ def main() -> None:
     #     pre_compress_output_files()
 
 
-    build_producer_calls(producers, ["venv_docker", "venv", ".git", "node_modules"])
+    studio = Studio(producers)
+
+    # build_producer_calls(producers, ["venv_docker", "venv", ".git", "node_modules"])
 
     # if args.watch:
     #     # If the watch argument is given then poll for changes of the files
