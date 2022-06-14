@@ -1,7 +1,7 @@
 import shutil
 import subprocess
-from pylib.producers import Producer
-from typing import List, Dict, Tuple
+from pylib.producers import Producer, SingleFile
+from typing import List, Dict, Tuple, TypedDict
 import re
 import os
 import math
@@ -17,29 +17,40 @@ def resource_list_parser_producers() -> List[Producer]:
     return [
         Producer(
             input_path_patterns=["^resource_lists/([a-z ]+)/resources.yaml$"],
-            output_paths=resource_list_parser_output_paths,
+            paths=resource_list_paths,
             function=resource_list_parser_function,
-            categories=["resource_list"]
+            categories=resource_list_categories
         ),
     ]
 
-def resource_list_parser_output_paths(path: str, match: re.Match) -> List[str]:
+
+def resource_list_categories(input_files: SingleFile) -> List[str]:
+    return ["resource_list"]
+
+class ResourceListOutputFiles(TypedDict):
+    resource_cache: str
+    page_metadata: str
+
+def resource_list_paths(index: int, regex: str, match: re.Match) -> Tuple[SingleFile, ResourceListOutputFiles]:
     calculator_page = match.group(1)
 
     calculator_resource_cache = os.path.join("cache", calculator_page, "resources.pickle")
     calculator_page_metadata = os.path.join("cache", calculator_page, "page_metadata.json")
 
-    return [
-        calculator_resource_cache,
-        calculator_page_metadata,
-    ]
+    return (
+        {
+            "file": match.group(0)
+        }, {
+            "resource_cache" :calculator_resource_cache,
+            "page_metadata" :calculator_page_metadata,
+        }
+    )
 
-def resource_list_parser_function(input_file: str, match: re.Match, output_files: List[str]) -> None:
-    if len(output_files) != 2:
-        raise ValueError("Expected two output files but got" + str(output_files))
-
-    resource_cache_path = output_files[0]
-    page_metadata_path = output_files[1]
+# def resource_list_parser_function(input_file: str, match: re.Match, output_files: List[str]) -> None:
+def resource_list_parser_function(input_files: SingleFile, output_files: ResourceListOutputFiles) -> None:
+    input_file = input_files["file"]
+    resource_cache_path = output_files["resource_cache"]
+    page_metadata_path = output_files["page_metadata"]
 
     errors = []
 

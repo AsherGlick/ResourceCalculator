@@ -1,6 +1,6 @@
 import htmlmin  # type: ignore
-from pylib.producers import Producer
-from typing import List, Tuple, OrderedDict, Dict
+from pylib.producers import Producer, SingleFile
+from typing import List, Tuple, OrderedDict, Dict, TypedDict, Tuple
 import re
 import os
 from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, get_primitive
@@ -17,24 +17,38 @@ def calculator_producers() -> List[Producer]:
             input_path_patterns=[
                 "^cache/([a-z ]+)/resources.pickle$",
                 "^cache/([a-z ]+)/packed_image_layout.json$",
-                # "^core/calculator.html$", # TODO: Figure out how to support having a dependency that does not contain required information
             ],
-            output_paths=calculator_output_paths,
+            paths=calculator_paths,
             function=calculator_function,
-            categories=["calculator"]
+            categories=calculator_categories,
         )
 
     ]
 
 
-def calculator_output_paths(path: str, match: re.Match) -> List[str]:
-    calculator_page = match.group(1)
+class CalculatorInputFile(TypedDict):
+    resources_pickle: str
+    image_layout_json: str
+    calculator_template: str
 
+def calculator_categories(input_files: CalculatorInputFile) -> List[str]:
+    return ["calculator"]
+
+def calculator_paths(index: int, regex: str, match: re.Match) -> Tuple[CalculatorInputFile, SingleFile]:
+    calculator_page = match.group(1)
     calculator_index_page = os.path.join("output", calculator_page, "index.html")
 
-    return [
-        calculator_index_page,
-    ]
+    return (
+        {
+            "resources_pickle": os.path.join("cache", calculator_page, "resources.pickle"),
+            "image_layout_json": os.path.join("cache", calculator_page, "packed_image_layout.json"),
+
+            # TODO: Are there other template files that should be added here too?
+            "calculator_template": "core/calculator.html",
+        },{
+            "file": calculator_index_page
+
+        })
 
 
 # ################################################################################
@@ -44,21 +58,20 @@ def calculator_output_paths(path: str, match: re.Match) -> List[str]:
 # # the html page and resource for it. If no files have been changed for the
 # # calculator since the last time it was created then the creation will be skipped
 # ################################################################################
-def calculator_function(input_file: str, match: re.Match, output_files: List[str]) -> None:
-    calculator_name: str = match.group(1)
-    resource_list_file = os.path.join("cache", calculator_name, "resources.pickle")
-    image_metadata_file = os.path.join("cache", calculator_name, "packed_image_layout.json")
-    input_files = [resource_list_file, image_metadata_file]
+def calculator_function(input_files: CalculatorInputFile, output_files: SingleFile) -> None:
 
-    if input_file not in input_files:
-        raise ValueError("Expected the input file to be one of:" + str(input_files) + " but got" + input_file)
+    resource_list_file = input_files["resources_pickle"] # os.path.join("cache", calculator_name, "resources.pickle")
+    image_metadata_file = input_files["image_layout_json"] #os.path.join("cache", calculator_name, "packed_image_layout.json")
 
-    if len(output_files) != 1:
-        raise ValueError("Expected just one output file but got" + str(output_files))
-    
-    calculator_index_html_filepath = output_files[0]
+    match = re.match(r"^cache/([a-z ]+)/resources.pickle$", resource_list_file)
+    if match is None:
+        raise ValueError
+    calculator_name = match.group(1)
 
-    print("Generating", calculator_name, "into", calculator_index_html_filepath)
+
+    calculator_index_html_filepath = output_files["file"]
+
+    # print("Generating", calculator_name, "into", calculator_index_html_filepath)
 
     with open(image_metadata_file) as f:
         image_metadata = json.load(f)
@@ -76,7 +89,7 @@ def calculator_function(input_file: str, match: re.Match, output_files: List[str
 
     default_stack_size: str = resource_list.default_stack_size
 
-    recipe_type_format_js = generate_recipe_type_format_js(calculator_name, resource_list.recipe_types)
+    recipe_type_format_js = generate_recipe_type_format_js(resource_list.recipe_types)
     recipe_type_format_js = uglify_js_string(recipe_type_format_js)
 
     recipe_js_data = mini_js_data(get_primitive(get_recipes_only(resource_list.resources)), "recipe_json")
@@ -124,48 +137,11 @@ def calculator_function(input_file: str, match: re.Match, output_files: List[str
     with open(calculator_index_html_filepath, "w", encoding="utf_8") as f:
         f.write(minified_calculator)
 
-
-# TODO: MOVE ALL THIS TO THE EDITOR PRODUCER
-#     resource_list_js_data = mini_js_data(hack_update_version(get_primitive(resource_list)), "resource_list_json")
-
-#     editor_template = env.get_template("edit.html")
-
-#     rendered_editor = editor_template.render(
-#         resource_list_json=resource_list_js_data,
-#         element_height=55,  # should be automatically generated from the image height? width? or should be static
-#         total_height=55 * 989,  # Should be implemented in-javascript
-#         buffer_element_count=2,
-#     )
-
-#     minified_editor = rendered_editor
-#     # minified_editor = htmlmin.minify(rendered_editor, remove_comments=True, remove_empty_space=True)
-#     # minified_editor = minify_css_blocks(minified_editor)
-
-#     with open(os.path.join(calculator_folder, "edit.html"), "w", encoding="utf_8") as f:
-#         f.write(minified_editor)
-
-#     # Sanity Check Warning, is there an image that does not have a recipe
-#     simple_resources = [x["simplename"] for x in html_resource_data]
-#     for simple_name in resource_image_coordinates:
-#         if simple_name not in simple_resources:
-#             print("WARNING:", simple_name, "has an image but no recipe and will not appear in the calculator")
-
-#     # Touch the created time of all the files in the output folder to prevent
-#     # re-triggering generation on outdated files that were intentionally skipped
-#     touch_output_folder_files(calculator_folder)
-
-#     publish_calculator_plugins(calculator_folder, source_folder)
-
-#     if len(errors) > 0:
-#         with open(resource_list_file, 'r', encoding="utf_8") as f:
-#             fulltext = f.read()
-#             fulltext_lines = fulltext.split("\n")
-
-#         for error in errors:
-#             error.print_error(fulltext_lines)
-
-#     end_time = time.time()
-#     print("  Generated in %.3f seconds" % (end_time - start_time))
+    # Sanity Check Warning, is there an image that does not have a recipe
+    simple_resources = [x["simplename"] for x in html_resource_data]
+    for simple_name in resource_image_coordinates:
+        if simple_name not in simple_resources:
+            print("WARNING:", simple_name, "has an image but no recipe and will not appear in the calculator")
 
 
 
@@ -208,7 +184,7 @@ def get_simple_name(resource: str, resources: OrderedDict[str, Resource]) -> str
 #         ]
 #     }]
 ################################################################################
-def generate_recipe_type_format_js(calculator_name: str, recipe_types: OrderedDict[str, str]) -> str:
+def generate_recipe_type_format_js(recipe_types: OrderedDict[str, str]) -> str:
     recipe_type_format_functions = []
 
     for recipe_type in recipe_types:

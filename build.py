@@ -421,12 +421,12 @@ def main() -> None:
     producers: List[Producer] = []
 
 
-    # producers += resource_list_parser_producers()
-    # producers += item_image_producers()
-    # producers += calculator_producers()
+    producers += resource_list_parser_producers()
+    producers += item_image_producers()
+    producers += calculator_producers()
     # producers += calculator_editor_producers()
     producers += core_resource_producers()
-    # producers += gz_compressor_producers()
+    producers += gz_compressor_producers()
 
 
     # if not FLAG_skip_index:
@@ -437,7 +437,7 @@ def main() -> None:
     #     pre_compress_output_files()
 
 
-    studio = Studio(producers)
+    studio = Studio(producers, ["venv_docker", "venv", ".git", "node_modules", "output_master"])
 
     # build_producer_calls(producers, ["venv_docker", "venv", ".git", "node_modules"])
 

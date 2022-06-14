@@ -7,6 +7,8 @@ import os
 import sys
 from typing import TypedDict
 
+from pylib.unique_heap import UniqueHeap
+
 
 
 # Convenience Class for anything with a single input or output file
@@ -32,23 +34,23 @@ class MultiFile(TypedDict):
 
 
 
-
-
-
-
-# InputFileDatatype = Dict[str, Union[str, List[str]]]
-# OutputFileDatatype = Dict[str, Union[str, List[str]]]
-
 InputFileDatatype = TypeVar("InputFileDatatype", bound=TypedDict)
 OutputFileDatatype = TypeVar("OutputFileDatatype", bound=TypedDict)
 
+################################################################################
+# Creator
+#
+# This is a static pairing of input files to output files. These are
+# constructed and managed fully behind the scenes and should not be implemented
+# by users directly. Producers are in charge of constructing them and Studios
+# are in charge of managing them after their creation.
+################################################################################
 class Creator(Generic[InputFileDatatype, OutputFileDatatype]):
     input_paths: InputFileDatatype
     _input_paths_set: Set[str]
     output_paths: OutputFileDatatype
     function: Callable[[InputFileDatatype, OutputFileDatatype], None]
     categories: List[str]
-
 
     ############################################################################
     ############################################################################
@@ -64,7 +66,9 @@ class Creator(Generic[InputFileDatatype, OutputFileDatatype]):
         self.function = function
         self.categories = categories
 
+        # Pre-cache the input files in a set for very fast file lookups.
         self._input_paths_set = set(self.flat_input_paths())
+
 
     ############################################################################
     ############################################################################
@@ -122,20 +126,27 @@ class Creator(Generic[InputFileDatatype, OutputFileDatatype]):
     def run(self):
         self.function(self.input_paths, self.output_paths)
 
+    def __lt__(self, other: Any) -> bool:
+        if not isinstance(other, Creator):
+            raise TypeError("'<' not supported between instances of 'Creator' and {}".format(type(other)))
+
+        self_paths = [sorted(self.flat_output_paths()), sorted(self.flat_input_paths())]
+        other_paths = [sorted(other.flat_output_paths()), sorted(other.flat_input_paths())]
+
+        return self_paths < other_paths
+
 @dataclass
 class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
     # A list of file regex matches. If a file is changed that matches one of
     # these regex matches then this producer will trigger 
     input_path_patterns: List[str]
 
+    # A function that takes in the matching input pattern and generates a set
+    # of input and output files.
     paths: Callable[[int, str, re.Match], Tuple[InputFileDatatype, OutputFileDatatype]]
 
-    # # A list output files or a function to transform an input file into a list
-    # # of output files. The function will receive the path of the modified file
-    # # in as an input.
-    # output_paths: Callable[[str, re.Match], List[str]]
-
-    # A function that takes in
+    # A function that takes in the input and output files and performs the
+    # tasks required to transform the input files into output files.
     function: Callable[[InputFileDatatype, OutputFileDatatype], None]
 
     # # A function that handles its own monitoring and updating logic. For example
@@ -154,38 +165,31 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
     #     the file(s) still need to exist at the destination.
     # fast_function: Optional[Callable[[str, List[str]], None]] = None
 
-    # _unique_id: str
-
-    # def __init__(self,
-    #     input_path_patterns: List[str],
-    #     output_paths: Callable[[str, re.Match], List[str]],
-    #     function: Callable[[str, List[str]], None],
-    #     categories: List[str]
-    # ):
-    #     self.input_path_patterns = input_path_patterns
-    #     self.output_paths = output_paths
-    #     self.function = function
-    #     self.categories = categories
-
-    #     # Create a unique id that we can use as a hashable value
-    #     global producer_count
-    #     self._unique_id = str(__class__) + str(producer_count)
-    #     producer_count += 1
-
-    @staticmethod
-    def static_output(output_file: str) -> Callable[[str, re.Match], List[str]]:
-        def output(path: str, match: re.Match) -> List[str]:
-            return [output_file]
-        return output
 
 # A controller and watcher for the set of producers and creators
 class Studio:
+    # A list of producers that can be referenced by id
     producer_list: List[Producer]
-    creator_list: List[Tuple[int, Creator]] # is this actually a heapq
+
+    # A list of creators that can be referenced by id
+    creator_list: Dict[int, Creator]
+    last_creator_list_index: int
+
+    # A map of a creator index to a producer index that spawned the creator
+    creator_producer: Dict[int, int]
+
+    # A map of output files to the creator indexes that create them
+    output_file_maps: Dict[str, int]
+    # A map of input files to the creator index that consume them
+    input_file_maps: Dict[str, List[int]]
 
     def __init__(self, producer_list: List[Producer], ignore_paths: List[str] = []):
         self.producer_list = producer_list
-        self.creator_list = []
+        self.creator_list = {}
+        self.last_creator_list_index = -1
+        self.creator_producer = {}
+        self.output_file_maps = {}
+        self.input_file_maps = {}
 
         # Grab all of the files that are in the directory as if they are all
         # new to the builder.
@@ -210,10 +214,13 @@ class Studio:
 
                 initial_filepaths.append(full_path)
 
-        self.add_files(initial_filepaths)
+        self.update_files(initial_filepaths)
 
 
-    def add_files(self, files: List[str]):
+    # TODO: This should probably just be part of "update_files" and if a file
+    # that has never been seen before is passed in then the new file logic is
+    # triggered automatically.
+    def make_creators(self, files: List[str]):
         # Build any new Creators based on the files
         for producer_index, producer in enumerate(self.producer_list):
             for path in files:
@@ -226,6 +233,7 @@ class Studio:
 
                     input_paths, output_paths = producer.paths(pattern_index, pattern, match)
 
+                    # Create the creator
                     creator = Creator(
                         input_paths=input_paths,
                         output_paths=output_paths,
@@ -233,32 +241,71 @@ class Studio:
                         categories=producer.categories(input_paths)
                     )
 
-                    # print("We have a match")
-                    # print("  ", producer_index)
-                    # print("  ", producer)
-                    # print("  ", creator)
-                    # print("  ", path)
-                    # print("  ", pattern)
+                    is_duplicate_creator = False
+                    # Detect duplicate creators or overlapping creators 
+                    for file in creator.flat_output_paths():
+                        if file in self.output_file_maps:
+                            is_duplicate_creator = True
+                            original_creator_index: int = self.output_file_maps[file]
+                            original_creator: Creator = self.creator_list[original_creator_index]
 
-                    heapq.heappush(self.creator_list, (producer_index, creator))
+                            if (sorted(original_creator.flat_input_paths()) != sorted(creator.flat_input_paths())):
+                                raise ValueError("Two creatos with same output file do not share all input files")
+
+                            if (sorted(original_creator.flat_output_paths()) != sorted(creator.flat_output_paths())):
+                                raise ValueError("Two creators with same output file do not share all output files")
+
+                            if producer_index != self.creator_producer[original_creator_index]:
+                                raise ValueError("Two creators with same output file are not made from the same")
+
+                            print("Duplicate Found with same data", file)
+                    if is_duplicate_creator:
+                        continue
+
+                    # Save the new creator into this studio
+                    self.last_creator_list_index += 1
+                    self.creator_list[self.last_creator_list_index] = creator
+                    self.creator_producer[self.last_creator_list_index] = producer_index
+
+                    for file in creator.flat_input_paths():
+
+                        if file not in self.input_file_maps:
+                            self.input_file_maps[file] = []
+
+                        self.input_file_maps[file].append(self.last_creator_list_index)
+
+                    for file in creator.flat_output_paths():
+                        self.output_file_maps[file] = self.last_creator_list_index
 
 
-        # Trigger a file update for all the new files
-        self.update_files(files)
-
-    # def delete_files(self, files: List[str]):
-    #     pass
-
+    ############################################################################
+    #
+    ############################################################################
     def update_files(self, files: List[str]):
-        creators_to_update: List[Tuple[int, Creator]] = [] # actually a heap
 
+        self.make_creators(files)
+
+        # Heap[Tuple[ProducerIndex, CreatorIndex]]
+        creators_to_update: UniqueHeap[Tuple[int, int]] = UniqueHeap()
+
+        # Fill the creators_to_update will all the producer/creator pairs
         for file in files:
-            for producer_index, creator in self.creator_list:
-                if(creator.has_input(file)):
-                    heapq.heappush(creators_to_update, (producer_index, creator))
+            # If the file is not used in any creator, ignore it
+            if file not in self.input_file_maps:
+                continue
 
+            # print(file, file in self.input_file_maps)
+
+            creator_indexes: List[int] = self.input_file_maps[file]
+            for creator_index in creator_indexes:
+                producer_index: int = self.creator_producer[creator_index]
+                creators_to_update.push((producer_index, creator_index))
+
+        # Process each creator until there are none left
         while len(creators_to_update) > 0:
-            producer_index, creator = heapq.heappop(creators_to_update)
+            producer_index, creator_index = creators_to_update.pop()
+
+            creator: Creator = self.creator_list[creator_index]
 
             output_files = creator.flat_output_paths()
             input_files = creator.flat_input_paths()
@@ -273,19 +320,24 @@ class Studio:
                     continue
 
             # Add the output files to the prioritized list of things to process.
-            # These will be automatically deduplicated if they are already
-            # present.
+            # These will be automatically de-duplicated if they are already present.
+            self.make_creators(output_files)
             for file in output_files:
-                for producer_index, re_creator in self.creator_list:
-                    if(re_creator.has_input(file)):
-                        heapq.heappush(creators_to_update, (producer_index, re_creator))
+                # If the file is not used in any creator, ignore it
+                if file not in self.input_file_maps:
+                    continue
 
+                creator_indexes: List[int] = self.input_file_maps[file]
+                for creator_index in creator_indexes:
+                    producer_index: int = self.creator_producer[creator_index]
+                    creators_to_update.push((producer_index, creator_index))
 
             # Pre-create any directories so the functions can always assume that
             # the directories exist and just focus on creating the files.
             build_required_directories(output_files)
 
-            print(creator.categories, input_files, output_files)
+            # print(creator.categories, input_files, output_files)
+            print(creator.categories, output_files)
             creator.run()
 
 
@@ -298,108 +350,11 @@ def all_files_exist(files: List[str]) -> bool:
     return True
 
 
-# ################################################################################
-# # Runs each producer over all of the files 
-# # TODO: Setup watchers for each input file
-
-# # Runs each producer if any of the input files are newer then any of the output files
-# # Each producer is run in order and dependency tree mapping is not done.
-# # NOTE: this is kinda ironic becuase doing dependency tree mapping would be very
-# # similar to what the calculator actually does.
-# ################################################################################
-# def build_producer_calls(producers: List[Producer], ignore_paths: List[str]):
-#     # TODO: something around checking if this code has been updated at all
-#     # and restarting it or something...
-
-#     paths: List[str] = []
-
-#     for root, dirs, files in os.walk("."):
-#         # Strip the "current directory" prefix because that makes it more
-#         # annoying to match things on.
-#         if root.startswith("./"):
-#             root = root[2:]
-
-#         for path in dirs + files:
-#             full_path = os.path.join(root, path)
-            
-#             skip = False
-#             for ignore_path in ignore_paths:
-#                 if full_path.startswith(ignore_path):
-#                     skip = True
-#                     break
-#             if skip:
-#                 continue
-
-#             paths.append(full_path)
-
-#     # A list of all the producers and path combinations that still need to be processed
-#     producer_paths: List[Tuple[int, str]] = []
-#     for producer_index, _ in enumerate(producers):
-#         for path in paths:
-#             heapq.heappush(producer_paths, (producer_index, path))
-
-
-#     while len(producer_paths) > 0:
-#         producer_path: Tuple[int, str] = heapq.heappop(producer_paths)
-#         producer_index: int = producer_path[0]
-#         producer: Producer = producers[producer_path[0]]
-#         path: str = producer_path[1]
-
-#         for pattern in producer.input_path_patterns:
-#             match: Optional[re.Match[str]] = re.match(pattern, path)
-           
-#             # Ignore this pattern/file if there is no match
-#             if match is None:
-#                 continue
-
-#             output_files: List[str] = producer.output_paths(path, match)
-#             all_output_files_exist = True
-#             for output_file in output_files:
-#                 if not os.path.exists(output_file):
-#                     all_output_files_exist = False
-#                     break
-
-#             if all_output_files_exist:
-#                 # If all of the output files are newer then all of the input files
-#                 # then do not regenerate this producer.
-#                 oldest_output = get_oldest_modified_time(output_files)
-#                 newest_input = get_newest_modified_time([path])
-#                 # "newer" is a larger number
-#                 if oldest_output > newest_input:
-#                     continue
-
-
-#             # Add the output files to the prioritized list of things to process.
-#             # These will be automatically deduplicated if they are already
-#             # present.
-#             for producer_index, _ in enumerate(producers):
-#                 for output_file in output_files:
-#                     heapq.heappush(producer_paths, (producer_index, output_file))
-
-#             build_required_directories(output_files)
-
-
-
-
-#             print(producer.categories, path, pattern, output_files)
-
-
-
-#             producer.function(path, match, output_files)
-#             # print("bringing it back")
-
-#             # If one pattern has matched by this point then there is no
-#             # need to continue searching for patterns because we would just
-#             # re-call the file.
-#             break
-
-
 def build_required_directories(files: List[str]) -> None:
     for file in files:
         directory = os.path.dirname(file)
         if not os.path.exists(directory):
             os.makedirs(directory)
-
 
 
 ################################################################################
