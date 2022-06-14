@@ -59,6 +59,7 @@ requirement_groups:
   - Stripped Jungle Wood
 
   Any Log:
+  - Oak Log
   - Acacia Log
   - Acacia Wood
   - Birch Log
@@ -71,7 +72,6 @@ requirement_groups:
   - Jungle Wood
   - Mangrove Log
   - Mangrove Wood
-  - Oak Log
   - Oak Wood
   - Spruce Log
   - Spruce Wood
@@ -97,6 +97,7 @@ requirement_groups:
   - Warped Stem
 
   Any Log That Burns:
+  - Oak Log
   - Acacia Log
   - Acacia Wood
   - Birch Log
@@ -107,7 +108,6 @@ requirement_groups:
   - Jungle Wood
   - Mangrove Log
   - Mangrove Wood
-  - Oak Log
   - Oak Wood
   - Spruce Log
   - Spruce Wood
@@ -139,13 +139,13 @@ requirement_groups:
   - Stripped Oak Wood
 
   Any Planks:
+  - Oak Planks
   - Acacia Planks
   - Birch Planks
   - Crimson Planks
   - Dark Oak Planks
   - Jungle Planks
   - Mangrove Planks
-  - Oak Planks
   - Spruce Planks
   - Warped Planks
 
@@ -154,13 +154,13 @@ requirement_groups:
   - Purpur Pillar
 
   Any Red Sandstone:
+  - Red Sandstone
   - Chiseled Red Sandstone
   - Cut Red Sandstone
-  - Red Sandstone
 
   Any Sand:
-  - Red Sand
   - Sand
+  - Red Sand
 
   Any Shulker Box:
   - Shulker Box
@@ -182,13 +182,13 @@ requirement_groups:
   - Yellow Shulker Box
 
   Any Slab:
+  - Oak Slab
   - Acacia Slab
   - Birch Slab
   - Crimson Slab
   - Dark Oak Slab
   - Jungle Slab
   - Mangrove Slab
-  - Oak Slab
   - Spruce Slab
   - Warped Slab
 
@@ -203,35 +203,36 @@ requirement_groups:
   - Stripped Spruce Wood
 
   Any Stone:
+  - Cobblestone
   - Blackstone
   - Cobbled Deepslate
-  - Cobblestone
 
   Any Stone Tool Material:
+  - Cobblestone
   - Blackstone
   - Cobbled Deepslate
-  - Cobblestone
 
   Any Uncut Red Sandstone:
-  - Chiseled Red Sandstone
   - Red Sandstone
+  - Chiseled Red Sandstone
 
   Any Uncut Yellow Sandstone:
-  - Chiseled Sandstone
   - Sandstone
+  - Chiseled Sandstone
 
   Any Unsmooth Quartz Block:
-  - Chiseled Quartz Block
   - Block of Quartz
   - Quartz Pillar
+  - Chiseled Quartz Block
 
   Any Warped Stem:
-  - Stripped Warped Hyphae
-  - Stripped Warped Stem
   - Warped Hyphae
   - Warped Stem
+  - Stripped Warped Hyphae
+  - Stripped Warped Stem
 
   Any Wool:
+  - White Wool
   - Black Wool
   - Blue Wool
   - Brown Wool
@@ -246,13 +247,12 @@ requirement_groups:
   - Pink Wool
   - Purple Wool
   - Red Wool
-  - White Wool
   - Yellow Wool
 
   Any Yellow Sandstone:
+  - Sandstone
   - Chiseled Sandstone
   - Cut Sandstone
-  - Sandstone
 
 
 stack_sizes:
