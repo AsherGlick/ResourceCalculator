@@ -644,45 +644,6 @@ resources:
         Titanium: -2
     - recipe_type: Raw Resource
 
-  Ion Cube:
-    recipes:
-      - recipe_type: Raw Resource
-  Purple Tablet:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Ion Cube: -1
-        Diamond: -2
-    - recipe_type: Raw Resource
-  Blue Tablet:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Ion Cube: -1
-        Kyanite: -2
-    - recipe_type: Raw Resource
-  Orange Tablet:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Ion Cube: -1
-        Nickel Ore: -2
-    - recipe_type: Raw Resource
-  Hatching Enzymes:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Eye Stalk Seed: -1
-        Fungal Sample: -1
-        Ghost Weed Seed: -1
-        Sea Crown Seed: -1
-        Bulb Bush Sample: -1
-    - recipe_type: Raw Resource
-
 # Tools
   Scanner:
     recipes:
@@ -933,6 +894,25 @@ resources:
         Titanium Ingot: -1
         Glass: -2
     - recipe_type: Raw Resource
+  Seamoth Depth Module MK2:
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Seamoth Depth Module MK1: -1
+        Plasteel Ingot: -1
+        Magnetite: -2
+        Enameled Glass: -1
+    - recipe_type: Raw Resource
+  Seamoth Depth Module MK3:
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Seamoth Depth Module MK2: -1
+        Plasteel Ingot: -1
+        Ruby: -3
+    - recipe_type: Raw Resource
   Seamoth Solar Charger:
     recipes:
     - output: 1
@@ -976,6 +956,16 @@ resources:
         Plasteel Ingot: -1
         Nickel Ore: -3
         Ruby: -2
+    - recipe_type: Raw Resource
+  Prawn Suit Depth Module MK2:
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Prawn Suit Depth Module MK1: -1
+        Titanium: -5
+        Lithium: -2
+        Kyanite: -3
     - recipe_type: Raw Resource
   Prawn Suit Thermal Reactor:
     recipes:
@@ -1053,6 +1043,15 @@ resources:
         Gas Pod: -1
     - recipe_type: Raw Resource
 
+## Cyclops
+  Cyclops Depth Module MK1:
+    recipes:
+    - output: 1
+      recipe_type: Cyclops Fabricator
+      requirements:
+        Plasteel Ingot: -1
+        Ruby: -3
+    - recipe_type: Raw Resource
   Cyclops Depth Module MK2:
     recipes:
     - output: 1
@@ -1070,45 +1069,6 @@ resources:
         Cyclops Depth Module MK2: -1
         Plasteel Ingot: -1
         Kyanite: -3
-    - recipe_type: Raw Resource
-  Prawn Suit Depth Module MK2:
-    recipes:
-    - output: 1
-      recipe_type: Modification Station
-      requirements:
-        Prawn Suit Depth Module MK1: -1
-        Titanium: -5
-        Lithium: -2
-        Kyanite: -3
-    - recipe_type: Raw Resource
-  Seamoth Depth Module MK2:
-    recipes:
-    - output: 1
-      recipe_type: Modification Station
-      requirements:
-        Seamoth Depth Module MK1: -1
-        Plasteel Ingot: -1
-        Magnetite: -2
-        Enameled Glass: -1
-    - recipe_type: Raw Resource
-  Seamoth Depth Module MK3:
-    recipes:
-    - output: 1
-      recipe_type: Modification Station
-      requirements:
-        Seamoth Depth Module MK2: -1
-        Plasteel Ingot: -1
-        Ruby: -3
-    - recipe_type: Raw Resource
-
-## Cyclops
-  Cyclops Depth Module MK1:
-    recipes:
-    - output: 1
-      recipe_type: Cyclops Fabricator
-      requirements:
-        Plasteel Ingot: -1
-        Ruby: -3
     - recipe_type: Raw Resource
   Cyclops Engine Efficiency Module:
     recipes:
@@ -1707,6 +1667,45 @@ resources:
         Titanium: -1
     - recipe_type: Raw Resource
 
+  Ion Cube:
+    recipes:
+      - recipe_type: Raw Resource
+  Purple Tablet:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Ion Cube: -1
+        Diamond: -2
+    - recipe_type: Raw Resource
+  Blue Tablet:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Ion Cube: -1
+        Kyanite: -2
+    - recipe_type: Raw Resource
+  Orange Tablet:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Ion Cube: -1
+        Nickel Ore: -2
+    - recipe_type: Raw Resource
+  Hatching Enzymes:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Eye Stalk Seed: -1
+        Fungal Sample: -1
+        Ghost Weed Seed: -1
+        Sea Crown Seed: -1
+        Bulb Bush Sample: -1
+    - recipe_type: Raw Resource
+
   Neptune Launch Platform:
     recipes:
     - output: 1
@@ -1972,3 +1971,101 @@ resources:
   Voxel Shrub Seed:
     recipes:
       - recipe_type: Raw Resource
+
+## Eggs
+  Ampeel Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Boneshark Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Crabsnake Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Crabsquid Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Crashfish Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Cuddlefish Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Gasopod Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Jellyray Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Lava Lizard Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Mesmer Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Rabbit Ray Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Sand Shark Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Spadefish Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Stalker Egg:
+    recipes:
+      - recipe_type: Raw Resource
+
+## Placeable
+  Arcade Gorge Toy:
+    recipes:
+      - recipe_type: Raw Resource
+  Gray Cap:
+    recipes:
+      - recipe_type: Raw Resource
+  Blue Cap:
+    recipes:
+      - recipe_type: Raw Resource
+  Large Sample Flask:
+    recipes:
+      - recipe_type: Raw Resource
+  Small Sample Flask:
+    recipes:
+      - recipe_type: Raw Resource
+  Cylindrical Sample Flask:
+    recipes:
+      - recipe_type: Raw Resource
+  Microscope:
+    recipes:
+      - recipe_type: Raw Resource
+  Fluid Analyzer:
+    recipes:
+      - recipe_type: Raw Resource
+  Sample Analyzer:
+    recipes:
+      - recipe_type: Raw Resource
+  Carry-all:
+    recipes:
+      - recipe_type: Raw Resource
+  Aurora Poster:
+    recipes:
+      - recipe_type: Raw Resource
+  Natural Selection 2 Poster:
+    recipes:
+      - recipe_type: Raw Resource
+  Keep Calm Poster:
+    recipes:
+      - recipe_type: Raw Resource
+  Prawn Suit Poster - Land:
+    recipes:
+      - recipe_type: Raw Resource
+  Prawn Suit Poster - Sea:
+    recipes:
+      - recipe_type: Raw Resource
+  Aurora Miniature:
+    recipes:
+      - recipe_type: Raw Resource
+  Toy Car:
+    recipes:
+      - recipe_type: Raw Resource
+
