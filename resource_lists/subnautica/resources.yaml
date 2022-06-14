@@ -1330,8 +1330,506 @@ resources:
         Computer Chip: -1
     - recipe_type: Raw Resource
 
+## Habitat Builder
 
+# Base Pieces
+  Foundation:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+        Lead: -2
+    - recipe_type: Raw Resource
+  I Compartment:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+    - recipe_type: Raw Resource
+  L Compartment:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+    - recipe_type: Raw Resource
+  T Compartment:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -3
+    - recipe_type: Raw Resource
+  X Compartment:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -3
+    - recipe_type: Raw Resource
+  Glass Compartment:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Glass: -2
+    - recipe_type: Raw Resource
+  L Glass Compartment:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Glass: -2
+    - recipe_type: Raw Resource
+  Vertical Connector:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+    - recipe_type: Raw Resource
+  Multipurpose Room:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -6
+    - recipe_type: Raw Resource
+  Scanner Room:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -5
+        Copper Ore: -2
+        Gold: -1
+        Table Coral Sample: -1
+    - recipe_type: Raw Resource
+  Moon Pool:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium Ingot: -2
+        Lubricant: -1
+        Lead: -2
+    - recipe_type: Raw Resource
+  Observatory:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Enameled Glass: -2
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Hatch:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Quartz: -1
+        Titanium: -2
+    - recipe_type: Raw Resource
+  Window:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Glass: -1
+    - recipe_type: Raw Resource
+  Reinforcement:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Lithium: -1
+        Titanium: -3
+    - recipe_type: Raw Resource
 
+# Exterior Modules
+  Solar Panel:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Quartz: -2
+        Titanium: -2
+        Copper Ore: -1
+    - recipe_type: Raw Resource
+  Thermal Plant:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -5
+        Magnetite: -2
+        Aerogel: -1
+    - recipe_type: Raw Resource
+  Power Transmitter:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Gold: -1
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Floodlight:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Glass: -1
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Spotlight:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Glass: -1
+        Titanium: -2
+    - recipe_type: Raw Resource
+  Exterior Growbed:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+    - recipe_type: Raw Resource
+  Base-attached Air Pump:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+    - recipe_type: Raw Resource
 
+# Interior Pieces
+  Ladder:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+    - recipe_type: Raw Resource
+  Water Filtration Machine:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -3
+        Copper Wire: -1
+        Aerogel: -1
+    - recipe_type: Raw Resource
+  Bulkhead:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -3
+        Silicone Rubber: -1
+    - recipe_type: Raw Resource
+  Vehicle Upgrade Console:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -3
+        Computer Chip: -1
+        Copper Wire: -1
+    - recipe_type: Raw Resource
+  Bioreactor:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -3
+        Wiring Kit: -1
+        Lubricant: -1
+    - recipe_type: Raw Resource
+  Nuclear Reactor:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Plasteel Ingot: -1
+        Advanced Wiring Kit: -1
+        Lead: -3
+    - recipe_type: Raw Resource
+  Alien Containment:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Glass: -5
+        Titanium: -2
+    - recipe_type: Raw Resource
+
+# Interior Modules
+  Fabricator:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -1
+        Gold: -1
+        Table Coral Sample: -1
+    - recipe_type: Raw Resource
+  Radio:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -1
+        Copper Ore: -1
+    - recipe_type: Raw Resource
+  Medical Kit Fabricator:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Computer Chip: -1
+        Fiber Mesh: -1
+        Silver Ore: -1
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Wall Locker:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+    - recipe_type: Raw Resource
+  Locker:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Quartz: -1
+        Titanium: -2
+    - recipe_type: Raw Resource
+  Battery Charger:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Wiring Kit: -1
+        Copper Wire: -1
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Power Cell Charger:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Advanced Wiring Kit: -1
+        Ruby: -2
+        Titanium: -2
+    - recipe_type: Raw Resource
+  Aquarium:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Glass: -2
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Modification Station:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Computer Chip: -1
+        Titanium: -1
+        Diamond: -1
+        Lead: -1
+    - recipe_type: Raw Resource
+  Basic Plant Pot:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+    - recipe_type: Raw Resource
+  Composite Plant Pot:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+    - recipe_type: Raw Resource
+  Chic Plant Pot:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+    - recipe_type: Raw Resource
+  Indoor Growbed:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -4
+    - recipe_type: Raw Resource
+  Plant Shelf:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -1
+    - recipe_type: Raw Resource
+
+# Misc
+  Bench:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+    - recipe_type: Raw Resource
+  Basic Double Bed:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+        Fiber Mesh: -1
+    - recipe_type: Raw Resource
+  Quilted Double Bed:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+        Fiber Mesh: -1
+    - recipe_type: Raw Resource
+  Single Bed:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -1
+        Fiber Mesh: -1
+    - recipe_type: Raw Resource
+  Desk:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Swivel Chair:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Office Chair:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Command Chair:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Sign:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Copper Wire: -1
+    - recipe_type: Raw Resource
+  Picture Frame:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Copper Wire: -1
+    - recipe_type: Raw Resource
+  Bar Table:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Glass: -1
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Trash Cans:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+    - recipe_type: Raw Resource
+  Nuclear Waste Disposal:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+    - recipe_type: Raw Resource
+  Vending Machine:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Glass: -1
+        Titanium: -2
+    - recipe_type: Raw Resource
+  Coffee Vending Machine:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+    - recipe_type: Raw Resource
+  Lab Counter:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+    - recipe_type: Raw Resource
+  Wall Planter:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Single Wall Shelf:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Wall Shelves:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+    - recipe_type: Raw Resource
+  An Unusual Doll:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Glass: -1
+        Titanium: -1
+    - recipe_type: Raw Resource
+
+## Other
 
 
