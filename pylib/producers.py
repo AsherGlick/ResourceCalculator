@@ -366,7 +366,7 @@ def build_required_directories(files: List[str]) -> None:
 def get_newest_modified_time(paths: List[str]) -> float:
     return get_ist_modified_time(
         paths=paths,
-        ist=min,
+        ist=max,
         default=sys.float_info.max,
     )
 
