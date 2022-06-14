@@ -1,6 +1,6 @@
 import shutil
 import subprocess
-from pylib.producers import Producer
+from pylib.producers import Producer, SingleFile
 from typing import List, Dict, Tuple
 import re
 import os
@@ -14,16 +14,24 @@ def gz_compressor_producers() -> List[Producer]:
     return [
         Producer(
             input_path_patterns=[r"^output/.*\.(?:html|js|css)$"],
-            output_paths=gz_compress_output_paths,
+            paths=gz_compress_paths,
             function=gz_compress_function,
-            categories=["compress", "gz"]
+            categories=gz_categories
         ),
     ]
 
-def gz_compress_output_paths(path: str, match: re.Match) -> List[str]:
-    return [
-        path + ".gz"
-    ]
+def gz_categories(input_files: SingleFile) -> List[str]:
+    return ["compress", "gz"]
+
+def gz_compress_paths(index: int, regex: str, match: re.Match) -> Tuple[SingleFile, SingleFile]:
+    path = match.group(0)
+    return (
+        {
+            "file": path
+        },{
+            "file": path + ".gz"
+        }
+    )
 
 # ################################################################################
 # # pre_compress_output_files
@@ -32,11 +40,9 @@ def gz_compress_output_paths(path: str, match: re.Match) -> List[str]:
 # # or .js extension with gz so that Apache can serve its compressed state
 # # automatically.
 # ################################################################################
-def gz_compress_function(input_file: str, match: re.Match, output_files: List[str]) -> None:
-    if len(output_files) != 1:
-        raise ValueError("Expected just one output file but got" + str(output_files))
-    
-    output_file = output_files[0]
+def gz_compress_function(input_files: SingleFile, output_files: SingleFile) -> None:
+    output_file = output_files["file"]
+    input_file = input_files["file"]
 
     with open(input_file, 'rb') as infile, gzip.open(output_file, 'wb') as outfile:
         shutil.copyfileobj(infile, outfile)
