@@ -2,6 +2,7 @@ import build
 from typing import List, OrderedDict
 from pylib.yaml_token_load import ordered_load
 from pylib.resource_list import ResourceList, Resource, StackSize, TokenError, Token
+from pylib.yaml_linter_producer import expand_raw_resource, lint_resources
 
 import unittest
 
@@ -16,13 +17,13 @@ def test_load(input_yaml: str) -> List[TokenError]:
         errors += resource_list.parse(yaml_data)
 
     resources: OrderedDict[str, Resource] = resource_list.resources
-    resources = build.expand_raw_resource(resources)
+    resources = expand_raw_resource(resources)
 
     recipe_types: OrderedDict[str, str] = resource_list.recipe_types
 
     stack_sizes: OrderedDict[str, StackSize] = resource_list.stack_sizes
 
-    errors += build.lint_resources("TEST CALCULATOR", resources, recipe_types, stack_sizes)
+    errors += lint_resources(resources, recipe_types, stack_sizes)
 
     return errors
 
