@@ -1,10 +1,10 @@
-from pylib.producer import Producer, SingleFile, producer_copyfile
+from pylib.producer import Producer, SingleFile, producer_copyfile, GenericProducer
 from typing import List, Tuple, Dict
 import os
 
 
 
-def plugins_producers() -> List[Producer]:
+def plugins_producers() -> List[GenericProducer]:
     return [
         Producer(
             input_path_patterns={

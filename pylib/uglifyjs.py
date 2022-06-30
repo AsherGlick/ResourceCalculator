@@ -40,7 +40,7 @@ def uglify_js_string(js_string: str) -> str:
 ################################################################################
 #
 ################################################################################
-def uglify_js_producer(input_file: str, output_file: str, categories: List[str]) -> Producer:
+def uglify_js_producer(input_file: str, output_file: str, categories: List[str]) -> Producer[SingleFile, SingleFile]:
     return Producer(
         input_path_patterns={
             "file": "^"+input_file+"$",

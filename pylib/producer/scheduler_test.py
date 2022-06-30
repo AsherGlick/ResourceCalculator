@@ -36,7 +36,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
         def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
             return None  # pragma: no cover
 
-        producer = Producer(
+        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
             input_path_patterns={
                 "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
                 "value_file": r"value_(?P<title>[a-z]+)\.txt$",
@@ -115,7 +115,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             return  # pragma: no cover
 
 
-        producer = Producer(
+        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
             input_path_patterns={
                 "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
                 "partial_files": [r"partial_(?P<title>[a-z]+)_[0-9]+\.txt$"],
@@ -196,7 +196,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
         def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
             return  # pragma: no cover
 
-        producer = Producer(
+        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
             input_path_patterns={
                 "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
                 "value_file": r"value_(?P<title>[a-z]+)\.txt$",
@@ -278,7 +278,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
         def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
             return  # pragma: no cover
 
-        producer = Producer(
+        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
             input_path_patterns={
                 "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
                 "value_file": r"value_(?P<title>[a-z]+)\.txt$",
@@ -354,7 +354,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
         def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
             return  # pragma: no cover
 
-        producer = Producer(
+        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
             input_path_patterns={
                 "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
                 "value_file": r"value_(?P<title>[a-z]+)\.txt$",
@@ -456,7 +456,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
         def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
             return  # pragma: no cover
 
-        producer = Producer(
+        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
             input_path_patterns={
                 "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
                 "value_file": r"value_(?P<title>[a-z]+)_(?P<language>[a-z]+)\.txt$",
@@ -566,7 +566,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             return  # pragma: no cover
 
 
-        producer = Producer(
+        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
             input_path_patterns={
                 "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
                 "partial_files": [r"partial\\?,?_(?P<title>[a-z]+)_[0-9]+\.txt$"],
@@ -642,7 +642,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
         def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
             return None  # pragma: no cover
 
-        producer = Producer(
+        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
             input_path_patterns={
                 "data_file": r"^data_[a-z]+\.txt$",
             },

@@ -1,5 +1,5 @@
 import htmlmin  # type: ignore
-from pylib.producer import Producer, SingleFile
+from pylib.producer import Producer, SingleFile, GenericProducer
 from typing import List, Tuple, OrderedDict, Dict, Any, TypedDict
 import re
 import os
@@ -13,7 +13,7 @@ import pickle
 
 
 
-def editor_producers() -> List[Producer]:
+def editor_producers() -> List[GenericProducer]:
     return [
         Producer(
             input_path_patterns={

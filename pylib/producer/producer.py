@@ -3,25 +3,10 @@ from dataclasses import dataclass
 import re
 import sqlite3
 
-
-# def core_categories(input_files: InputFileDatatype) -> List[str]:
-#     return ["core", input_files["input"]]
-
-
-# def core_resource_paths(input_files: Input_fileDatatype, grouping_values: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]
-# def core_resource_paths(index: int, regex: str, match: re.Match) -> Tuple[InputFileDatatype, OutputFileDatatype]:
-#     return ({
-#             "input": match.group(0)
-#         },{
-#             "output": os.path.join("output", os.path.basename(match.group(0)))
-#         })
-    
-# def producer_copyfile(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-
-
-
-InputFileDatatype = TypeVar("InputFileDatatype", bound=TypedDict)
-OutputFileDatatype = TypeVar("OutputFileDatatype", bound=TypedDict)
+ # TODO: mypy does not like this while pyright says it is ok
+InputFileDatatype = TypeVar("InputFileDatatype", bound=TypedDict) # type:ignore
+# TODO: mypy does not like this while pyright says it is ok
+OutputFileDatatype = TypeVar("OutputFileDatatype", bound=TypedDict) # type:ignore
 
 @dataclass(init=False)
 class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
@@ -77,6 +62,7 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
         # A map between each field name and a unique integer that is guarenteed
         # to be a safe sql name.
         self._field_to_index: Dict[str, int] = {}
+        field_name: str
         for field_index, field_name in enumerate(input_path_patterns):
             self._field_to_index[field_name] = field_index
 
@@ -87,7 +73,8 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
 
 
         # Preprocess all the regex data
-        for field_name, field_pattern in input_path_patterns.items():
+        # mypy yells at using .items() on a typed dict even though it is a dict
+        for field_name, field_pattern in input_path_patterns.items(): # type:ignore
             field_regex: re.Pattern[str]
 
             if isinstance(field_pattern, str):
@@ -181,10 +168,11 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
         # A map of each group to the list of tables that group is in
         field_groups: Dict[str, List[str]] = {}
 
-        for field_name in self._input_path_patterns:
-            if self._input_path_patterns[field_name] == "":
+        # mypy complains about iterating over a typeddict even though it is a dict
+        for field_name, field in self._input_path_patterns.items(): # type: ignore
+            if field == "":
                 continue
-            elif self._input_path_patterns[field_name] == []:
+            elif field == []:
                 continue
 
             field_index = self._field_to_index[field_name]
@@ -192,13 +180,13 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
 
             table_name = Producer.get_field_table_name(producer_index=producer_index, field_index=field_index)
 
-            if isinstance(self._input_path_patterns[field_name], str):
+            if isinstance(field, str):
                 singleton_fields.append(table_name + ".filename")
                 fields.append(table_name+".filename")
 
             # If the field is a list then we want to grab each file and put it into a list
             # this is done by using
-            elif isinstance(self._input_path_patterns[field_name], list):
+            elif isinstance(field, list):
                 fields.append("GROUP_CONCAT(REPLACE(REPLACE({table_name}.filename, '\\','\\\\'), ',', '\\,'), ',')".format(table_name=table_name))
             else:
                 raise TypeError("Expected either a str or a list")
@@ -255,7 +243,7 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
                 new_element: InputFileDatatype = {} # type:ignore
                 groups: Dict[str, str] = {}
 
-                for new_element_field, pattern in self._input_path_patterns.items():
+                for new_element_field, pattern in self._input_path_patterns.items(): # type: ignore
                     if pattern == "":
                         new_element[new_element_field] = "" # type:ignore
                         continue
@@ -333,3 +321,6 @@ def parse_comma_escape(input_string: str) -> List[str]:
 
     return output_strings
 
+# Convenience type to get around making lists of Producers with different
+# arguments.
+GenericProducer = Producer[Any, Any]

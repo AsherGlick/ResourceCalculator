@@ -1,4 +1,4 @@
-from pylib.producer import Producer, SingleFile, producer_copyfile
+from pylib.producer import Producer, SingleFile, producer_copyfile, GenericProducer
 from typing import List, Dict, Tuple, TypedDict
 import re
 import os
@@ -6,7 +6,7 @@ import json
 from jinja2 import Environment, FileSystemLoader
 
 
-def landing_page_producers() -> List[Producer]:
+def landing_page_producers() -> List[GenericProducer]:
     return [
         Producer(
             input_path_patterns={

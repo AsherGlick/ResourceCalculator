@@ -10,11 +10,12 @@ from typing import TypedDict
 from pylib.unique_heap import UniqueHeap
 import time
 import shutil
-from pylib.producer import Producer
+from .producer import Producer, GenericProducer
 from .creator import Creator
-
-
 import sqlite3
+
+
+GenericCreator = Creator[Any, Any]
 
 ################################################################################
 # Scheduler is a tool for scheduling jobs to be completed based on the
@@ -27,10 +28,10 @@ import sqlite3
 ################################################################################
 class Scheduler:
     # A list of producers that can be referenced by id
-    producer_list: List[Producer]
+    producer_list: List[GenericProducer]
 
     # A list of creators that can be referenced by id
-    creator_list: Dict[int, Creator]
+    creator_list: Dict[int, GenericCreator]
     last_creator_list_index: int
 
     # A map of a creator index to a producer index that spawned the creator
@@ -48,7 +49,7 @@ class Scheduler:
     ############################################################################
     def __init__(
         self,
-        producer_list: List[Producer],
+        producer_list: List[GenericProducer],
         initial_filepaths: List[str] = []
     ):
         self.producer_list = producer_list
@@ -61,7 +62,7 @@ class Scheduler:
         self.filecache: sqlite3.Connection = self.init_producer_cache(self.producer_list)
         self.add_or_update_files(initial_filepaths)
 
-    def init_producer_cache(self, producer_list: List[Producer]) -> sqlite3.Connection:
+    def init_producer_cache(self, producer_list: List[GenericProducer]) -> sqlite3.Connection:
         db = sqlite3.connect(':memory:')
 
         for producer_index, producer in enumerate(producer_list):
@@ -124,7 +125,7 @@ class Scheduler:
                     if file in self.output_file_maps:
                         is_duplicate_creator = True
                         original_creator_index: int = self.output_file_maps[file]
-                        original_creator: Creator = self.creator_list[original_creator_index]
+                        original_creator: GenericCreator = self.creator_list[original_creator_index]
 
                         if (sorted(original_creator.flat_input_paths()) != sorted(creator.flat_input_paths())):
                             raise ValueError("Two creators with same output file do not share all input files")
@@ -153,117 +154,12 @@ class Scheduler:
                     self.output_file_maps[file] = self.last_creator_list_index
 
 
-    
-
-    ############################################################################
-    # process_files
-    #
-    # Process a list of files through all of the creators... TODO DOCUMENTATION
-    ############################################################################
-    # def process_files(self, files: List[str]) -> None:
-        # We want to be sure that earlier producer's creators are being processed first, this is where the priority queue comes in.
-        # pass
-
-        # print(producer.query_string(producer_index))
-
-
-        # Run every creator
-
-
-
-        # # Stuff
-        # for producer_index, producer in enumerate(self.producer_list):
-        #     for path in files:
-        #         for field, pattern in producer.input_path_patterns.items():
-        #             if isinstance(pattern, str):
-        #                 match: Optional[re.Match[str]] = re.match(pattern, path)
-
-        #                 if match is None:
-        #                     continue
-
-        #                 self.set_cache(producer_index, field, path, match.groupdict())
-
-        #             elif isinstance(pattern, list) and all(isinstance(s, str) for s in pattern):
-        #                 match: Optional[re.Match[str]] = None
-        #                 for subpattern in pattern:
-        #                     match = re.match(subpattern, path)
-        #                     if match is not None:
-        #                         break
-
-        #                 if match is None:
-        #                     continue
-
-        #                 self.set_cache(producer_index, field, path, match.groupdict())
-
-        #             else:
-        #                 raise TypeError("Expecting only str and list[str] for patterns")
-
-        # print(self.file_cache)
-
-
-        # Loot things.
-
-
-                    # match: Optional[re.Match[str]] = re.match(pattern, path)
-        
-        #             # Ignore this pattern/file if there is no match
-        #             if match is None:
-        #                 continue
-
-        #             input_paths, output_paths = producer.paths(pattern_index, pattern, match)
-
-        #             # Create the creator
-        #             creator = Creator(
-        #                 input_paths=input_paths,
-        #                 output_paths=output_paths,
-        #                 function=producer.function,
-        #                 categories=producer.categories(input_paths)
-        #             )
-
-        #             is_duplicate_creator = False
-        #             # Detect duplicate creators or overlapping creators 
-        #             for file in creator.flat_output_paths():
-        #                 if file in self.output_file_maps:
-        #                     is_duplicate_creator = True
-        #                     original_creator_index: int = self.output_file_maps[file]
-        #                     original_creator: Creator = self.creator_list[original_creator_index]
-
-        #                     if (sorted(original_creator.flat_input_paths()) != sorted(creator.flat_input_paths())):
-        #                         raise ValueError("Two creatos with same output file do not share all input files")
-
-        #                     if (sorted(original_creator.flat_output_paths()) != sorted(creator.flat_output_paths())):
-        #                         raise ValueError("Two creators with same output file do not share all output files")
-
-        #                     if producer_index != self.creator_producer[original_creator_index]:
-        #                         raise ValueError("Two creators with same output file are not made from the same")
-
-
-        #                     # print("Duplicate creator found with the same data. Deduplicating.")
-        #             if is_duplicate_creator:
-        #                 continue
-
-        #             # Save the new creator into this studio
-        #             self.last_creator_list_index += 1
-        #             self.creator_list[self.last_creator_list_index] = creator
-        #             self.creator_producer[self.last_creator_list_index] = producer_index
-
-        #             for file in creator.flat_input_paths():
-
-        #                 if file not in self.input_file_maps:
-        #                     self.input_file_maps[file] = []
-
-        #                 self.input_file_maps[file].append(self.last_creator_list_index)
-
-        #             for file in creator.flat_output_paths():
-        #                 self.output_file_maps[file] = self.last_creator_list_index
-
-
     ############################################################################
     # process_files
     #
     #
     ############################################################################
-    def process_files(self, files: List[str]):
+    def process_files(self, files: List[str]) -> None:
         # Heap[Tuple[ProducerIndex, CreatorIndex]]
         creators_to_update: UniqueHeap[Tuple[int, int]] = UniqueHeap()
 
@@ -282,7 +178,7 @@ class Scheduler:
         while len(creators_to_update) > 0:
             producer_index, creator_index = creators_to_update.pop()
 
-            creator: Creator = self.creator_list[creator_index]
+            creator: GenericCreator = self.creator_list[creator_index]
 
             output_files = creator.flat_output_paths()
             input_files = creator.flat_input_paths()

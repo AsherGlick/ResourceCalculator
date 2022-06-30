@@ -16,19 +16,19 @@ class TypescriptInputFiles(TypedDict):
 # Build the producers list for compiling typescript to javascript given a
 # particular tsconfig.json file.
 ################################################################################
-def typescript_producer(ts_project_config: str, categories: List[str]) -> List[Producer]:
-
-    return [
-        Producer(
-            input_path_patterns={
-                "inputs": [],
-                "tsconfig_file": "^" + ts_project_config + "$",
-            },
-            paths=typescript_resource_paths,
-            function=build_typescript,
-            categories=categories + ["typescript"]
-        )
-    ]
+def typescript_producer(
+    ts_project_config: str,
+    categories: List[str]
+) -> Producer[TypescriptInputFiles, MultiFile]:
+    return Producer(
+        input_path_patterns={
+            "inputs": [],
+            "tsconfig_file": "^" + ts_project_config + "$",
+        },
+        paths=typescript_resource_paths,
+        function=build_typescript,
+        categories=categories + ["typescript"]
+    )
 
 
 def typescript_resource_paths(input_files: TypescriptInputFiles, groups: Dict[str, str]) -> Tuple[TypescriptInputFiles, MultiFile]:
@@ -72,7 +72,7 @@ def typescript_resource_paths(input_files: TypescriptInputFiles, groups: Dict[st
 
 
 
-def output_files(input_path: str, match: re.Match) -> List[str]:
+def output_files(input_path: str, match: "re.Match[str]") -> List[str]:
     tsconfig_path = os.path.join(input_path, "tsconfig.json")
 
     # Get the list of files and the typescript output directory

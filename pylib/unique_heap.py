@@ -12,7 +12,7 @@ class UniqueHeap(Generic[T]):
     _set: Set[T]
     _heap: List[T]
 
-    def __init__(self):
+    def __init__(self) -> None:
         self._set = set()
         self._heap = []
 

@@ -1,6 +1,6 @@
 import shutil
 import subprocess
-from pylib.producer import Producer, SingleFile
+from pylib.producer import Producer, SingleFile, GenericProducer
 from typing import List, Dict, Tuple
 import re
 import os
@@ -10,7 +10,7 @@ from PIL import Image  # type: ignore
 import gzip
 
 
-def gz_compressor_producers() -> List[Producer]:
+def gz_compressor_producers() -> List[GenericProducer]:
     return [
         Producer(
             input_path_patterns={

@@ -1,6 +1,6 @@
 import shutil
 import subprocess
-from pylib.producer import Producer, MultiFile, SingleFile
+from pylib.producer import Producer, MultiFile, SingleFile, GenericProducer
 from typing import List, Dict, Tuple, TypedDict
 import re
 import os
@@ -14,7 +14,7 @@ class ImagePackOutputFiles(TypedDict):
     image_file: str
     image_layout_file: str
 
-def item_image_producers() -> List[Producer]:
+def item_image_producers() -> List[GenericProducer]:
     return [
         # Pack Image
         Producer(
@@ -152,7 +152,7 @@ def image_compress_function(input_files: SingleFile, output_files: SingleFile) -
         print("        ", e)
 
 
-def image_copy_function(input_file: str, match: re.Match, output_files: List[str]) -> None:
+def image_copy_function(input_file: str, match: "re.Match[str]", output_files: List[str]) -> None:
     # Sanity check that there is only one output
     if len(output_files) != 1:
         raise ValueError("Must copy " + input_file + " to only one location not" + str(output_files))

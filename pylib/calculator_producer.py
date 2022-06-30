@@ -1,5 +1,5 @@
 import htmlmin  # type: ignore
-from pylib.producer import Producer, SingleFile
+from pylib.producer import Producer, SingleFile, GenericProducer
 from typing import List, Tuple, OrderedDict, Dict, TypedDict, Tuple
 import re
 import os
@@ -11,7 +11,7 @@ from pylib.json_data_compressor import mini_js_data
 from pylib.webminify import minify_css_blocks
 import pickle
 
-def calculator_producers() -> List[Producer]:
+def calculator_producers() -> List[GenericProducer]:
     return [
         Producer(
             input_path_patterns={

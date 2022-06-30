@@ -1,6 +1,6 @@
 import shutil
 import subprocess
-from pylib.producer import Producer, SingleFile
+from pylib.producer import Producer, SingleFile, GenericProducer
 from typing import List, Dict, Tuple, TypedDict
 import re
 import os
@@ -13,7 +13,7 @@ import pickle
 from typing import List, Tuple, OrderedDict, Dict, Set
 
 
-def resource_list_parser_producers() -> List[Producer]:
+def resource_list_parser_producers() -> List[GenericProducer]:
     return [
         Producer(
             input_path_patterns={

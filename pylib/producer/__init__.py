@@ -1,6 +1,6 @@
 from typing import List, TypedDict
 import shutil
-from .producer import Producer
+from .producer import Producer, GenericProducer
 from .scheduler import Scheduler
 
 
@@ -21,3 +21,8 @@ def producer_copyfile(input_files: SingleFile, output_files: SingleFile) -> None
     # Copy the file
     shutil.copyfile(input_file, output_file)
 
+__all__ = [
+    "Producer",
+    "GenericProducer",
+    "Scheduler",
+]

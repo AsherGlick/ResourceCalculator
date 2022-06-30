@@ -1,4 +1,5 @@
-import build
+# TODO: Rename this file and probably move it into pylib because it no longer
+# has anything to do with build.py directly.
 from typing import List, OrderedDict
 from pylib.yaml_token_load import ordered_load
 from pylib.resource_list import ResourceList, Resource, StackSize, TokenError, Token
