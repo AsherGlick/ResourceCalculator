@@ -1,7 +1,7 @@
 import shutil
 import subprocess
-from pylib.producers import Producer, SingleFile
-from typing import List, Callable, Tuple
+from pylib.producer import Producer, SingleFile
+from typing import List, Callable, Tuple, Dict
 import re
 import os
 
@@ -42,35 +42,21 @@ def uglify_js_string(js_string: str) -> str:
 ################################################################################
 def uglify_js_producer(input_file: str, output_file: str, categories: List[str]) -> Producer:
     return Producer(
-        input_path_patterns=["^"+input_file+"$"],
+        input_path_patterns={
+            "file": "^"+input_file+"$",
+        },
         paths=uglify_paths,
         function=uglify_copyfile,
-        categories=uglify_categories(categories)
+        categories= categories + ["minifyjs"]
     )
 
 
 ################################################################################
 #
 ################################################################################
-def uglify_categories(parent_categories: List[str]) -> Callable[[SingleFile], List[str]]:
-    def category_list(input_files: SingleFile) -> List[str]:
-        # flat_input_paths: List[str] = input_files["inputs"]
-
-        categories = []
-        categories += parent_categories
-        categories.append("minifyjs")
-        # categories += flat_input_paths
-
-        return categories
-    return category_list
-
-
-################################################################################
-#
-################################################################################
-def uglify_paths(index: int, regex: str, match: re.Match) -> Tuple[SingleFile, SingleFile]:
-    return ({
-            "file": match.group(0)
-        },{
-            "file": os.path.join("output", os.path.basename(match.group(0)))
+def uglify_paths(input_files: SingleFile, categories: Dict[str, str]) -> Tuple[SingleFile, SingleFile]:
+    return (
+        input_files,
+        {
+            "file": os.path.join("output", os.path.basename(input_files["file"]))
         })

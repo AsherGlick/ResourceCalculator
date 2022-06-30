@@ -6,6 +6,11 @@ from .producer import Producer
 from .scheduler import Scheduler
 
 
+# TODO: dont use scheduler.build_new_creators() instead just create the files
+# that are being tested and use those. This depends on Scheduler being able
+# to support working directory inputs instead of using the current working
+# directory as the base dir.
+
 class Test_Basic_Creator_Generation(unittest.TestCase):
     maxDiff = 999999
 
@@ -29,7 +34,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
 
         def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return
+            return None  # pragma: no cover
 
         producer = Producer(
             input_path_patterns={
@@ -44,7 +49,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
 
         scheduler = Scheduler(
             producer_list=[producer],
-            initial_filepaths=[
+            initial_filepaths=[],
+        )
+        scheduler.build_new_creators([
                 'data_one.txt',
                 'data_two.txt',
                 'value_one.txt',
@@ -53,9 +60,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             ]
         )
 
-        self.assertListEqual(
-            sorted(scheduler.creator_list.values()),
-            sorted([
+        self.assertCountEqual(
+            scheduler.creator_list.values(),
+            [
                 Creator(
                     input_paths={
                         "data_file": "data_one.txt",
@@ -80,7 +87,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
                     function=function,
                     categories=['test']
                 )
-            ])
+            ]
         )
 
 
@@ -105,7 +112,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
 
         def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return
+            return  # pragma: no cover
 
 
         producer = Producer(
@@ -120,7 +127,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
 
         scheduler = Scheduler(
             producer_list=[producer],
-            initial_filepaths=[
+            initial_filepaths=[],
+        )
+        scheduler.build_new_creators([
                 'data_one.txt',
                 'data_two.txt',
                 'partial_one_1.txt',
@@ -134,9 +143,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             ]
         )
 
-        self.assertListEqual(
-            sorted(scheduler.creator_list.values()),
-            sorted([
+        self.assertCountEqual(
+            scheduler.creator_list.values(),
+            [
                 Creator(
                     input_paths={
                         "data_file": "data_one.txt",
@@ -159,90 +168,8 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
                     function=function,
                     categories=['test']
                 )
-            ])
+            ]
         )
-
-
-
-    # # This still does not work right but that is mostly due to how I am doing
-    # # joins in the sqlite table. I will figure out a better way to handle this
-    # # test case after the entire system is working with the assumption that
-    # # all files exist. The only downside to the current system is that you will
-    # # not get an error if a file does not exist, the files corrisponding to it
-    # # will just not be processed.
-    # def test_missing_fields(self) -> None:
-
-    #     class InputFileDatatype(TypedDict):
-    #         data_file: str
-    #         data_file_two: str
-    #         partial_files: List[str]
-
-    #     class OutputFileDatatype(TypedDict):
-    #         data_file: str
-
-    #     def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
-    #         return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
-
-    #     def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-    #         return
-
-
-    #     producer = Producer(
-    #         input_path_patterns={
-    #             "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
-    #             "data_file_two": r"^2data_(?P<title>[a-z]+)\.txt$",
-    #             "partial_files": [r"partial_(?P<title>[a-z]+)_[0-9]+\.txt$"],
-    #         },
-    #         paths=paths,
-    #         function=function,
-    #         categories=["test"],
-    #     )
-
-    #     scheduler = Scheduler(
-    #         producer_list=[producer],
-    #         initial_filepaths=[
-    #             'data_one.txt',
-    #             '2data_one.txt',
-    #             'partial_one_1.txt',
-    #             'partial_one_2.txt',
-
-    #             'data_two.txt',
-    #             'partial_two_1.txt',
-    #             'partial_two_2.txt',
-
-    #             'data_three.txt',
-    #             '2data_three.txt',
-    #         ]
-    #     )
-
-    #     self.assertListEqual(
-    #         sorted(scheduler.creator_list.values()),
-    #         sorted([
-    #             Creator(
-    #                 input_paths={
-    #                     "data_file": "data_one.txt",
-    #                     "partial_files": ["partial_one_1.txt", "partial_one_2.txt", "partial_one_3.txt", "partial_one_4.txt"],
-    #                 },
-    #                 output_paths={
-    #                     "data_file": "output_one.txt"
-    #                 },
-    #                 function=function,
-    #                 categories=["test"]
-    #             ),
-    #             Creator(
-    #                 input_paths={
-    #                     'data_file': 'data_two.txt',
-    #                     "partial_files": ["partial_two_11.txt", "partial_two_12.txt", "partial_two_13.txt", "partial_two_14.txt"],
-    #                 },
-    #                 output_paths={
-    #                     'data_file': 'output_two.txt'
-    #                 },
-    #                 function=function,
-    #                 categories=['test']
-    #             )
-    #         ])
-    #     )
-
 
     ############################################################################
     # test_empty_field_string
@@ -267,7 +194,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
 
         def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return
+            return  # pragma: no cover
 
         producer = Producer(
             input_path_patterns={
@@ -282,7 +209,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
 
         scheduler = Scheduler(
             producer_list=[producer],
-            initial_filepaths=[
+            initial_filepaths=[],
+        )
+        scheduler.build_new_creators([
                 'data_one.txt',
                 'data_two.txt',
                 'value_one.txt',
@@ -290,9 +219,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             ]
         )
 
-        self.assertListEqual(
-            sorted(scheduler.creator_list.values()),
-            sorted([
+        self.assertCountEqual(
+            scheduler.creator_list.values(),
+            [
                 Creator(
                     input_paths={
                         "data_file": "data_one.txt",
@@ -317,7 +246,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
                     function=function,
                     categories=['test']
                 )
-            ])
+            ]
         )
 
 
@@ -347,7 +276,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
 
         def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return
+            return  # pragma: no cover
 
         producer = Producer(
             input_path_patterns={
@@ -362,7 +291,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
 
         scheduler = Scheduler(
             producer_list=[producer],
-            initial_filepaths=[
+            initial_filepaths=[],
+        )
+        scheduler.build_new_creators([
                 'data_one.txt',
                 'data_two.txt',
                 'value_one.txt',
@@ -370,9 +301,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             ]
         )
 
-        self.assertListEqual(
-            sorted(scheduler.creator_list.values()),
-            sorted([
+        self.assertCountEqual(
+            scheduler.creator_list.values(),
+            [
                 Creator(
                     input_paths={
                         "data_file": "data_one.txt",
@@ -397,7 +328,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
                     function=function,
                     categories=['test']
                 )
-            ])
+            ]
         )
 
     ############################################################################
@@ -418,10 +349,10 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
 
 
         def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
-            return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
+            return (input_files, {"data_file": "output_" + groups["title"] + "_" + input_files["global_config"]})
 
         def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return
+            return  # pragma: no cover
 
         producer = Producer(
             input_path_patterns={
@@ -436,7 +367,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
 
         scheduler = Scheduler(
             producer_list=[producer],
-            initial_filepaths=[
+            initial_filepaths=[],
+        )
+        scheduler.build_new_creators([
                 'data_one.txt',
                 'data_two.txt',
                 'value_one.txt',
@@ -446,9 +379,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             ]
         )
 
-        self.assertListEqual(
-            sorted(scheduler.creator_list.values()),
-            sorted([
+        self.assertCountEqual(
+            scheduler.creator_list.values(),
+            [
                 Creator(
                     input_paths={
                         "data_file": "data_one.txt",
@@ -456,7 +389,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
                         "global_config": "global_config.txt",
                     },
                     output_paths={
-                        "data_file": "output_one.txt"
+                        "data_file": "output_one_global_config.txt"
                     },
                     function=function,
                     categories=["test"]
@@ -468,7 +401,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
                         'global_config': 'global_config.txt'
                     },
                     output_paths={
-                        'data_file': 'output_two.txt'
+                        'data_file': 'output_two_global_config.txt'
                     },
                     function=function,
                     categories=['test']
@@ -480,7 +413,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
                         "global_config": "global_configs.txt",
                     },
                     output_paths={
-                        "data_file": "output_one.txt"
+                        "data_file": "output_one_global_configs.txt"
                     },
                     function=function,
                     categories=["test"]
@@ -492,13 +425,14 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
                         'global_config': 'global_configs.txt'
                     },
                     output_paths={
-                        'data_file': 'output_two.txt'
+                        'data_file': 'output_two_global_configs.txt'
                     },
                     function=function,
                     categories=['test']
                 )
-            ])
+            ]
         )
+
 
     ############################################################################
     # test_multiple_match_groups
@@ -520,7 +454,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             return (input_files, {"data_file": "output_" + groups["title"] + "_" + groups["language"] + ".txt"})
 
         def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return
+            return  # pragma: no cover
 
         producer = Producer(
             input_path_patterns={
@@ -535,7 +469,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
 
         scheduler = Scheduler(
             producer_list=[producer],
-            initial_filepaths=[
+            initial_filepaths=[],
+        )
+        scheduler.build_new_creators([
                 'data_one.txt',
                 'data_two.txt',
                 'value_one_german.txt',
@@ -547,9 +483,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             ]
         )
 
-        self.assertListEqual(
-            sorted(scheduler.creator_list.values()),
-            sorted([
+        self.assertCountEqual(
+            scheduler.creator_list.values(),
+            [
                 Creator(
                     input_paths={
                         "data_file": "data_one.txt",
@@ -598,7 +534,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
                     function=function,
                     categories=['test']
                 )
-            ])
+            ]
         )
 
     ############################################################################
@@ -610,9 +546,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
     # a `\` backslash. Additionally all backslashes are escaped with a
     # backslash. This is then parsed out into proper arrays without escaped
     # values. This test confirms that some values that we expected to have been
-    # escaped at one point in the process are correctly apearing as their
+    # escaped at one point in the process are correctly appearing as their
     # unescaped and properly split values. In the future it is possible that
-    # this test might be unessasary, however it should not break even if the
+    # this test might be unnecessary, however it should not break even if the
     # implementation is swapped out.
     ############################################################################
     def test_filename_with_comma(self) -> None:
@@ -627,7 +563,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
 
         def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return
+            return  # pragma: no cover
 
 
         producer = Producer(
@@ -642,7 +578,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
 
         scheduler = Scheduler(
             producer_list=[producer],
-            initial_filepaths=[
+            initial_filepaths=[],
+        )
+        scheduler.build_new_creators([
                 'data_one.txt',
                 'data_two.txt',
                 'partial_one_1.txt',
@@ -656,9 +594,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             ]
         )
 
-        self.assertListEqual(
-            sorted(scheduler.creator_list.values()),
-            sorted([
+        self.assertCountEqual(
+            scheduler.creator_list.values(),
+            [
                 Creator(
                     input_paths={
                         "data_file": "data_one.txt",
@@ -681,5 +619,70 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
                     function=function,
                     categories=['test']
                 )
-            ])
+            ]
+        )
+
+    ############################################################################
+    # test_no_match_group
+    #
+    # Tests that a producer that has no match group gets converted into
+    # Creators successfully
+    ############################################################################
+    def test_no_match_group(self) -> None:
+
+        class InputFileDatatype(TypedDict):
+            data_file: str
+        class OutputFileDatatype(TypedDict):
+            data_file: str
+
+
+        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
+            return (input_files, {"data_file": "output_" + input_files["data_file"]})
+
+        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
+            return None  # pragma: no cover
+
+        producer = Producer(
+            input_path_patterns={
+                "data_file": r"^data_[a-z]+\.txt$",
+            },
+            paths=paths,
+            function=function,
+            categories=["test"],
+        )
+
+        scheduler = Scheduler(
+            producer_list=[producer],
+            initial_filepaths=[],
+        )
+        scheduler.build_new_creators([
+                'data_one.txt',
+                'data_two.txt',
+            ]
+        )
+
+        self.assertCountEqual(
+            scheduler.creator_list.values(),
+            [
+                Creator(
+                    input_paths={
+                        "data_file": "data_one.txt",
+                    },
+                    output_paths={
+                        "data_file": "output_data_one.txt"
+                    },
+                    function=function,
+                    categories=["test"]
+                ),
+                Creator(
+                    input_paths={
+                        'data_file': 'data_two.txt',
+                    },
+                    output_paths={
+                        'data_file': 'output_data_two.txt'
+                    },
+                    function=function,
+                    categories=['test']
+                )
+            ]
         )

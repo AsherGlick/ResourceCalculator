@@ -11,13 +11,16 @@ from typing import Dict, Tuple, List, Any, TypedDict
 from pylib.uglifyjs import uglify_js_producer
 from pylib.resource_list import ResourceList, Resource, TokenError
 from pylib.yaml_token_load import ordered_load
-from pylib.producers import Producer
+from pylib.producer import Producer, Scheduler, SingleFile
 from pylib.typescript_producer import typescript_producer
 from pylib.imagepack import item_image_producers
 from pylib.calculator_producer import calculator_producers
+from pylib.editor_producer import editor_producers
 from pylib.yaml_linter_producer import resource_list_parser_producers
 from pylib.gz_compressor_producer import gz_compressor_producers
-from pylib.producers import Studio, SingleFile
+
+from pylib.landing_page_producer import landing_page_producers
+from pylib.producer_plugins import plugins_producers
 
 # CLI Argument Flags
 # FLAG_skip_js_lint = False
@@ -123,82 +126,6 @@ def get_newest_modified_time(path: str, ignore: List[str] = []) -> float:
         else:
             time_list.append(os.path.getctime(filepath))
     return max(time_list)
-
-
-
-
-
-################################################################################
-# get_simple_name checks if a simple name override has been set for the
-# resource, and if it has then returns it. Otherwise it generates the simple
-# name from the resource's actual name.
-################################################################################
-def get_simple_name(resource: str, resources: OrderedDict[str, Resource]) -> str:
-    # TODO: Change this if we end up implementing something like "is_set()" for the YAML conversions
-    if resources[resource].custom_simplename != "":
-        return resources[resource].custom_simplename
-    return re.sub(r'[^a-z0-9]', '', resource.lower())
-
-
-
-################################################################################
-# generate_resource_offset_classes
-#
-#
-################################################################################
-def generate_resource_offset_classes(resources: OrderedDict[str, Resource], resource_image_coordinates: Dict[str, Tuple[int, int]]) -> Dict[str, str]:
-    item_styles: Dict[str, str] = {}
-    for resource in resources:
-        simple_name = get_simple_name(resource, resources)
-
-        if simple_name in resource_image_coordinates:
-            x_coordinate, y_coordinate = resource_image_coordinates[simple_name]
-            item_styles[simple_name] = "background-position: " + str(-x_coordinate) + "px " + str(-y_coordinate) + "px;"
-        else:
-            item_styles[simple_name] = "background: #f0f; background-image: none;"
-            print("WARNING:", simple_name, "has a recipe but no image and will appear purple in the calculator")
-
-    return item_styles
-
-
-
-
-
-
-################################################################################
-# expand_raw_resource allow for the syntactic candy of only defining a a
-# `recipe_type` value for raw resources and not having to define the entire
-# construct because it is a trivial construct.
-################################################################################
-def expand_raw_resource(resources: OrderedDict[str, Resource]) -> OrderedDict[str, Resource]:
-    for resource in resources:
-        for i, recipe in enumerate(resources[resource].recipes):
-            if recipe.recipe_type == "Raw Resource" and recipe.output == 0 and len(recipe.requirements) == 0:
-                resources[resource].recipes[i].output = 1
-                resources[resource].recipes[i].requirements = OrderedDict([(resource, 0)])
-    return resources
-
-
-################################################################################
-# fill_default_requirement_groups replaces any uses of a requirement group with
-# the first item within that requirement group. This is an interim solution
-# while the requirement group feature is separately fleshed out. It has been
-# included in this state because there is some simplicity value to being able
-# to include the data structure in the resource_list.yaml file.
-################################################################################
-def fill_default_requirement_groups(resources: OrderedDict[str, Resource], requirement_groups: OrderedDict[str, List[str]]) -> OrderedDict[str, Resource]:
-    for resource in resources:
-        for i, recipe in enumerate(resources[resource].recipes):
-            # Create a copy of the keys so we can iterate over them and mutate them
-            requirement_list: List[str] = [requirement for requirement in recipe.requirements]
-
-            # Iterate over the requirements and replace any that are part of requirement groups
-            for requirement in requirement_list:
-                if requirement in requirement_groups:
-                    value = recipe.requirements[requirement]
-                    del recipe.requirements[requirement]
-                    recipe.requirements[requirement_groups[requirement][0]] = value
-    return resources
 
 
 def touch_output_folder_files(calculator_folder: str, timestamp: int = 0) -> None:
@@ -309,10 +236,12 @@ def core_resource_producers() -> List[Producer]:
     for copyfile in copyfiles:
         core_producers.append(
             Producer(
-                input_path_patterns=[ "^" + copyfile + "$"],
+                input_path_patterns={
+                    "file": "^{}$".format(copyfile),
+                },
                 paths=core_resource_paths,
                 function=producer_copyfile,
-                categories=core_categories
+                categories=["core"]
             )
         )
 
@@ -332,15 +261,11 @@ def core_resource_producers() -> List[Producer]:
     return core_producers
 
 
-def core_categories(input_files: SingleFile) -> List[str]:
-    return ["core", input_files["file"]]
-
-def core_resource_paths(index: int, regex: str, match: re.Match) -> Tuple[SingleFile, SingleFile]:
+def core_resource_paths(input_files: SingleFile, groups: Dict[str, str]) -> Tuple[SingleFile, SingleFile]:
     return (
+        input_files,
         {
-            "file": match.group(0)
-        },{
-            "file": os.path.join("output", os.path.basename(match.group(0)))
+            "file": os.path.join("output", os.path.basename(input_files["file"]))
         }
     )
     
@@ -420,24 +345,17 @@ def main() -> None:
 
     producers: List[Producer] = []
 
-
     producers += resource_list_parser_producers()
     producers += item_image_producers()
     producers += calculator_producers()
-    # producers += calculator_editor_producers()
+    producers += editor_producers()
     producers += core_resource_producers()
+    producers += landing_page_producers()
+    producers += plugins_producers()
     producers += gz_compressor_producers()
 
 
-    # if not FLAG_skip_index:
-    #     calculator_directories.sort()
-    #     create_index_page(calculator_directories)
-
-    # if not FLAG_skip_gz_compression:
-    #     pre_compress_output_files()
-
-
-    studio = Studio(producers, ["venv_docker", "venv", ".git", "node_modules", "output_master"])
+    studio = Scheduler(producers,  Scheduler.all_paths_in_dir(".", ["venv_docker", "venv", ".git", "node_modules", "output_master"]))
 
     # build_producer_calls(producers, ["venv_docker", "venv", ".git", "node_modules"])
 

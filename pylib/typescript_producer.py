@@ -1,8 +1,8 @@
-from pylib.producers import Producer, MultiFile
+from pylib.producer import Producer, MultiFile
 import json
 import os
 import subprocess
-from typing import List, Tuple, Callable, TypedDict
+from typing import List, Tuple, Callable, TypedDict, Dict
 import re
 
 
@@ -18,31 +18,21 @@ class TypescriptInputFiles(TypedDict):
 ################################################################################
 def typescript_producer(ts_project_config: str, categories: List[str]) -> List[Producer]:
 
-    input_directory_pattern = "^" + ts_project_config + "$"
-
     return [
         Producer(
-            input_path_patterns=[input_directory_pattern],
+            input_path_patterns={
+                "inputs": [],
+                "tsconfig_file": "^" + ts_project_config + "$",
+            },
             paths=typescript_resource_paths,
             function=build_typescript,
-            categories=typescript_categories(categories)
+            categories=categories + ["typescript"]
         )
     ]
 
-def typescript_categories(parent_categories: List[str]) -> Callable[[TypescriptInputFiles], List[str]]:
-    def category_list(input_files: TypescriptInputFiles) -> List[str]:
-        # flat_input_paths: List[str] = input_files["inputs"]
 
-        categories = []
-        categories += parent_categories
-        categories.append("typescript")
-        # categories += flat_input_paths
-
-        return categories
-    return category_list
-
-def typescript_resource_paths(index: int, regex: str, match: re.Match) -> Tuple[TypescriptInputFiles, MultiFile]:
-    tsconfig_path = match.group(0)
+def typescript_resource_paths(input_files: TypescriptInputFiles, groups: Dict[str, str]) -> Tuple[TypescriptInputFiles, MultiFile]:
+    tsconfig_path = input_files["tsconfig_file"]
     input_folder = os.path.dirname(tsconfig_path)
     
     # Get the list of files and the typescript output directory

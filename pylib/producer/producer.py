@@ -228,6 +228,13 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
                     table=table,
                 ))
 
+        # Prevent the WHERE clause from being blank ever.
+        # TODO: The WERE clause should probably just be removed entirely but the
+        # query is already imperfect by not using JOINs instead so this will be
+        # left until we re-evaluate the query again.
+        if len(field_joins) == 0:
+            field_joins = ["1=1"]
+
         query_string = "SELECT {fields} FROM {field_tables} WHERE {field_joins} GROUP BY {singleton_fields};".format(
             fields=", ".join(fields),
             field_tables=", ".join(tables),
@@ -245,7 +252,7 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
 
             for row in cur.fetchall():
 
-                new_element: InputFileDatatype = {} #= self._input_path_patterns.copy()
+                new_element: InputFileDatatype = {} # type:ignore
                 groups: Dict[str, str] = {}
 
                 for new_element_field, pattern in self._input_path_patterns.items():

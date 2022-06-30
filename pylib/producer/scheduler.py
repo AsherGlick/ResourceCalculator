@@ -13,11 +13,12 @@ import shutil
 from pylib.producer import Producer
 from .creator import Creator
 
+
 import sqlite3
 
 ################################################################################
 # Scheduler is a tool for scheduling jobs to be completed based on the
-# existance and modification of files.
+# existence and modification of files.
 ################################################################################
 
 
@@ -40,39 +41,6 @@ class Scheduler:
 
     # A map of input files to the creator index that consume them
     input_file_maps: Dict[str, List[int]]
-
-
-    ############################################################################
-    # all_paths_in_dir
-    #
-    # A helper function to use for initial_filepaths when you want to add all
-    # of the files under a particular directory.
-    ############################################################################
-    @staticmethod
-    def all_paths_in_dir(base_dir: str, ignore_paths: List[str]) -> List[str]:
-        paths: List[str] = []
-
-        for root, dirs, files in os.walk(base_dir):
-            # Strip the "current directory" prefix because that makes it more
-            # annoying to match things on.
-            if root.startswith("./"):
-                root = root[2:]
-
-            # Add all of the files and directories unless the path matches an ignore path
-            for path in dirs + files:
-                full_path = os.path.join(root, path)
-                
-                skip = False
-                for ignore_path in ignore_paths:
-                    if full_path.startswith(ignore_path):
-                        skip = True
-                        break
-                if skip:
-                    continue
-
-                paths.append(full_path)
-
-        return paths
 
 
     ############################################################################
@@ -105,9 +73,17 @@ class Scheduler:
 
 
     ############################################################################
-    # 
+    # add_or_update_files
+    #
+    # This function should be called whenever a file is added to the source
+    # tree, or updated inside the source tree. It should be called with a list
+    # of all files on program initialization.
     ############################################################################
-    def add_or_update_files(self, files: List[str]):
+    def add_or_update_files(self, files: List[str]) -> None:
+        self.build_new_creators(files)
+        self.process_files(files)
+
+    def build_new_creators(self, files: List[str]) -> None:
         for producer_index, producer in enumerate(self.producer_list):
             for path in files:
                 for field_name, pattern in producer.regex_field_patterns().items():
@@ -116,13 +92,11 @@ class Scheduler:
                     if match is None:
                         continue
 
-                    # print("Matched", pattern, path)
                     producer.insert(self.filecache, producer_index, field_name, path, match.groupdict())
 
-
+        # Build a list of creators
         for producer_index, producer in enumerate(self.producer_list):
             input_datas = producer.query_filesets(self.filecache, producer_index)
-
             for input_data in input_datas:
                 input_file, input_groups = input_data
                 # print(input_file, input_groups)
@@ -141,15 +115,59 @@ class Scheduler:
                     categories=categories
                 )
 
+                # Detect duplicate creators
+                # TODO: no duplicate creators should exist at all given this
+                # even ones that have identical producers, inputs, and outputs.
+                # Eventually this check should be much stricter.
+                is_duplicate_creator = False
+                for file in creator.flat_output_paths():
+                    if file in self.output_file_maps:
+                        is_duplicate_creator = True
+                        original_creator_index: int = self.output_file_maps[file]
+                        original_creator: Creator = self.creator_list[original_creator_index]
+
+                        if (sorted(original_creator.flat_input_paths()) != sorted(creator.flat_input_paths())):
+                            raise ValueError("Two creators with same output file do not share all input files")
+
+                        if (sorted(original_creator.flat_output_paths()) != sorted(creator.flat_output_paths())):
+                            raise ValueError("Two creators with same output file do not share all output files")
+
+                        if producer_index != self.creator_producer[original_creator_index]:
+                            raise ValueError("Two creators with same output file are not made from the same")
+                        # print("Duplicate creator found with the same data. Deduplicating.")
+                if is_duplicate_creator:
+                    continue
+
 
                 self.last_creator_list_index += 1
                 self.creator_list[self.last_creator_list_index] = creator
+                self.creator_producer[self.last_creator_list_index] = producer_index
 
+                for file in creator.flat_input_paths():
+                    if file not in self.input_file_maps:
+                        self.input_file_maps[file] = []
+
+                    self.input_file_maps[file].append(self.last_creator_list_index)
+
+                for file in creator.flat_output_paths():
+                    self.output_file_maps[file] = self.last_creator_list_index
+
+
+    
+
+    ############################################################################
+    # process_files
+    #
+    # Process a list of files through all of the creators... TODO DOCUMENTATION
+    ############################################################################
+    # def process_files(self, files: List[str]) -> None:
+        # We want to be sure that earlier producer's creators are being processed first, this is where the priority queue comes in.
+        # pass
 
         # print(producer.query_string(producer_index))
 
 
-
+        # Run every creator
 
 
 
@@ -241,11 +259,11 @@ class Scheduler:
 
 
     ############################################################################
+    # process_files
+    #
     #
     ############################################################################
-    def update_files(self, files: List[str]):
-        # self.make_creators(files)
-
+    def process_files(self, files: List[str]):
         # Heap[Tuple[ProducerIndex, CreatorIndex]]
         creators_to_update: UniqueHeap[Tuple[int, int]] = UniqueHeap()
 
@@ -304,7 +322,47 @@ class Scheduler:
 
 
 
+    ############################################################################
+    # all_paths_in_dir
+    #
+    # A helper function to use for initial_filepaths when you want to add all
+    # of the files under a particular directory.
+    ############################################################################
+    @staticmethod
+    def all_paths_in_dir(base_dir: str, ignore_paths: List[str]) -> List[str]:
+        paths: List[str] = []
 
+        for root, dirs, files in os.walk(base_dir):
+            # Strip the "current directory" prefix because that makes it more
+            # annoying to match things on.
+            if root.startswith("./"):
+                root = root[2:]
+
+            # Add all of the files and directories unless the path matches an ignore path
+            for path in dirs + files:
+                full_path = os.path.join(root, path)
+                
+                skip = False
+                for ignore_path in ignore_paths:
+                    if full_path.startswith(ignore_path):
+                        skip = True
+                        break
+                if skip:
+                    continue
+
+                paths.append(full_path)
+
+        return paths
+
+
+
+################################################################################
+# all_files_exist
+#
+# A helper function that will check if every file in a list exist. If one or
+# more files does not exist then it will return False. If an empty list is
+# passed in then it will return True.
+################################################################################
 def all_files_exist(files: List[str]) -> bool:
     for file in files:
         if not os.path.exists(file):
@@ -312,6 +370,12 @@ def all_files_exist(files: List[str]) -> bool:
     return True
 
 
+################################################################################
+# build_required_directories
+#
+# Takes in a list of files and then creates all of the directories needed in
+# order for those files to be written to if they do not already exist.
+################################################################################
 def build_required_directories(files: List[str]) -> None:
     for file in files:
         directory = os.path.dirname(file)

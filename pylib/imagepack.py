@@ -1,6 +1,6 @@
 import shutil
 import subprocess
-from pylib.producers import Producer, MultiFile, SingleFile
+from pylib.producer import Producer, MultiFile, SingleFile
 from typing import List, Dict, Tuple, TypedDict
 import re
 import os
@@ -18,39 +18,35 @@ def item_image_producers() -> List[Producer]:
     return [
         # Pack Image
         Producer(
-            input_path_patterns=["^resource_lists/([a-z ]+)/items$"],
+            input_path_patterns={
+                "files": [r"^resource_lists/(?P<calculator_dir>[a-z ]+)/items/.*$"],
+            },
             paths=image_pack_paths,
             function=image_pack_function,
-            categories=item_image_categories
+            categories=["image"]
         ),
 
         # Compress Image
         Producer(
-            input_path_patterns=["^cache/([a-z ]+)/packed_image.png$"],
+            input_path_patterns={
+                "file": r"^cache/(?P<calculator_dir>[a-z ]+)/packed_image\.png$",
+            },
             paths=image_compress_paths,
             function=image_compress_function,
-            categories=item_image_compress_categories
+            categories=["image", "compress", "imagecompress"]
         )
     ]
 
-def item_image_categories(input_files: MultiFile) -> List[str]:
-    return ["image"]
 
-def image_pack_paths(index: int, regex: str, match: re.Match) -> Tuple[MultiFile, ImagePackOutputFiles]:
-    calculator_page = match.group(1)
-
-    resource_folder = match.group(0)
-
-
-    input_files = [os.path.join(resource_folder, x) for x in os.listdir(resource_folder)]
+def image_pack_paths(input_files: MultiFile, categories: Dict[str,str]) -> Tuple[MultiFile, ImagePackOutputFiles]:
+    calculator_page = categories["calculator_dir"]
 
     calculator_imagefile = os.path.join("cache", calculator_page, "packed_image.png")
     calculator_image_layout = os.path.join("cache", calculator_page, "packed_image_layout.json")
 
     return (
+        input_files,
         {
-            "files": input_files,
-        }, {
             "image_file": calculator_imagefile,
             "image_layout_file": calculator_image_layout,
         }
@@ -128,21 +124,15 @@ def image_pack_function(input_files: MultiFile, output_files: ImagePackOutputFil
         }, f)
 
 
-def item_image_compress_categories(input_files: SingleFile) -> List[str]:
-    return ["image", "compress", "imagecompress"]
 
-
-def image_compress_paths(index: int, regex: str, match: re.Match) -> Tuple[SingleFile, SingleFile]:
-    calculator_page = match.group(1)
-
-    input_file = match.group(0)
+def image_compress_paths(input_files: SingleFile, categories: Dict[str, str]) -> Tuple[SingleFile, SingleFile]:
+    calculator_page = categories["calculator_dir"]
 
     output_calculator_imagefile = os.path.join("output", calculator_page, calculator_page + ".png")
 
     return (
+        input_files,
         {
-            "file": input_file,
-        }, {
             "file": output_calculator_imagefile
         }
     )

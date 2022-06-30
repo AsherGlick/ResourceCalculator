@@ -1,6 +1,6 @@
 import shutil
 import subprocess
-from pylib.producers import Producer, SingleFile
+from pylib.producer import Producer, SingleFile
 from typing import List, Dict, Tuple, TypedDict
 import re
 import os
@@ -16,33 +16,31 @@ from typing import List, Tuple, OrderedDict, Dict, Set
 def resource_list_parser_producers() -> List[Producer]:
     return [
         Producer(
-            input_path_patterns=["^resource_lists/([a-z ]+)/resources.yaml$"],
+            input_path_patterns={
+                "file": r"^resource_lists/(?P<calculator_dir>[a-z ]+)/resources.yaml$"
+            },
             paths=resource_list_paths,
             function=resource_list_parser_function,
-            categories=resource_list_categories
+            categories=["resource_list"]
         ),
     ]
 
-
-def resource_list_categories(input_files: SingleFile) -> List[str]:
-    return ["resource_list"]
 
 class ResourceListOutputFiles(TypedDict):
     resource_cache: str
     page_metadata: str
 
-def resource_list_paths(index: int, regex: str, match: re.Match) -> Tuple[SingleFile, ResourceListOutputFiles]:
-    calculator_page = match.group(1)
+def resource_list_paths(input_files: SingleFile, categories: Dict[str, str]) -> Tuple[SingleFile, ResourceListOutputFiles]:
+    calculator_page = categories["calculator_dir"]
 
     calculator_resource_cache = os.path.join("cache", calculator_page, "resources.pickle")
     calculator_page_metadata = os.path.join("cache", calculator_page, "page_metadata.json")
 
     return (
+        input_files,
         {
-            "file": match.group(0)
-        }, {
-            "resource_cache" :calculator_resource_cache,
-            "page_metadata" :calculator_page_metadata,
+            "resource_cache": calculator_resource_cache,
+            "page_metadata": calculator_page_metadata,
         }
     )
 

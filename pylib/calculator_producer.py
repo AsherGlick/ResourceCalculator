@@ -1,5 +1,5 @@
 import htmlmin  # type: ignore
-from pylib.producers import Producer, SingleFile
+from pylib.producer import Producer, SingleFile
 from typing import List, Tuple, OrderedDict, Dict, TypedDict, Tuple
 import re
 import os
@@ -14,41 +14,35 @@ import pickle
 def calculator_producers() -> List[Producer]:
     return [
         Producer(
-            input_path_patterns=[
-                "^cache/([a-z ]+)/resources.pickle$",
-                "^cache/([a-z ]+)/packed_image_layout.json$",
-            ],
+            input_path_patterns={
+                "resources_pickle": r"^cache/(?P<calculator_dir>[a-z ]+)/resources\.pickle$",
+                "image_layout_json": r"^cache/(?P<calculator_dir>[a-z ]+)/packed_image_layout\.json$",
+                "calculator_template": r"^core/calculator\.html$"
+            },
             paths=calculator_paths,
             function=calculator_function,
-            categories=calculator_categories,
+            categories=["calculator"],
         )
 
     ]
 
 
-class CalculatorInputFile(TypedDict):
+class CalculatorInputFiles(TypedDict):
     resources_pickle: str
     image_layout_json: str
     calculator_template: str
 
-def calculator_categories(input_files: CalculatorInputFile) -> List[str]:
-    return ["calculator"]
 
-def calculator_paths(index: int, regex: str, match: re.Match) -> Tuple[CalculatorInputFile, SingleFile]:
-    calculator_page = match.group(1)
+def calculator_paths(input_files:CalculatorInputFiles, categories: Dict[str, str]) -> Tuple[CalculatorInputFiles, SingleFile]:
+    calculator_page = categories["calculator_dir"]
     calculator_index_page = os.path.join("output", calculator_page, "index.html")
 
     return (
+        input_files,
         {
-            "resources_pickle": os.path.join("cache", calculator_page, "resources.pickle"),
-            "image_layout_json": os.path.join("cache", calculator_page, "packed_image_layout.json"),
-
-            # TODO: Are there other template files that should be added here too?
-            "calculator_template": "core/calculator.html",
-        },{
             "file": calculator_index_page
-
-        })
+        }
+    )
 
 
 # ################################################################################
@@ -58,7 +52,7 @@ def calculator_paths(index: int, regex: str, match: re.Match) -> Tuple[Calculato
 # # the html page and resource for it. If no files have been changed for the
 # # calculator since the last time it was created then the creation will be skipped
 # ################################################################################
-def calculator_function(input_files: CalculatorInputFile, output_files: SingleFile) -> None:
+def calculator_function(input_files: CalculatorInputFiles, output_files: SingleFile) -> None:
 
     resource_list_file = input_files["resources_pickle"] # os.path.join("cache", calculator_name, "resources.pickle")
     image_metadata_file = input_files["image_layout_json"] #os.path.join("cache", calculator_name, "packed_image_layout.json")

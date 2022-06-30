@@ -1,6 +1,6 @@
 import shutil
 import subprocess
-from pylib.producers import Producer, SingleFile
+from pylib.producer import Producer, SingleFile
 from typing import List, Dict, Tuple
 import re
 import os
@@ -13,22 +13,20 @@ import gzip
 def gz_compressor_producers() -> List[Producer]:
     return [
         Producer(
-            input_path_patterns=[r"^output/.*\.(?:html|js|css)$"],
+            input_path_patterns={
+                "file":r"^output/.*\.(?:html|js|css)$"
+            },
             paths=gz_compress_paths,
             function=gz_compress_function,
-            categories=gz_categories
+            categories=["compress", "gz"]
         ),
     ]
 
-def gz_categories(input_files: SingleFile) -> List[str]:
-    return ["compress", "gz"]
-
-def gz_compress_paths(index: int, regex: str, match: re.Match) -> Tuple[SingleFile, SingleFile]:
-    path = match.group(0)
+def gz_compress_paths(input_files: SingleFile, categories: Dict[str, str]) -> Tuple[SingleFile, SingleFile]:
+    path = input_files["file"]
     return (
+        input_files,
         {
-            "file": path
-        },{
             "file": path + ".gz"
         }
     )
