@@ -1,15 +1,4 @@
-from typing import List, Callable, Any, Optional, Union, Set, Tuple, TypeVar, Generic, Dict
-from collections import deque
-from dataclasses import dataclass
-import heapq
-import re
-import os
-import sys
-from typing import TypedDict
-
-from pylib.unique_heap import UniqueHeap
-import time
-import shutil
+from typing import List, Callable, Any, Set, Generic
 
 from .producer import InputFileDatatype, OutputFileDatatype
 
@@ -41,7 +30,6 @@ class Creator(Generic[InputFileDatatype, OutputFileDatatype]):
         # Pre-cache the input files in a set for very fast file lookups.
         self._input_paths_set: Set[str] = set(self.flat_input_paths())
 
-
     ############################################################################
     #
     ############################################################################
@@ -58,7 +46,7 @@ class Creator(Generic[InputFileDatatype, OutputFileDatatype]):
     ############################################################################
     def flat_input_paths(self) -> List[str]:
         flat_input_paths: List[str] = []
-        for input_path in self.input_paths.values(): # type:ignore # Typed Dict is secretly a dict but technically not
+        for input_path in self.input_paths.values():  # type:ignore # Typed Dict is secretly a dict but technically not
             if isinstance(input_path, str):
                 flat_input_paths.append(input_path)
 
@@ -71,13 +59,12 @@ class Creator(Generic[InputFileDatatype, OutputFileDatatype]):
 
         return flat_input_paths
 
-
     ############################################################################
     #
     ############################################################################
     def flat_output_paths(self) -> List[str]:
         flat_output_paths: List[str] = []
-        for output_path in self.output_paths.values(): # type:ignore # Typed Dict is secretly a dict but technically not
+        for output_path in self.output_paths.values():  # type:ignore # Typed Dict is secretly a dict but technically not
             if isinstance(output_path, str):
                 flat_output_paths.append(output_path)
 
@@ -96,7 +83,6 @@ class Creator(Generic[InputFileDatatype, OutputFileDatatype]):
     def has_input(self, input_path: str) -> bool:
         return input_path in self._input_paths_set
 
-
     ############################################################################
     #
     ############################################################################
@@ -111,7 +97,7 @@ class Creator(Generic[InputFileDatatype, OutputFileDatatype]):
         other_paths = [sorted(other.flat_output_paths()), sorted(other.flat_input_paths())]
 
         return self_paths < other_paths
-    
+
     def __eq__(self, other: Any) -> bool:
         if not isinstance(other, Creator):
             return False

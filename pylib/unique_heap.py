@@ -4,6 +4,7 @@ from typing import TypeVar, Generic, Set, List
 
 T = TypeVar("T")
 
+
 # A sorted heap that only lets one copy of an item into it.
 class UniqueHeap(Generic[T]):
     # TODO: It is possible to do this without a seperate Set but I am doing it

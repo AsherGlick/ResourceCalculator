@@ -1,12 +1,14 @@
+from typing import List, Tuple, Dict
+import os
 import shutil
 import subprocess
+
 from pylib.producer import Producer, SingleFile
-from typing import List, Callable, Tuple, Dict
-import re
-import os
 
 
 ################################################################################
+# uglify_copyfile
+#
 # Uglify Copyfile calls an uglification process on an entire file and writes
 # the output to a new file.
 ################################################################################
@@ -24,8 +26,12 @@ def uglify_copyfile(input_files: SingleFile, output_files: SingleFile) -> None:
 
 
 ################################################################################
+# uglify_js_string
+#
 # Uglify js String calls and uglification / minification process on a single
 # string, which is then returned.
+# TODO: This methodology does not support the Producer model and should be
+# revisited.
 ################################################################################
 def uglify_js_string(js_string: str) -> str:
     try:
@@ -38,21 +44,25 @@ def uglify_js_string(js_string: str) -> str:
 
 
 ################################################################################
+# uglify_js_producer
 #
+# Creates a producer that minifies a javascript file.
 ################################################################################
 def uglify_js_producer(input_file: str, output_file: str, categories: List[str]) -> Producer[SingleFile, SingleFile]:
     return Producer(
         input_path_patterns={
-            "file": "^"+input_file+"$",
+            "file": "^" + input_file + "$",
         },
         paths=uglify_paths,
         function=uglify_copyfile,
-        categories= categories + ["minifyjs"]
+        categories=categories + ["minifyjs"]
     )
 
 
 ################################################################################
+# uglify_paths
 #
+# The input output path generation function for the the uglify_js producer.
 ################################################################################
 def uglify_paths(input_files: SingleFile, categories: Dict[str, str]) -> Tuple[SingleFile, SingleFile]:
     return (

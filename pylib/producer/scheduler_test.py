@@ -26,9 +26,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             data_file: str
             value_file: str
             global_config: str
+
         class OutputFileDatatype(TypedDict):
             data_file: str
-
 
         def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
             return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
@@ -51,7 +51,8 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             producer_list=[producer],
             initial_filepaths=[],
         )
-        scheduler.build_new_creators([
+        scheduler.build_new_creators(
+            [
                 'data_one.txt',
                 'data_two.txt',
                 'value_one.txt',
@@ -90,7 +91,6 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             ]
         )
 
-
     ############################################################################
     # test_array_search
     #
@@ -114,7 +114,6 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
         def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
             return  # pragma: no cover
 
-
         producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
             input_path_patterns={
                 "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
@@ -129,7 +128,8 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             producer_list=[producer],
             initial_filepaths=[],
         )
-        scheduler.build_new_creators([
+        scheduler.build_new_creators(
+            [
                 'data_one.txt',
                 'data_two.txt',
                 'partial_one_1.txt',
@@ -185,9 +185,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             data_file: str
             value_file: str
             source_file: str
+
         class OutputFileDatatype(TypedDict):
             data_file: str
-
 
         def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
             input_files["source_file"] += "_extention_on_blank"
@@ -211,7 +211,8 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             producer_list=[producer],
             initial_filepaths=[],
         )
-        scheduler.build_new_creators([
+        scheduler.build_new_creators(
+            [
                 'data_one.txt',
                 'data_two.txt',
                 'value_one.txt',
@@ -249,7 +250,6 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             ]
         )
 
-
     ############################################################################
     # test_empty_field_array
     #
@@ -264,9 +264,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             data_file: str
             value_file: str
             source_files: List[str]
+
         class OutputFileDatatype(TypedDict):
             data_file: str
-
 
         def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
             input_files["source_files"].append("extention")
@@ -293,7 +293,8 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             producer_list=[producer],
             initial_filepaths=[],
         )
-        scheduler.build_new_creators([
+        scheduler.build_new_creators(
+            [
                 'data_one.txt',
                 'data_two.txt',
                 'value_one.txt',
@@ -308,7 +309,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
-                        "source_files": ["extention","on","blank"],
+                        "source_files": ["extention", "on", "blank"],
                     },
                     output_paths={
                         "data_file": "output_one.txt"
@@ -344,9 +345,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             data_file: str
             value_file: str
             global_config: str
+
         class OutputFileDatatype(TypedDict):
             data_file: str
-
 
         def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
             return (input_files, {"data_file": "output_" + groups["title"] + "_" + input_files["global_config"]})
@@ -369,7 +370,8 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             producer_list=[producer],
             initial_filepaths=[],
         )
-        scheduler.build_new_creators([
+        scheduler.build_new_creators(
+            [
                 'data_one.txt',
                 'data_two.txt',
                 'value_one.txt',
@@ -433,7 +435,6 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             ]
         )
 
-
     ############################################################################
     # test_multiple_match_groups
     #
@@ -446,9 +447,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             data_file: str
             value_file: str
             global_config: str
+
         class OutputFileDatatype(TypedDict):
             data_file: str
-
 
         def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
             return (input_files, {"data_file": "output_" + groups["title"] + "_" + groups["language"] + ".txt"})
@@ -471,7 +472,8 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             producer_list=[producer],
             initial_filepaths=[],
         )
-        scheduler.build_new_creators([
+        scheduler.build_new_creators(
+            [
                 'data_one.txt',
                 'data_two.txt',
                 'value_one_german.txt',
@@ -565,7 +567,6 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
         def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
             return  # pragma: no cover
 
-
         producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
             input_path_patterns={
                 "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
@@ -580,7 +581,8 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             producer_list=[producer],
             initial_filepaths=[],
         )
-        scheduler.build_new_creators([
+        scheduler.build_new_creators(
+            [
                 'data_one.txt',
                 'data_two.txt',
                 'partial_one_1.txt',
@@ -632,9 +634,9 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
 
         class InputFileDatatype(TypedDict):
             data_file: str
+
         class OutputFileDatatype(TypedDict):
             data_file: str
-
 
         def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
             return (input_files, {"data_file": "output_" + input_files["data_file"]})
@@ -655,7 +657,8 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             producer_list=[producer],
             initial_filepaths=[],
         )
-        scheduler.build_new_creators([
+        scheduler.build_new_creators(
+            [
                 'data_one.txt',
                 'data_two.txt',
             ]

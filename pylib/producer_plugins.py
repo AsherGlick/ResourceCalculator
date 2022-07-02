@@ -3,7 +3,12 @@ from typing import List, Tuple, Dict
 import os
 
 
-
+################################################################################
+# plugins_producers
+#
+# Creates the producers for copying plugin files from their source directories
+# to the output directories.
+################################################################################
 def plugins_producers() -> List[GenericProducer]:
     return [
         Producer(
@@ -17,10 +22,16 @@ def plugins_producers() -> List[GenericProducer]:
     ]
 
 
-def plugins_paths(input_files: SingleFile, categories: Dict[str,str]) -> Tuple[SingleFile, SingleFile]:
+################################################################################
+# plugin_paths
+#
+# The input and output paths generation function for copying plugin files from
+# thier source directories to the output directories.
+################################################################################
+def plugins_paths(input_files: SingleFile, categories: Dict[str, str]) -> Tuple[SingleFile, SingleFile]:
     return (
         input_files,
         {
-            "file": os.path.join("output",os.path.relpath(input_files["file"], "resource_lists")),
+            "file": os.path.join("output", os.path.relpath(input_files["file"], "resource_lists")),
         }
     )

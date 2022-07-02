@@ -8,9 +8,11 @@ from .scheduler import Scheduler
 class SingleFile(TypedDict):
     file: str
 
+
 # Convenience Class for anything with a single group of input or output files
 class MultiFile(TypedDict):
     files: List[str]
+
 
 # Convenience function for situations where all that needs to be done is to
 # copy a single input to a single output
@@ -20,6 +22,7 @@ def producer_copyfile(input_files: SingleFile, output_files: SingleFile) -> None
 
     # Copy the file
     shutil.copyfile(input_file, output_file)
+
 
 __all__ = [
     "Producer",

@@ -1,17 +1,24 @@
-from typing import List, Callable, Any, Optional, Union, Set, Tuple, TypeVar, Generic, Dict, TypedDict
 from dataclasses import dataclass
+from typing import List, Callable, Any, Union, Set, Tuple, TypeVar, Generic, Dict, TypedDict
 import re
 import sqlite3
 
- # TODO: mypy does not like this while pyright says it is ok
-InputFileDatatype = TypeVar("InputFileDatatype", bound=TypedDict) # type:ignore
 # TODO: mypy does not like this while pyright says it is ok
-OutputFileDatatype = TypeVar("OutputFileDatatype", bound=TypedDict) # type:ignore
+InputFileDatatype = TypeVar("InputFileDatatype", bound=TypedDict)  # type:ignore
+# TODO: mypy does not like this while pyright says it is ok
+OutputFileDatatype = TypeVar("OutputFileDatatype", bound=TypedDict)  # type:ignore
 
+
+################################################################################
+# Producer
+#
+# An object that represents a set of rules for generating an ouput file from
+# one or more input files.
+################################################################################
 @dataclass(init=False)
 class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
     # A list of file regex matches. If a file is changed that matches one of
-    # these regex matches then this producer will trigger 
+    # these regex matches then this producer will trigger.
     _input_path_patterns: InputFileDatatype
 
     # A function that takes in the matching input pattern and generates a set
@@ -35,8 +42,7 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
     # self_watcher_function: Optional[Callable[[], Any]]
 
     # To take advantage of hot retriggering of some expensive-to-start javascript commands like tsc
-    # self_watch_function: Optional[Callable[], Any]ff
-
+    # self_watch_function: Optional[Callable[], Any]
 
     # A map of pre-compiled regexes that map to the InputFileDatatype keys
     # Python apparently cannot handle Dict[str, List[re.Pattern[str]]] here
@@ -71,10 +77,9 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
         self._regex_group_to_index: Dict[str, int] = {}
         all_regex_groups: Set[str] = set()
 
-
         # Preprocess all the regex data
         # mypy yells at using .items() on a typed dict even though it is a dict
-        for field_name, field_pattern in input_path_patterns.items(): # type:ignore
+        for field_name, field_pattern in input_path_patterns.items():  # type:ignore
             field_regex: re.Pattern[str]
 
             if isinstance(field_pattern, str):
@@ -92,7 +97,7 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
                 raise TypeError("InputFileDatatype must be a dict of only str or List[str]. Found an element of type " + str(type(field_pattern)))
 
             # Save a cache of the compiled regexes for easier access.
-            self._compiled_regexes[field_name] =  field_regex
+            self._compiled_regexes[field_name] = field_regex
 
             # Save the list of different regex groups to join on for this key.
             field_regex_groups: Set[str] = set()
@@ -107,16 +112,33 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
         for group_index, group_name in enumerate(sorted(list(all_regex_groups))):
             self._regex_group_to_index[group_name] = group_index
 
-
+    ############################################################################
+    # regex_field_patterns
+    #
+    # A helper function to return the dict cache of compiled regexess that this
+    # producer uses.
+    ############################################################################
     def regex_field_patterns(self) -> Dict[str, "re.Pattern[str]"]:
         return self._compiled_regexes
 
-
+    ############################################################################
+    # get_field_table_name
+    #
+    # A helper function to produce the name of the table that stores matches
+    # for a particular field.
+    # TODO: The SQL logic should somehow be moved to scheduler.py
+    ############################################################################
     @staticmethod
     def get_field_table_name(producer_index: int, field_index: int) -> str:
         return "producer{producer_index}_field{field_index}_matches".format(producer_index=producer_index, field_index=field_index)
 
-
+    ############################################################################
+    # init_table_query
+    #
+    # Create a series of sql query strings that are used to create all of the
+    # tables for each field in this producer.
+    # TODO: The SQL logic should somehow be moved to scheduler.py
+    ############################################################################
     def init_table_query(self, producer_index: int) -> List[str]:
 
         query_strings: List[str] = []
@@ -125,7 +147,7 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
         # we should probably use best practices even though sql injection is not an issue here (yet)
 
         for field_name in self.regex_field_patterns():
-            
+
             field_index = self._field_to_index[field_name]
 
             table_columns: List[str] = ["filename TEXT"]
@@ -144,8 +166,14 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
 
         return query_strings
 
-
-    def query_filesets(self, db: sqlite3.Connection, producer_index: int) -> List[Tuple[InputFileDatatype, Dict[str,str]]]:
+    ############################################################################
+    # query_filesets
+    #
+    # Query all of the valid combinations of files that can be used for this
+    # producer using the field matches that have been stored in the database.
+    # TODO: The SQL logic should somehow be moved to scheduler.py
+    ############################################################################
+    def query_filesets(self, db: sqlite3.Connection, producer_index: int) -> List[Tuple[InputFileDatatype, Dict[str, str]]]:
         # A list of fields to SELECT from. These should corrispond exactly to
         # every non-empty field in the InputFieldDatatype.
         fields: List[str] = []
@@ -169,7 +197,7 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
         field_groups: Dict[str, List[str]] = {}
 
         # mypy complains about iterating over a typeddict even though it is a dict
-        for field_name, field in self._input_path_patterns.items(): # type: ignore
+        for field_name, field in self._input_path_patterns.items():  # type: ignore
             if field == "":
                 continue
             elif field == []:
@@ -182,7 +210,7 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
 
             if isinstance(field, str):
                 singleton_fields.append(table_name + ".filename")
-                fields.append(table_name+".filename")
+                fields.append(table_name + ".filename")
 
             # If the field is a list then we want to grab each file and put it into a list
             # this is done by using
@@ -198,7 +226,6 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
                     field_groups[field_group] = []
 
                 field_groups[field_group].append(table_name)
-
 
         field_joins: List[str] = []
         for field_group, group_tables in field_groups.items():
@@ -230,49 +257,46 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
             singleton_fields=", ".join(singleton_fields)
         )
 
-        # print(query_string)
-        output_data: List[Tuple[InputFileDatatype, Dict[str,str]]] = []
+        output_data: List[Tuple[InputFileDatatype, Dict[str, str]]] = []
         with db:
             cur = db.execute(
                 query_string,
             )
 
-
             for row in cur.fetchall():
 
-                new_element: InputFileDatatype = {} # type:ignore
+                new_element: InputFileDatatype = {}  # type:ignore
                 groups: Dict[str, str] = {}
 
-                for new_element_field, pattern in self._input_path_patterns.items(): # type: ignore
+                for new_element_field, pattern in self._input_path_patterns.items():  # type: ignore
                     if pattern == "":
-                        new_element[new_element_field] = "" # type:ignore
+                        new_element[new_element_field] = ""  # type:ignore
                         continue
                     elif pattern == []:
-                        new_element[new_element_field] = [] # type:ignore
+                        new_element[new_element_field] = []  # type:ignore
                         continue
 
-                    value:str = row[field_query_index[new_element_field]]                    
+                    value: str = row[field_query_index[new_element_field]]
                     if isinstance(pattern, str):
-                        new_element[new_element_field] = value # type:ignore
+                        new_element[new_element_field] = value  # type:ignore
                     elif isinstance(pattern, list):
-                        new_element[new_element_field] = sorted(parse_comma_escape(value)) # type:ignore
+                        new_element[new_element_field] = sorted(parse_comma_escape(value))  # type:ignore
                     else:
                         raise TypeError()
 
                 for group in group_query_index:
                     groups[group] = row[group_query_index[group]]
 
-
                 output_data.append((new_element, groups))
 
-
         return output_data
-
 
     ############################################################################
     # insert
     #
-    # Insert a file for this producer into the database
+    # Insert a file that has matched a field for this producer into the
+    # database table for that field.
+    # TODO: The SQL logic should somehow be moved to scheduler.py
     ############################################################################
     def insert(
         self,
@@ -283,20 +307,18 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
         groups: Dict[str, str]
     ) -> None:
         field_index = self._field_to_index[field_name]
-        
+
         table = Producer.get_field_table_name(producer_index=producer_index, field_index=field_index)
 
-        fields = ["filename"] + [ "group_{}".format(self._regex_group_to_index[x]) for x in groups.keys() ]
+        fields = ["filename"] + ["group_{}".format(self._regex_group_to_index[x]) for x in groups.keys()]
 
         binds = [filename] + list(groups.values())
 
         query_string: str = "INSERT INTO {table} ({fields}) VALUES ({value_binds})".format(
-                table=table,
-                fields=", ".join(fields),
-                value_binds=", ".join("?" * len(fields))
-            )
-
-        # print(query_string, binds)
+            table=table,
+            fields=", ".join(fields),
+            value_binds=", ".join("?" * len(fields))
+        )
 
         with db:
             db.execute(
@@ -305,7 +327,14 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
             )
 
 
-
+################################################################################
+# parse_comma_escape
+#
+# Parses the escaped comma string returned from the SQL query back into an
+# array. The query escapes all backslashes and commas, then uses a comma to
+# delimite each element in the array.
+# TODO: The SQL logic should somehow be moved to scheduler.py
+################################################################################
 def parse_comma_escape(input_string: str) -> List[str]:
     output_strings: List[str] = [""]
     last_character: str = ""
@@ -320,6 +349,7 @@ def parse_comma_escape(input_string: str) -> List[str]:
         last_character = character
 
     return output_strings
+
 
 # Convenience type to get around making lists of Producers with different
 # arguments.

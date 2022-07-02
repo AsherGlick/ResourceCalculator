@@ -1,11 +1,17 @@
-from pylib.producer import Producer, SingleFile, producer_copyfile, GenericProducer
-from typing import List, Dict, Tuple, TypedDict
-import re
-import os
-import json
 from jinja2 import Environment, FileSystemLoader
+from typing import List, Dict, Tuple, TypedDict
+import json
+import os
+
+from pylib.producer import Producer, SingleFile, producer_copyfile, GenericProducer
 
 
+################################################################################
+# landing_page_producers
+#
+# Creates producers for generating the landing page and copying the icons that
+# are used on the landing page.
+################################################################################
 def landing_page_producers() -> List[GenericProducer]:
     return [
         Producer(
@@ -29,7 +35,12 @@ def landing_page_producers() -> List[GenericProducer]:
     ]
 
 
-
+################################################################################
+# logo_copy_paths
+#
+# The input and output paths generation function for copying icon files into the
+# output directory.
+################################################################################
 def logo_copy_paths(input_files: SingleFile, categories: Dict[str, str]) -> Tuple[SingleFile, SingleFile]:
     calculator_name = categories["calculator_dir"]
     return (
@@ -39,11 +50,23 @@ def logo_copy_paths(input_files: SingleFile, categories: Dict[str, str]) -> Tupl
         }
     )
 
+
+################################################################################
+# LandingPageInputTypes
+#
+# A TypedDict representing the input files structure for the producer that
+# creates the landing page.
+################################################################################
 class LandingPageInputTypes(TypedDict):
     files: List[str]
     template: str
 
 
+################################################################################
+# landing_page_paths
+#
+# The input and output paths generation function for creating a landing page.
+################################################################################
 def landing_page_paths(input_files: LandingPageInputTypes, categories: Dict[str, str]) -> Tuple[LandingPageInputTypes, SingleFile]:
     return (
         input_files,
@@ -52,20 +75,14 @@ def landing_page_paths(input_files: LandingPageInputTypes, categories: Dict[str,
         }
     )
 
+
+################################################################################
+# landing_page_function
+#
+# The function that generates the landing page output file that links to each
+# of the calculator pages.
+################################################################################
 def landing_page_function(input_paths: LandingPageInputTypes, output_paths: SingleFile) -> None:
-    print("LANDING PAGE")
-    pass
-
-
-
-# ################################################################################
-# # create_index_page
-# #
-# # This function creates an index page with all of the calculator links
-# ################################################################################
-# def create_index_page(directories: List[str]) -> None:
-    # for directory in directories:
-    #     shutil.copyfile("resource_lists/" + directory + "/icon.png", "output/" + directory + "/icon.png")
 
     # Configure and begin the jinja2 template parsing
     env = Environment(loader=FileSystemLoader('core'))

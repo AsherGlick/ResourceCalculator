@@ -1,16 +1,23 @@
-import htmlmin  # type: ignore
-from pylib.producer import Producer, SingleFile, GenericProducer
-from typing import List, Tuple, OrderedDict, Dict, TypedDict, Tuple
-import re
-import os
-from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, get_primitive
 from jinja2 import Environment, FileSystemLoader
+from typing import List, Tuple, OrderedDict, Dict, TypedDict
+import htmlmin  # type: ignore
 import json
-from pylib.uglifyjs import uglify_js_string
-from pylib.json_data_compressor import mini_js_data
-from pylib.webminify import minify_css_blocks
+import os
 import pickle
+import re
 
+from pylib.json_data_compressor import mini_js_data
+from pylib.producer import Producer, SingleFile, GenericProducer
+from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, get_primitive
+from pylib.uglifyjs import uglify_js_string
+from pylib.webminify import minify_css_blocks
+
+
+################################################################################
+# calculator_producer
+#
+# Creates producers for generating the calculator pages.
+################################################################################
 def calculator_producers() -> List[GenericProducer]:
     return [
         Producer(
@@ -27,13 +34,24 @@ def calculator_producers() -> List[GenericProducer]:
     ]
 
 
+################################################################################
+# CalculatorInputFiles
+#
+# A TypedDict representing the input files structure for the producer that
+# creates the calculator pages.
+################################################################################
 class CalculatorInputFiles(TypedDict):
     resources_pickle: str
     image_layout_json: str
     calculator_template: str
 
 
-def calculator_paths(input_files:CalculatorInputFiles, categories: Dict[str, str]) -> Tuple[CalculatorInputFiles, SingleFile]:
+################################################################################
+# calculator_paths
+#
+# The input and output paths generation function for creating calculator pages.
+################################################################################
+def calculator_paths(input_files: CalculatorInputFiles, categories: Dict[str, str]) -> Tuple[CalculatorInputFiles, SingleFile]:
     calculator_page = categories["calculator_dir"]
     calculator_index_page = os.path.join("output", calculator_page, "index.html")
 
@@ -45,27 +63,23 @@ def calculator_paths(input_files:CalculatorInputFiles, categories: Dict[str, str
     )
 
 
-# ################################################################################
-# # create_calculator_page
-# #
-# # This function takes in a the name of a calculator resource list and creates
-# # the html page and resource for it. If no files have been changed for the
-# # calculator since the last time it was created then the creation will be skipped
-# ################################################################################
+################################################################################
+# calculator_function
+#
+# This function takes in a the input and output paths for the calculator
+# producer and writes the html page and resource for it to the output file.
+################################################################################
 def calculator_function(input_files: CalculatorInputFiles, output_files: SingleFile) -> None:
 
-    resource_list_file = input_files["resources_pickle"] # os.path.join("cache", calculator_name, "resources.pickle")
-    image_metadata_file = input_files["image_layout_json"] #os.path.join("cache", calculator_name, "packed_image_layout.json")
+    resource_list_file = input_files["resources_pickle"]
+    image_metadata_file = input_files["image_layout_json"]
 
     match = re.match(r"^cache/([a-z ]+)/resources.pickle$", resource_list_file)
     if match is None:
         raise ValueError
     calculator_name = match.group(1)
 
-
     calculator_index_html_filepath = output_files["file"]
-
-    # print("Generating", calculator_name, "into", calculator_index_html_filepath)
 
     with open(image_metadata_file) as f:
         image_metadata = json.load(f)
@@ -138,7 +152,6 @@ def calculator_function(input_files: CalculatorInputFiles, output_files: SingleF
             print("WARNING:", simple_name, "has an image but no recipe and will not appear in the calculator")
 
 
-
 # TODO: Move to shared library to be used in other places?
 ################################################################################
 # get_simple_name checks if a simple name override has been set for the
@@ -154,6 +167,10 @@ def get_simple_name(resource: str, resources: OrderedDict[str, Resource]) -> str
 
 ################################################################################
 # generate_recipe_type_format_js
+#
+# TODO: Investigate this function, it did not originally have a descriptive
+# comment and now the following Example Output might not be accurate to the
+# function.
 #
 # Example output:
 #
@@ -206,7 +223,7 @@ def generate_recipe_type_format_js(recipe_types: OrderedDict[str, str]) -> str:
                     tokenized_inputs.append(tokenized_item_name)
                     # TODO: some linting here can be done to make sure that all recipe_types that have this tokenized item have the item
                 else:
-                    print("UNKNOWN IDENTIFIER IN FORMAT STRING", chunk)  # TODO makethis error message better
+                    print("UNKNOWN IDENTIFIER IN FORMAT STRING", chunk)  # TODO make this error message better
 
             else:
                 input_chunks.append({"type": "text", "text": chunk})
@@ -224,8 +241,12 @@ def generate_recipe_type_format_js(recipe_types: OrderedDict[str, str]) -> str:
 
     return template.render(recipe_type_format_functions=recipe_type_format_functions)
 
+
 ################################################################################
+# get_recipes_only
 #
+# Takes in a complete resources list and returns a mapping of each item to only
+# the recipes that item has, stripping out all other information.
 ################################################################################
 def get_recipes_only(resources: OrderedDict[str, Resource]) -> Dict[str, List[Recipe]]:
     return {resource: resources[resource].recipes for resource in resources}
@@ -234,7 +255,8 @@ def get_recipes_only(resources: OrderedDict[str, Resource]) -> Dict[str, List[Re
 ################################################################################
 # generate_resource_html_data
 #
-#
+# Extracts a list of dicts containing information about each item that should
+# be displayed to the user.
 ################################################################################
 def generate_resource_html_data(resources: OrderedDict[str, Resource]) -> List[Dict[str, str]]:
     resources_html_data = []
@@ -250,7 +272,8 @@ def generate_resource_html_data(resources: OrderedDict[str, Resource]) -> List[D
 ################################################################################
 # generate_resource_offset_classes
 #
-#
+# Creates the CSS required to properly display images contained in the packed
+# image.
 ################################################################################
 def generate_resource_offset_classes(resources: OrderedDict[str, Resource], resource_image_coordinates: Dict[str, Tuple[int, int]]) -> Dict[str, str]:
     item_styles: Dict[str, str] = {}
@@ -266,6 +289,14 @@ def generate_resource_offset_classes(resources: OrderedDict[str, Resource], reso
 
     return item_styles
 
+
+################################################################################
+# generate_content_width_css
+#
+# Generates a series of content widths for the items to allow for the items to
+# be centered on screen and to allow for more precise line wrapping if the
+# row_group_count value is specified.
+################################################################################
 def generate_content_width_css(image_width: int, resource_list: ResourceList) -> str:
     content_width_css = ""
     media_padding = 40  # This give a slight padding from the edges, useful for avoiding intersection with scroll bars
@@ -299,8 +330,12 @@ def generate_content_width_css(image_width: int, resource_list: ResourceList) ->
 
     return content_width_css
 
+
 ################################################################################
+# merge_custom_multipliers
 #
+# Takes the custom stack sizes found attached to each item and merges them into
+# the stack size information so it can be displayed more easily.
 ################################################################################
 def merge_custom_multipliers(stack_sizes: OrderedDict[str, StackSize], resources: OrderedDict[str, Resource]) -> OrderedDict[str, StackSize]:
     for resource in resources:

@@ -1,14 +1,21 @@
-from pylib.producer import Producer, MultiFile
+from typing import List, Tuple, TypedDict, Dict
 import json
 import os
 import subprocess
-from typing import List, Tuple, Callable, TypedDict, Dict
-import re
+
+from pylib.producer import Producer, MultiFile
 
 
+################################################################################
+# TypescriptInputFiles
+#
+# A TypedDict representing the input files structure for the producer that
+# creates compiled javascript from typescript.
+################################################################################
 class TypescriptInputFiles(TypedDict):
     inputs: List[str]
     tsconfig_file: str
+
 
 ################################################################################
 # typescript_producer
@@ -31,10 +38,17 @@ def typescript_producer(
     )
 
 
+################################################################################
+# typescript_resource_paths
+#
+# The input and output paths generation function for creating compiled
+# typescript files. Uses the configuration file to determine what the input and
+# output files will be.
+################################################################################
 def typescript_resource_paths(input_files: TypescriptInputFiles, groups: Dict[str, str]) -> Tuple[TypescriptInputFiles, MultiFile]:
     tsconfig_path = input_files["tsconfig_file"]
     input_folder = os.path.dirname(tsconfig_path)
-    
+
     # Get the list of files and the typescript output directory
     with open(tsconfig_path) as f:
         tsconfig = json.load(f)
@@ -59,50 +73,21 @@ def typescript_resource_paths(input_files: TypescriptInputFiles, groups: Dict[st
         output_paths.append(output_path)
         input_paths.append(input_path)
 
-
-    return ({
+    return (
+        {
             "inputs": input_paths,
             "tsconfig_file": tsconfig_path
-        },{
+        }, {
             "files": output_paths
-        })
-    
-# def producer_copyfile(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-
-
-
-
-def output_files(input_path: str, match: "re.Match[str]") -> List[str]:
-    tsconfig_path = os.path.join(input_path, "tsconfig.json")
-
-    # Get the list of files and the typescript output directory
-    with open(tsconfig_path) as f:
-        tsconfig = json.load(f)
-
-    files: List[str] = tsconfig["files"]
-    output_directory: str = tsconfig["compilerOptions"]["outDir"]
-
-
-    output_paths = []
-
-    for file in files:
-
-        output_path = os.path.normpath(os.path.join(input_path, output_directory, file))
-
-        if output_path.endswith(".ts"):
-            output_path = output_path[:-3] + ".js"
-
-        input_path = os.path.join(input_path, file)
-
-        output_paths.append(output_path)
-
-    return output_paths
+        }
+    )
 
 
 ################################################################################
 # build_typescript
 #
-# Call the tsc 
+# Call the typescript compiler tsc to generate compiled typescript for the
+# files in the typescript project.
 ################################################################################
 def build_typescript(input_files: TypescriptInputFiles, output_files: MultiFile) -> None:
     tsconfig_file = input_files["tsconfig_file"]

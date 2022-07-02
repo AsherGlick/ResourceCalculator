@@ -1,18 +1,13 @@
-from typing import List, Callable, Any, Optional, Union, Set, Tuple, TypeVar, Generic, Dict
-from collections import deque
-from dataclasses import dataclass
-import heapq
-import re
+from typing import List, Callable, Any, Optional, Tuple, Dict
 import os
-import sys
-from typing import TypedDict
-
-from pylib.unique_heap import UniqueHeap
-import time
-import shutil
-from .producer import Producer, GenericProducer
-from .creator import Creator
+import re
 import sqlite3
+import sys
+import time
+
+from .producer import GenericProducer
+from .creator import Creator
+from pylib.unique_heap import UniqueHeap
 
 
 GenericCreator = Creator[Any, Any]
@@ -43,7 +38,6 @@ class Scheduler:
     # A map of input files to the creator index that consume them
     input_file_maps: Dict[str, List[int]]
 
-
     ############################################################################
     #
     ############################################################################
@@ -62,6 +56,14 @@ class Scheduler:
         self.filecache: sqlite3.Connection = self.init_producer_cache(self.producer_list)
         self.add_or_update_files(initial_filepaths)
 
+    ############################################################################
+    # init_producer_cache
+    #
+    # Create the cache database for storing all the files that match a producer
+    # field, and then initialize all of the tables in the database.
+    # TODO: Logic from producers using sql commands should be moved to this
+    # file instead.
+    ############################################################################
     def init_producer_cache(self, producer_list: List[GenericProducer]) -> sqlite3.Connection:
         db = sqlite3.connect(':memory:')
 
@@ -71,7 +73,6 @@ class Scheduler:
                     db.execute(init_query)
 
         return db
-
 
     ############################################################################
     # add_or_update_files
@@ -84,6 +85,12 @@ class Scheduler:
         self.build_new_creators(files)
         self.process_files(files)
 
+    ############################################################################
+    # build_new_creators
+    #
+    # Parse a series of files into all of the active producers and get a list
+    # of creators that those files would create.
+    ############################################################################
     def build_new_creators(self, files: List[str]) -> None:
         for producer_index, producer in enumerate(self.producer_list):
             for path in files:
@@ -100,7 +107,6 @@ class Scheduler:
             input_datas = producer.query_filesets(self.filecache, producer_index)
             for input_data in input_datas:
                 input_file, input_groups = input_data
-                # print(input_file, input_groups)
 
                 new_input_data, output_data = producer.paths(input_file, input_groups)
 
@@ -139,7 +145,6 @@ class Scheduler:
                 if is_duplicate_creator:
                     continue
 
-
                 self.last_creator_list_index += 1
                 self.creator_list[self.last_creator_list_index] = creator
                 self.creator_producer[self.last_creator_list_index] = producer_index
@@ -153,11 +158,10 @@ class Scheduler:
                 for file in creator.flat_output_paths():
                     self.output_file_maps[file] = self.last_creator_list_index
 
-
     ############################################################################
     # process_files
     #
-    #
+    # Process a list of files through all of the currently active creators.
     ############################################################################
     def process_files(self, files: List[str]) -> None:
         # Heap[Tuple[ProducerIndex, CreatorIndex]]
@@ -216,8 +220,6 @@ class Scheduler:
             duration = time.time() - start
             print("  Completed in {:.2f}".format(duration))
 
-
-
     ############################################################################
     # all_paths_in_dir
     #
@@ -237,7 +239,7 @@ class Scheduler:
             # Add all of the files and directories unless the path matches an ignore path
             for path in dirs + files:
                 full_path = os.path.join(root, path)
-                
+
                 skip = False
                 for ignore_path in ignore_paths:
                     if full_path.startswith(ignore_path):
@@ -249,7 +251,6 @@ class Scheduler:
                 paths.append(full_path)
 
         return paths
-
 
 
 ################################################################################
@@ -320,7 +321,7 @@ def get_aggregated_modified_time(
     default: float
 ) -> float:
     # Duplicate the paths list so we can modify it. This allows us to avoid
-    # recursion by just appending the values 
+    # recursion by just appending the values.
     paths = list(paths)
     time_list: List[float] = []
     for path in paths:

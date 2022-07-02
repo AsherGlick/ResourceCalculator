@@ -1,18 +1,20 @@
-import shutil
-import subprocess
-from pylib.producer import Producer, SingleFile, GenericProducer
-from typing import List, Dict, Tuple, TypedDict
-import re
-import os
-import math
+from typing import List, Dict, Tuple, TypedDict, OrderedDict, Set
 import json
-from PIL import Image  # type: ignore
-from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, TokenError, Token, get_primitive
-from pylib.yaml_token_load import ordered_load
+import os
 import pickle
-from typing import List, Tuple, OrderedDict, Dict, Set
+import re
+
+from pylib.producer import Producer, SingleFile, GenericProducer
+from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, TokenError, Token
+from pylib.yaml_token_load import ordered_load
 
 
+################################################################################
+# resource_list_parser_producers
+#
+# Creates the producers for parsing resource lists and checking it for errors
+# then outputing it as a python pickle file.
+################################################################################
 def resource_list_parser_producers() -> List[GenericProducer]:
     return [
         Producer(
@@ -26,10 +28,23 @@ def resource_list_parser_producers() -> List[GenericProducer]:
     ]
 
 
+################################################################################
+# ResourceListOutputFiles
+#
+# A TypedDict representing the output files structure for the producers that
+# create the pre-parsed resource list files.
+################################################################################
 class ResourceListOutputFiles(TypedDict):
     resource_cache: str
     page_metadata: str
 
+
+################################################################################
+# resource_list_paths
+#
+# The input and output paths generation function for the producers that create
+# pre-parsed and validated resource list files.
+################################################################################
 def resource_list_paths(input_files: SingleFile, categories: Dict[str, str]) -> Tuple[SingleFile, ResourceListOutputFiles]:
     calculator_page = categories["calculator_dir"]
 
@@ -44,7 +59,13 @@ def resource_list_paths(input_files: SingleFile, categories: Dict[str, str]) -> 
         }
     )
 
-# def resource_list_parser_function(input_file: str, match: re.Match, output_files: List[str]) -> None:
+
+################################################################################
+# resource_list_parser_function
+#
+# This function is called by the producers to parse an input resource list
+# and run all the validation on it.
+################################################################################
 def resource_list_parser_function(input_files: SingleFile, output_files: ResourceListOutputFiles) -> None:
     input_file = input_files["file"]
     resource_cache_path = output_files["resource_cache"]
@@ -95,10 +116,10 @@ def load_resource_list(filepath: str) -> Tuple[ResourceList, List[TokenError]]:
     return (resource_list, errors)
 
 
-
-
 ################################################################################
-# expand_raw_resource allow for the syntactic candy of only defining a a
+# expand_raw_resources
+#
+# expand_raw_resource allows for the syntactic candy of only defining a a
 # `recipe_type` value for raw resources and not having to define the entire
 # construct because it is a trivial construct.
 ################################################################################
@@ -111,9 +132,9 @@ def expand_raw_resource(resources: OrderedDict[str, Resource]) -> OrderedDict[st
     return resources
 
 
-
-
 ################################################################################
+# fill_default_requirement_groups
+#
 # fill_default_requirement_groups replaces any uses of a requirement group with
 # the first item within that requirement group. This is an interim solution
 # while the requirement group feature is separately fleshed out. It has been
@@ -135,9 +156,10 @@ def fill_default_requirement_groups(resources: OrderedDict[str, Resource], requi
     return resources
 
 
-
 ################################################################################
+# lint_resources
 #
+# Runs all of the linters used for resource objects in the recipe list.
 ################################################################################
 def lint_resources(
     resources: OrderedDict[str, Resource],
@@ -190,7 +212,10 @@ def lint_recipes(item_name: str, recipes: List[Recipe]) -> List[TokenError]:
 
 
 ################################################################################
+# lint_custom_stack_multipliers
 #
+# Lints that the definitions for custom stack multipliers all have proper
+# values and don't reference non existant parent stack sizes.
 ################################################################################
 def lint_custom_stack_multipliers(
     item_name: str,
@@ -203,15 +228,26 @@ def lint_custom_stack_multipliers(
 
         if stack_name not in stack_sizes:
             # TODO: Have a better token associated with this error
-            errors.append(TokenError("custom_stack_size \"" + stack_name + "\" for" + item_name + "is not a valid stack size. (" + ", ".join([x for x in stack_sizes]) + ")", Token()))
+            errors.append(TokenError(
+                "custom_stack_size \"{stack_name}\" for {item_name} is not a valid stack size. ({stack_sizes})".format(
+                    stack_name=stack_name,
+                    item_name=item_name,
+                    stack_sizes=", ".join([x for x in stack_sizes]),
+                ),
+                Token()
+            ))
 
         if custom_size < 1:
             # TODO: Have a better token associated with this error
-            errors.append(TokenError("custom_stack_size \"" + stack_name + "\" for" + item_name + "cannot be less than 1.", Token()))
+            errors.append(TokenError(
+                "custom_stack_size \"{stack_name}\" for {item_name} cannot be less than 1.".format(
+                    stack_name=stack_name,
+                    item_name=item_name
+                ),
+                Token()
+            ))
 
     return errors
-
-
 
 
 ################################################################################
@@ -234,7 +270,9 @@ def ensure_valid_requirements(resources: OrderedDict[str, Resource]) -> List[Tok
 
 
 ################################################################################
+# ensure_valid_recipe_types
 #
+# Validates that each defined recipe has a recipe type that exists.
 ################################################################################
 def ensure_valid_recipe_types(resources: OrderedDict[str, Resource], recipe_types: OrderedDict[str, str]) -> List[TokenError]:
     used_recipe_types: Set[str] = set()
@@ -261,7 +299,10 @@ def ensure_valid_recipe_types(resources: OrderedDict[str, Resource], recipe_type
 
 
 ################################################################################
+# ensure_unique_simple_names
 #
+# Validates that all the simple names are unique, otherwise there will be
+# multiple items that share an image and provide ambiguous lookups.
 ################################################################################
 def ensure_unique_simple_names(resources: OrderedDict[str, Resource]) -> List[TokenError]:
     errors: List[TokenError] = []

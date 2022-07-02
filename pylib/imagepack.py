@@ -1,19 +1,32 @@
+from PIL import Image  # type: ignore
+from typing import List, Dict, Tuple, TypedDict
+import json
+import math
+import os
+import re
 import shutil
 import subprocess
+
 from pylib.producer import Producer, MultiFile, SingleFile, GenericProducer
-from typing import List, Dict, Tuple, TypedDict
-import re
-import os
-import math
-import json
-from PIL import Image  # type: ignore
 
 
-
+################################################################################
+# ImagePackOutputFiles
+#
+# A TypedDict representing the output files structure for the producers that
+# create the packed image.
+################################################################################
 class ImagePackOutputFiles(TypedDict):
     image_file: str
     image_layout_file: str
 
+
+################################################################################
+# item_image_producers
+#
+# Creates the producers for packing images into a single file and the
+# producers that take that compressed file and compress it into the final image.
+################################################################################
 def item_image_producers() -> List[GenericProducer]:
     return [
         # Pack Image
@@ -38,7 +51,13 @@ def item_image_producers() -> List[GenericProducer]:
     ]
 
 
-def image_pack_paths(input_files: MultiFile, categories: Dict[str,str]) -> Tuple[MultiFile, ImagePackOutputFiles]:
+################################################################################
+# image_pack_paths
+#
+# The input and output paths generation function for packing images into a
+# single tiled image.
+################################################################################
+def image_pack_paths(input_files: MultiFile, categories: Dict[str, str]) -> Tuple[MultiFile, ImagePackOutputFiles]:
     calculator_page = categories["calculator_dir"]
 
     calculator_imagefile = os.path.join("cache", calculator_page, "packed_image.png")
@@ -53,15 +72,14 @@ def image_pack_paths(input_files: MultiFile, categories: Dict[str,str]) -> Tuple
     )
 
 
-# ################################################################################
-# # create_packed_image
-# #
-# # This function will take all the files within the resource_lists/[list]/items
-# # and create a single packed image of them. Then return the coordinates so that
-# # css can be written to load all of the images from the same file instead of
-# # making a large number of get requests for the file
-# ################################################################################
-# def create_packed_image(calculator_name: str) -> Tuple[int, int, Dict[str, Tuple[int, int]]]:
+################################################################################
+# image_pack_function
+#
+# This function will take all the files within the resource_lists/[list]/items
+# and create a single packed image of them. Then return the coordinates so that
+# css can be written to load all of the images from the same file instead of
+# making a large number of get requests for the file
+################################################################################
 def image_pack_function(input_files: MultiFile, output_files: ImagePackOutputFiles) -> None:
     output_image_path: str = output_files["image_file"]
     output_data_path: str = output_files["image_layout_file"]
@@ -124,7 +142,12 @@ def image_pack_function(input_files: MultiFile, output_files: ImagePackOutputFil
         }, f)
 
 
-
+################################################################################
+# image_compress_paths
+#
+# The input and output paths generation function for compressing image files
+# into the output directory.
+################################################################################
 def image_compress_paths(input_files: SingleFile, categories: Dict[str, str]) -> Tuple[SingleFile, SingleFile]:
     calculator_page = categories["calculator_dir"]
 
@@ -138,6 +161,12 @@ def image_compress_paths(input_files: SingleFile, categories: Dict[str, str]) ->
     )
 
 
+################################################################################
+# image_compress_function
+#
+# The function that generates a compressed png image given an input and
+# output file.
+################################################################################
 def image_compress_function(input_files: SingleFile, output_files: SingleFile) -> None:
     input_file = input_files["file"]
     output_file = output_files["file"]
@@ -152,6 +181,12 @@ def image_compress_function(input_files: SingleFile, output_files: SingleFile) -
         print("        ", e)
 
 
+################################################################################
+# image_copy_function
+#
+# The function used if image compression is skipped. Instead of compressing
+# a file it is instead just copied over to the destination.
+#################################################################################
 def image_copy_function(input_file: str, match: "re.Match[str]", output_files: List[str]) -> None:
     # Sanity check that there is only one output
     if len(output_files) != 1:
