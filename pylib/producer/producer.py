@@ -1,12 +1,14 @@
 from dataclasses import dataclass
-from typing import List, Callable, Any, Union, Set, Tuple, TypeVar, Generic, Dict, TypedDict
+from typing import List, Callable, Any, Union, Set, Tuple, TypeVar, Generic, Dict, TypedDict, Iterable
 import re
 import sqlite3
 
-# TODO: mypy does not like this while pyright says it is ok
-InputFileDatatype = TypeVar("InputFileDatatype", bound=TypedDict)  # type:ignore
-# TODO: mypy does not like this while pyright says it is ok
-OutputFileDatatype = TypeVar("OutputFileDatatype", bound=TypedDict)  # type:ignore
+# TODO: mypy does not like bound=TypedDict while pyright says it is ok
+# InputFileDatatype = TypeVar("InputFileDatatype", bound="TypedDict")
+InputFileDatatype = TypeVar("InputFileDatatype", bound=Iterable[Any])
+# TODO: mypy does not like bound=TypedDict while pyright says it is ok
+# OutputFileDatatype = TypeVar("OutputFileDatatype", bound="TypedDict")
+OutputFileDatatype = TypeVar("OutputFileDatatype", bound=Iterable[Any])
 
 
 ################################################################################
