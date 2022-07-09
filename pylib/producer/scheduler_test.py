@@ -11,7 +11,7 @@ from .scheduler import Scheduler
 # to support working directory inputs instead of using the current working
 # directory as the base dir.
 
-class Test_Basic_Creator_Generation(unittest.TestCase):
+class Integration_Tests(unittest.TestCase):
     maxDiff = 999999
 
     ############################################################################
@@ -52,7 +52,7 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
             initial_filepaths=[],
         )
         scheduler.build_new_creators(
-            [
+            files=[
                 'data_one.txt',
                 'data_two.txt',
                 'value_one.txt',
@@ -689,3 +689,323 @@ class Test_Basic_Creator_Generation(unittest.TestCase):
                 )
             ]
         )
+
+    def test_file_addition_to_existing_set(self) -> None:
+        class InputFileDatatype(TypedDict):
+            data_file: str
+            value_file: str
+            global_config: str
+
+        class OutputFileDatatype(TypedDict):
+            data_file: str
+
+        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
+            return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
+
+        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
+            return None  # pragma: no cover
+
+        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+            input_path_patterns={
+                "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
+                "value_file": r"value_(?P<title>[a-z]+)\.txt$",
+                "global_config": r"^global_configs?\.txt$",
+            },
+            paths=paths,
+            function=function,
+            categories=["test"],
+        )
+
+        scheduler = Scheduler(
+            producer_list=[producer],
+            initial_filepaths=[],
+        )
+        scheduler.build_new_creators(
+            [
+                'data_one.txt',
+                'value_one.txt',
+                'value_two.txt',
+                'global_config.txt',
+            ]
+        )
+
+        self.assertCountEqual(
+            scheduler.creator_list.values(),
+            [
+                Creator(
+                    input_paths={
+                        "data_file": "data_one.txt",
+                        "value_file": "value_one.txt",
+                        "global_config": "global_config.txt",
+                    },
+                    output_paths={
+                        "data_file": "output_one.txt"
+                    },
+                    function=function,
+                    categories=["test"]
+                ),
+            ]
+        )
+
+        scheduler.build_new_creators(
+            [
+                'data_two.txt',
+            ]
+        )
+
+        self.assertCountEqual(
+            scheduler.creator_list.values(),
+            [
+                Creator(
+                    input_paths={
+                        "data_file": "data_one.txt",
+                        "value_file": "value_one.txt",
+                        "global_config": "global_config.txt",
+                    },
+                    output_paths={
+                        "data_file": "output_one.txt"
+                    },
+                    function=function,
+                    categories=["test"]
+                ),
+                Creator(
+                    input_paths={
+                        'data_file': 'data_two.txt',
+                        'value_file': 'value_two.txt',
+                        'global_config': 'global_config.txt'
+                    },
+                    output_paths={
+                        'data_file': 'output_two.txt'
+                    },
+                    function=function,
+                    categories=['test']
+                )
+            ]
+        )
+
+
+    def test_double_file_addition(self) -> None:
+        class InputFileDatatype(TypedDict):
+            data_file: str
+            value_file: str
+            global_config: str
+
+        class OutputFileDatatype(TypedDict):
+            data_file: str
+
+        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
+            return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
+
+        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
+            return None  # pragma: no cover
+
+        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+            input_path_patterns={
+                "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
+                "value_file": r"value_(?P<title>[a-z]+)\.txt$",
+                "global_config": r"^global_configs?\.txt$",
+            },
+            paths=paths,
+            function=function,
+            categories=["test"],
+        )
+
+        scheduler = Scheduler(
+            producer_list=[producer],
+            initial_filepaths=[],
+        )
+        scheduler.build_new_creators(
+            [
+                'data_one.txt',
+                'data_two.txt',
+                'value_one.txt',
+                'value_two.txt',
+                'global_config.txt',
+            ]
+        )
+        scheduler.build_new_creators(
+            [
+                'data_one.txt',
+            ]
+        )
+
+        self.assertCountEqual(
+            scheduler.creator_list.values(),
+            [
+                Creator(
+                    input_paths={
+                        "data_file": "data_one.txt",
+                        "value_file": "value_one.txt",
+                        "global_config": "global_config.txt",
+                    },
+                    output_paths={
+                        "data_file": "output_one.txt"
+                    },
+                    function=function,
+                    categories=["test"]
+                ),
+                Creator(
+                    input_paths={
+                        'data_file': 'data_two.txt',
+                        'value_file': 'value_two.txt',
+                        'global_config': 'global_config.txt'
+                    },
+                    output_paths={
+                        'data_file': 'output_two.txt'
+                    },
+                    function=function,
+                    categories=['test']
+                )
+            ]
+        )
+
+
+    def test_file_deletion(self) -> None:
+        class InputFileDatatype(TypedDict):
+            data_file: str
+            value_file: str
+            global_config: str
+
+        class OutputFileDatatype(TypedDict):
+            data_file: str
+
+        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
+            return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
+
+        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
+            return None  # pragma: no cover
+
+        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+            input_path_patterns={
+                "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
+                "value_file": r"value_(?P<title>[a-z]+)\.txt$",
+                "global_config": r"^global_configs?\.txt$",
+            },
+            paths=paths,
+            function=function,
+            categories=["test"],
+        )
+
+        scheduler = Scheduler(
+            producer_list=[producer],
+            initial_filepaths=[],
+        )
+        scheduler.build_new_creators(
+            [
+                'data_one.txt',
+                'data_two.txt',
+                'value_one.txt',
+                'value_two.txt',
+                'global_config.txt',
+            ]
+        )
+        scheduler.delete_files(
+            [
+                'data_two.txt',
+                'value_two.txt',
+            ]
+        )
+
+        # Force a rebuild of the creators to be sure that deleting the files
+        # did not just delete the creators from the list and leave the files
+        scheduler.build_new_creators(
+            [
+            'global_config.txt'
+            ]
+        )
+
+        self.assertCountEqual(
+            scheduler.creator_list.values(),
+            [
+                Creator(
+                    input_paths={
+                        "data_file": "data_one.txt",
+                        "value_file": "value_one.txt",
+                        "global_config": "global_config.txt",
+                    },
+                    output_paths={
+                        "data_file": "output_one.txt"
+                    },
+                    function=function,
+                    categories=["test"]
+                ),
+            ]
+        )
+
+    def test_new_file_in_group(self) -> None:
+        class InputFileDatatype(TypedDict):
+            data_file: str
+            value_files: List[str]
+
+        class OutputFileDatatype(TypedDict):
+            data_file: str
+
+        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
+            return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
+
+        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
+            return None  # pragma: no cover
+
+        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+            input_path_patterns={
+                "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
+                "value_files": [r"value_(?P<title>[a-z]+).*\.txt$"],
+            },
+            paths=paths,
+            function=function,
+            categories=["test"],
+        )
+
+        scheduler = Scheduler(
+            producer_list=[producer],
+            initial_filepaths=[],
+        )
+        scheduler.build_new_creators(
+            [
+                'data_one.txt',
+                'value_one_1.txt',
+                'value_one_2.txt',
+            ]
+        )
+
+        scheduler.build_new_creators(
+            [
+                'value_one_3.txt',
+            ]
+        )
+
+        self.assertCountEqual(
+            scheduler.creator_list.values(),
+            [
+                Creator(
+                    input_paths={
+                        "data_file": "data_one.txt",
+                        "value_files": ["value_one_1.txt", "value_one_2.txt", "value_one_3.txt"],
+                    },
+                    output_paths={
+                        "data_file": "output_one.txt"
+                    },
+                    function=function,
+                    categories=["test"]
+                ),
+            ]
+        )
+
+    # TODO: Add a test like test_new_file_in_group but where regex for the new
+    # file does not have a regex group in it
+
+    # TODO: Add a test where there is an array of files that dont have a group
+    # and they have to be placed into at least two different filesets
+
+
+class Initialization_Query_Tests(unittest.TestCase):
+    pass
+
+class Insert_Query_Tests(unittest.TestCase):
+    pass
+
+class Remove_Query_Tests(unittest.TestCase):
+    pass
+
+class Filesets_Query_Tests(unittest.TestCase):
+    pass
