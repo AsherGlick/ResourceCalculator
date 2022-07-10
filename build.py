@@ -1,6 +1,10 @@
 import argparse
 import os
 from typing import Dict, Tuple, List
+import time
+from watchdog.observers import Observer
+from watchdog.events import FileSystemEventHandler
+import queue
 
 from pylib.calculator_producer import calculator_producers
 from pylib.editor_producer import editor_producers
@@ -113,7 +117,7 @@ def main() -> None:
 
     parser.add_argument('limit_files', nargs='*', help="Speed up dev-builds by only building a specific set of one or more calculators")
 
-    # parser.add_argument('--watch', action='store_true', help="Watch source files and automatically rebuild when they change")
+    parser.add_argument('--watch', action='store_true', help="Watch source files and automatically rebuild when they change")
     # parser.add_argument('--draft', action='store_true', help="Enable all speed up flags for dev builds")
 
     # # parser.add_argument('--no-jslint', action='store_true', help="Speed up dev-builds by skipping linting javascript files")
@@ -177,7 +181,8 @@ def main() -> None:
     producers += plugins_producers(calculator_dir_regex)
     producers += gz_compressor_producers()
 
-    studio = Scheduler(
+
+    scheduler = Scheduler(
         producer_list=producers,
         initial_filepaths=Scheduler.all_paths_in_dir(
             base_dir=".",
@@ -186,24 +191,52 @@ def main() -> None:
     )
 
 
-    # build_producer_calls(producers, ["venv_docker", "venv", ".git", "node_modules"])
+    watch_directory = "."
 
-    # if args.watch:
-    #     # If the watch argument is given then poll for changes of the files
-    #     # polling is used instead of something like inotify because change
-    #     # events are not propagated for volumes being run on docker for
-    #     # windows. If ever a nicer solution for handling this appears this
-    #     # code can be changed to support it.
-    #     #
-    #     # NOTE: With this polling method there is a race condition that is
-    #     # possible to hit rather if saving frequently. If a file is
-    #     # updated during its generation, after it has been read but before
-    #     # the first file is written then it will not be detected in the
-    #     # next pass-through.
-    #     time.sleep(.5)
-    #     continue
-    # else:
-    #     break
+    if args.watch:
+        q = queue.Queue()
+
+        observer = Observer()
+
+        event_handler = Handler(q)
+        observer.schedule(event_handler, watch_directory, recursive = True)
+        observer.start()
+        try:
+            while True:
+                event_type, src_path = q.get(True)
+
+                # TODO: Use .get_nowait after a successful "get" so we can bundle
+                # anything in the queue together into a single operation to the
+                # scheduler objects, instead of sending each file one by one.
+
+                if event_type == 'created' or event_type == 'modified':
+                    scheduler.add_or_update_files([src_path])
+                elif event_type == 'deleted':
+                    scheduler.delete_files([src_path])
+                elif event_type == 'closed':
+                    # A file was closed, does not seem as useful as modified
+                    pass
+                else:
+                    print("Unknown Event", event_type)
+
+        except:
+            observer.stop()
+            print("Observer Stopped")
+
+        observer.join()
+
+
+class Handler(FileSystemEventHandler):
+    def __init__(self, event_queue: queue.Queue):
+        self.event_queue = event_queue
+    def on_any_event(self, event):
+
+        if event.is_directory:
+            return
+
+        self.event_queue.put((event.event_type, event.src_path[2:]))
+
+
 
 
 PROFILE = False

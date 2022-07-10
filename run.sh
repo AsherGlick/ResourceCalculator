@@ -3,6 +3,11 @@
 export UID=`id -u`
 export GID=`id -g`
 
+# Create the output directory as the current user to avoid a race condition
+# where the webserver will create the directory as root if it launches before
+# the build creates the folder as the correct user.
+mkdir -p output
+
 # Convert the arguments into a quoted string array to pass into an environment
 # variable that will then be used as command line arguments for build.py.
 arguments=""
