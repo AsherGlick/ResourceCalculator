@@ -12,11 +12,13 @@ from pylib.producer import Producer, SingleFile, producer_copyfile, GenericProdu
 # Creates producers for generating the landing page and copying the icons that
 # are used on the landing page.
 ################################################################################
-def landing_page_producers() -> List[GenericProducer]:
+def landing_page_producers(calculator_dir_regex: str) -> List[GenericProducer]:
     return [
         Producer(
             input_path_patterns={
-                "file": r"^resource_lists/(?P<calculator_dir>[a-z ]+)/icon\.png$",
+                "file": r"^resource_lists/(?P<calculator_dir>{calculator_dir_regex})/icon\.png$".format(
+                    calculator_dir_regex=calculator_dir_regex
+                ),
             },
             paths=logo_copy_paths,
             function=producer_copyfile,
@@ -25,7 +27,9 @@ def landing_page_producers() -> List[GenericProducer]:
 
         Producer(
             input_path_patterns={
-                "files": [r"^cache/[a-z ]+/page_metadata\.json$"],
+                "files": [r"^cache/(?:{calculator_dir_regex})/page_metadata\.json$".format(
+                    calculator_dir_regex=calculator_dir_regex
+                )],
                 "template": r"^core/index\.html$"
             },
             paths=landing_page_paths,

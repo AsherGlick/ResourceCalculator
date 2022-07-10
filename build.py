@@ -1,4 +1,4 @@
-# import argparse
+import argparse
 import os
 from typing import Dict, Tuple, List
 
@@ -107,11 +107,11 @@ def core_resource_paths(input_files: SingleFile, groups: Dict[str, str]) -> Tupl
 # starting up the generator process.
 ################################################################################
 def main() -> None:
-    # parser = argparse.ArgumentParser(
-    #     description='Compile resourcecalculator.com html pages.'
-    # )
+    parser = argparse.ArgumentParser(
+        description='Compile resourcecalculator.com html pages.'
+    )
 
-    # parser.add_argument('limit_files', nargs='*', help="Speed up dev-builds by only building a specific set of one or more calculators")
+    parser.add_argument('limit_files', nargs='*', help="Speed up dev-builds by only building a specific set of one or more calculators")
 
     # parser.add_argument('--watch', action='store_true', help="Watch source files and automatically rebuild when they change")
     # parser.add_argument('--draft', action='store_true', help="Enable all speed up flags for dev builds")
@@ -133,7 +133,7 @@ def main() -> None:
     # global FLAG_force_image
     # global FLAG_skip_plugins
 
-    # args = parser.parse_args()
+    args = parser.parse_args()
     # if (args.watch):
     #     pass
 
@@ -159,20 +159,22 @@ def main() -> None:
     #     FLAG_skip_plugins = True
 
     # calculator_page_sublist = []
-    # if len(args.limit_files) >= 1:
-    #     FLAG_skip_index = True
-    #     calculator_page_sublist = args.limit_files
-    #     print("Only building", ", ".join(calculator_page_sublist))
+
+
+    calculator_dir_regex = r"[a-z ]+"
+    if len(args.limit_files) >= 1:
+        calculator_page_sublist = args.limit_files
+        calculator_dir_regex = "|".join(calculator_page_sublist)
 
     producers: List[GenericProducer] = []
 
-    producers += resource_list_parser_producers()
-    producers += item_image_producers()
-    producers += calculator_producers()
-    producers += editor_producers()
+    producers += resource_list_parser_producers(calculator_dir_regex)
+    producers += item_image_producers(calculator_dir_regex)
+    producers += calculator_producers(calculator_dir_regex)
+    producers += editor_producers(calculator_dir_regex)
     producers += core_resource_producers()
-    producers += landing_page_producers()
-    producers += plugins_producers()
+    producers += landing_page_producers(calculator_dir_regex)
+    producers += plugins_producers(calculator_dir_regex)
     producers += gz_compressor_producers()
 
     studio = Scheduler(

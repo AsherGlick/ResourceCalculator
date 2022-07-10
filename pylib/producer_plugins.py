@@ -9,14 +9,16 @@ import os
 # Creates the producers for copying plugin files from their source directories
 # to the output directories.
 ################################################################################
-def plugins_producers() -> List[GenericProducer]:
+def plugins_producers(calculator_dir_regex: str) -> List[GenericProducer]:
     return [
         Producer(
             input_path_patterns={
                 # TODO: Get rid of the full path capture group when the bug of
                 # these files deduplicating themselves on only "calculator_dir"
                 # is fixed.
-                "file": r"^(?P<fullpath>resource_lists/(?P<calculator_dir>[a-z ]+)/plugins/.+/.+)$",
+                "file": r"^(?P<fullpath>resource_lists/(?P<calculator_dir>{calculator_dir_regex})/plugins/.+/.+)$".format(
+                    calculator_dir_regex=calculator_dir_regex
+                ),
             },
             paths=plugins_paths,
             function=producer_copyfile,

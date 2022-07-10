@@ -15,11 +15,13 @@ from pylib.yaml_token_load import ordered_load
 # Creates the producers for parsing resource lists and checking it for errors
 # then outputing it as a python pickle file.
 ################################################################################
-def resource_list_parser_producers() -> List[GenericProducer]:
+def resource_list_parser_producers(calculator_dir_regex: str) -> List[GenericProducer]:
     return [
         Producer(
             input_path_patterns={
-                "file": r"^resource_lists/(?P<calculator_dir>[a-z ]+)/resources.yaml$"
+                "file": r"^resource_lists/(?P<calculator_dir>{calculator_dir_regex})/resources.yaml$".format(
+                    calculator_dir_regex=calculator_dir_regex
+                )
             },
             paths=resource_list_paths,
             function=resource_list_parser_function,

@@ -14,12 +14,16 @@ from pylib.resource_list import ResourceList, get_primitive
 # Creates a producer for the editor page that allows the user to edit a
 # calculator via a graphical tool instead of via yaml or json.
 ################################################################################
-def editor_producers() -> List[GenericProducer]:
+def editor_producers(calculator_dir_regex: str) -> List[GenericProducer]:
     return [
         Producer(
             input_path_patterns={
-                "resources_pickle": r"^cache/(?P<calculator_dir>[a-z ]+)/resources\.pickle$",
-                "image_layout_json": r"^cache/(?P<calculator_dir>[a-z ]+)/packed_image_layout\.json$",
+                "resources_pickle": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/resources\.pickle$".format(
+                    calculator_dir_regex=calculator_dir_regex
+                ),
+                "image_layout_json": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/packed_image_layout\.json$".format(
+                    calculator_dir_regex=calculator_dir_regex
+                ),
                 "editor_template": r"^core/edit\.html$",
             },
             paths=editor_paths,

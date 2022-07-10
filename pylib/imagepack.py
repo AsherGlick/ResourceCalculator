@@ -27,12 +27,14 @@ class ImagePackOutputFiles(TypedDict):
 # Creates the producers for packing images into a single file and the
 # producers that take that compressed file and compress it into the final image.
 ################################################################################
-def item_image_producers() -> List[GenericProducer]:
+def item_image_producers(calculator_dir_regex: str) -> List[GenericProducer]:
     return [
         # Pack Image
         Producer(
             input_path_patterns={
-                "files": [r"^resource_lists/(?P<calculator_dir>[a-z ]+)/items/.*$"],
+                "files": [r"^resource_lists/(?P<calculator_dir>{calculator_dir_regex})/items/.*$".format(
+                    calculator_dir_regex=calculator_dir_regex
+                )],
             },
             paths=image_pack_paths,
             function=image_pack_function,
@@ -42,7 +44,9 @@ def item_image_producers() -> List[GenericProducer]:
         # Compress Image
         Producer(
             input_path_patterns={
-                "file": r"^cache/(?P<calculator_dir>[a-z ]+)/packed_image\.png$",
+                "file": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/packed_image\.png$".format(
+                    calculator_dir_regex=calculator_dir_regex
+                ),
             },
             paths=image_compress_paths,
             function=image_compress_function,

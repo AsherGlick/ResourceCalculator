@@ -18,12 +18,16 @@ from pylib.webminify import minify_css_blocks
 #
 # Creates producers for generating the calculator pages.
 ################################################################################
-def calculator_producers() -> List[GenericProducer]:
+def calculator_producers(calculator_dir_regex: str) -> List[GenericProducer]:
     return [
         Producer(
             input_path_patterns={
-                "resources_pickle": r"^cache/(?P<calculator_dir>[a-z ]+)/resources\.pickle$",
-                "image_layout_json": r"^cache/(?P<calculator_dir>[a-z ]+)/packed_image_layout\.json$",
+                "resources_pickle": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/resources\.pickle$".format(
+                    calculator_dir_regex=calculator_dir_regex
+                ),
+                "image_layout_json": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/packed_image_layout\.json$".format(
+                    calculator_dir_regex=calculator_dir_regex
+                ),
                 "calculator_template": r"^core/calculator\.html$"
             },
             paths=calculator_paths,
