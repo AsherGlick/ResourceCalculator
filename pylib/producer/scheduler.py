@@ -9,6 +9,7 @@ import json
 from .producer import GenericProducer
 from .creator import Creator
 from pylib.unique_heap import UniqueHeap
+from pylib.terminal_color import fg_gray
 
 
 GenericCreator = Creator[Any, Any]
@@ -56,6 +57,8 @@ class Scheduler:
     input_file_maps: Dict[str, Set[CreatorIndexType]]
 
     filecache: sqlite3.Connection
+
+    verbose: bool = False
 
     ############################################################################
     #
@@ -173,7 +176,6 @@ class Scheduler:
         # Build a list of creators
         for producer_index, producer in enumerate(self.producer_list):
             input_datas = self.query_filesets(self.filecache, producer_index)
-            # print(producer_index, input_datas)
             for input_data in input_datas:
                 input_file, input_groups = input_data
 
@@ -287,12 +289,41 @@ class Scheduler:
             # the directories exist and just focus on creating the files.
             build_required_directories(output_files)
 
-            # print(creator.categories, input_files, output_files)
-            print(creator.categories, output_files)
+            print()
+            print(creator.categories)
+
+
+            if len(input_files) > 5:
+                print(fg_gray("  " + input_files[0]))
+                print(fg_gray("  " + input_files[1]))
+                print(fg_gray("  " + input_files[2]))
+                print(fg_gray("  " + input_files[3]))
+                print(fg_gray("  ...and {} other files".format(len(input_files)-4)))
+
+
+            else:
+                for i, file in enumerate(input_files):
+                    print(fg_gray("  " + file))
+
+            print(fg_gray("  │"))
+
+            for i, file in enumerate(output_files):
+
+                pipe_character = "├"
+                if (i == len(output_files)-1):
+                    pipe_character = "└"
+                    # pipe_character = "╰"
+
+                print(fg_gray("  {pipe_character}── {file}".format(
+                    pipe_character=pipe_character,
+                    file=file,
+                )))
+
+
             start = time.time()
             creator.run()
             duration = time.time() - start
-            print("  Completed in {:.2f}".format(duration))
+            print(fg_gray("  Completed in {:.2f}s".format(duration)))
 
     ############################################################################
     # all_paths_in_dir
