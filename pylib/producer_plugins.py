@@ -13,11 +13,14 @@ def plugins_producers() -> List[GenericProducer]:
     return [
         Producer(
             input_path_patterns={
-                "file": r"^resource_lists/(?P<calculator_dir>[a-z ]+)/plugins/.+/.+$",
+                # TODO: Get rid of the full path capture group when the bug of
+                # these files deduplicating themselves on only "calculator_dir"
+                # is fixed.
+                "file": r"^(?P<fullpath>resource_lists/(?P<calculator_dir>[a-z ]+)/plugins/.+/.+)$",
             },
             paths=plugins_paths,
             function=producer_copyfile,
-            categories=["editor"]
+            categories=["plugins"]
         )
     ]
 

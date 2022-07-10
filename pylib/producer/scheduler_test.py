@@ -998,6 +998,73 @@ class Integration_Tests(unittest.TestCase):
     # and they have to be placed into at least two different filesets
 
 
+    # ############################################################################
+    # # test_mutliple_options_with_group
+    # #
+    # # Test that a set of grouped files with a single shared file get converted
+    # # into Creators properly.
+    # ############################################################################
+    # def test_single_group(self) -> None:
+
+    #     class InputFileDatatype(TypedDict):
+    #         data_file: str
+
+    #     class OutputFileDatatype(TypedDict):
+    #         data_file: str
+
+    #     def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
+    #         return (input_files, {"data_file": "output_" + input_files["data_file"]})
+
+    #     def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
+    #         return None  # pragma: no cover
+
+    #     producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+    #         input_path_patterns={
+    #             "data_file": r"^data_(?P<title>[a-z]+)_.\.txt$",
+    #         },
+    #         paths=paths,
+    #         function=function,
+    #         categories=["test"],
+    #     )
+
+    #     scheduler = Scheduler(
+    #         producer_list=[producer],
+    #         initial_filepaths=[],
+    #     )
+    #     scheduler.build_new_creators(
+    #         files=[
+    #             'data_one_1.txt',
+    #             'data_one_2.txt',
+    #         ]
+    #     )
+
+    #     self.assertCountEqual(
+    #         scheduler.creator_list.values(),
+    #         [
+    #             Creator(
+    #                 input_paths={
+    #                     "data_file": "data_one_1.txt",
+    #                 },
+    #                 output_paths={
+    #                     "data_file": "output_data_one_1.txt"
+    #                 },
+    #                 function=function,
+    #                 categories=["test"]
+    #             ),
+    #             Creator(
+    #                 input_paths={
+    #                     'data_file': 'data_one_2.txt',
+    #                 },
+    #                 output_paths={
+    #                     'data_file': 'output_data_one_2.txt'
+    #                 },
+    #                 function=function,
+    #                 categories=['test']
+    #             )
+    #         ]
+    #     )
+
+
 class Initialization_Query_Tests(unittest.TestCase):
     pass
 
