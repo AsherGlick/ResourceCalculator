@@ -21,7 +21,7 @@ allowing one to order the items coherently.
 resources:
   Lithium:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Small Battery:
     recipes:
@@ -53,9 +53,19 @@ For Example:
 
 icon.jpg
 --------
-The icon needs to be `460px` by `215px` to fit in with the other calculator links. It also needs to be a `jpg`, not a `png` or other image file.
+The icon needs to be `460px` by `215px` to fit in with the other calculator links. It also needs to be a `jpg`, not a `png` or other image file. If a game is on Steam, the Steam page for a game uses a `jpg` thumbnail with those dimensions. Simply downloading it to the appropriate directory and renaming it to `icon.jpg` should be all that is needed.
 
-The Steam page for a game uses a `jpg` thumbnail with those dimensions, so simple downloading it to the appropriate directory and renaming to `icon.jpg` should be all that is needed.
+Prefer images that only contain the title/tagline (left) rather than ones for a specific event and/or with reviews (right).
+
+![Good thumbnail example](https://cdn.cloudflare.steamstatic.com/steam/apps/548430/header_alt_assets_1.jpg "Good thumbnail example")
+![Bad thumbnail example](https://cdn.cloudflare.steamstatic.com/steam/apps/548430/header_alt_assets_13.jpg "Bad thumbnail example")
+
+The first URL below will show the current header, while the second URL can be used to browse all historical thumbnails by changing the number.
+```
+https://cdn.akamai.steamstatic.com/steam/apps/{SteamAppID}/header.jpg
+https://cdn.cloudflare.steamstatic.com/steam/apps/{SteamAppID}/header_alt_assets_1.jpg
+```
+`SteamAppId` can be located by opening the store page for any Steam game: `https://store.steampowered.com/app/{SteamAppID}/Game_Name/`
 
 Compiling The Calculator
 ========================
