@@ -195,6 +195,17 @@ hide_unused_checkbox_elem.addEventListener("change", function() {
 
 
 ////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////// // TODO THIS FUNCTION NEEDS A BETTER PLACE TO LIVE
+////////////////////////////////////////////////////////////////////////////////
+function filenameify(rawname: string): string {
+	if (rawname === null) {
+		return "";
+	}
+	return rawname.toLowerCase().replace(/[^a-z0=9]/g, "");
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////// Save and Load /////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -1796,7 +1807,7 @@ function switch_recipe(item_name: string, event: MouseEvent) {
 				let item_elem = document.createElement("div");
 				item_elem.classList.add("required_item");
 				item_elem.classList.add("item");
-				item_elem.classList.add("item_" + resource_simple_names[j]);
+				item_elem.classList.add("item_" + (resource_simple_names[j] ? resource_simple_names[j] : filenameify(j)));
 				item_elem.textContent = quantity.toString();
 				recipe_category.appendChild(item_elem);
 

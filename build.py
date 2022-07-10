@@ -403,11 +403,12 @@ def get_simple_name(resource: str, resources: OrderedDict[str, Resource]) -> str
         return resources[resource].custom_simplename
     return re.sub(r'[^a-z0-9]', '', resource.lower())
 
-def get_simple_names(resources: OrderedDict[str, Resource]) -> Dict[str, str]:
+def get_simple_names_only(resources: OrderedDict[str, Resource]) -> Dict[str, str]:
     simple_names = {}
 
-    for resource in resources:
-        simple_names[resource] = get_simple_name(resource, resources);
+    for resourceKey in resources:
+        if resources[resourceKey].custom_simplename != "":
+            simple_names[resourceKey] = resources[resourceKey].custom_simplename
 
     return simple_names
 
@@ -606,7 +607,7 @@ def create_calculator_page(
 
     # TODO: Add linting for stack sizes here
 
-    resource_simple_names_js_data = mini_js_data(get_primitive(get_simple_names(resources)), "resource_simple_names")
+    resource_simple_names_js_data = mini_js_data(get_primitive(get_simple_names_only(resources)), "resource_simple_names")
 
     recipe_type_format_js = generate_recipe_type_format_js(calculator_name, recipe_types)
     recipe_type_format_js = uglify_js_string(recipe_type_format_js)
