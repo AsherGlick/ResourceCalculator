@@ -841,7 +841,7 @@ def get_aggregated_modified_time(
             for subpath in os.listdir(path):
                 paths.append(os.path.join(path, subpath))
         else:
-            time_list.append(os.path.getctime(path))
+            time_list.append(os.path.getmtime(path))
 
     # Sanity check that there are timestamps in the list before passing them
     # to the aggregator.
