@@ -130,6 +130,7 @@ def _get_invalid_keys(data: Any, valid_keys: List[str]) -> List[TokenBundle]:
 
     return invalid_keys
 
+
 ################################################################################
 # _get_duplicate_keys
 #
@@ -522,7 +523,6 @@ class Recipe():
             "recipe_type": get_primitive(self.recipe_type),
             "requirements": get_primitive(self.requirements),
         }
-
 
     def to_yaml(self) -> str:
         lines: List[str] = []

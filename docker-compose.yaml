@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  # A webserver to host the files
+  web:
+    build: ./dockerfiles/php/
+    ports:
+      - "8000:80"
+    volumes:
+      - "./output/:/var/www/html"
+
+  # A container that has all the dev dependencies to run the build.py script
+  build:
+    build: ./dockerfiles/build/
+    user: "${UID}:${GID}"
+    volumes:
+      - "./:/usr/src/app"
+    command: "${arguments}"
