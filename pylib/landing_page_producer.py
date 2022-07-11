@@ -16,7 +16,7 @@ def landing_page_producers(calculator_dir_regex: str) -> List[GenericProducer]:
     return [
         Producer(
             input_path_patterns={
-                "file": r"^resource_lists/(?P<calculator_dir>{calculator_dir_regex})/icon\.png$".format(
+                "file": r"^resource_lists/(?P<calculator_dir>{calculator_dir_regex})/icon\.jpg$".format(
                     calculator_dir_regex=calculator_dir_regex
                 ),
             },
@@ -50,7 +50,7 @@ def logo_copy_paths(input_files: SingleFile, categories: Dict[str, str]) -> Tupl
     return (
         input_files,
         {
-            "file": os.path.join("output", calculator_name, "icon.png")
+            "file": os.path.join("output", calculator_name, "icon.jpg")
         }
     )
 
