@@ -117,8 +117,7 @@ resources:
     - output: 1
       recipe_type: Smelter Level 2
       requirements:
-        Explodium: -1
-        Explodium: -1
+        Explodium: -2
     - output: 1
       recipe_type: Buying
       requirements:
