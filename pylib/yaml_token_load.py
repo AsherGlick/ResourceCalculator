@@ -20,12 +20,13 @@ def tuple_null_constructor(loader: Any, node: yaml.nodes.ScalarNode) -> TokenBun
 def tuple_int_constructor(loader: Any, node: yaml.nodes.ScalarNode) -> TokenBundle:
     return TokenBundle(loader.construct_yaml_int(node), node)
 
+
 def tuple_bool_constructor(loader: Any, node: yaml.nodes.ScalarNode) -> TokenBundle:
     return TokenBundle(loader.construct_yaml_bool(node), node)
 
 
 def placeholder_constructor(loader: Any, node: yaml.nodes.ScalarNode) -> None:
-    print("ERROR: YAML Element Found For Placeholder Constructor", node)
+    raise(ValueError("ERROR: YAML Element Found For Placeholder Constructor {}".format(node)))
 
 
 ################################################################################

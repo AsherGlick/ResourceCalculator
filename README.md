@@ -70,20 +70,31 @@ https://cdn.cloudflare.steamstatic.com/steam/apps/{SteamAppID}/header_alt_assets
 Compiling The Calculator
 ========================
 
-On linux, you will need to have python3 installed as well as several python dependencies found in requirements.txt
+Docker
+------
+The primary method for building resource calculator is using Docker and Docker Compose. As long as you have Docker Compose on your system you should be able to run the `./run.sh` command from any terminal that can run a shell script. This will start two docker containers, one which will build the calculator and one which will host the calculator output so you can easily access it via a web browser. It is recommended to use the `./run.sh --watch` flag, this will tell the build script to automatically re-build any changes you make without needing to relaunch the build script.
+
+The docker container will install the node and python libraries into the `node_modules` and `venv_docker` folders.
+
+**NOTE:** For Docker on Windows you may need to allow the docker container to access the repo files. This should be prompted to you the first time you run it but if it does not prompt then this can be done via Settings -> Resources -> File Sharing
+
+**NOTE:** For Docker on Windows file events are not always shared with the docker container, meaning that the `--watch` option will not always catch errors. To workaround this you can attempt to install and run [docker-windows-volume-watcher](https://pypi.org/project/docker-windows-volume-watcher/) however this does not seem to work with newer versions of docker desktop.
+
+Linux
+-----
+On Linux, you will need to have Python 3.8 or newer installed as well as several python dependencies found in requirements.txt
 ```
 sudo apt install python3 python3-pip pngquant npm
 pip3 install -r requirements.txt
 npm install
-python3 build.py
-```
-On windows you should be able to install the same dependencies via pip and npm though I am unsure how to use pngquant on windows, `build.py` should work without being able to run the png compression however.
-
-You can also run the calculator locally in Docker by running:
-
-```
-docker build . -t resourcecalculator
-docker run -dit --name resourcecalculator -p 8080:80 resourcecalculator
+python3 build.py --watch
 ```
 
-This creates a local docker container that compiles the current working directory, starts the container and exposes it locally at `127.0.0.1:8080`. To test changes, stop and delete the container and re-run the two commands.
+Windows
+-------
+On windows it is recommended to use the Docker runtime. However if you do not wish to use it you can install the dependencies manually just like on Linux.
+
+
+MacOS
+-----
+On macos it is recommended to use the docker runtime. However if you do not wish to use it you can install the dependencies manually just like on Linux.

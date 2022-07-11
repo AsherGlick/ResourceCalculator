@@ -1,6 +1,7 @@
 from PIL import Image # type:ignore
 from typing import List, Dict
 import shutil
+import json
 
 letters = {
     "042a2a2a1e":"a",
@@ -88,11 +89,14 @@ duplicate_names: Dict[str,int] = {}
 # appended with a _2 or _3 etc.
 ################################################################################
 def main(ui_size: int, image_quantity: int) -> None:
+    item_ordering = []
     for image_index in range(image_quantity):
         text_image_filename = "image_text/" + str(image_index) + ".png"
         block_image_filename = "diced_images/" + str(image_index) + ".png"
 
         decoded_name = decode_image_text(text_image_filename, ui_size)
+
+        item_ordering.append(decoded_name)
 
         # Convert to lowercase and strip symbols
         decoded_name = decoded_name.lower()
@@ -108,6 +112,9 @@ def main(ui_size: int, image_quantity: int) -> None:
         target_file_name = "named_images/" + decoded_name + ".png"
 
         shutil.copyfile(block_image_filename, target_file_name)
+
+    with open("named_images/ordering.json", 'w') as f:
+        json.dump(item_ordering, f)
 
 
 ################################################################################
@@ -177,7 +184,7 @@ def decode_image_text(filename: str, ui_size: int) -> str:
 
         else:
             print("Unknown Hex {} after {}? ({})".format(letterhex, "".join(decoded_letters), filename))
-            decoded_letters.append("_")
+            # decoded_letters.append("_")
             has_error = True
 
     if len(decoded_letters) == 0:
@@ -188,6 +195,6 @@ def decode_image_text(filename: str, ui_size: int) -> str:
 
 # Run the OCR renamer
 main(
-    ui_size=4,
-    image_quantity=1395,
+    ui_size=2,
+    image_quantity=1440,
 )
