@@ -14,6 +14,10 @@ authors:
 
 index_page_display_name: "Subnautica: Below Zero"
 
+game_version: "Language Pack Patch"
+# https://steamdb.info/app/848450/patchnotes/
+# https://steamcommunity.com/games/848450/announcements/detail/2976303615856385379
+
 recipe_types:
   Fabricator: "Use a Fabricator to turn {IN_ITEMS} into {OUT_ITEM}"
   Water Purification Tablet: "Use a Fabricator to turn {IN_ITEMS} into {OUT_ITEM}"
