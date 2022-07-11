@@ -3,25 +3,25 @@ authors:
   Ben: "https://benjaminvreeland.com"
 
 # Based on
-# https://subnautica.fandom.com/wiki/Spawn_IDs_(Subnautica)
-# https://subnautica.fandom.com/wiki/Fabricator_(Subnautica)
-# https://subnautica.fandom.com/wiki/Modification_Station_(Subnautica)
-# https://subnautica.fandom.com/wiki/Scanner_Room_(Subnautica)#Fabrication
-# https://subnautica.fandom.com/wiki/Cyclops#Upgrades_and_Customization
-# https://subnautica.fandom.com/wiki/Mobile_Vehicle_Bay_(Subnautica)
-# https://subnautica.fandom.com/wiki/Vehicle_Upgrade_Console_(Subnautica)
-# https://subnautica.fandom.com/wiki/Habitat_Builder_(Subnautica)
+# https://subnautica.fandom.com/wiki/Spawn_IDs_(Below_Zero)
+# https://subnautica.fandom.com/wiki/Fabricator_(Below_Zero)
+# https://subnautica.fandom.com/wiki/Modification_Station_(Below_Zero)
+# https://subnautica.fandom.com/wiki/Scanner_Room_(Below_Zero)
+# https://subnautica.fandom.com/wiki/Mobile_Vehicle_Bay_(Below_Zero)
+# https://subnautica.fandom.com/wiki/Vehicle_Upgrade_Console_(Below_Zero)
+# https://subnautica.fandom.com/wiki/Habitat_Builder_(Below_Zero)
+# https://subnautica.fandom.com/wiki/Fabricator_Base
 
-index_page_display_name: "Subnautica"
+index_page_display_name: "Subnautica: Below Zero"
 
 recipe_types:
   Fabricator: "Use a Fabricator to turn {IN_ITEMS} into {OUT_ITEM}"
+  Water Purification Tablet: "Use a Fabricator to turn {IN_ITEMS} into {OUT_ITEM}"
   Modification Station: "Use a Modification Station to turn {IN_ITEMS} into {OUT_ITEM}"
   Scanner Room: "Use a Scanner Room Fabricator to turn {IN_ITEMS} into {OUT_ITEM}"
-  Cyclops Fabricator: "Use a Cyclops Upgrade Fabricator to turn {IN_ITEMS} into {OUT_ITEM}"
   Mobile Vehicle Bay: "Use a Mobile Vehicle Bay to turn {IN_ITEMS} into {OUT_ITEM}"
-  Vehicle Upgrade: "Use a Vehicle Upgrade Console to turn {IN_ITEMS} into {OUT_ITEM}"
-  Neptune Launch Platform: "Use the Neptune Launch Platform to turn {IN_ITEMS} into {OUT_ITEM}"
+  Snowfox Hoverpad: "Use a Snowfox Hoverpad to turn {IN_ITEMS} into {OUT_ITEM}"
+  Architect Component Fabricator: "Use the Architect Component Fabricator to turn {IN_ITEMS} into {OUT_ITEM}"
   Build: "Use a Habitat Builder to turn {IN_ITEMS} into {OUT_ITEM}"
 
 resources:
@@ -34,7 +34,7 @@ resources:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Titanium: -10
+        Titanium: -5
     - recipe_type: Raw Resource
   Fiber Mesh:
     recipes:
@@ -57,14 +57,6 @@ resources:
       requirements:
         Quartz: -2
     - recipe_type: Raw Resource
-  Bleach:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Salt Deposit: -1
-        Coral Tube Sample: -1
-    - recipe_type: Raw Resource
   Lubricant:
     recipes:
     - output: 1
@@ -77,8 +69,9 @@ resources:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Stalker Tooth: -1
         Glass: -1
+        Lead: -1
+        Diamond: -1
     - recipe_type: Raw Resource
   Plasteel Ingot:
     recipes:
@@ -95,7 +88,7 @@ resources:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Deep Shroom: -3
+        Young Cotton Anemone: -3
         Salt Deposit: -1
     - recipe_type: Raw Resource
   Benzene:
@@ -103,15 +96,16 @@ resources:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Blood Oil: -3
+        Flowering Spore: -2
+        Ribbon Plant: -1
     - recipe_type: Raw Resource
   Synthetic Fibers:
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Benzene: -1
-        Fiber Mesh: -1
+        Ruby: -1
+        Spiral Plant Clipping: -1
     - recipe_type: Raw Resource
   Aerogel:
     recipes:
@@ -129,6 +123,14 @@ resources:
         Gold: -1
         Hydrochloric Acid: -1
     - recipe_type: Raw Resource
+  Hydraulic Fluid:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Creepvine Seed Cluster: -1
+        Gel Sack: -1
+    - recipe_type: Raw Resource
 
 # Electronics
   Copper Wire:
@@ -143,7 +145,7 @@ resources:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Acid Mushroom: -2
+        Ribbon Plant: -2
         Copper Ore: -1
     - recipe_type: Raw Resource
   Power Cell:
@@ -162,6 +164,7 @@ resources:
         Ion Cube: -1
         Gold: -1
         Silver Ore: -1
+        Lithium: -1
     - recipe_type: Raw Resource
   Ion Power Cell:
     recipes:
@@ -170,6 +173,7 @@ resources:
       requirements:
         Ion Battery: -2
         Silicone Rubber: -1
+        Wiring Kit: -1
     - recipe_type: Raw Resource
   Computer Chip:
     recipes:
@@ -193,7 +197,6 @@ resources:
       recipe_type: Fabricator
       requirements:
         Wiring Kit: -1
-        Gold: -2
         Computer Chip: -1
     - recipe_type: Raw Resource
   Reactor Rod:
@@ -201,7 +204,7 @@ resources:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Uraninite Crystal: -3
+        Uraninite Crystal: -2
         Lead: -1
         Titanium: -1
         Glass: -1
@@ -209,6 +212,35 @@ resources:
   Depleted Reactor Rod:
     recipes:
       - recipe_type: Raw Resource
+
+  Parallel Processing Unit:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Gold: -1
+        Silver Ore: -1
+        Table Coral Sample: -1
+    - recipe_type: Raw Resource
+  Test Override Module:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Parallel Processing Unit: -1
+        Titanium: -1
+        Lead: -1
+        Copper Wire: -1
+    - recipe_type: Raw Resource
+
+  Antidote:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Frost Vase Plant: -1
+        Fevered Pepper: -1
+    - recipe_type: Raw Resource
 
 # Water
   Filtered Water:
@@ -220,20 +252,35 @@ resources:
     - recipe_type: Raw Resource
   Disinfected Water:
     recipes:
-    - output: 2
-      recipe_type: Fabricator
-      requirements:
-        Bleach: -1
     - recipe_type: Raw Resource
   Large Filtered Water:
     recipes:
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Water Purification Tablet
+      requirements:
+        Water Purification Tablet: -1
+        Snowball: -1
+    - recipe_type: Raw Resource
   Reclaimed Water:
     recipes:
       - recipe_type: Raw Resource
-  Coffee Americano:
+  Water Purification Tablet:
     recipes:
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Frost Vase Plant: -1
+        Salt Deposit: -1
+    - recipe_type: Raw Resource
+
+  Thermos:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Titanium: -1
+        Glass: -1
+    - recipe_type: Raw Resource
 
 # Cooked
   Cooked Bladderfish:
@@ -250,27 +297,6 @@ resources:
       requirements:
         Boomerang: -1
     - recipe_type: Raw Resource
-  Cooked Eyeye:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Eyeye: -1
-    - recipe_type: Raw Resource
-  Cooked Garryfish:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Garryfish: -1
-    - recipe_type: Raw Resource
-  Cooked Holefish:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Holefish: -1
-    - recipe_type: Raw Resource
   Cooked Hoopfish:
     recipes:
     - output: 1
@@ -278,61 +304,83 @@ resources:
       requirements:
         Hoopfish: -1
     - recipe_type: Raw Resource
-  Cooked Hoverfish:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Hoverfish: -1
-    - recipe_type: Raw Resource
-  Cooked Magmarang:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Magmarang: -1
-    - recipe_type: Raw Resource
-  Cooked Oculus:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Oculus: -1
-    - recipe_type: Raw Resource
-  Cooked Peeper:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Peeper: -1
-    - recipe_type: Raw Resource
-  Cooked Red Eyeye:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Red Eyeye: -1
-    - recipe_type: Raw Resource
-  Cooked Reginald:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Reginald: -1
-    - recipe_type: Raw Resource
-  Cooked Spadefish:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Spadefish: -1
-    - recipe_type: Raw Resource
   Cooked Spinefish:
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
         Spinefish: -1
+    - recipe_type: Raw Resource
+  Cooked Spinner Fish:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Spinner Fish: -1
+    - recipe_type: Raw Resource
+  Cooked Arctic Peeper:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Arctic Peeper: -1
+    - recipe_type: Raw Resource
+  Cooked Arrow Ray:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Arrow Ray: -1
+    - recipe_type: Raw Resource
+  Cooked Symbiote:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Symbiote: -1
+    - recipe_type: Raw Resource
+  Cooked Noot Fish:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Noot Fish: -1
+    - recipe_type: Raw Resource
+  Cooked Triops:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Triops: -1
+    - recipe_type: Raw Resource
+  Cooked Feather Fish:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Feather Fish: -1
+    - recipe_type: Raw Resource
+  Cooked Red Feather Fish:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Red Feather Fish: -1
+    - recipe_type: Raw Resource
+  Cooked Discus Fish:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Discus Fish: -1
+    - recipe_type: Raw Resource
+  Spicy Fruit Salad:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Preston's Plant Leaf: -1
+        Fevered Pepper: -1
     - recipe_type: Raw Resource
 
 # Cured
@@ -352,30 +400,6 @@ resources:
         Boomerang: -1
         Salt Deposit: -1
     - recipe_type: Raw Resource
-  Cured Eyeye:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Eyeye: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
-  Cured Garryfish:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Garryfish: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
-  Cured Holefish:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Holefish: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
   Cured Hoopfish:
     recipes:
     - output: 1
@@ -384,68 +408,84 @@ resources:
         Hoopfish: -1
         Salt Deposit: -1
     - recipe_type: Raw Resource
-  Cured Hoverfish:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Hoverfish: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
-  Cured Magmarang:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Magmarang: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
-  Cured Oculus:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Oculus: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
-  Cured Peeper:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Peeper: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
-  Cured Red Eyeye:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Red Eyeye: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
-  Cured Reginald:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Reginald: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
-  Cured Spadefish:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Spadefish: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
   Cured Spinefish:
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
         Spinefish: -1
+        Salt Deposit: -1
+    - recipe_type: Raw Resource
+  Cured Spinner Fish:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Spinner Fish: -1
+        Salt Deposit: -1
+    - recipe_type: Raw Resource
+  Cured Arctic Peeper:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Arctic Peeper: -1
+        Salt Deposit: -1
+    - recipe_type: Raw Resource
+  Cured Arrow Ray:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Arrow Ray: -1
+        Salt Deposit: -1
+    - recipe_type: Raw Resource
+  Cured Symbiote:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Symbiote: -1
+        Salt Deposit: -1
+    - recipe_type: Raw Resource
+  Cured Noot Fish:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Noot Fish: -1
+        Salt Deposit: -1
+    - recipe_type: Raw Resource
+  Cured Triops:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Triops: -1
+        Salt Deposit: -1
+    - recipe_type: Raw Resource
+  Cured Feather Fish:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Feather Fish: -1
+        Salt Deposit: -1
+    - recipe_type: Raw Resource
+  Cured Red Feather Fish:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Red Feather Fish: -1
+        Salt Deposit: -1
+    - recipe_type: Raw Resource
+  Cured Discus Fish:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Discus Fish: -1
         Salt Deposit: -1
     - recipe_type: Raw Resource
 
@@ -469,40 +509,37 @@ resources:
   Boomerang:
     recipes:
       - recipe_type: Raw Resource
-  Eyeye:
-    recipes:
-      - recipe_type: Raw Resource
-  Garryfish:
-    recipes:
-      - recipe_type: Raw Resource
-  Holefish:
-    recipes:
-      - recipe_type: Raw Resource
   Hoopfish:
     recipes:
       - recipe_type: Raw Resource
-  Hoverfish:
-    recipes:
-      - recipe_type: Raw Resource
-  Magmarang:
-    recipes:
-      - recipe_type: Raw Resource
-  Oculus:
-    recipes:
-      - recipe_type: Raw Resource
-  Peeper:
-    recipes:
-      - recipe_type: Raw Resource
-  Red Eyeye:
-    recipes:
-      - recipe_type: Raw Resource
-  Reginald:
-    recipes:
-      - recipe_type: Raw Resource
-  Spadefish:
-    recipes:
-      - recipe_type: Raw Resource
   Spinefish:
+    recipes:
+      - recipe_type: Raw Resource
+  Spinner Fish:
+    recipes:
+      - recipe_type: Raw Resource
+  Arctic Peeper:
+    recipes:
+      - recipe_type: Raw Resource
+  Arrow Ray:
+    recipes:
+      - recipe_type: Raw Resource
+  Symbiote:
+    recipes:
+      - recipe_type: Raw Resource
+  Noot Fish:
+    recipes:
+      - recipe_type: Raw Resource
+  Triops:
+    recipes:
+      - recipe_type: Raw Resource
+  Feather Fish:
+    recipes:
+      - recipe_type: Raw Resource
+  Red Feather Fish:
+    recipes:
+      - recipe_type: Raw Resource
+  Discus Fish:
     recipes:
       - recipe_type: Raw Resource
 
@@ -514,13 +551,6 @@ resources:
       requirements:
         Fiber Mesh: -1
     - recipe_type: Raw Resource
-  Fire Extinguisher:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Titanium: -3
-    - recipe_type: Raw Resource
 
   Standard O₂ Tank:
     custom_simplename: standardo2tank
@@ -528,7 +558,8 @@ resources:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Titanium: -3
+        Titanium: -2
+        Fiber Mesh: -1
     - recipe_type: Raw Resource
   High Capacity O₂ Tank:
     custom_simplename: highcapacityo2tank
@@ -541,13 +572,13 @@ resources:
         Titanium: -4
         Silver Ore: -1
     - recipe_type: Raw Resource
-  Lightweight High Capacity Tank:
+  Booster Tank:
     recipes:
     - output: 1
       recipe_type: Modification Station
       requirements:
         High Capacity O₂ Tank: -1
-        Plasteel Ingot: -1
+        Wiring Kit: -1
     - recipe_type: Raw Resource
   Ultra High Capacity Tank:
     recipes:
@@ -565,16 +596,6 @@ resources:
       requirements:
         Silicone Rubber: -2
     - recipe_type: Raw Resource
-  Ultra Glide Fins:
-    recipes:
-    - output: 1
-      recipe_type: Modification Station
-      requirements:
-        Fins: -1
-        Silicone Rubber: -2
-        Titanium: -1
-        Lithium: -1
-    - recipe_type: Raw Resource
   Swim Charge Fins:
     recipes:
     - output: 1
@@ -585,15 +606,6 @@ resources:
         Wiring Kit: -1
     - recipe_type: Raw Resource
 
-  # Also gives gloves and helmet
-  Radiation Suit:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Fiber Mesh: -2
-        Lead: -2
-    - recipe_type: Raw Resource
   # Also gives gloves
   Reinforced Dive Suit:
     recipes:
@@ -604,7 +616,7 @@ resources:
         Diamond: -2
         Titanium: -2
     - recipe_type: Raw Resource
-  Stillsuit:
+  Water Filtration Suit:
     recipes:
     - output: 1
       recipe_type: Fabricator
@@ -613,6 +625,30 @@ resources:
         Aerogel: -1
         Copper Wire: -1
     - recipe_type: Raw Resource
+  Cold Suit:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Fiber Mesh: -2
+        Snow Stalker Fur: -2
+    - recipe_type: Raw Resource
+  Cold Suit Gloves:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Fiber Mesh: -1
+        Snow Stalker Fur: -1
+    - recipe_type: Raw Resource
+  Cold Suit Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Fiber Mesh: -1
+        Snow Stalker Fur: -1
+    - recipe_type: Raw Resource
 
   Rebreather:
     recipes:
@@ -620,7 +656,18 @@ resources:
       recipe_type: Fabricator
       requirements:
         Wiring Kit: -1
+        Silicone Rubber: -1
         Fiber Mesh: -1
+    - recipe_type: Raw Resource
+
+  Headlamp:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Ion Battery: -1
+        Glass: -1
+        Titanium: -1
     - recipe_type: Raw Resource
 
   Compass:
@@ -639,7 +686,7 @@ resources:
       requirements:
         Titanium: -2
     - recipe_type: Raw Resource
-  Pipe Surface Floater:
+  Floating Air Pump:
     recipes:
     - output: 1
       recipe_type: Fabricator
@@ -662,7 +709,7 @@ resources:
       recipe_type: Fabricator
       requirements:
         Silicone Rubber: -1
-        Cave Sulfur: -1
+        Crystalline Sulfur: -1
         Titanium: -1
     - recipe_type: Raw Resource
   Flashlight:
@@ -695,8 +742,8 @@ resources:
       recipe_type: Fabricator
       requirements:
         Creepvine Seed Cluster: -2
-        Copper Wire: -1
         Titanium: -1
+        Battery: -1
     - recipe_type: Raw Resource
   Air Bladder:
     recipes:
@@ -711,7 +758,7 @@ resources:
     - output: 5
       recipe_type: Fabricator
       requirements:
-        Cave Sulfur: -1
+        Crystalline Sulfur: -1
     - recipe_type: Raw Resource
   Habitat Builder:
     recipes:
@@ -730,17 +777,7 @@ resources:
         Diamond: -2
         Battery: -1
         Titanium: -1
-        Cave Sulfur: -1
-    - recipe_type: Raw Resource
-  Stasis Rifle:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Computer Chip: -1
-        Battery: -1
-        Titanium: -1
-        Magnetite: -2
+        Crystalline Sulfur: -1
     - recipe_type: Raw Resource
   Propulsion Cannon:
     recipes:
@@ -751,15 +788,6 @@ resources:
         Battery: -1
         Titanium: -1
     - recipe_type: Raw Resource
-  Repulsion Cannon:
-    recipes:
-    - output: 1
-      recipe_type: Modification Station
-      requirements:
-        Propulsion Cannon: -1
-        Computer Chip: -1
-        Magnetite: -2
-    - recipe_type: Raw Resource
   Light Stick:
     recipes:
     - output: 1
@@ -768,6 +796,34 @@ resources:
         Battery: -1
         Titanium: -1
         Glass: -1
+    - recipe_type: Raw Resource
+  Thumper:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Battery: -1
+        Magnetite: -1
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Mineral Detector:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Battery: -1
+        Titanium: -1
+        Copper Wire: -1
+        Silicone Rubber: -1
+    - recipe_type: Raw Resource
+  Tether Tool:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Titanium: -2
+        Silicone Rubber: -1
+        Ion Cube: -1
     - recipe_type: Raw Resource
 
 # Deployables
@@ -796,6 +852,15 @@ resources:
       requirements:
         Titanium: -4
     - recipe_type: Raw Resource
+  Quantum Locker:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Titanium: -2
+        Advanced Wiring Kit: -1
+        Ion Cube: -1
+    - recipe_type: Raw Resource
   Grav Trap:
     recipes:
     - output: 1
@@ -805,13 +870,23 @@ resources:
         Copper Ore: -1
         Titanium: -1
     - recipe_type: Raw Resource
-  Creature Decoy:
+  Spy Pengling:
     recipes:
-    - output: 3
+    - output: 1
       recipe_type: Fabricator
       requirements:
-        Titanium: -3
+        Titanium: -2
         Wiring Kit: -1
+        Silicone Rubber: -1
+        Battery: -1
+    - recipe_type: Raw Resource
+  Spy Pengling Remote:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Titanium: -1
+        Copper Wire: -1
     - recipe_type: Raw Resource
 
   Mobile Vehicle Bay:
@@ -821,144 +896,191 @@ resources:
       requirements:
         Titanium Ingot: -1
         Lubricant: -1
-        Power Cell: -1
+        Computer Chip: -1
     - recipe_type: Raw Resource
 
-## Mobile Vehicle Bay
-  Seamoth:
+# Snowfox
+  Snowfox:
+    recipes:
+    - output: 1
+      recipe_type: Snowfox Hoverpad
+      requirements:
+        Magnetite: -1
+        Battery: -1
+        Lubricant: -1
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Snowfox Hop Module:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Titanium: -2
+        Wiring Kit: -1
+    - recipe_type: Raw Resource
+  Snowfox Ice Worm Attack Reduction Module:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Titanium: -2
+        Wiring Kit: -1
+    - recipe_type: Raw Resource
+
+# Seatruck
+  Seatruck:
     recipes:
     - output: 1
       recipe_type: Mobile Vehicle Bay
       requirements:
         Titanium Ingot: -1
-        Power Cell: -1
+        Advanced Wiring Kit: -1
         Glass: -2
-        Lubricant: -1
-        Lead: -1
+        Lead: -3
+        Power Cell: -1
     - recipe_type: Raw Resource
-  Cyclops:
+
+  Seatruck Aquarium Module:
     recipes:
     - output: 1
       recipe_type: Mobile Vehicle Bay
       requirements:
-        Plasteel Ingot: -3
-        Enameled Glass: -3
-        Lubricant: -1
+        Plasteel Ingot: -1
+        Wiring Kit: -2
+        Enameled Glass: -2
+    - recipe_type: Raw Resource
+  Seatruck Docking Module:
+    recipes:
+    - output: 1
+      recipe_type: Mobile Vehicle Bay
+      requirements:
+        Plasteel Ingot: -1
         Advanced Wiring Kit: -1
         Lead: -3
     - recipe_type: Raw Resource
+  Seatruck Fabricator Module:
+    recipes:
+    - output: 1
+      recipe_type: Mobile Vehicle Bay
+      requirements:
+        Plasteel Ingot: -1
+        Computer Chip: -1
+        Lead: -3
+    - recipe_type: Raw Resource
+  Seatruck Sleeper Module:
+    recipes:
+    - output: 1
+      recipe_type: Mobile Vehicle Bay
+      requirements:
+        Plasteel Ingot: -1
+        Fiber Mesh: -2
+        Lead: -3
+    - recipe_type: Raw Resource
+  Seatruck Storage Module:
+    recipes:
+    - output: 1
+      recipe_type: Mobile Vehicle Bay
+      requirements:
+        Plasteel Ingot: -1
+        Wiring Kit: -1
+        Lead: -3
+    - recipe_type: Raw Resource
+  Seatruck Teleportation Module:
+    recipes:
+    - output: 1
+      recipe_type: Mobile Vehicle Bay
+      requirements:
+        Plasteel Ingot: -1
+        Advanced Wiring Kit: -1
+        Aerogel: -2
+    - recipe_type: Raw Resource
+
+  Seatruck Afterburner Upgrade:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Wiring Kit: -1
+        Power Cell: -1
+        Lithium: -2
+        Crystalline Sulfur: -2
+    - recipe_type: Raw Resource
+  Seatruck Horsepower Upgrade:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Advanced Wiring Kit: -1
+        Lubricant: -1
+        Lithium: -1
+    - recipe_type: Raw Resource
+  Seatruck Perimeter Defense Upgrade:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Computer Chip: -1
+        Ruby: -2
+        Power Cell: -1
+        Polyaniline: -1
+    - recipe_type: Raw Resource
+  Seatruck Depth Upgrade MK1:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Plasteel Ingot: -1
+        Enameled Glass: -2
+    - recipe_type: Raw Resource
+  Seatruck Depth Upgrade MK2:
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Seatruck Depth Upgrade MK1: -1
+        Synthetic Fibers: -1
+        Enameled Glass: -1
+        Ruby: -2
+    - recipe_type: Raw Resource
+  Seatruck Depth Upgrade MK3:
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Seatruck Depth Upgrade MK2: -1
+        Nickel Ore: -3
+        Kyanite: -2
+        Plasteel Ingot: -1
+    - recipe_type: Raw Resource
+
+# Prawn Suit
   Prawn Suit:
     recipes:
     - output: 1
       recipe_type: Mobile Vehicle Bay
       requirements:
-        Plasteel Ingot: -2
-        Aerogel: -2
-        Enameled Glass: -1
-        Diamond: -2
-        Lead: -2
-    - recipe_type: Raw Resource
-
-## Vehicle Upgrade Console
-
-# Common
-  Hull Reinforcement:
-    recipes:
-    - output: 1
-      recipe_type: Vehicle Upgrade
-      requirements:
-        Titanium: -3
-        Lithium: -1
-        Diamond: -4
-    - recipe_type: Raw Resource
-  Engine Efficiency Module:
-    recipes:
-    - output: 1
-      recipe_type: Vehicle Upgrade
-      requirements:
         Computer Chip: -1
-        Polyaniline: -1
+        Plasteel Ingot: -1
+        Power Cell: -1
+        Enameled Glass: -1
     - recipe_type: Raw Resource
-  Storage Module:
+
+  Prawn Suit Storage Module:
     recipes:
     - output: 1
-      recipe_type: Vehicle Upgrade
+      recipe_type: Fabricator
       requirements:
         Titanium: -3
         Lithium: -1
     - recipe_type: Raw Resource
-
-# Seamoth
-  Seamoth Depth Module MK1:
-    recipes:
-    - output: 1
-      recipe_type: Vehicle Upgrade
-      requirements:
-        Titanium Ingot: -1
-        Glass: -2
-    - recipe_type: Raw Resource
-  Seamoth Depth Module MK2:
-    recipes:
-    - output: 1
-      recipe_type: Modification Station
-      requirements:
-        Seamoth Depth Module MK1: -1
-        Plasteel Ingot: -1
-        Magnetite: -2
-        Enameled Glass: -1
-    - recipe_type: Raw Resource
-  Seamoth Depth Module MK3:
-    recipes:
-    - output: 1
-      recipe_type: Modification Station
-      requirements:
-        Seamoth Depth Module MK2: -1
-        Plasteel Ingot: -1
-        Ruby: -3
-    - recipe_type: Raw Resource
-  Seamoth Solar Charger:
-    recipes:
-    - output: 1
-      recipe_type: Vehicle Upgrade
-      requirements:
-        Advanced Wiring Kit: -1
-        Enameled Glass: -1
-    - recipe_type: Raw Resource
-  Seamoth Perimeter Defense System:
-    recipes:
-    - output: 1
-      recipe_type: Vehicle Upgrade
-      requirements:
-        Polyaniline: -1
-        Wiring Kit: -1
-    - recipe_type: Raw Resource
-  Seamoth Torpedo System:
-    recipes:
-    - output: 1
-      recipe_type: Vehicle Upgrade
-      requirements:
-        Titanium: -3
-        Lithium: -1
-        Aerogel: -1
-    - recipe_type: Raw Resource
-  Seamoth Sonar:
-    recipes:
-    - output: 1
-      recipe_type: Vehicle Upgrade
-      requirements:
-        Copper Wire: -1
-        Magnetite: -2
-    - recipe_type: Raw Resource
-
-# Prawn Suit
   Prawn Suit Depth Module MK1:
     recipes:
     - output: 1
-      recipe_type: Vehicle Upgrade
+      recipe_type: Fabricator
       requirements:
-        Plasteel Ingot: -1
-        Nickel Ore: -3
-        Ruby: -2
+        Synthetic Fibers: -1
+        Enameled Glass: -1
+        Ruby: -3
     - recipe_type: Raw Resource
   Prawn Suit Depth Module MK2:
     recipes:
@@ -966,14 +1088,14 @@ resources:
       recipe_type: Modification Station
       requirements:
         Prawn Suit Depth Module MK1: -1
-        Titanium: -5
-        Lithium: -2
-        Kyanite: -3
+        Kyanite: -1
+        Nickel Ore: -2
     - recipe_type: Raw Resource
+
   Prawn Suit Thermal Reactor:
     recipes:
     - output: 1
-      recipe_type: Vehicle Upgrade
+      recipe_type: Fabricator
       requirements:
         Kyanite: -2
         Polyaniline: -2
@@ -982,7 +1104,7 @@ resources:
   Prawn Suit Jump Jet Upgrade:
     recipes:
     - output: 1
-      recipe_type: Vehicle Upgrade
+      recipe_type: Fabricator
       requirements:
         Nickel Ore: -2
         Crystalline Sulfur: -3
@@ -992,7 +1114,7 @@ resources:
   Prawn Suit Propulsion Cannon:
     recipes:
     - output: 1
-      recipe_type: Vehicle Upgrade
+      recipe_type: Fabricator
       requirements:
         Computer Chip: -1
         Titanium: -5
@@ -1002,17 +1124,17 @@ resources:
   Prawn Suit Grappling Arm:
     recipes:
     - output: 1
-      recipe_type: Vehicle Upgrade
+      recipe_type: Fabricator
       requirements:
-        Advanced Wiring Kit: -1
-        Titanium: -5
-        Lithium: -1
         Benzene: -1
+        Advanced Wiring Kit: -1
+        Titanium: -2
+        Lithium: -1
     - recipe_type: Raw Resource
   Prawn Suit Drill Arm:
     recipes:
     - output: 1
-      recipe_type: Vehicle Upgrade
+      recipe_type: Fabricator
       requirements:
         Titanium: -5
         Lithium: -1
@@ -1021,7 +1143,7 @@ resources:
   Prawn Suit Torpedo Arm:
     recipes:
     - output: 1
-      recipe_type: Vehicle Upgrade
+      recipe_type: Fabricator
       requirements:
         Titanium: -5
         Lithium: -1
@@ -1032,7 +1154,7 @@ resources:
   Vortex Torpedo:
     recipes:
     - output: 2
-      recipe_type: Vehicle Upgrade
+      recipe_type: Fabricator
       requirements:
         Titanium: -1
         Magnetite: -1
@@ -1040,98 +1162,10 @@ resources:
   Gas Torpedo:
     recipes:
     - output: 2
-      recipe_type: Vehicle Upgrade
+      recipe_type: Fabricator
       requirements:
         Titanium: -1
-        Gas Pod: -1
-    - recipe_type: Raw Resource
-
-## Cyclops
-  Cyclops Depth Module MK1:
-    recipes:
-    - output: 1
-      recipe_type: Cyclops Fabricator
-      requirements:
-        Plasteel Ingot: -1
-        Ruby: -3
-    - recipe_type: Raw Resource
-  Cyclops Depth Module MK2:
-    recipes:
-    - output: 1
-      recipe_type: Modification Station
-      requirements:
-        Cyclops Depth Module MK1: -1
-        Plasteel Ingot: -1
-        Nickel Ore: -3
-    - recipe_type: Raw Resource
-  Cyclops Depth Module MK3:
-    recipes:
-    - output: 1
-      recipe_type: Modification Station
-      requirements:
-        Cyclops Depth Module MK2: -1
-        Plasteel Ingot: -1
-        Kyanite: -3
-    - recipe_type: Raw Resource
-  Cyclops Engine Efficiency Module:
-    recipes:
-    - output: 1
-      recipe_type: Cyclops Fabricator
-      requirements:
-        Computer Chip: -1
-        Benzene: -1
-        Polyaniline: -1
-    - recipe_type: Raw Resource
-  Cyclops Thermal Reactor Module:
-    recipes:
-    - output: 1
-      recipe_type: Cyclops Fabricator
-      requirements:
-        Polyaniline: -2
-        Kyanite: -4
-        Wiring Kit: -1
-    - recipe_type: Raw Resource
-  Cyclops Sonar Upgrade:
-    recipes:
-    - output: 1
-      recipe_type: Cyclops Fabricator
-      requirements:
-        Computer Chip: -1
-        Magnetite: -3
-    - recipe_type: Raw Resource
-  Cyclops Fire Suppression System:
-    recipes:
-    - output: 1
-      recipe_type: Cyclops Fabricator
-      requirements:
-        Aerogel: -2
-        Crystalline Sulfur: -2
-    - recipe_type: Raw Resource
-  Cyclops Docking Bay Repair Module:
-    recipes:
-    - output: 1
-      recipe_type: Cyclops Fabricator
-      requirements:
-        Repair Tool: -1
-        Copper Wire: -1
-    - recipe_type: Raw Resource
-  Cyclops Decoy Tube Upgrade:
-    recipes:
-    - output: 1
-      recipe_type: Cyclops Fabricator
-      requirements:
-        Titanium: -3
-        Lithium: -2
-        Aerogel: -1
-    - recipe_type: Raw Resource
-  Cyclops Shield Generator:
-    recipes:
-    - output: 1
-      recipe_type: Cyclops Fabricator
-      requirements:
-        Advanced Wiring Kit: -1
-        Polyaniline: -1
-        Power Cell: -1
+        Crystalline Sulfur: -1
     - recipe_type: Raw Resource
 
 ## Scanner Room
@@ -1209,7 +1243,7 @@ resources:
       requirements:
         Titanium: -3
     - recipe_type: Raw Resource
-  Glass Compartment:
+  I Glass Compartment:
     recipes:
     - output: 1
       recipe_type: Build
@@ -1264,13 +1298,48 @@ resources:
         Enameled Glass: -2
         Titanium: -1
     - recipe_type: Raw Resource
+  Control Room:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -4
+        Advanced Wiring Kit: -1
+        Glass: -1
+    - recipe_type: Raw Resource
+  Large Room:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Plasteel Ingot: -2
+    - recipe_type: Raw Resource
+  Multipurpose Room Glass Dome:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Enameled Glass: -2
+        Titanium: -2
+        Lithium: -1
+    - recipe_type: Raw Resource
+  Large Room Glass Dome:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Enameled Glass: -4
+        Titanium: -4
+        Copper Ore: -2
+        Lithium: -2
+    - recipe_type: Raw Resource
   Hatch:
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
         Quartz: -1
-        Titanium: -2
+        Titanium: -1
     - recipe_type: Raw Resource
   Window:
     recipes:
@@ -1315,6 +1384,14 @@ resources:
         Gold: -1
         Titanium: -1
     - recipe_type: Raw Resource
+  Snowfox Hoverpad:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+        Wiring Kit: -1
+    - recipe_type: Raw Resource
   Floodlight:
     recipes:
     - output: 1
@@ -1322,14 +1399,6 @@ resources:
       requirements:
         Glass: -1
         Titanium: -1
-    - recipe_type: Raw Resource
-  Spotlight:
-    recipes:
-    - output: 1
-      recipe_type: Build
-      requirements:
-        Glass: -1
-        Titanium: -2
     - recipe_type: Raw Resource
   Exterior Growbed:
     recipes:
@@ -1344,6 +1413,15 @@ resources:
       recipe_type: Build
       requirements:
         Titanium: -2
+    - recipe_type: Raw Resource
+  Snowman:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Snowball: -3
+        High Capacity O₂ Tank: -1
+        Rebreather: -1
     - recipe_type: Raw Resource
 
 # Interior Pieces
@@ -1406,6 +1484,21 @@ resources:
         Glass: -5
         Titanium: -2
     - recipe_type: Raw Resource
+  Large Room Partition:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Large Room Partition Door:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -1
+        Quartz: -1
+    - recipe_type: Raw Resource
 
 # Interior Modules
   Fabricator:
@@ -1413,27 +1506,9 @@ resources:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -1
-        Gold: -1
-        Table Coral Sample: -1
-    - recipe_type: Raw Resource
-  Radio:
-    recipes:
-    - output: 1
-      recipe_type: Build
-      requirements:
-        Titanium: -1
-        Copper Ore: -1
-    - recipe_type: Raw Resource
-  Medical Kit Fabricator:
-    recipes:
-    - output: 1
-      recipe_type: Build
-      requirements:
-        Computer Chip: -1
-        Fiber Mesh: -1
-        Silver Ore: -1
-        Titanium: -1
+        Titanium: -2
+        Copper Ore: -2
+        Quartz: -3
     - recipe_type: Raw Resource
   Wall Locker:
     recipes:
@@ -1465,7 +1540,7 @@ resources:
       recipe_type: Build
       requirements:
         Advanced Wiring Kit: -1
-        Ruby: -2
+        Lithium: -2
         Titanium: -2
     - recipe_type: Raw Resource
   Aquarium:
@@ -1485,6 +1560,22 @@ resources:
         Titanium: -1
         Diamond: -1
         Lead: -1
+    - recipe_type: Raw Resource
+  Jukebox:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Quartz: -1
+        Titanium: -2
+    - recipe_type: Raw Resource
+  Jukebox Speaker:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -1
+        Copper Ore: -1
     - recipe_type: Raw Resource
   Basic Plant Pot:
     recipes:
@@ -1521,6 +1612,21 @@ resources:
       requirements:
         Titanium: -1
     - recipe_type: Raw Resource
+  Recyclotron:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Ion Cube: -1
+        Titanium Ingot: -1
+    - recipe_type: Raw Resource
+  Coffee Vending Machine:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+    - recipe_type: Raw Resource
 
 # Misc
   Bench:
@@ -1554,7 +1660,72 @@ resources:
         Titanium: -1
         Fiber Mesh: -1
     - recipe_type: Raw Resource
+
+  Fred's Bed:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -1
+        Fiber Mesh: -1
+    - recipe_type: Raw Resource
+  Jeremiah's Bed:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -1
+        Fiber Mesh: -1
+    - recipe_type: Raw Resource
+  Sam's Bed:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -1
+        Fiber Mesh: -1
+    - recipe_type: Raw Resource
+  Zeta's Bed:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -1
+        Fiber Mesh: -1
+    - recipe_type: Raw Resource
+  Danielle's Bed:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -1
+        Fiber Mesh: -1
+    - recipe_type: Raw Resource
+  Parvan's Bed:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -1
+        Fiber Mesh: -1
+    - recipe_type: Raw Resource
+  Emmanuel's Bed:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -2
+        Fiber Mesh: -1
+    - recipe_type: Raw Resource
+
   Desk:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Executive Desk:
     recipes:
     - output: 1
       recipe_type: Build
@@ -1616,7 +1787,8 @@ resources:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
+        Lead: -2
+        Titanium: -1
     - recipe_type: Raw Resource
   Vending Machine:
     recipes:
@@ -1626,19 +1798,52 @@ resources:
         Glass: -1
         Titanium: -2
     - recipe_type: Raw Resource
-  Coffee Vending Machine:
+  Counter:
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
         Titanium: -2
     - recipe_type: Raw Resource
-  Lab Counter:
+  Fridge:
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
+        Glass: -1
         Titanium: -2
+    - recipe_type: Raw Resource
+  Shower:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Pipe: -1
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Sink:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Pipe: -1
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Toilet:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Pipe: -1
+        Titanium: -1
+    - recipe_type: Raw Resource
+  Small Stove:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Copper Wire: -1
+        Titanium: -1
     - recipe_type: Raw Resource
   Wall Planter:
     recipes:
@@ -1661,109 +1866,53 @@ resources:
       requirements:
         Titanium: -2
     - recipe_type: Raw Resource
-  An Unusual Doll:
+  Aromatherapy Lamp:
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Glass: -1
+        Battery: -1
+        Young Cotton Anemone: -1
+    - recipe_type: Raw Resource
+  Executive Toy:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Magnetite: -1
         Titanium: -1
     - recipe_type: Raw Resource
 
-  Ion Cube:
-    recipes:
-      - recipe_type: Raw Resource
-  Purple Tablet:
+# Architect Parts
+  Architect Organs:
     recipes:
     - output: 1
-      recipe_type: Fabricator
+      recipe_type: Architect Component Fabricator
       requirements:
         Ion Cube: -1
-        Diamond: -2
+        Ribbon Plant: -2
+        Kyanite: -3
     - recipe_type: Raw Resource
-  Blue Tablet:
+  Architect Skeleton:
     recipes:
     - output: 1
-      recipe_type: Fabricator
+      recipe_type: Architect Component Fabricator
       requirements:
-        Ion Cube: -1
-        Kyanite: -2
-    - recipe_type: Raw Resource
-  Orange Tablet:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Ion Cube: -1
-        Nickel Ore: -2
-    - recipe_type: Raw Resource
-  Hatching Enzymes:
-    recipes:
-    - output: 1
-      recipe_type: Fabricator
-      requirements:
-        Eye Stalk Seed: -1
-        Fungal Sample: -1
-        Ghost Weed Seed: -1
-        Sea Crown Seed: -1
-        Bulb Bush Sample: -1
-    - recipe_type: Raw Resource
-
-  Neptune Launch Platform:
-    recipes:
-    - output: 1
-      recipe_type: Mobile Vehicle Bay
-      requirements:
-        Lead: -4
-        Titanium Ingot: -2
-        Computer Chip: -1
-    - recipe_type: Raw Resource
-
-# Neptune Launch Platform
-  Neptune Gantry:
-    recipes:
-    - output: 1
-      recipe_type: Neptune Launch Platform
-      requirements:
+        Diamond: -3
         Plasteel Ingot: -1
-        Copper Wire: -1
-        Lubricant: -1
+        Polyaniline: -1
     - recipe_type: Raw Resource
-  Neptune Boosters:
+  Architect Tissues:
     recipes:
     - output: 1
-      recipe_type: Neptune Launch Platform
+      recipe_type: Architect Component Fabricator
       requirements:
-        Plasteel Ingot: -1
-        Nickel Ore: -3
-        Aerogel: -2
-        Wiring Kit: -1
-    - recipe_type: Raw Resource
-  Neptune Fuel Reserve:
-    recipes:
-    - output: 1
-      recipe_type: Neptune Launch Platform
-      requirements:
-        Plasteel Ingot: -1
-        Crystalline Sulfur: -4
-        Kyanite: -4
-        Ion Power Cell: -2
-    - recipe_type: Raw Resource
-  Neptune Cockpit:
-    recipes:
-    - output: 1
-      recipe_type: Neptune Launch Platform
-      requirements:
-        Cyclops Shield Generator: -1
-        Plasteel Ingot: -1
-        Enameled Glass: -1
-        Computer Chip: -1
+        Root Globule: -2
+        Synthetic Fibers: -1
+        Gel Sack: -2
     - recipe_type: Raw Resource
 
 # Raw Materials
-  Cave Sulfur:
-    recipes:
-      - recipe_type: Raw Resource
   Copper Ore:
     recipes:
       - recipe_type: Raw Resource
@@ -1816,14 +1965,13 @@ resources:
   Uraninite Crystal:
     recipes:
       - recipe_type: Raw Resource
-
-  Gas Pod:
+  Ion Cube:
     recipes:
       - recipe_type: Raw Resource
-  Stalker Tooth:
+  Snowball:
     recipes:
       - recipe_type: Raw Resource
-  Alien Feces:
+  Snow Stalker Fur:
     recipes:
       - recipe_type: Raw Resource
 
@@ -1831,32 +1979,17 @@ resources:
   Table Coral Sample:
     recipes:
       - recipe_type: Raw Resource
-  Coral Tube Sample:
-    recipes:
-      - recipe_type: Raw Resource
-  Fungal Sample:
+  Flowering Spore:
     recipes:
       - recipe_type: Raw Resource
 
-  Acid Mushroom:
+  Antennae Fruit:
     recipes:
       - recipe_type: Raw Resource
-  Acid Mushroom Spore:
+  Antennae Seed:
     recipes:
       - recipe_type: Raw Resource
-  Blood Oil:
-    recipes:
-      - recipe_type: Raw Resource
-  Blue Palm Seed:
-    recipes:
-      - recipe_type: Raw Resource
-  Brain Coral Sample:
-    recipes:
-      - recipe_type: Raw Resource
-  Bulb Bush Sample:
-    recipes:
-      - recipe_type: Raw Resource
-  Cave Bush Seed:
+  Bullseye Shroom Chunk:
     recipes:
       - recipe_type: Raw Resource
   Creepvine Sample:
@@ -1865,83 +1998,59 @@ resources:
   Creepvine Seed Cluster:
     recipes:
       - recipe_type: Raw Resource
-  Deep Shroom:
-    recipes:
-      - recipe_type: Raw Resource
-  Deep Shroom Spore:
-    recipes:
-      - recipe_type: Raw Resource
-  Eye Stalk Seed:
-    recipes:
-      - recipe_type: Raw Resource
-  Furled Papyrus Seed:
-    recipes:
-      - recipe_type: Raw Resource
-  Gabe's Feather Seed:
-    recipes:
-      - recipe_type: Raw Resource
   Gel Sack:
     recipes:
       - recipe_type: Raw Resource
   Gel Sack Spores:
     recipes:
       - recipe_type: Raw Resource
-  Ghost Weed Seed:
-    recipes:
-      - recipe_type: Raw Resource
-  Jellyshroom Spore:
-    recipes:
-      - recipe_type: Raw Resource
-  Membrain Tree Seed:
-    recipes:
-      - recipe_type: Raw Resource
-  Pygmy Fan Seed:
+  Hardy Cave Bush Seed:
     recipes:
       - recipe_type: Raw Resource
   Redwort Seed:
     recipes:
       - recipe_type: Raw Resource
-  Regress Shell Seed:
+  Ribbon Plant:
     recipes:
       - recipe_type: Raw Resource
-  Rouge Cradle Seed:
+  Ribbon Plant Seed:
     recipes:
       - recipe_type: Raw Resource
-  Sea Crown Seed:
+  Root Globule:
     recipes:
       - recipe_type: Raw Resource
-  Spiked Horn Grass Seed:
+  Root Globule Seed:
+    recipes:
+      - recipe_type: Raw Resource
+  Spiral Plant Clipping:
     recipes:
       - recipe_type: Raw Resource
   Spotted Dockleaf Seed:
     recipes:
       - recipe_type: Raw Resource
-  Tiger Plant Seed:
-    recipes:
-      - recipe_type: Raw Resource
-  Veined Nettle Seed:
-    recipes:
-      - recipe_type: Raw Resource
   Violet Beau Seed:
     recipes:
       - recipe_type: Raw Resource
-  Writhing Weed Seed:
+  Young Cotton Anemone:
+    recipes:
+      - recipe_type: Raw Resource
+  Young Cotton Anemone Seed:
     recipes:
       - recipe_type: Raw Resource
 
-  Bulbo Tree Sample:
-    recipes:
-      - recipe_type: Raw Resource
   Chinese Potato:
     recipes:
       - recipe_type: Raw Resource
-  Fern Palm Seed:
+  Fevered Pepper:
     recipes:
       - recipe_type: Raw Resource
-  Grub Basket Seed:
+  Frost Vase Plant:
     recipes:
       - recipe_type: Raw Resource
-  Jaffa Cup Seed:
+  Frost Vase Plant Seed:
+    recipes:
+      - recipe_type: Raw Resource
+  Shrub Nut:
     recipes:
       - recipe_type: Raw Resource
   Lantern Fruit:
@@ -1953,122 +2062,149 @@ resources:
   Small Marblemelon:
     recipes:
       - recipe_type: Raw Resource
-  Marblemelon Seeds:
+  Marblemelon Seed:
     recipes:
       - recipe_type: Raw Resource
-  Ming Plant Seed:
+  Preston's Delight:
     recipes:
       - recipe_type: Raw Resource
-  Pink Cap:
-    recipes:
-      - recipe_type: Raw Resource
-  Pink Cap Spore:
-    recipes:
-      - recipe_type: Raw Resource
-  Speckled Rattler:
-    recipes:
-      - recipe_type: Raw Resource
-  Speckled Rattler Spore:
-    recipes:
-      - recipe_type: Raw Resource
-  Voxel Shrub Seed:
+  Preston's Plant Leaf:
     recipes:
       - recipe_type: Raw Resource
 
 ## Eggs
-  Ampeel Egg:
+  Arctic Ray Egg:
     recipes:
       - recipe_type: Raw Resource
-  Boneshark Egg:
+  Brinewing Egg:
     recipes:
       - recipe_type: Raw Resource
-  Crabsnake Egg:
-    recipes:
-      - recipe_type: Raw Resource
-  Crabsquid Egg:
+  Brute Shark Egg:
     recipes:
       - recipe_type: Raw Resource
   Crashfish Egg:
     recipes:
       - recipe_type: Raw Resource
-  Cuddlefish Egg:
+  Cryptosuchus Egg:
     recipes:
       - recipe_type: Raw Resource
-  Gasopod Egg:
+  Glow Whale Egg:
     recipes:
       - recipe_type: Raw Resource
-  Jellyray Egg:
+  Eye Jelly Egg:
     recipes:
       - recipe_type: Raw Resource
-  Lava Lizard Egg:
+  Lily Paddler Egg:
     recipes:
       - recipe_type: Raw Resource
-  Mesmer Egg:
+  Pengwing Egg:
     recipes:
       - recipe_type: Raw Resource
-  Rabbit Ray Egg:
+  Pinnacarid Egg:
     recipes:
       - recipe_type: Raw Resource
-  Sand Shark Egg:
+  Rock Puncher Egg:
     recipes:
       - recipe_type: Raw Resource
-  Spadefish Egg:
+  Sea Monkey Egg:
     recipes:
       - recipe_type: Raw Resource
-  Stalker Egg:
+  Squidshark Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Titan Holefish Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Blue Trivalve Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Yellow Trivalve Egg:
     recipes:
       - recipe_type: Raw Resource
 
 ## Placeable
-  Arcade Gorge Toy:
+  Cylindrical Flask:
     recipes:
       - recipe_type: Raw Resource
-  Gray Cap:
+  Small Flask:
     recipes:
       - recipe_type: Raw Resource
-  Blue Cap:
-    recipes:
-      - recipe_type: Raw Resource
-  Large Sample Flask:
-    recipes:
-      - recipe_type: Raw Resource
-  Small Sample Flask:
-    recipes:
-      - recipe_type: Raw Resource
-  Cylindrical Sample Flask:
-    recipes:
-      - recipe_type: Raw Resource
-  Microscope:
-    recipes:
-      - recipe_type: Raw Resource
-  Fluid Analyzer:
-    recipes:
-      - recipe_type: Raw Resource
-  Sample Analyzer:
-    recipes:
-      - recipe_type: Raw Resource
-  Carry-all:
-    recipes:
-      - recipe_type: Raw Resource
-  Aurora Poster:
-    recipes:
-      - recipe_type: Raw Resource
-  Natural Selection 2 Poster:
-    recipes:
-      - recipe_type: Raw Resource
-  Keep Calm Poster:
-    recipes:
-      - recipe_type: Raw Resource
-  Prawn Suit Poster - Land:
-    recipes:
-      - recipe_type: Raw Resource
-  Prawn Suit Poster - Sea:
-    recipes:
-      - recipe_type: Raw Resource
-  Aurora Miniature:
-    recipes:
-      - recipe_type: Raw Resource
-  Toy Car:
+  Large Flask:
     recipes:
       - recipe_type: Raw Resource
 
+  Fred's Shaving Kit:
+    recipes:
+      - recipe_type: Raw Resource
+  Necklace:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Framed Picture Hand-drawn pengling art.:
+    recipes:
+      - recipe_type: Raw Resource
+  Picture Potato Portrait:
+    recipes:
+      - recipe_type: Raw Resource
+  Picture Robin & Potato:
+    recipes:
+      - recipe_type: Raw Resource
+  Picture Sam & Danielle:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Poster Alien intruder:
+    recipes:
+      - recipe_type: Raw Resource
+  Poster Architect Structures:
+    recipes:
+      - recipe_type: Raw Resource
+  Poster Early Spy Pengling concepts:
+    recipes:
+      - recipe_type: Raw Resource
+  Motivational Poster FOCUS:
+    recipes:
+      - recipe_type: Raw Resource
+  Poster Hang In There!:
+    recipes:
+      - recipe_type: Raw Resource
+  Poster Hoverball!:
+    recipes:
+      - recipe_type: Raw Resource
+  Motivational Poster It's Your Field:
+    recipes:
+      - recipe_type: Raw Resource
+  Poster Just say no… to skyrays!:
+    recipes:
+      - recipe_type: Raw Resource
+  Poster Keep calm and truck on:
+    recipes:
+      - recipe_type: Raw Resource
+  Poster Mercury II:
+    recipes:
+      - recipe_type: Raw Resource
+  Motivational Poster One Thing At A Time:
+    recipes:
+      - recipe_type: Raw Resource
+  Poster Reaper leviathan.:
+    recipes:
+      - recipe_type: Raw Resource
+  Poster Sea dragon.:
+    recipes:
+      - recipe_type: Raw Resource
+  Poster Seatruck X12:
+    recipes:
+      - recipe_type: Raw Resource
+  Poster Spy Pengling schematics:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Framed Art A roboticist's lightbulb moment.:
+    recipes:
+      - recipe_type: Raw Resource
+  Framed Art Abstract art:
+    recipes:
+      - recipe_type: Raw Resource
+  Framed Art Inspired by bacterial research.:
+    recipes:
+      - recipe_type: Raw Resource
