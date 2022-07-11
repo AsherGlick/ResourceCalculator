@@ -6,10 +6,11 @@ ResourceCalculator.com is a website that can calculate required resources from a
 Creating or Updating a Calculator
 =================================
 If you want to add a new resource list to the calculator, you will only need 4 things:  
-**1)** The list of resources and what is needed to obtain them (eg: [resource_lists/minecraft/resources.yaml](resource_lists/minecraft/resources.yaml))  
-**2)** A set of rectangular images of uniform size for each of the resources (eg: [resource_lists/minecraft/items/](resource_lists/minecraft/items/))  
-**3)** A 300px by 150px thumbnail of the game you are making a calculator for (eg: [resource_lists/minecraft/icon.png](resource_lists/minecraft/icon.png))  
-**4)** A folder in `resource_lists/` for all the files to live in (eg: [resource_lists/minecraft](resource_lists/minecraft))  
+1. A folder in `resource_lists/` for all the files to live in (eg: [resource_lists/minecraft](resource_lists/minecraft))
+2. A **460px** by **215px** thumbnail of the game you are making a calculator for (eg: [resource_lists/minecraft/icon.jpg](resource_lists/minecraft/icon.jpg))
+    * These are the same dimensions as the thumbnail in the Steam store.
+3. A set of rectangular images of uniform size for each of the resources (eg: [resource_lists/minecraft/items/](resource_lists/minecraft/items/))
+4. The list of resources and what is needed to obtain them (eg: [resource_lists/minecraft/resources.yaml](resource_lists/minecraft/resources.yaml))
 
 resources.yaml
 --------------
@@ -19,30 +20,24 @@ allowing one to order the items coherently.
 ```
 resources:
   Lithium:
-  - output: 1
-    recipe_type: Raw Resource
-    requirements:
-      Lithium: 0
+    recipes:
+    - recipe_type: Raw Resource
 
   Small Battery:
-  - output: 1
-    recipe_type: Backpack Printer
-    requirements:
-      Lithium: -1
-  - output: 1
-    recipe_type: Raw Resource
-    requirements:
-      Small Battery: 0
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Lithium: -1
+    - recipe_type: Raw Resource
 
   Medium Battery:
-  - output: 1
-    recipe_type: Printer
-    requirements:
-      Lithium: -2
-  - output: 1
-    recipe_type: Raw Resource
-    requirements:
-      Medium Battery: 0
+    recipes:
+    - output: 1
+      recipe_type: Printer
+      requirements:
+        Lithium: -2
+    - recipe_type: Raw Resource
 ```
 For ease of reading we will always have the key order be `output`, `recipe_type`, `requirements`, and then optionally `extra_data` where you can store extra information about the item in an unstructured map
 
@@ -50,13 +45,27 @@ items/[itemname].png
 -----------
 For each item in your resources.yaml file you will need to have an image for that resource. If an image is missing, then the build process will submit a warning and fill that space with a purple color, indicating it does not have an icon.
 The icons can be any size, even rectangular, but they all must be the same size as each other for a given calculator.
-The file names of each file should be the resource name in all lower case with no spaces or punctuation. For Example:  
-*"Pink Stained Glass Pane"* becomes *[pinkstainedglasspane.png](resource_lists/minecraft/items/pinkstainedglasspane.png)*  
-*"Jack 'o Lantern"* becomes *[jackolantern.png](resource_lists/minecraft/items/jackolantern.png)*  
+The file names of each file should be the resource name in all lower case with no spaces or punctuation.  
 
-icon.png
+For Example:  
+*"Pink Stained Glass Pane"* becomes *[pinkstainedglasspane.png](resource_lists/minecraft/items/pinkstainedglasspane.png)*  
+*"Jack 'o Lantern"* becomes *[jackolantern.png](resource_lists/minecraft/items/jackolantern.png)*
+
+icon.jpg
 --------
-The icon needs to be 300px by 150px to fit in with the other calculator links. It also needs to be in the `png` format, not `jpeg`.
+The icon needs to be `460px` by `215px` to fit in with the other calculator links. It also needs to be a `jpg`, not a `png` or other image file. If a game is on Steam, the Steam page for a game uses a `jpg` thumbnail with those dimensions. Simply downloading it to the appropriate directory and renaming it to `icon.jpg` should be all that is needed.
+
+Prefer images that only contain the title/tagline (left) rather than ones for a specific event and/or with reviews (right).
+
+![Good thumbnail example](https://cdn.cloudflare.steamstatic.com/steam/apps/548430/header_alt_assets_1.jpg "Good thumbnail example")
+![Bad thumbnail example](https://cdn.cloudflare.steamstatic.com/steam/apps/548430/header_alt_assets_13.jpg "Bad thumbnail example")
+
+The first URL below will show the current header, while the second URL can be used to browse all historical thumbnails by changing the number.
+```
+https://cdn.akamai.steamstatic.com/steam/apps/{SteamAppID}/header.jpg
+https://cdn.cloudflare.steamstatic.com/steam/apps/{SteamAppID}/header_alt_assets_1.jpg
+```
+`SteamAppId` can be located by opening the store page for any Steam game: `https://store.steampowered.com/app/{SteamAppID}/Game_Name/`
 
 Compiling The Calculator
 ========================
