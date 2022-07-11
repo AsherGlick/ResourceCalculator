@@ -1845,7 +1845,7 @@ function switch_recipe(item_name: string, event: MouseEvent) {
 	}
 
 
-	if (window.innerHeight + window.pageYOffset < recipe_selector.offsetHeight + event.pageY + menu_y_offset) {
+	if (window.innerHeight + window.pageYOffset < recipe_selector.offsetHeight + event.pageY + menu_y_offset ) {
 		top_offset = event.pageY - menu_y_offset - recipe_selector.offsetHeight;
 	}
 
