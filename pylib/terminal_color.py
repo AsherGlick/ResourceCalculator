@@ -1,5 +1,3 @@
-import sys
-
 FG_BLACK       = "\033[0;30m"
 FG_BLACK_BOLD  = "\033[1;30m"
 FG_RED         = "\033[0;31m"
@@ -27,26 +25,6 @@ CYAN   = 6
 WHITE  = 7
 
 RESET = "\033[0m"
-
-
-if not sys.stdout.isatty():
-    FG_BLACK       = ""
-    FG_BLACK_BOLD  = ""
-    FG_RED         = ""
-    FG_RED_BOLD    = ""
-    FG_GREEN       = ""
-    FG_GREEN_BOLD  = ""
-    FG_YELLOW      = ""
-    FG_YELLOW_BOLD = ""
-    FG_BLUE        = ""
-    FG_BLUE_BOLD   = ""
-    FG_PURPLE      = ""
-    FG_PURPLE_BOLD = ""
-    FG_CYAN        = ""
-    FG_CYAN_BOLD   = ""
-    FG_WHITE       = ""
-    FG_WHITE_BOLD  = ""
-    RESET          = ""
 
 
 def fg_gray(string: str) -> str:
