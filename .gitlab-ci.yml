@@ -42,7 +42,7 @@ deploy-prod:
     - rsync --recursive --archive --verbose -e ssh --delete output/ $PROD_USER@$PROD_HOST:/home/$PROD_USER/$DEPLOY_FOLDER/
     - ssh $PROD_USER@$PROD_HOST "cd $DEPLOY_FOLDER; tree -a"
   only:
-    - master
+    - production
 
 deploy-dev:
   image: asherglick/webdeploy:20170802
@@ -64,4 +64,4 @@ deploy-dev:
     - rsync --recursive --archive --verbose -e ssh --delete output/ $DEV_USER@$DEV_HOST:/home/$DEV_USER/$DEV_DEPLOY_FOLDER/
     - ssh $DEV_USER@$DEV_HOST "cd $DEV_DEPLOY_FOLDER; tree -a"
   only:
-    - dev
+    - master
