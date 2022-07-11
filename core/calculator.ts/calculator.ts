@@ -1840,12 +1840,12 @@ function switch_recipe(item_name: string, event: MouseEvent) {
 	var left_offset = event.pageX + menu_x_offset;
 	var top_offset = event.pageY + menu_y_offset;
 
-	if (window.innerWidth < recipe_selector.offsetWidth + event.pageX + menu_x_offset) {
+	if (window.innerWidth < recipe_selector.offsetWidth + event.pageX + menu_x_offset ) {
 		left_offset = event.pageX - menu_x_offset - recipe_selector.offsetWidth;
 	}
 
 
-	if (window.innerHeight + window.pageYOffset < recipe_selector.offsetHeight + event.pageY + menu_y_offset && event.pageY - menu_y_offset - recipe_selector.offsetHeight >= 0) {
+	if (window.innerHeight + window.pageYOffset < recipe_selector.offsetHeight + event.pageY + menu_y_offset) {
 		top_offset = event.pageY - menu_y_offset - recipe_selector.offsetHeight;
 	}
 
