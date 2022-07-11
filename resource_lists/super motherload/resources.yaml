@@ -4,6 +4,10 @@ authors:
 
 index_page_display_name: "Super Motherload"
 
+game_version: "1.04.01"
+# http://supermotherload.com/changelog/
+# https://store.steampowered.com/news/app/269110/view/2872689832680255250
+
 recipe_types:
   Buying: Buy {OUT_ITEM} for {IN_ITEMS} at a shop
   Upgrading: Buy {OUT_ITEM} for {IN_ITEMS} at a shop (once per character, not all available for all characters or in all maps)

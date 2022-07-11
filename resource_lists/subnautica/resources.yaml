@@ -14,6 +14,10 @@ authors:
 
 index_page_display_name: "Subnautica"
 
+game_version: "Minor Update B89"
+# https://steamdb.info/app/264710/patchnotes/
+# https://store.steampowered.com/news/app/264710/view/3100162208469621333
+
 recipe_types:
   Fabricator: "Use a Fabricator to turn {IN_ITEMS} into {OUT_ITEM}"
   Modification Station: "Use a Modification Station to turn {IN_ITEMS} into {OUT_ITEM}"

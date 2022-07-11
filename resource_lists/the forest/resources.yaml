@@ -8,6 +8,10 @@ authors:
 
 index_page_display_name: "The Forest"
 
+game_version: "V1.12 - VR"
+# https://endnightgames.com/updates
+# https://store.steampowered.com/news/app/242760/view/1585752541674344698
+
 recipe_types:
   Crafting: "Use your inventory to turn {IN_ITEMS} into {OUT_ITEM}"
   Upgrading: "Use your inventory to add {OUT_ITEM} to a weapon using {IN_ITEMS} (the weapon will not be consumed, not all weapons are applicable, terms and conditions may apply)"
