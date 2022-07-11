@@ -57,8 +57,13 @@ The icon needs to be `460px` by `215px` to fit in with the other calculator link
 
 Prefer images that only contain the title/tagline (left) rather than ones for a specific event and/or with reviews (right).
 
+<details>
+    <summary>See Thumbnail Examples</summary>
+    
 ![Good thumbnail example](https://cdn.cloudflare.steamstatic.com/steam/apps/548430/header_alt_assets_1.jpg "Good thumbnail example")
 ![Bad thumbnail example](https://cdn.cloudflare.steamstatic.com/steam/apps/548430/header_alt_assets_13.jpg "Bad thumbnail example")
+
+</details>
 
 The first URL below will show the current header, while the second URL can be used to browse all historical thumbnails by changing the number.
 ```
