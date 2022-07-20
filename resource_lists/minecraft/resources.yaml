@@ -41,10 +41,10 @@ requirement_groups:
   - Coal
 
   Any Crimson Stem:
-  - Crimson Hyphae
   - Crimson Stem
-  - Stripped Crimson Hyphae
+  - Crimson Hyphae
   - Stripped Crimson Stem
+  - Stripped Crimson Hyphae
 
   Any Dark Oak Log:
   - Dark Oak Log
@@ -226,10 +226,10 @@ requirement_groups:
   - Chiseled Quartz Block
 
   Any Warped Stem:
-  - Warped Hyphae
   - Warped Stem
-  - Stripped Warped Hyphae
+  - Warped Hyphae
   - Stripped Warped Stem
+  - Stripped Warped Hyphae
 
   Any Wool:
   - White Wool
