@@ -1,12 +1,13 @@
 #!/bin/bash
 source ./venv/bin/activate
-FILES=`find . -type f -name "*.py" -not -path "./venv/*" -not -path "./resource_lists/*"`
+
+readarray -d '' FILES < <(find . -type f -name "*.py" -not -path "*/venv/*" -not -path "*/venv_docker/*" -not -path "*/resource_lists/*"  -print0)
 
 # Lint Python Files
-flake8 --ignore=E501,E266,W503 $FILES
+flake8 --ignore=E501,E266,W503 "${FILES[@]}"
 
 # Type Check Python Files
-mypy --strict $FILES
+mypy --strict "${FILES[@]}"
 
 # Run Python Coverage Unit Tests
 coverage run -m unittest discover -s . -p '*_test.py'

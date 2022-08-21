@@ -16,7 +16,6 @@
 /tmp
 
 venv/
-output/
 /.coverage
 
 node_modules/
@@ -26,7 +25,9 @@ __pycache__/
 
 profiledata.prof
 
+# The virtual environment created from the docker containers
+venv_docker/
 
-# Generated js from typescript
-core/calculator.js
-core/calculator.js.map
+# Generated files
+cache/
+output/

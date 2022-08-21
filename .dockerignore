@@ -1,0 +1,4 @@
+.git
+venv
+venv_docker
+node_modules

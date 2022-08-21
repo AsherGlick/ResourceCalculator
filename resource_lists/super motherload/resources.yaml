@@ -1,0 +1,912 @@
+---
+authors:
+  Ben: "https://benjaminvreeland.com"
+
+index_page_display_name: "Super Motherload"
+
+game_version: "1.04.01"
+# http://supermotherload.com/changelog/
+# https://store.steampowered.com/news/app/269110/view/2872689832680255250
+
+recipe_types:
+  Buying: Buy {OUT_ITEM} for {IN_ITEMS} at a shop
+  Upgrading: Buy {OUT_ITEM} for {IN_ITEMS} at a shop (once per character, not all available for all characters or in all maps)
+  Sell: Bring {IN_ITEMS} to a mineral depot to sell for {OUT_ITEM}
+  Instant Sell: Mine {IN_ITEMS} to sell instantly for {OUT_ITEM}
+  Smelter Level 1: "Mine {IN_ITEMS} to smelt {OUT_ITEM}"
+  Smelter Level 2: "Mine {IN_ITEMS} to smelt {OUT_ITEM} (level 2 smelter required)"
+  Smelter Level 3: "Mine {IN_ITEMS} to smelt {OUT_ITEM} (level 3 smelter required)"
+  Smelter Level 4: "Mine {IN_ITEMS} to smelt {OUT_ITEM} (level 4 smelter required)"
+  Smelter Level 5: "Mine {IN_ITEMS} to smelt {OUT_ITEM} (level 5 smelter required)"
+  Smelter Level 6: "Mine {IN_ITEMS} to smelt {OUT_ITEM} (level 6 smelter required)"
+
+resources:
+## Level 1 Smelting
+  Sterling Silver:
+    recipes:
+    - output: 1
+      recipe_type: Smelter Level 1
+      requirements:
+        Bronzium: -1
+        Silverium: -1
+    - recipe_type: Raw Resource
+  Rare Earth Magnet:
+    recipes:
+    - output: 1
+      recipe_type: Smelter Level 1
+      requirements:
+        Ironium: -1
+        Platinium: -1
+    - recipe_type: Raw Resource
+  Katana Gold:
+    recipes:
+    - output: 1
+      recipe_type: Smelter Level 1
+      requirements:
+        Bronzium: -1
+        Goldium: -1
+    - recipe_type: Raw Resource
+  White Gold:
+    recipes:
+    - output: 1
+      recipe_type: Smelter Level 1
+      requirements:
+        Sterling Silver: -1
+        Goldium: -1
+    - recipe_type: Raw Resource
+
+## Level 2 Smelting (no bombs)
+  Green Diamond:
+    recipes:
+    - output: 1
+      recipe_type: Smelter Level 2
+      requirements:
+        Emerald: -1
+        Diamond: -1
+    - recipe_type: Raw Resource
+  Red Diamond:
+    recipes:
+    - output: 1
+      recipe_type: Smelter Level 2
+      requirements:
+        Ruby: -1
+        Diamond: -1
+    - recipe_type: Raw Resource
+  Blue Diamond:
+    recipes:
+    - output: 1
+      recipe_type: Smelter Level 2
+      requirements:
+        Amazonite: -1
+        Diamond: -1
+    - recipe_type: Raw Resource
+
+## Level 3 Smelting (no bombs)
+  Forest Stone:
+    recipes:
+    - output: 1
+      recipe_type: Smelter Level 3
+      requirements:
+        Emerald: -1
+        Amazonite: -1
+    - recipe_type: Raw Resource
+  Fire Stone:
+    recipes:
+    - output: 1
+      recipe_type: Smelter Level 3
+      requirements:
+        Ruby: -1
+        Amazonite: -1
+    - recipe_type: Raw Resource
+  Lightning Stone:
+    recipes:
+    - output: 1
+      recipe_type: Smelter Level 3
+      requirements:
+        Electronium: -1
+        Amazonite: -1
+    - recipe_type: Raw Resource
+  Aether Stone:
+    recipes:
+    - output: 1
+      recipe_type: Smelter Level 3
+      requirements:
+        Lightning Stone: -1
+        Unobtainium: -1
+    - recipe_type: Raw Resource
+
+## Bombs
+  TNT Bomb:
+    recipes:
+    - output: 1
+      recipe_type: Smelter Level 2
+      requirements:
+        Explodium: -2
+    - output: 1
+      recipe_type: Buying
+      requirements:
+        Dollars: -1500
+    - recipe_type: Raw Resource
+
+  C4 Bomb:
+    recipes:
+    - output: 1
+      recipe_type: Smelter Level 3
+      requirements:
+        Explodium: -1
+        Goldium: -1
+    - output: 1
+      recipe_type: Buying
+      requirements:
+        Dollars: -3000
+    - recipe_type: Raw Resource
+
+  T Bomb:
+    recipes:
+    - output: 1
+      recipe_type: Smelter Level 4
+      requirements:
+        Explodium: -1
+        Emerald: -1
+    - output: 1
+      recipe_type: Buying
+      requirements:
+        Dollars: -5000
+    - recipe_type: Raw Resource
+  Shaft Bomb:
+    recipes:
+    - output: 1
+      recipe_type: Smelter Level 4
+      requirements:
+        Explodium: -1
+        Ruby: -1
+    - output: 1
+      recipe_type: Buying
+      requirements:
+        Dollars: -10000
+    - recipe_type: Raw Resource
+
+  Electron Bomb:
+    recipes:
+    - output: 3
+      recipe_type: Smelter Level 5
+      requirements:
+        Explodium: -1
+        Electronium: -1
+    - output: 1
+      recipe_type: Buying
+      requirements:
+        Dollars: -30000
+    - recipe_type: Raw Resource
+
+  Nuke:
+    recipes:
+    - output: 1
+      recipe_type: Smelter Level 6
+      requirements:
+        Explodium: -1
+        Unobtainium: -1
+    - output: 1
+      recipe_type: Buying
+      requirements:
+        Dollars: -500000
+    - recipe_type: Raw Resource
+
+## Store
+# Upgrades
+  Drill Bit 1:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -4000
+    - recipe_type: Raw Resource
+  Drill Bit 2:
+    recipes:
+      - recipe_type: Raw Resource
+  Drill Bit 3:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Fuel Tank 1:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -2500
+    - recipe_type: Raw Resource
+  Fuel Tank 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -9000
+    - recipe_type: Raw Resource
+  Fuel Tank 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -37500
+    - recipe_type: Raw Resource
+  Fuel Tank 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -150000
+    - recipe_type: Raw Resource
+  Fuel Tank 5:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -500000
+    - recipe_type: Raw Resource
+  Fuel Tank 6:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -1500000
+    - recipe_type: Raw Resource
+  Fuel Tank 7:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -5000000
+    - recipe_type: Raw Resource
+
+  Cargo Size 1:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -1500
+    - recipe_type: Raw Resource
+  Cargo Size 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -6000
+    - recipe_type: Raw Resource
+  Cargo Size 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -25000
+    - recipe_type: Raw Resource
+  Cargo Size 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -100000
+    - recipe_type: Raw Resource
+  Cargo Size 5:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -350000
+    - recipe_type: Raw Resource
+  Cargo Size 6:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -1000000
+    - recipe_type: Raw Resource
+  Cargo Size 7:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -3000000
+    - recipe_type: Raw Resource
+
+  Hull Strength 1:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -1500
+    - recipe_type: Raw Resource
+  Hull Strength 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -6000
+    - recipe_type: Raw Resource
+  Hull Strength 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -25000
+    - recipe_type: Raw Resource
+  Hull Strength 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -100000
+    - recipe_type: Raw Resource
+  Hull Strength 5:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -350000
+    - recipe_type: Raw Resource
+  Hull Strength 6:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -1000000
+    - recipe_type: Raw Resource
+  Hull Strength 7:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -3000000
+    - recipe_type: Raw Resource
+
+  Smelter 1:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -1200
+    - recipe_type: Raw Resource
+  Smelter 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -5000
+    - recipe_type: Raw Resource
+  Smelter 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -20000
+    - recipe_type: Raw Resource
+  Smelter 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -75000
+    - recipe_type: Raw Resource
+  Smelter 5:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -250000
+    - recipe_type: Raw Resource
+  Smelter 6:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -1000000
+    - recipe_type: Raw Resource
+
+  Radar 1:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -750
+    - recipe_type: Raw Resource
+  Radar 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -2500
+    - recipe_type: Raw Resource
+  Radar 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -10000
+    - recipe_type: Raw Resource
+  Radar 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -75000
+    - recipe_type: Raw Resource
+  Radar 5:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -250000
+    - recipe_type: Raw Resource
+  Radar 6:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -1000000
+    - recipe_type: Raw Resource
+
+# Speed
+  Drill Speed 1:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -1500
+    - recipe_type: Raw Resource
+  Drill Speed 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -6000
+    - recipe_type: Raw Resource
+  Drill Speed 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -25000
+    - recipe_type: Raw Resource
+  Drill Speed 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -100000
+    - recipe_type: Raw Resource
+  Drill Speed 5:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -350000
+    - recipe_type: Raw Resource
+  Drill Speed 6:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -1000000
+    - recipe_type: Raw Resource
+  Drill Speed 7:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -3000000
+    - recipe_type: Raw Resource
+
+  Rotor Speed 1:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -750
+    - recipe_type: Raw Resource
+  Rotor Speed 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -3000
+    - recipe_type: Raw Resource
+  Rotor Speed 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -12500
+    - recipe_type: Raw Resource
+  Rotor Speed 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -50000
+    - recipe_type: Raw Resource
+  Rotor Speed 5:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -150000
+    - recipe_type: Raw Resource
+  Rotor Speed 6:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -500000
+    - recipe_type: Raw Resource
+  Rotor Speed 7:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -1500000
+    - recipe_type: Raw Resource
+
+  Tread Speed 1:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -750
+    - recipe_type: Raw Resource
+  Tread Speed 2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -3000
+    - recipe_type: Raw Resource
+  Tread Speed 3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -12500
+    - recipe_type: Raw Resource
+  Tread Speed 4:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -50000
+    - recipe_type: Raw Resource
+  Tread Speed 5:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -150000
+    - recipe_type: Raw Resource
+  Tread Speed 6:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -500000
+    - recipe_type: Raw Resource
+  Tread Speed 7:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -1500000
+    - recipe_type: Raw Resource
+
+# Items
+  Reserve Fuel:
+    recipes:
+    - output: 1
+      recipe_type: Buying
+      requirements:
+        Dollars: -100000
+    - recipe_type: Raw Resource
+  Repair Kit:
+    recipes:
+    - output: 1
+      recipe_type: Buying
+      requirements:
+        Dollars: -75000
+    - recipe_type: Raw Resource
+  Teleporter:
+    recipes:
+    - output: 1
+      recipe_type: Buying
+      requirements:
+        Dollars: -150000
+    - recipe_type: Raw Resource
+
+# Specials
+  Alchemy:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -100000
+    - recipe_type: Raw Resource
+  Rubber Hull:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -250000
+    - recipe_type: Raw Resource
+  Fuel Converter:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -500000
+    - recipe_type: Raw Resource
+  Hull Converter:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -500000
+    - recipe_type: Raw Resource
+  Radiator:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -500000
+    - recipe_type: Raw Resource
+  Magma Money:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -500000
+    - recipe_type: Raw Resource
+  Force Field:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -2000000
+    - recipe_type: Raw Resource
+  Hull Regen:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -2000000
+    - recipe_type: Raw Resource
+  Rock Drill:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -2000000
+    - recipe_type: Raw Resource
+  Smart Bombs:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -4000000
+    - recipe_type: Raw Resource
+  Double Cargo:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -5000000
+    - recipe_type: Raw Resource
+  Air Bombs:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -6000000
+    - recipe_type: Raw Resource
+  Metal Drill:
+    recipes:
+    - output: 1
+      recipe_type: Upgrading
+      requirements:
+        Dollars: -25000000
+    - recipe_type: Raw Resource
+  Oil Extractor:
+    recipes:
+      - recipe_type: Raw Resource
+
+## Basic
+  Bronzium:
+    recipes:
+      - recipe_type: Raw Resource
+  Silverium:
+    recipes:
+      - recipe_type: Raw Resource
+  Goldium:
+    recipes:
+      - recipe_type: Raw Resource
+  Ironium:
+    recipes:
+      - recipe_type: Raw Resource
+  Platinium:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Explodium:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Emerald:
+    recipes:
+      - recipe_type: Raw Resource
+  Ruby:
+    recipes:
+      - recipe_type: Raw Resource
+  Diamond:
+    recipes:
+      - recipe_type: Raw Resource
+  Amazonite:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Electronium:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Unobtainium:
+    recipes:
+      - recipe_type: Raw Resource
+
+## Dollars
+  Dollars:
+    recipes:
+    - recipe_type: Raw Resource
+
+    - output: 30
+      recipe_type: Sell
+      requirements:
+        Ironium: -1
+    - output: 60
+      recipe_type: Sell
+      requirements:
+       Bronzium : -1
+    - output: 100
+      recipe_type: Sell
+      requirements:
+        Silverium: -1
+    - output: 250
+      recipe_type: Sell
+      requirements:
+        Goldium: -1
+    - output: 500
+      recipe_type: Sell
+      requirements:
+        Platinium: -1
+    - output: 2500
+      recipe_type: Sell
+      requirements:
+        Emerald: -1
+    - output: 5000
+      recipe_type: Sell
+      requirements:
+        Ruby: -1
+    - output: 10000
+      recipe_type: Sell
+      requirements:
+        Diamond: -1
+    - output: 20000
+      recipe_type: Sell
+      requirements:
+        Amazonite: -1
+    - output: 40000
+      recipe_type: Sell
+      requirements:
+        Electronium: -1
+    - output: 100000
+      recipe_type: Sell
+      requirements:
+        Unobtainium: -1
+
+    - output: 192
+      recipe_type: Sell
+      requirements:
+        Sterling Silver: -1
+    - output: 372
+      recipe_type: Sell
+      requirements:
+        Katana Gold: -1
+    - output: 420
+      recipe_type: Sell
+      requirements:
+        White Gold: -1
+    - output: 2500
+      recipe_type: Sell
+      requirements:
+        Rare Earth Magnet: -1
+    - output: 15000
+      recipe_type: Sell
+      requirements:
+        Green Diamond: -1
+    - output: 18000
+      recipe_type: Sell
+      requirements:
+        Red Diamond: -1
+    - output: 27000
+      recipe_type: Sell
+      requirements:
+        Forest Stone: -1
+    - output: 30000
+      recipe_type: Sell
+      requirements:
+        Fire Stone: -1
+    - output: 36000
+      recipe_type: Sell
+      requirements:
+        Blue Diamond: -1
+    - output: 72000
+      recipe_type: Sell
+      requirements:
+        Lightning Stone: -1
+    - output: 206400
+      recipe_type: Sell
+      requirements:
+        Aether Stone: -1
+
+    - output: 2500
+      recipe_type: Instant Sell
+      requirements:
+        Mutant Skull: -1
+    - output: 500
+      recipe_type: Instant Sell
+      requirements:
+        Arm Bones: -1
+    - output: 1000
+      recipe_type: Instant Sell
+      requirements:
+        Rib Bones: -1
+    - output: 1000
+      recipe_type: Instant Sell
+      requirements:
+        Hip Bones: -1
+    - output: 500
+      recipe_type: Instant Sell
+      requirements:
+        Leg Bones: -1
+    - output: 500
+      recipe_type: Instant Sell
+      requirements:
+        Hammer: -1
+    - output: 1000
+      recipe_type: Instant Sell
+      requirements:
+        Scrap Metal: -1
+    - output: 250
+      recipe_type: Instant Sell
+      requirements:
+        Beacon: -1
+
+
+## Instant Sell
+  Mutant Skull:
+    recipes:
+      - recipe_type: Raw Resource
+  Arm Bones:
+    recipes:
+      - recipe_type: Raw Resource
+  Rib Bones:
+    recipes:
+      - recipe_type: Raw Resource
+  Hip Bones:
+    recipes:
+      - recipe_type: Raw Resource
+  Leg Bones:
+    recipes:
+      - recipe_type: Raw Resource
+  Hammer:
+    recipes:
+      - recipe_type: Raw Resource
+  Scrap Metal:
+    recipes:
+      - recipe_type: Raw Resource
+  Beacon:
+    recipes:
+      - recipe_type: Raw Resource
