@@ -101,6 +101,8 @@ def calculator_function(input_files: CalculatorInputFiles, output_files: SingleF
 
     default_stack_size: str = resource_list.default_stack_size
 
+    resource_simple_names_js_data = mini_js_data(get_primitive(get_simple_names_only(resource_list.resources)), "resource_simple_names")
+
     recipe_type_format_js = generate_recipe_type_format_js(resource_list.recipe_types)
     recipe_type_format_js = uglify_js_string(recipe_type_format_js)
 
@@ -125,6 +127,8 @@ def calculator_function(input_files: CalculatorInputFiles, output_files: SingleF
         resources=html_resource_data,
         # the javascript/json object used for calculations
         recipe_json=recipe_js_data,
+        # names for proper image mapping
+        resource_simple_names=resource_simple_names_js_data,
         # The size and positions of the image
         item_width=image_width,
         item_height=image_height,
@@ -168,6 +172,18 @@ def get_simple_name(resource: str, resources: OrderedDict[str, Resource]) -> str
         return resources[resource].custom_simplename
     return re.sub(r'[^a-z0-9]', '', resource.lower())
 
+################################################################################
+# get_simple_names_only generates an object of custom_simplenames only for
+# resources where a simple name override has been set.
+################################################################################
+def get_simple_names_only(resources: OrderedDict[str, Resource]) -> Dict[str, str]:
+    simple_names = {}
+
+    for resourceKey in resources:
+        if resources[resourceKey].custom_simplename != "":
+            simple_names[resourceKey] = resources[resourceKey].custom_simplename
+
+    return simple_names
 
 ################################################################################
 # generate_recipe_type_format_js

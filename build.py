@@ -1,7 +1,6 @@
 import argparse
 import os
 from typing import Dict, Tuple, List
-import time
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import queue
