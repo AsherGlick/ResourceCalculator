@@ -7107,6 +7107,8 @@ resources:
         Oak Planks: -6
         Stick: -1
     - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
 
   Spruce Sign:
     recipes:
@@ -7116,6 +7118,8 @@ resources:
         Spruce Planks: -6
         Stick: -1
     - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
 
   Birch Sign:
     recipes:
@@ -7125,6 +7129,8 @@ resources:
         Birch Planks: -6
         Stick: -1
     - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
 
   Jungle Sign:
     recipes:
@@ -7134,6 +7140,8 @@ resources:
         Jungle Planks: -6
         Stick: -1
     - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
 
   Acacia Sign:
     recipes:
@@ -7143,6 +7151,8 @@ resources:
         Acacia Planks: -6
         Stick: -1
     - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
 
   Dark Oak Sign:
     recipes:
@@ -7152,6 +7162,8 @@ resources:
         Dark Oak Planks: -6
         Stick: -1
     - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
 
   Crimson Sign:
     recipes:
@@ -7161,6 +7173,8 @@ resources:
         Crimson Planks: -6
         Stick: -1
     - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
 
   Warped Sign:
     recipes:
@@ -7170,6 +7184,8 @@ resources:
         Warped Planks: -6
         Stick: -1
     - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
 
   Bucket:
     recipes:
@@ -9387,6 +9403,8 @@ resources:
         Mangrove Planks: -6
         Stick: -1
     - recipe_type: Raw Resource
+    custom_stack_multipliers:
+      Stack: 16
 
   Mangrove Slab:
     recipes:
