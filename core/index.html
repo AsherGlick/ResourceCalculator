@@ -17,21 +17,21 @@
 			Resource Calculator
 		</div>
 
-
-		{% for calculator in calculators %}
-			<a href="./{{calculator.path}}">
+		<div class="calculator_wrapper">
+			{% for calculator in calculators %}
+				<a href="./{{calculator.path}}">
+					<div class="calculator_link_wrapper">
+						<img src="{{calculator.path}}/{{calculator.icon_filename}}"/>
+						<div class="calculator_link" >{{calculator.display_name}}</div>
+					</div>
+				</a>
+			{% endfor %}
+			<a href="https://github.com/AsherGlick/ResourceCalculator/blob/master/README.md">
 				<div class="calculator_link_wrapper">
-					<img src="{{calculator.path}}/{{calculator.icon_filename}}"/>
-					<div class="calculator_link" >{{calculator.display_name}}</div>
+					<img src="add_game.png"/>
+					<div class="calculator_link">Add a<br>New Game</div>
 				</div>
 			</a>
-		{% endfor %}
-		<a href="https://github.com/AsherGlick/ResourceCalculator/blob/master/README.md">
-			<div class="calculator_link_wrapper">
-				<img src="add_game.png"/>
-				<div class="calculator_link">Add a<br>New Game</div>
-			</div>
-		</a>
-
+		</div>
 	</body>
 </html>

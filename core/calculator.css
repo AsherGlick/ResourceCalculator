@@ -511,13 +511,26 @@ body {
 
 
 /* Index Page Styles */
+.calculator_wrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 470px);
+	justify-content: center;
+}
+
+@media only screen and (max-width:460px) and (min-width:0px){
+	/* When the screen is smaller then 1 item shrink the
+	items to fit the screen horizontally */
+	.calculator_wrapper {
+		display: block;
+	}
+}
+
 .calculator_link_wrapper {
 	/* 460 by 215 is the height of the Steam thumbnail so it's easy to drop in */
 	position: relative;
 	max-width: 460px;
 	max-height: 215px;
-	margin: 5px;
-	float: left;
+	margin-bottom: 10px;
 }
 .calculator_link_wrapper img {
 	/* This lets it get smaller for mobile */
