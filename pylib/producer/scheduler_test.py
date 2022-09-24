@@ -690,6 +690,158 @@ class Integration_Tests(unittest.TestCase):
             ]
         )
 
+    ############################################################################
+    # test_double_array_no_match_group
+    #
+    # Tests that having two arrays of data in the same producer correctly
+    # produces the desired output when the arrays do not have any match groups.
+    ############################################################################
+    def test_double_array_no_match_group(self) -> None:
+
+        class InputFileDatatype(TypedDict):
+            data_file: List[str]
+            value_file: List[str]
+
+        class OutputFileDatatype(TypedDict):
+            data_file: str
+
+        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
+            return (input_files, {"data_file": "output_file.txt"})
+
+
+        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
+            return None  # pragma: no cover
+
+        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+            input_path_patterns={
+                "data_file": [r"^data_[a-z]+\.txt$"],
+                "value_file": [r"^value_[a-z]+\.txt"],
+            },
+            paths=paths,
+            function=function,
+            categories=["test"],
+        )
+
+        scheduler = Scheduler(
+            producer_list=[producer],
+            initial_filepaths=[],
+        )
+        scheduler.build_new_creators(
+            [
+                'data_one.txt',
+                'data_two.txt',
+                'value_one.txt',
+                'value_two.txt'
+            ]
+        )
+
+        self.assertCountEqual(
+            scheduler.creator_list.values(),
+            [
+                Creator(
+                    input_paths={
+                        "data_file": [
+                            "data_one.txt",
+                            "data_two.txt"
+                        ],
+                        "value_file": [
+                            "value_one.txt",
+                            "value_two.txt"
+                        ]
+                    },
+                    output_paths={
+                        "data_file": "output_file.txt"
+                    },
+                    function=function,
+                    categories=["test"]
+                ),
+            ]
+        )
+
+    ############################################################################
+    # test_double_array
+    #
+    # Tests that having two arrays of data in the same producer correctly
+    # produces the desired output.
+    ############################################################################
+    def test_double_array(self) -> None:
+
+        class InputFileDatatype(TypedDict):
+            data_file: List[str]
+            value_file: List[str]
+
+        class OutputFileDatatype(TypedDict):
+            data_file: str
+
+        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
+            return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
+
+        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
+            return None  # pragma: no cover
+
+        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+            input_path_patterns={
+                "data_file": [r"^data_(?P<title>[a-z]+)_[0-9]\.txt$"],
+                "value_file": [r"^value_(?P<title>[a-z]+)_[0-9]\.txt$"],
+            },
+            paths=paths,
+            function=function,
+            categories=["test"],
+        )
+
+        scheduler = Scheduler(
+            producer_list=[producer],
+            initial_filepaths=[],
+        )
+        scheduler.build_new_creators(
+            [
+                'data_one_1.txt',
+                'data_one_2.txt',
+                'data_two_1.txt',
+                'data_two_2.txt',
+                'value_one_1.txt',
+                'value_one_2.txt',
+                'value_two_1.txt',
+                'value_two_2.txt'
+            ]
+        )
+
+        self.assertCountEqual(
+            scheduler.creator_list.values(),
+            [
+                Creator(
+                    input_paths={
+                        'data_file': [
+                            'data_one_1.txt',
+                            'data_one_2.txt',
+                        ],
+                        'value_file': [
+                            'value_one_1.txt',
+                            'value_one_2.txt',
+                        ]
+                    },
+                    output_paths={'data_file': 'output_one.txt'},
+                    function=function,
+                    categories=['test']
+                ),
+                Creator(
+                    input_paths={
+                        'data_file': [
+                            'data_two_1.txt',
+                            'data_two_2.txt',
+                        ],
+                        'value_file': [
+                            'value_two_1.txt',
+                            'value_two_2.txt',
+                        ]
+                    },
+                    output_paths={'data_file': 'output_two.txt'},
+                    function=function,
+                    categories=['test']
+                )
+            ]
+        )
+
     def test_file_addition_to_existing_set(self) -> None:
         class InputFileDatatype(TypedDict):
             data_file: str

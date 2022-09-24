@@ -559,8 +559,6 @@ class Scheduler:
     def query_filesets(self, db: sqlite3.Connection, producer_index: int) -> List[Tuple[Any, Dict[str, str]]]:
         query_string = self.new_filesets_querystring(producer_index)
 
-        #print(query_string)
-
         producer = self.producer_list[producer_index]
 
         # output_data: List[Tuple[InputFileDatatype, Dict[str, str]]] = []
@@ -651,6 +649,8 @@ class Scheduler:
                 field_id=field_id
             )
 
+            table_contents = table_name
+
             field_alias="\"field_{field_id}\"".format(
                 field_id=field_id,
             )
@@ -666,14 +666,29 @@ class Scheduler:
             # If the field is a list then we want to grab each file and put it into a list
             # this is done by using
             elif isinstance(field, list):
-                columns.append("GROUP_CONCAT(REPLACE(REPLACE({table_name}.filename, '\\','\\\\'), ',', '\\,'), ',') AS {field_alias}".format(
+
+
+                match_columns = [Scheduler.get_match_group_column_name(producer, match_group) for match_group in producer.get_match_groups(field_name)]
+                new_table_name = table_name + "_mod"
+
+                table_contents = "(SELECT GROUP_CONCAT(REPLACE(REPLACE(filename, '\\','\\\\'), ',', '\\,'), ',') as filename, {match_columns}, SUM(is_updated) as is_updated FROM {table_name} GROUP BY {match_columns}) as {new_table_name}".format(
                     table_name=table_name,
+                    new_table_name=new_table_name,
+                    match_columns=",".join(match_columns)
+                )
+
+                columns.append("GROUP_CONCAT({table_name}.filename, ',') AS {field_alias}".format(
+                    table_name=new_table_name,
                     field_alias=field_alias,
                 ))
+
+                table_name = new_table_name
+
+
             else:
                 raise TypeError("Expected either a str or a list")
 
-            tables.append(table_name)
+            tables.append(table_contents)
 
             for match_group_name in producer.get_match_groups(field_name):
                 if match_group_name not in field_groups:
