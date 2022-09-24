@@ -14,9 +14,9 @@ authors:
 
 index_page_display_name: "Subnautica: Below Zero"
 
-game_version: "Language Pack Patch"
+game_version: "What the Dock Update"
 # https://steamdb.info/app/848450/patchnotes/
-# https://steamcommunity.com/games/848450/announcements/detail/2976303615856385379
+# https://steamcommunity.com/games/848450/announcements
 
 recipe_types:
   Fabricator: "Use a Fabricator to turn {IN_ITEMS} into {OUT_ITEM}"
@@ -1359,6 +1359,15 @@ resources:
       requirements:
         Lithium: -1
         Titanium: -3
+    - recipe_type: Raw Resource
+  Seatruck Dock:
+    recipes:
+    - output: 1
+      recipe_type: Build
+      requirements:
+        Titanium Ingot: -1
+        Advanced Wiring Kit: -1
+        Glass: -4
     - recipe_type: Raw Resource
 
 # Exterior Modules
