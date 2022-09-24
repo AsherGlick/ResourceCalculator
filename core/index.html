@@ -21,7 +21,7 @@
 		{% for calculator in calculators %}
 			<a href="./{{calculator.path}}">
 				<div class="calculator_link_wrapper">
-					<img src="{{calculator.path}}/icon.jpg"/>
+					<img src="{{calculator.path}}/{{calculator.icon_filename}}"/>
 					<div class="calculator_link" >{{calculator.display_name}}</div>
 				</div>
 			</a>

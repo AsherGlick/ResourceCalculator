@@ -2,8 +2,15 @@ from jinja2 import Environment, FileSystemLoader
 from typing import List, Dict, Tuple, TypedDict
 import json
 import os
-
+from pylib.filehash import getfilehash
 from pylib.producer import Producer, SingleFile, producer_copyfile, GenericProducer
+import shutil
+
+
+
+class SingleHashedFile(TypedDict):
+    file: str
+    filemetadata: str
 
 
 ################################################################################
@@ -21,13 +28,16 @@ def landing_page_producers(calculator_dir_regex: str) -> List[GenericProducer]:
                 ),
             },
             paths=logo_copy_paths,
-            function=producer_copyfile,
+            function=hash_and_copy_file,
             categories=["landing"],
         ),
 
         Producer(
             input_path_patterns={
                 "files": [r"^cache/(?:{calculator_dir_regex})/page_metadata\.json$".format(
+                    calculator_dir_regex=calculator_dir_regex
+                )],
+                "icon_filename_data": [r"^cache/(?:{calculator_dir_regex})/icon\.jpg_name\.json$".format(
                     calculator_dir_regex=calculator_dir_regex
                 )],
                 "template": r"^core/index\.html$"
@@ -40,17 +50,47 @@ def landing_page_producers(calculator_dir_regex: str) -> List[GenericProducer]:
 
 
 ################################################################################
+# hash_and_copy_file
+#
+# Copies a file with a dynamic output and saves a file with that dynamic output
+# in a fixed location for later lookups
+################################################################################
+def hash_and_copy_file(input_files: SingleFile, output_files: SingleHashedFile) -> None:
+    input_file: str = input_files["file"]
+    output_file: str = output_files["file"]
+
+    output_metadata_file: str = output_files["filemetadata"]
+
+    # Copy the file
+    shutil.copyfile(input_file, output_file)
+
+    # Write the hashed file name to a known location
+    with open(output_metadata_file, 'w') as f:
+        json.dump({
+            "icon_name": output_file
+        }, f)
+
+
+
+
+################################################################################
 # logo_copy_paths
 #
 # The input and output paths generation function for copying icon files into the
 # output directory.
 ################################################################################
-def logo_copy_paths(input_files: SingleFile, categories: Dict[str, str]) -> Tuple[SingleFile, SingleFile]:
+def logo_copy_paths(input_files: SingleFile, categories: Dict[str, str]) -> Tuple[SingleFile, SingleHashedFile]:
     calculator_name = categories["calculator_dir"]
+
+    logo_path = input_files["file"]
+
+    filehash = getfilehash(logo_path)
+
     return (
         input_files,
         {
-            "file": os.path.join("output", calculator_name, "icon.jpg")
+            "file": os.path.join("output", calculator_name, "icon-" + filehash + ".jpg"),
+            "filemetadata": os.path.join("cache", calculator_name, "icon.jpg_name.json"),
         }
     )
 
@@ -63,6 +103,7 @@ def logo_copy_paths(input_files: SingleFile, categories: Dict[str, str]) -> Tupl
 ################################################################################
 class LandingPageInputTypes(TypedDict):
     files: List[str]
+    icon_filename_data: List[str]
     template: str
 
 
@@ -92,6 +133,11 @@ def landing_page_function(input_paths: LandingPageInputTypes, output_paths: Sing
     env = Environment(loader=FileSystemLoader('core'))
     template = env.get_template("index.html")
 
+    icon_filename_datas: Dict[str, str] = {}
+
+    for icon_filename_data in input_paths["icon_filename_data"]:
+        icon_filename_datas[os.path.basename(os.path.dirname(icon_filename_data))] = icon_filename_data
+
     calculators = []
     for metadata_path in input_paths["files"]:
 
@@ -100,9 +146,16 @@ def landing_page_function(input_paths: LandingPageInputTypes, output_paths: Sing
 
         directory = os.path.basename(os.path.dirname(metadata_path))
 
+        icon_filename_data = icon_filename_datas[directory]
+
+
+        with open(icon_filename_data) as f:
+            icon_filename = os.path.basename(json.load(f)["icon_name"])
+
         calculator_data = {
             "path": directory,
-            "display_name": calculator_display_name
+            "display_name": calculator_display_name,
+            "icon_filename": icon_filename
         }
 
         calculators.append(calculator_data)
