@@ -10,7 +10,7 @@ from pylib.editor_producer import editor_producers
 from pylib.gz_compressor_producer import gz_compressor_producers
 from pylib.imagepack import item_image_producers
 from pylib.landing_page_producer import landing_page_producers
-from pylib.producer import Producer, Scheduler, SingleFile, GenericProducer, producer_copyfile
+from pylib.producer import Producer, Scheduler, SingleFile, GenericProducer, producer_copyfile, copy_file_with_hash
 from pylib.producer_plugins import plugins_producers
 from pylib.typescript_producer import typescript_producer
 from pylib.uglifyjs import uglify_js_producer
@@ -35,12 +35,16 @@ from pylib.yaml_linter_producer import resource_list_parser_producers
 # not dynamic as most of the other files are.
 ################################################################################
 def core_resource_producers() -> List[GenericProducer]:
+
+    hashed_copyfiles = [
+        "core/calculator.css",
+        "core/add_game.png",
+    ]
+
     # Files that should be copied out of the "core" folder.
     copyfiles = [
-        "core/calculator.css",
         "core/logo.png",
         "core/.htaccess",
-        "core/add_game.png",
         "core/ads.txt",
         "core/favicon.ico",
     ]
@@ -57,6 +61,17 @@ def core_resource_producers() -> List[GenericProducer]:
     ]
 
     core_producers: List[GenericProducer] = []
+
+    # Add a producer for each file that will be copied over to output/.
+    for copyfile in hashed_copyfiles:
+        core_producers.append(
+            copy_file_with_hash(
+                input_file_pattern="^{}$".format(copyfile),
+                output_file_template="output/{filename}-{filehash}{extension}",
+                cache_file_template= "cache/{filename}{extension}.json",
+                categories=["core"],
+            )
+        )
 
     # Add a producer for each file that will be copied over to output/.
     for copyfile in copyfiles:
@@ -170,12 +185,12 @@ def main() -> None:
         calculator_dir_regex = "|".join(calculator_page_sublist)
 
     producers: List[GenericProducer] = []
+    producers += core_resource_producers()
 
     producers += resource_list_parser_producers(calculator_dir_regex)
     producers += item_image_producers(calculator_dir_regex)
     producers += calculator_producers(calculator_dir_regex)
     producers += editor_producers(calculator_dir_regex)
-    producers += core_resource_producers()
     producers += landing_page_producers(calculator_dir_regex)
     producers += plugins_producers(calculator_dir_regex)
     producers += gz_compressor_producers()

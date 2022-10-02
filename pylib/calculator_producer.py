@@ -7,7 +7,7 @@ import pickle
 import re
 
 from pylib.json_data_compressor import mini_js_data
-from pylib.producer import Producer, SingleFile, GenericProducer
+from pylib.producer import Producer, SingleFile, GenericProducer, filename_from_metadatafile
 from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, get_primitive
 from pylib.uglifyjs import uglify_js_string
 from pylib.webminify import minify_css_blocks
@@ -28,6 +28,7 @@ def calculator_producers(calculator_dir_regex: str) -> List[GenericProducer]:
                 "image_layout_json": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/packed_image_layout\.json$".format(
                     calculator_dir_regex=calculator_dir_regex
                 ),
+                "css_filename_data": r"^cache/calculator\.css\.json",
                 "calculator_template": r"^core/calculator\.html$"
             },
             paths=calculator_paths,
@@ -47,6 +48,7 @@ def calculator_producers(calculator_dir_regex: str) -> List[GenericProducer]:
 class CalculatorInputFiles(TypedDict):
     resources_pickle: str
     image_layout_json: str
+    css_filename_data: str
     calculator_template: str
 
 
@@ -119,6 +121,8 @@ def calculator_function(input_files: CalculatorInputFiles, output_files: SingleF
 
     stack_sizes_json = json.dumps(get_primitive(stack_sizes))
 
+    css_path = filename_from_metadatafile(input_files["css_filename_data"], rel=os.path.dirname(calculator_index_html_filepath))
+
     # Generate the calculator from a template
     env = Environment(loader=FileSystemLoader('core'))
     calculator_template = env.get_template("calculator.html")
@@ -145,7 +149,9 @@ def calculator_function(input_files: CalculatorInputFiles, output_files: SingleF
         stack_sizes=stack_sizes,
         default_stack_size=default_stack_size,
         # Used to do calculations to divide counts into stacks
-        stack_sizes_json=stack_sizes_json)
+        stack_sizes_json=stack_sizes_json,
+        css_path=css_path,
+    )
 
     minified_calculator = htmlmin.minify(rendered_calculator, remove_comments=True, remove_empty_space=True)
     minified_calculator = minify_css_blocks(minified_calculator)

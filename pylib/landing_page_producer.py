@@ -3,7 +3,7 @@ from typing import List, Dict, Tuple, TypedDict
 import json
 import os
 from pylib.filehash import getfilehash
-from pylib.producer import Producer, SingleFile, producer_copyfile, GenericProducer
+from pylib.producer import Producer, SingleFile, filename_from_metadatafile, GenericProducer
 import shutil
 
 
@@ -12,6 +12,18 @@ class SingleHashedFile(TypedDict):
     file: str
     filemetadata: str
 
+################################################################################
+# LandingPageInputTypes
+#
+# A TypedDict representing the input files structure for the producer that
+# creates the landing page.
+################################################################################
+class LandingPageInputTypes(TypedDict):
+    files: List[str]
+    icon_filename_data: List[str]
+    css_filename_data: str
+    add_game_filename_data: str
+    template: str
 
 ################################################################################
 # landing_page_producers
@@ -40,6 +52,8 @@ def landing_page_producers(calculator_dir_regex: str) -> List[GenericProducer]:
                 "icon_filename_data": [r"^cache/(?:{calculator_dir_regex})/icon\.jpg_name\.json$".format(
                     calculator_dir_regex=calculator_dir_regex
                 )],
+                "css_filename_data": r"^cache/calculator\.css\.json",
+                "add_game_filename_data": r"^cache/add_game\.png\.json$",
                 "template": r"^core/index\.html$"
             },
             paths=landing_page_paths,
@@ -95,16 +109,7 @@ def logo_copy_paths(input_files: SingleFile, categories: Dict[str, str]) -> Tupl
     )
 
 
-################################################################################
-# LandingPageInputTypes
-#
-# A TypedDict representing the input files structure for the producer that
-# creates the landing page.
-################################################################################
-class LandingPageInputTypes(TypedDict):
-    files: List[str]
-    icon_filename_data: List[str]
-    template: str
+
 
 
 ################################################################################
@@ -160,7 +165,14 @@ def landing_page_function(input_paths: LandingPageInputTypes, output_paths: Sing
 
         calculators.append(calculator_data)
 
-    output_from_parsed_template = template.render(calculators=calculators)
+    add_game_image_path = filename_from_metadatafile(input_paths["add_game_filename_data"], rel="output")
+    css_path = filename_from_metadatafile(input_paths["css_filename_data"], rel="output")
+
+    output_from_parsed_template = template.render(
+        calculators=calculators,
+        addgame_image_path=add_game_image_path,
+        css_path=css_path,
+    )
 
     with open(os.path.join(output_paths["file"]), "w", encoding="utf_8") as f:
         f.write(output_from_parsed_template)
