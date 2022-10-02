@@ -1,9 +1,9 @@
-from typing import List, Tuple, Dict
+from typing import Callable, List, Tuple, Dict
 import os
 import shutil
 import subprocess
 
-from pylib.producer import Producer, SingleFile
+from pylib.producer import Producer, SingleFile, single_file_static_output_path
 
 
 ################################################################################
@@ -53,20 +53,7 @@ def uglify_js_producer(input_file: str, output_file: str, categories: List[str])
         input_path_patterns={
             "file": "^" + input_file + "$",
         },
-        paths=uglify_paths,
+        paths=single_file_static_output_path(output_file),
         function=uglify_copyfile,
         categories=categories + ["minifyjs"]
     )
-
-
-################################################################################
-# uglify_paths
-#
-# The input output path generation function for the the uglify_js producer.
-################################################################################
-def uglify_paths(input_files: SingleFile, categories: Dict[str, str]) -> Tuple[SingleFile, SingleFile]:
-    return (
-        input_files,
-        {
-            "file": os.path.join("output", os.path.basename(input_files["file"]))
-        })
