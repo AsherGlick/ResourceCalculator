@@ -10,8 +10,168 @@
 		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no" />
 		<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
 
+		<style>
+:root{
+    --white: #f9f9f9;
+    --black: #36383F;
+    --gray: #85888C;
+} /* variables*/
+
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--white);
+    font-family: "Poppins", sans-serif;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+/* Header */
+.header{
+    background-color: var(--black);
+    box-shadow: 1px 1px 5px 0px var(--gray);
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+/* Logo */
+.logo{
+    display: inline-block;
+    color: var(--white);
+    font-size: 60px;
+    margin-left: 10px;
+}
+
+/* Nav menu */
+.nav{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: var(--black);
+    overflow: hidden;
+
+}
+.menu a{
+    display: block;
+    padding: 30px;
+    color: var(--white);
+}
+.menu a:hover{
+    background-color: var(--gray);
+}
+.nav{
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+/* Menu Icon */
+.hamb{
+    cursor: pointer;
+    float: right;
+    padding: 40px 20px;
+}/* Style label tag */
+
+.hamb-line {
+    background: var(--white);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+
+} /* Style span tag */
+
+.hamb-line::before,
+.hamb-line::after{
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+.hamb-line::before{
+    top: 5px;
+}
+.hamb-line::after{
+    top: -5px;
+}
+
+.side-menu {
+    display: none;
+} /* Hide checkbox */
+
+/* Toggle menu icon */
+.side-menu:checked ~ nav{
+    max-height: 100%;
+}
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
+}
+
+/* Responsiveness */
+@media (min-width: 768px) {
+    .nav{
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+    }
+    .menu li{
+        float: left;
+    }
+    .menu a:hover{
+        background-color: transparent;
+        color: var(--gray);
+
+    }
+
+    .hamb{
+        display: none;
+    }
+}
+
+		</style>
+
 	</head>
 	<body>
+		<header class="header">
+			<div  class="logo">
+				<a href="#"><img src="../logo.png"/></a>
+				<a href="#"><span>&nbsp;Resource Calculator</span></a>
+			</div>
+
+			<input class="side-menu" type="checkbox" id="side-menu"/>
+			<label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+
+			<nav class="nav">
+				<ul class="menu">
+					<li><a href=# id=reset_item_count>Reset Item Counts</a></li>
+					<li><a href=https://github.com/AsherGlick/ResourceCalculator/blob/master/README.md target="_blank">Contribute</a></li>
+					<li><a href="#">About</a></li>
+				</ul>
+			</nav>
+		</header>
+
+
+
 		<div class="icon">
 			<img src="logo.png" /><br>
 			Resource Calculator
