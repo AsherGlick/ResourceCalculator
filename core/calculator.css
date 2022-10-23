@@ -97,9 +97,10 @@ body {
 	font-family: sans-serif;
 	background-color: #fff;
 	border: none;
-	border-top: 2px solid #8b90a1;
-	border-bottom: 2px solid #8b90a1;
+	border: 2px solid #8b90a1;
+	border-left: 0;
 	font-size: 1em;
+	border-radius: 0 5px 5px 0;
 }
 
 

@@ -43,8 +43,6 @@ const inventory_import_text_elem = <HTMLInputElement>document.getElementById("in
 const hover_name_elem: HTMLElement = document.getElementById("hover_name")!;
 const reset_item_count_elem: HTMLElement = document.getElementById("reset_item_count")!;
 const text_instructions_elem = document.getElementById("text_instructions")!;
-const hide_unused_checkbox_elem: HTMLInputElement = <HTMLInputElement>document.getElementById("unused_hide_checkbox");
-const hide_unused_checkbox_label_elem: HTMLElement = document.getElementById("unused_hide_checkbox_label")!;
 const recipe_selector_list_elem = document.getElementById("recipe_selector_list")!;
 const recipe_select_elem = document.getElementById("recipe_select")!;
 const inventory_amount_input_elem = <HTMLInputElement>document.getElementById("inventory_amount_input");
@@ -62,11 +60,6 @@ function clear_item_counts() {
 		field.value = "";
 		set_textbox_background(field);
 	});
-
-	// uncheck the hide unused checkbox element
-	if (hide_unused_checkbox_elem.checked) {
-		hide_unused_checkbox_elem.click();
-	}
 
 	generatelist();
 }
@@ -152,7 +145,6 @@ initilize_all_items();
 \******************************************************************************/
 function filter_items() {
 	let search_string = item_filter_elem.value.toLowerCase();;
-	let hide_unused = hide_unused_checkbox_elem.checked;
 
 	// Loop through each item
 	document.querySelectorAll(".desired_item").forEach(function(item) {
@@ -161,7 +153,7 @@ function filter_items() {
 
 		// If the search string does not match hide the item
 		// If the item count is not greater than 0 and hide unused is true hide
-		if (item_name.indexOf(search_string) === -1 || !(item_count > 0 || !hide_unused)) {
+		if (item_name.indexOf(search_string) === -1) {
 			(<HTMLInputElement>item).style.display = "none";
 		}
 		else {
@@ -179,19 +171,6 @@ item_filter_elem.addEventListener("keyup", filter_items);
 item_filter_elem.addEventListener("input", filter_items);
 item_filter_elem.addEventListener("paste", filter_items);
 
-
-/******************************************************************************\
-| "Hide Unused" "Show Unused" Button Logic                                     |
-\******************************************************************************/
-hide_unused_checkbox_elem.addEventListener("change", function() {
-	if (this.checked) {
-		hide_unused_checkbox_label_elem.textContent = "Show Unused";
-	}
-	else {
-		hide_unused_checkbox_label_elem.textContent = "Hide Unused";
-	}
-	filter_items();
-});
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -294,10 +273,6 @@ function load() {
 			desired_item.value = value;
 			desired_item.style.display = "block";
 			set_textbox_background(desired_item);
-		}
-		// check the hide unused checkbox
-		if (!hide_unused_checkbox_elem.checked) {
-			hide_unused_checkbox_elem.click();
 		}
 		generatelist();
 	}
