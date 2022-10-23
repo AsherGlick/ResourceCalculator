@@ -13,6 +13,7 @@ body {
 .content {
 	margin-left: 8px;
 	margin-right: 8px;
+	padding-top: 70px;
 }
 
 .desired_item {
@@ -636,4 +637,130 @@ body {
 .stack_sizes input[type="radio"]+label:hover {
 	background: #000;
 	color: #FFF;
+}
+
+/*////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// header bar styling*/
+:root {
+	--white: #f9f9f9;
+	--black: #363636;
+	--gray: #666;
+}
+
+* {
+	margin: 0;
+}
+ul {
+	list-style: none;
+}
+
+.header {
+	background-color: var(--black);
+	box-shadow: 1px 1px 3px 0px;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 9001;
+}
+.logo {
+	color: var(--white);
+	font-size: 28px;
+	margin-left: 10px;
+	padding: 14px 0 12px 10px;
+	display: inline-flex;
+}
+.logo img {
+	height: 30px
+}
+
+.nav {
+	width: 100%;
+	height: 100%;
+	max-height: 0;
+	position: relative;
+	background-color: var(--black);
+	overflow: hidden;
+	transition: max-height .5s ease-out;
+}
+.menu {
+	padding: 0 20px 0 0;
+}
+.menu a {
+	display: block;
+	padding: 20px 0 20px 20px;
+	color: var(--white);
+}
+.menu a:hover {
+	background-color: var(--gray);
+}
+
+.hamb {
+	cursor: pointer;
+	float: right;
+	padding: 28px 20px;
+}
+.hamb-line {
+	background: var(--white);
+	display: block;
+	height: 2px;
+	position: relative;
+	width: 24px;
+}
+.hamb-line::before,
+.hamb-line::after {
+	background: var(--white);
+	content: '';
+	display: block;
+	height: 100%;
+	position: absolute;
+	transition: all .2s ease-out;
+	width: 100%;
+}
+.hamb-line::before {
+	top: 5px;
+}
+.hamb-line::after {
+	top: -5px;
+}
+
+.side-menu {
+	display: none;
+}
+.side-menu:checked ~ nav {
+	max-height: 100%;
+}
+.side-menu:checked ~ .hamb .hamb-line {
+	background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
+	transform: rotate(-45deg);
+	top:0;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+	transform: rotate(45deg);
+	top:0;
+}
+
+@media (min-width: 768px) {
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.nav {
+		max-height: none;
+		top: 0;
+		width: fit-content;
+	}
+	.menu li {
+		float: left;
+	}
+	.menu a:hover {
+		background-color: transparent;
+		color: var(--gray);
+	}
+	.hamb {
+		display: none;
+	}
 }

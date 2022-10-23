@@ -28,14 +28,20 @@
 		</style>
 	</head>
 	<body>
-		<div class="header_bar">
-			<a href="/" aria-label="Home"><div class="home_button_logo">&nbsp;</div></a>
-			<a href="#" id="reset_item_count"><div class="home_button"> Reset Item Counts</div></a>
-			<a href="mailto:admin@resourcecalculator.com?Subject=Resource%20Calculator%20Issue"><div class="home_button">Report An Issue</div></a>
-			<a href="https://github.com/AsherGlick/ResourceCalculator/blob/master/README.md"><div class="home_button">Contribute</div></a>
-			<a><div id="about_button" class="home_button">About</div></a>
-			<!--<a><div id="share_button" class="home_button">Share</div></a>-->
-		</div>
+		<header class="header">
+			<a href="#" class="logo"><img src="../logo.png"/>&nbsp;Resource Calculator</a>
+
+			<input class="side-menu" type="checkbox" id="side-menu"/>
+			<label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+
+			<nav class="nav">
+				<ul class="menu">
+					<li><a href=# id=reset_item_count>Reset Item Counts</a></li>
+					<li><a href=https://github.com/AsherGlick/ResourceCalculator/blob/master/README.md target="_blank">Contribute</a></li>
+					<li><a href="#">About</a></li>
+				</ul>
+			</nav>
+		</header>
 
 		<div id="about_us">
 			Resource Calculator is an open source project to allow players to easily calculate how many raw resources they need in order to construct the items they want.
