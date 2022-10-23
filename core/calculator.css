@@ -657,7 +657,7 @@ ul {
 
 .header {
 	background-color: var(--black);
-	box-shadow: 1px 1px 3px 0px;
+	box-shadow: 0 1px 3px 0px;
 	position: absolute;
 	top: 0;
 	width: 100%;
