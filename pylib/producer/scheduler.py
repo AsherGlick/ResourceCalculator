@@ -476,7 +476,7 @@ class Scheduler:
         filename: str,
         groups: Dict[str, str]
     ) -> None:
-        
+
         query_string, binds = self.insert_new_file_querystring(
             producer_index=producer_index,
             field_name=field_name,
@@ -856,7 +856,7 @@ def get_aggregated_modified_time(
             for subpath in os.listdir(path):
                 paths.append(os.path.join(path, subpath))
         else:
-            time_list.append(os.path.getmtime(path))
+            time_list.append(max(os.path.getmtime(path), os.path.getctime(path)))
 
     # Sanity check that there are timestamps in the list before passing them
     # to the aggregator.
