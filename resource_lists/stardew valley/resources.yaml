@@ -1,0 +1,360 @@
+---
+authors:
+  Ben: 'https://benjaminvreeland.com'
+
+# Based on
+# https://stardewvalleywiki.com/Crafting
+# https://stardewvalleywiki.com/Furnace
+# https://stardewvalleywiki.com/Cooking
+# https://stardewvalleywiki.com/Blacksmith
+# https://stardewvalleywiki.com/Artisan_Goods
+# https://stardewvalleywiki.com/Carpenter%27s_Shop
+# https://stardewvalleywiki.com/Forge
+# https://stardewvalleywiki.com/Monster_Loot
+# https://stardewvalleywiki.com/Fish
+
+index_page_display_name: 'Stardew Valley'
+
+game_version: '1.5.6'
+# https://stardewvalleywiki.com/Version_History
+# https://store.steampowered.com/news/app/413150/view/4451243368885879000
+
+recipe_types:
+  Crafting: Craft {IN_ITEMS} into {OUT_ITEM} (must have recipe)
+
+  # Refining
+  Smelting: Use a Furnace with {IN_ITEMS} to create {OUT_ITEM}
+  Charcoal Kiln: Use a Charcoal Kiln with {IN_ITEMS} to create {OUT_ITEM}
+  # Wood Chipper: Use the Wood Chipper to convert {IN_ITEMS} into {OUT_ITEM}
+  # TODO: https://stardewvalleywiki.com/Crafting#Refining_Equipment
+
+  # Smithing: Bring {IN_ITEMS} to Clint so he can create {OUT_ITEM}
+
+resources:
+  Bouquet:
+    recipes:
+      - recipe_type: Raw Resource
+  Wilted Bouquet:
+    recipes:
+      - output: 1
+        recipe_type: Smelting
+        requirements:
+          Bouquet: -1
+          Coal: -1
+      - recipe_type: Raw Resource
+
+  # Resources
+  ## Basic
+  Battery Pack:
+    recipes:
+      - recipe_type: Raw Resource
+  Bone Fragment:
+    recipes:
+      - recipe_type: Raw Resource
+  Cinder Shard:
+    recipes:
+      - recipe_type: Raw Resource
+  Clay:
+    recipes:
+      - recipe_type: Raw Resource
+  Coal:
+    recipes:
+      - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Charcoal Kiln
+        requirements:
+          Wood: -10
+  Fiber:
+    recipes:
+      - recipe_type: Raw Resource
+  Hardwood:
+    recipes:
+      - recipe_type: Raw Resource
+  Stone:
+    recipes:
+      - recipe_type: Raw Resource
+  Wood:
+    recipes:
+      - recipe_type: Raw Resource
+
+  ## Ore
+  Copper Ore:
+    recipes:
+      - recipe_type: Raw Resource
+  Iron Ore:
+    recipes:
+      - recipe_type: Raw Resource
+  Gold Ore:
+    recipes:
+      - recipe_type: Raw Resource
+  Iridium Ore:
+    recipes:
+      - recipe_type: Raw Resource
+  Radioactive Ore:
+    recipes:
+      - recipe_type: Raw Resource
+
+  ## Bars
+  Copper Bar:
+    recipes:
+      - output: 1
+        recipe_type: Smelting
+        requirements:
+          Copper Ore: -5
+          Coal: -1
+      - recipe_type: Raw Resource
+  Iron Bar:
+    recipes:
+      - output: 1
+        recipe_type: Smelting
+        requirements:
+          Iron Ore: -5
+          Coal: -1
+      - recipe_type: Raw Resource
+  Gold Bar:
+    recipes:
+      - output: 1
+        recipe_type: Smelting
+        requirements:
+          Gold Ore: -5
+          Coal: -1
+      - recipe_type: Raw Resource
+  Iridium Bar:
+    recipes:
+      - output: 1
+        recipe_type: Smelting
+        requirements:
+          Iridium Ore: -5
+          Coal: -1
+      - recipe_type: Raw Resource
+  Radioactive Bar:
+    recipes:
+      - output: 1
+        recipe_type: Smelting
+        requirements:
+          Radioactive Ore: -5
+          Coal: -1
+      - recipe_type: Raw Resource
+
+  Refined Quartz:
+    recipes:
+      - output: 1
+        recipe_type: Smelting
+        requirements:
+          Quartz: -1
+          Coal: -1
+      - output: 1
+        recipe_type: Smelting
+        requirements:
+          Fire Quartz: -1
+          Coal: -1
+      - recipe_type: Raw Resource
+
+  # Minerals
+  ## Foraged Minerals
+  Earth Crystal:
+    recipes:
+      - recipe_type: Raw Resource
+  Fire Quartz:
+    recipes:
+      - recipe_type: Raw Resource
+  Frozen Tear:
+    recipes:
+      - recipe_type: Raw Resource
+  Quartz:
+    recipes:
+      - recipe_type: Raw Resource
+
+  ## Gems
+  Amethyst:
+    recipes:
+      - recipe_type: Raw Resource
+  Aquamarine:
+    recipes:
+      - recipe_type: Raw Resource
+  Diamond:
+    recipes:
+      - recipe_type: Raw Resource
+  Emerald:
+    recipes:
+      - recipe_type: Raw Resource
+  Jade:
+    recipes:
+      - recipe_type: Raw Resource
+  Prismatic Shard:
+    recipes:
+      - recipe_type: Raw Resource
+  Ruby:
+    recipes:
+      - recipe_type: Raw Resource
+  Topaz:
+    recipes:
+      - recipe_type: Raw Resource
+
+  ## Geode Minerals
+  Aerinite:
+    recipes:
+      - recipe_type: Raw Resource
+  Alamite:
+    recipes:
+      - recipe_type: Raw Resource
+  Baryte:
+    recipes:
+      - recipe_type: Raw Resource
+  Basalt:
+    recipes:
+      - recipe_type: Raw Resource
+  Bixite:
+    recipes:
+      - recipe_type: Raw Resource
+  Calcite:
+    recipes:
+      - recipe_type: Raw Resource
+  Celestine:
+    recipes:
+      - recipe_type: Raw Resource
+  Dolomite:
+    recipes:
+      - recipe_type: Raw Resource
+  Esperite:
+    recipes:
+      - recipe_type: Raw Resource
+  Fairy Stone:
+    recipes:
+      - recipe_type: Raw Resource
+  Fire Opal:
+    recipes:
+      - recipe_type: Raw Resource
+  Fluorapatite:
+    recipes:
+      - recipe_type: Raw Resource
+  Geminite:
+    recipes:
+      - recipe_type: Raw Resource
+  Ghost Crystal:
+    recipes:
+      - recipe_type: Raw Resource
+  Granite:
+    recipes:
+      - recipe_type: Raw Resource
+  Helvite:
+    recipes:
+      - recipe_type: Raw Resource
+  Hematite:
+    recipes:
+      - recipe_type: Raw Resource
+  Jagoite:
+    recipes:
+      - recipe_type: Raw Resource
+  Jamborite:
+    recipes:
+      - recipe_type: Raw Resource
+  Jasper:
+    recipes:
+      - recipe_type: Raw Resource
+  Kyanite:
+    recipes:
+      - recipe_type: Raw Resource
+  Lemon Stone:
+    recipes:
+      - recipe_type: Raw Resource
+  Limestone:
+    recipes:
+      - recipe_type: Raw Resource
+  Lunarite:
+    recipes:
+      - recipe_type: Raw Resource
+  Malachite:
+    recipes:
+      - recipe_type: Raw Resource
+  Marble:
+    recipes:
+      - recipe_type: Raw Resource
+  Mudstone:
+    recipes:
+      - recipe_type: Raw Resource
+  Nekoite:
+    recipes:
+      - recipe_type: Raw Resource
+  Neptunite:
+    recipes:
+      - recipe_type: Raw Resource
+  Obsidian:
+    recipes:
+      - recipe_type: Raw Resource
+  Ocean Stone:
+    recipes:
+      - recipe_type: Raw Resource
+  Opal:
+    recipes:
+      - recipe_type: Raw Resource
+  Orpiment:
+    recipes:
+      - recipe_type: Raw Resource
+  Petrified Slime:
+    recipes:
+      - recipe_type: Raw Resource
+  Pyrite:
+    recipes:
+      - recipe_type: Raw Resource
+  Sandstone:
+    recipes:
+      - recipe_type: Raw Resource
+  Slate:
+    recipes:
+      - recipe_type: Raw Resource
+  Soapstone:
+    recipes:
+      - recipe_type: Raw Resource
+  Star Shards:
+    recipes:
+      - recipe_type: Raw Resource
+  Thunder Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Tigerseye:
+    recipes:
+      - recipe_type: Raw Resource
+
+  ## Geodes
+  Geode:
+    recipes:
+      - recipe_type: Raw Resource
+  Frozen Geode:
+    recipes:
+      - recipe_type: Raw Resource
+  Magma Geode:
+    recipes:
+      - recipe_type: Raw Resource
+  Omni Geode:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Artifact Trove:
+    recipes:
+      - recipe_type: Raw Resource
+  Golden Coconut:
+    recipes:
+      - recipe_type: Raw Resource
+
+  # Monster Loot
+  Slime:
+    recipes:
+      - recipe_type: Raw Resource
+  Bug Meat:
+    recipes:
+      - recipe_type: Raw Resource
+  Bat Wing:
+    recipes:
+      - recipe_type: Raw Resource
+  Solar Essence:
+    recipes:
+      - recipe_type: Raw Resource
+  Void Essence:
+    recipes:
+      - recipe_type: Raw Resource
+
+  # Money
+  Gold:
+    recipes:
+      - recipe_type: Raw Resource
