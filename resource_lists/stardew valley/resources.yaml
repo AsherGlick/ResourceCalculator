@@ -30,6 +30,79 @@ recipe_types:
 
   # Smithing: Bring {IN_ITEMS} to Clint so he can create {OUT_ITEM}
 
+requirement_groups:
+  Any Fish:
+    - Pufferfish
+    - Anchovy
+    - Tuna
+    - Sardine
+    - Bream
+    - Largemouth Bass
+    - Smallmouth Bass
+    - Rainbow Trout
+    - Salmon
+    - Walleye
+    - Perch
+    - Carp
+    - Catfish
+    - Pike
+    - Sunfish
+    - Red Mullet
+    - Herring
+    - Eel
+    - Octopus
+    - Red Snapper
+    - Squid
+    - Sea Cucumber
+    - Super Cucumber
+    - Ghostfish
+    - Stonefish
+    - Ice Pip
+    - Lava Eel
+    - Sandfish
+    - Scorpion Carp
+    - Flounder
+    - Midnight Carp
+    - Sturgeon
+    - Tiger Trout
+    - Bullhead
+    - Tilapia
+    - Chub
+    - Dorado
+    - Albacore
+    - Shad
+    - Lingcod
+    - Halibut
+    - Woodskip
+    - Void Salmon
+    - Slimejack
+    - Stingray
+    - Lionfish
+    - Blue Discus
+    - Midnight Squid
+    - Spook Fish
+    - Blobfish
+    - Crimsonfish
+    - Angler
+    - Legend
+    - Glacierfish
+    - Mutant Carp
+    - Son of Crimsonfish
+    - Ms. Angler
+    - Legend II
+    - Glacierfish Jr.
+    - Radioactive Carp
+    - Lobster
+    - Clam
+    - Crayfish
+    - Crab
+    - Cockle
+    - Mussel
+    - Shrimp
+    - Snail
+    - Periwinkle
+    - Oyster
+
 resources:
   Bouquet:
     recipes:
@@ -41,6 +114,347 @@ resources:
         requirements:
           Bouquet: -1
           Coal: -1
+      - recipe_type: Raw Resource
+
+  # Fish
+  ## Fishing Pole
+  Pufferfish:
+    recipes:
+      - recipe_type: Raw Resource
+  Anchovy:
+    recipes:
+      - recipe_type: Raw Resource
+  Tuna:
+    recipes:
+      - recipe_type: Raw Resource
+  Sardine:
+    recipes:
+      - recipe_type: Raw Resource
+  Bream:
+    recipes:
+      - recipe_type: Raw Resource
+  Largemouth Bass:
+    recipes:
+      - recipe_type: Raw Resource
+  Smallmouth Bass:
+    recipes:
+      - recipe_type: Raw Resource
+  Rainbow Trout:
+    recipes:
+      - recipe_type: Raw Resource
+  Salmon:
+    recipes:
+      - recipe_type: Raw Resource
+  Walleye:
+    recipes:
+      - recipe_type: Raw Resource
+  Perch:
+    recipes:
+      - recipe_type: Raw Resource
+  Carp:
+    recipes:
+      - recipe_type: Raw Resource
+  Catfish:
+    recipes:
+      - recipe_type: Raw Resource
+  Pike:
+    recipes:
+      - recipe_type: Raw Resource
+  Sunfish:
+    recipes:
+      - recipe_type: Raw Resource
+  Red Mullet:
+    recipes:
+      - recipe_type: Raw Resource
+  Herring:
+    recipes:
+      - recipe_type: Raw Resource
+  Eel:
+    recipes:
+      - recipe_type: Raw Resource
+  Octopus:
+    recipes:
+      - recipe_type: Raw Resource
+  Red Snapper:
+    recipes:
+      - recipe_type: Raw Resource
+  Squid:
+    recipes:
+      - recipe_type: Raw Resource
+  Sea Cucumber:
+    recipes:
+      - recipe_type: Raw Resource
+  Super Cucumber:
+    recipes:
+      - recipe_type: Raw Resource
+  Ghostfish:
+    recipes:
+      - recipe_type: Raw Resource
+  Stonefish:
+    recipes:
+      - recipe_type: Raw Resource
+  Ice Pip:
+    recipes:
+      - recipe_type: Raw Resource
+  Lava Eel:
+    recipes:
+      - recipe_type: Raw Resource
+  Sandfish:
+    recipes:
+      - recipe_type: Raw Resource
+  Scorpion Carp:
+    recipes:
+      - recipe_type: Raw Resource
+  Flounder:
+    recipes:
+      - recipe_type: Raw Resource
+  Midnight Carp:
+    recipes:
+      - recipe_type: Raw Resource
+  Sturgeon:
+    recipes:
+      - recipe_type: Raw Resource
+  Tiger Trout:
+    recipes:
+      - recipe_type: Raw Resource
+  Bullhead:
+    recipes:
+      - recipe_type: Raw Resource
+  Tilapia:
+    recipes:
+      - recipe_type: Raw Resource
+  Chub:
+    recipes:
+      - recipe_type: Raw Resource
+  Dorado:
+    recipes:
+      - recipe_type: Raw Resource
+  Albacore:
+    recipes:
+      - recipe_type: Raw Resource
+  Shad:
+    recipes:
+      - recipe_type: Raw Resource
+  Lingcod:
+    recipes:
+      - recipe_type: Raw Resource
+  Halibut:
+    recipes:
+      - recipe_type: Raw Resource
+  Woodskip:
+    recipes:
+      - recipe_type: Raw Resource
+  Void Salmon:
+    recipes:
+      - recipe_type: Raw Resource
+  Slimejack:
+    recipes:
+      - recipe_type: Raw Resource
+  Stingray:
+    recipes:
+      - recipe_type: Raw Resource
+  Lionfish:
+    recipes:
+      - recipe_type: Raw Resource
+  Blue Discus:
+    recipes:
+      - recipe_type: Raw Resource
+
+  ## Night Market Fish
+  Midnight Squid:
+    recipes:
+      - recipe_type: Raw Resource
+  Spook Fish:
+    recipes:
+      - recipe_type: Raw Resource
+  Blobfish:
+    recipes:
+      - recipe_type: Raw Resource
+
+  ## Legendary Fish
+  Crimsonfish:
+    recipes:
+      - recipe_type: Raw Resource
+  Angler:
+    recipes:
+      - recipe_type: Raw Resource
+  Legend:
+    recipes:
+      - recipe_type: Raw Resource
+  Glacierfish:
+    recipes:
+      - recipe_type: Raw Resource
+  Mutant Carp:
+    recipes:
+      - recipe_type: Raw Resource
+
+  ## Legendary Fish II
+  Son of Crimsonfish:
+    recipes:
+      - recipe_type: Raw Resource
+  Ms. Angler:
+    recipes:
+      - recipe_type: Raw Resource
+  Legend II:
+    recipes:
+      - recipe_type: Raw Resource
+  Glacierfish Jr.:
+    recipes:
+      - recipe_type: Raw Resource
+  Radioactive Carp:
+    recipes:
+      - recipe_type: Raw Resource
+
+  ## Crab Pot Fish
+  Lobster:
+    recipes:
+      - recipe_type: Raw Resource
+  Clam:
+    recipes:
+      - recipe_type: Raw Resource
+  Crayfish:
+    recipes:
+      - recipe_type: Raw Resource
+  Crab:
+    recipes:
+      - recipe_type: Raw Resource
+  Cockle:
+    recipes:
+      - recipe_type: Raw Resource
+  Mussel:
+    recipes:
+      - recipe_type: Raw Resource
+  Shrimp:
+    recipes:
+      - recipe_type: Raw Resource
+  Snail:
+    recipes:
+      - recipe_type: Raw Resource
+  Periwinkle:
+    recipes:
+      - recipe_type: Raw Resource
+  Oyster:
+    recipes:
+      - recipe_type: Raw Resource
+
+  ## Not Fish
+  Seaweed:
+    recipes:
+      - recipe_type: Raw Resource
+  Green Algae:
+    recipes:
+      - recipe_type: Raw Resource
+  White Algae:
+    recipes:
+      - recipe_type: Raw Resource
+
+  # Foraging
+
+  ## Spring
+  Wild Horseradish:
+    recipes:
+      - recipe_type: Raw Resource
+  Daffodil:
+    recipes:
+      - recipe_type: Raw Resource
+  Leek:
+    recipes:
+      - recipe_type: Raw Resource
+  Dandelion:
+    recipes:
+      - recipe_type: Raw Resource
+  Spring Onion:
+    recipes:
+      - recipe_type: Raw Resource
+  Morel:
+    recipes:
+      - recipe_type: Raw Resource
+  Common Mushroom:
+    recipes:
+      - recipe_type: Raw Resource
+  Salmonberry:
+    recipes:
+      - recipe_type: Raw Resource
+
+  ## Summer
+  Grape:
+    recipes:
+      - recipe_type: Raw Resource
+  Spice Berry:
+    recipes:
+      - recipe_type: Raw Resource
+  Sweet Pea:
+    recipes:
+      - recipe_type: Raw Resource
+  Red Mushroom:
+    recipes:
+      - recipe_type: Raw Resource
+  Fiddlehead Fern:
+    recipes:
+      - recipe_type: Raw Resource
+
+  ## Fall
+  Wild Plum:
+    recipes:
+      - recipe_type: Raw Resource
+  Hazelnut:
+    recipes:
+      - recipe_type: Raw Resource
+  Blackberry:
+    recipes:
+      - recipe_type: Raw Resource
+  Chanterelle:
+    recipes:
+      - recipe_type: Raw Resource
+  Purple Mushroom:
+    recipes:
+      - recipe_type: Raw Resource
+
+  ## Winter
+  Winter Root:
+    recipes:
+      - recipe_type: Raw Resource
+  Crystal Fruit:
+    recipes:
+      - recipe_type: Raw Resource
+  Snow Yam:
+    recipes:
+      - recipe_type: Raw Resource
+  Crocus:
+    recipes:
+      - recipe_type: Raw Resource
+  Holly:
+    recipes:
+      - recipe_type: Raw Resource
+
+  ## Beach
+  Nautilus Shell:
+    recipes:
+      - recipe_type: Raw Resource
+  Coral:
+    recipes:
+      - recipe_type: Raw Resource
+  Sea Urchin:
+    recipes:
+      - recipe_type: Raw Resource
+  Rainbow Shell:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Cave Carrot:
+    recipes:
+      - recipe_type: Raw Resource
+  Cactus Fruit:
+    recipes:
+      - recipe_type: Raw Resource
+  Coconut:
+    recipes:
+      - recipe_type: Raw Resource
+  Ginger:
+    recipes:
+      - recipe_type: Raw Resource
+  Magma Cap:
+    recipes:
       - recipe_type: Raw Resource
 
   # Resources
@@ -74,6 +488,63 @@ resources:
     recipes:
       - recipe_type: Raw Resource
   Wood:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Sap:
+    recipes:
+      - recipe_type: Raw Resource
+  Maple Syrup:
+    recipes:
+      - recipe_type: Raw Resource
+  Oak Resin:
+    recipes:
+      - recipe_type: Raw Resource
+  Pine Tar:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Maple Seed:
+    recipes:
+      - recipe_type: Raw Resource
+  Acorn:
+    recipes:
+      - recipe_type: Raw Resource
+  Pine Cone:
+    recipes:
+      - recipe_type: Raw Resource
+  Mahogany Seed:
+    recipes:
+      - recipe_type: Raw Resource
+  Mushroom Tree Seed:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Apple:
+    recipes:
+      - recipe_type: Raw Resource
+  Apricot:
+    recipes:
+      - recipe_type: Raw Resource
+  Banana:
+    recipes:
+      - recipe_type: Raw Resource
+  Cherry:
+    recipes:
+      - recipe_type: Raw Resource
+  Mango:
+    recipes:
+      - recipe_type: Raw Resource
+  Orange:
+    recipes:
+      - recipe_type: Raw Resource
+  Peach:
+    recipes:
+      - recipe_type: Raw Resource
+  Pomegranate:
+    recipes:
+      - recipe_type: Raw Resource
+  Tea Leaves:
     recipes:
       - recipe_type: Raw Resource
 
@@ -351,6 +822,9 @@ resources:
     recipes:
       - recipe_type: Raw Resource
   Void Essence:
+    recipes:
+      - recipe_type: Raw Resource
+  Dragon Tooth:
     recipes:
       - recipe_type: Raw Resource
 
