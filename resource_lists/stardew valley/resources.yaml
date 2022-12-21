@@ -104,6 +104,181 @@ requirement_groups:
     - Oyster
 
 resources:
+  Wood Fence:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -2
+      - recipe_type: Raw Resource
+  Stone Fence:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Stone: -2
+      - recipe_type: Raw Resource
+  Iron Fence:
+    recipes:
+      - output: 10
+        recipe_type: Crafting
+        requirements:
+          Iron Bar: -1
+      - recipe_type: Raw Resource
+  Hardwood Fence:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hardwood: -1
+      - recipe_type: Raw Resource
+  Gate:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -10
+      - recipe_type: Raw Resource
+
+  Sprinkler:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Copper Bar: -1
+          Iron Bar: -1
+      - recipe_type: Raw Resource
+  Quality Sprinkler:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Iron Bar: -1
+          Gold Bar: -1
+          Refined Quartz: -1
+      - recipe_type: Raw Resource
+  Iridium Sprinkler:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Gold Bar: -1
+          Iridium Bar: -1
+          Battery Pack: -1
+      - recipe_type: Raw Resource
+
+  # Bomb
+  Cherry Bomb:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Copper Ore: -4
+          Coal: -1
+      - recipe_type: Raw Resource
+  Bomb:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Iron Ore: -4
+          Coal: -1
+      - recipe_type: Raw Resource
+  Mega Bomb:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Gold Ore: -4
+          Solar Essence: -1
+          Void Essence: -1
+      - recipe_type: Raw Resource
+  Explosive Ammo:
+    recipes:
+      - output: 5
+        recipe_type: Crafting
+        requirements:
+          Iron Bar: -1
+          Coal: -2
+      - recipe_type: Raw Resource
+
+  # Artisan Equipment
+  Mayonnaise Machine:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -15
+          Stone: -15
+          Earth Crystal: -1
+          Copper Bar: -1
+      - recipe_type: Raw Resource
+  Bee House:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -40
+          Coal: -8
+          Iron Bar: -1
+          Maple Syrup: -1
+      - recipe_type: Raw Resource
+  Preserves Jar:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -50
+          Stone: -40
+          Coal: -8
+      - recipe_type: Raw Resource
+  Cheese Press:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -45
+          Stone: -45
+          Hardwood: -10
+          Copper Bar: -1
+      - recipe_type: Raw Resource
+  Loom:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -60
+          Fiber: -30
+          Pine Tar: -1
+      - recipe_type: Raw Resource
+  Keg:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -30
+          Copper Bar: -1
+          Iron Bar: -1
+          Oak Resin: -1
+      - recipe_type: Raw Resource
+  Oil Maker:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Slime: -50
+          Hardwood: -20
+          Gold Bar: -1
+      - recipe_type: Raw Resource
+  Cask:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -20
+          Hardwood: -1
+      - recipe_type: Raw Resource
+
   Bouquet:
     recipes:
       - recipe_type: Raw Resource
