@@ -29,81 +29,10 @@ recipe_types:
   # TODO: https://stardewvalleywiki.com/Crafting#Refining_Equipment
 
   # Smithing: Bring {IN_ITEMS} to Clint so he can create {OUT_ITEM}
-
-requirement_groups:
-  Any Fish:
-    - Pufferfish
-    - Anchovy
-    - Tuna
-    - Sardine
-    - Bream
-    - Largemouth Bass
-    - Smallmouth Bass
-    - Rainbow Trout
-    - Salmon
-    - Walleye
-    - Perch
-    - Carp
-    - Catfish
-    - Pike
-    - Sunfish
-    - Red Mullet
-    - Herring
-    - Eel
-    - Octopus
-    - Red Snapper
-    - Squid
-    - Sea Cucumber
-    - Super Cucumber
-    - Ghostfish
-    - Stonefish
-    - Ice Pip
-    - Lava Eel
-    - Sandfish
-    - Scorpion Carp
-    - Flounder
-    - Midnight Carp
-    - Sturgeon
-    - Tiger Trout
-    - Bullhead
-    - Tilapia
-    - Chub
-    - Dorado
-    - Albacore
-    - Shad
-    - Lingcod
-    - Halibut
-    - Woodskip
-    - Void Salmon
-    - Slimejack
-    - Stingray
-    - Lionfish
-    - Blue Discus
-    - Midnight Squid
-    - Spook Fish
-    - Blobfish
-    - Crimsonfish
-    - Angler
-    - Legend
-    - Glacierfish
-    - Mutant Carp
-    - Son of Crimsonfish
-    - Ms. Angler
-    - Legend II
-    - Glacierfish Jr.
-    - Radioactive Carp
-    - Lobster
-    - Clam
-    - Crayfish
-    - Crab
-    - Cockle
-    - Mussel
-    - Shrimp
-    - Snail
-    - Periwinkle
-    - Oyster
+  As: 'Treat {IN_ITEMS} as {OUT_ITEM}'
 
 resources:
+  # Fences
   Wood Fence:
     recipes:
       - output: 1
@@ -140,6 +69,7 @@ resources:
           Wood: -10
       - recipe_type: Raw Resource
 
+  # Sprinklers
   Sprinkler:
     recipes:
       - output: 1
@@ -167,7 +97,7 @@ resources:
           Battery Pack: -1
       - recipe_type: Raw Resource
 
-  # Bomb
+  # Bombs
   Cherry Bomb:
     recipes:
       - output: 1
@@ -289,6 +219,88 @@ resources:
         requirements:
           Bouquet: -1
           Coal: -1
+      - recipe_type: Raw Resource
+
+  # Fertilizer
+  Basic Fertilizer:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Sap: -2
+      - recipe_type: Raw Resource
+  Quality Fertilizer:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Sap: -2
+          Any Fish: -1
+      - recipe_type: Raw Resource
+  Deluxe Fertilizer:
+    recipes:
+      - output: 5
+        recipe_type: Crafting
+        requirements:
+          Iridium Bar: -1
+          Sap: -40
+      - recipe_type: Raw Resource
+  Speed-Gro:
+    recipes:
+      - output: 5
+        recipe_type: Crafting
+        requirements:
+          Pine Tar: -1
+          Clam: -1
+      - recipe_type: Raw Resource
+  Deluxe Speed-Gro:
+    recipes:
+      - output: 5
+        recipe_type: Crafting
+        requirements:
+          Oak Resin: -1
+          Coral: -1
+      - recipe_type: Raw Resource
+  Hyper Speed-Gro:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Radioactive Ore: -1
+          Bone Fragment: -3
+          Solar Essence: -1
+      - recipe_type: Raw Resource
+  Basic Retaining Soil:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Stone: -2
+      - recipe_type: Raw Resource
+  Quality Retaining Soil:
+    recipes:
+      - output: 2
+        recipe_type: Crafting
+        requirements:
+          Stone: -3
+          Clay: -1
+      - recipe_type: Raw Resource
+  Deluxe Retaining Soil:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Stone: -5
+          Fiber: -3
+          Clay: -1
+      - recipe_type: Raw Resource
+  Tree Fertilizer:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Fiber: -5
+          Stone: -5
       - recipe_type: Raw Resource
 
   # Fish
@@ -1007,3 +1019,195 @@ resources:
   Gold:
     recipes:
       - recipe_type: Raw Resource
+
+  Any Fish:
+    recipes:
+      - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: As
+        requirements:
+          Pufferfish: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Anchovy: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Tuna: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Sardine: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Bream: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Largemouth Bass: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Smallmouth Bass: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Rainbow Trout: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Salmon: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Walleye: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Perch: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Carp: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Catfish: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Pike: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Sunfish: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Red Mullet: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Herring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Eel: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Octopus: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Red Snapper: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Squid: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Sea Cucumber: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Super Cucumber: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Ghostfish: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Stonefish: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Ice Pip: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Lava Eel: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Sandfish: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Scorpion Carp: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Flounder: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Midnight Carp: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Sturgeon: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Tiger Trout: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Bullhead: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Tilapia: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Chub: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Dorado: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Albacore: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Shad: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Lingcod: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Halibut: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Woodskip: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Void Salmon: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Slimejack: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Stingray: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Lionfish: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Blue Discus: -1
