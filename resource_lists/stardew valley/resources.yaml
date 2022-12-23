@@ -69,6 +69,22 @@ resources:
           Wood: -10
       - recipe_type: Raw Resource
 
+  # Chests
+  Chest:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -50
+      - recipe_type: Raw Resource
+  Stone Chest:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Stone: -50
+      - recipe_type: Raw Resource
+
   # Sprinklers
   Sprinkler:
     recipes:
@@ -97,39 +113,138 @@ resources:
           Battery Pack: -1
       - recipe_type: Raw Resource
 
-  # Bombs
-  Cherry Bomb:
+  # Refining Equipment
+  Charcoal Kiln:
     recipes:
       - output: 1
         recipe_type: Crafting
         requirements:
-          Copper Ore: -4
-          Coal: -1
+          Wood: -20
+          Copper Bar: -2
       - recipe_type: Raw Resource
-  Bomb:
+  Crystalarium:
     recipes:
       - output: 1
         recipe_type: Crafting
         requirements:
-          Iron Ore: -4
-          Coal: -1
+          Stone: -99
+          Gold Bar: -5
+          Iridium Bar: -2
+          Battery Pack: -1
       - recipe_type: Raw Resource
-  Mega Bomb:
+  Furnace:
     recipes:
       - output: 1
         recipe_type: Crafting
         requirements:
-          Gold Ore: -4
-          Solar Essence: -1
-          Void Essence: -1
+          Copper Ore: -20
+          Stone: -25
       - recipe_type: Raw Resource
-  Explosive Ammo:
+  Lightning Rod:
     recipes:
-      - output: 5
+      - output: 1
         recipe_type: Crafting
         requirements:
           Iron Bar: -1
-          Coal: -2
+          Refined Quartz: -1
+          Bat Wing: -5
+      - recipe_type: Raw Resource
+  Solar Panel:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Refined Quartz: -10
+          Iron Bar: -5
+          Gold Bar: -5
+      - recipe_type: Raw Resource
+  Recycling Machine:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -25
+          Stone: -25
+          Iron Bar: -1
+      - recipe_type: Raw Resource
+  Seed Maker:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -25
+          Coal: -10
+          Gold Bar: -1
+      - recipe_type: Raw Resource
+  Slime Incubator:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Iridium Bar: -2
+          Slime: -100
+      - recipe_type: Raw Resource
+  Ostrich Incubator:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Bone Fragment: -50
+          Hardwood: -50
+          Cinder Shard: -20
+      - recipe_type: Raw Resource
+  Slime Egg-Press:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Coal: -25
+          Fire Quartz: -1
+          Battery Pack: -1
+      - recipe_type: Raw Resource
+  Tapper:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -40
+          Copper Bar: -2
+      - recipe_type: Raw Resource
+  Heavy Tapper:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hardwood: -30
+          Radioactive Bar: -1
+      - recipe_type: Raw Resource
+  Worm Bin:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hardwood: -25
+          Gold Bar: -1
+          Iron Bar: -1
+          Fiber: -50
+      - recipe_type: Raw Resource
+  Bone Mill:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Bone Fragment: -10
+          Clay: -3
+          Stone: -20
+      - recipe_type: Raw Resource
+  Geode Crusher:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Gold Bar: -2
+          Stone: -50
+          Diamond: -1
       - recipe_type: Raw Resource
 
   # Artisan Equipment
@@ -207,6 +322,85 @@ resources:
         requirements:
           Wood: -20
           Hardwood: -1
+      - recipe_type: Raw Resource
+
+  Garden Pot:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Clay: -1
+          Stone: -10
+          Refined Quartz: -1
+      - recipe_type: Raw Resource
+  Scarecrow:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -50
+          Coal: -1
+          Fiber: -20
+      - recipe_type: Raw Resource
+  Deluxe Scarecrow:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -50
+          Fiber: -40
+          Iridium Ore: -1
+      - recipe_type: Raw Resource
+  Staircase:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Stone: -99
+      - recipe_type: Raw Resource
+  Mini-Jukebox:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Iron Bar: -2
+          Battery Pack: -1
+      - recipe_type: Raw Resource
+  Mini-Obelisk:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hardwood: -30
+          Solar Essence: -20
+          Gold Bar: -3
+      - recipe_type: Raw Resource
+  Farm Computer:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Dwarf Gadget: -1
+          Battery Pack: -1
+          Refined Quartz: -10
+      - recipe_type: Raw Resource
+  Hopper:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hardwood: -10
+          Iridium Bar: -1
+          Radioactive Bar: -1
+      - recipe_type: Raw Resource
+  Cookout Kit:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -15
+          Fiber: -10
+          Coal: -3
       - recipe_type: Raw Resource
 
   # Flooring
@@ -302,6 +496,190 @@ resources:
         recipe_type: Crafting
         requirements:
           Refined Quartz: -1
+      - recipe_type: Raw Resource
+
+  # Lighting
+  Torch:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -1
+          Sap: -2
+      - recipe_type: Raw Resource
+  Campfire:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Stone: -10
+          Wood: -10
+          Fiber: -10
+      - recipe_type: Raw Resource
+  Wooden Brazier:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -10
+          Coal: -1
+          Fiber: -5
+      - recipe_type: Raw Resource
+  Stone Brazier:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Stone: -10
+          Coal: -1
+          Fiber: -5
+      - recipe_type: Raw Resource
+  Gold Brazier:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Gold Bar: -1
+          Coal: -1
+          Fiber: -5
+      - recipe_type: Raw Resource
+  Carved Brazier:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hardwood: -10
+          Coal: -1
+      - recipe_type: Raw Resource
+  Stump Brazier:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hardwood: -5
+          Coal: -1
+      - recipe_type: Raw Resource
+  Barrel Brazier:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -50
+          Solar Essence: -1
+          Coal: -1
+      - recipe_type: Raw Resource
+  Skull Brazier:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Bone Fragment: -10
+      - recipe_type: Raw Resource
+  Marble Brazier:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Marble: -1
+          Aquamarine: -1
+          Stone: -100
+      - recipe_type: Raw Resource
+  Wood Lamp-post:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -50
+          Battery Pack: -1
+      - recipe_type: Raw Resource
+  Iron Lamp-post:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Iron Bar: -1
+          Battery Pack: -1
+      - recipe_type: Raw Resource
+  Jack-O-Lantern:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Pumpkin: -1
+          Torch: -1
+      - recipe_type: Raw Resource
+
+  Wood Sign:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -25
+      - recipe_type: Raw Resource
+  Stone Sign:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Stone: -25
+      - recipe_type: Raw Resource
+  Dark Sign:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Bat Wing: -5
+          Bone Fragment: -5
+      - recipe_type: Raw Resource
+
+  Tub o' Flowers:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -15
+          Tulip Bulb: -1
+          Jazz Seeds: -1
+          Poppy Seeds: -1
+          Spangle Seeds: -1
+      - recipe_type: Raw Resource
+  Wicked Statue:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Stone: -25
+          Coal: -5
+      - recipe_type: Raw Resource
+  Flute Block:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -10
+          Copper Ore: -2
+          Fiber: -20
+      - recipe_type: Raw Resource
+  Drum Block:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Stone: -10
+          Copper Ore: -2
+          Fiber: -20
+      - recipe_type: Raw Resource
+
+  Bouquet:
+    recipes:
+      - recipe_type: Raw Resource
+  Wilted Bouquet:
+    recipes:
+      - output: 1
+        recipe_type: Smelting
+        requirements:
+          Bouquet: -1
+          Coal: -1
       - recipe_type: Raw Resource
 
   # Fishing
@@ -411,6 +789,41 @@ resources:
         requirements:
           Wood: -40
           Iron Bar: -3
+      - recipe_type: Raw Resource
+
+  # Bombs
+  Cherry Bomb:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Copper Ore: -4
+          Coal: -1
+      - recipe_type: Raw Resource
+  Bomb:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Iron Ore: -4
+          Coal: -1
+      - recipe_type: Raw Resource
+  Mega Bomb:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Gold Ore: -4
+          Solar Essence: -1
+          Void Essence: -1
+      - recipe_type: Raw Resource
+  Explosive Ammo:
+    recipes:
+      - output: 5
+        recipe_type: Crafting
+        requirements:
+          Iron Bar: -1
+          Coal: -2
       - recipe_type: Raw Resource
 
   # TODO: Artisan Goods
@@ -662,18 +1075,6 @@ resources:
           Hardwood: -1
           Truffle Oil: -1
           Pine Tar: -5
-      - recipe_type: Raw Resource
-
-  Bouquet:
-    recipes:
-      - recipe_type: Raw Resource
-  Wilted Bouquet:
-    recipes:
-      - output: 1
-        recipe_type: Smelting
-        requirements:
-          Bouquet: -1
-          Coal: -1
       - recipe_type: Raw Resource
 
   # Fertilizer
@@ -1229,7 +1630,6 @@ resources:
       - recipe_type: Raw Resource
 
   # Foraging
-
   ## Spring
   Wild Horseradish:
     recipes:
@@ -1568,6 +1968,10 @@ resources:
         requirements:
           Iron Ore: -5
           Coal: -1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Copper Bar: -3
       - recipe_type: Raw Resource
   Gold Bar:
     recipes:
@@ -1576,6 +1980,10 @@ resources:
         requirements:
           Gold Ore: -5
           Coal: -1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Iron Bar: -2
       - recipe_type: Raw Resource
   Iridium Bar:
     recipes:
