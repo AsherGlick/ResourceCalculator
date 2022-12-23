@@ -413,14 +413,6 @@ resources:
           Iron Bar: -3
       - recipe_type: Raw Resource
 
-  # TODO: Crops
-  Garlic:
-    recipes:
-      - recipe_type: Raw Resource
-  Fairy Rose:
-    recipes:
-      - recipe_type: Raw Resource
-
   # TODO: Artisan Goods
   Cloth:
     recipes:
@@ -934,13 +926,13 @@ resources:
   Pumpkin Seeds:
     recipes:
       - recipe_type: Raw Resource
-  Rare Seed:
-    recipes:
-      - recipe_type: Raw Resource
   Yam Seeds:
     recipes:
       - recipe_type: Raw Resource
   # Other
+  Rare Seed:
+    recipes:
+      - recipe_type: Raw Resource
   Cactus Seeds:
     recipes:
       - recipe_type: Raw Resource
@@ -1259,9 +1251,6 @@ resources:
       - recipe_type: Raw Resource
 
   ## Summer
-  Grape:
-    recipes:
-      - recipe_type: Raw Resource
   Spice Berry:
     recipes:
       - recipe_type: Raw Resource
@@ -1418,7 +1407,131 @@ resources:
   Tea Leaves:
     recipes:
       - recipe_type: Raw Resource
+
+  # Crops
+  ## Spring
+  Blue Jazz:
+    recipes:
+      - recipe_type: Raw Resource
+  Cauliflower:
+    recipes:
+      - recipe_type: Raw Resource
   Coffee Bean:
+    recipes:
+      - recipe_type: Raw Resource
+  Garlic:
+    recipes:
+      - recipe_type: Raw Resource
+  Green Bean:
+    recipes:
+      - recipe_type: Raw Resource
+  Kale:
+    recipes:
+      - recipe_type: Raw Resource
+  Parsnip:
+    recipes:
+      - recipe_type: Raw Resource
+  Potato:
+    recipes:
+      - recipe_type: Raw Resource
+  Rhubarb:
+    recipes:
+      - recipe_type: Raw Resource
+  Strawberry:
+    recipes:
+      - recipe_type: Raw Resource
+  Tulip:
+    recipes:
+      - recipe_type: Raw Resource
+  Unmilled Rice:
+    recipes:
+      - recipe_type: Raw Resource
+  ## Summer
+  BlueBerry:
+    recipes:
+      - recipe_type: Raw Resource
+  Corn:
+    recipes:
+      - recipe_type: Raw Resource
+  Hops:
+    recipes:
+      - recipe_type: Raw Resource
+  Hot Pepper:
+    recipes:
+      - recipe_type: Raw Resource
+  Melon:
+    recipes:
+      - recipe_type: Raw Resource
+  Poppy:
+    recipes:
+      - recipe_type: Raw Resource
+  Radish:
+    recipes:
+      - recipe_type: Raw Resource
+  Red Cabbage:
+    recipes:
+      - recipe_type: Raw Resource
+  Starfruit:
+    recipes:
+      - recipe_type: Raw Resource
+  Summer Spangle:
+    recipes:
+      - recipe_type: Raw Resource
+  Sunflower:
+    recipes:
+      - recipe_type: Raw Resource
+  Tomato:
+    recipes:
+      - recipe_type: Raw Resource
+  Wheat:
+    recipes:
+      - recipe_type: Raw Resource
+
+  ## Fall
+  Amaranth:
+    recipes:
+      - recipe_type: Raw Resource
+  Artichoke:
+    recipes:
+      - recipe_type: Raw Resource
+  Beet:
+    recipes:
+      - recipe_type: Raw Resource
+  Bok Choy:
+    recipes:
+      - recipe_type: Raw Resource
+  Cranberries:
+    recipes:
+      - recipe_type: Raw Resource
+  Eggplant:
+    recipes:
+      - recipe_type: Raw Resource
+  Fairy Rose:
+    recipes:
+      - recipe_type: Raw Resource
+  Grape:
+    recipes:
+      - recipe_type: Raw Resource
+  Pumpkin:
+    recipes:
+      - recipe_type: Raw Resource
+  Yam:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Sweet Gem Berry:
+    recipes:
+      - recipe_type: Raw Resource
+  Ancient Fruit:
+    recipes:
+      - recipe_type: Raw Resource
+  Pineapple:
+    recipes:
+      - recipe_type: Raw Resource
+  Taro Root:
+    recipes:
+      - recipe_type: Raw Resource
+  Qi Fruit:
     recipes:
       - recipe_type: Raw Resource
 
