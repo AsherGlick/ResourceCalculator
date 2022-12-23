@@ -209,7 +209,7 @@ resources:
           Hardwood: -1
       - recipe_type: Raw Resource
 
-  # Decor
+  # Flooring
   Wood Floor:
     recipes:
       - output: 1
@@ -302,6 +302,120 @@ resources:
         recipe_type: Crafting
         requirements:
           Refined Quartz: -1
+      - recipe_type: Raw Resource
+
+  # Fishing
+  Spinner:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Iron Bar: -2
+      - recipe_type: Raw Resource
+  Dressed Spinner:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Iron Bar: -2
+          Cloth: -1
+      - recipe_type: Raw Resource
+  Trap Bobber:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Copper Bar: -1
+          Sap: -10
+      - recipe_type: Raw Resource
+  Cork Bobber:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -10
+          Hardwood: -5
+          Slime: -10
+      - recipe_type: Raw Resource
+  Lead Bobber:
+    recipes:
+      - recipe_type: Raw Resource
+  Treasure Hunter:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Gold Bar: -2
+      - recipe_type: Raw Resource
+  Barbed Hook:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Copper Bar: -1
+          Iron Bar: -1
+          Gold Bar: -1
+      - recipe_type: Raw Resource
+  Curiosity Lure:
+    recipes:
+      - recipe_type: Raw Resource
+  Quality Bobber:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Copper Bar: -1
+          Sap: -20
+          Solar Essence: -5
+      - recipe_type: Raw Resource
+  Magnet:
+    recipes:
+      - output: 3
+        recipe_type: Crafting
+        requirements:
+          Iron Bar: -1
+      - recipe_type: Raw Resource
+  Bait:
+    recipes:
+      - output: 5
+        recipe_type: Crafting
+        requirements:
+          Bug Meat: -1
+      - recipe_type: Raw Resource
+  Wild Bait:
+    recipes:
+      - output: 5
+        recipe_type: Crafting
+        requirements:
+          Fiber: -10
+          Bug Meat: -5
+          Slime: -5
+      - recipe_type: Raw Resource
+  Magic Bait:
+    recipes:
+      - output: 5
+        recipe_type: Crafting
+        requirements:
+          Radioactive Ore: -1
+          Bug Meat: -3
+      - recipe_type: Raw Resource
+  Crab Pot:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -25
+          Copper Bar: -2
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -40
+          Iron Bar: -3
+      - recipe_type: Raw Resource
+
+  # TODO: Artisan Goods
+  Cloth:
+    recipes:
       - recipe_type: Raw Resource
 
   Bouquet:
