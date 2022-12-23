@@ -413,8 +413,25 @@ resources:
           Iron Bar: -3
       - recipe_type: Raw Resource
 
+  # TODO: Crops
+  Garlic:
+    recipes:
+      - recipe_type: Raw Resource
+  Fairy Rose:
+    recipes:
+      - recipe_type: Raw Resource
+
   # TODO: Artisan Goods
   Cloth:
+    recipes:
+      - recipe_type: Raw Resource
+  Oil:
+    recipes:
+      - recipe_type: Raw Resource
+  Honey:
+    recipes:
+      - recipe_type: Raw Resource
+  Truffle Oil:
     recipes:
       - recipe_type: Raw Resource
 
@@ -545,6 +562,114 @@ resources:
         requirements:
           Solar Essence: -5
           Iron Bar: -5
+      - recipe_type: Raw Resource
+
+  # Edible (Crafting)
+  Field Snack:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Acorn: -1
+          Maple Seed: -1
+          Pine Cone: -1
+      - recipe_type: Raw Resource
+  Bug Steak:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Bug Meat: -10
+      - recipe_type: Raw Resource
+  Life Elixir:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Red Mushroom: -1
+          Purple Mushroom: -1
+          Morel: -1
+          Chanterelle: -1
+      - recipe_type: Raw Resource
+  Oil of Garlic:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Garlic: -1
+          Oil: -1
+      - recipe_type: Raw Resource
+
+  # Consumables
+  Monster Musk:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Bat Wing: -30
+          Slime: -30
+      - recipe_type: Raw Resource
+  Fairy Dust:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Diamond: -1
+          Fairy Rose: -1
+      - recipe_type: Raw Resource
+  Warp Totem (Beach):
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hardwood: -1
+          Coral: -2
+          Fiber: -10
+      - recipe_type: Raw Resource
+  Warp Totem (Mountains):
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hardwood: -1
+          Iron Bar: -1
+          Stone: -25
+      - recipe_type: Raw Resource
+  Warp Totem (Farm):
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hardwood: -1
+          Honey: -1
+          Fiber: -20
+      - recipe_type: Raw Resource
+  Warp Totem (Desert):
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hardwood: -2
+          Coconut: -1
+          Iridium Ore: -4
+      - recipe_type: Raw Resource
+  Warp Totem (Island):
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hardwood: -5
+          Dragon Tooth: -1
+          Ginger: -1
+      - recipe_type: Raw Resource
+  Rain Totem:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hardwood: -1
+          Truffle Oil: -1
+          Pine Tar: -5
       - recipe_type: Raw Resource
 
   Bouquet:
@@ -1129,12 +1254,6 @@ resources:
   Spring Onion:
     recipes:
       - recipe_type: Raw Resource
-  Morel:
-    recipes:
-      - recipe_type: Raw Resource
-  Common Mushroom:
-    recipes:
-      - recipe_type: Raw Resource
   Salmonberry:
     recipes:
       - recipe_type: Raw Resource
@@ -1147,9 +1266,6 @@ resources:
     recipes:
       - recipe_type: Raw Resource
   Sweet Pea:
-    recipes:
-      - recipe_type: Raw Resource
-  Red Mushroom:
     recipes:
       - recipe_type: Raw Resource
   Fiddlehead Fern:
@@ -1166,13 +1282,6 @@ resources:
   Blackberry:
     recipes:
       - recipe_type: Raw Resource
-  Chanterelle:
-    recipes:
-      - recipe_type: Raw Resource
-  Purple Mushroom:
-    recipes:
-      - recipe_type: Raw Resource
-
   ## Winter
   Winter Root:
     recipes:
@@ -1204,6 +1313,21 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
+  Common Mushroom:
+    recipes:
+      - recipe_type: Raw Resource
+  Red Mushroom:
+    recipes:
+      - recipe_type: Raw Resource
+  Purple Mushroom:
+    recipes:
+      - recipe_type: Raw Resource
+  Morel:
+    recipes:
+      - recipe_type: Raw Resource
+  Chanterelle:
+    recipes:
+      - recipe_type: Raw Resource
   Cave Carrot:
     recipes:
       - recipe_type: Raw Resource
