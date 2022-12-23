@@ -303,6 +303,244 @@ resources:
           Stone: -5
       - recipe_type: Raw Resource
 
+  # Seeds
+  Spring Seeds:
+    recipes:
+      - output: 10
+        recipe_type: Crafting
+        requirements:
+          Wild Horseradish: -1
+          Daffodil: -1
+          Leek: -1
+          Dandelion: -1
+      - recipe_type: Raw Resource
+  Summer Seeds:
+    recipes:
+      - output: 10
+        recipe_type: Crafting
+        requirements:
+          Spice Berry: -1
+          Grape: -1
+          Sweet Pea: -1
+      - recipe_type: Raw Resource
+  Fall Seeds:
+    recipes:
+      - output: 10
+        recipe_type: Crafting
+        requirements:
+          Common Mushroom: -1
+          Wild Plum: -1
+          Hazelnut: -1
+          Blackberry: -1
+      - recipe_type: Raw Resource
+  Winter Seeds:
+    recipes:
+      - output: 10
+        recipe_type: Crafting
+        requirements:
+          Winter Root: -1
+          Crystal Fruit: -1
+          Snow Yam: -1
+          Crocus: -1
+      - recipe_type: Raw Resource
+  Ancient Seeds:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ancient Seed: -1
+      - recipe_type: Raw Resource
+  Grass Starter:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Fiber: -10
+      - recipe_type: Raw Resource
+  Fiber Seeds:
+    recipes:
+      - output: 4
+        recipe_type: Crafting
+        requirements:
+          Mixed Seeds: -1
+          Sap: -5
+          Clay: -1
+      - recipe_type: Raw Resource
+  Mixed Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  # Spring
+  Bean Starter:
+    recipes:
+      - recipe_type: Raw Resource
+  Cauliflower Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Garlic Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Jazz Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Kale Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Parsnip Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Potato Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Rice Shoot:
+    recipes:
+      - recipe_type: Raw Resource
+  Rhubarb Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Strawberry Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Tulip Bulb:
+    recipes:
+      - recipe_type: Raw Resource
+  # Summer
+  Blueberry Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Corn Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Hops Starter:
+    recipes:
+      - recipe_type: Raw Resource
+  Melon Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Pepper Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Poppy Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Radish Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Red Cabbage Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Spangle Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Sunflower Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Starfruit Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Tomato Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Wheat Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  # Fall
+  Amaranth Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Artichoke Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Beet Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Bok Choy Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Cranberry Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Eggplant Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Fairy Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Grape Starter:
+    recipes:
+      - recipe_type: Raw Resource
+  Pumpkin Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Rare Seed:
+    recipes:
+      - recipe_type: Raw Resource
+  Yam Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  # Other
+  Cactus Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Pineapple Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+  Taro Tuber:
+    recipes:
+      - recipe_type: Raw Resource
+  Qi Bean:
+    recipes:
+      - recipe_type: Raw Resource
+
+  # Trees
+  Maple Seed:
+    recipes:
+      - recipe_type: Raw Resource
+  Acorn:
+    recipes:
+      - recipe_type: Raw Resource
+  Pine Cone:
+    recipes:
+      - recipe_type: Raw Resource
+  Mahogany Seed:
+    recipes:
+      - recipe_type: Raw Resource
+  Mushroom Tree Seed:
+    recipes:
+      - recipe_type: Raw Resource
+  Tea Sapling:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Any Wild Seeds: -2
+          Fiber: -5
+          Wood: -5
+      - recipe_type: Raw Resource
+  Apricot Sapling:
+    recipes:
+      - recipe_type: Raw Resource
+  Cherry Sapling:
+    recipes:
+      - recipe_type: Raw Resource
+  Banana Sapling:
+    recipes:
+      - recipe_type: Raw Resource
+  Mango Sapling:
+    recipes:
+      - recipe_type: Raw Resource
+  Orange Sapling:
+    recipes:
+      - recipe_type: Raw Resource
+  Peach Sapling:
+    recipes:
+      - recipe_type: Raw Resource
+  Apple Sapling:
+    recipes:
+      - recipe_type: Raw Resource
+  Pomegranate Sapling:
+    recipes:
+      - recipe_type: Raw Resource
+
   # Fish
   ## Fishing Pole
   Pufferfish:
@@ -691,22 +929,6 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  Maple Seed:
-    recipes:
-      - recipe_type: Raw Resource
-  Acorn:
-    recipes:
-      - recipe_type: Raw Resource
-  Pine Cone:
-    recipes:
-      - recipe_type: Raw Resource
-  Mahogany Seed:
-    recipes:
-      - recipe_type: Raw Resource
-  Mushroom Tree Seed:
-    recipes:
-      - recipe_type: Raw Resource
-
   Apple:
     recipes:
       - recipe_type: Raw Resource
@@ -732,6 +954,9 @@ resources:
     recipes:
       - recipe_type: Raw Resource
   Tea Leaves:
+    recipes:
+      - recipe_type: Raw Resource
+  Coffee Bean:
     recipes:
       - recipe_type: Raw Resource
 
@@ -995,6 +1220,134 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
+  # Artifacts
+  Dwarf Scroll I:
+    recipes:
+      - recipe_type: Raw Resource
+  Dwarf Scroll II:
+    recipes:
+      - recipe_type: Raw Resource
+  Dwarf Scroll III:
+    recipes:
+      - recipe_type: Raw Resource
+  Dwarf Scroll IV:
+    recipes:
+      - recipe_type: Raw Resource
+  Chipped Amphora:
+    recipes:
+      - recipe_type: Raw Resource
+  Arrowhead:
+    recipes:
+      - recipe_type: Raw Resource
+  Ancient Doll:
+    recipes:
+      - recipe_type: Raw Resource
+  Elvish Jewelry:
+    recipes:
+      - recipe_type: Raw Resource
+  Chewing Stick:
+    recipes:
+      - recipe_type: Raw Resource
+  Ornamental Fan:
+    recipes:
+      - recipe_type: Raw Resource
+  Dinosaur Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Rare Disc:
+    recipes:
+      - recipe_type: Raw Resource
+  Ancient Sword:
+    recipes:
+      - recipe_type: Raw Resource
+  Rusty Spoon:
+    recipes:
+      - recipe_type: Raw Resource
+  Rusty Spur:
+    recipes:
+      - recipe_type: Raw Resource
+  Rusty Cog:
+    recipes:
+      - recipe_type: Raw Resource
+  Chicken Statue:
+    recipes:
+      - recipe_type: Raw Resource
+  Ancient Seed:
+    recipes:
+      - recipe_type: Raw Resource
+  Prehistoric Tool:
+    recipes:
+      - recipe_type: Raw Resource
+  Dried Starfish:
+    recipes:
+      - recipe_type: Raw Resource
+  Anchor:
+    recipes:
+      - recipe_type: Raw Resource
+  Glass Shards:
+    recipes:
+      - recipe_type: Raw Resource
+  Bone Flute:
+    recipes:
+      - recipe_type: Raw Resource
+  Prehistoric Handaxe:
+    recipes:
+      - recipe_type: Raw Resource
+  Dwarvish Helm:
+    recipes:
+      - recipe_type: Raw Resource
+  Dwarf Gadget:
+    recipes:
+      - recipe_type: Raw Resource
+  Ancient Drum:
+    recipes:
+      - recipe_type: Raw Resource
+  Golden Mask:
+    recipes:
+      - recipe_type: Raw Resource
+  Golden Relic:
+    recipes:
+      - recipe_type: Raw Resource
+  Strange Doll (green):
+    recipes:
+      - recipe_type: Raw Resource
+  Strange Doll (yellow):
+    recipes:
+      - recipe_type: Raw Resource
+  Prehistoric Scapula:
+    recipes:
+      - recipe_type: Raw Resource
+  Prehistoric Tibia:
+    recipes:
+      - recipe_type: Raw Resource
+  Prehistoric Skull:
+    recipes:
+      - recipe_type: Raw Resource
+  Skeletal Hand:
+    recipes:
+      - recipe_type: Raw Resource
+  Prehistoric Rib:
+    recipes:
+      - recipe_type: Raw Resource
+  Prehistoric Vertebra:
+    recipes:
+      - recipe_type: Raw Resource
+  Skeletal Tail:
+    recipes:
+      - recipe_type: Raw Resource
+  Nautilus Fossil:
+    recipes:
+      - recipe_type: Raw Resource
+  Amphibian Fossil:
+    recipes:
+      - recipe_type: Raw Resource
+  Palm Fossil:
+    recipes:
+      - recipe_type: Raw Resource
+  Trilobite:
+    recipes:
+      - recipe_type: Raw Resource
+
   # Monster Loot
   Slime:
     recipes:
@@ -1211,3 +1564,23 @@ resources:
         recipe_type: As
         requirements:
           Blue Discus: -1
+
+  Any Wild Seeds:
+    recipes:
+      - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: As
+        requirements:
+          Spring Seeds: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Summer Seeds: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Fall Seeds: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Winter Seeds: -1
