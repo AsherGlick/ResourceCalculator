@@ -209,6 +209,101 @@ resources:
           Hardwood: -1
       - recipe_type: Raw Resource
 
+  # Decor
+  Wood Floor:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -1
+      - recipe_type: Raw Resource
+  Rustic Plank Floor:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -1
+      - recipe_type: Raw Resource
+  Straw Floor:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -1
+          Fiber: -1
+      - recipe_type: Raw Resource
+  Weathered Floor:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -1
+      - recipe_type: Raw Resource
+  Crystal Floor:
+    recipes:
+      - output: 5
+        recipe_type: Crafting
+        requirements:
+          Refined Quartz: -1
+      - recipe_type: Raw Resource
+  Stone Floor:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Stone: -1
+      - recipe_type: Raw Resource
+  Stone Walkway Floor:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Stone: -1
+      - recipe_type: Raw Resource
+  Brick Floor:
+    recipes:
+      - output: 5
+        recipe_type: Crafting
+        requirements:
+          Clay: -2
+          Stone: -5
+      - recipe_type: Raw Resource
+  Wood Path:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -1
+      - recipe_type: Raw Resource
+  Gravel Path:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Stone: -1
+      - recipe_type: Raw Resource
+  Cobblestone Path:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Stone: -1
+      - recipe_type: Raw Resource
+  Stepping Stone Path:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Stone: -1
+      - recipe_type: Raw Resource
+  Crystal Path:
+    recipes:
+      - output: 5
+        recipe_type: Crafting
+        requirements:
+          Refined Quartz: -1
+      - recipe_type: Raw Resource
+
   Bouquet:
     recipes:
       - recipe_type: Raw Resource
