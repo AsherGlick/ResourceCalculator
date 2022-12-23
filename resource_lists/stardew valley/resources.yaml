@@ -418,6 +418,135 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
+  # Rings
+  Small Glow Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Glow Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Small Magnet Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Magnet Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Slime Charmer Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Warrior Ring:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Iron Bar: -10
+          Coal: -25
+          Frozen Tear: -10
+      - recipe_type: Raw Resource
+  Vampire Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Savage Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Ring of Yoba:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Iron Bar: -5
+          Gold Bar: -5
+          Diamond: -1
+      - recipe_type: Raw Resource
+  Sturdy Ring:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Copper Bar: -2
+          Bug Meat: -25
+          Slime: -25
+      - recipe_type: Raw Resource
+  Burglar's Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Iridium Band:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Iridium Bar: -5
+          Solar Essence: -50
+          Void Essence: -50
+      - recipe_type: Raw Resource
+  Amethyst Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Topaz Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Aquamarine Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Jade Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Emerald Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Ruby Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Wedding Ring:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Iridium Bar: -5
+          Prismatic Shard: -1
+      - recipe_type: Raw Resource
+  Crabshell Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Napalm Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Thorns Ring:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Bone Fragment: -50
+          Stone: -50
+          Gold Bar: -1
+      - recipe_type: Raw Resource
+  Lucky Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Hot Java Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Protection Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Soul Sapper Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Phoenix Ring:
+    recipes:
+      - recipe_type: Raw Resource
+  Immunity Band:
+    recipes:
+      - recipe_type: Raw Resource
+  Glowstone Ring:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Solar Essence: -5
+          Iron Bar: -5
+      - recipe_type: Raw Resource
+
   Bouquet:
     recipes:
       - recipe_type: Raw Resource
@@ -1793,3 +1922,5 @@ resources:
         recipe_type: As
         requirements:
           Winter Seeds: -1
+
+  # TODO: Any Ring (for combining in the forge)
