@@ -26,7 +26,18 @@ recipe_types:
   Smelting: Use a Furnace with {IN_ITEMS} to create {OUT_ITEM}
   Charcoal Kiln: Use a Charcoal Kiln with {IN_ITEMS} to create {OUT_ITEM}
   # Wood Chipper: Use the Wood Chipper to convert {IN_ITEMS} into {OUT_ITEM}
+  Slime Egg-Press: Use a Slime Egg-Press with {IN_ITEMS} to create {OUT_ITEM} (random possible color)
   # TODO: https://stardewvalleywiki.com/Crafting#Refining_Equipment
+
+  # Artisanal Goods
+  Cheese Press: Use a Cheese Press with {IN_ITEMS} to create {OUT_ITEM}
+  Keg: Use a Keg with {IN_ITEMS} to brew {OUT_ITEM}
+  Loom: Use a Loom with {IN_ITEMS} to create {OUT_ITEM}
+  Mayonnaise Machine: Use a Mayonnaise Machine with {IN_ITEMS} to create {OUT_ITEM}
+  Oil Maker: Use a Oil Maker with {IN_ITEMS} to create {OUT_ITEM}
+  Preserves Jar: Use a Preserves Jar with {IN_ITEMS} to create {OUT_ITEM}
+
+  Mill: Use a Mill with {IN_ITEMS} to create {OUT_ITEM}
 
   # Smithing: Bring {IN_ITEMS} to Clint so he can create {OUT_ITEM}
   As: 'Treat {IN_ITEMS} as {OUT_ITEM}'
@@ -644,17 +655,6 @@ resources:
           Bone Fragment: -5
       - recipe_type: Raw Resource
 
-  Tub o' Flowers:
-    recipes:
-      - output: 1
-        recipe_type: Crafting
-        requirements:
-          Wood: -15
-          Tulip Bulb: -1
-          Jazz Seeds: -1
-          Poppy Seeds: -1
-          Spangle Seeds: -1
-      - recipe_type: Raw Resource
   Wicked Statue:
     recipes:
       - output: 1
@@ -680,6 +680,17 @@ resources:
           Stone: -10
           Copper Ore: -2
           Fiber: -20
+      - recipe_type: Raw Resource
+  Tub o' Flowers:
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wood: -15
+          Tulip Bulb: -1
+          Jazz Seeds: -1
+          Poppy Seeds: -1
+          Spangle Seeds: -1
       - recipe_type: Raw Resource
 
   Bouquet:
@@ -838,21 +849,302 @@ resources:
           Coal: -2
       - recipe_type: Raw Resource
 
-  # TODO: Artisan Goods
-  Cloth:
-    recipes:
-      - recipe_type: Raw Resource
-  Oil:
-    recipes:
-      - recipe_type: Raw Resource
   Honey:
     recipes:
       - recipe_type: Raw Resource
+
+  Cheese:
+    recipes:
+      - output: 1
+        recipe_type: Cheese Press
+        requirements:
+          Milk: -1
+      - output: 1
+        recipe_type: Cheese Press
+        requirements:
+          Large Milk: -1
+      - recipe_type: Raw Resource
+  Goat Cheese:
+    recipes:
+      - output: 1
+        recipe_type: Cheese Press
+        requirements:
+          Goat Milk: -1
+      - output: 1
+        recipe_type: Cheese Press
+        requirements:
+          Large Goat Milk: -1
+      - recipe_type: Raw Resource
+
+  Beer:
+    recipes:
+      - output: 1
+        recipe_type: Keg
+        requirements:
+          Wheat: -1
+      - recipe_type: Raw Resource
+  Coffee:
+    recipes:
+      - output: 1
+        recipe_type: Keg
+        requirements:
+          Coffee Bean: -5
+      - recipe_type: Raw Resource
+  Green Tea:
+    recipes:
+      - output: 1
+        recipe_type: Keg
+        requirements:
+          Tea Leaves: -1
+      - recipe_type: Raw Resource
+  Mead:
+    recipes:
+      - output: 1
+        recipe_type: Keg
+        requirements:
+          Honey: -1
+      - recipe_type: Raw Resource
+  Pale Ale:
+    recipes:
+      - output: 1
+        recipe_type: Keg
+        requirements:
+          Hops: -1
+      - recipe_type: Raw Resource
+  Juice:
+    recipes:
+      - output: 1
+        recipe_type: Keg
+        requirements:
+          Almost Any Vegetable: -1
+      - recipe_type: Raw Resource
+  Wine:
+    recipes:
+      - output: 1
+        recipe_type: Keg
+        requirements:
+          Any Fruit: -1
+      - recipe_type: Raw Resource
+
+  Cloth:
+    recipes:
+      - output: 1
+        recipe_type: Loom
+        requirements:
+          Wool: -1
+      - recipe_type: Raw Resource
+
+  Mayonnaise:
+    recipes:
+      - output: 1
+        recipe_type: Mayonnaise Machine
+        requirements:
+          Egg: -1
+      - output: 1
+        recipe_type: Mayonnaise Machine
+        requirements:
+          Brown Egg: -1
+      - output: 1
+        recipe_type: Mayonnaise Machine
+        requirements:
+          Large Egg: -1
+      - output: 1
+        recipe_type: Mayonnaise Machine
+        requirements:
+          Large Brown Egg: -1
+      - output: 1
+        recipe_type: Mayonnaise Machine
+        requirements:
+          Ostrich Egg: -1
+      - output: 1
+        recipe_type: Mayonnaise Machine
+        requirements:
+          Golden Egg: -1
+      - recipe_type: Raw Resource
+  Duck Mayonnaise:
+    recipes:
+      - output: 1
+        recipe_type: Mayonnaise Machine
+        requirements:
+          Duck Egg: -1
+      - recipe_type: Raw Resource
+  Void Mayonnaise:
+    recipes:
+      - output: 1
+        recipe_type: Mayonnaise Machine
+        requirements:
+          Void Egg: -1
+      - recipe_type: Raw Resource
+  Dinosaur Mayonnaise:
+    recipes:
+      - output: 1
+        recipe_type: Mayonnaise Machine
+        requirements:
+          Dinosaur Egg: -1
+      - recipe_type: Raw Resource
+
+  Oil:
+    recipes:
+      - output: 1
+        recipe_type: Oil Maker
+        requirements:
+          Corn: -1
+          Sunflower Seeds: -1
+          Sunflower: -1
+      - recipe_type: Raw Resource
   Truffle Oil:
+    recipes:
+      - output: 1
+        recipe_type: Oil Maker
+        requirements:
+          Truffle: -1
+      - recipe_type: Raw Resource
+
+  Wheat Flour:
+    recipes:
+      - output: 1
+        recipe_type: Mill
+        requirements:
+          Wheat: -1
+      - recipe_type: Raw Resource
+  Sugar:
+    recipes:
+      - output: 3
+        recipe_type: Mill
+        requirements:
+          Beet: -1
+      - recipe_type: Raw Resource
+  Rice:
+    recipes:
+      - output: 1
+        recipe_type: Mill
+        requirements:
+          Unmilled Rice: -1
+      - recipe_type: Raw Resource
+  Vinegar:
     recipes:
       - recipe_type: Raw Resource
 
   Qi Seasoning:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Pickles:
+    recipes:
+      - output: 1
+        recipe_type: Preserves Jar
+        requirements:
+          Any Vegetable: -1
+      - output: 1
+        recipe_type: Preserves Jar
+        requirements:
+          Ginger: -1
+      - recipe_type: Raw Resource
+  Jelly:
+    recipes:
+      - output: 1
+        recipe_type: Preserves Jar
+        requirements:
+          Any Fruit: -1
+      - recipe_type: Raw Resource
+  Caviar:
+    recipes:
+      - output: 1
+        recipe_type: Preserves Jar
+        requirements:
+          Sturgeon Roe: -1
+      - recipe_type: Raw Resource
+  Aged Roe:
+    recipes:
+      - output: 1
+        recipe_type: Preserves Jar
+        requirements:
+          Almost Any Roe: -1
+      - recipe_type: Raw Resource
+
+  # Produce
+  Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Brown Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Large Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Large Brown Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Void Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Golden Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Ostrich Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Duck Egg:
+    recipes:
+      - recipe_type: Raw Resource
+  Duck Feather:
+    recipes:
+      - recipe_type: Raw Resource
+  Wool:
+    recipes:
+      - recipe_type: Raw Resource
+  Rabbit's Foot:
+    recipes:
+      - recipe_type: Raw Resource
+  Milk:
+    recipes:
+      - recipe_type: Raw Resource
+  Large Milk:
+    recipes:
+      - recipe_type: Raw Resource
+  Goat Milk:
+    recipes:
+      - recipe_type: Raw Resource
+  Large Goat Milk:
+    recipes:
+      - recipe_type: Raw Resource
+  Truffle:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Squid Ink:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Green Slime Egg:
+    recipes:
+      - output: 1
+        recipe_type: Slime Egg-Press
+        requirements:
+          Slime: -100
+      - recipe_type: Raw Resource
+  Blue Slime Egg:
+    recipes:
+      - output: 1
+        recipe_type: Slime Egg-Press
+        requirements:
+          Slime: -100
+      - recipe_type: Raw Resource
+  Red Slime Egg:
+    recipes:
+      - output: 1
+        recipe_type: Slime Egg-Press
+        requirements:
+          Slime: -100
+      - recipe_type: Raw Resource
+  Purple Slime Egg:
+    recipes:
+      - output: 1
+        recipe_type: Slime Egg-Press
+        requirements:
+          Slime: -100
+      - recipe_type: Raw Resource
+  Tiger Slime Egg:
     recipes:
       - recipe_type: Raw Resource
 
@@ -1645,6 +1937,181 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
+  Albacore Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Anchovy Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Blobfish Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Blue Discus Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Bream Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Bullhead Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Carp Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Catfish Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Chub Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Cockle Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Crab Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Crayfish Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Dorado Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Eel Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Flounder Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Ghostfish Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Halibut Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Herring Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Ice Pip Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Largemouth Bass Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Lava Eel Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Lingcod Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Lionfish Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Lobster Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Midnight Carp Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Mussel Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Octopus Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Oyster Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Perch Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Periwinkle Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Pike Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Pufferfish Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Rainbow Trout Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Red Mullet Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Red Snapper Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Salmon Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Sandfish Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Sardine Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Scorpion Carp Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Sea Cucumber Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Sea Urchin Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Shad Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Shrimp Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Slimejack Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Smallmouth Bass Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Snail Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Spook Fish Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Stingray Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Stonefish Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Sturgeon Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Sunfish Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Super Cucumber Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Tiger Trout Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Tilapia Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Tuna Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Void Salmon Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Walleye Roe:
+    recipes:
+      - recipe_type: Raw Resource
+  Woodskip Roe:
+    recipes:
+      - recipe_type: Raw Resource
+
   # Foraging
   ## Spring
   Wild Horseradish:
@@ -1863,7 +2330,7 @@ resources:
     recipes:
       - recipe_type: Raw Resource
   ## Summer
-  BlueBerry:
+  Blueberry:
     recipes:
       - recipe_type: Raw Resource
   Corn:
@@ -2567,6 +3034,330 @@ resources:
         recipe_type: As
         requirements:
           Blue Discus: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Midnight Squid: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Spook Fish: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Blobfish: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Crimsonfish: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Angler: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Legend: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Glacierfish: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Mutant Carp: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Son of Crimsonfish: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Ms. Angler: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Legend II: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Glacierfish Jr.: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Radioactive Carp: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Lobster: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Clam: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Crayfish: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Crab: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Cockle: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Mussel: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Shrimp: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Snail: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Periwinkle: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Oyster: -1
+
+  Almost Any Roe:
+    recipes:
+      - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: As
+        requirements:
+          Albacore Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Anchovy Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Blobfish Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Blue Discus Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Bream Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Bullhead Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Carp Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Catfish Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Chub Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Cockle Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Crab Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Crayfish Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Dorado Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Eel Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Flounder Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Ghostfish Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Halibut Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Herring Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Ice Pip Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Largemouth Bass Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Lava Eel Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Lingcod Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Lionfish Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Lobster Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Midnight Carp Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Mussel Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Octopus Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Oyster Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Perch Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Periwinkle Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Pike Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Pufferfish Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Rainbow Trout Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Red Mullet Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Red Snapper Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Salmon Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Sandfish Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Sardine Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Scorpion Carp Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Sea Cucumber Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Sea Urchin Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Shad Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Shrimp Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Slimejack Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Smallmouth Bass Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Snail Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Spook Fish Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Stingray Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Stonefish Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Sunfish Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Super Cucumber Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Tiger Trout Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Tilapia Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Tuna Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Void Salmon Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Walleye Roe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Woodskip Roe: -1
 
   Any Wild Seeds:
     recipes:
@@ -2587,5 +3378,349 @@ resources:
         recipe_type: As
         requirements:
           Winter Seeds: -1
+
+  Any Vegetable:
+    recipes:
+      - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: As
+        requirements:
+          Amaranth: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Artichoke: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Beet: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Bok Choy: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Cauliflower: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Corn: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Eggplant: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Fiddlehead Fern: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Garlic: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Green Bean: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Hops: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Kale: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Parsnip: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Potato: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Pumpkin: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Radish: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Red Cabbage: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Taro Root: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Tea Leaves: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Tomato: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Unmilled Rice: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Wheat: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Yam: -1
+
+  Almost Any Vegetable:
+    recipes:
+      - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: As
+        requirements:
+          Amaranth: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Artichoke: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Beet: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Bok Choy: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Cauliflower: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Corn: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Eggplant: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Fiddlehead Fern: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Garlic: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Green Bean: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Kale: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Parsnip: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Potato: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Pumpkin: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Radish: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Red Cabbage: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Taro Root: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Tomato: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Unmilled Rice: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Yam: -1
+
+  Any Fruit:
+    recipes:
+      - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: As
+        requirements:
+          Ancient Fruit: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Apple: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Apricot: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Banana: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Blackberry: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Blueberry: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Cactus Fruit: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Cherry: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Coconut: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Cranberries: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Crystal Fruit: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Grape: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Hot Pepper: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Mango: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Melon: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Orange: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Peach: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Pineapple: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Pomegranate: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Qi Fruit: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Rhubarb: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Salmonberry: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Spice Berry: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Starfruit: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Strawberry: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Wild Plum: -1
+
+  Any Animal Egg:
+    recipes:
+      - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: As
+        requirements:
+          Egg: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Brown Egg: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Large Egg: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Large Brown Egg: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Void Egg: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Golden Egg: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Ostrich Egg: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Duck Egg: -1
+
+  Any Milk:
+    recipes:
+      - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: As
+        requirements:
+          Milk: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Large Milk: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Goat Milk: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Large Goat Milk: -1
 
   # TODO: Any Ring (for combining in the forge)
