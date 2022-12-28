@@ -37,7 +37,7 @@ recipe_types:
   Geode Crusher: Use a Geode Crusher {IN_ITEMS} to possibly get {OUT_ITEM}
   Blacksmith (process, varied): Bring {IN_ITEMS} to Clint to possibly get {OUT_ITEM} (amount may be higher)
   Blacksmith (process): Bring {IN_ITEMS} to Clint to possibly get {OUT_ITEM}
-  # Blacksmith (upgrade):
+  Blacksmith (upgrade): Bring {IN_ITEMS} to Clint to upgrade to {OUT_ITEM}
 
   # Artisanal Goods
   Cheese Press: Use a Cheese Press with {IN_ITEMS} to create {OUT_ITEM}
@@ -1062,6 +1062,207 @@ resources:
         recipe_type: Preserves Jar
         requirements:
           Almost Any Roe: -1
+      - recipe_type: Raw Resource
+
+  # Tools:
+  Hoe:
+    recipes:
+      - recipe_type: Raw Resource
+  Copper Hoe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Hoe: -1
+          Gold: -2000
+          Copper Bar: -5
+      - recipe_type: Raw Resource
+  Steel Hoe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Copper Hoe: -1
+          Gold: -5000
+          Iron Bar: -5
+      - recipe_type: Raw Resource
+  Gold Hoe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Steel Hoe: -1
+          Gold: -10000
+          Gold Bar: -5
+      - recipe_type: Raw Resource
+  Iridium Hoe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Gold Hoe: -1
+          Gold: -25000
+          Iridium Bar: -5
+      - recipe_type: Raw Resource
+
+  Pickaxe:
+    recipes:
+      - recipe_type: Raw Resource
+  Copper Pickaxe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Pickaxe: -1
+          Gold: -2000
+          Copper Bar: -5
+      - recipe_type: Raw Resource
+  Steel Pickaxe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Copper Pickaxe: -1
+          Gold: -5000
+          Iron Bar: -5
+      - recipe_type: Raw Resource
+  Gold Pickaxe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Steel Pickaxe: -1
+          Gold: -10000
+          Gold Bar: -5
+      - recipe_type: Raw Resource
+  Iridium Pickaxe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Gold Pickaxe: -1
+          Gold: -25000
+          Iridium Bar: -5
+      - recipe_type: Raw Resource
+
+  Axe:
+    recipes:
+      - recipe_type: Raw Resource
+  Copper Axe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Axe: -1
+          Gold: -2000
+          Copper Bar: -5
+      - recipe_type: Raw Resource
+  Steel Axe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Copper Axe: -1
+          Gold: -5000
+          Iron Bar: -5
+      - recipe_type: Raw Resource
+  Gold Axe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Steel Axe: -1
+          Gold: -10000
+          Gold Bar: -5
+      - recipe_type: Raw Resource
+  Iridium Axe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Gold Axe: -1
+          Gold: -25000
+          Iridium Bar: -5
+      - recipe_type: Raw Resource
+
+  Watering Can:
+    recipes:
+      - recipe_type: Raw Resource
+  Copper Watering Can:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Watering Can: -1
+          Gold: -2000
+          Copper Bar: -5
+      - recipe_type: Raw Resource
+  Steel Watering Can:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Copper Watering Can: -1
+          Gold: -5000
+          Iron Bar: -5
+      - recipe_type: Raw Resource
+  Gold Watering Can:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Steel Watering Can: -1
+          Gold: -10000
+          Gold Bar: -5
+      - recipe_type: Raw Resource
+  Iridium Watering Can:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Gold Watering Can: -1
+          Gold: -25000
+          Iridium Bar: -5
+      - recipe_type: Raw Resource
+
+  Trash Can:
+    recipes:
+      - recipe_type: Raw Resource
+  Copper Trash Can:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Trash Can: -1
+          Gold: -1000
+          Copper Bar: -5
+      - recipe_type: Raw Resource
+  Steel Trash Can:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Copper Trash Can: -1
+          Gold: -2500
+          Iron Bar: -5
+      - recipe_type: Raw Resource
+  Gold Trash Can:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Steel Trash Can: -1
+          Gold: -5000
+          Gold Bar: -5
+      - recipe_type: Raw Resource
+  Iridium Trash Can:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Gold Trash Can: -1
+          Gold: -12500
+          Iridium Bar: -5
       - recipe_type: Raw Resource
 
   # Produce
