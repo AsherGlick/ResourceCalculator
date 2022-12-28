@@ -46,10 +46,11 @@ recipe_types:
   Mayonnaise Machine: Use a Mayonnaise Machine with {IN_ITEMS} to create {OUT_ITEM}
   Oil Maker: Use a Oil Maker with {IN_ITEMS} to create {OUT_ITEM}
   Preserves Jar: Use a Preserves Jar with {IN_ITEMS} to create {OUT_ITEM}
-
   Mill: Use a Mill with {IN_ITEMS} to create {OUT_ITEM}
 
-  # Smithing: Bring {IN_ITEMS} to Clint so he can create {OUT_ITEM}
+  # Only including basic items that might be purchased in bulk
+  Buy: 'Purchase {OUT_ITEM} with {IN_ITEMS}'
+
   As: 'Treat {IN_ITEMS} as {OUT_ITEM}'
 
 resources:
@@ -2714,6 +2715,10 @@ resources:
     recipes:
       - recipe_type: Raw Resource
       - output: 1
+        recipe_type: Buy
+        requirements:
+          Gold: -250
+      - output: 1
         recipe_type: Charcoal Kiln
         requirements:
           Wood: -10
@@ -2771,6 +2776,10 @@ resources:
     recipes:
       - recipe_type: Raw Resource
       - output: 1
+        recipe_type: Buy
+        requirements:
+          Gold: -100
+      - output: 1
         recipe_type: Recycling Machine (chance)
         requirements:
           Trash: -1
@@ -2813,6 +2822,10 @@ resources:
   Wood:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Buy
+        requirements:
+          Gold: -50
       - output: 1
         recipe_type: Recycling Machine (chance)
         requirements:
@@ -3011,6 +3024,10 @@ resources:
     recipes:
       - recipe_type: Raw Resource
       - output: 1
+        recipe_type: Buy
+        requirements:
+          Gold: -150
+      - output: 1
         recipe_type: Blacksmith (process, varied)
         requirements:
           Geode: -1
@@ -3049,6 +3066,10 @@ resources:
   Iron Ore:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Buy
+        requirements:
+          Gold: -250
       - output: 1
         recipe_type: Recycling Machine (chance)
         requirements:
@@ -3092,6 +3113,10 @@ resources:
   Gold Ore:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Buy
+        requirements:
+          Gold: -750
       - output: 1
         recipe_type: Blacksmith (process, varied)
         requirements:
