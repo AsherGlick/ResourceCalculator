@@ -33,6 +33,11 @@ recipe_types:
   Seed Maker: Use a Seed Maker with {IN_ITEMS} to likely get {OUT_ITEM} (amount may be higher)
   Seed Maker (chance): Use a Seed Maker with {IN_ITEMS} to rarely get {OUT_ITEM} (amount may be higher)
   Bone Mill: Use a Bone Mill with {IN_ITEMS} to possibly get {OUT_ITEM} (amount may be higher)
+  Geode Crusher (varied): Use a Geode Crusher {IN_ITEMS} to possibly get {OUT_ITEM} (amount may be higher)
+  Geode Crusher: Use a Geode Crusher {IN_ITEMS} to possibly get {OUT_ITEM}
+  Blacksmith (process, varied): Bring {IN_ITEMS} to Clint to possibly get {OUT_ITEM} (amount may be higher)
+  Blacksmith (process): Bring {IN_ITEMS} to Clint to possibly get {OUT_ITEM}
+  # Blacksmith (upgrade):
 
   # Artisanal Goods
   Cheese Press: Use a Cheese Press with {IN_ITEMS} to create {OUT_ITEM}
@@ -1853,6 +1858,11 @@ resources:
         recipe_type: Seed Maker
         requirements:
           Pineapple: -1
+      - output: 5
+        recipe_type: Blacksmith (process)
+        requirements:
+          Golden Coconut: -1
+          Gold: -25
   Taro Tuber:
     recipes:
       - recipe_type: Raw Resource
@@ -1860,6 +1870,11 @@ resources:
         recipe_type: Seed Maker
         requirements:
           Taro Root: -1
+      - output: 5
+        recipe_type: Blacksmith (process)
+        requirements:
+          Golden Coconut: -1
+          Gold: -25
   Qi Bean:
     recipes:
       - recipe_type: Raw Resource
@@ -1881,6 +1896,11 @@ resources:
   Mahogany Seed:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Golden Coconut: -1
+          Gold: -25
   Mushroom Tree Seed:
     recipes:
       - recipe_type: Raw Resource
@@ -1902,9 +1922,19 @@ resources:
   Banana Sapling:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Golden Coconut: -1
+          Gold: -25
   Mango Sapling:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Golden Coconut: -1
+          Gold: -25
   Orange Sapling:
     recipes:
       - recipe_type: Raw Resource
@@ -2443,6 +2473,42 @@ resources:
   Clay:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Coal:
     recipes:
       - recipe_type: Raw Resource
@@ -2458,6 +2524,42 @@ resources:
         recipe_type: Recycling Machine (chance)
         requirements:
           Trash: -1
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Omni Geode: -1
   Fiber:
     recipes:
       - recipe_type: Raw Resource
@@ -2471,6 +2573,42 @@ resources:
         recipe_type: Recycling Machine (chance)
         requirements:
           Trash: -1
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Omni Geode: -1
   Wood:
     recipes:
       - recipe_type: Raw Resource
@@ -2671,6 +2809,42 @@ resources:
   Copper Ore:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Omni Geode: -1
   Iron Ore:
     recipes:
       - recipe_type: Raw Resource
@@ -2678,12 +2852,98 @@ resources:
         recipe_type: Recycling Machine (chance)
         requirements:
           Trash: -1
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Omni Geode: -1
   Gold Ore:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Omni Geode: -1
   Iridium Ore:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process, varied)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher (varied)
+        requirements:
+          Omni Geode: -1
+      - output: 5
+        recipe_type: Blacksmith (process)
+        requirements:
+          Golden Coconut: -1
+          Gold: -25
   Radioactive Ore:
     recipes:
       - recipe_type: Raw Resource
@@ -2765,12 +3025,66 @@ resources:
   Earth Crystal:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Fire Quartz:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Frozen Tear:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Quartz:
     recipes:
       - recipe_type: Raw Resource
@@ -2794,6 +3108,15 @@ resources:
   Prismatic Shard:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Ruby:
     recipes:
       - recipe_type: Raw Resource
@@ -2805,126 +3128,864 @@ resources:
   Aerinite:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Alamite:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Baryte:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Basalt:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Bixite:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Calcite:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Celestine:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Dolomite:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Esperite:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Fairy Stone:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Fire Opal:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Fluorapatite:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Geminite:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Ghost Crystal:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Granite:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Helvite:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Hematite:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Jagoite:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Jamborite:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Jasper:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Kyanite:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Lemon Stone:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Limestone:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Lunarite:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Malachite:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Marble:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Mudstone:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Nekoite:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Neptunite:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Obsidian:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Ocean Stone:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Opal:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Orpiment:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Petrified Slime:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Pyrite:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Sandstone:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Slate:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Soapstone:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Star Shards:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Thunder Egg:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
   Tigerseye:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
 
   ## Geodes
   Geode:
@@ -2963,78 +4024,252 @@ resources:
   Chipped Amphora:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Arrowhead:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Ancient Doll:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Elvish Jewelry:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Chewing Stick:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Ornamental Fan:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Dinosaur Egg:
     recipes:
       - recipe_type: Raw Resource
   Rare Disc:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Ancient Sword:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Rusty Spoon:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Rusty Spur:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Rusty Cog:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Chicken Statue:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Ancient Seed:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Prehistoric Tool:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Dried Starfish:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Anchor:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Glass Shards:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Bone Flute:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Prehistoric Handaxe:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Dwarvish Helm:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Dwarf Gadget:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Magma Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Magma Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Ancient Drum:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Frozen Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Frozen Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Omni Geode: -1
+          Gold: -25
+      - output: 1
+        recipe_type: Geode Crusher
+        requirements:
+          Omni Geode: -1
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Golden Mask:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Golden Relic:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
   Strange Doll (green):
     recipes:
       - recipe_type: Raw Resource
@@ -3085,6 +4320,11 @@ resources:
   Fossilized Skull:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Golden Coconut: -1
+          Gold: -25
   Fossilized Spine:
     recipes:
       - recipe_type: Raw Resource
@@ -3103,6 +4343,31 @@ resources:
   Snake Vertebrae:
     recipes:
       - recipe_type: Raw Resource
+
+  Golden Pumpkin:
+    recipes:
+      - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
+  Pearl:
+    recipes:
+      - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
+  Treasure Chest:
+    recipes:
+      - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Blacksmith (process)
+        requirements:
+          Artifact Trove: -1
+          Gold: -25
 
   # Trash
   Trash:
