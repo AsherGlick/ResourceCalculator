@@ -25,9 +25,14 @@ recipe_types:
   # Refining
   Smelting: Use a Furnace with {IN_ITEMS} to create {OUT_ITEM}
   Charcoal Kiln: Use a Charcoal Kiln with {IN_ITEMS} to create {OUT_ITEM}
-  # Wood Chipper: Use the Wood Chipper to convert {IN_ITEMS} into {OUT_ITEM}
-  Slime Egg-Press: Use a Slime Egg-Press with {IN_ITEMS} to create {OUT_ITEM} (random possible color)
-  # TODO: https://stardewvalleywiki.com/Crafting#Refining_Equipment
+  Recycling Machine: Use a Recycling Machine with {IN_ITEMS} to get {OUT_ITEM}
+  Recycling Machine (chance): Use a Recycling Machine with {IN_ITEMS} to possibly get {OUT_ITEM} (amount may be higher)
+  Wood Chipper: Use the Wood Chipper with {IN_ITEMS} to get {OUT_ITEM} (amount may be higher)
+  Wood Chipper (chance): Use the Wood Chipper with {IN_ITEMS} to possibly get {OUT_ITEM} (amount may be higher)
+  Slime Egg-Press: Use a Slime Egg-Press with {IN_ITEMS} to possibly get {OUT_ITEM} (random color)
+  Seed Maker: Use a Seed Maker with {IN_ITEMS} to likely get {OUT_ITEM} (amount may be higher)
+  Seed Maker (chance): Use a Seed Maker with {IN_ITEMS} to rarely get {OUT_ITEM} (amount may be higher)
+  # Bone Mill:
 
   # Artisanal Goods
   Cheese Press: Use a Cheese Press with {IN_ITEMS} to create {OUT_ITEM}
@@ -95,9 +100,6 @@ resources:
         requirements:
           Stone: -50
       - recipe_type: Raw Resource
-  Junimo Chest:
-    recipes:
-      - recipe_type: Raw Resource
 
   # Sprinklers
   Sprinkler:
@@ -125,12 +127,6 @@ resources:
           Gold Bar: -1
           Iridium Bar: -1
           Battery Pack: -1
-      - recipe_type: Raw Resource
-  Enricher:
-    recipes:
-      - recipe_type: Raw Resource
-  Pressure Nozzle:
-    recipes:
       - recipe_type: Raw Resource
 
   # Refining Equipment
@@ -265,9 +261,6 @@ resources:
           Gold Bar: -2
           Stone: -50
           Diamond: -1
-      - recipe_type: Raw Resource
-  Deconstructor:
-    recipes:
       - recipe_type: Raw Resource
 
   # Artisan Equipment
@@ -529,6 +522,10 @@ resources:
         requirements:
           Wood: -1
           Sap: -2
+      - output: 3
+        recipe_type: Recycling Machine (chance)
+        requirements:
+          Soggy Newspaper: -1
       - recipe_type: Raw Resource
   Campfire:
     recipes:
@@ -932,6 +929,10 @@ resources:
         recipe_type: Loom
         requirements:
           Wool: -1
+      - output: 1
+        recipe_type: Recycling Machine (chance)
+        requirements:
+          Cloth: -1
       - recipe_type: Raw Resource
 
   Mayonnaise:
@@ -1022,10 +1023,6 @@ resources:
           Unmilled Rice: -1
       - recipe_type: Raw Resource
   Vinegar:
-    recipes:
-      - recipe_type: Raw Resource
-
-  Qi Seasoning:
     recipes:
       - recipe_type: Raw Resource
 
@@ -1478,6 +1475,11 @@ resources:
           Leek: -1
           Dandelion: -1
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Wild Horseradish: -1
+      - recipe_type: Raw Resource
   Summer Seeds:
     recipes:
       - output: 10
@@ -1486,6 +1488,10 @@ resources:
           Spice Berry: -1
           Grape: -1
           Sweet Pea: -1
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Spice Berry: -1
       - recipe_type: Raw Resource
   Fall Seeds:
     recipes:
@@ -1496,6 +1502,10 @@ resources:
           Wild Plum: -1
           Hazelnut: -1
           Blackberry: -1
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Common Mushroom: -1
       - recipe_type: Raw Resource
   Winter Seeds:
     recipes:
@@ -1506,13 +1516,25 @@ resources:
           Crystal Fruit: -1
           Snow Yam: -1
           Crocus: -1
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Winter Root: -1
       - recipe_type: Raw Resource
   Ancient Seeds:
     recipes:
       - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Ancient Fruit: -1
+      - output: 1
         recipe_type: Crafting
         requirements:
           Ancient Seed: -1
+      - output: 1
+        recipe_type: Seed Maker (chance)
+        requirements:
+          Any Seeded Crop: -1
       - recipe_type: Raw Resource
   Grass Starter:
     recipes:
@@ -1533,127 +1555,287 @@ resources:
   Mixed Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker (chance)
+        requirements:
+          Any Seeded Crop: -1
   # Spring
   Bean Starter:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Green Bean: -1
   Cauliflower Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Cauliflower: -1
   Garlic Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Garlic: -1
   Jazz Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Blue Jazz: -1
   Kale Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Kale: -1
   Parsnip Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Parsnip: -1
   Potato Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Potato: -1
   Rice Shoot:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Unmilled Rice: -1
   Rhubarb Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Rhubarb: -1
   Strawberry Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Strawberry: -1
   Tulip Bulb:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Tulip: -1
   # Summer
   Blueberry Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Blueberry: -1
   Corn Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Corn: -1
   Hops Starter:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Hops: -1
   Melon Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Melon: -1
   Pepper Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Hot Pepper: -1
   Poppy Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Poppy: -1
   Radish Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Radish: -1
   Red Cabbage Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Red Cabbage: -1
   Spangle Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Summer Spangle: -1
   Sunflower Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Sunflower: -1
   Starfruit Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Starfruit: -1
   Tomato Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Tomato: -1
   Wheat Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Wheat: -1
   # Fall
   Amaranth Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Amaranth: -1
   Artichoke Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Artichoke: -1
   Beet Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Beet: -1
   Bok Choy Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Bok Choy: -1
   Cranberry Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Cranberries: -1
   Eggplant Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Eggplant: -1
   Fairy Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Fairy Rose: -1
   Grape Starter:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Grape: -1
   Pumpkin Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Pumpkin: -1
   Yam Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Yam: -1
   # Other
   Rare Seed:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Sweet Gem Berry: -1
   Cactus Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Cactus Fruit: -1
   Pineapple Seeds:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Pineapple: -1
   Taro Tuber:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Taro Root: -1
   Qi Bean:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Seed Maker
+        requirements:
+          Qi Fruit: -1
 
   # Trees
   Maple Seed:
@@ -2237,6 +2419,14 @@ resources:
         recipe_type: Charcoal Kiln
         requirements:
           Wood: -10
+      - output: 1
+        recipe_type: Recycling Machine (chance)
+        requirements:
+          Driftwood: -1
+      - output: 1
+        recipe_type: Recycling Machine (chance)
+        requirements:
+          Trash: -1
   Fiber:
     recipes:
       - recipe_type: Raw Resource
@@ -2246,9 +2436,25 @@ resources:
   Stone:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Recycling Machine (chance)
+        requirements:
+          Trash: -1
   Wood:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Recycling Machine (chance)
+        requirements:
+          Driftwood: -1
+      - output: 5
+        recipe_type: Wood Chipper (chance)
+        requirements:
+          Hardwood: -1
+      - output: 5
+        recipe_type: Wood Chipper
+        requirements:
+          Driftwood: -1
 
   Sap:
     recipes:
@@ -2256,12 +2462,24 @@ resources:
   Maple Syrup:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Wood Chipper (chance)
+        requirements:
+          Hardwood: -1
   Oak Resin:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Wood Chipper (chance)
+        requirements:
+          Hardwood: -1
   Pine Tar:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Wood Chipper (chance)
+        requirements:
+          Hardwood: -1
 
   Apple:
     recipes:
@@ -2425,6 +2643,10 @@ resources:
   Iron Ore:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Recycling Machine (chance)
+        requirements:
+          Trash: -1
   Gold Ore:
     recipes:
       - recipe_type: Raw Resource
@@ -2492,11 +2714,19 @@ resources:
         requirements:
           Quartz: -1
           Coal: -1
-      - output: 1
+      - output: 3
         recipe_type: Smelting
         requirements:
           Fire Quartz: -1
           Coal: -1
+      - output: 1
+        recipe_type: Recycling Machine
+        requirements:
+          Broken CD: -1
+      - output: 1
+        recipe_type: Recycling Machine
+        requirements:
+          Broken Glasses: -1
       - recipe_type: Raw Resource
 
   # Minerals
@@ -2811,6 +3041,29 @@ resources:
     recipes:
       - recipe_type: Raw Resource
   Trilobite:
+    recipes:
+      - recipe_type: Raw Resource
+
+  # Trash
+  Trash:
+    recipes:
+      - recipe_type: Raw Resource
+  Driftwood:
+    recipes:
+      - recipe_type: Raw Resource
+  Soggy Newspaper:
+    recipes:
+      - recipe_type: Raw Resource
+  Broken CD:
+    recipes:
+      - recipe_type: Raw Resource
+  Broken Glasses:
+    recipes:
+      - recipe_type: Raw Resource
+  Joja Cola:
+    recipes:
+      - recipe_type: Raw Resource
+  Rotten Plant:
     recipes:
       - recipe_type: Raw Resource
 
@@ -3378,6 +3631,190 @@ resources:
         recipe_type: As
         requirements:
           Winter Seeds: -1
+
+  Any Seeded Crop:
+    recipes:
+      - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: As
+        requirements:
+          Wild Horseradish: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Spice Berry: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Common Mushroom: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Winter Root: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Ancient Fruit: -1
+      # Spring
+      - output: 1
+        recipe_type: As
+        requirements:
+          Green Bean: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Cauliflower: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Garlic: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Blue Jazz: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Kale: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Parsnip: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Potato: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Unmilled Rice: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Rhubarb: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Strawberry: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Tulip: -1
+      # Summer
+      - output: 1
+        recipe_type: As
+        requirements:
+          Blueberry: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Corn: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Hops: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Melon: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Hot Pepper: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Poppy: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Radish: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Red Cabbage: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Summer Spangle: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Sunflower: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Starfruit: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Tomato: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Wheat: -1
+      # Fall
+      - output: 1
+        recipe_type: As
+        requirements:
+          Amaranth: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Artichoke: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Beet: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Bok Choy: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Cranberries: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Eggplant: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Fairy Rose: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Grape: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Pumpkin: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Yam: -1
+      # Other
+      - output: 1
+        recipe_type: As
+        requirements:
+          Sweet Gem Berry: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Cactus Fruit: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Pineapple: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Taro Root: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Qi Fruit: -1
 
   Any Vegetable:
     recipes:
