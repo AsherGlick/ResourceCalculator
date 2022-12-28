@@ -48,6 +48,12 @@ recipe_types:
   Preserves Jar: Use a Preserves Jar with {IN_ITEMS} to create {OUT_ITEM}
   Mill: Use a Mill with {IN_ITEMS} to create {OUT_ITEM}
 
+  Forge (create): Use {IN_ITEMS} at the forge to create {OUT_ITEM}
+  Forge (stat): Use {IN_ITEMS} at the forge to add {OUT_ITEM}
+  Forge (stat, chance): Use {IN_ITEMS} at the forge to possibly add {OUT_ITEM} (random stat)
+  Forge (appearance): Use {IN_ITEMS} at the forge to make one look like the other (same type only)
+  Forge (enchantment): Use {IN_ITEMS} at the forge to add {OUT_ITEM} (random enchantment)
+
   # Only including basic items that might be purchased in bulk
   Buy: 'Purchase {OUT_ITEM} with {IN_ITEMS}'
 
@@ -1065,207 +1071,6 @@ resources:
           Almost Any Roe: -1
       - recipe_type: Raw Resource
 
-  # Tools:
-  Hoe:
-    recipes:
-      - recipe_type: Raw Resource
-  Copper Hoe:
-    recipes:
-      - output: 1
-        recipe_type: Blacksmith (upgrade)
-        requirements:
-          Hoe: -1
-          Gold: -2000
-          Copper Bar: -5
-      - recipe_type: Raw Resource
-  Steel Hoe:
-    recipes:
-      - output: 1
-        recipe_type: Blacksmith (upgrade)
-        requirements:
-          Copper Hoe: -1
-          Gold: -5000
-          Iron Bar: -5
-      - recipe_type: Raw Resource
-  Gold Hoe:
-    recipes:
-      - output: 1
-        recipe_type: Blacksmith (upgrade)
-        requirements:
-          Steel Hoe: -1
-          Gold: -10000
-          Gold Bar: -5
-      - recipe_type: Raw Resource
-  Iridium Hoe:
-    recipes:
-      - output: 1
-        recipe_type: Blacksmith (upgrade)
-        requirements:
-          Gold Hoe: -1
-          Gold: -25000
-          Iridium Bar: -5
-      - recipe_type: Raw Resource
-
-  Pickaxe:
-    recipes:
-      - recipe_type: Raw Resource
-  Copper Pickaxe:
-    recipes:
-      - output: 1
-        recipe_type: Blacksmith (upgrade)
-        requirements:
-          Pickaxe: -1
-          Gold: -2000
-          Copper Bar: -5
-      - recipe_type: Raw Resource
-  Steel Pickaxe:
-    recipes:
-      - output: 1
-        recipe_type: Blacksmith (upgrade)
-        requirements:
-          Copper Pickaxe: -1
-          Gold: -5000
-          Iron Bar: -5
-      - recipe_type: Raw Resource
-  Gold Pickaxe:
-    recipes:
-      - output: 1
-        recipe_type: Blacksmith (upgrade)
-        requirements:
-          Steel Pickaxe: -1
-          Gold: -10000
-          Gold Bar: -5
-      - recipe_type: Raw Resource
-  Iridium Pickaxe:
-    recipes:
-      - output: 1
-        recipe_type: Blacksmith (upgrade)
-        requirements:
-          Gold Pickaxe: -1
-          Gold: -25000
-          Iridium Bar: -5
-      - recipe_type: Raw Resource
-
-  Axe:
-    recipes:
-      - recipe_type: Raw Resource
-  Copper Axe:
-    recipes:
-      - output: 1
-        recipe_type: Blacksmith (upgrade)
-        requirements:
-          Axe: -1
-          Gold: -2000
-          Copper Bar: -5
-      - recipe_type: Raw Resource
-  Steel Axe:
-    recipes:
-      - output: 1
-        recipe_type: Blacksmith (upgrade)
-        requirements:
-          Copper Axe: -1
-          Gold: -5000
-          Iron Bar: -5
-      - recipe_type: Raw Resource
-  Gold Axe:
-    recipes:
-      - output: 1
-        recipe_type: Blacksmith (upgrade)
-        requirements:
-          Steel Axe: -1
-          Gold: -10000
-          Gold Bar: -5
-      - recipe_type: Raw Resource
-  Iridium Axe:
-    recipes:
-      - output: 1
-        recipe_type: Blacksmith (upgrade)
-        requirements:
-          Gold Axe: -1
-          Gold: -25000
-          Iridium Bar: -5
-      - recipe_type: Raw Resource
-
-  Watering Can:
-    recipes:
-      - recipe_type: Raw Resource
-  Copper Watering Can:
-    recipes:
-      - output: 1
-        recipe_type: Blacksmith (upgrade)
-        requirements:
-          Watering Can: -1
-          Gold: -2000
-          Copper Bar: -5
-      - recipe_type: Raw Resource
-  Steel Watering Can:
-    recipes:
-      - output: 1
-        recipe_type: Blacksmith (upgrade)
-        requirements:
-          Copper Watering Can: -1
-          Gold: -5000
-          Iron Bar: -5
-      - recipe_type: Raw Resource
-  Gold Watering Can:
-    recipes:
-      - output: 1
-        recipe_type: Blacksmith (upgrade)
-        requirements:
-          Steel Watering Can: -1
-          Gold: -10000
-          Gold Bar: -5
-      - recipe_type: Raw Resource
-  Iridium Watering Can:
-    recipes:
-      - output: 1
-        recipe_type: Blacksmith (upgrade)
-        requirements:
-          Gold Watering Can: -1
-          Gold: -25000
-          Iridium Bar: -5
-      - recipe_type: Raw Resource
-
-  Trash Can:
-    recipes:
-      - recipe_type: Raw Resource
-  Copper Trash Can:
-    recipes:
-      - output: 1
-        recipe_type: Blacksmith (upgrade)
-        requirements:
-          Trash Can: -1
-          Gold: -1000
-          Copper Bar: -5
-      - recipe_type: Raw Resource
-  Steel Trash Can:
-    recipes:
-      - output: 1
-        recipe_type: Blacksmith (upgrade)
-        requirements:
-          Copper Trash Can: -1
-          Gold: -2500
-          Iron Bar: -5
-      - recipe_type: Raw Resource
-  Gold Trash Can:
-    recipes:
-      - output: 1
-        recipe_type: Blacksmith (upgrade)
-        requirements:
-          Steel Trash Can: -1
-          Gold: -5000
-          Gold Bar: -5
-      - recipe_type: Raw Resource
-  Iridium Trash Can:
-    recipes:
-      - output: 1
-        recipe_type: Blacksmith (upgrade)
-        requirements:
-          Gold Trash Can: -1
-          Gold: -12500
-          Iridium Bar: -5
-      - recipe_type: Raw Resource
-
   # Produce
   Egg:
     recipes:
@@ -1479,6 +1284,15 @@ resources:
         requirements:
           Solar Essence: -5
           Iron Bar: -5
+      - recipe_type: Raw Resource
+
+  Combined Ring:
+    recipes:
+      - output: 1
+        recipe_type: Forge (create)
+        requirements:
+          Any Ring: -2
+          Cinder Shard: -20
       - recipe_type: Raw Resource
 
   # Edible (Crafting)
@@ -2148,6 +1962,376 @@ resources:
       - recipe_type: Raw Resource
   Pomegranate Sapling:
     recipes:
+      - recipe_type: Raw Resource
+
+  # Tools
+  Hoe:
+    recipes:
+      - recipe_type: Raw Resource
+  Copper Hoe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Hoe: -1
+          Gold: -2000
+          Copper Bar: -5
+      - recipe_type: Raw Resource
+  Steel Hoe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Copper Hoe: -1
+          Gold: -5000
+          Iron Bar: -5
+      - recipe_type: Raw Resource
+  Gold Hoe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Steel Hoe: -1
+          Gold: -10000
+          Gold Bar: -5
+      - recipe_type: Raw Resource
+  Iridium Hoe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Gold Hoe: -1
+          Gold: -25000
+          Iridium Bar: -5
+      - recipe_type: Raw Resource
+
+  Pickaxe:
+    recipes:
+      - recipe_type: Raw Resource
+  Copper Pickaxe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Pickaxe: -1
+          Gold: -2000
+          Copper Bar: -5
+      - recipe_type: Raw Resource
+  Steel Pickaxe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Copper Pickaxe: -1
+          Gold: -5000
+          Iron Bar: -5
+      - recipe_type: Raw Resource
+  Gold Pickaxe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Steel Pickaxe: -1
+          Gold: -10000
+          Gold Bar: -5
+      - recipe_type: Raw Resource
+  Iridium Pickaxe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Gold Pickaxe: -1
+          Gold: -25000
+          Iridium Bar: -5
+      - recipe_type: Raw Resource
+
+  Axe:
+    recipes:
+      - recipe_type: Raw Resource
+  Copper Axe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Axe: -1
+          Gold: -2000
+          Copper Bar: -5
+      - recipe_type: Raw Resource
+  Steel Axe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Copper Axe: -1
+          Gold: -5000
+          Iron Bar: -5
+      - recipe_type: Raw Resource
+  Gold Axe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Steel Axe: -1
+          Gold: -10000
+          Gold Bar: -5
+      - recipe_type: Raw Resource
+  Iridium Axe:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Gold Axe: -1
+          Gold: -25000
+          Iridium Bar: -5
+      - recipe_type: Raw Resource
+
+  Watering Can:
+    recipes:
+      - recipe_type: Raw Resource
+  Copper Watering Can:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Watering Can: -1
+          Gold: -2000
+          Copper Bar: -5
+      - recipe_type: Raw Resource
+  Steel Watering Can:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Copper Watering Can: -1
+          Gold: -5000
+          Iron Bar: -5
+      - recipe_type: Raw Resource
+  Gold Watering Can:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Steel Watering Can: -1
+          Gold: -10000
+          Gold Bar: -5
+      - recipe_type: Raw Resource
+  Iridium Watering Can:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Gold Watering Can: -1
+          Gold: -25000
+          Iridium Bar: -5
+      - recipe_type: Raw Resource
+
+  Trash Can:
+    recipes:
+      - recipe_type: Raw Resource
+  Copper Trash Can:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Trash Can: -1
+          Gold: -1000
+          Copper Bar: -5
+      - recipe_type: Raw Resource
+  Steel Trash Can:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Copper Trash Can: -1
+          Gold: -2500
+          Iron Bar: -5
+      - recipe_type: Raw Resource
+  Gold Trash Can:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Steel Trash Can: -1
+          Gold: -5000
+          Gold Bar: -5
+      - recipe_type: Raw Resource
+  Iridium Trash Can:
+    recipes:
+      - output: 1
+        recipe_type: Blacksmith (upgrade)
+        requirements:
+          Gold Trash Can: -1
+          Gold: -12500
+          Iridium Bar: -5
+      - recipe_type: Raw Resource
+
+  Training Rod:
+    recipes:
+      - recipe_type: Raw Resource
+  Bamboo Pole:
+    recipes:
+      - recipe_type: Raw Resource
+  Fiberglass Rod:
+    recipes:
+      - recipe_type: Raw Resource
+  Iridium Rod:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Galaxy Sword:
+    recipes:
+      - recipe_type: Raw Resource
+  Galaxy Dagger:
+    recipes:
+      - recipe_type: Raw Resource
+  Galaxy Hammer:
+    recipes:
+      - recipe_type: Raw Resource
+  Infinity Blade:
+    recipes:
+      - output: 1
+        recipe_type: Forge (create)
+        requirements:
+          Galaxy Sword: -1
+          Galaxy Soul: -3
+          Cinder Shard: -60
+      - recipe_type: Raw Resource
+  Infinity Dagger:
+    recipes:
+      - output: 1
+        recipe_type: Forge (create)
+        requirements:
+          Galaxy Dagger: -1
+          Galaxy Soul: -3
+          Cinder Shard: -60
+      - recipe_type: Raw Resource
+  Infinity Gavel:
+    recipes:
+      - output: 1
+        recipe_type: Forge (create)
+        requirements:
+          Galaxy Hammer: -1
+          Galaxy Soul: -3
+          Cinder Shard: -60
+      - recipe_type: Raw Resource
+
+  Knockback:
+    recipes:
+      - output: 1
+        recipe_type: Forge (stat)
+        requirements:
+          Any Weapon: -1
+          Amethyst: -1
+          Cinder Shard: -20
+      - output: 1
+        recipe_type: Forge (stat, chance)
+        requirements:
+          Any Weapon: -1
+          Diamond: -1
+          Cinder Shard: -10
+      - recipe_type: Raw Resource
+  Crit Chance:
+    recipes:
+      - output: 1
+        recipe_type: Forge (stat)
+        requirements:
+          Any Weapon: -1
+          Aquamarine: -1
+          Cinder Shard: -20
+      - output: 1
+        recipe_type: Forge (stat, chance)
+        requirements:
+          Any Weapon: -1
+          Diamond: -1
+          Cinder Shard: -10
+      - recipe_type: Raw Resource
+  Speed:
+    recipes:
+      - output: 1
+        recipe_type: Forge (stat)
+        requirements:
+          Any Weapon: -1
+          Emerald: -1
+          Cinder Shard: -20
+      - output: 1
+        recipe_type: Forge (stat, chance)
+        requirements:
+          Any Weapon: -1
+          Diamond: -1
+          Cinder Shard: -10
+      - recipe_type: Raw Resource
+  Crit Damage:
+    recipes:
+      - output: 1
+        recipe_type: Forge (stat)
+        requirements:
+          Any Weapon: -1
+          Jade: -1
+          Cinder Shard: -20
+      - output: 1
+        recipe_type: Forge (stat, chance)
+        requirements:
+          Any Weapon: -1
+          Diamond: -1
+          Cinder Shard: -10
+      - recipe_type: Raw Resource
+  Damage:
+    recipes:
+      - output: 1
+        recipe_type: Forge (stat)
+        requirements:
+          Any Weapon: -1
+          Ruby: -1
+          Cinder Shard: -20
+      - output: 1
+        recipe_type: Forge (stat, chance)
+        requirements:
+          Any Weapon: -1
+          Diamond: -1
+          Cinder Shard: -10
+      - recipe_type: Raw Resource
+  Defense:
+    recipes:
+      - output: 1
+        recipe_type: Forge (stat)
+        requirements:
+          Any Weapon: -1
+          Topaz: -1
+          Cinder Shard: -20
+      - output: 1
+        recipe_type: Forge (stat, chance)
+        requirements:
+          Any Weapon: -1
+          Diamond: -1
+          Cinder Shard: -10
+      - recipe_type: Raw Resource
+
+  Weapon Appearance:
+    recipes:
+      - output: 1
+        recipe_type: Forge (appearance)
+        requirements:
+          Any Weapon: -2
+          Cinder Shard: -10
+      - recipe_type: Raw Resource
+  Tool Enchantment:
+    recipes:
+      - output: 1
+        recipe_type: Forge (enchantment)
+        requirements:
+          Any Tool: -1
+          Prismatic Shard: -1
+          Cinder Shard: -20
+      - recipe_type: Raw Resource
+
+  Weapon Enchantment:
+    recipes:
+      - output: 1
+        recipe_type: Forge (enchantment)
+        requirements:
+          Any Weapon: -1
+          Prismatic Shard: -1
+          Cinder Shard: -20
       - recipe_type: Raw Resource
 
   # Fish
@@ -5795,4 +5979,226 @@ resources:
         requirements:
           Trilobite: -1
 
-  # TODO: Any Ring (for combining in the forge)
+  Any Tool:
+    recipes:
+      - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: As
+        requirements:
+          Hoe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Copper Hoe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Steel Hoe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Gold Hoe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Iridium Hoe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Pickaxe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Copper Pickaxe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Steel Pickaxe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Gold Pickaxe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Iridium Pickaxe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Axe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Copper Axe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Steel Axe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Gold Axe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Iridium Axe: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Watering Can: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Copper Watering Can: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Steel Watering Can: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Gold Watering Can: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Iridium Watering Can: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Training Rod: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Bamboo Pole: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Fiberglass Rod: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Iridium Rod: -1
+
+  Any Weapon:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Any Ring:
+    recipes:
+      - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: As
+        requirements:
+          Small Glow Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Glow Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Small Magnet Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Magnet Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Slime Charmer Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Warrior Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Vampire Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Savage Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Ring of Yoba: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Sturdy Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Burglar's Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Iridium Band: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Amethyst Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Topaz Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Aquamarine Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Jade Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Emerald Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Ruby Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Wedding Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Crabshell Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Napalm Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Thorns Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Lucky Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Hot Java Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Protection Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Soul Sapper Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Phoenix Ring: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Immunity Band: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Glowstone Ring: -1
