@@ -29,10 +29,10 @@ recipe_types:
   Recycling Machine (chance): Use a Recycling Machine with {IN_ITEMS} to possibly get {OUT_ITEM} (amount may be higher)
   Wood Chipper: Use the Wood Chipper with {IN_ITEMS} to get {OUT_ITEM} (amount may be higher)
   Wood Chipper (chance): Use the Wood Chipper with {IN_ITEMS} to possibly get {OUT_ITEM} (amount may be higher)
-  Slime Egg-Press: Use a Slime Egg-Press with {IN_ITEMS} to possibly get {OUT_ITEM} (random color)
+  Slime Egg-Press: Use a Slime Egg-Press with {IN_ITEMS} to possibly get {OUT_ITEM}
   Seed Maker: Use a Seed Maker with {IN_ITEMS} to likely get {OUT_ITEM} (amount may be higher)
   Seed Maker (chance): Use a Seed Maker with {IN_ITEMS} to rarely get {OUT_ITEM} (amount may be higher)
-  # Bone Mill:
+  Bone Mill: Use a Bone Mill with {IN_ITEMS} to possibly get {OUT_ITEM} (amount may be higher)
 
   # Artisanal Goods
   Cheese Press: Use a Cheese Press with {IN_ITEMS} to create {OUT_ITEM}
@@ -1397,6 +1397,14 @@ resources:
         requirements:
           Sap: -2
           Any Fish: -1
+      - output: 10
+        recipe_type: Bone Mill
+        requirements:
+          Bone Fragment: -5
+      - output: 10
+        recipe_type: Bone Mill
+        requirements:
+          Any Fossil: -1
       - recipe_type: Raw Resource
   Deluxe Fertilizer:
     recipes:
@@ -1413,6 +1421,14 @@ resources:
         requirements:
           Pine Tar: -1
           Clam: -1
+      - output: 5
+        recipe_type: Bone Mill
+        requirements:
+          Bone Fragment: -5
+      - output: 5
+        recipe_type: Bone Mill
+        requirements:
+          Any Fossil: -1
       - recipe_type: Raw Resource
   Deluxe Speed-Gro:
     recipes:
@@ -1421,6 +1437,14 @@ resources:
         requirements:
           Oak Resin: -1
           Coral: -1
+      - output: 3
+        recipe_type: Bone Mill
+        requirements:
+          Bone Fragment: -5
+      - output: 3
+        recipe_type: Bone Mill
+        requirements:
+          Any Fossil: -1
       - recipe_type: Raw Resource
   Hyper Speed-Gro:
     recipes:
@@ -1462,6 +1486,14 @@ resources:
         requirements:
           Fiber: -5
           Stone: -5
+      - output: 5
+        recipe_type: Bone Mill
+        requirements:
+          Bone Fragment: -5
+      - output: 5
+        recipe_type: Bone Mill
+        requirements:
+          Any Fossil: -1
       - recipe_type: Raw Resource
 
   # Seeds
@@ -1474,7 +1506,6 @@ resources:
           Daffodil: -1
           Leek: -1
           Dandelion: -1
-      - recipe_type: Raw Resource
       - output: 1
         recipe_type: Seed Maker
         requirements:
@@ -3044,6 +3075,35 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
+  # Ginger Island Fossils
+  Fossilized Leg:
+    recipes:
+      - recipe_type: Raw Resource
+  Fossilized Ribs:
+    recipes:
+      - recipe_type: Raw Resource
+  Fossilized Skull:
+    recipes:
+      - recipe_type: Raw Resource
+  Fossilized Spine:
+    recipes:
+      - recipe_type: Raw Resource
+  Fossilized Tail:
+    recipes:
+      - recipe_type: Raw Resource
+  Mummified Frog:
+    recipes:
+      - recipe_type: Raw Resource
+  Mummified Bat:
+    recipes:
+      - recipe_type: Raw Resource
+  Snake Skull:
+    recipes:
+      - recipe_type: Raw Resource
+  Snake Vertebrae:
+    recipes:
+      - recipe_type: Raw Resource
+
   # Trash
   Trash:
     recipes:
@@ -4159,5 +4219,89 @@ resources:
         recipe_type: As
         requirements:
           Large Goat Milk: -1
+
+  Any Fossil:
+    recipes:
+      - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: As
+        requirements:
+          Amphibian Fossil: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Fossilized Leg: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Fossilized Ribs: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Fossilized Skull: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Fossilized Spine: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Fossilized Tail: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Mummified Bat: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Mummified Frog: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Nautilus Fossil: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Palm Fossil: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Snake Skull: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Snake Vertebrae: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Prehistoric Rib: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Prehistoric Scapula: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Prehistoric Skull: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Prehistoric Tibia: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Prehistoric Vertebra: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Skeletal Hand: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Skeletal Tail: -1
+      - output: 1
+        recipe_type: As
+        requirements:
+          Trilobite: -1
 
   # TODO: Any Ring (for combining in the forge)
