@@ -21,6 +21,7 @@ game_version: '1.5.6'
 
 recipe_types:
   Crafting: Craft {IN_ITEMS} into {OUT_ITEM} (must have recipe)
+  Cooking: Cook {IN_ITEMS} into {OUT_ITEM} (must have recipe)
 
   # Refining
   Smelting: Use a Furnace with {IN_ITEMS} to create {OUT_ITEM}
@@ -858,6 +859,690 @@ resources:
           Coal: -2
       - recipe_type: Raw Resource
 
+  # Cooking
+  Fried Egg:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Any Animal Egg: -1
+      - recipe_type: Raw Resource
+  Omelet:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Any Animal Egg: -1
+          Any Milk: -1
+      - recipe_type: Raw Resource
+  Salad:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Leek: -1
+          Dandelion: -1
+          Vinegar: -1
+      - recipe_type: Raw Resource
+  Cheese Cauliflower:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Cauliflower: -1
+          Cheese: -1
+      - recipe_type: Raw Resource
+  Baked Fish:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Sunfish: -1
+          Bream: -1
+          Wheat Flour: -1
+      - recipe_type: Raw Resource
+  Parsnip Soup:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Parsnip: -1
+          Any Milk: -1
+          Vinegar: -1
+      - recipe_type: Raw Resource
+  Vegetable Medley:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Tomato: -1
+          Beet: -1
+      - recipe_type: Raw Resource
+  Complete Breakfast:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Fried Egg: -1
+          Any Milk: -1
+          Hashbrowns: -1
+          Pancakes: -1
+      - recipe_type: Raw Resource
+  Fried Calamari:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Squid: -1
+          Wheat Flour: -1
+          Oil: -1
+      - recipe_type: Raw Resource
+  Strange Bun:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Wheat Flour: -1
+          Periwinkle: -1
+          Void Mayonnaise: -1
+      - recipe_type: Raw Resource
+  Lucky Lunch:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Sea Cucumber: -1
+          Tortilla: -1
+          Blue Jazz: -1
+      - recipe_type: Raw Resource
+  Fried Mushroom:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Common Mushroom: -1
+          Morel: -1
+          Oil: -1
+      - recipe_type: Raw Resource
+  Pizza:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Wheat Flour: -1
+          Tomato: -1
+          Cheese: -1
+      - recipe_type: Raw Resource
+  Bean Hotpot:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Green Bean: -2
+      - recipe_type: Raw Resource
+  Glazed Yams:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Yam: -1
+          Sugar: -1
+      - recipe_type: Raw Resource
+  Carp Surprise:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Carp: -4
+      - recipe_type: Raw Resource
+  Hashbrowns:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Potato: -1
+          Oil: -1
+      - recipe_type: Raw Resource
+  Pancakes:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Wheat Flour: -1
+          Any Animal Egg: -1
+      - recipe_type: Raw Resource
+  Salmon Dinner:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Salmon: -1
+          Amaranth: -1
+          Kale: -1
+      - recipe_type: Raw Resource
+  Fish Taco:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Tuna: -1
+          Tortilla: -1
+          Red Cabbage: -1
+          Mayonnaise: -1
+      - recipe_type: Raw Resource
+  Crispy Bass:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Largemouth Bass: -1
+          Wheat Flour: -1
+          Oil: -1
+      - recipe_type: Raw Resource
+  Pepper Poppers:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Hot Pepper: -1
+          Cheese: -1
+      - recipe_type: Raw Resource
+  Bread:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Wheat Flour: -1
+      - recipe_type: Raw Resource
+  Tom Kha Soup:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Coconut: -1
+          Shrimp: -1
+          Common Mushroom: -1
+      - recipe_type: Raw Resource
+  Trout Soup:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Rainbow Trout: -1
+          Green Algae: -1
+      - recipe_type: Raw Resource
+  Chocolate Cake:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Wheat Flour: -1
+          Sugar: -1
+          Any Animal Egg: -1
+      - recipe_type: Raw Resource
+  Pink Cake:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Melon: -1
+          Wheat Flour: -1
+          Sugar: -1
+          Any Animal Egg: -1
+      - recipe_type: Raw Resource
+  Rhubarb Pie:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Rhubarb: -1
+          Wheat Flour: -1
+          Sugar: -1
+      - recipe_type: Raw Resource
+  Cookie:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Wheat Flour: -1
+          Sugar: -1
+          Any Animal Egg: -1
+      - recipe_type: Raw Resource
+  Spaghetti:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Wheat Flour: -1
+          Tomato: -1
+      - recipe_type: Raw Resource
+  Fried Eel:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Eel: -1
+          Oil: -1
+      - recipe_type: Raw Resource
+  Spicy Eel:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Eel: -1
+          Hot Pepper: -1
+      - recipe_type: Raw Resource
+  Sashimi:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Any Fish: -1
+      - recipe_type: Raw Resource
+  Maki Roll:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Any Fish: -1
+          Seaweed: -1
+          Rice: -1
+      - recipe_type: Raw Resource
+  Tortilla:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Corn: -1
+      - recipe_type: Raw Resource
+  Red Plate:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Red Cabbage: -1
+          Radish: -1
+      - recipe_type: Raw Resource
+  Eggplant Parmesan:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Eggplant: -1
+          Tomato: -1
+      - recipe_type: Raw Resource
+  Rice Pudding:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Any Milk: -1
+          Sugar: -1
+          Rice: -1
+      - recipe_type: Raw Resource
+  Ice Cream:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Any Milk: -1
+          Sugar: -1
+      - recipe_type: Raw Resource
+  Blueberry Tart:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Blueberry: -1
+          Wheat Flour: -1
+          Sugar: -1
+          Any Animal Egg: -1
+      - recipe_type: Raw Resource
+  Autumn's Bounty:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Yam: -1
+          Pumpkin: -1
+      - recipe_type: Raw Resource
+  Pumpkin Soup:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Pumpkin: -1
+          Any Milk: -1
+      - recipe_type: Raw Resource
+  Super Meal:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Bok Choy: -1
+          Cranberries: -1
+          Artichoke: -1
+      - recipe_type: Raw Resource
+  Cranberry Sauce:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Cranberries: -1
+          Sugar: -1
+      - recipe_type: Raw Resource
+  Stuffing:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Bread: -1
+          Cranberries: -1
+          Hazelnut: -1
+      - recipe_type: Raw Resource
+  Farmer's Lunch:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Omelet: -1
+          Parsnip: -1
+      - recipe_type: Raw Resource
+  Survival Burger:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Bread: -1
+          Cave Carrot: -1
+          Eggplant: -1
+      - recipe_type: Raw Resource
+  Dish O' The Sea:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Sardine: -2
+          Hashbrowns: -1
+      - recipe_type: Raw Resource
+  Miner's Treat:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Cave Carrot: -2
+          Sugar: -1
+          Any Milk: -1
+      - recipe_type: Raw Resource
+  Roots Platter:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Cave Carrot: -1
+          Winter Root: -1
+      - recipe_type: Raw Resource
+  Triple Shot Espresso:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Coffee: -3
+      - recipe_type: Raw Resource
+  Seafoam Pudding:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Flounder: -1
+          Midnight Carp: -1
+          Squid Ink: -1
+      - recipe_type: Raw Resource
+  Algae Soup:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Green Algae: -4
+      - recipe_type: Raw Resource
+  Pale Broth:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          White Algae: -2
+      - recipe_type: Raw Resource
+  Plum Pudding:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Wild Plum: -2
+          Wheat Flour: -1
+          Sugar: -1
+      - recipe_type: Raw Resource
+  Artichoke Dip:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Artichoke: -1
+          Any Milk: -1
+      - recipe_type: Raw Resource
+  Stir Fry:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Cave Carrot: -1
+          Common Mushroom: -1
+          Kale: -1
+          Oil: -1
+      - recipe_type: Raw Resource
+  Roasted Hazelnuts:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Hazelnut: -3
+      - recipe_type: Raw Resource
+  Pumpkin Pie:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Pumpkin: -1
+          Wheat Flour: -1
+          Any Milk: -1
+          Sugar: -1
+      - recipe_type: Raw Resource
+  Radish Salad:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Oil: -1
+          Vinegar: -1
+          Radish: -1
+      - recipe_type: Raw Resource
+  Fruit Salad:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Blueberry: -1
+          Melon: -1
+          Apricot: -1
+      - recipe_type: Raw Resource
+  Blackberry Cobbler:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Blackberry: -2
+          Sugar: -1
+          Wheat Flour: -1
+      - recipe_type: Raw Resource
+  Cranberry Candy:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Cranberries: -1
+          Apple: -1
+          Sugar: -1
+      - recipe_type: Raw Resource
+  Bruschetta:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Bread: -1
+          Oil: -1
+          Tomato: -1
+      - recipe_type: Raw Resource
+  Coleslaw:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Red Cabbage: -1
+          Vinegar: -1
+          Mayonnaise: -1
+      - recipe_type: Raw Resource
+  Fiddlehead Risotto:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Oil: -1
+          Fiddlehead Fern: -1
+          Garlic: -1
+      - recipe_type: Raw Resource
+  Poppyseed Muffin:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Poppy: -1
+          Wheat Flour: -1
+          Sugar: -1
+      - recipe_type: Raw Resource
+  Chowder:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Clam: -1
+          Any Milk: -1
+      - recipe_type: Raw Resource
+  Fish Stew:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Crayfish: -1
+          Mussel: -1
+          Periwinkle: -1
+          Tomato: -1
+      - recipe_type: Raw Resource
+  Escargot:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Snail: -1
+          Garlic: -1
+      - recipe_type: Raw Resource
+  Lobster Bisque:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Lobster: -1
+          Any Milk: -1
+      - recipe_type: Raw Resource
+  Maple Bar:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Maple Syrup: -1
+          Sugar: -1
+          Wheat Flour: -1
+      - recipe_type: Raw Resource
+  Crab Cakes:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Crab: -1
+          Wheat Flour: -1
+          Any Animal Egg: -1
+          Oil: -1
+      - recipe_type: Raw Resource
+  Shrimp Cocktail:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Tomato: -1
+          Shrimp: -1
+          Wild Horseradish: -1
+      - recipe_type: Raw Resource
+  Ginger Ale:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Ginger: -3
+          Sugar: -1
+      - recipe_type: Raw Resource
+  Banana Pudding:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Banana: -1
+          Any Milk: -1
+          Sugar: -1
+      - recipe_type: Raw Resource
+  Mango Sticky Rice:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Mango: -1
+          Coconut: -1
+          Rice: -1
+      - recipe_type: Raw Resource
+  Poi:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Taro Root: -4
+      - recipe_type: Raw Resource
+  Tropical Curry:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Coconut: -1
+          Pineapple: -1
+          Hot Pepper: -1
+      - recipe_type: Raw Resource
+  Squid Ink Ravioli:
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Squid Ink: -1
+          Wheat Flour: -1
+          Tomato: -1
+      - recipe_type: Raw Resource
+
+  # Artisan Goods
   Honey:
     recipes:
       - recipe_type: Raw Resource
@@ -2215,6 +2900,7 @@ resources:
           Cinder Shard: -60
       - recipe_type: Raw Resource
 
+  # TODO: rename to _ Upgrade
   Knockback:
     recipes:
       - output: 1
