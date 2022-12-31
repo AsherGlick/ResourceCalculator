@@ -117,6 +117,9 @@ resources:
         requirements:
           Stone: -50
       - recipe_type: Raw Resource
+  Junimo Chest:
+    recipes:
+      - recipe_type: Raw Resource
 
   # Sprinklers
   Sprinkler:
@@ -144,6 +147,12 @@ resources:
           Gold Bar: -1
           Iridium Bar: -1
           Battery Pack: -1
+      - recipe_type: Raw Resource
+  Enricher:
+    recipes:
+      - recipe_type: Raw Resource
+  Pressure Nozzle:
+    recipes:
       - recipe_type: Raw Resource
 
   # Refining Equipment
@@ -278,6 +287,9 @@ resources:
           Gold Bar: -2
           Stone: -50
           Diamond: -1
+      - recipe_type: Raw Resource
+  Deconstructor:
+    recipes:
       - recipe_type: Raw Resource
 
   # Artisan Equipment
@@ -1544,6 +1556,10 @@ resources:
           Squid Ink: -1
           Wheat Flour: -1
           Tomato: -1
+      - recipe_type: Raw Resource
+
+  Qi Seasoning:
+    recipes:
       - recipe_type: Raw Resource
 
   # Artisan Goods
