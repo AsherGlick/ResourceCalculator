@@ -56,7 +56,6 @@ recipe_types:
   Forge (create): Use {IN_ITEMS} at the forge to create {OUT_ITEM}
   Forge (stat): Use {IN_ITEMS} at the forge to add {OUT_ITEM}
   Forge (stat, chance): Use {IN_ITEMS} at the forge to possibly add {OUT_ITEM} (random stat)
-  Forge (appearance): Use {IN_ITEMS} at the forge to make one look like the other (same type only)
   Forge (enchantment): Use {IN_ITEMS} at the forge to add {OUT_ITEM} (random enchantment)
 
   # Only including basic items that might be purchased in bulk
@@ -1991,6 +1990,7 @@ resources:
           Iron Bar: -5
       - recipe_type: Raw Resource
 
+  # Ideally this could leverage a "unique" recipe since the rings must be different
   Combined Ring:
     recipes:
       - output: 1
@@ -3267,14 +3267,6 @@ resources:
           Cinder Shard: -10
       - recipe_type: Raw Resource
 
-  Weapon Appearance:
-    recipes:
-      - output: 1
-        recipe_type: Forge (appearance)
-        requirements:
-          Any Weapon: -2
-          Cinder Shard: -10
-      - recipe_type: Raw Resource
   Tool Enchantment:
     recipes:
       - output: 1
