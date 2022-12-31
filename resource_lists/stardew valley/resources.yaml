@@ -118,6 +118,10 @@ resources:
       - recipe_type: Raw Resource
   Junimo Chest:
     recipes:
+      - output: 1
+        recipe_type: Buy
+        requirements:
+          Qi Gem: -15
       - recipe_type: Raw Resource
 
   # Sprinklers
@@ -149,9 +153,17 @@ resources:
       - recipe_type: Raw Resource
   Enricher:
     recipes:
+      - output: 4
+        recipe_type: Buy
+        requirements:
+          Qi Gem: -20
       - recipe_type: Raw Resource
   Pressure Nozzle:
     recipes:
+      - output: 4
+        recipe_type: Buy
+        requirements:
+          Qi Gem: -20
       - recipe_type: Raw Resource
 
   # Refining Equipment
@@ -289,6 +301,10 @@ resources:
       - recipe_type: Raw Resource
   Deconstructor:
     recipes:
+      - output: 1
+        recipe_type: Buy
+        requirements:
+          Qi Gem: -20
       - recipe_type: Raw Resource
 
   # Artisan Equipment
@@ -436,6 +452,10 @@ resources:
           Hardwood: -10
           Iridium Bar: -1
           Radioactive Bar: -1
+      - output: 1
+        recipe_type: Buy
+        requirements:
+          Qi Gem: -10
       - recipe_type: Raw Resource
   Cookout Kit:
     recipes:
@@ -824,6 +844,10 @@ resources:
         requirements:
           Radioactive Ore: -1
           Bug Meat: -3
+      - output: 20
+        recipe_type: Buy
+        requirements:
+          Qi Gem: -5
       - recipe_type: Raw Resource
   Crab Pot:
     recipes:
@@ -1559,6 +1583,10 @@ resources:
 
   Qi Seasoning:
     recipes:
+      - output: 10
+        recipe_type: Buy
+        requirements:
+          Qi Gem: -10
       - recipe_type: Raw Resource
 
   # Artisan Goods
@@ -1794,6 +1822,10 @@ resources:
   Golden Egg:
     recipes:
       - recipe_type: Raw Resource
+      - output: 1
+        recipe_type: Buy
+        requirements:
+          Qi Gem: -100
   Ostrich Egg:
     recipes:
       - recipe_type: Raw Resource
@@ -2624,6 +2656,10 @@ resources:
           Gold: -25
   Mushroom Tree Seed:
     recipes:
+      - output: 1
+        recipe_type: Buy
+        requirements:
+          Qi Gem: -5
       - recipe_type: Raw Resource
   Tea Sapling:
     recipes:
@@ -5777,10 +5813,17 @@ resources:
 
   Galaxy Soul:
     recipes:
+      - output: 1
+        recipe_type: Buy
+        requirements:
+          Qi Gem: -40
       - recipe_type: Raw Resource
 
   # Money
   Gold:
+    recipes:
+      - recipe_type: Raw Resource
+  Qi Gem:
     recipes:
       - recipe_type: Raw Resource
 
