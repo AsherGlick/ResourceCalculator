@@ -23,6 +23,10 @@ recipe_types:
   Crafting: Craft {IN_ITEMS} into {OUT_ITEM} (must have recipe)
   Cooking: Cook {IN_ITEMS} into {OUT_ITEM} (must have recipe)
 
+  Building (carpenter): Bring {IN_ITEMS} to the carpenter to build {OUT_ITEM}
+  Building (carpenter, upgrade): Bring {IN_ITEMS} to the carpenter to upgrade the building to {OUT_ITEM}
+  Building (wizard): Bring {IN_ITEMS} to the wizard to build {OUT_ITEM}
+
   # Refining
   Smelting: Use a Furnace with {IN_ITEMS} to create {OUT_ITEM}
   Charcoal Kiln: Use a Charcoal Kiln with {IN_ITEMS} to create {OUT_ITEM}
@@ -2649,6 +2653,262 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
+  # Carpenter Buildings
+  Barn:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter)
+        requirements:
+          Gold: -6000
+          Wood: -350
+          Stone: -150
+      - recipe_type: Raw Resource
+  Big Barn:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter, upgrade)
+        requirements:
+          Barn: -1
+          Gold: -12000
+          Wood: -450
+          Stone: -200
+      - recipe_type: Raw Resource
+  Deluxe Barn:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter, upgrade)
+        requirements:
+          Big Barn: -1
+          Gold: -25000
+          Wood: -550
+          Stone: -300
+      - recipe_type: Raw Resource
+  Coop:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter)
+        requirements:
+          Gold: -4000
+          Wood: -300
+          Stone: -100
+      - recipe_type: Raw Resource
+  Big Coop:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter, upgrade)
+        requirements:
+          Coop: -1
+          Gold: -10000
+          Wood: -400
+          Stone: -150
+      - recipe_type: Raw Resource
+  Deluxe Coop:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter, upgrade)
+        requirements:
+          Big Coop: -1
+          Gold: -20000
+          Wood: -500
+          Stone: -200
+      - recipe_type: Raw Resource
+  Fish Pond:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter)
+        requirements:
+          Gold: -5000
+          Stone: -200
+          Seaweed: -5
+          Green Algae: -5
+      - recipe_type: Raw Resource
+  Mill:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter)
+        requirements:
+          Gold: -2500
+          Stone: -50
+          Wood: -150
+          Cloth: -4
+      - recipe_type: Raw Resource
+  Shed:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter)
+        requirements:
+          Gold: -15000
+          Wood: -300
+      - recipe_type: Raw Resource
+  Big Shed:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter, upgrade)
+        requirements:
+          Shed: -1
+          Gold: -20000
+          Wood: -550
+          Stone: -300
+      - recipe_type: Raw Resource
+  Silo:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter)
+        requirements:
+          Gold: -100
+          Stone: -100
+          Clay: -10
+          Copper Bar: -5
+      - recipe_type: Raw Resource
+  Slime Hutch:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter)
+        requirements:
+          Gold: -10000
+          Stone: -500
+          Refined Quartz: -10
+          Iridium Bar: -1
+      - recipe_type: Raw Resource
+  Stable:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter)
+        requirements:
+          Gold: -10000
+          Hardwood: -100
+          Iron Bar: -5
+      - recipe_type: Raw Resource
+  Well:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter)
+        requirements:
+          Gold: -1000
+          Stone: -75
+      - recipe_type: Raw Resource
+  Stone Cabin:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter)
+        requirements:
+          Gold: -100
+          Stone: -10
+      - recipe_type: Raw Resource
+  Plank Cabin:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter)
+        requirements:
+          Gold: -100
+          Wood: -5
+          Fiber: -10
+      - recipe_type: Raw Resource
+  Log Cabin:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter)
+        requirements:
+          Gold: -100
+          Wood: -10
+      - recipe_type: Raw Resource
+  Shipping Bin:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter)
+        requirements:
+          Gold: -250
+          Wood: -150
+      - recipe_type: Raw Resource
+
+  House:
+    recipes:
+      - recipe_type: Raw Resource
+  House Upgrade 1:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter, upgrade)
+        requirements:
+          House: -1
+          Gold: -10000
+          Wood: -450
+      - recipe_type: Raw Resource
+  House Upgrade 2:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter, upgrade)
+        requirements:
+          House Upgrade 1: -1
+          Gold: -50000
+          Hardwood: -150
+      - recipe_type: Raw Resource
+  House Upgrade 3:
+    recipes:
+      - output: 1
+        recipe_type: Building (carpenter, upgrade)
+        requirements:
+          House Upgrade 2: -1
+          Gold: -100000
+      - recipe_type: Raw Resource
+
+  # Wizard Buildings
+  Earth Obelisk:
+    recipes:
+      - output: 1
+        recipe_type: Building (wizard)
+        requirements:
+          Gold: -500000
+          Iridium Bar: -10
+          Earth Crystal: -10
+      - recipe_type: Raw Resource
+  Water Obelisk:
+    recipes:
+      - output: 1
+        recipe_type: Building (wizard)
+        requirements:
+          Gold: -500000
+          Iridium Bar: -5
+          Clam: -10
+          Coral: -10
+      - recipe_type: Raw Resource
+  Desert Obelisk:
+    recipes:
+      - output: 1
+        recipe_type: Building (wizard)
+        requirements:
+          Gold: -1000000
+          Iridium Bar: -20
+          Coconut: -10
+          Cactus Fruit: -10
+      - recipe_type: Raw Resource
+  Island Obelisk:
+    recipes:
+      - output: 1
+        recipe_type: Building (wizard)
+        requirements:
+          Gold: -1000000
+          Iridium Bar: -10
+          Dragon Tooth: -10
+          Banana: -10
+      - recipe_type: Raw Resource
+  Junimo Hut:
+    recipes:
+      - output: 1
+        recipe_type: Building (wizard)
+        requirements:
+          Gold: -20000
+          Stone: -200
+          Starfruit: -9
+          Fiber: -100
+      - recipe_type: Raw Resource
+  Gold Clock:
+    recipes:
+      - output: 1
+        recipe_type: Building (wizard)
+        requirements:
+          Gold: -10000000
+      - recipe_type: Raw Resource
+
   # Tools
   Hoe:
     recipes:
@@ -2900,8 +3160,7 @@ resources:
           Cinder Shard: -60
       - recipe_type: Raw Resource
 
-  # TODO: rename to _ Upgrade
-  Knockback:
+  Knockback Upgrade:
     recipes:
       - output: 1
         recipe_type: Forge (stat)
@@ -2916,7 +3175,7 @@ resources:
           Diamond: -1
           Cinder Shard: -10
       - recipe_type: Raw Resource
-  Crit Chance:
+  Crit Chance Upgrade:
     recipes:
       - output: 1
         recipe_type: Forge (stat)
@@ -2931,7 +3190,7 @@ resources:
           Diamond: -1
           Cinder Shard: -10
       - recipe_type: Raw Resource
-  Speed:
+  Speed Upgrade:
     recipes:
       - output: 1
         recipe_type: Forge (stat)
@@ -2946,7 +3205,7 @@ resources:
           Diamond: -1
           Cinder Shard: -10
       - recipe_type: Raw Resource
-  Crit Damage:
+  Crit Damage Upgrade:
     recipes:
       - output: 1
         recipe_type: Forge (stat)
@@ -2961,7 +3220,7 @@ resources:
           Diamond: -1
           Cinder Shard: -10
       - recipe_type: Raw Resource
-  Damage:
+  Damage Upgrade:
     recipes:
       - output: 1
         recipe_type: Forge (stat)
@@ -2976,7 +3235,7 @@ resources:
           Diamond: -1
           Cinder Shard: -10
       - recipe_type: Raw Resource
-  Defense:
+  Defense Upgrade:
     recipes:
       - output: 1
         recipe_type: Forge (stat)
