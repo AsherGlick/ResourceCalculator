@@ -31,6 +31,3 @@ venv_docker/
 # Generated files
 cache/
 output/
-
-# Ignore editor configs
-.vscode
