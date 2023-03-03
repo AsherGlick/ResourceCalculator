@@ -288,6 +288,54 @@ resources:
       requirements:
         Hydrazine: 0
 
+  Rubber:
+    recipes:
+    - output: 5
+      recipe_type: Chemistry Lab
+      requirements:
+        Organic: -1
+        Resin: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Rubber: 0
+
+  Plastic:
+    recipes:
+    - output: 5
+      recipe_type: Chemistry Lab
+      requirements:
+        Compound: -1
+        Carbon: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Rubber: 0
+
+  Aluminum Alloy:
+    recipes:
+    - output: 5
+      recipe_type: Chemistry Lab
+      requirements:
+        Aluminum: -1
+        Copper: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Aluminum Alloy: 0
+
+  Tungsten Carbide:
+    recipes:
+    - output: 5
+      recipe_type: Chemistry Lab
+      requirements:
+        Tungsten: -1
+        Carbon: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Tungsten Carbide: 0
+
   Tethers:
     recipes:
     - output: 1
