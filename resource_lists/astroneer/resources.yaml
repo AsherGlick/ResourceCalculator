@@ -13,7 +13,6 @@ recipe_types:
   Medium Printer: "Use a Medium Printer to turn {IN_ITEMS} into {OUT_ITEM}"
   Large Printer: "Use a Large Printer to turn {IN_ITEMS} into {OUT_ITEM}"
   Smelter: "Use a Smelter to turn {IN_ITEMS} into {OUT_ITEM}"
-  Atmospheric Condenser: "Use an Atmospheric Condenser to gather {OUT_ITEM}"
   Chemistry Lab: "Use a Chemistry Lab to turn {IN_ITEMS} into {OUT_ITEM}"
 
 resources:
@@ -234,6 +233,48 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Titanium: 0
+
+  Hydrogen:
+    recipes:
+    - output: 5
+      recipe_type: Raw Resource
+      requirements:
+        Hydrogen: 0
+
+  Argon:
+    recipes:
+    - output: 5
+      recipe_type: Raw Resource
+      requirements:
+        Argon: 0
+
+  Methane:
+    recipes:
+    - output: 5
+      recipe_type: Raw Resource
+      requirements:
+        Methane: 0
+
+  Nitrogen:
+    recipes:
+    - output: 5
+      recipe_type: Raw Resource
+      requirements:
+        Nitrogen: 0
+
+  Helium:
+    recipes:
+    - output: 5
+      recipe_type: Raw Resource
+      requirements:
+        Helium: 0
+
+  Sulfur:
+    recipes:
+    - output: 5
+      recipe_type: Raw Resource
+      requirements:
+        Sulfur: 0
 
   Hydrazine:
     recipes:
