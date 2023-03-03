@@ -147,6 +147,28 @@ resources:
       requirements:
         Carbon: 0
 
+  Glass:
+    recipes:
+    - output: 1
+      recipe_type: Smelter
+      requirements:
+        Quartz: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Glass: 0
+
+  Ceramic:
+    recipes:
+    - output: 1
+      recipe_type: Smelter
+      requirements:
+        Clay: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Ceramic: 0
+
   Aluminum:
     recipes:
     - output: 1
@@ -168,6 +190,39 @@ resources:
       recipe_type: Smelter
       requirements:
         Malachite: -1
+        
+  Tungsten:
+    recipes:
+    - output: 1
+      recipe_type: Smelter
+      requirements:
+        Wolframite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Tungsten: 0
+
+  Iron:
+    recipes:
+    - output: 1
+      recipe_type: Smelter
+      requirements:
+        Hematite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Iron: 0
+
+  Zinc:
+    recipes:
+    - output: 1
+      recipe_type: Smelter
+      requirements:
+        Sphalerite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Zinc: 0
 
   Titanium:
     recipes:
