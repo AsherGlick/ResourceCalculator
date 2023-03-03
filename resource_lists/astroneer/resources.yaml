@@ -437,3 +437,79 @@ resources:
       requirements:
         Nanocarbon Alloy: 0
 
+  Small Printer:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Compound: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Small Printer: 0
+
+  Packager:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Graphite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Packager: 0
+
+  Leveling Block:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Soil: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Leveling Block: 0
+
+  Tethers:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Compound: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Tethers: 0
+
+  Oxygen Filters:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Resin: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Oxygen Filters: 0
+
+  Oxygen Tank:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Glass: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Oxygen Tank: 0
+        
+  Portable Oxygenator:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Nanocarbon Alloy: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Portable Oxygenator: 0        
