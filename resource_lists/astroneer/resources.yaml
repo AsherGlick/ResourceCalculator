@@ -121,6 +121,20 @@ resources:
       requirements:
         Titanite: 0
 
+  Scrap:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Scrap: 0        
+
+  EXO Chip:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        EXO Chip: 0
+
   Astronium:
     recipes:
     - output: 1
