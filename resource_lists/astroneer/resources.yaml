@@ -276,21 +276,9 @@ resources:
       requirements:
         Sulfur: 0
 
-  Hydrazine:
-    recipes:
-    - output: 1
-      recipe_type: Chemistry Lab
-      requirements:
-        Ammonium: -2
-        Hydogen: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hydrazine: 0
-
   Rubber:
     recipes:
-    - output: 5
+    - output: 1
       recipe_type: Chemistry Lab
       requirements:
         Organic: -1
@@ -302,7 +290,7 @@ resources:
 
   Plastic:
     recipes:
-    - output: 5
+    - output: 1
       recipe_type: Chemistry Lab
       requirements:
         Compound: -1
@@ -314,7 +302,7 @@ resources:
 
   Aluminum Alloy:
     recipes:
-    - output: 5
+    - output: 1
       recipe_type: Chemistry Lab
       requirements:
         Aluminum: -1
@@ -326,7 +314,7 @@ resources:
 
   Tungsten Carbide:
     recipes:
-    - output: 5
+    - output: 1
       recipe_type: Chemistry Lab
       requirements:
         Tungsten: -1
@@ -335,6 +323,105 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tungsten Carbide: 0
+
+  Graphene:
+    recipes:
+    - output: 1
+      recipe_type: Chemistry Lab
+      requirements:
+        Graphite: -1
+        Hydrazine: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Graphene: 0
+
+  Diamond:
+    recipes:
+    - output: 1
+      recipe_type: Chemistry Lab
+      requirements:
+        Graphene: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Diamond: 0
+
+  Hydrazine:
+    recipes:
+    - output: 1
+      recipe_type: Chemistry Lab
+      requirements:
+        Ammonium: -2
+        Hydrogen: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Hydrazine: 0
+
+  Silicone:
+    recipes:
+    - output: 1
+      recipe_type: Chemistry Lab
+      requirements:
+        Resin: -1
+        Quartz: -1
+        Methane: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Silicone: 0
+
+  Explosive Powder:
+    recipes:
+    - output: 1
+      recipe_type: Chemistry Lab
+      requirements:
+        Carbon: -2
+        Sulfur: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Explosive Powder: 0
+
+  Steel:
+    recipes:
+    - output: 1
+      recipe_type: Chemistry Lab
+      requirements:
+        Carbon: -1
+        Iron: -1
+        Argon: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Steel: 0
+
+  Titanium Alloy:
+    recipes:
+    - output: 1
+      recipe_type: Chemistry Lab
+      requirements:
+        Titanium: -1
+        Graphene: -1
+        Nitrogen: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Titanium alloy: 0
+
+  Nanocarbon Alloy:
+    recipes:
+    - output: 1
+      recipe_type: Chemistry Lab
+      requirements:
+        Steel: -1
+        Titanium Alloy: -1
+        Helium: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Nanocarbon Alloy: 0
 
   Tethers:
     recipes:
