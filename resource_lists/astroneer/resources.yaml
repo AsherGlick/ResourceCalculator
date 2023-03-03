@@ -2,131 +2,195 @@
 authors:
   Asher: "https://aglick.com"
   Kevin: ""
+  Alban: "https://github.com/mopolita"
 
 index_page_display_name: "Astroneer"
 # row_group_count: 0
 
 recipe_types:
   Backpack Printer: "Use a Backpack Printer to turn {IN_ITEMS} into {OUT_ITEM}"
+  Small Printer: "Use a Small Printer to turn {IN_ITEMS} into {OUT_ITEM}"
+  Medium Printer: "Use a Medium Printer to turn {IN_ITEMS} into {OUT_ITEM}"
+  Large Printer: "Use a Large Printer to turn {IN_ITEMS} into {OUT_ITEM}"
   Smelter: "Use a Smelter to turn {IN_ITEMS} into {OUT_ITEM}"
-  Large Platform: "Use a Large Platform to turn {IN_ITEMS} into {OUT_ITEM}"
-  Printer: "Use a Printer to turn {IN_ITEMS} into {OUT_ITEM}"
-  Vehicle Bay: "Use a Vehicle Bay to turn {IN_ITEMS} into {OUT_ITEM}"
-  Printer and Vehicle Bay: "Use a Printer and Vehicle Bay to turn {IN_ITEMS} into {OUT_ITEM}"
+  Atmospheric Condenser: "Use an Atmospheric Condenser to gather {OUT_ITEM}"
+  Chemistry Lab: "Use a Chemistry Lab to turn {IN_ITEMS} into {OUT_ITEM}"
 
 resources:
-  Coal:
+  Soil:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
-        Coal: 0
+        Soil: 0
 
   Compound:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Raw Resource
       requirements:
         Compound: 0
+
+  Resin:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Resin: 0
+
+  Organic:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Organic: 0
+
+  Clay:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Clay: 0
+
+  Ammonium:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Ammonium: 0
+
+  Graphite:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Graphite: 0
+
+  Quartz:
+    recipes:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Quartz: 0
 
   Laterite:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Raw Resource
       requirements:
         Laterite: 0
 
   Malachite:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Raw Resource
       requirements:
         Malachite: 0
-
-  Hydrazine:
+        
+  Sphalerite:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Raw Resource
       requirements:
-        Hydrazine: 0
+        Sphalerite: 0
 
-  Hematite:
+  Wolframite:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Raw Resource
       requirements:
-        Hematite: 0
-
-  Marble:
-    recipes:
-    - output: 1
-      recipe_type: "Raw Resource"
-      requirements:
-        Marble: 0
+        Wolframite: 0
 
   Lithium:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Raw Resource
       requirements:
         Lithium: 0
 
-  Organic:
+  Hematite:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Raw Resource
       requirements:
-        Organic: 0
+        Hematite: 0
 
-  Oxygen:
+  Titanite:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Raw Resource
       requirements:
-        Oxygen: 0
+        Titanite: 0
 
-  Power:
+  Astronium:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Raw Resource
       requirements:
-        Power: 0
+        Astronium: 0
 
-  Resin:
+  Marble:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Raw Resource
       requirements:
-        Resin: 0
+        Marble: 0
 
-  Titanium:
+  Carbon:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Smelter
       requirements:
-        Titanium: 0
+        Organic: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Carbon: 0
 
   Aluminum:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
-      requirements:
-        Aluminum: 0
-    - output: 1
       recipe_type: Smelter
       requirements:
         Laterite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Aluminum: 0
 
   Copper:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Raw Resource
       requirements:
         Copper: 0
     - output: 1
       recipe_type: Smelter
       requirements:
         Malachite: -1
+
+  Titanium:
+    recipes:
+    - output: 1
+      recipe_type: Smelter
+      requirements:
+        Titanite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Titanium: 0
+
+  Hydrazine:
+    recipes:
+    - output: 1
+      recipe_type: Chemistry Lab
+      requirements:
+        Ammonium: -2
+        Hydogen: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Hydrazine: 0
 
   Tethers:
     recipes:
@@ -384,7 +448,7 @@ resources:
   Thruster:
     recipes:
     - output: 1
-      recipe_type: "Raw Resource"
+      recipe_type: Raw Resource
       requirements:
         Thruster: 0
 
