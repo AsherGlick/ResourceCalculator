@@ -546,3 +546,278 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Worklight: 0
+
+  Glowsticks:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Organic: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Glowsticks: 0
+
+  Floodlight:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Tungsten: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Floodlight: 0
+
+  Small Generator:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Compound: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Small Generator: 0
+
+  Power Cells:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Graphite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Power Cells: 0
+
+  Small Solar Panel:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Copper: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Small Solar Panel: 0
+
+  Small Wind Turbine:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Ceramic: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Small Wind Turbine: 0
+
+  Small Battery:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Zinc: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Small Battery: 0
+
+  Dynamite:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Explosive Powder: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Dynamite: 0
+
+  Fireworks:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Explosive Powder: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Fireworks: 0
+
+  Small Camera:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        EXO Chip: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Small Camera: 0
+
+  Small Trumpet Horn:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Resin: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Small Trumpet Horn: 0
+
+  Holographic Figurine:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Copper: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Holographic Figurine: 0
+
+  Probe Scanner:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Steel: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Probe Scanner: 0
+
+  Solid Fuel Jump Jet:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Aluminum Alloy: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Solid Fuel Jump Jet: 0
+
+  Hydrazine Jet Pack:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Titanium Alloy: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Hydrazine Jet Pack: 0
+
+  Hoverboard:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        EXO Chip: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Hoverboard: 0
+
+  Wide Mod:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Zinc: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Wide Mod: 0
+
+  Narrow Mod:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Zinc: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Narrow Mod: 0
+
+  Alignement Mod:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Zinc: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Alignement Mod: 0
+
+  Inhibitor Mod:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Zinc: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Inhibitor Mod: 0
+
+  Boost Mod:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Zinc: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Boost Mod: 0
+
+  Terrain Analyzer:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Zinc: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Terrain Analyzer: 0
+
+  Drill Mod 1:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Ceramic: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Drill Mod 1: 0
+
+  Drill Mod 2:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Tungsten Carbide: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Drill Mod 2: 0
+
+  Drill Mod 3:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Diamond: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Drill Mod 3: 0
