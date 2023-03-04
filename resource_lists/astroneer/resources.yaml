@@ -481,7 +481,7 @@ resources:
       requirements:
         Tethers: 0
 
-  Oxygen Filters:
+  Oxygen Filter:
     recipes:
     - output: 1
       recipe_type: Backpack Printer
@@ -490,7 +490,7 @@ resources:
     - output: 1
       recipe_type: Raw Resource
       requirements:
-        Oxygen Filters: 0
+        Oxygen Filter: 0
 
   Oxygen Tank:
     recipes:
@@ -513,3 +513,36 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Portable Oxygenator: 0        
+
+  Small Canister:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Resin: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Small Canister: 0
+
+  Beacon:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Quartz: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Beacon: 0
+
+  Worklight:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Copper: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Worklight: 0
