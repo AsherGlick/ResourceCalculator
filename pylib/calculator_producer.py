@@ -80,9 +80,9 @@ def calculator_function(input_files: CalculatorInputFiles, output_files: SingleF
     resource_list_file = input_files["resources_pickle"]
     image_metadata_file = input_files["image_layout_json"]
 
-    match = re.match(r"^cache/([a-z ]+)/resources.pickle$", resource_list_file)
+    match = re.match(r"^cache/([a-z_ ]+)/resources.pickle$", resource_list_file)
     if match is None:
-        raise ValueError
+        raise ValueError("resource list file does not match resources.pickle regex: " + resource_list_file)
     calculator_name = match.group(1)
 
     calculator_index_html_filepath = output_files["file"]

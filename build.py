@@ -179,7 +179,7 @@ def main() -> None:
     # calculator_page_sublist = []
 
 
-    calculator_dir_regex = r"[a-z ]+"
+    calculator_dir_regex = r"[a-z_ ]+"
     if len(args.limit_files) >= 1:
         calculator_page_sublist = args.limit_files
         calculator_dir_regex = "|".join(calculator_page_sublist)
