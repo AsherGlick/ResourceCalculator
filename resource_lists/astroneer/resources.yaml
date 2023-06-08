@@ -196,13 +196,13 @@ resources:
   Copper:
     recipes:
     - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Copper: 0
-    - output: 1
       recipe_type: Smelter
       requirements:
         Malachite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Copper: 0
         
   Tungsten:
     recipes:
@@ -821,3 +821,49 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Drill Mod 3: 0
+
+  Medium Printer:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Coumpound: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Medium Printer: 0
+
+  Oxygenator:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Aluminum: -1
+        Ceramic: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Oxygenator: 0
+
+  Medium Shredder:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Iron: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Medium Shredder: 0
+
+  Field Shelter:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Silicon: -1
+        Graphene: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Field Shelter: 0
