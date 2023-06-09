@@ -1069,3 +1069,15 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Medium Wind Turbine: 0
+
+  Medium Battery:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Lithium: -1
+        Zinc: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Medium Battery: 0
