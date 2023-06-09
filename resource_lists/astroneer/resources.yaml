@@ -951,3 +951,121 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Battery Sensor: 0
+
+  Button Repeater:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Zinc: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Button Repeater: 0
+
+  Proximity Repeater:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Zinc: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Proximity Repeater: 0
+
+  Delay Repeater:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Zinc: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Delay Repeater: 0
+
+  Count Repeater:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Zinc: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Count Repeater: 0
+
+  Extenders:
+    recipes:
+    - output: 1
+      recipe_type: Backpack Printer
+      requirements:
+        Copper: -1
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Copper: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Extenders: 0
+
+  Power Switch:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Copper: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Power Switch: 0
+
+  Splitter:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Copper: -1
+        Graphite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Splitter: 0
+
+  Medium Generator:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Aluminum: -1
+        Tungsten: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Medium Generator: 0
+
+  Medium Solar Panel:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Copper: -1
+        Glass: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Medium Solar Panel: 0
+
+  Medium Wind Turbine:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Aluminum: -1
+        Ceramic: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Medium Wind Turbine: 0
