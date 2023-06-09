@@ -827,7 +827,7 @@ resources:
     - output: 1
       recipe_type: Small Printer
       requirements:
-        Coumpound: -2
+        Compound: -2
     - output: 1
       recipe_type: Raw Resource
       requirements:
@@ -867,3 +867,51 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Field Shelter: 0
+
+  Auto Arm:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Aluminum: -1
+        Graphite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Auto Arm: 0
+
+  Medium Resource Canister:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Plastic: -1
+        Glass: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Medium Resource Canister: 0
+
+  Medium Fluid And Soil Canister:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Plastic: -1
+        Glass: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Medium Fluid And Soil Canister: 0
+
+  Medium Gas Canister:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Silicone: -1
+        Glass: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Medium Gas Canister: 0
