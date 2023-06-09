@@ -915,3 +915,39 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Medium Gas Canister: 0
+
+  Power Sensor:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Zinc: -1
+        Copper: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Power Sensor: 0
+
+  Storage Sensor:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Zinc: -1
+        Quartz: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Storage Sensor: 0
+
+  Battery Sensor:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Zinc: -1
+        Graphite: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Battery Sensor: 0
