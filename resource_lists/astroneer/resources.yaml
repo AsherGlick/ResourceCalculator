@@ -14,6 +14,7 @@ recipe_types:
   Large Printer: "Use a Large Printer to turn {IN_ITEMS} into {OUT_ITEM}"
   Smelter: "Use a Smelter to turn {IN_ITEMS} into {OUT_ITEM}"
   Chemistry Lab: "Use a Chemistry Lab to turn {IN_ITEMS} into {OUT_ITEM}"
+  Soil Centrifuge: "Use a Soil Centrifuge to make {OUT_ITEM} from {IN_ITEM}"
 
 resources:
   Soil:
@@ -29,6 +30,10 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Compound: 0
+    - output: 4
+      recipe_type: Soil Centrifuge
+      requirements:
+        Soil: -1
 
   Resin:
     recipes:
@@ -36,6 +41,10 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Resin: 0
+    - output: 4
+      recipe_type: Soil Centrifuge
+      requirements:
+        Soil: -1
 
   Organic:
     recipes:
@@ -43,6 +52,10 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Organic: 0
+        - output: 4
+      recipe_type: Soil Centrifuge
+      requirements:
+        Soil: -1
 
   Clay:
     recipes:
@@ -50,6 +63,10 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Clay: 0
+    - output: 3
+      recipe_type: Soil Centrifuge
+      requirements:
+        Soil: -1
 
   Ammonium:
     recipes:
@@ -57,6 +74,10 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ammonium: 0
+    - output: 1
+      recipe_type: Soil Centrifuge
+      requirements:
+        Soil: -2
 
   Graphite:
     recipes:
@@ -64,6 +85,10 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Graphite: 0
+    - output: 1
+      recipe_type: Soil Centrifuge
+      requirements:
+        Soil: -1
 
   Quartz:
     recipes:
@@ -71,6 +96,10 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Quartz: 0
+    - output: 2
+      recipe_type: Soil Centrifuge
+      requirements:
+        Soil: -1
 
   Laterite:
     recipes:
@@ -1358,3 +1387,406 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Fault Finder: 0
+
+  Large Printer:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Compound: -3
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Print: 0
+
+  Smelting Furnace:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Compound: -1
+        Resin: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Smelting Furnace: 0
+
+  Soil Centrifuge:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Compound: -2
+        Aluminum: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Soil Centrifuge: 0
+
+  Chemistry Lab:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Ceramic: -1
+        Glass: -1
+        Tungsten: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Chemistry Lab: 0
+
+  Atmospheric Condenser:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Plastic: -1
+        Glass: -1
+        Iron : -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Atmospheric Condenser: 0
+
+  Research Center:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Compound: -2
+        Resin: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Reseaarch Center: 0
+
+  EXO Request Platform:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Resin: -2
+        Ceramic: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        EXO Request Platform: 0
+
+  Trade Platform:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        EXO Chip: -1
+        Iron: -1
+        Tungsten: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Trade Platform: 0
+
+  Large Shredder:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        EXO Chip: -1
+        Iron: -1
+        Tungsten Carbide: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Shredder: 0
+
+  Large Solar Panel:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Aluminum Alloy: -1
+        Glass: -1
+        Copper: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Solar Panel: 0
+
+  Large Wind Turbine:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Aluminum Alloy: -1
+        Glass: -1
+        Ceramic: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Wind Turbine: 0
+
+  Large Platform A:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Resin: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Platform A: 0
+
+  Large Platform B:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Resin: -3
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Platform B: 0
+
+  Large Platform C:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Resin: -1
+        Ceramic: -1
+        Iron: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Platform C: 0
+
+  Large T-Platform:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Aluminum: -2
+        Resin: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large T-Platform: 0
+
+  Large Curved Platform:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Compound: -1
+        Ceramic: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Curved Platform: 0
+
+  Large Extended Platform:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Resin: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Extended Platform: 0
+
+  Large Resource Canister:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Glass: -1
+        Titanium: -1
+        Nanocarbon Alloy: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Resource Canister: 0
+
+  Large Storage:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Ceramic: -3
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Storage: 0
+
+  Large Storage Silo A:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Aluminum: -2
+        Steel: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Storage Silo A: 0
+
+  Large Storage Silo B:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Steel: -3
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Storage Silo B: 0
+
+  Large Active Storage:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Zinc: -1
+        Aluminum: -1
+        Resin: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Active Storage: 0
+
+  Buggy:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Compoun: -1
+        Aluminum: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Buggy: 0
+
+  Large Rover Seat:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Plastic: -2
+        Compound: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Rover Seat: 0
+
+  Medium Rover:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Plastic: -2
+        Rubber: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Medium Rover: 0
+
+  VTOL:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        EXO Chip: -1
+        Tungsten Carbide: -1
+        Silicone: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        VTOL: 0
+
+  Crane:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Steel: -1
+        Silicone: -1
+        Titanium: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Crane: 0
+
+  Large Fog Horn:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Plastic: -1
+        Rubber: -1
+        Steel: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Fog Horn: 0
+
+  Rail Engine:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Resin: -1
+        Aluminum: -1
+        Copper: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Rail Engine: 0
+
+  Rail Car:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Resin: -2
+        Aluminum: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Rail Car: 0
+
+  COLE:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Resin: -1
+        Aluminum: -1
+        Copper: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        COLE: 0
+
+  Recreational Sphere:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Aluminum Alloy: -1
+        Rubber: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Recreational Sphere: 0
+
+  Gravity Globe:
+    recipes:
+    - output: 1
+      recipe_type: Medium Printer
+      requirements:
+        Astronium: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Gravity Globe: 0
