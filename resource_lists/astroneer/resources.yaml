@@ -1081,3 +1081,280 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Medium Battery: 0
+
+  RTG:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Nanocarbon Alloy: -1
+        Lithium: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        RTG: 0
+
+  Medium Platform A:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Resin: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Medium Platform A: 0
+
+  Medium Platform B:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Resin: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Medium Platform B: 0
+
+  Medium Platform C:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Resin: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Medium Platform C: 0
+
+  Tall Platform:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Ceramic: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Tall Platform: 0
+
+  Medium T-Platform:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Resin: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Medium T-Platform: 0
+
+  Medium storage:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Resin: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Medium Storage: 0
+
+  Medium Storage Silo:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Titanium: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Medium Storage Silo: 0
+
+  Tall Storage:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Ceramic: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Tall Storage: 0
+
+  Rover Seat:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Compound: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Rover Seat: 0
+
+  Tractor:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Aluminum: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Tractor: 0
+
+  Trailer:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Aluminum: -1
+        Compound: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Trailer: 0
+
+  Medium Buggy Horn:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Plastic: -1
+        Rubber: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Medium Buggy Horn: 0
+
+  Winch:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        EXO Chip: -1
+        Rubber: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Winch: 0
+
+  Paver:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Aluminum Alloy: -1
+        Silicone: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Paver: 0
+
+  Drill Strenght 1:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Tungsten Carbide: -1
+        Ceramic: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Drill Strenght 1: 0
+
+  Drill Strenght 2:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Titanium Alloy: -1
+        Tungsten Carbide: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Drill Strenght 2: 0
+
+  Drill Strenght 3:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Diamond: -1
+        Titanium Alloy: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Drill Strenght 3: 0
+
+  Solid Fuel Thruster:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Aluminum: -1
+        Ammonium: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Solid Fuel Thruster: 0
+
+  Hydrazine Thruster:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        EXO Chip: -1
+        Steel: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Hydrazine Thruster: 0
+
+  Rail Post Bundle:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Resin: -1
+        Aluminum: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Rail Post Bundle: 0
+
+  Tall Rail Post Bundle:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Resin: -1
+        Aluminum: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Tall Rail Post Bundle: 0
+
+  Rail Junction Bundle:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Aluminum: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Rail Junction Bundle: 0
+
+  Fault Finder:
+    recipes:
+    - output: 1
+      recipe_type: Small Printer
+      requirements:
+        Astronium: -1
+        Scrap: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Fault Finder: 0
