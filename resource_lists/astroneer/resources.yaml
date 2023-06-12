@@ -1790,3 +1790,235 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Gravity Globe: 0
+
+  Shelter:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Plastic: -2
+        Silicone: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Shelter: 0
+
+  Auto Extractor:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        EXO Chip: -1
+        Steel: -1
+        Tungsten Carbide: -1
+        Rubber: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Auto Extractor: 0
+
+  Extra Large Shredder:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        EXO Chip: -2
+        Tungsten Carbide: -1
+        Steel:
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Extra Large Shredder: 0
+
+  Solar Array:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Copper: -1
+        Glass: -1
+        Graphene: -1
+        Aluminum Alloy: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Solar Array: 0
+
+  XL Wind Turbine:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Iron: -1
+        Ceramic: -1
+        Graphene: -1
+        Aluminum Alloy: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        XL Wind Turbine: 0
+
+  Medium Sensor Arch:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Zinc: -1
+        Quartz: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Medium Sensor Arch: 0
+
+  XL Sensor Arch:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Zinc: -2
+        Quartz: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        XL Sensor Arch: 0
+
+  XL Sensor Canopy:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Zinc: -2
+        Quartz: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        XL Sensor Canopy: 0
+
+  Large Sensor Ring:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Zinc: -2
+        Quartz: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Sensor Array: 0
+
+  Large Sensor Hoop A:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Zinc: -1
+        Quartz: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Sensor Hoop A: 0
+
+  Large Sensor Hoop B:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Zinc: -2
+        Quartz: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Sensor Hoop B: 0
+
+  XL Sensor Hoop A:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Zinc: -2
+        Quartz: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        XL Sensor Hoop A: 0
+
+  XL Sensor Hoop B:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Zinc: -3
+        Quartz: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        XL Sensor Hoop B: 0
+
+  Extra Large Platform A:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Iron: -2
+        Ceramic: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Extra Large Platform A: 0
+
+  Extra Large Platform B:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Iron: -4
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Extra Large Platform B: 0
+
+  Extra Large Platform C:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Resin: -2
+        Iron: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Extra Large Platform C: 0
+
+  Extra Large Curved Platform:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Ceramic: -2
+        Compound: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Extra Large Curved Platform: 0
+
+  XL Extended Platform:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Reson: -3
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        XL Extended Platform: 0
+
+  Figurine Platform:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Iron: -4
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Figurine Platform: 0
