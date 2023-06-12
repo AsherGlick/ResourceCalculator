@@ -12,9 +12,10 @@ recipe_types:
   Small Printer: "Use a Small Printer to turn {IN_ITEMS} into {OUT_ITEM}"
   Medium Printer: "Use a Medium Printer to turn {IN_ITEMS} into {OUT_ITEM}"
   Large Printer: "Use a Large Printer to turn {IN_ITEMS} into {OUT_ITEM}"
-  Smelter: "Use a Smelter to turn {IN_ITEMS} into {OUT_ITEM}"
+  Smelting Furnace: "Use a Smelting Furnace to smelt {IN_ITEMS} into {OUT_ITEM}"
   Chemistry Lab: "Use a Chemistry Lab to turn {IN_ITEMS} into {OUT_ITEM}"
   Soil Centrifuge: "Use a Soil Centrifuge to make {OUT_ITEM} from {IN_ITEM}"
+  Trade Platform: "Trade {IN_ITEM} for {OUT_ITEM}"
 
 resources:
   Soil:
@@ -34,6 +35,10 @@ resources:
       recipe_type: Soil Centrifuge
       requirements:
         Soil: -1
+    - output: 2
+      recipe_type: Trade Platform
+      requirements:
+        Scrap: -1
 
   Resin:
     recipes:
@@ -45,6 +50,10 @@ resources:
       recipe_type: Soil Centrifuge
       requirements:
         Soil: -1
+    - output: 2
+      recipe_type: Trade Platform
+      requirements:
+        Scrap: -1
 
   Organic:
     recipes:
@@ -56,6 +65,10 @@ resources:
       recipe_type: Soil Centrifuge
       requirements:
         Soil: -1
+    - output: 2
+      recipe_type: Trade Platform
+      requirements:
+        Scrap: -1
 
   Clay:
     recipes:
@@ -67,6 +80,10 @@ resources:
       recipe_type: Soil Centrifuge
       requirements:
         Soil: -1
+    - output: 2
+      recipe_type: Trade Platform
+      requirements:
+        Scrap: -1
 
   Ammonium:
     recipes:
@@ -78,6 +95,10 @@ resources:
       recipe_type: Soil Centrifuge
       requirements:
         Soil: -2
+    - output: 1
+      recipe_type: Trade Platform
+      requirements:
+        Scrap: -1
 
   Graphite:
     recipes:
@@ -89,6 +110,10 @@ resources:
       recipe_type: Soil Centrifuge
       requirements:
         Soil: -1
+    - output: 2
+      recipe_type: Trade Platform
+      requirements:
+        Scrap: -1
 
   Quartz:
     recipes:
@@ -100,6 +125,10 @@ resources:
       recipe_type: Soil Centrifuge
       requirements:
         Soil: -1
+    - output: 2
+      recipe_type: Trade Platform
+      requirements:
+        Scrap: -1
 
   Laterite:
     recipes:
@@ -107,6 +136,10 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Laterite: 0
+    - output: 1
+      recipe_type: Trade Platform
+      requirements:
+        Scrap: -1
 
   Malachite:
     recipes:
@@ -114,6 +147,10 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Malachite: 0
+    - output: 1
+      recipe_type: Trade Platform
+      requirements:
+        Scrap: -1
         
   Sphalerite:
     recipes:
@@ -121,6 +158,10 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Sphalerite: 0
+    - output: 2
+      recipe_type: Trade Platform
+      requirements:
+        Scrap: -1
 
   Wolframite:
     recipes:
@@ -128,6 +169,10 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Wolframite: 0
+    - output: 2
+      recipe_type: Trade Platform
+      requirements:
+        Scrap: -3
 
   Lithium:
     recipes:
@@ -135,6 +180,10 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Lithium: 0
+    - output: 1
+      recipe_type: Trade Platform
+      requirements:
+        Scrap: -4
 
   Hematite:
     recipes:
@@ -142,6 +191,10 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Hematite: 0
+    - output: 2
+      recipe_type: Trade Platform
+      requirements:
+        Scrap: -3
 
   Titanite:
     recipes:
@@ -149,6 +202,10 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Titanite: 0
+    - output: 1
+      recipe_type: Trade Platform
+      requirements:
+        Scrap: -2
 
   Scrap:
     recipes:
@@ -163,6 +220,10 @@ resources:
       recipe_type: Raw Resource
       requirements:
         EXO Chip: 0
+    - output: 1
+      recipe_type: Trade Platform
+      requirements:
+        Astronium: -3
 
   Astronium:
     recipes:
@@ -170,13 +231,6 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Astronium: 0
-
-  Marble:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Marble: 0
 
   Carbon:
     recipes:
@@ -326,6 +380,10 @@ resources:
       requirements:
         Organic: -1
         Resin: -1
+    - output: 8
+      recipe_type: Trade Platform
+      requirements:
+        Fault Finder: -1 
     - output: 1
       recipe_type: Raw Resource
       requirements:
@@ -338,6 +396,10 @@ resources:
       requirements:
         Compound: -1
         Carbon: -1
+    - output: 8
+      recipe_type: Trade Platform
+      requirements:
+        Fault Finder: -1
     - output: 1
       recipe_type: Raw Resource
       requirements:
@@ -350,6 +412,10 @@ resources:
       requirements:
         Aluminum: -1
         Copper: -1
+    - output: 4
+      recipe_type: Trade Platform
+      requirements:
+        Fault Finder: -1 
     - output: 1
       recipe_type: Raw Resource
       requirements:
@@ -362,6 +428,10 @@ resources:
       requirements:
         Tungsten: -1
         Carbon: -1
+    - output: 4
+      recipe_type: Trade Platform
+      requirements:
+        Fault Finder: -1 
     - output: 1
       recipe_type: Raw Resource
       requirements:
@@ -375,6 +445,10 @@ resources:
         Graphite: -1
         Hydrazine: -1
     - output: 1
+      recipe_type: Trade Platform
+      requirements:
+        Fault Finder: -1 
+    - output: 1
       recipe_type: Raw Resource
       requirements:
         Graphene: 0
@@ -385,6 +459,10 @@ resources:
       recipe_type: Chemistry Lab
       requirements:
         Graphene: -2
+    - output: 1
+      recipe_type: Trade Platform
+      requirements:
+        Fault Finder: -1 
     - output: 1
       recipe_type: Raw Resource
       requirements:
@@ -397,6 +475,14 @@ resources:
       requirements:
         Ammonium: -2
         Hydrogen: -1
+    - output: 4
+      recipe_type: Trade Platform
+      requirements:
+        Astronium: -3
+    - output: 2
+      recipe_type: Trade Platform
+      requirements:
+        Fault Finder: -1 
     - output: 1
       recipe_type: Raw Resource
       requirements:
@@ -410,6 +496,10 @@ resources:
         Resin: -1
         Quartz: -1
         Methane: -1
+    - output: 2
+      recipe_type: Trade Platform
+      requirements:
+        Fault Finder: -1
     - output: 1
       recipe_type: Raw Resource
       requirements:
@@ -422,6 +512,10 @@ resources:
       requirements:
         Carbon: -2
         Sulfur: -1
+    - output: 2
+      recipe_type: Trade Platform
+      requirements:
+        Fault Finder: -1 
     - output: 1
       recipe_type: Raw Resource
       requirements:
@@ -435,6 +529,10 @@ resources:
         Carbon: -1
         Iron: -1
         Argon: -1
+    - output: 2
+      recipe_type: Trade Platform
+      requirements:
+        Fault Finder: -1 
     - output: 1
       recipe_type: Raw Resource
       requirements:
@@ -449,6 +547,10 @@ resources:
         Graphene: -1
         Nitrogen: -1
     - output: 1
+      recipe_type: Trade Platform
+      requirements:
+        Fault Finder: -2
+    - output: 1
       recipe_type: Raw Resource
       requirements:
         Titanium alloy: 0
@@ -461,6 +563,10 @@ resources:
         Steel: -1
         Titanium Alloy: -1
         Helium: -1
+    - output: 1
+      recipe_type: Trade Platform
+      requirements:
+        Fault Finder: -4
     - output: 1
       recipe_type: Raw Resource
       requirements:
@@ -659,6 +765,10 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Explosive Powder: -1
+    - output: 4
+      recipe_type: Trade Platform
+      requirements:
+        Astronium: -3
     - output: 1
       recipe_type: Raw Resource
       requirements:
@@ -670,6 +780,10 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Explosive Powder: -1
+    - output: 8
+      recipe_type: Trade Platform
+      requirements:
+        Fault Finder: -1
     - output: 1
       recipe_type: Raw Resource
       requirements:
@@ -725,6 +839,10 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Aluminum Alloy: -1
+    - output: 2
+      recipe_type: Trade Platform
+      requirements:
+        Astronium: -1
     - output: 1
       recipe_type: Raw Resource
       requirements:
@@ -1123,6 +1241,17 @@ resources:
       requirements:
         RTG: 0
 
+  QT-RTG:
+    recipes:
+    - output: 1
+      recipe_type: Trade Platform
+      requirements:
+        Fault Finder: -4
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        QT-RTG: 0
+
   Medium Platform A:
     recipes:
     - output: 1
@@ -1411,6 +1540,17 @@ resources:
       requirements:
         Smelting Furnace: 0
 
+  Portable Smelting Furnace:
+    recipes:
+    - output: 1
+      recipe_type: Trade Platform
+      requirements:
+        Astronium: -8
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Portable Smelting Furnace: 0
+
   Soil Centrifuge:
     recipes:
     - output: 1
@@ -1449,7 +1589,7 @@ resources:
       requirements:
         Atmospheric Condenser: 0
 
-  Research Center:
+  Research Chamber:
     recipes:
     - output: 1
       recipe_type: Medium Printer
@@ -1459,7 +1599,7 @@ resources:
     - output: 1
       recipe_type: Raw Resource
       requirements:
-        Reseaarch Center: 0
+        Research Chamber: 0
 
   EXO Request Platform:
     recipes:
@@ -1776,6 +1916,10 @@ resources:
         Aluminum Alloy: -1
         Rubber: -1
     - output: 1
+      recipe_type: Trade Platform
+      requirements:
+        Fault Finder: -1
+    - output: 1
       recipe_type: Raw Resource
       requirements:
         Recreational Sphere: 0
@@ -1786,6 +1930,10 @@ resources:
       recipe_type: Medium Printer
       requirements:
         Astronium: -2
+    - output: 1
+      recipe_type: Trade Platform
+      requirements:
+        Astronium: -8
     - output: 1
       recipe_type: Raw Resource
       requirements:
