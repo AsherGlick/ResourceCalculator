@@ -2022,3 +2022,89 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Figurine Platform: 0
+
+  Extra Large Storage:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Iron: -2
+        Ceramic: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Extra Large Storage: 0
+
+  Large Rover:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        EXO Chip: -2
+        Aluminum Alloy: -1
+        Rubber: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Rover: 0
+
+  Landing Pad:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Aluminum: -1
+        Ceramic: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Landing Pad: 0
+
+  Small Shuttle:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Aluminum: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Small Shuttle: 0
+
+  Medium Shuttle:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Aluminum Alloy: -1
+        Ceramic: -2
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Medium Shuttle: 0
+
+  Large Shuttle:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        EXO Chip: -2
+        Titanium Alloy: -1
+        Ceramic: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Large Shuttle: 0
+
+  Rail Station:
+    recipes:
+    - output: 1
+      recipe_type: Large Printer
+      requirements:
+        Titanium: -2
+        Copper: -1
+        Quartz: -1
+    - output: 1
+      recipe_type: Raw Resource
+      requirements:
+        Rail Station: 0
