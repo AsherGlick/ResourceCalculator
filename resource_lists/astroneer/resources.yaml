@@ -2052,7 +2052,7 @@ resources:
     - output: 1
       recipe_type: Raw Resource
       requirements:
-        Large Sensor Array: 0
+        Large Sensor Ring: 0
 
   Large Sensor Hoop A:
     recipes:
