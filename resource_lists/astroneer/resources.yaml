@@ -8,20 +8,19 @@ index_page_display_name: "Astroneer"
 # row_group_count: 0
 
 recipe_types:
-  Backpack Printer: "Use a Backpack Printer to turn {IN_ITEMS} into {OUT_ITEM}"
-  Small Printer: "Use a Small Printer to turn {IN_ITEMS} into {OUT_ITEM}"
-  Medium Printer: "Use a Medium Printer to turn {IN_ITEMS} into {OUT_ITEM}"
-  Large Printer: "Use a Large Printer to turn {IN_ITEMS} into {OUT_ITEM}"
-  Smelting Furnace: "Use a Smelting Furnace to smelt {IN_ITEMS} into {OUT_ITEM}"
-  Chemistry Lab: "Use a Chemistry Lab to turn {IN_ITEMS} into {OUT_ITEM}"
-  Soil Centrifuge: "Use a Soil Centrifuge to make {OUT_ITEM} from {IN_ITEM}"
-  Trade Platform: "Trade {IN_ITEM} for {OUT_ITEM}"
+  Backpack Printer: "Use a Backpack Printer to turn {IN_ITEMS} into {OUT_ITEMS}"
+  Small Printer: "Use a Small Printer to turn {IN_ITEMS} into {OUT_ITEMS}"
+  Medium Printer: "Use a Medium Printer to turn {IN_ITEMS} into {OUT_ITEMS}"
+  Large Printer: "Use a Large Printer to turn {IN_ITEMS} into {OUT_ITEMS}"
+  Smelting Furnace: "Use a Smelting Furnace to smelt {IN_ITEMS} into {OUT_ITEMS}"
+  Chemistry Lab: "Use a Chemistry Lab to turn {IN_ITEMS} into {OUT_ITEMS}"
+  Soil Centrifuge: "Use a Soil Centrifuge to make {OUT_ITEMS} from {IN_ITEMS}"
+  Trade Platform: "Trade {IN_ITEMS} for {OUT_ITEMS}"
 
 resources:
   Soil:
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Compound:
     recipes:
@@ -50,7 +49,7 @@ resources:
   Organic:
     recipes:
     - recipe_type: Raw Resource
-        - output: 4
+    - output: 4
       recipe_type: Soil Centrifuge
       requirements:
         Soil: -1
@@ -760,7 +759,7 @@ resources:
     - output: 1
       recipe_type: Small Printer
       requirements:
-        Silicon: -1
+        Silicone: -1
         Graphene: -1
     - recipe_type: Raw Resource
 
@@ -1351,7 +1350,7 @@ resources:
     - output: 1
       recipe_type: Medium Printer
       requirements:
-        Compoun: -1
+        Compound: -1
         Aluminum: -1
     - recipe_type: Raw Resource
 
@@ -1484,7 +1483,7 @@ resources:
       requirements:
         EXO Chip: -2
         Tungsten Carbide: -1
-        Steel:
+        Steel: -1
     - recipe_type: Raw Resource
 
   Solar Array:
@@ -1621,7 +1620,7 @@ resources:
     - output: 1
       recipe_type: Large Printer
       requirements:
-        Reson: -3
+        Resin: -3
     - recipe_type: Raw Resource
 
   Figurine Platform:
