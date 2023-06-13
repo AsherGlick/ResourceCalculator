@@ -673,7 +673,7 @@ resources:
         Zinc: -1
     - recipe_type: Raw Resource
 
-  Alignement Mod:
+  Alignment Mod:
     recipes:
     - output: 1
       recipe_type: Backpack Printer
@@ -1056,7 +1056,7 @@ resources:
         Silicone: -1
     - recipe_type: Raw Resource
 
-  Drill Strenght 1:
+  Drill Strength 1:
     recipes:
     - output: 1
       recipe_type: Small Printer
@@ -1065,7 +1065,7 @@ resources:
         Ceramic: -1
     - recipe_type: Raw Resource
 
-  Drill Strenght 2:
+  Drill Strength 2:
     recipes:
     - output: 1
       recipe_type: Small Printer
@@ -1074,7 +1074,7 @@ resources:
         Tungsten Carbide: -1
     - recipe_type: Raw Resource
 
-  Drill Strenght 3:
+  Drill Strength 3:
     recipes:
     - output: 1
       recipe_type: Small Printer
