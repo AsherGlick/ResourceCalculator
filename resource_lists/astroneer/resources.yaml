@@ -25,8 +25,7 @@ resources:
 
   Compound:
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
     - output: 4
       recipe_type: Soil Centrifuge
       requirements:
@@ -38,8 +37,7 @@ resources:
 
   Resin:
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
     - output: 4
       recipe_type: Soil Centrifuge
       requirements:
@@ -51,8 +49,7 @@ resources:
 
   Organic:
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
         - output: 4
       recipe_type: Soil Centrifuge
       requirements:
@@ -64,8 +61,7 @@ resources:
 
   Clay:
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
     - output: 3
       recipe_type: Soil Centrifuge
       requirements:
@@ -77,8 +73,7 @@ resources:
 
   Ammonium:
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Soil Centrifuge
       requirements:
@@ -90,8 +85,7 @@ resources:
 
   Graphite:
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Soil Centrifuge
       requirements:
@@ -103,8 +97,7 @@ resources:
 
   Quartz:
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
     - output: 2
       recipe_type: Soil Centrifuge
       requirements:
@@ -116,8 +109,7 @@ resources:
 
   Laterite:
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Trade Platform
       requirements:
@@ -125,8 +117,7 @@ resources:
 
   Malachite:
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Trade Platform
       requirements:
@@ -134,8 +125,7 @@ resources:
         
   Sphalerite:
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
     - output: 2
       recipe_type: Trade Platform
       requirements:
@@ -143,8 +133,7 @@ resources:
 
   Wolframite:
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
     - output: 2
       recipe_type: Trade Platform
       requirements:
@@ -152,8 +141,7 @@ resources:
 
   Lithium:
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Trade Platform
       requirements:
@@ -161,8 +149,7 @@ resources:
 
   Hematite:
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
     - output: 2
       recipe_type: Trade Platform
       requirements:
@@ -170,8 +157,7 @@ resources:
 
   Titanite:
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Trade Platform
       requirements:
@@ -179,13 +165,11 @@ resources:
 
   Scrap:
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   EXO Chip:
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Trade Platform
       requirements:
@@ -193,8 +177,7 @@ resources:
 
   Astronium:
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Carbon:
     recipes:
@@ -202,8 +185,7 @@ resources:
       recipe_type: Smelter
       requirements:
         Organic: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Glass:
     recipes:
@@ -211,8 +193,7 @@ resources:
       recipe_type: Smelter
       requirements:
         Quartz: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Ceramic:
     recipes:
@@ -220,8 +201,7 @@ resources:
       recipe_type: Smelter
       requirements:
         Clay: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Aluminum:
     recipes:
@@ -229,8 +209,7 @@ resources:
       recipe_type: Smelter
       requirements:
         Laterite: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Copper:
     recipes:
@@ -238,8 +217,7 @@ resources:
       recipe_type: Smelter
       requirements:
         Malachite: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
         
   Tungsten:
     recipes:
@@ -247,8 +225,7 @@ resources:
       recipe_type: Smelter
       requirements:
         Wolframite: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Iron:
     recipes:
@@ -256,8 +233,7 @@ resources:
       recipe_type: Smelter
       requirements:
         Hematite: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Zinc:
     recipes:
@@ -265,8 +241,7 @@ resources:
       recipe_type: Smelter
       requirements:
         Sphalerite: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Titanium:
     recipes:
@@ -274,38 +249,31 @@ resources:
       recipe_type: Smelter
       requirements:
         Titanite: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Hydrogen:
     recipes:
-    - output: 5
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Argon:
     recipes:
-    - output: 5
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Methane:
     recipes:
-    - output: 5
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Nitrogen:
     recipes:
-    - output: 5
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Helium:
     recipes:
-    - output: 5
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Sulfur:
     recipes:
-    - output: 5
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Rubber:
     recipes:
@@ -318,8 +286,7 @@ resources:
       recipe_type: Trade Platform
       requirements:
         Fault Finder: -1 
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Plastic:
     recipes:
@@ -332,8 +299,7 @@ resources:
       recipe_type: Trade Platform
       requirements:
         Fault Finder: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Aluminum Alloy:
     recipes:
@@ -346,8 +312,7 @@ resources:
       recipe_type: Trade Platform
       requirements:
         Fault Finder: -1 
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Tungsten Carbide:
     recipes:
@@ -360,8 +325,7 @@ resources:
       recipe_type: Trade Platform
       requirements:
         Fault Finder: -1 
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Graphene:
     recipes:
@@ -374,8 +338,7 @@ resources:
       recipe_type: Trade Platform
       requirements:
         Fault Finder: -1 
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Diamond:
     recipes:
@@ -387,8 +350,7 @@ resources:
       recipe_type: Trade Platform
       requirements:
         Fault Finder: -1 
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Hydrazine:
     recipes:
@@ -405,8 +367,7 @@ resources:
       recipe_type: Trade Platform
       requirements:
         Fault Finder: -1 
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Silicone:
     recipes:
@@ -420,8 +381,7 @@ resources:
       recipe_type: Trade Platform
       requirements:
         Fault Finder: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Explosive Powder:
     recipes:
@@ -434,8 +394,7 @@ resources:
       recipe_type: Trade Platform
       requirements:
         Fault Finder: -1 
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Steel:
     recipes:
@@ -449,8 +408,7 @@ resources:
       recipe_type: Trade Platform
       requirements:
         Fault Finder: -1 
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Titanium Alloy:
     recipes:
@@ -464,8 +422,7 @@ resources:
       recipe_type: Trade Platform
       requirements:
         Fault Finder: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Nanocarbon Alloy:
     recipes:
@@ -479,8 +436,7 @@ resources:
       recipe_type: Trade Platform
       requirements:
         Fault Finder: -4
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Small Printer:
     recipes:
@@ -488,8 +444,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Compound: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Packager:
     recipes:
@@ -497,8 +452,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Graphite: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Leveling Block:
     recipes:
@@ -506,8 +460,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Soil: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Tethers:
     recipes:
@@ -515,8 +468,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Compound: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Oxygen Filter:
     recipes:
@@ -524,8 +476,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Resin: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Oxygen Tank:
     recipes:
@@ -533,8 +484,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Glass: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
         
   Portable Oxygenator:
     recipes:
@@ -542,8 +492,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Nanocarbon Alloy: -1
-    - output: 1
-      recipe_type: Raw Resource     
+    - recipe_type: Raw Resource     
 
   Small Canister:
     recipes:
@@ -551,8 +500,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Resin: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Beacon:
     recipes:
@@ -560,8 +508,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Quartz: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Worklight:
     recipes:
@@ -569,8 +516,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Copper: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Glowsticks:
     recipes:
@@ -578,8 +524,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Organic: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Floodlight:
     recipes:
@@ -587,8 +532,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Tungsten: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Small Generator:
     recipes:
@@ -596,8 +540,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Compound: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Power Cells:
     recipes:
@@ -605,8 +548,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Graphite: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Small Solar Panel:
     recipes:
@@ -614,8 +556,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Copper: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Small Wind Turbine:
     recipes:
@@ -623,8 +564,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Ceramic: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Small Battery:
     recipes:
@@ -632,8 +572,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Zinc: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Dynamite:
     recipes:
@@ -645,8 +584,7 @@ resources:
       recipe_type: Trade Platform
       requirements:
         Astronium: -3
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Fireworks:
     recipes:
@@ -658,8 +596,7 @@ resources:
       recipe_type: Trade Platform
       requirements:
         Fault Finder: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Small Camera:
     recipes:
@@ -667,8 +604,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         EXO Chip: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Small Trumpet Horn:
     recipes:
@@ -676,8 +612,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Resin: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Holographic Figurine:
     recipes:
@@ -685,8 +620,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Copper: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Probe Scanner:
     recipes:
@@ -694,8 +628,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Steel: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Solid Fuel Jump Jet:
     recipes:
@@ -707,8 +640,7 @@ resources:
       recipe_type: Trade Platform
       requirements:
         Astronium: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Hydrazine Jet Pack:
     recipes:
@@ -716,8 +648,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Titanium Alloy: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Hoverboard:
     recipes:
@@ -725,8 +656,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         EXO Chip: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Wide Mod:
     recipes:
@@ -734,8 +664,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Zinc: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Narrow Mod:
     recipes:
@@ -743,8 +672,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Zinc: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Alignement Mod:
     recipes:
@@ -752,8 +680,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Zinc: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Inhibitor Mod:
     recipes:
@@ -761,8 +688,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Zinc: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Boost Mod:
     recipes:
@@ -770,8 +696,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Zinc: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Terrain Analyzer:
     recipes:
@@ -779,8 +704,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Zinc: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Drill Mod 1:
     recipes:
@@ -788,8 +712,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Ceramic: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Drill Mod 2:
     recipes:
@@ -797,8 +720,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Tungsten Carbide: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Drill Mod 3:
     recipes:
@@ -806,8 +728,7 @@ resources:
       recipe_type: Backpack Printer
       requirements:
         Diamond: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Medium Printer:
     recipes:
@@ -815,8 +736,7 @@ resources:
       recipe_type: Small Printer
       requirements:
         Compound: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Oxygenator:
     recipes:
@@ -825,8 +745,7 @@ resources:
       requirements:
         Aluminum: -1
         Ceramic: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Medium Shredder:
     recipes:
@@ -834,8 +753,7 @@ resources:
       recipe_type: Small Printer
       requirements:
         Iron: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Field Shelter:
     recipes:
@@ -844,8 +762,7 @@ resources:
       requirements:
         Silicon: -1
         Graphene: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Auto Arm:
     recipes:
@@ -854,8 +771,7 @@ resources:
       requirements:
         Aluminum: -1
         Graphite: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Medium Resource Canister:
     recipes:
@@ -864,8 +780,7 @@ resources:
       requirements:
         Plastic: -1
         Glass: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Medium Fluid And Soil Canister:
     recipes:
@@ -874,8 +789,7 @@ resources:
       requirements:
         Plastic: -1
         Glass: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Medium Gas Canister:
     recipes:
@@ -884,8 +798,7 @@ resources:
       requirements:
         Silicone: -1
         Glass: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Power Sensor:
     recipes:
@@ -894,8 +807,7 @@ resources:
       requirements:
         Zinc: -1
         Copper: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Storage Sensor:
     recipes:
@@ -904,8 +816,7 @@ resources:
       requirements:
         Zinc: -1
         Quartz: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Battery Sensor:
     recipes:
@@ -914,8 +825,7 @@ resources:
       requirements:
         Zinc: -1
         Graphite: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Button Repeater:
     recipes:
@@ -923,8 +833,7 @@ resources:
       recipe_type: Small Printer
       requirements:
         Zinc: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Proximity Repeater:
     recipes:
@@ -932,8 +841,7 @@ resources:
       recipe_type: Small Printer
       requirements:
         Zinc: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Delay Repeater:
     recipes:
@@ -941,8 +849,7 @@ resources:
       recipe_type: Small Printer
       requirements:
         Zinc: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Count Repeater:
     recipes:
@@ -950,8 +857,7 @@ resources:
       recipe_type: Small Printer
       requirements:
         Zinc: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Extenders:
     recipes:
@@ -963,8 +869,7 @@ resources:
       recipe_type: Small Printer
       requirements:
         Copper: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Power Switch:
     recipes:
@@ -972,8 +877,7 @@ resources:
       recipe_type: Small Printer
       requirements:
         Copper: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Splitter:
     recipes:
@@ -982,8 +886,7 @@ resources:
       requirements:
         Copper: -1
         Graphite: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Medium Generator:
     recipes:
@@ -992,8 +895,7 @@ resources:
       requirements:
         Aluminum: -1
         Tungsten: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Medium Solar Panel:
     recipes:
@@ -1002,9 +904,7 @@ resources:
       requirements:
         Copper: -1
         Glass: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
+    - recipe_type: Raw Resource
 
   Medium Wind Turbine:
     recipes:
@@ -1013,8 +913,7 @@ resources:
       requirements:
         Aluminum: -1
         Ceramic: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Medium Battery:
     recipes:
@@ -1023,8 +922,7 @@ resources:
       requirements:
         Lithium: -1
         Zinc: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   RTG:
     recipes:
@@ -1033,8 +931,7 @@ resources:
       requirements:
         Nanocarbon Alloy: -1
         Lithium: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   QT-RTG:
     recipes:
@@ -1042,8 +939,7 @@ resources:
       recipe_type: Trade Platform
       requirements:
         Fault Finder: -4
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Medium Platform A:
     recipes:
@@ -1051,8 +947,7 @@ resources:
       recipe_type: Small Printer
       requirements:
         Resin: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Medium Platform B:
     recipes:
@@ -1060,8 +955,7 @@ resources:
       recipe_type: Small Printer
       requirements:
         Resin: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Medium Platform C:
     recipes:
@@ -1069,8 +963,7 @@ resources:
       recipe_type: Small Printer
       requirements:
         Resin: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Tall Platform:
     recipes:
@@ -1078,8 +971,7 @@ resources:
       recipe_type: Small Printer
       requirements:
         Ceramic: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Medium T-Platform:
     recipes:
@@ -1087,8 +979,7 @@ resources:
       recipe_type: Small Printer
       requirements:
         Resin: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Medium storage:
     recipes:
@@ -1096,8 +987,7 @@ resources:
       recipe_type: Small Printer
       requirements:
         Resin: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Medium Storage Silo:
     recipes:
@@ -1105,8 +995,7 @@ resources:
       recipe_type: Small Printer
       requirements:
         Titanium: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Tall Storage:
     recipes:
@@ -1114,8 +1003,7 @@ resources:
       recipe_type: Small Printer
       requirements:
         Ceramic: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Rover Seat:
     recipes:
@@ -1123,8 +1011,7 @@ resources:
       recipe_type: Small Printer
       requirements:
         Compound: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Tractor:
     recipes:
@@ -1132,8 +1019,7 @@ resources:
       recipe_type: Small Printer
       requirements:
         Aluminum: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Trailer:
     recipes:
@@ -1142,8 +1028,7 @@ resources:
       requirements:
         Aluminum: -1
         Compound: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Medium Buggy Horn:
     recipes:
@@ -1152,8 +1037,7 @@ resources:
       requirements:
         Plastic: -1
         Rubber: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Winch:
     recipes:
@@ -1162,8 +1046,7 @@ resources:
       requirements:
         EXO Chip: -1
         Rubber: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Paver:
     recipes:
@@ -1172,8 +1055,7 @@ resources:
       requirements:
         Aluminum Alloy: -1
         Silicone: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Drill Strenght 1:
     recipes:
@@ -1182,8 +1064,7 @@ resources:
       requirements:
         Tungsten Carbide: -1
         Ceramic: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Drill Strenght 2:
     recipes:
@@ -1192,8 +1073,7 @@ resources:
       requirements:
         Titanium Alloy: -1
         Tungsten Carbide: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Drill Strenght 3:
     recipes:
@@ -1202,8 +1082,7 @@ resources:
       requirements:
         Diamond: -1
         Titanium Alloy: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Solid Fuel Thruster:
     recipes:
@@ -1212,8 +1091,7 @@ resources:
       requirements:
         Aluminum: -1
         Ammonium: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Hydrazine Thruster:
     recipes:
@@ -1222,8 +1100,7 @@ resources:
       requirements:
         EXO Chip: -1
         Steel: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Rail Post Bundle:
     recipes:
@@ -1232,8 +1109,7 @@ resources:
       requirements:
         Resin: -1
         Aluminum: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Tall Rail Post Bundle:
     recipes:
@@ -1242,8 +1118,7 @@ resources:
       requirements:
         Resin: -1
         Aluminum: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Rail Junction Bundle:
     recipes:
@@ -1251,8 +1126,7 @@ resources:
       recipe_type: Small Printer
       requirements:
         Aluminum: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Fault Finder:
     recipes:
@@ -1261,8 +1135,7 @@ resources:
       requirements:
         Astronium: -1
         Scrap: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Printer:
     recipes:
@@ -1270,8 +1143,7 @@ resources:
       recipe_type: Medium Printer
       requirements:
         Compound: -3
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Smelting Furnace:
     recipes:
@@ -1280,8 +1152,7 @@ resources:
       requirements:
         Compound: -1
         Resin: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Portable Smelting Furnace:
     recipes:
@@ -1289,8 +1160,7 @@ resources:
       recipe_type: Trade Platform
       requirements:
         Astronium: -8
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Soil Centrifuge:
     recipes:
@@ -1299,8 +1169,7 @@ resources:
       requirements:
         Compound: -2
         Aluminum: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Chemistry Lab:
     recipes:
@@ -1310,8 +1179,7 @@ resources:
         Ceramic: -1
         Glass: -1
         Tungsten: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Atmospheric Condenser:
     recipes:
@@ -1321,8 +1189,7 @@ resources:
         Plastic: -1
         Glass: -1
         Iron : -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Research Chamber:
     recipes:
@@ -1331,8 +1198,7 @@ resources:
       requirements:
         Compound: -2
         Resin: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   EXO Request Platform:
     recipes:
@@ -1341,8 +1207,7 @@ resources:
       requirements:
         Resin: -2
         Ceramic: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Trade Platform:
     recipes:
@@ -1352,8 +1217,7 @@ resources:
         EXO Chip: -1
         Iron: -1
         Tungsten: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Shredder:
     recipes:
@@ -1363,8 +1227,7 @@ resources:
         EXO Chip: -1
         Iron: -1
         Tungsten Carbide: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Solar Panel:
     recipes:
@@ -1374,8 +1237,7 @@ resources:
         Aluminum Alloy: -1
         Glass: -1
         Copper: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Wind Turbine:
     recipes:
@@ -1385,8 +1247,7 @@ resources:
         Aluminum Alloy: -1
         Glass: -1
         Ceramic: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Platform A:
     recipes:
@@ -1394,8 +1255,7 @@ resources:
       recipe_type: Medium Printer
       requirements:
         Resin: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Platform B:
     recipes:
@@ -1403,8 +1263,7 @@ resources:
       recipe_type: Medium Printer
       requirements:
         Resin: -3
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Platform C:
     recipes:
@@ -1414,8 +1273,7 @@ resources:
         Resin: -1
         Ceramic: -1
         Iron: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large T-Platform:
     recipes:
@@ -1424,8 +1282,7 @@ resources:
       requirements:
         Aluminum: -2
         Resin: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Curved Platform:
     recipes:
@@ -1434,8 +1291,7 @@ resources:
       requirements:
         Compound: -1
         Ceramic: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Extended Platform:
     recipes:
@@ -1443,8 +1299,7 @@ resources:
       recipe_type: Medium Printer
       requirements:
         Resin: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Resource Canister:
     recipes:
@@ -1454,8 +1309,7 @@ resources:
         Glass: -1
         Titanium: -1
         Nanocarbon Alloy: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Storage:
     recipes:
@@ -1463,8 +1317,7 @@ resources:
       recipe_type: Medium Printer
       requirements:
         Ceramic: -3
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Storage Silo A:
     recipes:
@@ -1473,8 +1326,7 @@ resources:
       requirements:
         Aluminum: -2
         Steel: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Storage Silo B:
     recipes:
@@ -1482,8 +1334,7 @@ resources:
       recipe_type: Medium Printer
       requirements:
         Steel: -3
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Active Storage:
     recipes:
@@ -1493,8 +1344,7 @@ resources:
         Zinc: -1
         Aluminum: -1
         Resin: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Buggy:
     recipes:
@@ -1503,8 +1353,7 @@ resources:
       requirements:
         Compoun: -1
         Aluminum: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Rover Seat:
     recipes:
@@ -1513,8 +1362,7 @@ resources:
       requirements:
         Plastic: -2
         Compound: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Medium Rover:
     recipes:
@@ -1523,8 +1371,7 @@ resources:
       requirements:
         Plastic: -2
         Rubber: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   VTOL:
     recipes:
@@ -1534,8 +1381,7 @@ resources:
         EXO Chip: -1
         Tungsten Carbide: -1
         Silicone: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Crane:
     recipes:
@@ -1545,8 +1391,7 @@ resources:
         Steel: -1
         Silicone: -1
         Titanium: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Fog Horn:
     recipes:
@@ -1556,8 +1401,7 @@ resources:
         Plastic: -1
         Rubber: -1
         Steel: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Rail Engine:
     recipes:
@@ -1567,8 +1411,7 @@ resources:
         Resin: -1
         Aluminum: -1
         Copper: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Rail Car:
     recipes:
@@ -1577,8 +1420,7 @@ resources:
       requirements:
         Resin: -2
         Aluminum: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   COLE:
     recipes:
@@ -1588,8 +1430,7 @@ resources:
         Resin: -1
         Aluminum: -1
         Copper: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Recreational Sphere:
     recipes:
@@ -1602,8 +1443,7 @@ resources:
       recipe_type: Trade Platform
       requirements:
         Fault Finder: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Gravity Globe:
     recipes:
@@ -1615,8 +1455,7 @@ resources:
       recipe_type: Trade Platform
       requirements:
         Astronium: -8
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Shelter:
     recipes:
@@ -1625,8 +1464,7 @@ resources:
       requirements:
         Plastic: -2
         Silicone: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Auto Extractor:
     recipes:
@@ -1637,8 +1475,7 @@ resources:
         Steel: -1
         Tungsten Carbide: -1
         Rubber: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Extra Large Shredder:
     recipes:
@@ -1648,8 +1485,7 @@ resources:
         EXO Chip: -2
         Tungsten Carbide: -1
         Steel:
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Solar Array:
     recipes:
@@ -1660,8 +1496,7 @@ resources:
         Glass: -1
         Graphene: -1
         Aluminum Alloy: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   XL Wind Turbine:
     recipes:
@@ -1672,8 +1507,7 @@ resources:
         Ceramic: -1
         Graphene: -1
         Aluminum Alloy: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Medium Sensor Arch:
     recipes:
@@ -1682,8 +1516,7 @@ resources:
       requirements:
         Zinc: -1
         Quartz: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   XL Sensor Arch:
     recipes:
@@ -1692,8 +1525,7 @@ resources:
       requirements:
         Zinc: -2
         Quartz: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   XL Sensor Canopy:
     recipes:
@@ -1702,8 +1534,7 @@ resources:
       requirements:
         Zinc: -2
         Quartz: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Sensor Ring:
     recipes:
@@ -1712,8 +1543,7 @@ resources:
       requirements:
         Zinc: -2
         Quartz: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Sensor Hoop A:
     recipes:
@@ -1722,8 +1552,7 @@ resources:
       requirements:
         Zinc: -1
         Quartz: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Sensor Hoop B:
     recipes:
@@ -1732,8 +1561,7 @@ resources:
       requirements:
         Zinc: -2
         Quartz: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   XL Sensor Hoop A:
     recipes:
@@ -1742,8 +1570,7 @@ resources:
       requirements:
         Zinc: -2
         Quartz: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   XL Sensor Hoop B:
     recipes:
@@ -1752,8 +1579,7 @@ resources:
       requirements:
         Zinc: -3
         Quartz: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Extra Large Platform A:
     recipes:
@@ -1762,8 +1588,7 @@ resources:
       requirements:
         Iron: -2
         Ceramic: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Extra Large Platform B:
     recipes:
@@ -1771,8 +1596,7 @@ resources:
       recipe_type: Large Printer
       requirements:
         Iron: -4
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Extra Large Platform C:
     recipes:
@@ -1781,8 +1605,7 @@ resources:
       requirements:
         Resin: -2
         Iron: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Extra Large Curved Platform:
     recipes:
@@ -1791,8 +1614,7 @@ resources:
       requirements:
         Ceramic: -2
         Compound: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   XL Extended Platform:
     recipes:
@@ -1800,8 +1622,7 @@ resources:
       recipe_type: Large Printer
       requirements:
         Reson: -3
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Figurine Platform:
     recipes:
@@ -1809,9 +1630,7 @@ resources:
       recipe_type: Large Printer
       requirements:
         Iron: -4
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
+    - recipe_type: Raw Resource
 
   Extra Large Storage:
     recipes:
@@ -1820,8 +1639,7 @@ resources:
       requirements:
         Iron: -2
         Ceramic: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Rover:
     recipes:
@@ -1831,8 +1649,7 @@ resources:
         EXO Chip: -2
         Aluminum Alloy: -1
         Rubber: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Landing Pad:
     recipes:
@@ -1841,8 +1658,7 @@ resources:
       requirements:
         Aluminum: -1
         Ceramic: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Small Shuttle:
     recipes:
@@ -1850,8 +1666,7 @@ resources:
       recipe_type: Large Printer
       requirements:
         Aluminum: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Medium Shuttle:
     recipes:
@@ -1860,8 +1675,7 @@ resources:
       requirements:
         Aluminum Alloy: -1
         Ceramic: -2
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Large Shuttle:
     recipes:
@@ -1871,8 +1685,7 @@ resources:
         EXO Chip: -2
         Titanium Alloy: -1
         Ceramic: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Rail Station:
     recipes:
@@ -1882,5 +1695,4 @@ resources:
         Titanium: -2
         Copper: -1
         Quartz: -1
-    - output: 1
-      recipe_type: Raw Resource
+    - recipe_type: Raw Resource
