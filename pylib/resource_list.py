@@ -514,7 +514,7 @@ class Recipe():
                 if type(value.value) != int:
                     errors.append(TokenError("requirements value should be an int not a {}".format(str(type(value.value))), Token().from_yaml_scalar_node(value.token)))
 
-                self.requirements[str(key.value)] = int(value.value)
+                self.requirements[str(key.value)] = int(value.value or 0)
         return errors
 
     def to_primitive(self) -> Any:
