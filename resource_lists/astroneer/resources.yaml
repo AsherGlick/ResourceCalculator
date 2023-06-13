@@ -182,7 +182,7 @@ resources:
   Carbon:
     recipes:
     - output: 1
-      recipe_type: Smelter
+      recipe_type: Smelting Furnace
       requirements:
         Organic: -1
     - recipe_type: Raw Resource
@@ -190,7 +190,7 @@ resources:
   Glass:
     recipes:
     - output: 1
-      recipe_type: Smelter
+      recipe_type: Smelting Furnace
       requirements:
         Quartz: -1
     - recipe_type: Raw Resource
@@ -198,7 +198,7 @@ resources:
   Ceramic:
     recipes:
     - output: 1
-      recipe_type: Smelter
+      recipe_type: Smelting Furnace
       requirements:
         Clay: -1
     - recipe_type: Raw Resource
@@ -206,7 +206,7 @@ resources:
   Aluminum:
     recipes:
     - output: 1
-      recipe_type: Smelter
+      recipe_type: Smelting Furnace
       requirements:
         Laterite: -1
     - recipe_type: Raw Resource
@@ -214,7 +214,7 @@ resources:
   Copper:
     recipes:
     - output: 1
-      recipe_type: Smelter
+      recipe_type: Smelting Furnace
       requirements:
         Malachite: -1
     - recipe_type: Raw Resource
@@ -222,7 +222,7 @@ resources:
   Tungsten:
     recipes:
     - output: 1
-      recipe_type: Smelter
+      recipe_type: Smelting Furnace
       requirements:
         Wolframite: -1
     - recipe_type: Raw Resource
@@ -230,7 +230,7 @@ resources:
   Iron:
     recipes:
     - output: 1
-      recipe_type: Smelter
+      recipe_type: Smelting Furnace
       requirements:
         Hematite: -1
     - recipe_type: Raw Resource
@@ -238,7 +238,7 @@ resources:
   Zinc:
     recipes:
     - output: 1
-      recipe_type: Smelter
+      recipe_type: Smelting Furnace
       requirements:
         Sphalerite: -1
     - recipe_type: Raw Resource
@@ -246,7 +246,7 @@ resources:
   Titanium:
     recipes:
     - output: 1
-      recipe_type: Smelter
+      recipe_type: Smelting Furnace
       requirements:
         Titanite: -1
     - recipe_type: Raw Resource
