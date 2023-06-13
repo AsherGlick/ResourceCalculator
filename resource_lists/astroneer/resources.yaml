@@ -8,14 +8,14 @@ index_page_display_name: "Astroneer"
 # row_group_count: 0
 
 recipe_types:
-  Backpack Printer: "Use a Backpack Printer to turn {IN_ITEMS} into {OUT_ITEMS}"
-  Small Printer: "Use a Small Printer to turn {IN_ITEMS} into {OUT_ITEMS}"
-  Medium Printer: "Use a Medium Printer to turn {IN_ITEMS} into {OUT_ITEMS}"
-  Large Printer: "Use a Large Printer to turn {IN_ITEMS} into {OUT_ITEMS}"
-  Smelting Furnace: "Use a Smelting Furnace to smelt {IN_ITEMS} into {OUT_ITEMS}"
-  Chemistry Lab: "Use a Chemistry Lab to turn {IN_ITEMS} into {OUT_ITEMS}"
-  Soil Centrifuge: "Use a Soil Centrifuge to make {OUT_ITEMS} from {IN_ITEMS}"
-  Trade Platform: "Trade {IN_ITEMS} for {OUT_ITEMS}"
+  Backpack Printer: "Use a Backpack Printer to turn {IN_ITEMS} into {OUT_ITEM}"
+  Small Printer: "Use a Small Printer to turn {IN_ITEMS} into {OUT_ITEM}"
+  Medium Printer: "Use a Medium Printer to turn {IN_ITEMS} into {OUT_ITEM}"
+  Large Printer: "Use a Large Printer to turn {IN_ITEMS} into {OUT_ITEM}"
+  Smelting Furnace: "Use a Smelting Furnace to smelt {IN_ITEMS} into {OUT_ITEM}"
+  Chemistry Lab: "Use a Chemistry Lab to turn {IN_ITEMS} into {OUT_ITEM}"
+  Soil Centrifuge: "Use a Soil Centrifuge to make {OUT_ITEM} from {IN_ITEMS}"
+  Trade Platform: "Trade {IN_ITEMS} for {OUT_ITEM}"
 
 resources:
   Soil:
