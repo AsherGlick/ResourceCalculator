@@ -10414,7 +10414,7 @@ resources:
       requirements:
         Diamond: -7
         Netherrack: -1
-	      Netherite Upgrade: -1
+	Netherite Upgrade: -1
     - recipe_type: Raw Resource
 
   Sentry Armor Trim:
@@ -10424,7 +10424,7 @@ resources:
       requirements:
         Diamond: -7
         Cobblestone: -1
-	      Sentry Armor Trim: -1
+	Sentry Armor Trim: -1
     - recipe_type: Raw Resource
 
   Vex Armor Trim:
@@ -10434,7 +10434,7 @@ resources:
       requirements:
         Diamond: -7
         Cobblestone: -1
-	      Vex Armor Trim: -1
+	Vex Armor Trim: -1
     - recipe_type: Raw Resource
 
   Coast Armor Trim:
@@ -10444,7 +10444,7 @@ resources:
       requirements:
         Diamond: -7
         Cobblestone: -1
-	      Coast Armor Trim: -1
+	Coast Armor Trim: -1
     - recipe_type: Raw Resource
 
   Wild Armor Trim:
@@ -10454,7 +10454,7 @@ resources:
       requirements:
         Diamond: -7
         Mossy Cobblestone: -1
-	      Wild Armor Trim: -1
+	Wild Armor Trim: -1
     - recipe_type: Raw Resource
 
   Dune Armor Trim:
@@ -10464,7 +10464,7 @@ resources:
       requirements:
         Diamond: -7
         Sandstone: -1
-	      Dune Armor Trim: -1
+	Dune Armor Trim: -1
     - recipe_type: Raw Resource
 
   Wayfinder Armor Trim:
@@ -10484,7 +10484,7 @@ resources:
       requirements:
         Diamond: -7
         Terracotta: -1
-	      Raiser Armor Trim: -1
+	Raiser Armor Trim: -1
     - recipe_type: Raw Resource
 
   Shaper Armor Trim:
@@ -10494,7 +10494,7 @@ resources:
       requirements:
         Diamond: -7
         Terracotta: -1
-	      Shaper Armor Trim: -1
+	Shaper Armor Trim: -1
     - recipe_type: Raw Resource
 
   Host Armor Trim:
@@ -10514,7 +10514,7 @@ resources:
       requirements:
         Diamond: -7
         Cobbled Deepslate: -1
-	      Ward Armor Trim: -1
+	Ward Armor Trim: -1
     - recipe_type: Raw Resource
 
   Silence Armor Trim:
@@ -10534,7 +10534,7 @@ resources:
       requirements:
         Diamond: -7
         Blackstone: -1
-	      Snout Armor Trim: -1
+	Snout Armor Trim: -1
     - recipe_type: Raw Resource
 
   Tide Armor Trim:
@@ -10544,7 +10544,7 @@ resources:
       requirements:
         Diamond: -7
         Prismarine: -1
-	      Tide Armor Trim: -1
+	Tide Armor Trim: -1
     - recipe_type: Raw Resource
 
   Rib Armor Trim:
@@ -10554,7 +10554,7 @@ resources:
       requirements:
         Diamond: -7
         Netherrack: -1
-	      Rib Armor Trim: -1
+  	Rib Armor Trim: -1
     - recipe_type: Raw Resource
 
   Bottle o' Enchanting:
