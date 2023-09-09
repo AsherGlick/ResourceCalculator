@@ -264,7 +264,7 @@ def parse_recipe_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> List
     ]:
         return []
     else:
-        raise ValueError(input_struct)
+        raise ValueError("Unknown recipe 'type' {}".format(input_struct))
 
 
 
