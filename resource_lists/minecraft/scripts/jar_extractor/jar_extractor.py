@@ -212,6 +212,25 @@ def main() -> None:
     validate_resources(recipes, groups)
 
 
+
+################################################################################
+# confirm_keys
+#
+# A helper function to confirm that specific keys are in a dictionary and that
+# unknown keys are not in the dictionary. Displaying helpful error messages
+# if the dictionary is incorrect.
+################################################################################
+def confirm_keys(obj: Dict[str, Any], required_keys: List[str], optional_keys: List[str] = []) -> None:
+    for required_key in required_keys:
+        if required_key not in obj:
+            raise ValueError("{} is not found in {}".format(required_key, obj))
+
+    allowed_keys = set(required_keys + optional_keys)
+    for present_key in obj.keys():
+        if present_key not in allowed_keys:
+            raise ValueError("{} should not be in {}".format(present_key, obj))
+
+
 def get_tag_from_itemdict_list(ingredient_list: List[Dict[str, str]]) -> Dict[str,str]:
 
     compact_list = sorted([x["item"] for x in ingredient_list])
@@ -268,13 +287,18 @@ def parse_recipe_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> List
 
 
 
+################################################################################
+# parse_shaped_data
+#
+# Parses the data from recipes of the `minecraft:crafting_shaped` type.
+################################################################################
 def parse_shaped_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> List[RecipeItem]:
     # We are going to ignore the "group" field that contains data about similar
     # recipes. EG: Deepslate Coal Ore and Coal Ore are both part of the Coal group
     if "group" in input_struct:
         del input_struct["group"]
 
-    assert(sorted(input_struct.keys()) == ['key', 'pattern', 'result', 'type'])
+    confirm_keys(input_struct, ['key', 'pattern', 'result', 'type', 'category', 'show_notification'])
 
     count: int = 1
     if "count" in input_struct["result"]:
@@ -322,7 +346,7 @@ def parse_shapeless_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> L
     if "group" in input_struct:
         del input_struct["group"]
 
-    assert(sorted(input_struct.keys()) == ['ingredients', 'result', 'type'])
+    confirm_keys(input_struct, ['ingredients', 'result', 'type', 'category'])
 
     count: int = 1
     if "count" in input_struct["result"]:
@@ -366,7 +390,7 @@ def parse_campfire_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> Li
     if "experience" in input_struct:
         del input_struct["experience"]
 
-    assert(sorted(input_struct.keys()) == ['cookingtime', 'ingredient', 'result', 'type'])
+    confirm_keys(input_struct, ['cookingtime', 'ingredient', 'result', 'type', 'category'])
 
     cooking_time = input_struct["cookingtime"]
     if cooking_time != 600:
@@ -411,7 +435,7 @@ def parse_smoking_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> Lis
     if "experience" in input_struct:
         del input_struct["experience"]
 
-    assert(sorted(input_struct.keys()) == ['cookingtime', 'ingredient', 'result', 'type'])
+    confirm_keys(input_struct, ['cookingtime', 'ingredient', 'result', 'type', 'category'])
 
     cooking_time = input_struct["cookingtime"]
     if cooking_time != 100:
@@ -458,7 +482,7 @@ def parse_blasting_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> Li
     if "experience" in input_struct:
         del input_struct["experience"]
 
-    assert(sorted(input_struct.keys()) == ['cookingtime', 'ingredient', 'result', 'type'])
+    confirm_keys(input_struct, ['cookingtime', 'ingredient', 'result', 'type', 'category'])
 
     cooking_time = input_struct["cookingtime"]
     if cooking_time != 100:
@@ -507,7 +531,7 @@ def parse_smelting_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> Li
     if "experience" in input_struct:
         del input_struct["experience"]
 
-    assert(sorted(input_struct.keys()) == ['cookingtime', 'ingredient', 'result', 'type'])
+    confirm_keys(input_struct, ['cookingtime', 'ingredient', 'result', 'type', 'category'])
 
     cooking_time = input_struct["cookingtime"]
     if cooking_time != 200:
@@ -542,7 +566,8 @@ def parse_smelting_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> Li
 
 # Parse the anvil recipe types into a recipe item
 def parse_smithing_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> List[RecipeItem]:
-    assert(sorted(input_struct.keys()) == ['addition', 'base', 'result', 'type'])
+    confirm_keys(input_struct, ['addition', 'base', 'result', 'type'])
+
 
     addition: str = get_item_name_from_item_dict(input_struct["addition"], id_to_name_map)
     base: str = get_item_name_from_item_dict(input_struct["base"], id_to_name_map)
@@ -564,7 +589,8 @@ def parse_smithing_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> Li
 # Parse the stonecutting recipe type into a recipe item
 ################################################################################
 def parse_stonecutting_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> List[RecipeItem]:
-    assert(sorted(input_struct.keys()) == ['count', 'ingredient', 'result', 'type'])
+    confirm_keys(input_struct, ['count', 'ingredient', 'result', 'type'])
+
 
     count:int = input_struct["count"]
     ingredient:str = get_item_name_from_item_dict(input_struct["ingredient"], id_to_name_map)
