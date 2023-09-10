@@ -15,7 +15,7 @@ class ResourceGroups():
     resource_groups: List[ResourceGroup]
     automatic_resource_groups: Dict[str, List[str]]
 
-    def __init__(self, jarfile: zipfile.ZipFile):
+    def __init__(self, jarfile: zipfile.ZipFile, id_to_name_map: Dict[str, str]):
 
         self.load_automatic_resource_groups(jarfile)
 
@@ -96,9 +96,9 @@ class ResourceGroups():
             },
         ]
 
-        self.resource_groups += self.derive_resource_group_except_one("minecraft:beds")
-        self.resource_groups += self.derive_resource_group_except_one("minecraft:wool")
-        self.resource_groups += self.derive_resource_group_except_one("minecraft:wool_carpets")
+        self.resource_groups += self.derive_resource_group_except_one("minecraft:beds", id_to_name_map)
+        self.resource_groups += self.derive_resource_group_except_one("minecraft:wool", id_to_name_map)
+        self.resource_groups += self.derive_resource_group_except_one("minecraft:wool_carpets", id_to_name_map)
 
 
 
@@ -136,6 +136,7 @@ class ResourceGroups():
     def derive_resource_group_except_one(
         self,
         original_machine_name: str,
+        id_to_name_map: Dict[str, str],
     ) -> List[ResourceGroup]:
         original_resources = self.get_resouces_from_group(original_machine_name)
         original_display_name = self.get_display_name_from_group(original_machine_name)
@@ -145,7 +146,7 @@ class ResourceGroups():
         for removed_resource in original_resources:
             new_resource_groups.append({
                 "machine_name": "resourcecalculator:" + original_machine_name + "_except_" + removed_resource,
-                "human_name": original_display_name + " Except " + removed_resource,
+                "human_name": original_display_name + " Except " + id_to_name_map[removed_resource],
                 "resources": [x for x in original_resources if x != removed_resource]
             })
 

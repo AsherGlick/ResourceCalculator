@@ -59,7 +59,7 @@ def main() -> None:
     id_to_name_map = get_item_id_translations(zipped_file)
 
     global resource_groups
-    resource_groups = ResourceGroups(zipped_file)
+    resource_groups = ResourceGroups(zipped_file, id_to_name_map)
 
     # Build the recipe list from all of the recipe objects in the jar.
     recipes:List[RecipeItem] = []
