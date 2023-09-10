@@ -10499,10 +10499,6 @@ resources:
     recipes:
     - recipe_type: Raw Resource
 
-  Petrified Oak Slab:
-    recipes:
-    - recipe_type: Raw Resource
-
   Reinforced Deepslate:
     recipes:
     - recipe_type: Raw Resource
@@ -10925,3 +10921,64 @@ resources:
       requirements:
         Cherry Log: -1
     - recipe_type: Raw Resource
+
+  Cherry Log:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Block of Stripped Bamboo:
+    recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Block of Bamboo: -1
+    - recipe_type: Raw Resource
+
+  Pitcher Plant:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Pink Petals:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Torchflower:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Ominous Banner:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Cherry Leaves:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Cherry Sapling:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Piglin Head:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Pitcher Pod:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Sniffer Egg:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Suspicious Gravel:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Suspicious Sand:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Torchflower Seeds:
+    recipes:
+    - recipe_type: Raw Resource
+
