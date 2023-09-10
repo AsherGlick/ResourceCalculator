@@ -207,8 +207,8 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, 
     # Validate all jar recipes are in the resource recipes
     for jar_recipe in jar_recipes:
         if jar_recipe.name not in resource_recipes:
-            print("Cannot find recipes for", jar_recipe.name)
-            print("Expecting")
+            print("#!#Cannot find recipes for", jar_recipe.name)
+            print("#!#Expecting")
             print("  " + jar_recipe.name + ":")
             print("    recipes:")
             print_recipe_yaml(jar_recipe)
@@ -226,7 +226,7 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, 
                 break
 
         if not has_matching_recipe:
-            print("YAML Missing Recipe for \"" +jar_recipe.name + "\"")
+            print("#!#YAML Missing Recipe for \"" +jar_recipe.name + "\"")
             print_recipe_yaml(jar_recipe)
             continue
 
@@ -260,7 +260,7 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, 
 ################################################################################
 def validate_requirement_groups(
     groups: Dict[str, List[str]],
-    resource_requirement_groups:Dict[str, List[str]],
+    current_yaml_resource_requirement_groups: Dict[str, List[str]],
     id_to_name_map: Dict[str, str],
 ) -> None:
     output = {}
@@ -270,23 +270,42 @@ def validate_requirement_groups(
 
     # Validate all groups are requirement groups
     for group in output:
-        if group not in resource_requirement_groups:
-            print("Missing Requirement Group")
-            print(yaml.dump({group:output[group]}))
+        if group not in current_yaml_resource_requirement_groups:
+            print("#!#Missing Requirement Group")
+            print_resource_group(group, output[group])
 
         else:
+            example_group = []
+            has_error = False
+            for item in current_yaml_resource_requirement_groups[group]:
+                if item not in output[group]:
+                    print("#!#Requirement group {} has extra element {}".format(group, item))
+                    has_error = True
+                else:
+                    example_group.append(item)
+
             for item in output[group]:
-                if item not in resource_requirement_groups[group]:
-                    print("Requirement Group has incorrect elements. Should be:")
-                    print(yaml.dump({group:output[group]}))
+                if item not in current_yaml_resource_requirement_groups[group]:
+                    print("#!#Requirement group {} is missing element {}".format(group, item))
+                    example_group.append(item)
+                    has_error = True
+
+            if has_error:
+                print("#!#Requirement Group has incorrect elements. Should be:")
+                print_resource_group(group, example_group)
                     # This prints for every item that is missing from the YAML
             # TODO: Check that nothing in the yaml should no longer be there
 
 
     # Validate all requirement groups are groups
-    for group in resource_requirement_groups:
+    for group in current_yaml_resource_requirement_groups:
         if group not in output:
-            print("Extra Requirement Group Found")
-            print(yaml.dump({group:resource_requirement_groups[group]}))
+            print("#!#Extra Requirement Group Found")
+            print_resource_group(group, current_yaml_resource_requirement_groups[group])
 
+
+def print_resource_group(name: str, resources: List[str]) -> None:
+    print("  " + name + ":")
+    for resource in resources:
+        print("  - " + resource)
 main()
