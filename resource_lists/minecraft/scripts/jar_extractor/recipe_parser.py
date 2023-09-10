@@ -30,6 +30,8 @@ def parse_recipe_data(input_struct: Any, id_to_name_map: Dict[str, str], resourc
         return parse_campfire_data(input_struct, id_to_name_map, resource_groups)
     elif input_struct["type"] == "minecraft:stonecutting":
         return parse_stonecutting_data(input_struct, id_to_name_map, resource_groups)
+    elif input_struct["type"] == "minecraft:smithing_transform":
+        return parse_smithing_transform_data(input_struct, id_to_name_map, resource_groups)
     elif input_struct["type"] == "minecraft:crafting_special_shulkerboxcoloring":
         return custom_recipes_shulker_box_coloring.recipes()
     elif input_struct["type"] == "minecraft:crafting_special_firework_rocket":
@@ -48,8 +50,6 @@ def parse_recipe_data(input_struct: Any, id_to_name_map: Dict[str, str], resourc
         "minecraft:crafting_special_tippedarrow",
         "minecraft:smithing_trim",
         "minecraft:crafting_decorated_pot",
-
-        "minecraft:smithing_transform", # TODO: this should probably actually be implemented
     ]:
         return []
     else:
@@ -408,7 +408,29 @@ def parse_stonecutting_data(
     return [recipe_item]
 
 
+def parse_smithing_transform_data(
+    input_struct: Any,
+    id_to_name_map: Dict[str, str],
+    resource_groups: ResourceGroups,
+) -> List[RecipeItem]:
+    confirm_keys(input_struct, ['type', 'addition', 'base', 'result', 'template'])
 
+    addition: str = get_item_name_from_item_dict(input_struct['addition'], id_to_name_map, resource_groups)
+    base: str = get_item_name_from_item_dict(input_struct['base'], id_to_name_map, resource_groups)
+    # template: str = get_item_name_from_item_dict(input_struct['template'], id_to_name_map, resource_groups) # TODO: templates are weird so we are ingoring them for now
+    result: str = get_item_name_from_item_dict(input_struct["result"], id_to_name_map, resource_groups)
+
+    return [
+        RecipeItem(
+            name=result,
+            output=1,
+            recipe_type="Smithing Table",
+            requirements={
+                base: 1,
+                addition: 1,
+            }
+        )
+    ]
 
 ################################################################################
 ################################################################################
