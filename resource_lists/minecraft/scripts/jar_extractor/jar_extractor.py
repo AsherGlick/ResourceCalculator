@@ -1,3 +1,9 @@
+################################################################################
+# python3 jar_extractor.py ~/.minecraft/versions/1.20.1/1.20.1.jar
+#
+#
+################################################################################
+
 import sys
 
 # Include the standard resource list parsing library
@@ -6,7 +12,7 @@ from pylib.yaml_token_load import ordered_load
 from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, TokenError, Token, get_primitive
 
 from io import BytesIO
-from typing import Dict, Any, List, Set, Union
+from typing import Dict, Any, List, Set, Union, TypedDict
 import json
 import os
 import re
@@ -21,154 +27,40 @@ import custom_recipes_water
 import custom_recipes_shulker_box_coloring
 import custom_recipes_fireworks
 import custom_recipes_oxidation
-
-# A map between the minecraft tag names and the resource calculator resource
-# goup names.
+from requirement_groups import ResourceGroups
 
 
-tagname_to_requirement_group: Dict[str, str] = {
-    "minecraft:planks": "Any Planks",
-    "minecraft:wooden_slabs": "Any Slab",
-    "minecraft:logs": "Any Log",
-    "minecraft:stone_crafting_materials": "Any Stone",
-    "minecraft:sand": "Any Sand",
-    "minecraft:logs_that_burn": "Any Log That Burns",
-    "minecraft:acacia_logs": "Any Acacia Log",
-    "minecraft:birch_logs": "Any Birch Log",
-    "minecraft:crimson_stems": "Any Crimson Stem",
-    "minecraft:dark_oak_logs": "Any Dark Oak Log",
-    "minecraft:oak_logs": "Any Oak Log",
-    "minecraft:jungle_logs": "Any Jungle Log",
-    "minecraft:mangrove_logs": "Any Mangrove Log",
-    "minecraft:spruce_logs": "Any Spruce Log",
-    "minecraft:warped_stems": "Any Warped Stem",
-    "minecraft:coals": "Any Coal",
-    "minecraft:wool": "Any Wool",
-    "minecraft:soul_fire_base_blocks": "Any Soul Fire Base Block",
-    "minecraft:stone_tool_materials": "Any Stone Tool Material",
-    "minecraft:shulker_boxes": "Any Shulker Box",
+SKIPPED_RECIPES: Set[str] = set([
+    "data/minecraft/recipes/coast_armor_trim_smithing_template.json", # Recursive Recipe
+    "data/minecraft/recipes/dune_armor_trim_smithing_template.json", # Recursive Recipe
+    "data/minecraft/recipes/eye_armor_trim_smithing_template.json", # Recursive Recipe
+    "data/minecraft/recipes/host_armor_trim_smithing_template.json", # Recursive Recipe
+    "data/minecraft/recipes/netherite_upgrade_smithing_template.json", # Recursive Recipe
+    "data/minecraft/recipes/raiser_armor_trim_smithing_template.json", # Recursive Recipe
+    "data/minecraft/recipes/rib_armor_trim_smithing_template.json", # Recursive Recipe
+    "data/minecraft/recipes/sentry_armor_trim_smithing_template.json", # Recursive Recipe
+    "data/minecraft/recipes/shaper_armor_trim_smithing_template.json", # Recursive Recipe
+    "data/minecraft/recipes/silence_armor_trim_smithing_template.json", # Recursive Recipe
+    "data/minecraft/recipes/snout_armor_trim_smithing_template.json", # Recursive Recipe
+    "data/minecraft/recipes/spire_armor_trim_smithing_template.json", # Recursive Recipe
+    "data/minecraft/recipes/tide_armor_trim_smithing_template.json", # Recursive Recipe
+    "data/minecraft/recipes/vex_armor_trim_smithing_template.json", # Recursive Recipe
+    "data/minecraft/recipes/ward_armor_trim_smithing_template.json", # Recursive Recipe
+    "data/minecraft/recipes/wayfinder_armor_trim_smithing_template.json", # Recursive Recipe
+    "data/minecraft/recipes/wild_armor_trim_smithing_template.json", # Recursive Recipe
+])
 
-    # Corrisponding names for the custom resource_calculator_tag_groups
-    "resourcecalculator:yellow_sandstone": "Any Yellow Sandstone",
-    "resourcecalculator:uncut_yellow_sandstone": "Any Uncut Yellow Sandstone",
-    "resourcecalculator:red_sandstone": "Any Red Sandstone",
-    "resourcecalculator:uncut_red_sandstone": "Any Uncut Red Sandstone",
-    "resourcecalculator:unsmooth_quartz_block": "Any Unsmooth Quartz Block",
-    "resourcecalculator:purpur_block": "Any Purpur Block",
-}
-
-requirement_group_to_tagname: Dict[str, str] = { v:k for k, v in tagname_to_requirement_group.items() }
-
-# Additional groups that are not defined by minecraft but defined instead using
-# the array schema where an item's resource is an array of items instead of
-# a single one, indicating any of those items may be used. This is added to
-# all_tags in the get_all_tags() function.
-resource_calculator_tag_groups: Dict[str, List[str]] = {
-    "resourcecalculator:yellow_sandstone": [
-        'minecraft:chiseled_sandstone',
-        'minecraft:cut_sandstone',
-        'minecraft:sandstone',
-    ],
-    "resourcecalculator:uncut_yellow_sandstone": [
-        'minecraft:chiseled_sandstone',
-        'minecraft:sandstone',
-    ],
-
-    "resourcecalculator:red_sandstone": [
-        'minecraft:chiseled_red_sandstone',
-        'minecraft:cut_red_sandstone',
-        'minecraft:red_sandstone',
-    ],
-
-    "resourcecalculator:uncut_red_sandstone": [
-        'minecraft:chiseled_red_sandstone',
-        'minecraft:red_sandstone',
-    ],
-
-    "resourcecalculator:unsmooth_quartz_block": [
-        'minecraft:chiseled_quartz_block',
-        'minecraft:quartz_block',
-        'minecraft:quartz_pillar',
-    ],
-
-    "resourcecalculator:purpur_block": [
-        'minecraft:purpur_block',
-        'minecraft:purpur_pillar',
-    ]
-}
-
-
-all_tags: Dict[str, List[str]] = {}
-id_to_name_map: Dict[str, str] = {}
-
-
-
-
-################################################################################
-# Parse all of the tagfiles
-################################################################################
-def get_all_tags(jarfile: zipfile.ZipFile) -> Dict[str, List[str]]:
-    all_tags: Dict[str, List[str]] = {}
-
-    file_list = jarfile.infolist()
-    for file in file_list:
-        filename = file.filename
-
-        if filename.startswith("data/minecraft/tags/blocks") \
-            or filename.startswith("data/minecraft/tags/items"):
-                key = os.path.splitext(os.path.basename(filename))[0]
-
-                all_tags["minecraft:"+key] = sorted(list(set(parse_tagfile(jarfile, filename))))
-
-    for tag in resource_calculator_tag_groups:
-        all_tags[tag] = resource_calculator_tag_groups[tag]
-
-    return all_tags
-
-
-################################################################################
-# Parse a given tag file. Tag files contain the equivlent of requirement groups
-# and may be nested to contain other tagfiles. If a file contains another nested
-# file then recursively open that file and add its contents to this tag.
-################################################################################
-def parse_tagfile(jarfile: zipfile.ZipFile, tag_filename: str) -> List[str]:
-    tags: List[str] = []
-
-    files = set([x.filename for x in jarfile.infolist()])
-
-    tagfile_data = json.load(BytesIO(jarfile.read(tag_filename)))
-
-    assert(len(tagfile_data) == 1)
-    assert("values" in tagfile_data)
-    assert(type(tagfile_data["values"] == list))
-
-    for tag in tagfile_data["values"]:
-        assert(type(tag) == str)
-
-        if tag.startswith("#"):
-            blocksfile = "data/minecraft/tags/blocks/" + tag[11:] + ".json"
-            itemsfile = "data/minecraft/tags/items/" + tag[11:] + ".json"
-
-            if blocksfile in files:
-                tags += parse_tagfile(jarfile, blocksfile)
-            elif itemsfile in files:
-                tags += parse_tagfile(jarfile, itemsfile)
-
-        else:
-            tags.append(tag)
-
-    return tags
+resource_groups: ResourceGroups
 
 def main() -> None:
     jar_location = sys.argv[1]
 
     zipped_file = zipfile.ZipFile(jar_location, 'r')
 
-    global id_to_name_map
     id_to_name_map = get_item_id_translations(zipped_file)
 
-    global all_tags
-    all_tags = get_all_tags(zipped_file)
+    global resource_groups
+    resource_groups = ResourceGroups(zipped_file)
 
 
     # Build the recipe list from all of the recipe objects in the jar.
@@ -181,6 +73,9 @@ def main() -> None:
             if not filename.startswith("data/minecraft/recipes"):
                 continue
 
+            if filename in SKIPPED_RECIPES:
+                continue
+
             recipe_data = BytesIO(zipped_file.read(filename))
 
             recipes += parse_recipe_data(json.load(recipe_data), id_to_name_map)
@@ -190,26 +85,29 @@ def main() -> None:
 
     # Add any custom recipes that are not included in the jar.
     recipes += custom_recipes_carving.recipes()
-    recipes += custom_recipes_stripping.recipes([id_to_name_map[x] for x in all_tags["minecraft:logs"]])
+    recipes += custom_recipes_stripping.recipes([id_to_name_map[x] for x in resource_groups.get_resouces_from_group("minecraft:logs")])
     recipes += custom_recipes_tilling.recipes()
     recipes += custom_recipes_shoveling.recipes()
     recipes += custom_recipes_water.recipes()
     recipes += custom_recipes_oxidation.recipes()
 
-    # Calculate all of the used tags/requirement groups.
+    # Calculate and deduplicate all of the used tags/requirement groups.
     used_tags: Set[str] = set([])
     for recipe in recipes:
         for requirement in recipe.requirements:
-            if requirement in requirement_group_to_tagname:
-                used_tags.add(requirement_group_to_tagname[requirement])
+            if resource_groups.is_display_name_a_group(requirement):
+                used_tags.add(resource_groups.get_group_from_display_name(requirement))
 
     # Build the contents of each used requirement group.
     groups: Dict[str, List[str]] = {}
     for tag in used_tags:
-        groups[tag] = all_tags[tag]
+        groups[tag] = resource_groups.get_resouces_from_group(tag)
+
+
+
 
     # Validate the `resources.yaml` file against the data parsed.
-    validate_resources(recipes, groups)
+    validate_resources(recipes, groups, id_to_name_map)
 
 
 
@@ -235,11 +133,9 @@ def get_tag_from_itemdict_list(ingredient_list: List[Dict[str, str]]) -> Dict[st
 
     compact_list = sorted([x["item"] for x in ingredient_list])
 
-    for tag, value in all_tags.items():
-        if value == compact_list:
-            return {"tag": tag}
+    group_name = resource_groups.get_group_from_resources(compact_list)
 
-    raise ValueError("No matching tag for" + str(compact_list))
+    return {"tag": group_name}
 
 
 
@@ -280,6 +176,10 @@ def parse_recipe_data(input_struct: Any, id_to_name_map: Dict[str, str]) -> List
         "minecraft:crafting_special_shielddecoration",
         "minecraft:crafting_special_suspiciousstew",
         "minecraft:crafting_special_tippedarrow",
+        "minecraft:smithing_trim",
+        "minecraft:crafting_decorated_pot",
+
+        "minecraft:smithing_transform", # TODO: this should probably actually be implemented
     ]:
         return []
     else:
@@ -648,7 +548,7 @@ def get_item_name_from_item_dict(itemdict: Union[Dict[str, str], List[Dict[str,s
         raise ValueError("Itemdict should contain one key, either 'item' or 'tag'" + str(itemdict))
 
     if "tag" in itemdict:
-        return tagname_to_requirement_group[itemdict["tag"]]
+        return resource_groups.get_display_name_from_group(itemdict["tag"])
     elif "item" in itemdict:
         return id_to_name_map[itemdict["item"]]
 
@@ -665,7 +565,7 @@ def get_item_name_from_item_dict(itemdict: Union[Dict[str, str], List[Dict[str,s
 #
 # Validates that multiple aspects of the resources.yaml file are correct.
 ################################################################################
-def validate_resources(recipes:List[RecipeItem], groups: Dict[str, List[str]]) -> None:
+def validate_resources(recipes:List[RecipeItem], groups: Dict[str, List[str]], id_to_name_map: Dict[str, str]) -> None:
 
     errors: List[TokenError] = []
     with open("../../resources.yaml", 'r', encoding="utf_8") as f:
@@ -674,7 +574,7 @@ def validate_resources(recipes:List[RecipeItem], groups: Dict[str, List[str]]) -
         errors += resource_list.parse(yaml_data)
 
     validate_recipes(recipes, resource_list.resources)
-    validate_requirement_groups(groups, resource_list.requirement_groups)
+    validate_requirement_groups(groups, resource_list.requirement_groups, id_to_name_map)
 
 
 ################################################################################
@@ -784,12 +684,13 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, 
 ################################################################################
 def validate_requirement_groups(
     groups: Dict[str, List[str]],
-    resource_requirement_groups:Dict[str, List[str]]
+    resource_requirement_groups:Dict[str, List[str]],
+    id_to_name_map: Dict[str, str],
 ) -> None:
     output = {}
 
     for group in sorted(groups.keys()):
-        output[tagname_to_requirement_group[group]] = [id_to_name_map[x] for x in groups[group]]
+        output[resource_groups.get_display_name_from_group(group)] = [id_to_name_map[x] for x in groups[group]]
 
     # Validate all groups are requirement groups
     for group in output:
@@ -797,10 +698,14 @@ def validate_requirement_groups(
             print("Missing Requirement Group")
             print(yaml.dump({group:output[group]}))
 
-        for item in output[group]:
-            if item not in resource_requirement_groups[group]:
-                print("Requirement Group has incorrect elements. Should be:")
-                print(yaml.dump({group:output[group]}))
+        else:
+            for item in output[group]:
+                if item not in resource_requirement_groups[group]:
+                    print("Requirement Group has incorrect elements. Should be:")
+                    print(yaml.dump({group:output[group]}))
+                    # This prints for every item that is missing from the YAML
+            # TODO: Check that nothing in the yaml should no longer be there
+
 
     # Validate all requirement groups are groups
     for group in resource_requirement_groups:
