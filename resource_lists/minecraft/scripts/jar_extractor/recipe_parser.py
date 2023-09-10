@@ -24,8 +24,6 @@ def parse_recipe_data(input_struct: Any, id_to_name_map: Dict[str, str], resourc
         return parse_blasting_data(input_struct, id_to_name_map, resource_groups)
     elif input_struct["type"] == "minecraft:smoking":
         return parse_smoking_data(input_struct, id_to_name_map, resource_groups)
-    elif input_struct["type"] == "minecraft:smithing":
-        return parse_smithing_data(input_struct, id_to_name_map, resource_groups)
     elif input_struct["type"] == "minecraft:campfire_cooking":
         return parse_campfire_data(input_struct, id_to_name_map, resource_groups)
     elif input_struct["type"] == "minecraft:stonecutting":
@@ -357,30 +355,6 @@ def parse_smelting_data(
     return recipe_items
 
 
-# Parse the anvil recipe types into a recipe item
-def parse_smithing_data(
-    input_struct: Any,
-    id_to_name_map: Dict[str, str],
-    resource_groups: ResourceGroups,
-) -> List[RecipeItem]:
-    confirm_keys(input_struct, ['addition', 'base', 'result', 'type'])
-
-
-    addition: str = get_item_name_from_item_dict(input_struct["addition"], id_to_name_map, resource_groups)
-    base: str = get_item_name_from_item_dict(input_struct["base"], id_to_name_map, resource_groups)
-    result: str = get_item_name_from_item_dict(input_struct["result"], id_to_name_map, resource_groups)
-
-    recipe_item = RecipeItem(
-        name=result,
-        output=1,
-        recipe_type="Smithing Table",
-        requirements={
-            base : 1,
-            addition : 1,
-        }
-    )
-
-    return [recipe_item]
 
 ################################################################################
 # Parse the stonecutting recipe type into a recipe item
