@@ -14,9 +14,16 @@ recipe_types:
   Pressing: "Press {IN_ITEMS} into {OUT_ITEM}"
   Compacting: "Use a press over a basin to compact {IN_ITEMS} into {OUT_ITEM}"
   Bulk Packing: "Use a press over a basin to pack {IN_ITEMS} into {OUT_ITEM}"
+  
   Bulk Washing: "Use a fan behind water to wash {IN_ITEMS} into {OUT_ITEM}"
   Bulk Blasting: "Use a fan behind lava to smelt {IN_ITEMS} into {OUT_ITEM}"
   Bulk Smokeing: "Use a fan behind fire to cook {IN_ITEMS} into {OUT_ITEM}"
+
+  Milling: "Mill {IN_ITEMS} down into {OUT_ITEM}"
+  Crushing: "Crush {IN_ITEMS} down into {OUT_ITEM}"
+
+  Sawing: "Saw {IN_ITEMS} into {OUT_ITEM}"
+  Filling by Spout: "Use a spout to combine {IN_ITEMS} into {OUT_ITEM}"
 
   Casting Table: "Use a casting table to form {IN_ITEMS} to {OUT_ITEM}"
   Casting Basin: "Use a casting basin to form {IN_ITEMS} to {OUT_ITEM}"
@@ -27,7 +34,10 @@ recipe_types:
   Numismatic Dynamo: "Give a numismatic dynamo {IN_ITEMS} to generate {ITEM Energy}"
   Lapidary Dynamo: "Give a lapidary dynamo {IN_ITEMS} to generate {ITEM Energy}"
   Gourmand Dynamo: "Feed a gourmand dynamo with {IN_ITEMS} to generate {ITEM Energy}"
-  
+
+  Reagent Extractor: "Extract {OUT_ITEM} out of {IN_ITEMS} using {ITEM Energy}"
+
+  Pulverizer: "Break {IN_ITEMS} down into {OUT_ITEM} using {ITEM Energy}"
   Electric Smelting: "Use a redstone furnace to smelt {IN_ITEMS} into {OUT_ITEM} using {ITEM Energy}"
 
   Import: "Import {OUT_ITEM} for {IN_ITEMS} using {ITEM Energy}"
@@ -303,3 +313,98 @@ resources:
         Silver Coin: -3
         Energy: -1000
     - recipe_type: Raw Resource
+
+  Grass Block:
+    recipes:
+    - output: 1
+      recipe_type: Filling by Spout
+      requirements:
+        Millibuckets of Water: -500
+        Dirt: -1
+    - recipe_type: Raw Resource
+
+  Dirt:
+    recipes:
+    - output: 16
+      recipe_type: Import
+      requirements:
+        Silver Coin: -2
+    - recipe_type: Raw Resource
+
+  Coarse Dirt:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Dirt: -2
+        Gravel: -2
+    - recipe_type: Raw Resource
+
+  Podzol:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Crimson Nylium:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Warped Nylium:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Cobblestone:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 16
+      recipe_type: Import
+      requirements:
+        Silver Coin: -1
+    - output: 1
+      recipe_type: Milling
+      requirements:
+        Andesite: -1
+    - output: 1
+      recipe_type: Reagent Extractor
+      requirements:
+        Stone Reagent: -1
+    - output: 1
+      recipe_type: Pulverizer
+      requirements:
+        Granite: -1
+        Nether Quartz Dust: 2
+    - output: 1
+      recipe_type: Pulverizer
+      requirements:
+        Polished Granite: -1
+        Nether Quartz Dust: 2
+    - output: 1
+      recipe_type: Pulverizer
+      requirements:
+        Diorite: -1
+        Nether Quartz Dust: 1
+    - output: 1
+      recipe_type: Pulverizer
+      requirements:
+        Polished Diorite: -1
+        Nether Quartz Dust: 1
+    - output: 2
+      recipe_type: Pulverizer
+      requirements:
+        Andesite: -2
+        Nether Quartz Dust: 1
+    - output: 2
+      recipe_type: Pulverizer
+      requirements:
+        Polished Andesite: -2
+        Nether Quartz Dust: 1
+
+  Oak Planks:
+    recipes:
+    - output: 6
+      recipe_type: Sawing
+      requirements:
+        Stripped Oak Log: -1
+    - output: 6
+      recipe_type: Sawing
+      requirements:
+        Stripped Oak Wood: -1
