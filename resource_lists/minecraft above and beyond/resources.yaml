@@ -367,36 +367,43 @@ resources:
       recipe_type: Reagent Extractor
       requirements:
         Stone Reagent: -1
+        Energy: -2000
     - output: 1
       recipe_type: Pulverizer
       requirements:
         Granite: -1
         Nether Quartz Dust: 2
+        Energy: -4000
     - output: 1
       recipe_type: Pulverizer
       requirements:
         Polished Granite: -1
         Nether Quartz Dust: 2
+        Energy: -4000
     - output: 1
       recipe_type: Pulverizer
       requirements:
         Diorite: -1
         Nether Quartz Dust: 1
+        Energy: -4000
     - output: 1
       recipe_type: Pulverizer
       requirements:
         Polished Diorite: -1
         Nether Quartz Dust: 1
+        Energy: -4000
     - output: 2
       recipe_type: Pulverizer
       requirements:
         Andesite: -2
         Nether Quartz Dust: 1
+        Energy: -4000
     - output: 2
       recipe_type: Pulverizer
       requirements:
         Polished Andesite: -2
         Nether Quartz Dust: 1
+        Energy: -4000
 
   Oak Planks:
     recipes:
