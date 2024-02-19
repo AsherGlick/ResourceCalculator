@@ -20,6 +20,13 @@ recipe_types:
 
   Casting Table: "Use a casting table to form {IN_ITEMS} to {OUT_ITEM}"
   Casting Basin: "Use a casting basin to form {IN_ITEMS} to {OUT_ITEM}"
+
+  Stirling Dynamo: "Fuel a stirling dynamo with {IN_ITEMS} to generate {ITEM Energy}"
+  Compession Dynamo: "Fuel a compession dynamo with {IN_ITEMS} to generate {ITEM Energy}"
+  Magmatic Dynamo: "Fuel a magmatic dynamo with {IN_ITEMS} to generate {ITEM Energy}"
+  Numismatic Dynamo: "Give a numismatic dynamo {IN_ITEMS} to generate {ITEM Energy}"
+  Lapidary Dynamo: "Give a lapidary dynamo {IN_ITEMS} to generate {ITEM Energy}"
+  Gourmand Dynamo: "Feed a gourmand dynamo with {IN_ITEMS} to generate {ITEM Energy}"
   
   Electric Smelting: "Use a redstone furnace to smelt {IN_ITEMS} into {OUT_ITEM} using {ITEM Energy}"
 
@@ -51,13 +58,77 @@ stack_sizes:
 default_stack_size: "Stack"
 
 resources:
-
   Fuel:
     recipes:
     - output: 8
       recipe_type: As
       requirements:
         Coal: -1
+    - recipe_type: Raw Resource
+
+  Energy:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 2000
+      recipe_type: Stirling Dynamo
+      requirements:
+        Fuel: -1
+    - output: 100000
+      recipe_type: Compession Dynamo
+      requirements:
+        Millibuckets of Tree Oil: -1000
+    - output: 10000
+      recipe_type: Compession Dynamo
+      requirements:
+        Millibuckets of Oxygen: -1000
+    - output: 1500000
+      recipe_type: Compession Dynamo
+      requirements:
+        Millibuckets of Refined Fuel: -1000
+    - output: 100000
+      recipe_type: Compession Dynamo
+      requirements:
+        Millibuckets of Hydrogen: -1000
+    - output: 100000
+      recipe_type: Magmatic Dynamo
+      requirements:
+        Millibuckets of Lava: -1000
+    - output: 100000
+      recipe_type: Numismatic Dynamo
+      requirements:
+        Silver Coin: -1
+    - output: 6400000
+      recipe_type: Numismatic Dynamo
+      requirements:
+        Gold Coin: -1
+    - output: 40000
+      recipe_type: Lapidary Dynamo
+      requirements:
+        Prismarine Crystals: -1
+    - output: 40000
+      recipe_type: Lapidary Dynamo
+      requirements:
+        Lapis Lazuli: -1
+    - output: 125000
+      recipe_type: Lapidary Dynamo
+      requirements:
+        Ruby: -1
+    - output: 500000
+      recipe_type: Lapidary Dynamo
+      requirements:
+        Diamond: -1
+    - output: 125000
+      recipe_type: Lapidary Dynamo
+      requirements:
+        Sapphire: -1
+    - output: 125000
+      recipe_type: Lapidary Dynamo
+      requirements:
+        Emerald: -1
+    - output: 40000
+      recipe_type: Lapidary Dynamo
+      requirements:
+        Nether Quartz: -1
 
   Stone:
     recipes:
@@ -76,11 +147,11 @@ resources:
         Cobblestone: -1
         Energy: -2000
     - output: 1
-      recipe_type: Crafting
+      recipe_type: Packing
       requirements:
         Stone Pebble: -9
     - output: 1
-      recipe_type: Packing
+      recipe_type: Crafting
       requirements:
         Stone Pebble: -9
     - recipe_type: Raw Resource
@@ -126,10 +197,10 @@ resources:
       requirements:
         Granite: -1
     - output: 4
-      recipe_type: Crafting
+      recipe_type: Packing
       requirements:
         Granite: -4
     - output: 4
-      recipe_type: Packing
+      recipe_type: Crafting
       requirements:
         Granite: -4
