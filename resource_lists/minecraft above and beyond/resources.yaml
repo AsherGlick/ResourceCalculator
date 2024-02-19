@@ -34,6 +34,20 @@ recipe_types:
   Sell: "Sell {IN_ITEMS} for {OUT_ITEM} using {ITEM Energy}"
 
 requirement_groups:
+  Any Cobblestone Variant:
+  - Cobblestone
+  - Infested Cobblestone
+  - Mossy Cobblestone
+  - Granite Cobblestone
+  - Diorite Cobblestone
+  - Andesite Cobblestone
+  - Limestone Cobblestone
+  - Weathered Limestone Cobblestone
+  - Dolomite Cobblestone
+  - Gabbro Cobblestone
+  - Scoria Cobblestone
+  - Dark Scoria Cobblestone
+  
   Any Log:
   - Oak Log
   - Birch Log
@@ -204,3 +218,88 @@ resources:
       recipe_type: Crafting
       requirements:
         Granite: -4
+    - recipe_type: Raw Resource
+
+  Diorite:
+    recipes:
+    - output: 1
+      recipe_type: Bulk Blasting
+      requirements:
+        Diorite Cobblestone: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Diorite Cobblestone: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Electric Smelting
+      requirements:
+        Diorite Cobblestone: -1
+        Energy: -2000
+    - output: 1
+      recipe_type: Compacting
+      requirements:
+        Flint: -2
+        Limesand: -1
+        Millibuckets of Lava: -100
+    - output: 1
+      recipe_type: Casting Basin
+      requirements:
+        Millibuckets of Molten Quartz: -72
+        Andesite: -1
+    - output: 16
+      recipe_type: Import
+      requirements:
+        Silver Coin: -3
+        Energy: -1000
+    - recipe_type: Raw Resource
+
+  Polished Diorite:
+    recipes:
+    - output: 1
+      recipe_type: Stone Cutting
+      requirements:
+        Diorite: -1
+    - output: 4
+      recipe_type: Packing
+      requirements:
+        Diorite: -4
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Diorite: -4
+    - recipe_type: Raw Resource
+
+  Andesite:
+    recipes:
+    - output: 1
+      recipe_type: Bulk Blasting
+      requirements:
+        Andesite Cobblestone: -1
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Andesite Cobblestone: -1
+        Fuel: -1
+    - output: 1
+      recipe_type: Electric Smelting
+      requirements:
+        Andesite Cobblestone: -1
+        Energy: -2000
+    - output: 1
+      recipe_type: Compacting
+      requirements:
+        Flint: -2
+        Gravel: -1
+        Millibuckets of Lava: -100
+    - output: 1
+      recipe_type: Casting Basin
+      requirements:
+        Millibuckets of Molten Quartz: -72
+        Any Cobblestone Variant: -1
+    - output: 16
+      recipe_type: Import
+      requirements:
+        Silver Coin: -3
+        Energy: -1000
+    - recipe_type: Raw Resource
