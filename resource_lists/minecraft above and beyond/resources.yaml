@@ -8,26 +8,39 @@ game_version: Modpack Version 1.3
 banner_message: "Did you know? You can double click to change the recipe used."
 
 recipe_types:
+  ## --- Vanilla ---
   Crafting: "Craft {IN_ITEMS} into {OUT_ITEM}"
   Smelting: "Use a furnace to smelt {IN_ITEMS} into {OUT_ITEM} using {ITEM Fuel}"
   
+  ## --- Create ---
+  ## Mechanical Press
   Pressing: "Press {IN_ITEMS} into {OUT_ITEM}"
   Compacting: "Use a press over a basin to compact {IN_ITEMS} into {OUT_ITEM}"
   Bulk Packing: "Use a press over a basin to pack {IN_ITEMS} into {OUT_ITEM}"
-  
+  ## Mechanical Fan
   Bulk Washing: "Use a fan behind water to wash {IN_ITEMS} into {OUT_ITEM}"
   Bulk Blasting: "Use a fan behind lava to smelt {IN_ITEMS} into {OUT_ITEM}"
   Bulk Smokeing: "Use a fan behind fire to cook {IN_ITEMS} into {OUT_ITEM}"
-
+  ## Millstone + Crushing Wheel 
   Milling: "Mill {IN_ITEMS} down into {OUT_ITEM}"
   Crushing: "Crush {IN_ITEMS} down into {OUT_ITEM}"
-
+  ## Mechanical Saw
   Sawing: "Saw {IN_ITEMS} into {OUT_ITEM}"
+  ## Spout
   Filling by Spout: "Use a spout to combine {IN_ITEMS} into {OUT_ITEM}"
 
+  ## --- Tinkers Construct ---
   Casting Table: "Use a casting table to form {IN_ITEMS} to {OUT_ITEM}"
   Casting Basin: "Use a casting basin to form {IN_ITEMS} to {OUT_ITEM}"
 
+  ## --- Thermal Series ---
+  ## Reagents
+  Reagent Extractor: "Extract {OUT_ITEM} out of {IN_ITEMS} using {ITEM Energy}"
+  ## Other Battery Powered Stuff
+  Pulverizer: "Break {IN_ITEMS} down into {OUT_ITEM} using {ITEM Energy}"
+  Electric Smelting: "Use a redstone furnace to smelt {IN_ITEMS} into {OUT_ITEM} using {ITEM Energy}"
+
+  ## --- Thermal Expansion ---
   Stirling Dynamo: "Fuel a stirling dynamo with {IN_ITEMS} to generate {ITEM Energy}"
   Compession Dynamo: "Fuel a compession dynamo with {IN_ITEMS} to generate {ITEM Energy}"
   Magmatic Dynamo: "Fuel a magmatic dynamo with {IN_ITEMS} to generate {ITEM Energy}"
@@ -35,15 +48,12 @@ recipe_types:
   Lapidary Dynamo: "Give a lapidary dynamo {IN_ITEMS} to generate {ITEM Energy}"
   Gourmand Dynamo: "Feed a gourmand dynamo with {IN_ITEMS} to generate {ITEM Energy}"
 
-  Reagent Extractor: "Extract {OUT_ITEM} out of {IN_ITEMS} using {ITEM Energy}"
-
-  Pulverizer: "Break {IN_ITEMS} down into {OUT_ITEM} using {ITEM Energy}"
-  Electric Smelting: "Use a redstone furnace to smelt {IN_ITEMS} into {OUT_ITEM} using {ITEM Energy}"
-
+  ## --- Unique ---
   Import: "Import {OUT_ITEM} for {IN_ITEMS} using {ITEM Energy}"
   Sell: "Sell {IN_ITEMS} for {OUT_ITEM} using {ITEM Energy}"
 
 requirement_groups:
+  ## Forge:Cobblestone
   Any Cobblestone Variant:
   - Cobblestone
   - Infested Cobblestone
