@@ -12,6 +12,9 @@ recipe_types:
   Crafting: "Craft {IN_ITEMS} into {OUT_ITEM}"
   Smelting: "Use a furnace to smelt {IN_ITEMS} into {OUT_ITEM} using {ITEM Fuel}"
   
+  ## --- Farmer's Delight ---
+  Cutting: "Cut {IN_ITEMS} up into {OUT_ITEM}"
+  
   ## --- Create ---
   ## Mechanical Press
   Pressing: "Press {IN_ITEMS} into {OUT_ITEM}"
@@ -67,11 +70,14 @@ requirement_groups:
   - Gabbro Cobblestone
   - Scoria Cobblestone
   - Dark Scoria Cobblestone
-  
-  Any Log:
+
+  ## Minecraft:Oak_Logs
+  Any Oak Log Variant:
   - Oak Log
-  - Birch Log
-  - Spruce Log
+  - Oak Wood
+  - Stripped Oak Log
+  - Stripped Oak Wood
+  - Oak Beam
 
 stack_sizes:
   Double Chest:
@@ -425,3 +431,23 @@ resources:
       recipe_type: Sawing
       requirements:
         Stripped Oak Wood: -1
+    - Output: 4
+      recipe_type: Crafting
+      requirments:
+        Any Oak Wood Variant: -1
+    - Output: 4
+      recipe_type: Crafting
+      requirments:
+        Driftwood: -1
+    - Output: 1
+      recipe_type: Cutting
+      requirments:
+        Oak Door: -1
+    - Output: 1
+      recipe_type: Cutting
+      requirments:
+        Oak Sign: -1
+    - Output: 1
+      recipe_type: Cutting
+      requirments:
+        Oak Trapdoor: -1
