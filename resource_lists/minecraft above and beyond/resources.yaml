@@ -79,6 +79,22 @@ requirement_groups:
   - Stripped Oak Wood
   - Oak Beam
 
+  ## Minecraft:Spruce_Logs
+  Any Spruce Log Variant:
+  - Spruce Log
+  - Spruce Wood
+  - Stripped Spruce Log
+  - Stripped Spruce Wood
+  - Spruce Beam
+
+  ## Minecraft:Birch_Logs
+  Any Birch Log Variant:
+  - Birch Log
+  - Birch Wood
+  - Stripped Birch Log
+  - Stripped Birch Wood
+  - Birch Beam
+
 stack_sizes:
   Double Chest:
     quantity_multiplier: 54 # 9x6 Stacks
@@ -449,5 +465,63 @@ resources:
         Oak Sign: -1
     - Output: 1
       recipe_type: Cutting
+
+  Spruce Planks:
+    recipes:
+    - output: 6
+      recipe_type: Sawing
+      requirements:
+        Stripped Spruce Log: -1
+    - output: 6
+      recipe_type: Sawing
+      requirements:
+        Stripped Spruce Wood: -1
+    - Output: 4
+      recipe_type: Crafting
+      requirments:
+        Any Spruce Wood Variant: -1
+    - Output: 4
+      recipe_type: Crafting
+      requirments:
+        Driftwood: -1
+    - Output: 1
+      recipe_type: Cutting
+      requirments:
+        Spruce Door: -1
+    - Output: 1
+      recipe_type: Cutting
+      requirments:
+        Spruce Sign: -1
+    - Output: 1
+      recipe_type: Cutting
       requirments:
         Oak Trapdoor: -1
+
+  Birch Planks:
+    recipes:
+    - output: 6
+      recipe_type: Sawing
+      requirements:
+        Stripped Birch Log: -1
+    - output: 6
+      recipe_type: Sawing
+      requirements:
+        Stripped Birch Wood: -1
+    - Output: 4
+      recipe_type: Crafting
+      requirments:
+        Any Birch Wood Variant: -1
+    - Output: 4
+      recipe_type: Crafting
+      requirments:
+        Driftwood: -1
+    - Output: 1
+      recipe_type: Cutting
+      requirments:
+        Birch Door: -1
+    - Output: 1
+      recipe_type: Cutting
+      requirments:
+        Birch Sign: -1
+    - Output: 1
+      recipe_type: Cutting
