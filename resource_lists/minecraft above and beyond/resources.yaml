@@ -480,10 +480,6 @@ resources:
       recipe_type: Crafting
       requirments:
         Any Spruce Wood Variant: -1
-    - Output: 4
-      recipe_type: Crafting
-      requirments:
-        Driftwood: -1
     - Output: 1
       recipe_type: Cutting
       requirments:
@@ -511,10 +507,6 @@ resources:
       recipe_type: Crafting
       requirments:
         Any Birch Wood Variant: -1
-    - Output: 4
-      recipe_type: Crafting
-      requirments:
-        Driftwood: -1
     - Output: 1
       recipe_type: Cutting
       requirments:
