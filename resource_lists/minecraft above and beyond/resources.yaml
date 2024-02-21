@@ -115,7 +115,7 @@ stack_sizes:
     extends_from: "Stack"
 
   Sack:
-    quantity_multiplier: 9 # 9 Stacks
+    quantity_multiplier: 9
     plural: "Sacks"
     extends_from: "Stack"
 
