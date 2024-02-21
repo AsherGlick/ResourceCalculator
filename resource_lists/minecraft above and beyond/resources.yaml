@@ -11,10 +11,10 @@ recipe_types:
   ## --- Vanilla ---
   Crafting: "Craft {IN_ITEMS} into {OUT_ITEM}"
   Smelting: "Use a furnace to smelt {IN_ITEMS} into {OUT_ITEM} using {ITEM Fuel}"
-  
+
   ## --- Farmer's Delight ---
   Cutting: "Cut {IN_ITEMS} up into {OUT_ITEM}"
-  
+
   ## --- Create ---
   ## Mechanical Press
   Pressing: "Press {IN_ITEMS} into {OUT_ITEM}"
@@ -140,23 +140,23 @@ resources:
     - output: 100000
       recipe_type: Compession Dynamo
       requirements:
-        Millibuckets of Tree Oil: -1000
+        mB Tree Oil: -1000
     - output: 10000
       recipe_type: Compession Dynamo
       requirements:
-        Millibuckets of Oxygen: -1000
+        mB Oxygen: -1000
     - output: 1500000
       recipe_type: Compession Dynamo
       requirements:
-        Millibuckets of Refined Fuel: -1000
+        mB Refined Fuel: -1000
     - output: 100000
       recipe_type: Compession Dynamo
       requirements:
-        Millibuckets of Hydrogen: -1000
+        mB Hydrogen: -1000
     - output: 100000
       recipe_type: Magmatic Dynamo
       requirements:
-        Millibuckets of Lava: -1000
+        mB Lava: -1000
     - output: 100000
       recipe_type: Numismatic Dynamo
       requirements:
@@ -241,11 +241,11 @@ resources:
       requirements:
         Flint: -2
         Red Sand: -1
-        Millibuckets of Lava: -100
+        mB Lava: -100
     - output: 1
       recipe_type: Casting Basin
       requirements:
-        Millibuckets of Molten Quartz: -144
+        mB Molten Quartz: -144
         Diorite: -1
     - output: 16
       recipe_type: Import
@@ -291,11 +291,11 @@ resources:
       requirements:
         Flint: -2
         Limesand: -1
-        Millibuckets of Lava: -100
+        mB Lava: -100
     - output: 1
       recipe_type: Casting Basin
       requirements:
-        Millibuckets of Molten Quartz: -72
+        mB Molten Quartz: -72
         Andesite: -1
     - output: 16
       recipe_type: Import
@@ -341,11 +341,11 @@ resources:
       requirements:
         Flint: -2
         Gravel: -1
-        Millibuckets of Lava: -100
+        mB Lava: -100
     - output: 1
       recipe_type: Casting Basin
       requirements:
-        Millibuckets of Molten Quartz: -72
+        mB Molten Quartz: -72
         Any Cobblestone Variant: -1
     - output: 16
       recipe_type: Import
@@ -359,7 +359,7 @@ resources:
     - output: 1
       recipe_type: Filling by Spout
       requirements:
-        Millibuckets of Water: -500
+        mB Water: -500
         Dirt: -1
     - recipe_type: Raw Resource
 
