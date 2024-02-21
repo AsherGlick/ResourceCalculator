@@ -114,6 +114,11 @@ stack_sizes:
     plural: "Shulker Boxes"
     extends_from: "Stack"
 
+  Sack:
+    quantity_multiplier: 9 # 9 Stacks
+    plural: "Sacks"
+    extends_from: "Stack"
+
   Stack:
     quantity_multiplier: 64
     plural: "Stacks"
