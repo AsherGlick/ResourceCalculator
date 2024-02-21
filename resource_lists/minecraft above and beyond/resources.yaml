@@ -95,6 +95,14 @@ requirement_groups:
   - Stripped Birch Wood
   - Birch Beam
 
+  ## Minecraft:Jungle_Logs
+  Any Jungle Log Variant:
+  - Jungle Log
+  - Jungle Wood
+  - Stripped Jungle Log
+  - Stripped Jungle Wood
+  - Jungle Beam
+
 stack_sizes:
   Double Chest:
     quantity_multiplier: 54 # 9x6 Stacks
@@ -515,5 +523,30 @@ resources:
       recipe_type: Cutting
       requirments:
         Birch Sign: -1
+    - Output: 1
+      recipe_type: Cutting
+
+  Jungle Planks:
+    recipes:
+    - output: 6
+      recipe_type: Sawing
+      requirements:
+        Stripped Jungle Log: -1
+    - output: 6
+      recipe_type: Sawing
+      requirements:
+        Stripped Jungle Wood: -1
+    - Output: 4
+      recipe_type: Crafting
+      requirments:
+        Any Jungle Wood Variant: -1
+    - Output: 1
+      recipe_type: Cutting
+      requirments:
+        Jungle Door: -1
+    - Output: 1
+      recipe_type: Cutting
+      requirments:
+        Jungle Sign: -1
     - Output: 1
       recipe_type: Cutting
