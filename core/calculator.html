@@ -13,7 +13,7 @@
 			.item {
 				width: {{ item_width }}px;
 				height: {{ item_height }}px;
-				background: #8a8a8a url("{{resource_list}}.png") 0 0 no-repeat;
+				background: #8a8a8a url("{{resource_image}}") 0 0 no-repeat;
 			}
 			{% for item_style in item_styles %}
 				.item_{{item_style}} {
@@ -39,7 +39,7 @@
 
 		<div id="about_us">
 			Resource Calculator is an open source project to allow players to easily calculate how many raw resources they need in order to construct the items they want.
-			It was originally created by Asher Glick. You can help keep Resource Calculator up to date or add resources for new games by clicking on the Contribute button above. <br><br> The resources and recipes for the <b>{{resource_list}} calculator</b> were created and updated by<br>
+			It was originally created by Asher Glick. You can help keep Resource Calculator up to date or add resources for new games by clicking on the Contribute button above. <br><br> The resources and recipes for the <b>{{calculator_name}} calculator</b> were created and updated by<br>
 			{% for author in authors %}
 
 
