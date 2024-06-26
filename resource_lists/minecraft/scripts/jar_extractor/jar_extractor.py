@@ -25,6 +25,7 @@ import custom_recipes_tilling
 import custom_recipes_shoveling
 import custom_recipes_water
 import custom_recipes_oxidation
+import custom_recipes_buckets
 from requirement_groups import ResourceGroups
 from recipe_parser import parse_recipe_data
 
@@ -88,6 +89,7 @@ def main() -> None:
     recipes += custom_recipes_shoveling.recipes()
     recipes += custom_recipes_water.recipes()
     recipes += custom_recipes_oxidation.recipes()
+    recipes += custom_recipes_buckets.recipes()
 
     # Calculate and deduplicate all of the used tags/requirement groups.
     used_tags: Set[str] = set([])
