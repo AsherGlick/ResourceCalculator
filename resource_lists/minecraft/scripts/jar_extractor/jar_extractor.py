@@ -84,7 +84,7 @@ def main() -> None:
 
     # Add any custom recipes that are not included in the jar.
     recipes += custom_recipes_carving.recipes()
-    recipes += custom_recipes_stripping.recipes([id_to_name_map[x] for x in resource_groups.get_resouces_from_group("minecraft:logs")])
+    recipes += custom_recipes_stripping.recipes(resource_groups, id_to_name_map)
     recipes += custom_recipes_tilling.recipes()
     recipes += custom_recipes_shoveling.recipes()
     recipes += custom_recipes_water.recipes()
