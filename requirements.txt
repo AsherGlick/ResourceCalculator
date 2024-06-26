@@ -13,7 +13,7 @@ pyflakes==2.3.1
 PyYAML==5.4.1
 snakeviz==2.1.1
 toml==0.10.2
-tornado==6.3.2
+tornado==6.3.3
 types-PyYAML==5.4.3
 typing-extensions==4.3.0
 watchdog==2.1.9
