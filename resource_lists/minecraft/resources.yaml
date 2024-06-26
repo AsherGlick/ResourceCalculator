@@ -22,6 +22,7 @@ recipe_types:
   Cutting: "Use a stonecutter to cut {IN_ITEMS} into {OUT_ITEM}"
   Oxidation: "Place {IN_ITEMS} down as blocks until they oxidize into {OUT_ITEM}"
   Smithing Table: "Use a smithing table to upgrade {IN_ITEMS} into {OUT_ITEM}"
+  Fill Bucket: "Right click while holding a bucket to turn {IN_ITEMS} into {OUT_ITEM}"
 
 requirement_groups:
   Any Acacia Log:
@@ -2022,6 +2023,10 @@ resources:
 
   Cut Sandstone Slab:
     recipes:
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Sandstone: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -2030,10 +2035,6 @@ resources:
       recipe_type: Cutting
       requirements:
         Cut Sandstone: -1
-    - output: 2
-      recipe_type: Cutting
-      requirements:
-        Sandstone: -1
     - recipe_type: Raw Resource
 
   Cobblestone Slab:
@@ -3433,12 +3434,12 @@ resources:
 
   Brown Terracotta:
     recipes:
+    - recipe_type: Raw Resource
     - output: 8
       recipe_type: Crafting
       requirements:
         Terracotta: -8
         Brown Dye: -1
-    - recipe_type: Raw Resource
 
   Green Terracotta:
     recipes:
@@ -6494,11 +6495,6 @@ resources:
 
   Gold Ingot:
     recipes:
-    - output: 1
-      recipe_type: Smelting
-      requirements:
-        Raw Gold: -1
-        Fuel: -1
     - recipe_type: Raw Resource
     - output: 9
       recipe_type: Crafting
@@ -6523,7 +6519,11 @@ resources:
       requirements:
         Deepslate Gold Ore: -1
         Fuel: -1
-
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Raw Gold: -1
+        Fuel: -1
 
   Netherite Ingot:
     recipes:
@@ -7199,24 +7199,27 @@ resources:
   Water Bucket:
     recipes:
     - output: 1
-      recipe_type: Crafting
+      recipe_type: Fill Bucket
       requirements:
+        # TODO: Water Block: -1
         Bucket: -1
     - recipe_type: Raw Resource
 
   Lava Bucket: 
     recipes:
     - output: 1
-      recipe_type: Crafting
+      recipe_type: Fill Bucket
       requirements:
+        # TODO: Lava Block: -1
         Bucket: -1
     - recipe_type: Raw Resource
 
   Powder Snow Bucket: 
     recipes:
     - output: 1
-      recipe_type: Crafting
+      recipe_type: Fill Bucket
       requirements:
+        # TODO: Powder Snow Block: -1  
         Bucket: -1
     - recipe_type: Raw Resource
 
@@ -7237,48 +7240,54 @@ resources:
   Milk Bucket:
     recipes:
     - output: 1
-      recipe_type: Crafting
+      recipe_type: Fill Bucket
       requirements:
+        # TODO: Cow: -0 (infinite)
         Bucket: -1
     - recipe_type: Raw Resource
 
   Bucket of Pufferfish:
     recipes:
     - output: 1
-      recipe_type: Crafting
+      recipe_type: Fill Bucket
       requirements:
+        # TODO: Pufferfish: -1
         Bucket: -1
     - recipe_type: Raw Resource
 
   Bucket of Salmon:
     recipes:
     - output: 1
-      recipe_type: Crafting
+      recipe_type: Fill Bucket
       requirements:
+        # TODO: Salmon: -1 
         Bucket: -1
     - recipe_type: Raw Resource
 
   Bucket of Cod:
     recipes:
     - output: 1
-      recipe_type: Crafting
+      recipe_type: Fill Bucket
       requirements:
+        # TODO: Cod: -1
         Bucket: -1
     - recipe_type: Raw Resource
 
   Bucket of Tropical Fish:
     recipes:
     - output: 1
-      recipe_type: Crafting
+      recipe_type: Fill Bucket
       requirements:
+        # TODO: Tropical Fish: -1
         Bucket: -1
     - recipe_type: Raw Resource
 
   Bucket of Axolotl:
     recipes:
     - output: 1
-      recipe_type: Crafting
+      recipe_type: Fill Bucket
       requirements:
+        # TODO: Axolotl: -1
         Bucket: -1
     - recipe_type: Raw Resource
 
@@ -7541,6 +7550,10 @@ resources:
 
   Light Gray Dye:
     recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oxeye Daisy: -1
     - output: 3
       recipe_type: Crafting
       requirements:
@@ -7550,10 +7563,6 @@ resources:
       recipe_type: Crafting
       requirements:
         White Tulip: -1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Oxeye Daisy: -1
     - output: 2
       recipe_type: Crafting
       requirements:
@@ -7563,7 +7572,6 @@ resources:
       recipe_type: Crafting
       requirements:
         Azure Bluet: -1
-
     - recipe_type: Raw Resource
 
   Cyan Dye:
