@@ -19,13 +19,16 @@ from pylib.webminify import minify_css_blocks
 # Creates producers for generating the calculator pages.
 ################################################################################
 def calculator_producers(calculator_dir_regex: str) -> List[GenericProducer]:
-    return [
-        Producer(
+
+    calculator_producer: Producer[CalculatorInputFiles, SingleFile] = Producer(
             input_path_patterns={
                 "resources_pickle": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/resources\.pickle$".format(
                     calculator_dir_regex=calculator_dir_regex
                 ),
                 "image_layout_json": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/packed_image_layout\.json$".format(
+                    calculator_dir_regex=calculator_dir_regex
+                ),
+                "image_metadata": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/compressed_packed_image\.json$".format(
                     calculator_dir_regex=calculator_dir_regex
                 ),
                 "css_filename_data": r"^cache/calculator\.css\.json",
@@ -35,7 +38,8 @@ def calculator_producers(calculator_dir_regex: str) -> List[GenericProducer]:
             function=calculator_function,
             categories=["calculator"],
         )
-
+    return [
+        calculator_producer
     ]
 
 
@@ -48,6 +52,7 @@ def calculator_producers(calculator_dir_regex: str) -> List[GenericProducer]:
 class CalculatorInputFiles(TypedDict):
     resources_pickle: str
     image_layout_json: str
+    image_metadata: str
     css_filename_data: str
     calculator_template: str
 
@@ -78,7 +83,7 @@ def calculator_paths(input_files: CalculatorInputFiles, categories: Dict[str, st
 def calculator_function(input_files: CalculatorInputFiles, output_files: SingleFile) -> None:
 
     resource_list_file = input_files["resources_pickle"]
-    image_metadata_file = input_files["image_layout_json"]
+    image_layout_file = input_files["image_layout_json"]
 
     match = re.match(r"^cache/([a-z_ ]+)/resources.pickle$", resource_list_file)
     if match is None:
@@ -87,11 +92,14 @@ def calculator_function(input_files: CalculatorInputFiles, output_files: SingleF
 
     calculator_index_html_filepath = output_files["file"]
 
-    with open(image_metadata_file) as f:
-        image_metadata = json.load(f)
-        image_width = image_metadata["standard_width"]
-        image_height = image_metadata["standard_height"]
-        resource_image_coordinates = image_metadata["image_coordinates"]
+    with open(image_layout_file) as f:
+        image_layout_data = json.load(f)
+        image_width = image_layout_data["standard_width"]
+        image_height = image_layout_data["standard_height"]
+        resource_image_coordinates = image_layout_data["image_coordinates"]
+
+    # Get the relative hashed name of the calculator's stitched item images
+    calculator_item_image = filename_from_metadatafile(input_files["image_metadata"], rel=os.path.dirname(calculator_index_html_filepath))
 
     # Load and validate the type of the resource list data
     with open(resource_list_file, 'rb') as f:
@@ -138,7 +146,8 @@ def calculator_function(input_files: CalculatorInputFiles, output_files: SingleF
         item_height=image_height,
         item_styles=item_styles,
         # The name of the calculator
-        resource_list=calculator_name,
+        calculator_name=calculator_name,
+        resource_image=calculator_item_image,
         # Javascript formatting functions for recipe instructions # TODO this should be made into format strings to save space
         recipe_type_format_js=recipe_type_format_js,
         # The list of authors and emails to display in the authors sections

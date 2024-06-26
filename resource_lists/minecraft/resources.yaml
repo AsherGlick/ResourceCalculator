@@ -6,9 +6,9 @@ authors:
 
 index_page_display_name: "Minecraft"
 
-game_version: Java 1.20.1
+game_version: Java 1.19
 
-banner_message: "Now updated to 1.20!"
+banner_message: "Now updated to 1.19!"
 
 recipe_types:
   Crafting: "Craft {IN_ITEMS} into {OUT_ITEM}"
@@ -22,6 +22,7 @@ recipe_types:
   Cutting: "Use a stonecutter to cut {IN_ITEMS} into {OUT_ITEM}"
   Oxidation: "Place {IN_ITEMS} down as blocks until they oxidize into {OUT_ITEM}"
   Smithing Table: "Use a smithing table to upgrade {IN_ITEMS} into {OUT_ITEM}"
+  Fill Bucket: "Right click while holding a bucket to turn {IN_ITEMS} into {OUT_ITEM}"
 
 requirement_groups:
   Any Acacia Log:
@@ -95,11 +96,6 @@ requirement_groups:
   - Stripped Warped Stem
   - Warped Hyphae
   - Warped Stem
-  - Cherry Log
-  - Cherry Wood
-  - Stripped Cherry Log
-  - Stripped Cherry Wood
-
 
   Any Log That Burns:
   - Oak Log
@@ -130,10 +126,6 @@ requirement_groups:
   - Stripped Oak Wood
   - Stripped Spruce Log
   - Stripped Spruce Wood
-  - Cherry Log
-  - Cherry Wood
-  - Stripped Cherry Log
-  - Stripped Cherry Wood
 
   Any Mangrove Log:
   - Mangrove Log
@@ -157,8 +149,6 @@ requirement_groups:
   - Mangrove Planks
   - Spruce Planks
   - Warped Planks
-  - Bamboo Planks
-  - Cherry Planks
 
   Any Purpur Block:
   - Purpur Block
@@ -172,7 +162,6 @@ requirement_groups:
   Any Sand:
   - Sand
   - Red Sand
-  - Suspicious Sand
 
   Any Shulker Box:
   - Shulker Box
@@ -203,8 +192,6 @@ requirement_groups:
   - Mangrove Slab
   - Spruce Slab
   - Warped Slab
-  - Bamboo Slab
-  - Cherry Slab
 
   Any Soul Fire Base Block:
   - Soul Sand
@@ -268,836 +255,6 @@ requirement_groups:
   - Chiseled Sandstone
   - Cut Sandstone
 
-  Any Bamboo Block:
-  - Block of Bamboo
-  - Block of Stripped Bamboo
-
-  Any Cherry Log:
-  - Cherry Log
-  - Cherry Wood
-  - Stripped Cherry Log
-  - Stripped Cherry Wood
-
-
-  # These are weird, but they are kinda how minecraft is storing things internally.
-  # A future version will do something nicer with these
-  Any Bed Except Black Bed:
-  - White Bed
-  - Blue Bed
-  - Brown Bed
-  - Cyan Bed
-  - Gray Bed
-  - Green Bed
-  - Light Blue Bed
-  - Light Gray Bed
-  - Lime Bed
-  - Magenta Bed
-  - Orange Bed
-  - Pink Bed
-  - Purple Bed
-  - Red Bed
-  - Yellow Bed
-
-  Any Bed Except Blue Bed:
-  - White Bed
-  - Black Bed
-  - Brown Bed
-  - Cyan Bed
-  - Gray Bed
-  - Green Bed
-  - Light Blue Bed
-  - Light Gray Bed
-  - Lime Bed
-  - Magenta Bed
-  - Orange Bed
-  - Pink Bed
-  - Purple Bed
-  - Red Bed
-  - Yellow Bed
-
-  Any Bed Except Brown Bed:
-  - White Bed
-  - Black Bed
-  - Blue Bed
-  - Cyan Bed
-  - Gray Bed
-  - Green Bed
-  - Light Blue Bed
-  - Light Gray Bed
-  - Lime Bed
-  - Magenta Bed
-  - Orange Bed
-  - Pink Bed
-  - Purple Bed
-  - Red Bed
-  - Yellow Bed
-
-  Any Bed Except Cyan Bed:
-  - White Bed
-  - Black Bed
-  - Blue Bed
-  - Brown Bed
-  - Gray Bed
-  - Green Bed
-  - Light Blue Bed
-  - Light Gray Bed
-  - Lime Bed
-  - Magenta Bed
-  - Orange Bed
-  - Pink Bed
-  - Purple Bed
-  - Red Bed
-  - Yellow Bed
-
-  Any Bed Except Gray Bed:
-  - White Bed
-  - Black Bed
-  - Blue Bed
-  - Brown Bed
-  - Cyan Bed
-  - Green Bed
-  - Light Blue Bed
-  - Light Gray Bed
-  - Lime Bed
-  - Magenta Bed
-  - Orange Bed
-  - Pink Bed
-  - Purple Bed
-  - Red Bed
-  - Yellow Bed
-
-  Any Bed Except Green Bed:
-  - White Bed
-  - Black Bed
-  - Blue Bed
-  - Brown Bed
-  - Cyan Bed
-  - Gray Bed
-  - Light Blue Bed
-  - Light Gray Bed
-  - Lime Bed
-  - Magenta Bed
-  - Orange Bed
-  - Pink Bed
-  - Purple Bed
-  - Red Bed
-  - Yellow Bed
-
-  Any Bed Except Light Blue Bed:
-  - White Bed
-  - Black Bed
-  - Blue Bed
-  - Brown Bed
-  - Cyan Bed
-  - Gray Bed
-  - Green Bed
-  - Light Gray Bed
-  - Lime Bed
-  - Magenta Bed
-  - Orange Bed
-  - Pink Bed
-  - Purple Bed
-  - Red Bed
-  - Yellow Bed
-
-  Any Bed Except Light Gray Bed:
-  - White Bed
-  - Black Bed
-  - Blue Bed
-  - Brown Bed
-  - Cyan Bed
-  - Gray Bed
-  - Green Bed
-  - Light Blue Bed
-  - Lime Bed
-  - Magenta Bed
-  - Orange Bed
-  - Pink Bed
-  - Purple Bed
-  - Red Bed
-  - Yellow Bed
-
-  Any Bed Except Lime Bed:
-  - White Bed
-  - Black Bed
-  - Blue Bed
-  - Brown Bed
-  - Cyan Bed
-  - Gray Bed
-  - Green Bed
-  - Light Blue Bed
-  - Light Gray Bed
-  - Magenta Bed
-  - Orange Bed
-  - Pink Bed
-  - Purple Bed
-  - Red Bed
-  - Yellow Bed
-
-  Any Bed Except Magenta Bed:
-  - White Bed
-  - Black Bed
-  - Blue Bed
-  - Brown Bed
-  - Cyan Bed
-  - Gray Bed
-  - Green Bed
-  - Light Blue Bed
-  - Light Gray Bed
-  - Lime Bed
-  - Orange Bed
-  - Pink Bed
-  - Purple Bed
-  - Red Bed
-  - Yellow Bed
-
-  Any Bed Except Orange Bed:
-  - White Bed
-  - Black Bed
-  - Blue Bed
-  - Brown Bed
-  - Cyan Bed
-  - Gray Bed
-  - Green Bed
-  - Light Blue Bed
-  - Light Gray Bed
-  - Lime Bed
-  - Magenta Bed
-  - Pink Bed
-  - Purple Bed
-  - Red Bed
-  - Yellow Bed
-
-  Any Bed Except Pink Bed:
-  - White Bed
-  - Black Bed
-  - Blue Bed
-  - Brown Bed
-  - Cyan Bed
-  - Gray Bed
-  - Green Bed
-  - Light Blue Bed
-  - Light Gray Bed
-  - Lime Bed
-  - Magenta Bed
-  - Orange Bed
-  - Purple Bed
-  - Red Bed
-  - Yellow Bed
-
-  Any Bed Except Purple Bed:
-  - White Bed
-  - Black Bed
-  - Blue Bed
-  - Brown Bed
-  - Cyan Bed
-  - Gray Bed
-  - Green Bed
-  - Light Blue Bed
-  - Light Gray Bed
-  - Lime Bed
-  - Magenta Bed
-  - Orange Bed
-  - Pink Bed
-  - Red Bed
-  - Yellow Bed
-
-  Any Bed Except Red Bed:
-  - White Bed
-  - Black Bed
-  - Blue Bed
-  - Brown Bed
-  - Cyan Bed
-  - Gray Bed
-  - Green Bed
-  - Light Blue Bed
-  - Light Gray Bed
-  - Lime Bed
-  - Magenta Bed
-  - Orange Bed
-  - Pink Bed
-  - Purple Bed
-  - Yellow Bed
-
-  Any Bed Except White Bed:
-  - Black Bed
-  - Blue Bed
-  - Brown Bed
-  - Cyan Bed
-  - Gray Bed
-  - Green Bed
-  - Light Blue Bed
-  - Light Gray Bed
-  - Lime Bed
-  - Magenta Bed
-  - Orange Bed
-  - Pink Bed
-  - Purple Bed
-  - Red Bed
-  - Yellow Bed
-
-  Any Bed Except Yellow Bed:
-  - White Bed
-  - Black Bed
-  - Blue Bed
-  - Brown Bed
-  - Cyan Bed
-  - Gray Bed
-  - Green Bed
-  - Light Blue Bed
-  - Light Gray Bed
-  - Lime Bed
-  - Magenta Bed
-  - Orange Bed
-  - Pink Bed
-  - Purple Bed
-  - Red Bed
-
-  Any Carpet Except Black Carpet:
-  - White Carpet
-  - Blue Carpet
-  - Brown Carpet
-  - Cyan Carpet
-  - Gray Carpet
-  - Green Carpet
-  - Light Blue Carpet
-  - Light Gray Carpet
-  - Lime Carpet
-  - Magenta Carpet
-  - Orange Carpet
-  - Pink Carpet
-  - Purple Carpet
-  - Red Carpet
-  - Yellow Carpet
-
-  Any Carpet Except Blue Carpet:
-  - White Carpet
-  - Black Carpet
-  - Brown Carpet
-  - Cyan Carpet
-  - Gray Carpet
-  - Green Carpet
-  - Light Blue Carpet
-  - Light Gray Carpet
-  - Lime Carpet
-  - Magenta Carpet
-  - Orange Carpet
-  - Pink Carpet
-  - Purple Carpet
-  - Red Carpet
-  - Yellow Carpet
-
-  Any Carpet Except Brown Carpet:
-  - White Carpet
-  - Black Carpet
-  - Blue Carpet
-  - Cyan Carpet
-  - Gray Carpet
-  - Green Carpet
-  - Light Blue Carpet
-  - Light Gray Carpet
-  - Lime Carpet
-  - Magenta Carpet
-  - Orange Carpet
-  - Pink Carpet
-  - Purple Carpet
-  - Red Carpet
-  - Yellow Carpet
-
-  Any Carpet Except Cyan Carpet:
-  - White Carpet
-  - Black Carpet
-  - Blue Carpet
-  - Brown Carpet
-  - Gray Carpet
-  - Green Carpet
-  - Light Blue Carpet
-  - Light Gray Carpet
-  - Lime Carpet
-  - Magenta Carpet
-  - Orange Carpet
-  - Pink Carpet
-  - Purple Carpet
-  - Red Carpet
-  - Yellow Carpet
-
-  Any Carpet Except Gray Carpet:
-  - White Carpet
-  - Black Carpet
-  - Blue Carpet
-  - Brown Carpet
-  - Cyan Carpet
-  - Green Carpet
-  - Light Blue Carpet
-  - Light Gray Carpet
-  - Lime Carpet
-  - Magenta Carpet
-  - Orange Carpet
-  - Pink Carpet
-  - Purple Carpet
-  - Red Carpet
-  - Yellow Carpet
-
-  Any Carpet Except Green Carpet:
-  - White Carpet
-  - Black Carpet
-  - Blue Carpet
-  - Brown Carpet
-  - Cyan Carpet
-  - Gray Carpet
-  - Light Blue Carpet
-  - Light Gray Carpet
-  - Lime Carpet
-  - Magenta Carpet
-  - Orange Carpet
-  - Pink Carpet
-  - Purple Carpet
-  - Red Carpet
-  - Yellow Carpet
-
-  Any Carpet Except Light Blue Carpet:
-  - White Carpet
-  - Black Carpet
-  - Blue Carpet
-  - Brown Carpet
-  - Cyan Carpet
-  - Gray Carpet
-  - Green Carpet
-  - Light Gray Carpet
-  - Lime Carpet
-  - Magenta Carpet
-  - Orange Carpet
-  - Pink Carpet
-  - Purple Carpet
-  - Red Carpet
-  - Yellow Carpet
-
-  Any Carpet Except Light Gray Carpet:
-  - White Carpet
-  - Black Carpet
-  - Blue Carpet
-  - Brown Carpet
-  - Cyan Carpet
-  - Gray Carpet
-  - Green Carpet
-  - Light Blue Carpet
-  - Lime Carpet
-  - Magenta Carpet
-  - Orange Carpet
-  - Pink Carpet
-  - Purple Carpet
-  - Red Carpet
-  - Yellow Carpet
-
-  Any Carpet Except Lime Carpet:
-  - White Carpet
-  - Black Carpet
-  - Blue Carpet
-  - Brown Carpet
-  - Cyan Carpet
-  - Gray Carpet
-  - Green Carpet
-  - Light Blue Carpet
-  - Light Gray Carpet
-  - Magenta Carpet
-  - Orange Carpet
-  - Pink Carpet
-  - Purple Carpet
-  - Red Carpet
-  - Yellow Carpet
-
-  Any Carpet Except Magenta Carpet:
-  - White Carpet
-  - Black Carpet
-  - Blue Carpet
-  - Brown Carpet
-  - Cyan Carpet
-  - Gray Carpet
-  - Green Carpet
-  - Light Blue Carpet
-  - Light Gray Carpet
-  - Lime Carpet
-  - Orange Carpet
-  - Pink Carpet
-  - Purple Carpet
-  - Red Carpet
-  - Yellow Carpet
-
-  Any Carpet Except Orange Carpet:
-  - White Carpet
-  - Black Carpet
-  - Blue Carpet
-  - Brown Carpet
-  - Cyan Carpet
-  - Gray Carpet
-  - Green Carpet
-  - Light Blue Carpet
-  - Light Gray Carpet
-  - Lime Carpet
-  - Magenta Carpet
-  - Pink Carpet
-  - Purple Carpet
-  - Red Carpet
-  - Yellow Carpet
-
-  Any Carpet Except Pink Carpet:
-  - White Carpet
-  - Black Carpet
-  - Blue Carpet
-  - Brown Carpet
-  - Cyan Carpet
-  - Gray Carpet
-  - Green Carpet
-  - Light Blue Carpet
-  - Light Gray Carpet
-  - Lime Carpet
-  - Magenta Carpet
-  - Orange Carpet
-  - Purple Carpet
-  - Red Carpet
-  - Yellow Carpet
-
-  Any Carpet Except Purple Carpet:
-  - White Carpet
-  - Black Carpet
-  - Blue Carpet
-  - Brown Carpet
-  - Cyan Carpet
-  - Gray Carpet
-  - Green Carpet
-  - Light Blue Carpet
-  - Light Gray Carpet
-  - Lime Carpet
-  - Magenta Carpet
-  - Orange Carpet
-  - Pink Carpet
-  - Red Carpet
-  - Yellow Carpet
-
-  Any Carpet Except Red Carpet:
-  - White Carpet
-  - Black Carpet
-  - Blue Carpet
-  - Brown Carpet
-  - Cyan Carpet
-  - Gray Carpet
-  - Green Carpet
-  - Light Blue Carpet
-  - Light Gray Carpet
-  - Lime Carpet
-  - Magenta Carpet
-  - Orange Carpet
-  - Pink Carpet
-  - Purple Carpet
-  - Yellow Carpet
-
-  Any Carpet Except White Carpet:
-  - Black Carpet
-  - Blue Carpet
-  - Brown Carpet
-  - Cyan Carpet
-  - Gray Carpet
-  - Green Carpet
-  - Light Blue Carpet
-  - Light Gray Carpet
-  - Lime Carpet
-  - Magenta Carpet
-  - Orange Carpet
-  - Pink Carpet
-  - Purple Carpet
-  - Red Carpet
-  - Yellow Carpet
-
-  Any Carpet Except Yellow Carpet:
-  - White Carpet
-  - Black Carpet
-  - Blue Carpet
-  - Brown Carpet
-  - Cyan Carpet
-  - Gray Carpet
-  - Green Carpet
-  - Light Blue Carpet
-  - Light Gray Carpet
-  - Lime Carpet
-  - Magenta Carpet
-  - Orange Carpet
-  - Pink Carpet
-  - Purple Carpet
-  - Red Carpet
-
-  Any Wool Except Black Wool:
-  - White Wool
-  - Blue Wool
-  - Brown Wool
-  - Cyan Wool
-  - Gray Wool
-  - Green Wool
-  - Light Blue Wool
-  - Light Gray Wool
-  - Lime Wool
-  - Magenta Wool
-  - Orange Wool
-  - Pink Wool
-  - Purple Wool
-  - Red Wool
-  - Yellow Wool
-
-  Any Wool Except Blue Wool:
-  - White Wool
-  - Black Wool
-  - Brown Wool
-  - Cyan Wool
-  - Gray Wool
-  - Green Wool
-  - Light Blue Wool
-  - Light Gray Wool
-  - Lime Wool
-  - Magenta Wool
-  - Orange Wool
-  - Pink Wool
-  - Purple Wool
-  - Red Wool
-  - Yellow Wool
-
-  Any Wool Except Brown Wool:
-  - White Wool
-  - Black Wool
-  - Blue Wool
-  - Cyan Wool
-  - Gray Wool
-  - Green Wool
-  - Light Blue Wool
-  - Light Gray Wool
-  - Lime Wool
-  - Magenta Wool
-  - Orange Wool
-  - Pink Wool
-  - Purple Wool
-  - Red Wool
-  - Yellow Wool
-
-  Any Wool Except Cyan Wool:
-  - White Wool
-  - Black Wool
-  - Blue Wool
-  - Brown Wool
-  - Gray Wool
-  - Green Wool
-  - Light Blue Wool
-  - Light Gray Wool
-  - Lime Wool
-  - Magenta Wool
-  - Orange Wool
-  - Pink Wool
-  - Purple Wool
-  - Red Wool
-  - Yellow Wool
-
-  Any Wool Except Gray Wool:
-  - White Wool
-  - Black Wool
-  - Blue Wool
-  - Brown Wool
-  - Cyan Wool
-  - Green Wool
-  - Light Blue Wool
-  - Light Gray Wool
-  - Lime Wool
-  - Magenta Wool
-  - Orange Wool
-  - Pink Wool
-  - Purple Wool
-  - Red Wool
-  - Yellow Wool
-
-  Any Wool Except Green Wool:
-  - White Wool
-  - Black Wool
-  - Blue Wool
-  - Brown Wool
-  - Cyan Wool
-  - Gray Wool
-  - Light Blue Wool
-  - Light Gray Wool
-  - Lime Wool
-  - Magenta Wool
-  - Orange Wool
-  - Pink Wool
-  - Purple Wool
-  - Red Wool
-  - Yellow Wool
-
-  Any Wool Except Light Blue Wool:
-  - White Wool
-  - Black Wool
-  - Blue Wool
-  - Brown Wool
-  - Cyan Wool
-  - Gray Wool
-  - Green Wool
-  - Light Gray Wool
-  - Lime Wool
-  - Magenta Wool
-  - Orange Wool
-  - Pink Wool
-  - Purple Wool
-  - Red Wool
-  - Yellow Wool
-
-  Any Wool Except Light Gray Wool:
-  - White Wool
-  - Black Wool
-  - Blue Wool
-  - Brown Wool
-  - Cyan Wool
-  - Gray Wool
-  - Green Wool
-  - Light Blue Wool
-  - Lime Wool
-  - Magenta Wool
-  - Orange Wool
-  - Pink Wool
-  - Purple Wool
-  - Red Wool
-  - Yellow Wool
-
-  Any Wool Except Lime Wool:
-  - White Wool
-  - Black Wool
-  - Blue Wool
-  - Brown Wool
-  - Cyan Wool
-  - Gray Wool
-  - Green Wool
-  - Light Blue Wool
-  - Light Gray Wool
-  - Magenta Wool
-  - Orange Wool
-  - Pink Wool
-  - Purple Wool
-  - Red Wool
-  - Yellow Wool
-
-  Any Wool Except Magenta Wool:
-  - White Wool
-  - Black Wool
-  - Blue Wool
-  - Brown Wool
-  - Cyan Wool
-  - Gray Wool
-  - Green Wool
-  - Light Blue Wool
-  - Light Gray Wool
-  - Lime Wool
-  - Orange Wool
-  - Pink Wool
-  - Purple Wool
-  - Red Wool
-  - Yellow Wool
-
-  Any Wool Except Orange Wool:
-  - White Wool
-  - Black Wool
-  - Blue Wool
-  - Brown Wool
-  - Cyan Wool
-  - Gray Wool
-  - Green Wool
-  - Light Blue Wool
-  - Light Gray Wool
-  - Lime Wool
-  - Magenta Wool
-  - Pink Wool
-  - Purple Wool
-  - Red Wool
-  - Yellow Wool
-
-  Any Wool Except Pink Wool:
-  - White Wool
-  - Black Wool
-  - Blue Wool
-  - Brown Wool
-  - Cyan Wool
-  - Gray Wool
-  - Green Wool
-  - Light Blue Wool
-  - Light Gray Wool
-  - Lime Wool
-  - Magenta Wool
-  - Orange Wool
-  - Purple Wool
-  - Red Wool
-  - Yellow Wool
-
-  Any Wool Except Purple Wool:
-  - White Wool
-  - Black Wool
-  - Blue Wool
-  - Brown Wool
-  - Cyan Wool
-  - Gray Wool
-  - Green Wool
-  - Light Blue Wool
-  - Light Gray Wool
-  - Lime Wool
-  - Magenta Wool
-  - Orange Wool
-  - Pink Wool
-  - Red Wool
-  - Yellow Wool
-
-  Any Wool Except Red Wool:
-  - White Wool
-  - Black Wool
-  - Blue Wool
-  - Brown Wool
-  - Cyan Wool
-  - Gray Wool
-  - Green Wool
-  - Light Blue Wool
-  - Light Gray Wool
-  - Lime Wool
-  - Magenta Wool
-  - Orange Wool
-  - Pink Wool
-  - Purple Wool
-  - Yellow Wool
-
-  Any Wool Except White Wool:
-  - Black Wool
-  - Blue Wool
-  - Brown Wool
-  - Cyan Wool
-  - Gray Wool
-  - Green Wool
-  - Light Blue Wool
-  - Light Gray Wool
-  - Lime Wool
-  - Magenta Wool
-  - Orange Wool
-  - Pink Wool
-  - Purple Wool
-  - Red Wool
-  - Yellow Wool
-
-  Any Wool Except Yellow Wool:
-  - White Wool
-  - Black Wool
-  - Blue Wool
-  - Brown Wool
-  - Cyan Wool
-  - Gray Wool
-  - Green Wool
-  - Light Blue Wool
-  - Light Gray Wool
-  - Lime Wool
-  - Magenta Wool
-  - Orange Wool
-  - Pink Wool
-  - Purple Wool
-  - Red Wool
-  # End of the weird wool stuff
-
 
 stack_sizes:
   Double Chest:
@@ -1138,14 +295,14 @@ resources:
 
   Polished Granite:
     recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Granite: -4
     - output: 1
       recipe_type: Cutting
       requirements:
         Granite: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Granite: -4
     - recipe_type: Raw Resource
 
   Diorite:
@@ -1159,20 +316,19 @@ resources:
 
   Polished Diorite:
     recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Diorite: -4
     - output: 1
       recipe_type: Cutting
       requirements:
         Diorite: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Diorite: -4
     - recipe_type: Raw Resource
 
   Andesite:
     recipes:
     - recipe_type: Raw Resource
-
     - output: 2
       recipe_type: Crafting
       requirements:
@@ -1181,24 +337,24 @@ resources:
 
   Polished Andesite:
     recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Andesite: -4
     - output: 1
       recipe_type: Cutting
       requirements:
         Andesite: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Andesite: -4
     - recipe_type: Raw Resource
 
   Deepslate:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Smelting
       requirements:
         Cobbled Deepslate: -1
         Fuel: -1
-    - recipe_type: Raw Resource
 
   Cobbled Deepslate:
     recipes:
@@ -1206,14 +362,14 @@ resources:
 
   Polished Deepslate:
     recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Cobbled Deepslate: -4
     - output: 1
       recipe_type: Cutting
       requirements:
         Cobbled Deepslate: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Cobbled Deepslate: -4
     - recipe_type: Raw Resource
 
   Calcite:
@@ -1578,45 +734,45 @@ resources:
   Cut Copper:
     recipes:
     - output: 4
-      recipe_type: Crafting
-      requirements:
-        Block of Copper: -4
-    - output: 4
       recipe_type: Cutting
       requirements:
         Block of Copper: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Block of Copper: -4
     - recipe_type: Raw Resource
 
   Exposed Cut Copper:
     recipes:
-    - output: 4
-      recipe_type: Crafting
+    - output: 1
+      recipe_type: Oxidation
       requirements:
-        Exposed Copper: -4
+        Cut Copper: -1
     - output: 4
       recipe_type: Cutting
       requirements:
         Exposed Copper: -1
-    - output: 1
-      recipe_type: Oxidation
+    - output: 4
+      recipe_type: Crafting
       requirements:
-        Cut Copper: -1
+        Exposed Copper: -4
     - recipe_type: Raw Resource
 
   Weathered Cut Copper:
     recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Weathered Copper: -4
-    - output: 4
-      recipe_type: Cutting
-      requirements:
-        Weathered Copper: -1
     - output: 1
       recipe_type: Oxidation
       requirements:
         Cut Copper: -1
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Weathered Copper: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Weathered Copper: -4
     - output: 1
       recipe_type: Oxidation
       requirements:
@@ -1625,18 +781,18 @@ resources:
 
   Oxidized Cut Copper:
     recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Oxidized Copper: -4
-    - output: 4
-      recipe_type: Cutting
-      requirements:
-        Oxidized Copper: -1
     - output: 1
       recipe_type: Oxidation
       requirements:
         Cut Copper: -1
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Oxidized Copper: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Oxidized Copper: -4
     - output: 1
       recipe_type: Oxidation
       requirements:
@@ -1649,23 +805,26 @@ resources:
 
   Cut Copper Stairs:
     recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Cut Copper: -6
-    - output: 4
-      recipe_type: Cutting
-      requirements:
-        Block of Copper: -1
     - output: 1
       recipe_type: Cutting
       requirements:
         Cut Copper: -1
-
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Block of Copper: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Cut Copper: -6
     - recipe_type: Raw Resource
 
   Exposed Cut Copper Stairs:
     recipes:
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Cut Copper Stairs: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1678,14 +837,14 @@ resources:
       recipe_type: Cutting
       requirements:
         Exposed Cut Copper: -1
-    - output: 1
-      recipe_type: Oxidation
-      requirements:
-        Cut Copper Stairs: -1
     - recipe_type: Raw Resource
 
   Weathered Cut Copper Stairs:
     recipes:
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Cut Copper Stairs: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1701,15 +860,15 @@ resources:
     - output: 1
       recipe_type: Oxidation
       requirements:
-        Cut Copper Stairs: -1
-    - output: 1
-      recipe_type: Oxidation
-      requirements:
         Exposed Cut Copper Stairs: -1
     - recipe_type: Raw Resource
 
   Oxidized Cut Copper Stairs:
     recipes:
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Cut Copper Stairs: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1725,10 +884,6 @@ resources:
     - output: 1
       recipe_type: Oxidation
       requirements:
-        Cut Copper Stairs: -1
-    - output: 1
-      recipe_type: Oxidation
-      requirements:
         Exposed Cut Copper Stairs: -1
     - output: 1
       recipe_type: Oxidation
@@ -1738,6 +893,10 @@ resources:
 
   Cut Copper Slab:
     recipes:
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Cut Copper: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -1746,14 +905,14 @@ resources:
       recipe_type: Cutting
       requirements:
         Block of Copper: -1
-    - output: 2
-      recipe_type: Cutting
-      requirements:
-        Cut Copper: -1
     - recipe_type: Raw Resource
 
   Exposed Cut Copper Slab:
     recipes:
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Cut Copper Slab: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -1766,14 +925,14 @@ resources:
       recipe_type: Cutting
       requirements:
         Exposed Cut Copper: -1
-    - output: 1
-      recipe_type: Oxidation
-      requirements:
-        Cut Copper Slab: -1
     - recipe_type: Raw Resource
 
   Weathered Cut Copper Slab:
     recipes:
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Cut Copper Slab: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -1789,15 +948,15 @@ resources:
     - output: 1
       recipe_type: Oxidation
       requirements:
-        Cut Copper Slab: -1
-    - output: 1
-      recipe_type: Oxidation
-      requirements:
         Exposed Cut Copper Slab: -1
     - recipe_type: Raw Resource
 
   Oxidized Cut Copper Slab:
     recipes:
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Cut Copper Slab: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -1810,10 +969,6 @@ resources:
       recipe_type: Cutting
       requirements:
         Oxidized Cut Copper: -1
-    - output: 1
-      recipe_type: Oxidation
-      requirements:
-        Cut Copper Slab: -1
     - output: 1
       recipe_type: Oxidation
       requirements:
@@ -2435,13 +1590,13 @@ resources:
   Chiseled Sandstone:
     recipes:
     - output: 1
-      recipe_type: Crafting
-      requirements:
-        Sandstone Slab: -2
-    - output: 1
       recipe_type: Cutting
       requirements:
         Sandstone: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Sandstone Slab: -2
     - output: 1
       recipe_type: Raw Resource
       requirements:
@@ -2449,14 +1604,14 @@ resources:
 
   Cut Sandstone:
     recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Sandstone: -4
     - output: 1
       recipe_type: Cutting
       requirements:
         Sandstone: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Sandstone: -4
     - output: 1
       recipe_type: Raw Resource
       requirements:
@@ -2502,146 +1657,141 @@ resources:
       recipe_type: Crafting
       requirements:
         String: -4
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        White Dye: -1
-        Any Wool Except White Wool: -1
 
   Orange Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Wool Except Orange Wool: -1
+        White Wool: -1
         Orange Dye: -1
-    - recipe_type: Raw Resource
 
   Magenta Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Wool Except Magenta Wool: -1
+        White Wool: -1
         Magenta Dye: -1
-    - recipe_type: Raw Resource
 
   Light Blue Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Wool Except Light Blue Wool: -1
+        White Wool: -1
         Light Blue Dye: -1
-    - recipe_type: Raw Resource
 
   Yellow Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Wool Except Yellow Wool: -1
+        White Wool: -1
         Yellow Dye: -1
-    - recipe_type: Raw Resource
 
   Lime Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Wool Except Lime Wool: -1
+        White Wool: -1
         Lime Dye: -1
-    - recipe_type: Raw Resource
 
   Pink Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Wool Except Pink Wool: -1
+        White Wool: -1
         Pink Dye: -1
-    - recipe_type: Raw Resource
 
   Gray Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Wool Except Gray Wool: -1
+        White Wool: -1
         Gray Dye: -1
-    - recipe_type: Raw Resource
 
   Light Gray Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Wool Except Light Gray Wool: -1
+        White Wool: -1
         Light Gray Dye: -1
-    - recipe_type: Raw Resource
 
   Cyan Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Wool Except Cyan Wool: -1
+        White Wool: -1
         Cyan Dye: -1
-    - recipe_type: Raw Resource
 
   Purple Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Wool Except Purple Wool: -1
+        White Wool: -1
         Purple Dye: -1
-    - recipe_type: Raw Resource
 
   Blue Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Wool Except Blue Wool: -1
+        White Wool: -1
         Blue Dye: -1
-    - recipe_type: Raw Resource
 
   Brown Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Wool Except Brown Wool: -1
+        White Wool: -1
         Brown Dye: -1
-    - recipe_type: Raw Resource
 
   Green Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Wool Except Green Wool: -1
+        White Wool: -1
         Green Dye: -1
-    - recipe_type: Raw Resource
 
   Red Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Wool Except Red Wool: -1
+        White Wool: -1
         Red Dye: -1
-    - recipe_type: Raw Resource
 
   Black Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Wool Except Black Wool: -1
+        White Wool: -1
         Black Dye: -1
-    - recipe_type: Raw Resource
 
   Dandelion:
     recipes:
@@ -2837,42 +1987,46 @@ resources:
 
   Stone Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Stone: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Stone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Stone: -3
     - recipe_type: Raw Resource
 
   Smooth Stone Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Smooth Stone: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Smooth Stone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Smooth Stone: -3
     - recipe_type: Raw Resource
 
   Sandstone Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Any Uncut Yellow Sandstone: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Sandstone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Any Uncut Yellow Sandstone: -3
     - recipe_type: Raw Resource
 
   Cut Sandstone Slab:
     recipes:
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Sandstone: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -2881,46 +2035,42 @@ resources:
       recipe_type: Cutting
       requirements:
         Cut Sandstone: -1
-    - output: 2
-      recipe_type: Cutting
-      requirements:
-        Sandstone: -1
     - recipe_type: Raw Resource
 
   Cobblestone Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Cobblestone: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Cobblestone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Cobblestone: -3
     - recipe_type: Raw Resource
 
   Brick Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Bricks: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Bricks: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Bricks: -3
     - recipe_type: Raw Resource
 
   Stone Brick Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Stone Bricks: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Stone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Stone Bricks: -3
     - output: 2
       recipe_type: Cutting
       requirements:
@@ -2929,50 +2079,50 @@ resources:
 
   Nether Brick Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Nether Bricks: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Nether Bricks: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Nether Bricks: -3
     - recipe_type: Raw Resource
 
   Quartz Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Any Unsmooth Quartz Block: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Block of Quartz: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Any Unsmooth Quartz Block: -3
     - recipe_type: Raw Resource
 
   Red Sandstone Slab:
     recipes:
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Red Sandstone: -1
     - output: 6
       recipe_type: Crafting
       requirements:
         Any Uncut Red Sandstone: -3
-    - output: 2
-      recipe_type: Cutting
-      requirements:
-        Red Sandstone: -1
     - recipe_type: Raw Resource
 
   Cut Red Sandstone Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Cut Red Sandstone: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Red Sandstone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Cut Red Sandstone: -3
     - output: 2
       recipe_type: Cutting
       requirements:
@@ -2993,38 +2143,38 @@ resources:
 
   Prismarine Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Prismarine: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Prismarine: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Prismarine: -3
     - recipe_type: Raw Resource
 
   Prismarine Brick Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Prismarine Bricks: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Prismarine Bricks: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Prismarine Bricks: -3
     - recipe_type: Raw Resource
 
   Dark Prismarine Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Dark Prismarine: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Dark Prismarine: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Dark Prismarine: -3
     - recipe_type: Raw Resource
 
   Smooth Quartz Block:
@@ -3087,12 +2237,12 @@ resources:
       recipe_type: Crafting
       requirements:
         Cobblestone: -1
-        Vines: -1
+        Moss Block: -1
     - output: 1
       recipe_type: Crafting
       requirements:
         Cobblestone: -1
-        Moss Block: -1
+        Vines: -1
     - recipe_type: Raw Resource
 
   Obsidian:
@@ -3450,14 +2600,14 @@ resources:
 
   Stone Bricks:
     recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Stone: -4
     - output: 1
       recipe_type: Cutting
       requirements:
         Stone: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stone: -4
     - recipe_type: Raw Resource
 
   Mossy Stone Bricks:
@@ -3466,12 +2616,12 @@ resources:
       recipe_type: Crafting
       requirements:
         Stone Bricks: -1
-        Vines: -1
+        Moss Block: -1
     - output: 1
       recipe_type: Crafting
       requirements:
         Stone Bricks: -1
-        Moss Block: -1
+        Vines: -1
     - recipe_type: Raw Resource
 
   Cracked Stone Bricks:
@@ -3486,13 +2636,13 @@ resources:
   Chiseled Stone Bricks:
     recipes:
     - output: 1
-      recipe_type: Crafting
-      requirements:
-        Stone Brick Slab: -2
-    - output: 1
       recipe_type: Cutting
       requirements:
         Stone: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stone Brick Slab: -2
     - output: 1
       recipe_type: Cutting
       requirements:
@@ -3504,11 +2654,11 @@ resources:
     - output: 1
       recipe_type: Cutting
       requirements:
-        Polished Deepslate: -1
+        Cobbled Deepslate: -1
     - output: 1
       recipe_type: Cutting
       requirements:
-        Cobbled Deepslate: -1
+        Polished Deepslate: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -3526,6 +2676,10 @@ resources:
 
   Deepslate Tiles:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Cobbled Deepslate: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -3538,10 +2692,6 @@ resources:
       recipe_type: Cutting
       requirements:
         Polished Deepslate: -1
-    - output: 1
-      recipe_type: Cutting
-      requirements:
-        Cobbled Deepslate: -1
     - recipe_type: Raw Resource
 
   Cracked Deepslate Tiles:
@@ -3556,13 +2706,13 @@ resources:
   Chiseled Deepslate:
     recipes:
     - output: 1
-      recipe_type: Crafting
-      requirements:
-        Cobbled Deepslate Slab: -2
-    - output: 1
       recipe_type: Cutting
       requirements:
         Cobbled Deepslate: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cobbled Deepslate Slab: -2
     - recipe_type: Raw Resource
 
   Brown Mushroom Block:
@@ -3604,11 +2754,11 @@ resources:
 
   Melon:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         Melon Slice: -9
-    - recipe_type: Raw Resource
 
   Vines:
     recipes:
@@ -3674,13 +2824,13 @@ resources:
   Chiseled Nether Bricks:
     recipes:
     - output: 1
-      recipe_type: Crafting
-      requirements:
-        Nether Brick Slab: -2
-    - output: 1
       recipe_type: Cutting
       requirements:
         Nether Bricks: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Nether Brick Slab: -2
     - recipe_type: Raw Resource
 
   Nether Brick Fence:
@@ -3724,14 +2874,14 @@ resources:
 
   End Stone Bricks:
     recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        End Stone: -4
     - output: 1
       recipe_type: Cutting
       requirements:
         End Stone: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        End Stone: -4
     - recipe_type: Raw Resource
 
   Sandstone Stairs:
@@ -4176,21 +3326,21 @@ resources:
 
   White Terracotta:
     recipes:
+    - recipe_type: Raw Resource
     - output: 8
       recipe_type: Crafting
       requirements:
         Terracotta: -8
         White Dye: -1
-    - recipe_type: Raw Resource
 
   Orange Terracotta:
     recipes:
+    - recipe_type: Raw Resource
     - output: 8
       recipe_type: Crafting
       requirements:
         Terracotta: -8
         Orange Dye: -1
-    - recipe_type: Raw Resource
 
   Magenta Terracotta:
     recipes:
@@ -4212,12 +3362,12 @@ resources:
 
   Yellow Terracotta:
     recipes:
+    - recipe_type: Raw Resource
     - output: 8
       recipe_type: Crafting
       requirements:
         Terracotta: -8
         Yellow Dye: -1
-    - recipe_type: Raw Resource
 
   Lime Terracotta:
     recipes:
@@ -4248,12 +3398,12 @@ resources:
 
   Light Gray Terracotta:
     recipes:
+    - recipe_type: Raw Resource
     - output: 8
       recipe_type: Crafting
       requirements:
         Terracotta: -8
         Light Gray Dye: -1
-    - recipe_type: Raw Resource
 
   Cyan Terracotta:
     recipes:
@@ -4284,12 +3434,12 @@ resources:
 
   Brown Terracotta:
     recipes:
+    - recipe_type: Raw Resource
     - output: 8
       recipe_type: Crafting
       requirements:
         Terracotta: -8
         Brown Dye: -1
-    - recipe_type: Raw Resource
 
   Green Terracotta:
     recipes:
@@ -4302,12 +3452,12 @@ resources:
 
   Red Terracotta:
     recipes:
+    - recipe_type: Raw Resource
     - output: 8
       recipe_type: Crafting
       requirements:
         Terracotta: -8
         Red Dye: -1
-    - recipe_type: Raw Resource
 
   Black Terracotta:
     recipes:
@@ -4332,11 +3482,6 @@ resources:
       recipe_type: Crafting
       requirements:
         White Wool: -2
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Any Carpet Except White Carpet: -1
-        White Dye: -1
     - recipe_type: Raw Resource
 
   Orange Carpet:
@@ -4345,10 +3490,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Orange Wool: -2
-    - output: 1
+    - output: 8
       recipe_type: Crafting
       requirements:
-        Any Carpet Except Orange Carpet: -1
+        White Carpet: -8
         Orange Dye: -1
     - recipe_type: Raw Resource
 
@@ -4358,10 +3503,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Magenta Wool: -2
-    - output: 1
+    - output: 8
       recipe_type: Crafting
       requirements:
-        Any Carpet Except Magenta Carpet: -1
+        White Carpet: -8
         Magenta Dye: -1
     - recipe_type: Raw Resource
 
@@ -4371,10 +3516,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Light Blue Wool: -2
-    - output: 1
+    - output: 8
       recipe_type: Crafting
       requirements:
-        Any Carpet Except Light Blue Carpet: -1
+        White Carpet: -8
         Light Blue Dye: -1
     - recipe_type: Raw Resource
 
@@ -4384,10 +3529,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Yellow Wool: -2
-    - output: 1
+    - output: 8
       recipe_type: Crafting
       requirements:
-        Any Carpet Except Yellow Carpet: -1
+        White Carpet: -8
         Yellow Dye: -1
     - recipe_type: Raw Resource
 
@@ -4397,10 +3542,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Lime Wool: -2
-    - output: 1
+    - output: 8
       recipe_type: Crafting
       requirements:
-        Any Carpet Except Lime Carpet: -1
+        White Carpet: -8
         Lime Dye: -1
     - recipe_type: Raw Resource
 
@@ -4410,10 +3555,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Pink Wool: -2
-    - output: 1
+    - output: 8
       recipe_type: Crafting
       requirements:
-        Any Carpet Except Pink Carpet: -1
+        White Carpet: -8
         Pink Dye: -1
     - recipe_type: Raw Resource
 
@@ -4423,10 +3568,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Gray Wool: -2
-    - output: 1
+    - output: 8
       recipe_type: Crafting
       requirements:
-        Any Carpet Except Gray Carpet: -1
+        White Carpet: -8
         Gray Dye: -1
     - recipe_type: Raw Resource
 
@@ -4436,10 +3581,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Light Gray Wool: -2
-    - output: 1
+    - output: 8
       recipe_type: Crafting
       requirements:
-        Any Carpet Except Light Gray Carpet: -1
+        White Carpet: -8
         Light Gray Dye: -1
     - recipe_type: Raw Resource
 
@@ -4449,10 +3594,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Cyan Wool: -2
-    - output: 1
+    - output: 8
       recipe_type: Crafting
       requirements:
-        Any Carpet Except Cyan Carpet: -1
+        White Carpet: -8
         Cyan Dye: -1 
     - recipe_type: Raw Resource
 
@@ -4462,10 +3607,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Purple Wool: -2
-    - output: 1
+    - output: 8
       recipe_type: Crafting
       requirements:
-        Any Carpet Except Purple Carpet: -1
+        White Carpet: -8
         Purple Dye: -1 
     - recipe_type: Raw Resource
 
@@ -4475,10 +3620,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Blue Wool: -2
-    - output: 1
+    - output: 8
       recipe_type: Crafting
       requirements:
-        Any Carpet Except Blue Carpet: -1
+        White Carpet: -8
         Blue Dye: -1 
     - recipe_type: Raw Resource
 
@@ -4488,10 +3633,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Brown Wool: -2
-    - output: 1
+    - output: 8
       recipe_type: Crafting
       requirements:
-        Any Carpet Except Brown Carpet: -1
+        White Carpet: -8
         Brown Dye: -1 
     - recipe_type: Raw Resource
 
@@ -4501,10 +3646,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Green Wool: -2
-    - output: 1
+    - output: 8
       recipe_type: Crafting
       requirements:
-        Any Carpet Except Green Carpet: -1
+        White Carpet: -8
         Green Dye: -1 
     - recipe_type: Raw Resource
 
@@ -4514,10 +3659,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Red Wool: -2
-    - output: 1
+    - output: 8
       recipe_type: Crafting
       requirements:
-        Any Carpet Except Red Carpet: -1
+        White Carpet: -8
         Red Dye: -1 
     - recipe_type: Raw Resource
 
@@ -4527,21 +3672,21 @@ resources:
       recipe_type: Crafting
       requirements:
         Black Wool: -2
-    - output: 1
+    - output: 8
       recipe_type: Crafting
       requirements:
-        Any Carpet Except Black Carpet: -1
+        White Carpet: -8
         Black Dye: -1 
     - recipe_type: Raw Resource
 
   Terracotta:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Smelting
       requirements:
         Clay: -1
         Fuel: -1
-    - recipe_type: Raw Resource
 
   Packed Ice:
     recipes:
@@ -4606,6 +3751,7 @@ resources:
   Rose Bush:
     recipes:
     - recipe_type: Raw Resource
+
   Peony:
     recipes:
     - recipe_type: Raw Resource
@@ -6048,11 +5194,11 @@ resources:
     - output: 1
       recipe_type: Cutting
       requirements:
-        Polished Deepslate: -1
+        Cobbled Deepslate: -1
     - output: 1
       recipe_type: Cutting
       requirements:
-        Cobbled Deepslate: -1
+        Polished Deepslate: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -6064,15 +5210,15 @@ resources:
     - output: 1
       recipe_type: Cutting
       requirements:
+        Cobbled Deepslate: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
         Deepslate Bricks: -1
     - output: 1
       recipe_type: Cutting
       requirements:
         Polished Deepslate: -1
-    - output: 1
-      recipe_type: Cutting
-      requirements:
-        Cobbled Deepslate: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -6081,6 +5227,10 @@ resources:
 
   Deepslate Tile Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Cobbled Deepslate: -1
     - output: 1
       recipe_type: Cutting
       requirements:
@@ -6097,10 +5247,6 @@ resources:
       recipe_type: Cutting
       requirements:
         Deepslate Bricks: -1
-    - output: 1
-      recipe_type: Cutting
-      requirements:
-        Cobbled Deepslate: -1
     - recipe_type: Raw Resource
 
   Polished Granite Slab:
@@ -6292,11 +5438,11 @@ resources:
     - output: 2
       recipe_type: Cutting
       requirements:
-        Polished Deepslate: -1
+        Cobbled Deepslate: -1
     - output: 2
       recipe_type: Cutting
       requirements:
-        Cobbled Deepslate: -1
+        Polished Deepslate: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -6328,6 +5474,10 @@ resources:
     - output: 2
       recipe_type: Cutting
       requirements:
+        Cobbled Deepslate: -1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
         Deepslate Tiles: -1
     - output: 2
       recipe_type: Cutting
@@ -6337,10 +5487,6 @@ resources:
       recipe_type: Cutting
       requirements:
         Deepslate Bricks: -1
-    - output: 2
-      recipe_type: Cutting
-      requirements:
-        Cobbled Deepslate: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -7314,6 +6460,11 @@ resources:
 
   Copper Ingot:
     recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Raw Copper: -1
+        Fuel: -1
     - recipe_type: Raw Resource
     - output: 9
       recipe_type: Crafting
@@ -7332,11 +6483,6 @@ resources:
       recipe_type: Smelting
       requirements:
         Deepslate Copper Ore: -1
-        Fuel: -1
-    - output: 1
-      recipe_type: Smelting
-      requirements:
-        Raw Copper: -1
         Fuel: -1
 
   Raw Gold:
@@ -7378,7 +6524,6 @@ resources:
       requirements:
         Raw Gold: -1
         Fuel: -1
-
 
   Netherite Ingot:
     recipes:
@@ -8051,16 +7196,31 @@ resources:
     custom_stack_multipliers:
       Stack: 16
 
-  Water Bucket: # TODO: Should this have a recipe?
+  Water Bucket:
     recipes:
+    - output: 1
+      recipe_type: Fill Bucket
+      requirements:
+        # TODO: Water Block: -1
+        Bucket: -1
     - recipe_type: Raw Resource
 
-  Lava Bucket: # TODO Should this have a recipe?
+  Lava Bucket: 
     recipes:
+    - output: 1
+      recipe_type: Fill Bucket
+      requirements:
+        # TODO: Lava Block: -1
+        Bucket: -1
     - recipe_type: Raw Resource
 
-  Powder Snow Bucket: # TODO Should this have a recipe?
+  Powder Snow Bucket: 
     recipes:
+    - output: 1
+      recipe_type: Fill Bucket
+      requirements:
+        # TODO: Powder Snow Block: -1  
+        Bucket: -1
     - recipe_type: Raw Resource
 
   Snowball:
@@ -8079,26 +7239,56 @@ resources:
 
   Milk Bucket:
     recipes:
+    - output: 1
+      recipe_type: Fill Bucket
+      requirements:
+        # TODO: Cow: -0 (infinite)
+        Bucket: -1
     - recipe_type: Raw Resource
 
   Bucket of Pufferfish:
     recipes:
+    - output: 1
+      recipe_type: Fill Bucket
+      requirements:
+        # TODO: Pufferfish: -1
+        Bucket: -1
     - recipe_type: Raw Resource
 
   Bucket of Salmon:
     recipes:
+    - output: 1
+      recipe_type: Fill Bucket
+      requirements:
+        # TODO: Salmon: -1 
+        Bucket: -1
     - recipe_type: Raw Resource
 
   Bucket of Cod:
     recipes:
+    - output: 1
+      recipe_type: Fill Bucket
+      requirements:
+        # TODO: Cod: -1
+        Bucket: -1
     - recipe_type: Raw Resource
 
   Bucket of Tropical Fish:
     recipes:
+    - output: 1
+      recipe_type: Fill Bucket
+      requirements:
+        # TODO: Tropical Fish: -1
+        Bucket: -1
     - recipe_type: Raw Resource
 
   Bucket of Axolotl:
     recipes:
+    - output: 1
+      recipe_type: Fill Bucket
+      requirements:
+        # TODO: Axolotl: -1
+        Bucket: -1
     - recipe_type: Raw Resource
 
   Brick:
@@ -8262,14 +7452,14 @@ resources:
       recipe_type: Crafting
       requirements:
         Orange Tulip: -1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Torchflower: -1
     - recipe_type: Raw Resource
 
   Magenta Dye:
     recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Lilac: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -8281,10 +7471,6 @@ resources:
       requirements:
         Purple Dye: -1
         Pink Dye: -1
-    - output: 2
-      recipe_type: Crafting
-      requirements:
-        Lilac: -1
     - output: 3
       recipe_type: Crafting
       requirements:
@@ -8312,14 +7498,14 @@ resources:
 
   Yellow Dye:
     recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Dandelion: -1
     - output: 2
       recipe_type: Crafting
       requirements:
         Sunflower: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Dandelion: -1
     - recipe_type: Raw Resource
 
   Lime Dye:
@@ -8341,20 +7527,16 @@ resources:
     - output: 2
       recipe_type: Crafting
       requirements:
+        Peony: -1
+    - output: 2
+      recipe_type: Crafting
+      requirements:
         White Dye: -1
         Red Dye: -1
     - output: 1
       recipe_type: Crafting
       requirements:
         Pink Tulip: -1
-    - output: 2
-      recipe_type: Crafting
-      requirements:
-        Peony: -1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Pink Petals: -1
     - recipe_type: Raw Resource
 
   Gray Dye:
@@ -8368,6 +7550,10 @@ resources:
 
   Light Gray Dye:
     recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oxeye Daisy: -1
     - output: 3
       recipe_type: Crafting
       requirements:
@@ -8377,10 +7563,6 @@ resources:
       recipe_type: Crafting
       requirements:
         White Tulip: -1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Oxeye Daisy: -1
     - output: 2
       recipe_type: Crafting
       requirements:
@@ -8390,7 +7572,6 @@ resources:
       recipe_type: Crafting
       requirements:
         Azure Bluet: -1
-
     - recipe_type: Raw Resource
 
   Cyan Dye:
@@ -8400,10 +7581,6 @@ resources:
       requirements:
         Blue Dye: -1
         Green Dye: -1
-    - output: 2
-      recipe_type: Crafting
-      requirements:
-        Pitcher Plant: -1
     - recipe_type: Raw Resource
 
   Purple Dye:
@@ -8522,11 +7699,6 @@ resources:
       requirements:
         Any Planks: -3
         White Wool: -3
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Any Bed Except White Bed: -1
-        White Dye: -1
     - recipe_type: Raw Resource
 
   Orange Bed:
@@ -8539,7 +7711,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Bed Except Orange Bed: -1
+        White Bed: -1
         Orange Dye: -1
     - recipe_type: Raw Resource
 
@@ -8553,7 +7725,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Bed Except Magenta Bed: -1
+        White Bed: -1
         Magenta Dye: -1
     - recipe_type: Raw Resource
 
@@ -8567,7 +7739,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Bed Except Light Blue Bed: -1
+        White Bed: -1
         Light Blue Dye: -1
     - output: 1
       recipe_type: Raw Resource
@@ -8584,7 +7756,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Bed Except Yellow Bed: -1
+        White Bed: -1
         Yellow Dye: -1
     - recipe_type: Raw Resource
 
@@ -8598,7 +7770,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Bed Except Lime Bed: -1
+        White Bed: -1
         Lime Dye: -1
     - recipe_type: Raw Resource
 
@@ -8612,7 +7784,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Bed Except Pink Bed: -1
+        White Bed: -1
         Pink Dye: -1
     - recipe_type: Raw Resource
 
@@ -8626,7 +7798,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Bed Except Gray Bed: -1
+        White Bed: -1
         Gray Dye: -1
     - recipe_type: Raw Resource
 
@@ -8640,7 +7812,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Bed Except Light Gray Bed: -1
+        White Bed: -1
         Light Gray Dye: -1
     - output: 1
       recipe_type: Raw Resource
@@ -8657,7 +7829,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Bed Except Cyan Bed: -1
+        White Bed: -1
         Cyan Dye: -1
     - recipe_type: Raw Resource
 
@@ -8671,7 +7843,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Bed Except Purple Bed: -1
+        White Bed: -1
         Purple Dye: -1
     - recipe_type: Raw Resource
 
@@ -8685,7 +7857,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Bed Except Blue Bed: -1
+        White Bed: -1
         Blue Dye: -1
     - recipe_type: Raw Resource
 
@@ -8699,7 +7871,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Bed Except Brown Bed: -1
+        White Bed: -1
         Brown Dye: -1
     - recipe_type: Raw Resource
 
@@ -8713,7 +7885,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Bed Except Green Bed: -1
+        White Bed: -1
         Green Dye: -1
     - recipe_type: Raw Resource
 
@@ -8727,7 +7899,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Bed Except Red Bed: -1
+        White Bed: -1
         Red Dye: -1
     - recipe_type: Raw Resource
 
@@ -8741,7 +7913,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Bed Except Black Bed: -1
+        White Bed: -1
         Black Dye: -1
     - recipe_type: Raw Resource
 
@@ -9040,12 +8212,12 @@ resources:
 
   Baked Potato:
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Smelting
       requirements:
         Potato: -1
         Fuel: -1
+    - recipe_type: Raw Resource
 
   Poisonous Potato:
     recipes:
@@ -10364,11 +9536,11 @@ resources:
 
   Music Disc:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         Disc Fragment: -9
-    - recipe_type: Raw Resource
 
   Oak Boat with Chest:
     recipes:
@@ -10449,6 +9621,12 @@ resources:
 
   Banner Pattern:
     recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Paper: -1
+        Oxeye Daisy: -1
     - output: 1
       recipe_type: Crafting
       requirements:
@@ -10464,12 +9642,6 @@ resources:
       requirements:
         Paper: -1
         Creeper Head: -1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Paper: -1
-        Oxeye Daisy: -1
-    - recipe_type: Raw Resource
 
   Bucket of Tadpole:
     recipes:
@@ -10496,6 +9668,10 @@ resources:
     - recipe_type: Raw Resource
 
   Pearlescent Froglight:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Petrified Oak Slab:
     recipes:
     - recipe_type: Raw Resource
 
@@ -10526,459 +9702,3 @@ resources:
   Verdant Froglight:
     recipes:
     - recipe_type: Raw Resource
-
-  Acacia Hanging Sign:
-    recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Chain: -2
-        Stripped Acacia Log: -6
-    - recipe_type: Raw Resource
-
-  Block of Bamboo:
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bamboo: -9
-    - recipe_type: Raw Resource
-
-  Bamboo Button:
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bamboo Planks: -1
-    - recipe_type: Raw Resource
-
-  Bamboo Raft with Chest:
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Chest: -1
-        Bamboo Raft: -1
-    - recipe_type: Raw Resource
-
-  Bamboo Door:
-    recipes:
-    - output: 3
-      recipe_type: Crafting
-      requirements:
-        Bamboo Planks: -6
-    - recipe_type: Raw Resource
-
-  Bamboo Fence:
-    recipes:
-    - output: 3
-      recipe_type: Crafting
-      requirements:
-        Bamboo Planks: -4
-        Stick: -2
-    - recipe_type: Raw Resource
-
-  Bamboo Fence Gate:
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Stick: -4
-        Bamboo Planks: -2
-    - recipe_type: Raw Resource
-
-  Bamboo Hanging Sign:
-    recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Chain: -2
-        Block of Stripped Bamboo: -6
-    - recipe_type: Raw Resource
-
-  Bamboo Mosaic:
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bamboo Slab: -2
-    - recipe_type: Raw Resource
-
-  Bamboo Mosaic Slab:
-    recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Bamboo Mosaic: -3
-    - recipe_type: Raw Resource
-
-  Bamboo Mosaic Stairs:
-    recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Bamboo Mosaic: -6
-    - recipe_type: Raw Resource
-
-  Bamboo Planks:
-    recipes:
-    - output: 2
-      recipe_type: Crafting
-      requirements:
-        Any Bamboo Block: -1
-    - recipe_type: Raw Resource
-
-  Bamboo Pressure Plate:
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bamboo Planks: -2
-    - recipe_type: Raw Resource
-
-  Bamboo Raft:
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bamboo Planks: -5
-    - recipe_type: Raw Resource
-
-  Bamboo Sign:
-    recipes:
-    - output: 3
-      recipe_type: Crafting
-      requirements:
-        Bamboo Planks: -6
-        Stick: -1
-    - recipe_type: Raw Resource
-
-  Bamboo Slab:
-    recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Bamboo Planks: -3
-    - recipe_type: Raw Resource
-
-  Bamboo Stairs:
-    recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Bamboo Planks: -6
-    - recipe_type: Raw Resource
-
-  Bamboo Trapdoor:
-    recipes:
-    - output: 2
-      recipe_type: Crafting
-      requirements:
-        Bamboo Planks: -6
-    - recipe_type: Raw Resource
-
-  Birch Hanging Sign:
-    recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Chain: -2
-        Stripped Birch Log: -6
-    - recipe_type: Raw Resource
-
-  Brush:
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Feather: -1
-        Copper Ingot: -1
-        Stick: -1
-    - recipe_type: Raw Resource
-
-  Calibrated Sculk Sensor:
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Amethyst Shard: -3
-        Sculk Sensor: -1
-    - recipe_type: Raw Resource
-
-  Cherry Boat:
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Cherry Planks: -5
-    - recipe_type: Raw Resource
-
-  Cherry Button:
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Cherry Planks: -1
-    - recipe_type: Raw Resource
-
-  Cherry Boat with Chest:
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Chest: -1
-        Cherry Boat: -1
-    - recipe_type: Raw Resource
-
-  Cherry Door:
-    recipes:
-    - output: 3
-      recipe_type: Crafting
-      requirements:
-        Cherry Planks: -6
-    - recipe_type: Raw Resource
-
-  Cherry Fence:
-    recipes:
-    - output: 3
-      recipe_type: Crafting
-      requirements:
-        Cherry Planks: -4
-        Stick: -2
-    - recipe_type: Raw Resource
-
-  Cherry Fence Gate:
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Stick: -4
-        Cherry Planks: -2
-    - recipe_type: Raw Resource
-
-  Cherry Hanging Sign:
-    recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Chain: -2
-        Stripped Cherry Log: -6
-    - recipe_type: Raw Resource
-
-  Cherry Planks:
-    recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Any Cherry Log: -1
-    - recipe_type: Raw Resource
-
-  Cherry Pressure Plate:
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Cherry Planks: -2
-    - recipe_type: Raw Resource
-
-  Cherry Sign:
-    recipes:
-    - output: 3
-      recipe_type: Crafting
-      requirements:
-        Cherry Planks: -6
-        Stick: -1
-    - recipe_type: Raw Resource
-
-  Cherry Slab:
-    recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Cherry Planks: -3
-    - recipe_type: Raw Resource
-
-  Cherry Stairs:
-    recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Cherry Planks: -6
-    - recipe_type: Raw Resource
-
-  Cherry Trapdoor:
-    recipes:
-    - output: 2
-      recipe_type: Crafting
-      requirements:
-        Cherry Planks: -6
-    - recipe_type: Raw Resource
-
-  Cherry Wood:
-    recipes:
-    - output: 3
-      recipe_type: Crafting
-      requirements:
-        Cherry Log: -4
-    - recipe_type: Raw Resource
-
-  Chiseled Bookshelf:
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Any Planks: -6
-        Any Slab: -3
-    - recipe_type: Raw Resource
-
-  Crimson Hanging Sign:
-    recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Chain: -2
-        Stripped Crimson Stem: -6
-    - recipe_type: Raw Resource
-
-  Dark Oak Hanging Sign:
-    recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Chain: -2
-        Stripped Dark Oak Log: -6
-    - recipe_type: Raw Resource
-
-  Jungle Hanging Sign:
-    recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Chain: -2
-        Stripped Jungle Log: -6
-    - recipe_type: Raw Resource
-
-  Mangrove Hanging Sign:
-    recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Chain: -2
-        Stripped Mangrove Log: -6
-    - recipe_type: Raw Resource
-
-  Oak Hanging Sign:
-    recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Chain: -2
-        Stripped Oak Log: -6
-    - recipe_type: Raw Resource
-
-  Decorated Pot:
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Brick: -4
-    - recipe_type: Raw Resource
-
-  Spruce Hanging Sign:
-    recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Chain: -2
-        Stripped Spruce Log: -6
-    - recipe_type: Raw Resource
-
-  Stripped Cherry Wood:
-    recipes:
-    - output: 1
-      recipe_type: Strip
-      requirements:
-        Cherry Wood: -1
-    - output: 3
-      recipe_type: Crafting
-      requirements:
-        Stripped Cherry Log: -4
-    - recipe_type: Raw Resource
-
-  Warped Hanging Sign:
-    recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Chain: -2
-        Stripped Warped Stem: -6
-    - recipe_type: Raw Resource
-
-  Stripped Cherry Log:
-    recipes:
-    - output: 1
-      recipe_type: Strip
-      requirements:
-        Cherry Log: -1
-    - recipe_type: Raw Resource
-
-  Cherry Log:
-    recipes:
-    - recipe_type: Raw Resource
-
-  Block of Stripped Bamboo:
-    recipes:
-    - output: 1
-      recipe_type: Strip
-      requirements:
-        Block of Bamboo: -1
-    - recipe_type: Raw Resource
-
-  Pitcher Plant:
-    recipes:
-    - recipe_type: Raw Resource
-
-  Pink Petals:
-    recipes:
-    - recipe_type: Raw Resource
-
-  Torchflower:
-    recipes:
-    - recipe_type: Raw Resource
-
-  Ominous Banner:
-    recipes:
-    - recipe_type: Raw Resource
-
-  Cherry Leaves:
-    recipes:
-    - recipe_type: Raw Resource
-
-  Cherry Sapling:
-    recipes:
-    - recipe_type: Raw Resource
-
-  Piglin Head:
-    recipes:
-    - recipe_type: Raw Resource
-
-  Pitcher Pod:
-    recipes:
-    - recipe_type: Raw Resource
-
-  Sniffer Egg:
-    recipes:
-    - recipe_type: Raw Resource
-
-  Suspicious Gravel:
-    recipes:
-    - recipe_type: Raw Resource
-
-  Suspicious Sand:
-    recipes:
-    - recipe_type: Raw Resource
-
-  Torchflower Seeds:
-    recipes:
-    - recipe_type: Raw Resource
-

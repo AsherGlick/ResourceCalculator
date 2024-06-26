@@ -8,7 +8,7 @@ import shutil
 import subprocess
 
 from pylib.producer import Producer, MultiFile, SingleFile, GenericProducer
-
+from pylib.filehash import getfilehash
 
 ################################################################################
 # ImagePackOutputFiles
@@ -28,6 +28,18 @@ class ImagePackOutputFiles(TypedDict):
 # producers that take that compressed file and compress it into the final image.
 ################################################################################
 def item_image_producers(calculator_dir_regex: str) -> List[GenericProducer]:
+
+    copy_hashed_image: Producer[SingleFile, SingleHashedFile] = Producer(
+        input_path_patterns={
+            "file": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/compressed_packed_image\.png$".format(
+                calculator_dir_regex=calculator_dir_regex,
+            ),
+        },
+        paths=hash_and_copy_file_paths,
+        function=hash_and_copy_file,
+        categories=["landing"],
+    )
+
     return [
         # Pack Image
         Producer(
@@ -51,7 +63,8 @@ def item_image_producers(calculator_dir_regex: str) -> List[GenericProducer]:
             paths=image_compress_paths,
             function=image_compress_function,
             categories=["image", "compress", "imagecompress"]
-        )
+        ),
+        copy_hashed_image
     ]
 
 
@@ -155,7 +168,7 @@ def image_pack_function(input_files: MultiFile, output_files: ImagePackOutputFil
 def image_compress_paths(input_files: SingleFile, categories: Dict[str, str]) -> Tuple[SingleFile, SingleFile]:
     calculator_page = categories["calculator_dir"]
 
-    output_calculator_imagefile = os.path.join("output", calculator_page, calculator_page + ".png")
+    output_calculator_imagefile = os.path.join("cache", calculator_page, "compressed_packed_image.png")
 
     return (
         input_files,
@@ -163,7 +176,6 @@ def image_compress_paths(input_files: SingleFile, categories: Dict[str, str]) ->
             "file": output_calculator_imagefile
         }
     )
-
 
 ################################################################################
 # image_compress_function
@@ -199,3 +211,75 @@ def image_copy_function(input_file: str, match: "re.Match[str]", output_files: L
 
     # Copy the file
     shutil.copyfile(input_file, output_file)
+
+
+class SingleHashedFile(TypedDict):
+    file: str
+    filemetadata: str
+
+
+################################################################################
+# hash_and_copy_file
+#
+# Copies a file with a dynamic output and saves a file with that dynamic output
+# in a fixed location for later lookups
+################################################################################
+def hash_and_copy_file(
+    input_files: SingleFile,
+    output_files: SingleHashedFile
+) -> None:
+    input_file: str = input_files["file"]
+    output_file: str = output_files["file"]
+
+    output_metadata_file: str = output_files["filemetadata"]
+
+    # A GIANT HACK, but soon it wont be because we will be getting rid of the "paths" functions eventually so it is ok
+    file_hash = getfilehash(input_file)
+    base, extention = os.path.splitext(output_file)
+    output_file = base + "-" + file_hash + extention
+
+    # Copy the file
+    shutil.copyfile(input_file, output_file)
+
+    # Write the hashed file name to a known location
+    with open(output_metadata_file, 'w') as f:
+        json.dump({
+            "filename": output_file
+        }, f)
+
+
+################################################################################
+# logo_copy_paths
+#
+# The input and output paths generation function for copying icon files into the
+# output directory.
+################################################################################
+def hash_and_copy_file_paths(
+    input_files: SingleFile,
+    categories: Dict[str, str]
+) -> Tuple[SingleFile, SingleHashedFile]:
+
+    calculator_name = categories["calculator_dir"]
+
+    # A GIANT HACK but we will be getting rid of the "paths" functions eventually so it is ok
+    # We are doing this because this is a hack on a hack, and the original hack
+    # where we create the file hash within the "paths" function wont work on
+    # any file that does not exist at the start of generation. Nothing relies
+    # on the image output itself, so we are just lying about what the output
+    # filename is here so that we dont need to generate the hash here to
+    # determine the output filename. The only file that is depended on is the
+    # metadata which contains the real filepath, not the fake one.
+    #
+    # A new version of the scheduler will be getting rid of the "paths" function
+    # concept entirely rendering this hack,and the hack it is hacking, obsolete
+    # and will make this common process of hashed filenames much more trivial
+    # to implement.
+    new_filename = calculator_name + ".png"
+
+    return (
+        input_files,
+        {
+            "file": os.path.join("output", calculator_name, new_filename),
+            "filemetadata": os.path.join("cache", calculator_name, "compressed_packed_image.json"),
+        }
+    )
