@@ -22,6 +22,7 @@ recipe_types:
   Cutting: "Use a stonecutter to cut {IN_ITEMS} into {OUT_ITEM}"
   Oxidation: "Place {IN_ITEMS} down as blocks until they oxidize into {OUT_ITEM}"
   Smithing Table: "Use a smithing table to upgrade {IN_ITEMS} into {OUT_ITEM}"
+  Fill Bucket: "Right click while holding a bucket to turn {IN_ITEMS} into {OUT_ITEM}"
 
 requirement_groups:
   Any Acacia Log:
@@ -294,14 +295,14 @@ resources:
 
   Polished Granite:
     recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Granite: -4
     - output: 1
       recipe_type: Cutting
       requirements:
         Granite: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Granite: -4
     - recipe_type: Raw Resource
 
   Diorite:
@@ -315,20 +316,19 @@ resources:
 
   Polished Diorite:
     recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Diorite: -4
     - output: 1
       recipe_type: Cutting
       requirements:
         Diorite: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Diorite: -4
     - recipe_type: Raw Resource
 
   Andesite:
     recipes:
     - recipe_type: Raw Resource
-
     - output: 2
       recipe_type: Crafting
       requirements:
@@ -337,24 +337,24 @@ resources:
 
   Polished Andesite:
     recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Andesite: -4
     - output: 1
       recipe_type: Cutting
       requirements:
         Andesite: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Andesite: -4
     - recipe_type: Raw Resource
 
   Deepslate:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Smelting
       requirements:
         Cobbled Deepslate: -1
         Fuel: -1
-    - recipe_type: Raw Resource
 
   Cobbled Deepslate:
     recipes:
@@ -362,14 +362,14 @@ resources:
 
   Polished Deepslate:
     recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Cobbled Deepslate: -4
     - output: 1
       recipe_type: Cutting
       requirements:
         Cobbled Deepslate: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Cobbled Deepslate: -4
     - recipe_type: Raw Resource
 
   Calcite:
@@ -734,45 +734,45 @@ resources:
   Cut Copper:
     recipes:
     - output: 4
-      recipe_type: Crafting
-      requirements:
-        Block of Copper: -4
-    - output: 4
       recipe_type: Cutting
       requirements:
         Block of Copper: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Block of Copper: -4
     - recipe_type: Raw Resource
 
   Exposed Cut Copper:
     recipes:
-    - output: 4
-      recipe_type: Crafting
+    - output: 1
+      recipe_type: Oxidation
       requirements:
-        Exposed Copper: -4
+        Cut Copper: -1
     - output: 4
       recipe_type: Cutting
       requirements:
         Exposed Copper: -1
-    - output: 1
-      recipe_type: Oxidation
+    - output: 4
+      recipe_type: Crafting
       requirements:
-        Cut Copper: -1
+        Exposed Copper: -4
     - recipe_type: Raw Resource
 
   Weathered Cut Copper:
     recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Weathered Copper: -4
-    - output: 4
-      recipe_type: Cutting
-      requirements:
-        Weathered Copper: -1
     - output: 1
       recipe_type: Oxidation
       requirements:
         Cut Copper: -1
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Weathered Copper: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Weathered Copper: -4
     - output: 1
       recipe_type: Oxidation
       requirements:
@@ -781,18 +781,18 @@ resources:
 
   Oxidized Cut Copper:
     recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Oxidized Copper: -4
-    - output: 4
-      recipe_type: Cutting
-      requirements:
-        Oxidized Copper: -1
     - output: 1
       recipe_type: Oxidation
       requirements:
         Cut Copper: -1
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Oxidized Copper: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Oxidized Copper: -4
     - output: 1
       recipe_type: Oxidation
       requirements:
@@ -805,23 +805,26 @@ resources:
 
   Cut Copper Stairs:
     recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Cut Copper: -6
-    - output: 4
-      recipe_type: Cutting
-      requirements:
-        Block of Copper: -1
     - output: 1
       recipe_type: Cutting
       requirements:
         Cut Copper: -1
-
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Block of Copper: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Cut Copper: -6
     - recipe_type: Raw Resource
 
   Exposed Cut Copper Stairs:
     recipes:
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Cut Copper Stairs: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -834,14 +837,14 @@ resources:
       recipe_type: Cutting
       requirements:
         Exposed Cut Copper: -1
-    - output: 1
-      recipe_type: Oxidation
-      requirements:
-        Cut Copper Stairs: -1
     - recipe_type: Raw Resource
 
   Weathered Cut Copper Stairs:
     recipes:
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Cut Copper Stairs: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -857,15 +860,15 @@ resources:
     - output: 1
       recipe_type: Oxidation
       requirements:
-        Cut Copper Stairs: -1
-    - output: 1
-      recipe_type: Oxidation
-      requirements:
         Exposed Cut Copper Stairs: -1
     - recipe_type: Raw Resource
 
   Oxidized Cut Copper Stairs:
     recipes:
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Cut Copper Stairs: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -881,10 +884,6 @@ resources:
     - output: 1
       recipe_type: Oxidation
       requirements:
-        Cut Copper Stairs: -1
-    - output: 1
-      recipe_type: Oxidation
-      requirements:
         Exposed Cut Copper Stairs: -1
     - output: 1
       recipe_type: Oxidation
@@ -894,6 +893,10 @@ resources:
 
   Cut Copper Slab:
     recipes:
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Cut Copper: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -902,14 +905,14 @@ resources:
       recipe_type: Cutting
       requirements:
         Block of Copper: -1
-    - output: 2
-      recipe_type: Cutting
-      requirements:
-        Cut Copper: -1
     - recipe_type: Raw Resource
 
   Exposed Cut Copper Slab:
     recipes:
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Cut Copper Slab: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -922,14 +925,14 @@ resources:
       recipe_type: Cutting
       requirements:
         Exposed Cut Copper: -1
-    - output: 1
-      recipe_type: Oxidation
-      requirements:
-        Cut Copper Slab: -1
     - recipe_type: Raw Resource
 
   Weathered Cut Copper Slab:
     recipes:
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Cut Copper Slab: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -945,15 +948,15 @@ resources:
     - output: 1
       recipe_type: Oxidation
       requirements:
-        Cut Copper Slab: -1
-    - output: 1
-      recipe_type: Oxidation
-      requirements:
         Exposed Cut Copper Slab: -1
     - recipe_type: Raw Resource
 
   Oxidized Cut Copper Slab:
     recipes:
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Cut Copper Slab: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -966,10 +969,6 @@ resources:
       recipe_type: Cutting
       requirements:
         Oxidized Cut Copper: -1
-    - output: 1
-      recipe_type: Oxidation
-      requirements:
-        Cut Copper Slab: -1
     - output: 1
       recipe_type: Oxidation
       requirements:
@@ -1591,13 +1590,13 @@ resources:
   Chiseled Sandstone:
     recipes:
     - output: 1
-      recipe_type: Crafting
-      requirements:
-        Sandstone Slab: -2
-    - output: 1
       recipe_type: Cutting
       requirements:
         Sandstone: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Sandstone Slab: -2
     - output: 1
       recipe_type: Raw Resource
       requirements:
@@ -1605,14 +1604,14 @@ resources:
 
   Cut Sandstone:
     recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Sandstone: -4
     - output: 1
       recipe_type: Cutting
       requirements:
         Sandstone: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Sandstone: -4
     - output: 1
       recipe_type: Raw Resource
       requirements:
@@ -1661,138 +1660,138 @@ resources:
 
   Orange Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         White Wool: -1
         Orange Dye: -1
-    - recipe_type: Raw Resource
 
   Magenta Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         White Wool: -1
         Magenta Dye: -1
-    - recipe_type: Raw Resource
 
   Light Blue Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         White Wool: -1
         Light Blue Dye: -1
-    - recipe_type: Raw Resource
 
   Yellow Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         White Wool: -1
         Yellow Dye: -1
-    - recipe_type: Raw Resource
 
   Lime Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         White Wool: -1
         Lime Dye: -1
-    - recipe_type: Raw Resource
 
   Pink Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         White Wool: -1
         Pink Dye: -1
-    - recipe_type: Raw Resource
 
   Gray Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         White Wool: -1
         Gray Dye: -1
-    - recipe_type: Raw Resource
 
   Light Gray Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         White Wool: -1
         Light Gray Dye: -1
-    - recipe_type: Raw Resource
 
   Cyan Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         White Wool: -1
         Cyan Dye: -1
-    - recipe_type: Raw Resource
 
   Purple Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         White Wool: -1
         Purple Dye: -1
-    - recipe_type: Raw Resource
 
   Blue Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         White Wool: -1
         Blue Dye: -1
-    - recipe_type: Raw Resource
 
   Brown Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         White Wool: -1
         Brown Dye: -1
-    - recipe_type: Raw Resource
 
   Green Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         White Wool: -1
         Green Dye: -1
-    - recipe_type: Raw Resource
 
   Red Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         White Wool: -1
         Red Dye: -1
-    - recipe_type: Raw Resource
 
   Black Wool:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         White Wool: -1
         Black Dye: -1
-    - recipe_type: Raw Resource
 
   Dandelion:
     recipes:
@@ -1988,42 +1987,46 @@ resources:
 
   Stone Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Stone: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Stone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Stone: -3
     - recipe_type: Raw Resource
 
   Smooth Stone Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Smooth Stone: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Smooth Stone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Smooth Stone: -3
     - recipe_type: Raw Resource
 
   Sandstone Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Any Uncut Yellow Sandstone: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Sandstone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Any Uncut Yellow Sandstone: -3
     - recipe_type: Raw Resource
 
   Cut Sandstone Slab:
     recipes:
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Sandstone: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -2032,46 +2035,42 @@ resources:
       recipe_type: Cutting
       requirements:
         Cut Sandstone: -1
-    - output: 2
-      recipe_type: Cutting
-      requirements:
-        Sandstone: -1
     - recipe_type: Raw Resource
 
   Cobblestone Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Cobblestone: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Cobblestone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Cobblestone: -3
     - recipe_type: Raw Resource
 
   Brick Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Bricks: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Bricks: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Bricks: -3
     - recipe_type: Raw Resource
 
   Stone Brick Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Stone Bricks: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Stone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Stone Bricks: -3
     - output: 2
       recipe_type: Cutting
       requirements:
@@ -2080,50 +2079,50 @@ resources:
 
   Nether Brick Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Nether Bricks: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Nether Bricks: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Nether Bricks: -3
     - recipe_type: Raw Resource
 
   Quartz Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Any Unsmooth Quartz Block: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Block of Quartz: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Any Unsmooth Quartz Block: -3
     - recipe_type: Raw Resource
 
   Red Sandstone Slab:
     recipes:
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Red Sandstone: -1
     - output: 6
       recipe_type: Crafting
       requirements:
         Any Uncut Red Sandstone: -3
-    - output: 2
-      recipe_type: Cutting
-      requirements:
-        Red Sandstone: -1
     - recipe_type: Raw Resource
 
   Cut Red Sandstone Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Cut Red Sandstone: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Red Sandstone: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Cut Red Sandstone: -3
     - output: 2
       recipe_type: Cutting
       requirements:
@@ -2144,38 +2143,38 @@ resources:
 
   Prismarine Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Prismarine: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Prismarine: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Prismarine: -3
     - recipe_type: Raw Resource
 
   Prismarine Brick Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Prismarine Bricks: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Prismarine Bricks: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Prismarine Bricks: -3
     - recipe_type: Raw Resource
 
   Dark Prismarine Slab:
     recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Dark Prismarine: -3
     - output: 2
       recipe_type: Cutting
       requirements:
         Dark Prismarine: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Dark Prismarine: -3
     - recipe_type: Raw Resource
 
   Smooth Quartz Block:
@@ -2238,12 +2237,12 @@ resources:
       recipe_type: Crafting
       requirements:
         Cobblestone: -1
-        Vines: -1
+        Moss Block: -1
     - output: 1
       recipe_type: Crafting
       requirements:
         Cobblestone: -1
-        Moss Block: -1
+        Vines: -1
     - recipe_type: Raw Resource
 
   Obsidian:
@@ -2601,14 +2600,14 @@ resources:
 
   Stone Bricks:
     recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Stone: -4
     - output: 1
       recipe_type: Cutting
       requirements:
         Stone: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stone: -4
     - recipe_type: Raw Resource
 
   Mossy Stone Bricks:
@@ -2617,12 +2616,12 @@ resources:
       recipe_type: Crafting
       requirements:
         Stone Bricks: -1
-        Vines: -1
+        Moss Block: -1
     - output: 1
       recipe_type: Crafting
       requirements:
         Stone Bricks: -1
-        Moss Block: -1
+        Vines: -1
     - recipe_type: Raw Resource
 
   Cracked Stone Bricks:
@@ -2637,13 +2636,13 @@ resources:
   Chiseled Stone Bricks:
     recipes:
     - output: 1
-      recipe_type: Crafting
-      requirements:
-        Stone Brick Slab: -2
-    - output: 1
       recipe_type: Cutting
       requirements:
         Stone: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stone Brick Slab: -2
     - output: 1
       recipe_type: Cutting
       requirements:
@@ -2655,11 +2654,11 @@ resources:
     - output: 1
       recipe_type: Cutting
       requirements:
-        Polished Deepslate: -1
+        Cobbled Deepslate: -1
     - output: 1
       recipe_type: Cutting
       requirements:
-        Cobbled Deepslate: -1
+        Polished Deepslate: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -2677,6 +2676,10 @@ resources:
 
   Deepslate Tiles:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Cobbled Deepslate: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -2689,10 +2692,6 @@ resources:
       recipe_type: Cutting
       requirements:
         Polished Deepslate: -1
-    - output: 1
-      recipe_type: Cutting
-      requirements:
-        Cobbled Deepslate: -1
     - recipe_type: Raw Resource
 
   Cracked Deepslate Tiles:
@@ -2707,13 +2706,13 @@ resources:
   Chiseled Deepslate:
     recipes:
     - output: 1
-      recipe_type: Crafting
-      requirements:
-        Cobbled Deepslate Slab: -2
-    - output: 1
       recipe_type: Cutting
       requirements:
         Cobbled Deepslate: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cobbled Deepslate Slab: -2
     - recipe_type: Raw Resource
 
   Brown Mushroom Block:
@@ -2755,11 +2754,11 @@ resources:
 
   Melon:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         Melon Slice: -9
-    - recipe_type: Raw Resource
 
   Vines:
     recipes:
@@ -2825,13 +2824,13 @@ resources:
   Chiseled Nether Bricks:
     recipes:
     - output: 1
-      recipe_type: Crafting
-      requirements:
-        Nether Brick Slab: -2
-    - output: 1
       recipe_type: Cutting
       requirements:
         Nether Bricks: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Nether Brick Slab: -2
     - recipe_type: Raw Resource
 
   Nether Brick Fence:
@@ -2875,14 +2874,14 @@ resources:
 
   End Stone Bricks:
     recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        End Stone: -4
     - output: 1
       recipe_type: Cutting
       requirements:
         End Stone: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        End Stone: -4
     - recipe_type: Raw Resource
 
   Sandstone Stairs:
@@ -3327,21 +3326,21 @@ resources:
 
   White Terracotta:
     recipes:
+    - recipe_type: Raw Resource
     - output: 8
       recipe_type: Crafting
       requirements:
         Terracotta: -8
         White Dye: -1
-    - recipe_type: Raw Resource
 
   Orange Terracotta:
     recipes:
+    - recipe_type: Raw Resource
     - output: 8
       recipe_type: Crafting
       requirements:
         Terracotta: -8
         Orange Dye: -1
-    - recipe_type: Raw Resource
 
   Magenta Terracotta:
     recipes:
@@ -3363,12 +3362,12 @@ resources:
 
   Yellow Terracotta:
     recipes:
+    - recipe_type: Raw Resource
     - output: 8
       recipe_type: Crafting
       requirements:
         Terracotta: -8
         Yellow Dye: -1
-    - recipe_type: Raw Resource
 
   Lime Terracotta:
     recipes:
@@ -3399,12 +3398,12 @@ resources:
 
   Light Gray Terracotta:
     recipes:
+    - recipe_type: Raw Resource
     - output: 8
       recipe_type: Crafting
       requirements:
         Terracotta: -8
         Light Gray Dye: -1
-    - recipe_type: Raw Resource
 
   Cyan Terracotta:
     recipes:
@@ -3435,12 +3434,12 @@ resources:
 
   Brown Terracotta:
     recipes:
+    - recipe_type: Raw Resource
     - output: 8
       recipe_type: Crafting
       requirements:
         Terracotta: -8
         Brown Dye: -1
-    - recipe_type: Raw Resource
 
   Green Terracotta:
     recipes:
@@ -3453,12 +3452,12 @@ resources:
 
   Red Terracotta:
     recipes:
+    - recipe_type: Raw Resource
     - output: 8
       recipe_type: Crafting
       requirements:
         Terracotta: -8
         Red Dye: -1
-    - recipe_type: Raw Resource
 
   Black Terracotta:
     recipes:
@@ -3682,12 +3681,12 @@ resources:
 
   Terracotta:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Smelting
       requirements:
         Clay: -1
         Fuel: -1
-    - recipe_type: Raw Resource
 
   Packed Ice:
     recipes:
@@ -3752,6 +3751,7 @@ resources:
   Rose Bush:
     recipes:
     - recipe_type: Raw Resource
+
   Peony:
     recipes:
     - recipe_type: Raw Resource
@@ -5194,11 +5194,11 @@ resources:
     - output: 1
       recipe_type: Cutting
       requirements:
-        Polished Deepslate: -1
+        Cobbled Deepslate: -1
     - output: 1
       recipe_type: Cutting
       requirements:
-        Cobbled Deepslate: -1
+        Polished Deepslate: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -5210,15 +5210,15 @@ resources:
     - output: 1
       recipe_type: Cutting
       requirements:
+        Cobbled Deepslate: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
         Deepslate Bricks: -1
     - output: 1
       recipe_type: Cutting
       requirements:
         Polished Deepslate: -1
-    - output: 1
-      recipe_type: Cutting
-      requirements:
-        Cobbled Deepslate: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -5227,6 +5227,10 @@ resources:
 
   Deepslate Tile Stairs:
     recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Cobbled Deepslate: -1
     - output: 1
       recipe_type: Cutting
       requirements:
@@ -5243,10 +5247,6 @@ resources:
       recipe_type: Cutting
       requirements:
         Deepslate Bricks: -1
-    - output: 1
-      recipe_type: Cutting
-      requirements:
-        Cobbled Deepslate: -1
     - recipe_type: Raw Resource
 
   Polished Granite Slab:
@@ -5438,11 +5438,11 @@ resources:
     - output: 2
       recipe_type: Cutting
       requirements:
-        Polished Deepslate: -1
+        Cobbled Deepslate: -1
     - output: 2
       recipe_type: Cutting
       requirements:
-        Cobbled Deepslate: -1
+        Polished Deepslate: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -5474,6 +5474,10 @@ resources:
     - output: 2
       recipe_type: Cutting
       requirements:
+        Cobbled Deepslate: -1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
         Deepslate Tiles: -1
     - output: 2
       recipe_type: Cutting
@@ -5483,10 +5487,6 @@ resources:
       recipe_type: Cutting
       requirements:
         Deepslate Bricks: -1
-    - output: 2
-      recipe_type: Cutting
-      requirements:
-        Cobbled Deepslate: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -6460,6 +6460,11 @@ resources:
 
   Copper Ingot:
     recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Raw Copper: -1
+        Fuel: -1
     - recipe_type: Raw Resource
     - output: 9
       recipe_type: Crafting
@@ -6478,11 +6483,6 @@ resources:
       recipe_type: Smelting
       requirements:
         Deepslate Copper Ore: -1
-        Fuel: -1
-    - output: 1
-      recipe_type: Smelting
-      requirements:
-        Raw Copper: -1
         Fuel: -1
 
   Raw Gold:
@@ -6524,7 +6524,6 @@ resources:
       requirements:
         Raw Gold: -1
         Fuel: -1
-
 
   Netherite Ingot:
     recipes:
@@ -7197,16 +7196,31 @@ resources:
     custom_stack_multipliers:
       Stack: 16
 
-  Water Bucket: # TODO: Should this have a recipe?
+  Water Bucket:
     recipes:
+    - output: 1
+      recipe_type: Fill Bucket
+      requirements:
+        # TODO: Water Block: -1
+        Bucket: -1
     - recipe_type: Raw Resource
 
-  Lava Bucket: # TODO Should this have a recipe?
+  Lava Bucket: 
     recipes:
+    - output: 1
+      recipe_type: Fill Bucket
+      requirements:
+        # TODO: Lava Block: -1
+        Bucket: -1
     - recipe_type: Raw Resource
 
-  Powder Snow Bucket: # TODO Should this have a recipe?
+  Powder Snow Bucket: 
     recipes:
+    - output: 1
+      recipe_type: Fill Bucket
+      requirements:
+        # TODO: Powder Snow Block: -1  
+        Bucket: -1
     - recipe_type: Raw Resource
 
   Snowball:
@@ -7225,26 +7239,56 @@ resources:
 
   Milk Bucket:
     recipes:
+    - output: 1
+      recipe_type: Fill Bucket
+      requirements:
+        # TODO: Cow: -0 (infinite)
+        Bucket: -1
     - recipe_type: Raw Resource
 
   Bucket of Pufferfish:
     recipes:
+    - output: 1
+      recipe_type: Fill Bucket
+      requirements:
+        # TODO: Pufferfish: -1
+        Bucket: -1
     - recipe_type: Raw Resource
 
   Bucket of Salmon:
     recipes:
+    - output: 1
+      recipe_type: Fill Bucket
+      requirements:
+        # TODO: Salmon: -1 
+        Bucket: -1
     - recipe_type: Raw Resource
 
   Bucket of Cod:
     recipes:
+    - output: 1
+      recipe_type: Fill Bucket
+      requirements:
+        # TODO: Cod: -1
+        Bucket: -1
     - recipe_type: Raw Resource
 
   Bucket of Tropical Fish:
     recipes:
+    - output: 1
+      recipe_type: Fill Bucket
+      requirements:
+        # TODO: Tropical Fish: -1
+        Bucket: -1
     - recipe_type: Raw Resource
 
   Bucket of Axolotl:
     recipes:
+    - output: 1
+      recipe_type: Fill Bucket
+      requirements:
+        # TODO: Axolotl: -1
+        Bucket: -1
     - recipe_type: Raw Resource
 
   Brick:
@@ -7412,6 +7456,10 @@ resources:
 
   Magenta Dye:
     recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Lilac: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -7423,10 +7471,6 @@ resources:
       requirements:
         Purple Dye: -1
         Pink Dye: -1
-    - output: 2
-      recipe_type: Crafting
-      requirements:
-        Lilac: -1
     - output: 3
       recipe_type: Crafting
       requirements:
@@ -7454,14 +7498,14 @@ resources:
 
   Yellow Dye:
     recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Dandelion: -1
     - output: 2
       recipe_type: Crafting
       requirements:
         Sunflower: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Dandelion: -1
     - recipe_type: Raw Resource
 
   Lime Dye:
@@ -7483,16 +7527,16 @@ resources:
     - output: 2
       recipe_type: Crafting
       requirements:
+        Peony: -1
+    - output: 2
+      recipe_type: Crafting
+      requirements:
         White Dye: -1
         Red Dye: -1
     - output: 1
       recipe_type: Crafting
       requirements:
         Pink Tulip: -1
-    - output: 2
-      recipe_type: Crafting
-      requirements:
-        Peony: -1
     - recipe_type: Raw Resource
 
   Gray Dye:
@@ -7506,6 +7550,10 @@ resources:
 
   Light Gray Dye:
     recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oxeye Daisy: -1
     - output: 3
       recipe_type: Crafting
       requirements:
@@ -7515,10 +7563,6 @@ resources:
       recipe_type: Crafting
       requirements:
         White Tulip: -1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Oxeye Daisy: -1
     - output: 2
       recipe_type: Crafting
       requirements:
@@ -7528,7 +7572,6 @@ resources:
       recipe_type: Crafting
       requirements:
         Azure Bluet: -1
-
     - recipe_type: Raw Resource
 
   Cyan Dye:
@@ -8169,12 +8212,12 @@ resources:
 
   Baked Potato:
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Smelting
       requirements:
         Potato: -1
         Fuel: -1
+    - recipe_type: Raw Resource
 
   Poisonous Potato:
     recipes:
@@ -9493,11 +9536,11 @@ resources:
 
   Music Disc:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         Disc Fragment: -9
-    - recipe_type: Raw Resource
 
   Oak Boat with Chest:
     recipes:
@@ -9578,6 +9621,12 @@ resources:
 
   Banner Pattern:
     recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Paper: -1
+        Oxeye Daisy: -1
     - output: 1
       recipe_type: Crafting
       requirements:
@@ -9593,12 +9642,6 @@ resources:
       requirements:
         Paper: -1
         Creeper Head: -1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Paper: -1
-        Oxeye Daisy: -1
-    - recipe_type: Raw Resource
 
   Bucket of Tadpole:
     recipes:
