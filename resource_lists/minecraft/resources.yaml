@@ -643,11 +643,11 @@ resources:
     - recipe_type: Raw Resource
 
   Block of Amethyst:
+    recipes:
     - output: 1
       recipe_type: Crafting
       requirements:
         Amethyst Shard: -4
-    recipes:
     - recipe_type: Raw Resource
 
   Budding Amethyst:
@@ -1016,11 +1016,6 @@ resources:
 
   Waxed Cut Copper:
     recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Cut Copper: -1
-        Honeycomb: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1029,15 +1024,15 @@ resources:
       recipe_type: Cutting
       requirements:
         Waxed Block of Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cut Copper: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Exposed Cut Copper:
     recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Exposed Cut Copper: -1
-        Honeycomb: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1046,15 +1041,15 @@ resources:
       recipe_type: Cutting
       requirements:
         Waxed Exposed Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Exposed Cut Copper: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Weathered Cut Copper:
     recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Weathered Cut Copper: -1
-        Honeycomb: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1063,15 +1058,15 @@ resources:
       recipe_type: Cutting
       requirements:
         Waxed Weathered Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Weathered Cut Copper: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Oxidized Cut Copper:
     recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Oxidized Cut Copper: -1
-        Honeycomb: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1080,15 +1075,15 @@ resources:
       recipe_type: Cutting
       requirements:
         Waxed Oxidized Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oxidized Cut Copper: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Cut Copper Stairs:
     recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Cut Copper Stairs: -1
-        Honeycomb: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1101,15 +1096,15 @@ resources:
       recipe_type: Cutting
       requirements:
         Waxed Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cut Copper Stairs: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Exposed Cut Copper Stairs:
     recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Exposed Cut Copper Stairs: -1
-        Honeycomb: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1122,15 +1117,15 @@ resources:
       recipe_type: Cutting
       requirements:
         Waxed Exposed Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Exposed Cut Copper Stairs: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Weathered Cut Copper Stairs:
     recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Weathered Cut Copper Stairs: -1
-        Honeycomb: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1143,15 +1138,15 @@ resources:
       recipe_type: Cutting
       requirements:
         Waxed Weathered Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Weathered Cut Copper Stairs: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Oxidized Cut Copper Stairs:
     recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Oxidized Cut Copper Stairs: -1
-        Honeycomb: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -1164,15 +1159,15 @@ resources:
       recipe_type: Cutting
       requirements:
         Waxed Oxidized Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oxidized Cut Copper Stairs: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Cut Copper Slab:
     recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Cut Copper Slab: -1
-        Honeycomb: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -1185,15 +1180,15 @@ resources:
       recipe_type: Cutting
       requirements:
         Waxed Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cut Copper Slab: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Exposed Cut Copper Slab:
     recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Exposed Cut Copper Slab: -1
-        Honeycomb: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -1206,15 +1201,15 @@ resources:
       recipe_type: Cutting
       requirements:
         Waxed Exposed Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Exposed Cut Copper Slab: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Weathered Cut Copper Slab:
     recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Weathered Cut Copper Slab: -1
-        Honeycomb: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -1227,15 +1222,15 @@ resources:
       recipe_type: Cutting
       requirements:
         Waxed Weathered Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Weathered Cut Copper Slab: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Waxed Oxidized Cut Copper Slab:
     recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Oxidized Cut Copper Slab: -1
-        Honeycomb: -1
     - output: 6
       recipe_type: Crafting
       requirements:
@@ -1248,6 +1243,11 @@ resources:
       recipe_type: Cutting
       requirements:
         Waxed Oxidized Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oxidized Cut Copper Slab: -1
+        Honeycomb: -1
     - recipe_type: Raw Resource
 
   Oak Log:
@@ -2029,11 +2029,11 @@ resources:
     - output: 2
       recipe_type: Cutting
       requirements:
-        Sandstone: -1
+        Cut Sandstone: -1
     - output: 2
       recipe_type: Cutting
       requirements:
-        Cut Sandstone: -1
+        Sandstone: -1
     - recipe_type: Raw Resource
 
   Cobblestone Slab:
@@ -2805,11 +2805,11 @@ resources:
 
   Nether Bricks:
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         Nether Brick: -4
+    - recipe_type: Raw Resource
 
   Cracked Nether Bricks:
     recipes:
@@ -6423,11 +6423,6 @@ resources:
 
   Iron Ingot:
     recipes:
-    - output: 1
-      recipe_type: Smelting
-      requirements:
-        Raw Iron: -1
-        Fuel: -1
     - recipe_type: Raw Resource
     - output: 9
       recipe_type: Crafting
@@ -6437,6 +6432,11 @@ resources:
       recipe_type: Crafting
       requirements:
         Iron Nugget: -9
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Raw Iron: -1
+        Fuel: -1
     - output: 1
       recipe_type: Smelting
       requirements:
@@ -7541,11 +7541,6 @@ resources:
 
   Light Gray Dye:
     recipes:
-    - output: 2
-      recipe_type: Crafting
-      requirements:
-        Gray Dye: -1
-        White Dye: -1
     - output: 3
       recipe_type: Crafting
       requirements:
@@ -7559,6 +7554,11 @@ resources:
       recipe_type: Crafting
       requirements:
         Oxeye Daisy: -1
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Gray Dye: -1
+        White Dye: -1
     - output: 1
       recipe_type: Crafting
       requirements:
@@ -7589,11 +7589,11 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Lapis Lazuli: -1
+        Cornflower: -1
     - output: 1
       recipe_type: Crafting
       requirements:
-        Cornflower: -1
+        Lapis Lazuli: -1
     - recipe_type: Raw Resource
 
   Brown Dye:
@@ -8226,12 +8226,12 @@ resources:
 
   Golden Carrot:
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Crafting
       requirements:
         Gold Nugget: -8
         Carrot: -1
+    - recipe_type: Raw Resource
 
   Skeleton Skull:
     recipes:
@@ -8277,7 +8277,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Paper: -1
-        Gunpowder: -1
+        Gunpowder: -3
     - output: 3
       recipe_type: Crafting
       requirements:
@@ -8287,7 +8287,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Paper: -1
-        Gunpowder: -3
+        Gunpowder: -1
     - recipe_type: Raw Resource
 
   Firework Star:
@@ -9296,7 +9296,6 @@ resources:
 
   Fuel:
     recipes:
-    - recipe_type: Raw Resource
     - output: 8
       recipe_type: As
       requirements:
@@ -9325,6 +9324,7 @@ resources:
       recipe_type: As
       requirements:
         Any Planks: -2
+    - recipe_type: Raw Resource
 
 
   Acacia Boat with Chest:
