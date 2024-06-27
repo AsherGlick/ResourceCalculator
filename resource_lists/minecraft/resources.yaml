@@ -6,9 +6,9 @@ authors:
 
 index_page_display_name: "Minecraft"
 
-game_version: Java 1.20.1
+game_version: Java 1.21
 
-banner_message: "Now updated to 1.20!"
+banner_message: "Now updated to 1.21!"
 
 recipe_types:
   Crafting: "Craft {IN_ITEMS} into {OUT_ITEM}"
@@ -7124,10 +7124,10 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Scute: -5
+        Turtle Scute: -5
     - recipe_type: Raw Resource
 
-  Scute:
+  Turtle Scute:
     recipes:
     - recipe_type: Raw Resource
 
@@ -11017,5 +11017,853 @@ resources:
     - recipe_type: Raw Resource
 
   Torchflower Seeds:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Chiseled Copper:
+    recipes:
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Block of Copper: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cut Copper Slab: -2
+    - recipe_type: Raw Resource
+
+  Chiseled Tuff:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Tuff: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Tuff Slab: -2
+    - recipe_type: Raw Resource
+
+  Chiseled Tuff Bricks:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Tuff: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Tuff: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Tuff Bricks: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Tuff Brick Slab: -2
+    - recipe_type: Raw Resource
+
+  Copper Bulb:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Block of Copper: -3
+        Blaze Rod: -1
+        Redstone Dust: -1
+    - recipe_type: Raw Resource
+
+  Copper Door:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Copper Ingot: -6
+    - recipe_type: Raw Resource
+
+  Copper Grate:
+    recipes:
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Block of Copper: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Block of Copper: -4
+    - recipe_type: Raw Resource
+
+  Copper Trapdoor:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Copper Ingot: -6
+    - recipe_type: Raw Resource
+
+  Crafter:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -5
+        Crafting Table: -1
+        Redstone Dust: -2
+        Dropper: -1
+    - recipe_type: Raw Resource
+
+  Exposed Chiseled Copper:
+    recipes:
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Exposed Copper: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Exposed Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Exposed Cut Copper Slab: -2
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Chiseled Copper: -1
+    - recipe_type: Raw Resource
+
+  Exposed Copper Bulb:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Exposed Copper: -3
+        Blaze Rod: -1
+        Redstone Dust: -1
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Copper Bulb: -1
+    - recipe_type: Raw Resource
+
+  Exposed Copper Grate:
+    recipes:
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Exposed Copper: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Exposed Copper: -4
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Copper Grate: -1
+    - recipe_type: Raw Resource
+
+  Mace:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Heavy Core: -1
+        Breeze Rod: -1
+    - recipe_type: Raw Resource
+
+  Oxidized Chiseled Copper:
+    recipes:
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Oxidized Copper: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Oxidized Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oxidized Cut Copper Slab: -2
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Chiseled Copper: -1
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Exposed Chiseled Copper: -1
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Weathered Chiseled Copper: -1
+    - recipe_type: Raw Resource
+
+  Oxidized Copper Bulb:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Oxidized Copper: -3
+        Blaze Rod: -1
+        Redstone Dust: -1
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Copper Bulb: -1
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Exposed Copper Bulb: -1
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Weathered Copper Bulb: -1
+    - recipe_type: Raw Resource
+
+  Oxidized Copper Grate:
+    recipes:
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Oxidized Copper: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Oxidized Copper: -4
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Copper Grate: -1
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Exposed Copper Grate: -1
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Weathered Copper Grate: -1
+    - recipe_type: Raw Resource
+
+  Polished Tuff:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Tuff: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Tuff: -4
+    - recipe_type: Raw Resource
+
+  Polished Tuff Slab:
+    recipes:
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Tuff: -1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Polished Tuff: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Polished Tuff: -3
+    - recipe_type: Raw Resource
+
+  Polished Tuff Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Tuff: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Tuff: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Polished Tuff: -6
+    - recipe_type: Raw Resource
+
+  Polished Tuff Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Tuff: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Tuff: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Polished Tuff: -6
+    - recipe_type: Raw Resource
+
+  Tuff Brick Slab:
+    recipes:
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Tuff: -1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Polished Tuff: -1
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Tuff Bricks: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Tuff Bricks: -3
+    - recipe_type: Raw Resource
+
+  Tuff Brick Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Tuff: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Tuff: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Tuff Bricks: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Tuff Bricks: -6
+    - recipe_type: Raw Resource
+
+  Tuff Brick Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Tuff: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Tuff: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Tuff Bricks: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Tuff Bricks: -6
+    - recipe_type: Raw Resource
+
+  Tuff Bricks:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Tuff: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Polished Tuff: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Polished Tuff: -4
+    - recipe_type: Raw Resource
+
+  Tuff Slab:
+    recipes:
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Tuff: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Tuff: -3
+    - recipe_type: Raw Resource
+
+  Tuff Stairs:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Tuff: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Tuff: -6
+    - recipe_type: Raw Resource
+
+  Tuff Wall:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Tuff: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Tuff: -6
+    - recipe_type: Raw Resource
+
+  Waxed Chiseled Copper:
+    recipes:
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Waxed Block of Copper: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Waxed Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Waxed Cut Copper Slab: -2
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Chiseled Copper: -1
+        Honeycomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Copper Bulb:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Waxed Block of Copper: -3
+        Blaze Rod: -1
+        Redstone Dust: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Copper Bulb: -1
+        Honeycomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Copper Door:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Copper Door: -1
+        Honeycomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Copper Grate:
+    recipes:
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Waxed Block of Copper: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Waxed Block of Copper: -4
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Copper Grate: -1
+        Honeycomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Copper Trapdoor:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Copper Trapdoor: -1
+        Honeycomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Exposed Chiseled Copper:
+    recipes:
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Waxed Exposed Copper: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Waxed Exposed Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Waxed Exposed Cut Copper Slab: -2
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Exposed Chiseled Copper: -1
+        Honeycomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Exposed Copper Bulb:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Waxed Exposed Copper: -3
+        Blaze Rod: -1
+        Redstone Dust: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Exposed Copper Bulb: -1
+        Honeycomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Exposed Copper Door:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Exposed Copper Door: -1
+        Honeycomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Exposed Copper Grate:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Exposed Copper Grate: -1
+        Honeycomb: -1
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Waxed Exposed Copper: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Waxed Exposed Copper: -4
+    - recipe_type: Raw Resource
+
+  Waxed Exposed Copper Trapdoor:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Exposed Copper Trapdoor: -1
+        Honeycomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Oxidized Chiseled Copper:
+    recipes:
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Waxed Oxidized Copper: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Waxed Oxidized Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Waxed Oxidized Cut Copper Slab: -2
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oxidized Chiseled Copper: -1
+        Honeycomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Oxidized Copper Bulb:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Waxed Oxidized Copper: -3
+        Blaze Rod: -1
+        Redstone Dust: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oxidized Copper Bulb: -1
+        Honeycomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Oxidized Copper Door:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oxidized Copper Door: -1
+        Honeycomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Oxidized Copper Grate:
+    recipes:
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Waxed Oxidized Copper: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Waxed Oxidized Copper: -4
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oxidized Copper Grate: -1
+        Honeycomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Oxidized Copper Trapdoor:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oxidized Copper Trapdoor: -1
+        Honeycomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Weathered Chiseled Copper:
+    recipes:
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Waxed Weathered Copper: -1
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Waxed Weathered Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Waxed Weathered Cut Copper Slab: -2
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Weathered Chiseled Copper: -1
+        Honeycomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Weathered Copper Bulb:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Waxed Weathered Copper: -3
+        Blaze Rod: -1
+        Redstone Dust: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Weathered Copper Bulb: -1
+        Honeycomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Weathered Copper Door:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Weathered Copper Door: -1
+        Honeycomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Weathered Copper Grate:
+    recipes:
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Waxed Weathered Copper: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Waxed Weathered Copper: -4
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Weathered Copper Grate: -1
+        Honeycomb: -1
+    - recipe_type: Raw Resource
+
+  Waxed Weathered Copper Trapdoor:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Weathered Copper Trapdoor: -1
+        Honeycomb: -1
+    - recipe_type: Raw Resource
+
+  Weathered Chiseled Copper:
+    recipes:
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Weathered Cut Copper: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Weathered Cut Copper Slab: -2
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Weathered Copper: -1
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Chiseled Copper: -1
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Exposed Chiseled Copper: -1
+    - recipe_type: Raw Resource
+
+  Weathered Copper Bulb:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Weathered Copper: -3
+        Blaze Rod: -1
+        Redstone Dust: -1
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Copper Bulb: -1
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Exposed Copper Bulb: -1
+    - recipe_type: Raw Resource
+
+  Weathered Copper Grate:
+    recipes:
+    - output: 4
+      recipe_type: Cutting
+      requirements:
+        Weathered Copper: -1
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Weathered Copper: -4
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Copper Grate: -1
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Exposed Copper Grate: -1
+    - recipe_type: Raw Resource
+
+  Wind Charge:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Breeze Rod: -1
+    - recipe_type: Raw Resource
+
+  Wolf Armor:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Armadillo Scute: -6
+    - recipe_type: Raw Resource
+
+  Exposed Copper Door:
+    recipes:
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Copper Door: -1
+    - recipe_type: Raw Resource
+
+  Weathered Copper Door:
+    recipes:
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Copper Door: -1
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Exposed Copper Door: -1
+    - recipe_type: Raw Resource
+
+  Oxidized Copper Door:
+    recipes:
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Copper Door: -1
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Exposed Copper Door: -1
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Weathered Copper Door: -1
+    - recipe_type: Raw Resource
+
+  Exposed Copper Trapdoor:
+    recipes:
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Copper Trapdoor: -1
+    - recipe_type: Raw Resource
+
+  Weathered Copper Trapdoor:
+    recipes:
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Copper Trapdoor: -1
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Exposed Copper Trapdoor: -1
+    - recipe_type: Raw Resource
+
+  Oxidized Copper Trapdoor:
+    recipes:
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Copper Trapdoor: -1
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Exposed Copper Trapdoor: -1
+    - output: 1
+      recipe_type: Oxidation
+      requirements:
+        Weathered Copper Trapdoor: -1
+    - recipe_type: Raw Resource
+
+  Heavy Core:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Breeze Rod:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Armadillo Scute:
     recipes:
     - recipe_type: Raw Resource

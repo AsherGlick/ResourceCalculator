@@ -5,6 +5,9 @@ from io import BytesIO
 import os
 
 
+MINECRAFT_BLOCK_TAG_DIRECTORY = "data/minecraft/tags/block"
+MINECRAFT_ITEM_TAG_DIRECTORY = "data/minecraft/tags/item"
+
 class ResourceGroup(TypedDict):
     machine_name: str # MCTag
     human_name: str # Display Name
@@ -103,7 +106,7 @@ class ResourceGroups():
 
 
     ############################################################################
-    # get_all_automatic_resource_groups
+    # load_automatic_resource_groups
     ############################################################################
     def load_automatic_resource_groups(self, jarfile: zipfile.ZipFile):
         all_tags: Dict[str, List[str]] = {}
@@ -112,11 +115,9 @@ class ResourceGroups():
         for file in file_list:
             filename = file.filename
 
-            if filename.startswith("data/minecraft/tags/blocks") \
-                or filename.startswith("data/minecraft/tags/items"):
-                    key = os.path.splitext(os.path.basename(filename))[0]
-
-                    all_tags["minecraft:"+key] = sorted(list(set(parse_tagfile(jarfile, filename))))
+            if filename.startswith(MINECRAFT_BLOCK_TAG_DIRECTORY) or filename.startswith(MINECRAFT_ITEM_TAG_DIRECTORY):
+                key = os.path.splitext(os.path.basename(filename))[0]
+                all_tags["minecraft:"+key] = sorted(list(set(parse_tagfile(jarfile, filename))))
 
         self.automatic_resource_groups = all_tags
 
@@ -229,8 +230,8 @@ def parse_tagfile(jarfile: zipfile.ZipFile, tag_filename: str) -> List[str]:
         assert(type(tag) == str)
 
         if tag.startswith("#"):
-            blocksfile = "data/minecraft/tags/blocks/" + tag[11:] + ".json"
-            itemsfile = "data/minecraft/tags/items/" + tag[11:] + ".json"
+            blocksfile = os.path.join(MINECRAFT_BLOCK_TAG_DIRECTORY, tag[11:] + ".json")
+            itemsfile = os.path.join(MINECRAFT_ITEM_TAG_DIRECTORY, tag[11:] + ".json")
 
             if blocksfile in files:
                 tags += parse_tagfile(jarfile, blocksfile)
