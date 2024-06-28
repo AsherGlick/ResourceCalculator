@@ -1,7 +1,8 @@
 from PIL import Image # type:ignore
-from typing import List, Dict
+from typing import List, Dict, Tuple, Optional
 import shutil
 import json
+import math
 
 letters = {
     "042a2a2a1e":"a",
@@ -57,13 +58,6 @@ letters = {
     "80403e4080":"Y",
     "868a92a2c2":"Z",
     "c0":"'", # This is needed for things like "Jack o'Lantern"
-
-    # JUNK CHARACTERS
-    "ff": "",
-    "ffff": "",
-    "ffffff": "",
-    "ffffffff": "",
-    "ffffffffff": "",
 }
 
 
@@ -88,35 +82,65 @@ duplicate_names: Dict[str,int] = {}
 # the text screenshot to rename the icon screenshot. Duplicate names will be
 # appended with a _2 or _3 etc.
 ################################################################################
-def main(ui_size: int, image_quantity: int) -> None:
+def main(ui_size: int) -> None:
     item_ordering = []
-    for image_index in range(image_quantity):
-        text_image_filename = "image_text/" + str(image_index) + ".png"
-        block_image_filename = "diced_images/" + str(image_index) + ".png"
+    for i in range(37):
+        item_ordering += parse_page(i, ui_size)
 
-        decoded_name = decode_image_text(text_image_filename, ui_size)
-
-        item_ordering.append(decoded_name)
-
-        # Convert to lowercase and strip symbols
-        decoded_name = decoded_name.lower()
-        decoded_name = decoded_name.replace("'", "")
-
-        if decoded_name in duplicate_names:
-            duplicate_names[decoded_name] += 1
-            decoded_name = decoded_name + "_" + str(duplicate_names[decoded_name])
-
-        else:
-            duplicate_names[decoded_name] = 1
-
-        target_file_name = "named_images/" + decoded_name + ".png"
-
-        shutil.copyfile(block_image_filename, target_file_name)
-
-    with open("named_images/ordering.json", 'w') as f:
+    with open("item_ordering.json", 'w') as f:
         json.dump(item_ordering, f)
 
 
+
+def parse_page(page_index: int, ui_size: int) -> List[str]:
+    item_ordering = []
+    for y in range(5):
+        for x in range(9):
+            raw_icon_path = "raw_images/{page}-{y}-{x}-icon.png".format(
+                page=page_index,
+                x=x,
+                y=y,
+            )
+            raw_text_path = "raw_images/{page}-{y}-{x}-text.png".format(
+                page=page_index,
+                x=x,
+                y=y
+            )
+
+            decoded_name = decode_image_text(raw_text_path, ui_size)
+            print(decoded_name)
+            item_ordering.append(decoded_name)
+
+            # Convert to lowercase and strip symbols
+            decoded_name = decoded_name.lower()
+            decoded_name = decoded_name.replace("'", "")
+
+            if decoded_name in duplicate_names:
+                duplicate_names[decoded_name] += 1
+                decoded_name = decoded_name + "_" + str(duplicate_names[decoded_name])
+            else:
+                duplicate_names[decoded_name] = 1
+
+            target_file_name = "named_images/" + decoded_name + ".png"
+
+            shutil.copyfile(raw_icon_path, target_file_name)
+
+    return item_ordering
+
+
+endpurple_light = "2a0a59"
+background_light = "ffffff"
+
+endpurple_dark = "260558"
+background_dark = "8b8b8b"
+
+VALID_TEXT_COLORS = set([
+    (252, 252, 252), # White
+    (84, 252, 252), # Teal
+    (252, 168, 0), # Orange
+    (252, 252, 84), # Yellow
+    (252, 84, 252), # Purple
+])
 ################################################################################
 # Read the text-image file and attempt to decode the letters. This is done by
 # looking at one column at a time and from top to bottom converting each pixel
@@ -144,18 +168,35 @@ def decode_image_text(filename: str, ui_size: int) -> str:
     letter_rows: List[str] = []
 
     with Image.open(filename) as im:
-        pixels = im.load()
+        pixels = im.convert("RGB").load()
         width, height = im.size
+
+        # Track the previous blue channel value for the purple blue outline box
+        # that outlines the hover textbox we are parsing so we can determine
+        # when the line ends and we can stop searching for more letters.
+        previous_outline_blue_channel: Optional[int] = None
+
 
         # Iterate over all the columns and rows, but skip each other row/column
         # because all the pixels in the text screenshots are 2x2 blocks of
         # color because minecraft is at GUI scale 2.
-        for x in range(0,width,ui_size):
+        for x in range(0, width, ui_size):
+            outline_blue_channel = pixels[x, 0][2]
+
+            # Trace the purple blue outline box to determine when the textbox
+            # ends to stop searching for more letters
+            if (
+                previous_outline_blue_channel != None
+                and outline_blue_channel < previous_outline_blue_channel - 20
+            ):
+                break
+            previous_outline_blue_channel = outline_blue_channel
+
             column_bits = []
-            for y in range(0,height,ui_size):
+            for y in range(3 * ui_size, height, ui_size):
                 
                 color = pixels[x,y]
-                if color > 128:
+                if color in VALID_TEXT_COLORS:
                     column_bits.append(True)
                 else:
                     column_bits.append(False)
@@ -183,18 +224,14 @@ def decode_image_text(filename: str, ui_size: int) -> str:
             decoded_letters.append(letters[letterhex])
 
         else:
-            print("Unknown Hex {} after {}? ({})".format(letterhex, "".join(decoded_letters), filename))
-            # decoded_letters.append("_")
-            has_error = True
+            raise ValueError("Unknown Hex {} after {}? ({})".format(letterhex, "".join(decoded_letters), filename))
 
     if len(decoded_letters) == 0:
-        print("Zero Length Name {}".format(filename))
+        raise ValueError("Zero Length Name {}".format(filename))
 
     return "".join(decoded_letters)
-
 
 # Run the OCR renamer
 main(
     ui_size=2,
-    image_quantity=1440,
 )
