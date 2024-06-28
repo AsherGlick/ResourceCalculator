@@ -29,25 +29,28 @@ import custom_recipes_buckets
 from requirement_groups import ResourceGroups
 from recipe_parser import parse_recipe_data
 
+MINECRAFT_RECIPE_DIRECTORY = "data/minecraft/recipe"
 
 SKIPPED_RECIPES: Set[str] = set([
-    "data/minecraft/recipes/coast_armor_trim_smithing_template.json", # Recursive Recipe
-    "data/minecraft/recipes/dune_armor_trim_smithing_template.json", # Recursive Recipe
-    "data/minecraft/recipes/eye_armor_trim_smithing_template.json", # Recursive Recipe
-    "data/minecraft/recipes/host_armor_trim_smithing_template.json", # Recursive Recipe
-    "data/minecraft/recipes/netherite_upgrade_smithing_template.json", # Recursive Recipe
-    "data/minecraft/recipes/raiser_armor_trim_smithing_template.json", # Recursive Recipe
-    "data/minecraft/recipes/rib_armor_trim_smithing_template.json", # Recursive Recipe
-    "data/minecraft/recipes/sentry_armor_trim_smithing_template.json", # Recursive Recipe
-    "data/minecraft/recipes/shaper_armor_trim_smithing_template.json", # Recursive Recipe
-    "data/minecraft/recipes/silence_armor_trim_smithing_template.json", # Recursive Recipe
-    "data/minecraft/recipes/snout_armor_trim_smithing_template.json", # Recursive Recipe
-    "data/minecraft/recipes/spire_armor_trim_smithing_template.json", # Recursive Recipe
-    "data/minecraft/recipes/tide_armor_trim_smithing_template.json", # Recursive Recipe
-    "data/minecraft/recipes/vex_armor_trim_smithing_template.json", # Recursive Recipe
-    "data/minecraft/recipes/ward_armor_trim_smithing_template.json", # Recursive Recipe
-    "data/minecraft/recipes/wayfinder_armor_trim_smithing_template.json", # Recursive Recipe
-    "data/minecraft/recipes/wild_armor_trim_smithing_template.json", # Recursive Recipe
+    "coast_armor_trim_smithing_template.json", # Recursive Recipe
+    "dune_armor_trim_smithing_template.json", # Recursive Recipe
+    "eye_armor_trim_smithing_template.json", # Recursive Recipe
+    "host_armor_trim_smithing_template.json", # Recursive Recipe
+    "netherite_upgrade_smithing_template.json", # Recursive Recipe
+    "raiser_armor_trim_smithing_template.json", # Recursive Recipe
+    "rib_armor_trim_smithing_template.json", # Recursive Recipe
+    "sentry_armor_trim_smithing_template.json", # Recursive Recipe
+    "shaper_armor_trim_smithing_template.json", # Recursive Recipe
+    "silence_armor_trim_smithing_template.json", # Recursive Recipe
+    "snout_armor_trim_smithing_template.json", # Recursive Recipe
+    "spire_armor_trim_smithing_template.json", # Recursive Recipe
+    "tide_armor_trim_smithing_template.json", # Recursive Recipe
+    "vex_armor_trim_smithing_template.json", # Recursive Recipe
+    "ward_armor_trim_smithing_template.json", # Recursive Recipe
+    "wayfinder_armor_trim_smithing_template.json", # Recursive Recipe
+    "wild_armor_trim_smithing_template.json", # Recursive Recipe
+    "bolt_armor_trim_smithing_template.json", # Recursive Recipe
+    "flow_armor_trim_smithing_template.json", # Recursive Recipe
 ])
 
 resource_groups: ResourceGroups
@@ -69,10 +72,10 @@ def main() -> None:
         for zipped_item in file_list:
             filename = zipped_item.filename
 
-            if not filename.startswith("data/minecraft/recipes"):
+            if not filename.startswith(MINECRAFT_RECIPE_DIRECTORY):
                 continue
 
-            if filename in SKIPPED_RECIPES:
+            if os.path.basename(filename) in SKIPPED_RECIPES:
                 continue
 
             recipe_data = BytesIO(zipped_file.read(filename))
@@ -81,6 +84,9 @@ def main() -> None:
 
     finally:
         zipped_file.close()
+
+    if len(recipes) == 0:
+        raise ValueError("No recipes found")
 
     # Add any custom recipes that are not included in the jar.
     recipes += custom_recipes_carving.recipes()
@@ -206,17 +212,14 @@ def is_matching_recipe(jar_recipe: RecipeItem, resource_recipe: Recipe) -> bool:
 ################################################################################
 def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, Resource]) -> None:
 
+    missing_items: Dict[str, List[RecipeItem]] = {}
+
     # Validate all jar recipes are in the resource recipes
     for jar_recipe in jar_recipes:
         if jar_recipe.name not in resource_recipes:
-            print("#!#Cannot find recipes for", jar_recipe.name)
-            print("#!#Expecting")
-            print("  " + jar_recipe.name + ":")
-            print("    recipes:")
-            print_recipe_yaml(jar_recipe)
-            print("    - recipe_type: Raw Resource")
-
-            print("")
+            if jar_recipe.name not in missing_items:
+                missing_items[jar_recipe.name] = []
+            missing_items[jar_recipe.name].append(jar_recipe)
             continue
 
         item_resource_recipes: List[Recipe] = resource_recipes[jar_recipe.name].recipes
@@ -231,6 +234,15 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, 
             print("#!#YAML Missing Recipe for \"" +jar_recipe.name + "\"")
             print_recipe_yaml(jar_recipe)
             continue
+    for missing_item, recipes in missing_items.items():
+        print("#!#Cannot find recipes for", missing_item)
+        print("#!#Expecting")
+        print("  " + missing_item + ":")
+        print("    recipes:")
+        for recipe in recipes:
+            print_recipe_yaml(recipe)
+        print("    - recipe_type: Raw Resource")
+        print("")
 
     # Validate all resource recipes are in jar recipes
     for resource in resource_recipes:

@@ -1,16 +1,16 @@
-from typing import Any, Dict, List, Union
+from typing import Any, Dict, List, Union, Literal, Optional
 from recipe_item import RecipeItem
 from requirement_groups import ResourceGroups
 import custom_recipes_shulker_box_coloring
 import custom_recipes_fireworks
-
+from dataclasses import dataclass, field
+import classnotation
 
 
 ################################################################################
 #
 ################################################################################
 def parse_recipe_data(input_struct: Any, id_to_name_map: Dict[str, str], resource_groups: ResourceGroups) -> List[RecipeItem]:
-
     if "type" not in input_struct:
         raise ValueError("Cannot find recipe's type")
 
@@ -53,6 +53,34 @@ def parse_recipe_data(input_struct: Any, id_to_name_map: Dict[str, str], resourc
     else:
         raise ValueError("Unknown recipe 'type' {}".format(input_struct))
 
+@dataclass
+class Result:
+    item_id: str = field(metadata={"json": "id"})
+    count: int = 1
+
+@dataclass
+class ItemDictItem:
+    item: str
+
+@dataclass
+class ItemDictTag:
+    tag: str
+
+ItemDict = Union[ItemDictItem, ItemDictTag, List[ItemDictItem]]
+
+################################################################################
+################################ Shaped Recipes ################################
+################################################################################
+@dataclass
+class ShapedData:
+    recipe_type: Literal["minecraft:crafting_shaped"] = field(metadata={"json": "type"})
+    category: str
+    key: Dict[str, ItemDict]
+    pattern: List[str]
+    result: Result
+    group: Optional[str] = None
+    show_notification: Optional[bool] = None
+
 
 ################################################################################
 # parse_shaped_data
@@ -60,38 +88,27 @@ def parse_recipe_data(input_struct: Any, id_to_name_map: Dict[str, str], resourc
 # Parses the data from recipes of the `minecraft:crafting_shaped` type.
 ################################################################################
 def parse_shaped_data(
-    input_struct: Any,
+    input_data: Any,
     id_to_name_map: Dict[str, str],
     resource_groups: ResourceGroups,
 ) -> List[RecipeItem]:
-    # We are going to ignore the "group" field that contains data about similar
-    # recipes. EG: Deepslate Coal Ore and Coal Ore are both part of the Coal group
-    if "group" in input_struct:
-        del input_struct["group"]
+    input_struct: ShapedData = classnotation.load_data(ShapedData, input_data)
 
-    confirm_keys(input_struct, ['key', 'pattern', 'result', 'type', 'category', 'show_notification'])
-
-    count: int = 1
-    if "count" in input_struct["result"]:
-        count = input_struct["result"]["count"]
-        del input_struct["result"]["count"]
-
-    result = get_item_name_from_item_dict(input_struct["result"], id_to_name_map, resource_groups)
-
-
+    # result = get_item_name_from_item_dict(input_struct["result"], id_to_name_map, resource_groups)
+    result = id_to_name_map[input_struct.result.item_id]
 
     # Sanity check that " " is an emtpy space for all recipe patterns
-    if " " in input_struct["key"]:
+    if " " in input_struct.key:
         raise ValueError("Found ' ' as a key in a shaped recipe, it should be air and a null space")
 
-    pattern = "".join(input_struct['pattern'])
+    pattern: str = "".join(input_struct.pattern)
 
     ingredients: Dict[str, int] = {}
     for character in pattern:
         if character == " ":
             continue
 
-        itemdict = input_struct["key"][character]
+        itemdict = input_struct.key[character]
 
         item_name = get_item_name_from_item_dict(itemdict, id_to_name_map, resource_groups)
         if item_name not in ingredients:
@@ -101,7 +118,7 @@ def parse_shaped_data(
 
     recipe_item = RecipeItem(
         name=result,
-        output=count,
+        output=input_struct.result.count,
         recipe_type="Crafting",
         requirements=ingredients
     )
@@ -110,28 +127,30 @@ def parse_shaped_data(
     return [recipe_item]
 
 
+################################################################################
+############################## Shapeless Recipes ###############################
+################################################################################
+@dataclass
+class ShapelessData:
+    recipe_type: Literal["minecraft:crafting_shapeless"] = field(metadata={"json": "type"})
+    category: str
+    ingredients: List[ItemDict]
+    result: Result
+    group: Optional[str] = None
+
 
 def parse_shapeless_data(
-    input_struct: Any,
+    input_data: Any,
     id_to_name_map: Dict[str, str],
     resource_groups: ResourceGroups,
 ) -> List[RecipeItem]:
-    # We are going to ignore the "group" field that contains data about similar
-    # recipes. EG: Deepslate Coal Ore and Coal Ore are both part of the Coal group
-    if "group" in input_struct:
-        del input_struct["group"]
+    input_struct: ShapelessData = classnotation.load_data(ShapelessData, input_data)
 
-    confirm_keys(input_struct, ['ingredients', 'result', 'type', 'category'])
-
-    count: int = 1
-    if "count" in input_struct["result"]:
-        count = input_struct["result"]["count"]
-        del input_struct["result"]["count"]
-
-    result = get_item_name_from_item_dict(input_struct["result"], id_to_name_map, resource_groups)
+    # result = get_item_name_from_item_dict(input_struct["result"], id_to_name_map, resource_groups)
+    result = id_to_name_map[input_struct.result.item_id]
 
     ingredients: Dict[str, int] = {}
-    for ingredient in input_struct["ingredients"]:
+    for ingredient in input_struct.ingredients:
         item_name = get_item_name_from_item_dict(ingredient, id_to_name_map, resource_groups)
         if item_name not in ingredients:
             ingredients[item_name] = 0
@@ -141,57 +160,48 @@ def parse_shapeless_data(
 
     recipe_item = RecipeItem(
         name=result,
-        output=count,
+        output=input_struct.result.count,
         recipe_type="Crafting",
         requirements=ingredients
     )
 
-
     return [recipe_item]
 
 
-
-
-
+################################################################################
+############################### Campfire Recipes ###############################
+################################################################################
 # TODO: Figure out how to merge these into the regular recipe list
+@dataclass
+class CampfireData:
+    item_type: Literal["minecraft:campfire_cooking"] = field(metadata={"json": "type"})
+    category: str
+    cookingtime: int
+    experience: float
+    ingredient: ItemDict
+    result: Result
+
+
 def parse_campfire_data(
-    input_struct: Any,
+    input_data: Any,
     id_to_name_map: Dict[str, str],
     resource_groups: ResourceGroups,
 ) -> List[RecipeItem]:
-    # We are going to ignore the "group" field that contains data about similar
-    # recipes. EG: Deepslate Coal Ore and Coal Ore are both part of the Coal group
-    if "group" in input_struct:
-        del input_struct["group"]
+    input_struct = classnotation.load_data(CampfireData, input_data)
 
-    # We are going to ignore the "experience" field that indicates how much exp
-    # the player is awarded via crafting.
-    if "experience" in input_struct:
-        del input_struct["experience"]
-
-    confirm_keys(input_struct, ['cookingtime', 'ingredient', 'result', 'type', 'category'])
-
-    cooking_time = input_struct["cookingtime"]
-    if cooking_time != 600:
+    if input_struct.cookingtime != 600:
         raise ValueError("Non 600 cooking time, a feature is needed to convert this value into a correct fuel value")
 
-    result: str = input_struct["result"]
-    ingredients = input_struct["ingredient"]
-
-    # Convert any single values into a single element list to take avantage of
-    # common processing
-    if type(ingredients) == dict:
-        ingredients = [ingredients]
+    ingredients = [input_struct.ingredient]
 
     recipe_items: List[RecipeItem] = []
 
     for ingredient in ingredients:
-
         ingredient_name = get_item_name_from_item_dict(ingredient, id_to_name_map, resource_groups)
 
         recipe_items.append(RecipeItem(
-            name=id_to_name_map[result],
-            output=1,
+            name=id_to_name_map[input_struct.result.item_id],
+            output=input_struct.result.count,
             recipe_type="Campfire",
             requirements={
                 ingredient_name : 1
@@ -202,45 +212,44 @@ def parse_campfire_data(
     # be exactly the same as smelting recipes but just for food and not require coal.
     return [] #recipe_items
 
+
+################################################################################
+############################### Smoking Recipes ################################
+################################################################################
+@dataclass
+class SmokingData:
+    item_type: Literal["minecraft:smoking"] = field(metadata={"json": "type"})
+    category: str
+    cookingtime: int
+    experience: float
+    ingredient: ItemDict
+    result: Result
+
+
 # TODO: Figure out how to merge these into the regular recipe list
 def parse_smoking_data(
-    input_struct: Any,
+    input_data: Any,
     id_to_name_map: Dict[str, str],
     resource_groups: ResourceGroups,
 ) -> List[RecipeItem]:
-    # We are going to ignore the "group" field that contains data about similar
-    # recipes. EG: Deepslate Coal Ore and Coal Ore are both part of the Coal group
-    if "group" in input_struct:
-        del input_struct["group"]
+    input_struct = classnotation.load_data(SmokingData, input_data)
 
-    # We are going to ignore the "experience" field that indicates how much exp
-    # the player is awarded via crafting.
-    if "experience" in input_struct:
-        del input_struct["experience"]
-
-    confirm_keys(input_struct, ['cookingtime', 'ingredient', 'result', 'type', 'category'])
-
-    cooking_time = input_struct["cookingtime"]
-    if cooking_time != 100:
+    if input_struct.cookingtime != 100:
         raise ValueError("Non 100 cooking time, a feature is needed to convert this value into a correct fuel value")
 
-    result: str = input_struct["result"]
-    ingredients = input_struct["ingredient"]
-
-    # Convert any single values into a single element list to take avantage of
-    # common processing
-    if type(ingredients) == dict:
+    # Hack to unwrap lists of itemdicts into individual recipes to avoid making
+    # custom groups for singleinput recipes.
+    ingredients = input_struct.ingredient
+    if isinstance(ingredients, ItemDictItem) or isinstance(ingredients, ItemDictTag):
         ingredients = [ingredients]
 
     recipe_items: List[RecipeItem] = []
 
     for ingredient in ingredients:
-
         ingredient_name = get_item_name_from_item_dict(ingredient, id_to_name_map, resource_groups)
-
         recipe_items.append(RecipeItem(
-            name=id_to_name_map[result],
-            output=1,
+            name=id_to_name_map[input_struct.result.item_id],
+            output=input_struct.result.count,
             recipe_type="Smoking",
             requirements={
                 ingredient_name : 1
@@ -252,46 +261,44 @@ def parse_smoking_data(
     return [] #recipe_items
 
 
+################################################################################
+############################### Blasting Recipes ###############################
+################################################################################
+@dataclass
+class BlastingData:
+    item_type: Literal["minecraft:blasting"] = field(metadata={"json": "type"})
+    category: str
+    cookingtime: int
+    experience: float
+    ingredient: ItemDict
+    result: Result
+    group: Optional[str] = None
+
+
 # TODO: Figure out how to merge these into the regular recipe list
 def parse_blasting_data(
-    input_struct: Any,
+    input_data: Any,
     id_to_name_map: Dict[str, str],
     resource_groups: ResourceGroups,
 ) -> List[RecipeItem]:
 
-    # We are going to ignore the "group" field that contains data about similar
-    # recipes. EG: Deepslate Coal Ore and Coal Ore are both part of the Coal group
-    if "group" in input_struct:
-        del input_struct["group"]
+    input_struct = classnotation.load_data(BlastingData, input_data)
 
-    # We are going to ignore the "experience" field that indicates how much exp
-    # the player is awarded via crafting.
-    if "experience" in input_struct:
-        del input_struct["experience"]
-
-    confirm_keys(input_struct, ['cookingtime', 'ingredient', 'result', 'type', 'category'])
-
-    cooking_time = input_struct["cookingtime"]
-    if cooking_time != 100:
+    if input_struct.cookingtime != 100:
         raise ValueError("Non 100 cooking time, a feature is needed to convert this value into a correct fuel value")
 
-    result: str = input_struct["result"]
-    ingredients = input_struct["ingredient"]
-
-    # Convert any single values into a single element list to take avantage of
-    # common processing
-    if type(ingredients) == dict:
+    # Hack to unwrap lists of itemdicts into individual recipes to avoid making
+    # custom groups for singleinput recipes.
+    ingredients = input_struct.ingredient
+    if isinstance(ingredients, ItemDictItem) or isinstance(ingredients, ItemDictTag):
         ingredients = [ingredients]
 
     recipe_items: List[RecipeItem] = []
-
     for ingredient in ingredients:
-
         ingredient_name = get_item_name_from_item_dict(ingredient, id_to_name_map, resource_groups)
-
         recipe_items.append(RecipeItem(
-            name=id_to_name_map[result],
-            output=1,
+            name=id_to_name_map[input_struct.result.item_id],
+            output=input_struct.result.count,
             recipe_type="Blasting",
             requirements={
                 ingredient_name : 1,
@@ -306,45 +313,39 @@ def parse_blasting_data(
 ################################################################################
 # Parse the Smelting Recipes
 ################################################################################
+@dataclass
+class SmeltingData:
+    item_type: Literal["minecraft:smelting"] = field(metadata={"json": "type"})
+    category: str
+    cookingtime: int
+    experience: float
+    ingredient: ItemDict
+    result: Result
+    group: Optional[str] = None
+
 def parse_smelting_data(
-    input_struct: Any,
+    input_data: Any,
     id_to_name_map: Dict[str, str],
     resource_groups: ResourceGroups,
 ) -> List[RecipeItem]:
+    input_struct = classnotation.load_data(SmeltingData, input_data)
 
-    # We are going to ignore the "group" field that contains data about similar
-    # recipes. EG: Deepslate Coal Ore and Coal Ore are both part of the Coal group
-    if "group" in input_struct:
-        del input_struct["group"]
-
-    # We are going to ignore the "experience" field that indicates how much exp
-    # the player is awarded via crafting.
-    if "experience" in input_struct:
-        del input_struct["experience"]
-
-    confirm_keys(input_struct, ['cookingtime', 'ingredient', 'result', 'type', 'category'])
-
-    cooking_time = input_struct["cookingtime"]
-    if cooking_time != 200:
+    # Sanity check cooing time
+    if input_struct.cookingtime != 200:
         raise ValueError("Non 200 cooking time, a feature is needed to convert this value into a correct fuel value")
 
-    result: str = input_struct["result"]
-    ingredients = input_struct["ingredient"]
-
-    # Convert any single values into a single element list to take avantage of
-    # common processing
-    if type(ingredients) == dict:
+    # Hack to unwrap lists of itemdicts into individual recipes to avoid making
+    # custom groups for singleinput recipes.
+    ingredients = input_struct.ingredient
+    if isinstance(ingredients, ItemDictItem) or isinstance(ingredients, ItemDictTag):
         ingredients = [ingredients]
 
     recipe_items: List[RecipeItem] = []
-
     for ingredient in ingredients:
-
         ingredient_name = get_item_name_from_item_dict(ingredient, id_to_name_map, resource_groups)
-
         recipe_items.append(RecipeItem(
-            name=id_to_name_map[result],
-            output=1,
+            name=id_to_name_map[input_struct.result.item_id],
+            output=input_struct.result.count,
             recipe_type="Smelting",
             requirements={
                 ingredient_name : 1,
@@ -359,45 +360,61 @@ def parse_smelting_data(
 ################################################################################
 # Parse the stonecutting recipe type into a recipe item
 ################################################################################
+@dataclass
+class StonecuttingData:
+    recipe_type: Literal["minecraft:stonecutting"] = field(metadata={"json": "type"})
+    ingredient: ItemDict
+    result: Result
+
 def parse_stonecutting_data(
-    input_struct: Any,
+    input_data: Any,
     id_to_name_map: Dict[str, str],
     resource_groups: ResourceGroups,
 ) -> List[RecipeItem]:
-    confirm_keys(input_struct, ['count', 'ingredient', 'result', 'type'])
+    input_struct = classnotation.load_data(StonecuttingData, input_data)
 
-
-    count:int = input_struct["count"]
-    ingredient:str = get_item_name_from_item_dict(input_struct["ingredient"], id_to_name_map, resource_groups)
-    result: str = input_struct["result"]
+    ingredient:str = get_item_name_from_item_dict(
+        input_struct.ingredient,
+        id_to_name_map,
+        resource_groups
+    )
 
     recipe_item = RecipeItem(
-        name=id_to_name_map[result],
-        output=count,
+        name=id_to_name_map[input_struct.result.item_id],
+        output=input_struct.result.count,
         recipe_type="Cutting",
         requirements={
-            ingredient : 1
+            ingredient: 1
         }
     )
     return [recipe_item]
 
+################################################################################
+############################### Smithing Recipes ###############################
+################################################################################
+@dataclass
+class SmithingData:
+    recipe_type: Literal["minecraft:smithing_transform"] = field(metadata={"json": "type"})
+    addition: ItemDict
+    base: ItemDict
+    result: Result
+    template: ItemDict
+
 
 def parse_smithing_transform_data(
-    input_struct: Any,
+    input_data: Any,
     id_to_name_map: Dict[str, str],
     resource_groups: ResourceGroups,
 ) -> List[RecipeItem]:
-    confirm_keys(input_struct, ['type', 'addition', 'base', 'result', 'template'])
+    input_struct = classnotation.load_data(SmithingData, input_data)
 
-    addition: str = get_item_name_from_item_dict(input_struct['addition'], id_to_name_map, resource_groups)
-    base: str = get_item_name_from_item_dict(input_struct['base'], id_to_name_map, resource_groups)
-    # template: str = get_item_name_from_item_dict(input_struct['template'], id_to_name_map, resource_groups) # TODO: templates are weird so we are ingoring them for now
-    result: str = get_item_name_from_item_dict(input_struct["result"], id_to_name_map, resource_groups)
+    addition: str = get_item_name_from_item_dict(input_struct.addition, id_to_name_map, resource_groups)
+    base: str = get_item_name_from_item_dict(input_struct.base, id_to_name_map, resource_groups)
 
     return [
         RecipeItem(
-            name=result,
-            output=1,
+            name=id_to_name_map[input_struct.result.item_id],
+            output=input_struct.result.count,
             recipe_type="Smithing Table",
             requirements={
                 base: 1,
@@ -409,66 +426,23 @@ def parse_smithing_transform_data(
 ################################################################################
 ################################################################################
 ################################################################################
-
-# Helper function for unwrapping items
 def get_item_name_from_item_dict(
-    itemdict: Union[Dict[str, str], List[Dict[str,str]]],
+    itemdict: ItemDict,
     id_to_name_map: Dict[str, str],
     resource_groups: ResourceGroups,
 ) -> str:
-    # Sometimes the items that can be parsed are actually lists. This is a pretty
-    # bad design decision on minecraft's part but it likely the result of legacy
-    # code from a time before when they had item tags and they have not yet returned
-    # to clean up all the recipes. We will do that for them, and tags that are
-    # not present yet are manually created inside the resource_calculator_tag_groups
-    # variable.
-    if isinstance(itemdict, list):
-        itemdict = get_tag_from_itemdict_list(itemdict, resource_groups)
-
-    # We expect that the dict given to us at this point is a single element dict
-    # containing the key "item" or "tag".
-    if len(itemdict) > 1:
-        raise ValueError("Itemdict should contain one key, either 'item' or 'tag'" + str(itemdict))
-
-    if "tag" in itemdict:
-        return resource_groups.get_display_name_from_group(itemdict["tag"])
-    elif "item" in itemdict:
-        return id_to_name_map[itemdict["item"]]
-
-    raise ValueError("Itemdict should contain a key of either 'item' or 'tag' but contains neither" + str(itemdict))
+    if isinstance(itemdict, ItemDictItem):
+        return id_to_name_map[itemdict.item] 
+    elif isinstance(itemdict, ItemDictTag):
+        return resource_groups.get_display_name_from_group(itemdict.tag)
+    elif isinstance(itemdict, list):
+        return resource_groups.get_display_name_from_group(get_tag_from_itemdict_list(itemdict, resource_groups).tag)
 
 
 def get_tag_from_itemdict_list(
-    ingredient_list: List[Dict[str, str]],
+    ingredient_list: List[ItemDictItem],
     resource_groups: ResourceGroups
-) -> Dict[str,str]:
-
-    compact_list = sorted([x["item"] for x in ingredient_list])
-
+) -> ItemDictTag:
+    compact_list = sorted([x.item for x in ingredient_list])
     group_name = resource_groups.get_group_from_resources(compact_list)
-
-    return {"tag": group_name}
-
-
-
-
-
-
-
-
-################################################################################
-# confirm_keys
-#
-# A helper function to confirm that specific keys are in a dictionary and that
-# unknown keys are not in the dictionary. Displaying helpful error messages
-# if the dictionary is incorrect.
-################################################################################
-def confirm_keys(obj: Dict[str, Any], required_keys: List[str], optional_keys: List[str] = []) -> None:
-    for required_key in required_keys:
-        if required_key not in obj:
-            raise ValueError("{} is not found in {}".format(required_key, obj))
-
-    allowed_keys = set(required_keys + optional_keys)
-    for present_key in obj.keys():
-        if present_key not in allowed_keys:
-            raise ValueError("{} should not be in {}".format(present_key, obj))
+    return ItemDictTag(tag=group_name)

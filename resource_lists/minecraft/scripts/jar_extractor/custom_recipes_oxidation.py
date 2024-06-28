@@ -17,6 +17,11 @@ items = [
     "Cut Copper",
     "Cut Copper Stairs",
     "Cut Copper Slab",
+    "Copper Bulb",
+    "Chiseled Copper",
+    "Copper Grate",
+    "Copper Door",
+    "Copper Trapdoor",
 ]
 
 def maybe_replace_name(string):
