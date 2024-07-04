@@ -1,92 +1,88 @@
-from typing import Dict, List, Tuple, TypedDict
+from typing import Dict, List, Tuple, TypedDict, Protocol, Any, Generic, TypeVar, Callable
 import unittest
+from unittest.mock import Mock
 
-from .creator import Creator
-from .producer import Producer
+from .producer import InputFileDatatype, Producer
 from .scheduler import Scheduler
 
+from dataclasses import dataclass
 
-# TODO: dont use scheduler.build_new_creators() instead just create the files
-# that are being tested and use those. This depends on Scheduler being able
-# to support working directory inputs instead of using the current working
-# directory as the base dir.
+
+@dataclass
+class FunctionCall(Generic[InputFileDatatype]):
+    input_paths: InputFileDatatype
+    groups: Dict[str, str]
+
 
 class Integration_Tests(unittest.TestCase):
     maxDiff = 999999
 
     ############################################################################
-    # test_single_shared_file
+    # test_single_shared_filer
     #
     # Test that a set of grouped files with a single shared file get converted
     # into Creators properly.
     ############################################################################
     def test_single_group(self) -> None:
 
-        class InputFileDatatype(TypedDict):
+        class Input(TypedDict):
             data_file: str
             value_file: str
             global_config: str
 
-        class OutputFileDatatype(TypedDict):
-            data_file: str
+        function_calls: List[FunctionCall[Input]] = []
 
-        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
-            return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
+        def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls.append(FunctionCall(input_files, groups))
+            return ["output_" + groups["title"] + ".txt"]
 
-        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return None  # pragma: no cover
-
-        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+        producer: Producer[Input] = Producer(
+            name="Test Case",
             input_path_patterns={
                 "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
                 "value_file": r"value_(?P<title>[a-z]+)\.txt$",
                 "global_config": r"^global_configs?\.txt$",
             },
-            paths=paths,
             function=function,
-            categories=["test"],
         )
 
         scheduler = Scheduler(
-            producer_list=[producer],
-            initial_filepaths=[],
-        )
-        scheduler.build_new_creators(
-            files=[
+            producer_list=[
+                producer
+            ],
+            initial_filepaths=[
                 'data_one.txt',
                 'data_two.txt',
                 'value_one.txt',
                 'value_two.txt',
                 'global_config.txt',
-            ]
+            ],
         )
 
         self.assertCountEqual(
-            scheduler.creator_list.values(),
+            function_calls,
             [
-                Creator(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
                         "global_config": "global_config.txt",
                     },
-                    output_paths={
-                        "data_file": "output_one.txt"
-                    },
-                    function=function,
-                    categories=["test"]
+                    groups={
+                        "title": "one",
+                        "__global_config": "global_config.txt",
+                    }
                 ),
-                Creator(
+                FunctionCall(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two.txt',
                         'global_config': 'global_config.txt'
                     },
-                    output_paths={
-                        'data_file': 'output_two.txt'
-                    },
-                    function=function,
-                    categories=['test']
+                    groups={
+                        "title": "two",
+                        "__global_config": "global_config.txt",
+                    }
                 )
             ]
         )
@@ -101,35 +97,29 @@ class Integration_Tests(unittest.TestCase):
     ############################################################################
     def test_array_search(self) -> None:
 
-        class InputFileDatatype(TypedDict):
+        class Input(TypedDict):
             data_file: str
             partial_files: List[str]
 
-        class OutputFileDatatype(TypedDict):
-            data_file: str
+        function_calls: List[FunctionCall[Input]] = []
+        def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls.append(FunctionCall(input_files, groups))
+            return ["output_" + groups["title"] + ".txt"]
 
-        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
-            return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
-
-        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return  # pragma: no cover
-
-        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+        producer: Producer[Input] = Producer(
+            name="Test case",
             input_path_patterns={
                 "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
                 "partial_files": [r"partial_(?P<title>[a-z]+)_[0-9]+\.txt$"],
             },
-            paths=paths,
             function=function,
-            categories=["test"],
         )
 
         scheduler = Scheduler(
-            producer_list=[producer],
-            initial_filepaths=[],
-        )
-        scheduler.build_new_creators(
-            [
+            producer_list=[
+                producer
+            ],
+            initial_filepaths=[
                 'data_one.txt',
                 'data_two.txt',
                 'partial_one_1.txt',
@@ -140,33 +130,29 @@ class Integration_Tests(unittest.TestCase):
                 'partial_two_12.txt',
                 'partial_two_13.txt',
                 'partial_two_14.txt',
-            ]
+            ],
         )
 
         self.assertCountEqual(
-            scheduler.creator_list.values(),
+            function_calls,
             [
-                Creator(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "partial_files": ["partial_one_1.txt", "partial_one_2.txt", "partial_one_3.txt", "partial_one_4.txt"],
                     },
-                    output_paths={
-                        "data_file": "output_one.txt"
-                    },
-                    function=function,
-                    categories=["test"]
+                    groups={
+                        "title": "one"
+                    }
                 ),
-                Creator(
+                FunctionCall(
                     input_paths={
                         'data_file': 'data_two.txt',
                         "partial_files": ["partial_two_11.txt", "partial_two_12.txt", "partial_two_13.txt", "partial_two_14.txt"],
                     },
-                    output_paths={
-                        'data_file': 'output_two.txt'
-                    },
-                    function=function,
-                    categories=['test']
+                    groups={
+                        "title": "two"
+                    }
                 )
             ]
         )
@@ -175,44 +161,39 @@ class Integration_Tests(unittest.TestCase):
     # test_empty_field_string
     #
     # Tests that the ability to add an empty string as a field pattern works.
-    # An empty string should represent a field that is present but will not be
-    # automatically filled by the scheduler and instead is a placeholder for
-    # a value set to it inside of the paths() function.
+    # TODO: We now that we no longer have the `paths` step we should issue a
+    #   warning when this happens because at best it is equivalent to not having
+    #   a field, at worst it is equivalent to preventing the producer from ever
+    #   being run because "" is never going to be a file.
     ############################################################################
     def test_empty_field_string(self) -> None:
-
-        class InputFileDatatype(TypedDict):
+        class Input(TypedDict):
             data_file: str
             value_file: str
             source_file: str
 
-        class OutputFileDatatype(TypedDict):
-            data_file: str
+        function_calls: List[FunctionCall[Input]] = []
 
-        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
+        def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls.append(FunctionCall(input_files, groups))
             input_files["source_file"] += "_extention_on_blank"
-            return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
+            return ["output_" + groups["title"] + ".txt"]
 
-        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return  # pragma: no cover
-
-        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+        producer: Producer[Input] = Producer(
+            name="Text Case",
             input_path_patterns={
                 "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
                 "value_file": r"value_(?P<title>[a-z]+)\.txt$",
                 "source_file": "",
             },
-            paths=paths,
             function=function,
-            categories=["test"],
         )
 
         scheduler = Scheduler(
-            producer_list=[producer],
-            initial_filepaths=[],
-        )
-        scheduler.build_new_creators(
-            [
+            producer_list=[
+                producer
+            ],
+            initial_filepaths=[
                 'data_one.txt',
                 'data_two.txt',
                 'value_one.txt',
@@ -221,31 +202,27 @@ class Integration_Tests(unittest.TestCase):
         )
 
         self.assertCountEqual(
-            scheduler.creator_list.values(),
+            function_calls,
             [
-                Creator(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
                         "source_file": "_extention_on_blank",
                     },
-                    output_paths={
-                        "data_file": "output_one.txt"
-                    },
-                    function=function,
-                    categories=["test"]
+                    groups={
+                        "title": "one",
+                    }
                 ),
-                Creator(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_two.txt",
                         "value_file": "value_two.txt",
                         "source_file": "_extention_on_blank",
                     },
-                    output_paths={
-                        'data_file': 'output_two.txt'
-                    },
-                    function=function,
-                    categories=['test']
+                    groups={
+                        "title": "two"
+                    }
                 )
             ]
         )
@@ -254,80 +231,69 @@ class Integration_Tests(unittest.TestCase):
     # test_empty_field_array
     #
     # Tests that the ability to add an empty array as a field pattern works.
-    # An empty array should represent a field that is present but will not be
-    # automatically filled by the scheduler and instead is a placeholder for
-    # values set to it inside of the paths() function.
+    # TODO: We now that we no longer have the `paths` step we should issue a
+    #   warning when this happens because at best it is equivalent to not having
+    #   a field, at worst it is equivalent to preventing the producer from ever
+    #   being run because "" is never going to be a file.    
     ############################################################################
     def test_empty_field_array(self) -> None:
-
-        class InputFileDatatype(TypedDict):
+        class Input(TypedDict):
             data_file: str
             value_file: str
             source_files: List[str]
 
-        class OutputFileDatatype(TypedDict):
-            data_file: str
+        function_calls: List[FunctionCall[Input]] = []
 
-        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
+        def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls.append(FunctionCall(input_files, groups))
             input_files["source_files"].append("extention")
             input_files["source_files"].append("on")
             input_files["source_files"].append("blank")
+            return ["output_" + groups["title"] + ".txt"]
 
-            return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
-
-        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return  # pragma: no cover
-
-        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+        producer: Producer[Input] = Producer(
+            name="Test Case",
             input_path_patterns={
                 "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
                 "value_file": r"value_(?P<title>[a-z]+)\.txt$",
                 "source_files": [],
             },
-            paths=paths,
             function=function,
-            categories=["test"],
         )
 
         scheduler = Scheduler(
             producer_list=[producer],
-            initial_filepaths=[],
-        )
-        scheduler.build_new_creators(
-            [
+            initial_filepaths=[
                 'data_one.txt',
                 'data_two.txt',
                 'value_one.txt',
                 'value_two.txt',
-            ]
+            ],
         )
 
         self.assertCountEqual(
-            scheduler.creator_list.values(),
+            function_calls,
             [
-                Creator(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
                         "source_files": ["extention", "on", "blank"],
                     },
-                    output_paths={
-                        "data_file": "output_one.txt"
-                    },
-                    function=function,
-                    categories=["test"]
+                    groups={
+                        "title": "one"
+                    }
                 ),
-                Creator(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_two.txt",
                         "value_file": "value_two.txt",
                         "source_files": ["extention", "on", "blank"],
                     },
-                    output_paths={
-                        'data_file': 'output_two.txt'
-                    },
-                    function=function,
-                    categories=['test']
+                    groups={
+                        "title": "two"
+                    }
+
                 )
             ]
         )
@@ -341,96 +307,85 @@ class Integration_Tests(unittest.TestCase):
     ############################################################################
     def test_multi_global_file(self) -> None:
 
-        class InputFileDatatype(TypedDict):
+        class Input(TypedDict):
             data_file: str
             value_file: str
             global_config: str
 
-        class OutputFileDatatype(TypedDict):
-            data_file: str
+        function_calls: List[FunctionCall[Input]] = []
 
-        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
-            return (input_files, {"data_file": "output_" + groups["title"] + "_" + input_files["global_config"]})
+        def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls.append(FunctionCall(input_files, groups))
+            return["output_" + groups["title"] + "_" + input_files["global_config"]]
 
-        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return  # pragma: no cover
-
-        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+        producer: Producer[Input] = Producer(
+            name="Test Case",
             input_path_patterns={
                 "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
                 "value_file": r"value_(?P<title>[a-z]+)\.txt$",
                 "global_config": r"^global_configs?\.txt$",
             },
-            paths=paths,
             function=function,
-            categories=["test"],
         )
 
         scheduler = Scheduler(
             producer_list=[producer],
-            initial_filepaths=[],
-        )
-        scheduler.build_new_creators(
-            [
+            initial_filepaths=[
                 'data_one.txt',
                 'data_two.txt',
                 'value_one.txt',
                 'value_two.txt',
                 'global_config.txt',
                 'global_configs.txt',
-            ]
+            ],
         )
 
         self.assertCountEqual(
-            scheduler.creator_list.values(),
+            function_calls,
             [
-                Creator(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
                         "global_config": "global_config.txt",
                     },
-                    output_paths={
-                        "data_file": "output_one_global_config.txt"
-                    },
-                    function=function,
-                    categories=["test"]
+                    groups={
+                        "title": "one",
+                        "__global_config": "global_config.txt"
+                    }
                 ),
-                Creator(
+                FunctionCall(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two.txt',
                         'global_config': 'global_config.txt'
                     },
-                    output_paths={
-                        'data_file': 'output_two_global_config.txt'
-                    },
-                    function=function,
-                    categories=['test']
+                    groups={
+                        "title": "two",
+                        "__global_config": "global_config.txt"
+                    }
                 ),
-                Creator(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
                         "global_config": "global_configs.txt",
                     },
-                    output_paths={
-                        "data_file": "output_one_global_configs.txt"
-                    },
-                    function=function,
-                    categories=["test"]
+                    groups={
+                        "title": "one",
+                        "__global_config": "global_configs.txt"
+                    }
                 ),
-                Creator(
+                FunctionCall(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two.txt',
                         'global_config': 'global_configs.txt'
                     },
-                    output_paths={
-                        'data_file': 'output_two_global_configs.txt'
-                    },
-                    function=function,
-                    categories=['test']
+                    groups={
+                        "title": "two",
+                        "__global_config": "global_configs.txt"
+                    }
                 )
             ]
         )
@@ -443,37 +398,32 @@ class Integration_Tests(unittest.TestCase):
     ############################################################################
     def test_mutliple_match_groups(self) -> None:
 
-        class InputFileDatatype(TypedDict):
+        class Input(TypedDict):
             data_file: str
             value_file: str
             global_config: str
 
-        class OutputFileDatatype(TypedDict):
-            data_file: str
+        function_calls: List[FunctionCall[Input]] = []
 
-        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
-            return (input_files, {"data_file": "output_" + groups["title"] + "_" + groups["language"] + ".txt"})
+        def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls.append(FunctionCall(input_files, groups))
+            return ["output_" + groups["title"] + "_" + groups["language"] + ".txt" ]
 
-        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return  # pragma: no cover
-
-        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+        producer: Producer[Input] = Producer(
+            name="Test Case",
             input_path_patterns={
                 "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
                 "value_file": r"value_(?P<title>[a-z]+)_(?P<language>[a-z]+)\.txt$",
                 "global_config": r"^global_config_(?P<language>[a-z]+)\.txt$",
             },
-            paths=paths,
             function=function,
-            categories=["test"],
         )
 
         scheduler = Scheduler(
-            producer_list=[producer],
-            initial_filepaths=[],
-        )
-        scheduler.build_new_creators(
-            [
+            producer_list=[
+                producer
+            ],
+            initial_filepaths=[
                 'data_one.txt',
                 'data_two.txt',
                 'value_one_german.txt',
@@ -482,59 +432,55 @@ class Integration_Tests(unittest.TestCase):
                 'value_two_spanish.txt',
                 'global_config_german.txt',
                 'global_config_spanish.txt',
-            ]
+            ],
         )
 
         self.assertCountEqual(
-            scheduler.creator_list.values(),
+            function_calls,
             [
-                Creator(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one_german.txt",
                         "global_config": "global_config_german.txt",
                     },
-                    output_paths={
-                        "data_file": "output_one_german.txt"
-                    },
-                    function=function,
-                    categories=["test"]
+                    groups={
+                        "title": "one",
+                        "language": "german",
+                    }
                 ),
-                Creator(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one_spanish.txt",
                         "global_config": "global_config_spanish.txt",
                     },
-                    output_paths={
-                        "data_file": "output_one_spanish.txt"
-                    },
-                    function=function,
-                    categories=["test"]
+                    groups={
+                        "title": "one",
+                        "language": "spanish",
+                    }
                 ),
-                Creator(
+                FunctionCall(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two_german.txt',
                         'global_config': 'global_config_german.txt'
                     },
-                    output_paths={
-                        'data_file': 'output_two_german.txt'
-                    },
-                    function=function,
-                    categories=['test']
+                    groups={
+                        "title": "two",
+                        "language": "german",
+                    }
                 ),
-                Creator(
+                FunctionCall(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two_spanish.txt',
                         'global_config': 'global_config_spanish.txt'
                     },
-                    output_paths={
-                        'data_file': 'output_two_spanish.txt'
-                    },
-                    function=function,
-                    categories=['test']
+                    groups={
+                        "title": "two",
+                        "language": "spanish",
+                    }
                 )
             ]
         )
@@ -554,35 +500,28 @@ class Integration_Tests(unittest.TestCase):
     # implementation is swapped out.
     ############################################################################
     def test_filename_with_comma(self) -> None:
-        class InputFileDatatype(TypedDict):
+        class Input(TypedDict):
             data_file: str
             partial_files: List[str]
 
-        class OutputFileDatatype(TypedDict):
-            data_file: str
+        function_calls: List[FunctionCall[Input]] = []
 
-        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
-            return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
+        def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls.append(FunctionCall(input_files, groups))
+            return ["output_" + groups["title"] + ".txt"]
 
-        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return  # pragma: no cover
-
-        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+        producer: Producer[Input] = Producer(
+            name="Test Case",
             input_path_patterns={
                 "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
                 "partial_files": [r"partial\\?,?_(?P<title>[a-z]+)_[0-9]+\.txt$"],
             },
-            paths=paths,
             function=function,
-            categories=["test"],
         )
 
         scheduler = Scheduler(
             producer_list=[producer],
-            initial_filepaths=[],
-        )
-        scheduler.build_new_creators(
-            [
+            initial_filepaths=[
                 'data_one.txt',
                 'data_two.txt',
                 'partial_one_1.txt',
@@ -593,33 +532,39 @@ class Integration_Tests(unittest.TestCase):
                 'partial\\_two_12.txt',
                 'partial_two_13.txt',
                 'partial,_two_14.txt',
-            ]
+            ],
         )
 
         self.assertCountEqual(
-            scheduler.creator_list.values(),
+            function_calls,
             [
-                Creator(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
-                        "partial_files": ["partial,_one_4.txt", "partial\\_one_2.txt", "partial_one_1.txt", "partial_one_3.txt"],
+                        "partial_files": [
+                            "partial,_one_4.txt",
+                            "partial\\_one_2.txt",
+                            "partial_one_1.txt",
+                            "partial_one_3.txt"
+                        ],
                     },
-                    output_paths={
-                        "data_file": "output_one.txt"
-                    },
-                    function=function,
-                    categories=["test"]
+                    groups={
+                        "title": "one"
+                    }
                 ),
-                Creator(
+                FunctionCall(
                     input_paths={
                         'data_file': 'data_two.txt',
-                        "partial_files": ["partial,_two_14.txt", "partial\\_two_12.txt", "partial_two_11.txt", "partial_two_13.txt"],
+                        "partial_files": [
+                            "partial,_two_14.txt",
+                            "partial\\_two_12.txt",
+                            "partial_two_11.txt",
+                            "partial_two_13.txt"
+                        ],
                     },
-                    output_paths={
-                        'data_file': 'output_two.txt'
-                    },
-                    function=function,
-                    categories=['test']
+                    groups={
+                        "title": "two"
+                    }
                 )
             ]
         )
@@ -632,61 +577,99 @@ class Integration_Tests(unittest.TestCase):
     ############################################################################
     def test_no_match_group(self) -> None:
 
-        class InputFileDatatype(TypedDict):
+        class Input(TypedDict):
             data_file: str
 
-        class OutputFileDatatype(TypedDict):
-            data_file: str
+        function_calls: List[FunctionCall[Input]] = []
 
-        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
-            return (input_files, {"data_file": "output_" + input_files["data_file"]})
+        def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls.append(FunctionCall(input_files, groups))
+            return ["output_" + input_files["data_file"]]
 
-        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return None  # pragma: no cover
-
-        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+        producer: Producer[Input] = Producer(
+            name="Test Case2",
             input_path_patterns={
                 "data_file": r"^data_[a-z]+\.txt$",
             },
-            paths=paths,
             function=function,
-            categories=["test"],
         )
 
         scheduler = Scheduler(
             producer_list=[producer],
-            initial_filepaths=[],
-        )
-        scheduler.build_new_creators(
-            [
+            initial_filepaths=[
                 'data_one.txt',
                 'data_two.txt',
-            ]
+            ],
         )
 
         self.assertCountEqual(
-            scheduler.creator_list.values(),
+            function_calls,
             [
-                Creator(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                     },
-                    output_paths={
-                        "data_file": "output_data_one.txt"
-                    },
-                    function=function,
-                    categories=["test"]
+                    groups={
+                        "__data_file": "data_one.txt",
+                    }
                 ),
-                Creator(
+                FunctionCall(
                     input_paths={
                         'data_file': 'data_two.txt',
                     },
-                    output_paths={
-                        'data_file': 'output_data_two.txt'
-                    },
-                    function=function,
-                    categories=['test']
+                    groups={
+                        "__data_file": "data_two.txt",
+                    }
                 )
+            ]
+        )
+
+    ############################################################################
+    # test_array_no_match_group
+    #
+    # Test that an array regex without a match group is properly combined to be
+    # a single action instead of being split up to multiple actions
+    ############################################################################
+    def test_array_no_match_group(self) -> None:
+        class Input(TypedDict):
+            data_file: List[str]
+
+        function_calls: List[FunctionCall[Input]] = []
+
+        def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls.append(FunctionCall(input_files, groups))
+            return ["output_file.txt"]
+
+        producer: Producer[Input] = Producer(
+            name="Test Case",
+            input_path_patterns={
+                "data_file": [r"^data_[a-z]+\.txt$"],
+            },
+            function=function,
+        )
+
+        scheduler = Scheduler(
+            producer_list=[producer],
+            initial_filepaths=[
+                'data_one.txt',
+                'data_two.txt',
+            ],
+        )
+
+        self.assertCountEqual(
+            function_calls,
+            [
+                FunctionCall(
+                    input_paths={
+                        "data_file": [
+                            "data_one.txt",
+                            "data_two.txt"
+                        ],
+                    },
+                    groups={
+                        "__data_file": "",
+                    }
+                ),
             ]
         )
 
@@ -698,47 +681,39 @@ class Integration_Tests(unittest.TestCase):
     ############################################################################
     def test_double_array_no_match_group(self) -> None:
 
-        class InputFileDatatype(TypedDict):
+        class Input(TypedDict):
             data_file: List[str]
             value_file: List[str]
 
-        class OutputFileDatatype(TypedDict):
-            data_file: str
+        function_calls: List[FunctionCall[Input]] = []
 
-        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
-            return (input_files, {"data_file": "output_file.txt"})
+        def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls.append(FunctionCall(input_files, groups))
+            return ["output_file.txt"]
 
-
-        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return None  # pragma: no cover
-
-        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+        producer: Producer[Input] = Producer(
+            name="Test Case",
             input_path_patterns={
                 "data_file": [r"^data_[a-z]+\.txt$"],
-                "value_file": [r"^value_[a-z]+\.txt"],
+                "value_file": [r"^value_[a-z]+\.txt$"],
             },
-            paths=paths,
             function=function,
-            categories=["test"],
         )
 
         scheduler = Scheduler(
             producer_list=[producer],
-            initial_filepaths=[],
-        )
-        scheduler.build_new_creators(
-            [
+            initial_filepaths=[
                 'data_one.txt',
                 'data_two.txt',
                 'value_one.txt',
                 'value_two.txt'
-            ]
+            ],
         )
 
         self.assertCountEqual(
-            scheduler.creator_list.values(),
+            function_calls,
             [
-                Creator(
+                FunctionCall(
                     input_paths={
                         "data_file": [
                             "data_one.txt",
@@ -749,11 +724,10 @@ class Integration_Tests(unittest.TestCase):
                             "value_two.txt"
                         ]
                     },
-                    output_paths={
-                        "data_file": "output_file.txt"
-                    },
-                    function=function,
-                    categories=["test"]
+                    groups={
+                        "__data_file": "",
+                        "__value_file": "",
+                    }
                 ),
             ]
         )
@@ -766,35 +740,28 @@ class Integration_Tests(unittest.TestCase):
     ############################################################################
     def test_double_array(self) -> None:
 
-        class InputFileDatatype(TypedDict):
+        class Input(TypedDict):
             data_file: List[str]
             value_file: List[str]
 
-        class OutputFileDatatype(TypedDict):
-            data_file: str
+        function_calls: List[FunctionCall[Input]] = []
 
-        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
-            return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
+        def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls.append(FunctionCall(input_files, groups))
+            return ["output_" + groups["title"] + ".txt"]
 
-        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return None  # pragma: no cover
-
-        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+        producer: Producer[Input] = Producer(
+            name="Test Case",
             input_path_patterns={
                 "data_file": [r"^data_(?P<title>[a-z]+)_[0-9]\.txt$"],
                 "value_file": [r"^value_(?P<title>[a-z]+)_[0-9]\.txt$"],
             },
-            paths=paths,
             function=function,
-            categories=["test"],
         )
 
         scheduler = Scheduler(
             producer_list=[producer],
-            initial_filepaths=[],
-        )
-        scheduler.build_new_creators(
-            [
+            initial_filepaths=[
                 'data_one_1.txt',
                 'data_one_2.txt',
                 'data_two_1.txt',
@@ -803,13 +770,13 @@ class Integration_Tests(unittest.TestCase):
                 'value_one_2.txt',
                 'value_two_1.txt',
                 'value_two_2.txt'
-            ]
+            ],
         )
 
         self.assertCountEqual(
-            scheduler.creator_list.values(),
+            function_calls,
             [
-                Creator(
+                FunctionCall(
                     input_paths={
                         'data_file': [
                             'data_one_1.txt',
@@ -820,11 +787,11 @@ class Integration_Tests(unittest.TestCase):
                             'value_one_2.txt',
                         ]
                     },
-                    output_paths={'data_file': 'output_one.txt'},
-                    function=function,
-                    categories=['test']
+                    groups={
+                        "title": "one",
+                    },
                 ),
-                Creator(
+                FunctionCall(
                     input_paths={
                         'data_file': [
                             'data_two_1.txt',
@@ -835,45 +802,44 @@ class Integration_Tests(unittest.TestCase):
                             'value_two_2.txt',
                         ]
                     },
-                    output_paths={'data_file': 'output_two.txt'},
-                    function=function,
-                    categories=['test']
+                    groups={
+                        "title": "two",
+                    },
                 )
             ]
         )
 
-    def test_file_addition_to_existing_set(self) -> None:
-        class InputFileDatatype(TypedDict):
+    ############################################################################
+    # test_file_addition_to_existing_files
+    #
+    # Tests that we will generate new actions based on existing files if a new
+    # file is added that would complete a proucer regex combination.
+    ############################################################################
+    def test_file_addition_to_existing_files(self) -> None:
+        class Input(TypedDict):
             data_file: str
             value_file: str
             global_config: str
 
-        class OutputFileDatatype(TypedDict):
-            data_file: str
+        function_calls: List[FunctionCall[Input]] = []
 
-        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
-            return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
+        def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls.append(FunctionCall(input_files, groups))
+            return ["output_" + groups["title"] + ".txt"]
 
-        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return None  # pragma: no cover
-
-        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+        producer: Producer[Input] = Producer(
+            name="Test Case",
             input_path_patterns={
                 "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
                 "value_file": r"value_(?P<title>[a-z]+)\.txt$",
                 "global_config": r"^global_configs?\.txt$",
             },
-            paths=paths,
             function=function,
-            categories=["test"],
         )
 
         scheduler = Scheduler(
             producer_list=[producer],
-            initial_filepaths=[],
-        )
-        scheduler.build_new_creators(
-            [
+            initial_filepaths=[
                 'data_one.txt',
                 'value_one.txt',
                 'value_two.txt',
@@ -882,92 +848,82 @@ class Integration_Tests(unittest.TestCase):
         )
 
         self.assertCountEqual(
-            scheduler.creator_list.values(),
+            function_calls,
             [
-                Creator(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
                         "global_config": "global_config.txt",
                     },
-                    output_paths={
-                        "data_file": "output_one.txt"
-                    },
-                    function=function,
-                    categories=["test"]
+                    groups={
+                        "title": "one",
+                        "__global_config": "global_config.txt",
+                    }
                 ),
             ]
         )
 
-        scheduler.build_new_creators(
+        # Reset function_calls so we only see the function calls that are made
+        # as a result of calling add_or_update_files() with the new file.
+        function_calls = []
+
+        scheduler.add_or_update_files(
             [
-                'data_two.txt',
+                'data_two.txt'
             ]
         )
 
         self.assertCountEqual(
-            scheduler.creator_list.values(),
+            function_calls,
             [
-                Creator(
-                    input_paths={
-                        "data_file": "data_one.txt",
-                        "value_file": "value_one.txt",
-                        "global_config": "global_config.txt",
-                    },
-                    output_paths={
-                        "data_file": "output_one.txt"
-                    },
-                    function=function,
-                    categories=["test"]
-                ),
-                Creator(
+                FunctionCall(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two.txt',
                         'global_config': 'global_config.txt'
                     },
-                    output_paths={
-                        'data_file': 'output_two.txt'
-                    },
-                    function=function,
-                    categories=['test']
+                    groups={
+                        "title": "two",
+                        "__global_config": "global_config.txt",
+                    }
                 )
             ]
         )
 
-
-    def test_double_file_addition(self) -> None:
-        class InputFileDatatype(TypedDict):
+    ############################################################################
+    # test_file_readdition
+    #
+    # Test that when a file is re-added it triggers all of the actions it is
+    # supposed to and none of the actions it is not supposed to.
+    ############################################################################
+    def test_file_readdition(self) -> None:
+        class Input(TypedDict):
             data_file: str
             value_file: str
             global_config: str
 
-        class OutputFileDatatype(TypedDict):
-            data_file: str
+        function_calls: List[FunctionCall[Input]] = []
 
-        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
-            return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
+        def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls.append(FunctionCall(input_files, groups))
+            return ["output_" + groups["title"] + ".txt"]
 
-        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return None  # pragma: no cover
-
-        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+        producer: Producer[Input] = Producer(
+            name="Test Case",
             input_path_patterns={
                 "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
                 "value_file": r"value_(?P<title>[a-z]+)\.txt$",
                 "global_config": r"^global_configs?\.txt$",
             },
-            paths=paths,
             function=function,
-            categories=["test"],
         )
 
         scheduler = Scheduler(
-            producer_list=[producer],
-            initial_filepaths=[],
-        )
-        scheduler.build_new_creators(
-            [
+            producer_list=[
+                producer
+            ],
+            initial_filepaths=[
                 'data_one.txt',
                 'data_two.txt',
                 'value_one.txt',
@@ -975,144 +931,161 @@ class Integration_Tests(unittest.TestCase):
                 'global_config.txt',
             ]
         )
-        scheduler.build_new_creators(
-            [
-                'data_one.txt',
-            ]
-        )
 
         self.assertCountEqual(
-            scheduler.creator_list.values(),
+            function_calls,
             [
-                Creator(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
                         "global_config": "global_config.txt",
                     },
-                    output_paths={
-                        "data_file": "output_one.txt"
+                    groups={
+                        "title": "one",
+                        "__global_config": "global_config.txt"
                     },
-                    function=function,
-                    categories=["test"]
                 ),
-                Creator(
+                FunctionCall(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two.txt',
                         'global_config': 'global_config.txt'
                     },
-                    output_paths={
-                        'data_file': 'output_two.txt'
+                    groups={
+                        "title": "two",
+                        "__global_config": "global_config.txt"
                     },
-                    function=function,
-                    categories=['test']
                 )
             ]
         )
 
 
-    def test_file_deletion(self) -> None:
-        class InputFileDatatype(TypedDict):
-            data_file: str
-            value_file: str
-            global_config: str
+        # Reset function_calls so we only see the function calls that are made
+        # as a result of calling add_or_update_files() with the new file.
+        function_calls = []
 
-        class OutputFileDatatype(TypedDict):
-            data_file: str
 
-        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
-            return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
-
-        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return None  # pragma: no cover
-
-        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
-            input_path_patterns={
-                "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
-                "value_file": r"value_(?P<title>[a-z]+)\.txt$",
-                "global_config": r"^global_configs?\.txt$",
-            },
-            paths=paths,
-            function=function,
-            categories=["test"],
-        )
-
-        scheduler = Scheduler(
-            producer_list=[producer],
-            initial_filepaths=[],
-        )
-        scheduler.build_new_creators(
+        scheduler.add_or_update_files(
             [
                 'data_one.txt',
-                'data_two.txt',
-                'value_one.txt',
-                'value_two.txt',
-                'global_config.txt',
-            ]
-        )
-        scheduler.delete_files(
-            [
-                'data_two.txt',
-                'value_two.txt',
-            ]
-        )
-
-        # Force a rebuild of the creators to be sure that deleting the files
-        # did not just delete the creators from the list and leave the files
-        scheduler.build_new_creators(
-            [
-            'global_config.txt'
             ]
         )
 
         self.assertCountEqual(
-            scheduler.creator_list.values(),
+            function_calls,
             [
-                Creator(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
                         "global_config": "global_config.txt",
                     },
-                    output_paths={
-                        "data_file": "output_one.txt"
+                    groups={
+                        "title": "one",
+                        "__global_config": "global_config.txt"
                     },
-                    function=function,
-                    categories=["test"]
                 ),
             ]
         )
 
-    def test_new_file_in_group(self) -> None:
-        class InputFileDatatype(TypedDict):
+#     def test_file_deletion(self) -> None:
+#         class InputFileDatatype(TypedDict):
+#             data_file: str
+#             value_file: str
+#             global_config: str
+
+#         class OutputFileDatatype(TypedDict):
+#             data_file: str
+
+#         def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
+#             return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
+
+#         def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
+#             return None  # pragma: no cover
+
+#         producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+#             input_path_patterns={
+#                 "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
+#                 "value_file": r"value_(?P<title>[a-z]+)\.txt$",
+#                 "global_config": r"^global_configs?\.txt$",
+#             },
+#             paths=paths,
+#             function=function,
+#             categories=["test"],
+#         )
+
+#         scheduler = Scheduler(
+#             producer_list=[producer],
+#             initial_filepaths=[],
+#         )
+#         scheduler.build_new_creators(
+#             [
+#                 'data_one.txt',
+#                 'data_two.txt',
+#                 'value_one.txt',
+#                 'value_two.txt',
+#                 'global_config.txt',
+#             ]
+#         )
+#         scheduler.delete_files(
+#             [
+#                 'data_two.txt',
+#                 'value_two.txt',
+#             ]
+#         )
+
+#         # Force a rebuild of the creators to be sure that deleting the files
+#         # did not just delete the creators from the list and leave the files
+#         scheduler.build_new_creators(
+#             [
+#             'global_config.txt'
+#             ]
+#         )
+
+#         self.assertCountEqual(
+#             scheduler.creator_list.values(),
+#             [
+#                 Creator(
+#                     input_paths={
+#                         "data_file": "data_one.txt",
+#                         "value_file": "value_one.txt",
+#                         "global_config": "global_config.txt",
+#                     },
+#                     output_paths={
+#                         "data_file": "output_one.txt"
+#                     },
+#                     function=function,
+#                     categories=["test"]
+#                 ),
+#             ]
+#         )
+    
+    def test_new_file_in_array(self) -> None:
+        class Input(TypedDict):
             data_file: str
             value_files: List[str]
 
-        class OutputFileDatatype(TypedDict):
-            data_file: str
+        function_calls: List[FunctionCall[Input]] = []
 
-        def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
-            return (input_files, {"data_file": "output_" + groups["title"] + ".txt"})
+        def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls.append(FunctionCall(input_files, groups))
+            return ["output_" + groups["title"] + ".txt"]
 
-        def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-            return None  # pragma: no cover
-
-        producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+        producer: Producer[Input] = Producer(
+            name="Test Case",
             input_path_patterns={
                 "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
                 "value_files": [r"value_(?P<title>[a-z]+).*\.txt$"],
             },
-            paths=paths,
             function=function,
-            categories=["test"],
         )
 
         scheduler = Scheduler(
             producer_list=[producer],
             initial_filepaths=[],
         )
-        scheduler.build_new_creators(
+        scheduler.add_or_update_files(
             [
                 'data_one.txt',
                 'value_one_1.txt',
@@ -1120,25 +1093,43 @@ class Integration_Tests(unittest.TestCase):
             ]
         )
 
-        scheduler.build_new_creators(
+
+        self.assertCountEqual(
+            function_calls,
+            [
+                FunctionCall(
+                    input_paths={
+                        "data_file": "data_one.txt",
+                        "value_files": ["value_one_1.txt", "value_one_2.txt"],
+                    },
+                    groups={
+                        "title": "one",
+                    }
+                ),
+            ]
+        )
+
+        # Reset function_calls so we only see the function calls that are made
+        # as a result of calling add_or_update_files() with the new file.
+        function_calls = []
+
+        scheduler.add_or_update_files(
             [
                 'value_one_3.txt',
             ]
         )
 
         self.assertCountEqual(
-            scheduler.creator_list.values(),
+            function_calls,
             [
-                Creator(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_files": ["value_one_1.txt", "value_one_2.txt", "value_one_3.txt"],
                     },
-                    output_paths={
-                        "data_file": "output_one.txt"
-                    },
-                    function=function,
-                    categories=["test"]
+                    groups={
+                        "title": "one",
+                    }
                 ),
             ]
         )
@@ -1153,37 +1144,37 @@ class Integration_Tests(unittest.TestCase):
     # ############################################################################
     # # test_mutliple_options_with_group
     # #
-    # # Test that a set of grouped files with a single shared file get converted
-    # # into Creators properly.
+    # # TODO:
+    # # This should probably throw an error of some sort stating that it found
+    # # multiple different possibilities for a group. I dont think we actually
+    # # want two different action to be run here becuase the user should either
+    # # be using an additional group to indicate the difference in files, or
+    # # should be using an array.
     # ############################################################################
-    # def test_single_group(self) -> None:
+    # def test_mutliple_options_with_group(self) -> None:
 
-    #     class InputFileDatatype(TypedDict):
+    #     class Input(TypedDict):
     #         data_file: str
 
-    #     class OutputFileDatatype(TypedDict):
-    #         data_file: str
+    #     function_calls: List[FunctionCall[Input]] = []
 
-    #     def paths(input_files: InputFileDatatype, groups: Dict[str, str]) -> Tuple[InputFileDatatype, OutputFileDatatype]:
-    #         return (input_files, {"data_file": "output_" + input_files["data_file"]})
+    #     def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+    #         function_calls.append(FunctionCall(input_files, groups))
+    #         return ["output_" + input_files["data_file"]]
 
-    #     def function(input_files: InputFileDatatype, output_files: OutputFileDatatype) -> None:
-    #         return None  # pragma: no cover
-
-    #     producer: Producer[InputFileDatatype, OutputFileDatatype] = Producer(
+    #     producer: Producer[Input] = Producer(
+    #         name="Test Case",
     #         input_path_patterns={
     #             "data_file": r"^data_(?P<title>[a-z]+)_.\.txt$",
     #         },
-    #         paths=paths,
     #         function=function,
-    #         categories=["test"],
     #     )
 
     #     scheduler = Scheduler(
     #         producer_list=[producer],
     #         initial_filepaths=[],
     #     )
-    #     scheduler.build_new_creators(
+    #     scheduler.add_or_update_files(
     #         files=[
     #             'data_one_1.txt',
     #             'data_one_2.txt',
@@ -1191,40 +1182,115 @@ class Integration_Tests(unittest.TestCase):
     #     )
 
     #     self.assertCountEqual(
-    #         scheduler.creator_list.values(),
+    #         function_calls,
     #         [
-    #             Creator(
+    #             FunctionCall(
     #                 input_paths={
     #                     "data_file": "data_one_1.txt",
     #                 },
-    #                 output_paths={
-    #                     "data_file": "output_data_one_1.txt"
-    #                 },
-    #                 function=function,
-    #                 categories=["test"]
+    #                 groups={
+    #                     "title": "one",
+    #                 }
     #             ),
-    #             Creator(
+    #             FunctionCall(
     #                 input_paths={
     #                     'data_file': 'data_one_2.txt',
     #                 },
-    #                 output_paths={
-    #                     'data_file': 'output_data_one_2.txt'
-    #                 },
-    #                 function=function,
-    #                 categories=['test']
+    #                 groups={
+    #                     "title": "one",
+    #                 }
     #             )
     #         ]
     #     )
 
 
-class Initialization_Query_Tests(unittest.TestCase):
-    pass
+    ############################################################################
+    # test_cascading_actions
+    #
+    # Test that when one producer creates files that are consumed by another
+    # producer, the second producer successfully processes those files.
+    ############################################################################
+    def test_cascading_actions(self) -> None:
 
-class Insert_Query_Tests(unittest.TestCase):
-    pass
+        class Input(TypedDict):
+            data_file: str
 
-class Remove_Query_Tests(unittest.TestCase):
-    pass
+        function_calls_data: List[FunctionCall[Input]] = []
 
-class Filesets_Query_Tests(unittest.TestCase):
-    pass
+        def function_data(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls_data.append(FunctionCall(input_files, groups))
+            return ["value_" + groups["title"] + ".txt"]
+
+        function_calls_value: List[FunctionCall[Input]] = []
+
+        def function_value(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls_value.append(FunctionCall(input_files, groups))
+            return ["output_" + groups["title"] + ".txt"]
+
+
+        producer_data: Producer[Input] = Producer(
+            name="Test Case - Data",
+            input_path_patterns={
+                "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
+            },
+            function=function_data,
+        )
+        producer_value: Producer[Input] = Producer(
+            name="Test Case - Value",
+            input_path_patterns={
+                "data_file": r"^value_(?P<title>[a-z]+)\.txt$",
+            },
+            function=function_value,
+        )
+
+
+        scheduler = Scheduler(
+            producer_list=[
+                producer_data,
+                producer_value,
+            ],
+            initial_filepaths=[
+                'data_one.txt',
+            ],
+        )
+
+        self.assertCountEqual(
+            function_calls_data,
+            [
+                FunctionCall(
+                    input_paths={
+                        "data_file": "data_one.txt",
+                    },
+                    groups={
+                        "title": "one",
+                    }
+                ),
+            ]
+        )
+        self.assertCountEqual(
+            function_calls_value,
+            [
+                FunctionCall(
+                    input_paths={
+                        'data_file': 'value_one.txt',
+                    },
+                    groups={
+                        "title": "one",
+                    }
+                )
+            ]
+        )
+
+
+
+# class Initialization_Query_Tests(unittest.TestCase):
+#     pass
+
+# class Insert_Query_Tests(unittest.TestCase):
+#     pass
+
+# class Remove_Query_Tests(unittest.TestCase):
+#     pass
+
+# class Filesets_Query_Tests(unittest.TestCase):
+#     pass
