@@ -10,7 +10,7 @@ from pylib.editor_producer import editor_producers
 from pylib.gz_compressor_producer import gz_compressor_producers
 from pylib.imagepack import item_image_producers
 from pylib.landing_page_producer import landing_page_producers
-from pylib.producer import Producer, Scheduler, SingleFile, GenericProducer, producer_copyfile, copy_file_with_hash
+from pylib.producer import Producer, Scheduler, SingleFile, GenericProducer, copy_file, copy_file_with_hash
 from pylib.producer_plugins import plugins_producers
 from pylib.typescript_producer import typescript_producer
 from pylib.uglifyjs import uglify_js_producer
@@ -66,29 +66,26 @@ def core_resource_producers() -> List[GenericProducer]:
     for copyfile in hashed_copyfiles:
         core_producers.append(
             copy_file_with_hash(
+                name=f"Hash Copy {copyfile}",
                 input_file_pattern="^{}$".format(copyfile),
                 output_file_template="output/{filename}-{filehash}{extension}",
-                cache_file_template= "cache/{filename}{extension}.json",
-                categories=["core"],
+                metadata_file_template= "cache/{filename}{extension}.json",
             )
         )
 
     # Add a producer for each file that will be copied over to output/.
     for copyfile in copyfiles:
         core_producers.append(
-            Producer(
-                input_path_patterns={
-                    "file": "^{}$".format(copyfile),
-                },
-                paths=core_resource_paths,
-                function=producer_copyfile,
-                categories=["core"]
+            copy_file(
+                name=f"Copy {copyfile}",
+                target_file=copyfile,
+                destination_file=os.path.join("output", os.path.basename(copyfile))
             )
         )
 
     # Add a producer for each of the typescript project files.
     for ts_project_config in ts_project_configs:
-        core_producers.append(typescript_producer(ts_project_config, ["core"]))
+        core_producers.append(typescript_producer(ts_project_config))
 
     # Add a producer for each javascript file to minify.
     for uglify_js_file in uglify_js_files:
@@ -96,7 +93,6 @@ def core_resource_producers() -> List[GenericProducer]:
             uglify_js_producer(
                 input_file=uglify_js_file,
                 output_file=os.path.join("output", os.path.basename(uglify_js_file)),
-                categories=["core"]
             )
         )
 

@@ -20,7 +20,8 @@ from pylib.webminify import minify_css_blocks
 ################################################################################
 def calculator_producers(calculator_dir_regex: str) -> List[GenericProducer]:
 
-    calculator_producer: Producer[CalculatorInputFiles, SingleFile] = Producer(
+    calculator_producer: Producer[CalculatorInputFiles] = Producer(
+            name="Build Calculator Page",
             input_path_patterns={
                 "resources_pickle": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/resources\.pickle$".format(
                     calculator_dir_regex=calculator_dir_regex
@@ -34,9 +35,7 @@ def calculator_producers(calculator_dir_regex: str) -> List[GenericProducer]:
                 "css_filename_data": r"^cache/calculator\.css\.json",
                 "calculator_template": r"^core/calculator\.html$"
             },
-            paths=calculator_paths,
             function=calculator_function,
-            categories=["calculator"],
         )
     return [
         calculator_producer
@@ -58,39 +57,18 @@ class CalculatorInputFiles(TypedDict):
 
 
 ################################################################################
-# calculator_paths
-#
-# The input and output paths generation function for creating calculator pages.
-################################################################################
-def calculator_paths(input_files: CalculatorInputFiles, categories: Dict[str, str]) -> Tuple[CalculatorInputFiles, SingleFile]:
-    calculator_page = categories["calculator_dir"]
-    calculator_index_page = os.path.join("output", calculator_page, "index.html")
-
-    return (
-        input_files,
-        {
-            "file": calculator_index_page
-        }
-    )
-
-
-################################################################################
 # calculator_function
 #
 # This function takes in a the input and output paths for the calculator
 # producer and writes the html page and resource for it to the output file.
 ################################################################################
-def calculator_function(input_files: CalculatorInputFiles, output_files: SingleFile) -> None:
+def calculator_function(input_files: CalculatorInputFiles, groups: Dict[str, str]) -> List[str]:
 
     resource_list_file = input_files["resources_pickle"]
     image_layout_file = input_files["image_layout_json"]
 
-    match = re.match(r"^cache/([a-z_ ]+)/resources.pickle$", resource_list_file)
-    if match is None:
-        raise ValueError("resource list file does not match resources.pickle regex: " + resource_list_file)
-    calculator_name = match.group(1)
-
-    calculator_index_html_filepath = output_files["file"]
+    calculator_name = groups["calculator_dir"]
+    calculator_index_html_filepath =  os.path.join("output", calculator_name, "index.html")
 
     with open(image_layout_file) as f:
         image_layout_data = json.load(f)
@@ -173,6 +151,10 @@ def calculator_function(input_files: CalculatorInputFiles, output_files: SingleF
     for simple_name in resource_image_coordinates:
         if simple_name not in simple_resources:
             print("WARNING:", simple_name, "has an image but no recipe and will not appear in the calculator")
+
+    return [
+        calculator_index_html_filepath
+    ]
 
 
 # TODO: Move to shared library to be used in other places?

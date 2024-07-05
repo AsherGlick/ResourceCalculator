@@ -17,6 +17,7 @@ from pylib.resource_list import ResourceList, get_primitive
 def editor_producers(calculator_dir_regex: str) -> List[GenericProducer]:
     return [
         Producer(
+            name="Build Editor page",
             input_path_patterns={
                 "resources_pickle": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/resources\.pickle$".format(
                     calculator_dir_regex=calculator_dir_regex
@@ -26,9 +27,7 @@ def editor_producers(calculator_dir_regex: str) -> List[GenericProducer]:
                 ),
                 "editor_template": r"^core/edit\.html$",
             },
-            paths=editor_paths,
             function=editor_function,
-            categories=["editor"]
         )
     ]
 
@@ -46,32 +45,15 @@ class EditorInputFiles(TypedDict):
 
 
 ################################################################################
-# editor_paths
-#
-# The input output path generation function for the editor producer.
-################################################################################
-def editor_paths(input_files: EditorInputFiles, categories: Dict[str, str]) -> Tuple[EditorInputFiles, SingleFile]:
-    calculator_page = categories["calculator_dir"]
-
-    calculator_index_page = os.path.join("output", calculator_page, "edit.html")
-
-    return (
-        input_files,
-        {
-            "file": calculator_index_page,
-        }
-    )
-
-
-################################################################################
 # editor_function
 #
 # The processing function that generates the output editor file given a struct
 # of input and output files via the producer.
 ################################################################################
-def editor_function(input_files: EditorInputFiles, output_files: SingleFile) -> None:
+def editor_function(input_files: EditorInputFiles, groups: Dict[str, str]) -> List[str]:
     resource_list_file = input_files["resources_pickle"]
-    calculator_editor_html_filepath = output_files["file"]
+    calculator_page = groups["calculator_dir"]
+    calculator_editor_html_filepath = os.path.join("output", calculator_page, "edit.html")
 
     # Load and validate the type of the resource list data
     with open(resource_list_file, 'rb') as f:
@@ -94,9 +76,13 @@ def editor_function(input_files: EditorInputFiles, output_files: SingleFile) -> 
 
     # TODO: Minify this editor page at some point
 
+    os.makedirs(os.path.dirname(calculator_editor_html_filepath), exist_ok=True)
     with open(calculator_editor_html_filepath, "w", encoding="utf_8") as f:
         f.write(rendered_editor)
 
+    return [
+        calculator_editor_html_filepath,
+    ]
 
 ################################################################################
 # hack_update_resources_schema
