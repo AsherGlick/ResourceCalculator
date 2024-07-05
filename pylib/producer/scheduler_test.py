@@ -1364,7 +1364,49 @@ class Integration_Tests(unittest.TestCase):
 
     # TODO: Write a test that shows that an action can only replace itself in the unique heap, even if it shares a producer with another action.
 
+class ConfigurationTests(unittest.TestCase):
+    maxDiff = 999999
 
+    ############################################################################
+    # test_non_unique_producer_name_error
+    #
+    # The names of producers need to be unique so they can be referenced in
+    # subsequent runs.
+    ############################################################################
+    def test_non_unique_producer_name_error(self):
+
+        class Input(TypedDict):
+            data: str
+
+        def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            return [input_files["data"] + "_output.txt"]
+
+        producer_data: Producer[Input] = Producer(
+            name="Test Name",
+            input_path_patterns={
+                "data": r"^data_file1\.txt$",
+            },
+            function=function,
+        )
+        producer_value: Producer[Input] = Producer(
+            name="Test Name",
+            input_path_patterns={
+                "data": r"^data_file2\.txt$"
+            },
+            function=function,
+        )
+
+        with self.assertRaises(ValueError):
+            scheduler = Scheduler(
+                producer_list=[
+                    producer_data,
+                    producer_value,
+                ],
+                initial_filepaths=[
+                    'data_file1.txt',
+                    'data_file2.txt',
+                ],
+            )
 
 # class Initialization_Query_Tests(unittest.TestCase):
 #     pass

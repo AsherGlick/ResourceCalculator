@@ -110,6 +110,14 @@ class Scheduler:
         producer_list: List[GenericProducer],
         initial_filepaths: List[str] = []
     ):
+        # Check that every producer has a unique name.
+        producer_names: Set[str] = set()
+        for producer in producer_list:
+            if producer.name in producer_names:
+                raise ValueError("Duplicate producer name found {}. Every producer must have a unique name.".format(producer.name))
+            else:
+                producer_names.add(producer.name)
+
         self.producer_list = producer_list
 
         self.build_events = []
