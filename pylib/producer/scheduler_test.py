@@ -1282,6 +1282,89 @@ class Integration_Tests(unittest.TestCase):
         )
 
 
+    ############################################################################
+    ############################################################################
+    def test_inline_update_of_array(self) -> None:
+
+        class Input(TypedDict):
+            data_list: List[str]
+
+        function_calls_init: List[FunctionCall[Input]] = []
+        def function_init(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls_init.append(FunctionCall(input_files, groups))
+            return ["array_element_9.txt"]
+
+        function_calls_process: List[FunctionCall[Input]] = []
+        def function_process(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls_process.append(FunctionCall(input_files, groups))
+            return ["output.txt"]
+
+
+        producer_data: Producer[Input] = Producer(
+            name="Test Case - Init",
+            input_path_patterns={
+                "data_list": [r"^data_file\.txt$"],
+            },
+            function=function_init,
+        )
+        producer_value: Producer[Input] = Producer(
+            name="Test Case - Value",
+            input_path_patterns={
+                "data_list": [r"^array_element_[0-9]\.txt$"]
+            },
+            function=function_process,
+        )
+
+
+        scheduler = Scheduler(
+            producer_list=[
+                producer_data,
+                producer_value,
+            ],
+            initial_filepaths=[
+                'data_file.txt', # Triggering Function
+                'array_element_1.txt',
+                'array_element_2.txt',
+                'array_element_3.txt',
+            ],
+        )
+
+        self.assertCountEqual(
+            function_calls_init,
+            [
+                FunctionCall(
+                    input_paths={
+                        "data_list": ["data_file.txt"],
+                    },
+                    groups={
+                        "__data_list": "",
+                    }
+                ),
+            ]
+        )
+        self.assertCountEqual(
+            function_calls_process,
+            [
+                FunctionCall(
+                    input_paths={
+                        'data_list': [
+                            'array_element_1.txt',
+                            'array_element_2.txt',
+                            'array_element_3.txt',
+                            'array_element_9.txt',
+                        ],
+                    },
+                    groups={
+                        "__data_list": "",
+                    }
+                )
+            ]
+        )
+
+
+    # TODO: Write a test that shows that an action can only replace itself in the unique heap, even if it shares a producer with another action.
+
+
 
 # class Initialization_Query_Tests(unittest.TestCase):
 #     pass

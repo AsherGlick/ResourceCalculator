@@ -32,6 +32,7 @@ def copy_file(
     destination_file: str,
 ) -> Producer[SingleFile]:
     def function(input_files: SingleFile, groups: Dict[str, str]) -> List[str]:
+        os.makedirs(os.path.dirname(destination_file), exist_ok=True)
         shutil.copyfile(target_file, destination_file)
         return [destination_file]
 
@@ -86,9 +87,11 @@ def copy_file_with_hash(
         )
 
         # Copy the file
+        os.makedirs(os.path.dirname(output_file), exist_ok=True)
         shutil.copyfile(input_file, output_file)
 
         # Write the hashed file name to a known location
+        os.makedirs(os.path.dirname(metadata_file), exist_ok=True)
         with open(metadata_file, 'w') as f:
             json.dump({
                 "filename": output_file

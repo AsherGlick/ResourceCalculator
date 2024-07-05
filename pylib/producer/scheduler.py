@@ -29,11 +29,11 @@ class BuildEvent(Generic[InputFileDatatype]):
 
 
 
-@dataclass(order=True)
+@dataclass
 class Action(Generic[InputFileDatatype]):
     producer_index: int
-    input_files: InputFileDatatype = field(compare=False)
-    match_groups: Dict[str, str] = field(compare=False)
+    input_files: InputFileDatatype
+    match_groups: Dict[str, str]
 
     ############################################################################
     # producer
@@ -59,6 +59,17 @@ class Action(Generic[InputFileDatatype]):
             else:
                 raise TypeError
         return tuple(sorted(files))
+
+
+    def __lt__(self, other: "Action"):
+        return self.producer_index < other.producer_index
+    def __gt__(self, other: "Action"):
+        return self.producer_index > other.producer_index
+    def __le__(self, other: "Action"):
+        return self.producer_index <= other.producer_index
+    def __ge__(self, other: "Action"):
+        return self.producer_index >= other.producer_index
+
 
     # A hash function that hashes the producer index and the match groups
     def __hash__(self) -> int:

@@ -77,6 +77,7 @@ def build_typescript(input_files: TypescriptInputFiles, groups: Dict[str, str]) 
     for line in result.stdout.split("\n"):
         if line == "":
             continue
+        line = line.removeprefix("TSFILE: ")
         relative_path = os.path.relpath(line)
         output_files.append(relative_path)
 

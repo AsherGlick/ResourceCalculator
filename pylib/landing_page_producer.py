@@ -108,8 +108,6 @@ def landing_page_function(input_paths: LandingPageInputTypes, groups: Dict[str, 
     for icon_filename_data in input_paths["icon_filename_data"]:
         icon_filename_datas[os.path.basename(os.path.dirname(icon_filename_data))] = icon_filename_data
 
-    print(icon_filename_datas)
-
     calculators = []
     for metadata_path in input_paths["files"]:
 
