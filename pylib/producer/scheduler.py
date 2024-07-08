@@ -1,4 +1,9 @@
-from typing import List, Callable, Any, Optional, Tuple, Dict, Set, Generic, Iterable
+################################################################################
+# Scheduler is a tool for scheduling jobs to be completed based on the
+# existence and modification of files.
+################################################################################
+import shutil
+from typing import List, Callable, Any, Optional, Tuple, Dict, Set, Generic
 import os
 import re
 import sqlite3
@@ -13,25 +18,33 @@ from pylib.terminal_color import fg_gray
 from pylib.unique_heap import UniqueHeap
 
 
-################################################################################
-# Scheduler is a tool for scheduling jobs to be completed based on the
-# existence and modification of files.
-################################################################################
-
-ProducerListIndex = int
+BUILD_EVENTS_FILE = ".buildevents.json"
+TEMPORARY_BUILD_EVENTS_FILE = ".buildevents.json.tmp"
 
 # A record of a build event taking a set of input files, a producer, and a set of output files
 @dataclass
-class BuildEvent(Generic[InputFileDatatype]):
-    output_files: List[str]
-    producer_index: int
+class BuildEvent:
+    producer_name: str
     input_files: List[str]
+    match_groups: Dict[str, str]
+    output_files: List[str]
 
+    # We can store any warnings in the build log so that when a step is skipped
+    # subsequent runs we can still remind the user that there were errors when
+    # that step was run previously.
+    # warnings: List[str]
+
+    def weak_hash(self) -> int:
+        return hash(tuple(
+            [self.producer_name]
+            + sorted([(k, v) for k, v in self.match_groups.items()])
+        ))
 
 
 @dataclass
 class Action(Generic[InputFileDatatype]):
     producer_index: int
+    producer_name: str
     input_files: InputFileDatatype
     match_groups: Dict[str, str]
 
@@ -60,7 +73,9 @@ class Action(Generic[InputFileDatatype]):
                 raise TypeError
         return tuple(sorted(files))
 
-
+    ############################################################################
+    # Comparison functions
+    ############################################################################
     def __lt__(self, other: "Action"):
         return self.producer_index < other.producer_index
     def __gt__(self, other: "Action"):
@@ -70,18 +85,16 @@ class Action(Generic[InputFileDatatype]):
     def __ge__(self, other: "Action"):
         return self.producer_index >= other.producer_index
 
-
-    # A hash function that hashes the producer index and the match groups
-    def __hash__(self) -> int:
+    ############################################################################
+    # weak_hash
+    #
+    # A hash function that hashes the producer and the match groups.
+    ############################################################################
+    def weak_hash(self) -> int:
         return hash(tuple(
-            [self.producer_index]
+            [self.producer_name]
             + sorted([(k, v) for k, v in self.match_groups.items()])
         ))
-
-
-
-def get_hashable_matchgroups(groups: Dict[str, str]) -> str:
-    return json.dumps(groups, sort_keys=True)
 
 
 ################################################################################
@@ -120,11 +133,10 @@ class Scheduler:
 
         self.producer_list = producer_list
 
-        self.build_events = []
-
         self.filecache = self.init_producer_cache(self.producer_list)
 
-        self.add_or_update_files(initial_filepaths)
+        self.load_build_events()
+        self._process_files(initial_filepaths, init=True)
 
     ############################################################################
     # add_or_update_files
@@ -133,8 +145,50 @@ class Scheduler:
     # updated inside the source tree.
     ############################################################################
     def add_or_update_files(self, files: List[str]) -> None:
-        self._add_files_to_database(files)
         self._process_files(files)
+
+
+    # Load the build events into the class
+    def load_build_events(self) -> None:
+        self.build_events = []
+        raw_build_events = self._read_build_events_file()
+
+        for raw_build_event in raw_build_events:
+            # TODO: Replace this with classnotation
+            build_event: BuildEvent = BuildEvent(
+                producer_name=raw_build_event["producer_name"],
+                input_files=raw_build_event["input_files"],
+                match_groups=raw_build_event["match_groups"],
+                output_files=raw_build_event["output_files"],
+            )
+            self.build_events.append(build_event)
+
+    # A seperate function for reading build_event files from disk to support mocking in unit tests
+    def _read_build_events_file(self) -> Any:
+        if not os.path.exists(BUILD_EVENTS_FILE):
+            return []
+        with open(BUILD_EVENTS_FILE, "r") as f:
+            return json.load(f)
+
+    # Save the build events currently in the class
+    def save_build_events(self) -> None:
+        raw_build_events: List[Dict[str, Any]] = []
+        for build_event in self.build_events:
+            raw_build_events.append({
+                "producer_name": build_event.producer_name,
+                "input_files": build_event.input_files,
+                "match_groups": build_event.match_groups,
+                "output_files": build_event.output_files,
+            })
+        self._write_build_events_file(raw_build_events)
+
+
+    # A seperate function for writing build_event files to disk to support mocking in unit tests
+    def _write_build_events_file(self, data: Any) -> None:
+        with open(TEMPORARY_BUILD_EVENTS_FILE, "w") as f:
+            json.dump(data, f)
+        shutil.move(TEMPORARY_BUILD_EVENTS_FILE, BUILD_EVENTS_FILE)
+
 
 
     # ############################################################################
@@ -212,23 +266,6 @@ class Scheduler:
                         match.groupdict()
                     )
 
-
-    ############################################################################
-    # get_output_paths
-    #
-    # Searches through all of the previous build events to see if there are any
-    # that have matching input paths and producers.
-    ############################################################################
-    def get_output_paths(self, input_files: List[str], producer: int) -> Optional[List]:
-        for build_event in self.build_events:
-            if (
-                self.producer_list[build_event.producer_index] == producer
-                and set(build_event.input_files) == set(input_files)
-            ):
-                return build_event.output_files
-        return None
-
-
     ############################################################################
     # _query_for_actions_from_files
     #
@@ -244,6 +281,7 @@ class Scheduler:
 
                 action = Action(
                     producer_index=producer_index,
+                    producer_name=producer.name,
                     input_files=inputs,
                     match_groups=input_groups
                 )
@@ -261,28 +299,96 @@ class Scheduler:
     # Takes in a list of files that have been created or modified and then
     # runs all of the producer functions that would take in any of those files.
     ############################################################################
-    def _process_files(self, files: List[str]) -> None:
+    def _process_files(self, files: List[str], init: bool=False) -> None:
         actions_to_run: UniqueHeap[Action] = UniqueHeap()
 
-        for action in self._query_for_actions_from_files(files):
-            actions_to_run.push(action)
+        def update_actions(files: List[str]) -> None:
+            nonlocal actions_to_run
+            nonlocal init
+
+            self._add_files_to_database(files)
+            new_actions = self._query_for_actions_from_files(files)
+            for action in new_actions:
+                actions_to_run.push(action)
+
+            if init:
+                # File State                      | Build Log Link | Assumed Action Event
+                # --------------------------------|----------------|-----------
+                # Newer Outputs                   | Strong         | Nothing, Skip Processing
+                # Newer Inputs or missing Outputs | Strong         | Add,    Delete Build Log
+                # Newer Outputs                   | Weak           | Change, Delete build Log
+                # Newer Inputs or missing Outputs | Weak           | Change, Delete Build log
+                # Newer Outputs                   | None[^1]       | Remove, Delete Build Log
+                # Newer Inputs or missing Outputs | None[^1]       | Remove, Delete Build Log
+                filtered_build_events = []
+                for build_event in self.build_events:
+                    action = actions_to_run.get(build_event.weak_hash())
+
+                    # No Link
+                    if action is None:
+                        continue
+
+                    # Strong Link, Exact same input files
+                    elif set(action.files()) == set(build_event.input_files):
+                        oldest_output = get_oldest_modified_time(build_event.output_files)
+                        newest_input = get_newest_modified_time(build_event.input_files)
+
+                        # Newer Outputs
+                        if oldest_output > newest_input:
+                            actions_to_run.delete(build_event.weak_hash())
+                            filtered_build_events.append(build_event)
+                        # Newer Inputs
+                        else:
+                            continue
+                    # Weak Link, same groups and would trigger action deduplication, but different input files
+                    else:
+                        continue
+                self.build_events = filtered_build_events
+
+                # Do the things we need to do with the build log
+                init = False
+            else:
+                # Action Event | Build Log Link | Result
+                # -------------|----------------|--------
+                # Add          | Strong         | Delete Build Log
+                # Remove       | Strong         | Delete Build Log
+                # Change       | Strong         | Delete Build Log
+                # Nothing      | Strong         | Skip Processing
+                # Add          | Weak           | Delete Build Log
+                # Remove       | Weak           | Already Deleted
+                # Change       | Weak           | Already Deleted / Delete
+                # Nothing      | Weak           | Already Deleted
+                # Add          | None           | Nothing
+                # Remove       | None           | Nothing
+                # Change       | None           | Nothing
+                # Nothing      | None           | Nothing
+
+                # Action Event | Build Log Link | Result
+                # -------------|----------------|--------
+                # Add          | Strong         | Delete Build Log
+                # Add          | Weak           | Delete Build Log
+                # Add          | None           | Nothing
+                # Change       | Strong         | Delete Build Log
+                # Change       | Weak           | Already Deleted / Delete Build Log
+                # Change       | None           | Nothing
+                # Remove       | Strong         | Delete Build Log
+                # Remove       | Weak           | Already Deleted
+                # Remove       | None           | Nothing
+                # Nothing      | Strong         | Skip Processing 
+                # Nothing      | Weak           | Already Deleted
+                # Nothing      | None           | Nothing
+
+
+                # Do things for just the added stuff
+                pass
+
+        update_actions(files)
 
         # Process each creator until there are none left
         while len(actions_to_run) > 0:
             action: Action = actions_to_run.pop()
 
             input_files = list(action.files())
-
-            # Previous run optimization logic
-            output_files_from_last_run: Optional[List[str]] = self.get_output_paths(input_files, action.producer_index)
-            if output_files_from_last_run is not None and all_files_exist(output_files_from_last_run):
-                # If all of the output files are newer then all of the input files
-                # then do not regenerate this producer.
-                oldest_output = get_oldest_modified_time(output_files_from_last_run)
-                newest_input = get_newest_modified_time(input_files)
-                # "newer" is a larger number
-                if oldest_output > newest_input:
-                    continue
 
             print()
             print(action.producer(self.producer_list).name)
@@ -299,6 +405,13 @@ class Scheduler:
 
             start = time.time()
             output_files: List[str] = action.producer(self.producer_list).function(action.input_files, action.match_groups)
+            self.build_events.append(BuildEvent(
+                producer_name=action.producer(self.producer_list).name,
+                input_files=list(action.files()),
+                output_files=output_files,
+                match_groups=action.match_groups,
+            ))
+
             duration = time.time() - start
 
             print(fg_gray("  │"))
@@ -313,10 +426,14 @@ class Scheduler:
                 )))
 
             print(fg_gray("  Completed in {:.2f}s".format(duration)))
+            update_actions(output_files)
 
-            self._add_files_to_database(output_files)
-            for action in self._query_for_actions_from_files(output_files):
-                actions_to_run.push(action)
+        # TODO: This is probably the wrong place to call this function. It
+        # works, but when we begin testing for crashing actions we will find
+        # that we want to save this much more often. Maybe at the end of
+        # update_actions() or after calling action.producer().function() once
+        # the new build log is added as a result of that function call.
+        self.save_build_events()
 
     ############################################################################
     # all_paths_in_dir
@@ -367,7 +484,6 @@ class Scheduler:
     #                     continue
 
     #                 self.remove_file_from_database(self.filecache, producer_index, field_name, path)
-
 
     #     pass
 
@@ -847,17 +963,18 @@ def get_aggregated_modified_time(
     paths = list(paths)
     time_list: List[float] = []
     for path in paths:
-        # If a path is missing add the default value instead
-        if not os.path.exists(path):
-            time_list.append(default)
-            continue
+        # TODO: Decide if we want to re-add this recursive functionality. If so
+        #       then it needs some method of testing.
+        # if (os.path.isdir(path)):
+        #     for subpath in os.listdir(path):
+        #         paths.append(os.path.join(path, subpath))
+        #     continue
 
-        # If a path is a directory add all its children to the paths list
-        if (os.path.isdir(path)):
-            for subpath in os.listdir(path):
-                paths.append(os.path.join(path, subpath))
-        else:
-            time_list.append(os.path.getmtime(path))
+        time = _check_file_modification_time(path)
+        if time is None:
+            time = default
+
+        time_list.append(time)
 
     # Sanity check that there are timestamps in the list before passing them
     # to the aggregator.
@@ -865,6 +982,19 @@ def get_aggregated_modified_time(
         return default
 
     return aggregator(time_list)
+
+
+# A function that looks up the modification time of a file. Returns None if the file does not exist.
+def _check_file_modification_time(path: str) -> Optional[float]:
+    if not os.path.exists(path):
+        return None
+
+    # If a path is a directory add all its children to the paths list
+    if (os.path.isdir(path)):
+        raise ValueError
+    else:
+        return os.path.getmtime(path)
+
 
 
 ################################################################################

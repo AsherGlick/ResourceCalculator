@@ -1,6 +1,6 @@
-from typing import Dict, List, Tuple, TypedDict, Protocol, Any, Generic, TypeVar, Callable
+from typing import Dict, List, Tuple, TypedDict, Protocol, Any, Generic, TypeVar, Callable, Optional
 import unittest
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
 from .producer import InputFileDatatype, Producer
 from .scheduler import Scheduler
@@ -17,6 +17,19 @@ class FunctionCall(Generic[InputFileDatatype]):
 class Integration_Tests(unittest.TestCase):
     maxDiff = 999999
 
+    def setUp(self):
+        read_build_events_patcher = patch.object(Scheduler, '_read_build_events_file')
+        self.mocked_read_build_events = read_build_events_patcher.start()
+        self.addCleanup(read_build_events_patcher.stop)
+        self.mocked_read_build_events.return_value = []
+
+        write_build_events_patcher = patch.object(Scheduler, '_write_build_events_file')
+        self.mocked_write_build_events = write_build_events_patcher.start()
+        self.addCleanup(write_build_events_patcher.stop)
+        self.mocked_write_build_events.return_value = None
+
+
+
     ############################################################################
     # test_single_shared_filer
     #
@@ -24,7 +37,6 @@ class Integration_Tests(unittest.TestCase):
     # into Creators properly.
     ############################################################################
     def test_single_group(self) -> None:
-
         class Input(TypedDict):
             data_file: str
             value_file: str
@@ -1363,9 +1375,20 @@ class Integration_Tests(unittest.TestCase):
 
 
     # TODO: Write a test that shows that an action can only replace itself in the unique heap, even if it shares a producer with another action.
+    # we had a bug where an action replaced a different action due to a producer id access bug or something
 
 class ConfigurationTests(unittest.TestCase):
     maxDiff = 999999
+    def setUp(self):
+        read_build_events_patcher = patch.object(Scheduler, '_read_build_events_file')
+        self.mocked_read_build_events = read_build_events_patcher.start()
+        self.addCleanup(read_build_events_patcher.stop)
+        self.mocked_read_build_events.return_value = []
+
+        write_build_events_patcher = patch.object(Scheduler, '_write_build_events_file')
+        self.mocked_write_build_events = write_build_events_patcher.start()
+        self.addCleanup(write_build_events_patcher.stop)
+        self.mocked_write_build_events.return_value = None
 
     ############################################################################
     # test_non_unique_producer_name_error
@@ -1407,6 +1430,436 @@ class ConfigurationTests(unittest.TestCase):
                     'data_file2.txt',
                 ],
             )
+
+class BuildLogTests(unittest.TestCase):
+    maxDiff = 999999
+    def setUp(self):
+        read_build_events_patcher = patch.object(Scheduler, '_read_build_events_file')
+        self.mocked_read_build_events = read_build_events_patcher.start()
+        self.addCleanup(read_build_events_patcher.stop)
+        self.mocked_read_build_events.return_value = []
+
+        # Mock Build log writing
+        # Access build log output with `self.write_build_log_result`
+        write_build_events_patcher = patch.object(Scheduler, '_write_build_events_file')
+        self.mocked_write_build_events = write_build_events_patcher.start()
+        self.addCleanup(write_build_events_patcher.stop)
+        self.write_build_log_result: Any = None
+        def write_build_log_side_effect(log: Any):
+            self.write_build_log_result = log
+            return None
+        self.mocked_write_build_events.side_effect = write_build_log_side_effect
+
+        # Mock file last_modified_time lookups
+        check_file_modificaiton_time_patcher = patch(f"{__package__}.scheduler._check_file_modification_time")
+        self.mocked_check_modification_time = check_file_modificaiton_time_patcher.start()
+        self.addCleanup(check_file_modificaiton_time_patcher.stop)
+        self.check_file_modificaiton_time_patcher_args: Dict[str, Optional[int]] = {}
+        def modificaiton_time_side_effect(value: str) -> Optional[int]:
+            return self.check_file_modificaiton_time_patcher_args.get(value, None)
+        self.mocked_check_modification_time.side_effect = modificaiton_time_side_effect
+
+
+    ############################################################################
+    #
+    ############################################################################
+    def test_init_with_strong_associated_actions_newer_output_files(self):
+
+        class Input(TypedDict):
+            data_file: str
+
+        function_calls: List[FunctionCall[Input]] = []
+
+        def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls.append(FunctionCall(input_files, groups))
+            return ["output_" + groups["title"] + ".txt"]
+
+        producer: Producer[Input] = Producer(
+            name="Test Case",
+            input_path_patterns={
+                "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
+            },
+            function=function,
+        )
+
+        self.check_file_modificaiton_time_patcher_args = {
+            "data_one.txt": 100,
+            "data_two.txt": 101,
+            "output_one.txt": 998,
+            "output_two.txt": 999,
+        }
+
+        self.mocked_read_build_events.return_value = [
+            {
+                "producer_name": "Test Case",
+                "input_files": ["data_one.txt"],
+                "match_groups": {"title": "one"},
+                "output_files": ["output_one.txt"],
+            }, {
+                "producer_name": "Test Case",
+                "input_files": ["data_two.txt"],
+                "match_groups": {"title": "two"},
+                "output_files": ["output_two.txt"],
+            }
+        ]
+
+        scheduler = Scheduler(
+            producer_list=[
+                producer
+            ],
+            initial_filepaths=list(self.check_file_modificaiton_time_patcher_args.keys()),
+        )
+
+        self.assertCountEqual(function_calls, [])
+        self.assertIsNotNone(self.write_build_log_result)
+        self.assertCountEqual(
+            self.write_build_log_result,
+            [
+                {
+                    "producer_name": "Test Case",
+                    "input_files": ["data_one.txt"],
+                    "match_groups": {"title": "one"},
+                    "output_files": ["output_one.txt"],
+                }, {
+                    "producer_name": "Test Case",
+                    "input_files": ["data_two.txt"],
+                    "match_groups": {"title": "two"},
+                    "output_files": ["output_two.txt"],
+                }
+            ]
+        )
+
+    def test_init_with_strong_associated_actions_older_output_files(self):
+        class Input(TypedDict):
+            data_file: str
+
+        function_calls: List[FunctionCall[Input]] = []
+
+        def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls.append(FunctionCall(input_files, groups))
+            return ["output_" + groups["title"] + ".txt"]
+
+        producer: Producer[Input] = Producer(
+            name="Test Case",
+            input_path_patterns={
+                "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
+            },
+            function=function,
+        )
+
+        self.check_file_modificaiton_time_patcher_args = {
+            "data_one.txt": 998,
+            "data_two.txt": 999,
+            "output_one.txt": 100,
+            "output_two.txt": 101,
+        }
+
+        self.mocked_read_build_events.return_value = [
+            {
+                "producer_name": "Test Case",
+                "input_files": ["data_one.txt"],
+                "match_groups": {"title": "one"},
+                "output_files": ["output_one.txt"],
+            }, {
+                "producer_name": "Test Case",
+                "input_files": ["data_two.txt"],
+                "match_groups": {"title": "two"},
+                "output_files": ["output_two.txt"],
+            }
+        ]
+
+        scheduler = Scheduler(
+            producer_list=[
+                producer
+            ],
+            initial_filepaths=list(self.check_file_modificaiton_time_patcher_args.keys()),
+        )
+
+        self.assertCountEqual(function_calls, [
+            FunctionCall(
+                input_paths={
+                    "data_file": "data_one.txt",
+                },
+                groups={
+                    "title": "one"
+                }
+            ),
+            FunctionCall(
+                input_paths={
+                    "data_file": "data_two.txt",
+                },
+                groups={
+                    "title": "two"
+                }
+            ),
+        ])
+        self.assertIsNotNone(self.write_build_log_result)
+        self.assertCountEqual(
+            self.write_build_log_result,
+            [
+                {
+                    "producer_name": "Test Case",
+                    "input_files": ["data_one.txt"],
+                    "match_groups": {"title": "one"},
+                    "output_files": ["output_one.txt"],
+                }, {
+                    "producer_name": "Test Case",
+                    "input_files": ["data_two.txt"],
+                    "match_groups": {"title": "two"},
+                    "output_files": ["output_two.txt"],
+                }
+            ]
+        )
+
+    def test_init_with_strong_associated_actions_no_output_files(self):
+        class Input(TypedDict):
+            data_file: str
+
+        function_calls: List[FunctionCall[Input]] = []
+
+        def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls.append(FunctionCall(input_files, groups))
+            return ["output_" + groups["title"] + ".txt"]
+
+        producer: Producer[Input] = Producer(
+            name="Test Case",
+            input_path_patterns={
+                "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
+            },
+            function=function,
+        )
+
+        self.check_file_modificaiton_time_patcher_args = {
+            "data_one.txt": 998,
+            "data_two.txt": 999,
+        }
+
+        self.mocked_read_build_events.return_value = [
+            {
+                "producer_name": "Test Case",
+                "input_files": ["data_one.txt"],
+                "match_groups": {"title": "one"},
+                "output_files": ["output_one.txt"],
+            }, {
+                "producer_name": "Test Case",
+                "input_files": ["data_two.txt"],
+                "match_groups": {"title": "two"},
+                "output_files": ["output_two.txt"],
+            }
+        ]
+
+        scheduler = Scheduler(
+            producer_list=[
+                producer
+            ],
+            initial_filepaths=list(self.check_file_modificaiton_time_patcher_args.keys()),
+        )
+
+        self.assertCountEqual(function_calls, [
+            FunctionCall(
+                input_paths={
+                    "data_file": "data_one.txt",
+                },
+                groups={
+                    "title": "one"
+                }
+            ),
+            FunctionCall(
+                input_paths={
+                    "data_file": "data_two.txt",
+                },
+                groups={
+                    "title": "two"
+                }
+            ),
+        ])
+        self.assertIsNotNone(self.write_build_log_result)
+        self.assertCountEqual(
+            self.write_build_log_result,
+            [
+                {
+                    "producer_name": "Test Case",
+                    "input_files": ["data_one.txt"],
+                    "match_groups": {"title": "one"},
+                    "output_files": ["output_one.txt"],
+                }, {
+                    "producer_name": "Test Case",
+                    "input_files": ["data_two.txt"],
+                    "match_groups": {"title": "two"},
+                    "output_files": ["output_two.txt"],
+                }
+            ]
+        )
+
+    def test_init_with_weak_associated_actions(self):
+        class Input(TypedDict):
+            data_file: List[str]
+
+        function_calls: List[FunctionCall[Input]] = []
+
+        def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls.append(FunctionCall(input_files, groups))
+            return ["output_" + groups["title"] + ".txt"]
+
+        producer: Producer[Input] = Producer(
+            name="Test Case",
+            input_path_patterns={
+                "data_file": [r"^data_(?P<title>[a-z]+)_[0-9]+\.txt$"],
+            },
+            function=function,
+        )
+
+        self.check_file_modificaiton_time_patcher_args = {
+            "data_one_1.txt": 100,
+            "data_one_2.txt": 101,
+            "data_one_3.txt": 102,
+            "output_one.txt": 999,
+        }
+
+        self.mocked_read_build_events.return_value = [
+            {
+                "producer_name": "Test Case",
+                "input_files": ["data_one_1.txt", "data_one_2.txt"],
+                "match_groups": {"title": "one"},
+                "output_files": ["output_one.txt"],
+            },
+        ]
+
+        scheduler = Scheduler(
+            producer_list=[
+                producer
+            ],
+            initial_filepaths=list(self.check_file_modificaiton_time_patcher_args.keys()),
+        )
+
+        self.assertCountEqual(function_calls, [
+            FunctionCall(
+                input_paths={
+                    "data_file": ["data_one_1.txt", "data_one_2.txt", "data_one_3.txt"],
+                },
+                groups={
+                    "title": "one"
+                }
+            ),
+        ])
+        self.assertIsNotNone(self.write_build_log_result)
+        self.assertCountEqual(
+            self.write_build_log_result,
+            [
+                {
+                    "producer_name": "Test Case",
+                    "input_files": [
+                        "data_one_1.txt",
+                        "data_one_2.txt",
+                        "data_one_3.txt"
+                    ],
+                    "match_groups": {"title": "one"},
+                    "output_files": ["output_one.txt"],
+                },
+            ]
+        )
+
+
+    def test_init_with_no_associated_actions(self):
+        class Input(TypedDict):
+            data_file: str
+
+        function_calls: List[FunctionCall[Input]] = []
+
+        def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            function_calls.append(FunctionCall(input_files, groups))
+            return ["output_" + groups["title"] + ".txt"]
+
+        producer: Producer[Input] = Producer(
+            name="Test Case",
+            input_path_patterns={
+                "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
+            },
+            function=function,
+        )
+
+        self.check_file_modificaiton_time_patcher_args = {
+            "data_one.txt": 100,
+            "data_two.txt": 101,
+            "output_one.txt": 998,
+            "output_two.txt": 999,
+        }
+
+        self.mocked_read_build_events.return_value = [
+            {
+                "producer_name": "Some Crazy Unknown Producer Name",
+                "input_files": ["data_one.txt"],
+                "match_groups": {"title": "one"},
+                "output_files": ["output_one_crazy.txt"],
+            }, {
+                "producer_name": "Test Case",
+                "input_files": ["data_three.txt"],
+                "match_groups": {"title": "three"},
+                "output_files": ["output_three.txt"],
+            }
+        ]
+
+        scheduler = Scheduler(
+            producer_list=[
+                producer
+            ],
+            initial_filepaths=list(self.check_file_modificaiton_time_patcher_args.keys()),
+        )
+
+        self.assertCountEqual(function_calls, [
+            FunctionCall(
+                input_paths={
+                    "data_file": "data_one.txt",
+                },
+                groups={
+                    "title": "one"
+                }
+            ),
+            FunctionCall(
+                input_paths={
+                    "data_file": "data_two.txt",
+                },
+                groups={
+                    "title": "two"
+                }
+            ),
+        ])
+        self.assertIsNotNone(self.write_build_log_result)
+        self.assertCountEqual(
+            self.write_build_log_result,
+            [
+                {
+                    "producer_name": "Test Case",
+                    "input_files": ["data_one.txt"],
+                    "match_groups": {"title": "one"},
+                    "output_files": ["output_one.txt"],
+                }, {
+                    "producer_name": "Test Case",
+                    "input_files": ["data_two.txt"],
+                    "match_groups": {"title": "two"},
+                    "output_files": ["output_two.txt"],
+                }
+            ]
+        )
+
+    # def add_action_with_strong_associated_build_log(self)
+    # def add_action_with_weak_associated_build_log(self)
+    # def add_action_with_no_associated_build_log(self)
+
+    # def change_action_with_strong_associated_build_log(self)
+    # def change_action_with_weak_associated_build_log(self)
+    # def change_action_with_no_associated_build_log(self)
+
+    # def delete_action_with_strong_associated_build_log(self)
+    # def delete_action_with_weak_associated_build_log(self)
+    # def delete_action_with_no_associated_build_log(self)
+
+
+
+
+
+
+
 
 # class Initialization_Query_Tests(unittest.TestCase):
 #     pass
