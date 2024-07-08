@@ -55,7 +55,7 @@ def uglify_js_string(js_string: str) -> str:
 ################################################################################
 def uglify_js_producer(input_file: str, output_file: str) -> Producer[SingleFile]:
     return Producer(
-        name="Minify Javascript",
+        name="Minify Javascript " + input_file,
         input_path_patterns={
             "file": "^" + input_file + "$",
         },
