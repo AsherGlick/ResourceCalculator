@@ -2459,7 +2459,7 @@ resources:
     recipes:
     - recipe_type: Raw Resource
 
-  Grass:
+  Short Grass:
     recipes:
     - recipe_type: Raw Resource
 
@@ -10530,10 +10530,6 @@ resources:
     - recipe_type: Raw Resource
 
   Pearlescent Froglight:
-    recipes:
-    - recipe_type: Raw Resource
-
-  Petrified Oak Slab:
     recipes:
     - recipe_type: Raw Resource
 
