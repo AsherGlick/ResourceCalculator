@@ -1,0 +1,2279 @@
+authors:
+  jojoblackFr: https://github.com/jojoblackFr
+game_version: T1715700934 ba426e1f
+index_page_display_name: TerraTech
+recipe_types:
+  Refinery: Using Refinery turn {IN_ITEMS} into {OUT_ITEM}
+  Scrap: Using any scrap turn {IN_ITEMS} into {OUT_ITEM}
+  Component Factory: Using a GSO Component Factory turn {IN_ITEMS} into {OUT_ITEM}
+  Component Factory (Advanced): Using a GSO Component Factory with an GSO Advanced Component Dongle turn {IN_ITEMS} into {OUT_ITEM}
+  Component Factory (Complex): Using a GSO Component Factory with an GSO Complex Component Dongle turn {IN_ITEMS} into {OUT_ITEM}
+  Component Factory (Exotic): Using a GSO Component Factory with an GSO Exotic Component Dongle turn {IN_ITEMS} into {OUT_ITEM}
+  GSO Fabricator: Using a GSO Fabricator turn {IN_ITEMS} into {OUT_ITEM}
+  GeoCorp Fabricator: Using a GeoCorp Fabricator turn {IN_ITEMS} into {OUT_ITEM}
+  Venture Fabricator: Using a Venture Fabricator turn {IN_ITEMS} into {OUT_ITEM}
+  Hawkeye Fabricator: Using a Hawkeye Fabricator turn {IN_ITEMS} into {OUT_ITEM}
+  Better Future Fabricator: Using a Better Future Fabricator turn {IN_ITEMS} into {OUT_ITEM}
+
+resources:
+
+# Raw and Refined Resources
+  Fiberwood Chunk:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Fibron Chunk:
+    recipes:
+    - output: 1
+      recipe_type: Refinery
+      requirements:
+        Fiberwood Chunk: -1
+
+    - output: 24
+      recipe_type: Scrap
+      requirements:
+        GSO Fibron Block: -1
+
+    - output: 120
+      recipe_type: Scrap
+      requirements:
+        GeoCorp Fibron Block: -1
+
+    - output: 8
+      recipe_type: Scrap
+      requirements:
+        Venture Fibron Block: -1
+
+    - output: 64
+      recipe_type: Scrap
+      requirements:
+        Hawkeye Fibron Block: -1
+
+    - output: 42
+      recipe_type: Scrap
+      requirements:
+        Better Future Fibron Block: -1
+
+    - recipe_type: Raw Resource
+
+  Rubber Jelly:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Rubber Brick:
+    recipes:
+    - output: 1
+      recipe_type: Refinery
+      requirements:
+        Rubber Jelly: -1
+
+    - output: 24
+      recipe_type: Scrap
+      requirements:
+        GSO Rubber Block: -1
+
+    - output: 120
+      recipe_type: Scrap
+      requirements:
+        GeoCorp Rubber Block: -1
+
+    - output: 8
+      recipe_type: Scrap
+      requirements:
+        Venture Rubber Block: -1
+
+    - output: 64
+      recipe_type: Scrap
+      requirements:
+        Hawkeye Rubber Block: -1
+
+    - output: 42
+      recipe_type: Scrap
+      requirements:
+        Better Future Rubber Block: -1
+
+    - recipe_type: Raw Resource
+
+  Plumbite Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Plumbia Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Refinery
+      requirements:
+        Plumbite Ore: -1
+
+    - output: 24
+      recipe_type: Scrap
+      requirements:
+        GSO Plumbia Block: -1
+
+    - output: 120
+      recipe_type: Scrap
+      requirements:
+        GeoCorp Plumbia Block: -1
+
+    - output: 8
+      recipe_type: Scrap
+      requirements:
+        Venture Plumbia Block: -1
+
+    - output: 64
+      recipe_type: Scrap
+      requirements:
+        Hawkeye Plumbia Block: -1
+
+    - output: 42
+      recipe_type: Scrap
+      requirements:
+        Better Future Plumbia Block: -1
+
+    - recipe_type: Raw Resource
+
+  Titanite Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Titania Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Refinery
+      requirements:
+        Titanite Ore: -1
+
+    - output: 24
+      recipe_type: Scrap
+      requirements:
+        GSO Titania Block: -1
+
+    - output: 120
+      recipe_type: Scrap
+      requirements:
+        GeoCorp Titania Block: -1
+
+    - output: 8
+      recipe_type: Scrap
+      requirements:
+        Venture Titania Block: -1
+
+    - output: 64
+      recipe_type: Scrap
+      requirements:
+        Hawkeye Titania Block: -1
+
+    - output: 42
+      recipe_type: Scrap
+      requirements:
+        Better Future Titania Block: -1
+
+    - recipe_type: Raw Resource
+
+  Carbite Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Carbius Brick:
+    recipes:
+    - output: 1
+      recipe_type: Refinery
+      requirements:
+        Carbite Ore: -1
+
+    - output: 24
+      recipe_type: Scrap
+      requirements:
+        GSO Carbius Block: -1
+
+    - output: 120
+      recipe_type: Scrap
+      requirements:
+        GeoCorp Carbius Block: -1
+
+    - output: 8
+      recipe_type: Scrap
+      requirements:
+        Venture Carbius Block: -1
+
+    - output: 64
+      recipe_type: Scrap
+      requirements:
+        Hawkeye Carbius Block: -1
+
+    - output: 42
+      recipe_type: Scrap
+      requirements:
+        Better Future Carbius Block: -1
+
+    - recipe_type: Raw Resource
+
+  Oleite Jelly:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Olastic Brick:
+    recipes:
+    - output: 1
+      recipe_type: Refinery
+      requirements:
+        Oleite Jelly: -1
+
+    - output: 24
+      recipe_type: Scrap
+      requirements:
+        GSO Olastic Block: -1
+
+    - output: 120
+      recipe_type: Scrap
+      requirements:
+        GeoCorp Olastic Block: -1
+
+    - output: 8
+      recipe_type: Scrap
+      requirements:
+        Venture Olastic Block: -1
+
+    - output: 64
+      recipe_type: Scrap
+      requirements:
+        Hawkeye Olastic Block: -1
+
+    - output: 42
+      recipe_type: Scrap
+      requirements:
+        Better Future Olastic Block: -1
+
+    - recipe_type: Raw Resource
+
+  Rodite Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Rodius Capsule:
+    recipes:
+    - output: 1
+      recipe_type: Refinery
+      requirements:
+        Rodite Ore: -1
+
+    - output: 24
+      recipe_type: Scrap
+      requirements:
+        GSO Rodius Block: -1
+
+    - output: 120
+      recipe_type: Scrap
+      requirements:
+        GeoCorp Rodius Block: -1
+
+    - output: 8
+      recipe_type: Scrap
+      requirements:
+        Venture Rodius Block: -1
+
+    - output: 64
+      recipe_type: Scrap
+      requirements:
+        Hawkeye Rodius Block: -1
+
+    - output: 42
+      recipe_type: Scrap
+      requirements:
+        Better Future Rodius Block: -1
+
+    - recipe_type: Raw Resource
+
+  Ignite Shard:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Ignian Crystal:
+    recipes:
+    - output: 1
+      recipe_type: Refinery
+      requirements:
+        Ignite Shard: -1
+
+    - output: 24
+      recipe_type: Scrap
+      requirements:
+        GSO Ignian Block: -1
+
+    - output: 120
+      recipe_type: Scrap
+      requirements:
+        GeoCorp Ignian Block: -1
+
+    - output: 8
+      recipe_type: Scrap
+      requirements:
+        Venture Ignian Block: -1
+
+    - output: 64
+      recipe_type: Scrap
+      requirements:
+        Hawkeye Ignian Block: -1
+
+    - output: 42
+      recipe_type: Scrap
+      requirements:
+        Better Future Ignian Block: -1
+
+    - recipe_type: Raw Resource
+
+  Celestite Shard:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Celestian Crystal:
+    recipes:
+    - output: 1
+      recipe_type: Refinery
+      requirements:
+        Celestite Shard: -1
+
+    - output: 24
+      recipe_type: Scrap
+      requirements:
+        GSO Celestian Block: -1
+
+    - output: 120
+      recipe_type: Scrap
+      requirements:
+        GeoCorp Celestian Block: -1
+
+    - output: 8
+      recipe_type: Scrap
+      requirements:
+        Venture Celestian Block: -1
+
+    - output: 64
+      recipe_type: Scrap
+      requirements:
+        Hawkeye Celestian Block: -1
+
+    - output: 42
+      recipe_type: Scrap
+      requirements:
+        Better Future Celestian Block: -1
+
+    - recipe_type: Raw Resource
+
+  Erudite Shard:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Erudian Crystal:
+    recipes:
+    - output: 1
+      recipe_type: Refinery
+      requirements:
+        Erudite Shard: -1
+
+    - output: 24
+      recipe_type: Scrap
+      requirements:
+        GSO Erudian Block: -1
+
+    - output: 120
+      recipe_type: Scrap
+      requirements:
+        GeoCorp Erudian Block: -1
+
+    - output: 8
+      recipe_type: Scrap
+      requirements:
+        Venture Erudian Block: -1
+
+    - output: 64
+      recipe_type: Scrap
+      requirements:
+        Hawkeye Erudian Block: -1
+
+    - output: 42
+      recipe_type: Scrap
+      requirements:
+        Better Future Erudian Block: -1
+
+    - recipe_type: Raw Resource
+
+  Luxite Shard:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Luxian Crystal:
+    recipes:
+    - output: 1
+      recipe_type: Refinery
+      requirements:
+        Luxite Shard: -1
+
+    - output: 24
+      recipe_type: Scrap
+      requirements:
+        GSO Luxian Block: -1
+
+    - output: 120
+      recipe_type: Scrap
+      requirements:
+        GeoCorp Luxian Block: -1
+
+    - output: 8
+      recipe_type: Scrap
+      requirements:
+        Venture Luxian Block: -1
+
+    - output: 64
+      recipe_type: Scrap
+      requirements:
+        Hawkeye Luxian Block: -1
+
+    - output: 42
+      recipe_type: Scrap
+      requirements:
+        Better Future Luxian Block: -1
+
+    - recipe_type: Raw Resource
+
+# Basic Component
+
+  Acid Electrode:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory
+      requirements:
+        Rodius Capsule: -2
+        Olastic Brick: -1
+    - recipe_type: Raw Resource
+
+  Blast Caps:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory
+      requirements:
+        Rodius Capsule: -1
+        Carbius Brick: -2
+    - recipe_type: Raw Resource
+
+  Fuel Injector:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory
+      requirements:
+        Olastic Brick: -2
+        Carbius Brick: -1
+    - recipe_type: Raw Resource
+
+  Fibre Plating:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory
+      requirements:
+        Fibron Chunk: -2
+        Rubber Brick: -1
+    - recipe_type: Raw Resource
+
+  Plubonic Greebles:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory
+      requirements:
+        Plumbia Ingot: -2
+        Luxian Crystal: -1
+    - recipe_type: Raw Resource
+
+  Hardened Titanic:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory
+      requirements:
+        Titania Ingot: -2
+        Luxian Crystal: -1
+    - recipe_type: Raw Resource
+
+  Hard Light Drive:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory
+      requirements:
+        Ignian Crystal: -1
+        Celestian Crystal: -2
+    - recipe_type: Raw Resource
+
+  Heat Coil:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory
+      requirements:
+        Ignian Crystal: -2
+        Erudian Crystal: -1
+    - recipe_type: Raw Resource
+
+  Sensory Transmitter:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory
+      requirements:
+        Celestian Crystal: -1
+        Erudian Crystal: -2
+    - recipe_type: Raw Resource
+
+# Advanced Component
+
+  Ion Pulse Cell:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory (Advanced)
+      requirements:
+        Acid Electrode: -1
+        Rodius Capsule: -2
+    - recipe_type: Raw Resource
+
+  Z4 Explosives:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory (Advanced)
+      requirements:
+        Blast Caps: -1
+        Carbius Brick: -2
+    - recipe_type: Raw Resource
+
+  Cyclone Jet:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory (Advanced)
+      requirements:
+        Fuel Injector: -1
+        Olastic Brick: -2
+    - recipe_type: Raw Resource
+
+  Rugged Fiblar:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory (Advanced)
+      requirements:
+        Fibre Plating: -1
+        Fibron Chunk: -3
+    - recipe_type: Raw Resource
+
+  Mother Brain:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory (Advanced)
+      requirements:
+        Sensory Transmitter: -1
+        Erudian Crystal: -1
+    - recipe_type: Raw Resource
+
+  Plasma Emitter:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory (Advanced)
+      requirements:
+        Heat Coil: -1
+        Ignian Crystal: -1
+    - recipe_type: Raw Resource
+
+  Zero Point Splitter:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory (Advanced)
+      requirements:
+        Hard Light Drive: -1
+        Celestian Crystal: -1
+    - recipe_type: Raw Resource
+
+  Plubonic Alloy:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory (Advanced)
+      requirements:
+        Plubonic Greebles: -1
+        Plumbia Ingot: -3
+    - recipe_type: Raw Resource
+
+  Titanic Alloy:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory (Advanced)
+      requirements:
+        Hardened Titanic: -1
+        Titania Ingot: -3
+    - recipe_type: Raw Resource
+
+# Complex Component
+
+  Coffman Cell:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory (Complex)
+      requirements:
+        Sensory Transmitter: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Dervish Gel:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory (Complex)
+      requirements:
+        Z4 Explosives: -1
+        Heat Coil: -1
+    - recipe_type: Raw Resource
+
+  Thermo Jet:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory (Complex)
+      requirements:
+        Hard Light Drive: -1
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+# Exotic Component
+
+  Seed AI:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory (Exotic)
+      requirements:
+        Mother Brain: -1
+        Coffman Cell: -1
+    - recipe_type: Raw Resource
+
+  Gluon Beam:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory (Exotic)
+      requirements:
+        Dervish Gel: -1
+        Plasma Emitter: -1
+    - recipe_type: Raw Resource
+
+  Proxima Dark:
+    recipes:
+    - output: 1
+      recipe_type: Component Factory (Exotic)
+      requirements:
+        Thermo Jet: -1
+        Zero Point Splitter: -1
+    - recipe_type: Raw Resource
+
+# Ressource Block
+
+  GSO Fibron Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -24
+    - recipe_type: Raw Resource
+
+  GSO Rubber Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -24
+    - recipe_type: Raw Resource
+
+  GSO Plumbia Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -24
+    - recipe_type: Raw Resource
+
+  GSO Titania Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Titania Ingot: -24
+    - recipe_type: Raw Resource
+
+  GSO Carbius Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Carbius Brick: -24
+    - recipe_type: Raw Resource
+
+  GSO Olastic Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Olastic Brick: -24
+    - recipe_type: Raw Resource
+
+  GSO Rodius Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rodius Capsule: -24
+    - recipe_type: Raw Resource
+
+  GSO Ignian Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Ignian Crystal: -24
+    - recipe_type: Raw Resource
+
+  GSO Celestian Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Celestian Crystal: -24
+    - recipe_type: Raw Resource
+
+  GSO Erudian Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Erudian Crystal: -24
+    - recipe_type: Raw Resource
+
+  GSO Luxian Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Luxian Crystal: -24
+    - recipe_type: Raw Resource
+
+  GeoCorp Fibron Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -120
+    - recipe_type: Raw Resource
+
+  GeoCorp Rubber Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rubber Brick: -120
+    - recipe_type: Raw Resource
+
+  GeoCorp Plumbia Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbia Ingot: -120
+    - recipe_type: Raw Resource
+
+  GeoCorp Titania Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titania Ingot: -120
+    - recipe_type: Raw Resource
+
+  GeoCorp Carbius Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Carbius Brick: -120
+    - recipe_type: Raw Resource
+
+  GeoCorp Olastic Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Olastic Brick: -120
+    - recipe_type: Raw Resource
+
+  GeoCorp Rodius Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rodius Capsule: -120
+    - recipe_type: Raw Resource
+
+  GeoCorp Ignian Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Ignian Crystal: -120
+    - recipe_type: Raw Resource
+
+  GeoCorp Celestian Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Celestian Crystal: -120
+    - recipe_type: Raw Resource
+
+  GeoCorp Erudian Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Erudian Crystal: -120
+    - recipe_type: Raw Resource
+
+  GeoCorp Luxian Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Luxian Crystal: -120
+    - recipe_type: Raw Resource
+
+  Venture Fibron Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -8
+    - recipe_type: Raw Resource
+
+  Venture Rubber Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Rubber Brick: -8
+    - recipe_type: Raw Resource
+
+  Venture Plumbia Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Plumbia Ingot: -8
+    - recipe_type: Raw Resource
+
+  Venture Titania Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Titania Ingot: -8
+    - recipe_type: Raw Resource
+
+  Venture Carbius Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Carbius Brick: -8
+    - recipe_type: Raw Resource
+
+  Venture Olastic Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Olastic Brick: -8
+    - recipe_type: Raw Resource
+
+  Venture Rodius Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Rodius Capsule: -8
+    - recipe_type: Raw Resource
+
+  Venture Ignian Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Ignian Crystal: -8
+    - recipe_type: Raw Resource
+
+  Venture Celestian Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Celestian Crystal: -8
+    - recipe_type: Raw Resource
+
+  Venture Erudian Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Erudian Crystal: -8
+    - recipe_type: Raw Resource
+
+  Venture Luxian Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Luxian Crystal: -8
+    - recipe_type: Raw Resource
+
+  Hawkeye Fibron Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Fibron Chunk: -64
+    - recipe_type: Raw Resource
+
+  Hawkeye Rubber Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -64
+    - recipe_type: Raw Resource
+
+  Hawkeye Plumbia Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plumbia Ingot: -64
+    - recipe_type: Raw Resource
+
+  Hawkeye Titania Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Titania Ingot: -64
+    - recipe_type: Raw Resource
+
+  Hawkeye Carbius Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Carbius Brick: -64
+    - recipe_type: Raw Resource
+
+  Hawkeye Olastic Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Olastic Brick: -64
+    - recipe_type: Raw Resource
+
+  Hawkeye Rodius Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rodius Capsule: -64
+    - recipe_type: Raw Resource
+
+  Hawkeye Ignian Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Ignian Crystal: -64
+    - recipe_type: Raw Resource
+
+  Hawkeye Celestian Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Celestian Crystal: -64
+    - recipe_type: Raw Resource
+
+  Hawkeye Erudian Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Erudian Crystal: -64
+    - recipe_type: Raw Resource
+
+  Hawkeye Luxian Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -64
+    - recipe_type: Raw Resource
+
+  Better Future Fibron Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -42
+    - recipe_type: Raw Resource
+
+  Better Future Rubber Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Rubber Brick: -42
+    - recipe_type: Raw Resource
+
+  Better Future Plumbia Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -42
+    - recipe_type: Raw Resource
+
+  Better Future Titania Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Titania Ingot: -42
+    - recipe_type: Raw Resource
+
+  Better Future Carbius Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Carbius Brick: -42
+    - recipe_type: Raw Resource
+
+  Better Future Olastic Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Olastic Brick: -42
+    - recipe_type: Raw Resource
+
+  Better Future Rodius Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Rodius Capsule: -42
+    - recipe_type: Raw Resource
+
+  Better Future Ignian Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Ignian Crystal: -42
+    - recipe_type: Raw Resource
+
+  Better Future Celestian Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Celestian Crystal: -42
+    - recipe_type: Raw Resource
+
+  Better Future Erudian Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Erudian Crystal: -42
+    - recipe_type: Raw Resource
+
+  Better Future Luxian Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Luxian Crystal: -42
+    - recipe_type: Raw Resource
+
+# GSO Standard Blocks
+
+  GSO One Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fiberwood Chunk: -1
+        Plumbite Ore: -2
+    - recipe_type: Raw Resource
+
+  GSO Two Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Plumbia Ingot: -2
+    - recipe_type: Raw Resource
+
+  GSO Three Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Plumbia Ingot: -3
+    - recipe_type: Raw Resource
+
+  GSO Four Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Plumbia Ingot: -4
+    - recipe_type: Raw Resource
+
+  GSO Five Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Plumbia Ingot: -5
+    - recipe_type: Raw Resource
+
+  GSO Mighty Minion Head Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -1
+        Carbius Brick: -1
+        Erudian Crystal: -1
+    - recipe_type: Raw Resource
+
+  GSO Cab Chassis:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Plumbia Ingot: -5
+        Fibre Plating: -2
+    - recipe_type: Raw Resource
+
+  GSO Curved Left Frame:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Plubonic Greebles: -1
+        Erudian Crystal: -1
+    - recipe_type: Raw Resource
+
+  GSO Slim Arch:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Titanite Ore: -2
+        Fibre Plating: -2
+        Acid Electrode: -2
+    - recipe_type: Raw Resource
+
+  GSO Small Extender:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Plumbia Ingot: -3
+        Fibre Plating: -3
+    - recipe_type: Raw Resource
+
+  GSO Curved Right Frame:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -1
+        Plubonic Greebles: -2
+        Erudian Crystal: -1
+    - recipe_type: Raw Resource
+
+  GSO Slim Bonnet:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Titanite Ore: -3
+        Fibre Plating: -4
+        Fuel Injector: -2
+    - recipe_type: Raw Resource
+
+  GSO Running Board:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -4
+        Plumbia Ingot: -3
+        Rodius Capsule: -1
+    - recipe_type: Raw Resource
+
+  GSO Medium Extender:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Plumbia Ingot: -4
+        Fibre Plating: -4
+    - recipe_type: Raw Resource
+
+  GSO One Half Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -5
+        Titania Ingot: -1
+        Plubonic Greebles: -1
+    - recipe_type: Raw Resource
+
+  GSO Corner Half Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -4
+        Titania Ingot: -1
+        Plubonic Greebles: -1
+    - recipe_type: Raw Resource
+
+  GSO Inside Corner Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Titania Ingot: -1
+        Plubonic Greebles: -1
+    - recipe_type: Raw Resource
+
+  GSO Small Armour Plate:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Titania Ingot: -2
+        Plubonic Greebles: -1
+    - recipe_type: Raw Resource
+
+  GSO Cab Armour Plate:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Plubonic Greebles: -1
+    - recipe_type: Raw Resource
+
+  GSO Medium Armour Plate:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -5
+        Titania Ingot: -2
+        Plubonic Greebles: -2
+    - recipe_type: Raw Resource
+
+  GSO Large Armour Plate:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -8
+        Titania Ingot: -4
+        Plubonic Greebles: -3
+    - recipe_type: Raw Resource
+
+  GSO Two Half Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -2
+        Plumbia Ingot: -5
+        Titania Ingot: -1
+        Plubonic Greebles: -1
+    - recipe_type: Raw Resource
+
+# GSO Controls Blocks
+
+  GSO Cosmonaut SAP Cab:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -1
+        Rodius Capsule: -1
+        Erudian Crystal: -1
+    - recipe_type: Raw Resource
+
+  GSO Cosmonaut Wide Cab:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Rodius Capsule: -2
+        Erudian Crystal: -1
+    - recipe_type: Raw Resource
+
+  GSO Gruntle A.I. Module:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -1
+        Fuel Injector: -1
+        Mother Brain: -1
+    - recipe_type: Raw Resource
+
+  GSO Anchored A.I. Module:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Carbius Brick: -2
+        Rodius Capsule: -2
+        Celestian Crystal: -2
+    - recipe_type: Raw Resource
+
+  GSO Crafty Mike Cab:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Rodius Capsule: -1
+        Erudian Crystal: -1
+    - recipe_type: Raw Resource
+
+  GSO Agent Pow Cab:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Rodius Capsule: -1
+        Erudian Crystal: -1
+    - recipe_type: Raw Resource
+
+# GSO Wheel Blocks
+
+  GSO Dirt Wheel:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Jelly: -2
+        Plumbite Ore: -3
+    - recipe_type: Raw Resource
+
+  GSO Little Trekker Wheel:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Jelly: -1
+        Plumbite Ore: -2
+    - recipe_type: Raw Resource
+
+  GSO Stabiliser Wheel:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fiberwood Chunk: -1
+        Rubber Jelly: -1
+    - recipe_type: Raw Resource
+
+  GSO Riser Wheel:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -3
+        Plumbia Ingot: -3
+    - recipe_type: Raw Resource
+
+  GSO Bumper Wheel:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -6
+        Plumbia Ingot: -6
+    - recipe_type: Raw Resource
+
+  GSO Hub Wheel:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -4
+        Plumbia Ingot: -4
+    - recipe_type: Raw Resource
+
+  GSO Muddy Dog Wheel:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -10
+        Plumbia Ingot: -10
+    - recipe_type: Raw Resource
+
+  GSO Techa Track:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -8
+        Plumbia Ingot: -8
+        Plubonic Greebles: -2
+    - recipe_type: Raw Resource
+
+# GSO Weapon Blocks
+
+  GSO Mini Drill:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fiberwood Chunk: -2
+        Plumbite Ore: -2
+    - recipe_type: Raw Resource
+
+  GSO Rock Drill:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -2
+        Titania Ingot: -3
+    - recipe_type: Raw Resource
+
+  GSO Plough:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbite Ore: -3
+        Titanite Ore: -1
+    - recipe_type: Raw Resource
+
+  GSO Pusher Plough:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbite Ore: -2
+        Titanite Ore: -2
+    - recipe_type: Raw Resource
+
+  GSO Cow Catcher Plough:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -1
+        Plumbia Ingot: -4
+        Titania Ingot: -1
+    - recipe_type: Raw Resource
+
+  GSO Narrow Gauge COIL Laser:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Luxite Shard: -1
+        Plumbite Ore: -3
+    - recipe_type: Raw Resource
+
+  GSO Wide Gauge STUD Laser:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Plumbia Ingot: -3
+        Rubber Brick: -1
+    - recipe_type: Raw Resource
+
+  GSO ZK-47 Light Machine Gun:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbite Ore: -3
+        Titanite Ore: -2
+    - recipe_type: Raw Resource
+
+  GSO 3-Pound Cannon:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Carbius Brick: -2
+        Plubonic Greebles: -2
+        Blast Caps: -1
+    - recipe_type: Raw Resource
+
+  GSO 8-Barrel Fixed Mini-Mortar:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Carbius Brick: -2
+        Plubonic Greebles: -2
+        Blast Caps: -2
+    - recipe_type: Raw Resource
+
+  GSO Combat Shotgun:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Blast Caps: -3
+    - recipe_type: Raw Resource
+
+  GSO Megaton Cannon:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -1
+        Carbius Brick: -1
+        Blast Caps: -1
+        Proxima Dark: -1
+    - recipe_type: Raw Resource
+
+  GSO Big Berta Cannon:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plubonic Alloy: -6
+        Blast Caps: -6
+        Z4 Explosives: -4
+        Dervish Gel: -3
+        Gluon Beam: -1
+    - recipe_type: Raw Resource
+
+  GSO Missile Battery:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -1
+        Carbius Brick: -1
+        Blast Caps: -1
+        Proxima Dark: -1
+    - recipe_type: Raw Resource
+
+  GSO Gigaton Cannon:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -4
+        Blast Caps: -1
+        Z4 Explosives: -1
+        Dervish Gel: -1
+        Proxima Dark: -1
+    - recipe_type: Raw Resource
+
+# GSO Accessory Blocks
+
+  GSO Blinker Headlight:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Jelly: -1
+        Luxite Shard: -2
+    - recipe_type: Raw Resource
+
+  GSO Storm Lantern:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Jelly: -1
+        Luxite Shard: -1
+    - recipe_type: Raw Resource
+
+  GSO Kraven Radar Module:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Olastic Brick: -1
+    - recipe_type: Raw Resource
+
+  GSO Block Magnet Mini:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Plumbia Ingot: -3
+    - recipe_type: Raw Resource
+
+  GSO Multi-Light Panel:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -3
+        Luxian Crystal: -3
+        Erudian Crystal: -1
+    - recipe_type: Raw Resource
+
+  GSO SOS Searchlight:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -3
+        Luxian Crystal: -3
+    - recipe_type: Raw Resource
+
+  GSO Buzz Striplight:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -2
+        Luxian Crystal: -2
+    - recipe_type: Raw Resource
+
+  GSO Thimble Collector:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Luxian Crystal: -1
+        Plumbia Ingot: -2
+    - recipe_type: Raw Resource
+
+  GSO Flat-Bed Collector:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Luxian Crystal: -1
+        Plubonic Greebles: -1
+        Plubonic Alloy: -1
+        Acid Electrode: -1
+    - recipe_type: Raw Resource
+
+  GSO Block Magnet:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Plubonic Greebles: -2
+        Acid Electrode: -1
+    - recipe_type: Raw Resource
+
+  GSO Power Gauge:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Rodius Capsule: -1
+    - recipe_type: Raw Resource
+
+  GSO Signal Marker:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Luxian Crystal: -2
+    - recipe_type: Raw Resource
+
+  GSO Fuel Gauge:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Carbius Brick: -1
+    - recipe_type: Raw Resource
+
+  GSO Active All Axis Gyro:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibre Plating: -1
+        Rugged Fiblar: -1
+        Cyclone Jet: -2
+    - recipe_type: Raw Resource
+
+  GSO 2-Way Explosive Bolt 1:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Carbite Ore: -1
+    - recipe_type: Raw Resource
+
+  GSO 2-Way Explosive Bolt 2:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Carbius Brick: -1
+    - recipe_type: Raw Resource
+
+  GSO 2-Way Explosive Bolt 3:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Rodius Capsule: -1
+    - recipe_type: Raw Resource
+
+  GSO 2-Way Explosive Bolt 4:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Olastic Brick: -1
+    - recipe_type: Raw Resource
+
+  GSO 6-Way Explosive Bolt:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Blast Caps: -1
+    - recipe_type: Raw Resource
+
+  GSO Altimeter:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Luxian Crystal: -1
+        Plumbia Ingot: -2
+    - recipe_type: Raw Resource
+
+  GSO Payload Terminal:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Gluon Beam: -1
+        Seed AI: -1
+        Proxima Dark: -1
+    - recipe_type: Raw Resource
+
+# GSO Power Blocks
+
+  GSO Small Battery Cell:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Rodius Capsule: -2
+    - recipe_type: Raw Resource
+
+  GSO Tall Solar Generator:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Carbius Brick: -1
+        Rodius Capsule: -1
+        Ignian Crystal: -1
+    - recipe_type: Raw Resource
+
+  GSO Mobile Furnace Generator:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -1
+        Rodius Capsule: -1
+        Acid Electrode: -1
+        Gluon Beam: -1
+    - recipe_type: Raw Resource
+
+  GSO Anchored Furnace Generator:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibre Plating: -1
+        Carbius Brick: -1
+        Fuel Injector: -1
+    - recipe_type: Raw Resource
+
+  GSO Wireless Charger:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rodius Capsule: -1
+        Acid Electrode: -1
+        Heat Coil: -1
+        Plasma Emitter: -1
+    - recipe_type: Raw Resource
+
+  GSO Shield Bubble Projector:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Ion Pulse Cell: -1
+        Hard Light Drive: -1
+    - recipe_type: Raw Resource
+
+  GSO Repair Bubble Projector:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibre Plating: -1
+        Acid Electrode: -2
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+# GSO Manufactoring Blocks
+
+  GSO Fixed Anchor:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fiberwood Chunk: -1
+        Plumbite Ore: -3
+    - recipe_type: Raw Resource
+
+  GSO Rotating Anchor:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -2
+        Plumbia Ingot: -3
+    - recipe_type: Raw Resource
+
+  GSO Resource Receiver:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Luxian Crystal: -1
+    - recipe_type: Raw Resource
+
+  GSO Large Resource Receiver:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Luxian Crystal: -1
+        Rubber Brick: -1
+    - recipe_type: Raw Resource
+
+  GSO Conveyor:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Luxian Crystal: -1
+    - recipe_type: Raw Resource
+
+  GSO Step Conveyor:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -2
+        Luxian Crystal: -1
+        Titania Ingot: -1
+    - recipe_type: Raw Resource
+
+  GSO Up Conveyor:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -2
+        Luxian Crystal: -1
+        Plumbia Ingot: -1
+    - recipe_type: Raw Resource
+
+  GSO Down Conveyor:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -1
+        Luxian Crystal: -1
+        Plumbia Ingot: -1
+    - recipe_type: Raw Resource
+
+  GSO Alternator Conveyor:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Luxian Crystal: -2
+    - recipe_type: Raw Resource
+
+  GSO Filter:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Luxian Crystal: -3
+    - recipe_type: Raw Resource
+
+  GSO Dropper:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Luxian Crystal: -3
+        Plumbia Ingot: -2
+    - recipe_type: Raw Resource
+
+  GSO Pacemaker:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Luxian Crystal: -3
+        Plumbia Ingot: -2
+    - recipe_type: Raw Resource
+
+  GSO Filtered Node Silo:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -3
+        Luxian Crystal: -2
+    - recipe_type: Raw Resource
+
+  GSO Mixed 4-Pack Silo:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Luxian Crystal: -3
+        Rodius Capsule: -1
+    - recipe_type: Raw Resource
+
+  GSO Mixed Lotsa Silo:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -5
+        Luxian Crystal: -5
+        Rodius Capsule: -2
+    - recipe_type: Raw Resource
+
+  GSO Mobile Delivery Cannon:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -1
+        Olastic Brick: -1
+        Fuel Injector: -1
+        Seed AI: -1
+    - recipe_type: Raw Resource
+
+  GSO Matryoshka Anchored Delivery Cannon:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Hardened Titanic: -1
+        Acid Electrode: -1
+    - recipe_type: Raw Resource
+
+  GSO Refinery:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbite Ore: -2
+        Carbite Ore: -1
+        Oleite Jelly: -1
+    - recipe_type: Raw Resource
+
+  GSO Fabricator:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Carbius Brick: -1
+        Rodius Capsule: -1
+    - recipe_type: Raw Resource
+
+  GSO Scrapper:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plubonic Greebles: -1
+        Blast Caps: -1
+    - recipe_type: Raw Resource
+
+  GSO Component Factory:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Carbius Brick: -1
+        Rodius Capsule: -1
+        Olastic Brick: -1
+    - recipe_type: Raw Resource
+
+  GSO Advanced Component Dongle:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plubonic Greebles: -1
+        Acid Electrode: -1
+    - recipe_type: Raw Resource
+
+  GSO Complex Component Dongle:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plubonic Alloy: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  GSO Exotic Component Dongle:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Ion Pulse Cell: -1
+        Plasma Emitter: -1
+    - recipe_type: Raw Resource
+
+  GSO Anchored SCU Storage Device:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Olastic Brick: -1
+        Blast Caps: -1
+        Hard Light Drive: -1
+        Zero Point Splitter: -1
+    - recipe_type: Raw Resource
+
+  GSO Auto Miner:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Luxian Crystal: -1
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+    - recipe_type: Raw Resource
+
+# GSO Flight Blocks
+
+  GSO Tetrox Booster Jet:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibre Plating: -1
+        Carbius Brick: -2
+        Fuel Injector: -2
+    - recipe_type: Raw Resource
+
+  GSO 4x Redux Mega Booster:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Z4 Explosives: -2
+        Cyclone Jet: -1
+        Thermo Jet: -1
+    - recipe_type: Raw Resource
+
+  GSO Big Poppa Fuel Tank:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Olastic Brick: -1
+        Plasma Emitter: -1
+        Dervish Gel: -1
+    - recipe_type: Raw Resource
+
+  GSO Popper Fuel Tank:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rodius Capsule: -3
+        Plubonic Greebles: -3
+        Fuel Injector: -1
+    - recipe_type: Raw Resource
+
+  GSO Turbine Propeller:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Fuel Injector: -1
+        Heat Coil: -1
+        Zero Point Splitter: -1
+    - recipe_type: Raw Resource
+
+  GSO Left Highwind Aerofoil:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Rubber Brick: -3
+        Olastic Brick: -1
+    - recipe_type: Raw Resource
+
+  GSO Little Lift Aerofoil:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Rubber Brick: -1
+        Olastic Brick: -1
+    - recipe_type: Raw Resource
+
+  GSO Right Highwind Aerofoil:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Rubber Brick: -3
+        Olastic Brick: -1
+    - recipe_type: Raw Resource
+
+  GSO Rudder Aerofoil:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Rubber Brick: -2
+        Olastic Brick: -1
+    - recipe_type: Raw Resource
+
+  GSO Left Di-gon Wing:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -3
+        Fibre Plating: -2
+        Olastic Brick: -1
+    - recipe_type: Raw Resource
+
+  GSO Right Di-gon Wing:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -4
+        Fibre Plating: -2
+        Olastic Brick: -1
+    - recipe_type: Raw Resource
+
+  GSO Terraphobe Hover Pad:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Luxian Crystal: -1
+        Plubonic Alloy: -1
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  GSO Horn Adjustment Thruster:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Luxian Crystal: -1
+        Plubonic Alloy: -1
+        Z4 Explosives: -1
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  GSO Large Hover Pad:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Luxian Crystal: -1
+        Plubonic Alloy: -2
+        Ion Pulse Cell: -1
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
