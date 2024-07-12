@@ -2745,3 +2745,137 @@ resources:
         Erudite Shard: -4
     - recipe_type: Raw Resource
 
+# GeoCorp Wheel Blocks
+
+  GeoCorp Rugged Wheel:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rubber Jelly: -4
+        Titanite Ore: -8
+        Oleite Jelly: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Krusher Wheel:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -2
+        Titanite Ore: -10
+        Rodite Ore: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Workday Wheel:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rubber Brick: -4
+        Plumbia Ingot: -3
+        Titania Ingot: -5
+    - recipe_type: Raw Resource
+
+  GeoCorp Jaws Wheel:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Titania Ingot: -4
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Big-Boy Wheel:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rubber Brick: -6
+        Plumbia Ingot: -6
+        Titania Ingot: -6
+    - recipe_type: Raw Resource
+
+  GeoCorp Behemoth Wheel:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Hardened Titanic: -3
+        Titanic Alloy: -2
+        Fuel Injector: -1
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp XL Continuous Track:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rugged Fiblar: -6
+        Ion Pulse Cell: -3
+        Thermo Jet: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Continuous Track Right:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rugged Fiblar: -1
+        Ion Pulse Cell: -2
+        Thermo Jet: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Continuous Track Left:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rugged Fiblar: -2
+        Ion Pulse Cell: -2
+        Thermo Jet: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Continuous Track Middle:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rugged Fiblar: -3
+        Ion Pulse Cell: -2
+        Thermo Jet: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Landing Skid:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Rubber Brick: -5
+        Plumbia Ingot: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Landing Gear Wheel 1:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rubber Brick: -3
+        Plumbia Ingot: -1
+        Rodius Capsule: -2
+        Rugged Fiblar: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Landing Gear Wheel 2:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rubber Brick: -1
+        Rodius Capsule: -3
+        Rugged Fiblar: -1
+    - recipe_type: Raw Resource
+
