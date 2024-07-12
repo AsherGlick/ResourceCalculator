@@ -3381,3 +3381,126 @@ resources:
         Zero Point Splitter: -1
     - recipe_type: Raw Resource
 
+# GeoCorp Flight Blocks
+
+  GeoCorp Medium Rotor:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plubonic Alloy: -1
+        Fuel Injector: -1
+        Cyclone Jet: -1
+        Coffman Cell: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Left Wing:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Rubber Brick: -7
+        Titania Ingot: -3
+        Fibre Plating: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Right Wing:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Rubber Brick: -2
+        Titania Ingot: -2
+        Fibre Plating: -5
+    - recipe_type: Raw Resource
+
+  GeoCorp Tail Wing:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Rubber Brick: -1
+        Titania Ingot: -1
+        Rugged Fiblar: -3
+    - recipe_type: Raw Resource
+
+  GeoCorp 8 Blade Propeller:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rubber Brick: -2
+        Rugged Fiblar: -2
+        Fuel Injector: -2
+        Cyclone Jet: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Jet Engine:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rugged Fiblar: -2
+        Blast Caps: -1
+        Fuel Injector: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Center Wing:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rubber Brick: -1
+        Titania Ingot: -3
+        Olastic Brick: -2
+        Rugged Fiblar: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Powerlifter Hover Pad:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rugged Fiblar: -1
+        Hardened Titanic: -1
+        Titanic Alloy: -1
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Eagle Heavy Booster:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fuel Injector: -2
+        Z4 Explosives: -2
+        Cyclone Jet: -2
+        Thermo Jet: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Jetson Adjustment Thruster:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rugged Fiblar: -3
+        Hardened Titanic: -3
+        Titanic Alloy: -3
+        Cyclone Jet: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Big Rotor:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Hardened Titanic: -4
+        Fuel Injector: -1
+        Cyclone Jet: -2
+        Gluon Beam: -1
+    - recipe_type: Raw Resource
+
