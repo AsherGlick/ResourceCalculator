@@ -3211,3 +3211,76 @@ resources:
         Proxima Dark: -1
     - recipe_type: Raw Resource
 
+  GeoCorp Battery Pack:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titanic Alloy: -4
+        Fuel Injector: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Gluon Mega Battery:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Blast Caps: -3
+        Z4 Explosives: -4
+        Dervish Gel: -1
+        Proxima Dark: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Anchored Furnace Generator:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titania Ingot: -4
+        Carbius Brick: -2
+        Rodius Capsule: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Geothermal Generator:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titania Ingot: -8
+        Carbius Brick: -1
+        Olastic Brick: -1
+        Ignian Crystal: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Solar Panel:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Hardened Titanic: -8
+        Acid Electrode: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Remote Charger:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titanic Alloy: -3
+        Ion Pulse Cell: -1
+        Plasma Emitter: -1
+        Zero Point Splitter: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Repair Bubble:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titanic Alloy: -2
+        Cyclone Jet: -3
+        Gluon Beam: -1
+    - recipe_type: Raw Resource
+
