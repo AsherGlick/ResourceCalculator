@@ -2681,3 +2681,67 @@ resources:
 
 # GeoCorp Control Blocks
 
+  GeoCorp Foreman GPR Cab:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titania Ingot: -6
+        Carbius Brick: -1
+        Rodius Capsule: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Boss Cab:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titania Ingot: -4
+        Carbius Brick: -2
+        Rodius Capsule: -4
+        Erudian Crystal: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Overlord Cab:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titania Ingot: -8
+        Carbius Brick: -3
+        Rodius Capsule: -8
+        Erudian Crystal: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Aircraft Cab:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titania Ingot: -2
+        Carbius Brick: -2
+        Olastic Brick: -4
+        Erudite Shard: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Dozer AI Module:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Hardened Titanic: -1
+        Blast Caps: -1
+        Mother Brain: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Conning Tower Cab:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titania Ingot: -5
+        Carbius Brick: -6
+        Rodius Capsule: -5
+        Erudite Shard: -4
+    - recipe_type: Raw Resource
+
