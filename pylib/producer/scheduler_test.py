@@ -13,7 +13,6 @@ class FunctionCall(Generic[InputFileDatatype]):
     input_paths: InputFileDatatype
     groups: Dict[str, str]
 
-
 class Integration_Tests(unittest.TestCase):
     maxDiff = 999999
 
@@ -28,7 +27,13 @@ class Integration_Tests(unittest.TestCase):
         self.addCleanup(write_build_events_patcher.stop)
         self.mocked_write_build_events.return_value = None
 
-
+        delete_file_patcher = patch(f"{__package__}.scheduler._delete_file")
+        self.mocked_delete_file = delete_file_patcher.start()
+        self.addCleanup(delete_file_patcher.stop)
+        self.delete_function_calls: List[str] = []
+        def delete_file_side_effect(path: str) -> None:
+            self.delete_function_calls.append(path)
+        self.mocked_delete_file.side_effect = delete_file_side_effect
 
     ############################################################################
     # test_single_shared_filer
@@ -99,6 +104,8 @@ class Integration_Tests(unittest.TestCase):
             ]
         )
 
+        self.assertCountEqual(self.delete_function_calls, [])
+
     ############################################################################
     # test_array_search
     #
@@ -168,6 +175,7 @@ class Integration_Tests(unittest.TestCase):
                 )
             ]
         )
+        self.assertCountEqual(self.delete_function_calls, [])
 
     ############################################################################
     # test_empty_field_string
@@ -238,6 +246,7 @@ class Integration_Tests(unittest.TestCase):
                 )
             ]
         )
+        self.assertCountEqual(self.delete_function_calls, [])
 
     ############################################################################
     # test_empty_field_array
@@ -309,6 +318,7 @@ class Integration_Tests(unittest.TestCase):
                 )
             ]
         )
+        self.assertCountEqual(self.delete_function_calls, [])
 
     ############################################################################
     # test_multi_global_file
@@ -401,6 +411,7 @@ class Integration_Tests(unittest.TestCase):
                 )
             ]
         )
+        self.assertCountEqual(self.delete_function_calls, [])
 
     ############################################################################
     # test_multiple_match_groups
@@ -496,6 +507,7 @@ class Integration_Tests(unittest.TestCase):
                 )
             ]
         )
+        self.assertCountEqual(self.delete_function_calls, [])
 
     ############################################################################
     # test_filename_with_comma
@@ -580,6 +592,7 @@ class Integration_Tests(unittest.TestCase):
                 )
             ]
         )
+        self.assertCountEqual(self.delete_function_calls, [])
 
     ############################################################################
     # test_no_match_group
@@ -635,6 +648,7 @@ class Integration_Tests(unittest.TestCase):
                 )
             ]
         )
+        self.assertCountEqual(self.delete_function_calls, [])
 
     ############################################################################
     # test_array_no_match_group
@@ -684,6 +698,7 @@ class Integration_Tests(unittest.TestCase):
                 ),
             ]
         )
+        self.assertCountEqual(self.delete_function_calls, [])
 
     ############################################################################
     # test_double_array_no_match_group
@@ -743,6 +758,7 @@ class Integration_Tests(unittest.TestCase):
                 ),
             ]
         )
+        self.assertCountEqual(self.delete_function_calls, [])
 
     ############################################################################
     # test_double_array
@@ -820,6 +836,7 @@ class Integration_Tests(unittest.TestCase):
                 )
             ]
         )
+        self.assertCountEqual(self.delete_function_calls, [])
 
     ############################################################################
     # test_file_addition_to_existing_files
@@ -902,6 +919,7 @@ class Integration_Tests(unittest.TestCase):
                 )
             ]
         )
+        self.assertCountEqual(self.delete_function_calls, [])
 
     ############################################################################
     # test_file_readdition
@@ -999,6 +1017,10 @@ class Integration_Tests(unittest.TestCase):
                     },
                 ),
             ]
+        )
+        self.assertCountEqual(
+            self.delete_function_calls,
+            ["output_one.txt"]
         )
 
 #     def test_file_deletion(self) -> None:
@@ -1120,6 +1142,7 @@ class Integration_Tests(unittest.TestCase):
                 ),
             ]
         )
+        self.assertCountEqual(self.delete_function_calls, [])
 
         # Reset function_calls so we only see the function calls that are made
         # as a result of calling add_or_update_files() with the new file.
@@ -1143,6 +1166,12 @@ class Integration_Tests(unittest.TestCase):
                         "title": "one",
                     }
                 ),
+            ]
+        )
+        self.assertCountEqual(
+            self.delete_function_calls,
+            [
+                "output_one.txt",
             ]
         )
 
@@ -1292,6 +1321,7 @@ class Integration_Tests(unittest.TestCase):
                 )
             ]
         )
+        self.assertCountEqual(self.delete_function_calls, [])
 
 
     ############################################################################
@@ -1372,6 +1402,7 @@ class Integration_Tests(unittest.TestCase):
                 )
             ]
         )
+        self.assertCountEqual(self.delete_function_calls, [])
 
 
     # TODO: Write a test that shows that an action can only replace itself in the unique heap, even if it shares a producer with another action.
@@ -1389,6 +1420,14 @@ class ConfigurationTests(unittest.TestCase):
         self.mocked_write_build_events = write_build_events_patcher.start()
         self.addCleanup(write_build_events_patcher.stop)
         self.mocked_write_build_events.return_value = None
+
+        delete_file_patcher = patch(f"{__package__}.scheduler._delete_file")
+        self.mocked_delete_file = delete_file_patcher.start()
+        self.addCleanup(delete_file_patcher.stop)
+        self.delete_function_calls: List[str] = []
+        def delete_file_side_effect(path: str) -> None:
+            self.delete_function_calls.append(path)
+        self.mocked_delete_file.side_effect = delete_file_side_effect
 
     ############################################################################
     # test_non_unique_producer_name_error
@@ -1460,6 +1499,14 @@ class BuildLogTests(unittest.TestCase):
         self.mocked_check_modification_time.side_effect = modificaiton_time_side_effect
 
 
+        delete_file_patcher = patch(f"{__package__}.scheduler._delete_file")
+        self.mocked_delete_file = delete_file_patcher.start()
+        self.addCleanup(delete_file_patcher.stop)
+        self.delete_function_calls: List[str] = []
+        def delete_file_side_effect(path: str) -> None:
+            self.delete_function_calls.append(path)
+        self.mocked_delete_file.side_effect = delete_file_side_effect
+
     ############################################################################
     #
     ############################################################################
@@ -1501,7 +1548,7 @@ class BuildLogTests(unittest.TestCase):
                 "match_groups": {"title": "two"},
                 "output_files": ["output_two.txt"],
             }
-        ]
+        ]   
 
         scheduler = Scheduler(
             producer_list=[
@@ -1527,6 +1574,10 @@ class BuildLogTests(unittest.TestCase):
                     "output_files": ["output_two.txt"],
                 }
             ]
+        )
+        self.assertCountEqual(
+            self.delete_function_calls,
+            [],
         )
 
     def test_init_with_strong_associated_actions_older_output_files(self):
@@ -1610,6 +1661,13 @@ class BuildLogTests(unittest.TestCase):
                 }
             ]
         )
+        self.assertCountEqual(
+            self.delete_function_calls,
+            [
+                "output_one.txt",
+                "output_two.txt"
+            ],
+        )
 
     def test_init_with_strong_associated_actions_no_output_files(self):
         class Input(TypedDict):
@@ -1690,6 +1748,13 @@ class BuildLogTests(unittest.TestCase):
                 }
             ]
         )
+        self.assertCountEqual(
+            self.delete_function_calls,
+            [
+                "output_one.txt", # Technically this file does not exist but we still make a delete attempt
+                "output_two.txt", # Technically this file does not exist but we still make a delete attempt
+            ],
+        )
 
     def test_init_with_weak_associated_actions(self):
         class Input(TypedDict):
@@ -1758,7 +1823,10 @@ class BuildLogTests(unittest.TestCase):
                 },
             ]
         )
-
+        self.assertCountEqual(
+            self.delete_function_calls,
+            ["output_one.txt"],
+        )
 
     def test_init_with_no_associated_actions(self):
         class Input(TypedDict):
@@ -1841,23 +1909,373 @@ class BuildLogTests(unittest.TestCase):
                 }
             ]
         )
+        self.assertCountEqual(
+            self.delete_function_calls,
+            [
+                "output_one_crazy.txt",
+                "output_three.txt",
+            ],
+        )
 
-    # def add_action_with_strong_associated_build_log(self)
-    # def add_action_with_weak_associated_build_log(self)
-    # def add_action_with_no_associated_build_log(self)
+    ############################################################################
+    # test_delete_action_with_strong_associated_build_log
+    #
+    #
+    ############################################################################
+    def test_delete_action_with_strong_associated_build_log(self):
+        class Input(TypedDict):
+            data_file: str
 
-    # def change_action_with_strong_associated_build_log(self)
-    # def change_action_with_weak_associated_build_log(self)
-    # def change_action_with_no_associated_build_log(self)
+        first_function_calls: List[FunctionCall[Input]] = []
 
-    # def delete_action_with_strong_associated_build_log(self)
-    # def delete_action_with_weak_associated_build_log(self)
-    # def delete_action_with_no_associated_build_log(self)
+        def first_function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            first_function_calls.append(FunctionCall(input_files, groups))
+            return [f"output_{groups['title']}.txt"]
+
+        second_function_calls: List[FunctionCall[Input]] = []
+        def second_function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            second_function_calls.append(FunctionCall(input_files, groups))
+            return [f"second_output_{groups['title']}.txt"]
+
+        first_producer: Producer[Input] = Producer(
+            name="First Test Case",
+            input_path_patterns={
+                "data_file": r"^data_(?P<title>[a-z]+)\.txt$",
+            },
+            function=first_function,
+        )
+        second_producer: Producer[Input] = Producer(
+            name="Second Test Case",
+            input_path_patterns={
+                "data_file": r"^output_(?P<title>[a-z]+)\.txt$"
+            },
+            function=second_function
+        )
+
+        self.check_file_modificaiton_time_patcher_args = {
+            "data_one.txt": 999,
+            "output_one.txt": 100,
+            "second_output_one.txt": 101,
+        }
+
+        self.mocked_read_build_events.return_value = [
+            {
+                "producer_name": "First Test Case",
+                "input_files": ["data_one.txt"],
+                "match_groups": {"title": "one"},
+                "output_files": ["output_one.txt"],
+            }, {
+                "producer_name": "Second Test Case",
+                "input_files": ["output_one.txt"],
+                "match_groups": {"title": "one"},
+                "output_files": ["second_output_one.txt"],
+            }
+        ]
+
+        scheduler = Scheduler(
+            producer_list=[
+                first_producer,
+                second_producer,
+            ],
+            initial_filepaths=list(self.check_file_modificaiton_time_patcher_args.keys()),
+        )
+
+        self.assertCountEqual(first_function_calls, [
+            FunctionCall(
+                input_paths={
+                    "data_file": "data_one.txt",
+                },
+                groups={
+                    "title": "one"
+                }
+            ),
+        ])
+        self.assertCountEqual(second_function_calls, [
+            FunctionCall(
+                input_paths={
+                    "data_file": "output_one.txt",
+                },
+                groups={
+                    "title": "one"
+                }
+            ),
+        ])
+
+        self.assertIsNotNone(self.write_build_log_result)
+        self.assertCountEqual(
+            self.write_build_log_result,
+            [
+                {
+                    "producer_name": "First Test Case",
+                    "input_files": ["data_one.txt"],
+                    "match_groups": {"title": "one"},
+                    "output_files": ["output_one.txt"],
+                }, {
+                    "producer_name": "Second Test Case",
+                    "input_files": ["output_one.txt"],
+                    "match_groups": {"title": "one"},
+                    "output_files": ["second_output_one.txt"],
+                }
+            ]
+        )
+
+        self.assertCountEqual(
+            self.delete_function_calls,
+            [
+                "output_one.txt",
+                "second_output_one.txt",
+            ],
+        )
+
+    ############################################################################
+    # test_delete_action_with_weak_associated_build_log
+    #
+    # Tests that we can properly delete files that are weakly associated
+    # TODO: This might be a bad test because we are using some not-great regexes
+    ############################################################################
+    def test_delete_action_with_weak_associated_build_log(self):
+        class Input(TypedDict):
+            data_file: str
+
+        first_function_calls: List[FunctionCall[Input]] = []
+
+        def first_function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            first_function_calls.append(FunctionCall(input_files, groups))
+            return [f"output_{groups['title']}.txt"]
+
+        second_function_calls: List[FunctionCall[Input]] = []
+        def second_function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            second_function_calls.append(FunctionCall(input_files, groups))
+            return [f"second_output_{groups['title']}.txt"]
+
+        first_producer: Producer[Input] = Producer(
+            name="First Test Case",
+            input_path_patterns={
+                "data_file": r"^data_(?P<title>[a-z]+)_[ab]\.txt$",
+            },
+            function=first_function,
+        )
+        second_producer: Producer[Input] = Producer(
+            name="Second Test Case",
+            input_path_patterns={
+                "data_file": r"^output_(?P<title>[a-z]+)\.txt$"
+            },
+            function=second_function
+        )
+
+        self.check_file_modificaiton_time_patcher_args = {
+            "data_one_b.txt": 50,
+            "output_one.txt": 100,
+            "second_output_one.txt": 101,
+        }
+
+        self.mocked_read_build_events.return_value = [
+            {
+                "producer_name": "First Test Case",
+                "input_files": ["data_one_a.txt"],
+                "match_groups": {"title": "one"},
+                "output_files": ["output_one.txt"],
+            }, {
+                "producer_name": "Second Test Case",
+                "input_files": ["output_one.txt"],
+                "match_groups": {"title": "one"},
+                "output_files": ["second_output_one.txt"],
+            }
+        ]
+
+        scheduler = Scheduler(
+            producer_list=[
+                first_producer,
+                second_producer,
+            ],
+            initial_filepaths=list(self.check_file_modificaiton_time_patcher_args.keys()),
+        )
+
+        self.assertCountEqual(first_function_calls, [
+            FunctionCall(
+                input_paths={
+                    "data_file": "data_one_b.txt",
+                },
+                groups={
+                    "title": "one"
+                }
+            ),
+        ])
+        self.assertCountEqual(second_function_calls, [
+            FunctionCall(
+                input_paths={
+                    "data_file": "output_one.txt",
+                },
+                groups={
+                    "title": "one"
+                }
+            ),
+        ])
+
+        self.assertIsNotNone(self.write_build_log_result)
+        self.assertCountEqual(
+            self.write_build_log_result,
+            [
+                {
+                    "producer_name": "First Test Case",
+                    "input_files": ["data_one_b.txt"],
+                    "match_groups": {"title": "one"},
+                    "output_files": ["output_one.txt"],
+                }, {
+                    "producer_name": "Second Test Case",
+                    "input_files": ["output_one.txt"],
+                    "match_groups": {"title": "one"},
+                    "output_files": ["second_output_one.txt"],
+                }
+            ]
+        )
+
+        self.assertCountEqual(
+            self.delete_function_calls,
+            [
+                "output_one.txt",
+                "second_output_one.txt",
+            ],
+        )
 
 
 
+    def test_removing_file_from_action_input_array(self):
+        class Input(TypedDict):
+            data_file: List[str]
 
+        first_function_calls: List[FunctionCall[Input]] = []
 
+        def first_function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            first_function_calls.append(FunctionCall(input_files, groups))
+            return [
+                f"output_{groups['title']}_1.txt",
+                f"output_{groups['title']}_2.txt",
+                f"output_{groups['title']}_3.txt",
+            ]
+
+        second_function_calls: List[FunctionCall[Input]] = []
+        def second_function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            second_function_calls.append(FunctionCall(input_files, groups))
+            return [f"second_output_{groups['title']}.txt"]
+
+        first_producer: Producer[Input] = Producer(
+            name="First Test Case",
+            input_path_patterns={
+                "data_file": [r"^data_(?P<title>[a-z]+)\.txt$"],
+            },
+            function=first_function,
+        )
+        second_producer: Producer[Input] = Producer(
+            name="Second Test Case",
+            input_path_patterns={
+                "data_file": [r"^output_(?P<title>[a-z]+)_[0-9]\.txt$"]
+            },
+            function=second_function
+        )
+
+        self.check_file_modificaiton_time_patcher_args = {
+            "data_one.txt": 999,
+            "output_one_1.txt": 100,
+            "output_one_2.txt": 101,
+            "output_one_3.txt": 102,
+            "output_one_4.txt": 103,
+            "second_output_one.txt": 104,
+        }
+
+        self.mocked_read_build_events.return_value = [
+            {
+                "producer_name": "First Test Case",
+                "input_files": ["data_one.txt"],
+                "match_groups": {"title": "one"},
+                "output_files": [
+                    "output_one_1.txt",
+                    "output_one_2.txt",
+                    "output_one_3.txt",
+                    "output_one_4.txt",
+                ],
+            }, {
+                "producer_name": "Second Test Case",
+                "input_files": [
+                    "output_one_1.txt",
+                    "output_one_2.txt",
+                    "output_one_3.txt",
+                    "output_one_4.txt",
+                ],
+                "match_groups": {"title": "one"},
+                "output_files": ["second_output_one.txt"],
+            }
+        ]
+
+        scheduler = Scheduler(
+            producer_list=[
+                first_producer,
+                second_producer,
+            ],
+            initial_filepaths=list(self.check_file_modificaiton_time_patcher_args.keys()),
+        )
+
+        self.assertCountEqual(first_function_calls, [
+            FunctionCall(
+                input_paths={
+                    "data_file": ["data_one.txt"],
+                },
+                groups={
+                    "title": "one"
+                }
+            ),
+        ])
+        self.assertCountEqual(second_function_calls, [
+            FunctionCall(
+                input_paths={
+                    "data_file": [
+                        "output_one_1.txt",
+                        "output_one_2.txt",
+                        "output_one_3.txt",
+                    ],
+                },
+                groups={
+                    "title": "one"
+                }
+            ),
+        ])
+
+        self.assertIsNotNone(self.write_build_log_result)
+        self.assertCountEqual(
+            self.write_build_log_result,
+            [
+                {
+                    "producer_name": "First Test Case",
+                    "input_files": ["data_one.txt"],
+                    "match_groups": {"title": "one"},
+                    "output_files": [
+                        "output_one_1.txt",
+                        "output_one_2.txt",
+                        "output_one_3.txt",
+                    ],
+                }, {
+                    "producer_name": "Second Test Case",
+                    "input_files": [
+                        "output_one_1.txt",
+                        "output_one_2.txt",
+                        "output_one_3.txt",
+                    ],
+                    "match_groups": {"title": "one"},
+                    "output_files": ["second_output_one.txt"],
+                }
+            ]
+        )
+
+        self.assertCountEqual(
+            self.delete_function_calls,
+            [
+                "output_one_1.txt",
+                "output_one_2.txt",
+                "output_one_3.txt",
+                "output_one_4.txt",
+                "second_output_one.txt",
+            ],
+        )
 
 
 

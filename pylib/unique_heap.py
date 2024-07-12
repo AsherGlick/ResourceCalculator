@@ -1,5 +1,5 @@
 import heapq
-from typing import TypeVar, Generic, Dict, List, Protocol, Optional
+from typing import TypeVar, Generic, Dict, List, Protocol, Optional, Iterator
 
 
 class WeakHash(Protocol):
@@ -102,12 +102,14 @@ class UniqueHeap(Generic[T]):
         obj = self._dict.get(weak_hash, None)
 
         if obj is None:
-            raise KeyError
+            return None
 
         del self._dict[weak_hash]
 
         self._heap.remove(obj)
         heapq.heapify(self._heap)
+
+        return obj
 
     ############################################################################
     # __len__
@@ -116,3 +118,8 @@ class UniqueHeap(Generic[T]):
     ############################################################################
     def __len__(self) -> int:
         return len(self._heap)
+
+
+    def __iter__(self) -> Iterator[T]:
+        return self._heap.__iter__()
+
