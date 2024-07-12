@@ -2879,3 +2879,181 @@ resources:
         Rugged Fiblar: -1
     - recipe_type: Raw Resource
 
+# GeoCorp Weapon Blocks
+
+  GeoCorp Fixed Diamond Drill:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -3
+        Titanite Ore: -10
+        Carbite Ore: -3
+    - recipe_type: Raw Resource
+
+  GeoCorp One-Scoop Claw:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -2
+        Titanite Ore: -8
+    - recipe_type: Raw Resource
+
+  GeoCorp Two-Scoop Loader:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Plumbia Ingot: -4
+        Titania Ingot: -12
+    - recipe_type: Raw Resource
+
+  GeoCorp Articulated Diamond Drill:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbia Ingot: -4
+        Titania Ingot: -10
+        Carbius Brick: -3
+    - recipe_type: Raw Resource
+
+  GeoCorp Cerberus-Head Light Bore:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Hardened Titanic: -3
+        Titanic Alloy: -2
+        Z4 Explosives: -1
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Excavator:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titanic Alloy: -6
+        Cyclone Jet: -1
+        Thermo Jet: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Buzz Saw:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Titania Ingot: -9
+        Carbius Brick: -4
+    - recipe_type: Raw Resource
+
+  GeoCorp Angled Jackhammer:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titania Ingot: -5
+        Hardened Titanic: -1
+        Fuel Injector: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Straight Jackhammer:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titania Ingot: -6
+        Hardened Titanic: -1
+        Fuel Injector: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Cat Nine Flail Guard:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titania Ingot: -10
+        Blast Caps: -1
+        Fuel Injector: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Windmill Flail Guard:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Hardened Titanic: -2
+        Titanic Alloy: -2
+        Z4 Explosives: -1
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp TB Thresher:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Luxian Crystal: -10
+        Titania Ingot: -20
+        Carbius Brick: -3
+        Rodius Capsule: -3
+    - recipe_type: Raw Resource
+
+  GeoCorp Angled Plasma Cutter:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Luxian Crystal: -6
+        Titania Ingot: -8
+        Carbius Brick: -3
+    - recipe_type: Raw Resource
+
+  GeoCorp Straight Plasma Cutter:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Luxian Crystal: -4
+        Titania Ingot: -6
+        Carbius Brick: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Gimbal Mounted Plasma Cutter:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Luxian Crystal: -4
+        Titania Ingot: -4
+        Acid Electrode: -1
+        Heat Coil: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Nail Gun:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plubonic Alloy: -3
+        Blast Caps: -4
+        Fuel Injector: -1
+        Heat Coil: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Mortar:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Blast Caps: -3
+        Fuel Injector: -1
+        Z4 Explosives: -2
+        Dervish Gel: -1
+        Proxima Dark: -1
+    - recipe_type: Raw Resource
+
