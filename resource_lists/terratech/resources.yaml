@@ -3057,3 +3057,157 @@ resources:
         Proxima Dark: -1
     - recipe_type: Raw Resource
 
+# GeoCorp Accessory Blocks
+
+  GeoCorp Small Floodlight:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fiberwood Chunk: -7
+        Luxite Shard: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Hazard Light:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fiberwood Chunk: -6
+        Luxite Shard: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Navigational Light:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -8
+        Luxite Shard: -8
+        Rubber Brick: -4
+    - recipe_type: Raw Resource
+
+  GeoCorp Focus Spotlight:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -10
+        Rubber Brick: -6
+        Luxian Crystal: -4
+    - recipe_type: Raw Resource
+
+  GeoCorp Twin Floodlights:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -7
+        Rubber Brick: -2
+        Luxian Crystal: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Picker Collector:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Titania Ingot: -6
+        Rodius Capsule: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Scotty HC Collector:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Hardened Titanic: -3
+        Titanic Alloy: -2
+        Acid Electrode: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Block Magnet:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbia Ingot: -4
+        Titania Ingot: -8
+        Rodius Capsule: -4
+    - recipe_type: Raw Resource
+
+  GeoCorp Magnet Switch:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibre Plating: -2
+        Rugged Fiblar: -2
+        Acid Electrode: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Active Single Axis Gyro:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titania Ingot: -4
+        Rugged Fiblar: -3
+        Cyclone Jet: -3
+    - recipe_type: Raw Resource
+
+  GeoCorp Active All Axis Heavy Gyro:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibre Plating: -1
+        Rugged Fiblar: -1
+        Cyclone Jet: -1
+        Thermo Jet: -1
+        Proxima Dark: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Resource Radar:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rugged Fiblar: -2
+        Acid Electrode: -1
+        Ion Pulse Cell: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Frame Explosive Bolt:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Blast Caps: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Mass Modifier:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Titania Ingot: -5
+        Fibre Plating: -4
+        Hardened Titanic: -5
+    - recipe_type: Raw Resource
+
+  GeoCorp Payload Terminal:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Gluon Beam: -1
+        Seed AI: -1
+        Proxima Dark: -1
+    - recipe_type: Raw Resource
+
