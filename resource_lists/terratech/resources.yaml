@@ -3211,6 +3211,8 @@ resources:
         Proxima Dark: -1
     - recipe_type: Raw Resource
 
+# GeoCorp Power Blocks
+
   GeoCorp Battery Pack:
     recipes:
     - output: 1
@@ -3282,5 +3284,100 @@ resources:
         Titanic Alloy: -2
         Cyclone Jet: -3
         Gluon Beam: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Fixed Anchor:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fiberwood Chunk: -3
+        Titanite Ore: -9
+    - recipe_type: Raw Resource
+
+  GeoCorp Rotating Anchor:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -6
+        Plumbia Ingot: -6
+        Titania Ingot: -16
+    - recipe_type: Raw Resource
+
+  GeoCorp Resource Receiver:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Luxian Crystal: -4
+        Titania Ingot: -6
+    - recipe_type: Raw Resource
+
+  GeoCorp Anchored Delivery Cannon:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Titania Ingot: -7
+        Rodius Capsule: -3
+        Olastic Brick: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Refinery:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -2
+        Titanite Ore: -3
+        Carbite Ore: -1
+        Oleite Jelly: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Fabricator:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Titania Ingot: -7
+        Carbius Brick: -3
+        Rodius Capsule: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Scrapper:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Hardened Titanic: -1
+        Titanic Alloy: -1
+        Z4 Explosives: -1
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Heavy Auto Miner:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Hardened Titanic: -5
+        Plubonic Alloy: -2
+        Fuel Injector: -1
+        Acid Electrode: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Anchored Mass SCU:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Olastic Brick: -3
+        Blast Caps: -3
+        Hard Light Drive: -1
+        Zero Point Splitter: -1
     - recipe_type: Raw Resource
 
