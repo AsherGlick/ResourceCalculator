@@ -2277,3 +2277,407 @@ resources:
         Cyclone Jet: -1
     - recipe_type: Raw Resource
 
+# GeoCorp Standard Blocks
+
+  GeoCorp Basic Block Mini:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -1
+        Titanite Ore: -5
+    - recipe_type: Raw Resource
+
+  GeoCorp Basic Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -2
+        Titanite Ore: -10
+    - recipe_type: Raw Resource
+
+  GeoCorp Half Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -2
+        Titanite Ore: -5
+    - recipe_type: Raw Resource
+
+  GeoCorp Inside Corner Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titanite Ore: -10
+        Plumbia Ingot: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Half Corner Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -1
+        Titanite Ore: -3
+    - recipe_type: Raw Resource
+
+  GeoCorp Half Block Mini:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -1
+        Titanite Ore: -4
+    - recipe_type: Raw Resource
+
+  GeoCorp Long Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Plumbia Ingot: -4
+        Titania Ingot: -10
+    - recipe_type: Raw Resource
+
+  GeoCorp Long Half Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Plumbia Ingot: -2
+        Titania Ingot: -7
+    - recipe_type: Raw Resource
+
+  GeoCorp Staight Bumper:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -2
+        Titanite Ore: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Straight Long Bumper:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -3
+        Titanite Ore: -3
+    - recipe_type: Raw Resource
+
+  GeoCorp Corner Bumper:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -1
+        Titanite Ore: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Cross Bumper:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -3
+        Titanite Ore: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Bar Bumper:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -1
+        Titanite Ore: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp T-Bumper:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -2
+        Titanite Ore: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Tri Bumper:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -2
+        Titanite Ore: -3
+    - recipe_type: Raw Resource
+
+  GeoCorp Outside Corner Bracket Bumper:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -5
+        Titanite Ore: -4
+    - recipe_type: Raw Resource
+
+  GeoCorp Outside Corner Bumper:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -4
+        Titanite Ore: -3
+    - recipe_type: Raw Resource
+
+  GeoCorp Four Bumper:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -4
+        Titanite Ore: -4
+    - recipe_type: Raw Resource
+
+  GeoCorp Six Bumper:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -6
+        Titanite Ore: -6
+    - recipe_type: Raw Resource
+
+  GeoCorp Girder Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -3
+        Titanite Ore: -8
+    - recipe_type: Raw Resource
+
+  GeoCorp Brew Girder:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rubber Brick: -4
+        Plumbia Ingot: -2
+        Titania Ingot: -6
+    - recipe_type: Raw Resource
+
+  GeoCorp Girder Bracket:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -2
+        Titanite Ore: -4
+    - recipe_type: Raw Resource
+
+  GeoCorp Small Shock Plating:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rubber Brick: -8
+        Plumbia Ingot: -12
+        Titania Ingot: -8
+    - recipe_type: Raw Resource
+
+  GeoCorp Small Shock Plating Mini:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rubber Brick: -4
+        Plumbia Ingot: -6
+        Titania Ingot: -4
+    - recipe_type: Raw Resource
+
+  GeoCorp Large Shock Plating:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titania Ingot: -8
+        Plubonic Greebles: -4
+        Hardened Titanic: -4
+    - recipe_type: Raw Resource
+
+  GeoCorp Extended Corner Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -8
+        Plumbia Ingot: -4
+        Titania Ingot: -6
+    - recipe_type: Raw Resource
+
+  GeoCorp Cab Chassis:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -8
+        Plumbia Ingot: -8
+        Titania Ingot: -8
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp The Big One Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Plumbia Ingot: -3
+        Titania Ingot: -12
+        Hardened Titanic: -3
+    - recipe_type: Raw Resource
+
+  GeoCorp Octo Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -6
+        Plumbia Ingot: -6
+        Titania Ingot: -20
+        Hardened Titanic: -6
+    - recipe_type: Raw Resource
+
+  GeoCorp Wing-nut Column:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titania Ingot: -4
+        Plubonic Greebles: -3
+        Hardened Titanic: -3
+    - recipe_type: Raw Resource
+
+  GeoCorp Wing-nut Arm:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titania Ingot: -4
+        Plubonic Greebles: -2
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Wing-nut Face:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titania Ingot: -4
+        Plubonic Greebles: -2
+        Hardened Titanic: -3
+    - recipe_type: Raw Resource
+
+  GeoCorp Mighty Front Armour Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titania Ingot: -4
+        Hardened Titanic: -3
+        Titanic Alloy: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Mighty Side Armour Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titania Ingot: -4
+        Fibre Plating: -2
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Mighty Top Armour Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titania Ingot: -4
+        Hardened Titanic: -3
+        Plubonic Alloy: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Lightweight Block 1:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -2
+        Carbite Ore: -1
+        Hardened Titanic: -1
+        Titanic Alloy: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Lightweight Block 2:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbite Ore: -3
+        Carbite Ore: -2
+        Plubonic Greebles: -3
+        Titanic Alloy: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Lightweight Edge Block 1:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Carbius Brick: -3
+        Hardened Titanic: -3
+        Plubonic Alloy: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Lightweight Corner Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Carbius Brick: -1
+        Hardened Titanic: -2
+        Plubonic Alloy: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Lightweight Edge Block 2:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Carbius Brick: -2
+        Hardened Titanic: -2
+        Plubonic Alloy: -2
+    - recipe_type: Raw Resource
+
+  GeoCorp Lightweight Edge Block 3:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Carbius Brick: -2
+        Hardened Titanic: -4
+        Plubonic Alloy: -1
+    - recipe_type: Raw Resource
+
+# GeoCorp Control Blocks
+
