@@ -166,8 +166,8 @@ function build_instruction_inventory_line(
 }
 
 
-function text_item_object(count: number, name: string): HTMLDivElement{
-	var item_object = document.createElement("div");
+function text_item_object(count: number, name: string): HTMLSpanElement{
+	var item_object = document.createElement("span");
 	if (!count) {
 		return item_object;
 	}
@@ -177,7 +177,7 @@ function text_item_object(count: number, name: string): HTMLDivElement{
 
 	var units = (<HTMLInputElement>document.querySelector("input[name=unit_name]:checked")).value;
 
-	let count_object = document.createElement("div");
+	let count_object = document.createElement("span");
 	count_object.classList.add("instruction_item_count");
 	count_object.textContent = count.toString();
 
@@ -213,7 +213,7 @@ function text_item_object(count: number, name: string): HTMLDivElement{
 	space_object.textContent = " ";
 	item_object.appendChild(space_object);
 
-	var name_object = document.createElement("div");
+	var name_object = document.createElement("span");
 	name_object.classList.add("instruction_item_name");
 	name_object.textContent = name;
 	item_object.appendChild(name_object);
