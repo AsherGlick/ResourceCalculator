@@ -5,7 +5,6 @@ authors:
   Alban: "https://github.com/mopolita"
 
 index_page_display_name: "Astroneer"
-# row_group_count: 0
 
 recipe_types:
   Backpack Printer: "Use a Backpack Printer to turn {IN_ITEMS} into {OUT_ITEM}"

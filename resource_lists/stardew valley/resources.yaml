@@ -2022,8 +2022,8 @@ resources:
           Iron Bar: -5
       - recipe_type: Raw Resource
 
-  # Ideally this could leverage a "unique" recipe since the rings must be different
   Combined Ring:
+    note: "Ideally this could leverage a \"unique\" recipe since the rings must be different"
     recipes:
       - output: 1
         recipe_type: Forge (create)

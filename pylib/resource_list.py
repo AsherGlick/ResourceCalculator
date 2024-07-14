@@ -318,9 +318,10 @@ class StackSize():
         self.quantity_multiplier: int = 0
         self.plural: str = ""
         self.extends_from: Optional[str] = None
+        self.note: str = ""
         self.custom_multipliers: OrderedDict[str, int] = OrderedDict()
 
-        self.valid_keys = ['quantity_multiplier', 'plural', 'extends_from', 'custom_multipliers']
+        self.valid_keys = ['quantity_multiplier', 'plural', 'extends_from', 'note', 'custom_multipliers']
 
     def parse(self, tuple_tree: Any) -> List[TokenError]:
         errors: List[TokenError] = []
@@ -360,6 +361,14 @@ class StackSize():
 
                 self.extends_from = str(extends_from.value)
 
+        # Load note into a typed object
+        if 'note' in tokenless_keys:
+            note = tokenless_keys["note"]
+            if type(note.value) != str:
+                errors.append(TokenError("note should be a string not a {}".format(str(type(note.value))), Token().from_yaml_scalar_node(note.token)))
+
+            self.note = str(note.value)
+
         # Load custom_multipliers into a typed object
         if 'custom_multipliers' in tokenless_keys:
             # Create error for duplicate keys
@@ -381,6 +390,7 @@ class StackSize():
             "quantity_multiplier": get_primitive(self.quantity_multiplier),
             "plural": get_primitive(self.plural),
             "extends_from": get_primitive(self.extends_from),
+            "note": get_primitive(self.note),
             "custom_multipliers": get_primitive(self.custom_multipliers),
         }
 
@@ -392,8 +402,9 @@ class Resource():
         self.custom_stack_multipliers: OrderedDict[str, int] = OrderedDict()
         self.custom_simplename: str = ""
         self.currency: bool = False
+        self.note: str = ""
 
-        self.valid_keys = ['recipes', 'custom_stack_multipliers', 'custom_simplename', 'currency']
+        self.valid_keys = ['recipes', 'custom_stack_multipliers', 'custom_simplename', 'currency', 'note']
 
     def parse(self, tuple_tree: Any) -> List[TokenError]:
         errors: List[TokenError] = []
@@ -445,6 +456,14 @@ class Resource():
                 errors.append(TokenError("currency should be a bool not a {}".format(str(type(currency.value))), Token().from_yaml_scalar_node(currency.token)))
 
             self.currency = bool(currency.value)
+
+        # Load note into a typed object
+        if 'note' in tokenless_keys:
+            note = tokenless_keys["note"]
+            if type(note.value) != str:
+                errors.append(TokenError("note should be a string not a {}".format(str(type(note.value))), Token().from_yaml_scalar_node(note.token)))
+
+            self.note = str(note.value)
         return errors
 
     def to_primitive(self) -> Any:
@@ -453,6 +472,7 @@ class Resource():
             "custom_stack_multipliers": get_primitive(self.custom_stack_multipliers),
             "custom_simplename": get_primitive(self.custom_simplename),
             "currency": get_primitive(self.currency),
+            "note": get_primitive(self.note),
         }
 
 
@@ -462,8 +482,9 @@ class Recipe():
         self.output: int = 0
         self.recipe_type: str = ""
         self.requirements: OrderedDict[str, int] = OrderedDict()
+        self.note: str = ""
 
-        self.valid_keys = ['output', 'recipe_type', 'requirements']
+        self.valid_keys = ['output', 'recipe_type', 'requirements', 'note']
 
     def parse(self, tuple_tree: Any) -> List[TokenError]:
         errors: List[TokenError] = []
@@ -508,6 +529,14 @@ class Recipe():
                     errors.append(TokenError("requirements value should be an int not a {}".format(str(type(value.value))), Token().from_yaml_scalar_node(value.token)))
 
                 self.requirements[str(key.value)] = int(value.value or 0)
+
+        # Load note into a typed object
+        if 'note' in tokenless_keys:
+            note = tokenless_keys["note"]
+            if type(note.value) != str:
+                errors.append(TokenError("note should be a string not a {}".format(str(type(note.value))), Token().from_yaml_scalar_node(note.token)))
+
+            self.note = str(note.value)
         return errors
 
     def to_primitive(self) -> Any:
@@ -515,6 +544,7 @@ class Recipe():
             "output": get_primitive(self.output),
             "recipe_type": get_primitive(self.recipe_type),
             "requirements": get_primitive(self.requirements),
+            "note": get_primitive(self.note),
         }
 # ENDGENERATOR
     def to_yaml(self) -> str:

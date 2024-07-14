@@ -9,19 +9,6 @@ recipe_types:
   Upgrade: "Upgrade {IN_ITEMS} into {OUT_ITEM}"
   Weapon Buy: "Buy {OUT_ITEM} for {IN_ITEMS} from a weapon shop"
 
-
-# stack_sizes:
-#   Stack:
-#     quantity_multiplier: 64
-#     plural: "Stacks"
-#     extends_from: null
-
-# default_stack_size: "Stack"
-
-
-
-# Resize images to W:100 H:53
-
 resources:
   # Beastbane
   Beastbane Lv 1:

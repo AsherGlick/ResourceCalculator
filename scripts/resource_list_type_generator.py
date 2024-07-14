@@ -80,6 +80,11 @@ def main() -> None:
                     type="Optional[str]",
                     default="None"
                 ),
+                Variable(
+                    name="note",
+                    type="str",
+                    default='""'
+                ),
                 # custom_multipliers is a piece of data that is filled in via
                 # Resource.custom_stack_multipliers, but it lives here for lookup
                 Variable(
@@ -114,6 +119,11 @@ def main() -> None:
                     type="bool",
                     default="False"
                 ),
+                Variable(
+                    name="note",
+                    type="str",
+                    default='""'
+                ),
             ]
         ),
 
@@ -134,7 +144,12 @@ def main() -> None:
                     name="requirements",
                     type="OrderedDict[str, int]",
                     default="OrderedDict()"
-                )
+                ),
+                Variable(
+                    name="note",
+                    type="str",
+                    default='""'
+                ),
             ]
         )
     ]

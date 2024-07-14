@@ -610,8 +610,8 @@ resources:
         Wiring Kit: -1
     - recipe_type: Raw Resource
 
-  # Also gives gloves
   Reinforced Dive Suit:
+    note: "Also gives gloves"
     recipes:
     - output: 1
       recipe_type: Fabricator

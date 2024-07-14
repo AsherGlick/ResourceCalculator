@@ -1096,12 +1096,14 @@ requirement_groups:
 
 stack_sizes:
   Double Chest:
-    quantity_multiplier: 54 # 9x6 Stacks
+    quantity_multiplier: 54
+    note: "9x6 Stacks"
     plural: "Double Chests"
     extends_from: "Stack"
 
   Shulker Box:
-    quantity_multiplier: 27 # 9x3 Stacks
+    quantity_multiplier: 27
+    note: "9x3 Stacks"
     plural: "Shulker Boxes"
     extends_from: "Stack"
 
@@ -1391,8 +1393,6 @@ resources:
   Deepslate Copper Ore:
     recipes:
     - recipe_type: Raw Resource
-
-  # Page 2 # DELETE ME
 
   Gold Ore:
     recipes:
@@ -6437,8 +6437,9 @@ resources:
     recipes:
     - output: 1
       recipe_type: Crafting
+      note: "TODO: Empty Glass Bottles Are Also Produced Here"
       requirements:
-        Honey Bottle: -4  # TODO: Empty Glass Bottles Are Also Produced Here
+        Honey Bottle: -4
     - recipe_type: Raw Resource
 
   Observer:
@@ -8048,8 +8049,8 @@ resources:
     recipes:
     - output: 1
       recipe_type: Fill Bucket
+      note: "This also requires Water Block: -1"
       requirements:
-        # TODO: Water Block: -1
         Bucket: -1
     - recipe_type: Raw Resource
 
@@ -8057,8 +8058,8 @@ resources:
     recipes:
     - output: 1
       recipe_type: Fill Bucket
+      note: "This also requires Lava Block: -1"
       requirements:
-        # TODO: Lava Block: -1
         Bucket: -1
     - recipe_type: Raw Resource
 
@@ -8066,8 +8067,8 @@ resources:
     recipes:
     - output: 1
       recipe_type: Fill Bucket
+      note: "This also requires Powder Snow Block: -1"
       requirements:
-        # TODO: Powder Snow Block: -1  
         Bucket: -1
     - recipe_type: Raw Resource
 
@@ -8089,8 +8090,8 @@ resources:
     recipes:
     - output: 1
       recipe_type: Fill Bucket
+      note: "This also requires Cow: -0 (cows are infinite)"
       requirements:
-        # TODO: Cow: -0 (infinite)
         Bucket: -1
     - recipe_type: Raw Resource
 
@@ -8098,8 +8099,8 @@ resources:
     recipes:
     - output: 1
       recipe_type: Fill Bucket
+      note: "This also requires Pufferfish: -1"
       requirements:
-        # TODO: Pufferfish: -1
         Bucket: -1
     - recipe_type: Raw Resource
 
@@ -8107,8 +8108,8 @@ resources:
     recipes:
     - output: 1
       recipe_type: Fill Bucket
+      note: "This also requires Salmon: -1"
       requirements:
-        # TODO: Salmon: -1 
         Bucket: -1
     - recipe_type: Raw Resource
 
@@ -8116,8 +8117,8 @@ resources:
     recipes:
     - output: 1
       recipe_type: Fill Bucket
+      note: "This also requires Cod: -1"
       requirements:
-        # TODO: Cod: -1
         Bucket: -1
     - recipe_type: Raw Resource
 
@@ -8125,8 +8126,8 @@ resources:
     recipes:
     - output: 1
       recipe_type: Fill Bucket
+      note: "This also requires Tropical Fish: -1"
       requirements:
-        # TODO: Tropical Fish: -1
         Bucket: -1
     - recipe_type: Raw Resource
 
@@ -8134,8 +8135,8 @@ resources:
     recipes:
     - output: 1
       recipe_type: Fill Bucket
+      note: "This also requires Axolotl: -1"
       requirements:
-        # TODO: Axolotl: -1
         Bucket: -1
     - recipe_type: Raw Resource
 

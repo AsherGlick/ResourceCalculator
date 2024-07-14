@@ -381,8 +381,7 @@ resources:
 
 
 
-  # Potions ####################################################################
-
+  # Potions
   Bear Pheromones:
     recipes:
     - recipe_type: Alchemy
@@ -853,7 +852,8 @@ resources:
   Vermilion:
     recipes:
     - recipe_type: Alchemy
-      output: 1 # CHECK
+      output: 1
+      note: Check that the output quantity is correct
       requirements:
         White Gull: -1
         Verbena: -1
@@ -866,7 +866,8 @@ resources:
   Aether:
     recipes:
     - recipe_type: Alchemy
-      output: 1 # CHECK
+      output: 1
+      note: Check that the output quantity is correct
       requirements:
         White Gull: -1
         Verbena: -1
@@ -879,7 +880,8 @@ resources:
   Quebrith:
     recipes:
     - recipe_type: Alchemy
-      output: 1 # CHECK
+      output: 1
+      note: Check that the output quantity is correct
       requirements:
         White Gull: -1
         Verbena: -1
@@ -892,7 +894,8 @@ resources:
   Vitriol:
     recipes:
     - recipe_type: Alchemy
-      output: 1 # CHECK
+      output: 1
+      note: Check that the output quantity is correct
       requirements:
         White Gull: -1
         Bloodmoss: -1
@@ -905,7 +908,8 @@ resources:
   Rubedo:
     recipes:
     - recipe_type: Alchemy
-      output: 1 # CHECK
+      output: 1
+      note: Check that the output quantity is correct
       requirements:
         White Gull: -1
         Crow's Eye: -1
@@ -918,7 +922,8 @@ resources:
   Rebis:
     recipes:
     - recipe_type: Alchemy
-      output: 1  # CHECK
+      output: 1
+      note: Check that the output quantity is correct
       requirements:
         White Gull: -1
         Verbena: -1
@@ -933,7 +938,8 @@ resources:
   Dwarven Spirit:
     recipes:
     - recipe_type: Alchemy
-      output: 1 # Maybe Incorrect
+      output: 1
+      note: Check that the output quantity is correct
       requirements:
         Empty Bottle: -1
         Mahakaman Spirit: -2
@@ -943,7 +949,8 @@ resources:
   Alcohest:
     recipes:
     - recipe_type: Alchemy
-      output: 1 # CHECK
+      output: 1
+      note: Check that the output quantity is correct
       requirements:
         Empty Bottle: -1
         Cherry Cordial: -1
@@ -954,10 +961,11 @@ resources:
   White Gull:
     recipes:
     - recipe_type: Alchemy
-      output: 1 # CHECK
+      output: 1
+      note: Check that the output quantity is correct
       requirements:
         Empty Bottle: -1
-        Redanian Herbal: -1 # ?
+        Redanian Herbal: -1
         Cherry Cordial: -1
         Mandrake Cordial: -1
         Arenaria: -1
@@ -1119,7 +1127,8 @@ resources:
   Pringrape:
     recipes:
     - recipe_type: Raw Resource
-  Essence Of Wraith: # Check Image
+  Essence Of Wraith:
+    note: Check that this image is correct
     recipes:
     - recipe_type: Raw Resource
   Blowball:
@@ -1137,13 +1146,15 @@ resources:
   Mahakaman Spirit:
     recipes:
     - recipe_type: Raw Resource
-  Blue Lotus Flower: # CHECK if actually just "Blue Lotus" in game
+  Blue Lotus Flower:
+    note: Check if this item is actually called just "Blue Lous" in game
     recipes:
     - recipe_type: Raw Resource
   Winter Cherry:
     recipes:
     - recipe_type: Raw Resource
-  Nazairi Basil: # Check Image
+  Nazairi Basil:
+    note: Check that this image is correct
     recipes:
     - recipe_type: Raw Resource
   Bloodmoss:
@@ -1173,13 +1184,15 @@ resources:
     recipes:
     - recipe_type: Raw Resource
     - recipe_type: Alchemy
-      output: 1 # CHECK
+      output: 1
+      note: Check that the output quantity is correct
       requirements:
         Lesser Blue Mutagen: -1
         Rubedo: -1
         Winter Cherry: -1
     - recipe_type: Alchemy
-      output: 1 # CHECK
+      output: 1
+      note: Check that the output quantity is correct
       requirements:
         Lesser Green Mutagen: -1
         Rubedo: -1
@@ -1189,13 +1202,15 @@ resources:
     recipes:
     - recipe_type: Raw Resource
     - recipe_type: Alchemy
-      output: 1 # CHECK
+      output: 1
+      note: Check that the output quantity is correct
       requirements:
         Lesser Blue Mutagen: -1
         Rebis: -1
         Nazairi Basil: -1
     - recipe_type: Alchemy
-      output: 1 # CHECK
+      output: 1
+      note: Check that the output quantity is correct
       requirements:
         Lesser Red Mutagen: -1
         Rebis: -1
@@ -1205,13 +1220,15 @@ resources:
     recipes:
     - recipe_type: Raw Resource
     - recipe_type: Alchemy
-      output: 1 # CHECK
+      output: 1
+      note: Check that the output quantity is correct
       requirements:
         Lesser Green Mutagen: -1
         Vitriol: -1
         Blue Lotus Flower: -1
     - recipe_type: Alchemy
-      output: 1 # CHECK
+      output: 1
+      note: Check that the output quantity is correct
       requirements:
         Lesser Red Mutagen: -1
         Vitriol: -1
