@@ -1011,7 +1011,8 @@ def _check_file_modification_time(path: str) -> Optional[float]:
         return os.path.getmtime(path)
 
 def _delete_file(path: str) -> None:
-    os.unlink(path)
+    if os.path.exists(path):
+        os.unlink(path)
 
 
 ################################################################################
