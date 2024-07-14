@@ -1,42 +1,14 @@
+import { ResourceEdge } from "./resource_edge";
+
 declare var resource_simple_names: {[key: string]: string};
 declare var recipe_json: {[key: string]: {output: number, recipe_type: string, requirements: {[key:string]:number}}[]};
 declare var recipe_type_functions: any;
 declare var stack_sizes: any;
 
-// Polyfills
-// startsWith and endsWith are not supported until es2015 but provide a large
-// amount of readability in the code so are polyfilled here.
-interface String {
-		endsWith(searchString: string, endPosition?: number): boolean;
-		startsWith(searchString: string, startPosition?: number): boolean;
-}
-if (!String.prototype.endsWith) {
- 	String.prototype.endsWith = function(searchString, endPosition) {
-		if (endPosition === undefined || endPosition > this.length) {
-			endPosition = this.length;
-		}
-		return this.substring(endPosition - searchString.length, endPosition) === searchString;
-	};
-}
-if (!String.prototype.startsWith) {
-	String.prototype.startsWith = function(searchString, startPosition) {
-		if(startPosition === undefined || startPosition <= 0) {
-			startPosition = 0;
-		}
-		return this.substring(startPosition, startPosition + searchString.length) === searchString;
-		};
-}
-
 
 ////////////////////////////////////////////////////////////////////////////////
 // calculator.js handles all of the javascript for the calculator page
 ////////////////////////////////////////////////////////////////////////////////
-
-// Closure wrapper for the script file
-(function() {
-"use strict";
-// Closure wrapper for the script file
-
 
 /// DOM Gathering ///
 const inventory_import_text_elem = <HTMLInputElement>document.getElementById("inventory_import_text");
@@ -362,26 +334,6 @@ function negative_requirements_exist(requirements: { [key: string]: number }): b
 	}
 	return false;
 }
-
-
-class ResourceEdge {
-	public source: string;
-	public target: string;
-	public value: number;
-
-	public passthrough_nodes: string[] = []; // temporarily used later on
-
-	public source_y_offset: number = 0; // temporarily used later for positioning
-	public target_y_offset: number = 0; // temporarily used later for positioning
-
-
-	constructor(source: string, target: string, value: number) {
-		this.source = source;
-		this.target = target;
-		this.value = value;
-	}
-}
-
 
 
 
@@ -2010,7 +1962,3 @@ function set_textbox_background(textbox: HTMLInputElement){
 
 // Run the load function to load arguments from the URL if they exist
 load();
-
-// Closure wrapper for the script file
-})();
-// Closure wrapper for the script file

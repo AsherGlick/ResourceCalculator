@@ -9,6 +9,7 @@ from pylib.calculator_producer import calculator_producers
 from pylib.editor_producer import editor_producers
 from pylib.gz_compressor_producer import gz_compressor_producers
 from pylib.imagepack import item_image_producers
+from pylib.js_rollup_producer import js_rollup_producer
 from pylib.landing_page_producer import landing_page_producers
 from pylib.producer import Producer, Scheduler, SingleFile, GenericProducer, copy_file, copy_file_with_hash
 from pylib.producer_plugins import plugins_producers
@@ -54,6 +55,10 @@ def core_resource_producers() -> List[GenericProducer]:
         "core/src/tsconfig.json"
     ]
 
+    js_rollup_targets = {
+        "cache/calculatorjs/calculator.js": "cache/calculator.js"
+    }
+
     # Javascript files that should be minified for production.
     uglify_js_files = [
         "cache/calculator.js",
@@ -86,6 +91,10 @@ def core_resource_producers() -> List[GenericProducer]:
     # Add a producer for each of the typescript project files.
     for ts_project_config in ts_project_configs:
         core_producers += typescript_producer(ts_project_config)
+
+    # Add a producer to rollup each javascript library into a single file
+    for js_target_file, js_destination_file in js_rollup_targets.items():
+        core_producers += js_rollup_producer(js_target_file, js_destination_file)
 
     # Add a producer for each javascript file to minify.
     for uglify_js_file in uglify_js_files:
