@@ -25,7 +25,7 @@ class TypescriptInputFiles(TypedDict):
 ################################################################################
 def typescript_producer(
     ts_project_config: str,
-) -> Producer[TypescriptInputFiles]:
+) -> List[Producer[TypescriptInputFiles]]:
     ts_project_dir = os.path.dirname(ts_project_config)
 
     result = subprocess.run(
@@ -46,14 +46,16 @@ def typescript_producer(
         input_files.append(regex_path)
     input_files_regex = "|".join(input_files)
 
-    return Producer(
-        name="Compile Typescript to Javascript",
-        input_path_patterns={
-            "inputs": [input_files_regex],
-            "tsconfig_file": "^" + re.escape(ts_project_config) + "$",
-        },
-        function=build_typescript,
-    )
+    return [
+        Producer(
+            name="Compile Typescript to Javascript",
+            input_path_patterns={
+                "inputs": [input_files_regex],
+                "tsconfig_file": "^" + re.escape(ts_project_config) + "$",
+            },
+            function=build_typescript,
+        )
+    ]
 
 
 ################################################################################

@@ -85,7 +85,7 @@ def core_resource_producers() -> List[GenericProducer]:
 
     # Add a producer for each of the typescript project files.
     for ts_project_config in ts_project_configs:
-        core_producers.append(typescript_producer(ts_project_config))
+        core_producers += typescript_producer(ts_project_config)
 
     # Add a producer for each javascript file to minify.
     for uglify_js_file in uglify_js_files:
