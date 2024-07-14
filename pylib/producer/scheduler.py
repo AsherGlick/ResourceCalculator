@@ -15,7 +15,7 @@ from .producer import GenericProducer
 from .producer import InputFileDatatype
 from dataclasses import dataclass, field
 from pylib.terminal_color import fg_gray
-from pylib.unique_heap import UniqueHeap
+from .action_queue import UniqueHeap
 
 
 BUILD_EVENTS_FILE = ".buildevents.json"
