@@ -594,7 +594,7 @@ def generate_python_parser_class(classname: str, variables: List[Variable]) -> s
                 varblock.append("                if type(value.value) != int:")
                 varblock.append("                    errors.append(TokenError(\"{name} value should be an int not a {{}}\".format(str(type(value.value))), Token().from_yaml_scalar_node(value.token)))")
                 varblock.append("")
-                varblock.append("                self.{name}[str(key.value)] = int(value.value)")
+                varblock.append("                self.{name}[str(key.value)] = int(value.value or 0)")
             elif variable.type == "OrderedDict[str, StackSize]":
                 varblock += subobject_parse_python("StackSize")
 
@@ -615,7 +615,7 @@ def generate_python_parser_class(classname: str, variables: List[Variable]) -> s
             varblock.append("            if type({name}.value) != int:")
             varblock.append("                errors.append(TokenError(\"{name} should be an int not a {{}}\".format(str(type({name}.value))), Token().from_yaml_scalar_node({name}.token)))")
             varblock.append("")
-            varblock.append("            self.{name} = int({name}.value)")
+            varblock.append("            self.{name} = int({name}.value or 0)")
         elif variable.type == "List[Recipe]":
             varblock.append("            for item in tokenless_keys['{name}']:")
             varblock.append("                recipe = Recipe()")

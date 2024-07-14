@@ -294,7 +294,7 @@ class ResourceList():
             if type(row_group_count.value) != int:
                 errors.append(TokenError("row_group_count should be an int not a {}".format(str(type(row_group_count.value))), Token().from_yaml_scalar_node(row_group_count.token)))
 
-            self.row_group_count = int(row_group_count.value)
+            self.row_group_count = int(row_group_count.value or 0)
         return errors
 
     def to_primitive(self) -> Any:
@@ -341,7 +341,7 @@ class StackSize():
             if type(quantity_multiplier.value) != int:
                 errors.append(TokenError("quantity_multiplier should be an int not a {}".format(str(type(quantity_multiplier.value))), Token().from_yaml_scalar_node(quantity_multiplier.token)))
 
-            self.quantity_multiplier = int(quantity_multiplier.value)
+            self.quantity_multiplier = int(quantity_multiplier.value or 0)
 
         # Load plural into a typed object
         if 'plural' in tokenless_keys:
@@ -373,7 +373,7 @@ class StackSize():
                 if type(value.value) != int:
                     errors.append(TokenError("custom_multipliers value should be an int not a {}".format(str(type(value.value))), Token().from_yaml_scalar_node(value.token)))
 
-                self.custom_multipliers[str(key.value)] = int(value.value)
+                self.custom_multipliers[str(key.value)] = int(value.value or 0)
         return errors
 
     def to_primitive(self) -> Any:
@@ -428,7 +428,7 @@ class Resource():
                 if type(value.value) != int:
                     errors.append(TokenError("custom_stack_multipliers value should be an int not a {}".format(str(type(value.value))), Token().from_yaml_scalar_node(value.token)))
 
-                self.custom_stack_multipliers[str(key.value)] = int(value.value)
+                self.custom_stack_multipliers[str(key.value)] = int(value.value or 0)
 
         # Load custom_simplename into a typed object
         if 'custom_simplename' in tokenless_keys:
@@ -484,7 +484,7 @@ class Recipe():
             if type(output.value) != int:
                 errors.append(TokenError("output should be an int not a {}".format(str(type(output.value))), Token().from_yaml_scalar_node(output.token)))
 
-            self.output = int(output.value)
+            self.output = int(output.value or 0)
 
         # Load recipe_type into a typed object
         if 'recipe_type' in tokenless_keys:
@@ -516,7 +516,7 @@ class Recipe():
             "recipe_type": get_primitive(self.recipe_type),
             "requirements": get_primitive(self.requirements),
         }
-
+# ENDGENERATOR
     def to_yaml(self) -> str:
         lines: List[str] = []
         lines.append("    - output: " + str(self.output))
@@ -525,5 +525,3 @@ class Recipe():
         for requirement, value in self.requirements.items():
             lines.append("        " + requirement + ": " + str(value))
         return "\n".join(lines)
-
-# ENDGENERATOR
