@@ -181,10 +181,9 @@ class ResourceList():
 
         # Load authors into a typed object
         if 'authors' in tokenless_keys:
-
             # Create error for duplicate keys
             for duplicate_key in _get_duplicate_keys(tokenless_keys["authors"]):
-                errors.append(TokenError("Found Duplicate Author key", Token().from_yaml_scalar_node(duplicate_key.token)))
+                errors.append(TokenError("Found Duplicate authors key", Token().from_yaml_scalar_node(duplicate_key.token)))
 
             for key, value in tokenless_keys["authors"].items():
                 if type(key.value) != str:
@@ -205,10 +204,9 @@ class ResourceList():
 
         # Load recipe_types into a typed object
         if 'recipe_types' in tokenless_keys:
-
             # Create error for duplicate keys
             for duplicate_key in _get_duplicate_keys(tokenless_keys["recipe_types"]):
-                errors.append(TokenError("Found Duplicate RecipeType key", Token().from_yaml_scalar_node(duplicate_key.token)))
+                errors.append(TokenError("Found Duplicate recipe_types key", Token().from_yaml_scalar_node(duplicate_key.token)))
 
             for key, value in tokenless_keys["recipe_types"].items():
                 if type(key.value) != str:
@@ -221,10 +219,9 @@ class ResourceList():
 
         # Load stack_sizes into a typed object
         if 'stack_sizes' in tokenless_keys:
-
             # Create error for duplicate keys
             for duplicate_key in _get_duplicate_keys(tokenless_keys["stack_sizes"]):
-                errors.append(TokenError("Found Duplicate Stack Sizes key", Token().from_yaml_scalar_node(duplicate_key.token)))
+                errors.append(TokenError("Found Duplicate stack_sizes key", Token().from_yaml_scalar_node(duplicate_key.token)))
 
             for key, value in tokenless_keys["stack_sizes"].items():
                 if type(key.value) != str:
@@ -245,10 +242,9 @@ class ResourceList():
 
         # Load resources into a typed object
         if 'resources' in tokenless_keys:
-
             # Create error for duplicate keys
             for duplicate_key in _get_duplicate_keys(tokenless_keys["resources"]):
-                errors.append(TokenError("Found Duplicate Resources key", Token().from_yaml_scalar_node(duplicate_key.token)))
+                errors.append(TokenError("Found Duplicate resources key", Token().from_yaml_scalar_node(duplicate_key.token)))
 
             for key, value in tokenless_keys["resources"].items():
                 if type(key.value) != str:
@@ -277,10 +273,9 @@ class ResourceList():
 
         # Load requirement_groups into a typed object
         if 'requirement_groups' in tokenless_keys:
-
             # Create error for duplicate keys
             for duplicate_key in _get_duplicate_keys(tokenless_keys["requirement_groups"]):
-                errors.append(TokenError("Found Duplicate RequirementGroup key", Token().from_yaml_scalar_node(duplicate_key.token)))
+                errors.append(TokenError("Found Duplicate requirement_groups key", Token().from_yaml_scalar_node(duplicate_key.token)))
 
             for key, value in tokenless_keys["requirement_groups"].items():
                 if type(key.value) != str:
@@ -367,10 +362,9 @@ class StackSize():
 
         # Load custom_multipliers into a typed object
         if 'custom_multipliers' in tokenless_keys:
-
             # Create error for duplicate keys
-            for duplicate_key in _get_duplicate_keys(tokenless_keys['custom_multipliers']):
-                errors.append(TokenError("Found Duplicate CustomMultipliers key", Token().from_yaml_scalar_node(duplicate_key.token)))
+            for duplicate_key in _get_duplicate_keys(tokenless_keys["custom_multipliers"]):
+                errors.append(TokenError("Found Duplicate custom_multipliers key", Token().from_yaml_scalar_node(duplicate_key.token)))
 
             for key, value in tokenless_keys["custom_multipliers"].items():
                 if type(key.value) != str:
@@ -425,7 +419,7 @@ class Resource():
         if 'custom_stack_multipliers' in tokenless_keys:
             # Create error for duplicate keys
             for duplicate_key in _get_duplicate_keys(tokenless_keys["custom_stack_multipliers"]):
-                errors.append(TokenError("Found Duplicate Custom Stack Multiplier key", Token().from_yaml_scalar_node(duplicate_key.token)))
+                errors.append(TokenError("Found Duplicate custom_stack_multipliers key", Token().from_yaml_scalar_node(duplicate_key.token)))
 
             for key, value in tokenless_keys["custom_stack_multipliers"].items():
                 if type(key.value) != str:
@@ -502,10 +496,9 @@ class Recipe():
 
         # Load requirements into a typed object
         if 'requirements' in tokenless_keys:
-
             # Create error for duplicate keys
             for duplicate_key in _get_duplicate_keys(tokenless_keys["requirements"]):
-                errors.append(TokenError("Found Duplicate Requirements key", Token().from_yaml_scalar_node(duplicate_key.token)))
+                errors.append(TokenError("Found Duplicate requirements key", Token().from_yaml_scalar_node(duplicate_key.token)))
 
             for key, value in tokenless_keys["requirements"].items():
                 if type(key.value) != str:

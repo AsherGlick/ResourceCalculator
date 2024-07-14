@@ -540,6 +540,12 @@ def generate_python_parser_class(classname: str, variables: List[Variable]) -> s
     lines.append("        for invalid_key in _get_invalid_keys(tuple_tree, self.valid_keys):")
     lines.append("            errors.append(TokenError(\"Found Invalid {name} key, valid {name} keys are {{}}\".format(str(self.valid_keys)), Token().from_yaml_scalar_node(invalid_key.token)))".format(name=classname))
     lines.append("")
+
+    lines.append("        # Create error for duplicate keys")
+    lines.append("        for duplicate_key in _get_duplicate_keys(tuple_tree):")
+    lines.append("            errors.append(TokenError(\"Found Duplicate {name} key\", Token().from_yaml_scalar_node(duplicate_key.token)))".format(name=classname))
+    lines.append("")
+
     lines.append("        tokenless_keys = {k.value: v for k, v in tuple_tree.items()}")
 
     for variable in variables:
@@ -570,6 +576,10 @@ def generate_python_parser_class(classname: str, variables: List[Variable]) -> s
             varblock.append("")
             varblock.append("                self.{name} = str({name}.value)")
         elif variable.type.startswith("OrderedDict["):
+            varblock.append("            # Create error for duplicate keys")
+            varblock.append("            for duplicate_key in _get_duplicate_keys(tokenless_keys[\"{name}\"]):")
+            varblock.append("                errors.append(TokenError(\"Found Duplicate {name} key\", Token().from_yaml_scalar_node(duplicate_key.token)))")
+            varblock.append("")
             varblock.append("            for key, value in tokenless_keys[\"{name}\"].items():")
             varblock.append("                if type(key.value) != str:")
             varblock.append("                    errors.append(TokenError(\"{name} key should be a string not a {{}}\".format(str(type(key.value))), Token().from_yaml_scalar_node(key.token)))")
