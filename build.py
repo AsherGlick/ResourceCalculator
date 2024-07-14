@@ -25,6 +25,7 @@ from pylib.yaml_linter_producer import resource_list_parser_producers
 # FLAG_skip_image_compress = False
 # FLAG_force_image = False
 # FLAG_skip_plugins = False
+FLAG_skip_js_minify = False
 
 
 ################################################################################
@@ -60,7 +61,7 @@ def core_resource_producers() -> List[GenericProducer]:
     }
 
     # Javascript files that should be minified for production.
-    uglify_js_files = [
+    minify_js_files = [
         "cache/calculator.js",
         "core/yaml_export.js",
     ]
@@ -97,11 +98,22 @@ def core_resource_producers() -> List[GenericProducer]:
         core_producers += js_rollup_producer(js_target_file, js_destination_file)
 
     # Add a producer for each javascript file to minify.
-    for uglify_js_file in uglify_js_files:
+    for minify_js_file in minify_js_files:
+        input_file = minify_js_file
+        output_file = os.path.join("output", os.path.basename(minify_js_file))
+
+        if FLAG_skip_js_minify:
+            core_producers.append(copy_file(
+                name=f"Copy File " + input_file,
+                target_file=input_file,
+                destination_file=output_file
+            ))
+            continue
+
         core_producers.append(
             uglify_js_producer(
-                input_file=uglify_js_file,
-                output_file=os.path.join("output", os.path.basename(uglify_js_file)),
+                input_file=input_file,
+                output_file=output_file,
             )
         )
 
@@ -137,10 +149,10 @@ def main() -> None:
     parser.add_argument('limit_files', nargs='*', help="Speed up dev-builds by only building a specific set of one or more calculators")
 
     parser.add_argument('--watch', action='store_true', help="Watch source files and automatically rebuild when they change")
-    # parser.add_argument('--draft', action='store_true', help="Enable all speed up flags for dev builds")
+    parser.add_argument('--draft', action='store_true', help="Enable all speed up flags for dev builds")
 
     # # parser.add_argument('--no-jslint', action='store_true', help="Speed up dev-builds by skipping linting javascript files")
-    # parser.add_argument('--no-uglify-js', action='store_true', help="Speed up dev-builds by skipping javascript compression")
+    parser.add_argument('--no-js-minify', action='store_true', help="Speed up dev-builds by skipping javascript compression")
     # parser.add_argument('--no-gz', action='store_true', help="Speed up dev-builds by skipping gz text compression")
     # parser.add_argument('--no-index', action='store_true', help="Speed up dev-builds by skipping building the index page")
     # parser.add_argument('--no-image-compress', action='store_true', help="Speed up dev-builds by skipping the image compresson")
@@ -163,8 +175,9 @@ def main() -> None:
     # # if args.no_jslint or args.draft:
     #     # FLAG_skip_js_lint = True
 
-    # # if args.no_uglify_js or args.draft:
-    # #     set_skip_uglify_flag()
+    if args.no_js_minify or args.draft:
+        global FLAG_skip_js_minify
+        FLAG_skip_js_minify = True
 
     # if args.no_gz or args.draft:
     #     FLAG_skip_gz_compression = True
