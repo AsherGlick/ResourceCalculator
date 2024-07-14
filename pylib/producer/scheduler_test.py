@@ -7,13 +7,7 @@ from .scheduler import Scheduler
 
 from dataclasses import dataclass
 from .function_call_tracker import tracked_function
-from .function_call_tracker import FunctionCall as FunctionCall2
-
-
-@dataclass
-class FunctionCall(Generic[InputFileDatatype]):
-    input_paths: InputFileDatatype
-    groups: Dict[str, str]
+from .function_call_tracker import FunctionCall
 
 class Integration_Tests(unittest.TestCase):
     maxDiff = 999999
@@ -79,7 +73,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
@@ -93,7 +87,7 @@ class Integration_Tests(unittest.TestCase):
                         "output_one.txt"
                     ]
                 ),
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two.txt',
@@ -160,7 +154,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "partial_files": ["partial_one_1.txt", "partial_one_2.txt", "partial_one_3.txt", "partial_one_4.txt"],
@@ -172,7 +166,7 @@ class Integration_Tests(unittest.TestCase):
                         "output_one.txt"
                     ]
                 ),
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         'data_file': 'data_two.txt',
                         "partial_files": ["partial_two_11.txt", "partial_two_12.txt", "partial_two_13.txt", "partial_two_14.txt"],
@@ -233,7 +227,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
@@ -246,7 +240,7 @@ class Integration_Tests(unittest.TestCase):
                         "output_one.txt",
                     ]
                 ),
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_two.txt",
                         "value_file": "value_two.txt",
@@ -308,7 +302,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
@@ -321,7 +315,7 @@ class Integration_Tests(unittest.TestCase):
                         "output_one.txt",
                     ]
                 ),
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_two.txt",
                         "value_file": "value_two.txt",
@@ -382,7 +376,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
@@ -396,7 +390,7 @@ class Integration_Tests(unittest.TestCase):
                         "output_one_global_config.txt"
                     ]
                 ),
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two.txt',
@@ -410,7 +404,7 @@ class Integration_Tests(unittest.TestCase):
                         "output_two_global_config.txt",
                     ]
                 ),
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
@@ -424,7 +418,7 @@ class Integration_Tests(unittest.TestCase):
                         "output_one_global_configs.txt"
                     ]
                 ),
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two.txt',
@@ -488,7 +482,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one_german.txt",
@@ -502,7 +496,7 @@ class Integration_Tests(unittest.TestCase):
                         "output_one_german.txt"
                     ]
                 ),
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one_spanish.txt",
@@ -516,7 +510,7 @@ class Integration_Tests(unittest.TestCase):
                         "output_one_spanish.txt"
                     ]
                 ),
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two_german.txt',
@@ -530,7 +524,7 @@ class Integration_Tests(unittest.TestCase):
                         "output_two_german.txt",
                     ]
                 ),
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two_spanish.txt',
@@ -599,7 +593,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "partial_files": [
@@ -616,7 +610,7 @@ class Integration_Tests(unittest.TestCase):
                         "output_one.txt"
                     ]
                 ),
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         'data_file': 'data_two.txt',
                         "partial_files": [
@@ -671,7 +665,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                     },
@@ -682,7 +676,7 @@ class Integration_Tests(unittest.TestCase):
                         "output_data_one.txt",
                     ]
                 ),
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         'data_file': 'data_two.txt',
                     },
@@ -730,7 +724,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": [
                             "data_one.txt",
@@ -786,7 +780,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": [
                             "data_one.txt",
@@ -851,7 +845,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         'data_file': [
                             'data_one_1.txt',
@@ -869,7 +863,7 @@ class Integration_Tests(unittest.TestCase):
                         "output_one.txt",
                     ]
                 ),
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         'data_file': [
                             'data_two_1.txt',
@@ -930,7 +924,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
@@ -960,7 +954,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two.txt',
@@ -1020,7 +1014,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
@@ -1034,7 +1028,7 @@ class Integration_Tests(unittest.TestCase):
                         "output_one.txt",
                     ]
                 ),
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two.txt',
@@ -1064,7 +1058,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
@@ -1191,7 +1185,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_files": ["value_one_1.txt", "value_one_2.txt"],
@@ -1220,7 +1214,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_files": ["value_one_1.txt", "value_one_2.txt", "value_one_3.txt"],
@@ -1359,7 +1353,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function_data.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                     },
@@ -1375,7 +1369,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function_value.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         'data_file': 'value_one.txt',
                     },
@@ -1440,7 +1434,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function_init.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_list": ["data_file.txt"],
                     },
@@ -1456,7 +1450,7 @@ class Integration_Tests(unittest.TestCase):
         self.assertCountEqual(
             function_process.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         'data_list': [
                             'array_element_1.txt',
@@ -1697,7 +1691,7 @@ class BuildLogTests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                     },
@@ -1708,7 +1702,7 @@ class BuildLogTests(unittest.TestCase):
                         "output_one.txt"
                     ]
                 ),
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_two.txt",
                     },
@@ -1791,7 +1785,7 @@ class BuildLogTests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                     },
@@ -1802,7 +1796,7 @@ class BuildLogTests(unittest.TestCase):
                         "output_one.txt"
                     ]
                 ),
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_two.txt",
                     },
@@ -1882,7 +1876,7 @@ class BuildLogTests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": ["data_one_1.txt", "data_one_2.txt", "data_one_3.txt"],
                     },
@@ -1963,7 +1957,7 @@ class BuildLogTests(unittest.TestCase):
         self.assertCountEqual(
             function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                     },
@@ -1974,7 +1968,7 @@ class BuildLogTests(unittest.TestCase):
                         "output_one.txt"
                     ]
                 ),
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_two.txt",
                     },
@@ -2076,7 +2070,7 @@ class BuildLogTests(unittest.TestCase):
         self.assertCountEqual(
             first_function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one.txt",
                     },
@@ -2092,7 +2086,7 @@ class BuildLogTests(unittest.TestCase):
         self.assertCountEqual(
             second_function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "output_one.txt",
                     },
@@ -2197,7 +2191,7 @@ class BuildLogTests(unittest.TestCase):
         self.assertCountEqual(
             first_function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "data_one_b.txt",
                     },
@@ -2213,7 +2207,7 @@ class BuildLogTests(unittest.TestCase):
         self.assertCountEqual(
             second_function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": "output_one.txt",
                     },
@@ -2331,7 +2325,7 @@ class BuildLogTests(unittest.TestCase):
         self.assertCountEqual(
             first_function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": ["data_one.txt"],
                     },
@@ -2349,7 +2343,7 @@ class BuildLogTests(unittest.TestCase):
         self.assertCountEqual(
             second_function.call_list,
             [
-                FunctionCall2(
+                FunctionCall(
                     input_paths={
                         "data_file": [
                             "output_one_1.txt",
