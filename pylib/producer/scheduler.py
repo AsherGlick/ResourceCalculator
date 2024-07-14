@@ -1,4 +1,9 @@
-from typing import List, Callable, Any, Optional, Tuple, Dict, Set
+################################################################################
+# Scheduler is a tool for scheduling jobs to be completed based on the
+# existence and modification of files.
+################################################################################
+import shutil
+from typing import List, Callable, Any, Optional, Tuple, Dict, Set, Generic, Union
 import os
 import re
 import sqlite3
@@ -7,29 +12,91 @@ import time
 import json
 
 from .producer import GenericProducer
-from .creator import Creator
-from pylib.unique_heap import UniqueHeap
+from .producer import InputFileDatatype
+from dataclasses import dataclass, field
 from pylib.terminal_color import fg_gray
+from pylib.unique_heap import UniqueHeap
 
 
-GenericCreator = Creator[Any, Any]
+BUILD_EVENTS_FILE = ".buildevents.json"
+TEMPORARY_BUILD_EVENTS_FILE = ".buildevents.json.tmp"
 
-################################################################################
-# Scheduler is a tool for scheduling jobs to be completed based on the
-# existence and modification of files.
-################################################################################
+# A record of a build event taking a set of input files, a producer, and a set of output files
+@dataclass
+class BuildEvent:
+    producer_name: str
+    input_files: List[str]
+    match_groups: Dict[str, str]
+    output_files: List[str]
 
-ProducerIndexType = int
+    # We can store any warnings in the build log so that when a step is skipped
+    # subsequent runs we can still remind the user that there were errors when
+    # that step was run previously.
+    # warnings: List[str]
 
-# Tuple[ProducerId, StringifiedOrHashedGroups]
-# Keeping the producerindex first in this tuple is important for sorting reasons
-CreatorIndexType = Tuple[ProducerIndexType, str]
+    def weak_hash(self) -> int:
+        return hash(tuple(
+            [self.producer_name]
+            + sorted([(k, v) for k, v in self.match_groups.items()])
+        ))
 
 
+@dataclass
+class Action(Generic[InputFileDatatype]):
+    producer_index: int
+    producer_name: str
+    input_files: InputFileDatatype
+    match_groups: Dict[str, str]
+
+    ############################################################################
+    # producer
+    #
+    # A helper function to get the producer object from the internal producer
+    # index variable.
+    ############################################################################
+    def producer(self, producer_list: List[GenericProducer]):
+        return producer_list[self.producer_index]
+
+    ############################################################################
+    # files
+    #
+    # Returns a flat sorted flat tuple containing all of the files of this
+    ############################################################################
+    def files(self) -> Tuple[str, ...]:
+        files: List[str] = []
+        for input_file in self.input_files.values():
+            if isinstance(input_file, str):
+                files.append(input_file)
+            elif isinstance(input_file, list):
+                files += input_file
+            else:
+                raise TypeError
+        return tuple(sorted(files))
+
+    ############################################################################
+    # Comparison functions
+    ############################################################################
+    def __lt__(self, other: "Action"):
+        return self.producer_index < other.producer_index
+    def __gt__(self, other: "Action"):
+        return self.producer_index > other.producer_index
+    def __le__(self, other: "Action"):
+        return self.producer_index <= other.producer_index
+    def __ge__(self, other: "Action"):
+        return self.producer_index >= other.producer_index
+
+    ############################################################################
+    # weak_hash
+    #
+    # A hash function that hashes the producer and the match groups.
+    ############################################################################
+    def weak_hash(self) -> int:
+        return hash(tuple(
+            [self.producer_name]
+            + sorted([(k, v) for k, v in self.match_groups.items()])
+        ))
 
 
-def get_hashable_matchgroups(groups: Dict[str, str]) -> str:
-    return json.dumps(groups, sort_keys=True)
 ################################################################################
 # A controller and watcher for the set of producers and creators
 ################################################################################
@@ -37,261 +104,316 @@ class Scheduler:
     # A list of producers that can be referenced by id
     producer_list: List[GenericProducer]
 
-    # # A list of creators that can be referenced by id
-    # creator_list: Dict[int, GenericCreator]
-    # last_creator_list_index: int
+    # A list of all of the build events that have occurred in this scheduler
+    # run, or maybe this is a list of all valid build events from the past run
+    # eg: ones where the output files have not been changed or delted since they ran
+    build_events: List[Optional[BuildEvent]]
 
+    # A map of filename -> Set of `producer_list` indexes
+    input_file_maps: Dict[str, Set[Action]]
 
-    creator_list: Dict[CreatorIndexType, GenericCreator]
-
-
-    # # A map of a creator index to a producer index that spawned the creator
-    # # TODO: This should probably be a part of creator_list instead of a
-    # #       seperate object sitting around.
-    # creator_producer: Dict[int, int]
-
-    # A map of output files to the creator indexes that create them
-    output_file_maps: Dict[str, CreatorIndexType]
-
-    # A map of input files to the creator index that consume them
-    input_file_maps: Dict[str, Set[CreatorIndexType]]
-
+    # A datastructure that holds information about all of the currently known files
     filecache: sqlite3.Connection
 
-    verbose: bool = False
-
     ############################################################################
-    #
+    # 
     ############################################################################
     def __init__(
         self,
-        # producers: List[GenericProducer],
         producer_list: List[GenericProducer],
-        # filepaths: List[str] = []
         initial_filepaths: List[str] = []
     ):
+        # Check that every producer has a unique name.
+        producer_names: Set[str] = set()
+        for producer in producer_list:
+            if producer.name in producer_names:
+                raise ValueError("Duplicate producer name found {}. Every producer must have a unique name.".format(producer.name))
+            else:
+                producer_names.add(producer.name)
+
         self.producer_list = producer_list
-        self.creator_list = {}
-        # self.last_creator_list_index = -1
-        # self.creator_producer = {}
-        self.output_file_maps = {}
-        self.input_file_maps = {}
 
         self.filecache = self.init_producer_cache(self.producer_list)
 
-        self.add_or_update_files(initial_filepaths)
+        self.load_build_events()
+        self._process_files(initial_filepaths, init=True)
 
     ############################################################################
     # add_or_update_files
     #
-    # This function should be called whenever a file is added to the source
-    # tree, or updated inside the source tree. It should be called with a list
-    # of all files on program initialization.
+    # This function is called whenever a file is added to the source tree, or
+    # updated inside the source tree.
     ############################################################################
     def add_or_update_files(self, files: List[str]) -> None:
-        self.build_new_creators(files)
-        self.process_files(files)
+        self._process_files(files)
+
+
+    # Load the build events into the class
+    def load_build_events(self) -> None:
+        self.build_events = []
+        raw_build_events = self._read_build_events_file()
+
+        for raw_build_event in raw_build_events:
+            # TODO: Replace this with classnotation
+            build_event: BuildEvent = BuildEvent(
+                producer_name=raw_build_event["producer_name"],
+                input_files=raw_build_event["input_files"],
+                match_groups=raw_build_event["match_groups"],
+                output_files=raw_build_event["output_files"],
+            )
+            self.build_events.append(build_event)
+
+    # A seperate function for reading build_event files from disk to support mocking in unit tests
+    def _read_build_events_file(self) -> Any:
+        if not os.path.exists(BUILD_EVENTS_FILE):
+            return []
+        with open(BUILD_EVENTS_FILE, "r") as f:
+            return json.load(f)
+
+    # Save the build events currently in the class
+    def save_build_events(self) -> None:
+        raw_build_events: List[Dict[str, Any]] = []
+        for build_event in self.build_events:
+            if build_event is None:
+                continue
+            raw_build_events.append({
+                "producer_name": build_event.producer_name,
+                "input_files": build_event.input_files,
+                "match_groups": build_event.match_groups,
+                "output_files": build_event.output_files,
+            })
+        self._write_build_events_file(raw_build_events)
+
+
+    # A seperate function for writing build_event files to disk to support mocking in unit tests
+    def _write_build_events_file(self, data: Any) -> None:
+        with open(TEMPORARY_BUILD_EVENTS_FILE, "w") as f:
+            json.dump(data, f)
+        shutil.move(TEMPORARY_BUILD_EVENTS_FILE, BUILD_EVENTS_FILE)
+
 
 
     ############################################################################
-    # delete_creators_with_input_files
+    # _add_files_to_database
     #
-    #
+    # Matches each file against the all of the producer regexes to see if there
+    # are any matches. If there are then the file is added to the db as a part
+    # of the match. A file can be added multiple times if there are multiple
+    # matches found.
     ############################################################################
-    def delete_creators_with_input_files(self, files: List[str]) -> None:
-        creator_indexes_to_delete: Set[CreatorIndexType] = set()
-
-        for file in files:
-            if file in self.input_file_maps:
-                for creator_index in self.input_file_maps[file]:
-                    creator_indexes_to_delete.add(creator_index)
-
-        # Get all of the output files from the creator and then delete them
-        # from the output cache. Each output file can only be generated by one
-        # creator at a time so we know that these output files are only linked
-        # to this creator. We do this instead of looping through all elements
-        # in self.output_file_map so that we wont slow down this function as
-        # more files are added to the list.
-        for creator_index in creator_indexes_to_delete:
-            self.delete_creator(creator_index)
-
-    def delete_creator(self, creator_index: CreatorIndexType) -> None:
-        creator = self.creator_list[creator_index]
-        for output_file in creator.flat_output_paths():
-
-            # Sanity check that the file is indeed a part of the creator we
-            # will be deleting.
-            output_file_creator_index =self.output_file_maps[output_file]
-            if output_file_creator_index != creator_index:
-                raise ValueError("Trying to delete an output file index for a creator which is not being deleted")
-
-            del self.output_file_maps[output_file]
-
-        # Delete any input file cache reference to this creator
-        for input_file in creator.flat_input_paths():
-            self.input_file_maps[input_file].remove(creator_index)
-
-            # If this was the last creator this file referenced then delete
-            # the entire element to keep it clean.
-            if len(self.input_file_maps[input_file]) == 0:
-                del self.input_file_maps[input_file]
-
-
-        # Delete the creator itself
-        del self.creator_list[creator_index]
-
-
-
-
-    ############################################################################
-    # build_new_creators
-    #
-    # Parse a series of files into all of the active producers and get a list
-    # of the new creators that those files would create. Return the creator
-    # indexes of the creators that are created from them.
-    ############################################################################
-    def build_new_creators(self, files: List[str]) -> List[Tuple[ProducerIndexType, CreatorIndexType]]:
-        # Clean any creators that have any of these files as inputs
-        self.delete_creators_with_input_files(files)
-
+    def _add_files_to_database(self, files: List[str]) -> None:
         # Insert or update all files in the database
         for producer_index, producer in enumerate(self.producer_list):
             for path in files:
                 for field_name, pattern in producer.regex_field_patterns().items():
                     match: Optional[re.Match[str]] = re.match(pattern, path)
-
                     if match is None:
                         continue
 
                     # Delete the file from the database if it exists
-                    self.remove_file_from_database(self.filecache, producer_index, field_name, path)
+                    self.remove_file_from_database(
+                        self.filecache,
+                        producer_index,
+                        field_name,
+                        path
+                    )
 
                     # Insert a file into the database. If it already exists then
                     # it is updated to be marked as a fresh file.
-                    self.insert_new_file(self.filecache, producer_index, field_name, path, match.groupdict())
+                    self.insert_new_file(
+                        self.filecache,
+                        producer_index,
+                        field_name,
+                        path,
+                        match.groupdict()
+                    )
 
-
-
-        new_creators: List[Tuple[ProducerIndexType, CreatorIndexType]] = []
-        # Build a list of creators
+    ############################################################################
+    # _query_for_actions_from_files
+    #
+    # Query the database for all of the actions relevent to the list of filter
+    # files, and returns those action objects.
+    ############################################################################
+    def _query_for_actions_from_files(self, filter_files: List[str]) -> List[Action]:
+        actions: List[Action] = []
         for producer_index, producer in enumerate(self.producer_list):
-            input_datas = self.query_filesets(self.filecache, producer_index)
-            for input_data in input_datas:
-                input_file, input_groups = input_data
+            queried_actions = self.query_filesets(self.filecache, producer_index)
+            for queried_action in queried_actions:
+                inputs, input_groups = queried_action
 
-                new_input_data, output_data = producer.paths(input_file, input_groups)
-
-                categories = producer.categories
-
-                if callable(categories):
-                    categories = categories(new_input_data, output_data)
-
-                creator = Creator(
-                    input_paths=new_input_data,
-                    output_paths=output_data,
-                    function=producer.function,
-                    categories=categories
+                action = Action(
+                    producer_index=producer_index,
+                    producer_name=producer.name,
+                    input_files=inputs,
+                    match_groups=input_groups
                 )
 
+                # Only add this action if it has one of the input_files as an input file
+                for file in action.files():
+                    if file in filter_files:
+                        actions.append(action)
+                        break
+        return actions
 
-                new_creator_index: CreatorIndexType = (producer_index, get_hashable_matchgroups(input_groups))
+    ############################################################################
+    # rebuild actions that would have been, but arent, based on deleted fles
+    def get_actions_with_from_quasifiles(self, quasifiles: List[str]) -> List[Action]:
+        quasiactions: List[Action] = []
+        for quasifile in quasifiles:
+            print("  ", quasifile)
+            for producer_index, producer in enumerate(self.producer_list):
+                quasigroups: Dict[str, str] = {}
 
-                # Check if an old creator with all the same match-groups exists.
-                # The only time this will happen is if a creator is being
-                # remade. Then delete the old creator and any input/output
-                # caches it had.
-                if new_creator_index in self.creator_list:
-                    self.delete_creator(new_creator_index)
+                for _, pattern in producer.regex_field_patterns().items():
+                    match: Optional[re.Match[str]] = re.match(pattern, quasifile)
+                    if match is None:
+                        continue
+                    for group, value in match.groupdict().items():
+                        quasigroups[group] = value
 
-                # Detect duplicate creators and error if any exist
-                for file in creator.flat_output_paths():
-                    if file in self.output_file_maps:
-                        raise ValueError("Two Creators with the same output file exist. Was a creator not destroyed properly before being remade?\n\tExisting:{existing_creator}\n\tNew:{new_creator}".format(
-                            existing_creator=self.creator_list[self.output_file_maps[file]],
-                            new_creator=creator
+                print("     GROUPS:", quasigroups)
+
+                queried_actions = self.query_filesets(self.filecache, producer_index)
+                print("     ACTIONS:", queried_actions)
+
+
+                for queried_action in queried_actions:
+                    action_inputs = queried_action[0]
+                    action_groups: Dict[str, str] = queried_action[1]
+
+                    # Check if this is an action we want becuase it matches the quasigroups
+                    if quasigroups == action_groups:
+                        quasiactions.append(Action(
+                            producer_index=producer_index,
+                            producer_name=producer.name,
+                            input_files=action_inputs,
+                            match_groups=action_groups
                         ))
 
-                # self.last_creator_list_index += 1
-                self.creator_list[new_creator_index] = creator
-                # self.creator_producer[self.last_creator_list_index] = producer_index
-                new_creators.append((producer_index, new_creator_index))
+        print("REBUILT ACTIONS:", quasiactions, quasifiles)
 
-
-                for file in creator.flat_input_paths():
-                    if file not in self.input_file_maps:
-                        self.input_file_maps[file] = set()
-
-                    self.input_file_maps[file].add(new_creator_index)
-
-                for file in creator.flat_output_paths():
-                    self.output_file_maps[file] = new_creator_index
-
-        self.mark_all_files_old(self.filecache)
-
-        return new_creators
+        return quasiactions
 
     ############################################################################
-    # process_files
+    # _process_files
     #
-    # Process a list of files through all of the currently active creators.
+    # Takes in a list of files that have been created or modified and then
+    # runs all of the producer functions that would take in any of those files.
     ############################################################################
-    def process_files(self, files: List[str]) -> None:
-        # Heap[Tuple[ProducerIndex, CreatorIndex]]
-        creators_to_update: UniqueHeap[CreatorIndexType] = UniqueHeap()
+    def _process_files(self, files: List[str], init: bool=False) -> None:
+        actions_to_run: UniqueHeap[Action] = UniqueHeap()
 
-        # Fill the creators_to_update will all the producer/creator pairs
-        for file in files:
-            # If the file is not used in any creator, ignore it
-            if file not in self.input_file_maps:
-                continue
+        # Delete a build event and the files associated with it, plus cascading?
+        def delete_build_event(build_event: BuildEvent):
+            nonlocal actions_to_run
 
-            creator_indexes: Set[CreatorIndexType] = self.input_file_maps[file]
-            for creator_index in creator_indexes:
-                creators_to_update.push(creator_index)
+            build_events_to_remove: List[BuildEvent] = [build_event]
+
+            while len(build_events_to_remove) > 0:
+                build_event_to_remove = build_events_to_remove.pop()
+                try:
+                    build_event_to_remove_index = self.build_events.index(build_event_to_remove)
+                except ValueError:
+                    # We are trying to remove a build event that does not exist
+                    # This might be because we added the event twice because
+                    # it had more than one input file that was deleted.
+                    continue
+
+                # Remove build event
+                self.build_events[build_event_to_remove_index] = None
+
+                # Find all the other build events to delete and add them to the list
+                for cascading_build_event in self.build_events:
+                    if cascading_build_event is None:
+                        continue
+                    for file in cascading_build_event.input_files:
+                        if file in build_event_to_remove.output_files:
+                            build_events_to_remove.append(cascading_build_event)
+
+                # Delete all actions with inputs of the deleted files
+                for action_to_run in actions_to_run:
+                    for action_input_file in action_to_run.files():
+                        if action_input_file in build_event_to_remove.output_files:
+                            actions_to_run.delete(action_to_run.weak_hash())
+
+                # Rebuild actions that can still exist without the deleted files
+                rebuilt_actions = self.get_actions_with_from_quasifiles(build_event_to_remove.output_files)
+
+                for rebuilt_action in rebuilt_actions:
+                    actions_to_run.push(rebuilt_action)
+
+                # Remove files that were built by the build events
+                for output_file in build_event_to_remove.output_files:
+                    _delete_file(output_file)
+                self._remove_files_from_database(build_event_to_remove.output_files)
+
+
+        def update_actions(files: List[str]) -> None:
+            nonlocal actions_to_run
+            nonlocal init
+
+            self._add_files_to_database(files)
+            new_actions = self._query_for_actions_from_files(files)
+            for action in new_actions:
+                actions_to_run.push(action)
+
+            if init:
+
+                for build_event in self.build_events:
+                    if build_event is None:
+                        continue
+
+                    action = actions_to_run.get(build_event.weak_hash())
+
+                    # No Link
+                    if action is None:
+                        delete_build_event(build_event)
+                        continue # TODO: This should delete files and retrigger any actions with deleted files
+
+                    # Strong Link, Exact same input files
+                    elif set(action.files()) == set(build_event.input_files):
+                        oldest_output = get_oldest_modified_time(build_event.output_files)
+                        newest_input = get_newest_modified_time(build_event.input_files)
+
+                        # Newer Outputs
+                        if oldest_output > newest_input:
+                            actions_to_run.delete(build_event.weak_hash())
+                        # Newer Inputs
+                        else:
+                            delete_build_event(build_event)
+                            continue # TODO: This should delete files and retrigger any actions with deleted files
+                    # Weak Link, same groups and would trigger action deduplication, but different input files
+                    else:
+                        delete_build_event(build_event)
+                        continue # TODO: This should delete files and retrigger any actions with deleted files
+
+                self.build_events = [x for x in self.build_events if x is not None]
+
+                # Do the things we need to do with the build log
+                init = False
+            else:
+                for action in new_actions:
+                    # TODO: We can probably optimize this lookup
+                    for build_event in self.build_events:
+                        if build_event is None:
+                            continue
+
+                        if action.weak_hash() == build_event.weak_hash():
+                            delete_build_event(build_event)
+                            break
+                    
+                self.build_events = [x for x in self.build_events if x is not None]
+
+        update_actions(files)
 
         # Process each creator until there are none left
-        while len(creators_to_update) > 0:
-            creator_index: CreatorIndexType = creators_to_update.pop()
-            producer_index: ProducerIndexType = creator_index[0]
+        while len(actions_to_run) > 0:
+            action: Action = actions_to_run.pop()
 
-            creator: GenericCreator = self.creator_list[creator_index]
-
-            output_files: List[str] = creator.flat_output_paths()
-            input_files: List[str] = creator.flat_input_paths()
-
-            if all_files_exist(creator.flat_output_paths()):
-                # If all of the output files are newer then all of the input files
-                # then do not regenerate this producer.
-                oldest_output = get_oldest_modified_time(output_files)
-                newest_input = get_newest_modified_time(input_files)
-                # "newer" is a larger number
-                if oldest_output > newest_input:
-                    continue
-
-            # Build creators for any of the files generated by this creator
-            # They will be picked up in the next step where we add them to the
-            # creators_to_update variable.
-            self.build_new_creators(output_files)
-
-            # Add the output files to the prioritized list of things to process.
-            # These will be automatically de-duplicated if they are already present.
-            # self.make_creators(output_files)
-            for file in output_files:
-                # If the file is not used in any creator, ignore it
-                if file not in self.input_file_maps:
-                    continue
-
-                creator_indexes: Set[CreatorIndexType] = self.input_file_maps[file]
-                for creator_index in creator_indexes:
-                    creators_to_update.push(creator_index)
-
-            # Pre-create any directories so the functions can always assume that
-            # the directories exist and just focus on creating the files.
-            build_required_directories(output_files)
+            input_files = list(action.files())
 
             print()
-            print(creator.categories)
-
+            print(action.producer(self.producer_list).name)
 
             if len(input_files) > 5:
                 print(fg_gray("  " + input_files[0]))
@@ -299,31 +421,41 @@ class Scheduler:
                 print(fg_gray("  " + input_files[2]))
                 print(fg_gray("  " + input_files[3]))
                 print(fg_gray("  ...and {} other files".format(len(input_files)-4)))
-
-
             else:
                 for i, file in enumerate(input_files):
                     print(fg_gray("  " + file))
 
+            start = time.time()
+            output_files: List[str] = action.producer(self.producer_list).function(action.input_files, action.match_groups)
+            self.build_events.append(BuildEvent(
+                producer_name=action.producer(self.producer_list).name,
+                input_files=list(action.files()),
+                output_files=output_files,
+                match_groups=action.match_groups,
+            ))
+
+            duration = time.time() - start
+
             print(fg_gray("  │"))
 
             for i, file in enumerate(output_files):
-
                 pipe_character = "├"
                 if (i == len(output_files)-1):
                     pipe_character = "└"
-                    # pipe_character = "╰"
-
                 print(fg_gray("  {pipe_character}── {file}".format(
                     pipe_character=pipe_character,
                     file=file,
                 )))
 
-
-            start = time.time()
-            creator.run()
-            duration = time.time() - start
             print(fg_gray("  Completed in {:.2f}s".format(duration)))
+            update_actions(output_files)
+
+        # TODO: This is probably the wrong place to call this function. It
+        # works, but when we begin testing for crashing actions we will find
+        # that we want to save this much more often. Maybe at the end of
+        # update_actions() or after calling action.producer().function() once
+        # the new build log is added as a result of that function call.
+        self.save_build_events()
 
     ############################################################################
     # all_paths_in_dir
@@ -358,10 +490,9 @@ class Scheduler:
         return paths
 
 
-    def delete_files(self, files: List[str]) -> None:
-        self.delete_creators_with_input_files(files)
-        # self.remove_files_from_database(files)
-        # self.remove_file_from_database
+
+
+    def _remove_files_from_database(self, files: List[str]) -> None:
 
         # Delete all files to delete in the database
         for producer_index, producer in enumerate(self.producer_list):
@@ -374,8 +505,10 @@ class Scheduler:
 
                     self.remove_file_from_database(self.filecache, producer_index, field_name, path)
 
-
         pass
+
+
+
     ############################################################################
     ############################################################################
     # SQL LOGIC
@@ -556,7 +689,11 @@ class Scheduler:
     # producer using the field matches that have been stored in the database.
     ############################################################################
     # def query_filesets(self, db: sqlite3.Connection, producer_index: int) -> List[Tuple[InputFileDatatype, Dict[str, str]]]:
-    def query_filesets(self, db: sqlite3.Connection, producer_index: int) -> List[Tuple[Any, Dict[str, str]]]:
+    def query_filesets(
+        self,
+        db: sqlite3.Connection,
+        producer_index: int
+    ) -> List[Tuple[Any, Dict[str, str]]]:
         query_string = self.new_filesets_querystring(producer_index)
 
         producer = self.producer_list[producer_index]
@@ -789,12 +926,12 @@ def all_files_exist(files: List[str]) -> bool:
 
 
 ################################################################################
-# build_required_directories
+# make_required_directories
 #
 # Takes in a list of files and then creates all of the directories needed in
 # order for those files to be written to if they do not already exist.
 ################################################################################
-def build_required_directories(files: List[str]) -> None:
+def make_required_directories(files: List[str]) -> None:
     for file in files:
         directory = os.path.dirname(file)
         if not os.path.exists(directory):
@@ -846,17 +983,18 @@ def get_aggregated_modified_time(
     paths = list(paths)
     time_list: List[float] = []
     for path in paths:
-        # If a path is missing add the default value instead
-        if not os.path.exists(path):
-            time_list.append(default)
-            continue
+        # TODO: Decide if we want to re-add this recursive functionality. If so
+        #       then it needs some method of testing.
+        # if (os.path.isdir(path)):
+        #     for subpath in os.listdir(path):
+        #         paths.append(os.path.join(path, subpath))
+        #     continue
 
-        # If a path is a directory add all its children to the paths list
-        if (os.path.isdir(path)):
-            for subpath in os.listdir(path):
-                paths.append(os.path.join(path, subpath))
-        else:
-            time_list.append(os.path.getmtime(path))
+        time = _check_file_modification_time(path)
+        if time is None:
+            time = default
+
+        time_list.append(time)
 
     # Sanity check that there are timestamps in the list before passing them
     # to the aggregator.
@@ -864,6 +1002,21 @@ def get_aggregated_modified_time(
         return default
 
     return aggregator(time_list)
+
+
+# A function that looks up the modification time of a file. Returns None if the file does not exist.
+def _check_file_modification_time(path: str) -> Optional[float]:
+    if not os.path.exists(path):
+        return None
+
+    # If a path is a directory add all its children to the paths list
+    if (os.path.isdir(path)):
+        raise ValueError
+    else:
+        return os.path.getmtime(path)
+
+def _delete_file(path: str) -> None:
+    os.unlink(path)
 
 
 ################################################################################

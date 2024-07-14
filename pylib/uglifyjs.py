@@ -1,10 +1,12 @@
-from typing import Callable, List, Tuple, Dict
+from typing import Callable, List, Dict
 import os
 import shutil
 import subprocess
 
-from pylib.producer import Producer, SingleFile, single_file_static_output_path
+from pylib.producer import Producer, SingleFile
 
+
+ProducerFunctionType = Callable[[SingleFile, Dict[str,str]], List[str]]
 
 ################################################################################
 # uglify_copyfile
@@ -12,18 +14,21 @@ from pylib.producer import Producer, SingleFile, single_file_static_output_path
 # Uglify Copyfile calls an uglification process on an entire file and writes
 # the output to a new file.
 ################################################################################
-def uglify_copyfile(input_files: SingleFile, output_files: SingleFile) -> None:
-    in_file: str = input_files["file"]
-    out_file: str = output_files["file"]
+def uglify_copyfile(output_file: str) -> ProducerFunctionType:
+    def inner(input_files: SingleFile, groups: Dict[str, str]) -> List[str]:
+        in_file: str = input_files["file"]
+        out_file: str = output_file
 
-    try:
-        subprocess.run(["./node_modules/.bin/terser", "--mangle", "--compress", "-o", out_file, in_file])
-    except Exception as e:
-        print("WARNING: Javascript compression failed")
-        print("        ", e)
-        print("        Falling back to regular copy")
-        shutil.copyfile(in_file, out_file)
+        try:
+            subprocess.run(["./node_modules/.bin/terser", "--mangle", "--compress", "-o", out_file, in_file])
+        except Exception as e:
+            print("WARNING: Javascript compression failed")
+            print("        ", e)
+            print("        Falling back to regular copy")
+            shutil.copyfile(in_file, out_file)
 
+        return [out_file]
+    return inner
 
 ################################################################################
 # uglify_js_string
@@ -48,12 +53,11 @@ def uglify_js_string(js_string: str) -> str:
 #
 # Creates a producer that minifies a javascript file.
 ################################################################################
-def uglify_js_producer(input_file: str, output_file: str, categories: List[str]) -> Producer[SingleFile, SingleFile]:
+def uglify_js_producer(input_file: str, output_file: str) -> Producer[SingleFile]:
     return Producer(
+        name="Minify Javascript " + input_file,
         input_path_patterns={
             "file": "^" + input_file + "$",
         },
-        paths=single_file_static_output_path(output_file),
-        function=uglify_copyfile,
-        categories=categories + ["minifyjs"]
+        function=uglify_copyfile(output_file),
     )

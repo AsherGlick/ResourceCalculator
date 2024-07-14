@@ -1,14 +1,14 @@
 from dataclasses import dataclass
 from typing import List, Callable, Any, Union, Set, Tuple, TypeVar, Generic, Dict, TypedDict, Iterable, Final
 import re
-import sqlite3
 
 # TODO: mypy does not like bound=TypedDict while pyright says it is ok
 # InputFileDatatype = TypeVar("InputFileDatatype", bound="TypedDict")
 InputFileDatatype = TypeVar("InputFileDatatype", bound=Iterable[Any])
-# TODO: mypy does not like bound=TypedDict while pyright says it is ok
-# OutputFileDatatype = TypeVar("OutputFileDatatype", bound="TypedDict")
-OutputFileDatatype = TypeVar("OutputFileDatatype", bound=Iterable[Any])
+
+
+# InputFileDatatype = TypeVar("InputFileDatatype", bound=TypedDict("InputFileDatatype", {}))
+GenericInputFileDatatype = Dict[str, Union[str, List[str]]]
 
 
 ################################################################################
@@ -18,29 +18,13 @@ OutputFileDatatype = TypeVar("OutputFileDatatype", bound=Iterable[Any])
 # one or more input files.
 ################################################################################
 @dataclass(init=False)
-class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
-    # A function that takes in the matching input pattern and generates a set
-    # of input and output files.
-    paths: Callable[[InputFileDatatype, Dict[str, str]], Tuple[InputFileDatatype, OutputFileDatatype]]
+class Producer(Generic[InputFileDatatype]):
+    # The name of the producer
+    name: str
 
     # A function that takes in the input and output files and performs the
     # tasks required to transform the input files into output files.
-    function: Callable[[InputFileDatatype, OutputFileDatatype], None]
-
-    # A list of tags or a function that generates tags based on input and output data
-    categories: Union[List[str], Callable[[InputFileDatatype, OutputFileDatatype], List[str]]]
-
-    # an alternative for "function" that will be called if this step is to be skipped
-    # EG: javascript minification would have a simple copyfunction here because
-    #     the file(s) still need to exist at the destination.
-    # fast_function: Optional[Callable[[InputFileDatatype, OutputFileDatatype], None]] = None
-
-    # # A function that handles its own monitoring and updating logic. For example
-    # # the `tsc` typescript compiler.
-    # self_watcher_function: Optional[Callable[[], Any]]
-
-    # To take advantage of hot retriggering of some expensive-to-start javascript commands like tsc
-    # self_watch_function: Optional[Callable[], Any]
+    function: Callable[[InputFileDatatype, Dict[str, str]], List[str]]
 
     # A list of file regex matches. If a file is changed that matches one of
     # these regex matches then this producer will trigger.
@@ -55,15 +39,13 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
 
     def __init__(
         self,
+        name: str,
         input_path_patterns: InputFileDatatype,
-        paths: Callable[[InputFileDatatype, Dict[str, str]], Tuple[InputFileDatatype, OutputFileDatatype]],
-        function: Callable[[InputFileDatatype, OutputFileDatatype], None],
-        categories: Union[List[str], Callable[[InputFileDatatype, OutputFileDatatype], List[str]]],
+        function: Callable[[InputFileDatatype, Dict[str, str]], List[str]],
     ):
+        self.name = name
         self._input_path_patterns = input_path_patterns
-        self.paths = paths
         self.function = function
-        self.categories = categories
         self._compiled_regexes = {}
         self._regex_groups = {}
 
@@ -82,47 +64,43 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
         # Preprocess all the regex data
         # mypy yells at using .items() on a typed dict even though it is a dict
         for field_name, field_pattern in input_path_patterns.items():  # type:ignore
-
-
-            field_regex: re.Pattern[str] 
-            # regex_string: str
+            field_regex: re.Pattern[str]
             if isinstance(field_pattern, str):
                 if field_pattern == "":
                     continue
 
-                field_regex: re.Pattern[str] = re.compile(field_pattern)
+                # If there are no regex groups in this regex then create a new
+                # group that matches the entire string so that we can still
+                # split up different file paths that match this regex.
+                field_regex = re.compile(field_pattern)
                 if len(field_regex.groupindex) == 0:
                     field_regex = re.compile("(?P<{group_name}>{original_regex})".format(
                         group_name="__" + field_name,
                         original_regex=field_pattern,
                     ))
 
-
-
-
             elif isinstance(field_pattern, list):
                 if len(field_pattern) == 0:
                     continue
                 if len(field_pattern) > 1:
                     raise TypeError
+                if not isinstance(field_pattern[0], str):
+                    raise TypeError
 
-                # If there is no regex group in this array sequence then set
-                # a group that matches an empty string. We dont want to match
-                # the full string like we did for the single element field
-                # becuase that will cause each element of the array to be split
-                # up into different groups.
-                field_regex: re.Pattern[str] = re.compile(field_pattern[0])
+                # If there is no regex group in this array sequence then create
+                # a group that matches an empty string, followed by the
+                # original regex. We dont want to match the full string like we
+                # do for single element fields becuase that will cause each
+                # element of the array to be split up into different groups.
+                field_regex = re.compile(field_pattern[0])
                 if len(field_regex.groupindex) == 0:
                     field_regex = re.compile("(?P<{group_name}>){original_regex}".format(
                         group_name="__" + field_name,
                         original_regex=field_pattern[0],
                     ))
 
-
-
             else:
                 raise TypeError("InputFileDatatype must be a dict of only str or List[str]. Found an element of type " + str(type(field_pattern)))
-
 
 
 
@@ -187,4 +165,4 @@ class Producer(Generic[InputFileDatatype, OutputFileDatatype]):
 
 # Convenience type to get around making lists of Producers with different
 # arguments.
-GenericProducer = Producer[Any, Any]
+GenericProducer = Producer[Any]
