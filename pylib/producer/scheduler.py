@@ -256,11 +256,13 @@ class Scheduler:
         return actions
 
     ############################################################################
-    # rebuild actions that would have been, but arent, based on deleted fles
+    # get_actions_with_quasifiles
+    #
+    # Get a list of actions that would have changed if the quasifiles existed.
+    ############################################################################
     def get_actions_with_from_quasifiles(self, quasifiles: List[str]) -> List[Action]:
         quasiactions: List[Action] = []
         for quasifile in quasifiles:
-            print("  ", quasifile)
             for producer_index, producer in enumerate(self.producer_list):
                 quasigroups: Dict[str, str] = {}
 
@@ -270,12 +272,7 @@ class Scheduler:
                         continue
                     for group, value in match.groupdict().items():
                         quasigroups[group] = value
-
-                print("     GROUPS:", quasigroups)
-
                 queried_actions = self.query_filesets(self.filecache, producer_index)
-                print("     ACTIONS:", queried_actions)
-
 
                 for queried_action in queried_actions:
                     action_inputs = queried_action[0]
@@ -289,8 +286,6 @@ class Scheduler:
                             input_files=action_inputs,
                             match_groups=action_groups
                         ))
-
-        print("REBUILT ACTIONS:", quasiactions, quasifiles)
 
         return quasiactions
 
