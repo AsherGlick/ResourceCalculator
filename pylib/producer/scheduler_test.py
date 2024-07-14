@@ -1,11 +1,13 @@
-from typing import Dict, List, Tuple, TypedDict, Protocol, Any, Generic, TypeVar, Callable, Optional
+from typing import Dict, List, TypedDict, Any, Generic, Optional
 import unittest
-from unittest.mock import Mock, patch
+from unittest.mock import patch
 
 from .producer import InputFileDatatype, Producer
 from .scheduler import Scheduler
 
 from dataclasses import dataclass
+from .function_call_tracker import tracked_function
+from .function_call_tracker import FunctionCall as FunctionCall2
 
 
 @dataclass
@@ -47,10 +49,8 @@ class Integration_Tests(unittest.TestCase):
             value_file: str
             global_config: str
 
-        function_calls: List[FunctionCall[Input]] = []
-
+        @tracked_function
         def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls.append(FunctionCall(input_files, groups))
             return ["output_" + groups["title"] + ".txt"]
 
         producer: Producer[Input] = Producer(
@@ -77,9 +77,9 @@ class Integration_Tests(unittest.TestCase):
         )
 
         self.assertCountEqual(
-            function_calls,
+            function.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
@@ -88,9 +88,12 @@ class Integration_Tests(unittest.TestCase):
                     groups={
                         "title": "one",
                         "__global_config": "global_config.txt",
-                    }
+                    },
+                    output_paths=[
+                        "output_one.txt"
+                    ]
                 ),
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two.txt',
@@ -99,7 +102,10 @@ class Integration_Tests(unittest.TestCase):
                     groups={
                         "title": "two",
                         "__global_config": "global_config.txt",
-                    }
+                    },
+                    output_paths=[
+                        "output_two.txt"
+                    ]
                 )
             ]
         )
