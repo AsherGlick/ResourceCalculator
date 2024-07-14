@@ -31,3 +31,4 @@ venv_docker/
 # Generated files
 cache/
 output/
+/.buildevents.json
