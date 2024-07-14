@@ -126,9 +126,8 @@ class Integration_Tests(unittest.TestCase):
             data_file: str
             partial_files: List[str]
 
-        function_calls: List[FunctionCall[Input]] = []
+        @tracked_function
         def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls.append(FunctionCall(input_files, groups))
             return ["output_" + groups["title"] + ".txt"]
 
         producer: Producer[Input] = Producer(
@@ -159,25 +158,31 @@ class Integration_Tests(unittest.TestCase):
         )
 
         self.assertCountEqual(
-            function_calls,
+            function.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_file": "data_one.txt",
                         "partial_files": ["partial_one_1.txt", "partial_one_2.txt", "partial_one_3.txt", "partial_one_4.txt"],
                     },
                     groups={
                         "title": "one"
-                    }
+                    },
+                    output_paths=[
+                        "output_one.txt"
+                    ]
                 ),
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         'data_file': 'data_two.txt',
                         "partial_files": ["partial_two_11.txt", "partial_two_12.txt", "partial_two_13.txt", "partial_two_14.txt"],
                     },
                     groups={
                         "title": "two"
-                    }
+                    },
+                    output_paths=[
+                        "output_two.txt"
+                    ]
                 )
             ]
         )
@@ -198,10 +203,8 @@ class Integration_Tests(unittest.TestCase):
             value_file: str
             source_file: str
 
-        function_calls: List[FunctionCall[Input]] = []
-
+        @tracked_function
         def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls.append(FunctionCall(input_files, groups))
             input_files["source_file"] += "_extention_on_blank"
             return ["output_" + groups["title"] + ".txt"]
 
@@ -228,9 +231,9 @@ class Integration_Tests(unittest.TestCase):
         )
 
         self.assertCountEqual(
-            function_calls,
+            function.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
@@ -238,9 +241,12 @@ class Integration_Tests(unittest.TestCase):
                     },
                     groups={
                         "title": "one",
-                    }
+                    },
+                    output_paths=[
+                        "output_one.txt",
+                    ]
                 ),
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_file": "data_two.txt",
                         "value_file": "value_two.txt",
@@ -248,7 +254,10 @@ class Integration_Tests(unittest.TestCase):
                     },
                     groups={
                         "title": "two"
-                    }
+                    },
+                    output_paths=[
+                        "output_two.txt",
+                    ]
                 )
             ]
         )
@@ -269,10 +278,8 @@ class Integration_Tests(unittest.TestCase):
             value_file: str
             source_files: List[str]
 
-        function_calls: List[FunctionCall[Input]] = []
-
+        @tracked_function
         def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls.append(FunctionCall(input_files, groups))
             input_files["source_files"].append("extention")
             input_files["source_files"].append("on")
             input_files["source_files"].append("blank")
@@ -299,9 +306,9 @@ class Integration_Tests(unittest.TestCase):
         )
 
         self.assertCountEqual(
-            function_calls,
+            function.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
@@ -309,9 +316,12 @@ class Integration_Tests(unittest.TestCase):
                     },
                     groups={
                         "title": "one"
-                    }
+                    },
+                    output_paths=[
+                        "output_one.txt",
+                    ]
                 ),
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_file": "data_two.txt",
                         "value_file": "value_two.txt",
@@ -319,7 +329,10 @@ class Integration_Tests(unittest.TestCase):
                     },
                     groups={
                         "title": "two"
-                    }
+                    },
+                    output_paths=[
+                        "output_two.txt"
+                    ]
 
                 )
             ]
@@ -340,10 +353,8 @@ class Integration_Tests(unittest.TestCase):
             value_file: str
             global_config: str
 
-        function_calls: List[FunctionCall[Input]] = []
-
+        @tracked_function
         def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls.append(FunctionCall(input_files, groups))
             return["output_" + groups["title"] + "_" + input_files["global_config"]]
 
         producer: Producer[Input] = Producer(
@@ -369,9 +380,9 @@ class Integration_Tests(unittest.TestCase):
         )
 
         self.assertCountEqual(
-            function_calls,
+            function.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
@@ -380,9 +391,12 @@ class Integration_Tests(unittest.TestCase):
                     groups={
                         "title": "one",
                         "__global_config": "global_config.txt"
-                    }
+                    },
+                    output_paths=[
+                        "output_one_global_config.txt"
+                    ]
                 ),
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two.txt',
@@ -391,9 +405,12 @@ class Integration_Tests(unittest.TestCase):
                     groups={
                         "title": "two",
                         "__global_config": "global_config.txt"
-                    }
+                    },
+                    output_paths=[
+                        "output_two_global_config.txt",
+                    ]
                 ),
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
@@ -402,9 +419,12 @@ class Integration_Tests(unittest.TestCase):
                     groups={
                         "title": "one",
                         "__global_config": "global_configs.txt"
-                    }
+                    },
+                    output_paths=[
+                        "output_one_global_configs.txt"
+                    ]
                 ),
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two.txt',
@@ -413,7 +433,10 @@ class Integration_Tests(unittest.TestCase):
                     groups={
                         "title": "two",
                         "__global_config": "global_configs.txt"
-                    }
+                    },
+                    output_paths=[
+                        "output_two_global_configs.txt"
+                    ]
                 )
             ]
         )
@@ -432,10 +455,8 @@ class Integration_Tests(unittest.TestCase):
             value_file: str
             global_config: str
 
-        function_calls: List[FunctionCall[Input]] = []
-
+        @tracked_function
         def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls.append(FunctionCall(input_files, groups))
             return ["output_" + groups["title"] + "_" + groups["language"] + ".txt" ]
 
         producer: Producer[Input] = Producer(
@@ -465,9 +486,9 @@ class Integration_Tests(unittest.TestCase):
         )
 
         self.assertCountEqual(
-            function_calls,
+            function.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one_german.txt",
@@ -476,9 +497,12 @@ class Integration_Tests(unittest.TestCase):
                     groups={
                         "title": "one",
                         "language": "german",
-                    }
+                    },
+                    output_paths=[
+                        "output_one_german.txt"
+                    ]
                 ),
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one_spanish.txt",
@@ -487,9 +511,12 @@ class Integration_Tests(unittest.TestCase):
                     groups={
                         "title": "one",
                         "language": "spanish",
-                    }
+                    },
+                    output_paths=[
+                        "output_one_spanish.txt"
+                    ]
                 ),
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two_german.txt',
@@ -498,9 +525,12 @@ class Integration_Tests(unittest.TestCase):
                     groups={
                         "title": "two",
                         "language": "german",
-                    }
+                    },
+                    output_paths=[
+                        "output_two_german.txt",
+                    ]
                 ),
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two_spanish.txt',
@@ -509,7 +539,10 @@ class Integration_Tests(unittest.TestCase):
                     groups={
                         "title": "two",
                         "language": "spanish",
-                    }
+                    },
+                    output_paths=[
+                        "output_two_spanish.txt"
+                    ]
                 )
             ]
         )
@@ -534,10 +567,8 @@ class Integration_Tests(unittest.TestCase):
             data_file: str
             partial_files: List[str]
 
-        function_calls: List[FunctionCall[Input]] = []
-
+        @tracked_function
         def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls.append(FunctionCall(input_files, groups))
             return ["output_" + groups["title"] + ".txt"]
 
         producer: Producer[Input] = Producer(
@@ -566,9 +597,9 @@ class Integration_Tests(unittest.TestCase):
         )
 
         self.assertCountEqual(
-            function_calls,
+            function.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_file": "data_one.txt",
                         "partial_files": [
@@ -580,9 +611,12 @@ class Integration_Tests(unittest.TestCase):
                     },
                     groups={
                         "title": "one"
-                    }
+                    },
+                    output_paths=[
+                        "output_one.txt"
+                    ]
                 ),
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         'data_file': 'data_two.txt',
                         "partial_files": [
@@ -594,7 +628,10 @@ class Integration_Tests(unittest.TestCase):
                     },
                     groups={
                         "title": "two"
-                    }
+                    },
+                    output_paths=[
+                        "output_two.txt"
+                    ]
                 )
             ]
         )
@@ -611,10 +648,8 @@ class Integration_Tests(unittest.TestCase):
         class Input(TypedDict):
             data_file: str
 
-        function_calls: List[FunctionCall[Input]] = []
-
+        @tracked_function
         def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls.append(FunctionCall(input_files, groups))
             return ["output_" + input_files["data_file"]]
 
         producer: Producer[Input] = Producer(
@@ -634,23 +669,29 @@ class Integration_Tests(unittest.TestCase):
         )
 
         self.assertCountEqual(
-            function_calls,
+            function.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_file": "data_one.txt",
                     },
                     groups={
                         "__data_file": "data_one.txt",
-                    }
+                    },
+                    output_paths=[
+                        "output_data_one.txt",
+                    ]
                 ),
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         'data_file': 'data_two.txt',
                     },
                     groups={
                         "__data_file": "data_two.txt",
-                    }
+                    },
+                    output_paths=[
+                        "output_data_two.txt"
+                    ]
                 )
             ]
         )
@@ -666,10 +707,8 @@ class Integration_Tests(unittest.TestCase):
         class Input(TypedDict):
             data_file: List[str]
 
-        function_calls: List[FunctionCall[Input]] = []
-
+        @tracked_function
         def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls.append(FunctionCall(input_files, groups))
             return ["output_file.txt"]
 
         producer: Producer[Input] = Producer(
@@ -689,9 +728,9 @@ class Integration_Tests(unittest.TestCase):
         )
 
         self.assertCountEqual(
-            function_calls,
+            function.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_file": [
                             "data_one.txt",
@@ -700,7 +739,10 @@ class Integration_Tests(unittest.TestCase):
                     },
                     groups={
                         "__data_file": "",
-                    }
+                    },
+                    output_paths=[
+                        "output_file.txt"
+                    ]
                 ),
             ]
         )
@@ -718,10 +760,8 @@ class Integration_Tests(unittest.TestCase):
             data_file: List[str]
             value_file: List[str]
 
-        function_calls: List[FunctionCall[Input]] = []
-
+        @tracked_function
         def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls.append(FunctionCall(input_files, groups))
             return ["output_file.txt"]
 
         producer: Producer[Input] = Producer(
@@ -744,9 +784,9 @@ class Integration_Tests(unittest.TestCase):
         )
 
         self.assertCountEqual(
-            function_calls,
+            function.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_file": [
                             "data_one.txt",
@@ -760,7 +800,10 @@ class Integration_Tests(unittest.TestCase):
                     groups={
                         "__data_file": "",
                         "__value_file": "",
-                    }
+                    },
+                    output_paths=[
+                        "output_file.txt"
+                    ]
                 ),
             ]
         )
@@ -778,10 +821,8 @@ class Integration_Tests(unittest.TestCase):
             data_file: List[str]
             value_file: List[str]
 
-        function_calls: List[FunctionCall[Input]] = []
-
+        @tracked_function
         def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls.append(FunctionCall(input_files, groups))
             return ["output_" + groups["title"] + ".txt"]
 
         producer: Producer[Input] = Producer(
@@ -808,9 +849,9 @@ class Integration_Tests(unittest.TestCase):
         )
 
         self.assertCountEqual(
-            function_calls,
+            function.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         'data_file': [
                             'data_one_1.txt',
@@ -824,8 +865,11 @@ class Integration_Tests(unittest.TestCase):
                     groups={
                         "title": "one",
                     },
+                    output_paths=[
+                        "output_one.txt",
+                    ]
                 ),
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         'data_file': [
                             'data_two_1.txt',
@@ -839,6 +883,9 @@ class Integration_Tests(unittest.TestCase):
                     groups={
                         "title": "two",
                     },
+                    output_paths=[
+                        "output_two.txt"
+                    ]
                 )
             ]
         )
@@ -856,10 +903,8 @@ class Integration_Tests(unittest.TestCase):
             value_file: str
             global_config: str
 
-        function_calls: List[FunctionCall[Input]] = []
-
+        @tracked_function
         def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls.append(FunctionCall(input_files, groups))
             return ["output_" + groups["title"] + ".txt"]
 
         producer: Producer[Input] = Producer(
@@ -883,9 +928,9 @@ class Integration_Tests(unittest.TestCase):
         )
 
         self.assertCountEqual(
-            function_calls,
+            function.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
@@ -894,14 +939,17 @@ class Integration_Tests(unittest.TestCase):
                     groups={
                         "title": "one",
                         "__global_config": "global_config.txt",
-                    }
+                    },
+                    output_paths=[
+                        "output_one.txt"
+                    ]
                 ),
             ]
         )
 
         # Reset function_calls so we only see the function calls that are made
         # as a result of calling add_or_update_files() with the new file.
-        function_calls = []
+        function.call_list.clear()
 
         scheduler.add_or_update_files(
             [
@@ -910,9 +958,9 @@ class Integration_Tests(unittest.TestCase):
         )
 
         self.assertCountEqual(
-            function_calls,
+            function.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two.txt',
@@ -921,7 +969,10 @@ class Integration_Tests(unittest.TestCase):
                     groups={
                         "title": "two",
                         "__global_config": "global_config.txt",
-                    }
+                    },
+                    output_paths=[
+                        "output_two.txt",
+                    ]
                 )
             ]
         )
