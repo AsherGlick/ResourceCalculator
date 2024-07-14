@@ -990,10 +990,8 @@ class Integration_Tests(unittest.TestCase):
             value_file: str
             global_config: str
 
-        function_calls: List[FunctionCall[Input]] = []
-
+        @tracked_function
         def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls.append(FunctionCall(input_files, groups))
             return ["output_" + groups["title"] + ".txt"]
 
         producer: Producer[Input] = Producer(
@@ -1020,9 +1018,9 @@ class Integration_Tests(unittest.TestCase):
         )
 
         self.assertCountEqual(
-            function_calls,
+            function.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
@@ -1032,8 +1030,11 @@ class Integration_Tests(unittest.TestCase):
                         "title": "one",
                         "__global_config": "global_config.txt"
                     },
+                    output_paths=[
+                        "output_one.txt",
+                    ]
                 ),
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         'data_file': 'data_two.txt',
                         'value_file': 'value_two.txt',
@@ -1043,15 +1044,16 @@ class Integration_Tests(unittest.TestCase):
                         "title": "two",
                         "__global_config": "global_config.txt"
                     },
+                    output_paths=[
+                        "output_two.txt",
+                    ]
                 )
             ]
         )
 
-
         # Reset function_calls so we only see the function calls that are made
         # as a result of calling add_or_update_files() with the new file.
-        function_calls = []
-
+        function.call_list.clear()
 
         scheduler.add_or_update_files(
             [
@@ -1060,9 +1062,9 @@ class Integration_Tests(unittest.TestCase):
         )
 
         self.assertCountEqual(
-            function_calls,
+            function.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_file": "value_one.txt",
@@ -1072,6 +1074,9 @@ class Integration_Tests(unittest.TestCase):
                         "title": "one",
                         "__global_config": "global_config.txt"
                     },
+                    output_paths=[
+                        "output_one.txt"
+                    ]
                 ),
             ]
         )
@@ -1157,10 +1162,8 @@ class Integration_Tests(unittest.TestCase):
             data_file: str
             value_files: List[str]
 
-        function_calls: List[FunctionCall[Input]] = []
-
+        @tracked_function
         def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls.append(FunctionCall(input_files, groups))
             return ["output_" + groups["title"] + ".txt"]
 
         producer: Producer[Input] = Producer(
@@ -1186,16 +1189,19 @@ class Integration_Tests(unittest.TestCase):
 
 
         self.assertCountEqual(
-            function_calls,
+            function.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_files": ["value_one_1.txt", "value_one_2.txt"],
                     },
                     groups={
                         "title": "one",
-                    }
+                    },
+                    output_paths=[
+                        "output_one.txt"
+                    ]
                 ),
             ]
         )
@@ -1203,7 +1209,7 @@ class Integration_Tests(unittest.TestCase):
 
         # Reset function_calls so we only see the function calls that are made
         # as a result of calling add_or_update_files() with the new file.
-        function_calls = []
+        function.call_list.clear()
 
         scheduler.add_or_update_files(
             [
@@ -1212,16 +1218,19 @@ class Integration_Tests(unittest.TestCase):
         )
 
         self.assertCountEqual(
-            function_calls,
+            function.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_file": "data_one.txt",
                         "value_files": ["value_one_1.txt", "value_one_2.txt", "value_one_3.txt"],
                     },
                     groups={
                         "title": "one",
-                    }
+                    },
+                    output_paths=[
+                        "output_one.txt"
+                    ]
                 ),
             ]
         )
@@ -1313,18 +1322,13 @@ class Integration_Tests(unittest.TestCase):
         class Input(TypedDict):
             data_file: str
 
-        function_calls_data: List[FunctionCall[Input]] = []
-
+        @tracked_function
         def function_data(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls_data.append(FunctionCall(input_files, groups))
             return ["value_" + groups["title"] + ".txt"]
 
-        function_calls_value: List[FunctionCall[Input]] = []
-
+        @tracked_function
         def function_value(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls_value.append(FunctionCall(input_files, groups))
             return ["output_" + groups["title"] + ".txt"]
-
 
         producer_data: Producer[Input] = Producer(
             name="Test Case - Data",
@@ -1353,28 +1357,34 @@ class Integration_Tests(unittest.TestCase):
         )
 
         self.assertCountEqual(
-            function_calls_data,
+            function_data.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_file": "data_one.txt",
                     },
                     groups={
                         "title": "one",
-                    }
+                    },
+                    output_paths=[
+                        "value_one.txt"
+                    ]
                 ),
             ]
         )
         self.assertCountEqual(
-            function_calls_value,
+            function_value.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         'data_file': 'value_one.txt',
                     },
                     groups={
                         "title": "one",
-                    }
+                    },
+                    output_paths=[
+                        "output_one.txt"
+                    ]
                 )
             ]
         )
@@ -1382,20 +1392,19 @@ class Integration_Tests(unittest.TestCase):
 
 
     ############################################################################
+    # test_inline_update_of_array
     ############################################################################
     def test_inline_update_of_array(self) -> None:
 
         class Input(TypedDict):
             data_list: List[str]
 
-        function_calls_init: List[FunctionCall[Input]] = []
+        @tracked_function
         def function_init(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls_init.append(FunctionCall(input_files, groups))
             return ["array_element_9.txt"]
 
-        function_calls_process: List[FunctionCall[Input]] = []
+        @tracked_function
         def function_process(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls_process.append(FunctionCall(input_files, groups))
             return ["output.txt"]
 
 
@@ -1429,22 +1438,25 @@ class Integration_Tests(unittest.TestCase):
         )
 
         self.assertCountEqual(
-            function_calls_init,
+            function_init.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         "data_list": ["data_file.txt"],
                     },
                     groups={
                         "__data_list": "",
-                    }
+                    },
+                    output_paths=[
+                        "array_element_9.txt"
+                    ]
                 ),
             ]
         )
         self.assertCountEqual(
-            function_calls_process,
+            function_process.call_list,
             [
-                FunctionCall(
+                FunctionCall2(
                     input_paths={
                         'data_list': [
                             'array_element_1.txt',
@@ -1455,7 +1467,10 @@ class Integration_Tests(unittest.TestCase):
                     },
                     groups={
                         "__data_list": "",
-                    }
+                    },
+                    output_paths=[
+                        "output.txt"
+                    ]
                 )
             ]
         )
@@ -1572,10 +1587,8 @@ class BuildLogTests(unittest.TestCase):
         class Input(TypedDict):
             data_file: str
 
-        function_calls: List[FunctionCall[Input]] = []
-
+        @tracked_function
         def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls.append(FunctionCall(input_files, groups))
             return ["output_" + groups["title"] + ".txt"]
 
         producer: Producer[Input] = Producer(
@@ -1614,7 +1627,7 @@ class BuildLogTests(unittest.TestCase):
             initial_filepaths=list(self.check_file_modificaiton_time_patcher_args.keys()),
         )
 
-        self.assertCountEqual(function_calls, [])
+        self.assertCountEqual(function.call_list, [])
         self.assertIsNotNone(self.write_build_log_result)
         self.assertCountEqual(
             self.write_build_log_result,
@@ -1641,10 +1654,8 @@ class BuildLogTests(unittest.TestCase):
         class Input(TypedDict):
             data_file: str
 
-        function_calls: List[FunctionCall[Input]] = []
-
+        @tracked_function
         def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls.append(FunctionCall(input_files, groups))
             return ["output_" + groups["title"] + ".txt"]
 
         producer: Producer[Input] = Producer(
@@ -1683,24 +1694,33 @@ class BuildLogTests(unittest.TestCase):
             initial_filepaths=list(self.check_file_modificaiton_time_patcher_args.keys()),
         )
 
-        self.assertCountEqual(function_calls, [
-            FunctionCall(
-                input_paths={
-                    "data_file": "data_one.txt",
-                },
-                groups={
-                    "title": "one"
-                }
-            ),
-            FunctionCall(
-                input_paths={
-                    "data_file": "data_two.txt",
-                },
-                groups={
-                    "title": "two"
-                }
-            ),
-        ])
+        self.assertCountEqual(
+            function.call_list,
+            [
+                FunctionCall2(
+                    input_paths={
+                        "data_file": "data_one.txt",
+                    },
+                    groups={
+                        "title": "one"
+                    },
+                    output_paths=[
+                        "output_one.txt"
+                    ]
+                ),
+                FunctionCall2(
+                    input_paths={
+                        "data_file": "data_two.txt",
+                    },
+                    groups={
+                        "title": "two"
+                    },
+                    output_paths=[
+                        "output_two.txt"
+                    ]
+                ),
+            ]
+        )
         self.assertIsNotNone(self.write_build_log_result)
         self.assertCountEqual(
             self.write_build_log_result,
@@ -1730,10 +1750,8 @@ class BuildLogTests(unittest.TestCase):
         class Input(TypedDict):
             data_file: str
 
-        function_calls: List[FunctionCall[Input]] = []
-
+        @tracked_function
         def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls.append(FunctionCall(input_files, groups))
             return ["output_" + groups["title"] + ".txt"]
 
         producer: Producer[Input] = Producer(
@@ -1770,24 +1788,33 @@ class BuildLogTests(unittest.TestCase):
             initial_filepaths=list(self.check_file_modificaiton_time_patcher_args.keys()),
         )
 
-        self.assertCountEqual(function_calls, [
-            FunctionCall(
-                input_paths={
-                    "data_file": "data_one.txt",
-                },
-                groups={
-                    "title": "one"
-                }
-            ),
-            FunctionCall(
-                input_paths={
-                    "data_file": "data_two.txt",
-                },
-                groups={
-                    "title": "two"
-                }
-            ),
-        ])
+        self.assertCountEqual(
+            function.call_list,
+            [
+                FunctionCall2(
+                    input_paths={
+                        "data_file": "data_one.txt",
+                    },
+                    groups={
+                        "title": "one"
+                    },
+                    output_paths=[
+                        "output_one.txt"
+                    ]
+                ),
+                FunctionCall2(
+                    input_paths={
+                        "data_file": "data_two.txt",
+                    },
+                    groups={
+                        "title": "two"
+                    },
+                    output_paths=[
+                        "output_two.txt"
+                    ]
+                ),
+            ]
+        )
         self.assertIsNotNone(self.write_build_log_result)
         self.assertCountEqual(
             self.write_build_log_result,
@@ -1817,10 +1844,8 @@ class BuildLogTests(unittest.TestCase):
         class Input(TypedDict):
             data_file: List[str]
 
-        function_calls: List[FunctionCall[Input]] = []
-
+        @tracked_function
         def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls.append(FunctionCall(input_files, groups))
             return ["output_" + groups["title"] + ".txt"]
 
         producer: Producer[Input] = Producer(
@@ -1854,16 +1879,22 @@ class BuildLogTests(unittest.TestCase):
             initial_filepaths=list(self.check_file_modificaiton_time_patcher_args.keys()),
         )
 
-        self.assertCountEqual(function_calls, [
-            FunctionCall(
-                input_paths={
-                    "data_file": ["data_one_1.txt", "data_one_2.txt", "data_one_3.txt"],
-                },
-                groups={
-                    "title": "one"
-                }
-            ),
-        ])
+        self.assertCountEqual(
+            function.call_list,
+            [
+                FunctionCall2(
+                    input_paths={
+                        "data_file": ["data_one_1.txt", "data_one_2.txt", "data_one_3.txt"],
+                    },
+                    groups={
+                        "title": "one"
+                    },
+                    output_paths=[
+                        "output_one.txt"
+                    ]
+                ),
+            ]
+        )
         self.assertIsNotNone(self.write_build_log_result)
         self.assertCountEqual(
             self.write_build_log_result,
@@ -1889,10 +1920,8 @@ class BuildLogTests(unittest.TestCase):
         class Input(TypedDict):
             data_file: str
 
-        function_calls: List[FunctionCall[Input]] = []
-
+        @tracked_function
         def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            function_calls.append(FunctionCall(input_files, groups))
             return ["output_" + groups["title"] + ".txt"]
 
         producer: Producer[Input] = Producer(
@@ -1931,24 +1960,33 @@ class BuildLogTests(unittest.TestCase):
             initial_filepaths=list(self.check_file_modificaiton_time_patcher_args.keys()),
         )
 
-        self.assertCountEqual(function_calls, [
-            FunctionCall(
-                input_paths={
-                    "data_file": "data_one.txt",
-                },
-                groups={
-                    "title": "one"
-                }
-            ),
-            FunctionCall(
-                input_paths={
-                    "data_file": "data_two.txt",
-                },
-                groups={
-                    "title": "two"
-                }
-            ),
-        ])
+        self.assertCountEqual(
+            function.call_list,
+            [
+                FunctionCall2(
+                    input_paths={
+                        "data_file": "data_one.txt",
+                    },
+                    groups={
+                        "title": "one"
+                    },
+                    output_paths=[
+                        "output_one.txt"
+                    ]
+                ),
+                FunctionCall2(
+                    input_paths={
+                        "data_file": "data_two.txt",
+                    },
+                    groups={
+                        "title": "two"
+                    },
+                    output_paths=[
+                        "output_two.txt"
+                    ]
+                ),
+            ]
+        )
         self.assertIsNotNone(self.write_build_log_result)
         self.assertCountEqual(
             self.write_build_log_result,
@@ -1983,15 +2021,13 @@ class BuildLogTests(unittest.TestCase):
         class Input(TypedDict):
             data_file: str
 
-        first_function_calls: List[FunctionCall[Input]] = []
 
+        @tracked_function
         def first_function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            first_function_calls.append(FunctionCall(input_files, groups))
             return [f"output_{groups['title']}.txt"]
 
-        second_function_calls: List[FunctionCall[Input]] = []
+        @tracked_function
         def second_function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            second_function_calls.append(FunctionCall(input_files, groups))
             return [f"second_output_{groups['title']}.txt"]
 
         first_producer: Producer[Input] = Producer(
@@ -2037,26 +2073,38 @@ class BuildLogTests(unittest.TestCase):
             initial_filepaths=list(self.check_file_modificaiton_time_patcher_args.keys()),
         )
 
-        self.assertCountEqual(first_function_calls, [
-            FunctionCall(
-                input_paths={
-                    "data_file": "data_one.txt",
-                },
-                groups={
-                    "title": "one"
-                }
-            ),
-        ])
-        self.assertCountEqual(second_function_calls, [
-            FunctionCall(
-                input_paths={
-                    "data_file": "output_one.txt",
-                },
-                groups={
-                    "title": "one"
-                }
-            ),
-        ])
+        self.assertCountEqual(
+            first_function.call_list,
+            [
+                FunctionCall2(
+                    input_paths={
+                        "data_file": "data_one.txt",
+                    },
+                    groups={
+                        "title": "one"
+                    },
+                    output_paths=[
+                        "output_one.txt"
+                    ]
+                ),
+            ]
+        )
+        self.assertCountEqual(
+            second_function.call_list,
+            [
+                FunctionCall2(
+                    input_paths={
+                        "data_file": "output_one.txt",
+                    },
+                    groups={
+                        "title": "one"
+                    },
+                    output_paths=[
+                        "second_output_one.txt"
+                    ]
+                ),
+            ]
+        )
 
         self.assertIsNotNone(self.write_build_log_result)
         self.assertCountEqual(
@@ -2094,15 +2142,13 @@ class BuildLogTests(unittest.TestCase):
         class Input(TypedDict):
             data_file: str
 
-        first_function_calls: List[FunctionCall[Input]] = []
 
+        @tracked_function
         def first_function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            first_function_calls.append(FunctionCall(input_files, groups))
             return [f"output_{groups['title']}.txt"]
 
-        second_function_calls: List[FunctionCall[Input]] = []
+        @tracked_function
         def second_function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            second_function_calls.append(FunctionCall(input_files, groups))
             return [f"second_output_{groups['title']}.txt"]
 
         first_producer: Producer[Input] = Producer(
@@ -2148,26 +2194,38 @@ class BuildLogTests(unittest.TestCase):
             initial_filepaths=list(self.check_file_modificaiton_time_patcher_args.keys()),
         )
 
-        self.assertCountEqual(first_function_calls, [
-            FunctionCall(
-                input_paths={
-                    "data_file": "data_one_b.txt",
-                },
-                groups={
-                    "title": "one"
-                }
-            ),
-        ])
-        self.assertCountEqual(second_function_calls, [
-            FunctionCall(
-                input_paths={
-                    "data_file": "output_one.txt",
-                },
-                groups={
-                    "title": "one"
-                }
-            ),
-        ])
+        self.assertCountEqual(
+            first_function.call_list,
+            [
+                FunctionCall2(
+                    input_paths={
+                        "data_file": "data_one_b.txt",
+                    },
+                    groups={
+                        "title": "one"
+                    },
+                    output_paths=[
+                        "output_one.txt"
+                    ]
+                ),
+            ]
+        )
+        self.assertCountEqual(
+            second_function.call_list,
+            [
+                FunctionCall2(
+                    input_paths={
+                        "data_file": "output_one.txt",
+                    },
+                    groups={
+                        "title": "one"
+                    },
+                    output_paths=[
+                        "second_output_one.txt"
+                    ]
+                ),
+            ]
+        )
 
         self.assertIsNotNone(self.write_build_log_result)
         self.assertCountEqual(
@@ -2201,19 +2259,17 @@ class BuildLogTests(unittest.TestCase):
         class Input(TypedDict):
             data_file: List[str]
 
-        first_function_calls: List[FunctionCall[Input]] = []
 
+        @tracked_function
         def first_function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            first_function_calls.append(FunctionCall(input_files, groups))
             return [
                 f"output_{groups['title']}_1.txt",
                 f"output_{groups['title']}_2.txt",
                 f"output_{groups['title']}_3.txt",
             ]
 
-        second_function_calls: List[FunctionCall[Input]] = []
+        @tracked_function
         def second_function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            second_function_calls.append(FunctionCall(input_files, groups))
             return [f"second_output_{groups['title']}.txt"]
 
         first_producer: Producer[Input] = Producer(
@@ -2272,30 +2328,44 @@ class BuildLogTests(unittest.TestCase):
             initial_filepaths=list(self.check_file_modificaiton_time_patcher_args.keys()),
         )
 
-        self.assertCountEqual(first_function_calls, [
-            FunctionCall(
-                input_paths={
-                    "data_file": ["data_one.txt"],
-                },
-                groups={
-                    "title": "one"
-                }
-            ),
-        ])
-        self.assertCountEqual(second_function_calls, [
-            FunctionCall(
-                input_paths={
-                    "data_file": [
+        self.assertCountEqual(
+            first_function.call_list,
+            [
+                FunctionCall2(
+                    input_paths={
+                        "data_file": ["data_one.txt"],
+                    },
+                    groups={
+                        "title": "one"
+                    },
+                    output_paths=[
                         "output_one_1.txt",
                         "output_one_2.txt",
                         "output_one_3.txt",
-                    ],
-                },
-                groups={
-                    "title": "one"
-                }
-            ),
-        ])
+                    ]
+                ),
+            ]
+        )
+        self.assertCountEqual(
+            second_function.call_list,
+            [
+                FunctionCall2(
+                    input_paths={
+                        "data_file": [
+                            "output_one_1.txt",
+                            "output_one_2.txt",
+                            "output_one_3.txt",
+                        ],
+                    },
+                    groups={
+                        "title": "one"
+                    },
+                    output_paths=[
+                        "second_output_one.txt"
+                    ]
+                ),
+            ]
+        )
 
         self.assertIsNotNone(self.write_build_log_result)
         self.assertCountEqual(
