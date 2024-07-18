@@ -10,11 +10,11 @@ recipe_types:
   Buying: "Buy {OUT_ITEM} for {IN_ITEMS}"
 
 resources:
-  ####################################################
-  ##################### Clothing #####################
-  ####################################################
+  ##############################################################################
+  _a: {H1: Clothing} ###########################################################
+  ##############################################################################
 
-  # Ancient Armor Set
+  _b: {H2: Ancient Armor Set} ##################################################
   Ancient Helm:
     recipes:
     - output: 1
@@ -213,7 +213,8 @@ resources:
       requirements:
         Ancient Greaves ★★★★: 0
 
-  # Barbarian Set
+  _c: {H2: Barbarian Set} ######################################################
+
   Barbarian Helm:
     recipes:
     - output: 1
@@ -400,7 +401,7 @@ resources:
       requirements:
         Barbarian Leg Wraps ★★★★: 0
 
-  # Hero Set (Legend of Zelda Amiibo)
+  _d: {H2: Hero Set (Legend of Zelda Amiibo)} ##################################
   Cap of the Hero:
     recipes:
     - output: 1
@@ -578,7 +579,7 @@ resources:
       requirements:
         Trousers of the Hero ★★★★: 0
 
-  # Skyward Set (Amiibo Skyward Sword)
+  _e: {H2: Skyward Set (Amiibo Skyward Sword)} #################################
   Cap of the Sky:
     recipes:
     - output: 1
@@ -756,7 +757,7 @@ resources:
       requirements:
         Trousers of the Sky ★★★★: 0
 
-  # Wild set (breath of the wild shrine reward)
+  _f: {H2: Wild set (breath of the wild shrine reward)} ########################
   Cap of the Wild:
     recipes:
     - output: 1
@@ -935,7 +936,8 @@ resources:
         Trousers of the Wild ★★★★: 0
 
 
-  # Wind Set (skyward sword)
+  _g: {H2: Wind Set (skyward sword)} ###########################################
+
   Cap of the Wind:
     recipes:
     - output: 1
@@ -1113,7 +1115,7 @@ resources:
       requirements:
         Trousers of the Wind ★★★★: 0
 
-  # Time Set (Ocarina of time amiibo)
+  _h: {H2: Time Set (Ocarina of time amiibo)} ##################################
   Cap of Time:
     recipes:
     - output: 1
@@ -1291,7 +1293,7 @@ resources:
       requirements:
         Trousers of Time ★★★★: 0
 
-# Wind Set (skyward sword)
+  _i: {H2: Wind Set (skyward sword)} ###########################################
   Cap of Twilight:
     recipes:
     - output: 1
@@ -1470,7 +1472,7 @@ resources:
         Trousers of Twilight ★★★★: 0
 
 
-  # Climbers Set
+  _j: {H2: Climbers Set} #######################################################
   Climber's Bandanna:
     recipes:
     - output: 1
@@ -1649,7 +1651,7 @@ resources:
         Climbing Boots ★★★★: 0
 
 
-  # Deser Voe Set
+  _k: {H2: Deser Voe Set} ######################################################
   Desert Voe Headband:
     recipes:
     - output: 1
@@ -1836,7 +1838,7 @@ resources:
       requirements:
         Desert Voe Trousers ★★★★: 0
 
-  # Flame breaker set
+  _l: {H2: Flame breaker set} ##################################################
   Flamebreaker Helm:
     recipes:
     - output: 1
@@ -2026,7 +2028,7 @@ resources:
       requirements:
         Flamebreaker Boots ★★★★: 0
 
-  # Hylian Set
+  _m: {H2: Hylian Set)} ########################################################
   Hylian Hood:
     recipes:
     - output: 1
@@ -2213,7 +2215,7 @@ resources:
       requirements:
         Hylian Trousers ★★★★: 0
 
-  # Radient Set
+  _n: {H2: Radient Set} ########################################################
   Radiant Mask:
     recipes:
     - output: 1
@@ -2403,7 +2405,7 @@ resources:
       requirements:
         Radiant Tights ★★★★: 0
 
-  # Rubber Set
+  _o: {H2: Rubber Set} #########################################################
   Rubber Helm:
     recipes:
     - output: 1
@@ -2578,7 +2580,7 @@ resources:
       requirements:
         Rubber Tights ★★★★: 0
 
-  # Snowquill Set
+  _p: {H2: Snowquill Set} ######################################################
   Snowquill Headdress:
     recipes:
     - output: 1
@@ -2765,7 +2767,7 @@ resources:
       requirements:
         Snowquill Trousers ★★★★: 0
 
-  # Soldiers Set
+  _q: {H2: Soldiers Set} #######################################################
   Soldier's Helm:
     recipes:
     - output: 1
@@ -2955,7 +2957,7 @@ resources:
       requirements:
         Soldier's Greaves ★★★★: 0
 
-  # Zora Set
+  _r: {H2: Zora Set} ###########################################################
   Zora Helm:
     recipes:
     - output: 1
@@ -3130,7 +3132,7 @@ resources:
       requirements:
         Zora Greaves ★★★★: 0
 
-  # Fierce Deity set (Majoras mask)
+  _s: {H2: Fierce Deity set (Majoras mask)} ####################################
   Fierce Deity Mask:
     recipes:
     - output: 1
@@ -3308,7 +3310,7 @@ resources:
       requirements:
         Fierce Deity Boots ★★★★: 0
 
-  # Stealth Set
+  _t: {H2: Stealth Set} ########################################################
   Stealth Mask:
     recipes:
     - output: 1
@@ -3494,9 +3496,11 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Stealth Tights ★★★★: 0
-  ####################################################
-  # Setless Upgradable items
-  ####################################################
+
+  ##############################################################################
+  _u: {H1: Setless Upgradable items} ###########################################
+  ##############################################################################
+
   Sheik's Mask:
     recipes:
     - output: 1
@@ -4085,9 +4089,10 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Snow Boots ★★★★: 0
-  ####################################################
-  # Non upgradable
-  ####################################################
+  ##############################################################################
+  _v: {H1: Non upgradable} #####################################################
+  ##############################################################################
+
   Warm Doublet:
     recipes:
     - output: 1
@@ -4279,11 +4284,12 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Nintendo Switch Shirt: 0
-  #####################################################
-  ##################### Materials #####################
-  #####################################################
 
-  # Ancient Materials
+  ##############################################################################
+  _w: {H1: Materials} ##########################################################
+  ##############################################################################
+
+  _x: {H2: Ancient Materials} ##################################################
   Ancient Screw:
     recipes:
     - output: 1
@@ -4326,7 +4332,7 @@ resources:
       requirements:
         Giant Ancient Core: 0
 
-  # Lynel Materials
+  _y: {H2: Lynel Materials} ####################################################
   Lynel Horn:
     recipes:
     - output: 1
@@ -4348,7 +4354,7 @@ resources:
       requirements:
         Lynel Guts: 0
 
-  # Keese Wings
+  _z: {H2: Keese Wings} ########################################################
   Keese Wing:
     recipes:
     - output: 1
@@ -4384,7 +4390,7 @@ resources:
       requirements:
         Keese Eyeball: 0
 
-  # Flowers
+  _aa: {H2: Flowers} ###########################################################
   Swift Violet:
     recipes:
     - output: 1
@@ -4413,7 +4419,7 @@ resources:
       requirements:
         Silent Princess: 0
 
-  # Dragon Materials
+  _ab: {H2: Dragon Materials} ##################################################
   Shard of Dinraal's Horn:
     recipes:
     - output: 1
@@ -4498,7 +4504,7 @@ resources:
       requirements:
         Shard of Naydra's Fang: 0
 
-  # Gems
+  _ac: {H2: Gems} ##############################################################
   Ruby:
     recipes:
     - output: 1
@@ -4562,7 +4568,7 @@ resources:
       requirements:
         Star Fragment: 0
 
-  # Other
+  _ad: {H2: Other} #############################################################
   Acorn:
     recipes:
     - output: 1
@@ -4856,7 +4862,8 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Swift Carrot: 0
-  # Currency
+
+  _ae: {H2: Currency} ##########################################################
   Rupee:
     recipes:
     - output: 1

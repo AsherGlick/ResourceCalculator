@@ -8,7 +8,7 @@ import re
 
 from pylib.json_data_compressor import mini_js_data
 from pylib.producer import Producer, SingleFile, GenericProducer, filename_from_metadatafile
-from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, get_primitive
+from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, get_primitive, Heading
 from pylib.uglifyjs import uglify_js_string
 from pylib.webminify import minify_css_blocks
 
@@ -89,21 +89,23 @@ def calculator_function(input_files: CalculatorInputFiles, groups: Dict[str, str
 
     default_stack_size: str = resource_list.default_stack_size
 
-    resource_simple_names_js_data = mini_js_data(get_primitive(get_simple_names_only(resource_list.resources)), "resource_simple_names")
+    resources: OrderedDict[str, Resource] = OrderedDict({k: v for k, v in resource_list.resources.items() if not isinstance(v, Heading)})
+
+    resource_simple_names_js_data = mini_js_data(get_primitive(get_simple_names_only(resources)), "resource_simple_names")
 
     recipe_type_format_js = generate_recipe_type_format_js(resource_list.recipe_types)
     recipe_type_format_js = uglify_js_string(recipe_type_format_js)
 
-    recipe_js_data = mini_js_data(get_primitive(get_recipes_only(resource_list.resources)), "recipe_json")
+    recipe_js_data = mini_js_data(get_primitive(get_recipes_only(resources)), "recipe_json")
 
-    html_resource_data = generate_resource_html_data(resource_list.resources)
+    html_resource_data = generate_resource_html_data(resources)
 
-    item_styles = generate_resource_offset_classes(resource_list.resources, resource_image_coordinates)
+    item_styles = generate_resource_offset_classes(resources, resource_image_coordinates)
 
     # Generate some css to allow us to center the list
     content_width_css = generate_content_width_css(image_width, resource_list)
 
-    stack_sizes = merge_custom_multipliers(stack_sizes, resource_list.resources)
+    stack_sizes = merge_custom_multipliers(stack_sizes, resources)
 
     stack_sizes_json = json.dumps(get_primitive(stack_sizes))
 

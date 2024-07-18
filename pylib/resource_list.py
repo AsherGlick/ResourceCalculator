@@ -1,4 +1,4 @@
-from typing import List, Optional, Any
+from typing import List, Optional, Any, Union
 import yaml
 from collections import OrderedDict
 
@@ -158,7 +158,7 @@ class ResourceList():
         self.recipe_types: OrderedDict[str, str] = OrderedDict()
         self.stack_sizes: OrderedDict[str, StackSize] = OrderedDict()
         self.default_stack_size: str = ""
-        self.resources: OrderedDict[str, Resource] = OrderedDict()
+        self.resources: OrderedDict[str, Union[Resource, Heading]] = OrderedDict()
         self.game_version: str = ""
         self.banner_message: str = ""
         self.requirement_groups: OrderedDict[str, List[str]] = OrderedDict()
@@ -250,10 +250,17 @@ class ResourceList():
                 if type(key.value) != str:
                     errors.append(TokenError("resources key should be a string not a {}".format(str(type(key.value))), Token().from_yaml_scalar_node(key.token)))
 
-                Resource_subobject = Resource()
-                errors += Resource_subobject.parse(value)
+                tokenless_value_keys = [x.value for x in value.keys()]
+                if 'H1' in tokenless_value_keys or 'H2' in tokenless_value_keys or 'H3' in tokenless_value_keys:
+                    Heading_subobject = Heading()
+                    errors += Heading_subobject.parse(value)
 
-                self.resources[str(key.value)] = Resource_subobject
+                    self.resources[str(key.value)] = Heading_subobject
+                else:
+                    Resource_subobject = Resource()
+                    errors += Resource_subobject.parse(value)
+
+                    self.resources[str(key.value)] = Resource_subobject
 
         # Load game_version into a typed object
         if 'game_version' in tokenless_keys:
@@ -473,6 +480,61 @@ class Resource():
             "custom_simplename": get_primitive(self.custom_simplename),
             "currency": get_primitive(self.currency),
             "note": get_primitive(self.note),
+        }
+
+
+# Class Generated with resource_list_type_generator.py
+class Heading():
+    def __init__(self) -> None:
+        self.H1: str = ""
+        self.H2: str = ""
+        self.H3: str = ""
+
+        self.valid_keys = ['H1', 'H2', 'H3']
+
+    def parse(self, tuple_tree: Any) -> List[TokenError]:
+        errors: List[TokenError] = []
+
+        # Create error for invalid keys
+        for invalid_key in _get_invalid_keys(tuple_tree, self.valid_keys):
+            errors.append(TokenError("Found Invalid Heading key, valid Heading keys are {}".format(str(self.valid_keys)), Token().from_yaml_scalar_node(invalid_key.token)))
+
+        # Create error for duplicate keys
+        for duplicate_key in _get_duplicate_keys(tuple_tree):
+            errors.append(TokenError("Found Duplicate Heading key", Token().from_yaml_scalar_node(duplicate_key.token)))
+
+        tokenless_keys = {k.value: v for k, v in tuple_tree.items()}
+
+        # Load H1 into a typed object
+        if 'H1' in tokenless_keys:
+            H1 = tokenless_keys["H1"]
+            if type(H1.value) != str:
+                errors.append(TokenError("H1 should be a string not a {}".format(str(type(H1.value))), Token().from_yaml_scalar_node(H1.token)))
+
+            self.H1 = str(H1.value)
+
+        # Load H2 into a typed object
+        if 'H2' in tokenless_keys:
+            H2 = tokenless_keys["H2"]
+            if type(H2.value) != str:
+                errors.append(TokenError("H2 should be a string not a {}".format(str(type(H2.value))), Token().from_yaml_scalar_node(H2.token)))
+
+            self.H2 = str(H2.value)
+
+        # Load H3 into a typed object
+        if 'H3' in tokenless_keys:
+            H3 = tokenless_keys["H3"]
+            if type(H3.value) != str:
+                errors.append(TokenError("H3 should be a string not a {}".format(str(type(H3.value))), Token().from_yaml_scalar_node(H3.token)))
+
+            self.H3 = str(H3.value)
+        return errors
+
+    def to_primitive(self) -> Any:
+        return {
+            "H1": get_primitive(self.H1),
+            "H2": get_primitive(self.H2),
+            "H3": get_primitive(self.H3),
         }
 
 

@@ -5,7 +5,7 @@ import pickle
 import re
 
 from pylib.producer import Producer, SingleFile, GenericProducer
-from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, TokenError, Token
+from pylib.resource_list import Heading, ResourceList, Resource, StackSize, Recipe, TokenError, Token
 from pylib.yaml_token_load import ordered_load
 
 
@@ -49,9 +49,9 @@ def resource_list_parser_function(input_files: SingleFile, groups: Dict[str, str
     resource_list, parse_errors = load_resource_list(input_file)
     errors += parse_errors
 
-    resources: OrderedDict[str, Resource] = resource_list.resources
-    resource_list.resources = expand_raw_resource(resource_list.resources)
-    resource_list.resources = fill_default_requirement_groups(resource_list.resources, resource_list.requirement_groups)
+    resources: OrderedDict[str, Resource] = OrderedDict({k: v for k, v in resource_list.resources.items() if not isinstance(v, Heading)})
+    resources = expand_raw_resource(resources)
+    resources = fill_default_requirement_groups(resources, resource_list.requirement_groups)
 
     errors += lint_resources(resources, resource_list.recipe_types, resource_list.stack_sizes)
 

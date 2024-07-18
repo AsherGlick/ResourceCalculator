@@ -1,7 +1,14 @@
 import sys
-from typing import List
+from typing import List, Tuple, Literal, Union
 import shutil
 
+
+VariableType_Scalar = Union[Literal["str"], Literal["int"]]
+VariableType_OrderedDict = Tuple[Literal["OrderedDict"], "VariableType", "VariableType"]
+VariableType_List = Tuple[Literal["List"], "VariableType"]
+VariableType = Union[VariableType_Scalar, VariableType_OrderedDict]
+
+a: VariableType = ("OrderedDict", "str", ("OrderedDict", "str", "str"))
 
 def main() -> None:
     classes: List[Class] = [
@@ -35,7 +42,7 @@ def main() -> None:
                 ),
                 Variable(
                     name="resources",
-                    type="OrderedDict[str, Resource]",
+                    type="OrderedDict[str, Union[Resource, Heading]]",
                     default="OrderedDict()"
                 ),
                 Variable(
@@ -126,7 +133,26 @@ def main() -> None:
                 ),
             ]
         ),
-
+        Class(
+            classname="Heading",
+            variables=[
+                Variable(
+                    name="H1",
+                    type="str",
+                    default='""'
+                ),
+                Variable(
+                    name="H2",
+                    type="str",
+                    default='""'
+                ),
+                Variable(
+                    name="H3",
+                    type="str",
+                    default='""'
+                )
+            ]
+        ),
         Class(
             classname="Recipe",
             variables=[
@@ -613,8 +639,12 @@ def generate_python_parser_class(classname: str, variables: List[Variable]) -> s
             elif variable.type == "OrderedDict[str, StackSize]":
                 varblock += subobject_parse_python("StackSize")
 
-            elif variable.type == "OrderedDict[str, Resource]":
-                varblock += subobject_parse_python("Resource")
+            elif variable.type == "OrderedDict[str, Union[Resource, Heading]]":
+                varblock.append("                tokenless_value_keys = [x.value for x in value.keys()]")
+                varblock.append("                if 'H1' in tokenless_value_keys or 'H2' in tokenless_value_keys or 'H3' in tokenless_value_keys:")
+                varblock += subobject_parse_python("Heading", 20)
+                varblock.append("                else:")
+                varblock += subobject_parse_python("Resource", 20)
 
             elif variable.type == "OrderedDict[str, List[str]]":
                 varblock.append("                item_list: List[str] = []")
@@ -657,12 +687,12 @@ def generate_python_parser_class(classname: str, variables: List[Variable]) -> s
 ################################################################################
 #
 ################################################################################
-def subobject_parse_python(object_name: str) -> List[str]:
+def subobject_parse_python(object_name: str, indent: int = 16) -> List[str]:
     chunk = []
-    chunk.append("                " + object_name + "_subobject = " + object_name + "()")
-    chunk.append("                errors += " + object_name + "_subobject.parse(value)")
+    chunk.append(" " * indent + object_name + "_subobject = " + object_name + "()")
+    chunk.append(" " * indent + "errors += " + object_name + "_subobject.parse(value)")
     chunk.append("")
-    chunk.append("                self.{name}[str(key.value)] = " + object_name + "_subobject")
+    chunk.append(" " * indent + "self.{name}[str(key.value)] = " + object_name + "_subobject")
     return chunk
 
 
