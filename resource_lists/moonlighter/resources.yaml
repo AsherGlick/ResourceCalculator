@@ -11,7 +11,7 @@ recipe_types:
 
 resources:
 
-  # Fabric Bandana #############################################################
+  _a: {H2: Fabric Bandana} #####################################################
   Fabric Bandana:
     recipes:
     - recipe_type: Smith
@@ -56,7 +56,7 @@ resources:
         Gold: -192000
     - recipe_type: Raw Resource
 
-  # Iron Helmet ################################################################
+  _b: {H2: Iron Helmet} ########################################################
   Iron Helmet:
     recipes:
     - recipe_type: Smith
@@ -101,7 +101,7 @@ resources:
         Gold: -192000
     - recipe_type: Raw Resource
 
-  # Steel Helmet ###############################################################
+  _c: {H2: Steel Helmet} #######################################################
   Steel Helmet:
     recipes:
     - recipe_type: Smith
@@ -146,7 +146,7 @@ resources:
         Gold: -192000
     - recipe_type: Raw Resource
 
-  # Fabric Chestplate ##########################################################
+  _d: {H2: Fabric Chestplate} ##################################################
   Fabric Chestplate:
     recipes:
     - recipe_type: Smith
@@ -191,7 +191,7 @@ resources:
         Gold: -192000
     - recipe_type: Raw Resource
 
-  # Iron Chestplate ############################################################
+  _e: {H2: Iron Chestplate} ####################################################
   Iron Chestplate:
     recipes:
     - recipe_type: Smith
@@ -236,7 +236,7 @@ resources:
         Gold: -192000
     - recipe_type: Raw Resource
 
-  # Steel Chestplate ###########################################################
+  _f: {H2: Steel Chestplate} ###################################################
   Steel Chestplate:
     recipes:
     - recipe_type: Smith
@@ -281,7 +281,7 @@ resources:
         Gold: -192000
     - recipe_type: Raw Resource
 
-  # Fabric Boots ###############################################################
+  _g: {H2: Fabric Boots} #######################################################
   Fabric Boots:
     recipes:
     - recipe_type: Smith
@@ -326,7 +326,7 @@ resources:
         Gold: -192000
     - recipe_type: Raw Resource
 
-  # Iron Boots #################################################################
+  _h: {H2: Iron Boots} #########################################################
   Iron Boots:
     recipes:
     - recipe_type: Smith
@@ -371,7 +371,7 @@ resources:
         Gold: -192000
     - recipe_type: Raw Resource
 
-  # Steel Boots ################################################################
+  _i: {H2: Steel Boots} ########################################################
   Steel Boots:
     recipes:
     - recipe_type: Smith
@@ -417,7 +417,7 @@ resources:
     - recipe_type: Raw Resource
 
 
-  # Sword and Shields ##########################################################
+  _j: {H2: Sword and Shields} ##################################################
 
   Training Short Sword:
     recipes:
@@ -518,7 +518,7 @@ resources:
         Gold: -512000
     - recipe_type: Raw Resource
 
-  # Big Swords #################################################################
+  _k: {H2: Big Swords} #########################################################
   Training Big Sword:
     recipes:
     - recipe_type: Smith
@@ -618,7 +618,7 @@ resources:
         Gold: -512000
     - recipe_type: Raw Resource
 
-  # Spears #####################################################################
+  _l: {H2: Spears} #############################################################
   Training Spear:
     recipes:
     - recipe_type: Smith
@@ -720,7 +720,7 @@ resources:
 
 
 
-  # Gloves ###################################################################
+  _m: {H2: Gloves} #############################################################
   Training Gloves:
     recipes:
     - recipe_type: Smith
@@ -821,7 +821,7 @@ resources:
     - recipe_type: Raw Resource
 
 
-  # Bows #######################################################################
+  _n: {H2: Bows} ###############################################################
   Training Bow:
     recipes:
     - recipe_type: Smith
@@ -922,7 +922,7 @@ resources:
     - recipe_type: Raw Resource
 
 
-  # Potions ####################################################################
+  _o: {H2: Potions} ############################################################
   HP Potion I:
     recipes:
       - recipe_type: Wooden Hat
@@ -996,7 +996,7 @@ resources:
 
 
   ##############################################################################
-  # Resources
+  _p: {H1: Resources} ##########################################################
   ##############################################################################
 
   Broken Sword:
@@ -1296,7 +1296,7 @@ resources:
       - recipe_type: Raw Resource
 
   ##############################################################################
-  # Currency
+  _q: {H1: Currency} ###########################################################
   ##############################################################################
   Gold:
     recipes:
