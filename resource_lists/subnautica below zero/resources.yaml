@@ -2,21 +2,22 @@
 authors:
   Ben: "https://benjaminvreeland.com"
 
-# Based on
-# https://subnautica.fandom.com/wiki/Spawn_IDs_(Below_Zero)
-# https://subnautica.fandom.com/wiki/Fabricator_(Below_Zero)
-# https://subnautica.fandom.com/wiki/Modification_Station_(Below_Zero)
-# https://subnautica.fandom.com/wiki/Scanner_Room_(Below_Zero)
-# https://subnautica.fandom.com/wiki/Mobile_Vehicle_Bay_(Below_Zero)
-# https://subnautica.fandom.com/wiki/Vehicle_Upgrade_Console_(Below_Zero)
-# https://subnautica.fandom.com/wiki/Habitat_Builder_(Below_Zero)
-# https://subnautica.fandom.com/wiki/Fabricator_Base
-
 index_page_display_name: "Subnautica: Below Zero"
 
 game_version: "What the Dock Update"
-# https://steamdb.info/app/848450/patchnotes/
-# https://steamcommunity.com/games/848450/announcements
+
+note: >
+  Based on
+  https://subnautica.fandom.com/wiki/Spawn_IDs_(Below_Zero)
+  https://subnautica.fandom.com/wiki/Fabricator_(Below_Zero)
+  https://subnautica.fandom.com/wiki/Modification_Station_(Below_Zero)
+  https://subnautica.fandom.com/wiki/Scanner_Room_(Below_Zero)
+  https://subnautica.fandom.com/wiki/Mobile_Vehicle_Bay_(Below_Zero)
+  https://subnautica.fandom.com/wiki/Vehicle_Upgrade_Console_(Below_Zero)
+  https://subnautica.fandom.com/wiki/Habitat_Builder_(Below_Zero)
+  https://subnautica.fandom.com/wiki/Fabricator_Base
+  https://steamdb.info/app/848450/patchnotes/
+  https://steamcommunity.com/games/848450/announcements
 
 recipe_types:
   Fabricator: "Use a Fabricator to turn {IN_ITEMS} into {OUT_ITEM}"
@@ -30,9 +31,11 @@ recipe_types:
 
 resources:
 
-## Fabricator
+  ##############################################################################
+  _a: {H1: Fabricator} #########################################################
+  ##############################################################################
 
-# Basic Materials
+  _b: {H2: Basic Materials} ####################################################
   Titanium Ingot:
     recipes:
     - output: 1
@@ -86,7 +89,7 @@ resources:
         Lithium: -2
     - recipe_type: Raw Resource
 
-# Advanced Materials
+  _c: {H2: Advanced Materials} #################################################
   Hydrochloric Acid:
     recipes:
     - output: 1
@@ -136,7 +139,7 @@ resources:
         Gel Sack: -1
     - recipe_type: Raw Resource
 
-# Electronics
+  _d: {H2: Electronics} ########################################################
   Copper Wire:
     recipes:
     - output: 1
@@ -246,7 +249,7 @@ resources:
         Fevered Pepper: -1
     - recipe_type: Raw Resource
 
-# Water
+  _e: {H2: Water} ##############################################################
   Filtered Water:
     recipes:
     - output: 1
@@ -286,7 +289,7 @@ resources:
         Glass: -1
     - recipe_type: Raw Resource
 
-# Cooked
+  _f: {H2: Cooked} #############################################################
   Cooked Bladderfish:
     recipes:
     - output: 1
@@ -387,7 +390,7 @@ resources:
         Fevered Pepper: -1
     - recipe_type: Raw Resource
 
-# Cured
+  _g: {H2: Cured} ##############################################################
   Cured Bladderfish:
     recipes:
     - output: 1
@@ -506,7 +509,7 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-# Fish
+  _h: {H2: Fish} ###############################################################
   Bladderfish:
     recipes:
       - recipe_type: Raw Resource

@@ -5,8 +5,11 @@ authors:
 index_page_display_name: "Super Motherload"
 
 game_version: "1.04.01"
-# http://supermotherload.com/changelog/
-# https://store.steampowered.com/news/app/269110/view/2872689832680255250
+
+note: >
+  http://supermotherload.com/changelog/
+  https://store.steampowered.com/news/app/269110/view/2872689832680255250
+
 
 recipe_types:
   Buying: Buy {OUT_ITEM} for {IN_ITEMS} at a shop
@@ -21,7 +24,10 @@ recipe_types:
   Smelter Level 6: "Mine {IN_ITEMS} to smelt {OUT_ITEM} (level 6 smelter required)"
 
 resources:
-## Level 1 Smelting
+
+  ##############################################################################
+  _a: {H1: Level 1 Smelting} ###################################################
+  ##############################################################################
   Sterling Silver:
     recipes:
     - output: 1
@@ -54,8 +60,9 @@ resources:
         Sterling Silver: -1
         Goldium: -1
     - recipe_type: Raw Resource
-
-## Level 2 Smelting (no bombs)
+  ##############################################################################
+  _b: {H1: Level 2 Smelting (no bombs)} ########################################
+  ##############################################################################
   Green Diamond:
     recipes:
     - output: 1
@@ -81,7 +88,9 @@ resources:
         Diamond: -1
     - recipe_type: Raw Resource
 
-## Level 3 Smelting (no bombs)
+  ##############################################################################
+  _c: {H1: Level 3 Smelting (no bombs)} ########################################
+  ##############################################################################
   Forest Stone:
     recipes:
     - output: 1
@@ -115,7 +124,9 @@ resources:
         Unobtainium: -1
     - recipe_type: Raw Resource
 
-## Bombs
+  ##############################################################################
+  _d: {H1: Bombs} ##############################################################
+  ##############################################################################
   TNT Bomb:
     recipes:
     - output: 1
@@ -192,8 +203,11 @@ resources:
         Dollars: -500000
     - recipe_type: Raw Resource
 
-## Store
-# Upgrades
+  ##############################################################################
+  _e: {H1: Store} ##############################################################
+  ##############################################################################
+
+  _f: {H2: Upgrades} ###########################################################
   Drill Bit 1:
     recipes:
     - output: 1
@@ -444,7 +458,7 @@ resources:
         Dollars: -1000000
     - recipe_type: Raw Resource
 
-# Speed
+  _g: {H2: Speed} ##############################################################
   Drill Speed 1:
     recipes:
     - output: 1
@@ -595,7 +609,7 @@ resources:
         Dollars: -1500000
     - recipe_type: Raw Resource
 
-# Items
+  _h: {H2: Items} ##############################################################
   Reserve Fuel:
     recipes:
     - output: 1
@@ -618,7 +632,7 @@ resources:
         Dollars: -150000
     - recipe_type: Raw Resource
 
-# Specials
+  _i: {H2: Specials} ###########################################################
   Alchemy:
     recipes:
     - output: 1
@@ -714,7 +728,9 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-## Basic
+  ##############################################################################
+  _j: {H1: Basic} ##############################################################
+  ##############################################################################
   Bronzium:
     recipes:
       - recipe_type: Raw Resource
@@ -756,7 +772,9 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-## Dollars
+  ##############################################################################
+  _k: {H1: Dollars} ############################################################
+  ##############################################################################
   Dollars:
     recipes:
     - recipe_type: Raw Resource
@@ -885,7 +903,9 @@ resources:
         Beacon: -1
 
 
-## Instant Sell
+  ##############################################################################
+  _l: {H1: Instant Sell} #######################################################
+  ##############################################################################
   Mutant Skull:
     recipes:
       - recipe_type: Raw Resource

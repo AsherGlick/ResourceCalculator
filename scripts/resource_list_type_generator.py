@@ -65,6 +65,11 @@ def main() -> None:
                     type="int",
                     default="1",
                 ),
+                Variable(
+                    name="note",
+                    type="str",
+                    default='""'
+                ),
             ]
         ),
 

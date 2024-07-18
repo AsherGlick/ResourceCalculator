@@ -2,22 +2,24 @@
 authors:
   Ben: 'https://benjaminvreeland.com'
 
-# Based on
-# https://subnautica.fandom.com/wiki/Spawn_IDs_(Subnautica)
-# https://subnautica.fandom.com/wiki/Fabricator_(Subnautica)
-# https://subnautica.fandom.com/wiki/Modification_Station_(Subnautica)
-# https://subnautica.fandom.com/wiki/Scanner_Room_(Subnautica)#Fabrication
-# https://subnautica.fandom.com/wiki/Cyclops#Upgrades_and_Customization
-# https://subnautica.fandom.com/wiki/Mobile_Vehicle_Bay_(Subnautica)
-# https://subnautica.fandom.com/wiki/Vehicle_Upgrade_Console_(Subnautica)
-# https://subnautica.fandom.com/wiki/Habitat_Builder_(Subnautica)
-# ...and assets from the game itself.
 
 index_page_display_name: 'Subnautica'
 
 game_version: 'Living Large Update'
-# https://steamdb.info/patchnotes/10133851/
-# https://store.steampowered.com/news/app/264710/view/3653012651448198134
+
+note: >
+  Based on
+  https://subnautica.fandom.com/wiki/Spawn_IDs_(Subnautica)
+  https://subnautica.fandom.com/wiki/Fabricator_(Subnautica)
+  https://subnautica.fandom.com/wiki/Modification_Station_(Subnautica)
+  https://subnautica.fandom.com/wiki/Scanner_Room_(Subnautica)#Fabrication
+  https://subnautica.fandom.com/wiki/Cyclops#Upgrades_and_Customization
+  https://subnautica.fandom.com/wiki/Mobile_Vehicle_Bay_(Subnautica)
+  https://subnautica.fandom.com/wiki/Vehicle_Upgrade_Console_(Subnautica)
+  https://subnautica.fandom.com/wiki/Habitat_Builder_(Subnautica)
+  ...and assets from the game itself.
+  https://steamdb.info/patchnotes/10133851/
+  https://store.steampowered.com/news/app/264710/view/3653012651448198134
 
 recipe_types:
   Fabricator: 'Use a Fabricator to turn {IN_ITEMS} into {OUT_ITEM}'
@@ -30,9 +32,12 @@ recipe_types:
   Build: 'Use a Habitat Builder to turn {IN_ITEMS} into {OUT_ITEM}'
 
 resources:
-  ## Fabricator
+  ##############################################################################
+  _a: {H1: Fabricator} #########################################################
+  ##############################################################################
 
-  # Basic Materials
+  _b: {H2: Basic Materials} ####################################################
+
   Titanium Ingot:
     recipes:
       - output: 1
@@ -93,7 +98,7 @@ resources:
           Lithium: -2
       - recipe_type: Raw Resource
 
-  # Advanced Materials
+  _c: {H2: Advanced Materials} #################################################
   Hydrochloric Acid:
     recipes:
       - output: 1
@@ -134,7 +139,7 @@ resources:
           Hydrochloric Acid: -1
       - recipe_type: Raw Resource
 
-  # Electronics
+  _d: {H2: Electronics} ########################################################
   Copper Wire:
     recipes:
       - output: 1
@@ -214,7 +219,7 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  # Water
+  _e: {H2: Water} ##############################################################
   Filtered Water:
     recipes:
       - output: 1
@@ -239,7 +244,7 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  # Cooked
+  _f: {H2: Cooked} #############################################################
   Cooked Bladderfish:
     recipes:
       - output: 1
@@ -339,7 +344,7 @@ resources:
           Spinefish: -1
       - recipe_type: Raw Resource
 
-  # Cured
+  _f2: {H2: Cured} ##############################################################
   Cured Bladderfish:
     recipes:
       - output: 1
@@ -466,7 +471,8 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  # Fish
+
+  _g: {H2: Fish} ###############################################################
   Bladderfish:
     recipes:
       - recipe_type: Raw Resource
@@ -510,7 +516,7 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  # Equipment
+  _h: {H2: Equipment} ##########################################################
   First Aid Kit:
     recipes:
       - output: 1
@@ -651,7 +657,7 @@ resources:
           Titanium: -2
       - recipe_type: Raw Resource
 
-  # Tools
+  _i: {H2: Tools} ##############################################################
   Scanner:
     recipes:
       - output: 1
@@ -774,7 +780,7 @@ resources:
           Glass: -1
       - recipe_type: Raw Resource
 
-  # Deployables
+  _j: {H2: Deployables} ########################################################
   Seaglide:
     recipes:
       - output: 1
@@ -828,7 +834,9 @@ resources:
           Power Cell: -1
       - recipe_type: Raw Resource
 
-  ## Mobile Vehicle Bay
+  ##############################################################################
+  _k: {H1: Mobile Vehicle Bay} #################################################
+  ##############################################################################
   Seamoth:
     recipes:
       - output: 1
@@ -863,9 +871,11 @@ resources:
           Lead: -2
       - recipe_type: Raw Resource
 
-  ## Vehicle Upgrade Console
+  ##############################################################################
+  _l: {H1: Vehicle Upgrade Console} ############################################
+  ##############################################################################
 
-  # Common
+  _m: {H2: Common} #############################################################
   Hull Reinforcement:
     recipes:
       - output: 1
@@ -892,7 +902,7 @@ resources:
           Lithium: -1
       - recipe_type: Raw Resource
 
-  # Seamoth
+  _n: {H2: Seamoth} ############################################################
   Seamoth Depth Module MK1:
     recipes:
       - output: 1
@@ -954,7 +964,7 @@ resources:
           Magnetite: -2
       - recipe_type: Raw Resource
 
-  # Prawn Suit
+  _o: {H2: Prawn Suit} #########################################################
   Prawn Suit Depth Module MK1:
     recipes:
       - output: 1
@@ -1032,7 +1042,7 @@ resources:
           Aerogel: -1
       - recipe_type: Raw Resource
 
-  # Torpedoes
+  _p: {H2: Torpedoes} ##########################################################
   Vortex Torpedo:
     recipes:
       - output: 2
@@ -1050,7 +1060,8 @@ resources:
           Gas Pod: -1
       - recipe_type: Raw Resource
 
-  ## Cyclops
+
+  _q: {H1: Cyclops} ############################################################
   Cyclops Depth Module MK1:
     recipes:
       - output: 1
@@ -1138,7 +1149,9 @@ resources:
           Power Cell: -1
       - recipe_type: Raw Resource
 
-  ## Scanner Room
+  ##############################################################################
+  _r: {H1: Scanner Room} #######################################################
+  ##############################################################################
   Scanner Room HUD Chip:
     recipes:
       - output: 1
@@ -1174,9 +1187,11 @@ resources:
           Gold: -1
       - recipe_type: Raw Resource
 
-  ## Habitat Builder
+  ##############################################################################
+  _s: {H1: Habitat Builder} ####################################################
+  ##############################################################################
 
-  # Base Pieces
+  _t: {H2: Base Pieces} ########################################################
   Foundation:
     recipes:
       - output: 1
@@ -1317,7 +1332,7 @@ resources:
           Lithium: -2
       - recipe_type: Raw Resource
 
-  # Exterior Modules
+  _u: {H2: Exterior Modules} ###################################################
   Solar Panel:
     recipes:
       - output: 1
@@ -1375,7 +1390,7 @@ resources:
           Titanium: -2
       - recipe_type: Raw Resource
 
-  # Interior Pieces
+  _v: {H2: Interior Pieces} ####################################################
   Ladder:
     recipes:
       - output: 1
@@ -1451,7 +1466,7 @@ resources:
           Quartz: -1
       - recipe_type: Raw Resource
 
-  # Interior Modules
+  _w: {H2: Interior Modules} ###################################################
   Fabricator:
     recipes:
       - output: 1
@@ -1566,7 +1581,7 @@ resources:
           Titanium: -1
       - recipe_type: Raw Resource
 
-  # Misc
+  _x: {H2: Misc} ###############################################################
   Bench:
     recipes:
       - output: 1
@@ -1763,7 +1778,7 @@ resources:
           Computer Chip: -1
       - recipe_type: Raw Resource
 
-  # Neptune Launch Platform
+  _y: {H2: Neptune Launch Platform} ############################################
   Neptune Gantry:
     recipes:
       - output: 1
@@ -1804,7 +1819,9 @@ resources:
           Computer Chip: -1
       - recipe_type: Raw Resource
 
-  # Raw Materials
+  ##############################################################################
+  _z: {H1: Raw Materials} ######################################################
+  ##############################################################################
   Cave Sulfur:
     recipes:
       - recipe_type: Raw Resource
@@ -1871,7 +1888,9 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  #### Plants
+  ##############################################################################
+  _aa: {H1: Plants} ############################################################
+  ##############################################################################
   Table Coral Sample:
     recipes:
       - recipe_type: Raw Resource
@@ -2019,7 +2038,9 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  ## Eggs
+  ##############################################################################
+  _ab: {H1: Eggs} ##############################################################
+  ##############################################################################
   Ampeel Egg:
     recipes:
       - recipe_type: Raw Resource
@@ -2063,7 +2084,9 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  ## Placeable
+  ##############################################################################
+  _ac: {H2: Placeable} #########################################################
+  ##############################################################################
   Arcade Gorge Toy:
     recipes:
       - recipe_type: Raw Resource

@@ -2,32 +2,30 @@
 authors:
   Ben: 'https://benjaminvreeland.com'
 
-# Based on
-# https://stardewvalleywiki.com/Crafting
-# https://stardewvalleywiki.com/Furnace
-# https://stardewvalleywiki.com/Cooking
-# https://stardewvalleywiki.com/Blacksmith
-# https://stardewvalleywiki.com/Artisan_Goods
-# https://stardewvalleywiki.com/Carpenter%27s_Shop
-# https://stardewvalleywiki.com/Forge
-# https://stardewvalleywiki.com/Monster_Loot
-# https://stardewvalleywiki.com/Fish
-
 index_page_display_name: 'Stardew Valley'
 
 game_version: '1.5.6'
-# https://stardewvalleywiki.com/Version_History
-# https://store.steampowered.com/news/app/413150/view/4451243368885879000
+
+note: >
+  Based on
+  https://stardewvalleywiki.com/Crafting
+  https://stardewvalleywiki.com/Furnace
+  https://stardewvalleywiki.com/Cooking
+  https://stardewvalleywiki.com/Blacksmith
+  https://stardewvalleywiki.com/Artisan_Goods
+  https://stardewvalleywiki.com/Carpenter%27s_Shop
+  https://stardewvalleywiki.com/Forge
+  https://stardewvalleywiki.com/Monster_Loot
+  https://stardewvalleywiki.com/Fish
+  https://stardewvalleywiki.com/Version_History
+  https://store.steampowered.com/news/app/413150/view/4451243368885879000
 
 recipe_types:
   Crafting: Craft {IN_ITEMS} into {OUT_ITEM} (must have recipe)
   Cooking: Cook {IN_ITEMS} into {OUT_ITEM} (must have recipe)
-
   Building (carpenter): Bring {IN_ITEMS} to the carpenter to build {OUT_ITEM}
   Building (carpenter, upgrade): Bring {IN_ITEMS} to the carpenter to upgrade the building to {OUT_ITEM}
   Building (wizard): Bring {IN_ITEMS} to the wizard to build {OUT_ITEM}
-
-  # Refining
   Smelting: Use a Furnace with {IN_ITEMS} to create {OUT_ITEM}
   Charcoal Kiln: Use a Charcoal Kiln with {IN_ITEMS} to create {OUT_ITEM}
   Recycling Machine: Use a Recycling Machine with {IN_ITEMS} to get {OUT_ITEM}
@@ -43,8 +41,6 @@ recipe_types:
   Blacksmith (process, varied): Bring {IN_ITEMS} to Clint to possibly get {OUT_ITEM} (amount may be higher)
   Blacksmith (process): Bring {IN_ITEMS} to Clint to possibly get {OUT_ITEM}
   Blacksmith (upgrade): Bring {IN_ITEMS} to Clint to upgrade to {OUT_ITEM}
-
-  # Artisanal Goods
   Cheese Press: Use a Cheese Press with {IN_ITEMS} to create {OUT_ITEM}
   Keg: Use a Keg with {IN_ITEMS} to brew {OUT_ITEM}
   Loom: Use a Loom with {IN_ITEMS} to create {OUT_ITEM}
@@ -52,19 +48,17 @@ recipe_types:
   Oil Maker: Use a Oil Maker with {IN_ITEMS} to create {OUT_ITEM}
   Preserves Jar: Use a Preserves Jar with {IN_ITEMS} to create {OUT_ITEM}
   Mill: Use a Mill with {IN_ITEMS} to create {OUT_ITEM}
-
   Forge (create): Use {IN_ITEMS} at the forge to create {OUT_ITEM}
   Forge (stat): Use {IN_ITEMS} at the forge to add {OUT_ITEM}
   Forge (stat, chance): Use {IN_ITEMS} at the forge to possibly add {OUT_ITEM} (random stat)
   Forge (enchantment): Use {IN_ITEMS} at the forge to add {OUT_ITEM} (random enchantment)
-
-  # Only including basic items that might be purchased in bulk
   Buy: 'Purchase {OUT_ITEM} with {IN_ITEMS}'
-
   As: 'Treat {IN_ITEMS} as {OUT_ITEM}'
 
 resources:
-  # Fences
+  ##############################################################################
+  _a: {H1: Fences} #############################################################
+  ##############################################################################
   Wood Fence:
     recipes:
       - output: 1
@@ -101,7 +95,10 @@ resources:
           Wood: -10
       - recipe_type: Raw Resource
 
-  # Chests
+
+  ##############################################################################
+  _b: {H1: Chests} #############################################################
+  ##############################################################################
   Chest:
     recipes:
       - output: 1
@@ -124,7 +121,10 @@ resources:
           Qi Gem: -15
       - recipe_type: Raw Resource
 
-  # Sprinklers
+
+  ##############################################################################
+  _c: {H1: Sprinklers} #########################################################
+  ##############################################################################
   Sprinkler:
     recipes:
       - output: 1
@@ -166,7 +166,9 @@ resources:
           Qi Gem: -20
       - recipe_type: Raw Resource
 
-  # Refining Equipment
+  ##############################################################################
+  _d: {H1: Refining Equipment} #################################################
+  ##############################################################################
   Charcoal Kiln:
     recipes:
       - output: 1
@@ -307,7 +309,9 @@ resources:
           Qi Gem: -20
       - recipe_type: Raw Resource
 
-  # Artisan Equipment
+  ##############################################################################
+  _e: {H1: Artisan Equipment} ##################################################
+  ##############################################################################
   Mayonnaise Machine:
     recipes:
       - output: 1
@@ -467,7 +471,10 @@ resources:
           Coal: -3
       - recipe_type: Raw Resource
 
-  # Flooring
+
+  ##############################################################################
+  _f: {H1: Flooring} ###########################################################
+  ##############################################################################
   Wood Floor:
     recipes:
       - output: 1
@@ -562,7 +569,9 @@ resources:
           Refined Quartz: -1
       - recipe_type: Raw Resource
 
-  # Lighting
+  ##############################################################################
+  _g: {H1: Lighting} ###########################################################
+  ##############################################################################
   Torch:
     recipes:
       - output: 1
@@ -750,7 +759,9 @@ resources:
           Coal: -1
       - recipe_type: Raw Resource
 
-  # Fishing
+  ##############################################################################
+  _h: {H1: Fishing} ############################################################
+  ##############################################################################
   Spinner:
     recipes:
       - output: 1
@@ -863,7 +874,9 @@ resources:
           Iron Bar: -3
       - recipe_type: Raw Resource
 
-  # Bombs
+  ##############################################################################
+  _i: {H1: Bombs} ##############################################################
+  ##############################################################################
   Cherry Bomb:
     recipes:
       - output: 1
@@ -898,7 +911,9 @@ resources:
           Coal: -2
       - recipe_type: Raw Resource
 
-  # Cooking
+  ##############################################################################
+  _j: {H1: Cooking} ############################################################
+  ##############################################################################
   Fried Egg:
     recipes:
       - output: 1
@@ -1589,7 +1604,9 @@ resources:
           Qi Gem: -10
       - recipe_type: Raw Resource
 
-  # Artisan Goods
+  ##############################################################################
+  _j2: {H1: Artisan Goods} ######################################################
+  ##############################################################################
   Honey:
     recipes:
       - recipe_type: Raw Resource
@@ -1803,7 +1820,10 @@ resources:
           Almost Any Roe: -1
       - recipe_type: Raw Resource
 
-  # Produce
+
+  ##############################################################################
+  _k: {H1: Produce} ############################################################
+  ##############################################################################
   Egg:
     recipes:
       - recipe_type: Raw Resource
@@ -1893,7 +1913,9 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  # Rings
+  ##############################################################################
+  _l: {H1: Rings} ##############################################################
+  ##############################################################################
   Small Glow Ring:
     recipes:
       - recipe_type: Raw Resource
@@ -2032,7 +2054,10 @@ resources:
           Cinder Shard: -20
       - recipe_type: Raw Resource
 
-  # Edible (Crafting)
+
+  ##############################################################################
+  _m: {H1: Edible (Crafting)} ##################################################
+  ##############################################################################
   Field Snack:
     recipes:
       - output: 1
@@ -2068,7 +2093,10 @@ resources:
           Oil: -1
       - recipe_type: Raw Resource
 
-  # Consumables
+
+  ##############################################################################
+  _n: {H1: Consumables} ########################################################
+  ##############################################################################
   Monster Musk:
     recipes:
       - output: 1
@@ -2140,7 +2168,9 @@ resources:
           Pine Tar: -5
       - recipe_type: Raw Resource
 
-  # Fertilizer
+  ##############################################################################
+  _o: {H1: Fertilizer} #########################################################
+  ##############################################################################
   Basic Fertilizer:
     recipes:
       - output: 1
@@ -2254,7 +2284,9 @@ resources:
           Any Fossil: -1
       - recipe_type: Raw Resource
 
-  # Seeds
+  ##############################################################################
+  _p: {H1: Seeds} ##############################################################
+  ##############################################################################
   Spring Seeds:
     recipes:
       - output: 10
@@ -2348,7 +2380,8 @@ resources:
         recipe_type: Seed Maker (chance)
         requirements:
           Any Seeded Crop: -1
-  # Spring
+
+  _q: {H2: Spring} ############################################################
   Bean Starter:
     recipes:
       - recipe_type: Raw Resource
@@ -2426,7 +2459,8 @@ resources:
         recipe_type: Seed Maker
         requirements:
           Tulip: -1
-  # Summer
+
+  _r: {H2: Summer} ############################################################
   Blueberry Seeds:
     recipes:
       - recipe_type: Raw Resource
@@ -2518,7 +2552,8 @@ resources:
         recipe_type: Seed Maker
         requirements:
           Wheat: -1
-  # Fall
+
+  _s: {H2: Fall} ###############################################################
   Amaranth Seeds:
     recipes:
       - recipe_type: Raw Resource
@@ -2589,7 +2624,7 @@ resources:
         recipe_type: Seed Maker
         requirements:
           Yam: -1
-  # Other
+  _t: {H2: Other} ##############################################################
   Rare Seed:
     recipes:
       - recipe_type: Raw Resource
@@ -2636,7 +2671,9 @@ resources:
         requirements:
           Qi Fruit: -1
 
-  # Trees
+  ##############################################################################
+  _u: {H1: Trees} ##############################################################
+  ##############################################################################
   Maple Seed:
     recipes:
       - recipe_type: Raw Resource
@@ -2705,7 +2742,9 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  # Carpenter Buildings
+  ##############################################################################
+  _v: {H1: Carpenter Buildings} ################################################
+  ##############################################################################
   Barn:
     recipes:
       - output: 1
@@ -2903,7 +2942,9 @@ resources:
           Gold: -100000
       - recipe_type: Raw Resource
 
-  # Wizard Buildings
+  ##############################################################################
+  _w: {H1: Wizard Buildings} ###################################################
+  ##############################################################################
   Earth Obelisk:
     recipes:
       - output: 1
@@ -2961,7 +3002,9 @@ resources:
           Gold: -10000000
       - recipe_type: Raw Resource
 
-  # Tools
+  ##############################################################################
+  _x: {H2: Tools} ##############################################################
+  ##############################################################################
   Hoe:
     recipes:
       - recipe_type: Raw Resource
@@ -3323,8 +3366,10 @@ resources:
           Cinder Shard: -20
       - recipe_type: Raw Resource
 
-  # Fish
-  ## Fishing Pole
+  ##############################################################################
+  _y: {H1: Fish} ###############################################################
+  ##############################################################################
+  _z: {H2: Fishing Pole} #######################################################
   Pufferfish:
     recipes:
       - recipe_type: Raw Resource
@@ -3467,7 +3512,7 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  ## Night Market Fish
+  _aa: {H2: Night Market Fish} #################################################
   Midnight Squid:
     recipes:
       - recipe_type: Raw Resource
@@ -3478,7 +3523,8 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  ## Legendary Fish
+
+  _ab: {H2: Legendary Fish} ####################################################
   Crimsonfish:
     recipes:
       - recipe_type: Raw Resource
@@ -3495,7 +3541,7 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  ## Legendary Fish II
+  _ac: {H2: Legendary Fish II} #################################################
   Son of Crimsonfish:
     recipes:
       - recipe_type: Raw Resource
@@ -3512,7 +3558,7 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  ## Crab Pot Fish
+  _ad: {H2: Crab Pot Fish} #####################################################
   Lobster:
     recipes:
       - recipe_type: Raw Resource
@@ -3544,7 +3590,7 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  ## Not Fish
+  _ae: {H2: Not Fish} ##########################################################
   Seaweed:
     recipes:
       - recipe_type: Raw Resource
@@ -3730,8 +3776,11 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  # Foraging
-  ## Spring
+  ##############################################################################
+  _af: {H1: Foraging} ##########################################################
+  ##############################################################################
+  _ag: {H2: Spring} ############################################################
+
   Wild Horseradish:
     recipes:
       - recipe_type: Raw Resource
@@ -3751,7 +3800,7 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  ## Summer
+  _ah: {H2: Summer} ############################################################
   Spice Berry:
     recipes:
       - recipe_type: Raw Resource
@@ -3762,7 +3811,7 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  ## Fall
+  _ai: {H2: Fall} ##############################################################
   Wild Plum:
     recipes:
       - recipe_type: Raw Resource
@@ -3772,7 +3821,7 @@ resources:
   Blackberry:
     recipes:
       - recipe_type: Raw Resource
-  ## Winter
+  _aj: {H2: Winter} ############################################################
   Winter Root:
     recipes:
       - recipe_type: Raw Resource
@@ -3789,7 +3838,7 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  ## Beach
+  _ak: {H2: Beach} #############################################################
   Nautilus Shell:
     recipes:
       - recipe_type: Raw Resource
@@ -3834,8 +3883,10 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  # Resources
-  ## Basic
+  ##############################################################################
+  _al: {H1: Resources} #########################################################
+  ##############################################################################
+  _am: {H2: Basic} #############################################################
   Battery Pack:
     recipes:
       - recipe_type: Raw Resource
@@ -4065,8 +4116,10 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  # Crops
-  ## Spring
+  ##############################################################################
+  _an: {H1: Crops} #############################################################
+  ##############################################################################
+  _ao: {H2: Spring} ############################################################
   Blue Jazz:
     recipes:
       - recipe_type: Raw Resource
@@ -4103,7 +4156,7 @@ resources:
   Unmilled Rice:
     recipes:
       - recipe_type: Raw Resource
-  ## Summer
+  _ap: {H2: Summer} ############################################################
   Blueberry:
     recipes:
       - recipe_type: Raw Resource
@@ -4144,7 +4197,7 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  ## Fall
+  _aq: {H2: Fall} ##############################################################
   Amaranth:
     recipes:
       - recipe_type: Raw Resource
@@ -4192,7 +4245,9 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  ## Ore
+  ##############################################################################
+  _ar: {H1: Ore} ###############################################################
+  ##############################################################################
   Copper Ore:
     recipes:
       - recipe_type: Raw Resource
@@ -4347,7 +4402,9 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  ## Bars
+  ##############################################################################
+  _as: {H1: Bars} ##############################################################
+  ##############################################################################
   Copper Bar:
     recipes:
       - output: 1
@@ -4419,8 +4476,10 @@ resources:
           Broken Glasses: -1
       - recipe_type: Raw Resource
 
-  # Minerals
-  ## Foraged Minerals
+  ##############################################################################
+  _at: {H1: Minerals} ##########################################################
+  ##############################################################################
+  _au: {H2: Foraged Minerals} ##################################################
   Earth Crystal:
     recipes:
       - recipe_type: Raw Resource
@@ -4488,7 +4547,7 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  ## Gems
+  _av: {H2: Gems} ##############################################################
   Amethyst:
     recipes:
       - recipe_type: Raw Resource
@@ -4523,7 +4582,7 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  ## Geode Minerals
+  _aw: {H2: Geode Minerals} ####################################################
   Aerinite:
     recipes:
       - recipe_type: Raw Resource
@@ -5386,7 +5445,8 @@ resources:
         requirements:
           Omni Geode: -1
 
-  ## Geodes
+
+  _ax: {H2: Geodes} ############################################################
   Geode:
     recipes:
       - recipe_type: Raw Resource
@@ -5407,7 +5467,7 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  # Artifacts
+  _ay: {H1: Artifacts} #########################################################
   Dwarf Scroll I:
     recipes:
       - recipe_type: Raw Resource
@@ -5709,7 +5769,7 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  # Ginger Island Fossils
+  _az: {H2: Ginger Island Fossils} #############################################
   Fossilized Leg:
     recipes:
       - recipe_type: Raw Resource
@@ -5768,7 +5828,9 @@ resources:
           Artifact Trove: -1
           Gold: -25
 
-  # Trash
+  ##############################################################################
+  _ba: {H1: Trash} #############################################################
+  ##############################################################################
   Trash:
     recipes:
       - recipe_type: Raw Resource
@@ -5791,7 +5853,9 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-  # Monster Loot
+  ##############################################################################
+  _bb: {H1: Monster Loot} ######################################################
+  ##############################################################################
   Slime:
     recipes:
       - recipe_type: Raw Resource
@@ -5819,7 +5883,9 @@ resources:
           Qi Gem: -40
       - recipe_type: Raw Resource
 
-  # Money
+  ##############################################################################
+  _bc: {H1: Money} #############################################################
+  ##############################################################################
   Gold:
     recipes:
       - recipe_type: Raw Resource
@@ -6386,7 +6452,6 @@ resources:
         recipe_type: As
         requirements:
           Ancient Fruit: -1
-      # Spring
       - output: 1
         recipe_type: As
         requirements:
@@ -6431,7 +6496,6 @@ resources:
         recipe_type: As
         requirements:
           Tulip: -1
-      # Summer
       - output: 1
         recipe_type: As
         requirements:
@@ -6484,7 +6548,6 @@ resources:
         recipe_type: As
         requirements:
           Wheat: -1
-      # Fall
       - output: 1
         recipe_type: As
         requirements:
@@ -6525,7 +6588,6 @@ resources:
         recipe_type: As
         requirements:
           Yam: -1
-      # Other
       - output: 1
         recipe_type: As
         requirements:

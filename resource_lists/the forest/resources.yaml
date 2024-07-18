@@ -2,15 +2,18 @@
 authors:
   Ben: "https://benjaminvreeland.com"
 
-# Based on
-# https://theforest.fandom.com/wiki/Crafting
-# https://theforest.fandom.com/wiki/Building
 
 index_page_display_name: "The Forest"
 
 game_version: "V1.12 - VR"
-# https://endnightgames.com/updates
-# https://store.steampowered.com/news/app/242760/view/1585752541674344698
+
+note: >
+  Based on
+  https://theforest.fandom.com/wiki/Crafting
+  https://theforest.fandom.com/wiki/Building
+  https://endnightgames.com/updates
+  https://store.steampowered.com/news/app/242760/view/1585752541674344698
+
 
 recipe_types:
   Crafting: "Use your inventory to turn {IN_ITEMS} into {OUT_ITEM}"
@@ -94,7 +97,9 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-### Food ###
+  ##############################################################################
+  _a: {H1: Food} ###############################################################
+  ##############################################################################
 
   Small Meat:
     recipes:
@@ -160,7 +165,9 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-##### Weapons #####
+  ##############################################################################
+  _b: {H1: Weapons} ############################################################
+  ##############################################################################
 
   Crafted Axe:
     recipes:
@@ -199,7 +206,9 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-### Arrows ###
+  ##############################################################################
+  _c: {H1: Arrows} #############################################################
+  ##############################################################################
 
   Arrows:
     recipes:
@@ -414,7 +423,9 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-##### Projectiles #####
+  ##############################################################################
+  _d: {H1: Projectiles} ########################################################
+  ##############################################################################
 
   Molotov:
     recipes:
@@ -472,7 +483,9 @@ resources:
         Sap: -1
     - recipe_type: Raw Resource
 
-##### Clothing & Armor #####
+  ##############################################################################
+  _e: {H1: Clothing & Armor} ###################################################
+  ##############################################################################
 
   Lizard Skin Armor:
     recipes:
@@ -535,7 +548,9 @@ resources:
         Rope: -2
     - recipe_type: Raw Resource
 
-##### Storage #####
+  ##############################################################################
+  _f: {H1: Storage} ############################################################
+  ##############################################################################
 
   Water Skin:
     recipes:
@@ -603,7 +618,9 @@ resources:
         Rope: -3
     - recipe_type: Raw Resource
 
-##### Other #####
+  ##############################################################################
+  _g: {H1: Other} ##############################################################
+  ##############################################################################
 
   Repair Tool:
     recipes:
@@ -671,7 +688,9 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-##### Upgrades #####
+  ##############################################################################
+  _h: {H1: Upgrades} ###########################################################
+  ##############################################################################
 
   Plane Axe:
     recipes:
@@ -704,8 +723,12 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-# Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Crafted Club, Upgraded Stick, Machete, Tennis Racket, Club
+  ##############################################################################
+  _i: {H1: Upgrades} ###########################################################
+  ##############################################################################
+
   Speed Upgrade:
+    note: Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Crafted Club, Upgraded Stick, Machete, Tennis Racket, Club
     recipes:
     - output: 1
       recipe_type: Upgrading
@@ -714,8 +737,8 @@ resources:
         Sap: -1
     - recipe_type: Raw Resource
 
-# Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Crafted Club, Upgraded Stick, Machete, Tennis Racket, Club
   Damage Upgrade:
+    note: Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Crafted Club, Upgraded Stick, Machete, Tennis Racket, Club
     recipes:
     - output: 1
       recipe_type: Upgrading
@@ -724,8 +747,8 @@ resources:
         Sap: -1
     - recipe_type: Raw Resource
 
-# Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Upgraded Rock, Crafted Club, Upgraded Stick, Machete, Tennis Racket, Club
   Damage Upgrade+:
+    note: Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Upgraded Rock, Crafted Club, Upgraded Stick, Machete, Tennis Racket, Club
     custom_simplename: damageupgradeplus
     recipes:
     - output: 1
@@ -735,8 +758,8 @@ resources:
         Sap: -1
     - recipe_type: Raw Resource
 
-# Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Upgraded Rock, Crafted Club, Club, Upgraded Stick
   Fire Upgrade:
+    note: Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Upgraded Rock, Crafted Club, Club, Upgraded Stick
     recipes:
     - output: 1
       recipe_type: Upgrading
@@ -744,8 +767,8 @@ resources:
         Cloth: -1
     - recipe_type: Raw Resource
 
-# Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Upgraded Spear, Incendiary Spear, Katana, Machete
   Poison Upgrade:
+    note: Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Upgraded Spear, Incendiary Spear, Katana, Machete
     recipes:
     - output: 1
       recipe_type: Upgrading
@@ -771,8 +794,9 @@ resources:
   Batteries:
     recipes:
       - recipe_type: Raw Resource
-# Chainsaw, Modern Bow, Crafted Bow, Flintlock Pistol
+
   Light Upgrade:
+    note: Chainsaw, Modern Bow, Crafted Bow, Flintlock Pistol
     recipes:
     - output: 1
       recipe_type: Upgrading
@@ -787,7 +811,6 @@ resources:
   Flare Gun:
     recipes:
       - recipe_type: Raw Resource
-# Flare Gun
   Flare Gun Ammo:
     recipes:
     - output: 1
@@ -895,7 +918,9 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-##### Buildings #####
+  ##############################################################################
+  _j: {H1: Buildings} ##########################################################
+  ##############################################################################
   Variable Log Amount:
     recipes:
       - recipe_type: Raw Resource
@@ -958,7 +983,10 @@ resources:
     recipes:
       - recipe_type: Raw Resource
 
-### Fires ###
+
+  ##############################################################################
+  _k: {H1: Fires} ##############################################################
+  ##############################################################################
 
   Basic Fire:
     recipes:
@@ -996,7 +1024,10 @@ resources:
         Log: -5
     - recipe_type: Raw Resource
 
-### Shelters ###
+
+  ##############################################################################
+  _l: {H1: Shelters} ###########################################################
+  ##############################################################################
 
   Temporary Shelter:
     recipes:
@@ -1031,7 +1062,9 @@ resources:
         Variable Log Amount: -1
     - recipe_type: Raw Resource
 
-### Food & Water ###
+  ##############################################################################
+  _m: {H1: Food & Water} #######################################################
+  ##############################################################################
 
   Rabbit Cage:
     recipes:
@@ -1064,7 +1097,9 @@ resources:
         Stick: -5
     - recipe_type: Raw Resource
 
-### Storage ###
+  ##############################################################################
+  _n: {H1: Storage} ############################################################
+  ##############################################################################
 
   Small Stick Holder:
     recipes:
@@ -1179,7 +1214,9 @@ resources:
         Stick: -25
     - recipe_type: Raw Resource
 
-### Custom ###
+  ##############################################################################
+  _o: {H1: Custom} #############################################################
+  ##############################################################################
 
   Custom Foundation:
     recipes:
@@ -1274,7 +1311,9 @@ resources:
         Variable Bone Amount: -1
     - recipe_type: Raw Resource
 
-### Elevated ###
+  ##############################################################################
+  _p: {H1: Elevated} ###########################################################
+  ##############################################################################
 
   Treehouse:
     recipes:
@@ -1306,7 +1345,9 @@ resources:
         Variable Log Amount: -1
     - recipe_type: Raw Resource
 
-### Basic ###
+  ##############################################################################
+  _q: {H1: Basic} ##############################################################
+  ##############################################################################
 
   Basic Wall:
     recipes:
@@ -1337,7 +1378,9 @@ resources:
         Log: -5
     - recipe_type: Raw Resource
 
-### Utility ###
+  ##############################################################################
+  _r: {H1: Utility} ############################################################
+  ##############################################################################
 
   Stick Marker:
     recipes:
@@ -1399,7 +1442,9 @@ resources:
         Variable Log Amount: -1
     - recipe_type: Raw Resource
 
-### Furniture ###
+  ##############################################################################
+  _s: {H1: Furniture} ##########################################################
+  ##############################################################################
 
   Wood Bench:
     recipes:
@@ -1464,7 +1509,9 @@ resources:
         Bone: -31
     - recipe_type: Raw Resource
 
-### Decorations ###
+  ##############################################################################
+  _t: {H1: Decorations} ########################################################
+  ##############################################################################
 
   Deer Skin Decoration:
     recipes:
@@ -1646,7 +1693,10 @@ resources:
         Stick: -4
     - recipe_type: Raw Resource
 
-### Small Traps ###
+
+  ##############################################################################
+  _u: {H1: Small Traps} ########################################################
+  ##############################################################################
 
   Animal Trap:
     recipes:
@@ -1691,7 +1741,9 @@ resources:
         Explosive: -1
     - recipe_type: Raw Resource
 
-### Advanced Traps ###
+  ##############################################################################
+  _v: {H1: Advanced Traps} #####################################################
+  ##############################################################################
 
   Deadfall Trap:
     recipes:
@@ -1730,7 +1782,9 @@ resources:
         Log: -5
     - recipe_type: Raw Resource
 
-### Defensive Structures ###
+  ##############################################################################
+  _w: {H1: Defensive Structures} ###############################################
+  ##############################################################################
 
   Defensive Spikes:
     recipes:
@@ -1766,7 +1820,9 @@ resources:
         Log: -5
     - recipe_type: Raw Resource
 
-### Boats ###
+  ##############################################################################
+  _x: {H1: Boats} ##############################################################
+  ##############################################################################
 
   Small Raft:
     recipes:
@@ -1803,7 +1859,9 @@ resources:
         Variable Log Amount: -1
     - recipe_type: Raw Resource
 
-### Effigies ###
+  ##############################################################################
+  _y: {H1: Effigies} ###########################################################
+  ##############################################################################
 
   Custom Effigy:
     recipes:
@@ -1847,7 +1905,9 @@ resources:
         Arm: -7
     - recipe_type: Raw Resource
 
-### Schematic Buildings ###
+  ##############################################################################
+  _z: {H1: Schematic Buildings} ################################################
+  ##############################################################################
 
   Tower:
     recipes:
@@ -1907,7 +1967,9 @@ resources:
         Variable Log Amount: -1
     - recipe_type: Raw Resource
 
-### Special ###
+  ##############################################################################
+  _aa: {H1: Special} ###########################################################
+  ##############################################################################
 
   SOS Sign:
     recipes:
@@ -1917,7 +1979,9 @@ resources:
         Rock: -34
     - recipe_type: Raw Resource
 
-### End Game Buildings ###
+  ##############################################################################
+  _ab: {H1: End Game Buildings} ################################################
+  ##############################################################################
 
   Timmy Standing:
     recipes:

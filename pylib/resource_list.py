@@ -163,8 +163,9 @@ class ResourceList():
         self.banner_message: str = ""
         self.requirement_groups: OrderedDict[str, List[str]] = OrderedDict()
         self.row_group_count: int = 1
+        self.note: str = ""
 
-        self.valid_keys = ['authors', 'index_page_display_name', 'recipe_types', 'stack_sizes', 'default_stack_size', 'resources', 'game_version', 'banner_message', 'requirement_groups', 'row_group_count']
+        self.valid_keys = ['authors', 'index_page_display_name', 'recipe_types', 'stack_sizes', 'default_stack_size', 'resources', 'game_version', 'banner_message', 'requirement_groups', 'row_group_count', 'note']
 
     def parse(self, tuple_tree: Any) -> List[TokenError]:
         errors: List[TokenError] = []
@@ -302,6 +303,14 @@ class ResourceList():
                 errors.append(TokenError("row_group_count should be an int not a {}".format(str(type(row_group_count.value))), Token().from_yaml_scalar_node(row_group_count.token)))
 
             self.row_group_count = int(row_group_count.value or 0)
+
+        # Load note into a typed object
+        if 'note' in tokenless_keys:
+            note = tokenless_keys["note"]
+            if type(note.value) != str:
+                errors.append(TokenError("note should be a string not a {}".format(str(type(note.value))), Token().from_yaml_scalar_node(note.token)))
+
+            self.note = str(note.value)
         return errors
 
     def to_primitive(self) -> Any:
@@ -316,6 +325,7 @@ class ResourceList():
             "banner_message": get_primitive(self.banner_message),
             "requirement_groups": get_primitive(self.requirement_groups),
             "row_group_count": get_primitive(self.row_group_count),
+            "note": get_primitive(self.note),
         }
 
 
