@@ -3504,3 +3504,463 @@ resources:
         Gluon Beam: -1
     - recipe_type: Raw Resource
 
+# Venture Standard Blocks
+
+  Venture Standard Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Plumbia Ingot: -1
+        Titania Ingot: -1
+    - recipe_type: Raw Resource
+
+  Venture Small Dino Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+    - recipe_type: Raw Resource
+
+  Venture Hooked Beak Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+    - recipe_type: Raw Resource
+
+  Venture Smooth Standard Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Plumbia Ingot: -1
+    - recipe_type: Raw Resource
+
+  Venture Long Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Plumbia Ingot: -2
+        Titania Ingot: -1
+    - recipe_type: Raw Resource
+
+  Venture Medium Dino Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Plumbia Ingot: -3
+        Titania Ingot: -2
+    - recipe_type: Raw Resource
+
+  Venture Left Gruntle Armour Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Plumbia Ingot: -3
+        Titania Ingot: -2
+    - recipe_type: Raw Resource
+
+  Venture Right Gruntle Armour Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Plumbia Ingot: -3
+        Titania Ingot: -2
+    - recipe_type: Raw Resource
+
+  Venture Middle Gruntle Armour Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Plumbia Ingot: -3
+        Titania Ingot: -1
+    - recipe_type: Raw Resource
+
+  Venture Whimpy Armour Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Plumbia Ingot: -2
+        Titania Ingot: -1
+    - recipe_type: Raw Resource
+
+  Venture Cab Chassis :
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Plumbia Ingot: -3
+        Titania Ingot: -2
+        Fibre Plating: -1
+    - recipe_type: Raw Resource
+
+  Venture Medium Dino Side Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -5
+        Plumbia Ingot: -3
+        Titania Ingot: -1
+    - recipe_type: Raw Resource
+
+  Venture Large Dino Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Plumbia Ingot: -4
+        Titania Ingot: -2
+    - recipe_type: Raw Resource
+
+  Venture Duck Bill Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Plumbia Ingot: -4
+        Titania Ingot: -2
+    - recipe_type: Raw Resource
+
+  Venture Large Dino Side Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Plumbia Ingot: -4
+        Titania Ingot: -2
+    - recipe_type: Raw Resource
+
+  Venture Corner Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Plumbia Ingot: -2
+        Titania Ingot: -1
+    - recipe_type: Raw Resource
+
+  Venture Wide Dino Corner Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Plumbia Ingot: -5
+        Titania Ingot: -2
+    - recipe_type: Raw Resource
+
+  Venture Z1 Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Plumbia Ingot: -4
+        Titania Ingot: -1
+    - recipe_type: Raw Resource
+
+  Venture Z2 Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Plumbia Ingot: -4
+        Titania Ingot: -1
+    - recipe_type: Raw Resource
+
+  Venture U-Bracket:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Plumbia Ingot: -1
+        Titania Ingot: -1
+    - recipe_type: Raw Resource
+
+  Venture Right Angle Bracket:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Plumbia Ingot: -1
+        Titania Ingot: -1
+    - recipe_type: Raw Resource
+
+  Venture Straight Bracket:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Plumbia Ingot: -1
+        Titania Ingot: -1
+    - recipe_type: Raw Resource
+
+  Venture Long Straight Bracket:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -5
+        Plumbia Ingot: -1
+        Titania Ingot: -1
+    - recipe_type: Raw Resource
+
+# Venture Control Blocks
+
+  Venture Cruz Cab:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Fibre Plating: -1
+        Fuel Injector: -1
+    - recipe_type: Raw Resource
+
+  Venture Cruz Wide Cab:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Fibre Plating: -3
+        Fuel Injector: -1
+    - recipe_type: Raw Resource
+
+  Venture Flanker Cab:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -4
+        Rugged Fiblar: -1
+        Fuel Injector: -1
+    - recipe_type: Raw Resource
+
+  Venture AI Guard Module:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -1
+        Rugged Fiblar: -1
+        Mother Brain: -1
+    - recipe_type: Raw Resource
+
+  Venture Suzie Vroom Cab:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Fibre Plating: -1
+        Fuel Injector: -1
+    - recipe_type: Raw Resource
+
+# Venture Wheel Blocks
+
+  Venture Landing Gear Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Rubber Brick: -1
+        Plumbia Ingot: -1
+    - recipe_type: Raw Resource
+
+  Venture Zoomer Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Rubber Brick: -2
+        Plumbia Ingot	: -1
+    - recipe_type: Raw Resource
+
+  Venture Right Dune Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Rubber Brick: -3
+        Plumbia Ingot: -1
+    - recipe_type: Raw Resource
+
+  Venture Left Dune Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Rubber Brick: -4
+        Plumbia Ingot: -1
+    - recipe_type: Raw Resource
+
+  Venture Globe Trotter Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Fibre Plating: -2
+        Rugged Fiblar: -2
+    - recipe_type: Raw Resource
+
+  Venture Medium F1 Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -5
+        Rugged Fiblar: -5
+        Cyclone Jet: -1
+        Thermo Jet: -1
+    - recipe_type: Raw Resource
+
+  Venture Monster Truck Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -10
+        Rugged Fiblar: -10
+        Cyclone Jet: -3
+    - recipe_type: Raw Resource
+
+  Venture Original Springer Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -2
+        Rugged Fiblar: -1
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  Venture Mid Fork Springer Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -3
+        Rugged Fiblar: -2
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  Venture Short Fork Springer Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -2
+        Rugged Fiblar: -2
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  Venture Long Fork Springer Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -3
+        Rugged Fiblar: -3
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  Venture Titan Truck Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -5
+        Rugged Fiblar: -5
+        Thermo Jet: -3
+    - recipe_type: Raw Resource
+
+  Venture Large F1 Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -10
+        Rugged Fiblar: -10
+        Cyclone Jet: -2
+        Thermo Jet: -2
+    - recipe_type: Raw Resource
+
+  Venture Ripsaw Track :
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Fibre Plating: -4
+        Rugged Fiblar: -1
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  Venture Hurricane Track:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -4
+        Rugged Fiblar: -2
+        Cyclone Jet: -1
+        Thermo Jet: -1
+    - recipe_type: Raw Resource
+
+  Venture Medium Retractable Landing Gear:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Rubber Brick: -2
+        Plumbia Ingot: -2
+    - recipe_type: Raw Resource
+
+  Venture Large Retractable Landing Gear:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Rubber Brick: -3
+        Plumbia Ingot: -3
+    - recipe_type: Raw Resource
+
