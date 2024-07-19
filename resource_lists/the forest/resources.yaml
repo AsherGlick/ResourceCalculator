@@ -728,7 +728,7 @@ resources:
   ##############################################################################
 
   Speed Upgrade:
-    note: Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Crafted Club, Upgraded Stick, Machete, Tennis Racket, Club
+    note: Requires and returns Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Crafted Club, Upgraded Stick, Machete, Tennis Racket, or Club
     recipes:
     - output: 1
       recipe_type: Upgrading
@@ -738,7 +738,7 @@ resources:
     - recipe_type: Raw Resource
 
   Damage Upgrade:
-    note: Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Crafted Club, Upgraded Stick, Machete, Tennis Racket, Club
+    note: Requires and returns Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Crafted Club, Upgraded Stick, Machete, Tennis Racket, or Club
     recipes:
     - output: 1
       recipe_type: Upgrading
@@ -748,7 +748,7 @@ resources:
     - recipe_type: Raw Resource
 
   Damage Upgrade+:
-    note: Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Upgraded Rock, Crafted Club, Upgraded Stick, Machete, Tennis Racket, Club
+    note: Requires and returns Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Upgraded Rock, Crafted Club, Upgraded Stick, Machete, Tennis Racket, or Club
     custom_simplename: damageupgradeplus
     recipes:
     - output: 1
@@ -759,7 +759,7 @@ resources:
     - recipe_type: Raw Resource
 
   Fire Upgrade:
-    note: Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Upgraded Rock, Crafted Club, Club, Upgraded Stick
+    note: Requires and returns Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Upgraded Rock, Crafted Club, Club, or Upgraded Stick
     recipes:
     - output: 1
       recipe_type: Upgrading
@@ -768,7 +768,7 @@ resources:
     - recipe_type: Raw Resource
 
   Poison Upgrade:
-    note: Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Upgraded Spear, Incendiary Spear, Katana, Machete
+    note: Requires and returns Plane Axe, Crafted Axe, Rusty Axe, Modern Axe, Upgraded Spear, Incendiary Spear, Katana, or Machete
     recipes:
     - output: 1
       recipe_type: Upgrading
@@ -796,7 +796,7 @@ resources:
       - recipe_type: Raw Resource
 
   Light Upgrade:
-    note: Chainsaw, Modern Bow, Crafted Bow, Flintlock Pistol
+    note: Requires and returns Chainsaw, Modern Bow, Crafted Bow, Flintlock Pistol
     recipes:
     - output: 1
       recipe_type: Upgrading
@@ -812,6 +812,7 @@ resources:
     recipes:
       - recipe_type: Raw Resource
   Flare Gun Ammo:
+    note: Requires and returns Flare Gun
     recipes:
     - output: 1
       recipe_type: Upgrading
