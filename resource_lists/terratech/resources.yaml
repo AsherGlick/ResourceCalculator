@@ -3807,7 +3807,7 @@ resources:
       requirements:
         Fibron Chunk: -2
         Rubber Brick: -2
-        Plumbia Ingot	: -1
+        Plumbia Ingot: -1
     - recipe_type: Raw Resource
 
   Venture Right Dune Wheel:
@@ -3962,5 +3962,375 @@ resources:
         Fibron Chunk: -3
         Rubber Brick: -3
         Plumbia Ingot: -3
+    - recipe_type: Raw Resource
+
+# Venture Weapon Blocks
+
+  Venture Pip Machine Gun:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Luxian Crystal: -1
+        Titania Ingot: -1
+    - recipe_type: Raw Resource
+
+  Venture NEEDLE Laser:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -1
+        Rugged Fiblar: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Venture Reaper X1 Flamethrower:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -1
+        Carbius Brick: -1
+        Rugged Fiblar: -1
+        Z4 Explosives: -1
+    - recipe_type: Raw Resource
+
+  Venture Hail Fire Rifle:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Titania Ingot: -2
+        Fibre Plating: -2
+    - recipe_type: Raw Resource
+
+  Venture Lance Laser Turret:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Plumbia Ingot: -1
+        Fibre Plating: -1
+        Blast Caps: -1
+    - recipe_type: Raw Resource
+
+  Venture Roundabout Mortar:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Fibre Plating: -1
+        Carbius Brick: -1
+        Blast Caps: -2
+    - recipe_type: Raw Resource
+
+  Venture 360 Shotgun:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Titania Ingot: -2
+        Fibre Plating: -3
+        Rugged Fiblar: -2
+        Blast Caps: -2
+    - recipe_type: Raw Resource
+
+  Venture Contact Shotgun:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Titania Ingot: -2
+        Blast Caps: -2
+    - recipe_type: Raw Resource
+
+  Venture Mini Sonic Lance:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -4
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  Venture Sonic Lance:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -4
+        Cyclone Jet: -1
+        Dervish Gel: -1
+    - recipe_type: Raw Resource
+
+  Venture Oozee SMG:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Fibre Plating: -1
+        Rugged Fiblar: -1
+        Z4 Explosives: -1
+    - recipe_type: Raw Resource
+
+  Venture Avalanche Launcher:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -1
+        Ion Pulse Cell: -1
+        Thermo Jet: -1
+        Seed AI: -1
+    - recipe_type: Raw Resource
+
+  Venture Cluster Missile Launcher:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -2
+        Z4 Explosives: -2
+        Thermo Jet: -1
+    - recipe_type: Raw Resource
+
+  Venture Crossfire Rifle:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Fibre Plating: -2
+        Rugged Fiblar: -2
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  Venture Rapid Cannon:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -4
+        Rugged Fiblar: -2
+        Z4 Explosives: -2
+        Dervish Gel: -1
+    - recipe_type: Raw Resource
+
+  Venture Dual Auto Cannon:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Rugged Fiblar: -2
+        Acid Electrode: -4
+        Z4 Explosives: -2
+        Coffman Cell: -1
+        Gluon Beam: -1
+    - recipe_type: Raw Resource
+
+# Venture Accessory Blocks
+
+  Venture Rally Headlight:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Rubber Brick: -1
+        Luxian Crystal: -1
+    - recipe_type: Raw Resource
+
+  Venture Burn LED:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Rubber Brick: -1
+        Luxian Crystal: -1
+    - recipe_type: Raw Resource
+
+  Venture Safari Spotlight:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Rubber Brick: -2
+        Luxian Crystal: -1
+    - recipe_type: Raw Resource
+
+  Venture Popup Dino Light:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Luxian Crystal: -3
+        Fibre Plating: -1
+    - recipe_type: Raw Resource
+
+  Venture Lightbar:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Rubber Brick: -2
+        Luxian Crystal: -2
+    - recipe_type: Raw Resource
+
+  Venture Radar:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Fibre Plating: -1
+        Acid Electrode: -1
+    - recipe_type: Raw Resource
+
+  Venture Minimap Radar:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Cyclone Jet: -2
+        Sensory Transmitter: -1
+    - recipe_type: Raw Resource
+
+  Venture Surveying Radar:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Rugged Fiblar: -4
+        Cyclone Jet: -3
+        Sensory Transmitter: -2
+        Mother Brain: -2
+    - recipe_type: Raw Resource
+
+  Venture Collector:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Celestian Crystal: -1
+    - recipe_type: Raw Resource
+
+  Venture Active All Axis Gyro:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -1
+        Rugged Fiblar: -1
+        Cyclone Jet: -2
+    - recipe_type: Raw Resource
+
+  Venture Speedometer:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Luxian Crystal: -1
+        Titania Ingot: -1
+        Fibre Plating: -1
+    - recipe_type: Raw Resource
+
+  Venture Altimeter:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Luxian Crystal: -1
+        Plumbia Ingot: -1
+        Fibre Plating: -1
+    - recipe_type: Raw Resource
+
+  Venture Shove-it Explosive Bolt:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Blast Caps: -1
+    - recipe_type: Raw Resource
+
+  Venture Payload Terminal:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Gluon Beam: -1
+        Seed AI: -1
+        Proxima Dark: -1
+    - recipe_type: Raw Resource
+
+# Venture Power Blocks
+
+  Venture Battery:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Fibre Plating: -1
+        Acid Electrode: -1
+    - recipe_type: Raw Resource
+
+  Venture Remote Charger:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Fibre Plating: -1
+        Rugged Fiblar: -1
+        Ion Pulse Cell: -1
+        Gluon Beam: -1
+    - recipe_type: Raw Resource
+
+  Venture Shield Bubble Projector:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -1
+        Ion Pulse Cell: -1
+        Cyclone Jet: -1
+        Hard Light Drive: -1
+    - recipe_type: Raw Resource
+
+  Venture Projected Tracking Shield:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -3
+        Ion Pulse Cell: -1
+        Cyclone Jet: -1
+        Hard Light Drive: -1
+    - recipe_type: Raw Resource
+
+  Venture Repair Bubble Projector:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -1
+        Titanic Alloy: -1
+        Ion Pulse Cell: -1
     - recipe_type: Raw Resource
 
