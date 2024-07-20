@@ -122,7 +122,7 @@ def get_primitive(obj: Any) -> Any:
 #
 # A helper function to print yaml string values out
 ################################################################################
-def yaml_string(string: str, indent: str):
+def yaml_string(string: str, indent: str) -> str:
     if "\n" in string:
         string = string.removesuffix("\n")
         return ("\n  " + indent).join(["|"] + string.split("\n"))

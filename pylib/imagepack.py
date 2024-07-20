@@ -1,4 +1,4 @@
-from PIL import Image  # type: ignore
+from PIL import Image
 from typing import List, Dict, Tuple, TypedDict
 import json
 import math

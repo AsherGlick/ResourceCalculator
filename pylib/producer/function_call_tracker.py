@@ -1,4 +1,4 @@
-from typing import Callable, Generic, Protocol, List, Dict
+from typing import Callable, Generic, Protocol, List, Dict, cast
 from dataclasses import dataclass
 from .producer import InputFileDatatype
 
@@ -19,8 +19,10 @@ class TrackedProducerFunction(Generic[InputFileDatatype], Protocol):
 def tracked_function(
     func: Callable[[InputFileDatatype, Dict[str, str]], List[str]]
 ) -> TrackedProducerFunction[InputFileDatatype]:
-    
-    def wrapper(input_files: InputFileDatatype, groups: Dict[str, str]) -> List[str]:
+
+    wrapper: TrackedProducerFunction[InputFileDatatype]
+
+    def _wrapper(input_files: InputFileDatatype, groups: Dict[str, str]) -> List[str]:
         result = func(input_files, groups)
         wrapper.call_list.append(FunctionCall(
             input_paths=input_files,
@@ -29,6 +31,6 @@ def tracked_function(
         ))
         return result
 
+    wrapper = cast(TrackedProducerFunction[InputFileDatatype], _wrapper)
     wrapper.call_list = []
-
     return wrapper

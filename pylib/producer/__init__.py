@@ -119,7 +119,7 @@ def copy_file_with_hash(
 def filename_from_metadatafile(metadata_file: str, rel: str = "") -> str:
     with open(metadata_file) as f:
         if rel == "":
-            return json.load(f)["filename"]
+            return str(json.load(f)["filename"])
         else:
             return os.path.relpath(json.load(f)["filename"], rel)
 

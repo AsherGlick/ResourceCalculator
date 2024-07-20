@@ -16,4 +16,4 @@ toml==0.10.2
 tornado==6.4.1
 types-PyYAML==5.4.3
 typing-extensions==4.3.0
-watchdog==2.1.9
+watchdog==4.0.1

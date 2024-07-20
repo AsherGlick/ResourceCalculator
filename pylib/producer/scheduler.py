@@ -54,7 +54,7 @@ class Action(Generic[InputFileDatatype]):
     # A helper function to get the producer object from the internal producer
     # index variable.
     ############################################################################
-    def producer(self, producer_list: List[GenericProducer]):
+    def producer(self, producer_list: List[GenericProducer]) -> GenericProducer:
         return producer_list[self.producer_index]
 
     ############################################################################
@@ -64,7 +64,7 @@ class Action(Generic[InputFileDatatype]):
     ############################################################################
     def files(self) -> Tuple[str, ...]:
         files: List[str] = []
-        for input_file in self.input_files.values():
+        for input_file in self.input_files.values():  # type: ignore [attr-defined]
             if isinstance(input_file, str):
                 files.append(input_file)
             elif isinstance(input_file, list):
@@ -76,13 +76,13 @@ class Action(Generic[InputFileDatatype]):
     ############################################################################
     # Comparison functions
     ############################################################################
-    def __lt__(self, other: "Action"):
+    def __lt__(self, other: "Action[Any]") -> bool:
         return self.producer_index < other.producer_index
-    def __gt__(self, other: "Action"):
+    def __gt__(self, other: "Action[Any]") -> bool:
         return self.producer_index > other.producer_index
-    def __le__(self, other: "Action"):
+    def __le__(self, other: "Action[Any]") -> bool:
         return self.producer_index <= other.producer_index
-    def __ge__(self, other: "Action"):
+    def __ge__(self, other: "Action[Any]") -> bool:
         return self.producer_index >= other.producer_index
 
     ############################################################################
@@ -110,7 +110,7 @@ class Scheduler:
     build_events: List[Optional[BuildEvent]]
 
     # A map of filename -> Set of `producer_list` indexes
-    input_file_maps: Dict[str, Set[Action]]
+    input_file_maps: Dict[str, Set[Action[Any]]]
 
     # A datastructure that holds information about all of the currently known files
     filecache: sqlite3.Connection
@@ -234,8 +234,8 @@ class Scheduler:
     # Query the database for all of the actions relevent to the list of filter
     # files, and returns those action objects.
     ############################################################################
-    def _query_for_actions_from_files(self, filter_files: List[str]) -> List[Action]:
-        actions: List[Action] = []
+    def _query_for_actions_from_files(self, filter_files: List[str]) -> List[Action[Any]]:
+        actions: List[Action[Any]] = []
         for producer_index, producer in enumerate(self.producer_list):
             queried_actions = self.query_filesets(self.filecache, producer_index)
             for queried_action in queried_actions:
@@ -260,8 +260,8 @@ class Scheduler:
     #
     # Get a list of actions that would have changed if the quasifiles existed.
     ############################################################################
-    def get_actions_with_from_quasifiles(self, quasifiles: List[str]) -> List[Action]:
-        quasiactions: List[Action] = []
+    def get_actions_with_from_quasifiles(self, quasifiles: List[str]) -> List[Action[Any]]:
+        quasiactions: List[Action[Any]] = []
         for quasifile in quasifiles:
             for producer_index, producer in enumerate(self.producer_list):
                 quasigroups: Dict[str, str] = {}
@@ -296,10 +296,10 @@ class Scheduler:
     # runs all of the producer functions that would take in any of those files.
     ############################################################################
     def _process_files(self, files: List[str], init: bool=False) -> None:
-        actions_to_run: UniqueHeap[Action] = UniqueHeap()
+        actions_to_run: UniqueHeap[Action[Any]] = UniqueHeap()
 
         # Delete a build event and the files associated with it, plus cascading?
-        def delete_build_event(build_event: BuildEvent):
+        def delete_build_event(build_event: BuildEvent) -> None:
             nonlocal actions_to_run
 
             build_events_to_remove: List[BuildEvent] = [build_event]
@@ -358,15 +358,15 @@ class Scheduler:
                     if build_event is None:
                         continue
 
-                    action = actions_to_run.get(build_event.weak_hash())
+                    action_to_run = actions_to_run.get(build_event.weak_hash())
 
                     # No Link
-                    if action is None:
+                    if action_to_run is None:
                         delete_build_event(build_event)
                         continue # TODO: This should delete files and retrigger any actions with deleted files
 
                     # Strong Link, Exact same input files
-                    elif set(action.files()) == set(build_event.input_files):
+                    elif set(action_to_run.files()) == set(build_event.input_files):
                         oldest_output = get_oldest_modified_time(build_event.output_files)
                         newest_input = get_newest_modified_time(build_event.input_files)
 
@@ -387,13 +387,13 @@ class Scheduler:
                 # Do the things we need to do with the build log
                 init = False
             else:
-                for action in new_actions:
+                for new_action in new_actions:
                     # TODO: We can probably optimize this lookup
                     for build_event in self.build_events:
                         if build_event is None:
                             continue
 
-                        if action.weak_hash() == build_event.weak_hash():
+                        if new_action.weak_hash() == build_event.weak_hash():
                             delete_build_event(build_event)
                             break
                     
@@ -403,7 +403,7 @@ class Scheduler:
 
         # Process each creator until there are none left
         while len(actions_to_run) > 0:
-            action: Action = actions_to_run.pop()
+            action: Action[Any] = actions_to_run.pop()
 
             input_files = list(action.files())
 
@@ -631,7 +631,7 @@ class Scheduler:
 
         fields = ["filename", "is_updated"] + [Scheduler.get_match_group_column_name(producer=producer, group_name=group_name) for group_name in groups.keys()]
 
-        binds = [filename, 1] + list(groups.values())
+        binds: List[str] = [filename, "1"] + list(groups.values())
 
         # query_string: str = "INSERT INTO {table} ({fields}) VALUES ({value_binds}) ON CONFLICT(filename) DO UPDATE SET is_updated=1".format(
         query_string: str = "INSERT INTO {table} ({fields}) VALUES ({value_binds})".format(
@@ -683,11 +683,14 @@ class Scheduler:
     # Query all of the valid combinations of files that can be used for this
     # producer using the field matches that have been stored in the database.
     ############################################################################
-    # def query_filesets(self, db: sqlite3.Connection, producer_index: int) -> List[Tuple[InputFileDatatype, Dict[str, str]]]:
     def query_filesets(
         self,
         db: sqlite3.Connection,
         producer_index: int
+    # TODO: once we figure out how to better handle the types internally in
+    #   this tool we should get rid of the "Any" here and replace it with a
+    #   real type.
+    #    List[Tuple[InputFileDatatype, Dict[str, str]]]:
     ) -> List[Tuple[Any, Dict[str, str]]]:
         query_string = self.new_filesets_querystring(producer_index)
 
@@ -702,11 +705,10 @@ class Scheduler:
 
             columns = [ x[0] for x in cur.description ]
             columns_lookup = { value: index for index, value in enumerate(columns) }
-            # print(columns_lookup)
 
             for row in cur.fetchall():
 
-                new_element = {}
+                new_element: Dict[str, Union[str, List[str]]] = {}
                 groups: Dict[str, str] = {}
 
                 for new_element_field_name, pattern in producer.input_path_patterns_dict().items():

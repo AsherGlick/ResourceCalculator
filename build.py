@@ -231,8 +231,8 @@ def main() -> None:
         observer = Observer()
 
         event_handler = Handler(q)
-        observer.schedule(event_handler, watch_directory, recursive = True)
-        observer.start()
+        observer.schedule(event_handler, watch_directory, recursive = True)  # type: ignore [no-untyped-call]
+        observer.start()  # type: ignore [no-untyped-call]
         try:
             while True:
                 event_type, src_path = q.get(True)
@@ -253,7 +253,7 @@ def main() -> None:
                     print("Unknown Event", event_type)
 
         except:
-            observer.stop()
+            observer.stop()  # type: ignore [no-untyped-call]
             print("Observer Stopped")
 
         observer.join()

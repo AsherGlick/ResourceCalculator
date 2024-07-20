@@ -606,7 +606,7 @@ def generate_python_parser_class(classname: str, variables: List[Variable]) -> s
     lines.append("        tokenless_keys = {k.value: v for k, v in tuple_tree.items()}")
 
     for variable in variables:
-        varblock = []
+        varblock: List[str] = []
 
         varblock.append("")
         varblock.append("        # Load {name} into a typed object")
@@ -703,7 +703,7 @@ def generate_python_parser_class(classname: str, variables: List[Variable]) -> s
     for variable in variables:
         indent = ""
 
-        varblock: List[str] = []
+        varblock = []
 
         if not variable.always_present:
             varblock.append("        if self.{name} != " + variable.default + ":")
