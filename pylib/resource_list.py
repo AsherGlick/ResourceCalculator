@@ -360,8 +360,8 @@ class ResourceList():
         output = []
         if self.authors != OrderedDict():
             output.append(indent + "authors:")
-            for k, v in self.authors.items():
-                output.append(indent + "  " + k + ": " + yaml_string(v, indent + "  "))
+            for authors_k, authors_v in self.authors.items():
+                output.append(indent + "  " + authors_k + ": " + yaml_string(authors_v, indent + "  "))
         if self.index_page_display_name != "":
             output.append("")
             output.append(indent + "index_page_display_name: " + yaml_string(self.index_page_display_name, indent))
@@ -380,52 +380,52 @@ class ResourceList():
         if self.recipe_types != OrderedDict():
             output.append("")
             output.append(indent + "recipe_types:")
-            for k, v in self.recipe_types.items():
-                output.append(indent + "  " + k + ": " + yaml_string(v, indent + "  "))
+            for recipe_types_k, recipe_types_v in self.recipe_types.items():
+                output.append(indent + "  " + recipe_types_k + ": " + yaml_string(recipe_types_v, indent + "  "))
         if self.requirement_groups != OrderedDict():
             output.append("")
             output.append("requirement_groups:")
-            for i, (k, v) in enumerate(self.requirement_groups.items()):
+            for i, (requirement_groups_k, requirement_groups_v) in enumerate(self.requirement_groups.items()):
                 if i != 0:
                     output.append("")
-                output.append(indent + "  " + k + ":")
-                for item in v:
+                output.append(indent + "  " + requirement_groups_k + ":")
+                for item in requirement_groups_v:
                     output.append(indent + '  - ' + yaml_string(item, indent + '    '))
         if self.stack_sizes != OrderedDict():
             output.append("")
             output.append("stack_sizes:")
-            for k, v in self.stack_sizes.items():
-                output.append(indent + "  " + k + ":")
-                output.append(v.to_yaml(indent + '    '))
+            for stack_sizes_k, stack_sizes_v in self.stack_sizes.items():
+                output.append(indent + "  " + stack_sizes_k + ":")
+                output.append(stack_sizes_v.to_yaml(indent + '    '))
         if self.default_stack_size != "":
             output.append("")
             output.append(indent + "default_stack_size: " + yaml_string(self.default_stack_size, indent))
         if self.resources != OrderedDict():
             output.append("")
             output.append("resources:")
-            for i, (k, v) in enumerate(self.resources.items()):
-                if isinstance(v, Resource):
+            for i, (resources_k, resources_v) in enumerate(self.resources.items()):
+                if isinstance(resources_v, Resource):
                     if i != 0:
                         output.append("")
-                    output.append(indent + "  " + k + ":")
-                    output.append(v.to_yaml(indent + '    '))
+                    output.append(indent + "  " + resources_k + ":")
+                    output.append(resources_v.to_yaml(indent + '    '))
 
-                elif isinstance(v, Heading):
-                    if v.H1 != "":
+                elif isinstance(resources_v, Heading):
+                    if resources_v.H1 != "":
                         output.append("")
                         output.append(indent + "  " + "#" * (78-len(indent)))
-                        line = indent + "  " + k + ": {H1: " + v.H1 + "}"
+                        line = indent + "  " + resources_k + ": {H1: " + resources_v.H1 + "}"
                         line += " " + "#" * (79-len(line))
                         output.append(line)
                         output.append(indent + "  " + "#" * (78-len(indent)))
-                    elif v.H2 != "":
+                    elif resources_v.H2 != "":
                         output.append("")
-                        line = indent + "  " + k + ": {H2: " + v.H2 + "}"
+                        line = indent + "  " + resources_k + ": {H2: " + resources_v.H2 + "}"
                         line += " " + "#" * (79-len(line))
                         output.append(line)
-                    elif v.H3 != "":
+                    elif resources_v.H3 != "":
                         output.append("")
-                        output.append(indent + "  " + k + ": {H3: " + v.H3 + "}")
+                        output.append(indent + "  " + resources_k + ": {H3: " + resources_v.H3 + "}")
 
                 else:
                     raise ValueError
@@ -528,8 +528,8 @@ class StackSize():
             output.append(indent + "extends_from: " + yaml_string(self.extends_from, indent))
         if self.custom_multipliers != OrderedDict():
             output.append(indent + "custom_multipliers:")
-            for k, v in self.custom_multipliers.items():
-                output.append(indent + "  " + k + ": " + str(v))
+            for custom_multipliers_k, custom_multipliers_v in self.custom_multipliers.items():
+                output.append(indent + "  " + custom_multipliers_k + ": " + str(custom_multipliers_v))
         return '\n'.join(output)
 
 
@@ -623,14 +623,14 @@ class Resource():
             output.append(indent + "note: " + yaml_string(self.note, indent))
         if self.recipes != []:
             output.append(indent + "recipes:")
-            for v in self.recipes:
-                line = v.to_yaml(indent + '  ')
+            for recipes_v in self.recipes:
+                line = recipes_v.to_yaml(indent + '  ')
                 line = indent + '- ' + line.removeprefix(indent + '  ')
                 output.append(line)
         if self.custom_stack_multipliers != OrderedDict():
             output.append(indent + "custom_stack_multipliers:")
-            for k, v in self.custom_stack_multipliers.items():
-                output.append(indent + "  " + k + ": " + str(v))
+            for custom_stack_multipliers_k, custom_stack_multipliers_v in self.custom_stack_multipliers.items():
+                output.append(indent + "  " + custom_stack_multipliers_k + ": " + str(custom_stack_multipliers_v))
         return '\n'.join(output)
 
 
@@ -780,7 +780,7 @@ class Recipe():
             output.append(indent + "note: " + yaml_string(self.note, indent))
         if self.requirements != OrderedDict():
             output.append(indent + "requirements:")
-            for k, v in self.requirements.items():
-                output.append(indent + "  " + k + ": " + str(v))
+            for requirements_k, requirements_v in self.requirements.items():
+                output.append(indent + "  " + requirements_k + ": " + str(requirements_v))
         return '\n'.join(output)
 # ENDGENERATOR
