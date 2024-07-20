@@ -12,7 +12,7 @@ from .function_call_tracker import FunctionCall
 class Integration_Tests(unittest.TestCase):
     maxDiff = 999999
 
-    def setUp(self):
+    def setUp(self) -> None:
         read_build_events_patcher = patch.object(Scheduler, '_read_build_events_file')
         self.mocked_read_build_events = read_build_events_patcher.start()
         self.addCleanup(read_build_events_patcher.stop)
@@ -1476,7 +1476,7 @@ class Integration_Tests(unittest.TestCase):
 
 class ConfigurationTests(unittest.TestCase):
     maxDiff = 999999
-    def setUp(self):
+    def setUp(self) -> None:
         read_build_events_patcher = patch.object(Scheduler, '_read_build_events_file')
         self.mocked_read_build_events = read_build_events_patcher.start()
         self.addCleanup(read_build_events_patcher.stop)
@@ -1501,7 +1501,7 @@ class ConfigurationTests(unittest.TestCase):
     # The names of producers need to be unique so they can be referenced in
     # subsequent runs.
     ############################################################################
-    def test_non_unique_producer_name_error(self):
+    def test_non_unique_producer_name_error(self) -> None:
 
         class Input(TypedDict):
             data: str
@@ -1538,7 +1538,7 @@ class ConfigurationTests(unittest.TestCase):
 
 class BuildLogTests(unittest.TestCase):
     maxDiff = 999999
-    def setUp(self):
+    def setUp(self) -> None:
         read_build_events_patcher = patch.object(Scheduler, '_read_build_events_file')
         self.mocked_read_build_events = read_build_events_patcher.start()
         self.addCleanup(read_build_events_patcher.stop)
@@ -1550,7 +1550,7 @@ class BuildLogTests(unittest.TestCase):
         self.mocked_write_build_events = write_build_events_patcher.start()
         self.addCleanup(write_build_events_patcher.stop)
         self.write_build_log_result: Any = None
-        def write_build_log_side_effect(log: Any):
+        def write_build_log_side_effect(log: Any) -> None:
             self.write_build_log_result = log
             return None
         self.mocked_write_build_events.side_effect = write_build_log_side_effect
@@ -1576,7 +1576,7 @@ class BuildLogTests(unittest.TestCase):
     ############################################################################
     #
     ############################################################################
-    def test_init_with_strong_associated_actions_newer_output_files(self):
+    def test_init_with_strong_associated_actions_newer_output_files(self) -> None:
 
         class Input(TypedDict):
             data_file: str
@@ -1644,7 +1644,7 @@ class BuildLogTests(unittest.TestCase):
             [],
         )
 
-    def test_init_with_strong_associated_actions_older_output_files(self):
+    def test_init_with_strong_associated_actions_older_output_files(self) -> None:
         class Input(TypedDict):
             data_file: str
 
@@ -1740,7 +1740,7 @@ class BuildLogTests(unittest.TestCase):
             ],
         )
 
-    def test_init_with_strong_associated_actions_no_output_files(self):
+    def test_init_with_strong_associated_actions_no_output_files(self) -> None:
         class Input(TypedDict):
             data_file: str
 
@@ -1834,7 +1834,7 @@ class BuildLogTests(unittest.TestCase):
             ],
         )
 
-    def test_init_with_weak_associated_actions(self):
+    def test_init_with_weak_associated_actions(self) -> None:
         class Input(TypedDict):
             data_file: List[str]
 
@@ -1910,7 +1910,7 @@ class BuildLogTests(unittest.TestCase):
             ["output_one.txt"],
         )
 
-    def test_init_with_no_associated_actions(self):
+    def test_init_with_no_associated_actions(self) -> None:
         class Input(TypedDict):
             data_file: str
 
@@ -2011,7 +2011,7 @@ class BuildLogTests(unittest.TestCase):
     #
     #
     ############################################################################
-    def test_delete_action_with_strong_associated_build_log(self):
+    def test_delete_action_with_strong_associated_build_log(self) -> None:
         class Input(TypedDict):
             data_file: str
 
@@ -2132,7 +2132,7 @@ class BuildLogTests(unittest.TestCase):
     # Tests that we can properly delete files that are weakly associated
     # TODO: This might be a bad test because we are using some not-great regexes
     ############################################################################
-    def test_delete_action_with_weak_associated_build_log(self):
+    def test_delete_action_with_weak_associated_build_log(self) -> None:
         class Input(TypedDict):
             data_file: str
 
@@ -2249,7 +2249,7 @@ class BuildLogTests(unittest.TestCase):
 
 
 
-    def test_removing_file_from_action_input_array(self):
+    def test_removing_file_from_action_input_array(self) -> None:
         class Input(TypedDict):
             data_file: List[str]
 
