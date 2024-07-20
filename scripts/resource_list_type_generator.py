@@ -1,7 +1,7 @@
 import sys
 from typing import List, Tuple, Literal, Union
 import shutil
-
+from dataclasses import dataclass
 
 VariableType_Scalar = Union[Literal["str"], Literal["int"]]
 VariableType_OrderedDict = Tuple[Literal["OrderedDict"], "VariableType", "VariableType"]
@@ -18,57 +18,68 @@ def main() -> None:
                 Variable(
                     name="authors",
                     type="OrderedDict[str, str]",
-                    default="OrderedDict()"
+                    default="OrderedDict()",
                 ),
                 Variable(
                     name="index_page_display_name",
                     type="str",
-                    default='""'
-                ),
-                Variable(
-                    name="recipe_types",
-                    type="OrderedDict[str, str]",
-                    default="OrderedDict()"
-                ),
-                Variable(
-                    name="stack_sizes",
-                    type="OrderedDict[str, StackSize]",
-                    default="OrderedDict()"
-                ),
-                Variable(
-                    name="default_stack_size",
-                    type="str",
-                    default='""'
-                ),
-                Variable(
-                    name="resources",
-                    type="OrderedDict[str, Union[Resource, Heading]]",
-                    default="OrderedDict()"
+                    default='""',
+                    blank_lines_above_field=1,
                 ),
                 Variable(
                     name="game_version",
                     type="str",
-                    default='""'
-                ),
-                Variable(
-                    name="banner_message",
-                    type="str",
-                    default='""'
-                ),
-                Variable(
-                    name="requirement_groups",
-                    type="OrderedDict[str, List[str]]",
-                    default="OrderedDict()"
+                    default='""',
+                    blank_lines_above_field=1,
                 ),
                 Variable(
                     name="row_group_count",
                     type="int",
                     default="1",
+                    blank_lines_above_field=1,
                 ),
                 Variable(
                     name="note",
                     type="str",
-                    default='""'
+                    default='""',
+                    blank_lines_above_field=1,
+                ),
+                Variable(
+                    name="banner_message",
+                    type="str",
+                    default='""',
+                    blank_lines_above_field=1,
+                ),
+
+                Variable(
+                    name="recipe_types",
+                    type="OrderedDict[str, str]",
+                    default="OrderedDict()",
+                    blank_lines_above_field=1,
+                ),
+                Variable(
+                    name="requirement_groups",
+                    type="OrderedDict[str, List[str]]",
+                    default="OrderedDict()",
+                    blank_lines_above_field=1,
+                ),
+                Variable(
+                    name="stack_sizes",
+                    type="OrderedDict[str, StackSize]",
+                    default="OrderedDict()",
+                    blank_lines_above_field=1,
+                ),
+                Variable(
+                    name="default_stack_size",
+                    type="str",
+                    default='""',
+                    blank_lines_above_field=1,
+                ),
+                Variable(
+                    name="resources",
+                    type="OrderedDict[str, Union[Resource, Heading]]",
+                    default="OrderedDict()",
+                    blank_lines_above_field=1,
                 ),
             ]
         ),
@@ -83,6 +94,11 @@ def main() -> None:
                     default="0"
                 ),
                 Variable(
+                    name="note",
+                    type="str",
+                    default='""'
+                ),
+                Variable(
                     name="plural",
                     type="str",
                     default='""'
@@ -90,13 +106,10 @@ def main() -> None:
                 Variable(
                     name="extends_from",
                     type="Optional[str]",
-                    default="None"
+                    default="None",
+                    always_present=True,
                 ),
-                Variable(
-                    name="note",
-                    type="str",
-                    default='""'
-                ),
+
                 # custom_multipliers is a piece of data that is filled in via
                 # Resource.custom_stack_multipliers, but it lives here for lookup
                 Variable(
@@ -112,16 +125,6 @@ def main() -> None:
             classname="Resource",
             variables=[
                 Variable(
-                    name="recipes",
-                    type="List[Recipe]",
-                    default="[]"
-                ),
-                Variable(
-                    name="custom_stack_multipliers",
-                    type="OrderedDict[str, int]",
-                    default="OrderedDict()"
-                ),
-                Variable(
                     name="custom_simplename",
                     type="str",
                     default='""',
@@ -135,6 +138,16 @@ def main() -> None:
                     name="note",
                     type="str",
                     default='""'
+                ),
+                Variable(
+                    name="recipes",
+                    type="List[Recipe]",
+                    default="[]"
+                ),
+                Variable(
+                    name="custom_stack_multipliers",
+                    type="OrderedDict[str, int]",
+                    default="OrderedDict()"
                 ),
             ]
         ),
@@ -172,14 +185,14 @@ def main() -> None:
                     default='""'
                 ),
                 Variable(
-                    name="requirements",
-                    type="OrderedDict[str, int]",
-                    default="OrderedDict()"
-                ),
-                Variable(
                     name="note",
                     type="str",
                     default='""'
+                ),
+                Variable(
+                    name="requirements",
+                    type="OrderedDict[str, int]",
+                    default="OrderedDict()"
                 ),
             ]
         )
@@ -392,22 +405,20 @@ def replace_text(starting_token: str, ending_token: str, new_text: str, filepath
 ################################################################################
 # A data class to hold all the relevent fields to define a variable
 ################################################################################
+@dataclass
 class Variable():
-    def __init__(
-        self,
-        name: str,
-        type: str,
-        default: str,
-        ephemeral: bool = False,
-        line_above: bool = False,
-        split_elems: bool = False, # Style for Lists
-    ) -> None:
-        self.name = name
-        self.type = type
-        self.default = default
-        self.ephemeral = ephemeral
-        self.line_above = line_above
-        self.split_elems = split_elems
+    name: str
+    type: str
+    default: str
+
+    blank_lines_above_field: int = 0
+    always_present: bool = False
+
+
+    # Old Variables
+    ephemeral: bool = False
+    line_above: bool = False
+    split_elems: bool = False # Style for Lists
 
 
 ################################################################################
@@ -684,6 +695,105 @@ def generate_python_parser_class(classname: str, variables: List[Variable]) -> s
     for variable in variables:
         lines.append("            \"{name}\": get_primitive(self.{name}),".format(name=variable.name))
     lines.append("        }")
+    lines.append("")
+
+
+    lines.append("    def to_yaml(self, indent: str = \"\") -> str:")
+    lines.append("        output = []")
+    for variable in variables:
+        indent = ""
+
+        varblock: List[str] = []
+
+        if not variable.always_present:
+            varblock.append("        if self.{name} != " + variable.default + ":")
+            indent = "    "
+
+        for _ in range(variable.blank_lines_above_field):
+            varblock.append(indent + "        output.append(\"\")")
+
+        if variable.type == "str":
+            varblock.append(indent + "        output.append(indent + \"{name}: \" + yaml_string(self.{name}, indent))")
+        elif variable.type == "bool":
+            varblock.append(indent + "        output.append(indent + \"{name}: \" + str(self.{name}))")
+        elif variable.type == "Optional[str]":
+            if variable.default is not None or variable.always_present is True:
+                varblock.append(indent + "        if self.{name} is None:")
+                varblock.append(indent + "            output.append(indent + \"{name}: null\")")
+                varblock.append(indent + "        else:")
+                varblock.append(indent + "            output.append(indent + \"{name}: \" + yaml_string(self.{name}, indent))")
+            else:
+                varblock.append(indent + "        output.append(indent + \"{name}: \" + yaml_string(self.{name}, indent))")
+
+        elif variable.type == "OrderedDict[str, str]":
+            varblock.append(indent + "        output.append(indent + \"{name}:\")")
+            varblock.append(indent + "        for k, v in self.{name}.items():")
+            varblock.append(indent + "            output.append(indent + \"  \" + k + \": \" + yaml_string(v, indent + \"  \"))")
+        elif variable.type == "OrderedDict[str, int]":
+            varblock.append(indent + "        output.append(indent + \"{name}:\")")
+            varblock.append(indent + "        for k, v in self.{name}.items():")
+            varblock.append(indent + "            output.append(indent + \"  \" + k + \": \" + str(v))")
+        elif variable.type == "OrderedDict[str, StackSize]":
+            varblock.append(indent + "        output.append(\"{name}:\")")
+            varblock.append(indent + "        for k, v in self.{name}.items():")
+            varblock.append(indent + "            output.append(indent + \"  \" + k + \":\")")
+            varblock.append(indent + "            output.append(v.to_yaml(indent + '    '))")
+
+        elif variable.type == "OrderedDict[str, Union[Resource, Heading]]":
+            varblock.append(indent + "        output.append(\"{name}:\")")
+            varblock.append(indent + "        for i, (k, v) in enumerate(self.{name}.items()):")
+            varblock.append(indent + "            if isinstance(v, Resource):")
+            varblock.append(indent + "                if i != 0:")
+            varblock.append(indent + "                    output.append(\"\")")
+            varblock.append(indent + "                output.append(indent + \"  \" + k + \":\")")
+            varblock.append(indent + "                output.append(v.to_yaml(indent + '    '))")
+            varblock.append("")
+            varblock.append(indent + "            elif isinstance(v, Heading):")
+            varblock.append(indent + "                if v.H1 != \"\":")
+            varblock.append(indent + "                    output.append(\"\")")
+            varblock.append(indent + "                    output.append(indent + \"  \" + \"#\" * (78-len(indent)))")
+            varblock.append(indent + "                    line = indent + \"  \" + k + \": {{H1: \" + v.H1 + \"}}\"")
+            varblock.append(indent + "                    line += \" \" + \"#\" * (79-len(line))")
+            varblock.append(indent + "                    output.append(line)")
+            varblock.append(indent + "                    output.append(indent + \"  \" + \"#\" * (78-len(indent)))")
+            varblock.append(indent + "                elif v.H2 != \"\":")
+            varblock.append(indent + "                    output.append(\"\")")
+            varblock.append(indent + "                    line = indent + \"  \" + k + \": {{H2: \" + v.H2 + \"}}\"")
+            varblock.append(indent + "                    line += \" \" + \"#\" * (79-len(line))")
+            varblock.append(indent + "                    output.append(line)")
+            varblock.append(indent + "                elif v.H3 != \"\":")
+            varblock.append(indent + "                    output.append(\"\")")
+            varblock.append(indent + "                    output.append(indent + \"  \" + k + \": {{H3: \" + v.H3 + \"}}\")")
+            varblock.append("")
+            varblock.append(indent + "            else:")
+            varblock.append(indent + "                raise ValueError")
+
+        elif variable.type == "OrderedDict[str, List[str]]":
+            varblock.append(indent + "        output.append(\"{name}:\")")
+            varblock.append(indent + "        for i, (k, v) in enumerate(self.{name}.items()):")
+            varblock.append(indent + "            if i != 0:")
+            varblock.append(indent + "                output.append(\"\")")
+            varblock.append(indent + "            output.append(indent + \"  \" + k + \":\")")
+            varblock.append(indent + "            for item in v:")
+            varblock.append(indent + "                output.append(indent + '  - ' + yaml_string(item, indent + '    '))")
+
+        elif variable.type == "int":
+            varblock.append(indent + "        output.append(indent + \"{name}: \" + str(self.{name}))")
+
+        elif variable.type == "List[Recipe]":
+            varblock.append(indent + "        output.append(indent + \"{name}:\")")
+            varblock.append(indent + "        for v in self.{name}:")
+            varblock.append(indent + "            line = v.to_yaml(indent + '  ')")
+            varblock.append(indent + "            line = indent + '- ' + line.removeprefix(indent + '  ')")
+            varblock.append(indent + "            output.append(line)")
+
+        else:
+            print("UNKNOWN VARIABLE TYPE", variable.type, file=sys.stderr)
+
+        lines.append("\n".join(varblock).format(name=variable.name))
+
+    lines.append("        return '\\n'.join(output)")
+
     lines.append("")
 
     return "\n".join(lines)
