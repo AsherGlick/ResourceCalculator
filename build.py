@@ -2,7 +2,7 @@ import argparse
 import os
 from typing import Dict, Tuple, List
 from watchdog.observers import Observer
-from watchdog.events import FileSystemEventHandler
+from watchdog.events import FileSystemEvent, FileSystemEventHandler
 import queue
 
 from pylib.calculator_producer import calculator_producers
@@ -226,7 +226,7 @@ def main() -> None:
     watch_directory = "."
 
     if args.watch:
-        q = queue.Queue()
+        q: queue.Queue[Tuple[str, str]] = queue.Queue()
 
         observer = Observer()
 
@@ -244,7 +244,8 @@ def main() -> None:
                 if event_type == 'created' or event_type == 'modified':
                     scheduler.add_or_update_files([src_path])
                 elif event_type == 'deleted':
-                    scheduler.delete_files([src_path])
+                    # scheduler.delete_files([src_path])
+                    pass
                 elif event_type == 'closed':
                     # A file was closed, does not seem as useful as modified
                     pass
@@ -259,9 +260,12 @@ def main() -> None:
 
 
 class Handler(FileSystemEventHandler):
-    def __init__(self, event_queue: queue.Queue):
+    event_queue: queue.Queue[Tuple[str, str]]
+
+    def __init__(self, event_queue: queue.Queue[Tuple[str, str]]):
         self.event_queue = event_queue
-    def on_any_event(self, event):
+
+    def on_any_event(self, event: FileSystemEvent) ->None:
 
         if event.is_directory:
             return
