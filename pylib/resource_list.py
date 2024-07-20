@@ -130,10 +130,10 @@ def yaml_string(string: str, indent: str):
     if ":" in string:
         return '"' + string.replace('\\', '\\\\').replace('"', '\\"') + '"'
 
-    if '"' in string:
+    if string.startswith('"'):
         return '"' + string.replace('\\', '\\\\').replace('"', '\\"') + '"'
 
-    if "'" in string:
+    if string.startswith("'"):
         return '"' + string + '"'
 
     if string == "":

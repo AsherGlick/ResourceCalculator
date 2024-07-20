@@ -4,7 +4,7 @@ authors:
 
 index_page_display_name: The Survivalists
 
-game_version: 1.1.13.565.740066
+game_version: "1.1.13.565.740066"
 
 recipe_types:
   Campfire: Craft using a Campfire {IN_ITEMS} into {OUT_ITEM}

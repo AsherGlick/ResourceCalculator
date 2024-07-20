@@ -1097,12 +1097,12 @@ requirement_groups:
 stack_sizes:
   Double Chest:
     quantity_multiplier: 54
-    note: 9x6 Stacks
+    note: "9x6 Stacks"
     plural: Double Chests
     extends_from: Stack
   Shulker Box:
     quantity_multiplier: 27
-    note: 9x3 Stacks
+    note: "9x3 Stacks"
     plural: Shulker Boxes
     extends_from: Stack
   Stack:

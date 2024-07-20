@@ -2284,7 +2284,7 @@ resources:
     - recipe_type: Raw Resource
 
   Combined Ring:
-    note: "Ideally this could leverage a \"unique\" recipe since the rings must be different"
+    note: Ideally this could leverage a "unique" recipe since the rings must be different
     recipes:
     - output: 1
       recipe_type: Forge (create)

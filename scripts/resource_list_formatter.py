@@ -9,18 +9,45 @@ import yaml
 from pylib.yaml_token_load import ordered_load
 import yaml
 import difflib
+import argparse
+import os
 
 
 def main():
-    input_filepath = sys.argv[1]
-    output_filepath = sys.argv[1] + ".formatted"
+    parser = argparse.ArgumentParser(
+        description='Format resources.yaml files'
+    )
+    parser.add_argument("--all", action="store_true", help="Formats all of the yaml files in the resource_lists directory")
+    parser.add_argument("path", nargs='?', help="Formats a single file")
+    parser.add_argument("--inline", action="store_true", help="Formats a file and writes it to the file")
+    args = parser.parse_args()
+
+    if args.all:
+        for calculator in os.listdir("../resource_lists"):
+            path = os.path.join("../resource_lists", calculator, "resources.yaml")
+            print(path)
+            format_single_file(path, same_file=True)
+
+    elif args.path is not None:
+        format_single_file(args.path, args.inline)
+
+
+def format_single_file(input_filepath: str, same_file: bool=False):
+
+    if same_file:
+        output_filepath = input_filepath
+    else:
+        output_filepath = input_filepath + ".formatted"
+
+
     errors = []
     with open(input_filepath, 'r', encoding="utf_8") as f:
         yaml_data = ordered_load(f)
         resource_list = ResourceList()
         errors += resource_list.parse(yaml_data)
 
-    print(errors)
+    if len(errors) > 0:
+        print("There was an issue reading the file", input_filepath, errors)
 
     with open(output_filepath, 'w') as f:
         f.write("---\n")
