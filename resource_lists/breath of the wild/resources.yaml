@@ -2,19 +2,22 @@
 authors:
   Asher: "https://aglick.com"
 
-index_page_display_name: "Breath of<br>the Wild"
+index_page_display_name: Breath of<br>the Wild
+
 row_group_count: 5
 
 recipe_types:
-  Great Fairy: "Give {IN_ITEMS} to the Great Fairy to get {OUT_ITEM}"
-  Buying: "Buy {OUT_ITEM} for {IN_ITEMS}"
+  Great Fairy: Give {IN_ITEMS} to the Great Fairy to get {OUT_ITEM}
+  Buying: Buy {OUT_ITEM} for {IN_ITEMS}
 
 resources:
+
   ##############################################################################
   _a: {H1: Clothing} ###########################################################
   ##############################################################################
 
   _b: {H2: Ancient Armor Set} ##################################################
+
   Ancient Helm:
     recipes:
     - output: 1
@@ -28,6 +31,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ancient Helm: 0
+
   Ancient Helm ★:
     custom_simplename: ancienthelm1
     recipes:
@@ -41,6 +45,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ancient Helm ★: 0
+
   Ancient Helm ★★:
     custom_simplename: ancienthelm2
     recipes:
@@ -54,6 +59,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ancient Helm ★★: 0
+
   Ancient Helm ★★★:
     custom_simplename: ancienthelm3
     recipes:
@@ -67,6 +73,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ancient Helm ★★★: 0
+
   Ancient Helm ★★★★:
     custom_simplename: ancienthelm4
     recipes:
@@ -94,6 +101,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ancient Cuirass: 0
+
   Ancient Cuirass ★:
     custom_simplename: ancientcuirass1
     recipes:
@@ -107,6 +115,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ancient Cuirass ★: 0
+
   Ancient Cuirass ★★:
     custom_simplename: ancientcuirass2
     recipes:
@@ -120,6 +129,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ancient Cuirass ★★: 0
+
   Ancient Cuirass ★★★:
     custom_simplename: ancientcuirass3
     recipes:
@@ -133,6 +143,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ancient Cuirass ★★★: 0
+
   Ancient Cuirass ★★★★:
     custom_simplename: ancientcuirass4
     recipes:
@@ -160,6 +171,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ancient Greaves: 0
+
   Ancient Greaves ★:
     custom_simplename: ancientgreaves1
     recipes:
@@ -173,6 +185,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ancient Greaves ★: 0
+
   Ancient Greaves ★★:
     custom_simplename: ancientgreaves2
     recipes:
@@ -186,6 +199,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ancient Greaves ★★: 0
+
   Ancient Greaves ★★★:
     custom_simplename: ancientgreaves3
     recipes:
@@ -199,6 +213,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ancient Greaves ★★★: 0
+
   Ancient Greaves ★★★★:
     custom_simplename: ancientgreaves4
     recipes:
@@ -225,6 +240,7 @@ resources:
       recipe_type: Buying
       requirements:
         Rupee: -4000
+
   Barbarian Helm ★:
     custom_simplename: barbarianhelm1
     recipes:
@@ -237,6 +253,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Barbarian Helm ★: 0
+
   Barbarian Helm ★★:
     custom_simplename: barbarianhelm2
     recipes:
@@ -250,6 +267,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Barbarian Helm ★★: 0
+
   Barbarian Helm ★★★:
     custom_simplename: barbarianhelm3
     recipes:
@@ -263,6 +281,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Barbarian Helm ★★★: 0
+
   Barbarian Helm ★★★★:
     custom_simplename: barbarianhelm4
     recipes:
@@ -287,6 +306,7 @@ resources:
       recipe_type: Buying
       requirements:
         Rupee: -4000
+
   Barbarian Armor ★:
     custom_simplename: barbarianarmor1
     recipes:
@@ -299,6 +319,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Barbarian Armor ★: 0
+
   Barbarian Armor ★★:
     custom_simplename: barbarianarmor2
     recipes:
@@ -312,6 +333,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Barbarian Armor ★★: 0
+
   Barbarian Armor ★★★:
     custom_simplename: barbarianarmor3
     recipes:
@@ -325,6 +347,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Barbarian Armor ★★★: 0
+
   Barbarian Armor ★★★★:
     custom_simplename: barbarianarmor4
     recipes:
@@ -349,6 +372,7 @@ resources:
       recipe_type: Buying
       requirements:
         Rupee: -4000
+
   Barbarian Leg Wraps ★:
     custom_simplename: barbarianlegwraps1
     recipes:
@@ -361,6 +385,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Barbarian Leg Wraps ★: 0
+
   Barbarian Leg Wraps ★★:
     custom_simplename: barbarianlegwraps2
     recipes:
@@ -374,6 +399,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Barbarian Leg Wraps ★★: 0
+
   Barbarian Leg Wraps ★★★:
     custom_simplename: barbarianlegwraps3
     recipes:
@@ -387,6 +413,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Barbarian Leg Wraps ★★★: 0
+
   Barbarian Leg Wraps ★★★★:
     custom_simplename: barbarianlegwraps4
     recipes:
@@ -402,12 +429,14 @@ resources:
         Barbarian Leg Wraps ★★★★: 0
 
   _d: {H2: Hero Set (Legend of Zelda Amiibo)} ##################################
+
   Cap of the Hero:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Cap of the Hero: 0
+
   Cap of the Hero ★:
     custom_simplename: capofthehero1
     recipes:
@@ -421,6 +450,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cap of the Hero ★: 0
+
   Cap of the Hero ★★:
     custom_simplename: capofthehero2
     recipes:
@@ -434,6 +464,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cap of the Hero ★★: 0
+
   Cap of the Hero ★★★:
     custom_simplename: capofthehero3
     recipes:
@@ -447,6 +478,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cap of the Hero ★★★: 0
+
   Cap of the Hero ★★★★:
     custom_simplename: capofthehero4
     recipes:
@@ -467,6 +499,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of the Hero: 0
+
   Tunic of the Hero ★:
     custom_simplename: tunicofthehero1
     recipes:
@@ -480,6 +513,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of the Hero ★: 0
+
   Tunic of the Hero ★★:
     custom_simplename: tunicofthehero2
     recipes:
@@ -493,6 +527,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of the Hero ★★: 0
+
   Tunic of the Hero ★★★:
     custom_simplename: tunicofthehero3
     recipes:
@@ -506,6 +541,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of the Hero ★★★: 0
+
   Tunic of the Hero ★★★★:
     custom_simplename: tunicofthehero4
     recipes:
@@ -526,6 +562,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of the Hero: 0
+
   Trousers of the Hero ★:
     custom_simplename: trousersofthehero1
     recipes:
@@ -539,6 +576,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of the Hero ★: 0
+
   Trousers of the Hero ★★:
     custom_simplename: trousersofthehero2
     recipes:
@@ -552,6 +590,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of the Hero ★★: 0
+
   Trousers of the Hero ★★★:
     custom_simplename: trousersofthehero3
     recipes:
@@ -565,6 +604,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of the Hero ★★★: 0
+
   Trousers of the Hero ★★★★:
     custom_simplename: trousersofthehero4
     recipes:
@@ -580,12 +620,14 @@ resources:
         Trousers of the Hero ★★★★: 0
 
   _e: {H2: Skyward Set (Amiibo Skyward Sword)} #################################
+
   Cap of the Sky:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Cap of the Sky: 0
+
   Cap of the Sky ★:
     custom_simplename: capofthesky1
     recipes:
@@ -599,6 +641,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cap of the Sky ★: 0
+
   Cap of the Sky ★★:
     custom_simplename: capofthesky2
     recipes:
@@ -612,6 +655,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cap of the Sky ★★: 0
+
   Cap of the Sky ★★★:
     custom_simplename: capofthesky3
     recipes:
@@ -625,6 +669,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cap of the Sky ★★★: 0
+
   Cap of the Sky ★★★★:
     custom_simplename: capofthesky4
     recipes:
@@ -645,6 +690,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of the Sky: 0
+
   Tunic of the Sky ★:
     custom_simplename: tunicofthesky1
     recipes:
@@ -658,6 +704,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of the Sky ★: 0
+
   Tunic of the Sky ★★:
     custom_simplename: tunicofthesky2
     recipes:
@@ -671,6 +718,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of the Sky ★★: 0
+
   Tunic of the Sky ★★★:
     custom_simplename: tunicofthesky3
     recipes:
@@ -684,6 +732,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of the Sky ★★★: 0
+
   Tunic of the Sky ★★★★:
     custom_simplename: tunicofthesky4
     recipes:
@@ -704,6 +753,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of the Sky: 0
+
   Trousers of the Sky ★:
     custom_simplename: trousersofthesky1
     recipes:
@@ -717,6 +767,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of the Sky ★: 0
+
   Trousers of the Sky ★★:
     custom_simplename: trousersofthesky2
     recipes:
@@ -730,6 +781,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of the Sky ★★: 0
+
   Trousers of the Sky ★★★:
     custom_simplename: trousersofthesky3
     recipes:
@@ -743,6 +795,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of the Sky ★★★: 0
+
   Trousers of the Sky ★★★★:
     custom_simplename: trousersofthesky4
     recipes:
@@ -758,12 +811,14 @@ resources:
         Trousers of the Sky ★★★★: 0
 
   _f: {H2: Wild set (breath of the wild shrine reward)} ########################
+
   Cap of the Wild:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Cap of the Wild: 0
+
   Cap of the Wild ★:
     custom_simplename: capofthewild1
     recipes:
@@ -777,6 +832,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cap of the Wild ★: 0
+
   Cap of the Wild ★★:
     custom_simplename: capofthewild2
     recipes:
@@ -790,6 +846,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cap of the Wild ★★: 0
+
   Cap of the Wild ★★★:
     custom_simplename: capofthewild3
     recipes:
@@ -803,6 +860,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cap of the Wild ★★★: 0
+
   Cap of the Wild ★★★★:
     custom_simplename: capofthewild4
     recipes:
@@ -823,6 +881,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of the Wild: 0
+
   Tunic of the Wild ★:
     custom_simplename: tunicofthewild1
     recipes:
@@ -836,6 +895,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of the Wild ★: 0
+
   Tunic of the Wild ★★:
     custom_simplename: tunicofthewild2
     recipes:
@@ -849,6 +909,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of the Wild ★★: 0
+
   Tunic of the Wild ★★★:
     custom_simplename: tunicofthewild3
     recipes:
@@ -862,6 +923,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of the Wild ★★★: 0
+
   Tunic of the Wild ★★★★:
     custom_simplename: tunicofthewild4
     recipes:
@@ -882,6 +944,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of the Wild: 0
+
   Trousers of the Wild ★:
     custom_simplename: trousersofthewild1
     recipes:
@@ -895,6 +958,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of the Wild ★: 0
+
   Trousers of the Wild ★★:
     custom_simplename: trousersofthewild2
     recipes:
@@ -908,6 +972,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of the Wild ★★: 0
+
   Trousers of the Wild ★★★:
     custom_simplename: trousersofthewild3
     recipes:
@@ -921,6 +986,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of the Wild ★★★: 0
+
   Trousers of the Wild ★★★★:
     custom_simplename: trousersofthewild4
     recipes:
@@ -935,7 +1001,6 @@ resources:
       requirements:
         Trousers of the Wild ★★★★: 0
 
-
   _g: {H2: Wind Set (skyward sword)} ###########################################
 
   Cap of the Wind:
@@ -944,6 +1009,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cap of the Wind: 0
+
   Cap of the Wind ★:
     custom_simplename: capofthewind1
     recipes:
@@ -957,6 +1023,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cap of the Wind ★: 0
+
   Cap of the Wind ★★:
     custom_simplename: capofthewind2
     recipes:
@@ -970,6 +1037,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cap of the Wind ★★: 0
+
   Cap of the Wind ★★★:
     custom_simplename: capofthewind3
     recipes:
@@ -983,6 +1051,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cap of the Wind ★★★: 0
+
   Cap of the Wind ★★★★:
     custom_simplename: capofthewind4
     recipes:
@@ -1003,6 +1072,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of the Wind: 0
+
   Tunic of the Wind ★:
     custom_simplename: tunicofthewind1
     recipes:
@@ -1016,6 +1086,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of the Wind ★: 0
+
   Tunic of the Wind ★★:
     custom_simplename: tunicofthewind2
     recipes:
@@ -1029,6 +1100,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of the Wind ★★: 0
+
   Tunic of the Wind ★★★:
     custom_simplename: tunicofthewind3
     recipes:
@@ -1042,6 +1114,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of the Wind ★★★: 0
+
   Tunic of the Wind ★★★★:
     custom_simplename: tunicofthewind4
     recipes:
@@ -1062,6 +1135,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of the Wind: 0
+
   Trousers of the Wind ★:
     custom_simplename: trousersofthewind1
     recipes:
@@ -1075,6 +1149,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of the Wind ★: 0
+
   Trousers of the Wind ★★:
     custom_simplename: trousersofthewind2
     recipes:
@@ -1088,6 +1163,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of the Wind ★★: 0
+
   Trousers of the Wind ★★★:
     custom_simplename: trousersofthewind3
     recipes:
@@ -1101,6 +1177,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of the Wind ★★★: 0
+
   Trousers of the Wind ★★★★:
     custom_simplename: trousersofthewind4
     recipes:
@@ -1116,12 +1193,14 @@ resources:
         Trousers of the Wind ★★★★: 0
 
   _h: {H2: Time Set (Ocarina of time amiibo)} ##################################
+
   Cap of Time:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Cap of Time: 0
+
   Cap of Time ★:
     custom_simplename: capoftime1
     recipes:
@@ -1135,6 +1214,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cap of Time ★: 0
+
   Cap of Time ★★:
     custom_simplename: capoftime2
     recipes:
@@ -1148,6 +1228,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cap of Time ★★: 0
+
   Cap of Time ★★★:
     custom_simplename: capoftime3
     recipes:
@@ -1161,6 +1242,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cap of Time ★★★: 0
+
   Cap of Time ★★★★:
     custom_simplename: capoftime4
     recipes:
@@ -1181,6 +1263,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of Time: 0
+
   Tunic of Time ★:
     custom_simplename: tunicoftime1
     recipes:
@@ -1194,6 +1277,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of Time ★: 0
+
   Tunic of Time ★★:
     custom_simplename: tunicoftime2
     recipes:
@@ -1207,6 +1291,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of Time ★★: 0
+
   Tunic of Time ★★★:
     custom_simplename: tunicoftime3
     recipes:
@@ -1220,6 +1305,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of Time ★★★: 0
+
   Tunic of Time ★★★★:
     custom_simplename: tunicoftime4
     recipes:
@@ -1240,6 +1326,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of Time: 0
+
   Trousers of Time ★:
     custom_simplename: trousersoftime1
     recipes:
@@ -1253,6 +1340,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of Time ★: 0
+
   Trousers of Time ★★:
     custom_simplename: trousersoftime2
     recipes:
@@ -1266,6 +1354,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of Time ★★: 0
+
   Trousers of Time ★★★:
     custom_simplename: trousersoftime3
     recipes:
@@ -1279,6 +1368,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of Time ★★★: 0
+
   Trousers of Time ★★★★:
     custom_simplename: trousersoftime4
     recipes:
@@ -1294,12 +1384,14 @@ resources:
         Trousers of Time ★★★★: 0
 
   _i: {H2: Wind Set (skyward sword)} ###########################################
+
   Cap of Twilight:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Cap of Twilight: 0
+
   Cap of Twilight ★:
     custom_simplename: capoftwilight1
     recipes:
@@ -1313,6 +1405,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cap of Twilight ★: 0
+
   Cap of Twilight ★★:
     custom_simplename: capoftwilight2
     recipes:
@@ -1326,6 +1419,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cap of Twilight ★★: 0
+
   Cap of Twilight ★★★:
     custom_simplename: capoftwilight3
     recipes:
@@ -1339,6 +1433,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cap of Twilight ★★★: 0
+
   Cap of Twilight ★★★★:
     custom_simplename: capoftwilight4
     recipes:
@@ -1359,6 +1454,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of Twilight: 0
+
   Tunic of Twilight ★:
     custom_simplename: tunicoftwilight1
     recipes:
@@ -1372,6 +1468,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of Twilight ★: 0
+
   Tunic of Twilight ★★:
     custom_simplename: tunicoftwilight2
     recipes:
@@ -1385,6 +1482,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of Twilight ★★: 0
+
   Tunic of Twilight ★★★:
     custom_simplename: tunicoftwilight3
     recipes:
@@ -1398,6 +1496,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Tunic of Twilight ★★★: 0
+
   Tunic of Twilight ★★★★:
     custom_simplename: tunicoftwilight4
     recipes:
@@ -1418,6 +1517,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of Twilight: 0
+
   Trousers of Twilight ★:
     custom_simplename: trousersoftwilight1
     recipes:
@@ -1431,6 +1531,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of Twilight ★: 0
+
   Trousers of Twilight ★★:
     custom_simplename: trousersoftwilight2
     recipes:
@@ -1444,6 +1545,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of Twilight ★★: 0
+
   Trousers of Twilight ★★★:
     custom_simplename: trousersoftwilight3
     recipes:
@@ -1457,6 +1559,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Trousers of Twilight ★★★: 0
+
   Trousers of Twilight ★★★★:
     custom_simplename: trousersoftwilight4
     recipes:
@@ -1471,14 +1574,15 @@ resources:
       requirements:
         Trousers of Twilight ★★★★: 0
 
-
   _j: {H2: Climbers Set} #######################################################
+
   Climber's Bandanna:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Climber's Bandanna: 0
+
   Climber's Bandanna ★:
     custom_simplename: climbersbandanna1
     recipes:
@@ -1492,6 +1596,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Climber's Bandanna ★: 0
+
   Climber's Bandanna ★★:
     custom_simplename: climbersbandanna2
     recipes:
@@ -1505,6 +1610,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Climber's Bandanna ★★: 0
+
   Climber's Bandanna ★★★:
     custom_simplename: climbersbandanna3
     recipes:
@@ -1518,6 +1624,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Climber's Bandanna ★★★: 0
+
   Climber's Bandanna ★★★★:
     custom_simplename: climbersbandanna4
     recipes:
@@ -1538,6 +1645,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Climbing Gear: 0
+
   Climbing Gear ★:
     custom_simplename: climbinggear1
     recipes:
@@ -1551,6 +1659,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Climbing Gear ★: 0
+
   Climbing Gear ★★:
     custom_simplename: climbinggear2
     recipes:
@@ -1564,6 +1673,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Climbing Gear ★★: 0
+
   Climbing Gear ★★★:
     custom_simplename: climbinggear3
     recipes:
@@ -1577,6 +1687,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Climbing Gear ★★★: 0
+
   Climbing Gear ★★★★:
     custom_simplename: climbinggear4
     recipes:
@@ -1597,6 +1708,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Climbing Boots: 0
+
   Climbing Boots ★:
     custom_simplename: climbingboots1
     recipes:
@@ -1610,6 +1722,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Climbing Boots ★: 0
+
   Climbing Boots ★★:
     custom_simplename: climbingboots2
     recipes:
@@ -1623,6 +1736,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Climbing Boots ★★: 0
+
   Climbing Boots ★★★:
     custom_simplename: climbingboots3
     recipes:
@@ -1636,6 +1750,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Climbing Boots ★★★: 0
+
   Climbing Boots ★★★★:
     custom_simplename: climbingboots4
     recipes:
@@ -1650,8 +1765,8 @@ resources:
       requirements:
         Climbing Boots ★★★★: 0
 
-
   _k: {H2: Deser Voe Set} ######################################################
+
   Desert Voe Headband:
     recipes:
     - output: 1
@@ -1662,6 +1777,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Desert Voe Headband: 0
+
   Desert Voe Headband ★:
     custom_simplename: desertvoeheadband1
     recipes:
@@ -1674,6 +1790,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Desert Voe Headband ★: 0
+
   Desert Voe Headband ★★:
     custom_simplename: desertvoeheadband2
     recipes:
@@ -1687,6 +1804,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Desert Voe Headband ★★: 0
+
   Desert Voe Headband ★★★:
     custom_simplename: desertvoeheadband3
     recipes:
@@ -1700,6 +1818,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Desert Voe Headband ★★★: 0
+
   Desert Voe Headband ★★★★:
     custom_simplename: desertvoeheadband4
     recipes:
@@ -1724,6 +1843,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Desert Voe Spaulder: 0
+
   Desert Voe Spaulder ★:
     custom_simplename: desertvoespaulder1
     recipes:
@@ -1736,6 +1856,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Desert Voe Spaulder ★: 0
+
   Desert Voe Spaulder ★★:
     custom_simplename: desertvoespaulder2
     recipes:
@@ -1749,6 +1870,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Desert Voe Spaulder ★★: 0
+
   Desert Voe Spaulder ★★★:
     custom_simplename: desertvoespaulder3
     recipes:
@@ -1762,6 +1884,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Desert Voe Spaulder ★★★: 0
+
   Desert Voe Spaulder ★★★★:
     custom_simplename: desertvoespaulder4
     recipes:
@@ -1786,6 +1909,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Desert Voe Trousers: 0
+
   Desert Voe Trousers ★:
     custom_simplename: desertvoetrousers1
     recipes:
@@ -1798,6 +1922,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Desert Voe Trousers ★: 0
+
   Desert Voe Trousers ★★:
     custom_simplename: desertvoetrousers2
     recipes:
@@ -1811,6 +1936,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Desert Voe Trousers ★★: 0
+
   Desert Voe Trousers ★★★:
     custom_simplename: desertvoetrousers3
     recipes:
@@ -1824,6 +1950,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Desert Voe Trousers ★★★: 0
+
   Desert Voe Trousers ★★★★:
     custom_simplename: desertvoetrousers4
     recipes:
@@ -1839,6 +1966,7 @@ resources:
         Desert Voe Trousers ★★★★: 0
 
   _l: {H2: Flame breaker set} ##################################################
+
   Flamebreaker Helm:
     recipes:
     - output: 1
@@ -1849,6 +1977,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Flamebreaker Helm: 0
+
   Flamebreaker Helm ★:
     custom_simplename: flamebreakerhelm1
     recipes:
@@ -1862,6 +1991,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Flamebreaker Helm ★: 0
+
   Flamebreaker Helm ★★:
     custom_simplename: flamebreakerhelm2
     recipes:
@@ -1875,6 +2005,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Flamebreaker Helm ★★: 0
+
   Flamebreaker Helm ★★★:
     custom_simplename: flamebreakerhelm3
     recipes:
@@ -1888,6 +2019,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Flamebreaker Helm ★★★: 0
+
   Flamebreaker Helm ★★★★:
     custom_simplename: flamebreakerhelm4
     recipes:
@@ -1912,6 +2044,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Flamebreaker Armor: 0
+
   Flamebreaker Armor ★:
     custom_simplename: flamebreakerarmor1
     recipes:
@@ -1925,6 +2058,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Flamebreaker Armor ★: 0
+
   Flamebreaker Armor ★★:
     custom_simplename: flamebreakerarmor2
     recipes:
@@ -1938,6 +2072,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Flamebreaker Armor ★★: 0
+
   Flamebreaker Armor ★★★:
     custom_simplename: flamebreakerarmor3
     recipes:
@@ -1951,6 +2086,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Flamebreaker Armor ★★★: 0
+
   Flamebreaker Armor ★★★★:
     custom_simplename: flamebreakerarmor4
     recipes:
@@ -1975,6 +2111,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Flamebreaker Boots: 0
+
   Flamebreaker Boots ★:
     custom_simplename: flamebreakerboots1
     recipes:
@@ -1988,6 +2125,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Flamebreaker Boots ★: 0
+
   Flamebreaker Boots ★★:
     custom_simplename: flamebreakerboots2
     recipes:
@@ -2001,6 +2139,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Flamebreaker Boots ★★: 0
+
   Flamebreaker Boots ★★★:
     custom_simplename: flamebreakerboots3
     recipes:
@@ -2014,6 +2153,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Flamebreaker Boots ★★★: 0
+
   Flamebreaker Boots ★★★★:
     custom_simplename: flamebreakerboots4
     recipes:
@@ -2029,6 +2169,7 @@ resources:
         Flamebreaker Boots ★★★★: 0
 
   _m: {H2: Hylian Set)} ########################################################
+
   Hylian Hood:
     recipes:
     - output: 1
@@ -2039,6 +2180,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Hylian Hood: 0
+
   Hylian Hood ★:
     custom_simplename: hylianhood1
     recipes:
@@ -2051,6 +2193,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Hylian Hood ★: 0
+
   Hylian Hood ★★:
     custom_simplename: hylianhood2
     recipes:
@@ -2064,6 +2207,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Hylian Hood ★★: 0
+
   Hylian Hood ★★★:
     custom_simplename: hylianhood3
     recipes:
@@ -2077,6 +2221,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Hylian Hood ★★★: 0
+
   Hylian Hood ★★★★:
     custom_simplename: hylianhood4
     recipes:
@@ -2101,6 +2246,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Hylian Tunic: 0
+
   Hylian Tunic ★:
     custom_simplename: hyliantunic1
     recipes:
@@ -2113,6 +2259,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Hylian Tunic ★: 0
+
   Hylian Tunic ★★:
     custom_simplename: hyliantunic2
     recipes:
@@ -2126,6 +2273,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Hylian Tunic ★★: 0
+
   Hylian Tunic ★★★:
     custom_simplename: hyliantunic3
     recipes:
@@ -2139,6 +2287,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Hylian Tunic ★★★: 0
+
   Hylian Tunic ★★★★:
     custom_simplename: hyliantunic4
     recipes:
@@ -2163,6 +2312,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Hylian Trousers: 0
+
   Hylian Trousers ★:
     custom_simplename: hyliantrousers1
     recipes:
@@ -2175,6 +2325,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Hylian Trousers ★: 0
+
   Hylian Trousers ★★:
     custom_simplename: hyliantrousers2
     recipes:
@@ -2188,6 +2339,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Hylian Trousers ★★: 0
+
   Hylian Trousers ★★★:
     custom_simplename: hyliantrousers3
     recipes:
@@ -2201,6 +2353,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Hylian Trousers ★★★: 0
+
   Hylian Trousers ★★★★:
     custom_simplename: hyliantrousers4
     recipes:
@@ -2216,6 +2369,7 @@ resources:
         Hylian Trousers ★★★★: 0
 
   _n: {H2: Radient Set} ########################################################
+
   Radiant Mask:
     recipes:
     - output: 1
@@ -2226,6 +2380,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Radiant Mask: 0
+
   Radiant Mask ★:
     custom_simplename: radiantmask1
     recipes:
@@ -2239,6 +2394,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Radiant Mask ★: 0
+
   Radiant Mask ★★:
     custom_simplename: radiantmask2
     recipes:
@@ -2252,6 +2408,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Radiant Mask ★★: 0
+
   Radiant Mask ★★★:
     custom_simplename: radiantmask3
     recipes:
@@ -2265,6 +2422,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Radiant Mask ★★★: 0
+
   Radiant Mask ★★★★:
     custom_simplename: radiantmask4
     recipes:
@@ -2289,6 +2447,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Radiant Shirt: 0
+
   Radiant Shirt ★:
     custom_simplename: radiantshirt1
     recipes:
@@ -2302,6 +2461,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Radiant Shirt ★: 0
+
   Radiant Shirt ★★:
     custom_simplename: radiantshirt2
     recipes:
@@ -2315,6 +2475,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Radiant Shirt ★★: 0
+
   Radiant Shirt ★★★:
     custom_simplename: radiantshirt3
     recipes:
@@ -2328,6 +2489,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Radiant Shirt ★★★: 0
+
   Radiant Shirt ★★★★:
     custom_simplename: radiantshirt4
     recipes:
@@ -2352,6 +2514,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Radiant Tights: 0
+
   Radiant Tights ★:
     custom_simplename: radianttights1
     recipes:
@@ -2365,6 +2528,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Radiant Tights ★: 0
+
   Radiant Tights ★★:
     custom_simplename: radianttights2
     recipes:
@@ -2378,6 +2542,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Radiant Tights ★★: 0
+
   Radiant Tights ★★★:
     custom_simplename: radianttights3
     recipes:
@@ -2391,6 +2556,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Radiant Tights ★★★: 0
+
   Radiant Tights ★★★★:
     custom_simplename: radianttights4
     recipes:
@@ -2406,12 +2572,14 @@ resources:
         Radiant Tights ★★★★: 0
 
   _o: {H2: Rubber Set} #########################################################
+
   Rubber Helm:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Rubber Helm: 0
+
   Rubber Helm ★:
     custom_simplename: rubberhelm1
     recipes:
@@ -2424,6 +2592,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Rubber Helm ★: 0
+
   Rubber Helm ★★:
     custom_simplename: rubberhelm2
     recipes:
@@ -2437,6 +2606,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Rubber Helm ★★: 0
+
   Rubber Helm ★★★:
     custom_simplename: rubberhelm3
     recipes:
@@ -2450,6 +2620,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Rubber Helm ★★★: 0
+
   Rubber Helm ★★★★:
     custom_simplename: rubberhelm4
     recipes:
@@ -2470,6 +2641,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Rubber Armor: 0
+
   Rubber Armor ★:
     custom_simplename: rubberarmor1
     recipes:
@@ -2482,6 +2654,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Rubber Armor ★: 0
+
   Rubber Armor ★★:
     custom_simplename: rubberarmor2
     recipes:
@@ -2495,6 +2668,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Rubber Armor ★★: 0
+
   Rubber Armor ★★★:
     custom_simplename: rubberarmor3
     recipes:
@@ -2508,6 +2682,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Rubber Armor ★★★: 0
+
   Rubber Armor ★★★★:
     custom_simplename: rubberarmor4
     recipes:
@@ -2528,6 +2703,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Rubber Tights: 0
+
   Rubber Tights ★:
     custom_simplename: rubbertights1
     recipes:
@@ -2540,6 +2716,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Rubber Tights ★: 0
+
   Rubber Tights ★★:
     custom_simplename: rubbertights2
     recipes:
@@ -2553,6 +2730,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Rubber Tights ★★: 0
+
   Rubber Tights ★★★:
     custom_simplename: rubbertights3
     recipes:
@@ -2566,6 +2744,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Rubber Tights ★★★: 0
+
   Rubber Tights ★★★★:
     custom_simplename: rubbertights4
     recipes:
@@ -2581,6 +2760,7 @@ resources:
         Rubber Tights ★★★★: 0
 
   _p: {H2: Snowquill Set} ######################################################
+
   Snowquill Headdress:
     recipes:
     - output: 1
@@ -2591,6 +2771,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Snowquill Headdress: 0
+
   Snowquill Headdress ★:
     custom_simplename: snowquillheaddress1
     recipes:
@@ -2603,6 +2784,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Snowquill Headdress ★: 0
+
   Snowquill Headdress ★★:
     custom_simplename: snowquillheaddress2
     recipes:
@@ -2616,6 +2798,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Snowquill Headdress ★★: 0
+
   Snowquill Headdress ★★★:
     custom_simplename: snowquillheaddress3
     recipes:
@@ -2629,6 +2812,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Snowquill Headdress ★★★: 0
+
   Snowquill Headdress ★★★★:
     custom_simplename: snowquillheaddress4
     recipes:
@@ -2653,6 +2837,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Snowquill Tunic: 0
+
   Snowquill Tunic ★:
     custom_simplename: snowquilltunic1
     recipes:
@@ -2665,6 +2850,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Snowquill Tunic ★: 0
+
   Snowquill Tunic ★★:
     custom_simplename: snowquilltunic2
     recipes:
@@ -2678,6 +2864,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Snowquill Tunic ★★: 0
+
   Snowquill Tunic ★★★:
     custom_simplename: snowquilltunic3
     recipes:
@@ -2691,6 +2878,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Snowquill Tunic ★★★: 0
+
   Snowquill Tunic ★★★★:
     custom_simplename: snowquilltunic4
     recipes:
@@ -2715,6 +2903,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Snowquill Trousers: 0
+
   Snowquill Trousers ★:
     custom_simplename: snowquilltrousers1
     recipes:
@@ -2727,6 +2916,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Snowquill Trousers ★: 0
+
   Snowquill Trousers ★★:
     custom_simplename: snowquilltrousers2
     recipes:
@@ -2740,6 +2930,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Snowquill Trousers ★★: 0
+
   Snowquill Trousers ★★★:
     custom_simplename: snowquilltrousers3
     recipes:
@@ -2753,6 +2944,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Snowquill Trousers ★★★: 0
+
   Snowquill Trousers ★★★★:
     custom_simplename: snowquilltrousers4
     recipes:
@@ -2768,6 +2960,7 @@ resources:
         Snowquill Trousers ★★★★: 0
 
   _q: {H2: Soldiers Set} #######################################################
+
   Soldier's Helm:
     recipes:
     - output: 1
@@ -2778,6 +2971,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Soldier's Helm: 0
+
   Soldier's Helm ★:
     custom_simplename: soldiershelm1
     recipes:
@@ -2791,6 +2985,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Soldier's Helm ★: 0
+
   Soldier's Helm ★★:
     custom_simplename: soldiershelm2
     recipes:
@@ -2804,6 +2999,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Soldier's Helm ★★: 0
+
   Soldier's Helm ★★★:
     custom_simplename: soldiershelm3
     recipes:
@@ -2817,6 +3013,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Soldier's Helm ★★★: 0
+
   Soldier's Helm ★★★★:
     custom_simplename: soldiershelm4
     recipes:
@@ -2841,6 +3038,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Soldier's Armor: 0
+
   Soldier's Armor ★:
     custom_simplename: soldiersarmor1
     recipes:
@@ -2854,6 +3052,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Soldier's Armor ★: 0
+
   Soldier's Armor ★★:
     custom_simplename: soldiersarmor2
     recipes:
@@ -2867,6 +3066,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Soldier's Armor ★★: 0
+
   Soldier's Armor ★★★:
     custom_simplename: soldiersarmor3
     recipes:
@@ -2880,6 +3080,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Soldier's Armor ★★★: 0
+
   Soldier's Armor ★★★★:
     custom_simplename: soldiersarmor4
     recipes:
@@ -2904,6 +3105,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Soldier's Greaves: 0
+
   Soldier's Greaves ★:
     custom_simplename: soldiersgreaves1
     recipes:
@@ -2917,6 +3119,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Soldier's Greaves ★: 0
+
   Soldier's Greaves ★★:
     custom_simplename: soldiersgreaves2
     recipes:
@@ -2930,6 +3133,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Soldier's Greaves ★★: 0
+
   Soldier's Greaves ★★★:
     custom_simplename: soldiersgreaves3
     recipes:
@@ -2943,6 +3147,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Soldier's Greaves ★★★: 0
+
   Soldier's Greaves ★★★★:
     custom_simplename: soldiersgreaves4
     recipes:
@@ -2958,12 +3163,14 @@ resources:
         Soldier's Greaves ★★★★: 0
 
   _r: {H2: Zora Set} ###########################################################
+
   Zora Helm:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Zora Helm: 0
+
   Zora Helm ★:
     custom_simplename: zorahelm1
     recipes:
@@ -2976,6 +3183,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Zora Helm ★: 0
+
   Zora Helm ★★:
     custom_simplename: zorahelm2
     recipes:
@@ -2989,6 +3197,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Zora Helm ★★: 0
+
   Zora Helm ★★★:
     custom_simplename: zorahelm3
     recipes:
@@ -3002,6 +3211,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Zora Helm ★★★: 0
+
   Zora Helm ★★★★:
     custom_simplename: zorahelm4
     recipes:
@@ -3022,6 +3232,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Zora Armor: 0
+
   Zora Armor ★:
     custom_simplename: zoraarmor1
     recipes:
@@ -3034,6 +3245,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Zora Armor ★: 0
+
   Zora Armor ★★:
     custom_simplename: zoraarmor2
     recipes:
@@ -3047,6 +3259,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Zora Armor ★★: 0
+
   Zora Armor ★★★:
     custom_simplename: zoraarmor3
     recipes:
@@ -3060,6 +3273,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Zora Armor ★★★: 0
+
   Zora Armor ★★★★:
     custom_simplename: zoraarmor4
     recipes:
@@ -3080,6 +3294,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Zora Greaves: 0
+
   Zora Greaves ★:
     custom_simplename: zoragreaves1
     recipes:
@@ -3092,6 +3307,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Zora Greaves ★: 0
+
   Zora Greaves ★★:
     custom_simplename: zoragreaves2
     recipes:
@@ -3105,6 +3321,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Zora Greaves ★★: 0
+
   Zora Greaves ★★★:
     custom_simplename: zoragreaves3
     recipes:
@@ -3118,6 +3335,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Zora Greaves ★★★: 0
+
   Zora Greaves ★★★★:
     custom_simplename: zoragreaves4
     recipes:
@@ -3133,12 +3351,14 @@ resources:
         Zora Greaves ★★★★: 0
 
   _s: {H2: Fierce Deity set (Majoras mask)} ####################################
+
   Fierce Deity Mask:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Fierce Deity Mask: 0
+
   Fierce Deity Mask ★:
     custom_simplename: fiercedeitymask1
     recipes:
@@ -3152,6 +3372,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Fierce Deity Mask ★: 0
+
   Fierce Deity Mask ★★:
     custom_simplename: fiercedeitymask2
     recipes:
@@ -3165,6 +3386,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Fierce Deity Mask ★★: 0
+
   Fierce Deity Mask ★★★:
     custom_simplename: fiercedeitymask3
     recipes:
@@ -3178,6 +3400,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Fierce Deity Mask ★★★: 0
+
   Fierce Deity Mask ★★★★:
     custom_simplename: fiercedeitymask4
     recipes:
@@ -3198,6 +3421,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Fierce Deity Armor: 0
+
   Fierce Deity Armor ★:
     custom_simplename: fiercedeityarmor1
     recipes:
@@ -3211,6 +3435,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Fierce Deity Armor ★: 0
+
   Fierce Deity Armor ★★:
     custom_simplename: fiercedeityarmor2
     recipes:
@@ -3224,6 +3449,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Fierce Deity Armor ★★: 0
+
   Fierce Deity Armor ★★★:
     custom_simplename: fiercedeityarmor3
     recipes:
@@ -3237,6 +3463,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Fierce Deity Armor ★★★: 0
+
   Fierce Deity Armor ★★★★:
     custom_simplename: fiercedeityarmor4
     recipes:
@@ -3257,6 +3484,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Fierce Deity Boots: 0
+
   Fierce Deity Boots ★:
     custom_simplename: fiercedeityboots1
     recipes:
@@ -3270,6 +3498,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Fierce Deity Boots ★: 0
+
   Fierce Deity Boots ★★:
     custom_simplename: fiercedeityboots2
     recipes:
@@ -3283,6 +3512,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Fierce Deity Boots ★★: 0
+
   Fierce Deity Boots ★★★:
     custom_simplename: fiercedeityboots3
     recipes:
@@ -3296,6 +3526,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Fierce Deity Boots ★★★: 0
+
   Fierce Deity Boots ★★★★:
     custom_simplename: fiercedeityboots4
     recipes:
@@ -3311,6 +3542,7 @@ resources:
         Fierce Deity Boots ★★★★: 0
 
   _t: {H2: Stealth Set} ########################################################
+
   Stealth Mask:
     recipes:
     - output: 1
@@ -3321,6 +3553,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Stealth Mask: 0
+
   Stealth Mask ★:
     custom_simplename: stealthmask1
     recipes:
@@ -3333,6 +3566,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Stealth Mask ★: 0
+
   Stealth Mask ★★:
     custom_simplename: stealthmask2
     recipes:
@@ -3346,6 +3580,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Stealth Mask ★★: 0
+
   Stealth Mask ★★★:
     custom_simplename: stealthmask3
     recipes:
@@ -3359,6 +3594,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Stealth Mask ★★★: 0
+
   Stealth Mask ★★★★:
     custom_simplename: stealthmask4
     recipes:
@@ -3383,6 +3619,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Stealth Chest Guard: 0
+
   Stealth Chest Guard ★:
     custom_simplename: stealthchestguard1
     recipes:
@@ -3395,6 +3632,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Stealth Chest Guard ★: 0
+
   Stealth Chest Guard ★★:
     custom_simplename: stealthchestguard2
     recipes:
@@ -3408,6 +3646,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Stealth Chest Guard ★★: 0
+
   Stealth Chest Guard ★★★:
     custom_simplename: stealthchestguard3
     recipes:
@@ -3421,6 +3660,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Stealth Chest Guard ★★★: 0
+
   Stealth Chest Guard ★★★★:
     custom_simplename: stealthchestguard4
     recipes:
@@ -3445,6 +3685,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Stealth Tights: 0
+
   Stealth Tights ★:
     custom_simplename: stealthtights1
     recipes:
@@ -3457,6 +3698,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Stealth Tights ★: 0
+
   Stealth Tights ★★:
     custom_simplename: stealthtights2
     recipes:
@@ -3470,6 +3712,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Stealth Tights ★★: 0
+
   Stealth Tights ★★★:
     custom_simplename: stealthtights3
     recipes:
@@ -3483,6 +3726,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Stealth Tights ★★★: 0
+
   Stealth Tights ★★★★:
     custom_simplename: stealthtights4
     recipes:
@@ -3507,6 +3751,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Sheik's Mask: 0
+
   Sheik's Mask ★:
     custom_simplename: sheiksmask1
     recipes:
@@ -3520,6 +3765,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Sheik's Mask ★: 0
+
   Sheik's Mask ★★:
     custom_simplename: sheiksmask2
     recipes:
@@ -3533,6 +3779,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Sheik's Mask ★★: 0
+
   Sheik's Mask ★★★:
     custom_simplename: sheiksmask3
     recipes:
@@ -3546,6 +3793,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Sheik's Mask ★★★: 0
+
   Sheik's Mask ★★★★:
     custom_simplename: sheiksmask4
     recipes:
@@ -3566,6 +3814,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Amber Earrings: 0
+
   Amber Earrings ★:
     custom_simplename: amberearrings1
     recipes:
@@ -3579,6 +3828,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Amber Earrings ★: 0
+
   Amber Earrings ★★:
     custom_simplename: amberearrings2
     recipes:
@@ -3592,6 +3842,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Amber Earrings ★★: 0
+
   Amber Earrings ★★★:
     custom_simplename: amberearrings3
     recipes:
@@ -3605,6 +3856,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Amber Earrings ★★★: 0
+
   Amber Earrings ★★★★:
     custom_simplename: amberearrings4
     recipes:
@@ -3625,6 +3877,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Diamond Circlet: 0
+
   Diamond Circlet ★:
     custom_simplename: diamondcirclet1
     recipes:
@@ -3638,6 +3891,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Diamond Circlet ★: 0
+
   Diamond Circlet ★★:
     custom_simplename: diamondcirclet2
     recipes:
@@ -3651,6 +3905,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Diamond Circlet ★★: 0
+
   Diamond Circlet ★★★:
     custom_simplename: diamondcirclet3
     recipes:
@@ -3664,6 +3919,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Diamond Circlet ★★★: 0
+
   Diamond Circlet ★★★★:
     custom_simplename: diamondcirclet4
     recipes:
@@ -3684,6 +3940,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Opal Earrings: 0
+
   Opal Earrings ★:
     custom_simplename: opalearrings1
     recipes:
@@ -3697,6 +3954,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Opal Earrings ★: 0
+
   Opal Earrings ★★:
     custom_simplename: opalearrings2
     recipes:
@@ -3710,6 +3968,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Opal Earrings ★★: 0
+
   Opal Earrings ★★★:
     custom_simplename: opalearrings3
     recipes:
@@ -3723,6 +3982,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Opal Earrings ★★★: 0
+
   Opal Earrings ★★★★:
     custom_simplename: opalearrings4
     recipes:
@@ -3743,6 +4003,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ruby Circlet: 0
+
   Ruby Circlet ★:
     custom_simplename: rubycirclet1
     recipes:
@@ -3756,6 +4017,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ruby Circlet ★: 0
+
   Ruby Circlet ★★:
     custom_simplename: rubycirclet2
     recipes:
@@ -3769,6 +4031,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ruby Circlet ★★: 0
+
   Ruby Circlet ★★★:
     custom_simplename: rubycirclet3
     recipes:
@@ -3782,6 +4045,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ruby Circlet ★★★: 0
+
   Ruby Circlet ★★★★:
     custom_simplename: rubycirclet4
     recipes:
@@ -3802,6 +4066,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Sapphire Circlet: 0
+
   Sapphire Circlet ★:
     custom_simplename: sapphirecirclet1
     recipes:
@@ -3815,6 +4080,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Sapphire Circlet ★: 0
+
   Sapphire Circlet ★★:
     custom_simplename: sapphirecirclet2
     recipes:
@@ -3828,6 +4094,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Sapphire Circlet ★★: 0
+
   Sapphire Circlet ★★★:
     custom_simplename: sapphirecirclet3
     recipes:
@@ -3841,6 +4108,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Sapphire Circlet ★★★: 0
+
   Sapphire Circlet ★★★★:
     custom_simplename: sapphirecirclet4
     recipes:
@@ -3861,6 +4129,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Topaz Earrings: 0
+
   Topaz Earrings ★:
     custom_simplename: topazearrings1
     recipes:
@@ -3874,6 +4143,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Topaz Earrings ★: 0
+
   Topaz Earrings ★★:
     custom_simplename: topazearrings2
     recipes:
@@ -3887,6 +4157,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Topaz Earrings ★★: 0
+
   Topaz Earrings ★★★:
     custom_simplename: topazearrings3
     recipes:
@@ -3900,6 +4171,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Topaz Earrings ★★★: 0
+
   Topaz Earrings ★★★★:
     custom_simplename: topazearrings4
     recipes:
@@ -3920,6 +4192,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Champion's Tunic: 0
+
   Champion's Tunic ★:
     custom_simplename: championstunic1
     recipes:
@@ -3932,6 +4205,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Champion's Tunic ★: 0
+
   Champion's Tunic ★★:
     custom_simplename: championstunic2
     recipes:
@@ -3945,6 +4219,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Champion's Tunic ★★: 0
+
   Champion's Tunic ★★★:
     custom_simplename: championstunic3
     recipes:
@@ -3958,6 +4233,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Champion's Tunic ★★★: 0
+
   Champion's Tunic ★★★★:
     custom_simplename: championstunic4
     recipes:
@@ -3978,6 +4254,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Sand Boots: 0
+
   Sand Boots ★:
     custom_simplename: sandboots1
     recipes:
@@ -3991,6 +4268,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Sand Boots ★: 0
+
   Sand Boots ★★:
     custom_simplename: sandboots2
     recipes:
@@ -4004,6 +4282,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Sand Boots ★★: 0
+
   Sand Boots ★★★:
     custom_simplename: sandboots3
     recipes:
@@ -4017,6 +4296,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Sand Boots ★★★: 0
+
   Sand Boots ★★★★:
     custom_simplename: sandboots4
     recipes:
@@ -4037,7 +4317,9 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Snow Boots: 0
+
   Snow Boots ★:
+    custom_simplename: snowboots1
     recipes:
     - output: 1
       recipe_type: Great Fairy
@@ -4049,7 +4331,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Snow Boots ★: 0
-    custom_simplename: snowboots1
+
   Snow Boots ★★:
     custom_simplename: snowboots2
     recipes:
@@ -4063,6 +4345,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Snow Boots ★★: 0
+
   Snow Boots ★★★:
     custom_simplename: snowboots3
     recipes:
@@ -4076,6 +4359,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Snow Boots ★★★: 0
+
   Snow Boots ★★★★:
     custom_simplename: snowboots4
     recipes:
@@ -4089,6 +4373,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Snow Boots ★★★★: 0
+
   ##############################################################################
   _v: {H1: Non upgradable} #####################################################
   ##############################################################################
@@ -4290,6 +4575,7 @@ resources:
   ##############################################################################
 
   _x: {H2: Ancient Materials} ##################################################
+
   Ancient Screw:
     recipes:
     - output: 1
@@ -4333,6 +4619,7 @@ resources:
         Giant Ancient Core: 0
 
   _y: {H2: Lynel Materials} ####################################################
+
   Lynel Horn:
     recipes:
     - output: 1
@@ -4355,6 +4642,7 @@ resources:
         Lynel Guts: 0
 
   _z: {H2: Keese Wings} ########################################################
+
   Keese Wing:
     recipes:
     - output: 1
@@ -4391,6 +4679,7 @@ resources:
         Keese Eyeball: 0
 
   _aa: {H2: Flowers} ###########################################################
+
   Swift Violet:
     recipes:
     - output: 1
@@ -4420,6 +4709,7 @@ resources:
         Silent Princess: 0
 
   _ab: {H2: Dragon Materials} ##################################################
+
   Shard of Dinraal's Horn:
     recipes:
     - output: 1
@@ -4505,6 +4795,7 @@ resources:
         Shard of Naydra's Fang: 0
 
   _ac: {H2: Gems} ##############################################################
+
   Ruby:
     recipes:
     - output: 1
@@ -4569,6 +4860,7 @@ resources:
         Star Fragment: 0
 
   _ad: {H2: Other} #############################################################
+
   Acorn:
     recipes:
     - output: 1
@@ -4864,6 +5156,7 @@ resources:
         Swift Carrot: 0
 
   _ae: {H2: Currency} ##########################################################
+
   Rupee:
     recipes:
     - output: 1

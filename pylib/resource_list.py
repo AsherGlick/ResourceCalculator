@@ -128,7 +128,19 @@ def yaml_string(string: str, indent: str):
         return ("\n  " + indent).join(["|"] + string.split("\n"))
 
     if ":" in string:
-        return '"' + string.replace('\\', '\\\\').replace('"', '\\"') + '"' #.replace("'", "\\'")
+        return '"' + string.replace('\\', '\\\\').replace('"', '\\"') + '"'
+
+    if '"' in string:
+        return '"' + string.replace('\\', '\\\\').replace('"', '\\"') + '"'
+
+    if "'" in string:
+        return '"' + string + '"'
+
+    if string == "":
+        return '""'
+
+    if string[0].isdigit():
+        return '"' + string.replace('\\', '\\\\').replace('"', '\\"') + '"'
 
     return string
 

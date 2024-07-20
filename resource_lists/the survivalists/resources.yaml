@@ -1,7 +1,11 @@
+---
 authors:
-  jojoblackFr: https://github.com/jojoblackFr
-game_version: 1.1.13.565.740066
+  jojoblackFr: "https://github.com/jojoblackFr"
+
 index_page_display_name: The Survivalists
+
+game_version: 1.1.13.565.740066
+
 recipe_types:
   Campfire: Craft using a Campfire {IN_ITEMS} into {OUT_ITEM}
   Crafting Bench: Craft using a Crafting Bench {IN_ITEMS} into {OUT_ITEM}
@@ -14,7 +18,6 @@ recipe_types:
   Build: Build in the world {OUT_ITEM} using {IN_ITEMS}
   Alchemy: Convert using an alchemy table {IN_ITEMS} into {OUT_ITEM}
   Food Processor: Craft using a Food Processor {IN_ITEMS} into {OUT_ITEM}
-
 
 resources:
   Timber:
@@ -1315,7 +1318,6 @@ resources:
         Fruit: -3
         Palm Leaf: -1
     - recipe_type: Raw Resource
-
 
   Fish Curry:
     recipes:
