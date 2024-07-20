@@ -3,12 +3,12 @@ from typing import List, Dict, Tuple, TypedDict
 import json
 import math
 import os
-import re
 import shutil
 import subprocess
 
 from pylib.producer import Producer, MultiFile, SingleFile, GenericProducer
 from pylib.filehash import getfilehash
+
 
 ################################################################################
 # ImagePackOutputFiles

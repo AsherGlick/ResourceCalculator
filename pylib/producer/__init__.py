@@ -19,7 +19,6 @@ class MultiFile(TypedDict):
     files: List[str]
 
 
-
 ################################################################################
 # copy_file
 #
@@ -47,7 +46,7 @@ def copy_file(
 
 ################################################################################
 # copy_file_with_hash
-# 
+#
 # Create a producer to copy a file to another location adding the hash of the
 # file to the filename based on the output_file_template formatstring. Also
 # saves a metadata file which contains the hashed file's filename.
@@ -122,6 +121,7 @@ def filename_from_metadatafile(metadata_file: str, rel: str = "") -> str:
             return str(json.load(f)["filename"])
         else:
             return os.path.relpath(json.load(f)["filename"], rel)
+
 
 __all__ = [
     "Producer",

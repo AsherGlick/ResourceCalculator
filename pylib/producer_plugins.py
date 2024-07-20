@@ -13,7 +13,7 @@ import shutil
 def plugins_producers(calculator_dir_regex: str) -> List[GenericProducer]:
 
     def function(input_files: SingleFile, groups: Dict[str, str]) -> List[str]:
-        target_file=input_files["file"]
+        target_file = input_files["file"]
         destination_file = os.path.join("output", os.path.relpath(input_files["file"], "resource_lists"))
 
         os.makedirs(os.path.dirname(destination_file), exist_ok=True)

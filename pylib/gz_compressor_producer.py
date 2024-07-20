@@ -1,8 +1,9 @@
-from typing import List, Dict, Tuple
+from typing import List, Dict
 import gzip
 import shutil
 
 from pylib.producer import Producer, SingleFile, GenericProducer
+
 
 ################################################################################
 # gz_compressor_rpoducer

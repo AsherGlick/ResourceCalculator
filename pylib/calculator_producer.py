@@ -7,7 +7,7 @@ import pickle
 import re
 
 from pylib.json_data_compressor import mini_js_data
-from pylib.producer import Producer, SingleFile, GenericProducer, filename_from_metadatafile
+from pylib.producer import Producer, GenericProducer, filename_from_metadatafile
 from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, get_primitive, Heading
 from pylib.uglifyjs import uglify_js_string
 from pylib.webminify import minify_css_blocks
@@ -21,22 +21,22 @@ from pylib.webminify import minify_css_blocks
 def calculator_producers(calculator_dir_regex: str) -> List[GenericProducer]:
 
     calculator_producer: Producer[CalculatorInputFiles] = Producer(
-            name="Build Calculator Page",
-            input_path_patterns={
-                "resources_pickle": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/resources\.pickle$".format(
-                    calculator_dir_regex=calculator_dir_regex
-                ),
-                "image_layout_json": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/packed_image_layout\.json$".format(
-                    calculator_dir_regex=calculator_dir_regex
-                ),
-                "image_metadata": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/compressed_packed_image\.json$".format(
-                    calculator_dir_regex=calculator_dir_regex
-                ),
-                "css_filename_data": r"^cache/calculator\.css\.json",
-                "calculator_template": r"^core/calculator\.html$"
-            },
-            function=calculator_function,
-        )
+        name="Build Calculator Page",
+        input_path_patterns={
+            "resources_pickle": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/resources\.pickle$".format(
+                calculator_dir_regex=calculator_dir_regex
+            ),
+            "image_layout_json": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/packed_image_layout\.json$".format(
+                calculator_dir_regex=calculator_dir_regex
+            ),
+            "image_metadata": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/compressed_packed_image\.json$".format(
+                calculator_dir_regex=calculator_dir_regex
+            ),
+            "css_filename_data": r"^cache/calculator\.css\.json",
+            "calculator_template": r"^core/calculator\.html$"
+        },
+        function=calculator_function,
+    )
     return [
         calculator_producer
     ]
@@ -68,7 +68,7 @@ def calculator_function(input_files: CalculatorInputFiles, groups: Dict[str, str
     image_layout_file = input_files["image_layout_json"]
 
     calculator_name = groups["calculator_dir"]
-    calculator_index_html_filepath =  os.path.join("output", calculator_name, "index.html")
+    calculator_index_html_filepath = os.path.join("output", calculator_name, "index.html")
 
     with open(image_layout_file) as f:
         image_layout_data = json.load(f)
@@ -171,6 +171,7 @@ def get_simple_name(resource: str, resources: OrderedDict[str, Resource]) -> str
         return resources[resource].custom_simplename
     return re.sub(r'[^a-z0-9]', '', resource.lower())
 
+
 ################################################################################
 # get_simple_names_only generates an object of custom_simplenames only for
 # resources where a simple name override has been set.
@@ -183,6 +184,7 @@ def get_simple_names_only(resources: OrderedDict[str, Resource]) -> Dict[str, st
             simple_names[resourceKey] = resources[resourceKey].custom_simplename
 
     return simple_names
+
 
 ################################################################################
 # generate_recipe_type_format_js

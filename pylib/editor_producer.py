@@ -1,10 +1,10 @@
 from jinja2 import Environment, FileSystemLoader
-from typing import List, Tuple, Dict, Any, TypedDict
+from typing import List, Dict, Any, TypedDict
 import os
 import pickle
 
 from pylib.json_data_compressor import mini_js_data
-from pylib.producer import Producer, SingleFile, GenericProducer
+from pylib.producer import Producer, GenericProducer
 from pylib.resource_list import ResourceList, get_primitive
 
 
@@ -83,6 +83,7 @@ def editor_function(input_files: EditorInputFiles, groups: Dict[str, str]) -> Li
     return [
         calculator_editor_html_filepath,
     ]
+
 
 ################################################################################
 # hack_update_resources_schema

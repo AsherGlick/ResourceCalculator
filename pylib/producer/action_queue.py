@@ -119,7 +119,5 @@ class UniqueHeap(Generic[T]):
     def __len__(self) -> int:
         return len(self._heap)
 
-
     def __iter__(self) -> Iterator[T]:
         return self._heap.__iter__()
-

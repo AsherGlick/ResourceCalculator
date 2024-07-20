@@ -1,13 +1,13 @@
-from typing import Dict, List, TypedDict, Any, Generic, Optional
+from typing import Dict, List, TypedDict, Any, Optional
 import unittest
 from unittest.mock import patch
 
-from .producer import InputFileDatatype, Producer
+from .producer import Producer
 from .scheduler import Scheduler
 
-from dataclasses import dataclass
 from .function_call_tracker import tracked_function
 from .function_call_tracker import FunctionCall
+
 
 class Integration_Tests(unittest.TestCase):
     maxDiff = 999999
@@ -27,6 +27,7 @@ class Integration_Tests(unittest.TestCase):
         self.mocked_delete_file = delete_file_patcher.start()
         self.addCleanup(delete_file_patcher.stop)
         self.delete_function_calls: List[str] = []
+
         def delete_file_side_effect(path: str) -> None:
             self.delete_function_calls.append(path)
         self.mocked_delete_file.side_effect = delete_file_side_effect
@@ -57,7 +58,7 @@ class Integration_Tests(unittest.TestCase):
             function=function,
         )
 
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[
                 producer
             ],
@@ -133,7 +134,7 @@ class Integration_Tests(unittest.TestCase):
             function=function,
         )
 
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[
                 producer
             ],
@@ -212,7 +213,7 @@ class Integration_Tests(unittest.TestCase):
             function=function,
         )
 
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[
                 producer
             ],
@@ -264,7 +265,7 @@ class Integration_Tests(unittest.TestCase):
     # TODO: We now that we no longer have the `paths` step we should issue a
     #   warning when this happens because at best it is equivalent to not having
     #   a field, at worst it is equivalent to preventing the producer from ever
-    #   being run because "" is never going to be a file.    
+    #   being run because "" is never going to be a file.
     ############################################################################
     def test_empty_field_array(self) -> None:
         class Input(TypedDict):
@@ -289,7 +290,7 @@ class Integration_Tests(unittest.TestCase):
             function=function,
         )
 
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[producer],
             initial_filepaths=[
                 'data_one.txt',
@@ -361,7 +362,7 @@ class Integration_Tests(unittest.TestCase):
             function=function,
         )
 
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[producer],
             initial_filepaths=[
                 'data_one.txt',
@@ -451,7 +452,7 @@ class Integration_Tests(unittest.TestCase):
 
         @tracked_function
         def function(input_files: Input, groups: Dict[str, str]) -> List[str]:
-            return ["output_" + groups["title"] + "_" + groups["language"] + ".txt" ]
+            return ["output_" + groups["title"] + "_" + groups["language"] + ".txt"]
 
         producer: Producer[Input] = Producer(
             name="Test Case",
@@ -463,7 +464,7 @@ class Integration_Tests(unittest.TestCase):
             function=function,
         )
 
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[
                 producer
             ],
@@ -574,7 +575,7 @@ class Integration_Tests(unittest.TestCase):
             function=function,
         )
 
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[producer],
             initial_filepaths=[
                 'data_one.txt',
@@ -654,7 +655,7 @@ class Integration_Tests(unittest.TestCase):
             function=function,
         )
 
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[producer],
             initial_filepaths=[
                 'data_one.txt',
@@ -713,7 +714,7 @@ class Integration_Tests(unittest.TestCase):
             function=function,
         )
 
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[producer],
             initial_filepaths=[
                 'data_one.txt',
@@ -767,7 +768,7 @@ class Integration_Tests(unittest.TestCase):
             function=function,
         )
 
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[producer],
             initial_filepaths=[
                 'data_one.txt',
@@ -828,7 +829,7 @@ class Integration_Tests(unittest.TestCase):
             function=function,
         )
 
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[producer],
             initial_filepaths=[
                 'data_one_1.txt',
@@ -1150,7 +1151,7 @@ class Integration_Tests(unittest.TestCase):
 #                 ),
 #             ]
 #         )
-    
+
     def test_new_file_in_array(self) -> None:
         class Input(TypedDict):
             data_file: str
@@ -1180,7 +1181,6 @@ class Integration_Tests(unittest.TestCase):
                 'value_one_2.txt',
             ]
         )
-
 
         self.assertCountEqual(
             function.call_list,
@@ -1240,7 +1240,6 @@ class Integration_Tests(unittest.TestCase):
 
     # TODO: Add a test where there is an array of files that dont have a group
     # and they have to be placed into at least two different filesets
-
 
     # ############################################################################
     # # test_mutliple_options_with_group
@@ -1304,7 +1303,6 @@ class Integration_Tests(unittest.TestCase):
     #         ]
     #     )
 
-
     ############################################################################
     # test_cascading_actions
     #
@@ -1312,7 +1310,6 @@ class Integration_Tests(unittest.TestCase):
     # producer, the second producer successfully processes those files.
     ############################################################################
     def test_cascading_actions(self) -> None:
-
         class Input(TypedDict):
             data_file: str
 
@@ -1339,8 +1336,7 @@ class Integration_Tests(unittest.TestCase):
             function=function_value,
         )
 
-
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[
                 producer_data,
                 producer_value,
@@ -1384,12 +1380,10 @@ class Integration_Tests(unittest.TestCase):
         )
         self.assertCountEqual(self.delete_function_calls, [])
 
-
     ############################################################################
     # test_inline_update_of_array
     ############################################################################
     def test_inline_update_of_array(self) -> None:
-
         class Input(TypedDict):
             data_list: List[str]
 
@@ -1400,7 +1394,6 @@ class Integration_Tests(unittest.TestCase):
         @tracked_function
         def function_process(input_files: Input, groups: Dict[str, str]) -> List[str]:
             return ["output.txt"]
-
 
         producer_data: Producer[Input] = Producer(
             name="Test Case - Init",
@@ -1417,14 +1410,13 @@ class Integration_Tests(unittest.TestCase):
             function=function_process,
         )
 
-
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[
                 producer_data,
                 producer_value,
             ],
             initial_filepaths=[
-                'data_file.txt', # Triggering Function
+                'data_file.txt',  # Triggering Function
                 'array_element_1.txt',
                 'array_element_2.txt',
                 'array_element_3.txt',
@@ -1470,12 +1462,13 @@ class Integration_Tests(unittest.TestCase):
         )
         self.assertCountEqual(self.delete_function_calls, [])
 
-
     # TODO: Write a test that shows that an action can only replace itself in the unique heap, even if it shares a producer with another action.
     # we had a bug where an action replaced a different action due to a producer id access bug or something
 
+
 class ConfigurationTests(unittest.TestCase):
     maxDiff = 999999
+
     def setUp(self) -> None:
         read_build_events_patcher = patch.object(Scheduler, '_read_build_events_file')
         self.mocked_read_build_events = read_build_events_patcher.start()
@@ -1491,6 +1484,7 @@ class ConfigurationTests(unittest.TestCase):
         self.mocked_delete_file = delete_file_patcher.start()
         self.addCleanup(delete_file_patcher.stop)
         self.delete_function_calls: List[str] = []
+
         def delete_file_side_effect(path: str) -> None:
             self.delete_function_calls.append(path)
         self.mocked_delete_file.side_effect = delete_file_side_effect
@@ -1525,7 +1519,7 @@ class ConfigurationTests(unittest.TestCase):
         )
 
         with self.assertRaises(ValueError):
-            scheduler = Scheduler(
+            Scheduler(
                 producer_list=[
                     producer_data,
                     producer_value,
@@ -1536,8 +1530,10 @@ class ConfigurationTests(unittest.TestCase):
                 ],
             )
 
+
 class BuildLogTests(unittest.TestCase):
     maxDiff = 999999
+
     def setUp(self) -> None:
         read_build_events_patcher = patch.object(Scheduler, '_read_build_events_file')
         self.mocked_read_build_events = read_build_events_patcher.start()
@@ -1550,6 +1546,7 @@ class BuildLogTests(unittest.TestCase):
         self.mocked_write_build_events = write_build_events_patcher.start()
         self.addCleanup(write_build_events_patcher.stop)
         self.write_build_log_result: Any = None
+
         def write_build_log_side_effect(log: Any) -> None:
             self.write_build_log_result = log
             return None
@@ -1560,15 +1557,16 @@ class BuildLogTests(unittest.TestCase):
         self.mocked_check_modification_time = check_file_modificaiton_time_patcher.start()
         self.addCleanup(check_file_modificaiton_time_patcher.stop)
         self.check_file_modificaiton_time_patcher_args: Dict[str, Optional[int]] = {}
+
         def modificaiton_time_side_effect(value: str) -> Optional[int]:
             return self.check_file_modificaiton_time_patcher_args.get(value, None)
         self.mocked_check_modification_time.side_effect = modificaiton_time_side_effect
-
 
         delete_file_patcher = patch(f"{__package__}.scheduler._delete_file")
         self.mocked_delete_file = delete_file_patcher.start()
         self.addCleanup(delete_file_patcher.stop)
         self.delete_function_calls: List[str] = []
+
         def delete_file_side_effect(path: str) -> None:
             self.delete_function_calls.append(path)
         self.mocked_delete_file.side_effect = delete_file_side_effect
@@ -1612,9 +1610,9 @@ class BuildLogTests(unittest.TestCase):
                 "match_groups": {"title": "two"},
                 "output_files": ["output_two.txt"],
             }
-        ]   
+        ]
 
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[
                 producer
             ],
@@ -1681,7 +1679,7 @@ class BuildLogTests(unittest.TestCase):
             }
         ]
 
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[
                 producer
             ],
@@ -1775,7 +1773,7 @@ class BuildLogTests(unittest.TestCase):
             }
         ]
 
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[
                 producer
             ],
@@ -1829,8 +1827,8 @@ class BuildLogTests(unittest.TestCase):
         self.assertCountEqual(
             self.delete_function_calls,
             [
-                "output_one.txt", # Technically this file does not exist but we still make a delete attempt
-                "output_two.txt", # Technically this file does not exist but we still make a delete attempt
+                "output_one.txt",  # Technically this file does not exist but we still make a delete attempt
+                "output_two.txt",  # Technically this file does not exist but we still make a delete attempt
             ],
         )
 
@@ -1866,7 +1864,7 @@ class BuildLogTests(unittest.TestCase):
             },
         ]
 
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[
                 producer
             ],
@@ -1947,7 +1945,7 @@ class BuildLogTests(unittest.TestCase):
             }
         ]
 
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[
                 producer
             ],
@@ -2015,7 +2013,6 @@ class BuildLogTests(unittest.TestCase):
         class Input(TypedDict):
             data_file: str
 
-
         @tracked_function
         def first_function(input_files: Input, groups: Dict[str, str]) -> List[str]:
             return [f"output_{groups['title']}.txt"]
@@ -2059,7 +2056,7 @@ class BuildLogTests(unittest.TestCase):
             }
         ]
 
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[
                 first_producer,
                 second_producer,
@@ -2136,7 +2133,6 @@ class BuildLogTests(unittest.TestCase):
         class Input(TypedDict):
             data_file: str
 
-
         @tracked_function
         def first_function(input_files: Input, groups: Dict[str, str]) -> List[str]:
             return [f"output_{groups['title']}.txt"]
@@ -2180,7 +2176,7 @@ class BuildLogTests(unittest.TestCase):
             }
         ]
 
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[
                 first_producer,
                 second_producer,
@@ -2247,12 +2243,9 @@ class BuildLogTests(unittest.TestCase):
             ],
         )
 
-
-
     def test_removing_file_from_action_input_array(self) -> None:
         class Input(TypedDict):
             data_file: List[str]
-
 
         @tracked_function
         def first_function(input_files: Input, groups: Dict[str, str]) -> List[str]:
@@ -2314,7 +2307,7 @@ class BuildLogTests(unittest.TestCase):
             }
         ]
 
-        scheduler = Scheduler(
+        Scheduler(
             producer_list=[
                 first_producer,
                 second_producer,
@@ -2397,7 +2390,6 @@ class BuildLogTests(unittest.TestCase):
                 "second_output_one.txt",
             ],
         )
-
 
 
 # class Initialization_Query_Tests(unittest.TestCase):

@@ -1,12 +1,11 @@
 from typing import Callable, List, Dict
-import os
 import shutil
 import subprocess
 
 from pylib.producer import Producer, SingleFile
 
+ProducerFunctionType = Callable[[SingleFile, Dict[str, str]], List[str]]
 
-ProducerFunctionType = Callable[[SingleFile, Dict[str,str]], List[str]]
 
 ################################################################################
 # uglify_copyfile
@@ -29,6 +28,7 @@ def uglify_copyfile(output_file: str) -> ProducerFunctionType:
 
         return [out_file]
     return inner
+
 
 ################################################################################
 # uglify_js_string

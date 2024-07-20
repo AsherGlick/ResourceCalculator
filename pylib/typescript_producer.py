@@ -33,7 +33,7 @@ def typescript_producer(
         capture_output=True,
         text=True
     )
-    
+
     # TODO: This list is only built once when the producer is defined. Any new
     #   files would not be added here. This shoudld either become the standard
     #   pattern or upgrade to allow for live changes through some mechanism.

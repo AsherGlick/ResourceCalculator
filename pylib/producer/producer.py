@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import List, Callable, Any, Union, Set, Tuple, TypeVar, Generic, Dict, TypedDict, Iterable, Final
+from typing import List, Callable, Any, Union, Set, TypeVar, Generic, Dict, Iterable
 import re
 
 # TODO: mypy does not like bound=TypedDict while pyright says it is ok
@@ -102,8 +102,6 @@ class Producer(Generic[InputFileDatatype]):
             else:
                 raise TypeError("InputFileDatatype must be a dict of only str or List[str]. Found an element of type " + str(type(field_pattern)))
 
-
-
             # Save a cache of the compiled regexes for easier access.
             self._compiled_regexes[field_name] = field_regex
 
@@ -138,7 +136,7 @@ class Producer(Generic[InputFileDatatype]):
         return self._regex_groups[field_name]
 
     def get_match_group_id(self, group_name: str) -> str:
-         return str(self._regex_group_to_index[group_name])
+        return str(self._regex_group_to_index[group_name])
 
     # ############################################################################
     # # get_field_table_name
@@ -151,16 +149,14 @@ class Producer(Generic[InputFileDatatype]):
     # def get_field_table_name(producer_index: int, field_index: int) -> str:
     #     return "producer{producer_index}_field{field_index}_matches".format(producer_index=producer_index, field_index=field_index)
 
-
     def get_field_id(self, field_name: str) -> str:
         return str(self._field_to_field_id[field_name])
-
 
     def input_path_patterns_dict(self) -> Dict[str, Union[str, List[str]]]:
         # Ignoring this type because we are returning a TypedDict that is of
         # this specified type, however python typechecking cannot validate
         # that a TypedDict is also a Dict it seems.
-        return self._input_path_patterns # type:ignore
+        return self._input_path_patterns  # type:ignore
 
 
 # Convenience type to get around making lists of Producers with different

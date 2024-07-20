@@ -1,5 +1,5 @@
 from jinja2 import Environment, FileSystemLoader
-from typing import List, Dict, Tuple, TypedDict
+from typing import List, Dict, TypedDict
 import json
 import os
 from pylib.filehash import getfilehash
@@ -7,10 +7,10 @@ from pylib.producer import Producer, SingleFile, filename_from_metadatafile, Gen
 import shutil
 
 
-
 class SingleHashedFile(TypedDict):
     file: str
     filemetadata: str
+
 
 ################################################################################
 # LandingPageInputTypes
@@ -24,6 +24,7 @@ class LandingPageInputTypes(TypedDict):
     css_filename_data: str
     add_game_filename_data: str
     template: str
+
 
 ################################################################################
 # landing_page_producers
@@ -90,6 +91,7 @@ def hash_and_copy_file(input_files: SingleFile, groups: Dict[str, str]) -> List[
         output_metadata_file,
     ]
 
+
 ################################################################################
 # landing_page_function
 #
@@ -117,7 +119,6 @@ def landing_page_function(input_paths: LandingPageInputTypes, groups: Dict[str, 
         directory = os.path.basename(os.path.dirname(metadata_path))
 
         icon_filename_data = icon_filename_datas[directory]
-
 
         with open(icon_filename_data) as f:
             icon_filename = os.path.basename(json.load(f)["icon_name"])

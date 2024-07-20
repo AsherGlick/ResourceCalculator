@@ -12,6 +12,7 @@ class FunctionCall(Generic[InputFileDatatype]):
 
 class TrackedProducerFunction(Generic[InputFileDatatype], Protocol):
     call_list: List[FunctionCall[InputFileDatatype]]
+
     def __call__(self, input_files: InputFileDatatype, groups: Dict[str, str]) -> List[str]:
         ...
 

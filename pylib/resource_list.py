@@ -144,6 +144,7 @@ def yaml_string(string: str, indent: str) -> str:
 
     return string
 
+
 ################################################################################
 # _get_invalid_keys
 #
@@ -413,15 +414,15 @@ class ResourceList():
                 elif isinstance(resources_v, Heading):
                     if resources_v.H1 != "":
                         output.append("")
-                        output.append(indent + "  " + "#" * (78-len(indent)))
+                        output.append(indent + "  " + "#" * (78 - len(indent)))
                         line = indent + "  " + resources_k + ": {H1: " + resources_v.H1 + "}"
-                        line += " " + "#" * (79-len(line))
+                        line += " " + "#" * (79 - len(line))
                         output.append(line)
-                        output.append(indent + "  " + "#" * (78-len(indent)))
+                        output.append(indent + "  " + "#" * (78 - len(indent)))
                     elif resources_v.H2 != "":
                         output.append("")
                         line = indent + "  " + resources_k + ": {H2: " + resources_v.H2 + "}"
-                        line += " " + "#" * (79-len(line))
+                        line += " " + "#" * (79 - len(line))
                         output.append(line)
                     elif resources_v.H3 != "":
                         output.append("")
@@ -617,7 +618,7 @@ class Resource():
         output = []
         if self.custom_simplename != "":
             output.append(indent + "custom_simplename: " + yaml_string(self.custom_simplename, indent))
-        if self.currency != False:
+        if self.currency is False:
             output.append(indent + "currency: " + str(self.currency))
         if self.note != "":
             output.append(indent + "note: " + yaml_string(self.note, indent))

@@ -13,13 +13,14 @@ import json
 
 from .producer import GenericProducer
 from .producer import InputFileDatatype
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pylib.terminal_color import fg_gray
 from .action_queue import UniqueHeap
 
 
 BUILD_EVENTS_FILE = ".buildevents.json"
 TEMPORARY_BUILD_EVENTS_FILE = ".buildevents.json.tmp"
+
 
 # A record of a build event taking a set of input files, a producer, and a set of output files
 @dataclass
@@ -78,10 +79,13 @@ class Action(Generic[InputFileDatatype]):
     ############################################################################
     def __lt__(self, other: "Action[Any]") -> bool:
         return self.producer_index < other.producer_index
+
     def __gt__(self, other: "Action[Any]") -> bool:
         return self.producer_index > other.producer_index
+
     def __le__(self, other: "Action[Any]") -> bool:
         return self.producer_index <= other.producer_index
+
     def __ge__(self, other: "Action[Any]") -> bool:
         return self.producer_index >= other.producer_index
 
@@ -116,7 +120,7 @@ class Scheduler:
     filecache: sqlite3.Connection
 
     ############################################################################
-    # 
+    #
     ############################################################################
     def __init__(
         self,
@@ -146,7 +150,6 @@ class Scheduler:
     ############################################################################
     def add_or_update_files(self, files: List[str]) -> None:
         self._process_files(files)
-
 
     # Load the build events into the class
     def load_build_events(self) -> None:
@@ -184,14 +187,11 @@ class Scheduler:
             })
         self._write_build_events_file(raw_build_events)
 
-
     # A seperate function for writing build_event files to disk to support mocking in unit tests
     def _write_build_events_file(self, data: Any) -> None:
         with open(TEMPORARY_BUILD_EVENTS_FILE, "w") as f:
             json.dump(data, f)
         shutil.move(TEMPORARY_BUILD_EVENTS_FILE, BUILD_EVENTS_FILE)
-
-
 
     ############################################################################
     # _add_files_to_database
@@ -295,7 +295,7 @@ class Scheduler:
     # Takes in a list of files that have been created or modified and then
     # runs all of the producer functions that would take in any of those files.
     ############################################################################
-    def _process_files(self, files: List[str], init: bool=False) -> None:
+    def _process_files(self, files: List[str], init: bool = False) -> None:
         actions_to_run: UniqueHeap[Action[Any]] = UniqueHeap()
 
         # Delete a build event and the files associated with it, plus cascading?
@@ -342,7 +342,6 @@ class Scheduler:
                     _delete_file(output_file)
                 self._remove_files_from_database(build_event_to_remove.output_files)
 
-
         def update_actions(files: List[str]) -> None:
             nonlocal actions_to_run
             nonlocal init
@@ -363,7 +362,7 @@ class Scheduler:
                     # No Link
                     if action_to_run is None:
                         delete_build_event(build_event)
-                        continue # TODO: This should delete files and retrigger any actions with deleted files
+                        continue  # TODO: This should delete files and retrigger any actions with deleted files
 
                     # Strong Link, Exact same input files
                     elif set(action_to_run.files()) == set(build_event.input_files):
@@ -376,11 +375,11 @@ class Scheduler:
                         # Newer Inputs
                         else:
                             delete_build_event(build_event)
-                            continue # TODO: This should delete files and retrigger any actions with deleted files
+                            continue  # TODO: This should delete files and retrigger any actions with deleted files
                     # Weak Link, same groups and would trigger action deduplication, but different input files
                     else:
                         delete_build_event(build_event)
-                        continue # TODO: This should delete files and retrigger any actions with deleted files
+                        continue  # TODO: This should delete files and retrigger any actions with deleted files
 
                 self.build_events = [x for x in self.build_events if x is not None]
 
@@ -396,7 +395,7 @@ class Scheduler:
                         if new_action.weak_hash() == build_event.weak_hash():
                             delete_build_event(build_event)
                             break
-                    
+
                 self.build_events = [x for x in self.build_events if x is not None]
 
         update_actions(files)
@@ -415,7 +414,7 @@ class Scheduler:
                 print(fg_gray("  " + input_files[1]))
                 print(fg_gray("  " + input_files[2]))
                 print(fg_gray("  " + input_files[3]))
-                print(fg_gray("  ...and {} other files".format(len(input_files)-4)))
+                print(fg_gray("  ...and {} other files".format(len(input_files) - 4)))
             else:
                 for i, file in enumerate(input_files):
                     print(fg_gray("  " + file))
@@ -435,7 +434,7 @@ class Scheduler:
 
             for i, file in enumerate(output_files):
                 pipe_character = "├"
-                if (i == len(output_files)-1):
+                if (i == len(output_files) - 1):
                     pipe_character = "└"
                 print(fg_gray("  {pipe_character}── {file}".format(
                     pipe_character=pipe_character,
@@ -484,9 +483,6 @@ class Scheduler:
 
         return paths
 
-
-
-
     def _remove_files_from_database(self, files: List[str]) -> None:
 
         # Delete all files to delete in the database
@@ -502,14 +498,11 @@ class Scheduler:
 
         pass
 
-
-
     ############################################################################
     ############################################################################
     # SQL LOGIC
     ############################################################################
     ############################################################################
-
 
     ############################################################################
     # get_field_table_name
@@ -579,7 +572,7 @@ class Scheduler:
                 table_columns.append(Scheduler.get_match_group_column_name(
                     producer=producer,
                     group_name=group_name,
-                )+" TEXT")
+                ) + " TEXT")
 
             query_string = "CREATE TABLE {field_table_name} ({table_columns});".format(
                 field_table_name=field_table_name,
@@ -604,7 +597,6 @@ class Scheduler:
         filename: str,
         groups: Dict[str, str]
     ) -> None:
-        
         query_string, binds = self.insert_new_file_querystring(
             producer_index=producer_index,
             field_name=field_name,
@@ -668,14 +660,13 @@ class Scheduler:
         producer = self.producer_list[producer_index]
         table_name = Scheduler.get_field_table_name(
             producer_index=producer_index,
-            field_id= producer.get_field_id(field_name)
+            field_id=producer.get_field_id(field_name)
         )
         query_string: str = "DELETE FROM {table} WHERE filename = :filename".format(
             table=table_name
         )
 
         return query_string
-
 
     ############################################################################
     # query_filesets
@@ -687,10 +678,10 @@ class Scheduler:
         self,
         db: sqlite3.Connection,
         producer_index: int
-    # TODO: once we figure out how to better handle the types internally in
-    #   this tool we should get rid of the "Any" here and replace it with a
-    #   real type.
-    #    List[Tuple[InputFileDatatype, Dict[str, str]]]:
+        # TODO: once we figure out how to better handle the types internally in
+        #   this tool we should get rid of the "Any" here and replace it with a
+        #   real type.
+        # List[Tuple[InputFileDatatype, Dict[str, str]]]:
     ) -> List[Tuple[Any, Dict[str, str]]]:
         query_string = self.new_filesets_querystring(producer_index)
 
@@ -703,8 +694,8 @@ class Scheduler:
                 query_string,
             )
 
-            columns = [ x[0] for x in cur.description ]
-            columns_lookup = { value: index for index, value in enumerate(columns) }
+            columns = [x[0] for x in cur.description]
+            columns_lookup = {value: index for index, value in enumerate(columns)}
 
             for row in cur.fetchall():
 
@@ -720,7 +711,7 @@ class Scheduler:
                         new_element[new_element_field_name] = []
                         continue
 
-                    value: str = row[columns_lookup["field_"+new_element_field_id]]
+                    value: str = row[columns_lookup["field_" + new_element_field_id]]
                     if isinstance(pattern, str):
                         new_element[new_element_field_name] = value
                     elif isinstance(pattern, list):
@@ -730,8 +721,7 @@ class Scheduler:
 
                 for group_name in producer.get_all_match_groups():
                     group_id = producer.get_match_group_id(group_name)
-                    groups[group_name] = row[columns_lookup["group_"+group_id]]
-
+                    groups[group_name] = row[columns_lookup["group_" + group_id]]
 
                 # If at least one file is updated then this creator should be
                 # constructed.
@@ -741,11 +731,8 @@ class Scheduler:
 
         return output_data
 
-
     def new_filesets_querystring(self, producer_index: int) -> str:
-
         producer = self.producer_list[producer_index]
-
 
         # A list of columns to select. Should end up as the union between
         # every field and every match group
@@ -763,17 +750,15 @@ class Scheduler:
         # A map of each group to the list of tables that group is in
         field_groups: Dict[str, List[str]] = {}
 
-
         field_wheres: List[str] = []
-
 
         update_tracking_columns: List[str] = []
 
         # mypy complains about iterating over a typeddict even though it is a dict
-        for field_name, field in producer.input_path_patterns_dict().items():
-            if field == "":
+        for field_name, field_value in producer.input_path_patterns_dict().items():
+            if field_value == "":
                 continue
-            elif field == []:
+            elif field_value == []:
                 continue
 
             field_id = producer.get_field_id(field_name)
@@ -785,23 +770,20 @@ class Scheduler:
 
             table_contents = table_name
 
-            field_alias="\"field_{field_id}\"".format(
+            field_alias = "\"field_{field_id}\"".format(
                 field_id=field_id,
             )
 
-            if isinstance(field, str):
+            if isinstance(field_value, str):
                 columns.append("{table_name}.filename AS {field_alias}".format(
                     table_name=table_name,
                     field_alias=field_alias,
                 ))
                 group_by_columns.append(str(len(columns)))
 
-
             # If the field is a list then we want to grab each file and put it into a list
             # this is done by using
-            elif isinstance(field, list):
-
-
+            elif isinstance(field_value, list):
                 match_columns = [Scheduler.get_match_group_column_name(producer, match_group) for match_group in producer.get_match_groups(field_name)]
                 new_table_name = table_name + "_mod"
 
@@ -817,7 +799,6 @@ class Scheduler:
                 ))
 
                 table_name = new_table_name
-
 
             else:
                 raise TypeError("Expected either a str or a list")
@@ -835,7 +816,6 @@ class Scheduler:
             update_tracking_columns.append("{table_name}.is_updated".format(
                 table_name=table_name
             ))
-
 
         field_joins: List[str] = []
         for match_group_name, group_tables in field_groups.items():
@@ -861,7 +841,6 @@ class Scheduler:
         if len(field_joins) == 0:
             field_joins = ["1=1"]
 
-
         columns.append(
             "SUM({}) AS \"is_updated\"".format(
                 "+".join(update_tracking_columns)
@@ -877,7 +856,6 @@ class Scheduler:
 
         return query_string
 
-
     def mark_all_files_old(self, db: sqlite3.Connection) -> None:
         for mark_files_query in self.mark_all_files_old_querystrings():
             with db:
@@ -887,10 +865,10 @@ class Scheduler:
 
         query_strings = []
         for producer_index, producer in enumerate(self.producer_list):
-            for field_name, field in producer.input_path_patterns_dict().items():
-                if field == "":
+            for field_name, field_value in producer.input_path_patterns_dict().items():
+                if field_value == "":
                     continue
-                elif field == []:
+                elif field_value == []:
                     continue
 
                 field_id = producer.get_field_id(field_name)
@@ -905,7 +883,6 @@ class Scheduler:
                 ))
 
         return query_strings
-
 
 
 ################################################################################
@@ -1011,6 +988,7 @@ def _check_file_modification_time(path: str) -> Optional[float]:
         raise ValueError
     else:
         return os.path.getmtime(path)
+
 
 def _delete_file(path: str) -> None:
     if os.path.exists(path):

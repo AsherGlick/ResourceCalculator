@@ -8,8 +8,8 @@ import os
 import sys
 import yaml
 sys.path.append("../")
-from pylib.resource_list import ResourceList
-from pylib.yaml_token_load import ordered_load
+from pylib.resource_list import ResourceList  # noqa: E402
+from pylib.yaml_token_load import ordered_load  # noqa: E402
 
 
 def main() -> None:

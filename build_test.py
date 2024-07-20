@@ -1,6 +1,6 @@
 # TODO: Rename this file and probably move it into pylib because it no longer
 # has anything to do with build.py directly.
-from typing import List, OrderedDict, Union
+from typing import List, OrderedDict
 from pylib.yaml_token_load import ordered_load
 from pylib.resource_list import ResourceList, Resource, StackSize, TokenError, Token, Heading
 from pylib.yaml_linter_producer import expand_raw_resource, lint_resources
@@ -17,7 +17,7 @@ def test_load(input_yaml: str) -> List[TokenError]:
         resource_list = ResourceList()
         errors += resource_list.parse(yaml_data)
 
-    resources: OrderedDict[str, Resource] = OrderedDict([(k, v) for k,v in resource_list.resources.items() if not isinstance(v, Heading)])
+    resources: OrderedDict[str, Resource] = OrderedDict([(k, v) for k, v in resource_list.resources.items() if not isinstance(v, Heading)])
     resources = expand_raw_resource(resources)
 
     recipe_types: OrderedDict[str, str] = resource_list.recipe_types

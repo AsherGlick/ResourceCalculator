@@ -10,6 +10,7 @@ VariableType = Union[VariableType_Scalar, VariableType_OrderedDict]
 
 a: VariableType = ("OrderedDict", "str", ("OrderedDict", "str", "str"))
 
+
 def main() -> None:
     classes: List[Class] = [
         Class(
@@ -199,7 +200,7 @@ def main() -> None:
     ]
 
     generate_python_parser_classes(classes)
-    
+
     new_classes: List[Class] = [
         Class(
             classname="ResourceList",
@@ -213,57 +214,57 @@ def main() -> None:
                     name="index_page_display_name",
                     type="str",
                     default='""',
-                    line_above=True, # Formatting Style
+                    line_above=True,  # Formatting Style
                 ),
                 Variable(
                     name="row_group_count",
                     type="int",
                     default="1",
-                    line_above=True, # Formatting Style
+                    line_above=True,  # Formatting Style
                 ),
                 Variable(
                     name="game_version",
                     type="str",
                     default='""',
-                    line_above=True, # Formatting Style
+                    line_above=True,  # Formatting Style
                 ),
                 Variable(
                     name="banner_message",
                     type="str",
                     default='""',
-                    line_above=True, # Formatting Style
+                    line_above=True,  # Formatting Style
                 ),
                 Variable(
                     name="recipe_types",
                     type="Dict[str, str]",
                     default="{}",
-                    line_above=True, # Formatting Style
+                    line_above=True,  # Formatting Style
                 ),
                 Variable(
                     name="requirement_groups",
                     type="Dict[str, List[str]]",
                     default="{}",
-                    line_above=True, # Formatting Style
-                    split_elems=True, # Formatting Style
+                    line_above=True,  # Formatting Style
+                    split_elems=True,  # Formatting Style
                 ),
                 Variable(
                     name="stack_sizes",
                     type="Dict[str, StackSize]",
                     default="{}",
-                    line_above=True, # Formatting Style
+                    line_above=True,  # Formatting Style
                 ),
                 Variable(
                     name="default_stack_size",
                     type="str",
                     default='""',
-                    line_above=True, # Formatting Style
+                    line_above=True,  # Formatting Style
                 ),
                 Variable(
                     name="resources",
                     type="List[Resource]",
                     default="{}",
-                    line_above=True, # Formatting Style
-                    split_elems=True, # Formatting Style
+                    line_above=True,  # Formatting Style
+                    split_elems=True,  # Formatting Style
                 ),
             ]
         ),
@@ -373,8 +374,6 @@ def main() -> None:
         )
     ]
 
-
-
     generate_javascript_writers(new_classes)
 
 
@@ -414,11 +413,10 @@ class Variable():
     blank_lines_above_field: int = 0
     always_present: bool = False
 
-
     # Old Variables
     ephemeral: bool = False
     line_above: bool = False
-    split_elems: bool = False # Style for Lists
+    split_elems: bool = False  # Style for Lists
 
 
 ################################################################################
@@ -432,7 +430,6 @@ class Class():
     ) -> None:
         self.classname = classname
         self.variables = variables
-
 
 
 def generate_javascript_writers(classes: List[Class]) -> None:
@@ -457,7 +454,6 @@ def generate_javascript_writer(classname: str, variables: List[Variable]) -> str
     variable_name_list: str = ",".join(["\"" + variable.name + "\"" for variable in variables])
     lines.append("    const key_list = [{}];".format(variable_name_list))
 
-
     # Validate we have no extra keys
     lines.append("    const key_set = new Set(key_list);")
     lines.append("    let key_names = Object.keys(object);")
@@ -474,7 +470,6 @@ def generate_javascript_writer(classname: str, variables: List[Variable]) -> str
         # Skip writing ephermeral variables
         if variable.ephemeral:
             continue
-
 
         lines.append("    if (\"{}\" in object) {{".format(variable.name))
 
@@ -528,7 +523,6 @@ def generate_javascript_writer(classname: str, variables: List[Variable]) -> str
 
             varblock.append('        }}')
 
-
         elif variable.type.startswith("List["):
             if not variable.split_elems:
                 varblock.append('        output += "\\n";')
@@ -536,7 +530,6 @@ def generate_javascript_writer(classname: str, variables: List[Variable]) -> str
 
             if variable.split_elems:
                 varblock.append('            output += "\\n"')
-
 
             if variable.type == "List[Resource]":
                 varblock.append('        output += indent + tab + "- " + write_Resource(object["{name}"][list_index], indented+2).trim() + "\\n";')
@@ -548,7 +541,7 @@ def generate_javascript_writer(classname: str, variables: List[Variable]) -> str
             else:
                 print("UNKNOWN JAVASCRIPT WRITER VARIABLE TYPE", variable.type, file=sys.stderr)
             varblock.append('        }}')
-        
+
         else:
             print("UNKNOWN JAVASCRIPT WRITER VARIABLE TYPE", variable.type, file=sys.stderr)
 
@@ -556,13 +549,11 @@ def generate_javascript_writer(classname: str, variables: List[Variable]) -> str
 
         lines.append("    }")
 
-
     lines.append("    return output;")
     lines.append("}")
     lines.append("")
 
     return "\n".join(lines)
-
 
 
 def generate_python_parser_classes(classes: List[Class]) -> None:
@@ -697,7 +688,6 @@ def generate_python_parser_class(classname: str, variables: List[Variable]) -> s
     lines.append("        }")
     lines.append("")
 
-
     lines.append("    def to_yaml(self, indent: str = \"\") -> str:")
     lines.append("        output = []")
     for variable in variables:
@@ -706,7 +696,10 @@ def generate_python_parser_class(classname: str, variables: List[Variable]) -> s
         varblock = []
 
         if not variable.always_present:
-            varblock.append("        if self.{name} != " + variable.default + ":")
+            if variable.type == "bool":
+                varblock.append("        if self.{name} is " + variable.default + ":")
+            else:
+                varblock.append("        if self.{name} != " + variable.default + ":")
             indent = "    "
 
         for _ in range(variable.blank_lines_above_field):
@@ -751,15 +744,15 @@ def generate_python_parser_class(classname: str, variables: List[Variable]) -> s
             varblock.append(indent + "            elif isinstance({name}_v, Heading):")
             varblock.append(indent + "                if {name}_v.H1 != \"\":")
             varblock.append(indent + "                    output.append(\"\")")
-            varblock.append(indent + "                    output.append(indent + \"  \" + \"#\" * (78-len(indent)))")
+            varblock.append(indent + "                    output.append(indent + \"  \" + \"#\" * (78 - len(indent)))")
             varblock.append(indent + "                    line = indent + \"  \" + {name}_k + \": {{H1: \" + {name}_v.H1 + \"}}\"")
-            varblock.append(indent + "                    line += \" \" + \"#\" * (79-len(line))")
+            varblock.append(indent + "                    line += \" \" + \"#\" * (79 - len(line))")
             varblock.append(indent + "                    output.append(line)")
-            varblock.append(indent + "                    output.append(indent + \"  \" + \"#\" * (78-len(indent)))")
+            varblock.append(indent + "                    output.append(indent + \"  \" + \"#\" * (78 - len(indent)))")
             varblock.append(indent + "                elif {name}_v.H2 != \"\":")
             varblock.append(indent + "                    output.append(\"\")")
             varblock.append(indent + "                    line = indent + \"  \" + {name}_k + \": {{H2: \" + {name}_v.H2 + \"}}\"")
-            varblock.append(indent + "                    line += \" \" + \"#\" * (79-len(line))")
+            varblock.append(indent + "                    line += \" \" + \"#\" * (79 - len(line))")
             varblock.append(indent + "                    output.append(line)")
             varblock.append(indent + "                elif {name}_v.H3 != \"\":")
             varblock.append(indent + "                    output.append(\"\")")

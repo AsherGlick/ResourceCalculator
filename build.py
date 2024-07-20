@@ -11,7 +11,7 @@ from pylib.gz_compressor_producer import gz_compressor_producers
 from pylib.imagepack import item_image_producers
 from pylib.js_rollup_producer import js_rollup_producer
 from pylib.landing_page_producer import landing_page_producers
-from pylib.producer import Producer, Scheduler, SingleFile, GenericProducer, copy_file, copy_file_with_hash
+from pylib.producer import Scheduler, SingleFile, GenericProducer, copy_file, copy_file_with_hash
 from pylib.producer_plugins import plugins_producers
 from pylib.typescript_producer import typescript_producer
 from pylib.uglifyjs import uglify_js_producer
@@ -75,7 +75,7 @@ def core_resource_producers() -> List[GenericProducer]:
                 name=f"Hash Copy {copyfile}",
                 input_file_pattern="^{}$".format(copyfile),
                 output_file_template="output/{filename}-{filehash}{extension}",
-                metadata_file_template= "cache/{filename}{extension}.json",
+                metadata_file_template="cache/{filename}{extension}.json",
             )
         )
 
@@ -104,7 +104,7 @@ def core_resource_producers() -> List[GenericProducer]:
 
         if FLAG_skip_js_minify:
             core_producers.append(copy_file(
-                name=f"Copy File " + input_file,
+                name=f"Copy File {input_file}",
                 target_file=input_file,
                 destination_file=output_file
             ))
@@ -196,7 +196,6 @@ def main() -> None:
 
     # calculator_page_sublist = []
 
-
     calculator_dir_regex = r"[a-z_ ]+"
     if len(args.limit_files) >= 1:
         calculator_page_sublist = args.limit_files
@@ -213,7 +212,6 @@ def main() -> None:
     producers += plugins_producers(calculator_dir_regex)
     producers += gz_compressor_producers()
 
-
     scheduler = Scheduler(
         producer_list=producers,
         initial_filepaths=Scheduler.all_paths_in_dir(
@@ -221,7 +219,6 @@ def main() -> None:
             ignore_paths=["venv_docker", "venv", ".git", "node_modules", "output_master"]
         )
     )
-
 
     watch_directory = "."
 
@@ -231,7 +228,7 @@ def main() -> None:
         observer = Observer()
 
         event_handler = Handler(q)
-        observer.schedule(event_handler, watch_directory, recursive = True)  # type: ignore [no-untyped-call]
+        observer.schedule(event_handler, watch_directory, recursive=True)  # type: ignore [no-untyped-call]
         observer.start()  # type: ignore [no-untyped-call]
         try:
             while True:
@@ -252,7 +249,7 @@ def main() -> None:
                 else:
                     print("Unknown Event", event_type)
 
-        except:
+        except Exception:
             observer.stop()  # type: ignore [no-untyped-call]
             print("Observer Stopped")
 
@@ -265,14 +262,11 @@ class Handler(FileSystemEventHandler):
     def __init__(self, event_queue: queue.Queue[Tuple[str, str]]):
         self.event_queue = event_queue
 
-    def on_any_event(self, event: FileSystemEvent) ->None:
-
+    def on_any_event(self, event: FileSystemEvent) -> None:
         if event.is_directory:
             return
 
         self.event_queue.put((event.event_type, event.src_path[2:]))
-
-
 
 
 PROFILE = False
