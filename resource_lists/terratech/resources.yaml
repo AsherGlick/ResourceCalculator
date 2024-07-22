@@ -4458,3 +4458,257 @@ resources:
         Seed AI: -1
     - recipe_type: Raw Resource
 
+# Venture Flight Blocks
+
+  Venture Little Stud Pulse Booster:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Plasma Emitter: -1
+    - recipe_type: Raw Resource
+
+  Venture Double Booster:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -2
+        Cyclone Jet: -2
+        Thermo Jet: -1
+    - recipe_type: Raw Resource
+
+  Venture Fuel Pod:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -1
+        Sensory Transmitter: -1
+    - recipe_type: Raw Resource
+
+  Venture Large Kompress Fuel Tank:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -1
+        Rugged Fiblar: -1
+        Z4 Explosives: -2
+        Dervish Gel: -1
+    - recipe_type: Raw Resource
+
+  Venture Pinwheel Propeller:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -1
+        Rugged Fiblar: -1
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  Venture Zero Propeller:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -2
+        Rugged Fiblar: -1
+        Cyclone Jet: -1
+        Dervish Gel: -1
+    - recipe_type: Raw Resource
+
+  Venture Seraphim Nose Propeller:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -1
+        Rugged Fiblar: -1
+        Cyclone Jet: -1
+        Dervish Gel: -1
+    - recipe_type: Raw Resource
+
+  Venture Big Top Nose Propeller:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -4
+        Rugged Fiblar: -4
+        Cyclone Jet: -3
+        Dervish Gel: -2
+    - recipe_type: Raw Resource
+
+  Venture Little Slipstream Booster:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Heat Coil: -1
+    - recipe_type: Raw Resource
+
+  Venture Front Spoiler:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Rubber Brick: -1
+        Plumbia Ingot: -1
+    - recipe_type: Raw Resource
+
+  Venture Bub Spoiler:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Rubber Brick: -1
+        Plumbia Ingot: -1
+    - recipe_type: Raw Resource
+
+  Venture Lightweight Racing Spoiler:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Fibre Plating: -1
+        Olastic Brick: -1
+    - recipe_type: Raw Resource
+
+  Venture Darkside Spoiler:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Rubber Brick: -1
+        Fibre Plating: -1
+    - recipe_type: Raw Resource
+
+  Venture G-Boy Spoiler:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Fibre Plating: -2
+        Olastic Brick: -1
+    - recipe_type: Raw Resource
+
+  Venture Middle Wing:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -5
+        Rubber Brick: -1
+        Fibre Plating: -1
+    - recipe_type: Raw Resource
+
+  Venture Wing Expander Left:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Rubber Brick: -1
+        Fibre Plating: -1
+    - recipe_type: Raw Resource
+
+  Venture Wing Expander Right:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Rubber Brick: -1
+        Fibre Plating: -1
+    - recipe_type: Raw Resource
+
+  Venture Tail Wing:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Rubber Brick: -1
+        Fibre Plating: -1
+    - recipe_type: Raw Resource
+
+  Venture Tail Wing Expander:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Rubber Brick: -1
+        Fibre Plating: -2
+    - recipe_type: Raw Resource
+
+  Venture ZG Hover Pad:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Fibre Plating: -1
+        Rugged Fiblar: -1
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  Venture 5-Way Adjustment Thruster:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Fibre Plating: -1
+        Rugged Fiblar: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Venture 2-Way Adjustment Thruster:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Fibre Plating: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Venture 1-Way Adjustment Thruster:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Venture Left Rudder Tipped Wing:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Rubber Brick: -1
+        Fibre Plating: -2
+    - recipe_type: Raw Resource
+
+  Venture Right Rudder Tipped Wing:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -5
+        Rubber Brick: -1
+        Fibre Plating: -2
+    - recipe_type: Raw Resource
+
