@@ -6110,3 +6110,690 @@ resources:
         Cyclone Jet: -4
     - recipe_type: Raw Resource
 
+# Better Future Standard Blocks
+
+  Better Future One Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Fibre Plating: -2
+    - recipe_type: Raw Resource
+
+  Better Future Faired One Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Fibre Plating: -2
+    - recipe_type: Raw Resource
+
+  Better Future One Face Blank Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Plumbia Ingot: -3
+        Titania Ingot: -2
+        Fibre Plating: -2
+    - recipe_type: Raw Resource
+
+  Better Future Stream One Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Fibre Plating: -1
+    - recipe_type: Raw Resource
+
+  Better Future Stream Corner One Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Plumbia Ingot: -2
+        Titania Ingot: -1
+        Fibre Plating: -1
+    - recipe_type: Raw Resource
+
+  Better Future Fin:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Luxian Crystal: -1
+        Plumbia Ingot: -3
+        Titania Ingot: -3
+        Fibre Plating: -3
+    - recipe_type: Raw Resource
+
+  Better Future Two Face Blank Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Plumbia Ingot: -2
+        Titania Ingot: -3
+        Fibre Plating: -2
+    - recipe_type: Raw Resource
+
+  Better Future Three Face Blank Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Fibre Plating: -3
+    - recipe_type: Raw Resource
+
+  Better Future Stream Fillet Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Luxian Crystal: -1
+        Plumbia Ingot: -1
+        Titania Ingot: -1
+        Fibre Plating: -1
+    - recipe_type: Raw Resource
+
+  Better Future Stream Internal Corner Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Plumbia Ingot: -1
+        Titania Ingot: -1
+        Fibre Plating: -1
+    - recipe_type: Raw Resource
+
+  Better Future Small Air Rig:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -10
+        Titania Ingot: -10
+        Fibre Plating: -10
+        Rugged Fiblar: -10
+    - recipe_type: Raw Resource
+
+  Better Future Small Air Rig Extender:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -1
+        Titania Ingot: -3
+        Fibre Plating: -2
+        Rugged Fiblar: -2
+    - recipe_type: Raw Resource
+
+  Better Future Stream Two Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Fibre Plating: -2
+        Rugged Fiblar: -1
+    - recipe_type: Raw Resource
+
+  Better Future Stream Three Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Titania Ingot: -3
+        Fibre Plating: -3
+        Rugged Fiblar: -2
+    - recipe_type: Raw Resource
+
+  Better Future Stream Corner Two Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Fibre Plating: -1
+        Rugged Fiblar: -1
+    - recipe_type: Raw Resource
+
+  Better Future Stream Corner Three Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Titania Ingot: -3
+        Fibre Plating: -2
+        Rugged Fiblar: -2
+    - recipe_type: Raw Resource
+
+  Better Future Stream Wide Two Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -4
+        Titania Ingot: -2
+        Fibre Plating: -2
+        Rugged Fiblar: -2
+    - recipe_type: Raw Resource
+
+  Better Future Stream Wide Three Left Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -6
+        Titania Ingot: -6
+        Fibre Plating: -4
+        Rugged Fiblar: -4
+    - recipe_type: Raw Resource
+
+  Better Future Stream Wide Three Right Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -5
+        Titania Ingot: -6
+        Fibre Plating: -4
+        Rugged Fiblar: -4
+    - recipe_type: Raw Resource
+
+  Better Future Stream Extender Two Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Titania Ingot: -2
+        Fibre Plating: -2
+        Rugged Fiblar: -2
+    - recipe_type: Raw Resource
+
+  Better Future Stream Extender Three Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -4
+        Titania Ingot: -3
+        Fibre Plating: -3
+        Rugged Fiblar: -2
+    - recipe_type: Raw Resource
+
+  Better Future Six Face Blank Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -5
+        Titania Ingot: -6
+        Fibre Plating: -5
+        Rugged Fiblar: -2
+    - recipe_type: Raw Resource
+
+  Better Future Two Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Fibre Plating: -2
+        Rugged Fiblar: -2
+    - recipe_type: Raw Resource
+
+  Better Future Three Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Titania Ingot: -3
+        Fibre Plating: -3
+        Rugged Fiblar: -3
+    - recipe_type: Raw Resource
+
+  Better Future Four Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -4
+        Titania Ingot: -4
+        Fibre Plating: -4
+        Rugged Fiblar: -4
+    - recipe_type: Raw Resource
+
+  Better Future Five Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -5
+        Titania Ingot: -5
+        Fibre Plating: -5
+        Rugged Fiblar: -5
+    - recipe_type: Raw Resource
+
+  Better Future Chassis One:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Luxian Crystal: -4
+        Plumbia Ingot: -4
+        Titania Ingot: -4
+        Fibre Plating: -4
+    - recipe_type: Raw Resource
+
+  Better Future Chassis Two:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -6
+        Titania Ingot: -6
+        Fibre Plating: -6
+        Rugged Fiblar: -6
+    - recipe_type: Raw Resource
+
+  Better Future Chassis Three:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -8
+        Titania Ingot: -8
+        Fibre Plating: -8
+        Rugged Fiblar: -8
+    - recipe_type: Raw Resource
+
+  Better Future Chassis Four:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -9
+        Titania Ingot: -10
+        Fibre Plating: -10
+        Rugged Fiblar: -10
+    - recipe_type: Raw Resource
+
+  Better Future Medium Air Rig:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -15
+        Titania Ingot: -15
+        Fibre Plating: -15
+        Rugged Fiblar: -15
+    - recipe_type: Raw Resource
+
+  Better Future Medium Air Rig Extender:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Titania Ingot: -4
+        Fibre Plating: -3
+        Rugged Fiblar: -2
+    - recipe_type: Raw Resource
+
+  Better Future Cab Chassis:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -12
+        Titania Ingot: -12
+        Fibre Plating: -12
+        Rugged Fiblar: -12
+    - recipe_type: Raw Resource
+
+  Better Future Stream Four Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -4
+        Titania Ingot: -4
+        Fibre Plating: -4
+        Rugged Fiblar: -3
+    - recipe_type: Raw Resource
+
+  Better Future Stream Five Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -5
+        Titania Ingot: -5
+        Fibre Plating: -5
+        Rugged Fiblar: -4
+    - recipe_type: Raw Resource
+
+  Better Future Stream Corner Four Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -4
+        Titania Ingot: -4
+        Fibre Plating: -3
+        Rugged Fiblar: -3
+    - recipe_type: Raw Resource
+
+  Better Future Stream Corner Five Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -5
+        Titania Ingot: -5
+        Fibre Plating: -4
+        Rugged Fiblar: -4
+    - recipe_type: Raw Resource
+
+  Better Future Stream Wide Four Left Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -8
+        Titania Ingot: -8
+        Fibre Plating: -6
+        Rugged Fiblar: -6
+    - recipe_type: Raw Resource
+
+  Better Future Stream Wide Four Right Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -7
+        Titania Ingot: -8
+        Fibre Plating: -6
+        Rugged Fiblar: -6
+    - recipe_type: Raw Resource
+
+  Better Future Stream Wide Five Left Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -10
+        Titania Ingot: -10
+        Fibre Plating: -8
+        Rugged Fiblar: -8
+    - recipe_type: Raw Resource
+
+  Better Future Stream Wide Five Right Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -9
+        Titania Ingot: -10
+        Fibre Plating: -8
+        Rugged Fiblar: -8
+    - recipe_type: Raw Resource
+
+  Better Future Streamline Extender Four Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -5
+        Titania Ingot: -4
+        Fibre Plating: -4
+        Rugged Fiblar: -3
+    - recipe_type: Raw Resource
+
+  Better Future Streamline Extender Five Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -6
+        Titania Ingot: -5
+        Fibre Plating: -5
+        Rugged Fiblar: -4
+    - recipe_type: Raw Resource
+
+  Better Future Large Air Rig:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -20
+        Titania Ingot: -20
+        Fibre Plating: -20
+        Rugged Fiblar: -20
+    - recipe_type: Raw Resource
+
+  Better Future Large Air Rig Extender:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Titania Ingot: -5
+        Fibre Plating: -4
+        Rugged Fiblar: -3
+    - recipe_type: Raw Resource
+
+# Better Future Control Blocks
+
+  Better Future eCab:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -4
+        Rugged Fiblar: -2
+        Acid Electrode: -1
+    - recipe_type: Raw Resource
+
+  Better Future eFlow Cab:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -3
+        Rugged Fiblar: -3
+        Acid Electrode: -1
+    - recipe_type: Raw Resource
+
+  Better Future eFlux Cab:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -4
+        Rugged Fiblar: -3
+        Fuel Injector: -1
+        Acid Electrode: -1
+    - recipe_type: Raw Resource
+
+  Better Future AI Module:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -1
+        Acid Electrode: -1
+        Mother Brain: -1
+    - recipe_type: Raw Resource
+
+# Better Future Wheel Blocks
+
+  Better Future Small Angled Halo Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Plumbia Ingot: -3
+        Titania Ingot: -3
+        Fibre Plating: -3
+    - recipe_type: Raw Resource
+
+  Better Future Small Straight Halo Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Titania Ingot: -3
+        Fibre Plating: -4
+        Rugged Fiblar: -3
+    - recipe_type: Raw Resource
+
+  Better Future Small Side Halo Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Titania Ingot: -3
+        Fibre Plating: -3
+        Rugged Fiblar: -4
+    - recipe_type: Raw Resource
+
+  Better Future Small Long Halo Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Titania Ingot: -3
+        Fibre Plating: -3
+        Rugged Fiblar: -5
+    - recipe_type: Raw Resource
+
+  Better Future Medium Angled Halo Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -6
+        Titania Ingot: -7
+        Fibre Plating: -6
+        Rugged Fiblar: -6
+    - recipe_type: Raw Resource
+
+  Better Future Medium Straight Halo Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -6
+        Titania Ingot: -6
+        Fibre Plating: -7
+        Rugged Fiblar: -6
+    - recipe_type: Raw Resource
+
+  Better Future Medium Side Halo Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -6
+        Titania Ingot: -6
+        Fibre Plating: -6
+        Rugged Fiblar: -7
+    - recipe_type: Raw Resource
+
+  Better Future Medium Long Halo Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -6
+        Titania Ingot: -6
+        Fibre Plating: -6
+        Rugged Fiblar: -9
+    - recipe_type: Raw Resource
+
+  Better Future Large Straight Halo Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -9
+        Titania Ingot: -9
+        Fibre Plating: -9
+        Rugged Fiblar: -9
+    - recipe_type: Raw Resource
+
+  Better Future Large Side Halo Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -9
+        Titania Ingot: -9
+        Fibre Plating: -9
+        Rugged Fiblar: -10
+    - recipe_type: Raw Resource
+
+  Better Future Small Skid Landing Gear:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -1
+        Titania Ingot: -1
+        Fibre Plating: -1
+        Rugged Fiblar: -1
+    - recipe_type: Raw Resource
+
+  Better Future Medium Skid Landing Gear:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Titania Ingot: -3
+        Fibre Plating: -2
+        Rugged Fiblar: -1
+    - recipe_type: Raw Resource
+
+  Better Future Large Skid Landing Gear:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Titania Ingot: -3
+        Fibre Plating: -3
+        Rugged Fiblar: -2
+    - recipe_type: Raw Resource
+
+# Better Future Weapon Block
+
