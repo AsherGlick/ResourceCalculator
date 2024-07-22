@@ -4334,3 +4334,127 @@ resources:
         Ion Pulse Cell: -1
     - recipe_type: Raw Resource
 
+# Venture Manufacturing Blocks
+
+  Venture Fixed Anchor:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Plumbia Ingot: -3
+        Titania Ingot: -1
+    - recipe_type: Raw Resource
+
+  Venture Rotating Anchor:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Plumbia Ingot: -4
+        Titania Ingot: -3
+    - recipe_type: Raw Resource
+
+  Venture Resource Receiver:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Luxian Crystal: -1
+    - recipe_type: Raw Resource
+
+  Venture Conveyor:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Luxian Crystal: -1
+    - recipe_type: Raw Resource
+
+  Venture Filter:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Luxian Crystal: -3
+    - recipe_type: Raw Resource
+
+  Venture Dropper:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Luxian Crystal: -3
+        Plumbia Ingot: -2
+    - recipe_type: Raw Resource
+
+  Venture Mix Stack Silo:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Olastic Brick: -1
+        Celestian Crystal: -1
+    - recipe_type: Raw Resource
+
+  Venture Mobile Refinery:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Plumbia Ingot: -1
+        Fibre Plating: -1
+        Acid Electrode: -1
+    - recipe_type: Raw Resource
+
+  Venture Fabricator:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Plumbia Ingot: -1
+        Fibre Plating: -1
+        Blast Caps: -1
+    - recipe_type: Raw Resource
+
+  Venture Scrapper:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Rugged Fiblar: -1
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  Venture Mobile Delivery Cannon:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibre Plating: -2
+        Rugged Fiblar: -1
+        Z4 Explosives: -1
+        Coffman Cell: -1
+    - recipe_type: Raw Resource
+
+  Venture Mobile SCU Storage Device:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Rodius Capsule: -1
+        Acid Electrode: -1
+        Zero Point Splitter: -1
+        Thermo Jet: -1
+        Seed AI: -1
+    - recipe_type: Raw Resource
+
