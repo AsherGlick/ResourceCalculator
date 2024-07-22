@@ -4712,3 +4712,1401 @@ resources:
         Fibre Plating: -2
     - recipe_type: Raw Resource
 
+# Hawkeye Standard Blocks
+
+  Hawkeye One Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -1
+        Plumbia Ingot: -1
+        Titania Ingot: -1
+        Hardened Titanic: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Two Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -1
+        Plumbia Ingot: -1
+        Titania Ingot: -1
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Four Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Hardened Titanic: -3
+    - recipe_type: Raw Resource
+
+  Hawkeye Six Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Plumbia Ingot: -3
+        Titania Ingot: -3
+        Hardened Titanic: -4
+    - recipe_type: Raw Resource
+
+  Hawkeye Jack Bracket:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Large Bracket:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -1
+        Carbius Brick: -2
+        Rugged Fiblar: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Small Bracket:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Plumbia Ingot: -1
+        Titania Ingot: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Medium Bracket:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Plumbia Ingot: -3
+        Titania Ingot: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Corner Bracket:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -1
+        Plumbia Ingot: -2
+        Titania Ingot: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Elbow Bracket:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Plumbia Ingot: -2
+        Titania Ingot: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Long Jack Bracket:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Flat Bracket:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Plumbia Ingot: -1
+        Titania Ingot: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Small Armour Plate:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Titania Ingot: -3
+        Plubonic Greebles: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Medium Armour Plate:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Fibre Plating: -2
+        Plubonic Greebles: -3
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Large Armour Plate:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rugged Fiblar: -1
+        Plubonic Alloy: -2
+        Titanic Alloy: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Notch Armour Plate:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rugged Fiblar: -1
+        Plubonic Alloy: -2
+        Titanic Alloy: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Small Fort Armour:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -2
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Hardened Titanic: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Medium Wrap Armour:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -6
+        Plumbia Ingot: -6
+        Titania Ingot: -6
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Corner Edge Armour:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -2
+        Plumbia Ingot: -1
+        Titania Ingot: -1
+        Hardened Titanic: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Medium Spike Armour:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -3
+        Plumbia Ingot: -3
+        Titania Ingot: -3
+        Hardened Titanic: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Split Fort Armour:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -2
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Hardened Titanic: -3
+    - recipe_type: Raw Resource
+
+  Hawkeye Small Edge Armour:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -1
+        Plumbia Ingot: -1
+        Titania Ingot: -1
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Inside Corner Edge Armour:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -1
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Medium Spike Armour Extension:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -3
+        Plumbia Ingot: -4
+        Titania Ingot: -3
+        Hardened Titanic: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Medium Fort Armour:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -2
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Large Wrap Armour:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -7
+        Plumbia Ingot: -7
+        Titania Ingot: -7
+        Hardened Titanic: -3
+    - recipe_type: Raw Resource
+
+  Hawkeye Large Spike Armour:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -3
+        Plumbia Ingot: -3
+        Titania Ingot: -3
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Medium Edge Armour:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -2
+        Plumbia Ingot: -4
+        Titania Ingot: -4
+        Hardened Titanic: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Outside Corner Edge Armour:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -2
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Hardened Titanic: -4
+    - recipe_type: Raw Resource
+
+  Hawkeye Large Spike Armour Extension:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -3
+        Plumbia Ingot: -4
+        Titania Ingot: -3
+        Hardened Titanic: -3
+    - recipe_type: Raw Resource
+
+  Hawkeye Large Fort Armour:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -1
+        Carbius Brick: -4
+        Titanic Alloy: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye XL Fort Armour:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -2
+        Carbius Brick: -3
+        Titanic Alloy: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye XL Wrap Armour:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -2
+        Carbius Brick: -6
+        Titanic Alloy: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye XL Spike Armour:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -2
+        Carbius Brick: -4
+        Titanic Alloy: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye XL Spike Armour Extension:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -2
+        Carbius Brick: -4
+        Titanic Alloy: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Cab Chassis:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -5
+        Plumbia Ingot: -5
+        Titania Ingot: -5
+        Hardened Titanic: -4
+    - recipe_type: Raw Resource
+
+  Hawkeye Weapon Pylon:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -1
+        Carbius Brick: -2
+        Plubonic Alloy: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Small Fort Floor:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -3
+        Luxian Crystal: -2
+        Titania Ingot: -3
+        Hardened Titanic: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Small Fort Ramp:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -1
+        Plumbia Ingot: -2
+        Fibre Plating: -2
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Small Fort Wall:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plumbia Ingot: -1
+        Titania Ingot: -1
+        Fibre Plating: -2
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Windowed Fort Wall:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Fibre Plating: -2
+        Hardened Titanic: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Medium Fort Wall:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Titania Ingot: -3
+        Fibre Plating: -3
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Medium Fort Floor:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -3
+        Luxian Crystal: -3
+        Plumbia Ingot: -3
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Wide Fort Ramp:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -3
+        Titania Ingot: -3
+        Hardened Titanic: -4
+        Titanic Alloy: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Large Fort Floor:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -3
+        Luxian Crystal: -4
+        Plumbia Ingot: -4
+        Hardened Titanic: -3
+    - recipe_type: Raw Resource
+
+  Hawkeye Large Fort Wall:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plumbia Ingot: -4
+        Titania Ingot: -3
+        Fibre Plating: -4
+        Hardened Titanic: -3
+    - recipe_type: Raw Resource
+
+  Hawkeye Left Groundhog Armour:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -1
+        Plumbia Ingot: -5
+        Titania Ingot: -2
+        Hardened Titanic: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Right Groundhog Armour:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -2
+        Plumbia Ingot: -5
+        Titania Ingot: -2
+        Hardened Titanic: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Middle Groundhog Armour:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -3
+        Plumbia Ingot: -5
+        Titania Ingot: -2
+        Hardened Titanic: -1
+    - recipe_type: Raw Resource
+
+# Hawkeye Control Blocks
+
+  Hawkeye Hunter Cab:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plubonic Greebles: -1
+        Hardened Titanic: -1
+        Fuel Injector: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Bruiser Cab:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plubonic Greebles: -4
+        Hardened Titanic: -1
+        Fuel Injector: -3
+    - recipe_type: Raw Resource
+
+  Hawkeye Counter AI Module:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rugged Fiblar: -1
+        Acid Electrode: -1
+        Mother Brain: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Helios AI Sentry:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plubonic Alloy: -1
+        Acid Electrode: -2
+        Sensory Transmitter: -1
+        Zero Point Splitter: -1
+        Coffman Cell: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Bomber Command Cab:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plubonic Greebles: -2
+        Hardened Titanic: -2
+        Fuel Injector: -2
+    - recipe_type: Raw Resource
+
+# Hawkeye Wheel Blocks
+
+  Hawkeye Tread Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Plumbia Ingot: -3
+        Titania Ingot: -3
+        Fibre Plating: -3
+    - recipe_type: Raw Resource
+
+  Hawkeye Straight Bike Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -1
+        Plumbia Ingot: -1
+        Titania Ingot: -1
+        Fibre Plating: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Angled Bike Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Plumbia Ingot: -1
+        Titania Ingot: -1
+        Fibre Plating: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Garrison Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -5
+        Plumbia Ingot: -5
+        Titania Ingot: -5
+        Fibre Plating: -5
+    - recipe_type: Raw Resource
+
+  Hawkeye Warhorse Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plumbia Ingot: -5
+        Titania Ingot: -5
+        Fuel Injector: -2
+        Cyclone Jet: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Wing Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Jelly: -2
+        Fibre Plating: -2
+        Rodius Capsule: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Big Daddy Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Titania Ingot: -5
+        Fuel Injector: -2
+        Cyclone Jet: -2
+        Thermo Jet: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye PX Small Track:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rugged Fiblar: -4
+        Ion Pulse Cell: -1
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye M4 Medium Track:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rugged Fiblar: -1
+        Ion Pulse Cell: -2
+        Thermo Jet: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye TT12 Big Track:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rugged Fiblar: -2
+        Ion Pulse Cell: -3
+        Thermo Jet: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Landing Gear:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -2
+        Rodius Capsule: -2
+        Rugged Fiblar: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Small Landing Skid:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plumbia Ingot: -1
+        Titania Ingot: -1
+        Fibre Plating: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Medium Landing Skid:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Fibre Plating: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Large Landing Skid:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Titania Ingot: -2
+        Rodius Capsule: -1
+        Rugged Fiblar: -1
+    - recipe_type: Raw Resource
+
+# Hawkeye Weapon Blocks
+
+  Hawkeye Spider Mandibles:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rugged Fiblar: -1
+        Acid Electrode: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Machine Gun:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Fibre Plating: -1
+        Hardened Titanic: -1
+        Acid Electrode: -1
+        Z4 Explosives: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Bayonet Shotgun:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Hardened Titanic: -1
+        Titanic Alloy: -1
+        Blast Caps: -1
+        Z4 Explosives: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Burst Gun:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plumbia Ingot: -1
+        Titania Ingot: -1
+        Carbius Brick: -1
+        Acid Electrode: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Repeater Rifle:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plubonic Alloy: -1
+        Fuel Injector: -1
+        Z4 Explosives: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Zeus Laser Cannon:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plubonic Alloy: -1
+        Acid Electrode: -1
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye DFA Mortar :
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Titania Ingot: -3
+        Fibre Plating: -3
+        Carbius Brick: -3
+        Blast Caps: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Monster Mortar:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Titania Ingot: -4
+        Rugged Fiblar: -2
+        Mother Brain: -1
+        Dervish Gel: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Axis Shotgun:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Hardened Titanic: -2
+        Titanic Alloy: -1
+        Blast Caps: -1
+        Z4 Explosives: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Plasma Jaws:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rugged Fiblar: -2
+        Acid Electrode: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Cyclops Plasma Laser:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rugged Fiblar: -4
+        Acid Electrode: -1
+        Ion Pulse Cell: -2
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Auto Cannon:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rugged Fiblar: -1
+        Acid Electrode: -2
+        Z4 Explosives: -1
+        Coffman Cell: -1
+        Gluon Beam: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Seeker Missile Pod:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Titanic Alloy: -1
+        Fuel Injector: -2
+        Ion Pulse Cell: -1
+        Thermo Jet: -1
+        Seed AI: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Cruise Missile:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Titanic Alloy: -1
+        Fuel Injector: -2
+        Ion Pulse Cell: -1
+        Thermo Jet: -1
+        Seed AI: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye BMB:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Titanic Alloy: -1
+        Fuel Injector: -3
+        Ion Pulse Cell: -2
+        Thermo Jet: -1
+        Seed AI: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Paladin Bomb:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plubonic Alloy: -3
+        Blast Caps: -3
+        Z4 Explosives: -2
+        Dervish Gel: -2
+        Gluon Beam: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Railgun:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rugged Fiblar: -1
+        Acid Electrode: -2
+        Z4 Explosives: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Hunter Railgun:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rugged Fiblar: -2
+        Acid Electrode: -2
+        Z4 Explosives: -1
+        Coffman Cell: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Quad Railgun:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rugged Fiblar: -4
+        Acid Electrode: -4
+        Z4 Explosives: -4
+        Coffman Cell: -3
+    - recipe_type: Raw Resource
+
+  Hawkeye HG1 Cannon Turret:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plubonic Alloy: -1
+        Blast Caps: -2
+        Z4 Explosives: -1
+        Dervish Gel: -1
+        Gluon Beam: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Mk3 Battleship Cannon:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plubonic Alloy: -4
+        Blast Caps: -4
+        Z4 Explosives: -2
+        Dervish Gel: -2
+        Gluon Beam: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Type 45 Naval Gun:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plubonic Alloy: -4
+        Blast Caps: -5
+        Z4 Explosives: -4
+        Dervish Gel: -1
+        Gluon Beam: -1
+    - recipe_type: Raw Resource
+
+# Hawkeye Accessory Blocks
+
+  Hawkeye Pointer Radar:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Fibre Plating: -1
+        Plubonic Greebles: -1
+        Acid Electrode: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Signal Light:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Rubber Brick: -1
+        Luxian Crystal: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Laser Targeting:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Rodius Capsule: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Pack Collector:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Titania Ingot: -2
+        Fibre Plating: -3
+    - recipe_type: Raw Resource
+
+  Hawkeye Block Magnet:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Titania Ingot: -3
+        Rodius Capsule: -1
+        Acid Electrode: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Active All Axis Horizon Gyro:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Fibre Plating: -1
+        Rugged Fiblar: -1
+        Cyclone Jet: -1
+        Thermo Jet: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Z4 Explosive Bolt:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Blast Caps: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Spider Eye:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Rodius Capsule: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Payload Terminal:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Gluon Beam: -1
+        Seed AI: -1
+        Proxima Dark: -1
+    - recipe_type: Raw Resource
+
+# Hawkeye Power Blocks
+
+  Hawkeye Ion Battery:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Titanic Alloy: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Solar Panel:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plubonic Alloy: -2
+        Acid Electrode: -2
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Mobile Furnace Generator:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Fibre Plating: -2
+        Rodius Capsule: -2
+        Acid Electrode: -2
+        Gluon Beam: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Havoc Shield:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rugged Fiblar: -1
+        Ion Pulse Cell: -1
+        Dervish Gel: -1
+        Proxima Dark: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Repair Bubble:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Hardened Titanic: -1
+        Fuel Injector: -2
+        Ion Pulse Cell: -1
+        Zero Point Splitter: -2
+    - recipe_type: Raw Resource
+
+# Hawkeye Manufacturing Blocks
+
+  Hawkeye Fixed Anchor:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -1
+        Plumbia Ingot: -3
+        Titania Ingot: -3
+        Hardened Titanic: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Small Fort Anchor:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Plumbia Ingot: -3
+        Titania Ingot: -3
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Medium Fort Anchor:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Plumbia Ingot: -2
+        Titania Ingot: -3
+        Hardened Titanic: -3
+    - recipe_type: Raw Resource
+
+  Hawkeye Large Fort Anchor:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -4
+        Plumbia Ingot: -4
+        Titania Ingot: -4
+        Hardened Titanic: -4
+    - recipe_type: Raw Resource
+
+  Hawkeye Anchored Fort Ramp:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -1
+        Titania Ingot: -2
+        Hardened Titanic: -4
+        Acid Electrode: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Rotating Anchor:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -4
+        Plumbia Ingot: -4
+        Titania Ingot: -4
+        Hardened Titanic: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Refinery:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plumbia Ingot: -1
+        Titania Ingot: -2
+        Fibre Plating: -1
+        Acid Electrode: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Fabricator:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Titania Ingot: -3
+        Carbius Brick: -1
+        Rodius Capsule: -1
+        Blast Caps: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Scrapper:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Titanic Alloy: -1
+        Plasma Emitter: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Anchored Delivery Cannon:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Titania Ingot: -4
+        Fibre Plating: -1
+        Blast Caps: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Anchored Maze SCU:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Olastic Brick: -1
+        Blast Caps: -2
+        Hard Light Drive: -1
+        Zero Point Splitter: -1
+    - recipe_type: Raw Resource
+
+# Hawkeye Flight Blocks
+
+  Hawkeye Small Jet Engine:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rugged Fiblar: -1
+        Blast Caps: -1
+        Heat Coil: -1
+        Hard Light Drive: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Large Jet Engine:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rugged Fiblar: -1
+        Blast Caps: -2
+        Hard Light Drive: -1
+        Plasma Emitter: -1
+        Thermo Jet: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Fuel Tank:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Titanic Alloy: -1
+        Fuel Injector: -2
+        Heat Coil: -1
+        Mother Brain: -1
+        Dervish Gel: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Twister Prop:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rugged Fiblar: -1
+        Fuel Injector: -2
+        Cyclone Jet: -1
+        Coffman Cell: -1
+        Proxima Dark: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Aero Prop:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rugged Fiblar: -1
+        Fuel Injector: -2
+        Cyclone Jet: -1
+        Coffman Cell: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Medium Storm Rotor:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plubonic Alloy: -1
+        Fuel Injector: -2
+        Cyclone Jet: -1
+        Coffman Cell: -1
+        Proxima Dark: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Large Atlas Rotor:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Titanic Alloy: -1
+        Fuel Injector: -2
+        Cyclone Jet: -1
+        Gluon Beam: -1
+        Proxima Dark: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Spread Wing:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Titania Ingot: -3
+        Fibre Plating: -1
+        Olastic Brick: -1
+        Rugged Fiblar: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Wing Tip:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Titania Ingot: -1
+        Fibre Plating: -1
+        Olastic Brick: -1
+        Rugged Fiblar: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Left Delta Wing:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Titania Ingot: -1
+        Fibre Plating: -2
+        Olastic Brick: -1
+        Rugged Fiblar: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Right Delta Wing:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Titania Ingot: -1
+        Fibre Plating: -3
+        Olastic Brick: -1
+        Rugged Fiblar: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Plume Wing:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Titania Ingot: -2
+        Fibre Plating: -1
+        Olastic Brick: -1
+        Rugged Fiblar: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Exfil Adjustment Thruster:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rugged Fiblar: -2
+        Hardened Titanic: -2
+        Titanic Alloy: -2
+        Cyclone Jet: -2
+    - recipe_type: Raw Resource
+
+  Hawkeye Flying Fortress Hover Pad:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Fibre Plating: -4
+        Rugged Fiblar: -4
+        Plubonic Alloy: -4
+        Cyclone Jet: -4
+    - recipe_type: Raw Resource
+
