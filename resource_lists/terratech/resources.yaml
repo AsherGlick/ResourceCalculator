@@ -14,6 +14,7 @@ recipe_types:
   Venture Fabricator: Using a Venture Fabricator turn {IN_ITEMS} into {OUT_ITEM}
   Hawkeye Fabricator: Using a Hawkeye Fabricator turn {IN_ITEMS} into {OUT_ITEM}
   Better Future Fabricator: Using a Better Future Fabricator turn {IN_ITEMS} into {OUT_ITEM}
+  Reticule Research Fabricator: Using a Reticule Research Fabricator turn {IN_ITEMS} into {OUT_ITEM}
 
 resources:
 
@@ -6796,4 +6797,2014 @@ resources:
     - recipe_type: Raw Resource
 
 # Better Future Weapon Block
+
+  Better Future Flamethrower:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Rugged Fiblar: -1
+        Acid Electrode: -1
+        Ion Pulse Cell: -1
+        Plasma Emitter: -1
+    - recipe_type: Raw Resource
+
+  Better Future Scatter Laser:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Hardened Titanic: -3
+        Titanic Alloy: -2
+        Acid Electrode: -1
+        Ion Pulse Cell: -2
+    - recipe_type: Raw Resource
+
+  Better Future DOT Laser:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Titania Ingot: -2
+        Acid Electrode: -2
+    - recipe_type: Raw Resource
+
+  Better Future CLAW Plasma Cutter:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Hardened Titanic: -4
+        Titanic Alloy: -4
+        Acid Electrode: -2
+        Ion Pulse Cell: -2
+    - recipe_type: Raw Resource
+
+  Better Future Laser Rifle:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Titanic Alloy: -1
+        Acid Electrode: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Better Future Assault Laser Streamlined:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Rugged Fiblar: -1
+        Acid Electrode: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Better Future Trapdoor Assault Laser:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plubonic Alloy: -1
+        Acid Electrode: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Better Future FS Plasma Laser:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Rugged Fiblar: -3
+        Acid Electrode: -3
+        Zero Point Splitter: -1
+        Coffman Cell: -1
+    - recipe_type: Raw Resource
+
+  Better Future Speed Lance Laser:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Hardened Titanic: -2
+        Titanic Alloy: -2
+        Acid Electrode: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Better Future Gatling Laser:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Rugged Fiblar: -3
+        Acid Electrode: -3
+        Z4 Explosives: -2
+        Coffman Cell: -1
+        Gluon Beam: -1
+    - recipe_type: Raw Resource
+
+  Better Future Cyber Disc Plasma Laser:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Rugged Fiblar: -3
+        Acid Electrode: -3
+        Z4 Explosives: -2
+        Coffman Cell: -2
+        Gluon Beam: -1
+    - recipe_type: Raw Resource
+
+  Better Future Class D Laser Ray:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Rugged Fiblar: -8
+        Acid Electrode: -2
+        Z4 Explosives: -2
+        Coffman Cell: -1
+        Gluon Beam: -1
+    - recipe_type: Raw Resource
+
+  Better Future Arc Missile Pod:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -6
+        Blast Caps: -3
+        Z4 Explosives: -6
+        Dervish Gel: -2
+    - recipe_type: Raw Resource
+
+# Better Future Accessory Blocks
+
+  Better Future Small Light:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Luxian Crystal: -1
+        Plumbia Ingot: -1
+        Titania Ingot: -1
+    - recipe_type: Raw Resource
+
+  Better Future Medium Light:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+    - recipe_type: Raw Resource
+
+  Better Future Radar:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -1
+        Plubonic Alloy: -1
+        Acid Electrode: -1
+        Ion Pulse Cell: -2
+    - recipe_type: Raw Resource
+
+  Better Future Swipe Collector:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Luxian Crystal: -4
+        Titania Ingot: -4
+        Fibre Plating: -4
+    - recipe_type: Raw Resource
+
+  Better Future Passive All Axis Gyro:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -1
+        Rugged Fiblar: -1
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  Better Future Active All Axis Gyro:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -2
+        Rugged Fiblar: -1
+        Cyclone Jet: -2
+    - recipe_type: Raw Resource
+
+  Better Future Active Single Axis Gyro:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -4
+        Rugged Fiblar: -2
+        Cyclone Jet: -3
+    - recipe_type: Raw Resource
+
+  Better Future Pitch Trim Gyro:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -8
+        Rugged Fiblar: -8
+        Cyclone Jet: -6
+        Thermo Jet: -1
+    - recipe_type: Raw Resource
+
+  Better Future Controller Switch:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -1
+        Plubonic Alloy: -1
+        Acid Electrode: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Better Future Hover Power Controller:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -1
+        Rugged Fiblar: -1
+        Acid Electrode: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Better Future Stabilising Computer:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -1
+        Rugged Fiblar: -1
+        Sensory Transmitter: -1
+        Mother Brain: -1
+    - recipe_type: Raw Resource
+
+  Better Future Speedometer:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Luxian Crystal: -1
+        Titania Ingot: -1
+        Fibre Plating: -2
+    - recipe_type: Raw Resource
+
+  Better Future Altimeter:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Luxian Crystal: -1
+        Plumbia Ingot: -1
+        Fibre Plating: -2
+    - recipe_type: Raw Resource
+
+  Better Future Anchor Controller:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -1
+        Hardened Titanic: -1
+        Acid Electrode: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Better Future Payload Terminal:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Gluon Beam: -1
+        Seed AI: -1
+        Proxima Dark: -1
+    - recipe_type: Raw Resource
+
+# Better Future Power Blocks
+
+  Better Future Battery:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Rugged Fiblar: -2
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Better Future Solar Panel:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -2
+        Acid Electrode: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Better Future Plasma Furnace Generator:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -2
+        Carbius Brick: -2
+        Fuel Injector: -2
+    - recipe_type: Raw Resource
+
+  Better Future Shield Bubble Projector:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Rugged Fiblar: -1
+        Ion Pulse Cell: -1
+        Dervish Gel: -1
+        Coffman Cell: -1
+    - recipe_type: Raw Resource
+
+  Better Future Flat Shield:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Rugged Fiblar: -2
+        Ion Pulse Cell: -1
+        Hard Light Drive: -1
+    - recipe_type: Raw Resource
+
+  Better Future Long Flat Shield:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Rugged Fiblar: -3
+        Ion Pulse Cell: -1
+        Hard Light Drive: -1
+        Dervish Gel: -1
+    - recipe_type: Raw Resource
+
+  Better Future Edge Shield:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Rugged Fiblar: -2
+        Ion Pulse Cell: -2
+        Hard Light Drive: -1
+    - recipe_type: Raw Resource
+
+  Better Future Corner Shield:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Rugged Fiblar: -1
+        Ion Pulse Cell: -2
+        Hard Light Drive: -1
+    - recipe_type: Raw Resource
+
+  Better Future Repair Bubble Projector:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -3
+        Ion Pulse Cell: -2
+        Zero Point Splitter: -1
+    - recipe_type: Raw Resource
+
+# Better Future Manufacturing Blocks
+
+  Better Future Sky Anchor:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Rugged Fiblar: -8
+        Hardened Titanic: -8
+        Celestian Crystal: -4
+        Hard Light Drive: -1
+    - recipe_type: Raw Resource
+
+  Better Future Air Receiver:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Luxian Crystal: -4
+        Titania Ingot: -4
+        Carbius Brick: -4
+    - recipe_type: Raw Resource
+
+  Better Future Refinery:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Fibre Plating: -1
+        Acid Electrode: -1
+    - recipe_type: Raw Resource
+
+  Better Future Fabricator:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Carbius Brick: -1
+        Rodius Capsule: -2
+        Rugged Fiblar: -4
+        Blast Caps: -1
+    - recipe_type: Raw Resource
+
+  Better Future Scrapper:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Titanic Alloy: -1
+        Plasma Emitter: -1
+    - recipe_type: Raw Resource
+
+  Better Future Mobile Delivery Cannon:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -2
+        Rugged Fiblar: -2
+        Z4 Explosives: -2
+        Coffman Cell: -1
+    - recipe_type: Raw Resource
+
+  Better Future Mobile SCU:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Rodius Capsule: -1
+        Acid Electrode: -1
+        Zero Point Splitter: -1
+        Thermo Jet: -1
+        Seed AI: -1
+    - recipe_type: Raw Resource
+
+# Better Future Flight Blocks
+
+  Better Future Orb Booster:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -3
+        Cyclone Jet: -3
+    - recipe_type: Raw Resource
+
+  Better Future Medium Booster:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -6
+        Cyclone Jet: -3
+        Zero Point Splitter: -1
+    - recipe_type: Raw Resource
+
+  Better Future Large Booster:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -6
+        Cyclone Jet: -3
+        Zero Point Splitter: -2
+    - recipe_type: Raw Resource
+
+  Better Future Small Ion Drive:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -2
+        Rugged Fiblar: -2
+        Cyclone Jet: -1
+        Dervish Gel: -1
+    - recipe_type: Raw Resource
+
+  Better Future Medium Ion Drive:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -4
+        Rugged Fiblar: -4
+        Cyclone Jet: -2
+        Dervish Gel: -2
+    - recipe_type: Raw Resource
+
+  Better Future Linear Motion Engine:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -1
+        Olastic Brick: -1
+        Blast Caps: -2
+        Hard Light Drive: -1
+        Plasma Emitter: -1
+    - recipe_type: Raw Resource
+
+  Better Future Small Rotor:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plubonic Alloy: -4
+        Fuel Injector: -2
+        Cyclone Jet: -1
+        Coffman Cell: -1
+        Proxima Dark: -1
+    - recipe_type: Raw Resource
+
+  Better Future Medium Rotor:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Titanic Alloy: -4
+        Fuel Injector: -2
+        Cyclone Jet: -1
+        Gluon Beam: -1
+        Proxima Dark: -1
+    - recipe_type: Raw Resource
+
+  Better Future Small Fuel Tank:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -3
+        Fuel Injector: -3
+    - recipe_type: Raw Resource
+
+  Better Future Medium Fuel Tank:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -6
+        Fuel Injector: -3
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  Better Future Large Fuel Tank:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -6
+        Cyclone Jet: -2
+        Thermo Jet: -1
+    - recipe_type: Raw Resource
+
+  Better Future Anti-gravity Pip Engine:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -1
+        Olastic Brick: -1
+        Blast Caps: -2
+        Hard Light Drive: -1
+        Zero Point Splitter: -1
+    - recipe_type: Raw Resource
+
+  Better Future Anti-gravity Apple Engine:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -4
+        Olastic Brick: -4
+        Blast Caps: -4
+        Hard Light Drive: -2
+        Zero Point Splitter: -2
+    - recipe_type: Raw Resource
+
+  Better Future Anti-gravity Eco Engine:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -8
+        Olastic Brick: -8
+        Blast Caps: -8
+        Hard Light Drive: -3
+        Zero Point Splitter: -3
+    - recipe_type: Raw Resource
+
+  Better Future Gravity Magnifier Engine:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibre Plating: -1
+        Olastic Brick: -1
+        Blast Caps: -1
+        Hard Light Drive: -1
+        Zero Point Splitter: -1
+    - recipe_type: Raw Resource
+
+  Better Future Small Adjustment Thruster:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Fibre Plating: -1
+        Rugged Fiblar: -1
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  Better Future Medium Adjustment Thruster:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Fibre Plating: -2
+        Rugged Fiblar: -2
+        Cyclone Jet: -2
+    - recipe_type: Raw Resource
+
+  Better Future Large Adjustment Thruster:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Fibre Plating: -4
+        Rugged Fiblar: -4
+        Cyclone Jet: -4
+    - recipe_type: Raw Resource
+
+  Better Future Small Hover Ring:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Fibre Plating: -2
+        Rugged Fiblar: -2
+        Cyclone Jet: -2
+    - recipe_type: Raw Resource
+
+  Better Future Small Air Brake:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Titania Ingot: -1
+        Fibre Plating: -1
+        Rugged Fiblar: -1
+    - recipe_type: Raw Resource
+
+  Better Future Medium Air Brake:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Titania Ingot: -2
+        Fibre Plating: -2
+        Rugged Fiblar: -2
+    - recipe_type: Raw Resource
+
+  Better Future Large Air Brake:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Titania Ingot: -3
+        Fibre Plating: -3
+        Rugged Fiblar: -3
+    - recipe_type: Raw Resource
+
+  Better Future Small Wing:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -1
+        Fibre Plating: -1
+        Olastic Brick: -1
+        Rugged Fiblar: -1
+    - recipe_type: Raw Resource
+
+  Better Future Tail Wing:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Fibre Plating: -2
+        Olastic Brick: -1
+        Rugged Fiblar: -2
+    - recipe_type: Raw Resource
+
+  Better Future Medium Outside Wing:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Fibre Plating: -3
+        Olastic Brick: -2
+        Rugged Fiblar: -3
+    - recipe_type: Raw Resource
+
+  Better Future Medium Middle Wing:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Fibre Plating: -4
+        Olastic Brick: -2
+        Rugged Fiblar: -3
+    - recipe_type: Raw Resource
+
+  Better Future Large Outside Wing:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -5
+        Fibre Plating: -5
+        Olastic Brick: -4
+        Rugged Fiblar: -5
+    - recipe_type: Raw Resource
+
+  Better Future Left Small Hover Flipper:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Fibre Plating: -2
+        Rugged Fiblar: -2
+        Cyclone Jet: -2
+    - recipe_type: Raw Resource
+
+  Better Future Right Small Hover Flipper:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Fibre Plating: -2
+        Rugged Fiblar: -2
+        Cyclone Jet: -2
+    - recipe_type: Raw Resource
+
+  Better Future Left Medium Hover Flipper:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -3
+        Fibre Plating: -3
+        Rugged Fiblar: -3
+        Cyclone Jet: -3
+    - recipe_type: Raw Resource
+
+  Better Future Right Medium Hover Flipper:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Fibre Plating: -3
+        Rugged Fiblar: -3
+        Cyclone Jet: -3
+    - recipe_type: Raw Resource
+
+  Better Future Medium Hover Ring:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -5
+        Fibre Plating: -4
+        Rugged Fiblar: -4
+        Cyclone Jet: -4
+    - recipe_type: Raw Resource
+
+  Better Future Large Hover Ring:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -8
+        Fibre Plating: -8
+        Rugged Fiblar: -8
+        Cyclone Jet: -8
+    - recipe_type: Raw Resource
+
+  Better Future Left Large Hover Flipper:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -5
+        Fibre Plating: -5
+        Rugged Fiblar: -5
+        Cyclone Jet: -5
+    - recipe_type: Raw Resource
+
+  Better Future Right Large Hover Flipper:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -6
+        Fibre Plating: -5
+        Rugged Fiblar: -5
+        Cyclone Jet: -5
+    - recipe_type: Raw Resource
+
+# Better Future Flight Blocks
+
+  Reticule Research One Block:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Plumbia Ingot: -2
+        Titania Ingot: -1
+        Fibre Plating: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Two by Two Block:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Plumbia Ingot: -3
+        Titania Ingot: -2
+        Fibre Plating: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Faired One Block:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Fibre Plating: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Faired Two Block:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -6
+        Plumbia Ingot: -4
+        Titania Ingot: -2
+        Fibre Plating: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Armoured Two Block:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -6
+        Plumbia Ingot: -4
+        Titania Ingot: -6
+        Fibre Plating: -6
+    - recipe_type: Raw Resource
+
+  Reticule Research Armoured One Block:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Plumbia Ingot: -2
+        Titania Ingot: -4
+        Fibre Plating: -4
+    - recipe_type: Raw Resource
+
+  Reticule Research Medium Flat Bracket:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Titania Ingot: -3
+        Fibre Plating: -2
+        Rugged Fiblar: -3
+    - recipe_type: Raw Resource
+
+  Reticule Research Cross Chassis:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -5
+        Plumbia Ingot: -5
+        Titania Ingot: -4
+        Fibre Plating: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Rocker Chassis:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -4
+        Plumbia Ingot: -4
+        Titania Ingot: -3
+        Fibre Plating: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Tri Chassis:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -6
+        Plumbia Ingot: -6
+        Titania Ingot: -5
+        Fibre Plating: -3
+    - recipe_type: Raw Resource
+
+  Reticule Research Quad Chassis:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -7
+        Plumbia Ingot: -7
+        Titania Ingot: -6
+        Fibre Plating: -4
+    - recipe_type: Raw Resource
+
+  Reticule Research Small Flat Bracket:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Fibre Plating: -2
+        Rugged Fiblar: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Corner Bracket:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Rugged Fiblar: -3
+        Plubonic Greebles: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Small Arched Bracket:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Titania Ingot: -2
+        Rugged Fiblar: -2
+        Hardened Titanic: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Angled Bracket:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Plumbia Ingot: -1
+        Titania Ingot: -1
+        Rugged Fiblar: -4
+        Plubonic Greebles: -3
+    - recipe_type: Raw Resource
+
+  Reticule Research Medium Arched Bracket:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Titania Ingot: -3
+        Rugged Fiblar: -3
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Bracketed Wall Panel:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Plumbia Ingot: -2
+        Fibre Plating: -6
+        Hardened Titanic: -6
+    - recipe_type: Raw Resource
+
+  Reticule Research Single Bracket Window:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Fibre Plating: -3
+        Hardened Titanic: -2
+        Ignian Crystal: -3
+    - recipe_type: Raw Resource
+
+  Reticule Research Dual Bracket Window:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Fibre Plating: -3
+        Hardened Titanic: -3
+        Ignian Crystal: -3
+    - recipe_type: Raw Resource
+
+  Reticule Research Window Panel:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Fibre Plating: -2
+        Ignian Crystal: -3
+    - recipe_type: Raw Resource
+
+  Reticule Research Extended Window Panel:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -6
+        Fibre Plating: -4
+        Ignian Crystal: -5
+    - recipe_type: Raw Resource
+
+  Reticule Research Window Edge Panel:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Fibre Plating: -3
+        Ignian Crystal: -3
+    - recipe_type: Raw Resource
+
+  Reticule Research Extended Window Edge Panel:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -6
+        Fibre Plating: -5
+        Ignian Crystal: -6
+    - recipe_type: Raw Resource
+
+  Reticule Research Window Corner Panel:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Fibre Plating: -3
+        Ignian Crystal: -4
+    - recipe_type: Raw Resource
+
+  Reticule Research Research Wall Panel A:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Plumbia Ingot: -4
+        Fibre Plating: -3
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Wall Panel B:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Plumbia Ingot: -4
+        Fibre Plating: -4
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Extended Wall Panel:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Plumbia Ingot: -4
+        Fibre Plating: -5
+        Hardened Titanic: -4
+    - recipe_type: Raw Resource
+
+  Reticule Research Wall Edge Panel:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Fibre Plating: -4
+        Hardened Titanic: -3
+    - recipe_type: Raw Resource
+
+  Reticule Research Wall Corner Panel:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Plumbia Ingot: -3
+        Fibre Plating: -5
+        Hardened Titanic: -3
+    - recipe_type: Raw Resource
+
+  Reticule Research Ramp Medium:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Plumbia Ingot: -1
+        Titania Ingot: -4
+        Hardened Titanic: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Ramp Small:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Plumbia Ingot: -1
+        Titania Ingot: -3
+        Hardened Titanic: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Ramp Large:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Plumbia Ingot: -2
+        Titania Ingot: -5
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Platform:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Plumbia Ingot: -2
+        Titania Ingot: -6
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+# Reticule Research Control Blocks
+
+  Reticule Research Lookout Cab:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -2
+        Rugged Fiblar: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Pioneer Cab:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -3
+        Rugged Fiblar: -2
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+# Reticule Research Wheel Blocks
+
+  Reticule Research Mecanum Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -5
+        Rugged Fiblar: -5
+        Cyclone Jet: -2
+        Thermo Jet: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Front Balloon Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -3
+        Rugged Fiblar: -2
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Side Balloon Wheel:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -2
+        Rugged Fiblar: -2
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+# Reticule Research Weapon Blocks
+
+  Reticule Research HF Vibro Blade:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Hardened Titanic: -1
+        Acid Electrode: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Fireworks Launcher:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -1
+        Blast Caps: -1
+        Z4 Explosives: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Sonic Blaster:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Rugged Fiblar: -3
+        Acid Electrode: -3
+        Zero Point Splitter: -1
+        Coffman Cell: -1
+        Proxima Dark: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Talon Plasma Laser:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Rugged Fiblar: -2
+        Acid Electrode: -2
+        Zero Point Splitter: -1
+        Coffman Cell: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Zero Point Energy Gun:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Rugged Fiblar: -4
+        Acid Electrode: -2
+        Zero Point Splitter: -3
+        Coffman Cell: -1
+        Gluon Beam: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research GIGA PLASMA:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Rugged Fiblar: -4
+        Acid Electrode: -3
+        Zero Point Splitter: -1
+        Coffman Cell: -1
+        Gluon Beam: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research HIVE Missile Launcher:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Titanic Alloy: -1
+        Fuel Injector: -2
+        Ion Pulse Cell: -1
+        Thermo Jet: -2
+        Seed AI: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Tesla Coil:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Rugged Fiblar: -3
+        Acid Electrode: -3
+        Ion Pulse Cell: -5
+        Coffman Cell: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research AA Repulsor Cannon:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Rugged Fiblar: -3
+        Acid Electrode: -3
+        Zero Point Splitter: -1
+        Seed AI: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Sticky Bomb Launcher:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Titanic Alloy: -1
+        Fuel Injector: -2
+        Ion Pulse Cell: -1
+        Thermo Jet: -1
+        Gluon Beam: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Spotlight:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Titania Ingot: -3
+        Fibre Plating: -3
+        Acid Electrode: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Button:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -5
+        Plumbia Ingot: -5
+        Hardened Titanic: -3
+    - recipe_type: Raw Resource
+
+  Reticule Research Toggle:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Plumbia Ingot: -3
+        Hardened Titanic: -5
+    - recipe_type: Raw Resource
+
+  Reticule Research Input Value:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -5
+        Rodius Capsule: -2
+        Acid Electrode: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Beam Sensor:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -5
+        Plumbia Ingot: -3
+        Hardened Titanic: -3
+    - recipe_type: Raw Resource
+
+  Reticule Research Angled Beam Sensor:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -5
+        Plumbia Ingot: -3
+        Hardened Titanic: -5
+        Ignian Crystal: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Time of Day Sensor:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Hardened Titanic: -2
+        Sensory Transmitter: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Damage Sensor:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Fibre Plating: -3
+        Sensory Transmitter: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Proximity Sensor:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -4
+        Hardened Titanic: -2
+        Hard Light Drive: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Altitude Gauge:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Ion Pulse Cell: -1
+        Cyclone Jet: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Fuel Gauge:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Carbius Brick: -2
+        Titanic Alloy: -2
+        Fuel Injector: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Power Gauge:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Rodius Capsule: -2
+        Titanic Alloy: -2
+        Acid Electrode: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Speed Gauge:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibron Chunk: -2
+        Fibre Plating: -2
+        Ion Pulse Cell: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Red Wire:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Rubber Brick: -5
+        Rodius Capsule: -3
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Green Wire:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Rubber Brick: -4
+        Rodius Capsule: -3
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Blue Wire:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Rubber Brick: -4
+        Rodius Capsule: -4
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Yellow Wire:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Rubber Brick: -3
+        Rodius Capsule: -4
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Universal Wire:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Rubber Jelly: -5
+        Rodius Capsule: -3
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research One Way Wire:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Rubber Jelly: -5
+        Rodius Capsule: -4
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Signal Transmitter:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Plumbia Ingot: -1
+        Plubonic Greebles: -1
+        Sensory Transmitter: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Signal Receiver:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Hardened Titanic: -1
+        Sensory Transmitter: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Value Displayer:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -1
+        Acid Electrode: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Signal Extender:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Hardened Titanic: -1
+        Acid Electrode: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Signal Delayer:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Plubonic Greebles: -1
+        Acid Electrode: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Logic NOT:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Fibre Plating: -1
+        Ion Pulse Cell: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Logic AND:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -1
+        Titania Ingot: -1
+        Ion Pulse Cell: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Logic OR:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Plumbia Ingot: -3
+        Ion Pulse Cell: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Logic XOR:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Rugged Fiblar: -1
+        Ion Pulse Cell: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Logic Compare Less Than:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Plumbite Ore: -3
+        Fibre Plating: -1
+        Ion Pulse Cell: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Logic Compare Equals:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Plumbite Ore: -1
+        Titania Ingot: -1
+        Ion Pulse Cell: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Logic Compare Greater Than:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Plumbite Ore: -2
+        Rugged Fiblar: -1
+        Ion Pulse Cell: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Value Adder:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Plumbite Ore: -1
+        Luxian Crystal: -1
+        Ion Pulse Cell: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Value Subtractor:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Titanite Ore: -1
+        Plumbia Ingot: -1
+        Ion Pulse Cell: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Value Multiplier:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Plumbite Ore: -1
+        Fibre Plating: -1
+        Ion Pulse Cell: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Value Divider:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Titanite Ore: -1
+        Rugged Fiblar: -1
+        Ion Pulse Cell: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Fixed Colour Pixel:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -2
+        Acid Electrode: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Variable Colour Pixel:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Acid Electrode: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Actuating Gate:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -2
+        Hardened Titanic: -2
+        Ignian Crystal: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Actuating Ramp:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -3
+        Hardened Titanic: -1
+        Ignian Crystal: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Actuating Platform:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -4
+        Hardened Titanic: -2
+        Ignian Crystal: -1
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Repulsor Pad:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -3
+        Titanic Alloy: -3
+        Ion Pulse Cell: -1
+        Thermo Jet: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Stopwtach:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -2
+        Rugged Fiblar: -2
+        Ion Pulse Cell: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Tech Movement Controller:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -2
+        Hardened Titanic: -2
+        Heat Coil: -1
+        Seed AI: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Payload Terminal:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Gluon Beam: -1
+        Seed AI: -1
+        Proxima Dark: -1
+    - recipe_type: Raw Resource
+
+# Reticule Research Power Blocks
+
+  Reticule Research Small Phalanx Shield:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -2
+        Ion Pulse Cell: -1
+        Hard Light Drive: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Tapered Phalanx Shield:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -4
+        Ion Pulse Cell: -1
+        Hard Light Drive: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Long Phalanx Shield:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -1
+        Ion Pulse Cell: -1
+        Cyclone Jet: -1
+        Hard Light Drive: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Long Tapered Phalanx Shield:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -2
+        Ion Pulse Cell: -1
+        Cyclone Jet: -1
+        Hard Light Drive: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Large Phalanx Shield:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -2
+        Ion Pulse Cell: -1
+        Hard Light Drive: -1
+        Dervish Gel: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Large Tapered Phalanx Shield:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -3
+        Ion Pulse Cell: -1
+        Hard Light Drive: -1
+        Dervish Gel: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Small Edge Phalanx Shield:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -5
+        Ion Pulse Cell: -1
+        Hard Light Drive: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Small Tapered Edge Phalanx Shield:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -3
+        Ion Pulse Cell: -1
+        Hard Light Drive: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Corner Phalanx Shield:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibre Plating: -3
+        Ion Pulse Cell: -1
+        Cyclone Jet: -1
+        Hard Light Drive: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Dynamo Generator:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Titanic Alloy: -1
+        Fuel Injector: -2
+        Ion Pulse Cell: -2
+        Coffman Cell: -4
+    - recipe_type: Raw Resource
+
+# Reticule Research Manufacturing Blocks
+
+  Reticule Research Fixed Anchor:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Luxian Crystal: -3
+        Titania Ingot: -2
+        Fibre Plating: -2
+        Hardened Titanic: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Circuit Board Anchor:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Titania Ingot: -2
+        Fibre Plating: -2
+        Rugged Fiblar: -2
+        Hardened Titanic: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Rotating Anchor:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibron Chunk: -4
+        Plumbia Ingot: -2
+        Titania Ingot: -3
+        Fibre Plating: -3
+    - recipe_type: Raw Resource
+
+  Reticule Research Fabricator:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Rodius Capsule: -3
+        Olastic Brick: -3
+        Rugged Fiblar: -4
+        Blast Caps: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Scrapper:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Rugged Fiblar: -2
+        Heat Coil: -1
+    - recipe_type: Raw Resource
+
+  Reticule Research Anchored Ramp:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Rubber Brick: -3
+        Plumbia Ingot: -3
+        Fibre Plating: -3
+        Hardened Titanic: -4
+    - recipe_type: Raw Resource
+
+  Reticule Research Special Mixed Silo:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        Fibron Chunk: -5
+        Luxian Crystal: -5
+        Fibre Plating: -5
+        Rodius Capsule: -5
+    - recipe_type: Raw Resource
 
