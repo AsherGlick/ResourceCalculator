@@ -2,503 +2,560 @@
 authors:
   Asher: "https://aglick.com"
 
-index_page_display_name: "Skyward Sword"
+index_page_display_name: Skyward Sword
 
 recipe_types:
-  Beedle: "Buy {OUT_ITEM} for {IN_ITEMS} from Beedle"
-  Gear Shop: "Buy {OUT_ITEM} for {IN_ITEMS} at the Gear Shop"
-  Scrap Shop Upgrade: "Upgrade {IN_ITEMS} at the Scrap Shop to {OUT_ITEM}"
-  Potion Shop: "Buy {OUT_ITEM} for {IN_ITEMS} at the Potion Shop"
-  Infusion Shop Upgrade: "Upgrade {IN_ITEMS} at the Infusion Shop to {OUT_ITEM}"
+  Beedle: Buy {OUT_ITEM} for {IN_ITEMS} from Beedle
+  Gear Shop: Buy {OUT_ITEM} for {IN_ITEMS} at the Gear Shop
+  Scrap Shop Upgrade: Upgrade {IN_ITEMS} at the Scrap Shop to {OUT_ITEM}
+  Potion Shop: Buy {OUT_ITEM} for {IN_ITEMS} at the Potion Shop
+  Infusion Shop Upgrade: Upgrade {IN_ITEMS} at the Infusion Shop to {OUT_ITEM}
 
 resources:
   Bug Net:
     recipes:
-      - output: 1
-        recipe_type: Beedle
-        requirements:
-          Rupee: -50
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Beedle
+      requirements:
+        Rupee: -50
+    - recipe_type: Raw Resource
+
   Big Bug Net:
     recipes:
-      - output: 1
-        recipe_type: Scrap Shop Upgrade
-        requirements:
-          Bug Net: -1
-          Tumbleweed: -3
-          Ancient Flower: -2
-          Evil Crystal: -1
-          Rupee: -100
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Scrap Shop Upgrade
+      requirements:
+        Bug Net: -1
+        Tumbleweed: -3
+        Ancient Flower: -2
+        Evil Crystal: -1
+        Rupee: -100
+    - recipe_type: Raw Resource
 
   Slingshot:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Scattershot:
     recipes:
-      - output: 1
-        recipe_type: Scrap Shop Upgrade
-        requirements:
-          Slingshot: -1
-          Dusk Relic: -1
-          Amber Relic: -2
-          Jelly Blob: -3
-          Rupee: -20
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Scrap Shop Upgrade
+      requirements:
+        Slingshot: -1
+        Dusk Relic: -1
+        Amber Relic: -2
+        Jelly Blob: -3
+        Rupee: -20
+    - recipe_type: Raw Resource
 
   Beetle:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Quick Beetle:
     recipes:
-      - output: 1
-        recipe_type: Scrap Shop Upgrade
-        requirements:
-          Beetle: -1
-          Ancient Flower: -2
-          Hornet Larvae: -2
-          Golden Skull: -1
-          Rupee: -50
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Scrap Shop Upgrade
+      requirements:
+        Beetle: -1
+        Ancient Flower: -2
+        Hornet Larvae: -2
+        Golden Skull: -1
+        Rupee: -50
+    - recipe_type: Raw Resource
+
   Tough Beetle:
     recipes:
-      - output: 1
-        recipe_type: Scrap Shop Upgrade
-        requirements:
-          Quick Beetle: -1
-          Ancient Flower: -3
-          Amber Relic: -4
-          Blue Bird Feather: -1
-          Goddess Plume: -1
-          Rupee: -50
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Scrap Shop Upgrade
+      requirements:
+        Quick Beetle: -1
+        Ancient Flower: -3
+        Amber Relic: -4
+        Blue Bird Feather: -1
+        Goddess Plume: -1
+        Rupee: -50
+    - recipe_type: Raw Resource
 
   Bow:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Iron Bow:
     recipes:
-      - output: 1
-        recipe_type: Scrap Shop Upgrade
-        requirements:
-          Bow: -1
-          Tumbleweed: -3
-          Evil Crystal: -1
-          Monster Claw: -3
-          Eldin Ore: -2
-          Rupee: -50
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Scrap Shop Upgrade
+      requirements:
+        Bow: -1
+        Tumbleweed: -3
+        Evil Crystal: -1
+        Monster Claw: -3
+        Eldin Ore: -2
+        Rupee: -50
+    - recipe_type: Raw Resource
+
   Sacred Bow:
     recipes:
-      - output: 1
-        recipe_type: Scrap Shop Upgrade
-        requirements:
-          Iron Bow: -1
-          Tumbleweed: -5
-          Evil Crystal: -2
-          Lizard Tail: -3
-          Goddess Plume: -1
-          Rupee: -100
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Scrap Shop Upgrade
+      requirements:
+        Iron Bow: -1
+        Tumbleweed: -5
+        Evil Crystal: -2
+        Lizard Tail: -3
+        Goddess Plume: -1
+        Rupee: -100
+    - recipe_type: Raw Resource
 
   Wooden Shield:
     recipes:
-      - recipe_type: Raw Resource
-      - output: 1
-        recipe_type: Gear Shop
-        requirements:
-          Rupee: -50
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Gear Shop
+      requirements:
+        Rupee: -50
+
   Banded Shield:
     recipes:
-      - output: 1
-        recipe_type: Scrap Shop Upgrade
-        requirements:
-          Wooden Shield: -1
-          Amber Relic: -2
-          Monster Claw: -2
-          Jelly Blob: -1
-          Rupee: -30
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Scrap Shop Upgrade
+      requirements:
+        Wooden Shield: -1
+        Amber Relic: -2
+        Monster Claw: -2
+        Jelly Blob: -1
+        Rupee: -30
+    - recipe_type: Raw Resource
+
   Braced Shield:
     recipes:
-      - output: 1
-        recipe_type: Scrap Shop Upgrade
-        requirements:
-          Banded Shield: -1
-          Amber Relic: -3
-          Monster Claw: -2
-          Tumbleweed: -2
-          Ornamental Skull: -1
-          Rupee: -50
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Scrap Shop Upgrade
+      requirements:
+        Banded Shield: -1
+        Amber Relic: -3
+        Monster Claw: -2
+        Tumbleweed: -2
+        Ornamental Skull: -1
+        Rupee: -50
+    - recipe_type: Raw Resource
 
   Iron Shield:
     recipes:
-      - output: 1
-        recipe_type: Gear Shop
-        requirements:
-          Rupee: -100
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Gear Shop
+      requirements:
+        Rupee: -100
+    - recipe_type: Raw Resource
+
   Reinforced Shield:
     recipes:
-      - output: 1
-        recipe_type: Scrap Shop Upgrade
-        requirements:
-          Eldin Ore: -2
-          Monster Claw: -2
-          Ornamental Skull: -2
-          Rupee: -30
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Scrap Shop Upgrade
+      requirements:
+        Eldin Ore: -2
+        Monster Claw: -2
+        Ornamental Skull: -2
+        Rupee: -30
+    - recipe_type: Raw Resource
+
   Fortified Shield:
     recipes:
-      - output: 1
-        recipe_type: Scrap Shop Upgrade
-        requirements:
-          Eldin Ore: -3
-          Monster Claw: -3
-          Tumbleweed: -3
-          Blue Bird Feather: -1
-          Rupee: -100
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Scrap Shop Upgrade
+      requirements:
+        Eldin Ore: -3
+        Monster Claw: -3
+        Tumbleweed: -3
+        Blue Bird Feather: -1
+        Rupee: -100
+    - recipe_type: Raw Resource
 
   Sacred Shield:
     recipes:
-      - output: 1
-        recipe_type: Gear Shop
-        requirements:
-          Rupee: -500
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Gear Shop
+      requirements:
+        Rupee: -500
+    - recipe_type: Raw Resource
+
   Divine Shield:
     recipes:
-      - output: 1
-        recipe_type: Scrap Shop Upgrade
-        requirements:
-          Sacred Shield: -1
-          Dusk Relic: -1
-          Bird Feather: -2
-          Ornamental Skull: -3
-          Rupee: -100
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Scrap Shop Upgrade
+      requirements:
+        Sacred Shield: -1
+        Dusk Relic: -1
+        Bird Feather: -2
+        Ornamental Skull: -3
+        Rupee: -100
+    - recipe_type: Raw Resource
+
   Goddess Shield:
     recipes:
-      - output: 1
-        recipe_type: Scrap Shop Upgrade
-        requirements:
-          Divine Shield: -1
-          Dusk Relic: -4
-          Bird Feather: -3
-          Monster Horn: -3
-          Blue Bird Feather: -1
-          Rupee: -150
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Scrap Shop Upgrade
+      requirements:
+        Divine Shield: -1
+        Dusk Relic: -4
+        Bird Feather: -3
+        Monster Horn: -3
+        Blue Bird Feather: -1
+        Rupee: -150
+    - recipe_type: Raw Resource
 
   Small Bomb Bag:
     recipes:
-      - recipe_type: Raw Resource
-      - output: 1
-        recipe_type: Gear Shop
-        requirements:
-          Rupee: -150
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Gear Shop
+      requirements:
+        Rupee: -150
+
   Medium Bomb Bag:
     recipes:
-      - output: 1
-        recipe_type: Scrap Shop Upgrade
-        requirements:
-          Small Bomb Bag: -1
-          Lizard Tail: -1
-          Ornamental Skull: -3
-          Blue Bird Feather: -1
-          Rupee: -50
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Scrap Shop Upgrade
+      requirements:
+        Small Bomb Bag: -1
+        Lizard Tail: -1
+        Ornamental Skull: -3
+        Blue Bird Feather: -1
+        Rupee: -50
+    - recipe_type: Raw Resource
+
   Large Bomb Bag:
     recipes:
-      - output: 1
-        recipe_type: Scrap Shop Upgrade
-        requirements:
-          Medium Bomb Bag: -1
-          Lizard Tail: -3
-          Jelly Blob: -4
-          Hornet Larvae: -2
-          Golden Skull: -1
-          Rupee: -100
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Scrap Shop Upgrade
+      requirements:
+        Medium Bomb Bag: -1
+        Lizard Tail: -3
+        Jelly Blob: -4
+        Hornet Larvae: -2
+        Golden Skull: -1
+        Rupee: -100
+    - recipe_type: Raw Resource
 
   Small Seed Satchel:
     recipes:
-      - recipe_type: Raw Resource
-      - output: 1
-        recipe_type: Gear Shop
-        requirements:
-          Rupee: -100
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Gear Shop
+      requirements:
+        Rupee: -100
+
   Medium Seed Satchel:
     recipes:
-      - output: 1
-        recipe_type: Scrap Shop Upgrade
-        requirements:
-          Small Seed Satchel: -1
-          Amber Relic: -4
-          Monster Claw: -3
-          Ornamental Skull: -3
-          Rupee: -50
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Scrap Shop Upgrade
+      requirements:
+        Small Seed Satchel: -1
+        Amber Relic: -4
+        Monster Claw: -3
+        Ornamental Skull: -3
+        Rupee: -50
+    - recipe_type: Raw Resource
+
   Large Seed Satchel:
     recipes:
-      - output: 1
-        recipe_type: Scrap Shop Upgrade
-        requirements:
-          Medium Seed Satchel: -100
-          Amber Relic: -5
-          Monster Claw: -3
-          Golden Skull: -1
-          Blue Bird Feather: -1
-          Rupee: -100
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Scrap Shop Upgrade
+      requirements:
+        Medium Seed Satchel: -100
+        Amber Relic: -5
+        Monster Claw: -3
+        Golden Skull: -1
+        Blue Bird Feather: -1
+        Rupee: -100
+    - recipe_type: Raw Resource
 
   Small Quiver:
     recipes:
-      - recipe_type: Raw Resource
-      - output: 1
-        recipe_type: Gear Shop
-        requirements:
-          Rupee: -150
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Gear Shop
+      requirements:
+        Rupee: -150
+
   Medium Quiver:
     recipes:
-      - output: 1
-        recipe_type: Scrap Shop Upgrade
-        requirements:
-          Small Quiver: -1
-          Monster Claw: -3
-          Dusk Relic: -3
-          Amber Relic: -5
-          Rupee: -50
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Scrap Shop Upgrade
+      requirements:
+        Small Quiver: -1
+        Monster Claw: -3
+        Dusk Relic: -3
+        Amber Relic: -5
+        Rupee: -50
+    - recipe_type: Raw Resource
+
   Large Quiver:
     recipes:
-      - output: 1
-        recipe_type: Scrap Shop Upgrade
-        requirements:
-          Medium Quiver: -1
-          Monster Horn: -2
-          Dusk Relic: -3
-          Golden Skull: -1
-          Goddess Plume: -1
-          Rupee: -100
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Scrap Shop Upgrade
+      requirements:
+        Medium Quiver: -1
+        Monster Horn: -2
+        Dusk Relic: -3
+        Golden Skull: -1
+        Goddess Plume: -1
+        Rupee: -100
+    - recipe_type: Raw Resource
 
-  # Potions
+  ##############################################################################
+  _a: {H1: Potions} ############################################################
+  ##############################################################################
+
   Heart Potion:
     recipes:
-      - output: 1
-        recipe_type: Potion Shop
-        requirements:
-          Rupee: -20
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Potion Shop
+      requirements:
+        Rupee: -20
+    - recipe_type: Raw Resource
+
   Heart Potion+:
-    custom_simplename: heartpotion2 
+    custom_simplename: heartpotion2
     recipes:
-      - output: 1
-        recipe_type: Infusion Shop Upgrade
-        requirements:
-          Rupee: -20
-          Blessed Butterfly: -3
-          Woodland Rhino Beetle: -1
-          Volcanic Ladybug: -1
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Infusion Shop Upgrade
+      requirements:
+        Rupee: -20
+        Blessed Butterfly: -3
+        Woodland Rhino Beetle: -1
+        Volcanic Ladybug: -1
+    - recipe_type: Raw Resource
+
   Heart Potion++:
     custom_simplename: heartpotion3
     recipes:
-      - output: 1
-        recipe_type: Infusion Shop Upgrade
-        requirements:
-          Rupee: -30
-          Blessed Butterfly: -3
-          Deku Hornet: -3
-          Sand Cicada: -1
-          Eldin Roller: -1
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Infusion Shop Upgrade
+      requirements:
+        Rupee: -30
+        Blessed Butterfly: -3
+        Deku Hornet: -3
+        Sand Cicada: -1
+        Eldin Roller: -1
+    - recipe_type: Raw Resource
 
   Stamina Potion:
     recipes:
-      - output: 1
-        recipe_type: Potion Shop
-        requirements:
-          Rupee: -50
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Potion Shop
+      requirements:
+        Rupee: -50
+    - recipe_type: Raw Resource
+
   Stamina Potion+:
     custom_simplename: staminapotion2
     recipes:
-      - output: 1
-        recipe_type: Infusion Shop Upgrade
-        requirements:
-          Rupee: -20
-          Volcanic Ladybug: -3
-          Sky Stag Beetle: -2
-          Gerudo Dragonfly: -2
-          Faron Grasshopper: -1
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Infusion Shop Upgrade
+      requirements:
+        Rupee: -20
+        Volcanic Ladybug: -3
+        Sky Stag Beetle: -2
+        Gerudo Dragonfly: -2
+        Faron Grasshopper: -1
+    - recipe_type: Raw Resource
 
   Air Potion:
     recipes:
-      - output: 1
-        recipe_type: Potion Shop
-        requirements:
-          Rupee: -200
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Potion Shop
+      requirements:
+        Rupee: -200
+    - recipe_type: Raw Resource
+
   Air Potion+:
     custom_simplename: airpotion2
     recipes:
-      - output: 1
-        recipe_type: Infusion Shop Upgrade
-        requirements:
-          Rupee: -20
-          Volcanic Ladybug: -3
-          Sky Stag Beetle: -2
-          Gerudo Dragonfly: -2
-          Faron Grasshopper: -1
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Infusion Shop Upgrade
+      requirements:
+        Rupee: -20
+        Volcanic Ladybug: -3
+        Sky Stag Beetle: -2
+        Gerudo Dragonfly: -2
+        Faron Grasshopper: -1
+    - recipe_type: Raw Resource
 
   Revitalizing Potion:
     recipes:
-      - output: 1
-        recipe_type: Potion Shop
-        requirements:
-          Rupee: -30
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Potion Shop
+      requirements:
+        Rupee: -30
+    - recipe_type: Raw Resource
+
   Revitalizing Potion+:
     custom_simplename: revitalizingpotion2
     recipes:
-      - output: 1
-        recipe_type: Infusion Shop Upgrade
-        requirements:
-          Rupee: -20
-          Woodland Rhino Beetle: -2
-          Skyloft Mantis: -2
-          Deku Hornet: -3
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Infusion Shop Upgrade
+      requirements:
+        Rupee: -20
+        Woodland Rhino Beetle: -2
+        Skyloft Mantis: -2
+        Deku Hornet: -3
+    - recipe_type: Raw Resource
+
   Revitalizing Potion++:
     custom_simplename: revitalizingpotion3
     recipes:
-      - output: 1
-        recipe_type: Infusion Shop Upgrade
-        requirements:
-          Rupee: -30
-          Woodland Rhino Beetle: -2
-          Lanayru Ant: -3
-          Gerudo Dragonfly: -1
-          Sand Cicada: -1
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Infusion Shop Upgrade
+      requirements:
+        Rupee: -30
+        Woodland Rhino Beetle: -2
+        Lanayru Ant: -3
+        Gerudo Dragonfly: -1
+        Sand Cicada: -1
+    - recipe_type: Raw Resource
 
   Guardian Potion:
     recipes:
-      - output: 1
-        recipe_type: Potion Shop
-        requirements:
-          Rupee: -200
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Potion Shop
+      requirements:
+        Rupee: -200
+    - recipe_type: Raw Resource
+
   Guardian Potion+:
     custom_simplename: guardianpotion2
     recipes:
-      - output: 1
-        recipe_type: Infusion Shop Upgrade
-        requirements:
-          Rupee: -40
-          Faron Grasshopper: -1
-          Eldin Roller: -2
-          Blessed Butterfly: -3
-          Starry Firefly: -3
-      - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Infusion Shop Upgrade
+      requirements:
+        Rupee: -40
+        Faron Grasshopper: -1
+        Eldin Roller: -2
+        Blessed Butterfly: -3
+        Starry Firefly: -3
+    - recipe_type: Raw Resource
 
+  ##############################################################################
+  _b: {H1: Bugs} ###############################################################
+  ##############################################################################
 
-  # Bugs
   Faron Grasshopper:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Woodland Rhino Beetle:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Deku Hornet:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Skyloft Mantis:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Volcanic Ladybug:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Blessed Butterfly:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Lanayru Ant:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Sand Cicada:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Gerudo Dragonfly:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Eldin Roller:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Sky Stag Beetle:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Starry Firefly:
     recipes:
-      - recipe_type: Raw Resource
-  
+    - recipe_type: Raw Resource
 
-  # Treasures
+  ##############################################################################
+  _c: {H1: Treasures} ##########################################################
+  ##############################################################################
+
   Hornet Larvae:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Bird Feather:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Tumbleweed:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Lizard Tail:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Eldin Ore:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Ancient Flower:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Amber Relic:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Dusk Relic:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Jelly Blob:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Monster Claw:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Monster Horn:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Ornamental Skull:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Evil Crystal:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Blue Bird Feather:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Golden Skull:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
+
   Goddess Plume:
     recipes:
-      - recipe_type: Raw Resource
+    - recipe_type: Raw Resource
 
   Rupee:
     recipes:
-      - recipe_type: Raw Resource
-
+    - recipe_type: Raw Resource

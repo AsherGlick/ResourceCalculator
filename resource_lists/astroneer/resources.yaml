@@ -4,18 +4,17 @@ authors:
   Kevin: ""
   Alban: "https://github.com/mopolita"
 
-index_page_display_name: "Astroneer"
-# row_group_count: 0
+index_page_display_name: Astroneer
 
 recipe_types:
-  Backpack Printer: "Use a Backpack Printer to turn {IN_ITEMS} into {OUT_ITEM}"
-  Small Printer: "Use a Small Printer to turn {IN_ITEMS} into {OUT_ITEM}"
-  Medium Printer: "Use a Medium Printer to turn {IN_ITEMS} into {OUT_ITEM}"
-  Large Printer: "Use a Large Printer to turn {IN_ITEMS} into {OUT_ITEM}"
-  Smelting Furnace: "Use a Smelting Furnace to smelt {IN_ITEMS} into {OUT_ITEM}"
-  Chemistry Lab: "Use a Chemistry Lab to turn {IN_ITEMS} into {OUT_ITEM}"
-  Soil Centrifuge: "Use a Soil Centrifuge to make {OUT_ITEM} from {IN_ITEMS}"
-  Trade Platform: "Trade {IN_ITEMS} for {OUT_ITEM}"
+  Backpack Printer: Use a Backpack Printer to turn {IN_ITEMS} into {OUT_ITEM}
+  Small Printer: Use a Small Printer to turn {IN_ITEMS} into {OUT_ITEM}
+  Medium Printer: Use a Medium Printer to turn {IN_ITEMS} into {OUT_ITEM}
+  Large Printer: Use a Large Printer to turn {IN_ITEMS} into {OUT_ITEM}
+  Smelting Furnace: Use a Smelting Furnace to smelt {IN_ITEMS} into {OUT_ITEM}
+  Chemistry Lab: Use a Chemistry Lab to turn {IN_ITEMS} into {OUT_ITEM}
+  Soil Centrifuge: Use a Soil Centrifuge to make {OUT_ITEM} from {IN_ITEMS}
+  Trade Platform: Trade {IN_ITEMS} for {OUT_ITEM}
 
 resources:
   Soil:
@@ -121,7 +120,7 @@ resources:
       recipe_type: Trade Platform
       requirements:
         Scrap: -1
-        
+
   Sphalerite:
     recipes:
     - recipe_type: Raw Resource
@@ -217,7 +216,7 @@ resources:
       requirements:
         Malachite: -1
     - recipe_type: Raw Resource
-        
+
   Tungsten:
     recipes:
     - output: 1
@@ -284,7 +283,7 @@ resources:
     - output: 8
       recipe_type: Trade Platform
       requirements:
-        Fault Finder: -1 
+        Fault Finder: -1
     - recipe_type: Raw Resource
 
   Plastic:
@@ -310,7 +309,7 @@ resources:
     - output: 4
       recipe_type: Trade Platform
       requirements:
-        Fault Finder: -1 
+        Fault Finder: -1
     - recipe_type: Raw Resource
 
   Tungsten Carbide:
@@ -323,7 +322,7 @@ resources:
     - output: 4
       recipe_type: Trade Platform
       requirements:
-        Fault Finder: -1 
+        Fault Finder: -1
     - recipe_type: Raw Resource
 
   Graphene:
@@ -336,7 +335,7 @@ resources:
     - output: 1
       recipe_type: Trade Platform
       requirements:
-        Fault Finder: -1 
+        Fault Finder: -1
     - recipe_type: Raw Resource
 
   Diamond:
@@ -348,7 +347,7 @@ resources:
     - output: 1
       recipe_type: Trade Platform
       requirements:
-        Fault Finder: -1 
+        Fault Finder: -1
     - recipe_type: Raw Resource
 
   Hydrazine:
@@ -365,7 +364,7 @@ resources:
     - output: 2
       recipe_type: Trade Platform
       requirements:
-        Fault Finder: -1 
+        Fault Finder: -1
     - recipe_type: Raw Resource
 
   Silicone:
@@ -392,7 +391,7 @@ resources:
     - output: 2
       recipe_type: Trade Platform
       requirements:
-        Fault Finder: -1 
+        Fault Finder: -1
     - recipe_type: Raw Resource
 
   Steel:
@@ -406,7 +405,7 @@ resources:
     - output: 2
       recipe_type: Trade Platform
       requirements:
-        Fault Finder: -1 
+        Fault Finder: -1
     - recipe_type: Raw Resource
 
   Titanium Alloy:
@@ -484,14 +483,14 @@ resources:
       requirements:
         Glass: -1
     - recipe_type: Raw Resource
-        
+
   Portable Oxygenator:
     recipes:
     - output: 1
       recipe_type: Backpack Printer
       requirements:
         Nanocarbon Alloy: -1
-    - recipe_type: Raw Resource     
+    - recipe_type: Raw Resource
 
   Small Canister:
     recipes:
@@ -1187,7 +1186,7 @@ resources:
       requirements:
         Plastic: -1
         Glass: -1
-        Iron : -1
+        Iron: -1
     - recipe_type: Raw Resource
 
   Research Chamber:

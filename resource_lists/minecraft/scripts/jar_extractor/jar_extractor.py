@@ -9,10 +9,10 @@ import sys
 # Include the standard resource list parsing library
 sys.path.append("../../../../")
 from pylib.yaml_token_load import ordered_load
-from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, TokenError, Token, get_primitive
+from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, TokenError, Token, get_primitive, Heading
 
 from io import BytesIO
-from typing import Dict, Any, List, Set, Union, TypedDict
+from typing import Dict, Any, List, Set, Union, TypedDict, OrderedDict
 import json
 import os
 import re
@@ -157,7 +157,9 @@ def validate_resources(recipes:List[RecipeItem], groups: Dict[str, List[str]], i
         resource_list = ResourceList()
         errors += resource_list.parse(yaml_data)
 
-    validate_recipes(recipes, resource_list.resources)
+    resources: OrderedDict[str, Resource] = OrderedDict({k: v for k, v in resource_list.resources.items() if not isinstance(v, Heading)})
+
+    validate_recipes(recipes, resources)
     validate_requirement_groups(groups, resource_list.requirement_groups, id_to_name_map)
 
 

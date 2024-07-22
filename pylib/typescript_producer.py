@@ -1,9 +1,9 @@
-from typing import List, Tuple, TypedDict, Dict
-import json
+from typing import List, TypedDict, Dict
 import os
 import subprocess
+import re
 
-from pylib.producer import Producer, MultiFile
+from pylib.producer import Producer
 
 
 ################################################################################
@@ -25,62 +25,37 @@ class TypescriptInputFiles(TypedDict):
 ################################################################################
 def typescript_producer(
     ts_project_config: str,
-    categories: List[str]
-) -> Producer[TypescriptInputFiles, MultiFile]:
-    return Producer(
-        input_path_patterns={
-            "inputs": [],
-            "tsconfig_file": "^" + ts_project_config + "$",
-        },
-        paths=typescript_resource_paths,
-        function=build_typescript,
-        categories=categories + ["typescript"]
+) -> List[Producer[TypescriptInputFiles]]:
+    ts_project_dir = os.path.dirname(ts_project_config)
+
+    result = subprocess.run(
+        ["node_modules/.bin/tsc", "--project", ts_project_dir, "--listFilesOnly"],
+        capture_output=True,
+        text=True
     )
 
+    # TODO: This list is only built once when the producer is defined. Any new
+    #   files would not be added here. This shoudld either become the standard
+    #   pattern or upgrade to allow for live changes through some mechanism.
+    input_files = []
+    for line in result.stdout.split("\n"):
+        if line == "":
+            continue
+        relative_path = os.path.relpath(line)
+        regex_path = "^" + re.escape(relative_path) + "$"
+        input_files.append(regex_path)
+    input_files_regex = "|".join(input_files)
 
-################################################################################
-# typescript_resource_paths
-#
-# The input and output paths generation function for creating compiled
-# typescript files. Uses the configuration file to determine what the input and
-# output files will be.
-################################################################################
-def typescript_resource_paths(input_files: TypescriptInputFiles, groups: Dict[str, str]) -> Tuple[TypescriptInputFiles, MultiFile]:
-    tsconfig_path = input_files["tsconfig_file"]
-    input_folder = os.path.dirname(tsconfig_path)
-
-    # Get the list of files and the typescript output directory
-    with open(tsconfig_path) as f:
-        tsconfig = json.load(f)
-
-    files: List[str] = tsconfig["files"]
-    output_directory: str = tsconfig["compilerOptions"]["outDir"]
-
-    output_paths = []
-    input_paths = []
-
-    for file in files:
-
-        output_path = os.path.normpath(os.path.join(input_folder, output_directory, file))
-
-        if output_path.endswith(".ts"):
-            output_path = output_path[:-3] + ".js"
-        else:
-            raise ValueError("Expected only typescript files as input")
-
-        input_path = os.path.join(input_folder, file)
-
-        output_paths.append(output_path)
-        input_paths.append(input_path)
-
-    return (
-        {
-            "inputs": input_paths,
-            "tsconfig_file": tsconfig_path
-        }, {
-            "files": output_paths
-        }
-    )
+    return [
+        Producer(
+            name="Compile Typescript to Javascript",
+            input_path_patterns={
+                "inputs": [input_files_regex],
+                "tsconfig_file": "^" + re.escape(ts_project_config) + "$",
+            },
+            function=build_typescript,
+        )
+    ]
 
 
 ################################################################################
@@ -89,8 +64,27 @@ def typescript_resource_paths(input_files: TypescriptInputFiles, groups: Dict[st
 # Call the typescript compiler tsc to generate compiled typescript for the
 # files in the typescript project.
 ################################################################################
-def build_typescript(input_files: TypescriptInputFiles, output_files: MultiFile) -> None:
+def build_typescript(input_files: TypescriptInputFiles, groups: Dict[str, str]) -> List[str]:
     tsconfig_file = input_files["tsconfig_file"]
 
+    # Run tsc on the typescript code
     typescript_folder = os.path.dirname(tsconfig_file)
-    subprocess.run(["node_modules/.bin/tsc", "--project", typescript_folder])
+    result = subprocess.run(
+        ["node_modules/.bin/tsc", "--project", typescript_folder, "--listEmittedFiles"],
+        capture_output=True,
+        text=True,
+    )
+
+    output_files = []
+    for line in result.stdout.split("\n"):
+        if line == "":
+            continue
+
+        if not line.startswith("TSFILE: "):
+            print("ERROR:", line)
+
+        line = line.removeprefix("TSFILE: ")
+        relative_path = os.path.relpath(line)
+        output_files.append(relative_path)
+
+    return output_files
