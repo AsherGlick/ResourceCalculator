@@ -2,7 +2,7 @@
 # has anything to do with build.py directly.
 from typing import List, OrderedDict
 from pylib.yaml_token_load import ordered_load
-from pylib.resource_list import ResourceList, Resource, StackSize, TokenError, Token
+from pylib.resource_list import ResourceList, Resource, StackSize, TokenError, Token, Heading
 from pylib.yaml_linter_producer import expand_raw_resource, lint_resources
 
 import unittest
@@ -17,7 +17,7 @@ def test_load(input_yaml: str) -> List[TokenError]:
         resource_list = ResourceList()
         errors += resource_list.parse(yaml_data)
 
-    resources: OrderedDict[str, Resource] = resource_list.resources
+    resources: OrderedDict[str, Resource] = OrderedDict([(k, v) for k, v in resource_list.resources.items() if not isinstance(v, Heading)])
     resources = expand_raw_resource(resources)
 
     recipe_types: OrderedDict[str, str] = resource_list.recipe_types
@@ -72,7 +72,7 @@ class Test_Invalid_Yaml(unittest.TestCase):
         errors = test_load("tests/invalid_resource_list_key.yaml")
         desired_errors: List[TokenError] = [
             TokenError(
-                "Found Invalid ResourceList key, valid ResourceList keys are ['authors', 'index_page_display_name', 'recipe_types', 'stack_sizes', 'default_stack_size', 'resources', 'game_version', 'banner_message', 'requirement_groups', 'row_group_count']",
+                "Found Invalid ResourceList key, valid ResourceList keys are ['authors', 'index_page_display_name', 'game_version', 'row_group_count', 'note', 'banner_message', 'recipe_types', 'requirement_groups', 'stack_sizes', 'default_stack_size', 'resources']",
                 Token(10, 10, 0, 16)
             )
         ]

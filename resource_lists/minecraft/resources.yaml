@@ -1,28 +1,28 @@
 ---
 authors:
   Asher: "https://aglick.com"
-  Kevin: "kroden3d@gmail.com"
+  Kevin: kroden3d@gmail.com
   Marc: "https://github.com/mmodrow"
 
-index_page_display_name: "Minecraft"
+index_page_display_name: Minecraft
 
 game_version: Java 1.21
 
-banner_message: "Now updated to 1.21!"
+banner_message: Now updated to 1.21!
 
 recipe_types:
-  Crafting: "Craft {IN_ITEMS} into {OUT_ITEM}"
-  Smelting: "Use a furnace to smelt {IN_ITEMS} into {OUT_ITEM} using {ITEM Fuel}"
-  Add Water: "Pour water onto {IN_ITEMS} to turn it into {OUT_ITEM}"
-  Strip: "Right click on {IN_ITEMS} with an Axe to strip it into {OUT_ITEM}"
-  Till: "Right click on {IN_ITEMS} with a Hoe to till it into {OUT_ITEM}"
-  Carve: "Right click on {IN_ITEMS} with Sheers to carve it into {OUT_ITEM}"
-  Shovel: "Right click on {IN_ITEMS} with a Shovel to shovel it into {OUT_ITEM}"
-  As: "Treat {IN_ITEMS} as {OUT_ITEM}"
-  Cutting: "Use a stonecutter to cut {IN_ITEMS} into {OUT_ITEM}"
-  Oxidation: "Place {IN_ITEMS} down as blocks until they oxidize into {OUT_ITEM}"
-  Smithing Table: "Use a smithing table to upgrade {IN_ITEMS} into {OUT_ITEM}"
-  Fill Bucket: "Right click while holding a bucket to turn {IN_ITEMS} into {OUT_ITEM}"
+  Crafting: Craft {IN_ITEMS} into {OUT_ITEM}
+  Smelting: Use a furnace to smelt {IN_ITEMS} into {OUT_ITEM} using {ITEM Fuel}
+  Add Water: Pour water onto {IN_ITEMS} to turn it into {OUT_ITEM}
+  Strip: Right click on {IN_ITEMS} with an Axe to strip it into {OUT_ITEM}
+  Till: Right click on {IN_ITEMS} with a Hoe to till it into {OUT_ITEM}
+  Carve: Right click on {IN_ITEMS} with Sheers to carve it into {OUT_ITEM}
+  Shovel: Right click on {IN_ITEMS} with a Shovel to shovel it into {OUT_ITEM}
+  As: Treat {IN_ITEMS} as {OUT_ITEM}
+  Cutting: Use a stonecutter to cut {IN_ITEMS} into {OUT_ITEM}
+  Oxidation: Place {IN_ITEMS} down as blocks until they oxidize into {OUT_ITEM}
+  Smithing Table: Use a smithing table to upgrade {IN_ITEMS} into {OUT_ITEM}
+  Fill Bucket: Right click while holding a bucket to turn {IN_ITEMS} into {OUT_ITEM}
 
 requirement_groups:
   Any Acacia Log:
@@ -1096,21 +1096,21 @@ requirement_groups:
 
 stack_sizes:
   Double Chest:
-    quantity_multiplier: 54 # 9x6 Stacks
-    plural: "Double Chests"
-    extends_from: "Stack"
-
+    quantity_multiplier: 54
+    note: "9x6 Stacks"
+    plural: Double Chests
+    extends_from: Stack
   Shulker Box:
-    quantity_multiplier: 27 # 9x3 Stacks
-    plural: "Shulker Boxes"
-    extends_from: "Stack"
-
+    quantity_multiplier: 27
+    note: "9x3 Stacks"
+    plural: Shulker Boxes
+    extends_from: Stack
   Stack:
     quantity_multiplier: 64
-    plural: "Stacks"
+    plural: Stacks
     extends_from: null
 
-default_stack_size: "Stack"
+default_stack_size: Stack
 
 resources:
   Stone:
@@ -1233,7 +1233,6 @@ resources:
   Dirt:
     recipes:
     - recipe_type: Raw Resource
-      
 
   Coarse Dirt:
     recipes:
@@ -1359,7 +1358,7 @@ resources:
   Sand:
     recipes:
     - recipe_type: Raw Resource
-  
+
   Red Sand:
     recipes:
     - recipe_type: Raw Resource
@@ -1391,8 +1390,6 @@ resources:
   Deepslate Copper Ore:
     recipes:
     - recipe_type: Raw Resource
-
-  # Page 2 # DELETE ME
 
   Gold Ore:
     recipes:
@@ -1441,7 +1438,7 @@ resources:
   Nether Quartz Ore:
     recipes:
     - recipe_type: Raw Resource
-  
+
   Ancient Debris:
     recipes:
     - recipe_type: Raw Resource
@@ -2424,7 +2421,6 @@ resources:
       requirements:
         Sand: -4
 
-
   Chiseled Sandstone:
     recipes:
     - output: 1
@@ -2486,7 +2482,6 @@ resources:
   Sea Pickle:
     recipes:
     - recipe_type: Raw Resource
-
 
   White Wool:
     recipes:
@@ -3054,7 +3049,6 @@ resources:
       requirements:
         Stone: -1
         Fuel: -1
-
     - recipe_type: Raw Resource
 
   Bricks:
@@ -3141,18 +3135,17 @@ resources:
       requirements:
         Purpur Slab: -2
     - recipe_type: Raw Resource
-  
+
   Purpur Stairs:
     recipes:
     - output: 1
       recipe_type: Cutting
       requirements:
-        Purpur Block : -1
+        Purpur Block: -1
     - output: 4
       recipe_type: Crafting
       requirements:
         Any Purpur Block: -6
-
     - recipe_type: Raw Resource
 
   Oak Stairs:
@@ -3222,7 +3215,6 @@ resources:
       requirements:
         Cobblestone: -6
     - recipe_type: Raw Resource
-
 
   Snow:
     recipes:
@@ -3335,7 +3327,7 @@ resources:
       requirements:
         Warped Planks: -4
         Stick: -2
-    - recipe_type: Raw Resource  
+    - recipe_type: Raw Resource
 
   Pumpkin:
     recipes:
@@ -3616,7 +3608,7 @@ resources:
     - output: 1
       recipe_type: Cutting
       requirements:
-        Bricks : -1
+        Bricks: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -3747,7 +3739,7 @@ resources:
         Obsidian: -8
         Eye of Ender: -1
     - recipe_type: Raw Resource
- 
+
   Block of Emerald:
     recipes:
     - output: 1
@@ -3981,7 +3973,7 @@ resources:
       requirements:
         Diorite: -6
     - recipe_type: Raw Resource
-  
+
   Blackstone Wall:
     recipes:
     - output: 1
@@ -3993,7 +3985,7 @@ resources:
       requirements:
         Blackstone: -6
     - recipe_type: Raw Resource
-  
+
   Polished Blackstone Wall:
     recipes:
     - output: 1
@@ -4009,7 +4001,7 @@ resources:
       requirements:
         Polished Blackstone: -6
     - recipe_type: Raw Resource
-  
+
   Polished Blackstone Brick Wall:
     recipes:
     - output: 1
@@ -4029,7 +4021,7 @@ resources:
       requirements:
         Polished Blackstone Bricks: -6
     - recipe_type: Raw Resource
-  
+
   Cobbled Deepslate Wall:
     recipes:
     - output: 1
@@ -4041,7 +4033,7 @@ resources:
       requirements:
         Cobbled Deepslate: -6
     - recipe_type: Raw Resource
-  
+
   Polished Deepslate Wall:
     recipes:
     - output: 1
@@ -4057,7 +4049,7 @@ resources:
       requirements:
         Polished Deepslate: -6
     - recipe_type: Raw Resource
-  
+
   Deepslate Brick Wall:
     recipes:
     - output: 1
@@ -4077,7 +4069,7 @@ resources:
       requirements:
         Deepslate Bricks: -6
     - recipe_type: Raw Resource
-  
+
   Deepslate Tile Wall:
     recipes:
     - output: 1
@@ -4160,7 +4152,7 @@ resources:
     - output: 1
       recipe_type: Cutting
       requirements:
-        Block of Quartz : -1
+        Block of Quartz: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -5085,7 +5077,7 @@ resources:
       requirements:
         Magma Cream: -4
     - recipe_type: Raw Resource
-  
+
   Nether Wart Block:
     recipes:
     - output: 1
@@ -5106,7 +5098,7 @@ resources:
         Nether Brick: -2
         Nether Wart: -2
     - recipe_type: Raw Resource
-  
+
   Bone Block:
     recipes:
     - output: 1
@@ -5711,35 +5703,35 @@ resources:
   Dead Brain Coral Block:
     recipes:
     - recipe_type: Raw Resource
-  
+
   Dead Bubble Coral Block:
     recipes:
     - recipe_type: Raw Resource
-  
+
   Dead Fire Coral Block:
     recipes:
     - recipe_type: Raw Resource
-  
+
   Dead Horn Coral Block:
     recipes:
     - recipe_type: Raw Resource
-  
+
   Tube Coral Block:
     recipes:
     - recipe_type: Raw Resource
-  
+
   Brain Coral Block:
     recipes:
     - recipe_type: Raw Resource
-  
+
   Bubble Coral Block:
     recipes:
     - recipe_type: Raw Resource
-  
+
   Fire Coral Block:
     recipes:
     - recipe_type: Raw Resource
-  
+
   Horn Coral Block:
     recipes:
     - recipe_type: Raw Resource
@@ -5918,7 +5910,7 @@ resources:
     - output: 1
       recipe_type: Cutting
       requirements:
-       End Stone Bricks : -1
+        End Stone Bricks: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -5990,7 +5982,7 @@ resources:
     - output: 1
       recipe_type: Cutting
       requirements:
-       Red Nether Bricks: -1
+        Red Nether Bricks: -1
     - output: 4
       recipe_type: Crafting
       requirements:
@@ -6437,8 +6429,9 @@ resources:
     recipes:
     - output: 1
       recipe_type: Crafting
+      note: "TODO: Empty Glass Bottles Are Also Produced Here"
       requirements:
-        Honey Bottle: -4  # TODO: Empty Glass Bottles Are Also Produced Here
+        Honey Bottle: -4
     - recipe_type: Raw Resource
 
   Observer:
@@ -7030,7 +7023,7 @@ resources:
         Minecart: -1
         Furnace: -1
     - recipe_type: Raw Resource
-  
+
   Minecart with TNT:
     recipes:
     - output: 1
@@ -7057,7 +7050,7 @@ resources:
         Carrot: -1
         Fishing Rod: -1
     - recipe_type: Raw Resource
-  
+
   Warped Fungus on a Stick:
     recipes:
     - output: 1
@@ -7070,7 +7063,7 @@ resources:
   Elytra:
     recipes:
     - recipe_type: Raw Resource
-  
+
   Oak Boat:
     recipes:
     - output: 1
@@ -7296,7 +7289,6 @@ resources:
       requirements:
         Iron Ore: -1
         Fuel: -1
-
 
   Raw Copper:
     recipes:
@@ -7547,7 +7539,7 @@ resources:
         Stick: -2
         Iron Ingot: -1
     - recipe_type: Raw Resource
- 
+
   Iron Pickaxe:
     recipes:
     - output: 1
@@ -7814,7 +7806,7 @@ resources:
       requirements:
         Diamond: -5
     - recipe_type: Raw Resource
-      
+
   Diamond Chestplate:
     recipes:
     - output: 1
@@ -8048,26 +8040,26 @@ resources:
     recipes:
     - output: 1
       recipe_type: Fill Bucket
+      note: "This also requires Water Block: -1"
       requirements:
-        # TODO: Water Block: -1
         Bucket: -1
     - recipe_type: Raw Resource
 
-  Lava Bucket: 
+  Lava Bucket:
     recipes:
     - output: 1
       recipe_type: Fill Bucket
+      note: "This also requires Lava Block: -1"
       requirements:
-        # TODO: Lava Block: -1
         Bucket: -1
     - recipe_type: Raw Resource
 
-  Powder Snow Bucket: 
+  Powder Snow Bucket:
     recipes:
     - output: 1
       recipe_type: Fill Bucket
+      note: "This also requires Powder Snow Block: -1"
       requirements:
-        # TODO: Powder Snow Block: -1  
         Bucket: -1
     - recipe_type: Raw Resource
 
@@ -8089,8 +8081,8 @@ resources:
     recipes:
     - output: 1
       recipe_type: Fill Bucket
+      note: "This also requires Cow: -0 (cows are infinite)"
       requirements:
-        # TODO: Cow: -0 (infinite)
         Bucket: -1
     - recipe_type: Raw Resource
 
@@ -8098,8 +8090,8 @@ resources:
     recipes:
     - output: 1
       recipe_type: Fill Bucket
+      note: "This also requires Pufferfish: -1"
       requirements:
-        # TODO: Pufferfish: -1
         Bucket: -1
     - recipe_type: Raw Resource
 
@@ -8107,8 +8099,8 @@ resources:
     recipes:
     - output: 1
       recipe_type: Fill Bucket
+      note: "This also requires Salmon: -1"
       requirements:
-        # TODO: Salmon: -1 
         Bucket: -1
     - recipe_type: Raw Resource
 
@@ -8116,8 +8108,8 @@ resources:
     recipes:
     - output: 1
       recipe_type: Fill Bucket
+      note: "This also requires Cod: -1"
       requirements:
-        # TODO: Cod: -1
         Bucket: -1
     - recipe_type: Raw Resource
 
@@ -8125,8 +8117,8 @@ resources:
     recipes:
     - output: 1
       recipe_type: Fill Bucket
+      note: "This also requires Tropical Fish: -1"
       requirements:
-        # TODO: Tropical Fish: -1
         Bucket: -1
     - recipe_type: Raw Resource
 
@@ -8134,8 +8126,8 @@ resources:
     recipes:
     - output: 1
       recipe_type: Fill Bucket
+      note: "This also requires Axolotl: -1"
       requirements:
-        # TODO: Axolotl: -1
         Bucket: -1
     - recipe_type: Raw Resource
 
@@ -8176,7 +8168,7 @@ resources:
         Paper: -3
         Leather: -1
     - recipe_type: Raw Resource
-  
+
   Slimeball:
     recipes:
     - recipe_type: Raw Resource
@@ -8873,7 +8865,6 @@ resources:
     recipes:
     - recipe_type: Raw Resource
 
-
   Gold Nugget:
     recipes:
     - output: 9
@@ -9004,7 +8995,7 @@ resources:
         Blaze Powder: -1
         Ender Pearl: -1
     - recipe_type: Raw Resource
-  
+
   Glistering Melon Slice:
     recipes:
     - output: 1
@@ -9180,7 +9171,7 @@ resources:
   Prismarine Crystals:
     recipes:
     - recipe_type: Raw Resource
-  
+
   Raw Rabbit:
     recipes:
     - recipe_type: Raw Resource
@@ -9492,7 +9483,7 @@ resources:
         Bowl: -1
         Beetroot: -6
     - recipe_type: Raw Resource
-  
+
   Dragon's Breath:
     recipes:
     - recipe_type: Raw Resource
@@ -9605,7 +9596,6 @@ resources:
     recipes:
     - recipe_type: Raw Resource
 
-  
   Nautilus Shell:
     recipes:
     - recipe_type: Raw Resource
@@ -9613,7 +9603,7 @@ resources:
   Phantom Membrane:
     recipes:
     - recipe_type: Raw Resource
-  
+
   Heart of the Sea:
     recipes:
     - recipe_type: Raw Resource
@@ -9732,7 +9722,7 @@ resources:
         Iron Nugget: -8
         Torch: -1
     - recipe_type: Raw Resource
-  
+
   Soul Lantern:
     recipes:
     - output: 1
@@ -9970,7 +9960,6 @@ resources:
       recipe_type: Crafting
       requirements:
         Polished Blackstone Bricks: -6
-
     - recipe_type: Raw Resource
 
   Cracked Polished Blackstone Bricks:
@@ -10151,7 +10140,7 @@ resources:
   Medium Amethyst Bud:
     recipes:
     - recipe_type: Raw Resource
-  
+
   Large Amethyst Bud:
     recipes:
     - recipe_type: Raw Resource
@@ -10195,7 +10184,6 @@ resources:
       requirements:
         Any Planks: -2
     - recipe_type: Raw Resource
-
 
   Acacia Boat with Chest:
     recipes:
@@ -10479,7 +10467,6 @@ resources:
   Disc Fragment:
     recipes:
     - recipe_type: Raw Resource
-
 
   Banner Pattern:
     recipes:
@@ -10955,7 +10942,7 @@ resources:
       requirements:
         Cherry Log: -1
     - recipe_type: Raw Resource
-  
+
   Torchflower:
     recipes:
     - recipe_type: Raw Resource

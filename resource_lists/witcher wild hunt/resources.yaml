@@ -2,16 +2,16 @@
 authors:
   Asher: "https://aglick.com"
 
-index_page_display_name: "Witcher 3"
+index_page_display_name: Witcher 3
 
 recipe_types:
-  Alchemy: "Craft {OUT_ITEM} with {IN_ITEMS}"
+  Alchemy: Craft {OUT_ITEM} with {IN_ITEMS}
 
 resources:
   Alghoul Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Lesser Red Mutagen: -5
@@ -21,8 +21,8 @@ resources:
 
   Ancient Leshen Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Ancient Leshen Mutagen: -1
@@ -33,8 +33,8 @@ resources:
 
   Arachas Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Arachas Mutagen: -1
@@ -43,8 +43,8 @@ resources:
 
   Archgriffin Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Archgriffin Mutagen: -1
@@ -54,8 +54,8 @@ resources:
 
   Basilisk Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Basilisk Mutagen: -1
@@ -66,8 +66,8 @@ resources:
 
   Chort Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Chort Mutagen: -1
@@ -77,8 +77,8 @@ resources:
 
   Cockatrice Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Cockatrice Mutagen: -1
@@ -87,8 +87,8 @@ resources:
 
   Doppler Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Doppler Mutagen: -1
@@ -98,30 +98,30 @@ resources:
 
   Earth Elemental Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Earth Elemental Mutagen: -1
         Balisse Fruit: -1
         Pringrape: -1
     - recipe_type: Raw Resource
-  
+
   Ekhidna Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Ekhidna Mutagen: -1
         Ribleaf: -1
         Berbercane Fruit: -1
     - recipe_type: Raw Resource
-  
+
   Ekimmara Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Ekimmara Mutagen: -1
@@ -131,8 +131,8 @@ resources:
 
   Enhanced White Raffard's Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 2
+    - output: 2
+      recipe_type: Alchemy
       requirements:
         Alcohest: -1
         White Raffard's Decoction: -1
@@ -143,8 +143,8 @@ resources:
 
   Fiend Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Fiend Mutagen: -1
@@ -155,8 +155,8 @@ resources:
 
   Foglet Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Foglet Mutagen: -1
@@ -166,8 +166,8 @@ resources:
 
   Forktail Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Forktail Mutagen: -1
@@ -177,8 +177,8 @@ resources:
 
   Grave Hag Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Grave Hag Mutagen: -1
@@ -188,8 +188,8 @@ resources:
 
   Griffin Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Griffin Mutagen: -1
@@ -200,8 +200,8 @@ resources:
 
   Katakan Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Katakan Mutagen: -1
@@ -211,8 +211,8 @@ resources:
 
   Leshen Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Leshen Mutagen: -1
@@ -222,8 +222,8 @@ resources:
 
   Nekker Warrior Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Nekker Warrior Mutagen: -1
@@ -233,8 +233,8 @@ resources:
 
   Nightwraith Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Nightwraith Mutagen: -1
@@ -244,8 +244,8 @@ resources:
 
   Noonwraith Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Noonwraith Mutagen: -1
@@ -255,8 +255,8 @@ resources:
 
   Reliever's Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -5
         Lesser Red Mutagen: -4
@@ -267,8 +267,8 @@ resources:
 
   Succubus Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Succubus Mutagen: -1
@@ -278,8 +278,8 @@ resources:
 
   Superior White Raffard's Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 3
+    - output: 3
+      recipe_type: Alchemy
       requirements:
         White Gull: -1
         Enhanced White Raffard's Decoction: -1
@@ -292,8 +292,8 @@ resources:
 
   The Decoctions Of The Grasses:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Forktail Spinal Fluid: -1
         Manticore Poison Gland: -1
@@ -302,29 +302,32 @@ resources:
         Ribleaf: -1
         Mandrake Root: -1
     - recipe_type: Raw Resource
+
   Troll Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Troll Mutagen: -1
         Crow's Eye: -1
         Honeysuckle: -1
     - recipe_type: Raw Resource
+
   Water Hag Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Water Hag Mutagen: -1
         Berbercane Fruit: -1
     - recipe_type: Raw Resource
+
   Werewolf Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Werewolf Mutagen: -1
@@ -334,8 +337,8 @@ resources:
 
   White Raffard's Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 2
+    - output: 2
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Ribleaf: -2
@@ -344,8 +347,8 @@ resources:
 
   Wraith Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Wraith Mutagen: -1
@@ -355,8 +358,8 @@ resources:
 
   Wyvern Decoction:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Wyvern Mutagen: -1
@@ -364,29 +367,14 @@ resources:
         Celandine: -1
     - recipe_type: Raw Resource
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  # Potions ####################################################################
+  ##############################################################################
+  _a: {H1: Potions} ############################################################
+  ##############################################################################
 
   Bear Pheromones:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Berbercane Fruit: -1
@@ -396,26 +384,28 @@ resources:
 
   Black Blood:
     recipes:
-    - recipe_type: Alchemy
-      output: 3
+    - output: 3
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Sewant Mushrooms: -2
         Ghoul's Blood: -4
     - recipe_type: Raw Resource
+
   Blizzard:
     recipes:
-    - recipe_type: Alchemy
-      output: 2
+    - output: 2
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         White Myrtle Petals: -5
         Golem's Heart: -1
     - recipe_type: Raw Resource
+
   Cat:
     recipes:
-    - recipe_type: Alchemy
-      output: 3
+    - output: 3
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Berbercane Fruit: -4
@@ -424,8 +414,8 @@ resources:
 
   Drowner Pheromones:
     recipes:
-    - recipe_type: Alchemy
-      output: 2
+    - output: 2
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Drowner Brain: -1
@@ -435,8 +425,8 @@ resources:
 
   Enhanced Black Blood:
     recipes:
-    - recipe_type: Alchemy
-      output: 4
+    - output: 4
+      recipe_type: Alchemy
       requirements:
         Alcohest: -1
         Black Blood: -1
@@ -447,8 +437,8 @@ resources:
 
   Enhanced Blizzard:
     recipes:
-    - recipe_type: Alchemy
-      output: 3
+    - output: 3
+      recipe_type: Alchemy
       requirements:
         Alcohest: -1
         Blizzard: -1
@@ -459,8 +449,8 @@ resources:
 
   Enhanced Cat:
     recipes:
-    - recipe_type: Alchemy
-      output: 4
+    - output: 4
+      recipe_type: Alchemy
       requirements:
         Alcohest: -1
         Cat: -1
@@ -471,8 +461,8 @@ resources:
 
   Enhanced Full Moon:
     recipes:
-    - recipe_type: Alchemy
-      output: 4
+    - output: 4
+      recipe_type: Alchemy
       requirements:
         Alcohest: -1
         Full Moon: -1
@@ -483,8 +473,8 @@ resources:
 
   Enhanced Golden Oriole:
     recipes:
-    - recipe_type: Alchemy
-      output: 4
+    - output: 4
+      recipe_type: Alchemy
       requirements:
         Alcohest: -1
         Golden Oriole: -1
@@ -495,8 +485,8 @@ resources:
 
   Enhanced Maribor Forest:
     recipes:
-    - recipe_type: Alchemy
-      output: 4
+    - output: 4
+      recipe_type: Alchemy
       requirements:
         Alcohest: -1
         Maribor Forest: -1
@@ -507,8 +497,8 @@ resources:
 
   Enhanced Petri's Philter:
     recipes:
-    - recipe_type: Alchemy
-      output: 4
+    - output: 4
+      recipe_type: Alchemy
       requirements:
         Alcohest: -1
         Petri's Philter: -1
@@ -519,8 +509,8 @@ resources:
 
   Enhanced Swallow:
     recipes:
-    - recipe_type: Alchemy
-      output: 4
+    - output: 4
+      recipe_type: Alchemy
       requirements:
         Alcohest: -1
         Swallow: -1
@@ -531,8 +521,8 @@ resources:
 
   Enhanced Tawny Owl:
     recipes:
-    - recipe_type: Alchemy
-      output: 4
+    - output: 4
+      recipe_type: Alchemy
       requirements:
         Alcohest: -1
         Tawny Owl: -1
@@ -543,8 +533,8 @@ resources:
 
   Enhanced Thunderbolt:
     recipes:
-    - recipe_type: Alchemy
-      output: 4
+    - output: 4
+      recipe_type: Alchemy
       requirements:
         Alcohest: -1
         Thunderbolt: -1
@@ -555,8 +545,8 @@ resources:
 
   Enhanced White Honey:
     recipes:
-    - recipe_type: Alchemy
-      output: 2
+    - output: 2
+      recipe_type: Alchemy
       requirements:
         Alcohest: -1
         White Honey: -1
@@ -566,8 +556,8 @@ resources:
 
   Full Moon:
     recipes:
-    - recipe_type: Alchemy
-      output: 3
+    - output: 3
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Wolfsbane: -2
@@ -576,8 +566,8 @@ resources:
 
   Golden Oriole:
     recipes:
-    - recipe_type: Alchemy
-      output: 3
+    - output: 3
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Blowball: -4
@@ -586,8 +576,8 @@ resources:
 
   Killer Whale:
     recipes:
-    - recipe_type: Alchemy
-      output: 3
+    - output: 3
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -2
         Balisse Fruit: -5
@@ -597,8 +587,8 @@ resources:
 
   Maribor Forest:
     recipes:
-    - recipe_type: Alchemy
-      output: 3
+    - output: 3
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Berbercane Fruit: -3
@@ -608,8 +598,8 @@ resources:
 
   Nekker Pheromones:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Green Mold: -1
@@ -619,8 +609,8 @@ resources:
 
   Petri's Philter:
     recipes:
-    - recipe_type: Alchemy
-      output: 3
+    - output: 3
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Arenaria: -5
@@ -629,8 +619,8 @@ resources:
 
   Pops' Mold Antidote:
     recipes:
-    - recipe_type: Alchemy
-      output: 3
+    - output: 3
+      recipe_type: Alchemy
       requirements:
         White Myrtle Petals: -4
         Celandine: -1
@@ -643,8 +633,8 @@ resources:
 
   Superior Black Blood:
     recipes:
-    - recipe_type: Alchemy
-      output: 5
+    - output: 5
+      recipe_type: Alchemy
       requirements:
         White Gull: -1
         Enhanced Black Blood: -1
@@ -657,8 +647,8 @@ resources:
 
   Superior Blizzard:
     recipes:
-    - recipe_type: Alchemy
-      output: 4
+    - output: 4
+      recipe_type: Alchemy
       requirements:
         White Gull: -1
         Enhanced Blizzard: -1
@@ -671,8 +661,8 @@ resources:
 
   Superior Cat:
     recipes:
-    - recipe_type: Alchemy
-      output: 5
+    - output: 5
+      recipe_type: Alchemy
       requirements:
         White Gull: -1
         Enhanced Cat: -1
@@ -685,8 +675,8 @@ resources:
 
   Superior Full Moon:
     recipes:
-    - recipe_type: Alchemy
-      output: 5
+    - output: 5
+      recipe_type: Alchemy
       requirements:
         White Gull: -1
         Enhanced Full Moon: -1
@@ -699,8 +689,8 @@ resources:
 
   Superior Golden Oriole:
     recipes:
-    - recipe_type: Alchemy
-      output: 5
+    - output: 5
+      recipe_type: Alchemy
       requirements:
         White Gull: -1
         Enhanced Golden Oriole: -1
@@ -713,8 +703,8 @@ resources:
 
   Superior Maribor Forest:
     recipes:
-    - recipe_type: Alchemy
-      output: 5
+    - output: 5
+      recipe_type: Alchemy
       requirements:
         White Gull: -1
         Enhanced Maribor Forest: -1
@@ -727,8 +717,8 @@ resources:
 
   Superior Petri's Philter:
     recipes:
-    - recipe_type: Alchemy
-      output: 5
+    - output: 5
+      recipe_type: Alchemy
       requirements:
         White Gull: -1
         Enhanced Petri's Philter: -1
@@ -741,8 +731,8 @@ resources:
 
   Superior Swallow:
     recipes:
-    - recipe_type: Alchemy
-      output: 5
+    - output: 5
+      recipe_type: Alchemy
       requirements:
         White Gull: -1
         Enhanced Swallow: -1
@@ -755,8 +745,8 @@ resources:
 
   Superior Tawny Owl:
     recipes:
-    - recipe_type: Alchemy
-      output: 5
+    - output: 5
+      recipe_type: Alchemy
       requirements:
         White Gull: -1
         Enhanced Tawny Owl: -1
@@ -769,8 +759,8 @@ resources:
 
   Superior Thunderbolt:
     recipes:
-    - recipe_type: Alchemy
-      output: 5
+    - output: 5
+      recipe_type: Alchemy
       requirements:
         White Gull: -1
         Enhanced Thunderbolt: -1
@@ -783,8 +773,8 @@ resources:
 
   Superior White Honey:
     recipes:
-    - recipe_type: Alchemy
-      output: 5
+    - output: 5
+      recipe_type: Alchemy
       requirements:
         White Gull: -1
         Enhanced White Honey: -1
@@ -797,8 +787,8 @@ resources:
 
   Swallow:
     recipes:
-    - recipe_type: Alchemy
-      output: 3
+    - output: 3
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Celandine: -5
@@ -807,8 +797,8 @@ resources:
 
   Tawny Owl:
     recipes:
-    - recipe_type: Alchemy
-      output: 3
+    - output: 3
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Verbena: -2
@@ -817,8 +807,8 @@ resources:
 
   Thunderbolt:
     recipes:
-    - recipe_type: Alchemy
-      output: 3
+    - output: 3
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Cortinarius: -2
@@ -827,8 +817,8 @@ resources:
 
   White Honey:
     recipes:
-    - recipe_type: Alchemy
-      output: 1
+    - output: 1
+      recipe_type: Alchemy
       requirements:
         Dwarven Spirit: -1
         Honeysuckle: -1
@@ -838,22 +828,15 @@ resources:
     recipes:
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _b: {H1: Powders} ############################################################
+  ##############################################################################
 
-
-
-
-
-
-
-
-
-
-
-  # Powders
   Vermilion:
     recipes:
-    - recipe_type: Alchemy
-      output: 1 # CHECK
+    - output: 1
+      recipe_type: Alchemy
+      note: Check that the output quantity is correct
       requirements:
         White Gull: -1
         Verbena: -1
@@ -865,8 +848,9 @@ resources:
 
   Aether:
     recipes:
-    - recipe_type: Alchemy
-      output: 1 # CHECK
+    - output: 1
+      recipe_type: Alchemy
+      note: Check that the output quantity is correct
       requirements:
         White Gull: -1
         Verbena: -1
@@ -878,8 +862,9 @@ resources:
 
   Quebrith:
     recipes:
-    - recipe_type: Alchemy
-      output: 1 # CHECK
+    - output: 1
+      recipe_type: Alchemy
+      note: Check that the output quantity is correct
       requirements:
         White Gull: -1
         Verbena: -1
@@ -891,8 +876,9 @@ resources:
 
   Vitriol:
     recipes:
-    - recipe_type: Alchemy
-      output: 1 # CHECK
+    - output: 1
+      recipe_type: Alchemy
+      note: Check that the output quantity is correct
       requirements:
         White Gull: -1
         Bloodmoss: -1
@@ -904,8 +890,9 @@ resources:
 
   Rubedo:
     recipes:
-    - recipe_type: Alchemy
-      output: 1 # CHECK
+    - output: 1
+      recipe_type: Alchemy
+      note: Check that the output quantity is correct
       requirements:
         White Gull: -1
         Crow's Eye: -1
@@ -917,8 +904,9 @@ resources:
 
   Rebis:
     recipes:
-    - recipe_type: Alchemy
-      output: 1  # CHECK
+    - output: 1
+      recipe_type: Alchemy
+      note: Check that the output quantity is correct
       requirements:
         White Gull: -1
         Verbena: -1
@@ -928,12 +916,15 @@ resources:
         Ranogrin: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _c: {H1: Alcohol} ############################################################
+  ##############################################################################
 
-  # Alcohol
   Dwarven Spirit:
     recipes:
-    - recipe_type: Alchemy
-      output: 1 # Maybe Incorrect
+    - output: 1
+      recipe_type: Alchemy
+      note: Check that the output quantity is correct
       requirements:
         Empty Bottle: -1
         Mahakaman Spirit: -2
@@ -942,8 +933,9 @@ resources:
 
   Alcohest:
     recipes:
-    - recipe_type: Alchemy
-      output: 1 # CHECK
+    - output: 1
+      recipe_type: Alchemy
+      note: Check that the output quantity is correct
       requirements:
         Empty Bottle: -1
         Cherry Cordial: -1
@@ -953,214 +945,260 @@ resources:
 
   White Gull:
     recipes:
-    - recipe_type: Alchemy
-      output: 1 # CHECK
+    - output: 1
+      recipe_type: Alchemy
+      note: Check that the output quantity is correct
       requirements:
         Empty Bottle: -1
-        Redanian Herbal: -1 # ?
+        Redanian Herbal: -1
         Cherry Cordial: -1
         Mandrake Cordial: -1
         Arenaria: -1
     - recipe_type: Raw Resource
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   Honeysuckle:
     recipes:
     - recipe_type: Raw Resource
+
   Longrube:
     recipes:
     - recipe_type: Raw Resource
+
   Forktail Spinal Fluid:
     recipes:
     - recipe_type: Raw Resource
+
   White Myrtle Petals:
     recipes:
     - recipe_type: Raw Resource
+
   Wolf's Liver:
     recipes:
     - recipe_type: Raw Resource
+
   Hellebore Petals:
     recipes:
     - recipe_type: Raw Resource
+
   Balisse Fruit:
     recipes:
     - recipe_type: Raw Resource
+
   Green Mold:
     recipes:
     - recipe_type: Raw Resource
+
   Celandine:
     recipes:
     - recipe_type: Raw Resource
+
   Beggartick Blossoms:
     recipes:
     - recipe_type: Raw Resource
+
   Golem's Heart:
     recipes:
     - recipe_type: Raw Resource
+
   Mandrake Root:
     recipes:
     - recipe_type: Raw Resource
+
   Specter Dust:
     recipes:
     - recipe_type: Raw Resource
+
   Ribleaf:
     recipes:
     - recipe_type: Raw Resource
+
   Verbena:
     recipes:
     - recipe_type: Raw Resource
+
   Wolfsbane:
     recipes:
     - recipe_type: Raw Resource
+
   Nostrix:
     recipes:
     - recipe_type: Raw Resource
+
   Berbercane Fruit:
     recipes:
     - recipe_type: Raw Resource
+
   Ghoul's Blood:
     recipes:
     - recipe_type: Raw Resource
+
   Dark Essence:
     recipes:
     - recipe_type: Raw Resource
+
   Crow's Eye:
     recipes:
     - recipe_type: Raw Resource
+
   Arachas Venom:
     recipes:
     - recipe_type: Raw Resource
+
   Ranogrin:
     recipes:
     - recipe_type: Raw Resource
+
   Sewant Mushrooms:
     recipes:
     - recipe_type: Raw Resource
+
   Allspice:
     recipes:
     - recipe_type: Raw Resource
+
   Drowner Brain:
     recipes:
     - recipe_type: Raw Resource
+
   Ergot Seeds:
     recipes:
     - recipe_type: Raw Resource
+
   Light Essence:
     recipes:
     - recipe_type: Raw Resource
+
   Puffball:
     recipes:
     - recipe_type: Raw Resource
+
   Arenaria:
     recipes:
     - recipe_type: Raw Resource
+
   Nekker Heart:
     recipes:
     - recipe_type: Raw Resource
+
   Bison Grass:
     recipes:
     - recipe_type: Raw Resource
+
   Bryonia:
     recipes:
     - recipe_type: Raw Resource
+
   Manticore Poison Gland:
     recipes:
     - recipe_type: Raw Resource
+
   Fool's Parsley Leaves:
     recipes:
     - recipe_type: Raw Resource
+
   Buckthorn:
     recipes:
     - recipe_type: Raw Resource
+
   Alghoul Bone Marrow:
     recipes:
     - recipe_type: Raw Resource
+
   Moleyarrow:
     recipes:
     - recipe_type: Raw Resource
+
   Water Essence:
     recipes:
     - recipe_type: Raw Resource
+
   Mistletoe:
     recipes:
     - recipe_type: Raw Resource
+
   Ginatia Petals:
     recipes:
     - recipe_type: Raw Resource
+
   Hop Umbels:
     recipes:
     - recipe_type: Raw Resource
+
   Han Fiber:
     recipes:
     - recipe_type: Raw Resource
+
   Drowner Tongue:
     recipes:
     - recipe_type: Raw Resource
+
   Albino Bruxa Tongue:
     recipes:
     - recipe_type: Raw Resource
+
   Pringrape:
     recipes:
     - recipe_type: Raw Resource
-  Essence Of Wraith: # Check Image
+
+  Essence Of Wraith:
+    note: Check that this image is correct
     recipes:
     - recipe_type: Raw Resource
+
   Blowball:
     recipes:
     - recipe_type: Raw Resource
+
   Oil:
     recipes:
     - recipe_type: Raw Resource
+
   Endrega Embryo:
     recipes:
     - recipe_type: Raw Resource
+
   Empty Bottle:
     recipes:
     - recipe_type: Raw Resource
+
   Mahakaman Spirit:
     recipes:
     - recipe_type: Raw Resource
-  Blue Lotus Flower: # CHECK if actually just "Blue Lotus" in game
+
+  Blue Lotus Flower:
+    note: Check if this item is actually called just "Blue Lous" in game
     recipes:
     - recipe_type: Raw Resource
+
   Winter Cherry:
     recipes:
     - recipe_type: Raw Resource
-  Nazairi Basil: # Check Image
+
+  Nazairi Basil:
+    note: Check that this image is correct
     recipes:
     - recipe_type: Raw Resource
+
   Bloodmoss:
     recipes:
     - recipe_type: Raw Resource
+
   Hornwort:
     recipes:
     - recipe_type: Raw Resource
+
   Cherry Cordial:
     recipes:
     - recipe_type: Raw Resource
+
   Nilfgaardian Lemon:
     recipes:
     - recipe_type: Raw Resource
+
   Redanian Herbal:
     recipes:
     - recipe_type: Raw Resource
+
   Mandrake Cordial:
     recipes:
     - recipe_type: Raw Resource
@@ -1172,14 +1210,16 @@ resources:
   Lesser Red Mutagen:
     recipes:
     - recipe_type: Raw Resource
-    - recipe_type: Alchemy
-      output: 1 # CHECK
+    - output: 1
+      recipe_type: Alchemy
+      note: Check that the output quantity is correct
       requirements:
         Lesser Blue Mutagen: -1
         Rubedo: -1
         Winter Cherry: -1
-    - recipe_type: Alchemy
-      output: 1 # CHECK
+    - output: 1
+      recipe_type: Alchemy
+      note: Check that the output quantity is correct
       requirements:
         Lesser Green Mutagen: -1
         Rubedo: -1
@@ -1188,14 +1228,16 @@ resources:
   Lesser Green Mutagen:
     recipes:
     - recipe_type: Raw Resource
-    - recipe_type: Alchemy
-      output: 1 # CHECK
+    - output: 1
+      recipe_type: Alchemy
+      note: Check that the output quantity is correct
       requirements:
         Lesser Blue Mutagen: -1
         Rebis: -1
         Nazairi Basil: -1
-    - recipe_type: Alchemy
-      output: 1 # CHECK
+    - output: 1
+      recipe_type: Alchemy
+      note: Check that the output quantity is correct
       requirements:
         Lesser Red Mutagen: -1
         Rebis: -1
@@ -1204,14 +1246,16 @@ resources:
   Lesser Blue Mutagen:
     recipes:
     - recipe_type: Raw Resource
-    - recipe_type: Alchemy
-      output: 1 # CHECK
+    - output: 1
+      recipe_type: Alchemy
+      note: Check that the output quantity is correct
       requirements:
         Lesser Green Mutagen: -1
         Vitriol: -1
         Blue Lotus Flower: -1
-    - recipe_type: Alchemy
-      output: 1 # CHECK
+    - output: 1
+      recipe_type: Alchemy
+      note: Check that the output quantity is correct
       requirements:
         Lesser Red Mutagen: -1
         Vitriol: -1

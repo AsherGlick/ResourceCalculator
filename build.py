@@ -2,15 +2,16 @@ import argparse
 import os
 from typing import Dict, Tuple, List
 from watchdog.observers import Observer
-from watchdog.events import FileSystemEventHandler
+from watchdog.events import FileSystemEvent, FileSystemEventHandler
 import queue
 
 from pylib.calculator_producer import calculator_producers
 from pylib.editor_producer import editor_producers
 from pylib.gz_compressor_producer import gz_compressor_producers
 from pylib.imagepack import item_image_producers
+from pylib.js_rollup_producer import js_rollup_producer
 from pylib.landing_page_producer import landing_page_producers
-from pylib.producer import Producer, Scheduler, SingleFile, GenericProducer, producer_copyfile, copy_file_with_hash
+from pylib.producer import Scheduler, SingleFile, GenericProducer, copy_file, copy_file_with_hash
 from pylib.producer_plugins import plugins_producers
 from pylib.typescript_producer import typescript_producer
 from pylib.uglifyjs import uglify_js_producer
@@ -24,6 +25,7 @@ from pylib.yaml_linter_producer import resource_list_parser_producers
 # FLAG_skip_image_compress = False
 # FLAG_force_image = False
 # FLAG_skip_plugins = False
+FLAG_skip_js_minify = False
 
 
 ################################################################################
@@ -54,8 +56,12 @@ def core_resource_producers() -> List[GenericProducer]:
         "core/src/tsconfig.json"
     ]
 
+    js_rollup_targets = {
+        "cache/calculatorjs/calculator.js": "cache/calculator.js"
+    }
+
     # Javascript files that should be minified for production.
-    uglify_js_files = [
+    minify_js_files = [
         "cache/calculator.js",
         "core/yaml_export.js",
     ]
@@ -66,37 +72,48 @@ def core_resource_producers() -> List[GenericProducer]:
     for copyfile in hashed_copyfiles:
         core_producers.append(
             copy_file_with_hash(
+                name=f"Hash Copy {copyfile}",
                 input_file_pattern="^{}$".format(copyfile),
                 output_file_template="output/{filename}-{filehash}{extension}",
-                cache_file_template= "cache/{filename}{extension}.json",
-                categories=["core"],
+                metadata_file_template="cache/{filename}{extension}.json",
             )
         )
 
     # Add a producer for each file that will be copied over to output/.
     for copyfile in copyfiles:
         core_producers.append(
-            Producer(
-                input_path_patterns={
-                    "file": "^{}$".format(copyfile),
-                },
-                paths=core_resource_paths,
-                function=producer_copyfile,
-                categories=["core"]
+            copy_file(
+                name=f"Copy {copyfile}",
+                target_file=copyfile,
+                destination_file=os.path.join("output", os.path.basename(copyfile))
             )
         )
 
     # Add a producer for each of the typescript project files.
     for ts_project_config in ts_project_configs:
-        core_producers.append(typescript_producer(ts_project_config, ["core"]))
+        core_producers += typescript_producer(ts_project_config)
+
+    # Add a producer to rollup each javascript library into a single file
+    for js_target_file, js_destination_file in js_rollup_targets.items():
+        core_producers += js_rollup_producer(js_target_file, js_destination_file)
 
     # Add a producer for each javascript file to minify.
-    for uglify_js_file in uglify_js_files:
+    for minify_js_file in minify_js_files:
+        input_file = minify_js_file
+        output_file = os.path.join("output", os.path.basename(minify_js_file))
+
+        if FLAG_skip_js_minify:
+            core_producers.append(copy_file(
+                name=f"Copy File {input_file}",
+                target_file=input_file,
+                destination_file=output_file
+            ))
+            continue
+
         core_producers.append(
             uglify_js_producer(
-                input_file=uglify_js_file,
-                output_file=os.path.join("output", os.path.basename(uglify_js_file)),
-                categories=["core"]
+                input_file=input_file,
+                output_file=output_file,
             )
         )
 
@@ -132,10 +149,10 @@ def main() -> None:
     parser.add_argument('limit_files', nargs='*', help="Speed up dev-builds by only building a specific set of one or more calculators")
 
     parser.add_argument('--watch', action='store_true', help="Watch source files and automatically rebuild when they change")
-    # parser.add_argument('--draft', action='store_true', help="Enable all speed up flags for dev builds")
+    parser.add_argument('--draft', action='store_true', help="Enable all speed up flags for dev builds")
 
     # # parser.add_argument('--no-jslint', action='store_true', help="Speed up dev-builds by skipping linting javascript files")
-    # parser.add_argument('--no-uglify-js', action='store_true', help="Speed up dev-builds by skipping javascript compression")
+    parser.add_argument('--no-js-minify', action='store_true', help="Speed up dev-builds by skipping javascript compression")
     # parser.add_argument('--no-gz', action='store_true', help="Speed up dev-builds by skipping gz text compression")
     # parser.add_argument('--no-index', action='store_true', help="Speed up dev-builds by skipping building the index page")
     # parser.add_argument('--no-image-compress', action='store_true', help="Speed up dev-builds by skipping the image compresson")
@@ -158,8 +175,9 @@ def main() -> None:
     # # if args.no_jslint or args.draft:
     #     # FLAG_skip_js_lint = True
 
-    # # if args.no_uglify_js or args.draft:
-    # #     set_skip_uglify_flag()
+    if args.no_js_minify or args.draft:
+        global FLAG_skip_js_minify
+        FLAG_skip_js_minify = True
 
     # if args.no_gz or args.draft:
     #     FLAG_skip_gz_compression = True
@@ -178,7 +196,6 @@ def main() -> None:
 
     # calculator_page_sublist = []
 
-
     calculator_dir_regex = r"[a-z_ ]+"
     if len(args.limit_files) >= 1:
         calculator_page_sublist = args.limit_files
@@ -195,7 +212,6 @@ def main() -> None:
     producers += plugins_producers(calculator_dir_regex)
     producers += gz_compressor_producers()
 
-
     scheduler = Scheduler(
         producer_list=producers,
         initial_filepaths=Scheduler.all_paths_in_dir(
@@ -204,17 +220,16 @@ def main() -> None:
         )
     )
 
-
     watch_directory = "."
 
     if args.watch:
-        q = queue.Queue()
+        q: queue.Queue[Tuple[str, str]] = queue.Queue()
 
         observer = Observer()
 
         event_handler = Handler(q)
-        observer.schedule(event_handler, watch_directory, recursive = True)
-        observer.start()
+        observer.schedule(event_handler, watch_directory, recursive=True)  # type: ignore [no-untyped-call]
+        observer.start()  # type: ignore [no-untyped-call]
         try:
             while True:
                 event_type, src_path = q.get(True)
@@ -226,31 +241,32 @@ def main() -> None:
                 if event_type == 'created' or event_type == 'modified':
                     scheduler.add_or_update_files([src_path])
                 elif event_type == 'deleted':
-                    scheduler.delete_files([src_path])
+                    # scheduler.delete_files([src_path])
+                    pass
                 elif event_type == 'closed':
                     # A file was closed, does not seem as useful as modified
                     pass
                 else:
                     print("Unknown Event", event_type)
 
-        except:
-            observer.stop()
+        except Exception:
+            observer.stop()  # type: ignore [no-untyped-call]
             print("Observer Stopped")
 
         observer.join()
 
 
 class Handler(FileSystemEventHandler):
-    def __init__(self, event_queue: queue.Queue):
-        self.event_queue = event_queue
-    def on_any_event(self, event):
+    event_queue: queue.Queue[Tuple[str, str]]
 
+    def __init__(self, event_queue: queue.Queue[Tuple[str, str]]):
+        self.event_queue = event_queue
+
+    def on_any_event(self, event: FileSystemEvent) -> None:
         if event.is_directory:
             return
 
         self.event_queue.put((event.event_type, event.src_path[2:]))
-
-
 
 
 PROFILE = False

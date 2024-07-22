@@ -1,5 +1,5 @@
 from jinja2 import Environment, FileSystemLoader
-from typing import List, Dict, Tuple, TypedDict
+from typing import List, Dict, TypedDict
 import json
 import os
 from pylib.filehash import getfilehash
@@ -7,10 +7,10 @@ from pylib.producer import Producer, SingleFile, filename_from_metadatafile, Gen
 import shutil
 
 
-
 class SingleHashedFile(TypedDict):
     file: str
     filemetadata: str
+
 
 ################################################################################
 # LandingPageInputTypes
@@ -25,6 +25,7 @@ class LandingPageInputTypes(TypedDict):
     add_game_filename_data: str
     template: str
 
+
 ################################################################################
 # landing_page_producers
 #
@@ -34,17 +35,17 @@ class LandingPageInputTypes(TypedDict):
 def landing_page_producers(calculator_dir_regex: str) -> List[GenericProducer]:
     return [
         Producer(
+            name="Copy Calculator Icon",
             input_path_patterns={
                 "file": r"^resource_lists/(?P<calculator_dir>{calculator_dir_regex})/icon\.jpg$".format(
                     calculator_dir_regex=calculator_dir_regex
                 ),
             },
-            paths=logo_copy_paths,
             function=hash_and_copy_file,
-            categories=["landing"],
         ),
 
         Producer(
+            name="Build Landing Page",
             input_path_patterns={
                 "files": [r"^cache/(?:{calculator_dir_regex})/page_metadata\.json$".format(
                     calculator_dir_regex=calculator_dir_regex
@@ -56,9 +57,7 @@ def landing_page_producers(calculator_dir_regex: str) -> List[GenericProducer]:
                 "add_game_filename_data": r"^cache/add_game\.png\.json$",
                 "template": r"^core/index\.html$"
             },
-            paths=landing_page_paths,
             function=landing_page_function,
-            categories=["landing"],
         )
     ]
 
@@ -69,11 +68,14 @@ def landing_page_producers(calculator_dir_regex: str) -> List[GenericProducer]:
 # Copies a file with a dynamic output and saves a file with that dynamic output
 # in a fixed location for later lookups
 ################################################################################
-def hash_and_copy_file(input_files: SingleFile, output_files: SingleHashedFile) -> None:
+def hash_and_copy_file(input_files: SingleFile, groups: Dict[str, str]) -> List[str]:
     input_file: str = input_files["file"]
-    output_file: str = output_files["file"]
 
-    output_metadata_file: str = output_files["filemetadata"]
+    calculator_name = groups["calculator_dir"]
+    filehash = getfilehash(input_file)
+    output_file: str = os.path.join("output", calculator_name, "icon-" + filehash + ".jpg")
+
+    output_metadata_file: str = os.path.join("cache", calculator_name, "icon.jpg_name.json")
 
     # Copy the file
     shutil.copyfile(input_file, output_file)
@@ -84,46 +86,10 @@ def hash_and_copy_file(input_files: SingleFile, output_files: SingleHashedFile) 
             "icon_name": output_file
         }, f)
 
-
-
-
-################################################################################
-# logo_copy_paths
-#
-# The input and output paths generation function for copying icon files into the
-# output directory.
-################################################################################
-def logo_copy_paths(input_files: SingleFile, categories: Dict[str, str]) -> Tuple[SingleFile, SingleHashedFile]:
-    calculator_name = categories["calculator_dir"]
-
-    logo_path = input_files["file"]
-
-    filehash = getfilehash(logo_path)
-
-    return (
-        input_files,
-        {
-            "file": os.path.join("output", calculator_name, "icon-" + filehash + ".jpg"),
-            "filemetadata": os.path.join("cache", calculator_name, "icon.jpg_name.json"),
-        }
-    )
-
-
-
-
-
-################################################################################
-# landing_page_paths
-#
-# The input and output paths generation function for creating a landing page.
-################################################################################
-def landing_page_paths(input_files: LandingPageInputTypes, categories: Dict[str, str]) -> Tuple[LandingPageInputTypes, SingleFile]:
-    return (
-        input_files,
-        {
-            "file": "output/index.html"
-        }
-    )
+    return [
+        output_file,
+        output_metadata_file,
+    ]
 
 
 ################################################################################
@@ -132,7 +98,8 @@ def landing_page_paths(input_files: LandingPageInputTypes, categories: Dict[str,
 # The function that generates the landing page output file that links to each
 # of the calculator pages.
 ################################################################################
-def landing_page_function(input_paths: LandingPageInputTypes, output_paths: SingleFile) -> None:
+def landing_page_function(input_paths: LandingPageInputTypes, groups: Dict[str, str]) -> List[str]:
+    output_file = "output/index.html"
 
     # Configure and begin the jinja2 template parsing
     env = Environment(loader=FileSystemLoader('core'))
@@ -152,7 +119,6 @@ def landing_page_function(input_paths: LandingPageInputTypes, output_paths: Sing
         directory = os.path.basename(os.path.dirname(metadata_path))
 
         icon_filename_data = icon_filename_datas[directory]
-
 
         with open(icon_filename_data) as f:
             icon_filename = os.path.basename(json.load(f)["icon_name"])
@@ -174,5 +140,9 @@ def landing_page_function(input_paths: LandingPageInputTypes, output_paths: Sing
         css_path=css_path,
     )
 
-    with open(os.path.join(output_paths["file"]), "w", encoding="utf_8") as f:
+    with open(os.path.join(output_file), "w", encoding="utf_8") as f:
         f.write(output_from_parsed_template)
+
+    return [
+        output_file,
+    ]

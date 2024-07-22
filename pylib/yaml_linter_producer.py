@@ -1,11 +1,11 @@
-from typing import List, Dict, Tuple, TypedDict, OrderedDict, Set
+from typing import List, Dict, Tuple, OrderedDict, Set
 import json
 import os
 import pickle
 import re
 
 from pylib.producer import Producer, SingleFile, GenericProducer
-from pylib.resource_list import ResourceList, Resource, StackSize, Recipe, TokenError, Token
+from pylib.resource_list import Heading, ResourceList, Resource, StackSize, Recipe, TokenError, Token
 from pylib.yaml_token_load import ordered_load
 
 
@@ -18,48 +18,15 @@ from pylib.yaml_token_load import ordered_load
 def resource_list_parser_producers(calculator_dir_regex: str) -> List[GenericProducer]:
     return [
         Producer(
+            name="Parse Resource List",
             input_path_patterns={
                 "file": r"^resource_lists/(?P<calculator_dir>{calculator_dir_regex})/resources.yaml$".format(
                     calculator_dir_regex=calculator_dir_regex
                 )
             },
-            paths=resource_list_paths,
             function=resource_list_parser_function,
-            categories=["resource_list"]
         ),
     ]
-
-
-################################################################################
-# ResourceListOutputFiles
-#
-# A TypedDict representing the output files structure for the producers that
-# create the pre-parsed resource list files.
-################################################################################
-class ResourceListOutputFiles(TypedDict):
-    resource_cache: str
-    page_metadata: str
-
-
-################################################################################
-# resource_list_paths
-#
-# The input and output paths generation function for the producers that create
-# pre-parsed and validated resource list files.
-################################################################################
-def resource_list_paths(input_files: SingleFile, categories: Dict[str, str]) -> Tuple[SingleFile, ResourceListOutputFiles]:
-    calculator_page = categories["calculator_dir"]
-
-    calculator_resource_cache = os.path.join("cache", calculator_page, "resources.pickle")
-    calculator_page_metadata = os.path.join("cache", calculator_page, "page_metadata.json")
-
-    return (
-        input_files,
-        {
-            "resource_cache": calculator_resource_cache,
-            "page_metadata": calculator_page_metadata,
-        }
-    )
 
 
 ################################################################################
@@ -68,10 +35,12 @@ def resource_list_paths(input_files: SingleFile, categories: Dict[str, str]) -> 
 # This function is called by the producers to parse an input resource list
 # and run all the validation on it.
 ################################################################################
-def resource_list_parser_function(input_files: SingleFile, output_files: ResourceListOutputFiles) -> None:
+def resource_list_parser_function(input_files: SingleFile, groups: Dict[str, str]) -> List[str]:
     input_file = input_files["file"]
-    resource_cache_path = output_files["resource_cache"]
-    page_metadata_path = output_files["page_metadata"]
+    calculator_page = groups["calculator_dir"]
+
+    resource_cache_path = os.path.join("cache", calculator_page, "resources.pickle")
+    page_metadata_path = os.path.join("cache", calculator_page, "page_metadata.json")
 
     errors = []
 
@@ -80,9 +49,9 @@ def resource_list_parser_function(input_files: SingleFile, output_files: Resourc
     resource_list, parse_errors = load_resource_list(input_file)
     errors += parse_errors
 
-    resources: OrderedDict[str, Resource] = resource_list.resources
-    resource_list.resources = expand_raw_resource(resource_list.resources)
-    resource_list.resources = fill_default_requirement_groups(resource_list.resources, resource_list.requirement_groups)
+    resources: OrderedDict[str, Resource] = OrderedDict({k: v for k, v in resource_list.resources.items() if not isinstance(v, Heading)})
+    resources = expand_raw_resource(resources)
+    resources = fill_default_requirement_groups(resources, resource_list.requirement_groups)
 
     errors += lint_resources(resources, resource_list.recipe_types, resource_list.stack_sizes)
 
@@ -98,13 +67,20 @@ def resource_list_parser_function(input_files: SingleFile, output_files: Resourc
             error.print_error(fulltext_lines)
 
     # Output the completed datafiles
+    os.makedirs(os.path.dirname(resource_cache_path), exist_ok=True)
     with open(resource_cache_path, 'wb') as f:
         pickle.dump(resource_list, f)
 
+    os.makedirs(os.path.dirname(page_metadata_path), exist_ok=True)
     with open(page_metadata_path, 'w') as f:
         json.dump({
             "calculator_name": resource_list.index_page_display_name
         }, f)
+
+    return [
+        resource_cache_path,
+        page_metadata_path,
+    ]
 
 
 def load_resource_list(filepath: str) -> Tuple[ResourceList, List[TokenError]]:

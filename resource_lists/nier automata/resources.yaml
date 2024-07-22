@@ -2,28 +2,18 @@
 authors:
   Asher: "https://aglick.com"
 
-index_page_display_name: "Nier Automata"
+index_page_display_name: Nier Automata
+
 row_group_count: 4
 
 recipe_types:
-  Upgrade: "Upgrade {IN_ITEMS} into {OUT_ITEM}"
-  Weapon Buy: "Buy {OUT_ITEM} for {IN_ITEMS} from a weapon shop"
-
-
-# stack_sizes:
-#   Stack:
-#     quantity_multiplier: 64
-#     plural: "Stacks"
-#     extends_from: null
-
-# default_stack_size: "Stack"
-
-
-
-# Resize images to W:100 H:53
+  Upgrade: Upgrade {IN_ITEMS} into {OUT_ITEM}
+  Weapon Buy: Buy {OUT_ITEM} for {IN_ITEMS} from a weapon shop
 
 resources:
-  # Beastbane
+
+  _a: {H2: Beastbane} ##########################################################
+
   Beastbane Lv 1:
     recipes:
     - output: 1
@@ -34,6 +24,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Beastbane Lv 1: 0
+
   Beastbane Lv 2:
     recipes:
     - output: 1
@@ -48,6 +39,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Beastbane Lv 2: 0
+
   Beastbane Lv 3:
     recipes:
     - output: 1
@@ -63,6 +55,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Beastbane Lv 3: 0
+
   Beastbane Lv 4:
     recipes:
     - output: 1
@@ -79,13 +72,15 @@ resources:
       requirements:
         Beastbane Lv 4: 0
 
-  # Engine Blade
+  _b: {H2: Engine Blade} #######################################################
+
   Engine Blade Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Engine Blade Lv 1: 0
+
   Engine Blade Lv 2:
     recipes:
     - output: 1
@@ -99,6 +94,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Engine Blade Lv 2: 0
+
   Engine Blade Lv 3:
     recipes:
     - output: 1
@@ -113,6 +109,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Engine Blade Lv 3: 0
+
   Engine Blade Lv 4:
     recipes:
     - output: 1
@@ -129,13 +126,15 @@ resources:
       requirements:
         Engine Blade Lv 4: 0
 
-  # Faith
+  _c: {H2: Faith} ##############################################################
+
   Faith Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Faith Lv 1: 0
+
   Faith Lv 2:
     recipes:
     - output: 1
@@ -149,6 +148,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Faith Lv 2: 0
+
   Faith Lv 3:
     recipes:
     - output: 1
@@ -163,6 +163,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Faith Lv 3: 0
+
   Faith Lv 4:
     recipes:
     - output: 1
@@ -179,13 +180,15 @@ resources:
       requirements:
         Faith Lv 4: 0
 
-  # Type-40 Sword
+  _d: {H2: Type-40 Sword} ######################################################
+
   Type-40 Sword Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Type-40 Sword Lv 1: 0
+
   Type-40 Sword Lv 2:
     recipes:
     - output: 1
@@ -200,6 +203,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Type-40 Sword Lv 2: 0
+
   Type-40 Sword Lv 3:
     recipes:
     - output: 1
@@ -215,6 +219,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Type-40 Sword Lv 3: 0
+
   Type-40 Sword Lv 4:
     recipes:
     - output: 1
@@ -232,7 +237,8 @@ resources:
       requirements:
         Type-40 Sword Lv 4: 0
 
-  # Type-3 Sword
+  _e: {H2: Type-3 Sword} #######################################################
+
   Type-3 Sword Lv 1:
     recipes:
     - output: 1
@@ -243,6 +249,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Type-3 Sword Lv 1: 0
+
   Type-3 Sword Lv 2:
     recipes:
     - output: 1
@@ -256,6 +263,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Type-3 Sword Lv 2: 0
+
   Type-3 Sword Lv 3:
     recipes:
     - output: 1
@@ -270,6 +278,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Type-3 Sword Lv 3: 0
+
   Type-3 Sword Lv 4:
     recipes:
     - output: 1
@@ -286,7 +295,8 @@ resources:
       requirements:
         Type-3 Sword Lv 4: 0
 
-  # Ancient Overlord
+  _f: {H2: Ancient Overlord} ###################################################
+
   Ancient Overlord Lv 1:
     recipes:
     - output: 1
@@ -297,6 +307,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ancient Overlord Lv 1: 0
+
   Ancient Overlord Lv 2:
     recipes:
     - output: 1
@@ -310,6 +321,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ancient Overlord Lv 2: 0
+
   Ancient Overlord Lv 3:
     recipes:
     - output: 1
@@ -324,6 +336,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Ancient Overlord Lv 3: 0
+
   Ancient Overlord Lv 4:
     recipes:
     - output: 1
@@ -340,13 +353,15 @@ resources:
       requirements:
         Ancient Overlord Lv 4: 0
 
-  # Virtuous Contract
+  _g: {H2: Virtuous Contract} ##################################################
+
   Virtuous Contract Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Virtuous Contract Lv 1: 0
+
   Virtuous Contract Lv 2:
     recipes:
     - output: 1
@@ -361,6 +376,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Virtuous Contract Lv 2: 0
+
   Virtuous Contract Lv 3:
     recipes:
     - output: 1
@@ -376,6 +392,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Virtuous Contract Lv 3: 0
+
   Virtuous Contract Lv 4:
     recipes:
     - output: 1
@@ -392,13 +409,15 @@ resources:
       requirements:
         Virtuous Contract Lv 4: 0
 
-  # Cruel Oath
+  _h: {H2: Cruel Oath} #########################################################
+
   Cruel Oath Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Cruel Oath Lv 1: 0
+
   Cruel Oath Lv 2:
     recipes:
     - output: 1
@@ -412,6 +431,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cruel Oath Lv 2: 0
+
   Cruel Oath Lv 3:
     recipes:
     - output: 1
@@ -426,6 +446,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cruel Oath Lv 3: 0
+
   Cruel Oath Lv 4:
     recipes:
     - output: 1
@@ -442,13 +463,15 @@ resources:
       requirements:
         Cruel Oath Lv 4: 0
 
-  # YoRHa-issue Blade
+  _i: {H2: YoRHa-issue Blade} ##################################################
+
   YoRHa-issue Blade Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         YoRHa-issue Blade Lv 1: 0
+
   YoRHa-issue Blade Lv 2:
     recipes:
     - output: 1
@@ -462,6 +485,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         YoRHa-issue Blade Lv 2: 0
+
   YoRHa-issue Blade Lv 3:
     recipes:
     - output: 1
@@ -476,6 +500,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         YoRHa-issue Blade Lv 3: 0
+
   YoRHa-issue Blade Lv 4:
     recipes:
     - output: 1
@@ -492,13 +517,15 @@ resources:
       requirements:
         YoRHa-issue Blade Lv 4: 0
 
-  # Phoenix Dagger
+  _j: {H2: Phoenix Dagger} #####################################################
+
   Phoenix Dagger Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Phoenix Dagger Lv 1: 0
+
   Phoenix Dagger Lv 2:
     recipes:
     - output: 1
@@ -512,6 +539,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Phoenix Dagger Lv 2: 0
+
   Phoenix Dagger Lv 3:
     recipes:
     - output: 1
@@ -526,6 +554,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Phoenix Dagger Lv 3: 0
+
   Phoenix Dagger Lv 4:
     recipes:
     - output: 1
@@ -542,7 +571,8 @@ resources:
       requirements:
         Phoenix Dagger Lv 4: 0
 
-  # Machine Sword
+  _k: {H2: Machine Sword} ######################################################
+
   Machine Sword Lv 1:
     recipes:
     - output: 1
@@ -553,6 +583,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Machine Sword Lv 1: 0
+
   Machine Sword Lv 2:
     recipes:
     - output: 1
@@ -566,6 +597,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Machine Sword Lv 2: 0
+
   Machine Sword Lv 3:
     recipes:
     - output: 1
@@ -580,6 +612,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Machine Sword Lv 3: 0
+
   Machine Sword Lv 4:
     recipes:
     - output: 1
@@ -596,13 +629,15 @@ resources:
       requirements:
         Machine Sword Lv 4: 0
 
-  # Iron Pipe
+  _l: {H2: Iron Pipe} ##########################################################
+
   Iron Pipe Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Iron Pipe Lv 1: 0
+
   Iron Pipe Lv 2:
     recipes:
     - output: 1
@@ -617,6 +652,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Iron Pipe Lv 2: 0
+
   Iron Pipe Lv 3:
     recipes:
     - output: 1
@@ -632,6 +668,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Iron Pipe Lv 3: 0
+
   Iron Pipe Lv 4:
     recipes:
     - output: 1
@@ -649,13 +686,15 @@ resources:
       requirements:
         Iron Pipe Lv 4: 0
 
-  # Cypress Stick
+  _m: {H2: Cypress Stick} ######################################################
+
   Cypress Stick Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Cypress Stick Lv 1: 0
+
   Cypress Stick Lv 2:
     recipes:
     - output: 1
@@ -669,6 +708,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cypress Stick Lv 2: 0
+
   Cypress Stick Lv 3:
     recipes:
     - output: 1
@@ -683,6 +723,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cypress Stick Lv 3: 0
+
   Cypress Stick Lv 4:
     recipes:
     - output: 1
@@ -699,13 +740,15 @@ resources:
       requirements:
         Cypress Stick Lv 4: 0
 
-  # Iron Will
+  _n: {H2: Iron Will} ##########################################################
+
   Iron Will Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Iron Will Lv 1: 0
+
   Iron Will Lv 2:
     recipes:
     - output: 1
@@ -719,6 +762,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Iron Will Lv 2: 0
+
   Iron Will Lv 3:
     recipes:
     - output: 1
@@ -733,6 +777,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Iron Will Lv 3: 0
+
   Iron Will Lv 4:
     recipes:
     - output: 1
@@ -749,13 +794,15 @@ resources:
       requirements:
         Iron Will Lv 4: 0
 
-  # Fang of the Twins
+  _o: {H2: Fang of the Twins} ##################################################
+
   Fang of the Twins Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Fang of the Twins Lv 1: 0
+
   Fang of the Twins Lv 2:
     recipes:
     - output: 1
@@ -769,6 +816,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Fang of the Twins Lv 2: 0
+
   Fang of the Twins Lv 3:
     recipes:
     - output: 1
@@ -783,6 +831,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Fang of the Twins Lv 3: 0
+
   Fang of the Twins Lv 4:
     recipes:
     - output: 1
@@ -799,7 +848,8 @@ resources:
       requirements:
         Fang of the Twins Lv 4: 0
 
-  # Beastlord
+  _p: {H2: Beastlord} ##########################################################
+
   Beastlord Lv 1:
     recipes:
     - output: 1
@@ -810,6 +860,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Beastlord Lv 1: 0
+
   Beastlord Lv 2:
     recipes:
     - output: 1
@@ -823,6 +874,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Beastlord Lv 2: 0
+
   Beastlord Lv 3:
     recipes:
     - output: 1
@@ -837,6 +889,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Beastlord Lv 3: 0
+
   Beastlord Lv 4:
     recipes:
     - output: 1
@@ -853,13 +906,15 @@ resources:
       requirements:
         Beastlord Lv 4: 0
 
-  # Phoenix Sword
+  _q: {H2: Phoenix Sword} ######################################################
+
   Phoenix Sword Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Phoenix Sword Lv 1: 0
+
   Phoenix Sword Lv 2:
     recipes:
     - output: 1
@@ -873,6 +928,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Phoenix Sword Lv 2: 0
+
   Phoenix Sword Lv 3:
     recipes:
     - output: 1
@@ -887,6 +943,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Phoenix Sword Lv 3: 0
+
   Phoenix Sword Lv 4:
     recipes:
     - output: 1
@@ -903,13 +960,15 @@ resources:
       requirements:
         Phoenix Sword Lv 4: 0
 
-  # Type-40 Blade
+  _r: {H2: Type-40 Blade} ######################################################
+
   Type-40 Blade Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Type-40 Blade Lv 1: 0
+
   Type-40 Blade Lv 2:
     recipes:
     - output: 1
@@ -924,6 +983,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Type-40 Blade Lv 2: 0
+
   Type-40 Blade Lv 3:
     recipes:
     - output: 1
@@ -939,6 +999,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Type-40 Blade Lv 3: 0
+
   Type-40 Blade Lv 4:
     recipes:
     - output: 1
@@ -956,7 +1017,8 @@ resources:
       requirements:
         Type-40 Blade Lv 4: 0
 
-  # Type-3 Blade
+  _s: {H2: Type-3 Blade} #######################################################
+
   Type-3 Blade Lv 1:
     recipes:
     - output: 1
@@ -967,6 +1029,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Type-3 Blade Lv 1: 0
+
   Type-3 Blade Lv 2:
     recipes:
     - output: 1
@@ -980,6 +1043,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Type-3 Blade Lv 2: 0
+
   Type-3 Blade Lv 3:
     recipes:
     - output: 1
@@ -994,6 +1058,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Type-3 Blade Lv 3: 0
+
   Type-3 Blade Lv 4:
     recipes:
     - output: 1
@@ -1010,13 +1075,15 @@ resources:
       requirements:
         Type-3 Blade Lv 4: 0
 
-  # Virtuous Treaty
+  _t: {H2: Virtuous Treaty} ####################################################
+
   Virtuous Treaty Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Virtuous Treaty Lv 1: 0
+
   Virtuous Treaty Lv 2:
     recipes:
     - output: 1
@@ -1031,6 +1098,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Virtuous Treaty Lv 2: 0
+
   Virtuous Treaty Lv 3:
     recipes:
     - output: 1
@@ -1046,6 +1114,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Virtuous Treaty Lv 3: 0
+
   Virtuous Treaty Lv 4:
     recipes:
     - output: 1
@@ -1063,13 +1132,15 @@ resources:
       requirements:
         Virtuous Treaty Lv 4: 0
 
-  # Cruel Blood Oath
+  _u: {H2: Cruel Blood Oath} ###################################################
+
   Cruel Blood Oath Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Cruel Blood Oath Lv 1: 0
+
   Cruel Blood Oath Lv 2:
     recipes:
     - output: 1
@@ -1084,6 +1155,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cruel Blood Oath Lv 2: 0
+
   Cruel Blood Oath Lv 3:
     recipes:
     - output: 1
@@ -1099,6 +1171,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cruel Blood Oath Lv 3: 0
+
   Cruel Blood Oath Lv 4:
     recipes:
     - output: 1
@@ -1116,7 +1189,8 @@ resources:
       requirements:
         Cruel Blood Oath Lv 4: 0
 
-  # Machine Axe
+  _v: {H2: Machine Axe} ########################################################
+
   Machine Axe Lv 1:
     recipes:
     - output: 1
@@ -1127,6 +1201,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Machine Axe Lv 1: 0
+
   Machine Axe Lv 2:
     recipes:
     - output: 1
@@ -1141,6 +1216,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Machine Axe Lv 2: 0
+
   Machine Axe Lv 3:
     recipes:
     - output: 1
@@ -1156,6 +1232,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Machine Axe Lv 3: 0
+
   Machine Axe Lv 4:
     recipes:
     - output: 1
@@ -1173,13 +1250,15 @@ resources:
       requirements:
         Machine Axe Lv 4: 0
 
-  # Beastcurse
+  _w: {H2: Beastcurse} #########################################################
+
   Beastcurse Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Beastcurse Lv 1: 0
+
   Beastcurse Lv 2:
     recipes:
     - output: 1
@@ -1194,6 +1273,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Beastcurse Lv 2: 0
+
   Beastcurse Lv 3:
     recipes:
     - output: 1
@@ -1209,6 +1289,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Beastcurse Lv 3: 0
+
   Beastcurse Lv 4:
     recipes:
     - output: 1
@@ -1225,13 +1306,15 @@ resources:
       requirements:
         Beastcurse Lv 4: 0
 
-  # Dragoon Lance
+  _x: {H2: Dragoon Lance} ######################################################
+
   Dragoon Lance Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Dragoon Lance Lv 1: 0
+
   Dragoon Lance Lv 2:
     recipes:
     - output: 1
@@ -1246,6 +1329,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Dragoon Lance Lv 2: 0
+
   Dragoon Lance Lv 3:
     recipes:
     - output: 1
@@ -1261,6 +1345,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Dragoon Lance Lv 3: 0
+
   Dragoon Lance Lv 4:
     recipes:
     - output: 1
@@ -1278,13 +1363,15 @@ resources:
       requirements:
         Dragoon Lance Lv 4: 0
 
-  # Phoenix Lance
+  _y: {H2: Phoenix Lance} ######################################################
+
   Phoenix Lance Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Phoenix Lance Lv 1: 0
+
   Phoenix Lance Lv 2:
     recipes:
     - output: 1
@@ -1299,6 +1386,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Phoenix Lance Lv 2: 0
+
   Phoenix Lance Lv 3:
     recipes:
     - output: 1
@@ -1314,6 +1402,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Phoenix Lance Lv 3: 0
+
   Phoenix Lance Lv 4:
     recipes:
     - output: 1
@@ -1331,13 +1420,15 @@ resources:
       requirements:
         Phoenix Lance Lv 4: 0
 
-  # Type-40 Lance
+  _z: {H2: Type-40 Lance} ######################################################
+
   Type-40 Lance Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Type-40 Lance Lv 1: 0
+
   Type-40 Lance Lv 2:
     recipes:
     - output: 1
@@ -1352,6 +1443,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Type-40 Lance Lv 2: 0
+
   Type-40 Lance Lv 3:
     recipes:
     - output: 1
@@ -1367,6 +1459,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Type-40 Lance Lv 3: 0
+
   Type-40 Lance Lv 4:
     recipes:
     - output: 1
@@ -1384,13 +1477,15 @@ resources:
       requirements:
         Type-40 Lance Lv 4: 0
 
-  # Type-3 Lance
+  _aa: {H2: Type-3 Lance} ######################################################
+
   Type-3 Lance Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Type-3 Lance Lv 1: 0
+
   Type-3 Lance Lv 2:
     recipes:
     - output: 1
@@ -1405,6 +1500,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Type-3 Lance Lv 2: 0
+
   Type-3 Lance Lv 3:
     recipes:
     - output: 1
@@ -1420,6 +1516,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Type-3 Lance Lv 3: 0
+
   Type-3 Lance Lv 4:
     recipes:
     - output: 1
@@ -1437,13 +1534,15 @@ resources:
       requirements:
         Type-3 Lance Lv 4: 0
 
-  # Spear of the Usurper
+  _ab: {H2: Spear of the Usurper} ##############################################
+
   Spear of the Usurper Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Spear of the Usurper Lv 1: 0
+
   Spear of the Usurper Lv 2:
     recipes:
     - output: 1
@@ -1458,6 +1557,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Spear of the Usurper Lv 2: 0
+
   Spear of the Usurper Lv 3:
     recipes:
     - output: 1
@@ -1473,6 +1573,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Spear of the Usurper Lv 3: 0
+
   Spear of the Usurper Lv 4:
     recipes:
     - output: 1
@@ -1490,13 +1591,15 @@ resources:
       requirements:
         Spear of the Usurper Lv 4: 0
 
-  # Virtuous Dignity
+  _ac: {H2: Virtuous Dignity} ##################################################
+
   Virtuous Dignity Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Virtuous Dignity Lv 1: 0
+
   Virtuous Dignity Lv 2:
     recipes:
     - output: 1
@@ -1511,6 +1614,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Virtuous Dignity Lv 2: 0
+
   Virtuous Dignity Lv 3:
     recipes:
     - output: 1
@@ -1526,6 +1630,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Virtuous Dignity Lv 3: 0
+
   Virtuous Dignity Lv 4:
     recipes:
     - output: 1
@@ -1543,13 +1648,15 @@ resources:
       requirements:
         Virtuous Dignity Lv 4: 0
 
-  # Cruel Arrogance
+  _ad: {H2: Cruel Arrogance} ###################################################
+
   Cruel Arrogance Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Cruel Arrogance Lv 1: 0
+
   Cruel Arrogance Lv 2:
     recipes:
     - output: 1
@@ -1563,6 +1670,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cruel Arrogance Lv 2: 0
+
   Cruel Arrogance Lv 3:
     recipes:
     - output: 1
@@ -1577,6 +1685,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cruel Arrogance Lv 3: 0
+
   Cruel Arrogance Lv 4:
     recipes:
     - output: 1
@@ -1593,7 +1702,8 @@ resources:
       requirements:
         Cruel Arrogance Lv 4: 0
 
-  # Machine Spear
+  _ae: {H2: Machine Spear} #####################################################
+
   Machine Spear Lv 1:
     recipes:
     - output: 1
@@ -1604,6 +1714,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Machine Spear Lv 1: 0
+
   Machine Spear Lv 2:
     recipes:
     - output: 1
@@ -1617,6 +1728,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Machine Spear Lv 2: 0
+
   Machine Spear Lv 3:
     recipes:
     - output: 1
@@ -1631,6 +1743,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Machine Spear Lv 3: 0
+
   Machine Spear Lv 4:
     recipes:
     - output: 1
@@ -1647,7 +1760,8 @@ resources:
       requirements:
         Machine Spear Lv 4: 0
 
-  # Angel's Folly
+  _af: {H2: Angel's Folly} #####################################################
+
   Angel's Folly Lv 1:
     recipes:
     - output: 1
@@ -1658,6 +1772,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Angel's Folly Lv 1: 0
+
   Angel's Folly Lv 2:
     recipes:
     - output: 1
@@ -1672,6 +1787,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Angel's Folly Lv 2: 0
+
   Angel's Folly Lv 3:
     recipes:
     - output: 1
@@ -1687,6 +1803,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Angel's Folly Lv 3: 0
+
   Angel's Folly Lv 4:
     recipes:
     - output: 1
@@ -1704,13 +1821,15 @@ resources:
       requirements:
         Angel's Folly Lv 4: 0
 
-  # Demon's Cry
+  _ag: {H2: Demon's Cry} #######################################################
+
   Demon's Cry Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Demon's Cry Lv 1: 0
+
   Demon's Cry Lv 2:
     recipes:
     - output: 1
@@ -1724,6 +1843,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Demon's Cry Lv 2: 0
+
   Demon's Cry Lv 3:
     recipes:
     - output: 1
@@ -1738,6 +1858,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Demon's Cry Lv 3: 0
+
   Demon's Cry Lv 4:
     recipes:
     - output: 1
@@ -1754,13 +1875,15 @@ resources:
       requirements:
         Demon's Cry Lv 4: 0
 
-  # Type-40 Fists
+  _ah: {H2: Type-40 Fists} #####################################################
+
   Type-40 Fists Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Type-40 Fists Lv 1: 0
+
   Type-40 Fists Lv 2:
     recipes:
     - output: 1
@@ -1774,6 +1897,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Type-40 Fists Lv 2: 0
+
   Type-40 Fists Lv 3:
     recipes:
     - output: 1
@@ -1788,6 +1912,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Type-40 Fists Lv 3: 0
+
   Type-40 Fists Lv 4:
     recipes:
     - output: 1
@@ -1804,7 +1929,8 @@ resources:
       requirements:
         Type-40 Fists Lv 4: 0
 
-  # Type-3 Fists
+  _ai: {H2: Type-3 Fists} ######################################################
+
   Type-3 Fists Lv 1:
     recipes:
     - output: 1
@@ -1815,6 +1941,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Type-3 Fists Lv 1: 0
+
   Type-3 Fists Lv 2:
     recipes:
     - output: 1
@@ -1829,6 +1956,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Type-3 Fists Lv 2: 0
+
   Type-3 Fists Lv 3:
     recipes:
     - output: 1
@@ -1844,6 +1972,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Type-3 Fists Lv 3: 0
+
   Type-3 Fists Lv 4:
     recipes:
     - output: 1
@@ -1861,13 +1990,15 @@ resources:
       requirements:
         Type-3 Fists Lv 4: 0
 
-  # Virtuous Grief
+  _aj: {H2: Virtuous Grief} ####################################################
+
   Virtuous Grief Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Virtuous Grief Lv 1: 0
+
   Virtuous Grief Lv 2:
     recipes:
     - output: 1
@@ -1881,6 +2012,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Virtuous Grief Lv 2: 0
+
   Virtuous Grief Lv 3:
     recipes:
     - output: 1
@@ -1895,6 +2027,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Virtuous Grief Lv 3: 0
+
   Virtuous Grief Lv 4:
     recipes:
     - output: 1
@@ -1911,13 +2044,15 @@ resources:
       requirements:
         Virtuous Grief Lv 4: 0
 
-  # Cruel Lament
+  _ak: {H2: Cruel Lament} ######################################################
+
   Cruel Lament Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Cruel Lament Lv 1: 0
+
   Cruel Lament Lv 2:
     recipes:
     - output: 1
@@ -1931,6 +2066,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cruel Lament Lv 2: 0
+
   Cruel Lament Lv 3:
     recipes:
     - output: 1
@@ -1945,6 +2081,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Cruel Lament Lv 3: 0
+
   Cruel Lament Lv 4:
     recipes:
     - output: 1
@@ -1961,7 +2098,8 @@ resources:
       requirements:
         Cruel Lament Lv 4: 0
 
-  # Machine Heads
+  _al: {H2: Machine Heads} #####################################################
+
   Machine Heads Lv 1:
     recipes:
     - output: 1
@@ -1972,6 +2110,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Machine Heads Lv 1: 0
+
   Machine Heads Lv 2:
     recipes:
     - output: 1
@@ -1985,6 +2124,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Machine Heads Lv 2: 0
+
   Machine Heads Lv 3:
     recipes:
     - output: 1
@@ -1999,6 +2139,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Machine Heads Lv 3: 0
+
   Machine Heads Lv 4:
     recipes:
     - output: 1
@@ -2015,13 +2156,15 @@ resources:
       requirements:
         Machine Heads Lv 4: 0
 
-  # Emil Heads
+  _am: {H2: Emil Heads} ########################################################
+
   Emil Heads Lv 1:
     recipes:
     - output: 1
       recipe_type: Raw Resource
       requirements:
         Emil Heads Lv 1: 0
+
   Emil Heads Lv 2:
     recipes:
     - output: 1
@@ -2035,6 +2178,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Emil Heads Lv 2: 0
+
   Emil Heads Lv 3:
     recipes:
     - output: 1
@@ -2049,6 +2193,7 @@ resources:
       recipe_type: Raw Resource
       requirements:
         Emil Heads Lv 3: 0
+
   Emil Heads Lv 4:
     recipes:
     - output: 1
@@ -2065,17 +2210,10 @@ resources:
       requirements:
         Emil Heads Lv 4: 0
 
-
-
-
-
-
-
-
-
   ##############################################################################
-  # Materials
+  _an: {H1: Materials} #########################################################
   ##############################################################################
+
   Amber:
     recipes:
     - output: 1
@@ -2566,12 +2704,10 @@ resources:
       requirements:
         Warped Wire: 0
 
-
-
-
   ##############################################################################
-  # Currency
+  _ao: {H1: Currency} ##########################################################
   ##############################################################################
+
   G:
     recipes:
     - output: 1
