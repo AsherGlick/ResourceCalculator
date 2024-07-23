@@ -15,6 +15,7 @@ recipe_types:
   Hawkeye Fabricator: Using a Hawkeye Fabricator turn {IN_ITEMS} into {OUT_ITEM}
   Better Future Fabricator: Using a Better Future Fabricator turn {IN_ITEMS} into {OUT_ITEM}
   Reticule Research Fabricator: Using a Reticule Research Fabricator turn {IN_ITEMS} into {OUT_ITEM}
+  Space Junkers Fabricator: Using a Space Junkers Fusion Fabricator fusion {IN_ITEMS} into {OUT_ITEM}
 
 resources:
 
@@ -634,7 +635,7 @@ resources:
 
 # Exotic Component
 
-  Seed AI:
+  Seed A.I.:
     recipes:
     - output: 1
       recipe_type: Component Factory (Exotic)
@@ -659,448 +660,6 @@ resources:
       requirements:
         Thermo Jet: -1
         Zero Point Splitter: -1
-    - recipe_type: Raw Resource
-
-# Ressource Block
-
-  GSO Fibron Block:
-    recipes:
-    - output: 1
-      recipe_type: GSO Fabricator
-      requirements:
-        Fibron Chunk: -24
-    - recipe_type: Raw Resource
-
-  GSO Rubber Block:
-    recipes:
-    - output: 1
-      recipe_type: GSO Fabricator
-      requirements:
-        Rubber Brick: -24
-    - recipe_type: Raw Resource
-
-  GSO Plumbia Block:
-    recipes:
-    - output: 1
-      recipe_type: GSO Fabricator
-      requirements:
-        Plumbia Ingot: -24
-    - recipe_type: Raw Resource
-
-  GSO Titania Block:
-    recipes:
-    - output: 1
-      recipe_type: GSO Fabricator
-      requirements:
-        Titania Ingot: -24
-    - recipe_type: Raw Resource
-
-  GSO Carbius Block:
-    recipes:
-    - output: 1
-      recipe_type: GSO Fabricator
-      requirements:
-        Carbius Brick: -24
-    - recipe_type: Raw Resource
-
-  GSO Olastic Block:
-    recipes:
-    - output: 1
-      recipe_type: GSO Fabricator
-      requirements:
-        Olastic Brick: -24
-    - recipe_type: Raw Resource
-
-  GSO Rodius Block:
-    recipes:
-    - output: 1
-      recipe_type: GSO Fabricator
-      requirements:
-        Rodius Capsule: -24
-    - recipe_type: Raw Resource
-
-  GSO Ignian Block:
-    recipes:
-    - output: 1
-      recipe_type: GSO Fabricator
-      requirements:
-        Ignian Crystal: -24
-    - recipe_type: Raw Resource
-
-  GSO Celestian Block:
-    recipes:
-    - output: 1
-      recipe_type: GSO Fabricator
-      requirements:
-        Celestian Crystal: -24
-    - recipe_type: Raw Resource
-
-  GSO Erudian Block:
-    recipes:
-    - output: 1
-      recipe_type: GSO Fabricator
-      requirements:
-        Erudian Crystal: -24
-    - recipe_type: Raw Resource
-
-  GSO Luxian Block:
-    recipes:
-    - output: 1
-      recipe_type: GSO Fabricator
-      requirements:
-        Luxian Crystal: -24
-    - recipe_type: Raw Resource
-
-  GeoCorp Fibron Block:
-    recipes:
-    - output: 1
-      recipe_type: GeoCorp Fabricator
-      requirements:
-        Fibron Chunk: -120
-    - recipe_type: Raw Resource
-
-  GeoCorp Rubber Block:
-    recipes:
-    - output: 1
-      recipe_type: GeoCorp Fabricator
-      requirements:
-        Rubber Brick: -120
-    - recipe_type: Raw Resource
-
-  GeoCorp Plumbia Block:
-    recipes:
-    - output: 1
-      recipe_type: GeoCorp Fabricator
-      requirements:
-        Plumbia Ingot: -120
-    - recipe_type: Raw Resource
-
-  GeoCorp Titania Block:
-    recipes:
-    - output: 1
-      recipe_type: GeoCorp Fabricator
-      requirements:
-        Titania Ingot: -120
-    - recipe_type: Raw Resource
-
-  GeoCorp Carbius Block:
-    recipes:
-    - output: 1
-      recipe_type: GeoCorp Fabricator
-      requirements:
-        Carbius Brick: -120
-    - recipe_type: Raw Resource
-
-  GeoCorp Olastic Block:
-    recipes:
-    - output: 1
-      recipe_type: GeoCorp Fabricator
-      requirements:
-        Olastic Brick: -120
-    - recipe_type: Raw Resource
-
-  GeoCorp Rodius Block:
-    recipes:
-    - output: 1
-      recipe_type: GeoCorp Fabricator
-      requirements:
-        Rodius Capsule: -120
-    - recipe_type: Raw Resource
-
-  GeoCorp Ignian Block:
-    recipes:
-    - output: 1
-      recipe_type: GeoCorp Fabricator
-      requirements:
-        Ignian Crystal: -120
-    - recipe_type: Raw Resource
-
-  GeoCorp Celestian Block:
-    recipes:
-    - output: 1
-      recipe_type: GeoCorp Fabricator
-      requirements:
-        Celestian Crystal: -120
-    - recipe_type: Raw Resource
-
-  GeoCorp Erudian Block:
-    recipes:
-    - output: 1
-      recipe_type: GeoCorp Fabricator
-      requirements:
-        Erudian Crystal: -120
-    - recipe_type: Raw Resource
-
-  GeoCorp Luxian Block:
-    recipes:
-    - output: 1
-      recipe_type: GeoCorp Fabricator
-      requirements:
-        Luxian Crystal: -120
-    - recipe_type: Raw Resource
-
-  Venture Fibron Block:
-    recipes:
-    - output: 1
-      recipe_type: Venture Fabricator
-      requirements:
-        Fibron Chunk: -8
-    - recipe_type: Raw Resource
-
-  Venture Rubber Block:
-    recipes:
-    - output: 1
-      recipe_type: Venture Fabricator
-      requirements:
-        Rubber Brick: -8
-    - recipe_type: Raw Resource
-
-  Venture Plumbia Block:
-    recipes:
-    - output: 1
-      recipe_type: Venture Fabricator
-      requirements:
-        Plumbia Ingot: -8
-    - recipe_type: Raw Resource
-
-  Venture Titania Block:
-    recipes:
-    - output: 1
-      recipe_type: Venture Fabricator
-      requirements:
-        Titania Ingot: -8
-    - recipe_type: Raw Resource
-
-  Venture Carbius Block:
-    recipes:
-    - output: 1
-      recipe_type: Venture Fabricator
-      requirements:
-        Carbius Brick: -8
-    - recipe_type: Raw Resource
-
-  Venture Olastic Block:
-    recipes:
-    - output: 1
-      recipe_type: Venture Fabricator
-      requirements:
-        Olastic Brick: -8
-    - recipe_type: Raw Resource
-
-  Venture Rodius Block:
-    recipes:
-    - output: 1
-      recipe_type: Venture Fabricator
-      requirements:
-        Rodius Capsule: -8
-    - recipe_type: Raw Resource
-
-  Venture Ignian Block:
-    recipes:
-    - output: 1
-      recipe_type: Venture Fabricator
-      requirements:
-        Ignian Crystal: -8
-    - recipe_type: Raw Resource
-
-  Venture Celestian Block:
-    recipes:
-    - output: 1
-      recipe_type: Venture Fabricator
-      requirements:
-        Celestian Crystal: -8
-    - recipe_type: Raw Resource
-
-  Venture Erudian Block:
-    recipes:
-    - output: 1
-      recipe_type: Venture Fabricator
-      requirements:
-        Erudian Crystal: -8
-    - recipe_type: Raw Resource
-
-  Venture Luxian Block:
-    recipes:
-    - output: 1
-      recipe_type: Venture Fabricator
-      requirements:
-        Luxian Crystal: -8
-    - recipe_type: Raw Resource
-
-  Hawkeye Fibron Block:
-    recipes:
-    - output: 1
-      recipe_type: Hawkeye Fabricator
-      requirements:
-        Fibron Chunk: -64
-    - recipe_type: Raw Resource
-
-  Hawkeye Rubber Block:
-    recipes:
-    - output: 1
-      recipe_type: Hawkeye Fabricator
-      requirements:
-        Rubber Brick: -64
-    - recipe_type: Raw Resource
-
-  Hawkeye Plumbia Block:
-    recipes:
-    - output: 1
-      recipe_type: Hawkeye Fabricator
-      requirements:
-        Plumbia Ingot: -64
-    - recipe_type: Raw Resource
-
-  Hawkeye Titania Block:
-    recipes:
-    - output: 1
-      recipe_type: Hawkeye Fabricator
-      requirements:
-        Titania Ingot: -64
-    - recipe_type: Raw Resource
-
-  Hawkeye Carbius Block:
-    recipes:
-    - output: 1
-      recipe_type: Hawkeye Fabricator
-      requirements:
-        Carbius Brick: -64
-    - recipe_type: Raw Resource
-
-  Hawkeye Olastic Block:
-    recipes:
-    - output: 1
-      recipe_type: Hawkeye Fabricator
-      requirements:
-        Olastic Brick: -64
-    - recipe_type: Raw Resource
-
-  Hawkeye Rodius Block:
-    recipes:
-    - output: 1
-      recipe_type: Hawkeye Fabricator
-      requirements:
-        Rodius Capsule: -64
-    - recipe_type: Raw Resource
-
-  Hawkeye Ignian Block:
-    recipes:
-    - output: 1
-      recipe_type: Hawkeye Fabricator
-      requirements:
-        Ignian Crystal: -64
-    - recipe_type: Raw Resource
-
-  Hawkeye Celestian Block:
-    recipes:
-    - output: 1
-      recipe_type: Hawkeye Fabricator
-      requirements:
-        Celestian Crystal: -64
-    - recipe_type: Raw Resource
-
-  Hawkeye Erudian Block:
-    recipes:
-    - output: 1
-      recipe_type: Hawkeye Fabricator
-      requirements:
-        Erudian Crystal: -64
-    - recipe_type: Raw Resource
-
-  Hawkeye Luxian Block:
-    recipes:
-    - output: 1
-      recipe_type: Hawkeye Fabricator
-      requirements:
-        Luxian Crystal: -64
-    - recipe_type: Raw Resource
-
-  Better Future Fibron Block:
-    recipes:
-    - output: 1
-      recipe_type: Better Future Fabricator
-      requirements:
-        Fibron Chunk: -42
-    - recipe_type: Raw Resource
-
-  Better Future Rubber Block:
-    recipes:
-    - output: 1
-      recipe_type: Better Future Fabricator
-      requirements:
-        Rubber Brick: -42
-    - recipe_type: Raw Resource
-
-  Better Future Plumbia Block:
-    recipes:
-    - output: 1
-      recipe_type: Better Future Fabricator
-      requirements:
-        Plumbia Ingot: -42
-    - recipe_type: Raw Resource
-
-  Better Future Titania Block:
-    recipes:
-    - output: 1
-      recipe_type: Better Future Fabricator
-      requirements:
-        Titania Ingot: -42
-    - recipe_type: Raw Resource
-
-  Better Future Carbius Block:
-    recipes:
-    - output: 1
-      recipe_type: Better Future Fabricator
-      requirements:
-        Carbius Brick: -42
-    - recipe_type: Raw Resource
-
-  Better Future Olastic Block:
-    recipes:
-    - output: 1
-      recipe_type: Better Future Fabricator
-      requirements:
-        Olastic Brick: -42
-    - recipe_type: Raw Resource
-
-  Better Future Rodius Block:
-    recipes:
-    - output: 1
-      recipe_type: Better Future Fabricator
-      requirements:
-        Rodius Capsule: -42
-    - recipe_type: Raw Resource
-
-  Better Future Ignian Block:
-    recipes:
-    - output: 1
-      recipe_type: Better Future Fabricator
-      requirements:
-        Ignian Crystal: -42
-    - recipe_type: Raw Resource
-
-  Better Future Celestian Block:
-    recipes:
-    - output: 1
-      recipe_type: Better Future Fabricator
-      requirements:
-        Celestian Crystal: -42
-    - recipe_type: Raw Resource
-
-  Better Future Erudian Block:
-    recipes:
-    - output: 1
-      recipe_type: Better Future Fabricator
-      requirements:
-        Erudian Crystal: -42
-    - recipe_type: Raw Resource
-
-  Better Future Luxian Block:
-    recipes:
-    - output: 1
-      recipe_type: Better Future Fabricator
-      requirements:
-        Luxian Crystal: -42
     - recipe_type: Raw Resource
 
 # GSO Standard Blocks
@@ -1804,7 +1363,7 @@ resources:
       recipe_type: GSO Fabricator
       requirements:
         Gluon Beam: -1
-        Seed AI: -1
+        Seed A.I.: -1
         Proxima Dark: -1
     - recipe_type: Raw Resource
 
@@ -2034,7 +1593,7 @@ resources:
         Plumbia Ingot: -1
         Olastic Brick: -1
         Fuel Injector: -1
-        Seed AI: -1
+        Seed A.I.: -1
     - recipe_type: Raw Resource
 
   GSO Matryoshka Anchored Delivery Cannon:
@@ -2131,6 +1690,94 @@ resources:
         Luxian Crystal: -1
         Plumbia Ingot: -2
         Titania Ingot: -2
+    - recipe_type: Raw Resource
+
+  GSO Fibron Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Fibron Chunk: -24
+    - recipe_type: Raw Resource
+
+  GSO Rubber Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rubber Brick: -24
+    - recipe_type: Raw Resource
+
+  GSO Plumbia Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Plumbia Ingot: -24
+    - recipe_type: Raw Resource
+
+  GSO Titania Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Titania Ingot: -24
+    - recipe_type: Raw Resource
+
+  GSO Carbius Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Carbius Brick: -24
+    - recipe_type: Raw Resource
+
+  GSO Olastic Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Olastic Brick: -24
+    - recipe_type: Raw Resource
+
+  GSO Rodius Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Rodius Capsule: -24
+    - recipe_type: Raw Resource
+
+  GSO Ignian Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Ignian Crystal: -24
+    - recipe_type: Raw Resource
+
+  GSO Celestian Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Celestian Crystal: -24
+    - recipe_type: Raw Resource
+
+  GSO Erudian Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Erudian Crystal: -24
+    - recipe_type: Raw Resource
+
+  GSO Luxian Block:
+    recipes:
+    - output: 1
+      recipe_type: GSO Fabricator
+      requirements:
+        Luxian Crystal: -24
     - recipe_type: Raw Resource
 
 # GSO Flight Blocks
@@ -2725,7 +2372,7 @@ resources:
         Erudite Shard: -2
     - recipe_type: Raw Resource
 
-  GeoCorp Dozer AI Module:
+  GeoCorp Dozer A.I. Module:
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3208,7 +2855,7 @@ resources:
       recipe_type: GeoCorp Fabricator
       requirements:
         Gluon Beam: -1
-        Seed AI: -1
+        Seed A.I.: -1
         Proxima Dark: -1
     - recipe_type: Raw Resource
 
@@ -3286,6 +2933,8 @@ resources:
         Cyclone Jet: -3
         Gluon Beam: -1
     - recipe_type: Raw Resource
+
+# GeoCorp Manufacturing Blocks
 
   GeoCorp Fixed Anchor:
     recipes:
@@ -3380,6 +3029,94 @@ resources:
         Blast Caps: -3
         Hard Light Drive: -1
         Zero Point Splitter: -1
+    - recipe_type: Raw Resource
+
+  GeoCorp Fibron Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Fibron Chunk: -120
+    - recipe_type: Raw Resource
+
+  GeoCorp Rubber Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rubber Brick: -120
+    - recipe_type: Raw Resource
+
+  GeoCorp Plumbia Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Plumbia Ingot: -120
+    - recipe_type: Raw Resource
+
+  GeoCorp Titania Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Titania Ingot: -120
+    - recipe_type: Raw Resource
+
+  GeoCorp Carbius Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Carbius Brick: -120
+    - recipe_type: Raw Resource
+
+  GeoCorp Olastic Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Olastic Brick: -120
+    - recipe_type: Raw Resource
+
+  GeoCorp Rodius Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Rodius Capsule: -120
+    - recipe_type: Raw Resource
+
+  GeoCorp Ignian Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Ignian Crystal: -120
+    - recipe_type: Raw Resource
+
+  GeoCorp Celestian Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Celestian Crystal: -120
+    - recipe_type: Raw Resource
+
+  GeoCorp Erudian Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Erudian Crystal: -120
+    - recipe_type: Raw Resource
+
+  GeoCorp Luxian Block:
+    recipes:
+    - output: 1
+      recipe_type: GeoCorp Fabricator
+      requirements:
+        Luxian Crystal: -120
     - recipe_type: Raw Resource
 
 # GeoCorp Flight Blocks
@@ -3769,7 +3506,7 @@ resources:
         Fuel Injector: -1
     - recipe_type: Raw Resource
 
-  Venture AI Guard Module:
+  Venture A.I. Guard Module:
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4089,7 +3826,7 @@ resources:
         Fibre Plating: -1
         Ion Pulse Cell: -1
         Thermo Jet: -1
-        Seed AI: -1
+        Seed A.I.: -1
     - recipe_type: Raw Resource
 
   Venture Cluster Missile Launcher:
@@ -4275,7 +4012,7 @@ resources:
       recipe_type: Venture Fabricator
       requirements:
         Gluon Beam: -1
-        Seed AI: -1
+        Seed A.I.: -1
         Proxima Dark: -1
     - recipe_type: Raw Resource
 
@@ -4456,7 +4193,95 @@ resources:
         Acid Electrode: -1
         Zero Point Splitter: -1
         Thermo Jet: -1
-        Seed AI: -1
+        Seed A.I.: -1
+    - recipe_type: Raw Resource
+
+  Venture Fibron Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Fibron Chunk: -8
+    - recipe_type: Raw Resource
+
+  Venture Rubber Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Rubber Brick: -8
+    - recipe_type: Raw Resource
+
+  Venture Plumbia Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Plumbia Ingot: -8
+    - recipe_type: Raw Resource
+
+  Venture Titania Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Titania Ingot: -8
+    - recipe_type: Raw Resource
+
+  Venture Carbius Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Carbius Brick: -8
+    - recipe_type: Raw Resource
+
+  Venture Olastic Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Olastic Brick: -8
+    - recipe_type: Raw Resource
+
+  Venture Rodius Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Rodius Capsule: -8
+    - recipe_type: Raw Resource
+
+  Venture Ignian Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Ignian Crystal: -8
+    - recipe_type: Raw Resource
+
+  Venture Celestian Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Celestian Crystal: -8
+    - recipe_type: Raw Resource
+
+  Venture Erudian Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Erudian Crystal: -8
+    - recipe_type: Raw Resource
+
+  Venture Luxian Block:
+    recipes:
+    - output: 1
+      recipe_type: Venture Fabricator
+      requirements:
+        Luxian Crystal: -8
     - recipe_type: Raw Resource
 
 # Venture Flight Blocks
@@ -5257,7 +5082,7 @@ resources:
         Fuel Injector: -3
     - recipe_type: Raw Resource
 
-  Hawkeye Counter AI Module:
+  Hawkeye Counter A.I. Module:
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5267,7 +5092,7 @@ resources:
         Mother Brain: -1
     - recipe_type: Raw Resource
 
-  Hawkeye Helios AI Sentry:
+  Hawkeye HeliosA.I.Sentry:
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5575,7 +5400,7 @@ resources:
         Fuel Injector: -2
         Ion Pulse Cell: -1
         Thermo Jet: -1
-        Seed AI: -1
+        Seed A.I.: -1
     - recipe_type: Raw Resource
 
   Hawkeye Cruise Missile:
@@ -5587,7 +5412,7 @@ resources:
         Fuel Injector: -2
         Ion Pulse Cell: -1
         Thermo Jet: -1
-        Seed AI: -2
+        Seed A.I.: -2
     - recipe_type: Raw Resource
 
   Hawkeye BMB:
@@ -5599,7 +5424,7 @@ resources:
         Fuel Injector: -3
         Ion Pulse Cell: -2
         Thermo Jet: -1
-        Seed AI: -1
+        Seed A.I.: -1
     - recipe_type: Raw Resource
 
   Hawkeye Paladin Bomb:
@@ -5771,7 +5596,7 @@ resources:
       recipe_type: Hawkeye Fabricator
       requirements:
         Gluon Beam: -1
-        Seed AI: -1
+        Seed A.I.: -1
         Proxima Dark: -1
     - recipe_type: Raw Resource
 
@@ -5948,6 +5773,94 @@ resources:
         Blast Caps: -2
         Hard Light Drive: -1
         Zero Point Splitter: -1
+    - recipe_type: Raw Resource
+
+  Hawkeye Fibron Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Fibron Chunk: -64
+    - recipe_type: Raw Resource
+
+  Hawkeye Rubber Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rubber Brick: -64
+    - recipe_type: Raw Resource
+
+  Hawkeye Plumbia Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Plumbia Ingot: -64
+    - recipe_type: Raw Resource
+
+  Hawkeye Titania Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Titania Ingot: -64
+    - recipe_type: Raw Resource
+
+  Hawkeye Carbius Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Carbius Brick: -64
+    - recipe_type: Raw Resource
+
+  Hawkeye Olastic Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Olastic Brick: -64
+    - recipe_type: Raw Resource
+
+  Hawkeye Rodius Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Rodius Capsule: -64
+    - recipe_type: Raw Resource
+
+  Hawkeye Ignian Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Ignian Crystal: -64
+    - recipe_type: Raw Resource
+
+  Hawkeye Celestian Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Celestian Crystal: -64
+    - recipe_type: Raw Resource
+
+  Hawkeye Erudian Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Erudian Crystal: -64
+    - recipe_type: Raw Resource
+
+  Hawkeye Luxian Block:
+    recipes:
+    - output: 1
+      recipe_type: Hawkeye Fabricator
+      requirements:
+        Luxian Crystal: -64
     - recipe_type: Raw Resource
 
 # Hawkeye Flight Blocks
@@ -6641,7 +6554,7 @@ resources:
         Acid Electrode: -1
     - recipe_type: Raw Resource
 
-  Better Future AI Module:
+  Better Future A.I. Module:
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7095,7 +7008,7 @@ resources:
       recipe_type: Better Future Fabricator
       requirements:
         Gluon Beam: -1
-        Seed AI: -1
+        Seed A.I.: -1
         Proxima Dark: -1
     - recipe_type: Raw Resource
 
@@ -7267,7 +7180,95 @@ resources:
         Acid Electrode: -1
         Zero Point Splitter: -1
         Thermo Jet: -1
-        Seed AI: -1
+        Seed A.I.: -1
+    - recipe_type: Raw Resource
+
+  Better Future Fibron Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Fibron Chunk: -42
+    - recipe_type: Raw Resource
+
+  Better Future Rubber Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Rubber Brick: -42
+    - recipe_type: Raw Resource
+
+  Better Future Plumbia Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Plumbia Ingot: -42
+    - recipe_type: Raw Resource
+
+  Better Future Titania Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Titania Ingot: -42
+    - recipe_type: Raw Resource
+
+  Better Future Carbius Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Carbius Brick: -42
+    - recipe_type: Raw Resource
+
+  Better Future Olastic Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Olastic Brick: -42
+    - recipe_type: Raw Resource
+
+  Better Future Rodius Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Rodius Capsule: -42
+    - recipe_type: Raw Resource
+
+  Better Future Ignian Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Ignian Crystal: -42
+    - recipe_type: Raw Resource
+
+  Better Future Celestian Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Celestian Crystal: -42
+    - recipe_type: Raw Resource
+
+  Better Future Erudian Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Erudian Crystal: -42
+    - recipe_type: Raw Resource
+
+  Better Future Luxian Block:
+    recipes:
+    - output: 1
+      recipe_type: Better Future Fabricator
+      requirements:
+        Luxian Crystal: -42
     - recipe_type: Raw Resource
 
 # Better Future Flight Blocks
@@ -8139,7 +8140,7 @@ resources:
         Fuel Injector: -2
         Ion Pulse Cell: -1
         Thermo Jet: -2
-        Seed AI: -1
+        Seed A.I.: -1
     - recipe_type: Raw Resource
 
   Reticule Research Tesla Coil:
@@ -8161,7 +8162,7 @@ resources:
         Rugged Fiblar: -3
         Acid Electrode: -3
         Zero Point Splitter: -1
-        Seed AI: -1
+        Seed A.I.: -1
     - recipe_type: Raw Resource
 
   Reticule Research Sticky Bomb Launcher:
@@ -8610,7 +8611,7 @@ resources:
         Fibre Plating: -2
         Hardened Titanic: -2
         Heat Coil: -1
-        Seed AI: -1
+        Seed A.I.: -1
     - recipe_type: Raw Resource
 
   Reticule Research Payload Terminal:
@@ -8619,7 +8620,7 @@ resources:
       recipe_type: Reticule Research Fabricator
       requirements:
         Gluon Beam: -1
-        Seed AI: -1
+        Seed A.I.: -1
         Proxima Dark: -1
     - recipe_type: Raw Resource
 
@@ -8806,5 +8807,415 @@ resources:
         Luxian Crystal: -5
         Fibre Plating: -5
         Rodius Capsule: -5
+    - recipe_type: Raw Resource
+
+# Space Junkers Standard Blocks
+
+  Space Junkers One Block:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO One Block: -1
+        Venture Standard Block: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Two Block:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO Two Block: -1
+        Venture Long Block: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Battlecry Cab Armour Plate:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO Cab Armour Plate: -1
+        Hawkeye Small Armour Plate: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Warcry Cab Armour Plate:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO Cab Armour Plate: -2
+        Hawkeye Medium Armour Plate: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Small Bullbar Armour Plate:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO Small Armour Plate: -1
+        Reticule Research Small Flat Bracket: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Medium Bullbar Armour Plate:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO Medium Armour Plate: -1
+        Reticule Research Medium Flat Bracket: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Cornered Bullbar Armour Plate:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO Small Armour Plate: -1
+        Reticule Research Corner Bracket: -2
+    - recipe_type: Raw Resource
+
+  Space Junkers Large Bullbar Armour Plate:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO Small Armour Plate: -1
+        Reticule Research Medium Arched Bracket: -2
+    - recipe_type: Raw Resource
+
+  Reticule Research Angled Girder:
+    recipes:
+    - output: 1
+      recipe_type: Reticule Research Fabricator
+      requirements:
+        GeoCorp Girder Bracket: -1
+        GeoCorp Brew Girder: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Jagged Girder:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GeoCorp Girder Bracket: -1
+        GeoCorp Girder Block: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers T-Shaped Girder:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GeoCorp Girder Block: -1
+        GeoCorp Brew Girder: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Spiked Corner Armour Plate:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        Hawkeye Medium Spike Armour: -2
+    - recipe_type: Raw Resource
+
+  Space Junkers Spiked Armour Plate:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        Hawkeye Medium Fort Armour: -2
+    - recipe_type: Raw Resource
+
+  Space Junkers Spiked Tusk:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GeoCorp Straight Long Bumper: -2
+    - recipe_type: Raw Resource
+
+  Space Junkers Spiked Girder:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        Venture Straight Bracket: -2
+    - recipe_type: Raw Resource
+
+# Space Junkers Control Blocks
+
+  Space Junkers Rugged Seeker Cab:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GeoCorp Foreman GPR Cab: -1
+        Venture Cruz Wide Cab: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Rusty Cab:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO One Block: -1
+        Venture Standard Block: -1
+        GSO Crafty Mike Cab: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Battler Cab:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GeoCorp Foreman GPR Cab: -1
+        Venture Cruz Wide Cab: -2
+    - recipe_type: Raw Resource
+
+  Space Junkers Scraphead A.I. Module:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GeoCorp Foreman GPR Cab: -1
+        Venture Cruz Wide Cab: -1
+        GSO Gruntle A.I. Module: -1
+    - recipe_type: Raw Resource
+
+# Space Junkers Wheel Blocks
+
+  Space Junkers Hemispherical Roller:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        Better Future Two Block: -1
+        Venture Medium F1 Wheel: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Screw Track:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GeoCorp Fixed Diamond Drill: -1
+        Hawkeye Warhorse Wheel: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Junkyard Spinner:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GeoCorp Rugged Wheel: -1
+        Better Future Small Long Halo Wheel: -1
+    - recipe_type: Raw Resource
+
+# Space Junkers Weapon Blocks
+
+  Space Junkers Geode Rumbler:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO Rock Drill: -1
+        GSO Wide Gauge STUD Laser: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Junkyard Rainmaker:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO ZK-47 Light Machine Gun: -1
+        Hawkeye Repeater Rifle: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Scavengers Harpoon:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO Mini Drill: -1
+        Hawkeye Zeus Laser Cannon: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Rustic Cannon:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        Venture Rapid Cannon: -1
+        Hawkeye Auto Cannon: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Chainslicer:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GeoCorp Buzz Saw: -1
+        GeoCorp Nail Gun: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Patchwork Pyroblaster:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        Venture Reaper X1 Flamethrower: -1
+        GSO Popper Fuel Tank: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Cog Jammer:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO Shield Bubble Projector: -1
+        Reticule Research Zero Point Energy Gun: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Precision Laser:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        Hawkeye Medium Wrap Armour: -1
+        Better Future Flamethrower: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Blast Barrel Bomber:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO Two Block: -1
+        Better Future Chassis One: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Scrap Gun:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        Reticule Research Scrapper: -1
+        GSO Mobile Furnace Generator: -1
+    - recipe_type: Raw Resource
+
+# Space Junkers Accessory Blocks
+
+  Space Junkers Bulkhead Light:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO Blinker Headlight: -2
+    - recipe_type: Raw Resource
+
+  Space Junkers Armoured Radar:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO One Block: -1
+        GSO Small Armour Plate: -1
+        Venture Minimap Radar: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Block Magnet:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO Block Magnet Mini: -3
+        Better Future Three Block: -1
+    - recipe_type: Raw Resource
+
+# Space Junkers Power Blocks
+
+  Space Junkers Scraphead Juicer:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO Small Battery Cell: -3
+    - recipe_type: Raw Resource
+
+# Space Junkers Manufacturing Blocks
+
+  Space Junkers Fixed Anchor:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GeoCorp Fixed Anchor: -1
+        Better Future Sky Anchor: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Rotating Anchor:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GeoCorp Rotating Anchor: -1
+        Better Future Sky Anchor: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Fusion Fabricator:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        Hawkeye Fabricator: -1
+        GeoCorp Scrapper: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Scrapper:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GeoCorp Refinery: -1
+        Better Future Scrapper: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Block Deconstructor:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO Fabricator: -1
+        Hawkeye Scrapper: -1
+    - recipe_type: Raw Resource
+
+  Space Junkers Component Break-aparter:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO Component Factory: -1
+        Venture Mobile Refinery: -1
+        GSO Advanced Component Dongle: -1
+        GeoCorp Fabricator: -1
+    - recipe_type: Raw Resource
+
+# Space Junkers Flight Blocks
+
+  Space Junkers Fuel Tank:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        GSO Popper Fuel Tank: -2
+    - recipe_type: Raw Resource
+
+  Space Junkers Turbo Booster:
+    recipes:
+    - output: 1
+      recipe_type: Space Junkers Fabricator
+      requirements:
+        Venture Fuel Pod: -1
+        Better Future Medium Booster: -1
     - recipe_type: Raw Resource
 
