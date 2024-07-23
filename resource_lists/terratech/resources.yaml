@@ -22,13 +22,16 @@ recipe_types:
   Space Junkers Fabricator: Using a Space Junkers Fusion Fabricator fusion {IN_ITEMS} into {OUT_ITEM}
 
 resources:
+
+  ##############################################################################
+  _a: {H1: Raw and Refined Resources} ##########################################
+  ##############################################################################
+
   Fiberwood Chunk:
-    currency: False
     recipes:
     - recipe_type: Raw Resource
 
   Fibron Chunk:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Refinery
@@ -57,12 +60,10 @@ resources:
     - recipe_type: Raw Resource
 
   Rubber Jelly:
-    currency: False
     recipes:
     - recipe_type: Raw Resource
 
   Rubber Brick:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Refinery
@@ -91,12 +92,10 @@ resources:
     - recipe_type: Raw Resource
 
   Plumbite Ore:
-    currency: False
     recipes:
     - recipe_type: Raw Resource
 
   Plumbia Ingot:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Refinery
@@ -125,12 +124,10 @@ resources:
     - recipe_type: Raw Resource
 
   Titanite Ore:
-    currency: False
     recipes:
     - recipe_type: Raw Resource
 
   Titania Ingot:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Refinery
@@ -159,12 +156,10 @@ resources:
     - recipe_type: Raw Resource
 
   Carbite Ore:
-    currency: False
     recipes:
     - recipe_type: Raw Resource
 
   Carbius Brick:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Refinery
@@ -193,12 +188,10 @@ resources:
     - recipe_type: Raw Resource
 
   Oleite Jelly:
-    currency: False
     recipes:
     - recipe_type: Raw Resource
 
   Olastic Brick:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Refinery
@@ -227,12 +220,10 @@ resources:
     - recipe_type: Raw Resource
 
   Rodite Ore:
-    currency: False
     recipes:
     - recipe_type: Raw Resource
 
   Rodius Capsule:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Refinery
@@ -261,12 +252,10 @@ resources:
     - recipe_type: Raw Resource
 
   Ignite Shard:
-    currency: False
     recipes:
     - recipe_type: Raw Resource
 
   Ignian Crystal:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Refinery
@@ -295,12 +284,10 @@ resources:
     - recipe_type: Raw Resource
 
   Celestite Shard:
-    currency: False
     recipes:
     - recipe_type: Raw Resource
 
   Celestian Crystal:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Refinery
@@ -329,12 +316,10 @@ resources:
     - recipe_type: Raw Resource
 
   Erudite Shard:
-    currency: False
     recipes:
     - recipe_type: Raw Resource
 
   Erudian Crystal:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Refinery
@@ -363,12 +348,10 @@ resources:
     - recipe_type: Raw Resource
 
   Luxite Shard:
-    currency: False
     recipes:
     - recipe_type: Raw Resource
 
   Luxian Crystal:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Refinery
@@ -396,8 +379,11 @@ resources:
         Better Future Luxian Block: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _b: {H1: Basic Component} ####################################################
+  ##############################################################################
+
   Acid Electrode:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory
@@ -407,7 +393,6 @@ resources:
     - recipe_type: Raw Resource
 
   Blast Caps:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory
@@ -417,7 +402,6 @@ resources:
     - recipe_type: Raw Resource
 
   Fuel Injector:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory
@@ -427,7 +411,6 @@ resources:
     - recipe_type: Raw Resource
 
   Fibre Plating:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory
@@ -437,7 +420,6 @@ resources:
     - recipe_type: Raw Resource
 
   Plubonic Greebles:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory
@@ -447,7 +429,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hardened Titanic:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory
@@ -457,7 +438,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hard Light Drive:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory
@@ -467,7 +447,6 @@ resources:
     - recipe_type: Raw Resource
 
   Heat Coil:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory
@@ -477,7 +456,6 @@ resources:
     - recipe_type: Raw Resource
 
   Sensory Transmitter:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory
@@ -486,8 +464,11 @@ resources:
         Erudian Crystal: -2
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _c: {H1: Advanced Component} #################################################
+  ##############################################################################
+
   Ion Pulse Cell:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory (Advanced)
@@ -497,7 +478,6 @@ resources:
     - recipe_type: Raw Resource
 
   Z4 Explosives:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory (Advanced)
@@ -507,7 +487,6 @@ resources:
     - recipe_type: Raw Resource
 
   Cyclone Jet:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory (Advanced)
@@ -517,7 +496,6 @@ resources:
     - recipe_type: Raw Resource
 
   Rugged Fiblar:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory (Advanced)
@@ -527,7 +505,6 @@ resources:
     - recipe_type: Raw Resource
 
   Mother Brain:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory (Advanced)
@@ -537,7 +514,6 @@ resources:
     - recipe_type: Raw Resource
 
   Plasma Emitter:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory (Advanced)
@@ -547,7 +523,6 @@ resources:
     - recipe_type: Raw Resource
 
   Zero Point Splitter:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory (Advanced)
@@ -557,7 +532,6 @@ resources:
     - recipe_type: Raw Resource
 
   Plubonic Alloy:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory (Advanced)
@@ -567,7 +541,6 @@ resources:
     - recipe_type: Raw Resource
 
   Titanic Alloy:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory (Advanced)
@@ -576,8 +549,11 @@ resources:
         Titania Ingot: -3
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _d: {H1: Complex Component} ##################################################
+  ##############################################################################
+
   Coffman Cell:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory (Complex)
@@ -587,7 +563,6 @@ resources:
     - recipe_type: Raw Resource
 
   Dervish Gel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory (Complex)
@@ -597,7 +572,6 @@ resources:
     - recipe_type: Raw Resource
 
   Thermo Jet:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory (Complex)
@@ -606,8 +580,11 @@ resources:
         Cyclone Jet: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _e: {H1: Exotic Component} ###################################################
+  ##############################################################################
+
   Seed A.I.:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory (Exotic)
@@ -617,7 +594,6 @@ resources:
     - recipe_type: Raw Resource
 
   Gluon Beam:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory (Exotic)
@@ -627,7 +603,6 @@ resources:
     - recipe_type: Raw Resource
 
   Proxima Dark:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Component Factory (Exotic)
@@ -636,8 +611,11 @@ resources:
         Zero Point Splitter: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _f: {H1: GSO Standard Blocks} ################################################
+  ##############################################################################
+
   GSO One Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -647,7 +625,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Two Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -657,7 +634,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Three Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -667,7 +643,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Four Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -677,7 +652,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Five Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -687,7 +661,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Mighty Minion Head Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -698,7 +671,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Cab Chassis:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -709,7 +681,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Curved Left Frame:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -720,7 +691,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Slim Arch:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -731,7 +701,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Small Extender:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -742,7 +711,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Curved Right Frame:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -753,7 +721,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Slim Bonnet:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -764,7 +731,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Running Board:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -775,7 +741,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Medium Extender:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -786,7 +751,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO One Half Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -797,7 +761,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Corner Half Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -808,7 +771,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Inside Corner Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -819,7 +781,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Small Armour Plate:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -830,7 +791,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Cab Armour Plate:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -841,7 +801,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Medium Armour Plate:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -852,7 +811,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Large Armour Plate:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -863,7 +821,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Two Half Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -874,8 +831,11 @@ resources:
         Plubonic Greebles: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _g: {H1: GSO Controls Blocks} ################################################
+  ##############################################################################
+
   GSO Cosmonaut SAP Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -886,7 +846,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Cosmonaut Wide Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -897,7 +856,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Gruntle A.I. Module:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -908,7 +866,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Anchored A.I. Module:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -919,7 +876,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Crafty Mike Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -930,7 +886,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Agent Pow Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -940,8 +895,11 @@ resources:
         Erudian Crystal: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _h: {H1: GSO Wheel Blocks} ###################################################
+  ##############################################################################
+
   GSO Dirt Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -951,7 +909,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Little Trekker Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -961,7 +918,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Stabiliser Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -971,7 +927,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Riser Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -981,7 +936,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Bumper Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -991,7 +945,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Hub Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1001,7 +954,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Muddy Dog Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1011,7 +963,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Techa Track:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1021,8 +972,11 @@ resources:
         Plubonic Greebles: -2
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _i: {H1: GSO Weapon Blocks} ##################################################
+  ##############################################################################
+
   GSO Mini Drill:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1032,7 +986,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Rock Drill:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1042,7 +995,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Plough:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1052,7 +1004,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Pusher Plough:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1062,7 +1013,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Cow Catcher Plough:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1073,7 +1023,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Narrow Gauge COIL Laser:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1083,7 +1032,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Wide Gauge STUD Laser:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1094,7 +1042,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO ZK-47 Light Machine Gun:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1104,7 +1051,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO 3-Pound Cannon:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1115,7 +1061,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO 8-Barrel Fixed Mini-Mortar:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1126,7 +1071,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Combat Shotgun:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1137,7 +1081,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Megaton Cannon:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1149,7 +1092,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Big Berta Cannon:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1162,7 +1104,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Missile Battery:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1174,7 +1115,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Gigaton Cannon:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1186,8 +1126,11 @@ resources:
         Proxima Dark: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _j: {H1: GSO Accessory Blocks} ###############################################
+  ##############################################################################
+
   GSO Blinker Headlight:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1197,7 +1140,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Storm Lantern:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1207,7 +1149,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Kraven Radar Module:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1217,7 +1158,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Block Magnet Mini:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1227,7 +1167,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Multi-Light Panel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1238,7 +1177,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO SOS Searchlight:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1248,7 +1186,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Buzz Striplight:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1258,7 +1195,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Thimble Collector:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1268,7 +1204,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Flat-Bed Collector:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1280,7 +1215,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Block Magnet:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1291,7 +1225,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Power Gauge:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1301,7 +1234,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Signal Marker:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1311,7 +1243,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Fuel Gauge:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1321,7 +1252,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Active All Axis Gyro:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1332,7 +1262,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO 2-Way Explosive Bolt 1:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1342,7 +1271,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO 2-Way Explosive Bolt 2:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1352,7 +1280,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO 2-Way Explosive Bolt 3:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1362,7 +1289,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO 2-Way Explosive Bolt 4:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1372,7 +1298,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO 6-Way Explosive Bolt:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1382,7 +1307,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Altimeter:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1393,7 +1317,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Payload Terminal:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1403,8 +1326,11 @@ resources:
         Proxima Dark: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _k: {H1: GSO Power Blocks} ###################################################
+  ##############################################################################
+
   GSO Small Battery Cell:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1414,7 +1340,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Tall Solar Generator:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1425,7 +1350,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Mobile Furnace Generator:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1437,7 +1361,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Anchored Furnace Generator:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1448,7 +1371,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Wireless Charger:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1460,7 +1382,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Shield Bubble Projector:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1471,7 +1392,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Repair Bubble Projector:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1481,8 +1401,11 @@ resources:
         Ion Pulse Cell: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _l: {H1: GSO Manufactoring Blocks} ###########################################
+  ##############################################################################
+
   GSO Fixed Anchor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1492,7 +1415,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Rotating Anchor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1502,7 +1424,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Resource Receiver:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1512,7 +1433,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Large Resource Receiver:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1523,7 +1443,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Conveyor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1533,7 +1452,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Step Conveyor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1544,7 +1462,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Up Conveyor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1555,7 +1472,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Down Conveyor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1566,7 +1482,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Alternator Conveyor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1576,7 +1491,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Filter:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1586,7 +1500,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Dropper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1597,7 +1510,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Pacemaker:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1608,7 +1520,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Filtered Node Silo:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1618,7 +1529,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Mixed 4-Pack Silo:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1629,7 +1539,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Mixed Lotsa Silo:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1640,7 +1549,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Mobile Delivery Cannon:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1652,7 +1560,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Matryoshka Anchored Delivery Cannon:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1662,7 +1569,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Refinery:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1673,7 +1579,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Fabricator:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1684,7 +1589,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Scrapper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1694,7 +1598,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Component Factory:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1705,7 +1608,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Advanced Component Dongle:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1715,7 +1617,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Complex Component Dongle:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1725,7 +1626,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Exotic Component Dongle:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1735,7 +1635,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Anchored SCU Storage Device:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1747,7 +1646,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Auto Miner:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1758,7 +1656,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Fibron Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1767,7 +1664,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Rubber Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1776,7 +1672,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Plumbia Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1785,7 +1680,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Titania Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1794,7 +1688,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Carbius Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1803,7 +1696,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Olastic Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1812,7 +1704,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Rodius Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1821,7 +1712,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Ignian Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1830,7 +1720,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Celestian Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1839,7 +1728,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Erudian Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1848,7 +1736,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Luxian Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1856,8 +1743,11 @@ resources:
         Luxian Crystal: -24
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _m: {H1: GSO Flight Blocks} ##################################################
+  ##############################################################################
+
   GSO Tetrox Booster Jet:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1868,7 +1758,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO 4x Redux Mega Booster:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1879,7 +1768,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Big Poppa Fuel Tank:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1890,7 +1778,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Popper Fuel Tank:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1901,7 +1788,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Turbine Propeller:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1913,7 +1799,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Left Highwind Aerofoil:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1924,7 +1809,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Little Lift Aerofoil:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1935,7 +1819,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Right Highwind Aerofoil:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1946,7 +1829,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Rudder Aerofoil:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1957,7 +1839,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Left Di-gon Wing:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1968,7 +1849,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Right Di-gon Wing:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1979,7 +1859,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Terraphobe Hover Pad:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -1990,7 +1869,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Horn Adjustment Thruster:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -2002,7 +1880,6 @@ resources:
     - recipe_type: Raw Resource
 
   GSO Large Hover Pad:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GSO Fabricator
@@ -2013,8 +1890,11 @@ resources:
         Cyclone Jet: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _n: {H1: GeoCorp Standard Blocks} ############################################
+  ##############################################################################
+
   GeoCorp Basic Block Mini:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2024,7 +1904,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Basic Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2034,7 +1913,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Half Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2044,7 +1922,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Inside Corner Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2054,7 +1931,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Half Corner Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2064,7 +1940,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Half Block Mini:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2074,7 +1949,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Long Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2085,7 +1959,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Long Half Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2096,7 +1969,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Staight Bumper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2106,7 +1978,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Straight Long Bumper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2116,7 +1987,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Corner Bumper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2126,7 +1996,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Cross Bumper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2136,7 +2005,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Bar Bumper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2146,7 +2014,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp T-Bumper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2156,7 +2023,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Tri Bumper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2166,7 +2032,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Outside Corner Bracket Bumper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2176,7 +2041,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Outside Corner Bumper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2186,7 +2050,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Four Bumper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2196,7 +2059,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Six Bumper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2206,7 +2068,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Girder Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2216,7 +2077,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Brew Girder:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2227,7 +2087,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Girder Bracket:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2237,7 +2096,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Small Shock Plating:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2248,7 +2106,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Small Shock Plating Mini:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2259,7 +2116,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Large Shock Plating:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2270,7 +2126,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Extended Corner Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2281,7 +2136,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Cab Chassis:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2293,7 +2147,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp The Big One Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2305,7 +2158,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Octo Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2317,7 +2169,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Wing-nut Column:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2328,7 +2179,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Wing-nut Arm:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2339,7 +2189,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Wing-nut Face:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2350,7 +2199,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Mighty Front Armour Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2361,7 +2209,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Mighty Side Armour Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2372,7 +2219,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Mighty Top Armour Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2383,7 +2229,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Lightweight Block 1:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2395,7 +2240,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Lightweight Block 2:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2407,7 +2251,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Lightweight Edge Block 1:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2419,7 +2262,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Lightweight Corner Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2431,7 +2273,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Lightweight Edge Block 2:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2443,7 +2284,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Lightweight Edge Block 3:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2454,8 +2294,11 @@ resources:
         Plubonic Alloy: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _o: {H1: GeoCorp Control Blocks} #############################################
+  ##############################################################################
+
   GeoCorp Foreman GPR Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2466,7 +2309,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Boss Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2478,7 +2320,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Overlord Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2490,7 +2331,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Aircraft Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2502,7 +2342,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Dozer A.I. Module:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2513,7 +2352,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Conning Tower Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2524,8 +2362,11 @@ resources:
         Erudite Shard: -4
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _p: {H1: GeoCorp Wheel Blocks} ###############################################
+  ##############################################################################
+
   GeoCorp Rugged Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2536,7 +2377,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Krusher Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2547,7 +2387,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Workday Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2558,7 +2397,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Jaws Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2569,7 +2407,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Big-Boy Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2580,7 +2417,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Behemoth Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2592,7 +2428,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp XL Continuous Track:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2603,7 +2438,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Continuous Track Right:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2614,7 +2448,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Continuous Track Left:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2625,7 +2458,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Continuous Track Middle:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2636,7 +2468,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Landing Skid:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2647,7 +2478,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Landing Gear Wheel 1:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2659,7 +2489,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Landing Gear Wheel 2:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2669,8 +2498,11 @@ resources:
         Rugged Fiblar: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _q: {H1: GeoCorp Weapon Blocks} ##############################################
+  ##############################################################################
+
   GeoCorp Fixed Diamond Drill:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2681,7 +2513,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp One-Scoop Claw:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2691,7 +2522,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Two-Scoop Loader:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2702,7 +2532,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Articulated Diamond Drill:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2713,7 +2542,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Cerberus-Head Light Bore:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2725,7 +2553,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Excavator:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2736,7 +2563,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Buzz Saw:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2747,7 +2573,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Angled Jackhammer:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2758,7 +2583,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Straight Jackhammer:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2769,7 +2593,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Cat Nine Flail Guard:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2780,7 +2603,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Windmill Flail Guard:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2792,7 +2614,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp TB Thresher:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2804,7 +2625,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Angled Plasma Cutter:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2815,7 +2635,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Straight Plasma Cutter:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2826,7 +2645,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Gimbal Mounted Plasma Cutter:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2838,7 +2656,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Nail Gun:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2850,7 +2667,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Mortar:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2862,8 +2678,11 @@ resources:
         Proxima Dark: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _r: {H1: GeoCorp Accessory Blocks} ###########################################
+  ##############################################################################
+
   GeoCorp Small Floodlight:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2873,7 +2692,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Hazard Light:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2883,7 +2701,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Navigational Light:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2894,7 +2711,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Focus Spotlight:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2905,7 +2721,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Twin Floodlights:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2916,7 +2731,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Picker Collector:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2927,7 +2741,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Scotty HC Collector:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2939,7 +2752,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Block Magnet:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2950,7 +2762,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Magnet Switch:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2962,7 +2773,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Active Single Axis Gyro:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2973,7 +2783,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Active All Axis Heavy Gyro:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2986,7 +2795,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Resource Radar:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -2997,7 +2805,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Frame Explosive Bolt:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3007,7 +2814,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Mass Modifier:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3019,7 +2825,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Payload Terminal:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3029,8 +2834,11 @@ resources:
         Proxima Dark: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _s: {H1: GeoCorp Power Blocks} ###############################################
+  ##############################################################################
+
   GeoCorp Battery Pack:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3041,7 +2849,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Gluon Mega Battery:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3053,7 +2860,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Anchored Furnace Generator:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3064,7 +2870,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Geothermal Generator:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3076,7 +2881,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Solar Panel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3087,7 +2891,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Remote Charger:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3099,7 +2902,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Repair Bubble:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3109,8 +2911,11 @@ resources:
         Gluon Beam: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _t: {H1: GeoCorp Manufacturing Blocks} #######################################
+  ##############################################################################
+
   GeoCorp Fixed Anchor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3120,7 +2925,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Rotating Anchor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3131,7 +2935,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Resource Receiver:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3142,7 +2945,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Anchored Delivery Cannon:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3154,7 +2956,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Refinery:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3166,7 +2967,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Fabricator:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3178,7 +2978,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Scrapper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3190,7 +2989,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Heavy Auto Miner:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3202,7 +3000,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Anchored Mass SCU:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3214,7 +3011,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Fibron Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3223,7 +3019,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Rubber Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3232,7 +3027,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Plumbia Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3241,7 +3035,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Titania Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3250,7 +3043,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Carbius Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3259,7 +3051,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Olastic Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3268,7 +3059,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Rodius Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3277,7 +3067,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Ignian Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3286,7 +3075,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Celestian Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3295,7 +3083,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Erudian Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3304,7 +3091,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Luxian Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3312,8 +3098,11 @@ resources:
         Luxian Crystal: -120
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _u: {H1: GeoCorp Flight Blocks} ##############################################
+  ##############################################################################
+
   GeoCorp Medium Rotor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3325,7 +3114,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Left Wing:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3337,7 +3125,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Right Wing:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3349,7 +3136,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Tail Wing:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3361,7 +3147,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp 8 Blade Propeller:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3373,7 +3158,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Jet Engine:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3384,7 +3168,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Center Wing:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3396,7 +3179,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Powerlifter Hover Pad:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3408,7 +3190,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Eagle Heavy Booster:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3420,7 +3201,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Jetson Adjustment Thruster:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3432,7 +3212,6 @@ resources:
     - recipe_type: Raw Resource
 
   GeoCorp Big Rotor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: GeoCorp Fabricator
@@ -3444,8 +3223,11 @@ resources:
         Gluon Beam: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _v: {H1: Venture Standard Blocks} ############################################
+  ##############################################################################
+
   Venture Standard Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3456,7 +3238,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Small Dino Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3467,7 +3248,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Hooked Beak Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3478,7 +3258,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Smooth Standard Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3488,7 +3267,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Long Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3499,7 +3277,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Medium Dino Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3510,7 +3287,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Left Gruntle Armour Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3521,7 +3297,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Right Gruntle Armour Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3532,7 +3307,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Middle Gruntle Armour Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3543,7 +3317,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Whimpy Armour Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3554,7 +3327,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Cab Chassis:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3566,7 +3338,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Medium Dino Side Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3577,7 +3348,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Large Dino Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3588,7 +3358,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Duck Bill Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3599,7 +3368,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Large Dino Side Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3610,7 +3378,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Corner Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3621,7 +3388,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Wide Dino Corner Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3632,7 +3398,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Z1 Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3643,7 +3408,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Z2 Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3654,7 +3418,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture U-Bracket:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3665,7 +3428,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Right Angle Bracket:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3676,7 +3438,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Straight Bracket:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3687,7 +3448,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Long Straight Bracket:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3697,8 +3457,11 @@ resources:
         Titania Ingot: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _w: {H1: Venture Control Blocks} #############################################
+  ##############################################################################
+
   Venture Cruz Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3709,7 +3472,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Cruz Wide Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3720,7 +3482,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Flanker Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3731,7 +3492,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture A.I. Guard Module:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3742,7 +3502,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Suzie Vroom Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3752,8 +3511,11 @@ resources:
         Fuel Injector: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _x: {H1: Venture Wheel Blocks} ###############################################
+  ##############################################################################
+
   Venture Landing Gear Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3764,7 +3526,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Zoomer Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3775,7 +3536,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Right Dune Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3786,7 +3546,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Left Dune Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3797,7 +3556,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Globe Trotter Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3808,7 +3566,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Medium F1 Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3820,7 +3577,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Monster Truck Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3831,7 +3587,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Original Springer Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3842,7 +3597,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Mid Fork Springer Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3853,7 +3607,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Short Fork Springer Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3864,7 +3617,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Long Fork Springer Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3875,7 +3627,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Titan Truck Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3886,7 +3637,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Large F1 Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3898,7 +3648,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Ripsaw Track:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3910,7 +3659,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Hurricane Track:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3922,7 +3670,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Medium Retractable Landing Gear:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3933,7 +3680,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Large Retractable Landing Gear:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3943,8 +3689,11 @@ resources:
         Plumbia Ingot: -3
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _y: {H1: Venture Weapon Blocks} ##############################################
+  ##############################################################################
+
   Venture Pip Machine Gun:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3955,7 +3704,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture NEEDLE Laser:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3966,7 +3714,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Reaper X1 Flamethrower:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3978,7 +3725,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Hail Fire Rifle:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -3989,7 +3735,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Lance Laser Turret:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4001,7 +3746,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Roundabout Mortar:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4013,7 +3757,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture 360 Shotgun:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4025,7 +3768,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Contact Shotgun:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4036,7 +3778,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Mini Sonic Lance:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4046,7 +3787,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Sonic Lance:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4057,7 +3797,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Oozee SMG:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4069,7 +3808,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Avalanche Launcher:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4081,7 +3819,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Cluster Missile Launcher:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4092,7 +3829,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Crossfire Rifle:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4104,7 +3840,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Rapid Cannon:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4116,7 +3851,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Dual Auto Cannon:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4128,8 +3862,11 @@ resources:
         Gluon Beam: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _z: {H1: Venture Accessory Blocks} ###########################################
+  ##############################################################################
+
   Venture Rally Headlight:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4140,7 +3877,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Burn LED:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4151,7 +3887,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Safari Spotlight:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4162,7 +3897,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Popup Dino Light:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4173,7 +3907,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Lightbar:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4184,7 +3917,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Radar:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4195,7 +3927,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Minimap Radar:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4206,7 +3937,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Surveying Radar:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4218,7 +3948,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Collector:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4228,7 +3957,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Active All Axis Gyro:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4239,7 +3967,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Speedometer:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4251,7 +3978,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Altimeter:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4263,7 +3989,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Shove-it Explosive Bolt:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4273,7 +3998,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Payload Terminal:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4283,8 +4007,11 @@ resources:
         Proxima Dark: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _aa: {H1: Venture Power Blocks} ##############################################
+  ##############################################################################
+
   Venture Battery:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4295,7 +4022,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Remote Charger:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4308,7 +4034,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Shield Bubble Projector:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4320,7 +4045,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Projected Tracking Shield:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4332,7 +4056,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Repair Bubble Projector:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4342,8 +4065,11 @@ resources:
         Ion Pulse Cell: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _ab: {H1: Venture Manufacturing Blocks} ######################################
+  ##############################################################################
+
   Venture Fixed Anchor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4354,7 +4080,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Rotating Anchor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4365,7 +4090,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Resource Receiver:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4375,7 +4099,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Conveyor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4385,7 +4108,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Filter:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4395,7 +4117,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Dropper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4406,7 +4127,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Mix Stack Silo:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4417,7 +4137,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Mobile Refinery:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4429,7 +4148,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Fabricator:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4441,7 +4159,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Scrapper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4452,7 +4169,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Mobile Delivery Cannon:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4464,7 +4180,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Mobile SCU Storage Device:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4477,7 +4192,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Fibron Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4486,7 +4200,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Rubber Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4495,7 +4208,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Plumbia Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4504,7 +4216,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Titania Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4513,7 +4224,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Carbius Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4522,7 +4232,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Olastic Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4531,7 +4240,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Rodius Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4540,7 +4248,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Ignian Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4549,7 +4256,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Celestian Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4558,7 +4264,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Erudian Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4567,7 +4272,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Luxian Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4575,8 +4279,11 @@ resources:
         Luxian Crystal: -8
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _ac: {H1: Venture Flight Blocks} #############################################
+  ##############################################################################
+
   Venture Little Stud Pulse Booster:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4586,7 +4293,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Double Booster:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4597,7 +4303,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Fuel Pod:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4607,7 +4312,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Large Kompress Fuel Tank:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4619,7 +4323,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Pinwheel Propeller:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4630,7 +4333,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Zero Propeller:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4642,7 +4344,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Seraphim Nose Propeller:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4654,7 +4355,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Big Top Nose Propeller:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4666,7 +4366,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Little Slipstream Booster:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4676,7 +4375,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Front Spoiler:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4687,7 +4385,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Bub Spoiler:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4698,7 +4395,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Lightweight Racing Spoiler:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4709,7 +4405,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Darkside Spoiler:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4720,7 +4415,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture G-Boy Spoiler:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4731,7 +4425,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Middle Wing:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4742,7 +4435,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Wing Expander Left:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4753,7 +4445,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Wing Expander Right:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4764,7 +4455,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Tail Wing:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4775,7 +4465,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Tail Wing Expander:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4786,7 +4475,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture ZG Hover Pad:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4798,7 +4486,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture 5-Way Adjustment Thruster:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4810,7 +4497,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture 2-Way Adjustment Thruster:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4821,7 +4507,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture 1-Way Adjustment Thruster:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4831,7 +4516,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Left Rudder Tipped Wing:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4842,7 +4526,6 @@ resources:
     - recipe_type: Raw Resource
 
   Venture Right Rudder Tipped Wing:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Venture Fabricator
@@ -4852,8 +4535,11 @@ resources:
         Fibre Plating: -2
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _ad: {H1: Hawkeye Standard Blocks} ###########################################
+  ##############################################################################
+
   Hawkeye One Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -4865,7 +4551,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Two Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -4877,7 +4562,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Four Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -4889,7 +4573,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Six Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -4901,7 +4584,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Jack Bracket:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -4912,7 +4594,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Large Bracket:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -4923,7 +4604,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Small Bracket:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -4934,7 +4614,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Medium Bracket:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -4945,7 +4624,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Corner Bracket:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -4956,7 +4634,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Elbow Bracket:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -4967,7 +4644,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Long Jack Bracket:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -4978,7 +4654,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Flat Bracket:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -4989,7 +4664,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Small Armour Plate:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5000,7 +4674,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Medium Armour Plate:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5011,7 +4684,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Large Armour Plate:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5022,7 +4694,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Notch Armour Plate:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5033,7 +4704,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Small Fort Armour:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5045,7 +4715,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Medium Wrap Armour:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5057,7 +4726,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Corner Edge Armour:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5069,7 +4737,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Medium Spike Armour:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5081,7 +4748,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Split Fort Armour:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5093,7 +4759,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Small Edge Armour:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5105,7 +4770,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Inside Corner Edge Armour:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5117,7 +4781,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Medium Spike Armour Extension:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5129,7 +4792,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Medium Fort Armour:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5141,7 +4803,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Large Wrap Armour:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5153,7 +4814,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Large Spike Armour:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5165,7 +4825,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Medium Edge Armour:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5177,7 +4836,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Outside Corner Edge Armour:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5189,7 +4847,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Large Spike Armour Extension:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5201,7 +4858,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Large Fort Armour:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5212,7 +4868,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye XL Fort Armour:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5223,7 +4878,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye XL Wrap Armour:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5234,7 +4888,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye XL Spike Armour:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5245,7 +4898,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye XL Spike Armour Extension:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5256,7 +4908,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Cab Chassis:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5268,7 +4919,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Weapon Pylon:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5279,7 +4929,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Small Fort Floor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5291,7 +4940,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Small Fort Ramp:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5303,7 +4951,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Small Fort Wall:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5315,7 +4962,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Windowed Fort Wall:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5326,7 +4972,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Medium Fort Wall:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5338,7 +4983,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Medium Fort Floor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5350,7 +4994,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Wide Fort Ramp:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5362,7 +5005,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Large Fort Floor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5374,7 +5016,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Large Fort Wall:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5386,7 +5027,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Left Groundhog Armour:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5398,7 +5038,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Right Groundhog Armour:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5410,7 +5049,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Middle Groundhog Armour:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5421,8 +5059,11 @@ resources:
         Hardened Titanic: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _ae: {H1: Hawkeye Control Blocks} ############################################
+  ##############################################################################
+
   Hawkeye Hunter Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5433,7 +5074,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Bruiser Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5444,7 +5084,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Counter A.I. Module:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5455,7 +5094,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye HeliosA.I.Sentry:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5468,7 +5106,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Bomber Command Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5478,8 +5115,11 @@ resources:
         Fuel Injector: -2
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _af: {H1: Hawkeye Wheel Blocks} ##############################################
+  ##############################################################################
+
   Hawkeye Tread Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5491,7 +5131,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Straight Bike Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5503,7 +5142,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Angled Bike Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5515,7 +5153,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Garrison Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5527,7 +5164,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Warhorse Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5539,7 +5175,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Wing Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5550,7 +5185,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Big Daddy Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5562,7 +5196,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye PX Small Track:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5573,7 +5206,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye M4 Medium Track:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5584,7 +5216,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye TT12 Big Track:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5595,7 +5226,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Landing Gear:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5606,7 +5236,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Small Landing Skid:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5617,7 +5246,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Medium Landing Skid:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5628,7 +5256,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Large Landing Skid:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5638,8 +5265,11 @@ resources:
         Rugged Fiblar: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _ag: {H1: Hawkeye Weapon Blocks} #############################################
+  ##############################################################################
+
   Hawkeye Spider Mandibles:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5649,7 +5279,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Machine Gun:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5661,7 +5290,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Bayonet Shotgun:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5673,7 +5301,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Burst Gun:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5685,7 +5312,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Repeater Rifle:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5696,7 +5322,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Zeus Laser Cannon:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5707,7 +5332,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye DFA Mortar:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5719,7 +5343,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Monster Mortar:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5731,7 +5354,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Axis Shotgun:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5743,7 +5365,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Plasma Jaws:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5753,7 +5374,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Cyclops Plasma Laser:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5765,7 +5385,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Auto Cannon:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5778,7 +5397,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Seeker Missile Pod:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5791,7 +5409,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Cruise Missile:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5804,7 +5421,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye BMB:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5817,7 +5433,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Paladin Bomb:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5830,7 +5445,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Railgun:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5842,7 +5456,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Hunter Railgun:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5854,7 +5467,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Quad Railgun:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5866,7 +5478,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye HG1 Cannon Turret:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5879,7 +5490,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Mk3 Battleship Cannon:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5892,7 +5502,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Type 45 Naval Gun:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5904,8 +5513,11 @@ resources:
         Gluon Beam: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _ah: {H1: Hawkeye Accessory Blocks} ##########################################
+  ##############################################################################
+
   Hawkeye Pointer Radar:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5917,7 +5529,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Signal Light:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5928,7 +5539,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Laser Targeting:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5938,7 +5548,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Pack Collector:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5949,7 +5558,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Block Magnet:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5961,7 +5569,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Active All Axis Horizon Gyro:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5973,7 +5580,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Z4 Explosive Bolt:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5983,7 +5589,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Spider Eye:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -5993,7 +5598,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Payload Terminal:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6003,8 +5607,11 @@ resources:
         Proxima Dark: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _ai: {H1: Hawkeye Power Blocks} ##############################################
+  ##############################################################################
+
   Hawkeye Ion Battery:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6014,7 +5621,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Solar Panel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6025,7 +5631,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Mobile Furnace Generator:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6037,7 +5642,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Havoc Shield:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6049,7 +5653,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Repair Bubble:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6060,8 +5663,11 @@ resources:
         Zero Point Splitter: -2
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _aj: {H1: Hawkeye Manufacturing Blocks} ######################################
+  ##############################################################################
+
   Hawkeye Fixed Anchor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6073,7 +5679,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Small Fort Anchor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6085,7 +5690,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Medium Fort Anchor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6097,7 +5701,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Large Fort Anchor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6109,7 +5712,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Anchored Fort Ramp:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6121,7 +5723,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Rotating Anchor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6133,7 +5734,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Refinery:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6145,7 +5745,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Fabricator:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6157,7 +5756,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Scrapper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6167,7 +5765,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Anchored Delivery Cannon:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6179,7 +5776,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Anchored Maze SCU:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6191,7 +5787,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Fibron Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6200,7 +5795,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Rubber Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6209,7 +5803,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Plumbia Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6218,7 +5811,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Titania Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6227,7 +5819,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Carbius Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6236,7 +5827,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Olastic Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6245,7 +5835,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Rodius Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6254,7 +5843,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Ignian Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6263,7 +5851,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Celestian Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6272,7 +5859,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Erudian Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6281,7 +5867,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Luxian Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6289,8 +5874,11 @@ resources:
         Luxian Crystal: -64
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _ak: {H1: Hawkeye Flight Blocks} #############################################
+  ##############################################################################
+
   Hawkeye Small Jet Engine:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6302,7 +5890,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Large Jet Engine:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6315,7 +5902,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Fuel Tank:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6328,7 +5914,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Twister Prop:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6341,7 +5926,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Aero Prop:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6353,7 +5937,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Medium Storm Rotor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6366,7 +5949,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Large Atlas Rotor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6379,7 +5961,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Spread Wing:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6391,7 +5972,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Wing Tip:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6403,7 +5983,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Left Delta Wing:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6415,7 +5994,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Right Delta Wing:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6427,7 +6005,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Plume Wing:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6439,7 +6016,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Exfil Adjustment Thruster:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6451,7 +6027,6 @@ resources:
     - recipe_type: Raw Resource
 
   Hawkeye Flying Fortress Hover Pad:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Hawkeye Fabricator
@@ -6462,8 +6037,11 @@ resources:
         Cyclone Jet: -4
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _al: {H1: Better Future Standard Blocks} #####################################
+  ##############################################################################
+
   Better Future One Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6475,7 +6053,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Faired One Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6487,7 +6064,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future One Face Blank Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6499,7 +6075,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream One Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6511,7 +6086,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream Corner One Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6523,7 +6097,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Fin:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6535,7 +6108,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Two Face Blank Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6547,7 +6119,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Three Face Blank Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6559,7 +6130,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream Fillet Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6571,7 +6141,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream Internal Corner Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6583,7 +6152,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Small Air Rig:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6595,7 +6163,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Small Air Rig Extender:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6607,7 +6174,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream Two Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6619,7 +6185,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream Three Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6631,7 +6196,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream Corner Two Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6643,7 +6207,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream Corner Three Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6655,7 +6218,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream Wide Two Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6667,7 +6229,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream Wide Three Left Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6679,7 +6240,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream Wide Three Right Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6691,7 +6251,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream Extender Two Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6703,7 +6262,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream Extender Three Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6715,7 +6273,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Six Face Blank Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6727,7 +6284,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Two Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6739,7 +6295,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Three Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6751,7 +6306,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Four Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6763,7 +6317,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Five Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6775,7 +6328,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Chassis One:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6787,7 +6339,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Chassis Two:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6799,7 +6350,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Chassis Three:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6811,7 +6361,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Chassis Four:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6823,7 +6372,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Medium Air Rig:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6835,7 +6383,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Medium Air Rig Extender:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6847,7 +6394,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Cab Chassis:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6859,7 +6405,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream Four Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6871,7 +6416,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream Five Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6883,7 +6427,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream Corner Four Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6895,7 +6438,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream Corner Five Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6907,7 +6449,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream Wide Four Left Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6919,7 +6460,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream Wide Four Right Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6931,7 +6471,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream Wide Five Left Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6943,7 +6482,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stream Wide Five Right Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6955,7 +6493,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Streamline Extender Four Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6967,7 +6504,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Streamline Extender Five Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6979,7 +6515,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Large Air Rig:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -6991,7 +6526,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Large Air Rig Extender:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7002,8 +6536,11 @@ resources:
         Rugged Fiblar: -3
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _am: {H1: Better Future Control Blocks} ######################################
+  ##############################################################################
+
   Better Future eCab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7014,7 +6551,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future eFlow Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7025,7 +6561,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future eFlux Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7037,7 +6572,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future A.I. Module:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7047,8 +6581,11 @@ resources:
         Mother Brain: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _an: {H1: Better Future Wheel Blocks} ########################################
+  ##############################################################################
+
   Better Future Small Angled Halo Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7060,7 +6597,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Small Straight Halo Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7072,7 +6608,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Small Side Halo Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7084,7 +6619,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Small Long Halo Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7096,7 +6630,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Medium Angled Halo Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7108,7 +6641,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Medium Straight Halo Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7120,7 +6652,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Medium Side Halo Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7132,7 +6663,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Medium Long Halo Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7144,7 +6674,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Large Straight Halo Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7156,7 +6685,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Large Side Halo Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7168,7 +6696,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Small Skid Landing Gear:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7180,7 +6707,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Medium Skid Landing Gear:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7192,7 +6718,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Large Skid Landing Gear:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7203,8 +6728,11 @@ resources:
         Rugged Fiblar: -2
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _ao: {H1: Better Future Weapon Block} ########################################
+  ##############################################################################
+
   Better Future Flamethrower:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7216,7 +6744,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Scatter Laser:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7228,7 +6755,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future DOT Laser:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7238,7 +6764,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future CLAW Plasma Cutter:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7250,7 +6775,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Laser Rifle:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7261,7 +6785,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Assault Laser Streamlined:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7272,7 +6795,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Trapdoor Assault Laser:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7283,7 +6805,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future FS Plasma Laser:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7295,7 +6816,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Speed Lance Laser:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7307,7 +6827,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Gatling Laser:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7320,7 +6839,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Cyber Disc Plasma Laser:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7333,7 +6851,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Class D Laser Ray:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7346,7 +6863,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Arc Missile Pod:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7357,8 +6873,11 @@ resources:
         Dervish Gel: -2
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _ap: {H1: Better Future Accessory Blocks} ####################################
+  ##############################################################################
+
   Better Future Small Light:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7369,7 +6888,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Medium Light:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7380,7 +6898,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Radar:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7392,7 +6909,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Swipe Collector:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7403,7 +6919,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Passive All Axis Gyro:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7414,7 +6929,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Active All Axis Gyro:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7425,7 +6939,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Active Single Axis Gyro:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7436,7 +6949,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Pitch Trim Gyro:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7448,7 +6960,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Controller Switch:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7460,7 +6971,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Hover Power Controller:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7472,7 +6982,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Stabilising Computer:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7484,7 +6993,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Speedometer:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7496,7 +7004,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Altimeter:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7508,7 +7015,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Anchor Controller:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7520,7 +7026,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Payload Terminal:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7530,8 +7035,11 @@ resources:
         Proxima Dark: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _aq: {H1: Better Future Power Blocks} ########################################
+  ##############################################################################
+
   Better Future Battery:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7541,7 +7049,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Solar Panel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7552,7 +7059,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Plasma Furnace Generator:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7563,7 +7069,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Shield Bubble Projector:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7575,7 +7080,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Flat Shield:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7586,7 +7090,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Long Flat Shield:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7598,7 +7101,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Edge Shield:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7609,7 +7111,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Corner Shield:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7620,7 +7121,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Repair Bubble Projector:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7630,8 +7130,11 @@ resources:
         Zero Point Splitter: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _ar: {H1: Better Future Manufacturing Blocks} ################################
+  ##############################################################################
+
   Better Future Sky Anchor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7643,7 +7146,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Air Receiver:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7655,7 +7157,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Refinery:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7667,7 +7168,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Fabricator:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7679,7 +7179,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Scrapper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7689,7 +7188,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Mobile Delivery Cannon:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7701,7 +7199,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Mobile SCU:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7714,7 +7211,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Fibron Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7723,7 +7219,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Rubber Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7732,7 +7227,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Plumbia Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7741,7 +7235,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Titania Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7750,7 +7243,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Carbius Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7759,7 +7251,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Olastic Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7768,7 +7259,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Rodius Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7777,7 +7267,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Ignian Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7786,7 +7275,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Celestian Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7795,7 +7283,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Erudian Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7804,7 +7291,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Luxian Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7812,8 +7298,11 @@ resources:
         Luxian Crystal: -42
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _as: {H1: Better Future Flight Blocks} #######################################
+  ##############################################################################
+
   Better Future Orb Booster:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7823,7 +7312,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Medium Booster:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7834,7 +7322,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Large Booster:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7845,7 +7332,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Small Ion Drive:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7857,7 +7343,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Medium Ion Drive:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7869,7 +7354,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Linear Motion Engine:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7882,7 +7366,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Small Rotor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7895,7 +7378,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Medium Rotor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7908,7 +7390,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Small Fuel Tank:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7918,7 +7399,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Medium Fuel Tank:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7929,7 +7409,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Large Fuel Tank:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7940,7 +7419,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Anti-gravity Pip Engine:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7953,7 +7431,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Anti-gravity Apple Engine:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7966,7 +7443,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Anti-gravity Eco Engine:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7979,7 +7455,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Gravity Magnifier Engine:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -7992,7 +7467,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Small Adjustment Thruster:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -8004,7 +7478,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Medium Adjustment Thruster:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -8016,7 +7489,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Large Adjustment Thruster:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -8028,7 +7500,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Small Hover Ring:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -8040,7 +7511,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Small Air Brake:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -8051,7 +7521,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Medium Air Brake:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -8062,7 +7531,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Large Air Brake:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -8073,7 +7541,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Small Wing:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -8085,7 +7552,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Tail Wing:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -8097,7 +7563,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Medium Outside Wing:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -8109,7 +7574,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Medium Middle Wing:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -8121,7 +7585,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Large Outside Wing:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -8133,7 +7596,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Left Small Hover Flipper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -8145,7 +7607,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Right Small Hover Flipper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -8157,7 +7618,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Left Medium Hover Flipper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -8169,7 +7629,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Right Medium Hover Flipper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -8181,7 +7640,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Medium Hover Ring:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -8193,7 +7651,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Large Hover Ring:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -8205,7 +7662,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Left Large Hover Flipper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -8217,7 +7673,6 @@ resources:
     - recipe_type: Raw Resource
 
   Better Future Right Large Hover Flipper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Better Future Fabricator
@@ -8228,8 +7683,11 @@ resources:
         Cyclone Jet: -5
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _at: {H1: Better Future Flight Blocks} #######################################
+  ##############################################################################
+
   Reticule Research One Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8241,7 +7699,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Two by Two Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8253,7 +7710,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Faired One Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8265,7 +7721,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Faired Two Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8277,7 +7732,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Armoured Two Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8289,7 +7743,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Armoured One Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8301,7 +7754,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Medium Flat Bracket:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8313,7 +7765,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Cross Chassis:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8325,7 +7776,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Rocker Chassis:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8337,7 +7787,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Tri Chassis:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8349,7 +7798,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Quad Chassis:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8361,7 +7809,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Small Flat Bracket:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8373,7 +7820,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Corner Bracket:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8385,7 +7831,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Small Arched Bracket:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8397,7 +7842,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Angled Bracket:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8409,7 +7853,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Medium Arched Bracket:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8421,7 +7864,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Bracketed Wall Panel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8432,7 +7874,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Single Bracket Window:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8444,7 +7885,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Dual Bracket Window:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8456,7 +7896,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Window Panel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8467,7 +7906,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Extended Window Panel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8478,7 +7916,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Window Edge Panel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8489,7 +7926,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Extended Window Edge Panel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8500,7 +7936,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Window Corner Panel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8511,7 +7946,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Research Wall Panel A:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8522,7 +7956,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Wall Panel B:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8533,7 +7966,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Extended Wall Panel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8544,7 +7976,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Wall Edge Panel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8555,7 +7986,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Wall Corner Panel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8566,7 +7996,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Ramp Medium:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8578,7 +8007,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Ramp Small:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8590,7 +8018,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Ramp Large:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8602,7 +8029,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Platform:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8613,8 +8039,11 @@ resources:
         Hardened Titanic: -2
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _au: {H1: Reticule Research Control Blocks} ##################################
+  ##############################################################################
+
   Reticule Research Lookout Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8625,7 +8054,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Pioneer Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8635,8 +8063,11 @@ resources:
         Ion Pulse Cell: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _av: {H1: Reticule Research Wheel Blocks} ####################################
+  ##############################################################################
+
   Reticule Research Mecanum Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8648,7 +8079,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Front Balloon Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8659,7 +8089,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Side Balloon Wheel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8669,8 +8098,11 @@ resources:
         Cyclone Jet: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _aw: {H1: Reticule Research Weapon Blocks} ###################################
+  ##############################################################################
+
   Reticule Research HF Vibro Blade:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8680,7 +8112,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Fireworks Launcher:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8691,7 +8122,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Sonic Blaster:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8704,7 +8134,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Talon Plasma Laser:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8716,7 +8145,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Zero Point Energy Gun:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8729,7 +8157,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research GIGA PLASMA:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8742,7 +8169,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research HIVE Missile Launcher:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8755,7 +8181,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Tesla Coil:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8767,7 +8192,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research AA Repulsor Cannon:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8779,7 +8203,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Sticky Bomb Launcher:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8792,7 +8215,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Spotlight:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8804,7 +8226,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Button:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8815,7 +8236,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Toggle:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8826,7 +8246,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Input Value:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8838,7 +8257,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Beam Sensor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8849,7 +8267,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Angled Beam Sensor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8861,7 +8278,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Time of Day Sensor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8872,7 +8288,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Damage Sensor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8883,7 +8298,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Proximity Sensor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8894,7 +8308,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Altitude Gauge:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8905,7 +8318,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Fuel Gauge:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8916,7 +8328,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Power Gauge:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8927,7 +8338,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Speed Gauge:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8938,7 +8348,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Red Wire:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8949,7 +8358,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Green Wire:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8960,7 +8368,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Blue Wire:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8971,7 +8378,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Yellow Wire:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8982,7 +8388,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Universal Wire:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -8993,7 +8398,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research One Way Wire:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9004,7 +8408,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Signal Transmitter:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9015,7 +8418,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Signal Receiver:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9025,7 +8427,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Value Displayer:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9036,7 +8437,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Signal Extender:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9047,7 +8447,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Signal Delayer:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9058,7 +8457,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Logic NOT:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9069,7 +8467,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Logic AND:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9080,7 +8477,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Logic OR:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9091,7 +8487,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Logic XOR:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9102,7 +8497,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Logic Compare Less Than:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9113,7 +8507,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Logic Compare Equals:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9124,7 +8517,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Logic Compare Greater Than:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9135,7 +8527,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Value Adder:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9146,7 +8537,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Value Subtractor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9157,7 +8547,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Value Multiplier:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9168,7 +8557,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Value Divider:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9179,7 +8567,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Fixed Colour Pixel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9190,7 +8577,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Variable Colour Pixel:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9201,7 +8587,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Actuating Gate:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9213,7 +8598,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Actuating Ramp:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9225,7 +8609,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Actuating Platform:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9237,7 +8620,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Repulsor Pad:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9249,7 +8631,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Stopwtach:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9260,7 +8641,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Tech Movement Controller:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9272,7 +8652,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Payload Terminal:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9282,8 +8661,11 @@ resources:
         Proxima Dark: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _ax: {H1: Reticule Research Power Blocks} ####################################
+  ##############################################################################
+
   Reticule Research Small Phalanx Shield:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9294,7 +8676,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Tapered Phalanx Shield:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9305,7 +8686,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Long Phalanx Shield:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9317,7 +8697,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Long Tapered Phalanx Shield:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9329,7 +8708,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Large Phalanx Shield:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9341,7 +8719,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Large Tapered Phalanx Shield:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9353,7 +8730,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Small Edge Phalanx Shield:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9364,7 +8740,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Small Tapered Edge Phalanx Shield:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9375,7 +8750,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Corner Phalanx Shield:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9387,7 +8761,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Dynamo Generator:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9398,8 +8771,11 @@ resources:
         Coffman Cell: -4
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _ay: {H1: Reticule Research Manufacturing Blocks} ############################
+  ##############################################################################
+
   Reticule Research Fixed Anchor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9411,7 +8787,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Circuit Board Anchor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9423,7 +8798,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Rotating Anchor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9435,7 +8809,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Fabricator:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9447,7 +8820,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Scrapper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9457,7 +8829,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Anchored Ramp:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9469,7 +8840,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Special Mixed Silo:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9480,8 +8850,11 @@ resources:
         Rodius Capsule: -5
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _az: {H1: Space Junkers Standard Blocks} #####################################
+  ##############################################################################
+
   Space Junkers One Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9491,7 +8864,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Two Block:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9501,7 +8873,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Battlecry Cab Armour Plate:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9511,7 +8882,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Warcry Cab Armour Plate:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9521,7 +8891,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Small Bullbar Armour Plate:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9531,7 +8900,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Medium Bullbar Armour Plate:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9541,7 +8909,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Cornered Bullbar Armour Plate:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9551,7 +8918,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Large Bullbar Armour Plate:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9561,7 +8927,6 @@ resources:
     - recipe_type: Raw Resource
 
   Reticule Research Angled Girder:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Reticule Research Fabricator
@@ -9571,7 +8936,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Jagged Girder:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9581,7 +8945,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers T-Shaped Girder:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9591,7 +8954,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Spiked Corner Armour Plate:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9600,7 +8962,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Spiked Armour Plate:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9609,7 +8970,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Spiked Tusk:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9618,7 +8978,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Spiked Girder:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9626,8 +8985,11 @@ resources:
         Venture Straight Bracket: -2
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _ba: {H1: Space Junkers Control Blocks} ######################################
+  ##############################################################################
+
   Space Junkers Rugged Seeker Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9637,7 +8999,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Rusty Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9648,7 +9009,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Battler Cab:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9658,7 +9018,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Scraphead A.I. Module:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9668,8 +9027,11 @@ resources:
         GSO Gruntle A.I. Module: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _bb: {H1: Space Junkers Wheel Blocks} ########################################
+  ##############################################################################
+
   Space Junkers Hemispherical Roller:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9679,7 +9041,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Screw Track:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9689,7 +9050,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Junkyard Spinner:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9698,8 +9058,11 @@ resources:
         Better Future Small Long Halo Wheel: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _bc: {H1: Space Junkers Weapon Blocks} #######################################
+  ##############################################################################
+
   Space Junkers Geode Rumbler:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9709,7 +9072,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Junkyard Rainmaker:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9719,7 +9081,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Scavengers Harpoon:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9729,7 +9090,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Rustic Cannon:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9739,7 +9099,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Chainslicer:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9749,7 +9108,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Patchwork Pyroblaster:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9759,7 +9117,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Cog Jammer:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9769,7 +9126,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Precision Laser:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9779,7 +9135,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Blast Barrel Bomber:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9789,7 +9144,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Scrap Gun:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9798,8 +9152,11 @@ resources:
         GSO Mobile Furnace Generator: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _bd: {H1: Space Junkers Accessory Blocks} ####################################
+  ##############################################################################
+
   Space Junkers Bulkhead Light:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9808,7 +9165,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Armoured Radar:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9819,7 +9175,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Block Magnet:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9828,8 +9183,11 @@ resources:
         Better Future Three Block: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _be: {H1: Space Junkers Power Blocks} ########################################
+  ##############################################################################
+
   Space Junkers Scraphead Juicer:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9837,8 +9195,11 @@ resources:
         GSO Small Battery Cell: -3
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _bf: {H1: Space Junkers Manufacturing Blocks} ################################
+  ##############################################################################
+
   Space Junkers Fixed Anchor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9848,7 +9209,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Rotating Anchor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9858,7 +9218,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Fusion Fabricator:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9868,7 +9227,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Scrapper:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9878,7 +9236,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Block Deconstructor:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9888,7 +9245,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Component Break-aparter:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9899,8 +9255,11 @@ resources:
         GeoCorp Fabricator: -1
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _bg: {H1: Space Junkers Flight Blocks} #######################################
+  ##############################################################################
+
   Space Junkers Fuel Tank:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
@@ -9909,7 +9268,6 @@ resources:
     - recipe_type: Raw Resource
 
   Space Junkers Turbo Booster:
-    currency: False
     recipes:
     - output: 1
       recipe_type: Space Junkers Fabricator
