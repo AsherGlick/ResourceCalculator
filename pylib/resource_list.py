@@ -618,7 +618,7 @@ class Resource():
         output = []
         if self.custom_simplename != "":
             output.append(indent + "custom_simplename: " + yaml_string(self.custom_simplename, indent))
-        if self.currency is False:
+        if self.currency is not False:
             output.append(indent + "currency: " + str(self.currency))
         if self.note != "":
             output.append(indent + "note: " + yaml_string(self.note, indent))

@@ -697,7 +697,7 @@ def generate_python_parser_class(classname: str, variables: List[Variable]) -> s
 
         if not variable.always_present:
             if variable.type == "bool":
-                varblock.append("        if self.{name} is " + variable.default + ":")
+                varblock.append("        if self.{name} is not " + variable.default + ":")
             else:
                 varblock.append("        if self.{name} != " + variable.default + ":")
             indent = "    "
