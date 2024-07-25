@@ -4,7 +4,7 @@ authors:
 
 index_page_display_name: Stardew Valley
 
-game_version: "1.5.6"
+game_version: "1.6.8"
 
 note: |
   Based on
@@ -113,12 +113,29 @@ resources:
         Wood: -50
     - recipe_type: Raw Resource
 
+  Big Chest:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Wood: -120
+        Copper Bar: -2
+    - recipe_type: Raw Resource
+
   Stone Chest:
     recipes:
     - output: 1
       recipe_type: Crafting
       requirements:
         Stone: -50
+    - recipe_type: Raw Resource
+
+  Big Stone Chest:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stone: -250
     - recipe_type: Raw Resource
 
   Junimo Chest:
@@ -303,7 +320,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Hardwood: -25
+        Hardwood: -15
         Gold Bar: -1
         Iron Bar: -1
         Fiber: -50
@@ -2431,10 +2448,10 @@ resources:
 
   Quality Fertilizer:
     recipes:
-    - output: 1
+    - output: 2
       recipe_type: Crafting
       requirements:
-        Sap: -2
+        Sap: -4
         Any Fish: -1
     - output: 10
       recipe_type: Bone Mill
@@ -2461,7 +2478,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Pine Tar: -1
-        Clam: -1
+        Moss: -5
     - output: 5
       recipe_type: Bone Mill
       requirements:
@@ -2478,7 +2495,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Oak Resin: -1
-        Coral: -1
+        Bone Fragment: -5
     - output: 3
       recipe_type: Bone Mill
       requirements:
@@ -3220,7 +3237,6 @@ resources:
       recipe_type: Building (carpenter)
       requirements:
         Gold: -100
-        Stone: -10
     - recipe_type: Raw Resource
 
   Plank Cabin:
@@ -3229,8 +3245,6 @@ resources:
       recipe_type: Building (carpenter)
       requirements:
         Gold: -100
-        Wood: -5
-        Fiber: -10
     - recipe_type: Raw Resource
 
   Log Cabin:
@@ -3239,7 +3253,38 @@ resources:
       recipe_type: Building (carpenter)
       requirements:
         Gold: -100
-        Wood: -10
+    - recipe_type: Raw Resource
+
+  Neighbor Cabin:
+    recipes:
+    - output: 1
+      recipe_type: Building (carpenter)
+      requirements:
+        Gold: -100
+    - recipe_type: Raw Resource
+
+  Rustic Cabin:
+    recipes:
+    - output: 1
+      recipe_type: Building (carpenter)
+      requirements:
+        Gold: -100
+    - recipe_type: Raw Resource
+
+  Beach Cabin:
+    recipes:
+    - output: 1
+      recipe_type: Building (carpenter)
+      requirements:
+        Gold: -100
+    - recipe_type: Raw Resource
+
+  Trailer Cabin:
+    recipes:
+    - output: 1
+      recipe_type: Building (carpenter)
+      requirements:
+        Gold: -100
     - recipe_type: Raw Resource
 
   Shipping Bin:
@@ -3271,8 +3316,8 @@ resources:
       recipe_type: Building (carpenter, upgrade)
       requirements:
         House Upgrade 1: -1
-        Gold: -50000
-        Hardwood: -150
+        Gold: -65000
+        Hardwood: -100
     - recipe_type: Raw Resource
 
   House Upgrade 3:
@@ -4615,6 +4660,10 @@ resources:
       recipe_type: Wood Chipper
       requirements:
         Driftwood: -1
+
+  Moss:
+    recipes:
+    - recipe_type: Raw Resource
 
   Sap:
     recipes:
