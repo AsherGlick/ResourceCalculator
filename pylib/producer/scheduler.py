@@ -331,16 +331,16 @@ class Scheduler:
                         if action_input_file in build_event_to_remove.output_files:
                             actions_to_run.delete(action_to_run.weak_hash())
 
+                # Remove files that were built by the build events
+                for output_file in build_event_to_remove.output_files:
+                    _delete_file(output_file)
+                self._remove_files_from_database(build_event_to_remove.output_files)
+
                 # Rebuild actions that can still exist without the deleted files
                 rebuilt_actions = self.get_actions_with_from_quasifiles(build_event_to_remove.output_files)
 
                 for rebuilt_action in rebuilt_actions:
                     actions_to_run.push(rebuilt_action)
-
-                # Remove files that were built by the build events
-                for output_file in build_event_to_remove.output_files:
-                    _delete_file(output_file)
-                self._remove_files_from_database(build_event_to_remove.output_files)
 
         def update_actions(files: List[str]) -> None:
             nonlocal actions_to_run

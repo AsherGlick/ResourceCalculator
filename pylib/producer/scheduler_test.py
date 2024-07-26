@@ -2391,6 +2391,123 @@ class BuildLogTests(unittest.TestCase):
             ],
         )
 
+    # Make sure that producers for files that get deleted by build deleted build logs, dont get run
+    def test_multiple_cascade(self) -> None:
+        class Input(TypedDict):
+            data_file: List[str]
+
+        @tracked_function
+        def first_function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            return [f"output_1_{groups['title']}.txt"]
+
+        @tracked_function
+        def second_function(input_files: Input, groups: Dict[str, str]) -> List[str]:
+            return [f"output_2_{groups['title']}.txt"]
+
+        first_producer: Producer[Input] = Producer(
+            name="First Test Case",
+            input_path_patterns={
+                "data_file": [r"^data_(?P<title>[a-z]+)\.txt$"],
+            },
+            function=first_function,
+        )
+        second_producer: Producer[Input] = Producer(
+            name="Second Test Case",
+            input_path_patterns={
+                "data_file": [r"^output_1_(?P<title>[a-z]+)\.txt$"]
+            },
+            function=second_function
+        )
+
+        self.check_file_modificaiton_time_patcher_args = {
+            "data_two.txt": 100,
+            "output_1_one.txt": 100,
+            "output_2_one.txt": 100,
+        }
+
+        self.mocked_read_build_events.return_value = [
+            {
+                "producer_name": "First Test Case",
+                "input_files": ["data_one.txt"],
+                "match_groups": {"title": "one"},
+                "output_files": ["output_1_one.txt"],
+            }, {
+                "producer_name": "Second Test Case",
+                "input_files": ["output_1_one.txt"],
+                "match_groups": {"title": "one"},
+                "output_files": ["output_2_one.txt"],
+            }
+        ]
+
+        Scheduler(
+            producer_list=[
+                first_producer,
+                second_producer,
+            ],
+            initial_filepaths=list(self.check_file_modificaiton_time_patcher_args.keys()),
+        )
+
+        self.assertCountEqual(
+            first_function.call_list,
+            [
+                FunctionCall(
+                    input_paths={
+                        "data_file": ["data_two.txt"],
+                    },
+                    groups={
+                        "title": "two"
+                    },
+                    output_paths=[
+                        "output_1_two.txt",
+                    ]
+                ),
+            ]
+        )
+        self.assertCountEqual(
+            second_function.call_list,
+            [
+                FunctionCall(
+                    input_paths={
+                        "data_file": [
+                            "output_1_two.txt",
+                        ],
+                    },
+                    groups={
+                        "title": "two"
+                    },
+                    output_paths=[
+                        "output_2_two.txt"
+                    ]
+                ),
+            ]
+        )
+
+        self.assertIsNotNone(self.write_build_log_result)
+        self.assertCountEqual(
+            self.write_build_log_result,
+            [
+                {
+                    "producer_name": "First Test Case",
+                    "input_files": ["data_two.txt"],
+                    "match_groups": {"title": "two"},
+                    "output_files": ["output_1_two.txt"],
+                }, {
+                    "producer_name": "Second Test Case",
+                    "input_files": ["output_1_two.txt"],
+                    "match_groups": {"title": "two"},
+                    "output_files": ["output_2_two.txt"],
+                }
+            ]
+        )
+
+        self.assertCountEqual(
+            self.delete_function_calls,
+            [
+                "output_1_one.txt",
+                "output_2_one.txt",
+            ],
+        )
+
 
 # class Initialization_Query_Tests(unittest.TestCase):
 #     pass
