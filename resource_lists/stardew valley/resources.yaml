@@ -27,6 +27,7 @@ recipe_types:
   Building (carpenter, upgrade): Bring {IN_ITEMS} to the carpenter to upgrade the building to {OUT_ITEM}
   Building (wizard): Bring {IN_ITEMS} to the wizard to build {OUT_ITEM}
   Smelting: Use a Furnace with {IN_ITEMS} to create {OUT_ITEM}
+  Smelting (heavy): Use a Heavy Furnace with {IN_ITEMS} to create {OUT_ITEM} (amount may be higher)
   Charcoal Kiln: Use a Charcoal Kiln with {IN_ITEMS} to create {OUT_ITEM}
   Recycling Machine: Use a Recycling Machine with {IN_ITEMS} to get {OUT_ITEM}
   Recycling Machine (chance): Use a Recycling Machine with {IN_ITEMS} to possibly get {OUT_ITEM} (amount may be higher)
@@ -48,6 +49,8 @@ recipe_types:
   Oil Maker: Use a Oil Maker with {IN_ITEMS} to create {OUT_ITEM}
   Preserves Jar: Use a Preserves Jar with {IN_ITEMS} to create {OUT_ITEM}
   Mill: Use a Mill with {IN_ITEMS} to create {OUT_ITEM}
+  Fish Smoker: Use a Fish Smoker with {IN_ITEMS} to create {OUT_ITEM}
+  Bait Maker: Use a Bait Maker with {IN_ITEMS} to create {OUT_ITEM} (amount may be higher)
   Forge (create): Use {IN_ITEMS} at the forge to create {OUT_ITEM}
   Forge (stat): Use {IN_ITEMS} at the forge to add {OUT_ITEM}
   Forge (stat, chance): Use {IN_ITEMS} at the forge to possibly add {OUT_ITEM} (random stat)
@@ -228,6 +231,16 @@ resources:
         Stone: -25
     - recipe_type: Raw Resource
 
+  Heavy Furnace:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Furnace: -2
+        Iron Bar: -3
+        Stone: -50
+    - recipe_type: Raw Resource
+
   Lightning Rod:
     recipes:
     - output: 1
@@ -326,6 +339,15 @@ resources:
         Fiber: -50
     - recipe_type: Raw Resource
 
+  Deluxe Worm Bin:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Worm Bin: -1
+        Moss: -30
+    - recipe_type: Raw Resource
+
   Bone Mill:
     recipes:
     - output: 1
@@ -346,12 +368,47 @@ resources:
         Diamond: -1
     - recipe_type: Raw Resource
 
+  Wood Chipper:
+    recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -1000
+    - recipe_type: Raw Resource
+
   Deconstructor:
     recipes:
     - output: 1
       recipe_type: Buy
       requirements:
         Qi Gem: -20
+    - recipe_type: Raw Resource
+
+  Anvil:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Bar: -50
+    - recipe_type: Raw Resource
+
+  Bait Maker:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Bar: -3
+        Coral: -3
+        Sea Urchin: -1
+    - recipe_type: Raw Resource
+
+  Mushroom Log:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Hardwood: -10
+        Moss: -10
     - recipe_type: Raw Resource
 
   ##############################################################################
@@ -399,6 +456,27 @@ resources:
         Stone: -45
         Hardwood: -10
         Copper Bar: -1
+    - recipe_type: Raw Resource
+
+  Dehydrator:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Wood: -30
+        Clay: -2
+        Fire Quartz: -1
+    - recipe_type: Raw Resource
+
+  Fish Smoker:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Hardwood: -10
+        Sea Jelly: -1
+        River Jelly: -1
+        Cave Jelly: -1
     - recipe_type: Raw Resource
 
   Loom:
@@ -530,6 +608,25 @@ resources:
         Wood: -15
         Fiber: -10
         Coal: -3
+    - recipe_type: Raw Resource
+
+  Statue of Blessings:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Sap: -999
+        Fiber: -999
+        Stone: -999
+        Moss: -333
+    - recipe_type: Raw Resource
+
+  Statue of the Dwarf King:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iridium Bar: -20
     - recipe_type: Raw Resource
 
   ##############################################################################
@@ -797,6 +894,14 @@ resources:
         Bone Fragment: -5
     - recipe_type: Raw Resource
 
+  Text Sign:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Wood: -25
+    - recipe_type: Raw Resource
+
   Wicked Statue:
     recipes:
     - output: 1
@@ -849,6 +954,11 @@ resources:
       requirements:
         Bouquet: -1
         Coal: -1
+    - output: 1
+      recipe_type: Smelting (heavy)
+      requirements:
+        Bouquet: -1
+        Coal: -3
     - recipe_type: Raw Resource
 
   ##############################################################################
@@ -893,6 +1003,15 @@ resources:
 
   Lead Bobber:
     recipes:
+    - recipe_type: Raw Resource
+
+  Sonar Bobber:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Bar: -1
+        Refined Quartz: -2
     - recipe_type: Raw Resource
 
   Treasure Hunter:
@@ -943,6 +1062,15 @@ resources:
         Bug Meat: -1
     - recipe_type: Raw Resource
 
+  Deluxe Bait:
+    recipes:
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Bait: -5
+        Moss: -2
+    - recipe_type: Raw Resource
+
   Wild Bait:
     recipes:
     - output: 5
@@ -964,6 +1092,23 @@ resources:
       recipe_type: Buy
       requirements:
         Qi Gem: -5
+    - recipe_type: Raw Resource
+
+  Challenge Bait:
+    recipes:
+    - output: 5
+      recipe_type: Crafting
+      requirements:
+        Bone Fragment: -5
+        Moss: -2
+    - recipe_type: Raw Resource
+
+  Targeted Bait:
+    recipes:
+    - output: 5
+      recipe_type: Bait Maker
+      requirements:
+        Any Fish: -1
     - recipe_type: Raw Resource
 
   Crab Pot:
@@ -1786,6 +1931,14 @@ resources:
         Tomato: -1
     - recipe_type: Raw Resource
 
+  Moss Soup:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Moss: -20
+    - recipe_type: Raw Resource
+
   Qi Seasoning:
     recipes:
     - output: 10
@@ -2027,6 +2180,16 @@ resources:
       requirements:
         Almost Any Roe: -1
     - recipe_type: Raw Resource
+
+  Smoked Fish:
+    recipes:
+    - output: 1
+      recipe_type: Fish Smoker
+      requirements:
+       Any Fish: -1
+       Coal: -1
+    - recipe_type: Raw Resource
+
 
   ##############################################################################
   _k: {H1: Produce} ############################################################
@@ -2434,6 +2597,26 @@ resources:
         Pine Tar: -5
     - recipe_type: Raw Resource
 
+  Treasure Totem:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Hardwood: -5
+        Mystic Syrup: -1
+        Moss: -10
+    - recipe_type: Raw Resource
+
+  Tent Kit:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Hardwood: -10
+        Fiber: -25
+        Cloth: -1
+    - recipe_type: Raw Resource
+
   ##############################################################################
   _o: {H1: Fertilizer} #########################################################
   ##############################################################################
@@ -2647,6 +2830,16 @@ resources:
         Fiber: -10
     - recipe_type: Raw Resource
 
+  Blue Grass Starter:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Fiber: -25
+        Moss: -10
+        Mystic Syrup: -1
+    - recipe_type: Raw Resource
+
   Fiber Seeds:
     recipes:
     - output: 4
@@ -2659,11 +2852,32 @@ resources:
 
   Mixed Seeds:
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker (chance)
       requirements:
         Any Seeded Crop: -1
+    - output: 10
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+    - recipe_type: Raw Resource
+
+  Mixed Flower Seeds:
+    recipes:
+    - output: 10
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+    - recipe_type: Raw Resource
+
+  Mystic Tree Seed:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Acorn: -5
+        Maple Seed: -5
+        Pine Cone: -5
+        Mahogany Seed: -5
 
   _q: {H2: Spring} #############################################################
 
@@ -3296,6 +3510,15 @@ resources:
         Wood: -150
     - recipe_type: Raw Resource
 
+  Pet Bowl:
+    recipes:
+    - output: 1
+      recipe_type: Building (carpenter)
+      requirements:
+        Gold: -5000
+        Hardwood: -25
+    - recipe_type: Raw Resource
+
   House:
     recipes:
     - recipe_type: Raw Resource
@@ -3619,6 +3842,44 @@ resources:
         Iridium Bar: -5
     - recipe_type: Raw Resource
 
+  Copper Pan:
+    recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -2500
+    - recipe_type: Raw Resource
+
+  Steel Pan:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith (upgrade)
+      requirements:
+        Copper Pan: -1
+        Gold: -5000
+        Iron Bar: -5
+    - recipe_type: Raw Resource
+
+  Gold Pan:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith (upgrade)
+      requirements:
+        Steel Pan: -1
+        Gold: -10000
+        Gold Bar: -5
+    - recipe_type: Raw Resource
+
+  Iridium Pan:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith (upgrade)
+      requirements:
+        Gold Pan: -1
+        Gold: -25000
+        Iridium Bar: -5
+    - recipe_type: Raw Resource
+
   Training Rod:
     recipes:
     - recipe_type: Raw Resource
@@ -3632,6 +3893,10 @@ resources:
     - recipe_type: Raw Resource
 
   Iridium Rod:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Advanced Iridium Rod:
     recipes:
     - recipe_type: Raw Resource
 
@@ -4165,6 +4430,10 @@ resources:
     recipes:
     - recipe_type: Raw Resource
 
+  Goby Roe:
+    recipes:
+    - recipe_type: Raw Resource
+
   Halibut Roe:
     recipes:
     - recipe_type: Raw Resource
@@ -4693,6 +4962,10 @@ resources:
       requirements:
         Hardwood: -1
 
+  Mystic  Syrup:
+    recipes:
+    - recipe_type: Raw Resource
+
   Apple:
     recipes:
     - recipe_type: Raw Resource
@@ -5072,6 +5345,11 @@ resources:
       requirements:
         Copper Ore: -5
         Coal: -1
+    - output: 5
+      recipe_type: Smelting (heavy)
+      requirements:
+        Copper Ore: -25
+        Coal: -3
     - recipe_type: Raw Resource
 
   Iron Bar:
@@ -5081,6 +5359,11 @@ resources:
       requirements:
         Iron Ore: -5
         Coal: -1
+    - output: 5
+      recipe_type: Smelting (heavy)
+      requirements:
+        Iron Ore: -25
+        Coal: -3
     - output: 1
       recipe_type: Crafting
       requirements:
@@ -5094,6 +5377,11 @@ resources:
       requirements:
         Gold Ore: -5
         Coal: -1
+    - output: 5
+      recipe_type: Smelting (heavy)
+      requirements:
+        Gold Ore: -25
+        Coal: -3
     - output: 1
       recipe_type: Crafting
       requirements:
@@ -5107,6 +5395,11 @@ resources:
       requirements:
         Iridium Ore: -5
         Coal: -1
+    - output: 5
+      recipe_type: Smelting (heavy)
+      requirements:
+        Iridium Ore: -25
+        Coal: -3
     - recipe_type: Raw Resource
 
   Radioactive Bar:
@@ -5116,6 +5409,11 @@ resources:
       requirements:
         Radioactive Ore: -5
         Coal: -1
+    - output: 5
+      recipe_type: Smelting (heavy)
+      requirements:
+        Radioactive Ore: -25
+        Coal: -3
     - recipe_type: Raw Resource
 
   Refined Quartz:
@@ -5125,11 +5423,21 @@ resources:
       requirements:
         Quartz: -1
         Coal: -1
+    - output: 5
+      recipe_type: Smelting (heavy)
+      requirements:
+        Quartz: -5
+        Coal: -3
     - output: 3
       recipe_type: Smelting
       requirements:
         Fire Quartz: -1
         Coal: -1
+    - output: 15
+      recipe_type: Smelting (heavy)
+      requirements:
+        Fire Quartz: -5
+        Coal: -3
     - output: 1
       recipe_type: Recycling Machine
       requirements:
@@ -6189,6 +6497,14 @@ resources:
     recipes:
     - recipe_type: Raw Resource
 
+  Mystery Box:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Golden Mystery Box:
+    recipes:
+    - recipe_type: Raw Resource
+
   ##############################################################################
   _ay: {H1: Artifacts} #########################################################
   ##############################################################################
@@ -6787,6 +7103,10 @@ resources:
     - output: 1
       recipe_type: As
       requirements:
+        Goby: -1
+    - output: 1
+      recipe_type: As
+      requirements:
         Stonefish: -1
     - output: 1
       recipe_type: As
@@ -7036,6 +7356,10 @@ resources:
       recipe_type: As
       requirements:
         Ghostfish Roe: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Goby Roe: -1
     - output: 1
       recipe_type: As
       requirements:
@@ -7915,6 +8239,22 @@ resources:
     - output: 1
       recipe_type: As
       requirements:
+        Copper Pan: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Steel Pan: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Gold Pan: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Iridium Pan: -1
+    - output: 1
+      recipe_type: As
+      requirements:
         Training Rod: -1
     - output: 1
       recipe_type: As
@@ -7928,6 +8268,10 @@ resources:
       recipe_type: As
       requirements:
         Iridium Rod: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Advanced Iridium Rod: -1
 
   Any Weapon:
     recipes:
