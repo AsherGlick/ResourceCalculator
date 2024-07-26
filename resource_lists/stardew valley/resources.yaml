@@ -1648,6 +1648,11 @@ resources:
       recipe_type: Cooking
       requirements:
         Coffee: -3
+    - output: 3
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Seafoam Pudding:
@@ -1947,6 +1952,24 @@ resources:
         Qi Gem: -10
     - recipe_type: Raw Resource
 
+  Magic Rock Candy:
+    recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Golden Mystery Box: -20
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
+    - recipe_type: Raw Resource
+
   ##############################################################################
   _j2: {H1: Artisan Goods} #####################################################
   ##############################################################################
@@ -2155,6 +2178,26 @@ resources:
       recipe_type: Preserves Jar
       requirements:
         Ginger: -1
+    - output: 1
+      recipe_type: Preserves Jar
+      requirements:
+        Chanterelle: -1
+    - output: 1
+      recipe_type: Preserves Jar
+      requirements:
+        Common Mushroom: -1
+    - output: 1
+      recipe_type: Preserves Jar
+      requirements:
+        Magma Cap: -1
+    - output: 1
+      recipe_type: Preserves Jar
+      requirements:
+        Morel: -1
+    - output: 1
+      recipe_type: Preserves Jar
+      requirements:
+        Purple Mushroom: -1
     - recipe_type: Raw Resource
 
   Jelly:
@@ -2531,6 +2574,10 @@ resources:
   Fairy Dust:
     recipes:
     - output: 1
+      recipe_type: Buy
+      requirements:
+        Mystic Syrup: -1
+    - output: 1
       recipe_type: Crafting
       requirements:
         Diamond: -1
@@ -2842,16 +2889,20 @@ resources:
 
   Fiber Seeds:
     recipes:
+    - recipe_type: Raw Resource
     - output: 4
       recipe_type: Crafting
       requirements:
         Mixed Seeds: -1
         Sap: -5
         Clay: -1
-    - recipe_type: Raw Resource
 
   Mixed Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Cave Carrot: -1
     - output: 1
       recipe_type: Seed Maker (chance)
       requirements:
@@ -2860,6 +2911,7 @@ resources:
       recipe_type: Blacksmith (process)
       requirements:
         Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Mixed Flower Seeds:
@@ -2868,6 +2920,7 @@ resources:
       recipe_type: Blacksmith (process)
       requirements:
         Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Mystic Tree Seed:
@@ -2968,6 +3021,18 @@ resources:
       recipe_type: Seed Maker
       requirements:
         Tulip: -1
+
+  Carrot Seeds:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Seed Maker
+      requirements:
+        Carrot: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Maple Seed: -1
 
   _r: {H2: Summer} #############################################################
 
@@ -3075,6 +3140,18 @@ resources:
       requirements:
         Wheat: -1
 
+  Summer Squash Seeds:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Seed Maker
+      requirements:
+        Summer Squash: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Sap: -15
+
   _s: {H2: Fall} ###############################################################
 
   Amaranth Seeds:
@@ -3157,6 +3234,30 @@ resources:
       requirements:
         Yam: -1
 
+  Broccoli Seeds:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Seed Maker
+      requirements:
+        Broccoli: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Moss: -5
+
+  Powdermelon Seeds:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Seed Maker
+      requirements:
+        Powdermelon: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Pine Cone: -2
+
   _t: {H2: Other} ##############################################################
 
   Rare Seed:
@@ -3228,6 +3329,10 @@ resources:
   Mahogany Seed:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Coal: -20
     - output: 1
       recipe_type: Blacksmith (process)
       requirements:
@@ -5056,6 +5161,10 @@ resources:
     recipes:
     - recipe_type: Raw Resource
 
+  Carrot:
+    recipes:
+    - recipe_type: Raw Resource
+
   _ap: {H2: Summer} ############################################################
 
   Blueberry:
@@ -5107,6 +5216,10 @@ resources:
     - recipe_type: Raw Resource
 
   Wheat:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Summer Squash:
     recipes:
     - recipe_type: Raw Resource
 
@@ -5169,6 +5282,14 @@ resources:
     - recipe_type: Raw Resource
 
   Qi Fruit:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Broccoli:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Powdermelon:
     recipes:
     - recipe_type: Raw Resource
 
@@ -5558,6 +5679,11 @@ resources:
       recipe_type: Geode Crusher
       requirements:
         Omni Geode: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Ruby:
     recipes:
@@ -6504,6 +6630,10 @@ resources:
   Golden Mystery Box:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Mystery Box: -3
 
   ##############################################################################
   _ay: {H1: Artifacts} #########################################################
@@ -6902,6 +7032,11 @@ resources:
       requirements:
         Artifact Trove: -1
         Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Pearl:
     recipes:
@@ -6911,6 +7046,11 @@ resources:
       requirements:
         Artifact Trove: -1
         Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Treasure Chest:
     recipes:
@@ -6919,6 +7059,11 @@ resources:
       recipe_type: Blacksmith (process)
       requirements:
         Artifact Trove: -1
+        Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
         Gold: -25
 
   ##############################################################################
@@ -7723,6 +7868,22 @@ resources:
     - output: 1
       recipe_type: As
       requirements:
+        Carrot: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Summer Squash: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Broccoli: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Powdermelon: -1
+    - output: 1
+      recipe_type: As
+      requirements:
         Qi Fruit: -1
 
   Any Vegetable:
@@ -7756,10 +7917,6 @@ resources:
       recipe_type: As
       requirements:
         Eggplant: -1
-    - output: 1
-      recipe_type: As
-      requirements:
-        Fiddlehead Fern: -1
     - output: 1
       recipe_type: As
       requirements:
@@ -7820,6 +7977,54 @@ resources:
       recipe_type: As
       requirements:
         Yam: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Carrot: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Summer Squash: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Broccoli: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Wild Horseradish: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Leek: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Dandelion: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Spring Onion: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Fiddlehead Fern: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Hazelnut: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Winter Root: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Snow Yam: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Cave Carrot: -1
 
   Almost Any Vegetable:
     recipes:
@@ -7852,10 +8057,6 @@ resources:
       recipe_type: As
       requirements:
         Eggplant: -1
-    - output: 1
-      recipe_type: As
-      requirements:
-        Fiddlehead Fern: -1
     - output: 1
       recipe_type: As
       requirements:
@@ -7904,6 +8105,54 @@ resources:
       recipe_type: As
       requirements:
         Yam: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Carrot: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Summer Squash: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Broccoli: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Wild Horseradish: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Leek: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Dandelion: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Spring Onion: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Fiddlehead Fern: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Hazelnut: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Winter Root: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Snow Yam: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Cave Carrot: -1
 
   Any Fruit:
     recipes:
@@ -7987,10 +8236,6 @@ resources:
     - output: 1
       recipe_type: As
       requirements:
-        Qi Fruit: -1
-    - output: 1
-      recipe_type: As
-      requirements:
         Rhubarb: -1
     - output: 1
       recipe_type: As
@@ -8012,6 +8257,14 @@ resources:
       recipe_type: As
       requirements:
         Wild Plum: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Powdermelon: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Qi Fruit: -1
 
   Any Animal Egg:
     recipes:
