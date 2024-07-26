@@ -176,6 +176,11 @@ resources:
       requirements:
         Mystery Box: -1
         Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Iridium Sprinkler:
@@ -314,6 +319,24 @@ resources:
         Coal: -25
         Fire Quartz: -1
         Battery Pack: -1
+    - recipe_type: Raw Resource
+
+  Golden Animal Cracker:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
+    - recipe_type: Raw Resource
+
+  Auto-Petter:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Tapper:
@@ -991,6 +1014,11 @@ resources:
       requirements:
         Mystery Box: -1
         Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Trap Bobber:
@@ -1014,6 +1042,11 @@ resources:
       recipe_type: Blacksmith (process)
       requirements:
         Mystery Box: -1
+        Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
         Gold: -25
     - recipe_type: Raw Resource
 
@@ -1180,6 +1213,11 @@ resources:
       recipe_type: Blacksmith (process)
       requirements:
         Mystery Box: -1
+        Gold: -25
+    - output: 5
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
         Gold: -25
     - recipe_type: Raw Resource
 
@@ -1354,6 +1392,11 @@ resources:
       recipe_type: Blacksmith (process, varied)
       requirements:
         Mystery Box: -1
+        Gold: -25
+    - output: 2
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
         Gold: -25
     - recipe_type: Raw Resource
 
@@ -1881,6 +1924,11 @@ resources:
       requirements:
         Mystery Box: -1
         Gold: -25
+    - output: 2
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Miner's Treat:
@@ -1912,6 +1960,11 @@ resources:
       recipe_type: Blacksmith (process)
       requirements:
         Mystery Box: -1
+        Gold: -25
+    - output: 3
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
         Gold: -25
     - recipe_type: Raw Resource
 
@@ -2809,6 +2862,11 @@ resources:
       requirements:
         Mystery Box: -1
         Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
 
   Ruby Ring:
     recipes:
@@ -2817,6 +2875,11 @@ resources:
       recipe_type: Blacksmith (process)
       requirements:
         Mystery Box: -1
+        Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
         Gold: -25
 
   Wedding Ring:
@@ -2930,6 +2993,11 @@ resources:
       requirements:
         Mystery Box: -1
         Gold: -25
+    - output: 2
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Oil of Garlic:
@@ -3010,9 +3078,14 @@ resources:
       requirements:
         Taro Root: -5
     - output: 1
-      recipe_type: Blacksmith (process)
+      recipe_type: Blacksmith (process, varied)
       requirements:
         Mystery Box: -1
+        Gold: -25
+    - output: 3
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
         Gold: -25
     - recipe_type: Raw Resource
 
@@ -3094,9 +3167,14 @@ resources:
       requirements:
         Any Fossil: -1
     - output: 10
-      recipe_type: Blacksmith (process,varied)
+      recipe_type: Blacksmith (process, varied)
       requirements:
         Mystery Box: -1
+        Gold: -25
+    - output: 20
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
         Gold: -25
     - recipe_type: Raw Resource
 
@@ -3149,6 +3227,11 @@ resources:
       recipe_type: Blacksmith (process, varied)
       requirements:
         Mystery Box: -1
+        Gold: -25
+    - output: 20
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
         Gold: -25
     - recipe_type: Raw Resource
 
@@ -3368,6 +3451,11 @@ resources:
       requirements:
         Mystery Box: -1
         Gold: -25
+    - output: 20
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
 
   Cauliflower Seeds:
     recipes:
@@ -3380,6 +3468,11 @@ resources:
       recipe_type: Blacksmith (process, varied)
       requirements:
         Mystery Box: -1
+        Gold: -25
+    - output: 20
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
         Gold: -25
 
   Garlic Seeds:
@@ -3418,6 +3511,11 @@ resources:
       requirements:
         Mystery Box: -1
         Gold: -25
+    - output: 20
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
 
   Potato Seeds:
     recipes:
@@ -3430,6 +3528,11 @@ resources:
       recipe_type: Blacksmith (process, varied)
       requirements:
         Mystery Box: -1
+        Gold: -25
+    - output: 20
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
         Gold: -25
 
   Rice Shoot:
@@ -3484,6 +3587,11 @@ resources:
       requirements:
         Mystery Box: -1
         Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
 
   _r: {H2: Summer} #############################################################
 
@@ -3506,6 +3614,11 @@ resources:
       recipe_type: Blacksmith (process, varied)
       requirements:
         Mystery Box: -1
+        Gold: -25
+    - output: 20
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
         Gold: -25
 
   Hops Starter:
@@ -3536,6 +3649,11 @@ resources:
       requirements:
         Mystery Box: -1
         Gold: -25
+    - output: 20
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
 
   Poppy Seeds:
     recipes:
@@ -3556,6 +3674,11 @@ resources:
       recipe_type: Blacksmith (process, varied)
       requirements:
         Mystery Box: -1
+        Gold: -25
+    - output: 20
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
         Gold: -25
 
   Red Cabbage Seeds:
@@ -3614,6 +3737,11 @@ resources:
       requirements:
         Mystery Box: -1
         Gold: -25
+    - output: 20
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
 
   Summer Squash Seeds:
     recipes:
@@ -3630,6 +3758,11 @@ resources:
       recipe_type: Blacksmith (process)
       requirements:
         Mystery Box: -1
+        Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
         Gold: -25
 
   _s: {H2: Fall} ###############################################################
@@ -3653,6 +3786,11 @@ resources:
       recipe_type: Blacksmith (process, varied)
       requirements:
         Mystery Box: -1
+        Gold: -25
+    - output: 20
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
         Gold: -25
 
   Beet Seeds:
@@ -3695,6 +3833,11 @@ resources:
       requirements:
         Mystery Box: -1
         Gold: -25
+    - output: 20
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
 
   Fairy Seeds:
     recipes:
@@ -3724,6 +3867,11 @@ resources:
       requirements:
         Mystery Box: -1
         Gold: -25
+    - output: 20
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
 
   Yam Seeds:
     recipes:
@@ -3749,6 +3897,11 @@ resources:
       requirements:
         Mystery Box: -1
         Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
 
   Powdermelon Seeds:
     recipes:
@@ -3765,6 +3918,11 @@ resources:
       recipe_type: Blacksmith (process)
       requirements:
         Mystery Box: -1
+        Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
         Gold: -25
 
   _t: {H2: Other} ##############################################################
@@ -3890,6 +4048,11 @@ resources:
       requirements:
         Mystery Box: -1
         Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
 
   Cherry Sapling:
     recipes:
@@ -3898,6 +4061,11 @@ resources:
       recipe_type: Blacksmith (process)
       requirements:
         Mystery Box: -1
+        Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
         Gold: -25
 
   Banana Sapling:
@@ -3934,6 +4102,11 @@ resources:
       requirements:
         Mystery Box: -1
         Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
 
   Peach Sapling:
     recipes:
@@ -3942,6 +4115,11 @@ resources:
       recipe_type: Blacksmith (process)
       requirements:
         Mystery Box: -1
+        Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
         Gold: -25
 
   Apple Sapling:
@@ -3952,6 +4130,11 @@ resources:
       requirements:
         Mystery Box: -1
         Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
 
   Pomegranate Sapling:
     recipes:
@@ -3960,6 +4143,11 @@ resources:
       recipe_type: Blacksmith (process)
       requirements:
         Mystery Box: -1
+        Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
         Gold: -25
 
   ##############################################################################
@@ -5648,7 +5836,7 @@ resources:
       requirements:
         Hardwood: -1
 
-  Mystic  Syrup:
+  Mystic Syrup:
     recipes:
     - recipe_type: Raw Resource
 
@@ -6264,6 +6452,11 @@ resources:
       recipe_type: Blacksmith (process)
       requirements:
         Mystery Box: -1
+        Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
         Gold: -25
 
   Ruby:
@@ -7213,8 +7406,14 @@ resources:
         Coconut: -10
 
   Mystery Box:
+    note: This can also result in itself when opened, but the calculator does not handle it.
     recipes:
     - recipe_type: Raw Resource
+    - output: 5
+      recipe_type: Blacksmith (process, varied)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
 
   Golden Mystery Box:
     recipes:
@@ -7626,6 +7825,11 @@ resources:
       requirements:
         Mystery Box: -1
         Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
 
   Pearl:
     recipes:
@@ -7640,6 +7844,11 @@ resources:
       requirements:
         Mystery Box: -1
         Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
+        Gold: -25
 
   Treasure Chest:
     recipes:
@@ -7653,6 +7862,11 @@ resources:
       recipe_type: Blacksmith (process)
       requirements:
         Mystery Box: -1
+        Gold: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Golden Mystery Box: -1
         Gold: -25
 
   ##############################################################################
