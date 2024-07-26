@@ -171,6 +171,11 @@ resources:
         Iron Bar: -1
         Gold Bar: -1
         Refined Quartz: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Iridium Sprinkler:
@@ -981,6 +986,11 @@ resources:
       requirements:
         Iron Bar: -2
         Cloth: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Trap Bobber:
@@ -1000,6 +1010,11 @@ resources:
         Wood: -10
         Hardwood: -5
         Slime: -10
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Lead Bobber:
@@ -1146,6 +1161,11 @@ resources:
       requirements:
         Iron Ore: -4
         Coal: -1
+    - output: 5
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Mega Bomb:
@@ -1156,6 +1176,11 @@ resources:
         Gold Ore: -4
         Solar Essence: -1
         Void Essence: -1
+    - output: 5
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Explosive Ammo:
@@ -1177,6 +1202,11 @@ resources:
       recipe_type: Cooking
       requirements:
         Any Animal Egg: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Omelet:
@@ -1186,6 +1216,11 @@ resources:
       requirements:
         Any Animal Egg: -1
         Any Milk: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Salad:
@@ -1196,6 +1231,11 @@ resources:
         Leek: -1
         Dandelion: -1
         Vinegar: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Cheese Cauliflower:
@@ -1205,6 +1245,11 @@ resources:
       requirements:
         Cauliflower: -1
         Cheese: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Baked Fish:
@@ -1215,6 +1260,11 @@ resources:
         Sunfish: -1
         Bream: -1
         Wheat Flour: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Parsnip Soup:
@@ -1225,6 +1275,11 @@ resources:
         Parsnip: -1
         Any Milk: -1
         Vinegar: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Vegetable Medley:
@@ -1234,6 +1289,11 @@ resources:
       requirements:
         Tomato: -1
         Beet: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Complete Breakfast:
@@ -1245,6 +1305,11 @@ resources:
         Any Milk: -1
         Hashbrowns: -1
         Pancakes: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Fried Calamari:
@@ -1255,6 +1320,11 @@ resources:
         Squid: -1
         Wheat Flour: -1
         Oil: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Strange Bun:
@@ -1265,6 +1335,11 @@ resources:
         Wheat Flour: -1
         Periwinkle: -1
         Void Mayonnaise: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Lucky Lunch:
@@ -1275,6 +1350,11 @@ resources:
         Sea Cucumber: -1
         Tortilla: -1
         Blue Jazz: -1
+    - output: 1
+      recipe_type: Blacksmith (process, varied)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Fried Mushroom:
@@ -1285,6 +1365,11 @@ resources:
         Common Mushroom: -1
         Morel: -1
         Oil: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Pizza:
@@ -1295,6 +1380,11 @@ resources:
         Wheat Flour: -1
         Tomato: -1
         Cheese: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Bean Hotpot:
@@ -1303,6 +1393,11 @@ resources:
       recipe_type: Cooking
       requirements:
         Green Bean: -2
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Glazed Yams:
@@ -1312,6 +1407,11 @@ resources:
       requirements:
         Yam: -1
         Sugar: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Carp Surprise:
@@ -1320,6 +1420,11 @@ resources:
       recipe_type: Cooking
       requirements:
         Carp: -4
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Hashbrowns:
@@ -1329,6 +1434,11 @@ resources:
       requirements:
         Potato: -1
         Oil: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Pancakes:
@@ -1338,6 +1448,11 @@ resources:
       requirements:
         Wheat Flour: -1
         Any Animal Egg: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Salmon Dinner:
@@ -1348,6 +1463,11 @@ resources:
         Salmon: -1
         Amaranth: -1
         Kale: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Fish Taco:
@@ -1359,6 +1479,11 @@ resources:
         Tortilla: -1
         Red Cabbage: -1
         Mayonnaise: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Crispy Bass:
@@ -1369,6 +1494,11 @@ resources:
         Largemouth Bass: -1
         Wheat Flour: -1
         Oil: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Pepper Poppers:
@@ -1378,6 +1508,11 @@ resources:
       requirements:
         Hot Pepper: -1
         Cheese: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Bread:
@@ -1386,6 +1521,11 @@ resources:
       recipe_type: Cooking
       requirements:
         Wheat Flour: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Tom Kha Soup:
@@ -1396,6 +1536,11 @@ resources:
         Coconut: -1
         Shrimp: -1
         Common Mushroom: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Trout Soup:
@@ -1405,6 +1550,11 @@ resources:
       requirements:
         Rainbow Trout: -1
         Green Algae: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Chocolate Cake:
@@ -1415,6 +1565,11 @@ resources:
         Wheat Flour: -1
         Sugar: -1
         Any Animal Egg: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Pink Cake:
@@ -1426,6 +1581,11 @@ resources:
         Wheat Flour: -1
         Sugar: -1
         Any Animal Egg: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Rhubarb Pie:
@@ -1436,6 +1596,11 @@ resources:
         Rhubarb: -1
         Wheat Flour: -1
         Sugar: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Cookie:
@@ -1446,6 +1611,11 @@ resources:
         Wheat Flour: -1
         Sugar: -1
         Any Animal Egg: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Spaghetti:
@@ -1455,6 +1625,11 @@ resources:
       requirements:
         Wheat Flour: -1
         Tomato: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Fried Eel:
@@ -1464,6 +1639,11 @@ resources:
       requirements:
         Eel: -1
         Oil: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Spicy Eel:
@@ -1473,6 +1653,11 @@ resources:
       requirements:
         Eel: -1
         Hot Pepper: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Sashimi:
@@ -1481,6 +1666,11 @@ resources:
       recipe_type: Cooking
       requirements:
         Any Fish: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Maki Roll:
@@ -1491,6 +1681,11 @@ resources:
         Any Fish: -1
         Seaweed: -1
         Rice: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Tortilla:
@@ -1499,6 +1694,11 @@ resources:
       recipe_type: Cooking
       requirements:
         Corn: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Red Plate:
@@ -1508,6 +1708,11 @@ resources:
       requirements:
         Red Cabbage: -1
         Radish: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Eggplant Parmesan:
@@ -1517,6 +1722,11 @@ resources:
       requirements:
         Eggplant: -1
         Tomato: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Rice Pudding:
@@ -1527,6 +1737,11 @@ resources:
         Any Milk: -1
         Sugar: -1
         Rice: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Ice Cream:
@@ -1540,6 +1755,11 @@ resources:
       recipe_type: Buy
       requirements:
         Gold: -240
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Blueberry Tart:
@@ -1551,6 +1771,11 @@ resources:
         Wheat Flour: -1
         Sugar: -1
         Any Animal Egg: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Autumn's Bounty:
@@ -1560,6 +1785,11 @@ resources:
       requirements:
         Yam: -1
         Pumpkin: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Pumpkin Soup:
@@ -1569,6 +1799,11 @@ resources:
       requirements:
         Pumpkin: -1
         Any Milk: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Super Meal:
@@ -1579,6 +1814,11 @@ resources:
         Bok Choy: -1
         Cranberries: -1
         Artichoke: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Cranberry Sauce:
@@ -1588,6 +1828,11 @@ resources:
       requirements:
         Cranberries: -1
         Sugar: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Stuffing:
@@ -1598,6 +1843,11 @@ resources:
         Bread: -1
         Cranberries: -1
         Hazelnut: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Farmer's Lunch:
@@ -1626,6 +1876,11 @@ resources:
       requirements:
         Sardine: -2
         Hashbrowns: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Miner's Treat:
@@ -1822,6 +2077,11 @@ resources:
       requirements:
         Clam: -1
         Any Milk: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Fish Stew:
@@ -1833,6 +2093,11 @@ resources:
         Mussel: -1
         Periwinkle: -1
         Tomato: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Escargot:
@@ -1842,6 +2107,11 @@ resources:
       requirements:
         Snail: -1
         Garlic: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Lobster Bisque:
@@ -1851,6 +2121,11 @@ resources:
       requirements:
         Lobster: -1
         Any Milk: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Maple Bar:
@@ -1861,6 +2136,11 @@ resources:
         Maple Syrup: -1
         Sugar: -1
         Wheat Flour: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Crab Cakes:
@@ -1872,6 +2152,11 @@ resources:
         Wheat Flour: -1
         Any Animal Egg: -1
         Oil: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Shrimp Cocktail:
@@ -1882,6 +2167,11 @@ resources:
         Tomato: -1
         Shrimp: -1
         Wild Horseradish: -1
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Ginger Ale:
@@ -2025,6 +2315,11 @@ resources:
       recipe_type: Keg
       requirements:
         Coffee Bean: -5
+    - output: 3
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Green Tea:
@@ -2454,6 +2749,11 @@ resources:
         Copper Bar: -2
         Bug Meat: -25
         Slime: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Burglar's Ring:
@@ -2473,6 +2773,11 @@ resources:
   Amethyst Ring:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Topaz Ring:
     recipes:
@@ -2481,18 +2786,38 @@ resources:
   Aquamarine Ring:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Jade Ring:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Emerald Ring:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Ruby Ring:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Wedding Ring:
     recipes:
@@ -2552,6 +2877,11 @@ resources:
       requirements:
         Solar Essence: -5
         Iron Bar: -5
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Combined Ring:
@@ -2595,6 +2925,11 @@ resources:
         Purple Mushroom: -1
         Morel: -1
         Chanterelle: -1
+    - output: 2
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Oil of Garlic:
@@ -2640,6 +2975,11 @@ resources:
         Hardwood: -1
         Coral: -2
         Fiber: -10
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Warp Totem (Mountains):
@@ -2650,6 +2990,11 @@ resources:
         Hardwood: -1
         Iron Bar: -1
         Stone: -25
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Warp Totem (Farm):
@@ -2664,6 +3009,11 @@ resources:
       recipe_type: Buy
       requirements:
         Taro Root: -5
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Warp Totem (Desert):
@@ -2743,6 +3093,11 @@ resources:
       recipe_type: Bone Mill
       requirements:
         Any Fossil: -1
+    - output: 10
+      recipe_type: Blacksmith (process,varied)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Deluxe Fertilizer:
@@ -2790,6 +3145,11 @@ resources:
       recipe_type: Bone Mill
       requirements:
         Any Fossil: -1
+    - output: 10
+      recipe_type: Blacksmith (process, varied)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
     - recipe_type: Raw Resource
 
   Hyper Speed-Gro:
@@ -3003,6 +3363,11 @@ resources:
       recipe_type: Seed Maker
       requirements:
         Green Bean: -1
+    - output: 8
+      recipe_type: Blacksmith (process, varied)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Cauliflower Seeds:
     recipes:
@@ -3011,6 +3376,11 @@ resources:
       recipe_type: Seed Maker
       requirements:
         Cauliflower: -1
+    - output: 8
+      recipe_type: Blacksmith (process, varied)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Garlic Seeds:
     recipes:
@@ -3043,6 +3413,11 @@ resources:
       recipe_type: Seed Maker
       requirements:
         Parsnip: -1
+    - output: 8
+      recipe_type: Blacksmith (process, varied)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Potato Seeds:
     recipes:
@@ -3051,6 +3426,11 @@ resources:
       recipe_type: Seed Maker
       requirements:
         Potato: -1
+    - output: 8
+      recipe_type: Blacksmith (process, varied)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Rice Shoot:
     recipes:
@@ -3099,6 +3479,11 @@ resources:
       recipe_type: Buy
       requirements:
         Maple Seed: -1
+    - output: 8
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   _r: {H2: Summer} #############################################################
 
@@ -3117,6 +3502,11 @@ resources:
       recipe_type: Seed Maker
       requirements:
         Corn: -1
+    - output: 8
+      recipe_type: Blacksmith (process, varied)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Hops Starter:
     recipes:
@@ -3141,6 +3531,11 @@ resources:
       recipe_type: Seed Maker
       requirements:
         Hot Pepper: -1
+    - output: 8
+      recipe_type: Blacksmith (process, varied)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Poppy Seeds:
     recipes:
@@ -3157,6 +3552,11 @@ resources:
       recipe_type: Seed Maker
       requirements:
         Radish: -1
+    - output: 8
+      recipe_type: Blacksmith (process, varied)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Red Cabbage Seeds:
     recipes:
@@ -3209,6 +3609,11 @@ resources:
       recipe_type: Seed Maker
       requirements:
         Wheat: -1
+    - output: 8
+      recipe_type: Blacksmith (process, varied)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Summer Squash Seeds:
     recipes:
@@ -3221,6 +3626,11 @@ resources:
       recipe_type: Buy
       requirements:
         Sap: -15
+    - output: 8
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   _s: {H2: Fall} ###############################################################
 
@@ -3239,6 +3649,11 @@ resources:
       recipe_type: Seed Maker
       requirements:
         Artichoke: -1
+    - output: 8
+      recipe_type: Blacksmith (process, varied)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Beet Seeds:
     recipes:
@@ -3275,6 +3690,11 @@ resources:
       recipe_type: Seed Maker
       requirements:
         Eggplant: -1
+    - output: 8
+      recipe_type: Blacksmith (process, varied)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Fairy Seeds:
     recipes:
@@ -3299,6 +3719,11 @@ resources:
       recipe_type: Seed Maker
       requirements:
         Pumpkin: -1
+    - output: 8
+      recipe_type: Blacksmith (process, varied)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Yam Seeds:
     recipes:
@@ -3319,6 +3744,11 @@ resources:
       recipe_type: Buy
       requirements:
         Moss: -5
+    - output: 8
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Powdermelon Seeds:
     recipes:
@@ -3331,6 +3761,11 @@ resources:
       recipe_type: Buy
       requirements:
         Pine Cone: -2
+    - output: 8
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   _t: {H2: Other} ##############################################################
 
@@ -3450,10 +3885,20 @@ resources:
   Apricot Sapling:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Cherry Sapling:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Banana Sapling:
     recipes:
@@ -3484,18 +3929,38 @@ resources:
   Orange Sapling:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Peach Sapling:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Apple Sapling:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Pomegranate Sapling:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   ##############################################################################
   _v: {H1: Carpenter Buildings} ################################################
@@ -3648,7 +4113,7 @@ resources:
         Stone: -75
     - recipe_type: Raw Resource
 
-  Stone Cabin:
+  Cabin:
     recipes:
     - output: 1
       recipe_type: Building (carpenter)
@@ -3656,52 +4121,33 @@ resources:
         Gold: -100
     - recipe_type: Raw Resource
 
-  Plank Cabin:
+  Cabin Upgrade 1:
     recipes:
     - output: 1
-      recipe_type: Building (carpenter)
+      recipe_type: Building (carpenter, upgrade)
       requirements:
-        Gold: -100
+        Cabin: -1
+        Gold: -10000
+        Wood: -450
     - recipe_type: Raw Resource
 
-  Log Cabin:
+  Cabin Upgrade 2:
     recipes:
     - output: 1
-      recipe_type: Building (carpenter)
+      recipe_type: Building (carpenter, upgrade)
       requirements:
-        Gold: -100
+        Cabin Upgrade 1: -1
+        Gold: -65000
+        Hardwood: -100
     - recipe_type: Raw Resource
 
-  Neighbor Cabin:
+  Cabin Upgrade 3:
     recipes:
     - output: 1
-      recipe_type: Building (carpenter)
+      recipe_type: Building (carpenter, upgrade)
       requirements:
-        Gold: -100
-    - recipe_type: Raw Resource
-
-  Rustic Cabin:
-    recipes:
-    - output: 1
-      recipe_type: Building (carpenter)
-      requirements:
-        Gold: -100
-    - recipe_type: Raw Resource
-
-  Beach Cabin:
-    recipes:
-    - output: 1
-      recipe_type: Building (carpenter)
-      requirements:
-        Gold: -100
-    - recipe_type: Raw Resource
-
-  Trailer Cabin:
-    recipes:
-    - output: 1
-      recipe_type: Building (carpenter)
-      requirements:
-        Gold: -100
+        Cabin Upgrade 2: -1
+        Gold: -100000
     - recipe_type: Raw Resource
 
   Shipping Bin:
@@ -5096,6 +5542,11 @@ resources:
   Hardwood:
     recipes:
     - recipe_type: Raw Resource
+    - output: 10
+      recipe_type: Blacksmith (process)
+      requirements:
+        Mystery Box: -1
+        Gold: -25
 
   Stone:
     recipes:
