@@ -2929,16 +2929,17 @@ resources:
 
   Fiber Seeds:
     recipes:
-    - recipe_type: Raw Resource
     - output: 4
       recipe_type: Crafting
       requirements:
         Mixed Seeds: -1
         Sap: -5
         Clay: -1
+    - recipe_type: Raw Resource
 
   Mixed Seeds:
     recipes:
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Buy
       requirements:
@@ -2952,7 +2953,6 @@ resources:
       requirements:
         Mystery Box: -1
         Gold: -25
-    - recipe_type: Raw Resource
 
   Mixed Flower Seeds:
     recipes:
@@ -2971,6 +2971,7 @@ resources:
         Maple Seed: -5
         Pine Cone: -5
         Mahogany Seed: -5
+    - recipe_type: Raw Resource
 
   _q: {H2: Spring} #############################################################
 
@@ -8313,7 +8314,6 @@ resources:
       recipe_type: As
       requirements:
         Qi Fruit: -1
-
 
   Almost Any Fruit:
     recipes:
