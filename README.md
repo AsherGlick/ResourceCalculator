@@ -5,7 +5,7 @@ ResourceCalculator.com is a website that can calculate required resources from a
 
 Creating or Updating a Calculator
 =================================
-If you want to add a new resource list to the calculator, you will only need 4 things:  
+If you want to add a new resource list to the calculator, you will only need 4 things:
 1. A folder in `resource_lists/` for all the files to live in (eg: [resource_lists/minecraft](resource_lists/minecraft))
 2. A **460px** by **215px** thumbnail of the game you are making a calculator for (eg: [resource_lists/minecraft/icon.jpg](resource_lists/minecraft/icon.jpg))
     * These are the same dimensions as the thumbnail in the Steam store.
@@ -45,21 +45,21 @@ items/[itemname].png
 -----------
 For each item in your resources.yaml file you will need to have an image for that resource. If an image is missing, then the build process will submit a warning and fill that space with a purple color, indicating it does not have an icon.
 The icons can be any size, even rectangular, but they all must be the same size as each other for a given calculator.
-The file names of each file should be the resource name in all lower case with no spaces or punctuation.  
+The file names of each file should be the resource name in all lower case with no spaces or punctuation.
 
-For Example:  
-*"Pink Stained Glass Pane"* becomes *[pinkstainedglasspane.png](resource_lists/minecraft/items/pinkstainedglasspane.png)*  
+For Example:
+*"Pink Stained Glass Pane"* becomes *[pinkstainedglasspane.png](resource_lists/minecraft/items/pinkstainedglasspane.png)*
 *"Jack 'o Lantern"* becomes *[jackolantern.png](resource_lists/minecraft/items/jackolantern.png)*
 
 icon.jpg
 --------
 The icon needs to be `460px` by `215px` to fit in with the other calculator links. It also needs to be a `jpg`, not a `png` or other image file. If a game is on Steam, the Steam page for a game uses a `jpg` thumbnail with those dimensions. Simply downloading it to the appropriate directory and renaming it to `icon.jpg` should be all that is needed.
 
-Prefer images that only contain the title/tagline (left) rather than ones for a specific event and/or with reviews (right).
+Prefer images that only contain the title/tagline (first) rather than ones for a specific event and/or with reviews (second).
 
 <details>
     <summary>See Thumbnail Examples</summary>
-    
+
 ![Good thumbnail example](https://cdn.cloudflare.steamstatic.com/steam/apps/548430/header_alt_assets_1.jpg "Good thumbnail example")
 ![Bad thumbnail example](https://cdn.cloudflare.steamstatic.com/steam/apps/548430/header_alt_assets_13.jpg "Bad thumbnail example")
 

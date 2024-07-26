@@ -1536,6 +1536,10 @@ resources:
       requirements:
         Any Milk: -1
         Sugar: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -240
     - recipe_type: Raw Resource
 
   Blueberry Tart:
@@ -1978,6 +1982,10 @@ resources:
   Honey:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -200
 
   Cheese:
     recipes:
@@ -2652,6 +2660,10 @@ resources:
         Hardwood: -1
         Honey: -1
         Fiber: -20
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Taro Root: -5
     - recipe_type: Raw Resource
 
   Warp Totem (Desert):
@@ -2766,6 +2778,10 @@ resources:
       requirements:
         Oak Resin: -1
         Bone Fragment: -5
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -80
     - output: 3
       recipe_type: Bone Mill
       requirements:
@@ -2801,6 +2817,10 @@ resources:
       requirements:
         Stone: -3
         Clay: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -200
     - recipe_type: Raw Resource
 
   Deluxe Retaining Soil:
@@ -2964,6 +2984,7 @@ resources:
     - recipe_type: Raw Resource
 
   Mystic Tree Seed:
+    recipes:
     - output: 1
       recipe_type: Crafting
       requirements:
@@ -3042,6 +3063,10 @@ resources:
   Rhubarb Seeds:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -100
     - output: 1
       recipe_type: Seed Maker
       requirements:
@@ -3161,6 +3186,10 @@ resources:
     recipes:
     - recipe_type: Raw Resource
     - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -400
+    - output: 1
       recipe_type: Seed Maker
       requirements:
         Starfruit: -1
@@ -3214,6 +3243,10 @@ resources:
   Beet Seeds:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -20
     - output: 1
       recipe_type: Seed Maker
       requirements:
@@ -3313,6 +3346,10 @@ resources:
     recipes:
     - recipe_type: Raw Resource
     - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -150
+    - output: 1
       recipe_type: Seed Maker
       requirements:
         Cactus Fruit: -1
@@ -3320,6 +3357,10 @@ resources:
   Pineapple Seeds:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Magma Cap: -1
     - output: 1
       recipe_type: Seed Maker
       requirements:
@@ -3333,6 +3374,10 @@ resources:
   Taro Tuber:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Bone Fragment: -2
     - output: 1
       recipe_type: Seed Maker
       requirements:
@@ -3375,6 +3420,10 @@ resources:
       requirements:
         Coal: -20
     - output: 1
+      recipe_type: Buy
+      requirements:
+        Stingray: -1
+    - output: 1
       recipe_type: Blacksmith (process)
       requirements:
         Golden Coconut: -1
@@ -3410,6 +3459,10 @@ resources:
     recipes:
     - recipe_type: Raw Resource
     - output: 1
+      recipe_type: Buy
+      requirements:
+        Dragon Tooth: -5
+    - output: 1
       recipe_type: Blacksmith (process)
       requirements:
         Golden Coconut: -1
@@ -3418,6 +3471,10 @@ resources:
   Mango Sapling:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Mussel: -75
     - output: 1
       recipe_type: Blacksmith (process)
       requirements:
@@ -4314,6 +4371,10 @@ resources:
     recipes:
     - recipe_type: Raw Resource
 
+  Goby:
+    recipes:
+    - recipe_type: Raw Resource
+
   Stonefish:
     recipes:
     - recipe_type: Raw Resource
@@ -4417,6 +4478,18 @@ resources:
     - recipe_type: Raw Resource
 
   Blobfish:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Sea Jelly:
+    recipes:
+    - recipe_type: Raw Resource
+
+  River Jelly:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Cave Jelly:
     recipes:
     - recipe_type: Raw Resource
 
@@ -4881,10 +4954,18 @@ resources:
   Cactus Fruit:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -150
 
   Coconut:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -200
 
   Ginger:
     recipes:
@@ -6663,6 +6744,10 @@ resources:
   Omni Geode:
     recipes:
     - recipe_type: Raw Resource
+    - output: 3
+      recipe_type: Buy
+      requirements:
+        Gold: -500
 
   Artifact Trove:
     recipes:
@@ -6671,6 +6756,10 @@ resources:
   Golden Coconut:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Coconut: -10
 
   Mystery Box:
     recipes:
@@ -7181,6 +7270,10 @@ resources:
       recipe_type: Buy
       requirements:
         Qi Gem: -40
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Radioactive Bar: -10
     - recipe_type: Raw Resource
 
   ##############################################################################
