@@ -18,4 +18,4 @@ done
 export arguments
 
 # Run docker compose
-docker-compose up
+docker-compose up --build
