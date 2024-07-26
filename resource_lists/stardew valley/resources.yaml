@@ -50,6 +50,7 @@ recipe_types:
   Preserves Jar: Use a Preserves Jar with {IN_ITEMS} to create {OUT_ITEM}
   Mill: Use a Mill with {IN_ITEMS} to create {OUT_ITEM}
   Fish Smoker: Use a Fish Smoker with {IN_ITEMS} to create {OUT_ITEM}
+  Dehydrator: Use a Dehydrator with {IN_ITEMS} to create {OUT_ITEM}
   Bait Maker: Use a Bait Maker with {IN_ITEMS} to create {OUT_ITEM} (amount may be higher)
   Forge (create): Use {IN_ITEMS} at the forge to create {OUT_ITEM}
   Forge (stat): Use {IN_ITEMS} at the forge to add {OUT_ITEM}
@@ -2233,6 +2234,45 @@ resources:
        Coal: -1
     - recipe_type: Raw Resource
 
+  Dried Mushrooms:
+    recipes:
+    - output: 1
+      recipe_type: Dehydrator
+      requirements:
+        Chanterelle: -5
+    - output: 1
+      recipe_type: Dehydrator
+      requirements:
+        Common Mushroom: -5
+    - output: 1
+      recipe_type: Dehydrator
+      requirements:
+        Magma Cap: -5
+    - output: 1
+      recipe_type: Dehydrator
+      requirements:
+        Morel: -5
+    - output: 1
+      recipe_type: Dehydrator
+      requirements:
+        Purple Mushroom: -5
+    - recipe_type: Raw Resource
+
+  Dried Fruit:
+    recipes:
+    - output: 1
+      recipe_type: Dehydrator
+      requirements:
+        Almost Any Fruit: -5
+    - recipe_type: Raw Resource
+
+  Raisins:
+    recipes:
+    - output: 1
+      recipe_type: Dehydrator
+      requirements:
+        Grape: -5
+    - recipe_type: Raw Resource
 
   ##############################################################################
   _k: {H1: Produce} ############################################################
@@ -3613,6 +3653,14 @@ resources:
       requirements:
         Gold: -250
         Wood: -150
+    - recipe_type: Raw Resource
+
+  Mini-Shipping Bin:
+    recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Qi Gem: -80
     - recipe_type: Raw Resource
 
   Pet Bowl:
@@ -8205,6 +8253,115 @@ resources:
       recipe_type: As
       requirements:
         Grape: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Hot Pepper: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Mango: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Melon: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Orange: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Peach: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Pineapple: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Pomegranate: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Rhubarb: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Salmonberry: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Spice Berry: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Starfruit: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Strawberry: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Wild Plum: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Powdermelon: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Qi Fruit: -1
+
+
+  Almost Any Fruit:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: As
+      requirements:
+        Ancient Fruit: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Apple: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Apricot: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Banana: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Blackberry: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Blueberry: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Cactus Fruit: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Cherry: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Coconut: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Cranberries: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Crystal Fruit: -1
     - output: 1
       recipe_type: As
       requirements:
