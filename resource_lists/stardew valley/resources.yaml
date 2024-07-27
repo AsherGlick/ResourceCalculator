@@ -2790,8 +2790,8 @@ resources:
     - output: 1
       recipe_type: Fish Smoker
       requirements:
-       Any Fish: -1
-       Coal: -1
+        Any Fish: -1
+        Coal: -1
     - recipe_type: Raw Resource
 
   Dried Mushrooms:
