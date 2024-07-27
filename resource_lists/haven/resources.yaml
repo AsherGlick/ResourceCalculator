@@ -78,7 +78,7 @@ resources:
       recipe_type: Cooking
       requirements:
         Appledew: -5
-        Loofacrids: -3
+        Loofacrid: -3
     - recipe_type: Raw Resource
 
   Boba salad:
@@ -122,7 +122,7 @@ resources:
       recipe_type: Cooking
       requirements:
         Boba nut: -5
-        Loofacrids: -3
+        Loofacrid: -3
     - recipe_type: Raw Resource
 
   Creamberry fondue:
@@ -157,7 +157,7 @@ resources:
       recipe_type: Cooking
       requirements:
         Creamberry: -5
-        Loofacrids : -3
+        Loofacrid : -3
     - recipe_type: Raw Resource
 
   _c: {H2: Camping} ############################################################
@@ -226,7 +226,7 @@ resources:
     - output: 1
       recipe_type: Synthesizer
       requirements:
-        Rattlepeppers: -6
+        Rattlepepper: -6
     - recipe_type: Raw Resource
 
   Toriko balm:
@@ -234,7 +234,7 @@ resources:
     - output: 1
       recipe_type: Synthesizer
       requirements:
-        Rattlepeppers: -3
+        Rattlepepper: -3
         Helicap: -3
     - recipe_type: Raw Resource
 
@@ -251,8 +251,8 @@ resources:
     - output: 1
       recipe_type: Synthesizer
       requirements:
-        Rattlepeppers: -3
-        Loofacrids: -3
+        Rattlepepper: -3
+        Loofacrid: -3
     - recipe_type: Raw Resource
 
   Loofanol:
@@ -260,7 +260,7 @@ resources:
     - output: 1
       recipe_type: Synthesizer
       requirements:
-        Loofacrids: -3
+        Loofacrid: -3
         Helicap: -3
     - recipe_type: Raw Resource
 
@@ -269,7 +269,7 @@ resources:
     - output: 1
       recipe_type: Synthesizer
       requirements:
-        Loofacrids: -6
+        Loofacrid: -6
     - recipe_type: Raw Resource
 
   ##############################################################################
@@ -283,19 +283,11 @@ resources:
       requirements:
         Crude rust: -15
         Fine rust: -6
-    - recipe_type: Raw Resource
-
-  Balm:
-    recipes:
     - output: 1
       recipe_type: Crafting
       requirements:
         Crude rust: -15
         Shiny rust: -2
-    - recipe_type: Raw Resource
-
-  Balm:
-    recipes:
     - output: 1
       recipe_type: Crafting
       requirements:
@@ -310,19 +302,11 @@ resources:
       requirements:
         Crude rust: -6
         Fine rust: -3
-    - recipe_type: Raw Resource
-
-  Omni-Impact:
-    recipes:
     - output: 1
       recipe_type: Crafting
       requirements:
         Crude rust: -6
         Shiny rust: -1
-    - recipe_type: Raw Resource
-
-  Omni-Impact:
-    recipes:
     - output: 1
       recipe_type: Crafting
       requirements:
@@ -337,19 +321,11 @@ resources:
       requirements:
         Crude rust: -6
         Fine rust: -3
-    - recipe_type: Raw Resource
-
-  Omni-Blast:
-    recipes:
     - output: 1
       recipe_type: Crafting
       requirements:
         Crude rust: -6
         Shiny rust: -1
-    - recipe_type: Raw Resource
-
-  Omni-Blast:
-    recipes:
     - output: 1
       recipe_type: Crafting
       requirements:
@@ -364,19 +340,11 @@ resources:
       requirements:
         Crude rust: -10
         Fine rust: -4
-    - recipe_type: Raw Resource
-
-  Tonic:
-    recipes:
     - output: 1
       recipe_type: Crafting
       requirements:
         Crude rust: -10
         Shiny rust: -2
-    - recipe_type: Raw Resource
-
-  Tonic:
-    recipes:
     - output: 1
       recipe_type: Crafting
       requirements:
