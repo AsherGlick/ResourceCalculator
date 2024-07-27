@@ -80,7 +80,7 @@ resources:
         Loofacrids: -3
     - recipe_type: Raw Resource
 
-	Boba salad:
+  Boba salad:
     recipes:
     - output: 1
       recipe_type: Cooking
@@ -279,13 +279,117 @@ resources:
   _f: {H1: Resources} ##########################################################
   ##############################################################################
 
+  Appledew:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Boba nut:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Creamberry:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Rattlepepper:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Helicap:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Loofacrid:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Crude rust:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Fine rust:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Shiny rust:
+    recipes:
+    - recipe_type: Raw Resource
 
   _g: {H2: Gardening} ##########################################################
 
+  Rattlepepper seeds:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Helicap seeds:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Loofacrid seeds:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Appledew seeds:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Boba nut seeds:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Creamberry seeds:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Firefluke seed:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Catilla Spirata scale:
+    recipes:
+    - recipe_type: Raw Resource
 
   ##############################################################################
   _h: {H1: Gear} ###############################################################
   ##############################################################################
+
+  Fighting gloves:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bursting gloves:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Hyper gloves:
+    recipes:
+    - output: 1
+      recipe_type: Enhancement
+      requirements:
+        Hyper-rust: -2
+        Crude rust: -2
+    - recipe_type: Raw Resource
+
+  Anti-grav boots:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Improved anti-grav boots:
+    recipes:
+    - output: 1
+      recipe_type: Enhancement
+      requirements:
+        Antigrav sticks: -1
+        Crude rust: -10
+    - recipe_type: Raw Resource
+
+  Flower boots:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Eraser boots:
+    recipes:
+    - recipe_type: Raw Resource
 
   ##############################################################################
   _i: {H1: Nest} ###############################################################
@@ -294,3 +398,83 @@ resources:
   ##############################################################################
   _j: {H1: Other} ##############################################################
   ##############################################################################
+
+  Yu's Ribbon:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Kay's Medal:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Radar:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Antigrav sticks:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Hyper-rust:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bunch of cables:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Illustrated Erotica Handbook:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Massage oil:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Muffin & Cupcake:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bodigado's antlers:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Heliga Feather:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Fitness accessories:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Alpha Zooloolum:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Teapot:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Singing Daiko:
+    recipes:
+    - recipe_type: Raw Resource
+
+  \"Glowing Slugs\":
+    recipes:
+    - recipe_type: Raw Resource
+
+  Hygrocybe rubescens:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Acrobots Poster:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Sneddy:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Souvenir Conch:
+    recipes:
+    - recipe_type: Raw Resource
