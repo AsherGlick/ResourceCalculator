@@ -55,7 +55,7 @@ icon.jpg
 --------
 The icon needs to be `460px` by `215px` to fit in with the other calculator links. It also needs to be a `jpg`, not a `png` or other image file. If a game is on Steam, the Steam page for a game uses a `jpg` thumbnail with those dimensions. Simply downloading it to the appropriate directory and renaming it to `icon.jpg` should be all that is needed.
 
-Prefer images that only contain the title/tagline (left) rather than ones for a specific event and/or with reviews (right).
+Prefer images that only contain the title/tagline (first) rather than ones for a specific event and/or with reviews (second).
 
 <details>
     <summary>See Thumbnail Examples</summary>
