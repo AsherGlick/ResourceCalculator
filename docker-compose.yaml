@@ -12,7 +12,7 @@ services:
   # A container that has all the dev dependencies to run the build.py script
   build:
     build: ./dockerfiles/build/
-    user: "${UID}:${GID}"
+    user: "${TARGET_UID}:${TARGET_GID}"
     volumes:
       - "./:/usr/src/app"
     command: "${arguments}"

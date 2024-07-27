@@ -1,7 +1,9 @@
 # Get the user and group id which the docker compose config will use to access
 # the mounted directory with the correct user.
-export UID=`id -u`
-export GID=`id -g`
+export TARGET_UID=`id -u`
+export TARGET_GID=`id -g`
+
+echo "run.sh UID:GID ${TARGET_UID}:${TARGET_GID}"
 
 # Create the output directory as the current user to avoid a race condition
 # where the webserver will create the directory as root if it launches before
@@ -18,4 +20,10 @@ done
 export arguments
 
 # Run docker compose
-docker-compose up --build
+docker ps > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+    echo "Running docker-compose with sudo"
+    sudo -E docker-compose up --build
+else
+    docker-compose up --build
+fi
