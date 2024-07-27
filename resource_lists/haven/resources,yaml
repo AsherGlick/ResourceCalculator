@@ -1,0 +1,106 @@
+---
+authors:
+  Ben: "https://benjaminvreeland.com"
+
+index_page_display_name: Haven
+
+game_version: "1.1.302"
+
+note: |
+  Based on
+  https://haven.fandom.com/wiki/Items
+  https://steamdb.info/app/983970/history/
+  https://steamcommunity.com/sharedfiles/filedetails/?id=2310841844
+
+recipe_types:
+  Cooking: Cook {IN_ITEMS} into {OUT_ITEM}
+  Cooking (Camping): Cook {IN_ITEMS} into {OUT_ITEM} (only when camping)
+  Synthesizer: Synthesize {IN_ITEMS} into {OUT_ITEM}
+  Crafting: Craft {IN_ITEMS} into {OUT_ITEM}
+  Enhancement: Use {IN_ITEMS} to enhance {OUT_ITEM}
+
+resources:
+
+  ##############################################################################
+  _a: {H1: Food} ###############################################################
+  ##############################################################################
+
+  _b: {H2: Kitchen} ############################################################
+  _c: {H2: Camping} ############################################################
+
+  ##############################################################################
+  _d: {H1: Medicines} ##########################################################
+  ##############################################################################
+
+  Health Kit:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Pepperpills:
+    - output: 1
+      recipe_type: Synthesizer
+      requirements:
+        Rattlepeppers: -6
+    - recipe_type: Raw Resource
+
+  Toriko balm:
+    - output: 1
+      recipe_type: Synthesizer
+      requirements:
+        Rattlepeppers: -3
+        Helicap: -3
+    - recipe_type: Raw Resource
+
+  Heligauze:
+    - output: 1
+      recipe_type: Synthesizer
+      requirements:
+        Helicap: -6
+    - recipe_type: Raw Resource
+
+  Loofacrid oil:
+    - output: 1
+      recipe_type: Synthesizer
+      requirements:
+        Rattlepeppers: -3
+        Loofacrids: -3
+    - recipe_type: Raw Resource
+
+  Loofanol:
+    - output: 1
+      recipe_type: Synthesizer
+      requirements:
+        Loofacrids: -3
+        Helicap: -3
+    - recipe_type: Raw Resource
+
+  Acricilin:
+    - output: 1
+      recipe_type: Synthesizer
+      requirements:
+        Loofacrids: -6
+    - recipe_type: Raw Resource
+
+  ##############################################################################
+  _e: {H1: Consumables} ########################################################
+  ##############################################################################
+
+  ##############################################################################
+  _f: {H1: Resources} ##########################################################
+  ##############################################################################
+
+
+  _g: {H2: Gardening} ##########################################################
+
+
+  ##############################################################################
+  _h: {H1: Gear} ###############################################################
+  ##############################################################################
+
+  ##############################################################################
+  _i: {H1: Nest} ###############################################################
+  ##############################################################################
+
+  ##############################################################################
+  _j: {H1: Other} ##############################################################
+  ##############################################################################
