@@ -26,7 +26,191 @@ resources:
   ##############################################################################
 
   _b: {H2: Kitchen} ############################################################
+
+  Roasted appledews:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Appledew: -10
+    - recipe_type: Raw Resource
+
+  Glazed boba:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Appledew: -5
+        Boba nut: -5
+    - recipe_type: Raw Resource
+
+  Creamberry flambé:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Appledew: -5
+        Creamberry: -5
+    - recipe_type: Raw Resource
+
+  Spicy appledew:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Appledew: -5
+        Rattlepepper: -3
+    - recipe_type: Raw Resource
+
+  Marble appledew cake:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Appledew: -5
+        Helicap: -3
+    - recipe_type: Raw Resource
+
+  Turnovers á la Kay:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Appledew: -5
+        Loofacrids: -3
+    - recipe_type: Raw Resource
+
+	Boba salad:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Boba nut: -10
+    - recipe_type: Raw Resource
+
+  Pot-au-flow:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Boba nut: -5
+        Creamberry: -5
+    - recipe_type: Raw Resource
+
+  Boba massala:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Boba nut: -5
+        Rattlepepper: -3
+    - recipe_type: Raw Resource
+
+  Veggie kabobs:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Boba nut: -5
+        Helicap: -3
+    - recipe_type: Raw Resource
+
+  Slow noodles:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Boba nut: -5
+        Loofacrids: -3
+    - recipe_type: Raw Resource
+
+  Creamberry fondue:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Creamberry: -10
+    - recipe_type: Raw Resource
+
+  Chili cheesecake:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Creamberry: -5
+        Rattlepepper: -3
+    - recipe_type: Raw Resource
+
+  Creamberry custard:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Creamberry: -5
+        Helicap: -3
+    - recipe_type: Raw Resource
+
+  Harmony bun:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Creamberry: -5
+        Loofacrids : -3
+    - recipe_type: Raw Resource
+
   _c: {H2: Camping} ############################################################
+
+  Appledew stew:
+    recipes:
+    - output: 1
+      recipe_type: Cooking (Camping)
+      requirements:
+        Appledew: -10
+    - recipe_type: Raw Resource
+
+  Boba-appledew broth:
+    recipes:
+    - output: 1
+      recipe_type: Cooking (Camping)
+      requirements:
+        Appledew: -5
+        Boba nut: -5
+    - recipe_type: Raw Resource
+
+  Apple-berry cream:
+    recipes:
+    - output: 1
+      recipe_type: Cooking (Camping)
+      requirements:
+        Appledew: -5
+        Creamberry: -5
+    - recipe_type: Raw Resource
+
+  Boba puree:
+    recipes:
+    - output: 1
+      recipe_type: Cooking (Camping)
+      requirements:
+        Boba nut: -10
+    - recipe_type: Raw Resource
+
+  Boba-creamberry soup:
+    recipes:
+    - output: 1
+      recipe_type: Cooking (Camping)
+      requirements:
+        Boba nut: -5
+        Creamberry: -5
+    - recipe_type: Raw Resource
+
+  Creamberry chowder:
+    recipes:
+    - output: 1
+      recipe_type: Cooking (Camping)
+      requirements:
+        Creamberry : -10
+    - recipe_type: Raw Resource
 
   ##############################################################################
   _d: {H1: Medicines} ##########################################################
@@ -37,6 +221,7 @@ resources:
     - recipe_type: Raw Resource
 
   Pepperpills:
+    recipes:
     - output: 1
       recipe_type: Synthesizer
       requirements:
@@ -44,6 +229,7 @@ resources:
     - recipe_type: Raw Resource
 
   Toriko balm:
+    recipes:
     - output: 1
       recipe_type: Synthesizer
       requirements:
@@ -52,6 +238,7 @@ resources:
     - recipe_type: Raw Resource
 
   Heligauze:
+    recipes:
     - output: 1
       recipe_type: Synthesizer
       requirements:
@@ -59,6 +246,7 @@ resources:
     - recipe_type: Raw Resource
 
   Loofacrid oil:
+    recipes:
     - output: 1
       recipe_type: Synthesizer
       requirements:
@@ -67,6 +255,7 @@ resources:
     - recipe_type: Raw Resource
 
   Loofanol:
+    recipes:
     - output: 1
       recipe_type: Synthesizer
       requirements:
@@ -75,6 +264,7 @@ resources:
     - recipe_type: Raw Resource
 
   Acricilin:
+    recipes:
     - output: 1
       recipe_type: Synthesizer
       requirements:
