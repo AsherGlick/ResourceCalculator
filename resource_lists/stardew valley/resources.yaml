@@ -95,6 +95,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Hardwood: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Qi Coin: -100
     - recipe_type: Raw Resource
 
   Gate:
@@ -106,7 +110,7 @@ resources:
     - recipe_type: Raw Resource
 
   ##############################################################################
-  _b: {H1: Chests} #############################################################
+  _b: {H1: Storage/Crafting} ###################################################
   ##############################################################################
 
   Chest:
@@ -148,6 +152,22 @@ resources:
       recipe_type: Buy
       requirements:
         Qi Gem: -15
+    - recipe_type: Raw Resource
+
+  Mini-Fridge:
+    recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -3000
+    - recipe_type: Raw Resource
+
+  Workbench:
+    recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -2000
     - recipe_type: Raw Resource
 
   ##############################################################################
@@ -330,6 +350,22 @@ resources:
         Gold: -25
     - recipe_type: Raw Resource
 
+  Heater:
+    recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -2000
+    - recipe_type: Raw Resource
+
+  Auto-Grabber:
+    recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -25000
+    - recipe_type: Raw Resource
+
   Auto-Petter:
     recipes:
     - output: 1
@@ -337,6 +373,10 @@ resources:
       requirements:
         Golden Mystery Box: -1
         Gold: -25
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -50000
     - recipe_type: Raw Resource
 
   Tapper:
@@ -584,6 +624,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Stone: -99
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Jade: -1
     - recipe_type: Raw Resource
 
   Mini-Jukebox:
@@ -656,6 +700,14 @@ resources:
       recipe_type: Crafting
       requirements:
         Iridium Bar: -20
+    - recipe_type: Raw Resource
+
+  Statue of Endless Fortune:
+    recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -1000000
     - recipe_type: Raw Resource
 
   ##############################################################################
@@ -1000,6 +1052,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Iron Bar: -2
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -500
     - recipe_type: Raw Resource
 
   Dressed Spinner:
@@ -1009,6 +1065,10 @@ resources:
       requirements:
         Iron Bar: -2
         Cloth: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -1000
     - output: 1
       recipe_type: Blacksmith (process)
       requirements:
@@ -1028,6 +1088,10 @@ resources:
       requirements:
         Copper Bar: -1
         Sap: -10
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -500
     - recipe_type: Raw Resource
 
   Cork Bobber:
@@ -1038,6 +1102,10 @@ resources:
         Wood: -10
         Hardwood: -5
         Slime: -10
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -750
     - output: 1
       recipe_type: Blacksmith (process)
       requirements:
@@ -1052,6 +1120,10 @@ resources:
 
   Lead Bobber:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -200
     - recipe_type: Raw Resource
 
   Sonar Bobber:
@@ -1061,6 +1133,10 @@ resources:
       requirements:
         Iron Bar: -1
         Refined Quartz: -2
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -500
     - recipe_type: Raw Resource
 
   Treasure Hunter:
@@ -1069,6 +1145,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Gold Bar: -2
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -750
     - recipe_type: Raw Resource
 
   Barbed Hook:
@@ -1079,6 +1159,10 @@ resources:
         Copper Bar: -1
         Iron Bar: -1
         Gold Bar: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -1000
     - recipe_type: Raw Resource
 
   Curiosity Lure:
@@ -1101,6 +1185,14 @@ resources:
       recipe_type: Crafting
       requirements:
         Iron Bar: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -1000
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Qi Coin: -1000
     - recipe_type: Raw Resource
 
   Bait:
@@ -1109,6 +1201,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Bug Meat: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -2
     - recipe_type: Raw Resource
 
   Deluxe Bait:
@@ -1118,6 +1214,10 @@ resources:
       requirements:
         Bait: -5
         Moss: -2
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -4
     - recipe_type: Raw Resource
 
   Wild Bait:
@@ -1158,6 +1258,10 @@ resources:
       recipe_type: Bait Maker
       requirements:
         Any Fish: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -140
     - recipe_type: Raw Resource
 
   Crab Pot:
@@ -1172,6 +1276,10 @@ resources:
       requirements:
         Wood: -40
         Iron Bar: -3
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -1500
     - recipe_type: Raw Resource
 
   ##############################################################################
@@ -1185,6 +1293,10 @@ resources:
       requirements:
         Copper Ore: -4
         Coal: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -450
     - recipe_type: Raw Resource
 
   Bomb:
@@ -1194,6 +1306,14 @@ resources:
       requirements:
         Iron Ore: -4
         Coal: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -1000
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Quartz: -5
     - output: 5
       recipe_type: Blacksmith (process)
       requirements:
@@ -1209,6 +1329,14 @@ resources:
         Gold Ore: -4
         Solar Essence: -1
         Void Essence: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -1600
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Iridium Ore: -5
     - output: 5
       recipe_type: Blacksmith (process)
       requirements:
@@ -1228,6 +1356,10 @@ resources:
       requirements:
         Iron Bar: -1
         Coal: -2
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -300
     - recipe_type: Raw Resource
 
   ##############################################################################
@@ -1269,6 +1401,10 @@ resources:
         Leek: -1
         Dandelion: -1
         Vinegar: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -220
     - output: 1
       recipe_type: Blacksmith (process)
       requirements:
@@ -1424,6 +1560,10 @@ resources:
         Tomato: -1
         Cheese: -1
     - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -600
+    - output: 1
       recipe_type: Blacksmith (process)
       requirements:
         Mystery Box: -1
@@ -1565,6 +1705,10 @@ resources:
       requirements:
         Wheat Flour: -1
     - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -120
+    - output: 1
       recipe_type: Blacksmith (process)
       requirements:
         Mystery Box: -1
@@ -1593,6 +1737,10 @@ resources:
       requirements:
         Rainbow Trout: -1
         Green Algae: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -250
     - output: 1
       recipe_type: Blacksmith (process)
       requirements:
@@ -1669,6 +1817,10 @@ resources:
         Wheat Flour: -1
         Tomato: -1
     - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -240
+    - output: 1
       recipe_type: Blacksmith (process)
       requirements:
         Mystery Box: -1
@@ -1696,6 +1848,10 @@ resources:
       requirements:
         Eel: -1
         Hot Pepper: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Ruby: -1
     - output: 1
       recipe_type: Blacksmith (process)
       requirements:
@@ -1939,6 +2095,10 @@ resources:
         Cave Carrot: -2
         Sugar: -1
         Any Milk: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -1000
     - recipe_type: Raw Resource
 
   Roots Platter:
@@ -1956,6 +2116,10 @@ resources:
       recipe_type: Cooking
       requirements:
         Coffee: -3
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -300
     - output: 3
       recipe_type: Blacksmith (process)
       requirements:
@@ -2305,6 +2469,10 @@ resources:
     - output: 1
       recipe_type: Buy
       requirements:
+        Prismatic Shard: -3
+    - output: 1
+      recipe_type: Buy
+      requirements:
         Golden Mystery Box: -20
     - output: 1
       recipe_type: Blacksmith (process)
@@ -2340,6 +2508,10 @@ resources:
       recipe_type: Cheese Press
       requirements:
         Large Milk: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Emrald: -1
     - recipe_type: Raw Resource
 
   Goat Cheese:
@@ -2360,6 +2532,10 @@ resources:
       recipe_type: Keg
       requirements:
         Wheat: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -400
     - recipe_type: Raw Resource
 
   Coffee:
@@ -2421,6 +2597,10 @@ resources:
       recipe_type: Loom
       requirements:
         Wool: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Aquamarine: -3
     - output: 1
       recipe_type: Recycling Machine (chance)
       requirements:
@@ -2660,6 +2840,10 @@ resources:
     - output: 1
       recipe_type: Buy
       requirements:
+        Gold: -100000
+    - output: 1
+      recipe_type: Buy
+      requirements:
         Qi Gem: -100
 
   Ostrich Egg:
@@ -2765,6 +2949,10 @@ resources:
   Slime Charmer Ring:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -25000
 
   Warrior Ring:
     recipes:
@@ -2779,10 +2967,18 @@ resources:
   Vampire Ring:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -15000
 
   Savage Ring:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -25000
 
   Ring of Yoba:
     recipes:
@@ -2812,6 +3008,10 @@ resources:
   Burglar's Ring:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -20000
 
   Iridium Band:
     recipes:
@@ -2827,6 +3027,10 @@ resources:
     recipes:
     - recipe_type: Raw Resource
     - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -1000
+    - output: 1
       recipe_type: Blacksmith (process)
       requirements:
         Mystery Box: -1
@@ -2835,10 +3039,18 @@ resources:
   Topaz Ring:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -1000
 
   Aquamarine Ring:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -2500
     - output: 1
       recipe_type: Blacksmith (process)
       requirements:
@@ -2849,6 +3061,10 @@ resources:
     recipes:
     - recipe_type: Raw Resource
     - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -2500
+    - output: 1
       recipe_type: Blacksmith (process)
       requirements:
         Mystery Box: -1
@@ -2857,6 +3073,10 @@ resources:
   Emerald Ring:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -5000
     - output: 1
       recipe_type: Blacksmith (process)
       requirements:
@@ -2871,6 +3091,10 @@ resources:
   Ruby Ring:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -5000
     - output: 1
       recipe_type: Blacksmith (process)
       requirements:
@@ -2894,10 +3118,18 @@ resources:
   Crabshell Ring:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -15000
 
   Napalm Ring:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -30000
 
   Thorns Ring:
     recipes:
@@ -2988,6 +3220,10 @@ resources:
         Purple Mushroom: -1
         Morel: -1
         Chanterelle: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -2000
     - output: 2
       recipe_type: Blacksmith (process)
       requirements:
@@ -3007,11 +3243,31 @@ resources:
       requirements:
         Garlic: -1
         Oil: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -2000
     - recipe_type: Raw Resource
 
   ##############################################################################
   _n: {H1: Consumables} ########################################################
   ##############################################################################
+
+  Energy Tonic:
+    recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -1000
+    - recipe_type: Raw Resource
+
+  Muscle Remedy:
+    recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -1000
+    - recipe_type: Raw Resource
 
   Monster Musk:
     recipes:
@@ -3078,6 +3334,10 @@ resources:
       requirements:
         Taro Root: -5
     - output: 1
+      recipe_type: Buy
+      requirements:
+        Qi Coin: -1000
+    - output: 1
       recipe_type: Blacksmith (process, varied)
       requirements:
         Mystery Box: -1
@@ -3097,6 +3357,10 @@ resources:
         Hardwood: -2
         Coconut: -1
         Iridium Ore: -4
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Omni Geode: -3
     - recipe_type: Raw Resource
 
   Warp Totem (Island):
@@ -3310,6 +3574,10 @@ resources:
       recipe_type: Seed Maker
       requirements:
         Wild Horseradish: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Summer Seeds: -2
     - recipe_type: Raw Resource
 
   Summer Seeds:
@@ -3324,6 +3592,10 @@ resources:
       recipe_type: Seed Maker
       requirements:
         Spice Berry: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Fall Seeds: -2
     - recipe_type: Raw Resource
 
   Fall Seeds:
@@ -3339,6 +3611,10 @@ resources:
       recipe_type: Seed Maker
       requirements:
         Common Mushroom: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Winter Seeds: -2
     - recipe_type: Raw Resource
 
   Winter Seeds:
@@ -3354,6 +3630,10 @@ resources:
       recipe_type: Seed Maker
       requirements:
         Winter Root: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Spring Seeds: -2
     - recipe_type: Raw Resource
 
   Ancient Seeds:
@@ -3934,6 +4214,10 @@ resources:
       recipe_type: Seed Maker
       requirements:
         Sweet Gem Berry: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -1000
 
   Cactus Seeds:
     recipes:
@@ -4727,18 +5011,34 @@ resources:
 
   Training Rod:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -25
     - recipe_type: Raw Resource
 
   Bamboo Pole:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -500
     - recipe_type: Raw Resource
 
   Fiberglass Rod:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -1800
     - recipe_type: Raw Resource
 
   Iridium Rod:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -7500
     - recipe_type: Raw Resource
 
   Advanced Iridium Rod:
@@ -5726,6 +6026,10 @@ resources:
   Fiber:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Stone: -5
 
   Hardwood:
     recipes:
@@ -5804,6 +6108,18 @@ resources:
       requirements:
         Driftwood: -1
 
+  Hay:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -50
+    - output: 3
+      recipe_type: Buy
+      requirements:
+        Omni Geode: -1
+
   Moss:
     recipes:
     - recipe_type: Raw Resource
@@ -5840,6 +6156,10 @@ resources:
     recipes:
     - recipe_type: Raw Resource
 
+  ##############################################################################
+  _an: {H1: Crops} #############################################################
+  ##############################################################################
+
   Apple:
     recipes:
     - recipe_type: Raw Resource
@@ -5875,10 +6195,6 @@ resources:
   Tea Leaves:
     recipes:
     - recipe_type: Raw Resource
-
-  ##############################################################################
-  _an: {H1: Crops} #############################################################
-  ##############################################################################
 
   _ao: {H2: Spring} ############################################################
 
@@ -7396,6 +7712,10 @@ resources:
   Artifact Trove:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Omni Geode: -5
 
   Golden Coconut:
     recipes:
@@ -7896,6 +8216,10 @@ resources:
   Joja Cola:
     recipes:
     - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -75
 
   Rotten Plant:
     recipes:
@@ -7949,9 +8273,21 @@ resources:
     recipes:
     - recipe_type: Raw Resource
 
+  Qi Coin:
+    recipes:
+    - output: 100
+      recipe_type: Buy
+      requirements:
+        Gold: -1000
+    - recipe_type: Raw Resource
+
   Qi Gem:
     recipes:
     - recipe_type: Raw Resource
+
+  ##############################################################################
+  _bd: {H1: Groups} ############################################################
+  ##############################################################################
 
   Any Fish:
     recipes:
