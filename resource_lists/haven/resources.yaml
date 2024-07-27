@@ -18,7 +18,7 @@ recipe_types:
   Synthesizer: Synthesize {IN_ITEMS} into {OUT_ITEM}
   Crafting: Craft {IN_ITEMS} into {OUT_ITEM}
   Enhancement: Use {IN_ITEMS} to enhance {OUT_ITEM}
-  Repair: Use {IN_ITEMS} and {OUT_ITEM} to repair {OUT_ITEM} on the Nest
+  Repair: Use {IN_ITEMS} to repair the Nest ({OUT_ITEM})
 
 resources:
 
@@ -281,18 +281,18 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Crude rust: -15
-        Fine rust: -6
+        Crude rust: -9
+        Fine rust: -4
     - output: 1
       recipe_type: Crafting
       requirements:
-        Crude rust: -15
-        Shiny rust: -2
+        Crude rust: -9
+        Shiny rust: -1
     - output: 1
       recipe_type: Crafting
       requirements:
-        Fine rust: -6
-        Shiny rust: -2
+        Fine rust: -4
+        Shiny rust: -1
     - recipe_type: Raw Resource
 
   Omni-Impact:
@@ -300,17 +300,17 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Crude rust: -6
-        Fine rust: -3
+        Crude rust: -4
+        Fine rust: -2
     - output: 1
       recipe_type: Crafting
       requirements:
-        Crude rust: -6
+        Crude rust: -4
         Shiny rust: -1
     - output: 1
       recipe_type: Crafting
       requirements:
-        Fine rust: -3
+        Fine rust: -2
         Shiny rust: -1
     - recipe_type: Raw Resource
 
@@ -319,17 +319,17 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Crude rust: -6
-        Fine rust: -3
+        Crude rust: -4
+        Fine rust: -2
     - output: 1
       recipe_type: Crafting
       requirements:
-        Crude rust: -6
+        Crude rust: -4
         Shiny rust: -1
     - output: 1
       recipe_type: Crafting
       requirements:
-        Fine rust: -3
+        Fine rust: -2
         Shiny rust: -1
     - recipe_type: Raw Resource
 
@@ -338,18 +338,18 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Crude rust: -10
+        Crude rust: -9
         Fine rust: -4
     - output: 1
       recipe_type: Crafting
       requirements:
-        Crude rust: -10
-        Shiny rust: -2
+        Crude rust: -9
+        Shiny rust: -1
     - output: 1
       recipe_type: Crafting
       requirements:
         Fine rust: -4
-        Shiny rust: -2
+        Shiny rust: -1
     - recipe_type: Raw Resource
 
   Flow seeds:
@@ -551,6 +551,20 @@ resources:
     recipes:
     - recipe_type: Raw Resource
 
+  Nest:
+    recipes:
+    - output: 1
+      recipe_type: Repair
+      requirements:
+        Right wing: -1
+        Gyro-stabilizer: -1
+        Hypo-propellers: -1
+        Cylinder: -1
+        Waduz turbine: -1
+        Engine-hood: -1
+        Left wing: -1
+    - recipe_type: Raw Resource
+
   ##############################################################################
   _j: {H1: Other} ##############################################################
   ##############################################################################
@@ -615,7 +629,7 @@ resources:
     recipes:
     - recipe_type: Raw Resource
 
-  \"Glowing Slugs\":
+  “Glowing Slugs”:
     recipes:
     - recipe_type: Raw Resource
 
