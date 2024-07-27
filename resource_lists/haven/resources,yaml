@@ -276,6 +276,118 @@ resources:
   _e: {H1: Consumables} ########################################################
   ##############################################################################
 
+  Balm:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crude rust: -15
+        Fine rust: -6
+    - recipe_type: Raw Resource
+
+  Balm:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crude rust: -15
+        Shiny rust: -2
+    - recipe_type: Raw Resource
+
+  Balm:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Fine rust: -6
+        Shiny rust: -2
+    - recipe_type: Raw Resource
+
+  Omni-Impact:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crude rust: -6
+        Fine rust: -3
+    - recipe_type: Raw Resource
+
+  Omni-Impact:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crude rust: -6
+        Shiny rust: -1
+    - recipe_type: Raw Resource
+
+  Omni-Impact:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Fine rust: -3
+        Shiny rust: -1
+    - recipe_type: Raw Resource
+
+  Omni-Blast:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crude rust: -6
+        Fine rust: -3
+    - recipe_type: Raw Resource
+
+  Omni-Blast:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crude rust: -6
+        Shiny rust: -1
+    - recipe_type: Raw Resource
+
+  Omni-Blast:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Fine rust: -3
+        Shiny rust: -1
+    - recipe_type: Raw Resource
+
+  Tonic:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crude rust: -10
+        Fine rust: -4
+    - recipe_type: Raw Resource
+
+  Tonic:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crude rust: -10
+        Shiny rust: -2
+    - recipe_type: Raw Resource
+
+  Tonic:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Fine rust: -4
+        Shiny rust: -2
+    - recipe_type: Raw Resource
+
+  Flow seeds:
+    recipes:
+    - recipe_type: Raw Resource
+
   ##############################################################################
   _f: {H1: Resources} ##########################################################
   ##############################################################################
