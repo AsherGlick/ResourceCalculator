@@ -18,6 +18,7 @@ recipe_types:
   Synthesizer: Synthesize {IN_ITEMS} into {OUT_ITEM}
   Crafting: Craft {IN_ITEMS} into {OUT_ITEM}
   Enhancement: Use {IN_ITEMS} to enhance {OUT_ITEM}
+  Repair: Use {IN_ITEMS} and {OUT_ITEM} to repair {OUT_ITEM} on the Nest
 
 resources:
 
@@ -394,6 +395,81 @@ resources:
   ##############################################################################
   _i: {H1: Nest} ###############################################################
   ##############################################################################
+
+  Right wing:
+    recipes:
+    - output: 1
+      recipe_type: Repair
+      requirements:
+        Crude rust: -20
+        Fine rust: -3
+        Shiny rust: -1
+    - recipe_type: Raw Resource
+
+  Gyro-stabilizer:
+    recipes:
+    - output: 1
+      recipe_type: Repair
+      requirements:
+        Crude rust: -15
+        Fine rust: -5
+    - recipe_type: Raw Resource
+
+  Hypo-propellers:
+    recipes:
+    - output: 1
+      recipe_type: Repair
+      requirements:
+        Crude rust: -15
+        Fine rust: -5
+        Shiny rust: -1
+    - recipe_type: Raw Resource
+
+  Cylinder:
+    recipes:
+    - output: 1
+      recipe_type: Repair
+      requirements:
+        Crude rust: -10
+        Fine rust: -10
+    - recipe_type: Raw Resource
+
+  Waduz turbine:
+    recipes:
+    - output: 1
+      recipe_type: Repair
+      requirements:
+        Crude rust: -5
+        Fine rust: -3
+        Shiny rust: -1
+    - recipe_type: Raw Resource
+
+  Engine-hood:
+    recipes:
+    - output: 1
+      recipe_type: Repair
+      requirements:
+        Crude rust: -20
+        Fine rust: -5
+    - recipe_type: Raw Resource
+
+  Left wing:
+    recipes:
+    - output: 1
+      recipe_type: Repair
+      requirements:
+        Crude rust: -20
+        Fine rust: -3
+        Shiny rust: -1
+    - recipe_type: Raw Resource
+
+  Extender nozzle:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Fertilizator:
+    recipes:
+    - recipe_type: Raw Resource
 
   ##############################################################################
   _j: {H1: Other} ##############################################################
