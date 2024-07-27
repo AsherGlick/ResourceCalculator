@@ -1026,6 +1026,10 @@ resources:
 
   Bouquet:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -200
     - recipe_type: Raw Resource
 
   Wilted Bouquet:
@@ -2511,7 +2515,7 @@ resources:
     - output: 1
       recipe_type: Buy
       requirements:
-        Emrald: -1
+        Emerald: -1
     - recipe_type: Raw Resource
 
   Goat Cheese:
@@ -2667,6 +2671,10 @@ resources:
         Corn: -1
         Sunflower Seeds: -1
         Sunflower: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -200
     - recipe_type: Raw Resource
 
   Truffle Oil:
@@ -2683,6 +2691,10 @@ resources:
       recipe_type: Mill
       requirements:
         Wheat: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -100
     - recipe_type: Raw Resource
 
   Sugar:
@@ -2691,6 +2703,10 @@ resources:
       recipe_type: Mill
       requirements:
         Beet: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -100
     - recipe_type: Raw Resource
 
   Rice:
@@ -2699,10 +2715,18 @@ resources:
       recipe_type: Mill
       requirements:
         Unmilled Rice: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -200
     - recipe_type: Raw Resource
 
   Vinegar:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -200
     - recipe_type: Raw Resource
 
   Pickles:
@@ -3413,6 +3437,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Sap: -2
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -100
     - recipe_type: Raw Resource
 
   Quality Fertilizer:
@@ -3422,6 +3450,10 @@ resources:
       requirements:
         Sap: -4
         Any Fish: -1
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -150
     - output: 10
       recipe_type: Bone Mill
       requirements:
@@ -3458,6 +3490,10 @@ resources:
       requirements:
         Pine Tar: -1
         Moss: -5
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -100
     - output: 5
       recipe_type: Bone Mill
       requirements:
@@ -3515,6 +3551,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Stone: -2
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -100
     - recipe_type: Raw Resource
 
   Quality Retaining Soil:
@@ -3527,7 +3567,7 @@ resources:
     - output: 1
       recipe_type: Buy
       requirements:
-        Gold: -200
+        Gold: -150
     - recipe_type: Raw Resource
 
   Deluxe Retaining Soil:
@@ -3658,6 +3698,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Fiber: -10
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -100
     - recipe_type: Raw Resource
 
   Blue Grass Starter:
@@ -3706,21 +3750,14 @@ resources:
         Gold: -25
     - recipe_type: Raw Resource
 
-  Mystic Tree Seed:
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Acorn: -5
-        Maple Seed: -5
-        Pine Cone: -5
-        Mahogany Seed: -5
-    - recipe_type: Raw Resource
-
   _q: {H2: Spring} #############################################################
 
   Bean Starter:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -60
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -3739,6 +3776,10 @@ resources:
 
   Cauliflower Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -80
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -3757,6 +3798,10 @@ resources:
 
   Garlic Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -40
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -3765,6 +3810,10 @@ resources:
 
   Jazz Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -30
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -3773,6 +3822,10 @@ resources:
 
   Kale Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -70
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -3781,6 +3834,10 @@ resources:
 
   Parsnip Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -20
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -3799,6 +3856,10 @@ resources:
 
   Potato Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -50
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -3817,6 +3878,10 @@ resources:
 
   Rice Shoot:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -40
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -3825,11 +3890,11 @@ resources:
 
   Rhubarb Seeds:
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Buy
       requirements:
         Gold: -100
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
       requirements:
@@ -3837,6 +3902,10 @@ resources:
 
   Strawberry Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -100
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -3845,6 +3914,10 @@ resources:
 
   Tulip Bulb:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -20
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -3877,6 +3950,10 @@ resources:
 
   Blueberry Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -80
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -3885,6 +3962,10 @@ resources:
 
   Corn Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -150
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -3903,6 +3984,10 @@ resources:
 
   Hops Starter:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -60
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -3911,6 +3996,10 @@ resources:
 
   Melon Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -80
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -3919,6 +4008,10 @@ resources:
 
   Pepper Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -40
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -3937,6 +4030,10 @@ resources:
 
   Poppy Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -100
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -3945,6 +4042,10 @@ resources:
 
   Radish Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -40
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -3963,6 +4064,10 @@ resources:
 
   Red Cabbage Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -100
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -3971,6 +4076,10 @@ resources:
 
   Spangle Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -50
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -3979,6 +4088,10 @@ resources:
 
   Sunflower Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -200
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -3987,11 +4100,11 @@ resources:
 
   Starfruit Seeds:
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Buy
       requirements:
         Gold: -400
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
       requirements:
@@ -3999,6 +4112,10 @@ resources:
 
   Tomato Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -50
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -4007,6 +4124,10 @@ resources:
 
   Wheat Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -10
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -4049,6 +4170,10 @@ resources:
 
   Amaranth Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -70
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -4057,6 +4182,10 @@ resources:
 
   Artichoke Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -30
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -4075,11 +4204,11 @@ resources:
 
   Beet Seeds:
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Buy
       requirements:
         Gold: -20
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
       requirements:
@@ -4087,6 +4216,10 @@ resources:
 
   Bok Choy Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -50
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -4095,6 +4228,10 @@ resources:
 
   Cranberry Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -240
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -4103,6 +4240,10 @@ resources:
 
   Eggplant Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -20
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -4121,6 +4262,10 @@ resources:
 
   Fairy Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -200
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -4129,6 +4274,10 @@ resources:
 
   Grape Starter:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -60
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -4137,6 +4286,10 @@ resources:
 
   Pumpkin Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -100
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -4155,6 +4308,10 @@ resources:
 
   Yam Seeds:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -60
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
@@ -4209,23 +4366,23 @@ resources:
 
   Rare Seed:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -1000
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
       requirements:
         Sweet Gem Berry: -1
-    - output: 1
-      recipe_type: Buy
-      requirements:
-        Gold: -1000
 
   Cactus Seeds:
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Buy
       requirements:
         Gold: -150
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
       requirements:
@@ -4233,11 +4390,11 @@ resources:
 
   Pineapple Seeds:
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Buy
       requirements:
         Magma Cap: -1
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
       requirements:
@@ -4250,11 +4407,11 @@ resources:
 
   Taro Tuber:
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Buy
       requirements:
         Bone Fragment: -2
+    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Seed Maker
       requirements:
@@ -4314,6 +4471,21 @@ resources:
         Qi Gem: -5
     - recipe_type: Raw Resource
 
+  Mystic Tree Seed:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Acorn: -5
+        Maple Seed: -5
+        Pine Cone: -5
+        Mahogany Seed: -5
+    - recipe_type: Raw Resource
+
+  Mossy Seed:
+    recipes:
+    - recipe_type: Raw Resource
+
   Tea Sapling:
     recipes:
     - output: 1
@@ -4326,6 +4498,10 @@ resources:
 
   Apricot Sapling:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -2000
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Blacksmith (process)
@@ -4340,6 +4516,10 @@ resources:
 
   Cherry Sapling:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -3400
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Blacksmith (process)
@@ -4380,6 +4560,10 @@ resources:
 
   Orange Sapling:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -4000
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Blacksmith (process)
@@ -4394,6 +4578,10 @@ resources:
 
   Peach Sapling:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -6000
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Blacksmith (process)
@@ -4408,6 +4596,10 @@ resources:
 
   Apple Sapling:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -4000
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Blacksmith (process)
@@ -4422,6 +4614,10 @@ resources:
 
   Pomegranate Sapling:
     recipes:
+    - output: 1
+      recipe_type: Buy
+      requirements:
+        Gold: -6000
     - recipe_type: Raw Resource
     - output: 1
       recipe_type: Blacksmith (process)
@@ -5188,7 +5384,7 @@ resources:
     - output: 1
       recipe_type: Forge (enchantment)
       requirements:
-        Any Tool: -1
+        Any Enchantable Tool: -1
         Prismatic Shard: -1
         Cinder Shard: -20
     - recipe_type: Raw Resource
@@ -9657,7 +9853,7 @@ resources:
       requirements:
         Trilobite: -1
 
-  Any Tool:
+  Any Enchantable Tool:
     recipes:
     - recipe_type: Raw Resource
     - output: 1
