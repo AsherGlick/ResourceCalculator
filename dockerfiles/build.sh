@@ -6,7 +6,9 @@
 # fi
 
 
-echo $UID : $GID
+echo "Running as user $(id -u):$(id -g)."
+
+export HOME="/tmp"
 
 # Install or update all dependencies.
 npm install
