@@ -1,5 +1,5 @@
 from jinja2 import Environment, FileSystemLoader
-from typing import List, Dict, TypedDict
+from typing import List, Dict, TypedDict, Optional
 import json
 import os
 from pylib.filehash import getfilehash
@@ -23,6 +23,7 @@ class LandingPageInputTypes(TypedDict):
     icon_filename_data: List[str]
     css_filename_data: str
     add_game_filename_data: str
+    popular_lists_file: str
     template: str
 
 
@@ -43,7 +44,6 @@ def landing_page_producers(calculator_dir_regex: str) -> List[GenericProducer]:
             },
             function=hash_and_copy_file,
         ),
-
         Producer(
             name="Build Landing Page",
             input_path_patterns={
@@ -55,6 +55,7 @@ def landing_page_producers(calculator_dir_regex: str) -> List[GenericProducer]:
                 )],
                 "css_filename_data": r"^cache/calculator\.css\.json",
                 "add_game_filename_data": r"^cache/add_game\.png\.json$",
+                "popular_lists_file": r"^resource_lists/popular_lists\.json$",
                 "template": r"^core/index\.html$"
             },
             function=landing_page_function,
@@ -92,6 +93,12 @@ def hash_and_copy_file(input_files: SingleFile, groups: Dict[str, str]) -> List[
     ]
 
 
+class CalculatorData(TypedDict):
+    path: str
+    display_name: str
+    icon_filename: str
+
+
 ################################################################################
 # landing_page_function
 #
@@ -100,6 +107,13 @@ def hash_and_copy_file(input_files: SingleFile, groups: Dict[str, str]) -> List[
 ################################################################################
 def landing_page_function(input_paths: LandingPageInputTypes, groups: Dict[str, str]) -> List[str]:
     output_file = "output/index.html"
+
+    with open(input_paths["popular_lists_file"]) as f:
+        popular_calculator_paths = json.load(f)
+
+    popular_calculator_cache: Dict[str, Optional[CalculatorData]] = {}
+    for popular_calculator_path in popular_calculator_paths:
+        popular_calculator_cache[popular_calculator_path] = None
 
     # Configure and begin the jinja2 template parsing
     env = Environment(loader=FileSystemLoader('core'))
@@ -110,7 +124,7 @@ def landing_page_function(input_paths: LandingPageInputTypes, groups: Dict[str, 
     for icon_filename_data in input_paths["icon_filename_data"]:
         icon_filename_datas[os.path.basename(os.path.dirname(icon_filename_data))] = icon_filename_data
 
-    calculators = []
+    calculators: List[CalculatorData] = []
     for metadata_path in input_paths["files"]:
 
         with open(metadata_path) as f:
@@ -123,13 +137,24 @@ def landing_page_function(input_paths: LandingPageInputTypes, groups: Dict[str, 
         with open(icon_filename_data) as f:
             icon_filename = os.path.basename(json.load(f)["icon_name"])
 
-        calculator_data = {
+        calculator_data: CalculatorData = {
             "path": directory,
             "display_name": calculator_display_name,
             "icon_filename": icon_filename
         }
 
-        calculators.append(calculator_data)
+        if directory in popular_calculator_cache:
+            popular_calculator_cache[directory] = calculator_data
+        else:
+            calculators.append(calculator_data)
+
+    popular_calculators: List[CalculatorData] = []
+    for popular_calculator_path in popular_calculator_paths:
+        popular_calculator = popular_calculator_cache[popular_calculator_path]
+        if popular_calculator is None:
+            continue
+        popular_calculators.append(popular_calculator)
+    calculators = popular_calculators + calculators
 
     add_game_image_path = filename_from_metadatafile(input_paths["add_game_filename_data"], rel="output")
     css_path = filename_from_metadatafile(input_paths["css_filename_data"], rel="output")
