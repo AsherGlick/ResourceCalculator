@@ -1,0 +1,652 @@
+---
+authors:
+  Ben: "https://benjaminvreeland.com"
+
+index_page_display_name: Haven
+
+game_version: "1.1.302"
+
+note: |
+  Based on
+  https://haven.fandom.com/wiki/Items
+  https://steamdb.info/app/983970/history/
+  https://steamcommunity.com/sharedfiles/filedetails/?id=2310841844
+
+recipe_types:
+  Cooking: Cook {IN_ITEMS} into {OUT_ITEM}
+  Cooking (Camping): Cook {IN_ITEMS} into {OUT_ITEM} (only when camping)
+  Synthesizer: Synthesize {IN_ITEMS} into {OUT_ITEM}
+  Crafting: Craft {IN_ITEMS} into {OUT_ITEM}
+  Enhancement: Use {IN_ITEMS} to enhance {OUT_ITEM}
+  Repair: Use {IN_ITEMS} to repair the Nest ({OUT_ITEM})
+
+resources:
+
+  ##############################################################################
+  _a: {H1: Food} ###############################################################
+  ##############################################################################
+
+  _b: {H2: Kitchen} ############################################################
+
+  Roasted appledews:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Appledew: -10
+    - recipe_type: Raw Resource
+
+  Glazed boba:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Appledew: -5
+        Boba nut: -5
+    - recipe_type: Raw Resource
+
+  Creamberry flambé:
+    custom_simplename: creamberryflambe
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Appledew: -5
+        Creamberry: -5
+    - recipe_type: Raw Resource
+
+  Spicy appledew:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Appledew: -5
+        Rattlepepper: -3
+    - recipe_type: Raw Resource
+
+  Marble appledew cake:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Appledew: -5
+        Helicap: -3
+    - recipe_type: Raw Resource
+
+  Turnovers á la Kay:
+    custom_simplename: turnoversalakay
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Appledew: -5
+        Loofacrid: -3
+    - recipe_type: Raw Resource
+
+  Boba salad:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Boba nut: -10
+    - recipe_type: Raw Resource
+
+  Pot-au-flow:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Boba nut: -5
+        Creamberry: -5
+    - recipe_type: Raw Resource
+
+  Boba massala:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Boba nut: -5
+        Rattlepepper: -3
+    - recipe_type: Raw Resource
+
+  Veggie kabobs:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Boba nut: -5
+        Helicap: -3
+    - recipe_type: Raw Resource
+
+  Slow noodles:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Boba nut: -5
+        Loofacrid: -3
+    - recipe_type: Raw Resource
+
+  Creamberry fondue:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Creamberry: -10
+    - recipe_type: Raw Resource
+
+  Chili cheesecake:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Creamberry: -5
+        Rattlepepper: -3
+    - recipe_type: Raw Resource
+
+  Creamberry custard:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Creamberry: -5
+        Helicap: -3
+    - recipe_type: Raw Resource
+
+  Harmony bun:
+    recipes:
+    - output: 1
+      recipe_type: Cooking
+      requirements:
+        Creamberry: -5
+        Loofacrid: -3
+    - recipe_type: Raw Resource
+
+  _c: {H2: Camping} ############################################################
+
+  Appledew stew:
+    recipes:
+    - output: 1
+      recipe_type: Cooking (Camping)
+      requirements:
+        Appledew: -10
+    - recipe_type: Raw Resource
+
+  Boba-appledew broth:
+    recipes:
+    - output: 1
+      recipe_type: Cooking (Camping)
+      requirements:
+        Appledew: -5
+        Boba nut: -5
+    - recipe_type: Raw Resource
+
+  Apple-berry cream:
+    recipes:
+    - output: 1
+      recipe_type: Cooking (Camping)
+      requirements:
+        Appledew: -5
+        Creamberry: -5
+    - recipe_type: Raw Resource
+
+  Boba puree:
+    recipes:
+    - output: 1
+      recipe_type: Cooking (Camping)
+      requirements:
+        Boba nut: -10
+    - recipe_type: Raw Resource
+
+  Boba-creamberry soup:
+    recipes:
+    - output: 1
+      recipe_type: Cooking (Camping)
+      requirements:
+        Boba nut: -5
+        Creamberry: -5
+    - recipe_type: Raw Resource
+
+  Creamberry chowder:
+    recipes:
+    - output: 1
+      recipe_type: Cooking (Camping)
+      requirements:
+        Creamberry: -10
+    - recipe_type: Raw Resource
+
+  ##############################################################################
+  _d: {H1: Medicines} ##########################################################
+  ##############################################################################
+
+  Health Kit:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Pepperpills:
+    recipes:
+    - output: 1
+      recipe_type: Synthesizer
+      requirements:
+        Rattlepepper: -6
+    - recipe_type: Raw Resource
+
+  Toriko balm:
+    recipes:
+    - output: 1
+      recipe_type: Synthesizer
+      requirements:
+        Rattlepepper: -3
+        Helicap: -3
+    - recipe_type: Raw Resource
+
+  Heligauze:
+    recipes:
+    - output: 1
+      recipe_type: Synthesizer
+      requirements:
+        Helicap: -6
+    - recipe_type: Raw Resource
+
+  Loofacrid oil:
+    recipes:
+    - output: 1
+      recipe_type: Synthesizer
+      requirements:
+        Rattlepepper: -3
+        Loofacrid: -3
+    - recipe_type: Raw Resource
+
+  Loofanol:
+    recipes:
+    - output: 1
+      recipe_type: Synthesizer
+      requirements:
+        Loofacrid: -3
+        Helicap: -3
+    - recipe_type: Raw Resource
+
+  Acricilin:
+    recipes:
+    - output: 1
+      recipe_type: Synthesizer
+      requirements:
+        Loofacrid: -6
+    - recipe_type: Raw Resource
+
+  ##############################################################################
+  _e: {H1: Consumables} ########################################################
+  ##############################################################################
+
+  Balm:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crude rust: -9
+        Fine rust: -4
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crude rust: -9
+        Shiny rust: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Fine rust: -4
+        Shiny rust: -1
+    - recipe_type: Raw Resource
+
+  Omni-Impact:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crude rust: -4
+        Fine rust: -2
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crude rust: -4
+        Shiny rust: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Fine rust: -2
+        Shiny rust: -1
+    - recipe_type: Raw Resource
+
+  Omni-Blast:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crude rust: -4
+        Fine rust: -2
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crude rust: -4
+        Shiny rust: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Fine rust: -2
+        Shiny rust: -1
+    - recipe_type: Raw Resource
+
+  Tonic:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crude rust: -9
+        Fine rust: -4
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crude rust: -9
+        Shiny rust: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Fine rust: -4
+        Shiny rust: -1
+    - recipe_type: Raw Resource
+
+  Flow Seed:
+    recipes:
+    - recipe_type: Raw Resource
+
+  ##############################################################################
+  _f: {H1: Resources} ##########################################################
+  ##############################################################################
+
+  Appledew:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Boba nut:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Creamberry:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Rattlepepper:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Helicap:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Loofacrid:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Crude rust:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Fine rust:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Shiny rust:
+    recipes:
+    - recipe_type: Raw Resource
+
+  _g: {H2: Gardening} ##########################################################
+
+  Rattlepepper seeds:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Helicap seeds:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Loofacrid seeds:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Appledew seeds:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Boba nut seeds:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Creamberry seeds:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Firefluke seed:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Catilla Spirata scale:
+    recipes:
+    - recipe_type: Raw Resource
+
+  ##############################################################################
+  _h: {H1: Gear} ###############################################################
+  ##############################################################################
+
+  Fighting gloves:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bursting gloves:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Hyper gloves:
+    recipes:
+    - output: 1
+      recipe_type: Enhancement
+      requirements:
+        Hyper-rust: -2
+        Crude rust: -2
+    - recipe_type: Raw Resource
+
+  Anti-grav boots:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Improved anti-grav boots:
+    recipes:
+    - output: 1
+      recipe_type: Enhancement
+      requirements:
+        Antigrav sticks: -1
+        Crude rust: -10
+    - recipe_type: Raw Resource
+
+  Flower boots:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Eraser boots:
+    recipes:
+    - recipe_type: Raw Resource
+
+  ##############################################################################
+  _i: {H1: Nest} ###############################################################
+  ##############################################################################
+
+  Right wing:
+    recipes:
+    - output: 1
+      recipe_type: Repair
+      requirements:
+        Crude rust: -20
+        Fine rust: -3
+        Shiny rust: -1
+    - recipe_type: Raw Resource
+
+  Gyro-stabilizer:
+    recipes:
+    - output: 1
+      recipe_type: Repair
+      requirements:
+        Crude rust: -15
+        Fine rust: -5
+    - recipe_type: Raw Resource
+
+  Hypo-propellers:
+    recipes:
+    - output: 1
+      recipe_type: Repair
+      requirements:
+        Crude rust: -15
+        Fine rust: -5
+        Shiny rust: -1
+    - recipe_type: Raw Resource
+
+  Cylinder:
+    recipes:
+    - output: 1
+      recipe_type: Repair
+      requirements:
+        Crude rust: -10
+        Fine rust: -10
+    - recipe_type: Raw Resource
+
+  Waduz turbine:
+    recipes:
+    - output: 1
+      recipe_type: Repair
+      requirements:
+        Crude rust: -5
+        Fine rust: -3
+        Shiny rust: -1
+    - recipe_type: Raw Resource
+
+  Engine-hood:
+    recipes:
+    - output: 1
+      recipe_type: Repair
+      requirements:
+        Crude rust: -20
+        Fine rust: -5
+    - recipe_type: Raw Resource
+
+  Left wing:
+    recipes:
+    - output: 1
+      recipe_type: Repair
+      requirements:
+        Crude rust: -20
+        Fine rust: -3
+        Shiny rust: -1
+    - recipe_type: Raw Resource
+
+  Extender nozzle:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Fertilizator:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Nest:
+    recipes:
+    - output: 1
+      recipe_type: Repair
+      requirements:
+        Right wing: -1
+        Gyro-stabilizer: -1
+        Hypo-propellers: -1
+        Cylinder: -1
+        Waduz turbine: -1
+        Engine-hood: -1
+        Left wing: -1
+    - recipe_type: Raw Resource
+
+  ##############################################################################
+  _j: {H1: Other} ##############################################################
+  ##############################################################################
+
+  Yu's Ribbon:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Kay's Medal:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Radar:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Antigrav sticks:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Hyper-rust:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bunch of cables:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Illustrated Erotica Handbook:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Massage oil:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Muffin & Cupcake:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bodigado's antlers:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Heliga Feather:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Fitness accessories:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Alpha Zooloolum:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Teapot:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Singing Daiko:
+    recipes:
+    - recipe_type: Raw Resource
+
+  “Glowing Slugs”:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Hygrocybe rubescens:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Acrobots Poster:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Sneddy:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Souvenir Conch:
+    recipes:
+    - recipe_type: Raw Resource
