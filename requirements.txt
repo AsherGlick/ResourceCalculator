@@ -7,7 +7,7 @@ Jinja2==3.1.4
 mypy==1.10.1
 pillow==10.3.0
 PyAutoGUI==0.9.54
-PyYAML==5.4.1
+PyYAML==6.0.1
 snakeviz==2.1.1
 types-PyYAML==5.4.3
 watchdog==4.0.1
