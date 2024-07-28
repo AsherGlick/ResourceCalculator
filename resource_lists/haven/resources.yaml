@@ -46,6 +46,7 @@ resources:
     - recipe_type: Raw Resource
 
   Creamberry flambé:
+    custom_simplename: creamberryflambe
     recipes:
     - output: 1
       recipe_type: Cooking
@@ -73,6 +74,7 @@ resources:
     - recipe_type: Raw Resource
 
   Turnovers á la Kay:
+    custom_simplename: turnoversalakay
     recipes:
     - output: 1
       recipe_type: Cooking
@@ -157,7 +159,7 @@ resources:
       recipe_type: Cooking
       requirements:
         Creamberry: -5
-        Loofacrid : -3
+        Loofacrid: -3
     - recipe_type: Raw Resource
 
   _c: {H2: Camping} ############################################################
@@ -210,7 +212,7 @@ resources:
     - output: 1
       recipe_type: Cooking (Camping)
       requirements:
-        Creamberry : -10
+        Creamberry: -10
     - recipe_type: Raw Resource
 
   ##############################################################################
@@ -352,7 +354,7 @@ resources:
         Shiny rust: -1
     - recipe_type: Raw Resource
 
-  Flow seeds:
+  Flow Seed:
     recipes:
     - recipe_type: Raw Resource
 
