@@ -1,0 +1,4334 @@
+---
+authors:
+  Asher: ""
+
+index_page_display_name: Skyrim
+
+recipe_types:
+  Craft: Craft {IN_ITEMS} into {OUT_ITEM}
+  Aetherium Forge: Use the Aetherium Forge to forge {IN_ITEMS} into {OUT_ITEM}
+  Atronach Forge: Use the Atronach Forge to forge {IN_ITEMS} into {OUT_ITEM}
+  Forge: Use any forge to forge {IN_ITEMS} into {OUT_ITEM}
+  Transmutation: Use Transmutation magic to transmute {IN_ITEMS} into {OUT_ITEM}
+
+resources:
+  Aetherial Crown:
+    recipes:
+    - output: 1
+      recipe_type: Aetherium Forge
+      requirements:
+        Aetherium Crest: -1
+        Flawless Sapphire: -2
+        Dwarven Metal Ingot: -2
+        Gold Ingot: -2
+    - recipe_type: Raw Resource
+
+  Aetherial Shield:
+    recipes:
+    - output: 1
+      recipe_type: Aetherium Forge
+      requirements:
+        Aetherium Crest: -1
+        Dwarven Metal Ingot: -4
+        Refined Malachite: -2
+    - recipe_type: Raw Resource
+
+  Aetherial Staff:
+    recipes:
+    - output: 1
+      recipe_type: Aetherium Forge
+      requirements:
+        Aetherium Crest: -1
+        Dwarven Metal Ingot: -2
+        Ebony Ingot: -2
+        Gold Ingot: -1
+    - recipe_type: Raw Resource
+
+  Alchemy Laboratory:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Alchemy Laboratory - Doors: -1
+        Alchemy Laboratory - Foundation: -1
+        Alchemy Laboratory - Main Supports: -1
+        Alchemy Laboratory - Floor: -1
+        Alchemy Laboratory - First Floor Walls: -1
+        Alchemy Laboratory - Second Floor Supports: -1
+        Alchemy Laboratory - Second Floor Walls: -1
+        Alchemy Laboratory - Roof: -1
+        Alchemy Laboratory - Roof Canopy: -1
+    - recipe_type: Raw Resource
+
+  Alchemy Laboratory - Doors:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Fittings: -3
+        Sawn Log: -3
+        Lock: -3
+        Hinge: -6
+        Nails: -6
+    - recipe_type: Raw Resource
+
+  Alchemy Laboratory - First Floor Walls:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Clay: -3
+    - recipe_type: Raw Resource
+
+  Alchemy Laboratory - Floor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quarried Stone: -4
+    - recipe_type: Raw Resource
+
+  Alchemy Laboratory - Foundation:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -2
+        Quarried Stone: -8
+    - recipe_type: Raw Resource
+
+  Alchemy Laboratory - Main Supports:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -10
+        Nails: -10
+    - recipe_type: Raw Resource
+
+  Alchemy Laboratory - Roof:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Quarried Stone: -4
+    - recipe_type: Raw Resource
+
+  Alchemy Laboratory - Roof Canopy:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Nails: -6
+    - recipe_type: Raw Resource
+
+  Alchemy Laboratory - Second Floor Supports:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -4
+        Nails: -12
+    - recipe_type: Raw Resource
+
+  Alchemy Laboratory - Second Floor Walls:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -2
+        Clay: -6
+    - recipe_type: Raw Resource
+
+  Ancient Nord Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -5
+        Iron Ingot: -2
+        Leather: -2
+        Leather Strips: -4
+    - recipe_type: Raw Resource
+
+  Ancient Nord Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -4
+        Iron Ingot: -2
+        Leather: -2
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Ancient Nord Gauntlets:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -3
+        Iron Ingot: -2
+        Leather: -2
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Ancient Nord Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -3
+        Iron Ingot: -2
+        Leather: -2
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Ancient Nord Sword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -2
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Animal Pen:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+    - recipe_type: Raw Resource
+
+  Apiary:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -2
+        Nails: -1
+        Straw: -2
+    - recipe_type: Raw Resource
+
+  Apple Cabbage Stew:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Cabbage: -1
+        Red Apple: -1
+        Salt Pile: -1
+    - recipe_type: Raw Resource
+
+  Apple Dumpling:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sack of Flour: -1
+        Green Apple: -1
+        Red Apple: -1
+    - recipe_type: Raw Resource
+
+  Armorer Workbench:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quarried Stone: -2
+        Iron Ingot: -1
+        Sawn Log: -1
+    - recipe_type: Raw Resource
+
+  Armory:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Armory - Doors: -1
+        Armory - Foundation: -1
+        Armory - Floor: -1
+        Armory - Wall Supports: -1
+        Armory - Roof: -1
+        Armory - Walls: -1
+    - recipe_type: Raw Resource
+
+  Armory - Doors:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Fittings: -3
+        Sawn Log: -3
+        Lock: -3
+        Hinge: -6
+        Nails: -6
+    - recipe_type: Raw Resource
+
+  Armory - Floor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quarried Stone: -6
+    - recipe_type: Raw Resource
+
+  Armory - Foundation:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -2
+        Quarried Stone: -10
+    - recipe_type: Raw Resource
+
+  Armory - Roof:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quarried Stone: -4
+        Sawn Log: -1
+    - recipe_type: Raw Resource
+
+  Armory - Wall Supports:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -7
+        Nails: -8
+    - recipe_type: Raw Resource
+
+  Armory - Walls:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Clay: -3
+    - recipe_type: Raw Resource
+
+  Banded Iron Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -3
+        Iron Ingot: -5
+        Corundum Ingot: -1
+    - recipe_type: Raw Resource
+
+  Banded Iron Shield:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -1
+        Iron Ingot: -4
+        Corundum Ingot: -1
+    - recipe_type: Raw Resource
+
+  Bedrooms:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Bedrooms - Doors: -1
+        Bedrooms - Foundation: -1
+        Bedrooms - Floor: -1
+        Bedrooms - Wall Supports: -1
+        Bedrooms - Roof: -1
+        Bedrooms - Walls: -1
+    - recipe_type: Raw Resource
+
+  Bedrooms - Doors:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Fittings: -3
+        Sawn Log: -3
+        Lock: -3
+        Hinge: -6
+        Nails: -6
+    - recipe_type: Raw Resource
+
+  Bedrooms - Floor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quarried Stone: -6
+    - recipe_type: Raw Resource
+
+  Bedrooms - Foundation:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -2
+        Quarried Stone: -10
+    - recipe_type: Raw Resource
+
+  Bedrooms - Roof:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quarried Stone: -4
+        Sawn Log: -1
+    - recipe_type: Raw Resource
+
+  Bedrooms - Wall Supports:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -7
+        Nails: -8
+    - recipe_type: Raw Resource
+
+  Bedrooms - Walls:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Clay: -3
+    - recipe_type: Raw Resource
+
+  Beef Stew:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Carrot: -1
+        Garlic: -1
+        Raw Beef: -1
+        Salt Pile: -1
+    - recipe_type: Raw Resource
+
+  Bone Hawk Amulet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Bone Hawk Skull: -1
+        Bone Hawk Feathers: -6
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Bonemold Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Netch Leather: -2
+        Iron Ingot: -1
+        Bone Meal: -10
+    - recipe_type: Raw Resource
+
+  Bonemold Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Netch Leather: -1
+        Iron Ingot: -1
+        Bone Meal: -6
+    - recipe_type: Raw Resource
+
+  Bonemold Gauntlets:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Netch Leather: -1
+        Bone Meal: -4
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Bonemold Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Netch Leather: -1
+        Bone Meal: -6
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Bonemold Pauldron Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Netch Leather: -2
+        Iron Ingot: -1
+        Bone Meal: -10
+    - recipe_type: Raw Resource
+
+  Bonemold Shield:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Netch Leather: -1
+        Bone Meal: -8
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Braided Bread:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Salt Pile: -2
+        Sack of Flour: -1
+    - recipe_type: Raw Resource
+
+  Cabbage Potato Soup:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Cabbage: -1
+        Leek: -1
+        Potato: -1
+        Salt Pile: -1
+    - recipe_type: Raw Resource
+
+  Cabbage Soup:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Cabbage: -1
+        Salt Pile: -1
+    - recipe_type: Raw Resource
+
+  Cellar:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -8
+        Quarried Stone: -50
+    - recipe_type: Raw Resource
+
+  Chitin Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Netch Leather: -2
+        Chitin Plate: -5
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Chitin Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Netch Leather: -1
+        Iron Ingot: -1
+        Chitin Plate: -3
+    - recipe_type: Raw Resource
+
+  Chitin Bracers:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Netch Leather: -1
+        Chitin Plate: -2
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Chitin Heavy Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Netch Leather: -2
+        Chitin Plate: -6
+        Corundum Ingot: -1
+    - recipe_type: Raw Resource
+
+  Chitin Heavy Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Netch Leather: -1
+        Corundum Ingot: -1
+        Chitin Plate: -4
+    - recipe_type: Raw Resource
+
+  Chitin Heavy Gauntlets:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Netch Leather: -1
+        Corundum Ingot: -1
+        Chitin Plate: -3
+    - recipe_type: Raw Resource
+
+  Chitin Heavy Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Netch Leather: -1
+        Chitin Plate: -4
+        Corundum Ingot: -1
+    - recipe_type: Raw Resource
+
+  Chitin Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Netch Leather: -1
+        Chitin Plate: -3
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Chitin Shield:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Netch Leather: -1
+        Chitin Plate: -4
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Clam Chowder:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Clam Meat: -1
+        Potato: -1
+        Jug of Milk: -1
+        Butter: -1
+    - recipe_type: Raw Resource
+
+  Conjurer's Elixir:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Empty Wine Bottle: -1
+        Ectoplasm: -1
+        Soul Gem: -1
+    - recipe_type: Raw Resource
+
+  Cooked Beef:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Raw Beef: -1
+        Salt Pile: -1
+    - recipe_type: Raw Resource
+
+  Corner Shelf:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Nails: -3
+    - recipe_type: Raw Resource
+
+  Corundum Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Corundum Ore: -2
+    - recipe_type: Raw Resource
+
+  Crossbow:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -3
+        Firewood: -3
+    - recipe_type: Raw Resource
+
+  Daedra Heart:
+    recipes:
+    - output: 1
+      recipe_type: Atronach Forge
+      requirements:
+        Human Heart: -1
+        Black Soul Gem: -1
+    - recipe_type: Raw Resource
+
+  Daedric Armor:
+    recipes:
+    - output: 1
+      recipe_type: Forge
+      requirements:
+        Leather Strips: -3
+        Ebony Ingot: -5
+        Daedra Heart: -1
+    - output: 1
+      recipe_type: Atronach Forge
+      requirements:
+        Ebony Armor: -1
+        Daedra Heart: -1
+        Centurion Dynamo Core: -1
+        Black Soul Gem: -1
+    - recipe_type: Raw Resource
+
+  Daedric Battleaxe:
+    recipes:
+    - output: 1
+      recipe_type: Forge
+      requirements:
+        Ebony Ingot: -5
+        Leather Strips: -1
+        Daedra Heart: -1
+    - output: 1
+      recipe_type: Atronach Forge
+      requirements:
+        Ebony Battleaxe: -1
+        Daedra Heart: -1
+        Centurion Dynamo Core: -1
+        Black Soul Gem: -1
+    - recipe_type: Raw Resource
+
+  Daedric Boots:
+    recipes:
+    - output: 1
+      recipe_type: Forge
+      requirements:
+        Ebony Ingot: -3
+        Leather Strips: -2
+        Daedra Heart: -1
+    - output: 1
+      recipe_type: Atronach Forge
+      requirements:
+        Ebony Boots: -1
+        Daedra Heart: -1
+        Centurion Dynamo Core: -1
+        Black Soul Gem: -1
+    - recipe_type: Raw Resource
+
+  Daedric Bow:
+    recipes:
+    - output: 1
+      recipe_type: Forge
+      requirements:
+        Ebony Ingot: -3
+        Daedra Heart: -1
+    - output: 1
+      recipe_type: Atronach Forge
+      requirements:
+        Ebony Bow: -1
+        Daedra Heart: -1
+        Centurion Dynamo Core: -1
+        Black Soul Gem: -1
+    - recipe_type: Raw Resource
+
+  Daedric Dagger:
+    recipes:
+    - output: 1
+      recipe_type: Forge
+      requirements:
+        Ebony Ingot: -1
+        Leather Strips: -1
+        Daedra Heart: -1
+    - output: 1
+      recipe_type: Atronach Forge
+      requirements:
+        Ebony Dagger: -1
+        Daedra Heart: -1
+        Centurion Dynamo Core: -1
+        Black Soul Gem: -1
+    - recipe_type: Raw Resource
+
+  Daedric Gauntlets:
+    recipes:
+    - output: 1
+      recipe_type: Forge
+      requirements:
+        Ebony Ingot: -2
+        Leather Strips: -2
+        Daedra Heart: -1
+    - output: 1
+      recipe_type: Atronach Forge
+      requirements:
+        Ebony Gauntlets: -1
+        Daedra Heart: -1
+        Centurion Dynamo Core: -1
+        Black Soul Gem: -1
+    - recipe_type: Raw Resource
+
+  Daedric Greatsword:
+    recipes:
+    - output: 1
+      recipe_type: Forge
+      requirements:
+        Ebony Ingot: -5
+        Leather Strips: -3
+        Daedra Heart: -1
+    - output: 1
+      recipe_type: Atronach Forge
+      requirements:
+        Ebony Greatsword: -1
+        Daedra Heart: -1
+        Centurion Dynamo Core: -1
+        Black Soul Gem: -1
+    - recipe_type: Raw Resource
+
+  Daedric Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Forge
+      requirements:
+        Ebony Ingot: -3
+        Leather Strips: -2
+        Daedra Heart: -1
+    - output: 1
+      recipe_type: Atronach Forge
+      requirements:
+        Ebony Helmet: -1
+        Daedra Heart: -1
+        Centurion Dynamo Core: -1
+        Black Soul Gem: -1
+    - recipe_type: Raw Resource
+
+  Daedric Mace:
+    recipes:
+    - output: 1
+      recipe_type: Forge
+      requirements:
+        Ebony Ingot: -3
+        Leather Strips: -1
+        Daedra Heart: -1
+    - output: 1
+      recipe_type: Atronach Forge
+      requirements:
+        Ebony Mace: -1
+        Daedra Heart: -1
+        Centurion Dynamo Core: -1
+        Black Soul Gem: -1
+    - recipe_type: Raw Resource
+
+  Daedric Shield:
+    recipes:
+    - output: 1
+      recipe_type: Forge
+      requirements:
+        Ebony Ingot: -4
+        Leather Strips: -1
+        Daedra Heart: -1
+    - output: 1
+      recipe_type: Atronach Forge
+      requirements:
+        Ebony Shield: -1
+        Daedra Heart: -1
+        Centurion Dynamo Core: -1
+        Black Soul Gem: -1
+    - recipe_type: Raw Resource
+
+  Daedric Sword:
+    recipes:
+    - output: 1
+      recipe_type: Forge
+      requirements:
+        Ebony Ingot: -2
+        Leather Strips: -1
+        Daedra Heart: -1
+    - output: 1
+      recipe_type: Atronach Forge
+      requirements:
+        Ebony Sword: -1
+        Daedra Heart: -1
+        Centurion Dynamo Core: -1
+        Black Soul Gem: -1
+    - recipe_type: Raw Resource
+
+  Daedric War Axe:
+    recipes:
+    - output: 1
+      recipe_type: Forge
+      requirements:
+        Ebony Ingot: -2
+        Leather Strips: -2
+        Daedra Heart: -1
+    - output: 1
+      recipe_type: Atronach Forge
+      requirements:
+        Ebony War Axe: -1
+        Daedra Heart: -1
+        Centurion Dynamo Core: -1
+        Black Soul Gem: -1
+    - recipe_type: Raw Resource
+
+  Daedric Warhammer:
+    recipes:
+    - output: 1
+      recipe_type: Forge
+      requirements:
+        Ebony Ingot: -5
+        Leather Strips: -3
+        Daedra Heart: -1
+    - output: 1
+      recipe_type: Atronach Forge
+      requirements:
+        Ebony Warhammer: -1
+        Daedra Heart: -1
+        Centurion Dynamo Core: -1
+        Black Soul Gem: -1
+    - recipe_type: Raw Resource
+
+  Double Bed:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -2
+        Nails: -2
+        Leather Strips: -4
+        Straw: -2
+    - recipe_type: Raw Resource
+
+  Dragonbone Battleaxe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Dragon Bone: -3
+        Ebony Ingot: -2
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Dragonbone Bow:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Dragon Bone: -2
+        Ebony Ingot: -1
+    - recipe_type: Raw Resource
+
+  Dragonbone Dagger:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Dragon Bone: -1
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Dragonbone Greatsword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Dragon Bone: -4
+        Ebony Ingot: -1
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Dragonbone Mace:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Dragon Bone: -2
+        Ebony Ingot: -1
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Dragonbone Sword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Dragon Bone: -1
+        Ebony Ingot: -1
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Dragonbone War Axe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Dragon Bone: -1
+        Ebony Ingot: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Dragonbone Warhammer:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Dragon Bone: -3
+        Ebony Ingot: -2
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Dragonplate Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -3
+        Dragon Scales: -3
+        Dragon Bone: -2
+    - recipe_type: Raw Resource
+
+  Dragonplate Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Dragon Scales: -3
+        Dragon Bone: -1
+    - recipe_type: Raw Resource
+
+  Dragonplate Gauntlets:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Dragon Scales: -2
+        Dragon Bone: -1
+    - recipe_type: Raw Resource
+
+  Dragonplate Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Dragon Scales: -2
+        Dragon Bone: -1
+    - recipe_type: Raw Resource
+
+  Dragonplate Shield:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -1
+        Dragon Scales: -3
+        Dragon Bone: -1
+    - recipe_type: Raw Resource
+
+  Dragonscale Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -3
+        Dragon Scales: -4
+        Iron Ingot: -2
+    - recipe_type: Raw Resource
+
+  Dragonscale Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Dragon Scales: -2
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Dragonscale Gauntlets:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Leather: -1
+        Dragon Scales: -2
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Dragonscale Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -1
+        Leather: -1
+        Dragon Scales: -2
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Dragonscale Shield:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Dragon Scales: -4
+        Iron Ingot: -2
+    - recipe_type: Raw Resource
+
+  Dwarven Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -3
+        Dwarven Metal Ingot: -3
+        Iron Ingot: -1
+        Steel Ingot: -1
+    - recipe_type: Raw Resource
+
+  Dwarven Battleaxe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -2
+        Iron Ingot: -1
+        Leather Strips: -2
+        Dwarven Metal Ingot: -2
+    - recipe_type: Raw Resource
+
+  Dwarven Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Iron Ingot: -1
+        Dwarven Metal Ingot: -2
+        Steel Ingot: -1
+    - recipe_type: Raw Resource
+
+  Dwarven Bow:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -1
+        Dwarven Metal Ingot: -2
+    - recipe_type: Raw Resource
+
+  Dwarven Crossbow:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Dwarven Metal Ingot: -5
+    - recipe_type: Raw Resource
+
+  Dwarven Dagger:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Dwarven Metal Ingot: -1
+        Steel Ingot: -1
+        Leather Strips: -1
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Dwarven Gauntlets:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -1
+        Leather Strips: -2
+        Dwarven Metal Ingot: -1
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Dwarven Greatsword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Dwarven Metal Ingot: -2
+        Steel Ingot: -2
+        Leather Strips: -3
+        Iron Ingot: -2
+    - recipe_type: Raw Resource
+
+  Dwarven Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -1
+        Leather Strips: -2
+        Dwarven Metal Ingot: -2
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Dwarven Mace:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -1
+        Dwarven Metal Ingot: -2
+        Leather Strips: -1
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Dwarven Shield:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -1
+        Leather Strips: -1
+        Dwarven Metal Ingot: -2
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Dwarven Sword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -1
+        Dwarven Metal Ingot: -1
+        Leather Strips: -1
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Dwarven War Axe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -1
+        Dwarven Metal Ingot: -1
+        Leather Strips: -2
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Dwarven Warhammer:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -2
+        Iron Ingot: -1
+        Leather Strips: -3
+        Dwarven Metal Ingot: -2
+    - recipe_type: Raw Resource
+
+  Ebony Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -3
+        Ebony Ingot: -5
+    - recipe_type: Raw Resource
+
+  Ebony Battleaxe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Ebony Ingot: -5
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Ebony Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Ebony Ingot: -3
+    - recipe_type: Raw Resource
+
+  Ebony Bow:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Ebony Ingot: -3
+    - recipe_type: Raw Resource
+
+  Ebony Dagger:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Ebony Ingot: -1
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Ebony Gauntlets:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Ebony Ingot: -2
+    - recipe_type: Raw Resource
+
+  Ebony Greatsword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Ebony Ingot: -5
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Ebony Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Ebony Ingot: -3
+    - recipe_type: Raw Resource
+
+  Ebony Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Ebony Ore: -2
+    - recipe_type: Raw Resource
+
+  Ebony Mace:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Ebony Ingot: -3
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Ebony Shield:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -1
+        Ebony Ingot: -4
+    - recipe_type: Raw Resource
+
+  Ebony Sword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Ebony Ingot: -2
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Ebony War Axe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Ebony Ingot: -2
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Ebony Warhammer:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Ebony Ingot: -5
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Elsweyr Fondue:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Ale: -1
+        Eidar Cheese Wheel: -1
+        Moon Sugar: -1
+    - recipe_type: Raw Resource
+
+  Elven Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -3
+        Leather: -1
+        Refined Moonstone: -4
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Elven Battleaxe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -2
+        Quicksilver Ingot: -1
+        Leather Strips: -2
+        Refined Moonstone: -2
+    - recipe_type: Raw Resource
+
+  Elven Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Leather: -1
+        Refined Moonstone: -2
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Elven Bow:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Refined Moonstone: -2
+        Quicksilver Ingot: -1
+    - recipe_type: Raw Resource
+
+  Elven Dagger:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -1
+        Quicksilver Ingot: -1
+        Leather Strips: -1
+        Refined Moonstone: -1
+    - recipe_type: Raw Resource
+
+  Elven Gauntlets:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Leather: -1
+        Refined Moonstone: -1
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Elven Gilded Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -1
+        Quicksilver Ingot: -1
+        Leather Strips: -3
+        Refined Moonstone: -4
+    - recipe_type: Raw Resource
+
+  Elven Greatsword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Refined Moonstone: -2
+        Iron Ingot: -2
+        Leather Strips: -3
+        Quicksilver Ingot: -1
+    - recipe_type: Raw Resource
+
+  Elven Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -1
+        Leather: -1
+        Refined Moonstone: -2
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Elven Mace:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -1
+        Refined Moonstone: -2
+        Leather Strips: -1
+        Quicksilver Ingot: -1
+    - recipe_type: Raw Resource
+
+  Elven Shield:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -1
+        Leather Strips: -2
+        Refined Moonstone: -4
+    - recipe_type: Raw Resource
+
+  Elven Sword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -1
+        Refined Moonstone: -1
+        Leather Strips: -1
+        Quicksilver Ingot: -1
+    - recipe_type: Raw Resource
+
+  Elven War Axe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -1
+        Refined Moonstone: -1
+        Leather Strips: -2
+        Quicksilver Ingot: -1
+    - recipe_type: Raw Resource
+
+  Elven Warhammer:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -2
+        Quicksilver Ingot: -1
+        Leather Strips: -3
+        Refined Moonstone: -2
+    - recipe_type: Raw Resource
+
+  Enchanter's Tower:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Enchanter's Tower - Doors: -1
+        Enchanter's Tower - Foundation: -1
+        Enchanter's Tower - Floor: -1
+        Enchanter's Tower - Main Supports: -1
+        Enchanter's Tower - First Floor Walls: -1
+        Enchanter's Tower - Second Floor Supports: -1
+        Enchanter's Tower - Second Floor Walls: -1
+        Enchanter's Tower - Roof: -1
+        Enchanter's Tower - Roof Canopy: -1
+    - recipe_type: Raw Resource
+
+  Enchanter's Tower - Doors:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Fittings: -3
+        Sawn Log: -3
+        Lock: -3
+        Hinge: -6
+        Nails: -6
+    - recipe_type: Raw Resource
+
+  Enchanter's Tower - First Floor Walls:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Clay: -3
+    - recipe_type: Raw Resource
+
+  Enchanter's Tower - Floor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quarried Stone: -4
+    - recipe_type: Raw Resource
+
+  Enchanter's Tower - Foundation:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -2
+        Quarried Stone: -8
+    - recipe_type: Raw Resource
+
+  Enchanter's Tower - Main Supports:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -10
+        Nails: -10
+    - recipe_type: Raw Resource
+
+  Enchanter's Tower - Roof:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Quarried Stone: -4
+    - recipe_type: Raw Resource
+
+  Enchanter's Tower - Roof Canopy:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Nails: -6
+    - recipe_type: Raw Resource
+
+  Enchanter's Tower - Second Floor Supports:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -4
+        Nails: -12
+    - recipe_type: Raw Resource
+
+  Enchanter's Tower - Second Floor Walls:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -2
+        Clay: -6
+    - recipe_type: Raw Resource
+
+  Enhanced Crossbow:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Crossbow: -1
+        Corundum Ingot: -2
+    - recipe_type: Raw Resource
+
+  Enhanced Dwarven Crossbow:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Dwarven Crossbow: -1
+        Quicksilver Ingot: -2
+    - recipe_type: Raw Resource
+
+  Fire Salts:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Salt Pile: -1
+        Ruby: -1
+        Soul Gem: -1
+    - recipe_type: Raw Resource
+
+  Firepit:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quarried Stone: -1
+    - recipe_type: Raw Resource
+
+  Fish Hatchery:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -3
+        Quarried Stone: -3
+        Nails: -4
+    - recipe_type: Raw Resource
+
+  Frost Salts:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Salt Pile: -1
+        Sapphire: -1
+        Soul Gem: -1
+    - recipe_type: Raw Resource
+
+  Garden:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+    - recipe_type: Raw Resource
+
+  Garlic Bread:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Garlic: -1
+        Butter: -1
+        Bread: -1
+    - recipe_type: Raw Resource
+
+  Glass Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -3
+        Refined Malachite: -4
+        Refined Moonstone: -2
+    - recipe_type: Raw Resource
+
+  Glass Battleaxe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Refined Moonstone: -2
+        Leather Strips: -2
+        Refined Malachite: -2
+    - recipe_type: Raw Resource
+
+  Glass Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Refined Malachite: -2
+        Refined Moonstone: -1
+    - recipe_type: Raw Resource
+
+  Glass Bow:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Refined Moonstone: -1
+        Refined Malachite: -2
+    - recipe_type: Raw Resource
+
+  Glass Dagger:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Refined Moonstone: -1
+        Leather Strips: -1
+        Refined Malachite: -1
+    - recipe_type: Raw Resource
+
+  Glass Gauntlets:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Leather: -1
+        Refined Malachite: -1
+        Refined Moonstone: -1
+    - recipe_type: Raw Resource
+
+  Glass Greatsword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Refined Malachite: -2
+        Refined Moonstone: -2
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Glass Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -1
+        Leather: -1
+        Refined Malachite: -2
+        Refined Moonstone: -1
+    - recipe_type: Raw Resource
+
+  Glass Mace:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Refined Moonstone: -1
+        Refined Malachite: -2
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Glass Shield:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Refined Moonstone: -1
+        Refined Malachite: -4
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Glass Sword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Refined Moonstone: -1
+        Refined Malachite: -1
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Glass War Axe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Refined Malachite: -1
+        Refined Moonstone: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Glass Warhammer:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Refined Malachite: -3
+        Leather Strips: -3
+        Refined Moonstone: -2
+    - recipe_type: Raw Resource
+
+  Gold Diamond Necklace:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Flawless Diamond: -1
+        Gold Ingot: -1
+    - recipe_type: Raw Resource
+
+  Gold Diamond Ring:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Diamond: -1
+        Gold Ingot: -1
+    - recipe_type: Raw Resource
+
+  Gold Emerald Ring:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Emerald: -1
+        Gold Ingot: -1
+    - recipe_type: Raw Resource
+
+  Gold Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Gold Ore: -2
+    - recipe_type: Raw Resource
+
+  Gold Jeweled Necklace:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Flawless Amethyst: -2
+        Gold Ingot: -1
+    - recipe_type: Raw Resource
+
+  Gold Necklace:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Gold Ingot: -1
+    - recipe_type: Raw Resource
+
+  Gold Ore:
+    recipes:
+    - output: 1
+      recipe_type: Transmutation
+      requirements:
+        Silver Ore: -1
+    - recipe_type: Raw Resource
+
+  Gold Ring:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Gold Ingot: -1
+    - recipe_type: Raw Resource
+
+  Gold Ruby Necklace:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Flawless Ruby: -1
+        Gold Ingot: -1
+    - recipe_type: Raw Resource
+
+  Gold Sapphire Ring:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sapphire: -1
+        Gold Ingot: -1
+    - recipe_type: Raw Resource
+
+  Greenhouse:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        GreenHouse - Doors: -1
+        GreenHouse - Foundation: -1
+        GreenHouse - Floor: -1
+        GreenHouse - Wall Supports: -1
+        GreenHouse - Roof Framing: -1
+        GreenHouse - Roof: -1
+        GreenHouse - Walls: -1
+    - recipe_type: Raw Resource
+
+  GreenHouse - Doors:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Fittings: -2
+        Sawn Log: -2
+        Lock: -2
+        Hinge: -4
+        Nails: -4
+    - recipe_type: Raw Resource
+
+  GreenHouse - Floor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quarried Stone: -6
+    - recipe_type: Raw Resource
+
+  GreenHouse - Foundation:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -2
+        Quarried Stone: -10
+    - recipe_type: Raw Resource
+
+  GreenHouse - Roof:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Nails: -8
+    - recipe_type: Raw Resource
+
+  GreenHouse - Roof Framing:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -4
+    - recipe_type: Raw Resource
+
+  GreenHouse - Wall Supports:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -8
+        Nails: -8
+    - recipe_type: Raw Resource
+
+  GreenHouse - Walls:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Clay: -3
+    - recipe_type: Raw Resource
+
+  Grilled Chicken Breast:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Chicken Breast: -1
+        Salt Pile: -1
+    - recipe_type: Raw Resource
+
+  Grindstone:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quarried Stone: -1
+        Sawn Log: -1
+        Iron Fittings: -1
+    - recipe_type: Raw Resource
+
+  Hanging Rack:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -1
+        Iron Fittings: -1
+    - recipe_type: Raw Resource
+
+  Hide Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -3
+        Leather: -4
+    - recipe_type: Raw Resource
+
+  Hide Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Leather: -2
+    - recipe_type: Raw Resource
+
+  Hide Bracers:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Leather: -1
+    - recipe_type: Raw Resource
+
+  Hide Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -1
+        Leather: -2
+    - recipe_type: Raw Resource
+
+  Hide Shield:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Leather: -4
+    - recipe_type: Raw Resource
+
+  Hinge:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Horker Loaf:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Horker Meat: -1
+        Salt Pile: -1
+    - recipe_type: Raw Resource
+
+  Horker Stew:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Garlic: -1
+        Horker Meat: -1
+        Lavender: -1
+        Tomato: -1
+    - recipe_type: Raw Resource
+
+  Horker and Ash Yam Stew:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Ash Yam: -1
+        Garlic: -1
+        Horker Meat: -1
+    - recipe_type: Raw Resource
+
+  Horse Haunch:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Horse Meat: -1
+        Salt Pile: -1
+    - recipe_type: Raw Resource
+
+  House - Door:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Fittings: -1
+        Sawn Log: -1
+        Lock: -1
+        Hinge: -2
+        Nails: -2
+    - recipe_type: Raw Resource
+
+  House - Floor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quarried Stone: -2
+    - recipe_type: Raw Resource
+
+  House - Foundation:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Quarried Stone: -10
+    - recipe_type: Raw Resource
+
+  House - Roof:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Nails: -10
+        Sawn Log: -1
+    - recipe_type: Raw Resource
+
+  House - Roof Framing:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -6
+    - recipe_type: Raw Resource
+
+  House - Wall Framing:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -6
+        Nails: -10
+    - recipe_type: Raw Resource
+
+  House - Walls:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -2
+        Nails: -8
+        Clay: -4
+    - recipe_type: Raw Resource
+
+  Imperial Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -3
+        Leather: -2
+        Steel Ingot: -4
+    - recipe_type: Raw Resource
+
+  Imperial Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Leather: -1
+        Steel Ingot: -2
+    - recipe_type: Raw Resource
+
+  Imperial Bracers:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Leather: -1
+        Steel Ingot: -2
+    - recipe_type: Raw Resource
+
+  Imperial Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -1
+        Leather: -1
+        Steel Ingot: -2
+    - recipe_type: Raw Resource
+
+  Imperial Shield:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Steel Ingot: -4
+    - recipe_type: Raw Resource
+
+  Improved Bonemold Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Netch Leather: -2
+        Bone Meal: -10
+        Iron Ingot: -1
+        Void Salts: -1
+        Stalhrim: -1
+        Netch Jelly: -1
+    - recipe_type: Raw Resource
+
+  Improved Bonemold Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Netch Leather: -1
+        Iron Ingot: -1
+        Bone Meal: -6
+        Void Salts: -1
+        Stalhrim: -1
+        Netch Jelly: -1
+    - recipe_type: Raw Resource
+
+  Improved Bonemold Gauntlets:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Netch Leather: -1
+        Bone Meal: -4
+        Iron Ingot: -1
+        Void Salts: -1
+        Stalhrim: -1
+        Netch Jelly: -1
+    - recipe_type: Raw Resource
+
+  Improved Bonemold Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Netch Leather: -1
+        Bone Meal: -6
+        Iron Ingot: -1
+        Void Salts: -1
+        Stalhrim: -1
+        Netch Jelly: -1
+    - recipe_type: Raw Resource
+
+  Improved Bonemold Shield:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Netch Leather: -1
+        Bone Meal: -8
+        Iron Ingot: -1
+        Void Salts: -1
+        Stalhrim: -1
+        Netch Jelly: -1
+    - recipe_type: Raw Resource
+
+  Iron Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -3
+        Iron Ingot: -5
+    - recipe_type: Raw Resource
+
+  Iron Battleaxe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -4
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Iron Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Iron Ingot: -3
+    - recipe_type: Raw Resource
+
+  Iron Dagger:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -1
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Iron Fittings:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Iron Gauntlets:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Iron Ingot: -2
+    - recipe_type: Raw Resource
+
+  Iron Greatsword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -4
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Iron Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Iron Ingot: -3
+    - recipe_type: Raw Resource
+
+  Iron Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ore: -1
+    - recipe_type: Raw Resource
+
+  Iron Mace:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -3
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Iron Shield:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -1
+        Iron Ingot: -4
+    - recipe_type: Raw Resource
+
+  Iron Sword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -2
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Iron War Axe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -2
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Iron Warhammer:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -4
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Jazbay Crostata:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Butter: -1
+        Jazbay Grapes: -2
+        Sack of Flour: -1
+    - recipe_type: Raw Resource
+
+  Juniper Berry Crostata:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Butter: -1
+        Juniper Berries: -3
+        Sack of Flour: -1
+    - recipe_type: Raw Resource
+
+  Kitchen:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Kitchen - Doors: -1
+        Kitchen - Foundation: -1
+        Kitchen - Floor: -1
+        Kitchen - Wall Supports: -1
+        Kitchen - Roof Framing: -1
+        Kitchen - Roof: -1
+        Kitchen - Walls: -1
+    - recipe_type: Raw Resource
+
+  Kitchen - Doors:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Fittings: -2
+        Sawn Log: -2
+        Lock: -2
+        Hinge: -4
+        Nails: -4
+    - recipe_type: Raw Resource
+
+  Kitchen - Floor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quarried Stone: -6
+    - recipe_type: Raw Resource
+
+  Kitchen - Foundation:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -2
+        Quarried Stone: -10
+    - recipe_type: Raw Resource
+
+  Kitchen - Roof:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Nails: -8
+    - recipe_type: Raw Resource
+
+  Kitchen - Roof Framing:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -4
+    - recipe_type: Raw Resource
+
+  Kitchen - Wall Supports:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -8
+        Nails: -8
+    - recipe_type: Raw Resource
+
+  Kitchen - Walls:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Clay: -3
+    - recipe_type: Raw Resource
+
+  Lavender Dumpling:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Moon Sugar: -1
+        Sack of Flour: -1
+        Snowberries: -2
+        Lavender: -1
+    - recipe_type: Raw Resource
+
+  Leather Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather: -4
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Leather Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather: -2
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Leather Bracers:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Leather Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather: -2
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Leather Strips:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather: -1
+    - recipe_type: Raw Resource
+
+  Leg of Goat Roast:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leg of Goat: -1
+        Salt Pile: -1
+    - recipe_type: Raw Resource
+
+  Library:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Library - Doors: -1
+        Library - Foundation: -1
+        Library - Main Supports: -1
+        Library - Floor: -1
+        Library - First Floor Walls: -1
+        Library - Second Floor Supports: -1
+        Library - Second Floor Walls: -1
+        Library - Roof: -1
+        Library - Roof Canopy: -1
+    - recipe_type: Raw Resource
+
+  Library - Doors:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Fittings: -3
+        Sawn Log: -3
+        Lock: -3
+        Hinge: -6
+        Nails: -6
+    - recipe_type: Raw Resource
+
+  Library - First Floor Walls:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Clay: -3
+    - recipe_type: Raw Resource
+
+  Library - Floor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quarried Stone: -4
+    - recipe_type: Raw Resource
+
+  Library - Foundation:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -2
+        Quarried Stone: -8
+    - recipe_type: Raw Resource
+
+  Library - Main Supports:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -10
+        Nails: -10
+    - recipe_type: Raw Resource
+
+  Library - Roof:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Quarried Stone: -4
+    - recipe_type: Raw Resource
+
+  Library - Roof Canopy:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Nails: -6
+    - recipe_type: Raw Resource
+
+  Library - Second Floor Supports:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -4
+        Nails: -12
+    - recipe_type: Raw Resource
+
+  Library - Second Floor Walls:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -2
+        Clay: -6
+    - recipe_type: Raw Resource
+
+  Lock:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -1
+        Corundum Ingot: -1
+    - recipe_type: Raw Resource
+
+  Main Hall:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Main Hall - Foundation: -1
+        Main Hall - Wall Framing: -1
+        Main Hall - First Level Walls: -1
+        Main Hall - Floor: -1
+        Main Hall - Second Floor Supports: -1
+        Main Hall - Second Floor Walls: -1
+        Main Hall - Roof Framing: -1
+        Main Hall - Roof: -1
+        Main Hall - Door: -1
+    - recipe_type: Raw Resource
+
+  Main Hall - Door:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Fittings: -1
+        Sawn Log: -1
+        Lock: -1
+        Hinge: -2
+        Nails: -2
+    - recipe_type: Raw Resource
+
+  Main Hall - First Level Walls:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -4
+        Nails: -16
+        Clay: -8
+    - recipe_type: Raw Resource
+
+  Main Hall - Floor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quarried Stone: -6
+    - recipe_type: Raw Resource
+
+  Main Hall - Foundation:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -4
+        Quarried Stone: -30
+    - recipe_type: Raw Resource
+
+  Main Hall - Roof:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Nails: -25
+        Sawn Log: -2
+    - recipe_type: Raw Resource
+
+  Main Hall - Roof Framing:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -10
+    - recipe_type: Raw Resource
+
+  Main Hall - Second Floor Supports:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -6
+        Nails: -10
+    - recipe_type: Raw Resource
+
+  Main Hall - Second Floor Walls:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -4
+        Nails: -12
+        Clay: -8
+    - recipe_type: Raw Resource
+
+  Main Hall - Wall Framing:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -16
+        Nails: -20
+    - recipe_type: Raw Resource
+
+  Mammoth Steak:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Mammoth Snout: -1
+        Salt Pile: -1
+    - recipe_type: Raw Resource
+
+  Mill:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quarried Stone: -2
+        Sawn Log: -2
+        Iron Fittings: -2
+    - recipe_type: Raw Resource
+
+  Nails:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Nord Hero Battle Axe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Ancient Nord Battle Axe: -1
+        Steel Ingot: -3
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Nord Hero Bow:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Ancient Nord Bow: -1
+        Steel Ingot: -3
+    - recipe_type: Raw Resource
+
+  Nord Hero Greatsword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Ancient Nord Greatsword: -1
+        Steel Ingot: -3
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Nord Hero Sword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Ancient Nord Sword: -1
+        Steel Ingot: -2
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Nord Hero War Axe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Ancient Nord War Axe: -1
+        Steel Ingot: -2
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Nordic Battleaxe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quicksilver Ingot: -1
+        Leather Strips: -2
+        Steel Ingot: -5
+    - recipe_type: Raw Resource
+
+  Nordic Bow:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quicksilver Ingot: -1
+        Steel Ingot: -3
+    - recipe_type: Raw Resource
+
+  Nordic Carved Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -3
+        Steel Ingot: -6
+        Ebony Ingot: -1
+        Quicksilver Ingot: -1
+    - recipe_type: Raw Resource
+
+  Nordic Carved Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Ebony Ingot: -1
+        Quicksilver Ingot: -1
+        Leather Strips: -2
+        Steel Ingot: -4
+    - recipe_type: Raw Resource
+
+  Nordic Carved Gauntlets:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Steel Ingot: -3
+        Ebony Ingot: -1
+        Quicksilver Ingot: -1
+    - recipe_type: Raw Resource
+
+  Nordic Carved Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Ebony Ingot: -1
+        Quicksilver Ingot: -1
+        Leather Strips: -2
+        Steel Ingot: -4
+    - recipe_type: Raw Resource
+
+  Nordic Dagger:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quicksilver Ingot: -1
+        Leather Strips: -1
+        Steel Ingot: -1
+    - recipe_type: Raw Resource
+
+  Nordic Greatsword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quicksilver Ingot: -1
+        Leather Strips: -3
+        Steel Ingot: -5
+    - recipe_type: Raw Resource
+
+  Nordic Mace:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quicksilver Ingot: -1
+        Leather Strips: -1
+        Steel Ingot: -1
+    - recipe_type: Raw Resource
+
+  Nordic Shield:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quicksilver Ingot: -1
+        Leather Strips: -1
+        Steel Ingot: -4
+    - recipe_type: Raw Resource
+
+  Nordic Sword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quicksilver Ingot: -1
+        Leather Strips: -1
+        Steel Ingot: -2
+    - recipe_type: Raw Resource
+
+  Nordic War Axe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quicksilver Ingot: -1
+        Leather Strips: -2
+        Steel Ingot: -2
+    - recipe_type: Raw Resource
+
+  Nordic Warhammer:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quicksilver Ingot: -1
+        Leather Strips: -3
+        Steel Ingot: -5
+    - recipe_type: Raw Resource
+
+  Orcish Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Orichalcum Ingot: -4
+        Iron Ingot: -1
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Orcish Battleaxe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Orichalcum Ingot: -4
+        Iron Ingot: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Orcish Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Orichalcum Ingot: -3
+        Iron Ingot: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Orcish Bow:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Orichalcum Ingot: -2
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Orcish Dagger:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Orichalcum Ingot: -1
+        Iron Ingot: -1
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Orcish Gauntlets:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Orichalcum Ingot: -2
+        Iron Ingot: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Orcish Greatsword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Orichalcum Ingot: -4
+        Iron Ingot: -2
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Orcish Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Orichalcum Ingot: -2
+        Iron Ingot: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Orcish Mace:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Orichalcum Ingot: -3
+        Iron Ingot: -1
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Orcish Shield:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Orichalcum Ingot: -3
+        Iron Ingot: -1
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Orcish Sword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Orichalcum Ingot: -2
+        Iron Ingot: -1
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Orcish War Axe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Orichalcum Ingot: -2
+        Iron Ingot: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Orcish Warhammer:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Ingot: -1
+        Leather Strips: -3
+        Orichalcum Ingot: -4
+    - recipe_type: Raw Resource
+
+  Orichalcum Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Orichalcum Ore: -2
+    - recipe_type: Raw Resource
+
+  Pheasant Roast:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Pheasant Breast: -1
+        Salt Pile: -1
+    - recipe_type: Raw Resource
+
+  Potato Bread:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Salt Pile: -2
+        Jug of Milk: -1
+        Sack of Flour: -1
+        Potato: -1
+        Chicken's Egg: -1
+    - recipe_type: Raw Resource
+
+  Potato Soup:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Potato: -1
+        Salt Pile: -1
+    - recipe_type: Raw Resource
+
+  Quicksilver Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quicksilver Ore: -2
+    - recipe_type: Raw Resource
+
+  Rabbit Haunch:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Raw Rabbit Leg: -1
+        Salt Pile: -1
+    - recipe_type: Raw Resource
+
+  Refined Malachite:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Malachite Ore: -2
+    - recipe_type: Raw Resource
+
+  Refined Moonstone:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Moonstone Ore: -2
+    - recipe_type: Raw Resource
+
+  Sack of Flour:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Wheat: -3
+    - recipe_type: Raw Resource
+
+  Salmon Steak:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Salmon Meat: -1
+        Salt Pile: -1
+    - recipe_type: Raw Resource
+
+  Scaled Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Corundum Ingot: -2
+        Steel Ingot: -3
+        Leather: -2
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Scaled Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Corundum Ingot: -1
+        Steel Ingot: -2
+        Leather: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Scaled Bracers:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Corundum Ingot: -1
+        Steel Ingot: -1
+        Leather: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Scaled Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Corundum Ingot: -1
+        Steel Ingot: -2
+        Leather: -1
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Shellbug Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Shellbug Chitin: -2
+        Iron Ingot: -2
+    - recipe_type: Raw Resource
+
+  Silver Amethyst Ring:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Amethyst: -1
+        Silver Ingot: -1
+    - recipe_type: Raw Resource
+
+  Silver Emerald Necklace:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Flawless Emerald: -1
+        Silver Ingot: -1
+    - recipe_type: Raw Resource
+
+  Silver Garnet Ring:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Garnet: -1
+        Silver Ingot: -1
+    - recipe_type: Raw Resource
+
+  Silver Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Silver Ore: -2
+    - recipe_type: Raw Resource
+
+  Silver Jeweled Necklace:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Flawless Garnet: -2
+        Silver Ingot: -1
+    - recipe_type: Raw Resource
+
+  Silver Necklace:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Silver Ingot: -1
+    - recipe_type: Raw Resource
+
+  Silver Ore:
+    recipes:
+    - output: 1
+      recipe_type: Transmutation
+      requirements:
+        Iron Ore: -1
+    - recipe_type: Raw Resource
+
+  Silver Ring:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Silver Ingot: -1
+    - recipe_type: Raw Resource
+
+  Silver Ruby Ring:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Ruby: -1
+        Silver Ingot: -1
+    - recipe_type: Raw Resource
+
+  Silver Sapphire Necklace:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Flawless Sapphire: -1
+        Silver Ingot: -1
+    - recipe_type: Raw Resource
+
+  Small House Layout:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        House - Foundation: -1
+        House - Wall Framing: -1
+        House - Walls: -1
+        House - Floor: -1
+        House - Roof Framing: -1
+        House - Roof: -1
+        House - Door: -1
+    - recipe_type: Raw Resource
+
+  Smelter:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Fittings: -2
+        Iron Ingot: -5
+        Clay: -6
+        Quarried Stone: -4
+    - recipe_type: Raw Resource
+
+  Snowberry Crostata:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Butter: -1
+        Snowberries: -2
+        Sack of Flour: -1
+    - recipe_type: Raw Resource
+
+  Square Table and Chairs:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -2
+        Nails: -4
+    - recipe_type: Raw Resource
+
+  Stable:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -3
+        Nails: -5
+    - recipe_type: Raw Resource
+
+  Stalhrim Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Stalhrim: -6
+        Quicksilver Ingot: -1
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Stalhrim Battleaxe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Stalhrim: -5
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Stalhrim Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Stalhrim: -4
+        Quicksilver Ingot: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Stalhrim Bow:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Stalhrim: -3
+    - recipe_type: Raw Resource
+
+  Stalhrim Dagger:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Stalhrim: -1
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Stalhrim Gauntlets:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Stalhrim: -3
+        Quicksilver Ingot: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Stalhrim Greatsword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Stalhrim: -5
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Stalhrim Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Stalhrim: -4
+        Quicksilver Ingot: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Stalhrim Light Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Stalhrim: -5
+        Steel Ingot: -1
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Stalhrim Light Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Stalhrim: -3
+        Steel Ingot: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Stalhrim Light Bracers:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Stalhrim: -2
+        Steel Ingot: -1
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Stalhrim Light Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Stalhrim: -3
+        Steel Ingot: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Stalhrim Mace:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Stalhrim: -3
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Stalhrim Shield:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Stalhrim: -4
+        Steel Ingot: -1
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Stalhrim Sword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Stalhrim: -2
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Stalhrim War Axe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Stalhrim: -2
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Stalhrim Warhammer:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Stalhrim: -5
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Steamed Mudcrab Legs:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Mudcrab Legs: -1
+        Butter: -1
+    - recipe_type: Raw Resource
+
+  Steel Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -3
+        Steel Ingot: -4
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Steel Battleaxe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -4
+        Iron Ingot: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Steel Cuffed Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Iron Ingot: -1
+        Steel Ingot: -3
+    - recipe_type: Raw Resource
+
+  Steel Dagger:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -1
+        Iron Ingot: -1
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Steel Greatsword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -4
+        Leather Strips: -3
+        Iron Ingot: -2
+    - recipe_type: Raw Resource
+
+  Steel Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -2
+        Steel Ingot: -2
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Steel Horned Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -2
+        Iron Ingot: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Steel Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Corundum Ore: -1
+        Iron Ore: -1
+    - recipe_type: Raw Resource
+
+  Steel Mace:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -3
+        Iron Ingot: -1
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Steel Nordic Gauntlets:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -2
+        Iron Ingot: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Steel Plate Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -3
+        Corundum Ingot: -1
+        Iron Ingot: -1
+        Leather Strips: -3
+    - recipe_type: Raw Resource
+
+  Steel Plate Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Corundum Ingot: -1
+        Steel Ingot: -2
+        Iron Ingot: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Steel Plate Gauntlets:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Corundum Ingot: -1
+        Steel Ingot: -2
+        Iron Ingot: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Steel Plate Helmet:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Corundum Ingot: -1
+        Steel Ingot: -2
+        Iron Ingot: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Steel Shield:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -3
+        Iron Ingot: -1
+        Leather Strips: -1
+    - recipe_type: Raw Resource
+
+  Steel Shin Boots:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -3
+        Iron Ingot: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Steel Sword:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -2
+        Iron Ingot: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Steel War Axe:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -2
+        Iron Ingot: -1
+        Leather Strips: -2
+    - recipe_type: Raw Resource
+
+  Steel Warhammer:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Steel Ingot: -4
+        Leather Strips: -3
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Storage Room:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Storage Room - Doors: -1
+        Storage Room - Foundation: -1
+        Storage Room - Floor: -1
+        Storage Room - Wall Supports: -1
+        Storage Room - Roof: -1
+        Storage Room - Walls: -1
+    - recipe_type: Raw Resource
+
+  Storage Room - Doors:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Fittings: -3
+        Sawn Log: -3
+        Lock: -3
+        Hinge: -6
+        Nails: -6
+    - recipe_type: Raw Resource
+
+  Storage Room - Floor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quarried Stone: -6
+    - recipe_type: Raw Resource
+
+  Storage Room - Foundation:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -2
+        Quarried Stone: -10
+    - recipe_type: Raw Resource
+
+  Storage Room - Roof:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quarried Stone: -4
+        Sawn Log: -1
+    - recipe_type: Raw Resource
+
+  Storage Room - Wall Supports:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -7
+        Nails: -8
+    - recipe_type: Raw Resource
+
+  Storage Room - Walls:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Clay: -3
+    - recipe_type: Raw Resource
+
+  Studded Armor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leather Strips: -3
+        Leather: -4
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Tall Shelf with Display Case:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -2
+        Nails: -4
+        Glass: -1
+        Hinge: -2
+    - recipe_type: Raw Resource
+
+  Tomato Soup:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Garlic: -1
+        Leek: -1
+        Salt Pile: -1
+        Tomato: -1
+    - recipe_type: Raw Resource
+
+  Trophy Room:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Trophy Room - Doors: -1
+        Trophy Room - Foundation: -1
+        Trophy Room - Floor: -1
+        Trophy Room - Wall Supports: -1
+        Trophy Room - Roof Framing: -1
+        Trophy Room - Walls: -1
+        Trophy Room - Roof: -1
+    - recipe_type: Raw Resource
+
+  Trophy Room - Doors:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Fittings: -2
+        Sawn Log: -2
+        Lock: -2
+        Hinge: -4
+        Nails: -4
+    - recipe_type: Raw Resource
+
+  Trophy Room - Floor:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Quarried Stone: -6
+    - recipe_type: Raw Resource
+
+  Trophy Room - Foundation:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -2
+        Quarried Stone: -10
+    - recipe_type: Raw Resource
+
+  Trophy Room - Roof:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Nails: -8
+    - recipe_type: Raw Resource
+
+  Trophy Room - Roof Framing:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -4
+    - recipe_type: Raw Resource
+
+  Trophy Room - Wall Supports:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -8
+        Nails: -8
+    - recipe_type: Raw Resource
+
+  Trophy Room - Walls:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Clay: -3
+    - recipe_type: Raw Resource
+
+  Vegetable Soup:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Cabbage: -1
+        Leek: -1
+        Potato: -1
+        Tomato: -1
+    - recipe_type: Raw Resource
+
+  Venison Chop:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Salt Pile: -1
+        Venison: -1
+    - recipe_type: Raw Resource
+
+  Venison Stew:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Leek: -1
+        Potato: -1
+        Salt Pile: -1
+        Venison: -1
+    - recipe_type: Raw Resource
+
+  Void Salts:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Salt Pile: -1
+        Amethyst: -1
+        Soul Gem: -1
+    - recipe_type: Raw Resource
+
+  Wall Sconces:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Iron Fittings: -1
+        Goat Horns: -1
+    - recipe_type: Raw Resource
+
+  Wall Shelves:
+    recipes:
+    - output: 1
+      recipe_type: Craft
+      requirements:
+        Sawn Log: -1
+        Nails: -1
+    - recipe_type: Raw Resource
+
+  Aetherium Crest:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Ale:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Amethyst:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Ancient Nord Battle Axe:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Ancient Nord Bow:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Ancient Nord Greatsword:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Ancient Nord War Axe:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Ash Yam:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Black Soul Gem:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bone Hawk Feathers:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bone Hawk Skull:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bone Meal:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Bread:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Butter:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Cabbage:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Carrot:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Centurion Dynamo Core:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Chicken Breast:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Chicken's Egg:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Chitin Plate:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Clam Meat:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Clay:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Corundum Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Diamond:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dragon Bone:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dragon Scales:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Dwarven Metal Ingot:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Ebony Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Ectoplasm:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Eidar Cheese Wheel:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Emerald:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Empty Wine Bottle:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Firewood:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Flawless Amethyst:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Flawless Diamond:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Flawless Emerald:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Flawless Garnet:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Flawless Ruby:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Flawless Sapphire:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Garlic:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Garnet:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Glass:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Goat Horns:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Green Apple:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Horker Meat:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Horse Meat:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Human Heart:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Iron Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Jazbay Grapes:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Jug of Milk:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Juniper Berries:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Lavender:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Leather:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Leek:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Leg of Goat:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Malachite Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Mammoth Snout:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Moon Sugar:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Moonstone Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Mudcrab Legs:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Netch Jelly:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Netch Leather:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Orichalcum Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Pheasant Breast:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Potato:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Quarried Stone:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Quicksilver Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Raw Beef:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Raw Rabbit Leg:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Red Apple:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Ruby:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Salmon Meat:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Salt Pile:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Sapphire:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Sawn Log:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Shellbug Chitin:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Snowberries:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Soul Gem:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Stalhrim:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Straw:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Tomato:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Venison:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Wheat:
+    recipes:
+    - recipe_type: Raw Resource
