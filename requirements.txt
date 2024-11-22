@@ -26,5 +26,5 @@ PyScreeze==0.1.30
 python3-xlib==0.15
 pytweening==1.2.0
 tomli==2.0.1
-tornado==6.4.1
+tornado==6.4.2
 typing_extensions==4.12.2
