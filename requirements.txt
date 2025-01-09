@@ -3,7 +3,7 @@ coverage==5.5
 csscompressor==0.9.5
 flake8==3.9.2
 htmlmin==0.1.12
-Jinja2==3.1.4
+Jinja2==3.1.5
 mypy==1.10.1
 pillow==10.3.0
 PyAutoGUI==0.9.54
