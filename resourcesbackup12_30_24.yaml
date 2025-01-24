@@ -1,0 +1,3935 @@
+authors:
+  Bloodtap: ""
+
+index_page_display_name: enshrouded
+
+recipe_types:
+    Carpenter: Carpenter NPC
+    Workbench: Workbench
+    Alchemist: Alchemist
+    Alchemy Station: Station
+    Bard: Bard NPC
+    Beehive: Beehive
+    Blacksmith: Blacksmith NPC
+    Blast Furnace: Blast Furnace
+    Charcoal Kiln: Charcoal Kiln
+    Collector: Collector NPC
+    Cooking Station: Cooking Station
+    Drying Rack: Drying Rack
+    Ectoplasm Press: Ectoplasm Press
+    Farmer: Farmer NPC
+    Forge: Your making metal sheets
+    Grinding Stones: Grinding Stones
+    Hand Spindle: Hand Spindle
+    Hunter: Hunter NPC
+    Improved Spinning Wheel: Improved Spinning Wheel
+    Laboratory: Laboratory
+    Loom: Loom
+    Oven: Oven
+    Smelter: Smelter
+    Spinning Wheel: Spinning Wheel
+    Table Saw: Table Saw
+    Tanning Station: Tanning Station
+
+resources:
+  Stone:
+    recipes:
+    - recipe_type: Raw Resource
+  Fossilized Bone:
+    recipes:
+    - recipe_type: Raw Resource
+  Mini Mushroom Meat:
+    recipes:
+    - recipe_type: Raw Resource
+  Bonemeal:
+    recipes:
+    - recipe_type: Raw Resource
+  Fell Thunderbrute Head:
+    recipes:
+    - recipe_type: Raw Resource
+  Fell Sicklescythe Head:
+    recipes:
+    - recipe_type: Raw Resource
+  Fell Wispwyvern Head:
+    recipes:
+    - recipe_type: Raw Resource
+  Metal Scraps:
+    recipes:
+    - recipe_type: Raw Resource
+  Aloe:
+    recipes:
+    - recipe_type: Raw Resource
+  Amber:
+    recipes:
+    - recipe_type: Raw Resource
+  Amethyst:
+    recipes:
+    - recipe_type: Raw Resource
+  Ammonia Gland:
+    recipes:
+    - recipe_type: Raw Resource
+  Animal Fur:
+    recipes:
+    - recipe_type: Raw Resource
+  Aureolin Flower:
+    recipes:
+    - recipe_type: Raw Resource
+  Bones:
+    recipes:
+    - recipe_type: Raw Resource
+  Chamomile:
+    recipes:
+    - recipe_type: Raw Resource
+  Coal:
+    recipes:
+    - recipe_type: Raw Resource
+  Conifer Logs:
+    recipes:
+    - recipe_type: Raw Resource
+  Copper Ore:
+    recipes:
+    - recipe_type: Raw Resource
+  Corncob:
+    recipes:
+    - recipe_type: Raw Resource
+  Critter Parts:
+    recipes:
+    - recipe_type: Raw Resource
+  Dried Fur:
+    recipes:
+    - recipe_type: Raw Resource
+  Dirt:
+    recipes:
+    - recipe_type: Raw Resource
+  Ectoplasm Crystal:
+    recipes:
+    - recipe_type: Raw Resource
+  Ectoplasm Fragment:
+    recipes:
+    - recipe_type: Raw Resource
+  Ectoplasm Shard:
+    recipes:
+    - recipe_type: Raw Resource
+  Eggs:
+    recipes:
+    - recipe_type: Raw Resource
+  Feather:
+    recipes:
+    - recipe_type: Raw Resource
+  Fell Cyclops Head:
+    recipes:
+    - recipe_type: Raw Resource
+  Fell Dragon Youngling Head:
+    recipes:
+    - recipe_type: Raw Resource
+  Fell Monstrosity Head:
+    recipes:
+    - recipe_type: Raw Resource
+  Fire Fly:
+    recipes:
+    - recipe_type: Raw Resource
+  Flax:
+    recipes:
+    - recipe_type: Raw Resource
+  Flintstone:
+    recipes:
+    - recipe_type: Raw Resource
+  Forest Beet:
+    recipes:
+    - recipe_type: Raw Resource
+  Frizzy Goat Milk:
+    recipes:
+    - recipe_type: Raw Resource
+  Fur Patch:
+    recipes:
+    - recipe_type: Raw Resource
+  Gentian:
+    recipes:
+    - recipe_type: Raw Resource
+  Giant Bones:
+    recipes:
+    - recipe_type: Raw Resource
+  Glass Shards:
+    recipes:
+    - recipe_type: Raw Resource
+  Hardwood:
+    recipes:
+    - recipe_type: Raw Resource
+  Hollow Cyclops Head:
+    recipes:
+    - recipe_type: Raw Resource
+  Indigo Plant:
+    recipes:
+    - recipe_type: Raw Resource
+  Iron Ore:
+    recipes:
+    - recipe_type: Raw Resource
+  Kindlewastes Flower:
+    recipes:
+    - recipe_type: Raw Resource
+  Lapislazuli:
+    recipes:
+    - recipe_type: Raw Resource
+  Limestone:
+    recipes:
+    - recipe_type: Raw Resource
+  Luminous Growth:
+    recipes:
+    - recipe_type: Raw Resource
+  Lump of Clay:
+    recipes:
+    - recipe_type: Raw Resource
+  Mint Mushroom Meat:
+    recipes:
+    - recipe_type: Raw Resource
+  Mycelium:
+    recipes:
+    - recipe_type: Raw Resource
+  Obsidian:
+    recipes:
+    - recipe_type: Raw Resource
+  Old Books:
+    recipes:
+    - recipe_type: Raw Resource
+  Palm Wood Logs:
+    recipes:
+    - recipe_type: Raw Resource
+  Plant Fiber:
+    recipes:
+    - recipe_type: Raw Resource
+  Poison Sack:
+    recipes:
+    - recipe_type: Raw Resource
+  Pumpkin:
+    recipes:
+    - recipe_type: Raw Resource
+  Purple Berries:
+    recipes:
+    - recipe_type: Raw Resource
+  Raw Bird Meat:
+    recipes:
+    - recipe_type: Raw Resource
+  Raw Dune Armadillo Meat:
+    recipes:
+    - recipe_type: Raw Resource
+  Raw Fatty Meat:
+    recipes:
+    - recipe_type: Raw Resource
+  Raw Game:
+    recipes:
+    - recipe_type: Raw Resource
+  Raw Lean Meat:
+    recipes:
+    - recipe_type: Raw Resource
+  Raw Wolf Meat:
+    recipes:
+    - recipe_type: Raw Resource
+  Raw Wool:
+    recipes:
+    - recipe_type: Raw Resource
+  Red Marble Fragment:
+    recipes:
+    - recipe_type: Raw Resource
+  Red Mushroom:
+    recipes:
+    - recipe_type: Raw Resource
+  Reptile Hide:
+    recipes:
+    - recipe_type: Raw Resource
+  Resin:
+    recipes:
+    - recipe_type: Raw Resource
+  Rooibos:
+    recipes:
+    - recipe_type: Raw Resource
+  Rubble:
+    recipes:
+    - recipe_type: Raw Resource
+  Runes:
+    recipes:
+    - recipe_type: Raw Resource
+  Saffron:
+    recipes:
+    - recipe_type: Raw Resource
+  Sage Leaves:
+    recipes:
+    - recipe_type: Raw Resource
+  Salt:
+    recipes:
+    - recipe_type: Raw Resource
+  Sand:
+    recipes:
+    - recipe_type: Raw Resource
+  Sandstone:
+    recipes:
+    - recipe_type: Raw Resource
+  Scales:
+    recipes:
+    - recipe_type: Raw Resource
+  Scavenger Matron Helmet:
+    recipes:
+    - recipe_type: Raw Resource
+  Shroud Liquid:
+    recipes:
+    - recipe_type: Raw Resource
+  Shroud Sack:
+    recipes:
+    - recipe_type: Raw Resource
+  Shroud Spores:
+    recipes:
+    - recipe_type: Raw Resource
+  Shroud Wood:
+    recipes:
+    - recipe_type: Raw Resource
+  Silver Ore:
+    recipes:
+    - recipe_type: Raw Resource
+  Spark:
+    recipes:
+    - recipe_type: Raw Resource
+  Straw:
+    recipes:
+    - recipe_type: Raw Resource
+  Strawberry:
+    recipes:
+    - recipe_type: Raw Resource
+  Sugar Cane:
+    recipes:
+    - recipe_type: Raw Resource
+  Sulfur:
+    recipes:
+    - recipe_type: Raw Resource
+  Tin Ore:
+    recipes:
+    - recipe_type: Raw Resource
+  Tomato:
+    recipes:
+    - recipe_type: Raw Resource
+  Torn Cloth:
+    recipes:
+    - recipe_type: Raw Resource
+  Toxic Slime:
+    recipes:
+    - recipe_type: Raw Resource
+  Twigs:
+    recipes:
+    - recipe_type: Raw Resource
+  Vukah Brawler Head:
+    recipes:
+    - recipe_type: Raw Resource
+  Water:
+    recipes:
+    - recipe_type: Raw Resource
+  Wheat Grains:
+    recipes:
+    - recipe_type: Raw Resource
+  Wolfsbane:
+    recipes:
+    - recipe_type: Raw Resource
+  Wood Logs:
+    recipes:
+    - recipe_type: Raw Resource
+  Test Item:
+    recipes:
+    - recipe_type: Raw Resource
+  Wood Acid:
+    recipes:
+    - output: 10
+      recipe_type: Charcoal Kiln
+      requirements:
+        Wood Logs: -15
+        Dirt: -3
+    - recipe_type: Raw Resource
+  Iron Bench:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Iron Bars: -6
+        Charcoal: -6
+        Padding: -2
+        Mini Mushroom Meat: -2
+        Lapislazuli: -8
+    - recipe_type: Raw Resource
+  Palm Wood Chair:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Palm Wood Logs: -4
+        Nails: -1
+        Padding: -1
+    - recipe_type: Raw Resource
+  Polished Wooden Bench:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -4
+        Nails: -3
+        Resin: -1
+        Hardwood: -4
+    - recipe_type: Raw Resource
+  Polished Wooden Chair:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -4
+        Nails: -1
+        Hardwood: -2
+    - recipe_type: Raw Resource
+  Polished Wooden Throne:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -8
+        Copper Bars: -5
+        Amber: -20
+        Indigo Plant: -5
+        Torn Cloth: -5
+        Nails: -10
+        Hardwood: -2
+    - recipe_type: Raw Resource
+  Rustic Bench:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -6
+    - recipe_type: Raw Resource
+  Rustic Chair:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -3
+    - recipe_type: Raw Resource
+  Sand Throne:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Sandstone: -8
+        Iron Bars: -4
+        Charcoal: -4
+        Lapislazuli: -2
+        Amber: -7
+        Padding: -1
+    - recipe_type: Raw Resource
+  Stone Bench:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -20
+    - recipe_type: Raw Resource
+  Stone Chair:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -3
+        Torn Cloth: -1
+    - recipe_type: Raw Resource
+  Wooden Chair:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -3
+        Resin: -2
+    - recipe_type: Raw Resource
+  Crypt Chair:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Shroud Wood: -4
+        Nails: -4
+        Bones: -2
+        Ectoplasm Gem: -1
+    - recipe_type: Raw Resource
+  Crypt Throne:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Bones: -30
+        Ectoplasm Gem: -2
+        Resin: -20
+        Giant Bones: -10
+    - recipe_type: Raw Resource
+  Crude Bench:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -3
+        Resin: -1
+    - recipe_type: Raw Resource
+  Crude Wooden Stool:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -4
+    - recipe_type: Raw Resource
+  Blue Globe:
+    recipes:
+    - output: 1
+      recipe_type: Alchemist
+      requirements:
+        Bronze Bars: -3
+        Charcoal: -3
+        Lapislazuli: -5
+    - recipe_type: Raw Resource
+  Bug Dust:
+    recipes:
+    - output: 1
+      recipe_type: Alchemist
+      requirements:
+        Critter Parts: -1
+    - recipe_type: Raw Resource
+  Crystal Ball:
+    recipes:
+    - output: 1
+      recipe_type: Alchemist
+      requirements:
+        Bronze Bars: -3
+        Charcoal: -2
+        Ectoplasm Fragments: -5
+    - recipe_type: Raw Resource
+  Glow Dust:
+    recipes:
+    - output: 1
+      recipe_type: Alchemist
+      requirements:
+        Fire fly: -1
+    - recipe_type: Raw Resource
+  Goo:
+    recipes:
+    - output: 1
+      recipe_type: Alchemist
+      requirements:
+        Dirt: -1
+        Shroud Liquid: -1
+        Bug Dust: -1
+    - recipe_type: Raw Resource
+  Shroud Core:
+    recipes:
+    - output: 1
+      recipe_type: Alchemist
+      requirements:
+        Shroud Spores: -10
+        Shroud Liquid: -10
+    - recipe_type: Raw Resource
+  White Glowing Substance:
+    recipes:
+    - output: 20
+      recipe_type: Alchemist
+      requirements:
+        Dirt: -7
+        Mycelium: -10
+        Bonemeal: -20
+        Wood Acid: -1
+    - recipe_type: Raw Resource
+  Alchemical Base:
+    recipes:
+    - output: 1
+      recipe_type: Alchemy Station
+      requirements:
+        Shroud Liquid: -1
+        Mycelium: -1
+        Water: -1
+        Shroud Spores: -1
+    - recipe_type: Raw Resource
+  Antiseptic:
+    recipes:
+    - output: 1
+      recipe_type: Alchemy Station
+      requirements:
+        Wood Acid: -1
+        Aloe: -1
+    - recipe_type: Raw Resource
+  Long Wall Banner:
+    recipes:
+    - output: 1
+      recipe_type: Bard
+      requirements:
+        Charcoal: -2
+        Iron Bars: -2
+        Blue Fabric: -2
+        Indigo Plant: -1
+    - recipe_type: Raw Resource
+  Ornate Wall Banner:
+    recipes:
+    - output: 1
+      recipe_type: Bard
+      requirements:
+        Charcoal: -4
+        Iron Bars: -4
+        Blue Fabric: -3
+        Indigo Plant: -1
+    - recipe_type: Raw Resource
+  Wall Banner:
+    recipes:
+    - output: 1
+      recipe_type: Bard
+      requirements:
+        Charcoal: -2
+        Iron Bars: -2
+        Blue Fabric: -2
+        Indigo Plant: -1
+    - recipe_type: Raw Resource
+  War Banner:
+    recipes:
+    - output: 1
+      recipe_type: Bard
+      requirements:
+        String: -2
+        Torn Cloth: -4
+        Mint Mushroom Meat: -3
+        Indigo Plant: -3
+    - recipe_type: Raw Resource
+  Wax:
+    recipes:
+    - output: 1
+      recipe_type: Beehive
+      requirements:
+        Plant Fiber: -3
+        Water: -1
+    - recipe_type: Raw Resource
+  Honey:
+    recipes:
+    - output: 5
+      recipe_type: Beehive
+      requirements:
+        Water: -2
+        Sugar: -1
+    - recipe_type: Raw Resource
+  Ceiling Chain:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Iron Bars: -1
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Copper Fence:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Charcoal: -3
+        Copper Bars: -3
+    - recipe_type: Raw Resource
+  Crypt Fence:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Charcoal: -10
+        Iron Bars: -10
+    - recipe_type: Raw Resource
+  Fire Bowl:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Bronze Bars: -2
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Iron Bucket:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Iron Bars: -1
+        Charcoal: -1
+    - recipe_type: Raw Resource
+  Iron Fence:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Charcoal: -3
+        Iron Bars: -3
+    - recipe_type: Raw Resource
+  Jewelry Box:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Bronze Bars: -2
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Prison Fence 1:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Charcoal: -5
+        Iron Bars: -5
+    - recipe_type: Raw Resource
+  Prison Fence 2:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Charcoal: -5
+        Iron Bars: -5
+    - recipe_type: Raw Resource
+  Prison Fence 3:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Charcoal: -5
+        Iron Bars: -5
+    - recipe_type: Raw Resource
+  Pulley:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Iron Bars: -2
+        Charcoal: -3
+        Linen: -2
+    - recipe_type: Raw Resource
+  Steel Barrel (Large):
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Steel Bars: -6
+        Coal: -6
+    - recipe_type: Raw Resource
+  Steel Barrel (Small):
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Steel Bars: -4
+        Coal: -4
+    - recipe_type: Raw Resource
+  Steel Bucket:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Steel Bars: -2
+        Coal: -2
+    - recipe_type: Raw Resource
+  Tall Crypt Fence:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Charcoal: -20
+        Iron Bars: -20
+    - recipe_type: Raw Resource
+  Urn:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Bronze Bars: -2
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Bronze Jug:
+    recipes:
+    - output: 2
+      recipe_type: Blacksmith
+      requirements:
+        Bronze Bars: -2
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Copper Jug:
+    recipes:
+    - output: 2
+      recipe_type: Blacksmith
+      requirements:
+        Copper Bars: -2
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Nails:
+    recipes:
+    - output: 2
+      recipe_type: Blacksmith
+      requirements:
+        Metal Scraps: -1
+    - recipe_type: Raw Resource
+  Bronze Bowl:
+    recipes:
+    - output: 3
+      recipe_type: Blacksmith
+      requirements:
+        Bronze Bars: -2
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Bronze Platter:
+    recipes:
+    - output: 3
+      recipe_type: Blacksmith
+      requirements:
+        Bronze Bars: -2
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Copper Bowl:
+    recipes:
+    - output: 3
+      recipe_type: Blacksmith
+      requirements:
+        Copper Bars: -2
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Copper Platter:
+    recipes:
+    - output: 3
+      recipe_type: Blacksmith
+      requirements:
+        Copper Bars: -2
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Scrap Bowl:
+    recipes:
+    - output: 3
+      recipe_type: Blacksmith
+      requirements:
+        Metal Scraps: -1
+    - recipe_type: Raw Resource
+  Scrap Cup:
+    recipes:
+    - output: 3
+      recipe_type: Blacksmith
+      requirements:
+        Metal Scraps: -1
+    - recipe_type: Raw Resource
+  Scrap Jug:
+    recipes:
+    - output: 3
+      recipe_type: Blacksmith
+      requirements:
+        Metal Scraps: -1
+    - recipe_type: Raw Resource
+  Scrap Platter:
+    recipes:
+    - output: 3
+      recipe_type: Blacksmith
+      requirements:
+        Metal Scraps: -1
+    - recipe_type: Raw Resource
+  Bronze Cup:
+    recipes:
+    - output: 5
+      recipe_type: Blacksmith
+      requirements:
+        Bronze Bars: -2
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Copper Cup:
+    recipes:
+    - output: 5
+      recipe_type: Blacksmith
+      requirements:
+        Copper Bars: -2
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Bronze Barrel:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Bronze Bars: -4
+        Charcoal: -4
+    - recipe_type: Raw Resource
+  Grappling Hook Pull Anchor:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Metal Sheets: -3
+        Copper Bars: -1
+    - recipe_type: Raw Resource
+  Grappling Hook Swing Anchor:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Metal Sheets: -1
+        Copper Bars: -1
+    - recipe_type: Raw Resource
+  Silver Bars:
+    recipes:
+    - output: 20
+      recipe_type: Blast Furnace
+      requirements:
+        Silver Ore: -20
+        Coal: -20
+    - recipe_type: Raw Resource
+  Steel Bars:
+    recipes:
+    - output: 20
+      recipe_type: Blast Furnace
+      requirements:
+        Iron Ore: -20
+        Coal: -50
+    - recipe_type: Raw Resource
+  Boar At Home:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Palm Wood Logs: -1
+        Fabric: -1
+        Saffron: -1
+        Indigo Plant: -1
+        Mint Mushroom Meat: -1
+        Sulfur: -1
+    - recipe_type: Raw Resource
+  Brazier:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Resin: -5
+        Metal Scraps: -7
+    - recipe_type: Raw Resource
+  Brick Fireplace:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Bronze Bar: -5
+        Fired Brick: -10
+    - recipe_type: Raw Resource
+  Candleholder:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Bronze Bars: -2
+        Charcoal: -2
+        Candle: -1
+    - recipe_type: Raw Resource
+  Carved Wooden Cabinet:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -3
+        Nails: -1
+    - recipe_type: Raw Resource
+  Carved Wooden Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -5
+        Metal scraps: -2
+        Nails: -4
+    - recipe_type: Raw Resource
+  Carved Wooden Double Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Carved Wooden Door: -2
+    - recipe_type: Raw Resource
+  Carved Wooden Nightstand:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -2
+        Resin: -1
+    - recipe_type: Raw Resource
+  Carved Wooden Shelf:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -2
+        Nails: -1
+    - recipe_type: Raw Resource
+  Carved Wooden Window Frame:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -3
+        Nails: -2
+    - recipe_type: Raw Resource
+  Chandelier:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Metal Scraps: -6
+        Wood Logs: -4
+        Candle: -4
+    - recipe_type: Raw Resource
+  Chandelier (Bronze):
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Bronze Bars: -4
+        Charcoal: -4
+        Candle: -4
+    - recipe_type: Raw Resource
+  Chandelier (Iron):
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Iron Bars: -2
+        Charcoal: -3
+        Glass: -2
+        Luminous Growth: -4
+        Goo: -4
+    - recipe_type: Raw Resource
+  Clay Fireplace:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Lump of Clay: -4
+        Wood Logs: -4
+        Fired Brick: -10
+    - recipe_type: Raw Resource
+  Copper Bathtub:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -6
+        Bronze Bars: -6
+        Charcoal: -6
+    - recipe_type: Raw Resource
+  Copper Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -10
+        Copper Bars: -6
+        Metal Scraps: -3
+    - recipe_type: Raw Resource
+  Copper Double Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Copper Door: -2
+    - recipe_type: Raw Resource
+  Crude Wooden Cabinet:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -5
+        String: -10
+    - recipe_type: Raw Resource
+  Crypt Gate:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Charcoal: -20
+        Iron Bars: -20
+    - recipe_type: Raw Resource
+  Fired Brick:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Lump of Clay: -1
+        Wood Logs: -1
+    - recipe_type: Raw Resource
+  Firefly Chandelier:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Fire Fly: -5
+        Plant Fibre: -5
+    - recipe_type: Raw Resource
+  Firefly Standing Lamp:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Plant Fibre: -3
+        Fire Fly: -5
+        Twigs: -1
+    - recipe_type: Raw Resource
+  Firefly Wall Lamp:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -1
+        Fire Fly: -5
+        Plant Fibre: -3
+    - recipe_type: Raw Resource
+  Floor Candleholder:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Bronze Bars: -5
+        Charcoal: -5
+        Candle: -3
+    - recipe_type: Raw Resource
+  Flower Snake:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Palm Wood Logs: -1
+        Fabric: -1
+        Saffron: -1
+        Indigo Plant: -1
+        Mint Mushroom Meat: -1
+        Sulfur: -1
+    - recipe_type: Raw Resource
+  Flower Vase:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Palm Wood Logs: -1
+        Fabric: -1
+        Saffron: -1
+        Indigo Plant: -1
+        Mint Mushroom Meat: -1
+        Sulfur: -1
+    - recipe_type: Raw Resource
+  Glass:
+    recipes:
+    - output: 10
+      recipe_type: Smelter
+      requirements:
+        Sand: -30
+        Charcoal: -5
+  Granite Fireplace:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Coal: -2
+        Granite: -20
+        Steel Bars: -2
+    - recipe_type: Raw Resource
+  Graveyard Fence 1:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -6
+    - recipe_type: Raw Resource
+  Graveyard Fence 2:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -4
+        Copper Fence: -1
+    - recipe_type: Raw Resource
+  Graveyard Fence 3:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -4
+        Copper Fence: -1
+    - recipe_type: Raw Resource
+  Graveyard Fence 4:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -4
+        Copper Fence: -1
+    - recipe_type: Raw Resource
+  Huge Crypt Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Charcoal: -30
+        Iron Bars: -60
+    - recipe_type: Raw Resource
+  Iron Adorned Round Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Charcoal: -4
+        Iron Bars: -5
+        Wood Planks: -4
+        Mint Mushroom Meat: -1
+    - recipe_type: Raw Resource
+  Iron Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Charcoal: -8
+        Iron Bars: -8
+    - recipe_type: Raw Resource
+  Iron Double Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Iron Door: -2
+    - recipe_type: Raw Resource
+  Iron Grate:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Iron Bars: -8
+        Charcoal: -8
+    - recipe_type: Raw Resource
+  Iron Window Frame:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Iron Bars: -2
+        Charcoal: -2
+        Glass: -2
+    - recipe_type: Raw Resource
+  Lamp:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Sand: -1
+        Lump of Clay: -2
+        Wood Logs: -1
+    - recipe_type: Raw Resource
+  Lantern:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Iron Bars: -4
+        Charcoal: -4
+        Glass: -2
+        Sandstone: -2
+        Luminous Growth: -2
+    - recipe_type: Raw Resource
+  Large Carved Wooden Cabinet:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -5
+        Nails: -2
+    - recipe_type: Raw Resource
+  Large Crypt Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Charcoal: -20
+        Iron Bars: -20
+    - recipe_type: Raw Resource
+  Large Palm Wood Cabinet:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Palm Wood Logs: -8
+        Nails: -5
+    - recipe_type: Raw Resource
+  Large Palm Wood Cupboard:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Palm Wood Logs: -16
+        Nails: -10
+        Lapislazuli: -8
+        Amber: -16
+    - recipe_type: Raw Resource
+  Large Polished Wooden Cabinet:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -8
+        Nails: -4
+    - recipe_type: Raw Resource
+  Large Polished Wooden Cupboard:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -16
+        Nails: -10
+    - recipe_type: Raw Resource
+  Large Round Carved Window Frame:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -6
+        Nails: -4
+    - recipe_type: Raw Resource
+  Large Round Iron Window Frame:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Iron Bars: -2
+        Charcoal: -2
+        Glass: -2
+    - recipe_type: Raw Resource
+  Large Round Polished Window Frame:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -2
+        Nails: -2
+        Resin: -2
+    - recipe_type: Raw Resource
+  Large Round Stone Window Frame:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -5
+    - recipe_type: Raw Resource
+  Medium Flask:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Charcoal: -1
+        Glass: -1
+    - recipe_type: Raw Resource
+  Medium Stone Brazier:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Resin: -5
+        Stone: -6
+    - recipe_type: Raw Resource
+  Ornamented Wooden Window Frame:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -2
+        Nails: -1
+        Resin: -1
+    - recipe_type: Raw Resource
+  Ornate Wooden Bed:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Nails: -5
+        Wood Planks: -4
+        Dried Fur: -6
+        Torn Cloth: -10
+        Plant Fiber: -10
+        String: -2
+        Hardwood: -2
+    - recipe_type: Raw Resource
+  Palm Wood Bed:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Nails: -6
+        Palm Wood Logs: -3
+        String: -10
+        Straw: -10
+        Fabric: -4
+        Green Fabric: -1
+    - recipe_type: Raw Resource
+  Palm Wood Shelf:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Palm Wood Logs: -2
+        Nails: -2
+    - recipe_type: Raw Resource
+  Polished Scrap Brazier:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Resin: -5
+        Metal Scraps: -7
+        Charcoal: -3
+    - recipe_type: Raw Resource
+  Polished Wooden Banquet Table:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -6
+        Resin: -1
+        Nails: -3
+        Hardwood: -4
+    - recipe_type: Raw Resource
+  Polished Wooden Bedside Table:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -2
+        Nails: -1
+        Hardwood: -2
+    - recipe_type: Raw Resource
+  Polished Wooden Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -10
+        Nails: -6
+        Tar: -1
+    - recipe_type: Raw Resource
+  Polished Wooden Double Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Polished Wooden Door: -2
+    - recipe_type: Raw Resource
+  Polished Wooden Shelf:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -10
+        Nails: -6
+    - recipe_type: Raw Resource
+  Polished Wooden Side Table:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -4
+        Resin: -1
+        Nails: -1
+        Hardwood: -2
+    - recipe_type: Raw Resource
+  Polished Wooden Table:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -6
+        Resin: -1
+        Nails: -2
+        Hardwood: -2
+    - recipe_type: Raw Resource
+  Round Carved Window Frame:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -2
+        Nails: -2
+    - recipe_type: Raw Resource
+  Round Iron Window Frame:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Iron Bars: -1
+        Charcoal: -2
+        Glass: -1
+    - recipe_type: Raw Resource
+  Round Polished Window Frame:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -1
+        Nails: -1
+        Resin: -1
+    - recipe_type: Raw Resource
+  Round Stone Window Frame:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -2
+    - recipe_type: Raw Resource
+  Round Wooden Window Frame (planks):
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -4
+        Nails: -1
+    - recipe_type: Raw Resource
+  Rustic Banquet Table:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Blackmire Heartwood: -15
+    - recipe_type: Raw Resource
+  Rustic Bed:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Twigs: -20
+    - recipe_type: Raw Resource
+  Rustic Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -8
+        Twigs: -4
+    - recipe_type: Raw Resource
+  Rustic Door (Stone):
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -20
+    - recipe_type: Raw Resource
+  Rustic Side Table:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Blackmire Heartwood: -5
+    - recipe_type: Raw Resource
+  Rustic Table:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Blackmire Heartwood: -10
+    - recipe_type: Raw Resource
+  Sandstone Brazier:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Resin: -5
+        Sandstone: -9
+    - recipe_type: Raw Resource
+  Scabird On One Leg:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Palm Wood Logs: -1
+        Fabric: -1
+        Saffron: -1
+        Indigo Plant: -1
+        Mint Mushroom Meat: -1
+        Sulfur: -1
+    - recipe_type: Raw Resource
+  Secret Basement Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Metal Sheets: -5
+        Limestone Block: -100
+        String: -10
+    - recipe_type: Raw Resource
+  Secret Bookshelf Door Fix LATER:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Metal Sheets: -5
+        String: -10
+    - recipe_type: Raw Resource
+  Secret Bookshelf Door2 FIX LATER:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Metal Sheets: -5
+        String: -10
+    - recipe_type: Raw Resource
+  Secret Castle Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Metal Sheets: -5
+        Castle Wall Stone Block: -100
+        String: -10
+    - recipe_type: Raw Resource
+  Secret Red Marble Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Metal Sheets: -5
+        Red Marble Fragment: -100
+        String: -10
+    - recipe_type: Raw Resource
+  Secret Stone Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Metal Sheets: -5
+        Rough Stone Block: -100
+        String: -10
+    - recipe_type: Raw Resource
+  Secret Stone Floor Passage:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Metal Sheets: -5
+        Refined Stone Block: -100
+        String: -10
+    - recipe_type: Raw Resource
+  Secret Temple Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Metal Sheets: -5
+        Rough Stone block: -100
+        String: -10
+    - recipe_type: Raw Resource
+  Secret Wooden Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Metal Sheets: -5
+        Rough Wood Block: -100
+        String: -10
+    - recipe_type: Raw Resource
+  Secret Wooden Floor Passage:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Metal Sheets: -5
+        Rough Wood Block: -100
+        String: -10
+    - recipe_type: Raw Resource
+  Small Palm Wood Cabinet:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Palm Wood Logs: -4
+        Nails: -3
+    - recipe_type: Raw Resource
+  Small Palm Wood Cupboard:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Palm Wood Logs: -6
+        Nails: -4
+        Lapislazuli: -4
+    - recipe_type: Raw Resource
+  Small Polished Wooden Cabinet:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -6
+        Nails: -2
+    - recipe_type: Raw Resource
+  Small Polished Wooden Cupboard:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -8
+        Nails: -4
+    - recipe_type: Raw Resource
+  Small Stone Brazier:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Resin: -5
+        Stone: -3
+    - recipe_type: Raw Resource
+  Standing Torch:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -2
+        Metal Scraps: -4
+        Resin: -2
+    - recipe_type: Raw Resource
+  Still Life:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Palm Wood Logs: -1
+        Fabric: -1
+        Saffron: -1
+        Indigo Plant: -1
+        Mint Mushroom Meat: -1
+        Sulfur: -1
+    - recipe_type: Raw Resource
+  Stone Bed:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Torn Cloth: -10
+        Stone: -20
+        String: -10
+        Indigo Plant: -4
+        Straw: -20
+        Mint Mushroom Meat: -4
+    - recipe_type: Raw Resource
+  Stone Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -10
+        Bronze Bars: -5
+        Charcoal: -5
+    - recipe_type: Raw Resource
+  Stone Double Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone Door: -2
+    - recipe_type: Raw Resource
+  Stone Fence:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -6
+    - recipe_type: Raw Resource
+  Stone Fireplace:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -10
+        Wood Logs: -4
+    - recipe_type: Raw Resource
+  Stone Lavatory:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -4
+        Bronze Bars: -2
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Stone Shower:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -8
+        Bronze Bars: -3
+        Charcoal: -3
+    - recipe_type: Raw Resource
+  Stone Sink:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -4
+        Bronze Bars: -2
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Stone Window Frame:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -3
+    - recipe_type: Raw Resource
+  Sun Lounger:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Metal Scraps: -4
+        String: -2
+        Dried Fur: -2
+    - recipe_type: Raw Resource
+  Tall Stone Brazier:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Resin: -5
+        Stone: -9
+    - recipe_type: Raw Resource
+  Temple Landscape:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Palm Wood Logs: -1
+        Fabric: -1
+        Saffron: -1
+        Indigo Plant: -1
+        Mint Mushroom Meat: -1
+        Sulfur: -1
+    - recipe_type: Raw Resource
+  Tower In The Night:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Palm Wood Logs: -1
+        Fabric: -1
+        Saffron: -1
+        Indigo Plant: -1
+        Mint Mushroom Meat: -1
+        Sulfur: -1
+    - recipe_type: Raw Resource
+  Wall Lantern:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Iron Bars: -1
+        Charcoal: -2
+        Glass: -2
+        Goo: -2
+        Luminous Growth: -2
+    - recipe_type: Raw Resource
+  Wall Torch (Bronze):
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Bronze Bars: -3
+        Charcoal: -3
+        Resin: -3
+    - recipe_type: Raw Resource
+  Wall-Mounted Candleholder:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -1
+        Candle: -1
+    - recipe_type: Raw Resource
+  Wolf's Choir:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Palm Wood Logs: -1
+        Fabric: -1
+        Saffron: -1
+        Indigo Plant: -1
+        Mint Mushroom Meat: -1
+        Sulfur: -1
+    - recipe_type: Raw Resource
+  Wooden Banquet Table:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -5
+        Resin: -2
+        Nails: -3
+    - recipe_type: Raw Resource
+  Wooden Barrel:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -4
+        Metal Sheets: -2
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Wooden Bathtub:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Nails: -4
+        Wood Logs: -4
+        Metal Scraps: -4
+        Resin: -4
+    - recipe_type: Raw Resource
+  Wooden Bed:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Nails: -4
+        Wood Logs: -6
+        Dried Fur: -6
+        Torn Cloth: -10
+        Plant Fiber: -10
+        String: -4
+    - recipe_type: Raw Resource
+  Wooden Crate:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -5
+        Nails: -3
+    - recipe_type: Raw Resource
+  Wooden Lavatory:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Nails: -3
+        Wood Logs: -3
+        Metal Scraps: -4
+    - recipe_type: Raw Resource
+  Wooden Side Table:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -3
+        Resin: -1
+        Nails: -1
+    - recipe_type: Raw Resource
+  Wooden Sink:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Resin: -2
+        Wood Logs: -2
+        Metal Scraps: -4
+    - recipe_type: Raw Resource
+  Wooden Table:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -4
+        Resin: -2
+        Nails: -2
+    - recipe_type: Raw Resource
+  Clay Jug:
+    recipes:
+    - output: 2
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -1
+        Lump of Clay: -1
+    - recipe_type: Raw Resource
+  Crystal Jug:
+    recipes:
+    - output: 2
+      recipe_type: Carpenter
+      requirements:
+        Glass: -2
+        Charcoal: -1
+    - recipe_type: Raw Resource
+  Small Flask:
+    recipes:
+    - output: 2
+      recipe_type: Carpenter
+      requirements:
+        Charcoal: -1
+        Glass: -1
+    - recipe_type: Raw Resource
+  Bembel Pitcher:
+    recipes:
+    - output: 3
+      recipe_type: Carpenter
+      requirements:
+        Plant Fiber: -2
+        Lump of Clay: -2
+        Indigo Plant: -2
+    - recipe_type: Raw Resource
+  Clay Bowl:
+    recipes:
+    - output: 3
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -1
+        Lump of Clay: -1
+    - recipe_type: Raw Resource
+  Clay Platter:
+    recipes:
+    - output: 3
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -1
+        Lump of Clay: -1
+    - recipe_type: Raw Resource
+  Crystal Bowl:
+    recipes:
+    - output: 3
+      recipe_type: Carpenter
+      requirements:
+        Glass: -2
+        Charcoal: -1
+    - recipe_type: Raw Resource
+  Crystal Platter:
+    recipes:
+    - output: 3
+      recipe_type: Carpenter
+      requirements:
+        Glass: -2
+        Charcoal: -1
+    - recipe_type: Raw Resource
+  Clay Cup:
+    recipes:
+    - output: 5
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -1
+        Lump of Clay: -1
+    - recipe_type: Raw Resource
+  Crystal Cup:
+    recipes:
+    - output: 5
+      recipe_type: Carpenter
+      requirements:
+        Glass: -2
+        Charcoal: -1
+    - recipe_type: Raw Resource
+  Kingsize Bed:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Nails: -10
+        Palm Wood Logs: -10
+        String: -6
+        Straw: -20
+        Fabric: -8
+        Green Fabric: -2
+    - recipe_type: Raw Resource
+  Palm Wood Banquet Table:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Palm Wood Logs: -14
+        Lapislazuli: -20
+        Nails: -4
+        Resin: -4
+        Glass: -10
+    - recipe_type: Raw Resource
+  Palm Wood Bedside Table:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Palm Wood Logs: -2
+        Resin: -2
+    - recipe_type: Raw Resource
+  Palm Wood Side Table:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Palm Wood Logs: -4
+        Resin: -3
+    - recipe_type: Raw Resource
+  Palm Wood Table:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Palm Wood Logs: -8
+        Lapislazuli: -4
+        Nails: -2
+        Resin: -2
+    - recipe_type: Raw Resource
+  Stone Banquet Table:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -20
+        Torn Cloth: -10
+        String: -3
+        Mint Mushroom Meat: -2
+        Indigo Plant: -2
+    - recipe_type: Raw Resource
+  Stone Bedside Table:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -4
+        Torn Cloth: -1
+        Mint Mushroom Meat: -2
+    - recipe_type: Raw Resource
+  Stone Side Table:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -8
+        Torn Cloth: -4
+        String: -1
+        Mint Mushroom Meat: -2
+    - recipe_type: Raw Resource
+  Stone Table:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -10
+        Torn Cloth: -4
+        String: -1
+        Mint Mushroom Meat: -2
+        Indigo Plant: -2
+    - recipe_type: Raw Resource
+  Charcoal:
+    recipes:
+    - output: 15
+      recipe_type: Charcoal Kiln
+      requirements:
+        Wood Logs: -17
+        Dirt: -3
+    - recipe_type: Raw Resource
+  Tar:
+    recipes:
+    - output: 20
+      recipe_type: Charcoal Kiln
+      requirements:
+        Wood Logs: -30
+        Dirt: -6
+    - recipe_type: Raw Resource
+  Crypt Bookrest:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Leather: -1
+        Indigo Plant: -2
+        Paper: -10
+        Shroud Wood: -5
+    - recipe_type: Raw Resource
+  Crypt Brazier:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Metal Scraps: -10
+        Charcoal: -5
+        Bones: -6
+        Ectoplasm Gem: -6
+        Resin: -10
+    - recipe_type: Raw Resource
+  Crypt Candle:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Metal Scraps: -1
+        Resin: -3
+        Charcoal: -1
+    - recipe_type: Raw Resource
+  Crypt Chandelier:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Metal Scraps: -5
+        Charcoal: -3
+        Bones: -6
+        Ectoplasm Gem: -6
+        Resin: -6
+    - recipe_type: Raw Resource
+  Crypt Skull Torch:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Candle: -1
+        Bones: -2
+    - recipe_type: Raw Resource
+  Crypt Standing Skull Torch:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Ectoplasm Gem: -5
+        Metal Scraps: -4
+        Charcoal: -3
+        Bones: -1
+    - recipe_type: Raw Resource
+  Crypt Standing Torch:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Ectoplasm Gem: -3
+        Metal Scraps: -5
+        Resin: -5
+        Charcoal: -3
+    - recipe_type: Raw Resource
+  Crypt Wall Skull Torch:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Ectoplasm Gem: -2
+        Metal Scraps: -1
+        Charcoal: -1
+        Bones: -1
+    - recipe_type: Raw Resource
+  Crypt Wall Torch:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Metal Scraps: -2
+        Resin: -5
+        Charcoal: -1
+    - recipe_type: Raw Resource
+  Ectoplasm Gem:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Flintstone: -5
+        Ectoplasm Fragment: -2
+    - recipe_type: Raw Resource
+  Iron Crypt Brazier:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Iron Bars: -5
+        Charcoal: -30
+        Ectoplasm Crystal: -10
+        Resin: -20
+    - recipe_type: Raw Resource
+  Iron Crypt Chandelier:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Iron Bars: -10
+        Charcoal: -30
+        Ectoplasm Crystal: -20
+        Resin: -50
+    - recipe_type: Raw Resource
+  Iron Crypt Wall Torch:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Iron Bars: -3
+        Charcoal: -10
+        Ectoplasm Crystal: -5
+        Resin: -10
+    - recipe_type: Raw Resource
+  Large Crypt Cabinet:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Shroud Wood: -20
+        Nails: -4
+        Ectoplasm Gem: -5
+        Bones: -10
+    - recipe_type: Raw Resource
+  Large Crypt Cupboard:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Red Marble Fragment: -2
+        Shroud Wood: -25
+        Ectoplasm Gem: -5
+        Nails: -6
+        Bones: -1
+    - recipe_type: Raw Resource
+  Large Crypt Sideboard:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Shroud Wood: -16
+        Nails: -10
+        Ectoplasm Gem: -2
+    - recipe_type: Raw Resource
+  Large Crypt Table:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Red Marble Fragment: -3
+        Ectoplasm Gem: -8
+        Nails: -8
+        Bones: -10
+        Shroud Wood: -16
+    - recipe_type: Raw Resource
+  Large Iron Crypt Brazier:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Iron Bars: -30
+        Charcoal: -30
+        Ectoplasm Crystal: -30
+        Resin: -100
+    - recipe_type: Raw Resource
+  Medium Crypt Cabinet:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Shroud Wood: -15
+        Nails: -3
+        Ectoplasm Gem: -3
+        Bones: -5
+    - recipe_type: Raw Resource
+  Medium Crypt Table:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Metal Sheets: -12
+        Nails: -6
+        Red Marble Fragment: -2
+        Bones: -8
+        Ectoplasm Gem: -8
+    - recipe_type: Raw Resource
+  Small Crypt Cabinet:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Shroud Wood: -10
+        Nails: -2
+        Ectoplasm Gem: -2
+    - recipe_type: Raw Resource
+  Small Crypt Cupboard:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Red Marble Fragment: -1
+        Shroud Wood: -15
+        Ectoplasm Gem: -2
+        Nails: -3
+    - recipe_type: Raw Resource
+  Small Crypt Sideboard:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Shroud Wood: -8
+        Nails: -4
+        Ectoplasm Gem: -2
+    - recipe_type: Raw Resource
+  Small Crypt Table:
+    recipes:
+    - output: 1
+      recipe_type: Collector
+      requirements:
+        Metal Sheets: -8
+        Bones: -4
+        Nails: -4
+        Red Marble Fragment: -1
+    - recipe_type: Raw Resource
+  Grilled Wolf Meat:
+    recipes:
+    - output: 1
+      recipe_type: Cooking Station
+      requirements:
+        Raw Wolf Meat: -1
+    - recipe_type: Raw Resource
+  Reptile Leather:
+    recipes:
+    - output: 1
+      recipe_type: Drying Rack
+      requirements:
+        Reptile Hide: -1
+        Salt: -3
+    - recipe_type: Raw Resource
+  Ectoplasm:
+    recipes:
+    - output: 10
+      recipe_type: Ectoplasm Press
+      requirements:
+        Ectoplasm Fragment: -10
+        Torn Cloth: -5
+        Charcoal: -1
+    - recipe_type: Raw Resource
+  Excellent Ectoplasm:
+    recipes:
+    - output: 10
+      recipe_type: Ectoplasm Press
+      requirements:
+        Ectoplasm Crystal: -10
+        Torn Cloth: -10
+        Fabric: -1
+        Coal Powder: -10
+    - recipe_type: Raw Resource
+  Greater Ectoplasm:
+    recipes:
+    - output: 10
+      recipe_type: Ectoplasm Press
+      requirements:
+        Ectoplasm Shard: -10
+        Torn Cloth: -10
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Purified Slime:
+    recipes:
+    - output: 10
+      recipe_type: Ectoplasm Press
+      requirements:
+        Charcoal: -3
+        Salt: -10
+        Toxic Slime: -3
+        Wood Acid: -1
+    - recipe_type: Raw Resource
+  Chamomile Tea:
+    recipes:
+    - output: 1
+      recipe_type: Farmer
+      requirements:
+        Chamomile: -1
+        Water: -1
+    - recipe_type: Raw Resource
+  Scarecrow:
+    recipes:
+    - output: 1
+      recipe_type: Farmer
+      requirements:
+        Twigs: -4
+        Straw: -4
+        Torn Cloth: -5
+        String: -5
+    - recipe_type: Raw Resource
+  Sugar:
+    recipes:
+    - output: 1
+      recipe_type: Farmer
+      requirements:
+        Sugar Cane: -2
+    - recipe_type: Raw Resource
+  Empty Flower Pot (Long):
+    recipes:
+    - output: 2
+      recipe_type: Farmer
+      requirements:
+        Wood Logs: -1
+        Lump of Clay: -1
+    - recipe_type: Raw Resource
+  Pink Flower Pot (Long):
+    recipes:
+    - output: 2
+      recipe_type: Farmer
+      requirements:
+        Flower Soil: -1
+        Empty Flower Pot (Long): -2
+    - recipe_type: Raw Resource
+  Pink Wall Flower Pot (Long):
+    recipes:
+    - output: 2
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Long): -2
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Red Flower Pot (Long):
+    recipes:
+    - output: 2
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Long): -2
+        Charcoal: -1
+        Metal Scraps: -1
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Red Wall Flower Pot (Long):
+    recipes:
+    - output: 2
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Long): -2
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  White Flower Pot (Long):
+    recipes:
+    - output: 2
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Long): -2
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  White Wall Flower Pot (Long):
+    recipes:
+    - output: 2
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Long): -2
+        Charcoal: -1
+        Metal Scraps: -1
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Yellow Flower Pot (Long):
+    recipes:
+    - output: 2
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Long): -2
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Yellow Wall Flower Pot (Long):
+    recipes:
+    - output: 2
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Long): -2
+        Flower Soil: -1
+        Metal Scraps: -1
+        Charcoal: -1
+    - recipe_type: Raw Resource
+  Empty Flower Pot (Medium):
+    recipes:
+    - output: 3
+      recipe_type: Farmer
+      requirements:
+        Wood Logs: -1
+        Lump of Clay: -1
+    - recipe_type: Raw Resource
+  Fern Pot (Medium):
+    recipes:
+    - output: 3
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Medium): -3
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Grass Pot (Medium):
+    recipes:
+    - output: 3
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Medium): -3
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Pink Flower Pot (Medium):
+    recipes:
+    - output: 3
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Medium): -3
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Pink Wall Flower Pot (Medium):
+    recipes:
+    - output: 3
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Medium): -3
+        Metal Scraps: -1
+        Charcoal: -1
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Red Flower Pot (Medium):
+    recipes:
+    - output: 3
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Medium): -3
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Red Wall Flower Pot (Medium):
+    recipes:
+    - output: 3
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Medium): -3
+        Metal Scraps: -1
+        Charcoal: -1
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  White Flower Pot (Medium):
+    recipes:
+    - output: 3
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Medium): -3
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  White Wall Flower Pot (Medium):
+    recipes:
+    - output: 3
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Medium): -3
+        Metal Scraps: -1
+        Charcoal: -1
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Yellow Flower Pot (Medium):
+    recipes:
+    - output: 3
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Medium): -3
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Yellow Wall Flower Pot (Medium):
+    recipes:
+    - output: 3
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Medium): -3
+        Metal Scraps: -1
+        Charcoal: -1
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Empty Flower (Small):
+    recipes:
+    - output: 4
+      recipe_type: Farmer
+      requirements:
+        Wood Logs: -1
+        Lump of Clay: -1
+    - recipe_type: Raw Resource
+  Fern Pot (Small):
+    recipes:
+    - output: 4
+      recipe_type: Farmer
+      requirements:
+        Empty Flower (Small): -4
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Grass Pot (Small):
+    recipes:
+    - output: 4
+      recipe_type: Farmer
+      requirements:
+        Empty Flower (Small): -4
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Pink Flower Pot (Small):
+    recipes:
+    - output: 4
+      recipe_type: Farmer
+      requirements:
+        Empty Flower (Small): -4
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Red Flower Pot (Small):
+    recipes:
+    - output: 4
+      recipe_type: Farmer
+      requirements:
+        Empty Flower (Small): -4
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Square Flower Pot (Small):
+    recipes:
+    - output: 4
+      recipe_type: Farmer
+      requirements:
+        Empty Flower (Small): -4
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  White Flower Pot (Small):
+    recipes:
+    - output: 4
+      recipe_type: Farmer
+      requirements:
+        Empty Flower (Small): -4
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Yellow Flower Pot (Small):
+    recipes:
+    - output: 4
+      recipe_type: Farmer
+      requirements:
+        Empty Flower (Small): -4
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Empty Flower Pot (Tiny):
+    recipes:
+    - output: 5
+      recipe_type: Farmer
+      requirements:
+        Wood Logs: -1
+        Lump of Clay: -1
+    - recipe_type: Raw Resource
+  Pink Flower Pot (Tiny):
+    recipes:
+    - output: 5
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Tiny): -5
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Red Flower Pot (Tiny):
+    recipes:
+    - output: 5
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Tiny): -5
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  White Flower Pot (Tiny):
+    recipes:
+    - output: 5
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Tiny): -5
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Yellow Flower Pot (Tiny):
+    recipes:
+    - output: 5
+      recipe_type: Farmer
+      requirements:
+        Empty Flower Pot (Tiny): -5
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Farm Soil:
+    recipes:
+    - output: 10
+      recipe_type: Farmer
+      requirements:
+        Dirt: -7
+        Bonemeal: -3
+    - recipe_type: Raw Resource
+  Flower Soil:
+    recipes:
+    - output: 10
+      recipe_type: Farmer
+      requirements:
+        Farm Soil: -7
+        Honey: -3
+    - recipe_type: Raw Resource
+  Fertilised Farm Soil:
+    recipes:
+    - output: 15
+      recipe_type: Farmer
+      requirements:
+        Sand: -10
+        Fossilized Bone Dust: -2
+        Nitrate: -3
+    - recipe_type: Raw Resource
+  Metal Sheets:
+    recipes:
+    - output: 1
+      recipe_type: Forge
+      requirements:
+        Charcoal: -2
+        Metal Scraps: -2
+    - recipe_type: Raw Resource
+  Flour:
+    recipes:
+    - output: 1
+      recipe_type: Grinding Stones
+      requirements:
+        Wheat Grains: -2
+    - recipe_type: Raw Resource
+  Obsidian Dust:
+    recipes:
+    - output: 1
+      recipe_type: Grinding Stones
+      requirements:
+        Obsidian: -1
+    - recipe_type: Raw Resource
+  Silver Dust:
+    recipes:
+    - output: 1
+      recipe_type: Grinding Stones
+      requirements:
+        Silver Bars: -1
+    - recipe_type: Raw Resource
+  BoneMeal:
+    recipes:
+    - output: 2
+      recipe_type: Grinding Stones
+      requirements:
+        Bones: -1
+    - recipe_type: Raw Resource
+  Fossilized Bone Dust:
+    recipes:
+    - output: 3
+      recipe_type: Grinding Stones
+      requirements:
+        Fossilized Bone: -1
+    - recipe_type: Raw Resource
+  Coal Powder:
+    recipes:
+    - output: 5
+      recipe_type: Grinding Stones
+      requirements:
+        Charcoal: -5
+    - recipe_type: Raw Resource
+  Linen:
+    recipes:
+    - output: 1
+      recipe_type: Hand Spindle
+      requirements:
+        Flax: -2
+    - recipe_type: Raw Resource
+  Big Fur Rug:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Dried Fur: -4
+        Linen: -2
+    - recipe_type: Raw Resource
+  Big furry straw mat:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Dried Fur: -2
+        Leather: -4
+        Straw: -10
+    - recipe_type: Raw Resource
+  Big straw mat:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Plant Fiber: -20
+    - recipe_type: Raw Resource
+  Bronze Fell Dragon Youngling Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Fell Dragon Youngling Head: -1
+        Nails: -2
+        Bronze Bars: -1
+    - recipe_type: Raw Resource
+  Bronze Fell Monstrosity Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Fell Monstrosity Head: -1
+        Nails: -2
+        Bronze Bars: -1
+    - recipe_type: Raw Resource
+  Bronze Fell Sicklescythe Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Fell Sicklescythe Head: -1
+        Nails: -2
+        Bronze Bars: -1
+    - recipe_type: Raw Resource
+  Bronze Fell Thunderbrute Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Fell Thunderbrute Head: -3
+        Nails: -2
+        Bronze Bars: -1
+    - recipe_type: Raw Resource
+  Bronze Fell Wispwyvern Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Fell Wispwyvern Head: -5
+        Nails: -2
+        Bronze Bars: -1
+    - recipe_type: Raw Resource
+  Bronze Hollow Cyclops Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Hollow Cyclops Head: -5
+        Nails: -2
+        Bronze Bars: -1
+    - recipe_type: Raw Resource
+  Bronze Scavenger Matron Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Scavenger Matron Helmet: -3
+        Nails: -2
+        Bronze Bars: -1
+    - recipe_type: Raw Resource
+  Bronze Vukah Brawler Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Vukah Brawler Head: -3
+        Nails: -2
+        Bronze Bars: -1
+    - recipe_type: Raw Resource
+  Carpet:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Fabric: -5
+        Mint Mushroom Meat: -2
+        Saffron: -2
+        Indigo Plant: -2
+        Sulfur: -2
+    - recipe_type: Raw Resource
+  Fell Dragon Youngling Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Fell Dragon Youngling Head: -5
+        Nails: -2
+    - recipe_type: Raw Resource
+  Fell Monstrosity Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Fell Monstrosity Head: -3
+        Nails: -2
+    - recipe_type: Raw Resource
+  Fell Sicklescythe Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Fell Sicklescythe Head: -5
+        Nails: -2
+    - recipe_type: Raw Resource
+  Fell Thunderbrute Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Fell Thunderbrute Head: -1
+        Nails: -2
+    - recipe_type: Raw Resource
+  Fell Wispwyvern Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Fell Wispwyvern Head: -3
+        Nails: -2
+    - recipe_type: Raw Resource
+  Fur Rug:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Dried Fur: -1
+    - recipe_type: Raw Resource
+  Furry straw mat:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Dried Fur: -1
+        Leather: -1
+        Straw: -5
+    - recipe_type: Raw Resource
+  Green Fabric:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Fabric: -1
+        Mint Mushroom Meat: -1
+    - recipe_type: Raw Resource
+  Hardened Leather:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Leather: -1
+        Wax: -2
+    - recipe_type: Raw Resource
+  Hollow Cyclops Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Hollow Cyclops Head: -3
+        Nails: -2
+    - recipe_type: Raw Resource
+  Iron Fell Dragon Youngling Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Fell Dragon Youngling Head: -3
+        Nails: -2
+        Iron Bars: -1
+    - recipe_type: Raw Resource
+  Iron Fell Monstrosity Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Fell Monstrosity Head: -3
+        Nails: -2
+        Iron Bars: -1
+    - recipe_type: Raw Resource
+  Iron Fell Sicklescythe Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Fell Sicklescythe Head: -3
+        Nails: -2
+        Iron Bars: -1
+    - recipe_type: Raw Resource
+  Iron Fell Thunderbrute Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Fell Thunderbrute Head: -5
+        Nails: -2
+        Iron Bars: -1
+    - recipe_type: Raw Resource
+  Iron Fell Wispwyvern Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Fell Wispwyvern Head: -1
+        Nails: -2
+        Iron Bars: -1
+    - recipe_type: Raw Resource
+  Iron Hollow Cyclops Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Hollow Cyclops Head: -1
+        Nails: -2
+        Iron Bars: -1
+    - recipe_type: Raw Resource
+  Iron Scavenger Matron Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Scavenger Matron Helmet: -5
+        Nails: -2
+        Iron Bars: -1
+    - recipe_type: Raw Resource
+  Iron Vukah Brawler Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Vukah Brawler Head: -1
+        Nails: -2
+        Iron Bars: -1
+    - recipe_type: Raw Resource
+  Padding:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Fabric: -3
+        Leather: -1
+        Resin: -2
+        Linen: -2
+    - recipe_type: Raw Resource
+  Red Fabric:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Fabric: -1
+        Sulfur: -1
+    - recipe_type: Raw Resource
+  Scavenger Matron Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Scavenger Matron Helmet: -1
+        Nails: -2
+    - recipe_type: Raw Resource
+  Straw mat:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Plant Fiber: -10
+    - recipe_type: Raw Resource
+  Violet Fabric:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Fabric: -1
+        Mauveine: -1
+    - recipe_type: Raw Resource
+  Vukah Brawler Trophy:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Planks: -2
+        Vukah Brawler Head: -1
+        Nails: -2
+    - recipe_type: Raw Resource
+  Warm Padding:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Fabric: -3
+        Leather: -1
+        Resin: -2
+        Wool: -4
+    - recipe_type: Raw Resource
+  Yellow Fabric:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Fabric: -1
+        Saffron: -1
+    - recipe_type: Raw Resource
+  Blue Fabric:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Fabric: -1
+        Indigo Plant: -1
+    - recipe_type: Raw Resource
+  Wool:
+    recipes:
+    - output: 1
+      recipe_type: Improved Spinning Wheel
+      requirements:
+        Raw Wool: -20
+    - recipe_type: Raw Resource
+  Black Powder:
+    recipes:
+    - output: 1
+      recipe_type: Laboratory
+      requirements:
+        Nitrate: -7
+        Sulfur: -1
+        Coal Powder: -1
+    - recipe_type: Raw Resource
+  Wound Ointment:
+    recipes:
+    - output: 1
+      recipe_type: Laboratory
+      requirements:
+        Antiseptic: -1
+        Chamomile: -2
+        Gentian: -2
+        Silver Dust: -1
+    - recipe_type: Raw Resource
+  Enshrouded Oil:
+    recipes:
+    - output: 5
+      recipe_type: Laboratory
+      requirements:
+        Shroud Spores: -5
+        Coal Powder: -5
+        Shroud Liquid: -5
+        Sulfur: -1
+    - recipe_type: Raw Resource
+  Flammable Goo:
+    recipes:
+    - output: 5
+      recipe_type: Laboratory
+      requirements:
+        Tar: -5
+        Alchemical Base: -1
+        Coal: -1
+        Goo: -1
+    - recipe_type: Raw Resource
+  Mauveine:
+    recipes:
+    - output: 5
+      recipe_type: Laboratory
+      requirements:
+        Tar: -5
+        Alchemical Base: -1
+        Nitrate: -1
+        Sulfur: -1
+    - recipe_type: Raw Resource
+  Nitrate:
+    recipes:
+    - output: 5
+      recipe_type: Laboratory
+      requirements:
+        Sand: -5
+        Salt: -5
+        Wood Acid: -1
+        Alchemical Base: -1
+    - recipe_type: Raw Resource
+  Paper:
+    recipes:
+    - output: 5
+      recipe_type: Laboratory
+      requirements:
+        Wood Logs: -1
+        Ammonia Gland: -1
+    - recipe_type: Raw Resource
+  Spice:
+    recipes:
+    - output: 10
+      recipe_type: Laboratory
+      requirements:
+        Saffron: -1
+        Alchemical Base: -1
+        Chamomile: -1
+        Rooibos: -1
+        Kindlewastes Flower: -2
+    - recipe_type: Raw Resource
+  Fabric:
+    recipes:
+    - output: 1
+      recipe_type: Loom
+      requirements:
+        Linen: -2
+    - recipe_type: Raw Resource
+  Flat Bread:
+    recipes:
+    - output: 1
+      recipe_type: Oven
+      requirements:
+        Salt: -1
+        Water: -1
+        Flour: -1
+    - recipe_type: Raw Resource
+  Tin Bars:
+    recipes:
+    - output: 3
+      recipe_type: Smelter
+      requirements:
+        Tin Ore: -15
+        Charcoal: -5
+        Wood Acid: -2
+    - recipe_type: Raw Resource
+  Bronze Bars:
+    recipes:
+    - output: 10
+      recipe_type: Smelter
+      requirements:
+        Copper Bars: -7
+        Tin Bars: -3
+        Charcoal: -10
+    - recipe_type: Raw Resource
+  Copper Bars:
+    recipes:
+    - output: 10
+      recipe_type: Smelter
+      requirements:
+        Copper Ore: -10
+    - recipe_type: Raw Resource
+  Iron Bars:
+    recipes:
+    - output: 10
+      recipe_type: Smelter
+      requirements:
+        Iron Ore: -10
+        Charcoal: -25
+    - recipe_type: Raw Resource
+  String:
+    recipes:
+    - output: 2
+      recipe_type: Spinning Wheel
+      requirements:
+        Plant Fiber: -2
+    - recipe_type: Raw Resource
+  Wood Planks:
+    recipes:
+    - output: 2
+      recipe_type: Table Saw
+      requirements:
+        Wood Logs: -1
+    - recipe_type: Raw Resource
+  Leather:
+    recipes:
+    - output: 10
+      recipe_type: Tanning Station
+      requirements:
+        Dried Fur: -10
+        Salt: -20
+        Ammonia Gland: -2
+    - recipe_type: Raw Resource
+  Candle:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        String: -1
+        Wax: -1
+    - recipe_type: Raw Resource
+  Crude Mattress:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Plant Fiber: -4
+        String: -3
+        Torn Cloth: -4
+    - recipe_type: Raw Resource
+  Crude Wooden Bed:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Animal Fur: -4
+        String: -4
+        Wood Logs: -4
+        Crude Mattress: -1
+    - recipe_type: Raw Resource
+  Crude Wooden Door:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -8
+        String: -2
+    - recipe_type: Raw Resource
+  Crude Wooden Fence:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -3
+        String: -2
+    - recipe_type: Raw Resource
+  Crude Wooden Fence 2:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -1
+        String: -1
+    - recipe_type: Raw Resource
+  Crude Wooden Fence 3:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -4
+        String: -2
+    - recipe_type: Raw Resource
+  Crude Wooden Fence 4:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -7
+        String: -3
+    - recipe_type: Raw Resource
+  Crude Wooden Gate 1:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -9
+        String: -2
+    - recipe_type: Raw Resource
+  Crude Wooden Gate 2:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -7
+    - recipe_type: Raw Resource
+  Crude Wooden Nightstand:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -2
+    - recipe_type: Raw Resource
+  Crude Wooden Side Table:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -5
+    - recipe_type: Raw Resource
+  Crude Wooden Table:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -5
+    - recipe_type: Raw Resource
+  Firefly Lamp:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Plant Fibre: -3
+        Fire Fly: -5
+    - recipe_type: Raw Resource
+  Large Round Wooden Window Frame:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -4
+    - recipe_type: Raw Resource
+  Palisade 1:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -3
+    - recipe_type: Raw Resource
+  Palisade 2:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -5
+        String: -2
+    - recipe_type: Raw Resource
+  Palisade 3:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -7
+        String: -4
+    - recipe_type: Raw Resource
+  Palisade 4:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -8
+        String: -4
+    - recipe_type: Raw Resource
+  Round Wooden Window Frame:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -2
+    - recipe_type: Raw Resource
+  Round Wooden Window Frame (Door):
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -5
+    - recipe_type: Raw Resource
+  Scaffold A:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -5
+        String: -1
+    - recipe_type: Raw Resource
+  Scaffold B:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -5
+        String: -1
+    - recipe_type: Raw Resource
+  Skull Candle:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Resin: -3
+        Bones: -1
+        Candle: -1
+    - recipe_type: Raw Resource
+  Standing Torch (Wood):
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Resin: -4
+        Wood Logs: -2
+        Torn Cloth: -2
+    - recipe_type: Raw Resource
+  Wall Torch:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Resin: -4
+        Wood Logs: -1
+        Torn Cloth: -2
+    - recipe_type: Raw Resource
+  Wooden Door:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -5
+        Metal Scraps: -2
+    - recipe_type: Raw Resource
+  Wooden Double Door:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wooden Door: -2
+    - recipe_type: Raw Resource
+  Wooden Ladder:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -4
+        Nails: -4
+    - recipe_type: Raw Resource
+  Wooden Round Door:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -10
+        Metal Scraps: -2
+    - recipe_type: Raw Resource
+  Wooden Window Frame:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -3
+    - recipe_type: Raw Resource
+  Crude Wooden Jug:
+    recipes:
+    - output: 2
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -2
+    - recipe_type: Raw Resource
+  Crude Wooden Platter:
+    recipes:
+    - output: 3
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -1
+    - recipe_type: Raw Resource
+  Wooden Bowl:
+    recipes:
+    - output: 3
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -1
+    - recipe_type: Raw Resource
+  Wooden Cup:
+    recipes:
+    - output: 5
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -1
+    - recipe_type: Raw Resource
+  Dirt Road Block:
+    recipes:
+    - output: 10
+      recipe_type: Workbench
+      requirements:
+        Dirt: -10
+    - recipe_type: Raw Resource
+  Rocky Stone Road Block:
+    recipes:
+    - output: 10
+      recipe_type: Workbench
+      requirements:
+        Stone: -10
+    - recipe_type: Raw Resource
+  Smooth Stone Road Block:
+    recipes:
+    - output: 10
+      recipe_type: Workbench
+      requirements:
+        Stone: -5
+        Dirt: -5
+    - recipe_type: Raw Resource
+  Rough Wood Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -2
+    - recipe_type: Raw Resource
+  Blue Luminescent Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Stone: -5
+        Luminous Growth: -5
+    - recipe_type: Raw Resource
+  Brick-Timbered Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Fired Bricks Block: -10
+        Wood Logs: -5
+    - recipe_type: Raw Resource
+  Bronze Block:
+    recipes:
+    - output: 75
+      recipe_type: Workbench
+      requirements:
+        Bronze Bars: -1
+        Wood Logs: -5
+    - recipe_type: Raw Resource
+  Castle Wall Stone Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Stone: -10
+        Dirt: -2
+    - recipe_type: Raw Resource
+  Citywall Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Stone: -10
+        Dirt: -2
+    - recipe_type: Raw Resource
+  Conifer Wood Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Conifer Logs: -10
+    - recipe_type: Raw Resource
+  Copper Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Copper Bar: -1
+        Wood Logs: -5
+    - recipe_type: Raw Resource
+  Desert City Wall:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Sandstone: -30
+    - recipe_type: Raw Resource
+  Desert Temple Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Sandstone: -20
+        Indigo Plant: -2
+    - recipe_type: Raw Resource
+  Ectoplasm Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Flintstone: -5
+        Ectoplasm Shard: -5
+    - recipe_type: Raw Resource
+  Fancy Stone Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Limestone: -10
+        Wood Planks: -3
+    - recipe_type: Raw Resource
+  Fired Bricks Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Fried Brick: -10
+    - recipe_type: Raw Resource
+  Granite Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Granite: -10
+    - recipe_type: Raw Resource
+  Green Luminescent Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Stone: -5
+        Purified Slime: -5
+    - recipe_type: Raw Resource
+  Half-Timbered Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Lump of Clay: -10
+        Wood Logs: -5
+    - recipe_type: Raw Resource
+  Highly Polished Stone Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Stone: -30
+    - recipe_type: Raw Resource
+  Hollow Halls Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Stone: -5
+        Tar: -1
+    - recipe_type: Raw Resource
+  Iron Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Iron Bars: -1
+        Wood Logs: -5
+    - recipe_type: Raw Resource
+  Limestone Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Limestone: -10
+        Dirt: -4
+    - recipe_type: Raw Resource
+  Metal Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Metal Sheets: -1
+        Wood Logs: -5
+    - recipe_type: Raw Resource
+  Mixed Sandstone Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Sandstone: -10
+        Limestone: -5
+    - recipe_type: Raw Resource
+  Mycelium Overgrown Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Stone: -10
+        Mycelium: -5
+    - recipe_type: Raw Resource
+  Obsidian Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Obsidian: -20
+        Silver Bars: -20
+    - recipe_type: Raw Resource
+  Palm Wood Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -3
+        Palm Wood Logs: -7
+    - recipe_type: Raw Resource
+  Plaited Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Twigs: -10
+    - recipe_type: Raw Resource
+  Polished Granite Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Granite: -20
+    - recipe_type: Raw Resource
+  Red Marble Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Red Marble Fragment: -10
+    - recipe_type: Raw Resource
+  Refined Sandstone Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Sandstone: -10
+        Sand: -2
+        Lump of Clay: -2
+    - recipe_type: Raw Resource
+  Refined Stone Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Limestone: -10
+        Flintstone: -10
+    - recipe_type: Raw Resource
+  Refined Wood Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -2
+    - recipe_type: Raw Resource
+  Regular Sandstone Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Sandstone: -10
+        Lump of Clay: -2
+    - recipe_type: Raw Resource
+  Regular Stone Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Stone: -15
+    - recipe_type: Raw Resource
+  Rough Flintstone Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Flintstone: -10
+    - recipe_type: Raw Resource
+  Rough Sandstone Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Sandstone: -10
+    - recipe_type: Raw Resource
+  Rough Stone Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Stone: -2
+    - recipe_type: Raw Resource
+  Roughly Cut Stone Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Stone: -10
+        Rubble: -1
+    - recipe_type: Raw Resource
+  Shroud Wood Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Shroud Wood: -10
+    - recipe_type: Raw Resource
+  Tarred Wood Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -10
+        Tar: -5
+    - recipe_type: Raw Resource
+  Vukah Temple Stones:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Stone: -10
+        Dirt: -2
+    - recipe_type: Raw Resource
+  Weathered Stone Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        stone: -10
+    - recipe_type: Raw Resource
+  Well Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Sandstone: -10
+        Shroud Liquid: -5
+    - recipe_type: Raw Resource
+  White Luminescent Block:
+    recipes:
+    - output: 100
+      recipe_type: Workbench
+      requirements:
+        Stone: -5
+        White Glowing Substance: -5
+    - recipe_type: Raw Resource
