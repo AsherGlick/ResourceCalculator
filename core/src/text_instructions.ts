@@ -85,7 +85,7 @@ export const generate_instructions = (edges: { [key: string]: ResourceEdge }, ge
 				}
 
 				instructions.appendChild(build_instruction_line(edges, node, generation_totals));
-				let instruction_inventory_line = build_instruction_inventory_line(edges, node);
+				let instruction_inventory_line = wrap_instruction(build_instruction_inventory_line(edges, node));
 				if (instruction_inventory_line !== null) {
 					instructions.appendChild(instruction_inventory_line)
 				}
@@ -145,18 +145,32 @@ const build_instruction_inventory_line = (
 		return null;
 	}
 
-	let line_wrapper = document.createElement("div");
+	const span = document.createElement("span");
+
+	span.appendChild(document.createTextNode("Take "));
+	span.appendChild(text_item_object(amount_to_take, item_name));
+	span.appendChild(document.createTextNode(" from inventory."));
+
+	return span;
+}
+
+const wrap_instruction = (to_be_wrapped: HTMLElement | null): HTMLElement => {
+	const line_wrapper = document.createElement("div");
+
+	if (to_be_wrapped == null) {
+		return line_wrapper;
+	}
+
 	line_wrapper.classList.add("instruction_wrapper");
 
-	let prefix = document.createElement("span");
-	prefix.textContent = "Take ";
-	line_wrapper.appendChild(prefix);
+	const checkbox = document.createElement("input");
+	checkbox.type = "checkbox";
+	const label = document.createElement("label");
+	label.classList.add("strikethrough");
 
-	line_wrapper.appendChild(text_item_object(amount_to_take, item_name));
-
-	let suffix = document.createElement("span");
-	suffix.textContent = " from inventory."
-	line_wrapper.appendChild(suffix);
+	line_wrapper.appendChild(checkbox);
+	label.appendChild(to_be_wrapped);
+	line_wrapper.appendChild(label);
 
 	return line_wrapper;
 }

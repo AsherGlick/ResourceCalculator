@@ -600,6 +600,9 @@ body {
 	color: #636363;
 	word-spacing: initial;
 }
+input[type=checkbox]:checked + label.strikethrough{
+  text-decoration: line-through;
+}
 
 
 .stack_sizes {
