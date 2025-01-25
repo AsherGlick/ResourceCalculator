@@ -600,8 +600,12 @@ body {
 	color: #636363;
 	word-spacing: initial;
 }
+.instruction_wrapper > input[type=checkbox] {
+	margin-right: .5em;
+}
 input[type=checkbox]:checked + label.strikethrough{
   text-decoration: line-through;
+	color: #636363;
 }
 
 

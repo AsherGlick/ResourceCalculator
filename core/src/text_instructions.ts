@@ -84,10 +84,10 @@ export const generate_instructions = (edges: { [key: string]: ResourceEdge }, ge
 					continue;
 				}
 
-				instructions.appendChild(build_instruction_line(edges, node, generation_totals));
-				let instruction_inventory_line = wrap_instruction(build_instruction_inventory_line(edges, node));
+				instructions.appendChild(wrap_instruction(build_instruction_line(edges, node, generation_totals)));
+				let instruction_inventory_line = build_instruction_inventory_line(edges, node);
 				if (instruction_inventory_line !== null) {
-					instructions.appendChild(instruction_inventory_line)
+					instructions.appendChild(wrap_instruction(instruction_inventory_line))
 				}
 			}
 		}
@@ -154,13 +154,8 @@ const build_instruction_inventory_line = (
 	return span;
 }
 
-const wrap_instruction = (to_be_wrapped: HTMLElement | null): HTMLElement => {
+const wrap_instruction = (to_be_wrapped: HTMLElement): HTMLElement => {
 	const line_wrapper = document.createElement("div");
-
-	if (to_be_wrapped == null) {
-		return line_wrapper;
-	}
-
 	line_wrapper.classList.add("instruction_wrapper");
 
 	const checkbox = document.createElement("input");
