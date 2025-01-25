@@ -26,8 +26,9 @@ export function generate_instructions(edges: { [key: string]: ResourceEdge }, ge
 
 	var inventory_resources: HTMLDivElement[] = [];
 	var needed_resources: HTMLDivElement[] = [];
+
 	// List out raw resource numbers
-	for (let node in node_columns){
+	for (let node in node_columns) {
 		if (node_columns[node] === 0) {
 			var line_wrapper = document.createElement("div");
 			line_wrapper.classList.add("instruction_wrapper");
@@ -45,7 +46,7 @@ export function generate_instructions(edges: { [key: string]: ResourceEdge }, ge
 
 		// Track the largest column as the max column count
 		if (node_columns[node] >= column_count) {
-			column_count = node_columns[node]+1;
+			column_count = node_columns[node] + 1;
 		}
 	}
 
@@ -80,42 +81,42 @@ export function generate_instructions(edges: { [key: string]: ResourceEdge }, ge
 		for (let node in node_columns) {
 			if (node_columns[node] === i) {
 
-				if (node.startsWith("[Final]") || node.startsWith("[Extra]")){
+				if (node.startsWith("[Final]") || node.startsWith("[Extra]")) {
 					continue;
 				}
 
-				instructions.appendChild(build_instruction_line(edges, node, generation_totals));
-				let instruction_inventory_line = build_instruction_inventory_line(edges, node);
+				const instruction_line = build_instruction_line(edges, node, generation_totals);
+				if (instruction_line !== null) {
+					instructions.appendChild(wrap_instruction(instruction_line));
+				}
+				const instruction_inventory_line = build_instruction_inventory_line(edges, node);
 				if (instruction_inventory_line !== null) {
-					instructions.appendChild(instruction_inventory_line)
+					instructions.appendChild(wrap_instruction(instruction_inventory_line))
 				}
 			}
 		}
 
-		var line_break = document.createElement("div");
+		const line_break = document.createElement("div");
 		line_break.classList.add("instruction_line_break");
 		instructions.appendChild(line_break);
 	}
 
 	// Add the new instruction list to the page
 	text_instructions_elem.appendChild(instructions);
-
 }
 
-
-
 function build_instruction_line(
-	edges: { [key: string]: ResourceEdge},
+	edges: { [key: string]: ResourceEdge },
 	item_name: string,
-	generation_totals: { [key: string]: number}
-): HTMLDivElement {
+	generation_totals: { [key: string]: number }
+): HTMLSpanElement | null {
 	if (!generation_totals[item_name]) {
-		return document.createElement("div");
+		return null;
 	}
 
 	// Build the input item sub string
-	var inputs: {[key: string]:number} = {};
-	for (let edge in edges){
+	var inputs: { [key: string]: number } = {};
+	for (let edge in edges) {
 		// If this is pointing into the resource we are currently trying to craft
 		if (edges[edge].target === item_name && !(edges[edge].source.endsWith(inventory_label_suffix))) {
 			inputs[edges[edge].source] = edges[edge].value;
@@ -125,7 +126,7 @@ function build_instruction_line(
 	var recipe_type = get_recipe(item_name).recipe_type;
 
 	if (recipe_type_functions[recipe_type] === undefined) {
-		return document.createElement("div");
+		return null;
 	}
 
 	return recipe_type_functions[recipe_type](inputs, item_name, generation_totals[item_name], text_item_object);
@@ -134,9 +135,9 @@ function build_instruction_line(
 function build_instruction_inventory_line(
 	edges: { [key: string]: ResourceEdge },
 	item_name: string
-): HTMLElement | null{
+): HTMLSpanElement | null {
 	let amount_to_take: number = 0;
-	for (let edge in edges){
+	for (let edge in edges) {
 		// If this is pointing into the resource we are currently trying to take from the inventory.
 		if (edges[edge].target === item_name && (edges[edge].source.endsWith(inventory_label_suffix))) {
 			amount_to_take = edges[edge].value;
@@ -148,87 +149,77 @@ function build_instruction_inventory_line(
 		return null;
 	}
 
+	const span = document.createElement("span");
 
-	let line_wrapper = document.createElement("div");
+	span.appendChild(document.createTextNode("Take "));
+	span.appendChild(text_item_object(amount_to_take, item_name));
+	span.appendChild(document.createTextNode(" from inventory."));
+
+	return span;
+}
+
+function wrap_instruction(to_be_wrapped: HTMLElement): HTMLDivElement {
+	const line_wrapper = document.createElement("div");
 	line_wrapper.classList.add("instruction_wrapper");
 
-	let prefix = document.createElement("span");
-	prefix.textContent = "Take ";
-	line_wrapper.appendChild(prefix);
+	const checkbox = document.createElement("input");
+	checkbox.type = "checkbox";
+	const label = document.createElement("label");
+	label.classList.add("strikethrough");
 
-	line_wrapper.appendChild(text_item_object(amount_to_take, item_name));
-
-	let suffix = document.createElement("span");
-	suffix.textContent = " from inventory."
-	line_wrapper.appendChild(suffix);
+	line_wrapper.appendChild(checkbox);
+	label.appendChild(to_be_wrapped);
+	line_wrapper.appendChild(label);
 
 	return line_wrapper;
 }
 
+function text_item_object(count: number, name: string): HTMLSpanElement {
+	const item_object = document.createElement("span");
 
-function text_item_object(count: number, name: string): HTMLSpanElement{
-	var item_object = document.createElement("span");
 	if (!count) {
 		return item_object;
 	}
 
 	item_object.classList.add("instruction_item");
+	item_object.appendChild(document.createTextNode(count.toString()));
 
-
-	var units = (<HTMLInputElement>document.querySelector("input[name=unit_name]:checked")).value;
-
-	let count_object = document.createElement("span");
-	count_object.classList.add("instruction_item_count");
-	count_object.textContent = count.toString();
+	const units = (<HTMLInputElement>document.querySelector("input[name=unit_name]:checked")).value;
 
 	if (units !== "" && units !== undefined) {
-		var unit_value_list = build_unit_value_list(count, units, name);
+		const unit_value_list = build_unit_value_list(count, units, name);
 
-		var join_plus_character = "";
-		var smalltext = " (";
-		for (let i = 0; i < unit_value_list.length; i++){
+		let join_plus_character = "";
+		let smalltext = "";
+		for (let i = 0; i < unit_value_list.length; i++) {
 			smalltext += join_plus_character + unit_value_list[i].count;
 
 			if (unit_value_list[i].name !== "") {
 				smalltext += " " + unit_value_list[i].name;
 			}
-			join_plus_character=" + ";
+			join_plus_character = " + ";
 		}
-		smalltext += ")";
 
-		// If there is more then one unit, or only one that is not default
+		// If there is more than one unit, or only one that is not default
 		if (unit_value_list.length > 1 || unit_value_list[0].name !== "") {
-			let small_unit_elem = document.createElement("span");
+			const small_unit_elem = document.createElement("span");
 			small_unit_elem.classList.add("small_unit_name");
-			small_unit_elem.textContent = smalltext;
-			count_object.appendChild(small_unit_elem);
+			small_unit_elem.textContent = " (" + smalltext + ")";
+			item_object.appendChild(small_unit_elem);
 		}
-
-		item_object.appendChild(count_object);
 	}
 
-	item_object.appendChild(count_object);
-
-	var space_object = document.createElement("span");
-	space_object.textContent = " ";
-	item_object.appendChild(space_object);
-
-	var name_object = document.createElement("span");
-	name_object.classList.add("instruction_item_name");
-	name_object.textContent = name;
-	item_object.appendChild(name_object);
+	item_object.appendChild(document.createTextNode(" " + name));
 
 	return item_object;
 }
-
-
 
 
 class ValueListElem {
 	name: string = "";
 	count: number;
 
-	constructor (count: number) {
+	constructor(count: number) {
 		this.count = count
 	}
 }
@@ -241,15 +232,15 @@ function build_unit_value_list(number: number, unit_name: string, item_name: str
 		return [new ValueListElem(number)];
 	}
 
-	var unit = stack_sizes[unit_name];
-	var unit_size = get_unit_size(unit_name, item_name);
-	var quotient = Math.floor(number/unit_size);
-	var remainder = number % unit_size;
+	const unit = stack_sizes[unit_name];
+	const unit_size = get_unit_size(unit_name, item_name);
+	const quotient = Math.floor(number / unit_size);
+	const remainder = number % unit_size;
 
-	var value_list: ValueListElem[] = [];
+	let value_list: ValueListElem[] = [];
 
 	if (quotient > 0) {
-		let value_list_element = new ValueListElem(quotient);
+		const value_list_element = new ValueListElem(quotient);
 		if (quotient > 1) {
 			value_list_element.name = unit.plural;
 		}
@@ -264,7 +255,6 @@ function build_unit_value_list(number: number, unit_name: string, item_name: str
 
 	return value_list;
 }
-
 
 ////////////////////////////////////////////////////////////////////////////////
 // Gets the base number of items that would fit in a particular unit accounting
@@ -285,4 +275,3 @@ function get_unit_size(unit_name: string, item_name: string): number {
 
 	return multiplier;
 }
-

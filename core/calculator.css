@@ -585,7 +585,6 @@ body {
 }
 .instruction_wrapper {
 	padding: 2px;
-
 }
 .instruction_item {
 	display: inline-block;
@@ -593,13 +592,6 @@ body {
 	padding: 2px 5px;
 	border-radius: 5px;
 }
-.instruction_item_count {
-	display: inline-block;
-}
-.instruction_item_name {
-	display: inline-block;
-}
-
 .instruction_line_break{
 	height: 1em;
 }
@@ -607,6 +599,13 @@ body {
 	font-size: .7em;
 	color: #636363;
 	word-spacing: initial;
+}
+.instruction_wrapper > input[type=checkbox] {
+	margin-right: .5em;
+}
+input[type=checkbox]:checked + label.strikethrough{
+	text-decoration: line-through;
+	color: #636363;
 }
 
 
