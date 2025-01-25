@@ -84,15 +84,18 @@ export const generate_instructions = (edges: { [key: string]: ResourceEdge }, ge
 					continue;
 				}
 
-				instructions.appendChild(wrap_instruction(build_instruction_line(edges, node, generation_totals)));
-				let instruction_inventory_line = build_instruction_inventory_line(edges, node);
+				const instruction_line = build_instruction_line(edges, node, generation_totals);
+				if (instruction_line !== null) {
+					instructions.appendChild(wrap_instruction(instruction_line));
+				}
+				const instruction_inventory_line = build_instruction_inventory_line(edges, node);
 				if (instruction_inventory_line !== null) {
 					instructions.appendChild(wrap_instruction(instruction_inventory_line))
 				}
 			}
 		}
 
-		var line_break = document.createElement("div");
+		const line_break = document.createElement("div");
 		line_break.classList.add("instruction_line_break");
 		instructions.appendChild(line_break);
 	}
@@ -105,9 +108,9 @@ const build_instruction_line = (
 	edges: { [key: string]: ResourceEdge },
 	item_name: string,
 	generation_totals: { [key: string]: number }
-): HTMLDivElement => {
+): HTMLDivElement | null => {
 	if (!generation_totals[item_name]) {
-		return document.createElement("div");
+		return null;
 	}
 
 	// Build the input item sub string
@@ -122,7 +125,7 @@ const build_instruction_line = (
 	var recipe_type = get_recipe(item_name).recipe_type;
 
 	if (recipe_type_functions[recipe_type] === undefined) {
-		return document.createElement("div");
+		return null;
 	}
 
 	return recipe_type_functions[recipe_type](inputs, item_name, generation_totals[item_name], text_item_object);
