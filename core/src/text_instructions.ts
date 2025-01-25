@@ -8,7 +8,7 @@ declare var stack_sizes: any;
 
 const text_instructions_elem = document.getElementById("text_instructions")!;
 
-export const generate_instructions = (edges: { [key: string]: ResourceEdge }, generation_totals: { [key: string]: number }) => {
+export function generate_instructions(edges: { [key: string]: ResourceEdge }, generation_totals: { [key: string]: number }) {
 	// Delete any old instructions
 	while (text_instructions_elem.firstChild) {
 		text_instructions_elem.removeChild(text_instructions_elem.firstChild);
@@ -26,6 +26,7 @@ export const generate_instructions = (edges: { [key: string]: ResourceEdge }, ge
 
 	var inventory_resources: HTMLDivElement[] = [];
 	var needed_resources: HTMLDivElement[] = [];
+
 	// List out raw resource numbers
 	for (let node in node_columns) {
 		if (node_columns[node] === 0) {
@@ -104,11 +105,11 @@ export const generate_instructions = (edges: { [key: string]: ResourceEdge }, ge
 	text_instructions_elem.appendChild(instructions);
 }
 
-const build_instruction_line = (
+function build_instruction_line(
 	edges: { [key: string]: ResourceEdge },
 	item_name: string,
 	generation_totals: { [key: string]: number }
-): HTMLDivElement | null => {
+): HTMLSpanElement | null {
 	if (!generation_totals[item_name]) {
 		return null;
 	}
@@ -131,10 +132,10 @@ const build_instruction_line = (
 	return recipe_type_functions[recipe_type](inputs, item_name, generation_totals[item_name], text_item_object);
 }
 
-const build_instruction_inventory_line = (
+function build_instruction_inventory_line(
 	edges: { [key: string]: ResourceEdge },
 	item_name: string
-): HTMLElement | null => {
+): HTMLSpanElement | null {
 	let amount_to_take: number = 0;
 	for (let edge in edges) {
 		// If this is pointing into the resource we are currently trying to take from the inventory.
@@ -157,7 +158,7 @@ const build_instruction_inventory_line = (
 	return span;
 }
 
-const wrap_instruction = (to_be_wrapped: HTMLElement): HTMLElement => {
+function wrap_instruction(to_be_wrapped: HTMLElement): HTMLDivElement {
 	const line_wrapper = document.createElement("div");
 	line_wrapper.classList.add("instruction_wrapper");
 
@@ -173,7 +174,7 @@ const wrap_instruction = (to_be_wrapped: HTMLElement): HTMLElement => {
 	return line_wrapper;
 }
 
-const text_item_object = (count: number, name: string): HTMLSpanElement => {
+function text_item_object(count: number, name: string): HTMLSpanElement {
 	const item_object = document.createElement("span");
 
 	if (!count) {
@@ -223,7 +224,7 @@ class ValueListElem {
 	}
 }
 
-const build_unit_value_list = (number: number, unit_name: string, item_name: string): ValueListElem[] => {
+function build_unit_value_list(number: number, unit_name: string, item_name: string): ValueListElem[] {
 	if (number === 0) {
 		return [];
 	}
@@ -259,7 +260,7 @@ const build_unit_value_list = (number: number, unit_name: string, item_name: str
 // Gets the base number of items that would fit in a particular unit accounting
 // for the units that it is based off of.
 ////////////////////////////////////////////////////////////////////////////////
-const get_unit_size = (unit_name: string, item_name: string): number => {
+function get_unit_size(unit_name: string, item_name: string): number {
 	let multiplier = stack_sizes[unit_name].quantity_multiplier;
 
 	// Check for unique sizes for this particular item
