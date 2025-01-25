@@ -4,7 +4,7 @@ authors:
 
 index_page_display_name: Stardew Valley
 
-game_version: "1.6.8"
+game_version: "1.6.15"
 
 note: |
   Based on
@@ -5959,6 +5959,46 @@ resources:
     recipes:
     - recipe_type: Raw Resource
 
+  Crimsonfish Roe:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Angler Roe:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Legend Roe:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Glacierfish Roe:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Mutant Carp Roe:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Son of Crimsonfish Roe:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Ms. Angler Roe:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Legend II Roe:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Glacierfish Jr. Roe:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Radioactive Carp Roe:
+    recipes:
+    - recipe_type: Raw Resource
+
   ##############################################################################
   _af: {H1: Foraging} ##########################################################
   ##############################################################################
@@ -9008,6 +9048,46 @@ resources:
       recipe_type: As
       requirements:
         Woodskip Roe: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Crimsonfish Roe: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Angler Roe: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Legend Roe: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Glacierfish Roe: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Mutant Carp Roe: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Son of Crimsonfish Roe: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Ms. Angler Roe: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Legend II Roe: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Glacierfish Jr. Roe: -1
+    - output: 1
+      recipe_type: As
+      requirements:
+        Radioactive Carp Roe: -1
 
   Any Wild Seeds:
     recipes:
