@@ -8,7 +8,7 @@ declare var stack_sizes: any;
 
 const text_instructions_elem = document.getElementById("text_instructions")!;
 
-export function generate_instructions(edges: { [key: string]: ResourceEdge }, generation_totals: { [key: string]: number }) {
+export const generate_instructions = (edges: { [key: string]: ResourceEdge }, generation_totals: { [key: string]: number }) => {
 	// Delete any old instructions
 	while (text_instructions_elem.firstChild) {
 		text_instructions_elem.removeChild(text_instructions_elem.firstChild);
@@ -27,7 +27,7 @@ export function generate_instructions(edges: { [key: string]: ResourceEdge }, ge
 	var inventory_resources: HTMLDivElement[] = [];
 	var needed_resources: HTMLDivElement[] = [];
 	// List out raw resource numbers
-	for (let node in node_columns){
+	for (let node in node_columns) {
 		if (node_columns[node] === 0) {
 			var line_wrapper = document.createElement("div");
 			line_wrapper.classList.add("instruction_wrapper");
@@ -45,7 +45,7 @@ export function generate_instructions(edges: { [key: string]: ResourceEdge }, ge
 
 		// Track the largest column as the max column count
 		if (node_columns[node] >= column_count) {
-			column_count = node_columns[node]+1;
+			column_count = node_columns[node] + 1;
 		}
 	}
 
@@ -80,7 +80,7 @@ export function generate_instructions(edges: { [key: string]: ResourceEdge }, ge
 		for (let node in node_columns) {
 			if (node_columns[node] === i) {
 
-				if (node.startsWith("[Final]") || node.startsWith("[Extra]")){
+				if (node.startsWith("[Final]") || node.startsWith("[Extra]")) {
 					continue;
 				}
 
@@ -99,23 +99,20 @@ export function generate_instructions(edges: { [key: string]: ResourceEdge }, ge
 
 	// Add the new instruction list to the page
 	text_instructions_elem.appendChild(instructions);
-
 }
 
-
-
-function build_instruction_line(
-	edges: { [key: string]: ResourceEdge},
+const build_instruction_line = (
+	edges: { [key: string]: ResourceEdge },
 	item_name: string,
-	generation_totals: { [key: string]: number}
-): HTMLDivElement {
+	generation_totals: { [key: string]: number }
+): HTMLDivElement => {
 	if (!generation_totals[item_name]) {
 		return document.createElement("div");
 	}
 
 	// Build the input item sub string
-	var inputs: {[key: string]:number} = {};
-	for (let edge in edges){
+	var inputs: { [key: string]: number } = {};
+	for (let edge in edges) {
 		// If this is pointing into the resource we are currently trying to craft
 		if (edges[edge].target === item_name && !(edges[edge].source.endsWith(inventory_label_suffix))) {
 			inputs[edges[edge].source] = edges[edge].value;
@@ -131,12 +128,12 @@ function build_instruction_line(
 	return recipe_type_functions[recipe_type](inputs, item_name, generation_totals[item_name], text_item_object);
 }
 
-function build_instruction_inventory_line(
+const build_instruction_inventory_line = (
 	edges: { [key: string]: ResourceEdge },
 	item_name: string
-): HTMLElement | null{
+): HTMLElement | null => {
 	let amount_to_take: number = 0;
-	for (let edge in edges){
+	for (let edge in edges) {
 		// If this is pointing into the resource we are currently trying to take from the inventory.
 		if (edges[edge].target === item_name && (edges[edge].source.endsWith(inventory_label_suffix))) {
 			amount_to_take = edges[edge].value;
@@ -147,7 +144,6 @@ function build_instruction_inventory_line(
 	if (!amount_to_take) {
 		return null;
 	}
-
 
 	let line_wrapper = document.createElement("div");
 	line_wrapper.classList.add("instruction_wrapper");
@@ -165,75 +161,57 @@ function build_instruction_inventory_line(
 	return line_wrapper;
 }
 
+const text_item_object = (count: number, name: string): HTMLSpanElement => {
+	const item_object = document.createElement("span");
 
-function text_item_object(count: number, name: string): HTMLSpanElement{
-	var item_object = document.createElement("span");
 	if (!count) {
 		return item_object;
 	}
 
 	item_object.classList.add("instruction_item");
+	item_object.appendChild(document.createTextNode(count.toString()));
 
-
-	var units = (<HTMLInputElement>document.querySelector("input[name=unit_name]:checked")).value;
-
-	let count_object = document.createElement("span");
-	count_object.classList.add("instruction_item_count");
-	count_object.textContent = count.toString();
+	const units = (<HTMLInputElement>document.querySelector("input[name=unit_name]:checked")).value;
 
 	if (units !== "" && units !== undefined) {
-		var unit_value_list = build_unit_value_list(count, units, name);
+		const unit_value_list = build_unit_value_list(count, units, name);
 
-		var join_plus_character = "";
-		var smalltext = " (";
-		for (let i = 0; i < unit_value_list.length; i++){
+		let join_plus_character = "";
+		let smalltext = "";
+		for (let i = 0; i < unit_value_list.length; i++) {
 			smalltext += join_plus_character + unit_value_list[i].count;
 
 			if (unit_value_list[i].name !== "") {
 				smalltext += " " + unit_value_list[i].name;
 			}
-			join_plus_character=" + ";
+			join_plus_character = " + ";
 		}
-		smalltext += ")";
 
-		// If there is more then one unit, or only one that is not default
+		// If there is more than one unit, or only one that is not default
 		if (unit_value_list.length > 1 || unit_value_list[0].name !== "") {
-			let small_unit_elem = document.createElement("span");
+			const small_unit_elem = document.createElement("span");
 			small_unit_elem.classList.add("small_unit_name");
-			small_unit_elem.textContent = smalltext;
-			count_object.appendChild(small_unit_elem);
+			small_unit_elem.textContent = " (" + smalltext + ")";
+			item_object.appendChild(small_unit_elem);
 		}
-
-		item_object.appendChild(count_object);
 	}
 
-	item_object.appendChild(count_object);
-
-	var space_object = document.createElement("span");
-	space_object.textContent = " ";
-	item_object.appendChild(space_object);
-
-	var name_object = document.createElement("span");
-	name_object.classList.add("instruction_item_name");
-	name_object.textContent = name;
-	item_object.appendChild(name_object);
+	item_object.appendChild(document.createTextNode(" " + name));
 
 	return item_object;
 }
-
-
 
 
 class ValueListElem {
 	name: string = "";
 	count: number;
 
-	constructor (count: number) {
+	constructor(count: number) {
 		this.count = count
 	}
 }
 
-function build_unit_value_list(number: number, unit_name: string, item_name: string): ValueListElem[] {
+const build_unit_value_list = (number: number, unit_name: string, item_name: string): ValueListElem[] => {
 	if (number === 0) {
 		return [];
 	}
@@ -241,15 +219,15 @@ function build_unit_value_list(number: number, unit_name: string, item_name: str
 		return [new ValueListElem(number)];
 	}
 
-	var unit = stack_sizes[unit_name];
-	var unit_size = get_unit_size(unit_name, item_name);
-	var quotient = Math.floor(number/unit_size);
-	var remainder = number % unit_size;
+	const unit = stack_sizes[unit_name];
+	const unit_size = get_unit_size(unit_name, item_name);
+	const quotient = Math.floor(number / unit_size);
+	const remainder = number % unit_size;
 
-	var value_list: ValueListElem[] = [];
+	let value_list: ValueListElem[] = [];
 
 	if (quotient > 0) {
-		let value_list_element = new ValueListElem(quotient);
+		const value_list_element = new ValueListElem(quotient);
 		if (quotient > 1) {
 			value_list_element.name = unit.plural;
 		}
@@ -265,12 +243,11 @@ function build_unit_value_list(number: number, unit_name: string, item_name: str
 	return value_list;
 }
 
-
 ////////////////////////////////////////////////////////////////////////////////
 // Gets the base number of items that would fit in a particular unit accounting
 // for the units that it is based off of.
 ////////////////////////////////////////////////////////////////////////////////
-function get_unit_size(unit_name: string, item_name: string): number {
+const get_unit_size = (unit_name: string, item_name: string): number => {
 	let multiplier = stack_sizes[unit_name].quantity_multiplier;
 
 	// Check for unique sizes for this particular item
@@ -285,4 +262,3 @@ function get_unit_size(unit_name: string, item_name: string): number {
 
 	return multiplier;
 }
-
