@@ -1,13 +1,15 @@
 import heapq
-from typing import TypeVar, Generic, Dict, List, Protocol, Optional, Iterator
+from typing import TypeVar, Generic, Dict, List, Protocol, Optional, Iterator, Union
 
 
 class WeakHash(Protocol):
     def weak_hash(self) -> int:
-        ...
+        ...  # pragma: nocover
 
 
 T = TypeVar("T", bound=WeakHash)
+
+D = TypeVar("D")
 
 
 ################################################################################
@@ -81,11 +83,9 @@ class UniqueHeap(Generic[T]):
     #
     # Returns a value from within the unique heap, or None if the heap does
     # not contain that data.
-    # TODO: We should probably replicate other .get() functions and allow for
-    #   a default value to be passed in, to return instead of None.
     ############################################################################
-    def get(self, weak_hash: int) -> Optional[T]:
-        return self._dict.get(weak_hash, None)
+    def get(self, weak_hash: int, default: D = None) -> Union[T, D]:  # type: ignore[assignment]
+        return self._dict.get(weak_hash, default)
 
     ############################################################################
     # delete
@@ -119,5 +119,10 @@ class UniqueHeap(Generic[T]):
     def __len__(self) -> int:
         return len(self._heap)
 
+    ############################################################################
+    # __iter__
+    #
+    # Returns an iterator over the heap.
+    ############################################################################
     def __iter__(self) -> Iterator[T]:
         return self._heap.__iter__()
