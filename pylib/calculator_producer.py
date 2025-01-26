@@ -33,7 +33,8 @@ def calculator_producers(calculator_dir_regex: str) -> List[GenericProducer]:
                 calculator_dir_regex=calculator_dir_regex
             ),
             "css_filename_data": r"^cache/calculator\.css\.json",
-            "calculator_template": r"^core/calculator\.html$"
+            "calculator_template": r"^core/calculator\.html$",
+            "recipe_type_display_function_template": r"^core/_recipe_type_display_functions\.js$",
         },
         function=calculator_function,
     )
@@ -54,6 +55,7 @@ class CalculatorInputFiles(TypedDict):
     image_metadata: str
     css_filename_data: str
     calculator_template: str
+    recipe_type_display_function_template: str
 
 
 ################################################################################
