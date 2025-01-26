@@ -1,6 +1,8 @@
 from typing import Dict, List, TypedDict, Any, Optional
 import unittest
 from unittest.mock import patch
+from io import StringIO
+import sys
 
 from .producer import Producer
 from .scheduler import Scheduler
@@ -31,6 +33,14 @@ class Integration_Tests(unittest.TestCase):
         def delete_file_side_effect(path: str) -> None:
             self.delete_function_calls.append(path)
         self.mocked_delete_file.side_effect = delete_file_side_effect
+
+        # TODO: There is probably a better way to handle masking stdout
+        self.captured_stdout = StringIO()
+        self.original_stdout = sys.stdout
+        sys.stdout = self.captured_stdout
+
+    def tearDown(self) -> None:
+        sys.stdout = self.original_stdout
 
     ############################################################################
     # test_single_shared_filer
@@ -1489,6 +1499,14 @@ class ConfigurationTests(unittest.TestCase):
             self.delete_function_calls.append(path)
         self.mocked_delete_file.side_effect = delete_file_side_effect
 
+        # TODO: There is probably a better way to handle masking stdout
+        self.captured_stdout = StringIO()
+        self.original_stdout = sys.stdout
+        sys.stdout = self.captured_stdout
+
+    def tearDown(self) -> None:
+        sys.stdout = self.original_stdout
+
     ############################################################################
     # test_non_unique_producer_name_error
     #
@@ -1570,6 +1588,14 @@ class BuildLogTests(unittest.TestCase):
         def delete_file_side_effect(path: str) -> None:
             self.delete_function_calls.append(path)
         self.mocked_delete_file.side_effect = delete_file_side_effect
+
+        # TODO: There is probably a better way to handle masking stdout
+        self.captured_stdout = StringIO()
+        self.original_stdout = sys.stdout
+        sys.stdout = self.captured_stdout
+
+    def tearDown(self) -> None:
+        sys.stdout = self.original_stdout
 
     ############################################################################
     #
