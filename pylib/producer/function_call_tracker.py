@@ -17,6 +17,12 @@ class TrackedProducerFunction(Generic[InputFileDatatype], Protocol):
         ...
 
 
+################################################################################
+# tracked_function
+#
+# This decorator adds tracking for a builder function to make testing the
+# functions easier.
+################################################################################
 def tracked_function(
     func: Callable[[InputFileDatatype, Dict[str, str]], List[str]]
 ) -> TrackedProducerFunction[InputFileDatatype]:
