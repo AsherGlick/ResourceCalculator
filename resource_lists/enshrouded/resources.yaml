@@ -3,8 +3,9 @@ authors:
 ## Extra thanks to:
 ## Oasis for helping me beta test and double-check recipes
 ## The folks at enshrouded.wiki.gg (especially .Primoris) for permission for image use
-## A few of the images and recipes, especially from the newest expansion, were captured and edited by me.
+## A few of the images and recipes, especially from the two newest expansion, were captured and edited by me.
 ## If you find some bugs or miscalculations, you will find me in the enshrouded Discord.
+## 1.1 update pact of the flame, all images are my own!
 index_page_display_name: Enshrouded
 
 recipe_types:
@@ -37,7 +38,1113 @@ recipe_types:
     Base: Craft {IN_ITEMS} to get {OUT_ITEM} (internal crafting)
     Kiln: Go to Kiln with {IN_ITEMS} to get {OUT_ITEM}
     Seedbed: Go to Seedbed with {IN_ITEMS} to get {OUT_ITEM}
+    Lunar New Year Trader: Go to Lunar New Year Trader with {IN_ITEMS} to get {OUT_ITEM}
 resources:
+#new update start
+  Strawberry Cake:
+    recipes:
+    - output: 1
+      recipe_type: Farmer
+      requirements:
+        Flour: -2
+        Sugar: -1
+        Strawberry: -1
+        Saffron: -1
+    - recipe_type: Raw Resource
+  Purple Berry Cake:
+    recipes:
+    - output: 1
+      recipe_type: Farmer
+      requirements:
+        Flour: -1
+        Sugar: -1
+        Dried Purple Berry: -1
+        Salt: -1
+    - recipe_type: Raw Resource
+  Dune Armadillo Food Bait:
+    recipes:
+    - output: 10
+      recipe_type: Farmer
+      requirements:
+        Saffron: -1
+        Yucca Fruit: -1
+        Flour: -1
+        Sage Leaves: -1
+        Aureolin Flower: -1
+    - recipe_type: Raw Resource
+  Flightless Redtail Food Bait:
+    recipes:
+    - output: 10
+      recipe_type: Farmer
+      requirements:
+        Bell Pepper: -1
+        Wheat Grains: -1
+        Corncob: -1
+        Dried Purple Berry: -1
+        Hazelnut: -1
+    - recipe_type: Raw Resource
+  Dog Food Bait:
+    recipes:
+    - output: 10
+      recipe_type: Farmer
+      requirements:
+        Raw Lean Meat: -2
+        Raw Game: -2
+        Purple Berries: -1
+    - recipe_type: Raw Resource
+  Fae Deer Food Bait:
+    recipes:
+    - output: 10
+      recipe_type: Farmer
+      requirements:
+        Plant Fiber: -1
+        Milk: -1
+        Corncob: -1
+        Forest Beet: -1
+        Penny Bun: -1
+    - recipe_type: Raw Resource
+  Cat Food Bait:
+    recipes:
+    - output: 10
+      recipe_type: Farmer
+      requirements:
+        Raw Lean Meat: -2
+        Raw Wolf Meat: -1
+        Raw Game: -1
+    - recipe_type: Raw Resource
+  Hophare Food Bait:
+    recipes:
+    - output: 10
+      recipe_type: Farmer
+      requirements:
+        Forest Beet: -1
+        Hazelnut: -1
+        Strawberry: -1
+        Corncob: -1
+    - recipe_type: Raw Resource
+  Goat Food Bait:
+    recipes:
+    - output: 10
+      recipe_type: Farmer
+      requirements:
+        Honey: -1
+        Plant Fiber: -3
+        Corncob: -1
+    - recipe_type: Raw Resource
+  Climbing Rose:
+    recipes:
+    - output: 100
+      recipe_type: Farmer
+      requirements:
+        Dirt: -1
+        Flax: -1
+    - recipe_type: Raw Resource
+  Mycelium(Overgrowth):
+    recipes:
+    - output: 100
+      recipe_type: Farmer
+      requirements:
+        Dirt: -1
+        Flax: -1
+    - recipe_type: Raw Resource
+  Ivy:
+    recipes:
+    - output: 100
+      recipe_type: Farmer
+      requirements:
+        Farm Soil: -1
+        Honey: -1
+    - recipe_type: Raw Resource
+  Food Plates (Tray):
+    recipes:
+    - output: 1
+      recipe_type: Farmer
+      requirements:
+        Wood Planks: -2
+    - recipe_type: Raw Resource
+  Food Plates (Plate):
+    recipes:
+    - output: 1
+      recipe_type: Farmer
+      requirements:
+        Wood Planks: -2
+    - recipe_type: Raw Resource
+  Coaster:
+    recipes:
+    - output: 1
+      recipe_type: Farmer
+      requirements:
+        Wood Planks: -1
+    - recipe_type: Raw Resource
+  Basket:
+    recipes:
+    - output: 1
+      recipe_type: Farmer
+      requirements:
+        Straw: -1
+    - recipe_type: Raw Resource
+  Basket (2):
+    recipes:
+    - output: 1
+      recipe_type: Farmer
+      requirements:
+        Straw: -1
+    - recipe_type: Raw Resource
+  Basket (3):
+    recipes:
+    - output: 1
+      recipe_type: Farmer
+      requirements:
+        Straw: -1
+    - recipe_type: Raw Resource
+  Basket (4):
+    recipes:
+    - output: 1
+      recipe_type: Farmer
+      requirements:
+        Straw: -1
+    - recipe_type: Raw Resource
+  Basket (5):
+    recipes:
+    - output: 1
+      recipe_type: Farmer
+      requirements:
+        Straw: -1
+    - recipe_type: Raw Resource
+  Basket (6):
+    recipes:
+    - output: 1
+      recipe_type: Farmer
+      requirements:
+        Straw: -1
+    - recipe_type: Raw Resource
+  Overgrowth Tool:
+    recipes:
+    - output: 1
+      recipe_type: Farmer
+      requirements:
+        Grilled Penny Bun: -1
+        Goo: -1
+    - recipe_type: Raw Resource
+  Diamond Wall Emblem:
+    recipes:
+    - output: 1
+      recipe_type: Bard
+      requirements:
+        Iron Bars: -3
+        Charcoal: -3
+        Nails: -3
+        Scrappy Sword: -4
+    - recipe_type: Raw Resource
+  Diamond Wall Emblem (2):
+    recipes:
+    - output: 1
+      recipe_type: Bard
+      requirements:
+        Iron Bars: -3
+        Charcoal: -3
+        Nails: -3
+        Scrappy Sword: -2
+    - recipe_type: Raw Resource
+  Shield Wall Emblem:
+    recipes:
+    - output: 1
+      recipe_type: Bard
+      requirements:
+        Iron Bars: -3
+        Charcoal: -3
+        Nails: -3
+        Scrappy Sword: -2
+    - recipe_type: Raw Resource
+  Shield Wall Emblem (2):
+    recipes:
+    - output: 1
+      recipe_type: Bard
+      requirements:
+        Iron Bars: -3
+        Charcoal: -3
+        Nails: -3
+        Scrappy Sword: -2
+    - recipe_type: Raw Resource
+  Decorative Box (red):
+    recipes:
+    - output: 1
+      recipe_type: Bard
+      requirements:
+        Torn Cloth: -2
+        Twigs: -2
+        Sulfur: -1
+        Saffron: -1
+    - recipe_type: Raw Resource
+  Decorative Box (cyan):
+    recipes:
+    - output: 1
+      recipe_type: Bard
+      requirements:
+        Torn Cloth: -2
+        Twigs: -3
+        Indigo Plant: -1
+        Mint Mushroom Meat: -1
+    - recipe_type: Raw Resource
+  Decorative Box (blue):
+    recipes:
+    - output: 1
+      recipe_type: Bard
+      requirements:
+        Torn Cloth: -2
+        Twigs: -3
+        Indigo Plant: -2
+    - recipe_type: Raw Resource
+  Decorative Box (pink):
+    recipes:
+    - output: 1
+      recipe_type: Bard
+      requirements:
+        Torn Cloth: -2
+        Twigs: -2
+        Mauveine: -2
+    - recipe_type: Raw Resource
+  Decorative Box (yellow):
+    recipes:
+    - output: 1
+      recipe_type: Bard
+      requirements:
+        Torn Cloth: -2
+        Twigs: -2
+        Saffron: -2
+    - recipe_type: Raw Resource
+  Decorative Box (green):
+    recipes:
+    - output: 1
+      recipe_type: Bard
+      requirements:
+        Torn Cloth: -2
+        Twigs: -2
+        Mint Mushroom Meat: -2
+    - recipe_type: Raw Resource
+  Flag Pole:
+    recipes:
+    - output: 2
+      recipe_type: Bard
+      requirements:
+        Conifer Logs: -4
+        String: -2
+        Green Fabric: -2
+        Red Fabric: -2
+        Yellow Fabric: -2
+        Blue Fabric: -2
+        Violet Fabric: -2
+    - recipe_type: Raw Resource
+  Flag Pole (2):
+    recipes:
+    - output: 2
+      recipe_type: Bard
+      requirements:
+        Conifer Logs: -4
+        String: -2
+        Green Fabric: -2
+        Red Fabric: -2
+        Yellow Fabric: -2
+        Blue Fabric: -2
+        Violet Fabric: -2
+    - recipe_type: Raw Resource
+  Flag Pole (3):
+    recipes:
+    - output: 2
+      recipe_type: Bard
+      requirements:
+        Conifer Logs: -4
+        String: -2
+        Green Fabric: -2
+        Red Fabric: -2
+        Yellow Fabric: -2
+        Blue Fabric: -2
+        Violet Fabric: -2
+    - recipe_type: Raw Resource
+  Flag Pole (4):
+    recipes:
+    - output: 2
+      recipe_type: Bard
+      requirements:
+        Conifer Logs: -4
+        String: -2
+        Green Fabric: -2
+        Red Fabric: -2
+        Yellow Fabric: -2
+        Blue Fabric: -2
+        Violet Fabric: -2
+    - recipe_type: Raw Resource
+  Flag Pole (5):
+    recipes:
+    - output: 2
+      recipe_type: Bard
+      requirements:
+        Conifer Logs: -4
+        String: -2
+        Green Fabric: -2
+        Red Fabric: -2
+        Yellow Fabric: -2
+        Blue Fabric: -2
+        Violet Fabric: -2
+    - recipe_type: Raw Resource
+  Flag Pole (6):
+    recipes:
+    - output: 2
+      recipe_type: Bard
+      requirements:
+        Conifer Logs: -4
+        String: -2
+        Green Fabric: -2
+        Red Fabric: -2
+        Yellow Fabric: -2
+        Blue Fabric: -2
+        Violet Fabric: -2
+    - recipe_type: Raw Resource
+  Party Hat (cyan):
+    recipes:
+    - output: 1
+      recipe_type: Bard
+      requirements:
+        Torn Cloth: -1
+        Indigo Plant: -1
+        Linen: -1
+    - recipe_type: Raw Resource
+  Party Hat (purple):
+    recipes:
+    - output: 1
+      recipe_type: Bard
+      requirements:
+        Linen: -1
+        Violet Fabric: -1
+    - recipe_type: Raw Resource
+  Party Hat (red):
+    recipes:
+    - output: 1
+      recipe_type: Bard
+      requirements:
+        String: -1
+        Red Fabric: -1
+    - recipe_type: Raw Resource
+  Party Hat (yellow):
+    recipes:
+    - output: 1
+      recipe_type: Bard
+      requirements:
+        Linen: -1
+        Yellow Fabric: -1
+    - recipe_type: Raw Resource
+  Red Confetti Mortar:
+    recipes:
+    - output: 1
+      recipe_type: Alchemist
+      requirements:
+        Wood Logs: -5
+        Plant Fiber: -2
+        Coal Powder: -1
+        Sulfur: -1
+    - recipe_type: Raw Resource
+  Yellow Confetti Mortar:
+    recipes:
+    - output: 1
+      recipe_type: Bard
+      requirements:
+        Wood Logs: -5
+        Plant Fiber: -2
+        Coal Powder: -1
+        Sulfur: -1
+    - recipe_type: Raw Resource
+  Blue Confetti Mortar:
+    recipes:
+    - output: 1
+      recipe_type: Bard
+      requirements:
+        Wood Logs: -5
+        Plant Fiber: -2
+        Coal Powder: -1
+        Indigo Plant: -1
+    - recipe_type: Raw Resource
+  Silver Chest:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Silver Bars: -3
+        Charcoal: -6
+    - recipe_type: Raw Resource
+  Wooden Chest:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -5
+        Metal Sheets: -3
+        Charcoal: -3
+    - recipe_type: Raw Resource
+  Elegant Sofa:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Conifer Logs: -6
+        Nails: -3
+        Warm Padding: -3
+        Wool: -10
+        Hardened Leather: -3
+    - recipe_type: Raw Resource
+  Elegant Sofa (long):
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Conifer Logs: -6
+        Nails: -3
+        Warm Padding: -3
+        Wool: -10
+        Hardened Leather: -3
+    - recipe_type: Raw Resource
+  Elegant Armchair:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Conifer Logs: -2
+        Nails: -1
+        Warm Padding: -2
+        Wool: -4
+        Hardened Leather: -2
+    - recipe_type: Raw Resource
+  Elegant Armchair (tall):
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Conifer Logs: -2
+        Nails: -1
+        Warm Padding: -2
+        Wool: -6
+        Hardened Leather: -3
+    - recipe_type: Raw Resource
+  Large Silver Brazier:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Silver Bars: -5
+        Nails: -5
+        Steel Bars: -3
+    - recipe_type: Raw Resource
+  Small Silver Brazier:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Silver Bars: -3
+        Nails: -3
+        Steel Bars: -2
+    - recipe_type: Raw Resource
+  Hanging Silver Brazier:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Silver Bars: -2
+        Coal: -2
+        Steel Bars: -2
+    - recipe_type: Raw Resource
+  Small Wall Mounted Silver Brazier:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Silver Bars: -1
+        Coal: -1
+        Steel Bars: -1
+    - recipe_type: Raw Resource
+  Bronze Wall Torch (iron):
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Iron Bars: -1
+        Charcoal: -2
+        Resin: -5
+    - recipe_type: Raw Resource
+  Wooden Tavern Counter:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -6
+        Metal Scraps: -4
+        Nails: -2
+    - recipe_type: Raw Resource
+  Bow Arrow Wall Mount:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -1
+        Nails: -1
+    - recipe_type: Raw Resource
+  Dagger Wall Mount:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -1
+        Nails: -1
+    - recipe_type: Raw Resource
+  Boreal Wood Double Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Boreal Wood Door: -2
+    - recipe_type: Raw Resource
+  Ornate Steel Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Granite: -10
+        Steel Bars: -5
+        Coal: -5
+    - recipe_type: Raw Resource
+  Vault Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Granite: -10
+        Steel Bars: -8
+        Coal: -8
+    - recipe_type: Raw Resource
+  Ornate Steel Double Door:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Ornate Steel Door: -2
+    - recipe_type: Raw Resource
+  Handrail (stone):
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -6
+    - recipe_type: Raw Resource
+  Fence Corner (stone):
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -4
+    - recipe_type: Raw Resource
+  Stone Fence(stone):
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -6
+    - recipe_type: Raw Resource
+  Handrail (wood):
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Hardwood: -6
+    - recipe_type: Raw Resource
+  Fence Corner (wood):
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Hardwood: -4
+    - recipe_type: Raw Resource
+  Fine Wooden Fence:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Hardwood: -6
+    - recipe_type: Raw Resource
+  Fence Corner (stone 2):
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -4
+    - recipe_type: Raw Resource
+  Butter Churn:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -5
+        Metal Sheets: -2
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Wooden Barrel (top half):
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -2
+        Metal Sheets: -1
+        Charcoal: -1
+    - recipe_type: Raw Resource
+  Vat:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -6
+        Metal Sheets: -2
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Vat (2):
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -2
+        Metal Sheets: -1
+        Charcoal: -1
+    - recipe_type: Raw Resource
+  Vat (3):
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -5
+        Metal Sheets: -2
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Harrow:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Logs: -2
+        Wood Planks: -2
+        Metal Sheets: -1
+        Nails: -2
+    - recipe_type: Raw Resource
+  Big Clay Vat:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Lump of Clay: -10
+        Wood Logs: -2
+        Limestone: -3
+    - recipe_type: Raw Resource
+  Wooden Grate:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -10
+    - recipe_type: Raw Resource
+  Wooden Grate (2):
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Wood Planks: -10
+    - recipe_type: Raw Resource
+  Statue:
+    recipes:
+    - output: 1
+      recipe_type: Carpenter
+      requirements:
+        Stone: -15
+    - recipe_type: Raw Resource
+  Paper Lantern:
+    recipes:
+    - output: 1
+      recipe_type: Lunar New Year Trader
+      requirements:
+        Metal Scraps: -1
+        Charcoal: -1
+        Plant Fiber: -2
+        Torn Cloth: -1
+        Candle: -1
+    - recipe_type: Raw Resource
+  Paper Lantern (2):
+    recipes:
+    - output: 1
+      recipe_type: Lunar New Year Trader
+      requirements:
+        Metal Scraps: -1
+        Charcoal: -1
+        Plant Fiber: -3
+        Torn Cloth: -1
+        Candle: -1
+    - recipe_type: Raw Resource
+  Lunar New Year Door:
+    recipes:
+    - output: 1
+      recipe_type: Lunar New Year Trader
+      requirements:
+        Hardwood: -5
+        Nails: -2
+    - recipe_type: Raw Resource
+  Room Divider:
+    recipes:
+    - output: 2
+      recipe_type: Lunar New Year Trader
+      requirements:
+        Hardwood: -8
+        Plant Fiber: -10
+    - recipe_type: Raw Resource
+  Room Divider (2):
+    recipes:
+    - output: 2
+      recipe_type: Lunar New Year Trader
+      requirements:
+        Hardwood: -8
+        Plant Fiber: -10
+    - recipe_type: Raw Resource
+  Room Divider (3):
+    recipes:
+    - output: 2
+      recipe_type: Lunar New Year Trader
+      requirements:
+        Hardwood: -8
+        Plant Fiber: -10
+    - recipe_type: Raw Resource
+  Room Divider (4):
+    recipes:
+    - output: 2
+      recipe_type: Lunar New Year Trader
+      requirements:
+        Hardwood: -8
+        Plant Fiber: -10
+    - recipe_type: Raw Resource
+  Statue (snake):
+    recipes:
+    - output: 1
+      recipe_type: Lunar New Year Trader
+      requirements:
+        Bronze Bars: -10
+        Charcoal: -10
+    - recipe_type: Raw Resource
+  Lily Flower Pot:
+    recipes:
+    - output: 2
+      recipe_type: Lunar New Year Trader
+      requirements:
+        Stone: -2
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Lily Flower Pot(2):
+    recipes:
+    - output: 2
+      recipe_type: Lunar New Year Trader
+      requirements:
+        Stone: -2
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Lily Flower Pot (3):
+    recipes:
+    - output: 2
+      recipe_type: Lunar New Year Trader
+      requirements:
+        Stone: -2
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Cymbidium Flower Pot:
+    recipes:
+    - output: 2
+      recipe_type: Lunar New Year Trader
+      requirements:
+        Stone: -2
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Cymbidium Flower Pot (2):
+    recipes:
+    - output: 2
+      recipe_type: Lunar New Year Trader
+      requirements:
+        Stone: -2
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Fern Pot:
+    recipes:
+    - output: 2
+      recipe_type: Lunar New Year Trader
+      requirements:
+        Stone: -2
+        Flower Soil: -1
+    - recipe_type: Raw Resource
+  Serpent Warrior Boots:
+    recipes:
+    - output: 2
+      recipe_type: Lunar New Year Trader
+      requirements:
+        Mint Mushroom Meat: -1
+        Leather: -1
+        Linen: -1
+        String: -2
+    - recipe_type: Raw Resource
+  Serpent Warrior Pants:
+    recipes:
+    - output: 2
+      recipe_type: Lunar New Year Trader
+      requirements:
+        Reptile Leather: -1
+        String: -3
+        Linen: -2
+    - recipe_type: Raw Resource
+  Serpent Warrior Gloves:
+    recipes:
+    - output: 2
+      recipe_type: Lunar New Year Trader
+      requirements:
+        Mint Mushroom Meat: -1
+        Linen: -1
+        Leather: -1
+        String: -1
+    - recipe_type: Raw Resource
+  Serpent Warrior Chest:
+    recipes:
+    - output: 2
+      recipe_type: Lunar New Year Trader
+      requirements:
+        Red Fabric: -3
+        Scales: -4
+        Green Fabric: -1
+        Iron Bars: -1
+        Charcoal: -1
+    - recipe_type: Raw Resource
+  Serpent Warrior Helmet:
+    recipes:
+    - output: 2
+      recipe_type: Lunar New Year Trader
+      requirements:
+        Steel Bars: -2
+        Coal: -2
+        Scales: -1
+        Saffron: -1
+    - recipe_type: Raw Resource
+  Scavanger Gong:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Wood Logs: -2
+        Vukah Brawler Head: -1
+        Torn Cloth: -3
+        Metal Scraps: -3
+        Charcoal: -3
+    - recipe_type: Raw Resource
+  Spiderweb:
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Raw Wool: -1
+    - recipe_type: Raw Resource
+  Spiderweb (2):
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Raw Wool: -1
+    - recipe_type: Raw Resource
+  Spiderweb (3):
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Raw Wool: -1
+    - recipe_type: Raw Resource
+  Spiderweb (4):
+    recipes:
+    - output: 1
+      recipe_type: Hunter
+      requirements:
+        Raw Wool: -2
+    - recipe_type: Raw Resource
+  Scrap Cage:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Metal Scraps: -3
+        Charcoal: -3
+    - recipe_type: Raw Resource
+  Scrap Vat:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Metal Scraps: -4
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Scrap Vat (lid):
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Metal Scraps: -5
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Scrap Bucket:
+    recipes:
+    - output: 1
+      recipe_type: Blacksmith
+      requirements:
+        Metal Scraps: -2
+        Charcoal: -2
+    - recipe_type: Raw Resource
+  Crude Wooden Shelf:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -5
+        Nails: -1
+    - recipe_type: Raw Resource
+  Crude Wooden Shelf (small):
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -3
+        Nails: -1
+    - recipe_type: Raw Resource
+  Support Strut:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -6
+        Metal Scraps: -1
+        Torn Cloth: -3
+    - recipe_type: Raw Resource
+  Wood Wall:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -7
+        String: -3
+        Nails: -2
+    - recipe_type: Raw Resource
+  Wood Wall (2):
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -7
+        String: -3
+        Nails: -2
+    - recipe_type: Raw Resource
+  Wood Wall (3):
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -7
+        String: -3
+        Nails: -2
+    - recipe_type: Raw Resource
+  Wood Wall (4):
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -7
+        String: -3
+        Nails: -2
+    - recipe_type: Raw Resource
+  Banister:
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -7
+        String: -3
+        Nails: -2
+    - recipe_type: Raw Resource
+  Banister (2):
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -7
+        String: -3
+        Nails: -2
+    - recipe_type: Raw Resource
+  Banister (3):
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -7
+        String: -3
+        Nails: -2
+    - recipe_type: Raw Resource
+  Banister (4):
+    recipes:
+    - output: 1
+      recipe_type: Workbench
+      requirements:
+        Wood Logs: -7
+        String: -3
+        Nails: -2
+    - recipe_type: Raw Resource
+  Clay Vase:
+    recipes:
+    - output: 2
+      recipe_type: Kiln
+      requirements:
+        Lump of Clay: -1
+        Wood Logs: -1
+    - recipe_type: Raw Resource
+  Clay Vase (2):
+    recipes:
+    - output: 2
+      recipe_type: Kiln
+      requirements:
+        Lump of Clay: -1
+        Wood Logs: -1
+    - recipe_type: Raw Resource
+  Clay Vase (3):
+    recipes:
+    - output: 2
+      recipe_type: Kiln
+      requirements:
+        Lump of Clay: -1
+        Wood Logs: -1
+    - recipe_type: Raw Resource
+  Clay Vase (4):
+    recipes:
+    - output: 2
+      recipe_type: Kiln
+      requirements:
+        Lump of Clay: -1
+        Wood Logs: -1
+    - recipe_type: Raw Resource
+  Clay Vase (5):
+    recipes:
+    - output: 2
+      recipe_type: Kiln
+      requirements:
+        Lump of Clay: -1
+        Wood Logs: -1
+    - recipe_type: Raw Resource
+  Clay Vase (large):
+    recipes:
+    - output: 1
+      recipe_type: Kiln
+      requirements:
+        Lump of Clay: -1
+        Wood Logs: -1
+    - recipe_type: Raw Resource
+#new update end
 #farmer start
   Beef Stew:
     recipes:
@@ -55,7 +1162,7 @@ resources:
       recipe_type: Farmer
       requirements:
         Water: -1
-        Red Mushroom: -3
+        Penny Bun: -3
         Raw Dune Armadillo Meat: -1
         Flour: -1
     - recipe_type: Raw Resource
@@ -207,7 +1314,7 @@ resources:
     - output: 1
       recipe_type: Farmer
       requirements:
-        Red Mushroom: -3
+        Penny Bun: -3
         Eggs: -3
     - recipe_type: Raw Resource
   Boiled Eggs:
@@ -311,8 +1418,7 @@ resources:
       recipe_type: Farmer
       requirements:
         Wood Logs: -7
-        Metal Scraps: -4
-        Nails: -3
+        Nails: -2
     - recipe_type: Raw Resource
   Farm Soil:
     recipes:
@@ -385,12 +1491,14 @@ resources:
 #must do more food baits later
   Yak Food Bait:
     recipes:
-    - output: 1
+    - output: 10
       recipe_type: Farmer
       requirements:
-        Wood Logs: -7
-        Metal Scraps: -4
-        Nails: -3
+        Yucca Fruit: -1
+        Flat Bread: -1
+        Corncob: -1
+        Dried Purple Berry: -1
+        Honey: -1
     - recipe_type: Raw Resource
   Scarecrow:
     recipes:
@@ -1124,7 +2232,7 @@ resources:
     - output: 1
       recipe_type: Alchemist
       requirements:
-        Red Mushroom: -1
+        Penny Bun: -1
         Purple Berries: -1
         Water: -1
     - recipe_type: Raw Resource
@@ -3859,12 +4967,12 @@ resources:
         Stone: -4
         Copper Fence: -1
     - recipe_type: Raw Resource
-  Stone Fence:
+  Stone Fence(limestone):
     recipes:
     - output: 1
       recipe_type: Carpenter
       requirements:
-        Stone: -6
+        Limestone: -6
     - recipe_type: Raw Resource
   Big Waggon:
     recipes:
@@ -5515,7 +6623,7 @@ resources:
         Leather: -2
         Linen: -2
     - recipe_type: Raw Resource
-  Resource Bungle:
+  Resource Bundle:
     recipes:
     - output: 1
       recipe_type: Hunter
@@ -5523,7 +6631,7 @@ resources:
         Torn Cloth: -8
         String: -4
     - recipe_type: Raw Resource
-  Resource Bungle(2):
+  Resource Bundle(2):
     recipes:
     - output: 1
       recipe_type: Hunter
@@ -8169,12 +9277,12 @@ resources:
       requirements:
         Azure Russula: -1
     - recipe_type: Raw Resource
-  Grilled Red Mushroom:
+  Grilled Penny Bun:
     recipes:
     - output: 1
       recipe_type: Fireplace
       requirements:
-        Red Mushroom: -1
+        Penny Bun: -1
     - recipe_type: Raw Resource
   Roasted Corncob:
     recipes:
@@ -8570,13 +9678,13 @@ resources:
         Azure Russula: -1
         Fossilized Bone Dust: -1
     - recipe_type: Raw Resource
-  Red Mushroom Seedling:
+  Penny Bun Seedling:
     recipes:
     - output: 5
       recipe_type: Seedbed
       requirements:
         Bonemeal: -1
-        Red Mushroom: -1
+        Penny Bun: -1
     - recipe_type: Raw Resource
   Gentian Seedling:
     recipes:
@@ -9096,7 +10204,7 @@ resources:
   Red Marble Fragment:
     recipes:
     - recipe_type: Raw Resource
-  Red Mushroom:
+  Penny Bun:
     recipes:
     - recipe_type: Raw Resource
   Reptile Hide:
