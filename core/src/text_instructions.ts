@@ -30,21 +30,29 @@ export function generate_instructions(edges: { [key: string]: ResourceEdge }, ge
 	// List out raw resource numbers
 	for (const node in node_columns) {
 		if (node_columns[node] === 0) {
-			const base_ingredients = text_item_object(generation_totals[node], node.replace(inventory_label_suffix, ""));
+			const raw_resource_name = node.replace(inventory_label_suffix, "");
+			const base_ingredients = text_item_object(generation_totals[node], raw_resource_name);
 
 			if (node.endsWith(inventory_label_suffix)) {
 				const line_wrapper = document.createElement("div");
 				line_wrapper.classList.add("instruction_wrapper");
 				line_wrapper.appendChild(base_ingredients);
-
 				inventory_resources.push(line_wrapper);
+
+				// For inventory nodes, we need to check for the non-inventory node
+				// Then we can determine how many of the resource are missing for our list
+				for (const non_inventory_node in node_columns) {
+					if (non_inventory_node === raw_resource_name) {
+						if (generation_totals[non_inventory_node] > 0) {
+							needed_resources.push(wrap_instruction(text_item_object(generation_totals[non_inventory_node], raw_resource_name)));
+						}
+						break;
+					}
+				}
 			}
 			else {
 				needed_resources.push(wrap_instruction(base_ingredients));
 			}
-			console.log(node_columns[node], node);
-			console.log("inv", inventory_resources);
-			console.log("need", needed_resources);
 		}
 
 		// Track the largest column as the max column count
@@ -57,10 +65,10 @@ export function generate_instructions(edges: { [key: string]: ResourceEdge }, ge
 	base_ingredients_title_elem.classList.add("text_instructions_title");
 	base_ingredients_title_elem.textContent = (inventory_resources.length > 0 ? "Missing " : "") + "Base Ingredients";
 	instructions.appendChild(base_ingredients_title_elem);
+
 	for (const needed_resource in needed_resources) {
 		instructions.appendChild(needed_resources[needed_resource]);
 	}
-
 
 	if (inventory_resources.length > 0) {
 		const inventory_resources_title = document.createElement("div");
