@@ -28,20 +28,23 @@ export function generate_instructions(edges: { [key: string]: ResourceEdge }, ge
 	var needed_resources: HTMLDivElement[] = [];
 
 	// List out raw resource numbers
-	for (let node in node_columns) {
+	for (const node in node_columns) {
 		if (node_columns[node] === 0) {
-			var line_wrapper = document.createElement("div");
-			line_wrapper.classList.add("instruction_wrapper");
-			let is_inventory = node.endsWith(inventory_label_suffix);
-			var base_ingredients = text_item_object(generation_totals[node], node.replace(inventory_label_suffix, ""));
-			line_wrapper.appendChild(base_ingredients);
+			const base_ingredients = text_item_object(generation_totals[node], node.replace(inventory_label_suffix, ""));
 
-			if (is_inventory) {
+			if (node.endsWith(inventory_label_suffix)) {
+				const line_wrapper = document.createElement("div");
+				line_wrapper.classList.add("instruction_wrapper");
+				line_wrapper.appendChild(base_ingredients);
+
 				inventory_resources.push(line_wrapper);
 			}
 			else {
-				needed_resources.push(line_wrapper);
+				needed_resources.push(wrap_instruction(base_ingredients));
 			}
+			console.log(node_columns[node], node);
+			console.log("inv", inventory_resources);
+			console.log("need", needed_resources);
 		}
 
 		// Track the largest column as the max column count
@@ -50,29 +53,29 @@ export function generate_instructions(edges: { [key: string]: ResourceEdge }, ge
 		}
 	}
 
-	let base_ingredients_title_elem = document.createElement("div");
-	base_ingredients_title_elem.id = "text_instructions_title"; // TODO: this should be a class now that it effects multiple elements
+	const base_ingredients_title_elem = document.createElement("div");
+	base_ingredients_title_elem.classList.add("text_instructions_title");
 	base_ingredients_title_elem.textContent = (inventory_resources.length > 0 ? "Missing " : "") + "Base Ingredients";
 	instructions.appendChild(base_ingredients_title_elem);
-	for (let needed_resource in needed_resources) {
+	for (const needed_resource in needed_resources) {
 		instructions.appendChild(needed_resources[needed_resource]);
 	}
 
 
 	if (inventory_resources.length > 0) {
-		let inventory_resources_title = document.createElement("div");
-		inventory_resources_title.setAttribute("id", "text_instructions_title");
+		const inventory_resources_title = document.createElement("div");
+		inventory_resources_title.classList.add("text_instructions_title");
 		inventory_resources_title.textContent = "Already Owned Base Ingredients";
 		instructions.appendChild(inventory_resources_title);
 
-		for (let inventory_resource in inventory_resources) {
+		for (const inventory_resource in inventory_resources) {
 			instructions.appendChild(inventory_resources[inventory_resource]);
 		}
 	}
 
 	// Text Instructions for crafting
-	let text_instructions_title = document.createElement("div");
-	text_instructions_title.id = "text_instructions_title"; // TODO: this should be a class now that it effects multiple elements
+	const text_instructions_title = document.createElement("div");
+	text_instructions_title.classList.add("text_instructions_title");
 	text_instructions_title.textContent = "Text Instructions [Beta]";
 	instructions.appendChild(text_instructions_title);
 
