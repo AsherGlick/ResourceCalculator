@@ -30,8 +30,12 @@ const inventory_amount_input_elem = <HTMLInputElement>document.getElementById("i
 | "Reset Item Counts" Button Logic                                             |
 \******************************************************************************/
 function clear_item_counts() {
+	if (!confirm("Are you sure you want to clear all items?")) {
+		return;
+	}
+
 	document.querySelectorAll(".desired_item").forEach((desired_item) => {
-		let field = <HTMLInputElement>desired_item.querySelector(".desired_item_count");
+		const field = <HTMLInputElement>desired_item.querySelector(".desired_item_count");
 		field.value = "";
 		set_textbox_background(field);
 	});
