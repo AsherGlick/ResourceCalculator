@@ -1,0 +1,140 @@
+---
+authors:
+  Schop: "https://github.com/Schop0"
+
+index_page_display_name: Outworld Station
+
+game_version: "0.1.2.0 (Early Access)"
+
+recipe_types:
+  Drone: Use {IN_ITEMS} to build {OUT_ITEM}
+  Smelter: Smelt {IN_ITEMS} into {OUT_ITEM} in a Smelter
+  Matter Printer: Print {IN_ITEMS} into {OUT_ITEM} in a Matter Printer
+
+resources:
+
+  Connector:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Hull Plating: -1
+    - recipe_type: Raw Resource
+  Vertical Connector:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Hull Plating: -5
+    - recipe_type: Raw Resource
+  Storage Unit:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Hull Plating: -5
+        Basic Frames: -1
+    - recipe_type: Raw Resource
+  Atomizer:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Hull Plating: -5
+        Basic Frames: -1
+    - recipe_type: Raw Resource
+  Smelter:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Hull Plating: -10
+        Basic Frames: -2
+    - recipe_type: Raw Resource
+  Solar Panel:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Basic Frames: -5
+        Gold: -5
+    - recipe_type: Raw Resource
+  Matter Printer:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Hull Plating: -15
+        Basic Frames: -5
+    - recipe_type: Raw Resource
+
+  Titanium Ore:
+    recipes:
+    - recipe_type: Raw Resource
+  Gold Ore:
+    recipes:
+    - recipe_type: Raw Resource
+  Silica:
+    recipes:
+    - recipe_type: Raw Resource
+  Carbon Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Titanium:
+    recipes:
+    - output: 1
+      recipe_type: Smelter
+      requirements:
+        Titanium Ore: -1
+    - recipe_type: Raw Resource
+  Carbon:
+    recipes:
+    - output: 1
+      recipe_type: Smelter
+      requirements:
+        Carbon Ore: -1
+    - recipe_type: Raw Resource
+  Glass Fibre:
+    recipes:
+    - output: 1
+      recipe_type: Smelter
+      requirements:
+        Silica: -1
+    - recipe_type: Raw Resource
+  Gold:
+    recipes:
+    - output: 1
+      recipe_type: Smelter
+      requirements:
+        Gold Ore: -1
+    - recipe_type: Raw Resource
+
+  Hull Plating:
+    recipes:
+    - output: 2
+      recipe_type: Matter Printer
+      requirements:
+        Titanium: -3
+    - recipe_type: Raw Resource
+  Basic Frames:
+    recipes:
+    - output: 1
+      recipe_type: Matter Printer
+      requirements:
+        Titanium: -4
+    - recipe_type: Raw Resource
+  Fibre Optics:
+    recipes:
+    - output: 2
+      recipe_type: Matter Printer
+      requirements:
+        Glass Fibre: -3
+    - recipe_type: Raw Resource
+  Composite:
+    recipes:
+    - output: 2
+      recipe_type: Matter Printer
+      requirements:
+        Carbon: -3
+    - recipe_type: Raw Resource
