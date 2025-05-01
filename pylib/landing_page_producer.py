@@ -79,6 +79,7 @@ def hash_and_copy_file(input_files: SingleFile, groups: Dict[str, str]) -> List[
     output_metadata_file: str = os.path.join("cache", calculator_name, "icon.jpg_name.json")
 
     # Copy the file
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
     shutil.copyfile(input_file, output_file)
 
     # Write the hashed file name to a known location
