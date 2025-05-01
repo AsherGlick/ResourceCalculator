@@ -67,6 +67,33 @@ resources:
         Hull Plating: -15
         Basic Frames: -5
     - recipe_type: Raw Resource
+  Artifact Analyzer:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Hull Plating: -50
+        Basic Frames: -25
+        Composite: -25
+    - recipe_type: Raw Resource
+  Fabricator:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Hull Plating: -25
+        Basic Frames: -10
+        Composite: -10
+    - recipe_type: Raw Resource
+  Energy Storage:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Hull Plating: -15
+        Basic Frames: -5
+        Fibre Optics: -5
+    - recipe_type: Raw Resource
 
   Titanium Ore:
     recipes:
@@ -109,6 +136,13 @@ resources:
       requirements:
         Gold Ore: -1
     - recipe_type: Raw Resource
+  Molecular Bonding:
+    recipes:
+    - output: 3
+      recipe_type: Smelter
+      requirements:
+        Silica: -1
+    - recipe_type: Raw Resource
 
   Hull Plating:
     recipes:
@@ -137,4 +171,28 @@ resources:
       recipe_type: Matter Printer
       requirements:
         Carbon: -3
+    - recipe_type: Raw Resource
+  Artificial Diamond:
+    recipes:
+    - output: 1
+      recipe_type: Matter Printer
+      requirements:
+        Carbon: -10
+    - recipe_type: Raw Resource
+
+  Nano Plating:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Hull Plating: -4
+        Molecular Bonding: -6
+    - recipe_type: Raw Resource
+  Reinforced Frames:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Basic Frames: -4
+        Molecular Bonding: -6
     - recipe_type: Raw Resource
