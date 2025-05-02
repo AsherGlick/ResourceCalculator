@@ -250,3 +250,4 @@ resources:
         Hull Plating: -10
         Computers: -1
         Small Engine: -2
+    - recipe_type: Raw Resource
