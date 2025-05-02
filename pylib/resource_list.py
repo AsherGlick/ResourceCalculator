@@ -415,22 +415,48 @@ class ResourceList():
                     if resources_v.H1 != "":
                         output.append("")
                         output.append(indent + "  " + "#" * (78 - len(indent)))
-                        line = indent + "  " + resources_k + ": {H1: " + resources_v.H1 + "}"
+                        line = indent + "  " + resources_k + ": {H1: " + optional_quote_wrapping(resources_v.H1) + "}"
                         line += " " + "#" * (79 - len(line))
                         output.append(line)
                         output.append(indent + "  " + "#" * (78 - len(indent)))
                     elif resources_v.H2 != "":
                         output.append("")
-                        line = indent + "  " + resources_k + ": {H2: " + resources_v.H2 + "}"
+                        line = indent + "  " + resources_k + ": {H2: " + optional_quote_wrapping(resources_v.H2) + "}"
                         line += " " + "#" * (79 - len(line))
                         output.append(line)
                     elif resources_v.H3 != "":
                         output.append("")
-                        output.append(indent + "  " + resources_k + ": {H3: " + resources_v.H3 + "}")
+                        output.append(indent + "  " + resources_k + ": {H3: " + optional_quote_wrapping(resources_v.H3) + "}")
 
                 else:
                     raise ValueError
         return '\n'.join(output)
+
+
+################################################################################
+# optional_quote_wrapping
+#
+# Optionally wrap a string in quotes if it needs it to be encoded into a yaml
+# value. Certian values will also be escaped.
+################################################################################
+def optional_quote_wrapping(string: str) -> str:
+    quotes_required = False
+    if "," in string:
+        quotes_required = True
+
+    if "'" in string:
+        quotes_required = True
+
+    if '"' in string:
+        string.replace('"', '\\"')
+
+    if '\\' in string:
+        string.replace('\\', '\\\\')
+
+    if quotes_required:
+        return f'"{string}"'
+    else:
+        return string
 
 
 # Class Generated with resource_list_type_generator.py
