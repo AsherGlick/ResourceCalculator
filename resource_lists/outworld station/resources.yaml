@@ -99,7 +99,7 @@ resources:
   Small Shipyard:
     recipes:
     - output: 1
-      recipe_type: drone
+      recipe_type: Drone
       requirements:
         Nano Plating: -25
         Reinforced Frames: -10
@@ -108,7 +108,7 @@ resources:
   Miner:
     recipes:
     - output: 1
-      recipe_type: drone
+      recipe_type: Drone
       requirements:
         Nano Plating: -15
         Reinforced Frames: -5
