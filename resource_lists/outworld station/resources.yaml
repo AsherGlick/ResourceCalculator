@@ -8,9 +8,11 @@ game_version: "0.1.2.0 (Early Access)"
 
 recipe_types:
   Drone: Use {IN_ITEMS} to build {OUT_ITEM}
+  Upgrade: Upgrade {IN_ITEMS} to {OUT_ITEM}
   Smelter: Smelt {IN_ITEMS} into {OUT_ITEM} in a Smelter
   Matter Printer: Print {IN_ITEMS} into {OUT_ITEM} in a Matter Printer
   Fabricator: Assemble {IN_ITEMS} into {OUT_ITEM} in a Fabricator
+  Freighter Dock: Construct {IN_ITEMS} into {OUT_ITEM} in a Freighter Dock
   Small Shipyard: Construct {IN_ITEMS} into {OUT_ITEM} in a Small Shipyard
 
 resources:
@@ -36,6 +38,15 @@ resources:
       requirements:
         Hull Plating: -5
         Basic Frames: -1
+    - recipe_type: Raw Resource
+  Storage Unit Mk2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Storage Unit: -1
+        Nano Plating: -10
+        Reinforced Frames: -2
     - recipe_type: Raw Resource
   Atomizer:
     recipes:
@@ -113,6 +124,26 @@ resources:
         Nano Plating: -15
         Reinforced Frames: -5
         Fibre Optics: -5
+        Computers: -1
+    - recipe_type: Raw Resource
+  Freighter Dock:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Nano Plating: -20
+        Reinforced Frames: -10
+        Composite: -25
+        Computers: -5
+    - recipe_type: Raw Resource
+  Defense Turret:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Nano Plating: -15
+        Reinforced Frames: -10
+        Superconductor: -5
         Computers: -1
     - recipe_type: Raw Resource
 
@@ -241,6 +272,24 @@ resources:
         Hull Plating: -4
         Composite: -8
     - recipe_type: Raw Resource
+  Superconductor:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Artificial Diamond: -2
+        Fibre Optics: -12
+    - recipe_type: Raw Resource
+
+  Freighter:
+    recipes:
+    - output: 1
+      recipe_type: Freighter Dock
+      requirements:
+        Hull Plating: -25
+        Reinforced Frames: -5
+        Computers: -1
+    - recipe_type: Raw Resource
 
   Aeon Hopper:
     recipes:
@@ -250,4 +299,13 @@ resources:
         Hull Plating: -10
         Computers: -1
         Small Engine: -2
+    - recipe_type: Raw Resource
+  Aeon Courier:
+    recipes:
+    - output: 1
+      recipe_type: Small Shipyard
+      requirements:
+        Hull Plating: -20
+        Computers: -2
+        Small Engine: -4
     - recipe_type: Raw Resource
