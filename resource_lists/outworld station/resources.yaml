@@ -15,6 +15,7 @@ recipe_types:
   Fabricator: Assemble {IN_ITEMS} into {OUT_ITEM} in a Fabricator
   Freighter Dock: Construct {IN_ITEMS} into {OUT_ITEM} in a Freighter Dock
   Small Shipyard: Construct {IN_ITEMS} into {OUT_ITEM} in a Small Shipyard
+  Location: Found a new station in {OUT_ITEM} using {IN_ITEMS}
 
 resources:
 
@@ -67,6 +68,15 @@ resources:
       requirements:
         Hull Plating: -10
         Basic Frames: -2
+    - recipe_type: Raw Resource
+  Smelter Mk2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Smelter: -1
+        Nano Plating: -25
+        Reinforced Frames: -5
     - recipe_type: Raw Resource
   Solar Panel:
     recipes:
@@ -129,6 +139,17 @@ resources:
         Reinforced Frames: -5
         Fibre Optics: -5
         Computers: -1
+    - recipe_type: Raw Resource
+  Miner Mk2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Miner: -1
+        Nano Plating: -35
+        Reinforced Frames: -20
+        Superconductor: -15
+        Computers: -5
     - recipe_type: Raw Resource
   Freighter Dock:
     recipes:
@@ -244,6 +265,56 @@ resources:
         Composite: -25
         Computers: -5
     - recipe_type: Raw Resource
+  Wormhole Terminus:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Nano Plating: -50
+        Reinforced Frames: -25
+        Superconductor: -25
+        Computers: -10
+    - recipe_type: Raw Resource
+  Tug Bay:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Nano Plating: -20
+        Reinforced Frames: -10
+        Composite: -25
+        Computers: -5
+    - recipe_type: Raw Resource
+  Fuel Depot:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Nano Plating: -20
+        Reinforced Frames: -10
+        Carbon Nanotube: -50
+        Computers: -5
+    - recipe_type: Raw Resource
+  Cloud Miner:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Nano Plating: -30
+        Reinforced Frames: -15
+        Carbon Nanotube: -50
+        Computers: -10
+    - recipe_type: Raw Resource
+  Cyclone Generator:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Nano Plating: -15
+        Reinforced Frames: -10
+        Superconductor: -5
+        Small Engine: -1
+    - recipe_type: Raw Resource
 
 ###################
 # Raw Resource    #
@@ -261,6 +332,9 @@ resources:
     recipes:
     - recipe_type: Raw Resource
   Water Ice:
+    recipes:
+    - recipe_type: Raw Resource
+  Nitratium:
     recipes:
     - recipe_type: Raw Resource
 
@@ -319,6 +393,21 @@ resources:
       recipe_type: Refinery
       requirements:
         Pure Water: -1
+    - recipe_type: Raw Resource
+  Oxygen:
+    recipes:
+    - output: 1
+      recipe_type: Refinery
+      requirements:
+        Pure Water: -5
+    - recipe_type: Raw Resource
+  Nitrox:
+    recipes:
+    - output: 1
+      recipe_type: Refinery
+      requirements:
+        Oxygen: -10
+        Nitratium: -10
     - recipe_type: Raw Resource
 
 ###################
@@ -426,6 +515,14 @@ resources:
         Composite: -16
         Reinforced Frames: -3
     - recipe_type: Raw Resource
+  Small Fuel Tank:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Nano Plating: -6
+        Molecular Bonding: -8
+    - recipe_type: Raw Resource
 
 ###################
 # Ships           #
@@ -458,4 +555,29 @@ resources:
         Computers: -2
         Small Engine: -3
         Small Cargo Pod: -6
+    - recipe_type: Raw Resource
+  Photon Tanker:
+    recipes:
+    - output: 1
+      recipe_type: Small Shipyard
+      requirements:
+        Nano Plating: -15
+        Reinforced Frames: -8
+        Computers: -3
+        Small Engine: -4
+        Small Fuel Tank: -4
+    - recipe_type: Raw Resource
+
+###################
+# Locations       #
+###################
+  Titania - Low Orbit:
+    recipes:
+    - output: 1
+      recipe_type: Location
+      requirements:
+        Nano Plating: -50
+        Reinforced Frames: -25
+        Superconductor: -25
+        Computers: -10
     - recipe_type: Raw Resource
