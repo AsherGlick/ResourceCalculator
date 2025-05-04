@@ -10,6 +10,7 @@ recipe_types:
   Drone: Use {IN_ITEMS} to build {OUT_ITEM}
   Upgrade: Upgrade {IN_ITEMS} to {OUT_ITEM}
   Smelter: Smelt {IN_ITEMS} into {OUT_ITEM} in a Smelter
+  Refinery: Refine {IN_ITEMS} into {OUT_ITEM} in a Refinery
   Matter Printer: Print {IN_ITEMS} into {OUT_ITEM} in a Matter Printer
   Fabricator: Assemble {IN_ITEMS} into {OUT_ITEM} in a Fabricator
   Freighter Dock: Construct {IN_ITEMS} into {OUT_ITEM} in a Freighter Dock
@@ -136,6 +137,18 @@ resources:
         Composite: -25
         Computers: -5
     - recipe_type: Raw Resource
+  Freighter Dock Mk2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Freighter Dock: -1
+        Nano Plating: -80
+        Reinforced Frames: -20
+        Composite: -75
+        Computers: -20
+        Carbon Nanotube: -250
+    - recipe_type: Raw Resource
   Defense Turret:
     recipes:
     - output: 1
@@ -145,6 +158,61 @@ resources:
         Reinforced Frames: -10
         Superconductor: -5
         Computers: -1
+    - recipe_type: Raw Resource
+  Pipe:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Carbon Nanotube: -1
+    - recipe_type: Raw Resource
+  Pipe Junction:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Carbon Nanotube: -10
+        Reinforced Frames: -1
+    - recipe_type: Raw Resource
+  Storage Tank:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Nano Plating: -12
+        Composite: -24
+        Reinforced Frames: -4
+        Carbon Nanotube: -25
+    - recipe_type: Raw Resource
+  Refinery:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Nano Plating: -20
+        Reinforced Frames: -10
+        Carbon Nanotube: -50
+        Superconductor: -5
+    - recipe_type: Raw Resource
+  Fusion Reactor:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Nano Plating: -50
+        Reinforced Frames: -25
+        Superconductor: -25
+        Computers: -10
+    - recipe_type: Raw Resource
+  Power Link:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Nano Plating: -20
+        Reinforced Frames: -10
+        Composite: -25
+        Computers: -5
     - recipe_type: Raw Resource
 
   Titanium Ore:
@@ -157,6 +225,9 @@ resources:
     recipes:
     - recipe_type: Raw Resource
   Carbon Ore:
+    recipes:
+    - recipe_type: Raw Resource
+  Water Ice:
     recipes:
     - recipe_type: Raw Resource
 
@@ -196,6 +267,21 @@ resources:
         Silica: -1
     - recipe_type: Raw Resource
 
+  Pure Water:
+    recipes:
+    - output: 5 # and 1 Carbon
+      recipe_type: Refinery
+      requirements:
+        Water Ice: -5
+    - recipe_type: Raw Resource
+  Hydrogen:
+    recipes:
+    - output: 4
+      recipe_type: Refinery
+      requirements:
+        Pure Water: -1
+    - recipe_type: Raw Resource
+
   Hull Plating:
     recipes:
     - output: 2
@@ -230,6 +316,13 @@ resources:
       recipe_type: Matter Printer
       requirements:
         Carbon: -10
+    - recipe_type: Raw Resource
+  Carbon Nanotube:
+    recipes:
+    - output: 1
+      recipe_type: Matter Printer
+      requirements:
+        Carbon: -1
     - recipe_type: Raw Resource
 
   Nano Plating:
@@ -280,6 +373,14 @@ resources:
         Artificial Diamond: -2
         Fibre Optics: -12
     - recipe_type: Raw Resource
+  Small Cargo Pod:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Composite: -16
+        Reinforced Frames: -3
+    - recipe_type: Raw Resource
 
   Freighter:
     recipes:
@@ -289,6 +390,24 @@ resources:
         Hull Plating: -25
         Reinforced Frames: -5
         Computers: -1
+    - recipe_type: Raw Resource
+  Freighter Mk2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Freighter: -1
+        Hull Plating: -25
+        Reinforced Frames: -20
+        Computers: -4
+        Small Engine: -5
+    - output: 1
+      recipe_type: Freighter Dock
+      requirements:
+        Hull Plating: -50
+        Reinforced Frames: -25
+        Computers: -5
+        Small Engine: -5
     - recipe_type: Raw Resource
 
   Aeon Hopper:
@@ -308,4 +427,15 @@ resources:
         Hull Plating: -20
         Computers: -2
         Small Engine: -4
+    - recipe_type: Raw Resource
+  Photon Light Hauler:
+    recipes:
+    - output: 1
+      recipe_type: Small Shipyard
+      requirements:
+        Nano Plating: -10
+        Reinforced Frames: -5
+        Computers: -2
+        Small Engine: -3
+        Small Cargo Pod: -6
     - recipe_type: Raw Resource
