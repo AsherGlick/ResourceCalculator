@@ -140,6 +140,15 @@ resources:
         Composite: -25
         Computers: -5
     - recipe_type: Raw Resource
+  Freighter:
+    recipes:
+    - output: 1
+      recipe_type: Freighter Dock
+      requirements:
+        Hull Plating: -25
+        Reinforced Frames: -5
+        Computers: -1
+    - recipe_type: Raw Resource
   Freighter Dock Mk2:
     recipes:
     - output: 1
@@ -151,6 +160,24 @@ resources:
         Composite: -75
         Computers: -20
         Carbon Nanotube: -250
+    - recipe_type: Raw Resource
+  Freighter Mk2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Freighter: -1
+        Hull Plating: -25
+        Reinforced Frames: -20
+        Computers: -4
+        Small Engine: -5
+    - output: 1
+      recipe_type: Freighter Dock
+      requirements:
+        Hull Plating: -50
+        Reinforced Frames: -25
+        Computers: -5
+        Small Engine: -5
     - recipe_type: Raw Resource
   Defense Turret:
     recipes:
@@ -398,37 +425,6 @@ resources:
       requirements:
         Composite: -16
         Reinforced Frames: -3
-    - recipe_type: Raw Resource
-
-###################
-# Freighters      #
-###################
-  Freighter:
-    recipes:
-    - output: 1
-      recipe_type: Freighter Dock
-      requirements:
-        Hull Plating: -25
-        Reinforced Frames: -5
-        Computers: -1
-    - recipe_type: Raw Resource
-  Freighter Mk2:
-    recipes:
-    - output: 1
-      recipe_type: Upgrade
-      requirements:
-        Freighter: -1
-        Hull Plating: -25
-        Reinforced Frames: -20
-        Computers: -4
-        Small Engine: -5
-    - output: 1
-      recipe_type: Freighter Dock
-      requirements:
-        Hull Plating: -50
-        Reinforced Frames: -25
-        Computers: -5
-        Small Engine: -5
     - recipe_type: Raw Resource
 
 ###################
