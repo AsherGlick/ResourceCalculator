@@ -10,6 +10,7 @@ recipe_types:
   Drone: Use {IN_ITEMS} to build {OUT_ITEM}
   Upgrade: Upgrade {IN_ITEMS} to {OUT_ITEM}
   Smelter: Smelt {IN_ITEMS} into {OUT_ITEM} in a Smelter
+  Plasma Forge: Forge {IN_ITEMS} into {OUT_ITEM} in a Plasma Forge
   Refinery: Refine {IN_ITEMS} into {OUT_ITEM} in a Refinery
   Matter Printer: Print {IN_ITEMS} into {OUT_ITEM} in a Matter Printer
   Fabricator: Assemble {IN_ITEMS} into {OUT_ITEM} in a Fabricator
@@ -317,6 +318,26 @@ resources:
         Superconductor: -5
         Small Engine: -1
     - recipe_type: Raw Resource
+  Plasma Forge:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Superalloy: -40
+        Reinforced Frames: -20
+        Computers: -10
+        Superconductor: -20
+    - recipe_type: Raw Resource
+  Bio Extractor:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Superalloy: -25
+        Reinforced Frames: -25
+        Carbon Nanotube: -50
+        Computers: -10
+    - recipe_type: Raw Resource
 
 ###################
 # Raw Resource    #
@@ -336,6 +357,10 @@ resources:
   Water Ice:
     recipes:
     - recipe_type: Raw Resource
+  Tungsten Ore:
+    recipes:
+    - recipe_type: Raw Resource
+
   Nitratium:
     recipes:
     - recipe_type: Raw Resource
@@ -377,6 +402,25 @@ resources:
       recipe_type: Smelter
       requirements:
         Silica: -1
+    - recipe_type: Raw Resource
+  Tungsten:
+    recipes:
+    - output: 1
+      recipe_type: Smelter
+      requirements:
+        Tungsten Ore: -2
+    - recipe_type: Raw Resource
+
+###################
+# Plasma Forge    #
+###################
+  Superalloy:
+    recipes:
+    - output: 1
+      recipe_type: Plasma Forge
+      requirements:
+        Titanium: -4
+        Tungsten: -4
     - recipe_type: Raw Resource
 
 ###################
@@ -525,6 +569,22 @@ resources:
         Nano Plating: -6
         Molecular Bonding: -8
     - recipe_type: Raw Resource
+  Small Aero-Wing:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Composite: -10
+        Molecular Bonding: -6
+    - recipe_type: Raw Resource
+  Small Scramjet:
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Small Engine: -2
+        Carbon Nanotube: -25
+    - recipe_type: Raw Resource
 
 ###################
 # Ships           #
@@ -577,11 +637,60 @@ resources:
         Photon Tanker: -1
         Hydrogen: -25
     - recipe_type: Raw Resource
+  Neutron Explorer:
+    recipes:
+    - output: 1
+      recipe_type: Small Shipyard
+      requirements:
+        Nano Plating: -25
+        Reinforced Frames: -15
+        Computers: -10
+        Small Engine: -8
+        Small Fuel Tank: -2
+    - recipe_type: Raw Resource
+  Neutron Explorer - Fuelled:
+    recipes:
+    - output: 1
+      recipe_type: Fuel Depot
+      requirements:
+        Neutron Explorer: -1
+        Hydrogen: -100
+    - recipe_type: Raw Resource
+  Stratos Shuttle:
+    recipes:
+    - output: 1
+      recipe_type: Small Shipyard
+      requirements:
+        Nano Plating: -8
+        Reinforced Frames: -2
+        Composite: -10
+        Computers: -1
+        Small Aero-Wing: -2
+        Small Scramjet: -2
+    - recipe_type: Raw Resource
+  Stratos Shuttle - Fuelled:
+    recipes:
+    - output: 1
+      recipe_type: Fuel Depot
+      requirements:
+        Stratos Shuttle: -1
+        Hydrogen: -25
+    - recipe_type: Raw Resource
 
 ###################
 # Locations       #
 ###################
   Titania - Low Orbit:
+    recipes:
+    - output: 1
+      recipe_type: Location
+      requirements:
+        Nano Plating: -50
+        Reinforced Frames: -25
+        Superconductor: -25
+        Computers: -10
+    - recipe_type: Raw Resource
+  Asteroid Belt 2:
     recipes:
     - output: 1
       recipe_type: Location
@@ -602,4 +711,13 @@ resources:
       requirements:
         Photon Tanker - Fuelled: -50
         Nitrox: -100
+    - recipe_type: Raw Resource
+  Station Expansion 8:
+    recipes:
+    - output: 1
+      recipe_type: Objective
+      requirements:
+        Neutron Explorer - Fuelled: -50
+        Stratos Shuttle - Fuelled: -100
+        Superalloy: -500
     - recipe_type: Raw Resource
