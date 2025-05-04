@@ -18,6 +18,9 @@ recipe_types:
 
 resources:
 
+###################
+# Drone           #
+###################
   Connector:
     recipes:
     - output: 1
@@ -215,6 +218,9 @@ resources:
         Computers: -5
     - recipe_type: Raw Resource
 
+###################
+# Raw Resource    #
+###################
   Titanium Ore:
     recipes:
     - recipe_type: Raw Resource
@@ -231,6 +237,9 @@ resources:
     recipes:
     - recipe_type: Raw Resource
 
+###################
+# Smelter         #
+###################
   Titanium:
     recipes:
     - output: 1
@@ -267,6 +276,9 @@ resources:
         Silica: -1
     - recipe_type: Raw Resource
 
+###################
+# Refinery        #
+###################
   Pure Water:
     recipes:
     - output: 5 # and 1 Carbon
@@ -282,6 +294,9 @@ resources:
         Pure Water: -1
     - recipe_type: Raw Resource
 
+###################
+# Matter Printer  #
+###################
   Hull Plating:
     recipes:
     - output: 2
@@ -325,6 +340,9 @@ resources:
         Carbon: -1
     - recipe_type: Raw Resource
 
+###################
+# Fabricator      #
+###################
   Nano Plating:
     recipes:
     - output: 1
@@ -382,6 +400,9 @@ resources:
         Reinforced Frames: -3
     - recipe_type: Raw Resource
 
+###################
+# Freighters      #
+###################
   Freighter:
     recipes:
     - output: 1
@@ -410,6 +431,9 @@ resources:
         Small Engine: -5
     - recipe_type: Raw Resource
 
+###################
+# Ships           #
+###################
   Aeon Hopper:
     recipes:
     - output: 1
