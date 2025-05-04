@@ -15,7 +15,9 @@ recipe_types:
   Fabricator: Assemble {IN_ITEMS} into {OUT_ITEM} in a Fabricator
   Freighter Dock: Construct {IN_ITEMS} into {OUT_ITEM} in a Freighter Dock
   Small Shipyard: Construct {IN_ITEMS} into {OUT_ITEM} in a Small Shipyard
+  Fuel Depot: Fuel up {IN_ITEMS} into {OUT_ITEM} in a Fuel Depot
   Location: Found a new station in {OUT_ITEM} using {IN_ITEMS}
+  Objective: Produce {IN_ITEMS} for {OUT_ITEM}
 
 resources:
 
@@ -567,6 +569,14 @@ resources:
         Small Engine: -4
         Small Fuel Tank: -4
     - recipe_type: Raw Resource
+  Photon Tanker - Fuelled:
+    recipes:
+    - output: 1
+      recipe_type: Fuel Depot
+      requirements:
+        Photon Tanker: -1
+        Hydrogen: -25
+    - recipe_type: Raw Resource
 
 ###################
 # Locations       #
@@ -580,4 +590,16 @@ resources:
         Reinforced Frames: -25
         Superconductor: -25
         Computers: -10
+    - recipe_type: Raw Resource
+
+###################
+# Objectives      #
+###################
+  Station Expansion 7:
+    recipes:
+    - output: 1
+      recipe_type: Objective
+      requirements:
+        Photon Tanker - Fuelled: -50
+        Nitrox: -100
     - recipe_type: Raw Resource
