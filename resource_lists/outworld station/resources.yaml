@@ -14,8 +14,10 @@ recipe_types:
   Refinery: Refine {IN_ITEMS} into {OUT_ITEM} in a Refinery
   Matter Printer: Print {IN_ITEMS} into {OUT_ITEM} in a Matter Printer
   Fabricator: Assemble {IN_ITEMS} into {OUT_ITEM} in a Fabricator
+  Manufactory: Assemble {IN_ITEMS} into {OUT_ITEM} in a Manufactory
   Freighter Dock: Construct {IN_ITEMS} into {OUT_ITEM} in a Freighter Dock
   Small Shipyard: Construct {IN_ITEMS} into {OUT_ITEM} in a Small Shipyard
+  Medium Shipyard: Construct {IN_ITEMS} into {OUT_ITEM} in a Medium Shipyard
   Fuel Depot: Fuel up {IN_ITEMS} into {OUT_ITEM} in a Fuel Depot
   Location: Found a new station in {OUT_ITEM} using {IN_ITEMS}
   Objective: Produce {IN_ITEMS} for {OUT_ITEM}
@@ -55,6 +57,31 @@ resources:
         Storage Unit: -1
         Nano Plating: -10
         Reinforced Frames: -2
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Hull Plating: -5
+        Basic Frames: -1
+        Nano Plating: -10
+        Reinforced Frames: -2
+    - recipe_type: Raw Resource
+  Storage Unit Mk3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Storage Unit Mk2: -1
+        Advanced Plating: -8
+        Heavy Frames: -4
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Hull Plating: -5
+        Basic Frames: -1
+        Nano Plating: -10
+        Reinforced Frames: -2
+        Advanced Plating: -8
+        Heavy Frames: -4
     - recipe_type: Raw Resource
   Atomizer:
     recipes:
@@ -338,6 +365,36 @@ resources:
         Carbon Nanotube: -50
         Computers: -10
     - recipe_type: Raw Resource
+  Manufactory:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Superalloy: -25
+        Nano Plating: -50
+        Reinforced Frames: -25
+        Composite: -50
+        Computers: -10
+    - recipe_type: Raw Resource
+  Medium Shipyard:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Advanced Plating: -25
+        Heavy Frames: -10
+        Composite: -25
+    - recipe_type: Raw Resource
+  Missile Turret:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Advanced Plating: -15
+        Heavy Frames: -10
+        Superconductor: -10
+        Computers: -2
+    - recipe_type: Raw Resource
 
 ###################
 # Raw Resource    #
@@ -587,6 +644,57 @@ resources:
     - recipe_type: Raw Resource
 
 ###################
+# Manufactory     #
+###################
+  Advanced Plating:
+    recipes:
+    - output: 1
+      recipe_type: Manufactory
+      requirements:
+        Nano Plating: -4
+        Molecular Bonding: -8
+        Superalloy: -6
+    - recipe_type: Raw Resource
+  Heavy Frames:
+    recipes:
+    - output: 1
+      recipe_type: Manufactory
+      requirements:
+        Reinforced Frames: -4
+        Molecular Bonding: -8
+        Superalloy: -12
+    - recipe_type: Raw Resource
+  Medium Engine:
+    recipes:
+    - output: 1
+      recipe_type: Manufactory
+      requirements:
+        Small Engine: -4
+        Molecular Bonding: -12
+        Reinforced Frames: -4
+        Nano Plating: -8
+    - recipe_type: Raw Resource
+  Supercomputer:
+    recipes:
+    - output: 1
+      recipe_type: Manufactory
+      requirements:
+        Computers: -4
+        Fibre Optics: -24
+        Superconductor: -8
+    - recipe_type: Raw Resource
+  Micro-Fusion Reactor:
+    recipes:
+    - output: 1
+      recipe_type: Manufactory
+      requirements:
+        Supercomputer: -1
+        Superconductor: -24
+        Superalloy: -12
+        Gold: -24
+    - recipe_type: Raw Resource
+
+###################
 # Ships           #
 ###################
   Aeon Hopper:
@@ -606,6 +714,14 @@ resources:
         Hull Plating: -20
         Computers: -2
         Small Engine: -4
+    - recipe_type: Raw Resource
+  Aeon Courier - Fuelled:
+    recipes:
+    - output: 1
+      recipe_type: Fuel Depot
+      requirements:
+        Aeon Courier: -1
+        Hydrogen: -10
     - recipe_type: Raw Resource
   Photon Light Hauler:
     recipes:
@@ -676,10 +792,41 @@ resources:
         Stratos Shuttle: -1
         Hydrogen: -25
     - recipe_type: Raw Resource
+  Meson Heavy Hauler:
+    recipes:
+    - output: 1
+      recipe_type: Medium Shipyard
+      requirements:
+        Micro-Fusion Reactor: -1
+        Advanced Plating: -15
+        Heavy Frames: -10
+        Supercomputer: -1
+        Medium Engine: -2
+        Small Engine: -4
+        Small Cargo Pod: -2
+    - recipe_type: Raw Resource
+  Meson Heavy Hauler - Fuelled:
+    recipes:
+    - output: 1
+      recipe_type: Fuel Depot
+      requirements:
+        Meson Heavy Hauler: -1
+        Hydrogen: -500
+    - recipe_type: Raw Resource
 
 ###################
 # Locations       #
 ###################
+  Asteroid Belt:
+    recipes:
+    - output: 1
+      recipe_type: Location
+      requirements:
+        Nano Plating: -50
+        Reinforced Frames: -25
+        Superconductor: -25
+        Computers: -10
+    - recipe_type: Raw Resource
   Titania - Low Orbit:
     recipes:
     - output: 1
@@ -691,6 +838,16 @@ resources:
         Computers: -10
     - recipe_type: Raw Resource
   Asteroid Belt 2:
+    recipes:
+    - output: 1
+      recipe_type: Location
+      requirements:
+        Nano Plating: -50
+        Reinforced Frames: -25
+        Superconductor: -25
+        Computers: -10
+    - recipe_type: Raw Resource
+  Glacialis - Ice Ring:
     recipes:
     - output: 1
       recipe_type: Location
@@ -720,4 +877,15 @@ resources:
         Neutron Explorer - Fuelled: -50
         Stratos Shuttle - Fuelled: -100
         Superalloy: -500
+    - recipe_type: Raw Resource
+  Station Expansion 9:
+    recipes:
+    - output: 1
+      recipe_type: Objective
+      requirements:
+        Meson Heavy Hauler - Fuelled: -25
+        Photon Tanker - Fuelled: -100
+        Aeon Courier - Fuelled: -250
+        Micro-Fusion Reactor: -25
+        Nitrox: -1000
     - recipe_type: Raw Resource
