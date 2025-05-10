@@ -15,10 +15,12 @@ recipe_types:
   Matter Printer: Print {IN_ITEMS} into {OUT_ITEM} in a Matter Printer
   Fabricator: Assemble {IN_ITEMS} into {OUT_ITEM} in a Fabricator
   Manufactory: Assemble {IN_ITEMS} into {OUT_ITEM} in a Manufactory
+  Ammo Factory: Assemble {IN_ITEMS} into {OUT_ITEM} in an Ammo Factory
   Freighter Dock: Construct {IN_ITEMS} into {OUT_ITEM} in a Freighter Dock
   Small Shipyard: Construct {IN_ITEMS} into {OUT_ITEM} in a Small Shipyard
   Medium Shipyard: Construct {IN_ITEMS} into {OUT_ITEM} in a Medium Shipyard
   Fuel Depot: Fuel up {IN_ITEMS} into {OUT_ITEM} in a Fuel Depot
+  Ammo Depot: Arm {IN_ITEMS} into {OUT_ITEM} in an Ammo Depot
   Location: Found a new station in {OUT_ITEM} using {IN_ITEMS}
   Objective: Produce {IN_ITEMS} for {OUT_ITEM}
 
@@ -180,6 +182,35 @@ resources:
         Reinforced Frames: -20
         Superconductor: -15
         Computers: -5
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Nano Plating: -50
+        Reinforced Frames: -25
+        Fibre Optics: -5
+        Superconductor: -15
+        Computers: -6
+    - recipe_type: Raw Resource
+  Miner Mk3:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Miner Mk2: -1
+        Advanced Plating: -10
+        Heavy Frames: -5
+        Supercomputer: -1
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Nano Plating: -50
+        Reinforced Frames: -25
+        Fibre Optics: -5
+        Superconductor: -15
+        Computers: -6
+        Advanced Plating: -10
+        Heavy Frames: -5
+        Supercomputer: -1
     - recipe_type: Raw Resource
   Freighter Dock:
     recipes:
@@ -325,6 +356,26 @@ resources:
         Carbon Nanotube: -50
         Computers: -5
     - recipe_type: Raw Resource
+  Fuel Depot Mk2:
+    recipes:
+    - output: 1
+      recipe_type: Upgrade
+      requirements:
+        Fuel Depot: -1
+        Carbon Nanotube: -500
+        Computers: -20
+        Advanced Plating: -25
+        Heavy Frames: -10
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Nano Plating: -20
+        Reinforced Frames: -10
+        Carbon Nanotube: -550
+        Computers: -25
+        Advanced Plating: -25
+        Heavy Frames: -10
+    - recipe_type: Raw Resource
   Cloud Miner:
     recipes:
     - output: 1
@@ -394,6 +445,26 @@ resources:
         Heavy Frames: -10
         Superconductor: -10
         Computers: -2
+    - recipe_type: Raw Resource
+  Ammo Factory:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Advanced Plating: -50
+        Heavy Frames: -25
+        Composite: -100
+        Supercomputer: -1
+    - recipe_type: Raw Resource
+  Ammo Depot:
+    recipes:
+    - output: 1
+      recipe_type: Drone
+      requirements:
+        Advanced Plating: -50
+        Heavy Frames: -25
+        Composite: -150
+        Supercomputer: -1
     - recipe_type: Raw Resource
 
 ###################
@@ -693,6 +764,47 @@ resources:
         Superalloy: -12
         Gold: -24
     - recipe_type: Raw Resource
+  Missile Launcher:
+    recipes:
+    - output: 1
+      recipe_type: Manufactory
+      requirements:
+        Advanced Plating: -8
+        Heavy Frames: -4
+        Computers: -3
+    - recipe_type: Raw Resource
+  Shield Generator:
+    recipes:
+    - output: 1
+      recipe_type: Manufactory
+      requirements:
+        Advanced Plating: -4
+        Superconductor: -18
+        Heavy Frames: -2
+        Computers: -1
+    - recipe_type: Raw Resource
+
+###################
+# Ammo Factory    #
+###################
+  Warheads:
+    recipes:
+    - output: 1
+      recipe_type: Ammo Factory
+      requirements:
+        Nitrox: -5
+        Molecular Bonding: -2
+    - recipe_type: Raw Resource
+  Light Missile Ammo:
+    recipes:
+    - output: 5
+      recipe_type: Ammo Factory
+      requirements:
+        Warheads: -1
+        Hull Plating: -10
+        Basic Frames: -5
+        Small Engine: -1
+    - recipe_type: Raw Resource
 
 ###################
 # Ships           #
@@ -813,6 +925,85 @@ resources:
         Meson Heavy Hauler: -1
         Hydrogen: -500
     - recipe_type: Raw Resource
+  Meson Archer:
+    recipes:
+    - output: 1
+      recipe_type: Medium Shipyard
+      requirements:
+        Micro-Fusion Reactor: -2
+        Advanced Plating: -20
+        Heavy Frames: -15
+        Supercomputer: -3
+        Medium Engine: -3
+        Small Engine: -2
+        Missile Launcher: -1
+        Shield Generator: -1
+    - recipe_type: Raw Resource
+  Meson Archer - Fuelled:
+    recipes:
+    - output: 1
+      recipe_type: Fuel Depot
+      requirements:
+        Meson Archer: -1
+        Hydrogen: -1000
+    - recipe_type: Raw Resource
+  Meson Archer - Fuelled - Armed:
+    recipes:
+    - output: 1
+      recipe_type: Ammo Depot
+      requirements:
+        Meson Archer - Fuelled: -1
+        Light Missile Ammo: -50
+    - recipe_type: Raw Resource
+  Meson Lifter:
+    recipes:
+    - output: 1
+      recipe_type: Medium Shipyard
+      requirements:
+        Micro-Fusion Reactor: -2
+        Advanced Plating: -20
+        Heavy Frames: -15
+        Supercomputer: -3
+        Medium Engine: -2
+        Small Aero-Wing: -6
+        Small Scramjet: -6
+    - recipe_type: Raw Resource
+  Meson Lifter - Fuelled:
+    recipes:
+    - output: 1
+      recipe_type: Fuel Depot
+      requirements:
+        Meson Lifter: -1
+        Hydrogen: -1500
+    - recipe_type: Raw Resource
+  Stratos Interceptor:
+    recipes:
+    - output: 1
+      recipe_type: Small Shipyard
+      requirements:
+        Nano Plating: -12
+        Reinforced Frames: -4
+        Composite: -12
+        Computers: -2
+        Small Aero-Wing: -4
+        Small Scramjet: -4
+    - recipe_type: Raw Resource
+  Stratos Interceptor - Fuelled:
+    recipes:
+    - output: 1
+      recipe_type: Fuel Depot
+      requirements:
+        Stratos Interceptor: -1
+        Hydrogen: -50
+    - recipe_type: Raw Resource
+  Stratos Interceptor - Fuelled - Armed:
+    recipes:
+    - output: 1
+      recipe_type: Ammo Depot
+      requirements:
+        Stratos Interceptor - Fuelled: -1
+        Light Missile Ammo: -4
+    - recipe_type: Raw Resource
 
 ###################
 # Locations       #
@@ -888,4 +1079,14 @@ resources:
         Aeon Courier - Fuelled: -250
         Micro-Fusion Reactor: -25
         Nitrox: -1000
+    - recipe_type: Raw Resource
+  Station Expansion 10:
+    recipes:
+    - output: 1
+      recipe_type: Objective
+      requirements:
+        Meson Archer - Fuelled - Armed: -50
+        Meson Lifter - Fuelled: -50
+        Stratos Interceptor - Fuelled - Armed: -250
+        Light Missile Ammo: -1000
     - recipe_type: Raw Resource
