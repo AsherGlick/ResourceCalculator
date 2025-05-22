@@ -3,8 +3,12 @@
     "eslint": "^5.16.0",
     "rollup": "^4.18.1",
     "terser": "^4.0.0",
-    "typescript": "^4.4.3"
+    "typescript": "^4.4.3",
+    "vitest": "^3.1.4"
   },
-  "license": "SEE LICENSE IN /LICENSE",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "license": "SEE LICENSE IN //LICENSE",
   "repository": "https://github.com/AsherGlick/ResourceCalculator"
 }

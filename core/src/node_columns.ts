@@ -1,8 +1,14 @@
 import { ResourceEdge } from "./resource_edge";
 
-// This function groups the list of nodes into ones that should share
-// the same column within the generated graph
-export function get_node_columns(edges: { [key: string]: ResourceEdge }) {
+////////////////////////////////////////////////////////////////////////////////
+// get_node_columns
+//
+// Takes in all of the edges of the graph and returns a mapping of each node to
+// what column that node should be in.
+////////////////////////////////////////////////////////////////////////////////
+export function get_node_columns(
+	edges: { [key: string]: ResourceEdge }
+): { [key: string]: number } {
 	let nodes: string[] = [];
 
 	// Start by getting a list of all the nodes
@@ -24,9 +30,10 @@ export function get_node_columns(edges: { [key: string]: ResourceEdge }) {
 			child_counts[node] = 0;
 			for (let edge in edges){
 				if (edges[edge].source === node) {
-					// make sure that this child has the correct child count
+					// make sure that this child has the correct child_count
 					populate_child_count(edges[edge].target);
-					// If this child's child count is larger then any other child's thus far save it as the longest
+					// If this child's child_count is larger then any other
+					// child's child_count so far save it as the longest
 					if (child_counts[edges[edge].target]+1 > child_counts[node]){
 						child_counts[node] = child_counts[edges[edge].target]+1;
 					}
@@ -34,14 +41,16 @@ export function get_node_columns(edges: { [key: string]: ResourceEdge }) {
 			}
 		}
 	}
+
 	function populate_parent_count(node: string){
 		if (!(node in parent_counts)) {
 			parent_counts[node] = 0;
 			for (let edge in edges){
 				if (edges[edge].target === node) {
-					// make sure that this child has the correct child count
+					// make sure that this child has the correct child_count
 					populate_parent_count(edges[edge].source);
-					// If this child's child count is larger then any other child's thus far save it as the longest
+					// If this child's child count is larger then any other
+					// child's child_count so far save it as the longest.
 					if (parent_counts[edges[edge].source]+1 > parent_counts[node]){
 						parent_counts[node] = parent_counts[edges[edge].source]+1;
 					}

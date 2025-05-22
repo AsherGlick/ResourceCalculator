@@ -13,5 +13,6 @@
 		"noImplicitAny": true,
 		"strictNullChecks": true
 	},
-	"include": ["*.ts"]
+	"include": ["*.ts"],
+	"exclude": ["**/*.test.ts"]
 }
