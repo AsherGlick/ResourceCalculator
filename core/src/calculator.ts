@@ -260,6 +260,9 @@ function load() {
 			var id = decodeURIComponent(split[0]);
 			var value = decodeURIComponent(split[1]);
 			let desired_item = <HTMLInputElement>document.getElementById(id);
+			if (desired_item === null) {
+				continue;
+			}
 			desired_item.value = value;
 			desired_item.style.display = "block";
 			set_textbox_background(desired_item);
