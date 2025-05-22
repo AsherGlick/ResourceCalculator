@@ -76,15 +76,20 @@ def build_typescript(input_files: TypescriptInputFiles, groups: Dict[str, str]) 
     )
 
     output_files = []
+    error = False
     for line in result.stdout.split("\n"):
         if line == "":
             continue
 
         if not line.startswith("TSFILE: "):
             print("ERROR:", line)
+            error = True
 
         line = line.removeprefix("TSFILE: ")
         relative_path = os.path.relpath(line)
         output_files.append(relative_path)
+
+    if error:
+        raise ValueError("Typescript Compile Error")
 
     return output_files
