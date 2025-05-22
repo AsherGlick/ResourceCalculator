@@ -408,25 +408,25 @@ class ResourceList():
                 if isinstance(resources_v, Resource):
                     if i != 0:
                         output.append("")
-                    output.append(indent + "  " + resources_k + ":")
-                    output.append(resources_v.to_yaml(indent + '    '))
+                    # output.append(indent + "  " + resources_k + ":")
+                    output.append(resources_v.to_yaml(indent + '    ', resources_k))
 
                 elif isinstance(resources_v, Heading):
                     if resources_v.H1 != "":
                         output.append("")
                         output.append(indent + "  " + "#" * (78 - len(indent)))
-                        line = indent + "  " + resources_k + ": {H1: " + optional_quote_wrapping(resources_v.H1) + "}"
+                        line = indent + "  - H1: " + optional_quote_wrapping(resources_v.H1)
                         line += " " + "#" * (79 - len(line))
                         output.append(line)
                         output.append(indent + "  " + "#" * (78 - len(indent)))
                     elif resources_v.H2 != "":
                         output.append("")
-                        line = indent + "  " + resources_k + ": {H2: " + optional_quote_wrapping(resources_v.H2) + "}"
+                        line = indent + "  - H2: " + optional_quote_wrapping(resources_v.H2)
                         line += " " + "#" * (79 - len(line))
                         output.append(line)
                     elif resources_v.H3 != "":
                         output.append("")
-                        output.append(indent + "  " + resources_k + ": {H3: " + optional_quote_wrapping(resources_v.H3) + "}")
+                        output.append(indent + "  - H3: " + optional_quote_wrapping(resources_v.H3))
 
                 else:
                     raise ValueError
@@ -640,17 +640,23 @@ class Resource():
             "custom_stack_multipliers": get_primitive(self.custom_stack_multipliers),
         }
 
-    def to_yaml(self, indent: str = "") -> str:
+    def to_yaml(self, indent: str = "", resource_name: str = "<<<<<ERROR>>>>>") -> str:
         output = []
+        if resource_name:
+            output.append(indent[:-2] + "- name: " + yaml_string(resource_name, indent))
         if self.custom_simplename != "":
             output.append(indent + "custom_simplename: " + yaml_string(self.custom_simplename, indent))
         if self.currency is not False:
             output.append(indent + "currency: " + str(self.currency))
         if self.note != "":
             output.append(indent + "note: " + yaml_string(self.note, indent))
-        if self.recipes != []:
+        if self.recipes[0].recipe_type == "Raw Resource":
+            output.append(indent + "raw_resource: true")
+        if self.recipes != [] and not (len(self.recipes) == 1 and self.recipes[0].recipe_type == "Raw Resource"):
             output.append(indent + "recipes:")
             for recipes_v in self.recipes:
+                if recipes_v.recipe_type == "Raw Resource":
+                    continue
                 line = recipes_v.to_yaml(indent + '  ')
                 line = indent + '- ' + line.removeprefix(indent + '  ')
                 output.append(line)
@@ -798,6 +804,8 @@ class Recipe():
         }
 
     def to_yaml(self, indent: str = "") -> str:
+        if self.recipe_type == "Raw Resource":
+            return ""
         output = []
         if self.output != 0:
             output.append(indent + "output: " + str(self.output))
@@ -808,6 +816,8 @@ class Recipe():
         if self.requirements != OrderedDict():
             output.append(indent + "requirements:")
             for requirements_k, requirements_v in self.requirements.items():
-                output.append(indent + "  " + requirements_k + ": " + str(requirements_v))
+                if (requirements_v > 0):
+                    raise ValueError("NonNegative Requirement")
+                output.append(indent + "  " + requirements_k + ": " + str(-requirements_v))
         return '\n'.join(output)
 # ENDGENERATOR
