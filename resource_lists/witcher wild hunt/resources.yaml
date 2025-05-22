@@ -8,1359 +8,1190 @@ recipe_types:
   Alchemy: Craft {OUT_ITEM} with {IN_ITEMS}
 
 resources:
-  Alghoul Decoction:
+  - name: Alghoul Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Lesser Red Mutagen: -5
-        Alghoul Bone Marrow: -1
-        Buckthorn: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Lesser Red Mutagen: 5
+        Alghoul Bone Marrow: 1
+        Buckthorn: 1
 
-  Ancient Leshen Decoction:
+  - name: Ancient Leshen Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Ancient Leshen Mutagen: -1
-        Mandrake Root: -1
-        Ginatia Petals: -1
-        Honeysuckle: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Ancient Leshen Mutagen: 1
+        Mandrake Root: 1
+        Ginatia Petals: 1
+        Honeysuckle: 1
 
-  Arachas Decoction:
+  - name: Arachas Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Arachas Mutagen: -1
-        White Myrtle Petals: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Arachas Mutagen: 1
+        White Myrtle Petals: 1
 
-  Archgriffin Decoction:
+  - name: Archgriffin Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Archgriffin Mutagen: -1
-        Ribleaf: -1
-        Blowball: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Archgriffin Mutagen: 1
+        Ribleaf: 1
+        Blowball: 1
 
-  Basilisk Decoction:
+  - name: Basilisk Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Basilisk Mutagen: -1
-        Blowball: -1
-        Fool's Parsley Leaves: -1
-        Beggartick Blossoms: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Basilisk Mutagen: 1
+        Blowball: 1
+        Fool's Parsley Leaves: 1
+        Beggartick Blossoms: 1
 
-  Chort Decoction:
+  - name: Chort Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Chort Mutagen: -1
-        Puffball: -1
-        Cortinarius: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Chort Mutagen: 1
+        Puffball: 1
+        Cortinarius: 1
 
-  Cockatrice Decoction:
+  - name: Cockatrice Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Cockatrice Mutagen: -1
-        Crow's Eye: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Cockatrice Mutagen: 1
+        Crow's Eye: 1
 
-  Doppler Decoction:
+  - name: Doppler Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Doppler Mutagen: -1
-        Han Fiber: -1
-        Longrube: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Doppler Mutagen: 1
+        Han Fiber: 1
+        Longrube: 1
 
-  Earth Elemental Decoction:
+  - name: Earth Elemental Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Earth Elemental Mutagen: -1
-        Balisse Fruit: -1
-        Pringrape: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Earth Elemental Mutagen: 1
+        Balisse Fruit: 1
+        Pringrape: 1
 
-  Ekhidna Decoction:
+  - name: Ekhidna Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Ekhidna Mutagen: -1
-        Ribleaf: -1
-        Berbercane Fruit: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Ekhidna Mutagen: 1
+        Ribleaf: 1
+        Berbercane Fruit: 1
 
-  Ekimmara Decoction:
+  - name: Ekimmara Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Ekimmara Mutagen: -1
-        White Myrtle Petals: -1
-        Mandrake Root: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Ekimmara Mutagen: 1
+        White Myrtle Petals: 1
+        Mandrake Root: 1
 
-  Enhanced White Raffard's Decoction:
+  - name: Enhanced White Raffard's Decoction
     recipes:
     - output: 2
       recipe_type: Alchemy
       requirements:
-        Alcohest: -1
-        White Raffard's Decoction: -1
-        Ribleaf: -4
-        Bryonia: -1
-        Nekker Heart: -5
-    - recipe_type: Raw Resource
+        Alcohest: 1
+        White Raffard's Decoction: 1
+        Ribleaf: 4
+        Bryonia: 1
+        Nekker Heart: 5
 
-  Fiend Decoction:
+  - name: Fiend Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Fiend Mutagen: -1
-        Hellebore Petals: -1
-        Fool's Parsley Leaves: -1
-        Arenaria: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Fiend Mutagen: 1
+        Hellebore Petals: 1
+        Fool's Parsley Leaves: 1
+        Arenaria: 1
 
-  Foglet Decoction:
+  - name: Foglet Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Foglet Mutagen: -1
-        Fool's Parsley Leaves: -1
-        Blowball: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Foglet Mutagen: 1
+        Fool's Parsley Leaves: 1
+        Blowball: 1
 
-  Forktail Decoction:
+  - name: Forktail Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Forktail Mutagen: -1
-        Moleyarrow: -1
-        Bryonia: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Forktail Mutagen: 1
+        Moleyarrow: 1
+        Bryonia: 1
 
-  Grave Hag Decoction:
+  - name: Grave Hag Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Grave Hag Mutagen: -1
-        Longrube: -1
-        Cortinarius: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Grave Hag Mutagen: 1
+        Longrube: 1
+        Cortinarius: 1
 
-  Griffin Decoction:
+  - name: Griffin Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Griffin Mutagen: -1
-        Oil: -1
-        Bryonia: -1
-        Wolf's Liver: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Griffin Mutagen: 1
+        Oil: 1
+        Bryonia: 1
+        Wolf's Liver: 1
 
-  Katakan Decoction:
+  - name: Katakan Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Katakan Mutagen: -1
-        Verbena: -1
-        Arenaria: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Katakan Mutagen: 1
+        Verbena: 1
+        Arenaria: 1
 
-  Leshen Decoction:
+  - name: Leshen Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Leshen Mutagen: -1
-        Moleyarrow: -1
-        Pringrape: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Leshen Mutagen: 1
+        Moleyarrow: 1
+        Pringrape: 1
 
-  Nekker Warrior Decoction:
+  - name: Nekker Warrior Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Nekker Warrior Mutagen: -1
-        Fool's Parsley Leaves: -1
-        Ranogrin: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Nekker Warrior Mutagen: 1
+        Fool's Parsley Leaves: 1
+        Ranogrin: 1
 
-  Nightwraith Decoction:
+  - name: Nightwraith Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Nightwraith Mutagen: -1
-        Mistletoe: -1
-        Sewant Mushrooms: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Nightwraith Mutagen: 1
+        Mistletoe: 1
+        Sewant Mushrooms: 1
 
-  Noonwraith Decoction:
+  - name: Noonwraith Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Noonwraith Mutagen: -1
-        Ginatia Petals: -1
-        Ergot Seeds: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Noonwraith Mutagen: 1
+        Ginatia Petals: 1
+        Ergot Seeds: 1
 
-  Reliever's Decoction:
+  - name: Reliever's Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -5
-        Lesser Red Mutagen: -4
-        Lesser Green Mutagen: -4
-        Lesser Blue Mutagen: -4
-        Essence Of Wraith: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 5
+        Lesser Red Mutagen: 4
+        Lesser Green Mutagen: 4
+        Lesser Blue Mutagen: 4
+        Essence Of Wraith: 1
 
-  Succubus Decoction:
+  - name: Succubus Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Succubus Mutagen: -1
-        Green Mold: -1
-        Allspice: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Succubus Mutagen: 1
+        Green Mold: 1
+        Allspice: 1
 
-  Superior White Raffard's Decoction:
+  - name: Superior White Raffard's Decoction
     recipes:
     - output: 3
       recipe_type: Alchemy
       requirements:
-        White Gull: -1
-        Enhanced White Raffard's Decoction: -1
-        Ribleaf: -4
-        Bryonia: -4
-        Pringrape: -1
-        Bison Grass: -1
-        Vermilion: -1
-    - recipe_type: Raw Resource
+        White Gull: 1
+        Enhanced White Raffard's Decoction: 1
+        Ribleaf: 4
+        Bryonia: 4
+        Pringrape: 1
+        Bison Grass: 1
+        Vermilion: 1
 
-  The Decoctions Of The Grasses:
+  - name: The Decoctions Of The Grasses
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Forktail Spinal Fluid: -1
-        Manticore Poison Gland: -1
-        Albino Bruxa Tongue: -1
-        Bryonia: -1
-        Ribleaf: -1
-        Mandrake Root: -1
-    - recipe_type: Raw Resource
+        Forktail Spinal Fluid: 1
+        Manticore Poison Gland: 1
+        Albino Bruxa Tongue: 1
+        Bryonia: 1
+        Ribleaf: 1
+        Mandrake Root: 1
 
-  Troll Decoction:
+  - name: Troll Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Troll Mutagen: -1
-        Crow's Eye: -1
-        Honeysuckle: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Troll Mutagen: 1
+        Crow's Eye: 1
+        Honeysuckle: 1
 
-  Water Hag Decoction:
+  - name: Water Hag Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Water Hag Mutagen: -1
-        Berbercane Fruit: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Water Hag Mutagen: 1
+        Berbercane Fruit: 1
 
-  Werewolf Decoction:
+  - name: Werewolf Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Werewolf Mutagen: -1
-        Beggartick Blossoms: -1
-        Hop Umbels: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Werewolf Mutagen: 1
+        Beggartick Blossoms: 1
+        Hop Umbels: 1
 
-  White Raffard's Decoction:
+  - name: White Raffard's Decoction
     recipes:
     - output: 2
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Ribleaf: -2
-        Nekker Heart: -4
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Ribleaf: 2
+        Nekker Heart: 4
 
-  Wraith Decoction:
+  - name: Wraith Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Wraith Mutagen: -1
-        Blowball: -1
-        Nostrix: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Wraith Mutagen: 1
+        Blowball: 1
+        Nostrix: 1
 
-  Wyvern Decoction:
+  - name: Wyvern Decoction
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Wyvern Mutagen: -1
-        Moleyarrow: -1
-        Celandine: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Wyvern Mutagen: 1
+        Moleyarrow: 1
+        Celandine: 1
 
   ##############################################################################
-  _a: {H1: Potions} ############################################################
+  - H1: Potions ################################################################
   ##############################################################################
 
-  Bear Pheromones:
+  - name: Bear Pheromones
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Berbercane Fruit: -1
-        Ergot Seeds: -1
-        Hellebore Petals: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Berbercane Fruit: 1
+        Ergot Seeds: 1
+        Hellebore Petals: 1
 
-  Black Blood:
+  - name: Black Blood
     recipes:
     - output: 3
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Sewant Mushrooms: -2
-        Ghoul's Blood: -4
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Sewant Mushrooms: 2
+        Ghoul's Blood: 4
 
-  Blizzard:
+  - name: Blizzard
     recipes:
     - output: 2
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        White Myrtle Petals: -5
-        Golem's Heart: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        White Myrtle Petals: 5
+        Golem's Heart: 1
 
-  Cat:
+  - name: Cat
     recipes:
     - output: 3
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Berbercane Fruit: -4
-        Water Essence: -2
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Berbercane Fruit: 4
+        Water Essence: 2
 
-  Drowner Pheromones:
+  - name: Drowner Pheromones
     recipes:
     - output: 2
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Drowner Brain: -1
-        Sewant Mushrooms: -1
-        Puffball: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Drowner Brain: 1
+        Sewant Mushrooms: 1
+        Puffball: 1
 
-  Enhanced Black Blood:
+  - name: Enhanced Black Blood
     recipes:
     - output: 4
       recipe_type: Alchemy
       requirements:
-        Alcohest: -1
-        Black Blood: -1
-        Hellebore Petals: -1
-        Sewant Mushrooms: -5
-        Ghoul's Blood: -5
-    - recipe_type: Raw Resource
+        Alcohest: 1
+        Black Blood: 1
+        Hellebore Petals: 1
+        Sewant Mushrooms: 5
+        Ghoul's Blood: 5
 
-  Enhanced Blizzard:
+  - name: Enhanced Blizzard
     recipes:
     - output: 3
       recipe_type: Alchemy
       requirements:
-        Alcohest: -1
-        Blizzard: -1
-        Celandine: -1
-        White Myrtle Petals: -5
-        Golem's Heart: -1
-    - recipe_type: Raw Resource
+        Alcohest: 1
+        Blizzard: 1
+        Celandine: 1
+        White Myrtle Petals: 5
+        Golem's Heart: 1
 
-  Enhanced Cat:
+  - name: Enhanced Cat
     recipes:
     - output: 4
       recipe_type: Alchemy
       requirements:
-        Alcohest: -1
-        Cat: -1
-        Berbercane Fruit: -5
-        Cortinarius: -1
-        Water Essence: -3
-    - recipe_type: Raw Resource
+        Alcohest: 1
+        Cat: 1
+        Berbercane Fruit: 5
+        Cortinarius: 1
+        Water Essence: 3
 
-  Enhanced Full Moon:
+  - name: Enhanced Full Moon
     recipes:
     - output: 4
       recipe_type: Alchemy
       requirements:
-        Alcohest: -1
-        Full Moon: -1
-        Crow's Eye: -2
-        Wolfsbane: -5
-        Dark Essence: -2
-    - recipe_type: Raw Resource
+        Alcohest: 1
+        Full Moon: 1
+        Crow's Eye: 2
+        Wolfsbane: 5
+        Dark Essence: 2
 
-  Enhanced Golden Oriole:
+  - name: Enhanced Golden Oriole
     recipes:
     - output: 4
       recipe_type: Alchemy
       requirements:
-        Alcohest: -1
-        Golden Oriole: -1
-        Blowball: -6
-        Celandine: -1
-        Light Essence: -2
-    - recipe_type: Raw Resource
+        Alcohest: 1
+        Golden Oriole: 1
+        Blowball: 6
+        Celandine: 1
+        Light Essence: 2
 
-  Enhanced Maribor Forest:
+  - name: Enhanced Maribor Forest
     recipes:
     - output: 4
       recipe_type: Alchemy
       requirements:
-        Alcohest: -1
-        Maribor Forest: -1
-        Berbercane Fruit: -5
-        Crow's Eye: -1
-        Drowner Tongue: -2
-    - recipe_type: Raw Resource
+        Alcohest: 1
+        Maribor Forest: 1
+        Berbercane Fruit: 5
+        Crow's Eye: 1
+        Drowner Tongue: 2
 
-  Enhanced Petri's Philter:
+  - name: Enhanced Petri's Philter
     recipes:
     - output: 4
       recipe_type: Alchemy
       requirements:
-        Alcohest: -1
-        Petri's Philter: -1
-        Arenaria: -6
-        Buckthorn: -1
-        Specter Dust: -2
-    - recipe_type: Raw Resource
+        Alcohest: 1
+        Petri's Philter: 1
+        Arenaria: 6
+        Buckthorn: 1
+        Specter Dust: 2
 
-  Enhanced Swallow:
+  - name: Enhanced Swallow
     recipes:
     - output: 4
       recipe_type: Alchemy
       requirements:
-        Alcohest: -1
-        Swallow: -1
-        Celandine: -6
-        White Myrtle Petals: -4
-        Drowner Brain: -5
-    - recipe_type: Raw Resource
+        Alcohest: 1
+        Swallow: 1
+        Celandine: 6
+        White Myrtle Petals: 4
+        Drowner Brain: 5
 
-  Enhanced Tawny Owl:
+  - name: Enhanced Tawny Owl
     recipes:
     - output: 4
       recipe_type: Alchemy
       requirements:
-        Alcohest: -1
-        Tawny Owl: -1
-        Verbena: -4
-        Wolfsbane: -2
-        Arachas Venom: -1
-    - recipe_type: Raw Resource
+        Alcohest: 1
+        Tawny Owl: 1
+        Verbena: 4
+        Wolfsbane: 2
+        Arachas Venom: 1
 
-  Enhanced Thunderbolt:
+  - name: Enhanced Thunderbolt
     recipes:
     - output: 4
       recipe_type: Alchemy
       requirements:
-        Alcohest: -1
-        Thunderbolt: -1
-        Cortinarius: -2
-        Fool's Parsley Leaves: -1
-        Endrega Embryo: -2
-    - recipe_type: Raw Resource
+        Alcohest: 1
+        Thunderbolt: 1
+        Cortinarius: 2
+        Fool's Parsley Leaves: 1
+        Endrega Embryo: 2
 
-  Enhanced White Honey:
+  - name: Enhanced White Honey
     recipes:
     - output: 2
       recipe_type: Alchemy
       requirements:
-        Alcohest: -1
-        White Honey: -1
-        Honeysuckle: -2
-        White Myrtle Petals: -1
-    - recipe_type: Raw Resource
+        Alcohest: 1
+        White Honey: 1
+        Honeysuckle: 2
+        White Myrtle Petals: 1
 
-  Full Moon:
+  - name: Full Moon
     recipes:
     - output: 3
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Wolfsbane: -2
-        Dark Essence: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Wolfsbane: 2
+        Dark Essence: 1
 
-  Golden Oriole:
+  - name: Golden Oriole
     recipes:
     - output: 3
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Blowball: -4
-        Light Essence: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Blowball: 4
+        Light Essence: 1
 
-  Killer Whale:
+  - name: Killer Whale
     recipes:
     - output: 3
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -2
-        Balisse Fruit: -5
-        Buckthorn: -6
-        Drowner Tongue: -5
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 2
+        Balisse Fruit: 5
+        Buckthorn: 6
+        Drowner Tongue: 5
 
-  Maribor Forest:
+  - name: Maribor Forest
     recipes:
     - output: 3
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Berbercane Fruit: -3
-        Alghoul Bone Marrow: -1
-        Drowner Tongue: -4
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Berbercane Fruit: 3
+        Alghoul Bone Marrow: 1
+        Drowner Tongue: 4
 
-  Nekker Pheromones:
+  - name: Nekker Pheromones
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Green Mold: -1
-        Drowner Brain: -1
-        Moleyarrow: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Green Mold: 1
+        Drowner Brain: 1
+        Moleyarrow: 1
 
-  Petri's Philter:
+  - name: Petri's Philter
     recipes:
     - output: 3
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Arenaria: -5
-        Specter Dust: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Arenaria: 5
+        Specter Dust: 1
 
-  Pops' Mold Antidote:
+  - name: Pops' Mold Antidote
     recipes:
     - output: 3
       recipe_type: Alchemy
       requirements:
-        White Myrtle Petals: -4
-        Celandine: -1
-        Hellebore Petals: -1
-    - recipe_type: Raw Resource
+        White Myrtle Petals: 4
+        Celandine: 1
+        Hellebore Petals: 1
 
-  Potion Of Clearance:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Potion Of Clearance
+    raw_resource: true
 
-  Superior Black Blood:
+  - name: Superior Black Blood
     recipes:
     - output: 5
       recipe_type: Alchemy
       requirements:
-        White Gull: -1
-        Enhanced Black Blood: -1
-        Hellebore Petals: -5
-        Sewant Mushrooms: -5
-        Han Fiber: -1
-        Nostrix: -1
-        Rebis: -1
-    - recipe_type: Raw Resource
+        White Gull: 1
+        Enhanced Black Blood: 1
+        Hellebore Petals: 5
+        Sewant Mushrooms: 5
+        Han Fiber: 1
+        Nostrix: 1
+        Rebis: 1
 
-  Superior Blizzard:
+  - name: Superior Blizzard
     recipes:
     - output: 4
       recipe_type: Alchemy
       requirements:
-        White Gull: -1
-        Enhanced Blizzard: -1
-        Celandine: -4
-        White Myrtle Petals: -4
-        Sewant Mushrooms: -1
-        Buckthorn: -1
-        Rebis: -1
-    - recipe_type: Raw Resource
+        White Gull: 1
+        Enhanced Blizzard: 1
+        Celandine: 4
+        White Myrtle Petals: 4
+        Sewant Mushrooms: 1
+        Buckthorn: 1
+        Rebis: 1
 
-  Superior Cat:
+  - name: Superior Cat
     recipes:
     - output: 5
       recipe_type: Alchemy
       requirements:
-        White Gull: -1
-        Enhanced Cat: -1
-        Berbercane Fruit: -4
-        Cortinarius: -4
-        Moleyarrow: -1
-        Allspice: -1
-        Aether: -1
-    - recipe_type: Raw Resource
+        White Gull: 1
+        Enhanced Cat: 1
+        Berbercane Fruit: 4
+        Cortinarius: 4
+        Moleyarrow: 1
+        Allspice: 1
+        Aether: 1
 
-  Superior Full Moon:
+  - name: Superior Full Moon
     recipes:
     - output: 5
       recipe_type: Alchemy
       requirements:
-        White Gull: -1
-        Enhanced Full Moon: -1
-        Mistletoe: -1
-        Verbena: -1
-        Crow's Eye: -4
-        Wolfsbane: -4
-        Quebrith: -1
-    - recipe_type: Raw Resource
+        White Gull: 1
+        Enhanced Full Moon: 1
+        Mistletoe: 1
+        Verbena: 1
+        Crow's Eye: 4
+        Wolfsbane: 4
+        Quebrith: 1
 
-  Superior Golden Oriole:
+  - name: Superior Golden Oriole
     recipes:
     - output: 5
       recipe_type: Alchemy
       requirements:
-        White Gull: -1
-        Enhanced Golden Oriole: -1
-        Blowball: -4
-        Celandine: -4
-        Han Fiber: -1
-        Ranogrin: -1
-        Quebrith: -1
-    - recipe_type: Raw Resource
+        White Gull: 1
+        Enhanced Golden Oriole: 1
+        Blowball: 4
+        Celandine: 4
+        Han Fiber: 1
+        Ranogrin: 1
+        Quebrith: 1
 
-  Superior Maribor Forest:
+  - name: Superior Maribor Forest
     recipes:
     - output: 5
       recipe_type: Alchemy
       requirements:
-        White Gull: -1
-        Enhanced Maribor Forest: -1
-        Berbercane Fruit: -4
-        Crow's Eye: -4
-        Hellebore Petals: -1
-        Ribleaf: -1
-        Vermilion: -1
-    - recipe_type: Raw Resource
+        White Gull: 1
+        Enhanced Maribor Forest: 1
+        Berbercane Fruit: 4
+        Crow's Eye: 4
+        Hellebore Petals: 1
+        Ribleaf: 1
+        Vermilion: 1
 
-  Superior Petri's Philter:
+  - name: Superior Petri's Philter
     recipes:
     - output: 5
       recipe_type: Alchemy
       requirements:
-        White Gull: -1
-        Enhanced Petri's Philter: -1
-        Arenaria: -4
-        Buckthorn: -4
-        Longrube: -1
-        Ranogrin: -1
-        Rubedo: -1
-    - recipe_type: Raw Resource
+        White Gull: 1
+        Enhanced Petri's Philter: 1
+        Arenaria: 4
+        Buckthorn: 4
+        Longrube: 1
+        Ranogrin: 1
+        Rubedo: 1
 
-  Superior Swallow:
+  - name: Superior Swallow
     recipes:
     - output: 5
       recipe_type: Alchemy
       requirements:
-        White Gull: -1
-        Enhanced Swallow: -1
-        Berbercane Fruit: -6
-        White Myrtle Petals: -6
-        Celandine: -4
-        Crow's Eye: -4
-        Vitriol: -2
-    - recipe_type: Raw Resource
+        White Gull: 1
+        Enhanced Swallow: 1
+        Berbercane Fruit: 6
+        White Myrtle Petals: 6
+        Celandine: 4
+        Crow's Eye: 4
+        Vitriol: 2
 
-  Superior Tawny Owl:
+  - name: Superior Tawny Owl
     recipes:
     - output: 5
       recipe_type: Alchemy
       requirements:
-        White Gull: -1
-        Enhanced Tawny Owl: -1
-        Verbena: -4
-        Wolfsbane: -4
-        Fool's Parsley Leaves: -1
-        Mandrake Root: -1
-        Sewant Mushrooms: -1
-    - recipe_type: Raw Resource
+        White Gull: 1
+        Enhanced Tawny Owl: 1
+        Verbena: 4
+        Wolfsbane: 4
+        Fool's Parsley Leaves: 1
+        Mandrake Root: 1
+        Sewant Mushrooms: 1
 
-  Superior Thunderbolt:
+  - name: Superior Thunderbolt
     recipes:
     - output: 5
       recipe_type: Alchemy
       requirements:
-        White Gull: -1
-        Enhanced Thunderbolt: -1
-        Cortinarius: -4
-        Fool's Parsley Leaves: -4
-        Verbena: -1
-        Bryonia: -1
-        Quebrith: -1
-    - recipe_type: Raw Resource
+        White Gull: 1
+        Enhanced Thunderbolt: 1
+        Cortinarius: 4
+        Fool's Parsley Leaves: 4
+        Verbena: 1
+        Bryonia: 1
+        Quebrith: 1
 
-  Superior White Honey:
+  - name: Superior White Honey
     recipes:
     - output: 5
       recipe_type: Alchemy
       requirements:
-        White Gull: -1
-        Enhanced White Honey: -1
-        Honeysuckle: -4
-        White Myrtle Petals: -4
-        Balisse Fruit: -1
-        Hellebore Petals: -1
-        Vitriol: -1
-    - recipe_type: Raw Resource
+        White Gull: 1
+        Enhanced White Honey: 1
+        Honeysuckle: 4
+        White Myrtle Petals: 4
+        Balisse Fruit: 1
+        Hellebore Petals: 1
+        Vitriol: 1
 
-  Swallow:
+  - name: Swallow
     recipes:
     - output: 3
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Celandine: -5
-        Drowner Brain: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Celandine: 5
+        Drowner Brain: 1
 
-  Tawny Owl:
+  - name: Tawny Owl
     recipes:
     - output: 3
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Verbena: -2
-        Arachas Venom: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Verbena: 2
+        Arachas Venom: 1
 
-  Thunderbolt:
+  - name: Thunderbolt
     recipes:
     - output: 3
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Cortinarius: -2
-        Endrega Embryo: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Cortinarius: 2
+        Endrega Embryo: 1
 
-  White Honey:
+  - name: White Honey
     recipes:
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Dwarven Spirit: -1
-        Honeysuckle: -1
-    - recipe_type: Raw Resource
+        Dwarven Spirit: 1
+        Honeysuckle: 1
 
-  Wolven Hour:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Wolven Hour
+    raw_resource: true
 
   ##############################################################################
-  _b: {H1: Powders} ############################################################
+  - H1: Powders ################################################################
   ##############################################################################
 
-  Vermilion:
+  - name: Vermilion
     recipes:
     - output: 1
       recipe_type: Alchemy
       note: Check that the output quantity is correct
       requirements:
-        White Gull: -1
-        Verbena: -1
-        Ergot Seeds: -1
-        Han Fiber: -1
-        Beggartick Blossoms: -1
-        Bryonia: -1
-    - recipe_type: Raw Resource
+        White Gull: 1
+        Verbena: 1
+        Ergot Seeds: 1
+        Han Fiber: 1
+        Beggartick Blossoms: 1
+        Bryonia: 1
 
-  Aether:
+  - name: Aether
     recipes:
     - output: 1
       recipe_type: Alchemy
       note: Check that the output quantity is correct
       requirements:
-        White Gull: -1
-        Verbena: -1
-        Ergot Seeds: -1
-        Han Fiber: -1
-        Puffball: -1
-        Longrube: -1
-    - recipe_type: Raw Resource
+        White Gull: 1
+        Verbena: 1
+        Ergot Seeds: 1
+        Han Fiber: 1
+        Puffball: 1
+        Longrube: 1
 
-  Quebrith:
+  - name: Quebrith
     recipes:
     - output: 1
       recipe_type: Alchemy
       note: Check that the output quantity is correct
       requirements:
-        White Gull: -1
-        Verbena: -1
-        Puffball: -1
-        Longrube: -1
-        Nostrix: -1
-        Pringrape: -1
-    - recipe_type: Raw Resource
+        White Gull: 1
+        Verbena: 1
+        Puffball: 1
+        Longrube: 1
+        Nostrix: 1
+        Pringrape: 1
 
-  Vitriol:
+  - name: Vitriol
     recipes:
     - output: 1
       recipe_type: Alchemy
       note: Check that the output quantity is correct
       requirements:
-        White Gull: -1
-        Bloodmoss: -1
-        Allspice: -1
-        Ranogrin: -1
-        Hellebore Petals: -1
-        Hornwort: -1
-    - recipe_type: Raw Resource
+        White Gull: 1
+        Bloodmoss: 1
+        Allspice: 1
+        Ranogrin: 1
+        Hellebore Petals: 1
+        Hornwort: 1
 
-  Rubedo:
+  - name: Rubedo
     recipes:
     - output: 1
       recipe_type: Alchemy
       note: Check that the output quantity is correct
       requirements:
-        White Gull: -1
-        Crow's Eye: -1
-        Han Fiber: -1
-        Mistletoe: -1
-        Puffball: -1
-        Green Mold: -1
-    - recipe_type: Raw Resource
+        White Gull: 1
+        Crow's Eye: 1
+        Han Fiber: 1
+        Mistletoe: 1
+        Puffball: 1
+        Green Mold: 1
 
-  Rebis:
+  - name: Rebis
     recipes:
     - output: 1
       recipe_type: Alchemy
       note: Check that the output quantity is correct
       requirements:
-        White Gull: -1
-        Verbena: -1
-        Ergot Seeds: -1
-        Allspice: -1
-        Mistletoe: -1
-        Ranogrin: -1
-    - recipe_type: Raw Resource
+        White Gull: 1
+        Verbena: 1
+        Ergot Seeds: 1
+        Allspice: 1
+        Mistletoe: 1
+        Ranogrin: 1
 
   ##############################################################################
-  _c: {H1: Alcohol} ############################################################
+  - H1: Alcohol ################################################################
   ##############################################################################
 
-  Dwarven Spirit:
+  - name: Dwarven Spirit
     recipes:
     - output: 1
       recipe_type: Alchemy
       note: Check that the output quantity is correct
       requirements:
-        Empty Bottle: -1
-        Mahakaman Spirit: -2
-        White Myrtle Petals: -1
-    - recipe_type: Raw Resource
+        Empty Bottle: 1
+        Mahakaman Spirit: 2
+        White Myrtle Petals: 1
 
-  Alcohest:
+  - name: Alcohest
     recipes:
     - output: 1
       recipe_type: Alchemy
       note: Check that the output quantity is correct
       requirements:
-        Empty Bottle: -1
-        Cherry Cordial: -1
-        Nilfgaardian Lemon: -1
-        Balisse Fruit: -1
-    - recipe_type: Raw Resource
+        Empty Bottle: 1
+        Cherry Cordial: 1
+        Nilfgaardian Lemon: 1
+        Balisse Fruit: 1
 
-  White Gull:
+  - name: White Gull
     recipes:
     - output: 1
       recipe_type: Alchemy
       note: Check that the output quantity is correct
       requirements:
-        Empty Bottle: -1
-        Redanian Herbal: -1
-        Cherry Cordial: -1
-        Mandrake Cordial: -1
-        Arenaria: -1
-    - recipe_type: Raw Resource
+        Empty Bottle: 1
+        Redanian Herbal: 1
+        Cherry Cordial: 1
+        Mandrake Cordial: 1
+        Arenaria: 1
 
-  Honeysuckle:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Honeysuckle
+    raw_resource: true
 
-  Longrube:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Longrube
+    raw_resource: true
 
-  Forktail Spinal Fluid:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Forktail Spinal Fluid
+    raw_resource: true
 
-  White Myrtle Petals:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: White Myrtle Petals
+    raw_resource: true
 
-  Wolf's Liver:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Wolf's Liver
+    raw_resource: true
 
-  Hellebore Petals:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Hellebore Petals
+    raw_resource: true
 
-  Balisse Fruit:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Balisse Fruit
+    raw_resource: true
 
-  Green Mold:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Green Mold
+    raw_resource: true
 
-  Celandine:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Celandine
+    raw_resource: true
 
-  Beggartick Blossoms:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Beggartick Blossoms
+    raw_resource: true
 
-  Golem's Heart:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Golem's Heart
+    raw_resource: true
 
-  Mandrake Root:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Mandrake Root
+    raw_resource: true
 
-  Specter Dust:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Specter Dust
+    raw_resource: true
 
-  Ribleaf:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Ribleaf
+    raw_resource: true
 
-  Verbena:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Verbena
+    raw_resource: true
 
-  Wolfsbane:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Wolfsbane
+    raw_resource: true
 
-  Nostrix:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Nostrix
+    raw_resource: true
 
-  Berbercane Fruit:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Berbercane Fruit
+    raw_resource: true
 
-  Ghoul's Blood:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Ghoul's Blood
+    raw_resource: true
 
-  Dark Essence:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Dark Essence
+    raw_resource: true
 
-  Crow's Eye:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Crow's Eye
+    raw_resource: true
 
-  Arachas Venom:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Arachas Venom
+    raw_resource: true
 
-  Ranogrin:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Ranogrin
+    raw_resource: true
 
-  Sewant Mushrooms:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Sewant Mushrooms
+    raw_resource: true
 
-  Allspice:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Allspice
+    raw_resource: true
 
-  Drowner Brain:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Drowner Brain
+    raw_resource: true
 
-  Ergot Seeds:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Ergot Seeds
+    raw_resource: true
 
-  Light Essence:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Light Essence
+    raw_resource: true
 
-  Puffball:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Puffball
+    raw_resource: true
 
-  Arenaria:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Arenaria
+    raw_resource: true
 
-  Nekker Heart:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Nekker Heart
+    raw_resource: true
 
-  Bison Grass:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Bison Grass
+    raw_resource: true
 
-  Bryonia:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Bryonia
+    raw_resource: true
 
-  Manticore Poison Gland:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Manticore Poison Gland
+    raw_resource: true
 
-  Fool's Parsley Leaves:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Fool's Parsley Leaves
+    raw_resource: true
 
-  Buckthorn:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Buckthorn
+    raw_resource: true
 
-  Alghoul Bone Marrow:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Alghoul Bone Marrow
+    raw_resource: true
 
-  Moleyarrow:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Moleyarrow
+    raw_resource: true
 
-  Water Essence:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Water Essence
+    raw_resource: true
 
-  Mistletoe:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Mistletoe
+    raw_resource: true
 
-  Ginatia Petals:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Ginatia Petals
+    raw_resource: true
 
-  Hop Umbels:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Hop Umbels
+    raw_resource: true
 
-  Han Fiber:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Han Fiber
+    raw_resource: true
 
-  Drowner Tongue:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Drowner Tongue
+    raw_resource: true
 
-  Albino Bruxa Tongue:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Albino Bruxa Tongue
+    raw_resource: true
 
-  Pringrape:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Pringrape
+    raw_resource: true
 
-  Essence Of Wraith:
+  - name: Essence Of Wraith
     note: Check that this image is correct
-    recipes:
-    - recipe_type: Raw Resource
+    raw_resource: true
 
-  Blowball:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Blowball
+    raw_resource: true
 
-  Oil:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Oil
+    raw_resource: true
 
-  Endrega Embryo:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Endrega Embryo
+    raw_resource: true
 
-  Empty Bottle:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Empty Bottle
+    raw_resource: true
 
-  Mahakaman Spirit:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Mahakaman Spirit
+    raw_resource: true
 
-  Blue Lotus Flower:
+  - name: Blue Lotus Flower
     note: Check if this item is actually called just "Blue Lous" in game
-    recipes:
-    - recipe_type: Raw Resource
+    raw_resource: true
 
-  Winter Cherry:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Winter Cherry
+    raw_resource: true
 
-  Nazairi Basil:
+  - name: Nazairi Basil
     note: Check that this image is correct
-    recipes:
-    - recipe_type: Raw Resource
+    raw_resource: true
 
-  Bloodmoss:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Bloodmoss
+    raw_resource: true
 
-  Hornwort:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Hornwort
+    raw_resource: true
 
-  Cherry Cordial:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Cherry Cordial
+    raw_resource: true
 
-  Nilfgaardian Lemon:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Nilfgaardian Lemon
+    raw_resource: true
 
-  Redanian Herbal:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Redanian Herbal
+    raw_resource: true
 
-  Mandrake Cordial:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Mandrake Cordial
+    raw_resource: true
 
-  Cortinarius:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Cortinarius
+    raw_resource: true
 
-  Lesser Red Mutagen:
+  - name: Lesser Red Mutagen
+    raw_resource: true
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Alchemy
       note: Check that the output quantity is correct
       requirements:
-        Lesser Blue Mutagen: -1
-        Rubedo: -1
-        Winter Cherry: -1
+        Lesser Blue Mutagen: 1
+        Rubedo: 1
+        Winter Cherry: 1
     - output: 1
       recipe_type: Alchemy
       note: Check that the output quantity is correct
       requirements:
-        Lesser Green Mutagen: -1
-        Rubedo: -1
-        Winter Cherry: -1
+        Lesser Green Mutagen: 1
+        Rubedo: 1
+        Winter Cherry: 1
 
-  Lesser Green Mutagen:
+  - name: Lesser Green Mutagen
+    raw_resource: true
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Alchemy
       note: Check that the output quantity is correct
       requirements:
-        Lesser Blue Mutagen: -1
-        Rebis: -1
-        Nazairi Basil: -1
+        Lesser Blue Mutagen: 1
+        Rebis: 1
+        Nazairi Basil: 1
     - output: 1
       recipe_type: Alchemy
       note: Check that the output quantity is correct
       requirements:
-        Lesser Red Mutagen: -1
-        Rebis: -1
-        Nazairi Basil: -1
+        Lesser Red Mutagen: 1
+        Rebis: 1
+        Nazairi Basil: 1
 
-  Lesser Blue Mutagen:
+  - name: Lesser Blue Mutagen
+    raw_resource: true
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Alchemy
       note: Check that the output quantity is correct
       requirements:
-        Lesser Green Mutagen: -1
-        Vitriol: -1
-        Blue Lotus Flower: -1
+        Lesser Green Mutagen: 1
+        Vitriol: 1
+        Blue Lotus Flower: 1
     - output: 1
       recipe_type: Alchemy
       note: Check that the output quantity is correct
       requirements:
-        Lesser Red Mutagen: -1
-        Vitriol: -1
-        Blue Lotus Flower: -1
+        Lesser Red Mutagen: 1
+        Vitriol: 1
+        Blue Lotus Flower: 1
 
-  Doppler Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Doppler Mutagen
+    raw_resource: true
 
-  Nekker Warrior Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Nekker Warrior Mutagen
+    raw_resource: true
 
-  Werewolf Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Werewolf Mutagen
+    raw_resource: true
 
-  Archgriffin Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Archgriffin Mutagen
+    raw_resource: true
 
-  Succubus Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Succubus Mutagen
+    raw_resource: true
 
-  Water Hag Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Water Hag Mutagen
+    raw_resource: true
 
-  Wyvern Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Wyvern Mutagen
+    raw_resource: true
 
-  Katakan Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Katakan Mutagen
+    raw_resource: true
 
-  Chort Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Chort Mutagen
+    raw_resource: true
 
-  Foglet Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Foglet Mutagen
+    raw_resource: true
 
-  Forktail Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Forktail Mutagen
+    raw_resource: true
 
-  Ancient Leshen Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Ancient Leshen Mutagen
+    raw_resource: true
 
-  Leshen Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Leshen Mutagen
+    raw_resource: true
 
-  Earth Elemental Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Earth Elemental Mutagen
+    raw_resource: true
 
-  Basilisk Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Basilisk Mutagen
+    raw_resource: true
 
-  Cockatrice Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Cockatrice Mutagen
+    raw_resource: true
 
-  Ekhidna Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Ekhidna Mutagen
+    raw_resource: true
 
-  Griffin Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Griffin Mutagen
+    raw_resource: true
 
-  Ekimmara Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Ekimmara Mutagen
+    raw_resource: true
 
-  Nightwraith Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Nightwraith Mutagen
+    raw_resource: true
 
-  Grave Hag Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Grave Hag Mutagen
+    raw_resource: true
 
-  Fiend Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Fiend Mutagen
+    raw_resource: true
 
-  Wraith Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Wraith Mutagen
+    raw_resource: true
 
-  Arachas Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Arachas Mutagen
+    raw_resource: true
 
-  Troll Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Troll Mutagen
+    raw_resource: true
 
-  Noonwraith Mutagen:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Noonwraith Mutagen
+    raw_resource: true
