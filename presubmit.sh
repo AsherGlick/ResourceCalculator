@@ -1,4 +1,8 @@
 #!/bin/bash
+set -e
+
+npm test
+
 source ./venv/bin/activate
 
 readarray -d '' FILES < <(find . -type f -name "*.py" -not -path "*/venv/*" -not -path "*/venv_docker/*" -not -path "*/resource_lists/*"  -print0)
