@@ -124,7 +124,7 @@ export function generatelist(inventory: { [key: string]: number}) {
                         if (output_requirements[item] === undefined) {
                             output_requirements[item] = 0;
                         }
-                        output_requirements[item] += recipe_requirements[item] * produce_count;
+                        output_requirements[item] -= recipe_requirements[item] * produce_count;
 
                         // Add the recipe's conversion
                         let tracker_key = requirement+item;
@@ -135,7 +135,7 @@ export function generatelist(inventory: { [key: string]: number}) {
                                 0,
                             );
                         }
-                        resource_tracker[tracker_key].value += recipe_requirements[item] * -produce_count;
+                        resource_tracker[tracker_key].value += recipe_requirements[item] * produce_count;
                     };
                 }
             }

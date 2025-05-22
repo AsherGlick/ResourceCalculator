@@ -272,22 +272,7 @@ def generate_recipe_type_format_js(recipe_types: OrderedDict[str, str]) -> str:
 # the recipes that item has, stripping out all other information.
 ################################################################################
 def get_recipes_only(resources: List[Resource]) -> Dict[str, List[Recipe]]:
-
-    primitive_resources = {resource.name: get_primitive(resource.recipes) for resource in resources}
-    for resource in primitive_resources:
-        for recipe in primitive_resources[resource]:
-            for requirement in recipe["requirements"]:
-                recipe["requirements"][requirement] = -recipe["requirements"][requirement]
-
-    # TODO: Remove this hack to invert the data. This only works with the type
-    # ignore because the very next command that is run in the only place this
-    # function is called is get_primitive. We are putting this hack in here
-    # instead of editing the solver to take positive numbers so that we can
-    # diff the effects of the resource_list schema change more easily.
-    return primitive_resources
-
-    # TODO: Eventually the following should be the only return value
-    # return {resource.name: resource.recipes for resource in resources}
+    return {resource.name: resource.recipes for resource in resources}
 
 
 ################################################################################
