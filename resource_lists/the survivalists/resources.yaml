@@ -20,1987 +20,1774 @@ recipe_types:
   Food Processor: Craft using a Food Processor {IN_ITEMS} into {OUT_ITEM}
 
 resources:
-  Timber:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Timber
+    raw_resource: true
 
-  Pebbles:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Pebbles
+    raw_resource: true
 
-  Long Grass:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Long Grass
+    raw_resource: true
 
-  Palm Leaf:
+  - name: Palm Leaf
+    raw_resource: true
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Food Processor
       requirements:
-        Long Grass: -9
+        Long Grass: 9
 
-  Metal Ingot:
+  - name: Metal Ingot
+    raw_resource: true
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Gold Ingot: -1
+        Gold Ingot: 1
 
-  Gold Ingot:
+  - name: Gold Ingot
+    raw_resource: true
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Gem Stone: -1
+        Gem Stone: 1
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Metal Ingot: -3
+        Metal Ingot: 3
 
-  Gem Stone:
+  - name: Gem Stone
+    raw_resource: true
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Glowing Rock: -2
+        Glowing Rock: 2
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Gold Ingot: -3
+        Gold Ingot: 3
 
-  Stag Antlers:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Stag Antlers
+    raw_resource: true
 
-  Big-Cat Claws:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Big-Cat Claws
+    raw_resource: true
 
-  Boar Tusks:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Boar Tusks
+    raw_resource: true
 
-  Mud:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Mud
+    raw_resource: true
 
-  Bone:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Bone
+    raw_resource: true
 
-  Boar Pelt:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Boar Pelt
+    raw_resource: true
 
-  Cat Pelt:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Cat Pelt
+    raw_resource: true
 
-  Wolf Pelt:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Wolf Pelt
+    raw_resource: true
 
-  Fur Clump:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Fur Clump
+    raw_resource: true
 
-  Berries:
+  - name: Berries
+    raw_resource: true
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Food Processor
       requirements:
-        Fruit: -1
+        Fruit: 1
 
-  Wheat:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Wheat
+    raw_resource: true
 
-  Petals:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Petals
+    raw_resource: true
 
-  Cane:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Cane
+    raw_resource: true
 
-  Flimsy Orcling Relic:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Flimsy Orcling Relic
+    raw_resource: true
 
-  Tank Bird Feather:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Tank Bird Feather
+    raw_resource: true
 
-  Hardwood:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Hardwood
+    raw_resource: true
 
-  Sand:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Sand
+    raw_resource: true
 
-  Brimstone:
+  - name: Brimstone
+    raw_resource: true
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Basalt Rock: -2
+        Basalt Rock: 2
 
-  Basalt Rock:
+  - name: Basalt Rock
+    raw_resource: true
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Pebbles: -18
+        Pebbles: 18
 
-  Swamp Sap:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Swamp Sap
+    raw_resource: true
 
-  Sugar:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Sugar
+    raw_resource: true
 
-  Boar Bristles:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Boar Bristles
+    raw_resource: true
 
-  Live Fish:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Live Fish
+    raw_resource: true
 
-  Fruit:
+  - name: Fruit
+    raw_resource: true
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Food Processor
       requirements:
-        Berries: -9
+        Berries: 9
 
-  Sugarcane Seeds:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Sugarcane Seeds
+    raw_resource: true
 
-  Cocoa Pod:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Cocoa Pod
+    raw_resource: true
 
-  Meat Scrap:
+  - name: Meat Scrap
+    raw_resource: true
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Food Processor
       requirements:
-        Fillet: -2
+        Fillet: 2
     - output: 1
       recipe_type: Food Processor
       requirements:
-        Meat Chunk: -1
+        Meat Chunk: 1
     - output: 1
       recipe_type: Food Processor
       requirements:
-        Petals: -3
+        Petals: 3
 
-  Steak:
+  - name: Steak
+    raw_resource: true
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Food Processor
       requirements:
-        Meat Chunk: -3
+        Meat Chunk: 3
 
-  Fillet:
+  - name: Fillet
+    raw_resource: true
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Food Processor
       requirements:
-        Meat Scrap: -2
+        Meat Scrap: 2
 
-  Coconut:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Coconut
+    raw_resource: true
 
-  Bat Wing:
+  - name: Bat Wing
+    raw_resource: true
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Food Processor
       requirements:
-        Meat Scrap: -3
+        Meat Scrap: 3
 
-  Meat Chunk:
+  - name: Meat Chunk
+    raw_resource: true
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Food Processor
       requirements:
-        Meat Scrap: -3
+        Meat Scrap: 3
     - output: 1
       recipe_type: Food Processor
       requirements:
-        Steak: -1
+        Steak: 1
 
-  Glowing Rock:
+  - name: Glowing Rock
+    raw_resource: true
     recipes:
-    - recipe_type: Raw Resource
     - output: 1
       recipe_type: Alchemy
       requirements:
-        Gem Stone: -3
+        Gem Stone: 3
 
-  Stunning Barb:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Stunning Barb
+    raw_resource: true
 
-  Blackened Barb:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Blackened Barb
+    raw_resource: true
 
-  Poisonous Barb:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Poisonous Barb
+    raw_resource: true
 
-  Deer Musk:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Deer Musk
+    raw_resource: true
 
-  Rope:
+  - name: Rope
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Long Grass: -3
-    - recipe_type: Raw Resource
+        Long Grass: 3
 
-  Stone Chunk:
+  - name: Stone Chunk
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Pebbles: -6
-    - recipe_type: Raw Resource
+        Pebbles: 6
 
-  Charcoal:
+  - name: Charcoal
     recipes:
     - output: 1
       recipe_type: Campfire
       requirements:
-        Timber: -3
-    - recipe_type: Raw Resource
+        Timber: 3
 
-  Tool Handle:
+  - name: Tool Handle
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Pebbles: -1
-        Timber: -3
-    - recipe_type: Raw Resource
+        Pebbles: 1
+        Timber: 3
 
-  Hand Axe:
+  - name: Hand Axe
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Pebbles: -3
-    - recipe_type: Raw Resource
+        Pebbles: 3
 
-  Flimsy Axe:
+  - name: Flimsy Axe
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Hand Axe: -1
-        Rope: -1
-        Tool Handle: -1
-    - recipe_type: Raw Resource
+        Hand Axe: 1
+        Rope: 1
+        Tool Handle: 1
 
-  Flimsy Pickaxe:
+  - name: Flimsy Pickaxe
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Rope: -1
-        Stone Chunk: -2
-        Tool Handle: -1
-    - recipe_type: Raw Resource
+        Rope: 1
+        Stone Chunk: 2
+        Tool Handle: 1
 
-  Flimsy Shovel:
+  - name: Flimsy Shovel
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Rope: -2
-        Stone Chunk: -1
-        Tool Handle: -1
-    - recipe_type: Raw Resource
+        Rope: 2
+        Stone Chunk: 1
+        Tool Handle: 1
 
-  Torch:
+  - name: Torch
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Rope: -2
-        Charcoal: -4
-        Tool Handle: -1
-    - recipe_type: Raw Resource
+        Rope: 2
+        Charcoal: 4
+        Tool Handle: 1
 
-  Makeshift Bowl:
+  - name: Makeshift Bowl
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Palm Leaf: -3
-    - recipe_type: Raw Resource
+        Palm Leaf: 3
 
-  Decorative Wall Hanging:
+  - name: Decorative Wall Hanging
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Rope: -2
-        Palm Leaf: -3
-        Charcoal: -1
-    - recipe_type: Raw Resource
+        Rope: 2
+        Palm Leaf: 3
+        Charcoal: 1
 
-  Stag Trophy:
+  - name: Stag Trophy
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Wood Slat: -2
-        Nails: -1
-        Stag Antlers: -1
-    - recipe_type: Raw Resource
+        Wood Slat: 2
+        Nails: 1
+        Stag Antlers: 1
 
-  Big-Cat Trophy:
+  - name: Big-Cat Trophy
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Wood Slat: -2
-        Nails: -1
-        Big-Cat Claws: -1
-    - recipe_type: Raw Resource
+        Wood Slat: 2
+        Nails: 1
+        Big-Cat Claws: 1
 
-  Boar Trophy:
+  - name: Boar Trophy
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Wood Slat: -2
-        Nails: -1
-        Boar Tusks: -1
-    - recipe_type: Raw Resource
+        Wood Slat: 2
+        Nails: 1
+        Boar Tusks: 1
 
-  Wood Slat:
+  - name: Wood Slat
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Rope: -2
-        Timber: -4
-    - recipe_type: Raw Resource
+        Rope: 2
+        Timber: 4
 
-  Nails:
+  - name: Nails
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Metal Ingot: -3
-    - recipe_type: Raw Resource
+        Metal Ingot: 3
 
-  Flimsy Multitool:
+  - name: Flimsy Multitool
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Timber: -2
-        Rope: -2
-    - recipe_type: Raw Resource
+        Timber: 2
+        Rope: 2
 
-  Wooden Club:
+  - name: Wooden Club
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Timber: -4
-        Rope: -1
-        Palm Leaf: -1
-    - recipe_type: Raw Resource
+        Timber: 4
+        Rope: 1
+        Palm Leaf: 1
 
-  Makeshift Bed Sheet:
+  - name: Makeshift Bed Sheet
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Palm Leaf: -3
-    - recipe_type: Raw Resource
+        Palm Leaf: 3
 
-  Straw Bundle:
+  - name: Straw Bundle
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Long Grass: -4
-    - recipe_type: Raw Resource
+        Long Grass: 4
 
-  Comfy Padding:
+  - name: Comfy Padding
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Palm Leaf: -2
-        Straw Bundle: -1
-        Rope: -1
-    - recipe_type: Raw Resource
+        Palm Leaf: 2
+        Straw Bundle: 1
+        Rope: 1
 
-  Bone Club:
+  - name: Bone Club
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Bone: -4
-        Palm Leaf: -1
-        Rope: -1
-    - recipe_type: Raw Resource
+        Bone: 4
+        Palm Leaf: 1
+        Rope: 1
 
-  Animal Trap:
+  - name: Animal Trap
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Wood Slat: -3
-        Rope: -2
-        Berries: -2
-    - recipe_type: Raw Resource
+        Wood Slat: 3
+        Rope: 2
+        Berries: 2
 
-  Wood Rod:
+  - name: Wood Rod
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Timber: -3
-        Rope: -1
-    - recipe_type: Raw Resource
+        Timber: 3
+        Rope: 1
 
-  Bow:
+  - name: Bow
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Wood Rod: -1
-        Rope: -2
-        Mud: -2
-    - recipe_type: Raw Resource
+        Wood Rod: 1
+        Rope: 2
+        Mud: 2
 
-  Makeshift Rug:
+  - name: Makeshift Rug
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Fur Clump: -3
-        Boar Pelt: -1
-    - recipe_type: Raw Resource
+        Fur Clump: 3
+        Boar Pelt: 1
 
-  Spear:
+  - name: Spear
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Wood Rod: -2
-        Metal Sheet: -2
-        Boar Pelt: -3
-    - recipe_type: Raw Resource
+        Wood Rod: 2
+        Metal Sheet: 2
+        Boar Pelt: 3
 
-  Gold Spear:
+  - name: Gold Spear
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Wood Rod: -2
-        Gold Sheet: -2
-        Wolf Pelt: -3
-    - recipe_type: Raw Resource
+        Wood Rod: 2
+        Gold Sheet: 2
+        Wolf Pelt: 3
 
-  Metal Sheet:
+  - name: Metal Sheet
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Metal Ingot: -4
-        Charcoal: -2
-    - recipe_type: Raw Resource
+        Metal Ingot: 4
+        Charcoal: 2
 
-  Gold Sheet:
+  - name: Gold Sheet
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Gold Ingot: -4
-        Charcoal: -2
-    - recipe_type: Raw Resource
+        Gold Ingot: 4
+        Charcoal: 2
 
-  Refined Gem:
+  - name: Refined Gem
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Gem Stone: -6
-    - recipe_type: Raw Resource
+        Gem Stone: 6
 
-  Luxury bed Sheet:
+  - name: Luxury bed Sheet
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Comfy Padding: -2
-        Cat Pelt: -1
-        Wolf Pelt: -1
-    - recipe_type: Raw Resource
+        Comfy Padding: 2
+        Cat Pelt: 1
+        Wolf Pelt: 1
 
-  Flimsy Arrows:
+  - name: Flimsy Arrows
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Wood Rod: -4
-        Petals: -4
-        Pebbles: -4
-    - recipe_type: Raw Resource
+        Wood Rod: 4
+        Petals: 4
+        Pebbles: 4
 
-  Lightweight Arrows:
+  - name: Lightweight Arrows
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Wood Rod: -4
-        Petals: -4
-        Metal Ingot: -4
-    - recipe_type: Raw Resource
+        Wood Rod: 4
+        Petals: 4
+        Metal Ingot: 4
 
-  Sturdy Arrows:
+  - name: Sturdy Arrows
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Hardwood: -2
-        Refined Gem: -2
-        Tank Bird Feather: -1
-    - recipe_type: Raw Resource
+        Hardwood: 2
+        Refined Gem: 2
+        Tank Bird Feather: 1
 
-  Makeshift Sail:
+  - name: Makeshift Sail
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Makeshift Rug: -2
-        Makeshift Bed Sheet: -3
-        Rope: -9
-    - recipe_type: Raw Resource
+        Makeshift Rug: 2
+        Makeshift Bed Sheet: 3
+        Rope: 9
 
-  Empty Watering Can:
+  - name: Empty Watering Can
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Makeshift Bowl: -3
-        Tool Handle: -1
-    - recipe_type: Raw Resource
+        Makeshift Bowl: 3
+        Tool Handle: 1
 
-  Cloth:
+  - name: Cloth
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Wheat: -4
-        Fur Clump: -1
-    - recipe_type: Raw Resource
+        Wheat: 4
+        Fur Clump: 1
 
-  Ornate Orcling Relic:
+  - name: Ornate Orcling Relic
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Flimsy Orcling Relic: -3
-    - recipe_type: Raw Resource
+        Flimsy Orcling Relic: 3
 
-  Hardwood Slat:
+  - name: Hardwood Slat
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Hardwood: -3
-    - recipe_type: Raw Resource
+        Hardwood: 3
 
-  Rope Ladder:
+  - name: Rope Ladder
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Hardwood Slat: -4
-        Rope: -6
-        Cane: -2
-    - recipe_type: Raw Resource
+        Hardwood Slat: 4
+        Rope: 6
+        Cane: 2
 
-  Fishing Net:
+  - name: Fishing Net
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Cloth: -2
-        Rope: -3
-    - recipe_type: Raw Resource
+        Cloth: 2
+        Rope: 3
 
-  Insect Net:
+  - name: Insect Net
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Cloth: -5
-        Rope: -2
-    - recipe_type: Raw Resource
+        Cloth: 5
+        Rope: 2
 
-  Fish Trap:
+  - name: Fish Trap
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Cloth: -2
-        Rope: -2
-        Cane: -2
-    - recipe_type: Raw Resource
+        Cloth: 2
+        Rope: 2
+        Cane: 2
 
-  Backpack 25 Slots:
+  - name: Backpack 25 Slots
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Cloth: -2
-        Boar Pelt: -10
-    - recipe_type: Raw Resource
+        Cloth: 2
+        Boar Pelt: 10
 
-  Backpack 28 Slots:
+  - name: Backpack 28 Slots
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Cloth: -3
-        Wolf Pelt: -10
-        Boar Pelt: -10
-    - recipe_type: Raw Resource
+        Cloth: 3
+        Wolf Pelt: 10
+        Boar Pelt: 10
 
-  Backpack 31 Slots:
+  - name: Backpack 31 Slots
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Cloth: -6
-        Wolf Pelt: -10
-        Cat Pelt: -5
-    - recipe_type: Raw Resource
+        Cloth: 6
+        Wolf Pelt: 10
+        Cat Pelt: 5
 
-  Backpack 33 Slots:
+  - name: Backpack 33 Slots
     recipes:
     - output: 1
       recipe_type: Crafting Bench
       requirements:
-        Cloth: -9
-        Cat Pelt: -20
-    - recipe_type: Raw Resource
+        Cloth: 9
+        Cat Pelt: 20
 
-  Stone Slab:
+  - name: Stone Slab
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Stone Chunk: -2
-        Mud: -1
-    - recipe_type: Raw Resource
+        Stone Chunk: 2
+        Mud: 1
 
-  Gold Nails:
+  - name: Gold Nails
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Gold Ingot: -3
-    - recipe_type: Raw Resource
+        Gold Ingot: 3
 
-  Metal Frame:
+  - name: Metal Frame
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Metal Sheet: -2
-        Nails: -3
-    - recipe_type: Raw Resource
+        Metal Sheet: 2
+        Nails: 3
 
-  Gold Frame:
+  - name: Gold Frame
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Gold Sheet: -3
-        Nails: -3
-    - recipe_type: Raw Resource
+        Gold Sheet: 3
+        Nails: 3
 
-  Lightweight Axe:
+  - name: Lightweight Axe
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Metal Sheet: -1
-        Tool Handle: -1
-        Metal Ingot: -2
-    - recipe_type: Raw Resource
+        Metal Sheet: 1
+        Tool Handle: 1
+        Metal Ingot: 2
 
-  Lightweight Pickaxe:
+  - name: Lightweight Pickaxe
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Metal Sheet: -1
-        Tool Handle: -1
-        Nails: -2
-    - recipe_type: Raw Resource
+        Metal Sheet: 1
+        Tool Handle: 1
+        Nails: 2
 
-  Lightweight Shovel:
+  - name: Lightweight Shovel
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Metal Sheet: -1
-        Tool Handle: -1
-        Nails: -1
-    - recipe_type: Raw Resource
+        Metal Sheet: 1
+        Tool Handle: 1
+        Nails: 1
 
-  Metal Club:
+  - name: Metal Club
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Boar Pelt: -5
-        Metal Sheet: -5
-        Rope: -2
-    - recipe_type: Raw Resource
+        Boar Pelt: 5
+        Metal Sheet: 5
+        Rope: 2
 
-  Sturdy Multitool:
+  - name: Sturdy Multitool
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Tool Handle: -1
-        Metal Ingot: -1
-        Rope: -1
-    - recipe_type: Raw Resource
+        Tool Handle: 1
+        Metal Ingot: 1
+        Rope: 1
 
-  Sturdy Shovel:
+  - name: Sturdy Shovel
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Tool Handle: -1
-        Gold Ingot: -1
-        Gold Nails: -2
-    - recipe_type: Raw Resource
+        Tool Handle: 1
+        Gold Ingot: 1
+        Gold Nails: 2
 
-  Gold Statue:
+  - name: Gold Statue
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Gold Ingot: -2
-        Gold Nails: -1
-    - recipe_type: Raw Resource
+        Gold Ingot: 2
+        Gold Nails: 1
 
-  Sword:
+  - name: Sword
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Metal Sheet: -1
-        Sword Handle: -1
-        Nails: -1
-    - recipe_type: Raw Resource
+        Metal Sheet: 1
+        Sword Handle: 1
+        Nails: 1
 
-  Metal Hinge:
+  - name: Metal Hinge
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Gold Ingot: -2
-        Gold Nails: -1
-    - recipe_type: Raw Resource
+        Gold Ingot: 2
+        Gold Nails: 1
 
-  Sword Handle:
+  - name: Sword Handle
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Metal Sheet: -6
-        Metal Frame: -1
-        Wolf Pelt: -5
-    - recipe_type: Raw Resource
+        Metal Sheet: 6
+        Metal Frame: 1
+        Wolf Pelt: 5
 
-  Gold Sword Handle:
+  - name: Gold Sword Handle
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Gold Sheet: -12
-        Gold Frame: -1
-        Cat Pelt: -5
-    - recipe_type: Raw Resource
+        Gold Sheet: 12
+        Gold Frame: 1
+        Cat Pelt: 5
 
-  Gold Sword:
+  - name: Gold Sword
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Gold Sword Handle: -1
-        Gold Sheet: -1
-        Gold Nails: -1
-    - recipe_type: Raw Resource
+        Gold Sword Handle: 1
+        Gold Sheet: 1
+        Gold Nails: 1
 
-  Bucket:
+  - name: Bucket
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Metal Hinge: -1
-        Metal Sheet: -2
-        Metal Frame: -1
-    - recipe_type: Raw Resource
+        Metal Hinge: 1
+        Metal Sheet: 2
+        Metal Frame: 1
 
-  Bomb:
+  - name: Bomb
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Metal Frame: -1
-        Brimstone: -6
-    - recipe_type: Raw Resource
+        Metal Frame: 1
+        Brimstone: 6
 
-  Glass Sheet:
+  - name: Glass Sheet
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Sand: -8
-        Charcoal: -2
-    - recipe_type: Raw Resource
+        Sand: 8
+        Charcoal: 2
 
-  Glass Bottle:
+  - name: Glass Bottle
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Glass Sheet: -1
-    - recipe_type: Raw Resource
+        Glass Sheet: 1
 
-  Glass Bowl:
+  - name: Glass Bowl
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Glass Sheet: -4
-    - recipe_type: Raw Resource
+        Glass Sheet: 4
 
-  Makeshift Lantern:
+  - name: Makeshift Lantern
     recipes:
     - output: 1
       recipe_type: Furnace
       requirements:
-        Torch: -1
-        Glass Bottle: -1
-        Mud: -2
-    - recipe_type: Raw Resource
+        Torch: 1
+        Glass Bottle: 1
+        Mud: 2
 
-  Spiked Wooden Club:
+  - name: Spiked Wooden Club
     recipes:
     - output: 1
       recipe_type: Grindstone
       requirements:
-        Wooden Club: -1
-        Pebbles: -8
-    - recipe_type: Raw Resource
+        Wooden Club: 1
+        Pebbles: 8
 
-  Rough Whetstone:
+  - name: Rough Whetstone
     recipes:
     - output: 1
       recipe_type: Grindstone
       requirements:
-        Stone Slab: -3
-    - recipe_type: Raw Resource
+        Stone Slab: 3
 
-  Coarse Whetstone:
+  - name: Coarse Whetstone
     recipes:
     - output: 1
       recipe_type: Grindstone
       requirements:
-        Basalt Rock: -6
-    - recipe_type: Raw Resource
+        Basalt Rock: 6
 
-  Sharp Flimsy Axe:
+  - name: Sharp Flimsy Axe
     recipes:
     - output: 1
       recipe_type: Grindstone
       requirements:
-        Flimsy Axe: -1
-        Rough Whetstone: -1
-    - recipe_type: Raw Resource
+        Flimsy Axe: 1
+        Rough Whetstone: 1
 
-  Sharp Flimsy Pickaxe:
+  - name: Sharp Flimsy Pickaxe
     recipes:
     - output: 1
       recipe_type: Grindstone
       requirements:
-        Flimsy Pickaxe: -1
-        Rough Whetstone: -1
-    - recipe_type: Raw Resource
+        Flimsy Pickaxe: 1
+        Rough Whetstone: 1
 
-  Sharp Spear:
+  - name: Sharp Spear
     recipes:
     - output: 1
       recipe_type: Grindstone
       requirements:
-        Spear: -1
-        Rough Whetstone: -1
-        Boar Pelt: -5
-    - recipe_type: Raw Resource
+        Spear: 1
+        Rough Whetstone: 1
+        Boar Pelt: 5
 
-  Sharp Sword:
+  - name: Sharp Sword
     recipes:
     - output: 1
       recipe_type: Grindstone
       requirements:
-        Sword: -1
-        Rough Whetstone: -1
-        Wolf Pelt: -5
-    - recipe_type: Raw Resource
+        Sword: 1
+        Rough Whetstone: 1
+        Wolf Pelt: 5
 
-  Spiked Bone Club:
+  - name: Spiked Bone Club
     recipes:
     - output: 1
       recipe_type: Grindstone
       requirements:
-        Bone Club: -1
-        Stone Chunk: -2
-        Boar Pelt: -3
-    - recipe_type: Raw Resource
+        Bone Club: 1
+        Stone Chunk: 2
+        Boar Pelt: 3
 
-  Spiked Metal Club:
+  - name: Spiked Metal Club
     recipes:
     - output: 1
       recipe_type: Grindstone
       requirements:
-        Metal Club: -1
-        Nails: -3
-        Wolf Pelt: -3
-    - recipe_type: Raw Resource
+        Metal Club: 1
+        Nails: 3
+        Wolf Pelt: 3
 
-  Sharp Lightweight Pickaxe:
+  - name: Sharp Lightweight Pickaxe
     recipes:
     - output: 1
       recipe_type: Grindstone
       requirements:
-        Lightweight Pickaxe: -1
-        Coarse Whetstone: -1
-    - recipe_type: Raw Resource
+        Lightweight Pickaxe: 1
+        Coarse Whetstone: 1
 
-  Sharp Gold Sword:
+  - name: Sharp Gold Sword
     recipes:
     - output: 1
       recipe_type: Grindstone
       requirements:
-        Gold Sword: -1
-        Coarse Whetstone: -1
-        Cat Pelt: -5
-    - recipe_type: Raw Resource
+        Gold Sword: 1
+        Coarse Whetstone: 1
+        Cat Pelt: 5
 
-  Sharp Gold Spear:
+  - name: Sharp Gold Spear
     recipes:
     - output: 1
       recipe_type: Grindstone
       requirements:
-        Gold Spear: -1
-        Coarse Whetstone: -1
-        Wolf Pelt: -5
-    - recipe_type: Raw Resource
+        Gold Spear: 1
+        Coarse Whetstone: 1
+        Wolf Pelt: 5
 
-  Sharp Lightweight Axe:
+  - name: Sharp Lightweight Axe
     recipes:
     - output: 1
       recipe_type: Grindstone
       requirements:
-        Lightweight Axe: -1
-        Coarse Whetstone: -1
-    - recipe_type: Raw Resource
+        Lightweight Axe: 1
+        Coarse Whetstone: 1
 
-  Glass Bottle (Dirty Water):
+  - name: Glass Bottle (Dirty Water)
     recipes:
     - output: 1
       recipe_type: Fill Water
       requirements:
-        Glass Bottle: -1
-    - recipe_type: Raw Resource
+        Glass Bottle: 1
 
-  Glass Bottle (Clean Water):
+  - name: Glass Bottle (Clean Water)
     recipes:
     - output: 1
       recipe_type: Campfire
       requirements:
-        Glass Bottle (Dirty Water): -1
-        Charcoal: -2
-    - recipe_type: Raw Resource
+        Glass Bottle (Dirty Water): 1
+        Charcoal: 2
 
-  Glass Bottle (Elixir):
+  - name: Glass Bottle (Elixir)
     recipes:
     - output: 1
       recipe_type: Campfire
       requirements:
-        Glass Bottle (Dirty Water): -1
-        Bone: -1
-        Petals: -3
-    - recipe_type: Raw Resource
+        Glass Bottle (Dirty Water): 1
+        Bone: 1
+        Petals: 3
 
-  Dye Base:
+  - name: Dye Base
     recipes:
     - output: 1
       recipe_type: Dye Table
       requirements:
-        Swamp Sap: -1
-    - recipe_type: Raw Resource
+        Swamp Sap: 1
 
-  Dye Remover:
+  - name: Dye Remover
     recipes:
     - output: 1
       recipe_type: Dye Table
       requirements:
-        Dye Base: -1
-        Pebbles: -2
-        Sugar: -1
-    - recipe_type: Raw Resource
+        Dye Base: 1
+        Pebbles: 2
+        Sugar: 1
 
-  Bristles Brush:
+  - name: Bristles Brush
     recipes:
     - output: 1
       recipe_type: Dye Table
       requirements:
-        Tool Handle: -1
-        Boar Bristles: -3
-    - recipe_type: Raw Resource
+        Tool Handle: 1
+        Boar Bristles: 3
 
-  Blue Dye:
+  - name: Blue Dye
     recipes:
     - output: 1
       recipe_type: Dye Table
       requirements:
-        Bristles Brush: -1
-        Dye Base: -1
-        Live Fish: -1
-    - recipe_type: Raw Resource
+        Bristles Brush: 1
+        Dye Base: 1
+        Live Fish: 1
 
-  Violet Dye:
+  - name: Violet Dye
     recipes:
     - output: 1
       recipe_type: Dye Table
       requirements:
-        Bristles Brush: -1
-        Dye Base: -1
-        Berries: -10
-    - recipe_type: Raw Resource
+        Bristles Brush: 1
+        Dye Base: 1
+        Berries: 10
 
-  Indigo Dye:
+  - name: Indigo Dye
     recipes:
     - output: 1
       recipe_type: Dye Table
       requirements:
-        Bristles Brush: -1
-        Dye Base: -1
-        Tank Bird Feather: -1
-    - recipe_type: Raw Resource
+        Bristles Brush: 1
+        Dye Base: 1
+        Tank Bird Feather: 1
 
-  Yellow Dye:
+  - name: Yellow Dye
     recipes:
     - output: 1
       recipe_type: Dye Table
       requirements:
-        Bristles Brush: -1
-        Dye Base: -1
-        Fruit: -2
-    - recipe_type: Raw Resource
+        Bristles Brush: 1
+        Dye Base: 1
+        Fruit: 2
 
-  Red Dye:
+  - name: Red Dye
     recipes:
     - output: 1
       recipe_type: Dye Table
       requirements:
-        Bristles Brush: -1
-        Dye Base: -1
-        Petals: -10
-    - recipe_type: Raw Resource
+        Bristles Brush: 1
+        Dye Base: 1
+        Petals: 10
 
-  Green Dye:
+  - name: Green Dye
     recipes:
     - output: 1
       recipe_type: Dye Table
       requirements:
-        Bristles Brush: -1
-        Dye Base: -1
-        Sugarcane Seeds: -3
-    - recipe_type: Raw Resource
+        Bristles Brush: 1
+        Dye Base: 1
+        Sugarcane Seeds: 3
 
-  Black Dye:
+  - name: Black Dye
     recipes:
     - output: 1
       recipe_type: Dye Table
       requirements:
-        Bristles Brush: -1
-        Dye Base: -1
-        Charcoal: -1
-    - recipe_type: Raw Resource
+        Bristles Brush: 1
+        Dye Base: 1
+        Charcoal: 1
 
-  Orange Dye:
+  - name: Orange Dye
     recipes:
     - output: 1
       recipe_type: Dye Table
       requirements:
-        Red Dye: -2
-        Yellow Dye: -2
-    - recipe_type: Raw Resource
+        Red Dye: 2
+        Yellow Dye: 2
 
-  White Dye:
+  - name: White Dye
     recipes:
     - output: 1
       recipe_type: Dye Table
       requirements:
-        Bristles Brush: -1
-        Dye Base: -1
-        Pastry: -1
-    - recipe_type: Raw Resource
+        Bristles Brush: 1
+        Dye Base: 1
+        Pastry: 1
 
-  Pastry:
+  - name: Pastry
     recipes:
     - output: 1
       recipe_type: Cooking Pot
       requirements:
-        Sugar: -1
-        Wheat: -1
-    - recipe_type: Raw Resource
+        Sugar: 1
+        Wheat: 1
 
-  Meat Pasty:
+  - name: Meat Pasty
     recipes:
     - output: 1
       recipe_type: Cooking Pot
       requirements:
-        Meat Scrap: -2
-        Pastry: -1
-    - recipe_type: Raw Resource
+        Meat Scrap: 2
+        Pastry: 1
 
-  Meat Pie:
+  - name: Meat Pie
     recipes:
     - output: 1
       recipe_type: Cooking Pot
       requirements:
-        Meat Scrap: -4
-        Pastry: -2
-    - recipe_type: Raw Resource
+        Meat Scrap: 4
+        Pastry: 2
 
-  Gourmet Pie:
+  - name: Gourmet Pie
     recipes:
     - output: 1
       recipe_type: Cooking Pot
       requirements:
-        Steak: -3
-        Pastry: -2
-    - recipe_type: Raw Resource
+        Steak: 3
+        Pastry: 2
 
-  Fish Pie:
+  - name: Fish Pie
     recipes:
     - output: 1
       recipe_type: Cooking Pot
       requirements:
-        Fillet: -4
-        Pastry: -2
-    - recipe_type: Raw Resource
+        Fillet: 4
+        Pastry: 2
 
-  Chocolate Bar:
+  - name: Chocolate Bar
     recipes:
     - output: 1
       recipe_type: Cooking Pot
       requirements:
-        Cocoa Pod: -1
-        Sugar: -1
-    - recipe_type: Raw Resource
+        Cocoa Pod: 1
+        Sugar: 1
 
-  Chocolate Pie:
+  - name: Chocolate Pie
     recipes:
     - output: 1
       recipe_type: Cooking Pot
       requirements:
-        Chocolate Bar: -2
-        Pastry: -2
-    - recipe_type: Raw Resource
+        Chocolate Bar: 2
+        Pastry: 2
 
-  Chocolate Cake:
+  - name: Chocolate Cake
     recipes:
     - output: 1
       recipe_type: Cooking Pot
       requirements:
-        Chocolate Bar: -3
-        Sugar: -2
-        Wheat: -1
-    - recipe_type: Raw Resource
+        Chocolate Bar: 3
+        Sugar: 2
+        Wheat: 1
 
-  Fruit Pie:
+  - name: Fruit Pie
     recipes:
     - output: 1
       recipe_type: Cooking Pot
       requirements:
-        Pastry: -2
-        Berries: -4
-    - recipe_type: Raw Resource
+        Pastry: 2
+        Berries: 4
 
-  Fool Meal:
+  - name: Fool Meal
     recipes:
     - output: 1
       recipe_type: Campfire
       requirements:
-        Petals: -3
-        Long Grass: -3
-        Timber: -1
-    - recipe_type: Raw Resource
+        Petals: 3
+        Long Grass: 3
+        Timber: 1
 
-  Fruit Smoothie:
+  - name: Fruit Smoothie
     recipes:
     - output: 1
       recipe_type: Campfire
       requirements:
-        Coconut: -2
-        Palm Leaf: -1
-        Berries: -2
-    - recipe_type: Raw Resource
+        Coconut: 2
+        Palm Leaf: 1
+        Berries: 2
 
-  Stewed Berries:
+  - name: Stewed Berries
     recipes:
     - output: 1
       recipe_type: Campfire
       requirements:
-        Petals: -3
-        Berries: -3
-        Makeshift Bowl: -1
-    - recipe_type: Raw Resource
+        Petals: 3
+        Berries: 3
+        Makeshift Bowl: 1
 
-  Charred Fish:
+  - name: Charred Fish
     recipes:
     - output: 1
       recipe_type: Campfire
       requirements:
-        Fillet: -2
-        Palm Leaf: -1
-    - recipe_type: Raw Resource
+        Fillet: 2
+        Palm Leaf: 1
 
-  Sweet Fish:
+  - name: Sweet Fish
     recipes:
     - output: 1
       recipe_type: Campfire
       requirements:
-        Fillet: -4
-        Fruit: -3
-        Palm Leaf: -1
-    - recipe_type: Raw Resource
+        Fillet: 4
+        Fruit: 3
+        Palm Leaf: 1
 
-  Fish Curry:
+  - name: Fish Curry
     recipes:
     - output: 1
       recipe_type: Campfire
       requirements:
-        Fillet: -4
-        Coconut: -3
-        Petals: -3
-    - recipe_type: Raw Resource
+        Fillet: 4
+        Coconut: 3
+        Petals: 3
 
-  Slow Cooked Stew:
+  - name: Slow Cooked Stew
     recipes:
     - output: 1
       recipe_type: Campfire
       requirements:
-        Bat Wing: -6
-        Steak: -2
-        Makeshift Bowl: -2
-    - recipe_type: Raw Resource
+        Bat Wing: 6
+        Steak: 2
+        Makeshift Bowl: 2
 
-  Wing Curry:
+  - name: Wing Curry
     recipes:
     - output: 1
       recipe_type: Campfire
       requirements:
-        Bat Wing: -4
-        Petals: -4
-        Coconut: -3
-    - recipe_type: Raw Resource
+        Bat Wing: 4
+        Petals: 4
+        Coconut: 3
 
-  Sticky Wings:
+  - name: Sticky Wings
     recipes:
     - output: 1
       recipe_type: Campfire
       requirements:
-        Bat Wing: -4
-        Fruit: -2
-        Palm Leaf: -1
-    - recipe_type: Raw Resource
+        Bat Wing: 4
+        Fruit: 2
+        Palm Leaf: 1
 
-  Crispy Wings:
+  - name: Crispy Wings
     recipes:
     - output: 1
       recipe_type: Campfire
       requirements:
-        Bat Wing: -4
-        Palm Leaf: -1
-    - recipe_type: Raw Resource
+        Bat Wing: 4
+        Palm Leaf: 1
 
-  Meat Kebab:
+  - name: Meat Kebab
     recipes:
     - output: 1
       recipe_type: Campfire
       requirements:
-        Meat Scrap: -4
+        Meat Scrap: 4
     - output: 1
       recipe_type: Campfire
       requirements:
-        Meat Chunk: -2
-    - recipe_type: Raw Resource
+        Meat Chunk: 2
 
-  Fruity Kebab:
+  - name: Fruity Kebab
     recipes:
     - output: 1
       recipe_type: Campfire
       requirements:
-        Meat Chunk: -2
-        Fruit: -3
-        Timber: -1
-    - recipe_type: Raw Resource
+        Meat Chunk: 2
+        Fruit: 3
+        Timber: 1
 
-  Mango Curry:
+  - name: Mango Curry
     recipes:
     - output: 1
       recipe_type: Campfire
       requirements:
-        Makeshift Bowl: -2
-        Fruit: -4
-        Coconut: -4
-    - recipe_type: Raw Resource
+        Makeshift Bowl: 2
+        Fruit: 4
+        Coconut: 4
 
-  Sweetened Meat:
+  - name: Sweetened Meat
     recipes:
     - output: 1
       recipe_type: Campfire
       requirements:
-        Palm Leaf: -1
-        Meat Chunk: -4
-        Berries: -4
-    - recipe_type: Raw Resource
+        Palm Leaf: 1
+        Meat Chunk: 4
+        Berries: 4
 
-  Meaty Stew:
+  - name: Meaty Stew
     recipes:
     - output: 1
       recipe_type: Campfire
       requirements:
-        Makeshift Bowl: -1
-        Meat Chunk: -4
-        Petals: -4
-    - recipe_type: Raw Resource
+        Makeshift Bowl: 1
+        Meat Chunk: 4
+        Petals: 4
 
-  Sizzling Steak:
+  - name: Sizzling Steak
     recipes:
     - output: 1
       recipe_type: Campfire
       requirements:
-        Makeshift Bowl: -1
-        Steak: -4
-        Berries: -4
-    - recipe_type: Raw Resource
+        Makeshift Bowl: 1
+        Steak: 4
+        Berries: 4
 
-  Marinated Steaks:
+  - name: Marinated Steaks
     recipes:
     - output: 1
       recipe_type: Campfire
       requirements:
-        Fruit: -1
-        Steak: -4
-        Petals: -4
-    - recipe_type: Raw Resource
+        Fruit: 1
+        Steak: 4
+        Petals: 4
 
-  Pipe Component:
+  - name: Pipe Component
     recipes:
     - output: 1
       recipe_type: Taming Bench
       requirements:
-        Timber: -3
-        Mud: -1
-        Petals: -3
-    - recipe_type: Raw Resource
+        Timber: 3
+        Mud: 1
+        Petals: 3
 
-  Rabbit Tranquiliser:
+  - name: Rabbit Tranquiliser
     recipes:
     - output: 1
       recipe_type: Taming Bench
       requirements:
-        Stunning Barb: -1
-        Pipe Component: -1
-        Petals: -3
-    - recipe_type: Raw Resource
+        Stunning Barb: 1
+        Pipe Component: 1
+        Petals: 3
 
-  Luring Flute:
+  - name: Luring Flute
     recipes:
     - output: 1
       recipe_type: Taming Bench
       requirements:
-        Bone: -8
-        Petals: -4
-        Mud: -2
-    - recipe_type: Raw Resource
+        Bone: 8
+        Petals: 4
+        Mud: 2
 
-  Herbivore Food:
+  - name: Herbivore Food
     recipes:
     - output: 1
       recipe_type: Taming Bench
       requirements:
-        Wheat: -6
-        Petals: -2
-        Berries: -3
-    - recipe_type: Raw Resource
+        Wheat: 6
+        Petals: 2
+        Berries: 3
 
-  Carnivore Food:
+  - name: Carnivore Food
     recipes:
     - output: 1
       recipe_type: Taming Bench
       requirements:
-        Meat Chunk: -6
-        Bat Wing: -2
-        Meat Scrap: -3
-    - recipe_type: Raw Resource
+        Meat Chunk: 6
+        Bat Wing: 2
+        Meat Scrap: 3
 
-  Bird Food:
+  - name: Bird Food
     recipes:
     - output: 1
       recipe_type: Taming Bench
       requirements:
-        Wheat: -6
-        Fruit: -2
-        Fillet: -3
-    - recipe_type: Raw Resource
+        Wheat: 6
+        Fruit: 2
+        Fillet: 3
 
-  Deer Tranquiliser:
+  - name: Deer Tranquiliser
     recipes:
     - output: 1
       recipe_type: Taming Bench
       requirements:
-        Stunning Barb: -1
-        Pipe Component: -1
-        Petals: -6
-    - recipe_type: Raw Resource
+        Stunning Barb: 1
+        Pipe Component: 1
+        Petals: 6
 
-  Boar Tranquiliser:
+  - name: Boar Tranquiliser
     recipes:
     - output: 1
       recipe_type: Taming Bench
       requirements:
-        Stunning Barb: -1
-        Pipe Component: -1
-        Deer Musk: -1
-    - recipe_type: Raw Resource
+        Stunning Barb: 1
+        Pipe Component: 1
+        Deer Musk: 1
 
-  Bird Tranquiliser:
+  - name: Bird Tranquiliser
     recipes:
     - output: 1
       recipe_type: Taming Bench
       requirements:
-        Blackened Barb: -1
-        Pipe Component: -1
-        Boar Bristles: -1
-    - recipe_type: Raw Resource
+        Blackened Barb: 1
+        Pipe Component: 1
+        Boar Bristles: 1
 
-  Cat Tranquiliser:
+  - name: Cat Tranquiliser
     recipes:
     - output: 1
       recipe_type: Taming Bench
       requirements:
-        Poisonous Barb: -1
-        Pipe Component: -1
-        Tank Bird Feather: -1
-    - recipe_type: Raw Resource
+        Poisonous Barb: 1
+        Pipe Component: 1
+        Tank Bird Feather: 1
 
-  Flimsy Garden Patch:
+  - name: Flimsy Garden Patch
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Pebbles: -6
-        Stone Chunk: -2
-        Mud: -2
-    - recipe_type: Raw Resource
+        Pebbles: 6
+        Stone Chunk: 2
+        Mud: 2
 
-  Taming Bench:
+  - name: Taming Bench
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Nails: -3
-        Stone Slab: -4
-        Wood Slat: -4
-    - recipe_type: Raw Resource
+        Nails: 3
+        Stone Slab: 4
+        Wood Slat: 4
 
-  Dyeing Bench:
+  - name: Dyeing Bench
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Makeshift Bowl: -1
-        Nails: -4
-        Hardwood Slat: -4
-    - recipe_type: Raw Resource
+        Makeshift Bowl: 1
+        Nails: 4
+        Hardwood Slat: 4
 
-  Animal Pen:
+  - name: Animal Pen
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Wood Slat: -12
-        Nails: -3
-    - recipe_type: Raw Resource
+        Wood Slat: 12
+        Nails: 3
 
-  Hatchery:
+  - name: Hatchery
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Wood Slat: -4
-        Brimstone: -4
-        Stone Slab: -4
-    - recipe_type: Raw Resource
+        Wood Slat: 4
+        Brimstone: 4
+        Stone Slab: 4
 
-  Refuse Pit:
+  - name: Refuse Pit
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Stone Chunk: -3
-        Mud: -3
-    - recipe_type: Raw Resource
+        Stone Chunk: 3
+        Mud: 3
 
-  Food Processor:
+  - name: Food Processor
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Stone Slab: -6
-        Wood Slat: -5
-        Rope: -5
-    - recipe_type: Raw Resource
+        Stone Slab: 6
+        Wood Slat: 5
+        Rope: 5
 
-  Orchard:
+  - name: Orchard
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Hardwood Slat: -4
-        Cane: -4
-        Wheat: -4
-    - recipe_type: Raw Resource
+        Hardwood Slat: 4
+        Cane: 4
+        Wheat: 4
 
-  Pond:
+  - name: Pond
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Stone Chunk: -3
-        Glass Bottle (Dirty Water): -1
-        Mud: -3
-    - recipe_type: Raw Resource
+        Stone Chunk: 3
+        Glass Bottle (Dirty Water): 1
+        Mud: 3
 
-  Water Feature:
+  - name: Water Feature
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Stone Slab: -2
-        Glass Bottle (Dirty Water): -1
-        Cane: -2
-    - recipe_type: Raw Resource
+        Stone Slab: 2
+        Glass Bottle (Dirty Water): 1
+        Cane: 2
 
-  Large Water Feature:
+  - name: Large Water Feature
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Stone Slab: -3
-        Glass Bottle (Dirty Water): -1
-        Cane: -3
-    - recipe_type: Raw Resource
+        Stone Slab: 3
+        Glass Bottle (Dirty Water): 1
+        Cane: 3
 
-  Campfire:
+  - name: Campfire
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Pebbles: -12
-    - recipe_type: Raw Resource
+        Pebbles: 12
 
-  Multipurpose Pole:
+  - name: Multipurpose Pole
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Wood Rod: -2
-        Mud: -2
-    - recipe_type: Raw Resource
+        Wood Rod: 2
+        Mud: 2
 
-  Fence:
+  - name: Fence
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Wood Rod: -4
-        Rope: -2
-    - recipe_type: Raw Resource
+        Wood Rod: 4
+        Rope: 2
 
-  Wooden Spike Trap:
+  - name: Wooden Spike Trap
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Wood Slat: -3
-        Long Grass: -2
-        Timber: -2
-    - recipe_type: Raw Resource
+        Wood Slat: 3
+        Long Grass: 2
+        Timber: 2
 
-  Bone Spike Trap:
+  - name: Bone Spike Trap
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Wood Slat: -3
-        Long Grass: -2
-        Bone: -2
-    - recipe_type: Raw Resource
+        Wood Slat: 3
+        Long Grass: 2
+        Bone: 2
 
-  Metal Spike Trap:
+  - name: Metal Spike Trap
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Wood Slat: -3
-        Long Grass: -2
-        Nails: -2
-    - recipe_type: Raw Resource
+        Wood Slat: 3
+        Long Grass: 2
+        Nails: 2
 
-  Table:
+  - name: Table
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Wood Rod: -4
-        Rope: -2
-    - recipe_type: Raw Resource
+        Wood Rod: 4
+        Rope: 2
 
-  Wooden Chair:
+  - name: Wooden Chair
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Timber: -3
-        Wood Rod: -4
-        Rope: -3
-    - recipe_type: Raw Resource
+        Timber: 3
+        Wood Rod: 4
+        Rope: 3
 
-  Bone Chair:
+  - name: Bone Chair
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Bone: -6
-        Metal Frame: -1
-        Rope: -3
-    - recipe_type: Raw Resource
+        Bone: 6
+        Metal Frame: 1
+        Rope: 3
 
-  Gold Chair:
+  - name: Gold Chair
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Gold Nails: -1
-        Gold Frame: -1
-        Cat Pelt: -1
-    - recipe_type: Raw Resource
+        Gold Nails: 1
+        Gold Frame: 1
+        Cat Pelt: 1
 
-  Small Chest:
+  - name: Small Chest
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Rope: -3
-        Timber: -8
-    - recipe_type: Raw Resource
+        Rope: 3
+        Timber: 8
 
-  Medium Chest:
+  - name: Medium Chest
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Wood Slat: -4
-        Timber: -4
-        Metal Hinge: -2
-    - recipe_type: Raw Resource
+        Wood Slat: 4
+        Timber: 4
+        Metal Hinge: 2
 
-  Large Chest:
+  - name: Large Chest
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Wood Slat: -8
-        Metal Hinge: -3
-    - recipe_type: Raw Resource
+        Wood Slat: 8
+        Metal Hinge: 3
 
-  Crafting Bench:
+  - name: Crafting Bench
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Stone Chunk: -3
-        Wood Rod: -2
-        Rope: -3
-    - recipe_type: Raw Resource
+        Stone Chunk: 3
+        Wood Rod: 2
+        Rope: 3
 
-  Repair Bench:
+  - name: Repair Bench
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Stone Chunk: -6
-        Wood Slat: -4
-        Rope: -6
-    - recipe_type: Raw Resource
+        Stone Chunk: 6
+        Wood Slat: 4
+        Rope: 6
 
-  Trinket Bench:
+  - name: Trinket Bench
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Stone Slab: -4
-        Nails: -3
-        Wood Slat: -5
-    - recipe_type: Raw Resource
+        Stone Slab: 4
+        Nails: 3
+        Wood Slat: 5
 
-  Forge:
+  - name: Forge
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Mud: -8
-        Stone Chunk: -16
-    - recipe_type: Raw Resource
+        Mud: 8
+        Stone Chunk: 16
 
-  Alchemy Bench:
+  - name: Alchemy Bench
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Basalt Rock: -10
-        Hardwood Slat: -12
-        Glass Sheet: -6
-    - recipe_type: Raw Resource
+        Basalt Rock: 10
+        Hardwood Slat: 12
+        Glass Sheet: 6
 
-  Cooking Pot:
+  - name: Cooking Pot
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Bucket: -1
-        Pebbles: -12
-    - recipe_type: Raw Resource
+        Bucket: 1
+        Pebbles: 12
 
-  Grindstone:
+  - name: Grindstone
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Wood Slat: -6
-        Stone Slab: -12
-    - recipe_type: Raw Resource
+        Wood Slat: 6
+        Stone Slab: 12
 
-  Raft:
+  - name: Raft
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Wood Rod: -16
-        Rope: -8
-    - recipe_type: Raw Resource
+        Wood Rod: 16
+        Rope: 8
 
-  Fast Raft:
+  - name: Fast Raft
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Cane: -24
-        Rope: -10
-    - recipe_type: Raw Resource
+        Cane: 24
+        Rope: 10
 
-  Flimsy Bed:
+  - name: Flimsy Bed
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Comfy Padding: -1
-    - recipe_type: Raw Resource
+        Comfy Padding: 1
 
-  Pebbles Floor Tile:
+  - name: Pebbles Floor Tile
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Pebbles: -6
-        Mud: -2
-    - recipe_type: Raw Resource
+        Pebbles: 6
+        Mud: 2
 
-  Wooden Floor Tile:
+  - name: Wooden Floor Tile
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Wood Slat: -1
-        Mud: -1
-    - recipe_type: Raw Resource
+        Wood Slat: 1
+        Mud: 1
 
-  Carpet Floor:
+  - name: Carpet Floor
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Wood Slat: -1
-        Fur Clump: -1
-        Petals: -6
-    - recipe_type: Raw Resource
+        Wood Slat: 1
+        Fur Clump: 1
+        Petals: 6
 
-  Stone Floor Tile:
+  - name: Stone Floor Tile
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Stone Slab: -2
-        Mud: -2
-    - recipe_type: Raw Resource
+        Stone Slab: 2
+        Mud: 2
 
-  Lightweight Bed:
+  - name: Lightweight Bed
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Boar Pelt: -3
-        Wood Slat: -2
-        Nails: -2
-    - recipe_type: Raw Resource
+        Boar Pelt: 3
+        Wood Slat: 2
+        Nails: 2
 
-  Sturdy Bed:
+  - name: Sturdy Bed
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Wolf Pelt: -4
-        Metal Frame: -2
-        Nails: -2
-    - recipe_type: Raw Resource
+        Wolf Pelt: 4
+        Metal Frame: 2
+        Nails: 2
 
-  Grand Bed:
+  - name: Grand Bed
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Cat Pelt: -5
-        Gold Frame: -2
-        Gold Nails: -2
-    - recipe_type: Raw Resource
+        Cat Pelt: 5
+        Gold Frame: 2
+        Gold Nails: 2
 
-  Straw Wall:
+  - name: Straw Wall
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Straw Bundle: -2
-    - recipe_type: Raw Resource
+        Straw Bundle: 2
 
-  Wooden Wall:
+  - name: Wooden Wall
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Wood Slat: -3
-        Rope: -1
-        Mud: -1
-    - recipe_type: Raw Resource
+        Wood Slat: 3
+        Rope: 1
+        Mud: 1
 
-  Window:
+  - name: Window
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Wood Slat: -2
-        Glass Sheet: -2
-        Mud: -2
-    - recipe_type: Raw Resource
+        Wood Slat: 2
+        Glass Sheet: 2
+        Mud: 2
 
-  Door:
+  - name: Door
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Wood Slat: -2
-        Metal Hinge: -2
-        Metal Ingot: -1
-    - recipe_type: Raw Resource
+        Wood Slat: 2
+        Metal Hinge: 2
+        Metal Ingot: 1
 
-  Stone Wall:
+  - name: Stone Wall
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Stone Slab: -3
-        Mud: -3
-    - recipe_type: Raw Resource
+        Stone Slab: 3
+        Mud: 3
 
-  Metal Wall:
+  - name: Metal Wall
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Metal Sheet: -3
-        Nails: -1
-    - recipe_type: Raw Resource
+        Metal Sheet: 3
+        Nails: 1
 
-  Teleporter:
+  - name: Teleporter
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Glowing Rock: -3
-        Gold Frame: -1
-        Hardwood Slat: -3
-    - recipe_type: Raw Resource
+        Glowing Rock: 3
+        Gold Frame: 1
+        Hardwood Slat: 3
 
-  Summoning Banana:
+  - name: Summoning Banana
     recipes:
     - output: 1
       recipe_type: Food Processor
       requirements:
-        Berries: -2
-    - recipe_type: Raw Resource
+        Berries: 2

@@ -17,29 +17,64 @@ resources.yaml
 The resource list is a yaml file that contains all the recipes for each item in the game. All items will have a "Raw Resource" type to allow users to ignore any materials needed for crafting that resource, and because some resources are base resources that you cannot craft.
 Though key/value mappings are not inherently ordered, when we build the calculator page, their order is preserved from the yaml file
 allowing one to order the items coherently.
-```
+```yaml
 resources:
-  Lithium:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Lithium
+    raw_resource: true
 
-  Small Battery:
+  - name: Small Battery
     recipes:
     - output: 1
       recipe_type: Backpack Printer
       requirements:
-        Lithium: -1
-    - recipe_type: Raw Resource
+        Lithium: 1
 
-  Medium Battery:
+  - name: Medium Battery
     recipes:
     - output: 1
       recipe_type: Printer
       requirements:
-        Lithium: -2
-    - recipe_type: Raw Resource
+        Lithium: 2
 ```
 For ease of reading we will always have the key order be `output`, `recipe_type`, `requirements`, and then optionally `extra_data` where you can store extra information about the item in an unstructured map
+
+
+```yaml
+# All "Resource" Fields
+
+# String - the display name of the item
+name: Lithium
+
+# Specify the simplename of the resource, this is used for the image
+# path the url encoding. It must be unique between resources
+custom_simplename: lithium1
+
+# Indicates if the resource is a currency or not.
+# currencies will be scaled uniquely from items as 1 currency is usually a lot
+# less impactful than 1 item.
+currency: false
+
+# A note that will be attached to the recipe in a parseable manner. Comments
+# should not be used in the resource list because it cannot always be properly
+# parsed by automated tools.
+note: "I am a note"
+
+# A boolean that indicates if the resource should be considered a raw resource
+# by default. If it is set to false or absent then users can still select it
+# as a raw resource but it will not be set as one by default
+raw_resource: true
+
+# A list of all the recipes for this resource
+recipes: []
+
+# Overlay values for the global stack_multipliers chart. This lets certian
+# resources have different stack sizes when doing the calculations of how many
+# stacks of an item are needed. EG: in minecraft you can normally have 64 of an
+# item, but some items can be stacked to only 16 instead. While others can only
+# be a stack of 1.
+custom_stack_multipliers:
+  Stack: 16
+```
 
 items/[itemname].png
 -----------

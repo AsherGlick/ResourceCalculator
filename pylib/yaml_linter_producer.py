@@ -42,15 +42,16 @@ def resource_list_parser_function(input_files: SingleFile, groups: Dict[str, str
     resource_cache_path = os.path.join("cache", calculator_page, "resources.pickle")
     page_metadata_path = os.path.join("cache", calculator_page, "page_metadata.json")
 
-    errors = []
+    errors: List[TokenError] = []
 
     resource_list: ResourceList
 
     resource_list, parse_errors = load_resource_list(input_file)
     errors += parse_errors
 
-    resources: OrderedDict[str, Resource] = OrderedDict({k: v for k, v in resource_list.resources.items() if not isinstance(v, Heading)})
-    resources = expand_raw_resource(resources)
+    resources: List[Resource] = [resource for resource in resource_list.resources if not isinstance(resource, Heading)]
+    resources, expanding_raw_resource_errors = expand_raw_resource(resources)
+    errors += expanding_raw_resource_errors
     resources = fill_default_requirement_groups(resources, resource_list.requirement_groups)
 
     errors += lint_resources(resources, resource_list.recipe_types, resource_list.stack_sizes)
@@ -95,19 +96,31 @@ def load_resource_list(filepath: str) -> Tuple[ResourceList, List[TokenError]]:
 
 
 ################################################################################
-# expand_raw_resources
+# expand_raw_resource
 #
 # expand_raw_resource allows for the syntactic candy of only defining a a
 # `recipe_type` value for raw resources and not having to define the entire
 # construct because it is a trivial construct.
 ################################################################################
-def expand_raw_resource(resources: OrderedDict[str, Resource]) -> OrderedDict[str, Resource]:
+def expand_raw_resource(resources: List[Resource]) -> Tuple[List[Resource], List[TokenError]]:
+    errors: List[TokenError] = []
     for resource in resources:
-        for i, recipe in enumerate(resources[resource].recipes):
-            if recipe.recipe_type == "Raw Resource" and recipe.output == 0 and len(recipe.requirements) == 0:
-                resources[resource].recipes[i].output = 1
-                resources[resource].recipes[i].requirements = OrderedDict([(resource, 0)])
-    return resources
+        for recipe in resource.recipes:
+            if recipe.recipe_type == "Raw Resource":
+                # TODO: Have a better token associated with this error
+                errors.append(TokenError(resource.name + " should not have a \"Raw Resource\". Instead use the raw_resource boolean on the resource itself", Token()))
+
+        raw_resource_recipe = Recipe()
+        raw_resource_recipe.recipe_type = "Raw Resource"
+        raw_resource_recipe.output = 1
+        raw_resource_recipe.requirements = OrderedDict([(resource.name, 0)])
+
+        if resource.raw_resource:
+            resource.recipes.insert(0, raw_resource_recipe)
+        else:
+            resource.recipes.append(raw_resource_recipe)
+
+    return resources, errors
 
 
 ################################################################################
@@ -119,9 +132,9 @@ def expand_raw_resource(resources: OrderedDict[str, Resource]) -> OrderedDict[st
 # included in this state because there is some simplicity value to being able
 # to include the data structure in the resource_list.yaml file.
 ################################################################################
-def fill_default_requirement_groups(resources: OrderedDict[str, Resource], requirement_groups: OrderedDict[str, List[str]]) -> OrderedDict[str, Resource]:
+def fill_default_requirement_groups(resources: List[Resource], requirement_groups: OrderedDict[str, List[str]]) -> List[Resource]:
     for resource in resources:
-        for i, recipe in enumerate(resources[resource].recipes):
+        for recipe in resource.recipes:
             # Create a copy of the keys so we can iterate over them and mutate them
             requirement_list: List[str] = [requirement for requirement in recipe.requirements]
 
@@ -140,14 +153,14 @@ def fill_default_requirement_groups(resources: OrderedDict[str, Resource], requi
 # Runs all of the linters used for resource objects in the recipe list.
 ################################################################################
 def lint_resources(
-    resources: OrderedDict[str, Resource],
+    resources: List[Resource],
     recipe_types: OrderedDict[str, str],
     stack_sizes: OrderedDict[str, StackSize]
 ) -> List[TokenError]:
     errors: List[TokenError] = []
     for resource in resources:
-        errors += lint_recipes(resource, resources[resource].recipes)
-        errors += lint_custom_stack_multipliers(resource, resources[resource].custom_stack_multipliers, stack_sizes)
+        errors += lint_recipes(resource.name, resource.recipes)
+        errors += lint_custom_stack_multipliers(resource.name, resource.custom_stack_multipliers, stack_sizes)
 
     errors += ensure_valid_requirements(resources)
     errors += ensure_valid_recipe_types(resources, recipe_types)
@@ -176,15 +189,15 @@ def lint_recipes(item_name: str, recipes: List[Recipe]) -> List[TokenError]:
                 raw_resource_count += 1
             else:
                 # TODO: Have a better token associated with this error
-                errors.append(TokenError(item_name + " has an invalid \"Raw Resource\"", Token()))
+                errors.append(TokenError(item_name + " has an invalid \"Raw Resource\". You should use the resource.raw_resource boolean flag instead.", Token()))
 
     # Lint that every resource has a raw resource and only one
     if raw_resource_count == 0:
         # TODO: Have a better token associated with this error
-        errors.append(TokenError(item_name + " must have a \"Raw Resource\" which outputs 1 and has a requirement of 0 of itself", Token()))
+        errors.append(TokenError(item_name + " must have a \"Raw Resource\". Use the resource.raw_resource boolean flag to indicate this.", Token()))
     elif raw_resource_count > 1:
         # TODO: Have a better token associated with this error
-        errors.append(TokenError(item_name + " must have only one \"Raw Resource\"", Token()))
+        errors.append(TokenError(item_name + " must have only one \"Raw Resource\". You should use the resource.raw_resource boolean flag instead.", Token()))
 
     return errors
 
@@ -233,17 +246,18 @@ def lint_custom_stack_multipliers(
 #
 # Make sure each recipe requirement is another existing item in the resource list
 ################################################################################
-def ensure_valid_requirements(resources: OrderedDict[str, Resource]) -> List[TokenError]:
+def ensure_valid_requirements(resources: List[Resource]) -> List[TokenError]:
     errors: List[TokenError] = []
+    all_resource_names: Set[str] = set([x.name for x in resources])
     for resource in resources:
-        for recipe in resources[resource].recipes:
+        for recipe in resource.recipes:
             for requirement in recipe.requirements:
-                if requirement not in resources:
+                if requirement not in all_resource_names:
                     # TODO: Have a better token associated with this error
-                    errors.append(TokenError("ERROR: Invalid requirement for resource:" + resource + ". \"" + requirement + "\" does not exist as a resource", Token()))
-                elif recipe.requirements[requirement] > 0:
+                    errors.append(TokenError("ERROR: Invalid requirement for resource:" + resource.name + ". \"" + requirement + "\" does not exist as a resource", Token()))
+                elif recipe.requirements[requirement] < 0:
                     # TODO: Have a better token associated with this error
-                    errors.append(TokenError("ERROR: Invalid requirement for resource:" + resource + ". \"" + requirement + "\" must be a negative number", Token()))
+                    errors.append(TokenError("ERROR: Invalid requirement for resource:" + resource.name + ". \"" + requirement + "\" must be a positive number", Token()))
     return errors
 
 
@@ -252,12 +266,12 @@ def ensure_valid_requirements(resources: OrderedDict[str, Resource]) -> List[Tok
 #
 # Validates that each defined recipe has a recipe type that exists.
 ################################################################################
-def ensure_valid_recipe_types(resources: OrderedDict[str, Resource], recipe_types: OrderedDict[str, str]) -> List[TokenError]:
+def ensure_valid_recipe_types(resources: List[Resource], recipe_types: OrderedDict[str, str]) -> List[TokenError]:
     used_recipe_types: Set[str] = set()
     errors: List[TokenError] = []
 
     for resource in resources:
-        for recipe in resources[resource].recipes:
+        for recipe in resource.recipes:
             recipe_type: str = recipe.recipe_type
 
             # add this to the list of found recipe types to later check to make sure all the recipe_types in the list are used
@@ -267,7 +281,7 @@ def ensure_valid_recipe_types(resources: OrderedDict[str, Resource], recipe_type
             # check if this recipe exists in the recipe type list
             if recipe_type not in recipe_types and recipe_type != "Raw Resource":
                 # TODO: Have a better token associated with this error
-                errors.append(TokenError(resource + " has an undefined resource_type" + ": \"" + recipe_type + "\"", Token()))
+                errors.append(TokenError(resource.name + " has an undefined recipe_type" + ": \"" + recipe_type + "\"", Token()))
 
     for recipe_type in recipe_types:
         if recipe_type not in used_recipe_types:
@@ -282,15 +296,15 @@ def ensure_valid_recipe_types(resources: OrderedDict[str, Resource], recipe_type
 # Validates that all the simple names are unique, otherwise there will be
 # multiple items that share an image and provide ambiguous lookups.
 ################################################################################
-def ensure_unique_simple_names(resources: OrderedDict[str, Resource]) -> List[TokenError]:
+def ensure_unique_simple_names(resources: List[Resource]) -> List[TokenError]:
     errors: List[TokenError] = []
     simple_names: Dict[str, List[str]] = {}
 
     for resource in resources:
-        simple_name: str = get_simple_name(resource, resources)
+        simple_name: str = get_simple_name(resource)
         if simple_name not in simple_names:
             simple_names[simple_name] = []
-        simple_names[simple_name].append(resource)
+        simple_names[simple_name].append(resource.name)
 
     for simple_name in simple_names:
         if len(simple_names[simple_name]) > 1:
@@ -306,8 +320,8 @@ def ensure_unique_simple_names(resources: OrderedDict[str, Resource]) -> List[To
 # resource, and if it has then returns it. Otherwise it generates the simple
 # name from the resource's actual name.
 ################################################################################
-def get_simple_name(resource: str, resources: OrderedDict[str, Resource]) -> str:
+def get_simple_name(resource: Resource) -> str:
     # TODO: Change this if we end up implementing something like "is_set()" for the YAML conversions
-    if resources[resource].custom_simplename != "":
-        return resources[resource].custom_simplename
-    return re.sub(r'[^a-z0-9]', '', resource.lower())
+    if resource.custom_simplename != "":
+        return resource.custom_simplename
+    return re.sub(r'[^a-z0-9]', '', resource.name.lower())

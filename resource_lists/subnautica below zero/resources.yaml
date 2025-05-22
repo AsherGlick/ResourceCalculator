@@ -32,2529 +32,2200 @@ recipe_types:
 resources:
 
   ##############################################################################
-  _a: {H1: Fabricator} #########################################################
+  - H1: Fabricator #############################################################
   ##############################################################################
 
-  _b: {H2: Basic Materials} ####################################################
+  - H2: Basic Materials ########################################################
 
-  Titanium Ingot:
+  - name: Titanium Ingot
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Titanium: -5
-    - recipe_type: Raw Resource
+        Titanium: 5
 
-  Fiber Mesh:
+  - name: Fiber Mesh
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Creepvine Sample: -2
-    - recipe_type: Raw Resource
+        Creepvine Sample: 2
 
-  Silicone Rubber:
+  - name: Silicone Rubber
     recipes:
     - output: 2
       recipe_type: Fabricator
       requirements:
-        Creepvine Seed Cluster: -1
-    - recipe_type: Raw Resource
+        Creepvine Seed Cluster: 1
 
-  Glass:
+  - name: Glass
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Quartz: -2
-    - recipe_type: Raw Resource
+        Quartz: 2
 
-  Lubricant:
+  - name: Lubricant
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Creepvine Seed Cluster: -1
-    - recipe_type: Raw Resource
+        Creepvine Seed Cluster: 1
 
-  Enameled Glass:
+  - name: Enameled Glass
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Glass: -1
-        Lead: -1
-        Diamond: -1
-    - recipe_type: Raw Resource
+        Glass: 1
+        Lead: 1
+        Diamond: 1
 
-  Plasteel Ingot:
+  - name: Plasteel Ingot
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Titanium Ingot: -1
-        Lithium: -2
-    - recipe_type: Raw Resource
+        Titanium Ingot: 1
+        Lithium: 2
 
-  _c: {H2: Advanced Materials} #################################################
+  - H2: Advanced Materials #####################################################
 
-  Hydrochloric Acid:
+  - name: Hydrochloric Acid
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Young Cotton Anemone: -3
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
+        Young Cotton Anemone: 3
+        Salt Deposit: 1
 
-  Benzene:
+  - name: Benzene
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Flowering Spore: -2
-        Ribbon Plant: -1
-    - recipe_type: Raw Resource
+        Flowering Spore: 2
+        Ribbon Plant: 1
 
-  Synthetic Fibers:
+  - name: Synthetic Fibers
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Ruby: -1
-        Spiral Plant Clipping: -1
-    - recipe_type: Raw Resource
+        Ruby: 1
+        Spiral Plant Clipping: 1
 
-  Aerogel:
+  - name: Aerogel
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Gel Sack: -1
-        Ruby: -1
-    - recipe_type: Raw Resource
+        Gel Sack: 1
+        Ruby: 1
 
-  Polyaniline:
+  - name: Polyaniline
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Gold: -1
-        Hydrochloric Acid: -1
-    - recipe_type: Raw Resource
+        Gold: 1
+        Hydrochloric Acid: 1
 
-  Hydraulic Fluid:
+  - name: Hydraulic Fluid
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Creepvine Seed Cluster: -1
-        Gel Sack: -1
-    - recipe_type: Raw Resource
+        Creepvine Seed Cluster: 1
+        Gel Sack: 1
 
-  _d: {H2: Electronics} ########################################################
+  - H2: Electronics ############################################################
 
-  Copper Wire:
+  - name: Copper Wire
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Copper Ore: -2
-    - recipe_type: Raw Resource
+        Copper Ore: 2
 
-  Battery:
+  - name: Battery
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Ribbon Plant: -2
-        Copper Ore: -1
-    - recipe_type: Raw Resource
+        Ribbon Plant: 2
+        Copper Ore: 1
 
-  Power Cell:
+  - name: Power Cell
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Battery: -2
-        Silicone Rubber: -1
-    - recipe_type: Raw Resource
+        Battery: 2
+        Silicone Rubber: 1
 
-  Ion Battery:
+  - name: Ion Battery
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Ion Cube: -1
-        Gold: -1
-        Silver Ore: -1
-        Lithium: -1
-    - recipe_type: Raw Resource
+        Ion Cube: 1
+        Gold: 1
+        Silver Ore: 1
+        Lithium: 1
 
-  Ion Power Cell:
+  - name: Ion Power Cell
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Ion Battery: -2
-        Silicone Rubber: -1
-        Wiring Kit: -1
-    - recipe_type: Raw Resource
+        Ion Battery: 2
+        Silicone Rubber: 1
+        Wiring Kit: 1
 
-  Computer Chip:
+  - name: Computer Chip
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Table Coral Sample: -2
-        Gold: -1
-        Copper Wire: -1
-    - recipe_type: Raw Resource
+        Table Coral Sample: 2
+        Gold: 1
+        Copper Wire: 1
 
-  Wiring Kit:
+  - name: Wiring Kit
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Silver Ore: -2
-    - recipe_type: Raw Resource
+        Silver Ore: 2
 
-  Advanced Wiring Kit:
+  - name: Advanced Wiring Kit
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Wiring Kit: -1
-        Computer Chip: -1
-    - recipe_type: Raw Resource
+        Wiring Kit: 1
+        Computer Chip: 1
 
-  Reactor Rod:
+  - name: Reactor Rod
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Uraninite Crystal: -2
-        Lead: -1
-        Titanium: -1
-        Glass: -1
-    - recipe_type: Raw Resource
+        Uraninite Crystal: 2
+        Lead: 1
+        Titanium: 1
+        Glass: 1
 
-  Depleted Reactor Rod:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Depleted Reactor Rod
+    raw_resource: true
 
-  Parallel Processing Unit:
+  - name: Parallel Processing Unit
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Gold: -1
-        Silver Ore: -1
-        Table Coral Sample: -1
-    - recipe_type: Raw Resource
+        Gold: 1
+        Silver Ore: 1
+        Table Coral Sample: 1
 
-  Test Override Module:
+  - name: Test Override Module
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Parallel Processing Unit: -1
-        Titanium: -1
-        Lead: -1
-        Copper Wire: -1
-    - recipe_type: Raw Resource
+        Parallel Processing Unit: 1
+        Titanium: 1
+        Lead: 1
+        Copper Wire: 1
 
-  Antidote:
+  - name: Antidote
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Frost Vase Plant: -1
-        Fevered Pepper: -1
-    - recipe_type: Raw Resource
+        Frost Vase Plant: 1
+        Fevered Pepper: 1
 
-  _e: {H2: Water} ##############################################################
+  - H2: Water ##################################################################
 
-  Filtered Water:
+  - name: Filtered Water
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Bladderfish: -1
-    - recipe_type: Raw Resource
+        Bladderfish: 1
 
-  Disinfected Water:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Disinfected Water
+    raw_resource: true
 
-  Large Filtered Water:
+  - name: Large Filtered Water
     recipes:
     - output: 1
       recipe_type: Water Purification Tablet
       requirements:
-        Water Purification Tablet: -1
-        Snowball: -1
-    - recipe_type: Raw Resource
+        Water Purification Tablet: 1
+        Snowball: 1
 
-  Reclaimed Water:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Reclaimed Water
+    raw_resource: true
 
-  Water Purification Tablet:
+  - name: Water Purification Tablet
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Frost Vase Plant: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
+        Frost Vase Plant: 1
+        Salt Deposit: 1
 
-  Thermos:
+  - name: Thermos
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Titanium: -1
-        Glass: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
+        Glass: 1
 
-  _f: {H2: Cooked} #############################################################
+  - H2: Cooked #################################################################
 
-  Cooked Bladderfish:
+  - name: Cooked Bladderfish
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Bladderfish: -1
-    - recipe_type: Raw Resource
+        Bladderfish: 1
 
-  Cooked Boomerang:
+  - name: Cooked Boomerang
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Boomerang: -1
-    - recipe_type: Raw Resource
+        Boomerang: 1
 
-  Cooked Hoopfish:
+  - name: Cooked Hoopfish
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Hoopfish: -1
-    - recipe_type: Raw Resource
+        Hoopfish: 1
 
-  Cooked Spinefish:
+  - name: Cooked Spinefish
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Spinefish: -1
-    - recipe_type: Raw Resource
+        Spinefish: 1
 
-  Cooked Spinner Fish:
+  - name: Cooked Spinner Fish
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Spinner Fish: -1
-    - recipe_type: Raw Resource
+        Spinner Fish: 1
 
-  Cooked Arctic Peeper:
+  - name: Cooked Arctic Peeper
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Arctic Peeper: -1
-    - recipe_type: Raw Resource
+        Arctic Peeper: 1
 
-  Cooked Arrow Ray:
+  - name: Cooked Arrow Ray
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Arrow Ray: -1
-    - recipe_type: Raw Resource
+        Arrow Ray: 1
 
-  Cooked Symbiote:
+  - name: Cooked Symbiote
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Symbiote: -1
-    - recipe_type: Raw Resource
+        Symbiote: 1
 
-  Cooked Noot Fish:
+  - name: Cooked Noot Fish
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Noot Fish: -1
-    - recipe_type: Raw Resource
+        Noot Fish: 1
 
-  Cooked Triops:
+  - name: Cooked Triops
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Triops: -1
-    - recipe_type: Raw Resource
+        Triops: 1
 
-  Cooked Feather Fish:
+  - name: Cooked Feather Fish
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Feather Fish: -1
-    - recipe_type: Raw Resource
+        Feather Fish: 1
 
-  Cooked Red Feather Fish:
+  - name: Cooked Red Feather Fish
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Red Feather Fish: -1
-    - recipe_type: Raw Resource
+        Red Feather Fish: 1
 
-  Cooked Discus Fish:
+  - name: Cooked Discus Fish
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Discus Fish: -1
-    - recipe_type: Raw Resource
+        Discus Fish: 1
 
-  Spicy Fruit Salad:
+  - name: Spicy Fruit Salad
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Preston's Plant Leaf: -1
-        Fevered Pepper: -1
-    - recipe_type: Raw Resource
+        Preston's Plant Leaf: 1
+        Fevered Pepper: 1
 
-  _g: {H2: Cured} ##############################################################
+  - H2: Cured ##################################################################
 
-  Cured Bladderfish:
+  - name: Cured Bladderfish
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Bladderfish: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
+        Bladderfish: 1
+        Salt Deposit: 1
 
-  Cured Boomerang:
+  - name: Cured Boomerang
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Boomerang: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
+        Boomerang: 1
+        Salt Deposit: 1
 
-  Cured Hoopfish:
+  - name: Cured Hoopfish
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Hoopfish: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
+        Hoopfish: 1
+        Salt Deposit: 1
 
-  Cured Spinefish:
+  - name: Cured Spinefish
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Spinefish: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
+        Spinefish: 1
+        Salt Deposit: 1
 
-  Cured Spinner Fish:
+  - name: Cured Spinner Fish
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Spinner Fish: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
+        Spinner Fish: 1
+        Salt Deposit: 1
 
-  Cured Arctic Peeper:
+  - name: Cured Arctic Peeper
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Arctic Peeper: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
+        Arctic Peeper: 1
+        Salt Deposit: 1
 
-  Cured Arrow Ray:
+  - name: Cured Arrow Ray
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Arrow Ray: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
+        Arrow Ray: 1
+        Salt Deposit: 1
 
-  Cured Symbiote:
+  - name: Cured Symbiote
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Symbiote: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
+        Symbiote: 1
+        Salt Deposit: 1
 
-  Cured Noot Fish:
+  - name: Cured Noot Fish
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Noot Fish: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
+        Noot Fish: 1
+        Salt Deposit: 1
 
-  Cured Triops:
+  - name: Cured Triops
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Triops: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
+        Triops: 1
+        Salt Deposit: 1
 
-  Cured Feather Fish:
+  - name: Cured Feather Fish
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Feather Fish: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
+        Feather Fish: 1
+        Salt Deposit: 1
 
-  Cured Red Feather Fish:
+  - name: Cured Red Feather Fish
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Red Feather Fish: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
+        Red Feather Fish: 1
+        Salt Deposit: 1
 
-  Cured Discus Fish:
+  - name: Cured Discus Fish
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Discus Fish: -1
-        Salt Deposit: -1
-    - recipe_type: Raw Resource
+        Discus Fish: 1
+        Salt Deposit: 1
 
-  Nutrient Block:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Nutrient Block
+    raw_resource: true
 
-  Mix Chips:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Mix Chips
+    raw_resource: true
 
-  Potato Mix:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Potato Mix
+    raw_resource: true
 
-  Rice Snack:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Rice Snack
+    raw_resource: true
 
-  _h: {H2: Fish} ###############################################################
+  - H2: Fish ###################################################################
 
-  Bladderfish:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Bladderfish
+    raw_resource: true
 
-  Boomerang:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Boomerang
+    raw_resource: true
 
-  Hoopfish:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Hoopfish
+    raw_resource: true
 
-  Spinefish:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Spinefish
+    raw_resource: true
 
-  Spinner Fish:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Spinner Fish
+    raw_resource: true
 
-  Arctic Peeper:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Arctic Peeper
+    raw_resource: true
 
-  Arrow Ray:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Arrow Ray
+    raw_resource: true
 
-  Symbiote:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Symbiote
+    raw_resource: true
 
-  Noot Fish:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Noot Fish
+    raw_resource: true
 
-  Triops:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Triops
+    raw_resource: true
 
-  Feather Fish:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Feather Fish
+    raw_resource: true
 
-  Red Feather Fish:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Red Feather Fish
+    raw_resource: true
 
-  Discus Fish:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Discus Fish
+    raw_resource: true
 
   ##############################################################################
-  _i: {H1: Equipment} ##########################################################
+  - H1: Equipment ##############################################################
   ##############################################################################
 
-  First Aid Kit:
+  - name: First Aid Kit
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Fiber Mesh: -1
-    - recipe_type: Raw Resource
+        Fiber Mesh: 1
 
-  Standard O₂ Tank:
+  - name: Standard O₂ Tank
     custom_simplename: standardo2tank
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Titanium: -2
-        Fiber Mesh: -1
-    - recipe_type: Raw Resource
+        Titanium: 2
+        Fiber Mesh: 1
 
-  High Capacity O₂ Tank:
+  - name: High Capacity O₂ Tank
     custom_simplename: highcapacityo2tank
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Standard O₂ Tank: -1
-        Glass: -2
-        Titanium: -4
-        Silver Ore: -1
-    - recipe_type: Raw Resource
+        Standard O₂ Tank: 1
+        Glass: 2
+        Titanium: 4
+        Silver Ore: 1
 
-  Booster Tank:
+  - name: Booster Tank
     recipes:
     - output: 1
       recipe_type: Modification Station
       requirements:
-        High Capacity O₂ Tank: -1
-        Wiring Kit: -1
-    - recipe_type: Raw Resource
+        High Capacity O₂ Tank: 1
+        Wiring Kit: 1
 
-  Ultra High Capacity Tank:
+  - name: Ultra High Capacity Tank
     recipes:
     - output: 1
       recipe_type: Modification Station
       requirements:
-        High Capacity O₂ Tank: -1
-        Lithium: -4
-    - recipe_type: Raw Resource
+        High Capacity O₂ Tank: 1
+        Lithium: 4
 
-  Fins:
+  - name: Fins
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Silicone Rubber: -2
-    - recipe_type: Raw Resource
+        Silicone Rubber: 2
 
-  Swim Charge Fins:
+  - name: Swim Charge Fins
     recipes:
     - output: 1
       recipe_type: Modification Station
       requirements:
-        Fins: -1
-        Polyaniline: -1
-        Wiring Kit: -1
-    - recipe_type: Raw Resource
+        Fins: 1
+        Polyaniline: 1
+        Wiring Kit: 1
 
-  Reinforced Dive Suit:
+  - name: Reinforced Dive Suit
     note: Also gives gloves
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Synthetic Fibers: -1
-        Diamond: -2
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Synthetic Fibers: 1
+        Diamond: 2
+        Titanium: 2
 
-  Water Filtration Suit:
+  - name: Water Filtration Suit
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Synthetic Fibers: -1
-        Aerogel: -1
-        Copper Wire: -1
-    - recipe_type: Raw Resource
+        Synthetic Fibers: 1
+        Aerogel: 1
+        Copper Wire: 1
 
-  Cold Suit:
+  - name: Cold Suit
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Fiber Mesh: -2
-        Snow Stalker Fur: -2
-    - recipe_type: Raw Resource
+        Fiber Mesh: 2
+        Snow Stalker Fur: 2
 
-  Cold Suit Gloves:
+  - name: Cold Suit Gloves
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Fiber Mesh: -1
-        Snow Stalker Fur: -1
-    - recipe_type: Raw Resource
+        Fiber Mesh: 1
+        Snow Stalker Fur: 1
 
-  Cold Suit Helmet:
+  - name: Cold Suit Helmet
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Fiber Mesh: -1
-        Snow Stalker Fur: -1
-    - recipe_type: Raw Resource
+        Fiber Mesh: 1
+        Snow Stalker Fur: 1
 
-  Rebreather:
+  - name: Rebreather
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Wiring Kit: -1
-        Silicone Rubber: -1
-        Fiber Mesh: -1
-    - recipe_type: Raw Resource
+        Wiring Kit: 1
+        Silicone Rubber: 1
+        Fiber Mesh: 1
 
-  Headlamp:
+  - name: Headlamp
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Ion Battery: -1
-        Glass: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Ion Battery: 1
+        Glass: 1
+        Titanium: 1
 
-  Compass:
+  - name: Compass
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Copper Wire: -1
-        Wiring Kit: -1
-    - recipe_type: Raw Resource
+        Copper Wire: 1
+        Wiring Kit: 1
 
-  Pipe:
+  - name: Pipe
     recipes:
     - output: 5
       recipe_type: Fabricator
       requirements:
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Titanium: 2
 
-  Floating Air Pump:
+  - name: Floating Air Pump
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Titanium: 2
 
   ##############################################################################
-  _j: {H1: Tools} ##############################################################
+  - H1: Tools ##################################################################
   ##############################################################################
 
-  Scanner:
+  - name: Scanner
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Battery: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Battery: 1
+        Titanium: 1
 
-  Repair Tool:
+  - name: Repair Tool
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Silicone Rubber: -1
-        Crystalline Sulfur: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Silicone Rubber: 1
+        Crystalline Sulfur: 1
+        Titanium: 1
 
-  Flashlight:
+  - name: Flashlight
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Battery: -1
-        Glass: -1
-    - recipe_type: Raw Resource
+        Battery: 1
+        Glass: 1
 
-  Survival Knife:
+  - name: Survival Knife
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Silicone Rubber: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Silicone Rubber: 1
+        Titanium: 1
 
-  Thermoblade:
+  - name: Thermoblade
     recipes:
     - output: 1
       recipe_type: Modification Station
       requirements:
-        Survival Knife: -1
-        Battery: -1
-    - recipe_type: Raw Resource
+        Survival Knife: 1
+        Battery: 1
 
-  Pathfinder Tool:
+  - name: Pathfinder Tool
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Creepvine Seed Cluster: -2
-        Titanium: -1
-        Battery: -1
-    - recipe_type: Raw Resource
+        Creepvine Seed Cluster: 2
+        Titanium: 1
+        Battery: 1
 
-  Air Bladder:
+  - name: Air Bladder
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Silicone Rubber: -1
-        Bladderfish: -1
-    - recipe_type: Raw Resource
+        Silicone Rubber: 1
+        Bladderfish: 1
 
-  Flare:
+  - name: Flare
     recipes:
     - output: 5
       recipe_type: Fabricator
       requirements:
-        Crystalline Sulfur: -1
-    - recipe_type: Raw Resource
+        Crystalline Sulfur: 1
 
-  Habitat Builder:
+  - name: Habitat Builder
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Wiring Kit: -1
-        Computer Chip: -1
-        Battery: -1
-    - recipe_type: Raw Resource
+        Wiring Kit: 1
+        Computer Chip: 1
+        Battery: 1
 
-  Laser Cutter:
+  - name: Laser Cutter
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Diamond: -2
-        Battery: -1
-        Titanium: -1
-        Crystalline Sulfur: -1
-    - recipe_type: Raw Resource
+        Diamond: 2
+        Battery: 1
+        Titanium: 1
+        Crystalline Sulfur: 1
 
-  Propulsion Cannon:
+  - name: Propulsion Cannon
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Wiring Kit: -1
-        Battery: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Wiring Kit: 1
+        Battery: 1
+        Titanium: 1
 
-  Light Stick:
+  - name: Light Stick
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Battery: -1
-        Titanium: -1
-        Glass: -1
-    - recipe_type: Raw Resource
+        Battery: 1
+        Titanium: 1
+        Glass: 1
 
-  Thumper:
+  - name: Thumper
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Battery: -1
-        Magnetite: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Battery: 1
+        Magnetite: 1
+        Titanium: 1
 
-  Mineral Detector:
+  - name: Mineral Detector
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Battery: -1
-        Titanium: -1
-        Copper Wire: -1
-        Silicone Rubber: -1
-    - recipe_type: Raw Resource
+        Battery: 1
+        Titanium: 1
+        Copper Wire: 1
+        Silicone Rubber: 1
 
-  Tether Tool:
+  - name: Tether Tool
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Titanium: -2
-        Silicone Rubber: -1
-        Ion Cube: -1
-    - recipe_type: Raw Resource
+        Titanium: 2
+        Silicone Rubber: 1
+        Ion Cube: 1
 
   ##############################################################################
-  _k: {H1: Deployables} ########################################################
+  - H1: Deployables ############################################################
   ##############################################################################
 
-  Seaglide:
+  - name: Seaglide
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Battery: -1
-        Lubricant: -1
-        Copper Wire: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Battery: 1
+        Lubricant: 1
+        Copper Wire: 1
+        Titanium: 1
 
-  Beacon:
+  - name: Beacon
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Copper Ore: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Copper Ore: 1
+        Titanium: 1
 
-  Waterproof Locker:
+  - name: Waterproof Locker
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Titanium: -4
-    - recipe_type: Raw Resource
+        Titanium: 4
 
-  Quantum Locker:
+  - name: Quantum Locker
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Titanium: -2
-        Advanced Wiring Kit: -1
-        Ion Cube: -1
-    - recipe_type: Raw Resource
+        Titanium: 2
+        Advanced Wiring Kit: 1
+        Ion Cube: 1
 
-  Grav Trap:
+  - name: Grav Trap
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Battery: -1
-        Copper Ore: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Battery: 1
+        Copper Ore: 1
+        Titanium: 1
 
-  Spy Pengling:
+  - name: Spy Pengling
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Titanium: -2
-        Wiring Kit: -1
-        Silicone Rubber: -1
-        Battery: -1
-    - recipe_type: Raw Resource
+        Titanium: 2
+        Wiring Kit: 1
+        Silicone Rubber: 1
+        Battery: 1
 
-  Spy Pengling Remote:
+  - name: Spy Pengling Remote
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Titanium: -1
-        Copper Wire: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
+        Copper Wire: 1
 
-  Mobile Vehicle Bay:
+  - name: Mobile Vehicle Bay
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Titanium Ingot: -1
-        Lubricant: -1
-        Computer Chip: -1
-    - recipe_type: Raw Resource
+        Titanium Ingot: 1
+        Lubricant: 1
+        Computer Chip: 1
 
   ##############################################################################
-  _k2: {H1: Snowfox} ###########################################################
+  - H1: Snowfox ################################################################
   ##############################################################################
 
-  Snowfox:
+  - name: Snowfox
     recipes:
     - output: 1
       recipe_type: Snowfox Hoverpad
       requirements:
-        Magnetite: -1
-        Battery: -1
-        Lubricant: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Magnetite: 1
+        Battery: 1
+        Lubricant: 1
+        Titanium: 1
 
-  Snowfox Hop Module:
+  - name: Snowfox Hop Module
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Titanium: -2
-        Wiring Kit: -1
-    - recipe_type: Raw Resource
+        Titanium: 2
+        Wiring Kit: 1
 
-  Snowfox Ice Worm Attack Reduction Module:
+  - name: Snowfox Ice Worm Attack Reduction Module
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Titanium: -2
-        Wiring Kit: -1
-    - recipe_type: Raw Resource
+        Titanium: 2
+        Wiring Kit: 1
 
   ##############################################################################
-  _l: {H1: Seatruck} ###########################################################
+  - H1: Seatruck ###############################################################
   ##############################################################################
 
-  Seatruck:
+  - name: Seatruck
     recipes:
     - output: 1
       recipe_type: Mobile Vehicle Bay
       requirements:
-        Titanium Ingot: -1
-        Advanced Wiring Kit: -1
-        Glass: -2
-        Lead: -3
-        Power Cell: -1
-    - recipe_type: Raw Resource
+        Titanium Ingot: 1
+        Advanced Wiring Kit: 1
+        Glass: 2
+        Lead: 3
+        Power Cell: 1
 
-  Seatruck Aquarium Module:
+  - name: Seatruck Aquarium Module
     recipes:
     - output: 1
       recipe_type: Mobile Vehicle Bay
       requirements:
-        Plasteel Ingot: -1
-        Wiring Kit: -2
-        Enameled Glass: -2
-    - recipe_type: Raw Resource
+        Plasteel Ingot: 1
+        Wiring Kit: 2
+        Enameled Glass: 2
 
-  Seatruck Docking Module:
+  - name: Seatruck Docking Module
     recipes:
     - output: 1
       recipe_type: Mobile Vehicle Bay
       requirements:
-        Plasteel Ingot: -1
-        Advanced Wiring Kit: -1
-        Lead: -3
-    - recipe_type: Raw Resource
+        Plasteel Ingot: 1
+        Advanced Wiring Kit: 1
+        Lead: 3
 
-  Seatruck Fabricator Module:
+  - name: Seatruck Fabricator Module
     recipes:
     - output: 1
       recipe_type: Mobile Vehicle Bay
       requirements:
-        Plasteel Ingot: -1
-        Computer Chip: -1
-        Lead: -3
-    - recipe_type: Raw Resource
+        Plasteel Ingot: 1
+        Computer Chip: 1
+        Lead: 3
 
-  Seatruck Sleeper Module:
+  - name: Seatruck Sleeper Module
     recipes:
     - output: 1
       recipe_type: Mobile Vehicle Bay
       requirements:
-        Plasteel Ingot: -1
-        Fiber Mesh: -2
-        Lead: -3
-    - recipe_type: Raw Resource
+        Plasteel Ingot: 1
+        Fiber Mesh: 2
+        Lead: 3
 
-  Seatruck Storage Module:
+  - name: Seatruck Storage Module
     recipes:
     - output: 1
       recipe_type: Mobile Vehicle Bay
       requirements:
-        Plasteel Ingot: -1
-        Wiring Kit: -1
-        Lead: -3
-    - recipe_type: Raw Resource
+        Plasteel Ingot: 1
+        Wiring Kit: 1
+        Lead: 3
 
-  Seatruck Teleportation Module:
+  - name: Seatruck Teleportation Module
     recipes:
     - output: 1
       recipe_type: Mobile Vehicle Bay
       requirements:
-        Plasteel Ingot: -1
-        Advanced Wiring Kit: -1
-        Aerogel: -2
-    - recipe_type: Raw Resource
+        Plasteel Ingot: 1
+        Advanced Wiring Kit: 1
+        Aerogel: 2
 
-  Seatruck Afterburner Upgrade:
+  - name: Seatruck Afterburner Upgrade
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Wiring Kit: -1
-        Power Cell: -1
-        Lithium: -2
-        Crystalline Sulfur: -2
-    - recipe_type: Raw Resource
+        Wiring Kit: 1
+        Power Cell: 1
+        Lithium: 2
+        Crystalline Sulfur: 2
 
-  Seatruck Horsepower Upgrade:
+  - name: Seatruck Horsepower Upgrade
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Advanced Wiring Kit: -1
-        Lubricant: -1
-        Lithium: -1
-    - recipe_type: Raw Resource
+        Advanced Wiring Kit: 1
+        Lubricant: 1
+        Lithium: 1
 
-  Seatruck Perimeter Defense Upgrade:
+  - name: Seatruck Perimeter Defense Upgrade
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Computer Chip: -1
-        Ruby: -2
-        Power Cell: -1
-        Polyaniline: -1
-    - recipe_type: Raw Resource
+        Computer Chip: 1
+        Ruby: 2
+        Power Cell: 1
+        Polyaniline: 1
 
-  Seatruck Depth Upgrade MK1:
+  - name: Seatruck Depth Upgrade MK1
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Plasteel Ingot: -1
-        Enameled Glass: -2
-    - recipe_type: Raw Resource
+        Plasteel Ingot: 1
+        Enameled Glass: 2
 
-  Seatruck Depth Upgrade MK2:
+  - name: Seatruck Depth Upgrade MK2
     recipes:
     - output: 1
       recipe_type: Modification Station
       requirements:
-        Seatruck Depth Upgrade MK1: -1
-        Synthetic Fibers: -1
-        Enameled Glass: -1
-        Ruby: -2
-    - recipe_type: Raw Resource
+        Seatruck Depth Upgrade MK1: 1
+        Synthetic Fibers: 1
+        Enameled Glass: 1
+        Ruby: 2
 
-  Seatruck Depth Upgrade MK3:
+  - name: Seatruck Depth Upgrade MK3
     recipes:
     - output: 1
       recipe_type: Modification Station
       requirements:
-        Seatruck Depth Upgrade MK2: -1
-        Nickel Ore: -3
-        Kyanite: -2
-        Plasteel Ingot: -1
-    - recipe_type: Raw Resource
+        Seatruck Depth Upgrade MK2: 1
+        Nickel Ore: 3
+        Kyanite: 2
+        Plasteel Ingot: 1
 
   ##############################################################################
-  _m: {H1: Prawn Suit} #########################################################
+  - H1: Prawn Suit #############################################################
   ##############################################################################
 
-  Prawn Suit:
+  - name: Prawn Suit
     recipes:
     - output: 1
       recipe_type: Mobile Vehicle Bay
       requirements:
-        Computer Chip: -1
-        Plasteel Ingot: -1
-        Power Cell: -1
-        Enameled Glass: -1
-    - recipe_type: Raw Resource
+        Computer Chip: 1
+        Plasteel Ingot: 1
+        Power Cell: 1
+        Enameled Glass: 1
 
-  Prawn Suit Storage Module:
+  - name: Prawn Suit Storage Module
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Titanium: -3
-        Lithium: -1
-    - recipe_type: Raw Resource
+        Titanium: 3
+        Lithium: 1
 
-  Prawn Suit Depth Module MK1:
+  - name: Prawn Suit Depth Module MK1
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Synthetic Fibers: -1
-        Enameled Glass: -1
-        Ruby: -3
-    - recipe_type: Raw Resource
+        Synthetic Fibers: 1
+        Enameled Glass: 1
+        Ruby: 3
 
-  Prawn Suit Depth Module MK2:
+  - name: Prawn Suit Depth Module MK2
     recipes:
     - output: 1
       recipe_type: Modification Station
       requirements:
-        Prawn Suit Depth Module MK1: -1
-        Kyanite: -1
-        Nickel Ore: -2
-    - recipe_type: Raw Resource
+        Prawn Suit Depth Module MK1: 1
+        Kyanite: 1
+        Nickel Ore: 2
 
-  Prawn Suit Thermal Reactor:
+  - name: Prawn Suit Thermal Reactor
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Kyanite: -2
-        Polyaniline: -2
-        Wiring Kit: -1
-    - recipe_type: Raw Resource
+        Kyanite: 2
+        Polyaniline: 2
+        Wiring Kit: 1
 
-  Prawn Suit Jump Jet Upgrade:
+  - name: Prawn Suit Jump Jet Upgrade
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Nickel Ore: -2
-        Crystalline Sulfur: -3
-        Titanium: -5
-        Lithium: -1
-    - recipe_type: Raw Resource
+        Nickel Ore: 2
+        Crystalline Sulfur: 3
+        Titanium: 5
+        Lithium: 1
 
-  Prawn Suit Propulsion Cannon:
+  - name: Prawn Suit Propulsion Cannon
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Computer Chip: -1
-        Titanium: -5
-        Lithium: -1
-        Magnetite: -2
-    - recipe_type: Raw Resource
+        Computer Chip: 1
+        Titanium: 5
+        Lithium: 1
+        Magnetite: 2
 
-  Prawn Suit Grappling Arm:
+  - name: Prawn Suit Grappling Arm
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Benzene: -1
-        Advanced Wiring Kit: -1
-        Titanium: -2
-        Lithium: -1
-    - recipe_type: Raw Resource
+        Benzene: 1
+        Advanced Wiring Kit: 1
+        Titanium: 2
+        Lithium: 1
 
-  Prawn Suit Drill Arm:
+  - name: Prawn Suit Drill Arm
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Titanium: -5
-        Lithium: -1
-        Diamond: -4
-    - recipe_type: Raw Resource
+        Titanium: 5
+        Lithium: 1
+        Diamond: 4
 
-  Prawn Suit Torpedo Arm:
+  - name: Prawn Suit Torpedo Arm
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Titanium: -5
-        Lithium: -1
-        Aerogel: -1
-    - recipe_type: Raw Resource
+        Titanium: 5
+        Lithium: 1
+        Aerogel: 1
 
   ##############################################################################
-  _n: {H1: Torpedoes} ##########################################################
+  - H1: Torpedoes ##############################################################
   ##############################################################################
 
-  Vortex Torpedo:
+  - name: Vortex Torpedo
     recipes:
     - output: 2
       recipe_type: Fabricator
       requirements:
-        Titanium: -1
-        Magnetite: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
+        Magnetite: 1
 
-  Gas Torpedo:
+  - name: Gas Torpedo
     recipes:
     - output: 2
       recipe_type: Fabricator
       requirements:
-        Titanium: -1
-        Crystalline Sulfur: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
+        Crystalline Sulfur: 1
 
   ##############################################################################
-  _o: {H1: Scanner Room} #######################################################
+  - H1: Scanner Room ###########################################################
   ##############################################################################
 
-  Scanner Room HUD Chip:
+  - name: Scanner Room HUD Chip
     recipes:
     - output: 1
       recipe_type: Scanner Room
       requirements:
-        Computer Chip: -1
-        Magnetite: -1
-    - recipe_type: Raw Resource
+        Computer Chip: 1
+        Magnetite: 1
 
-  Camera Drone:
+  - name: Camera Drone
     recipes:
     - output: 1
       recipe_type: Scanner Room
       requirements:
-        Computer Chip: -1
-        Battery: -1
-        Glass: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Computer Chip: 1
+        Battery: 1
+        Glass: 1
+        Titanium: 1
 
-  Scanner Room Range Upgrade:
+  - name: Scanner Room Range Upgrade
     recipes:
     - output: 1
       recipe_type: Scanner Room
       requirements:
-        Copper Ore: -1
-        Magnetite: -1
-    - recipe_type: Raw Resource
+        Copper Ore: 1
+        Magnetite: 1
 
-  Scanner Room Speed Upgrade:
+  - name: Scanner Room Speed Upgrade
     recipes:
     - output: 1
       recipe_type: Scanner Room
       requirements:
-        Silver Ore: -1
-        Gold: -1
-    - recipe_type: Raw Resource
+        Silver Ore: 1
+        Gold: 1
 
   ##############################################################################
-  _p: {H1: Habitat Builder} ####################################################
+  - H1: Habitat Builder ########################################################
   ##############################################################################
 
-  _q: {H2: Base Pieces} ########################################################
+  - H2: Base Pieces ############################################################
 
-  Foundation:
+  - name: Foundation
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-        Lead: -2
-    - recipe_type: Raw Resource
+        Titanium: 2
+        Lead: 2
 
-  I Compartment:
+  - name: I Compartment
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Titanium: 2
 
-  L Compartment:
+  - name: L Compartment
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Titanium: 2
 
-  T Compartment:
+  - name: T Compartment
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -3
-    - recipe_type: Raw Resource
+        Titanium: 3
 
-  X Compartment:
+  - name: X Compartment
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -3
-    - recipe_type: Raw Resource
+        Titanium: 3
 
-  I Glass Compartment:
+  - name: I Glass Compartment
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Glass: -2
-    - recipe_type: Raw Resource
+        Glass: 2
 
-  L Glass Compartment:
+  - name: L Glass Compartment
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Glass: -2
-    - recipe_type: Raw Resource
+        Glass: 2
 
-  Vertical Connector:
+  - name: Vertical Connector
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Titanium: 2
 
-  Multipurpose Room:
+  - name: Multipurpose Room
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -6
-    - recipe_type: Raw Resource
+        Titanium: 6
 
-  Scanner Room:
+  - name: Scanner Room
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -5
-        Copper Ore: -2
-        Gold: -1
-        Table Coral Sample: -1
-    - recipe_type: Raw Resource
+        Titanium: 5
+        Copper Ore: 2
+        Gold: 1
+        Table Coral Sample: 1
 
-  Moon Pool:
+  - name: Moon Pool
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium Ingot: -2
-        Lubricant: -1
-        Lead: -2
-    - recipe_type: Raw Resource
+        Titanium Ingot: 2
+        Lubricant: 1
+        Lead: 2
 
-  Observatory:
+  - name: Observatory
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Enameled Glass: -2
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Enameled Glass: 2
+        Titanium: 1
 
-  Control Room:
+  - name: Control Room
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -4
-        Advanced Wiring Kit: -1
-        Glass: -1
-    - recipe_type: Raw Resource
+        Titanium: 4
+        Advanced Wiring Kit: 1
+        Glass: 1
 
-  Large Room:
+  - name: Large Room
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Plasteel Ingot: -2
-    - recipe_type: Raw Resource
+        Plasteel Ingot: 2
 
-  Multipurpose Room Glass Dome:
+  - name: Multipurpose Room Glass Dome
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Enameled Glass: -2
-        Titanium: -2
-        Lithium: -1
-    - recipe_type: Raw Resource
+        Enameled Glass: 2
+        Titanium: 2
+        Lithium: 1
 
-  Large Room Glass Dome:
+  - name: Large Room Glass Dome
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Enameled Glass: -4
-        Titanium: -4
-        Copper Ore: -2
-        Lithium: -2
-    - recipe_type: Raw Resource
+        Enameled Glass: 4
+        Titanium: 4
+        Copper Ore: 2
+        Lithium: 2
 
-  Hatch:
+  - name: Hatch
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Quartz: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Quartz: 1
+        Titanium: 1
 
-  Window:
+  - name: Window
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Glass: -1
-    - recipe_type: Raw Resource
+        Glass: 1
 
-  Reinforcement:
+  - name: Reinforcement
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Lithium: -1
-        Titanium: -3
-    - recipe_type: Raw Resource
+        Lithium: 1
+        Titanium: 3
 
-  Seatruck Dock:
+  - name: Seatruck Dock
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium Ingot: -1
-        Advanced Wiring Kit: -1
-        Glass: -4
-    - recipe_type: Raw Resource
+        Titanium Ingot: 1
+        Advanced Wiring Kit: 1
+        Glass: 4
 
-  _r: {H2: Exterior Modules} ###################################################
+  - H2: Exterior Modules #######################################################
 
-  Solar Panel:
+  - name: Solar Panel
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Quartz: -2
-        Titanium: -2
-        Copper Ore: -1
-    - recipe_type: Raw Resource
+        Quartz: 2
+        Titanium: 2
+        Copper Ore: 1
 
-  Thermal Plant:
+  - name: Thermal Plant
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -5
-        Magnetite: -2
-        Aerogel: -1
-    - recipe_type: Raw Resource
+        Titanium: 5
+        Magnetite: 2
+        Aerogel: 1
 
-  Power Transmitter:
+  - name: Power Transmitter
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Gold: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Gold: 1
+        Titanium: 1
 
-  Snowfox Hoverpad:
+  - name: Snowfox Hoverpad
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-        Wiring Kit: -1
-    - recipe_type: Raw Resource
+        Titanium: 2
+        Wiring Kit: 1
 
-  Floodlight:
+  - name: Floodlight
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Glass: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Glass: 1
+        Titanium: 1
 
-  Exterior Growbed:
+  - name: Exterior Growbed
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Titanium: 2
 
-  Base-attached Air Pump:
+  - name: Base-attached Air Pump
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Titanium: 2
 
-  Snowman:
+  - name: Snowman
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Snowball: -3
-        High Capacity O₂ Tank: -1
-        Rebreather: -1
-    - recipe_type: Raw Resource
+        Snowball: 3
+        High Capacity O₂ Tank: 1
+        Rebreather: 1
 
-  _s: {H2: Interior Pieces} ####################################################
+  - H2: Interior Pieces ########################################################
 
-  Ladder:
+  - name: Ladder
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Titanium: 2
 
-  Water Filtration Machine:
+  - name: Water Filtration Machine
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -3
-        Copper Wire: -1
-        Aerogel: -1
-    - recipe_type: Raw Resource
+        Titanium: 3
+        Copper Wire: 1
+        Aerogel: 1
 
-  Bulkhead:
+  - name: Bulkhead
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -3
-        Silicone Rubber: -1
-    - recipe_type: Raw Resource
+        Titanium: 3
+        Silicone Rubber: 1
 
-  Vehicle Upgrade Console:
+  - name: Vehicle Upgrade Console
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -3
-        Computer Chip: -1
-        Copper Wire: -1
-    - recipe_type: Raw Resource
+        Titanium: 3
+        Computer Chip: 1
+        Copper Wire: 1
 
-  Bioreactor:
+  - name: Bioreactor
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -3
-        Wiring Kit: -1
-        Lubricant: -1
-    - recipe_type: Raw Resource
+        Titanium: 3
+        Wiring Kit: 1
+        Lubricant: 1
 
-  Nuclear Reactor:
+  - name: Nuclear Reactor
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Plasteel Ingot: -1
-        Advanced Wiring Kit: -1
-        Lead: -3
-    - recipe_type: Raw Resource
+        Plasteel Ingot: 1
+        Advanced Wiring Kit: 1
+        Lead: 3
 
-  Alien Containment:
+  - name: Alien Containment
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Glass: -5
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Glass: 5
+        Titanium: 2
 
-  Large Room Partition:
+  - name: Large Room Partition
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
 
-  Large Room Partition Door:
+  - name: Large Room Partition Door
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -1
-        Quartz: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
+        Quartz: 1
 
-  _t: {H2: Interior Modules} ###################################################
+  - H2: Interior Modules #######################################################
 
-  Fabricator:
+  - name: Fabricator
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-        Copper Ore: -2
-        Quartz: -3
-    - recipe_type: Raw Resource
+        Titanium: 2
+        Copper Ore: 2
+        Quartz: 3
 
-  Wall Locker:
+  - name: Wall Locker
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Titanium: 2
 
-  Locker:
+  - name: Locker
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Quartz: -1
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Quartz: 1
+        Titanium: 2
 
-  Battery Charger:
+  - name: Battery Charger
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Wiring Kit: -1
-        Copper Wire: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Wiring Kit: 1
+        Copper Wire: 1
+        Titanium: 1
 
-  Power Cell Charger:
+  - name: Power Cell Charger
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Advanced Wiring Kit: -1
-        Lithium: -2
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Advanced Wiring Kit: 1
+        Lithium: 2
+        Titanium: 2
 
-  Aquarium:
+  - name: Aquarium
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Glass: -2
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Glass: 2
+        Titanium: 1
 
-  Modification Station:
+  - name: Modification Station
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Computer Chip: -1
-        Titanium: -1
-        Diamond: -1
-        Lead: -1
-    - recipe_type: Raw Resource
+        Computer Chip: 1
+        Titanium: 1
+        Diamond: 1
+        Lead: 1
 
-  Jukebox:
+  - name: Jukebox
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Quartz: -1
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Quartz: 1
+        Titanium: 2
 
-  Jukebox Speaker:
+  - name: Jukebox Speaker
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -1
-        Copper Ore: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
+        Copper Ore: 1
 
-  Basic Plant Pot:
+  - name: Basic Plant Pot
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Titanium: 2
 
-  Composite Plant Pot:
+  - name: Composite Plant Pot
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Titanium: 2
 
-  Chic Plant Pot:
+  - name: Chic Plant Pot
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Titanium: 2
 
-  Indoor Growbed:
+  - name: Indoor Growbed
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -4
-    - recipe_type: Raw Resource
+        Titanium: 4
 
-  Plant Shelf:
+  - name: Plant Shelf
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
 
-  Recyclotron:
+  - name: Recyclotron
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Ion Cube: -1
-        Titanium Ingot: -1
-    - recipe_type: Raw Resource
+        Ion Cube: 1
+        Titanium Ingot: 1
 
-  Coffee Vending Machine:
+  - name: Coffee Vending Machine
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Titanium: 2
 
-  _u: {H2: Misc} ###############################################################
+  - H2: Misc ###################################################################
 
-  Bench:
+  - name: Bench
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Titanium: 2
 
-  Basic Double Bed:
+  - name: Basic Double Bed
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-        Fiber Mesh: -1
-    - recipe_type: Raw Resource
+        Titanium: 2
+        Fiber Mesh: 1
 
-  Quilted Double Bed:
+  - name: Quilted Double Bed
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-        Fiber Mesh: -1
-    - recipe_type: Raw Resource
+        Titanium: 2
+        Fiber Mesh: 1
 
-  Single Bed:
+  - name: Single Bed
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -1
-        Fiber Mesh: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
+        Fiber Mesh: 1
 
-  Fred's Bed:
+  - name: Fred's Bed
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -1
-        Fiber Mesh: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
+        Fiber Mesh: 1
 
-  Jeremiah's Bed:
+  - name: Jeremiah's Bed
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -1
-        Fiber Mesh: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
+        Fiber Mesh: 1
 
-  Sam's Bed:
+  - name: Sam's Bed
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -1
-        Fiber Mesh: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
+        Fiber Mesh: 1
 
-  Zeta's Bed:
+  - name: Zeta's Bed
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -1
-        Fiber Mesh: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
+        Fiber Mesh: 1
 
-  Danielle's Bed:
+  - name: Danielle's Bed
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -1
-        Fiber Mesh: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
+        Fiber Mesh: 1
 
-  Parvan's Bed:
+  - name: Parvan's Bed
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -1
-        Fiber Mesh: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
+        Fiber Mesh: 1
 
-  Emmanuel's Bed:
+  - name: Emmanuel's Bed
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-        Fiber Mesh: -1
-    - recipe_type: Raw Resource
+        Titanium: 2
+        Fiber Mesh: 1
 
-  Desk:
+  - name: Desk
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
 
-  Executive Desk:
+  - name: Executive Desk
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
 
-  Swivel Chair:
+  - name: Swivel Chair
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
 
-  Office Chair:
+  - name: Office Chair
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
 
-  Command Chair:
+  - name: Command Chair
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
 
-  Sign:
+  - name: Sign
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Copper Wire: -1
-    - recipe_type: Raw Resource
+        Copper Wire: 1
 
-  Picture Frame:
+  - name: Picture Frame
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Copper Wire: -1
-    - recipe_type: Raw Resource
+        Copper Wire: 1
 
-  Bar Table:
+  - name: Bar Table
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Glass: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Glass: 1
+        Titanium: 1
 
-  Trash Can:
+  - name: Trash Can
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Titanium: 2
 
-  Nuclear Waste Disposal:
+  - name: Nuclear Waste Disposal
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Lead: -2
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Lead: 2
+        Titanium: 1
 
-  Vending Machine:
+  - name: Vending Machine
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Glass: -1
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Glass: 1
+        Titanium: 2
 
-  Counter:
+  - name: Counter
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Titanium: 2
 
-  Fridge:
+  - name: Fridge
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Glass: -1
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Glass: 1
+        Titanium: 2
 
-  Shower:
+  - name: Shower
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Pipe: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Pipe: 1
+        Titanium: 1
 
-  Sink:
+  - name: Sink
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Pipe: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Pipe: 1
+        Titanium: 1
 
-  Toilet:
+  - name: Toilet
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Pipe: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Pipe: 1
+        Titanium: 1
 
-  Small Stove:
+  - name: Small Stove
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Copper Wire: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Copper Wire: 1
+        Titanium: 1
 
-  Wall Planter:
+  - name: Wall Planter
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
 
-  Single Wall Shelf:
+  - name: Single Wall Shelf
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Titanium: 1
 
-  Wall Shelves:
+  - name: Wall Shelves
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Titanium: -2
-    - recipe_type: Raw Resource
+        Titanium: 2
 
-  Aromatherapy Lamp:
+  - name: Aromatherapy Lamp
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Battery: -1
-        Young Cotton Anemone: -1
-    - recipe_type: Raw Resource
+        Battery: 1
+        Young Cotton Anemone: 1
 
-  Executive Toy:
+  - name: Executive Toy
     recipes:
     - output: 1
       recipe_type: Build
       requirements:
-        Magnetite: -1
-        Titanium: -1
-    - recipe_type: Raw Resource
+        Magnetite: 1
+        Titanium: 1
 
   ##############################################################################
-  _v: {H1: Architect Parts} ####################################################
+  - H1: Architect Parts ########################################################
   ##############################################################################
 
-  Architect Organs:
+  - name: Architect Organs
     recipes:
     - output: 1
       recipe_type: Architect Component Fabricator
       requirements:
-        Ion Cube: -1
-        Ribbon Plant: -2
-        Kyanite: -3
-    - recipe_type: Raw Resource
+        Ion Cube: 1
+        Ribbon Plant: 2
+        Kyanite: 3
 
-  Architect Skeleton:
+  - name: Architect Skeleton
     recipes:
     - output: 1
       recipe_type: Architect Component Fabricator
       requirements:
-        Diamond: -3
-        Plasteel Ingot: -1
-        Polyaniline: -1
-    - recipe_type: Raw Resource
+        Diamond: 3
+        Plasteel Ingot: 1
+        Polyaniline: 1
 
-  Architect Tissues:
+  - name: Architect Tissues
     recipes:
     - output: 1
       recipe_type: Architect Component Fabricator
       requirements:
-        Root Globule: -2
-        Synthetic Fibers: -1
-        Gel Sack: -2
-    - recipe_type: Raw Resource
+        Root Globule: 2
+        Synthetic Fibers: 1
+        Gel Sack: 2
 
   ##############################################################################
-  _w: {H1: Raw Materials} ######################################################
+  - H1: Raw Materials ##########################################################
   ##############################################################################
 
-  Copper Ore:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Copper Ore
+    raw_resource: true
 
-  Crystalline Sulfur:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Crystalline Sulfur
+    raw_resource: true
 
-  Diamond:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Diamond
+    raw_resource: true
 
-  Gold:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Gold
+    raw_resource: true
 
-  Kyanite:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Kyanite
+    raw_resource: true
 
-  Lead:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Lead
+    raw_resource: true
 
-  Lithium:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Lithium
+    raw_resource: true
 
-  Magnetite:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Magnetite
+    raw_resource: true
 
-  Nickel Ore:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Nickel Ore
+    raw_resource: true
 
-  Quartz:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Quartz
+    raw_resource: true
 
-  Ruby:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Ruby
+    raw_resource: true
 
-  Salt Deposit:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Salt Deposit
+    raw_resource: true
 
-  Silver Ore:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Silver Ore
+    raw_resource: true
 
-  Metal Salvage:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Metal Salvage
+    raw_resource: true
 
-  Titanium:
+  - name: Titanium
+    raw_resource: true
     recipes:
-    - recipe_type: Raw Resource
     - output: 4
       recipe_type: Fabricator
       requirements:
-        Metal Salvage: -1
+        Metal Salvage: 1
 
-  Uraninite Crystal:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Uraninite Crystal
+    raw_resource: true
 
-  Ion Cube:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Ion Cube
+    raw_resource: true
 
-  Snowball:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Snowball
+    raw_resource: true
 
-  Snow Stalker Fur:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Snow Stalker Fur
+    raw_resource: true
 
   ##############################################################################
-  _x: {H1: Plants} #############################################################
+  - H1: Plants #################################################################
   ##############################################################################
 
-  Table Coral Sample:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Table Coral Sample
+    raw_resource: true
 
-  Flowering Spore:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Flowering Spore
+    raw_resource: true
 
-  Antennae Fruit:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Antennae Fruit
+    raw_resource: true
 
-  Antennae Seed:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Antennae Seed
+    raw_resource: true
 
-  Bullseye Shroom Chunk:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Bullseye Shroom Chunk
+    raw_resource: true
 
-  Creepvine Sample:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Creepvine Sample
+    raw_resource: true
 
-  Creepvine Seed Cluster:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Creepvine Seed Cluster
+    raw_resource: true
 
-  Gel Sack:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Gel Sack
+    raw_resource: true
 
-  Gel Sack Spores:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Gel Sack Spores
+    raw_resource: true
 
-  Hardy Cave Bush Seed:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Hardy Cave Bush Seed
+    raw_resource: true
 
-  Redwort Seed:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Redwort Seed
+    raw_resource: true
 
-  Ribbon Plant:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Ribbon Plant
+    raw_resource: true
 
-  Ribbon Plant Seed:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Ribbon Plant Seed
+    raw_resource: true
 
-  Root Globule:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Root Globule
+    raw_resource: true
 
-  Root Globule Seed:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Root Globule Seed
+    raw_resource: true
 
-  Spiral Plant Clipping:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Spiral Plant Clipping
+    raw_resource: true
 
-  Spotted Dockleaf Seed:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Spotted Dockleaf Seed
+    raw_resource: true
 
-  Violet Beau Seed:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Violet Beau Seed
+    raw_resource: true
 
-  Young Cotton Anemone:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Young Cotton Anemone
+    raw_resource: true
 
-  Young Cotton Anemone Seed:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Young Cotton Anemone Seed
+    raw_resource: true
 
-  Chinese Potato:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Chinese Potato
+    raw_resource: true
 
-  Fevered Pepper:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Fevered Pepper
+    raw_resource: true
 
-  Frost Vase Plant:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Frost Vase Plant
+    raw_resource: true
 
-  Frost Vase Plant Seed:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Frost Vase Plant Seed
+    raw_resource: true
 
-  Shrub Nut:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Shrub Nut
+    raw_resource: true
 
-  Lantern Fruit:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Lantern Fruit
+    raw_resource: true
 
-  Marblemelon:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Marblemelon
+    raw_resource: true
 
-  Small Marblemelon:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Small Marblemelon
+    raw_resource: true
 
-  Marblemelon Seed:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Marblemelon Seed
+    raw_resource: true
 
-  Preston's Delight:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Preston's Delight
+    raw_resource: true
 
-  Preston's Plant Leaf:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Preston's Plant Leaf
+    raw_resource: true
 
   ##############################################################################
-  _y: {H1: Eggs} ###############################################################
+  - H1: Eggs ###################################################################
   ##############################################################################
 
-  Arctic Ray Egg:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Arctic Ray Egg
+    raw_resource: true
 
-  Brinewing Egg:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Brinewing Egg
+    raw_resource: true
 
-  Brute Shark Egg:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Brute Shark Egg
+    raw_resource: true
 
-  Crashfish Egg:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Crashfish Egg
+    raw_resource: true
 
-  Cryptosuchus Egg:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Cryptosuchus Egg
+    raw_resource: true
 
-  Glow Whale Egg:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Glow Whale Egg
+    raw_resource: true
 
-  Eye Jelly Egg:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Eye Jelly Egg
+    raw_resource: true
 
-  Lily Paddler Egg:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Lily Paddler Egg
+    raw_resource: true
 
-  Pengwing Egg:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Pengwing Egg
+    raw_resource: true
 
-  Pinnacarid Egg:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Pinnacarid Egg
+    raw_resource: true
 
-  Rock Puncher Egg:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Rock Puncher Egg
+    raw_resource: true
 
-  Sea Monkey Egg:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Sea Monkey Egg
+    raw_resource: true
 
-  Squidshark Egg:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Squidshark Egg
+    raw_resource: true
 
-  Titan Holefish Egg:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Titan Holefish Egg
+    raw_resource: true
 
-  Blue Trivalve Egg:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Blue Trivalve Egg
+    raw_resource: true
 
-  Yellow Trivalve Egg:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Yellow Trivalve Egg
+    raw_resource: true
 
   ##############################################################################
-  _z: {H1: Placeable} ##########################################################
+  - H1: Placeable ##############################################################
   ##############################################################################
 
-  Cylindrical Flask:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Cylindrical Flask
+    raw_resource: true
 
-  Small Flask:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Small Flask
+    raw_resource: true
 
-  Large Flask:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Large Flask
+    raw_resource: true
 
-  Fred's Shaving Kit:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Fred's Shaving Kit
+    raw_resource: true
 
-  Necklace:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Necklace
+    raw_resource: true
 
-  Framed Picture Hand-drawn pengling art.:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Framed Picture Hand-drawn pengling art.
+    raw_resource: true
 
-  Picture Potato Portrait:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Picture Potato Portrait
+    raw_resource: true
 
-  Picture Robin & Potato:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Picture Robin & Potato
+    raw_resource: true
 
-  Picture Sam & Danielle:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Picture Sam & Danielle
+    raw_resource: true
 
-  Poster Alien intruder:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Poster Alien intruder
+    raw_resource: true
 
-  Poster Architect Structures:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Poster Architect Structures
+    raw_resource: true
 
-  Poster Early Spy Pengling concepts:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Poster Early Spy Pengling concepts
+    raw_resource: true
 
-  Motivational Poster FOCUS:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Motivational Poster FOCUS
+    raw_resource: true
 
-  Poster Hang In There!:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Poster Hang In There!
+    raw_resource: true
 
-  Poster Hoverball!:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Poster Hoverball!
+    raw_resource: true
 
-  Motivational Poster It's Your Field:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Motivational Poster It's Your Field
+    raw_resource: true
 
-  Poster Just say no… to skyrays!:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Poster Just say no… to skyrays!
+    raw_resource: true
 
-  Poster Keep calm and truck on:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Poster Keep calm and truck on
+    raw_resource: true
 
-  Poster Mercury II:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Poster Mercury II
+    raw_resource: true
 
-  Motivational Poster One Thing At A Time:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Motivational Poster One Thing At A Time
+    raw_resource: true
 
-  Poster Reaper leviathan.:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Poster Reaper leviathan.
+    raw_resource: true
 
-  Poster Sea dragon.:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Poster Sea dragon.
+    raw_resource: true
 
-  Poster Seatruck X12:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Poster Seatruck X12
+    raw_resource: true
 
-  Poster Spy Pengling schematics:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Poster Spy Pengling schematics
+    raw_resource: true
 
-  Framed Art A roboticist's lightbulb moment.:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Framed Art A roboticist's lightbulb moment.
+    raw_resource: true
 
-  Framed Art Abstract art:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Framed Art Abstract art
+    raw_resource: true
 
-  Framed Art Inspired by bacterial research.:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Framed Art Inspired by bacterial research.
+    raw_resource: true

@@ -1,5 +1,5 @@
 from jinja2 import Environment, FileSystemLoader
-from typing import List, Dict, Any, TypedDict
+from typing import List, Dict, TypedDict
 import os
 import pickle
 
@@ -63,7 +63,7 @@ def editor_function(input_files: EditorInputFiles, groups: Dict[str, str]) -> Li
 
     env = Environment(loader=FileSystemLoader('core'))
 
-    resource_list_js_data = mini_js_data(hack_update_resources_schema(get_primitive(resource_list)), "resource_list_json")
+    resource_list_js_data = mini_js_data(get_primitive(resource_list), "resource_list_json")
 
     editor_template = env.get_template("edit.html")
 
@@ -83,36 +83,3 @@ def editor_function(input_files: EditorInputFiles, groups: Dict[str, str]) -> Li
     return [
         calculator_editor_html_filepath,
     ]
-
-
-################################################################################
-# hack_update_resources_schema
-#
-# Temporary file to update the resource file to the new format that does not
-# use ordered dictionaries and instead uses arrays of dictionaries.
-################################################################################
-def hack_update_resources_schema(data: Any) -> Any:
-    new_authors = []
-    for author in data["authors"]:
-        new_authors.append({
-            "name": author,
-            "link": data["authors"][author]
-        })
-    data["authors"] = new_authors
-
-    new_resources = []
-    resource_id_count = 1
-    for resource in data["resources"]:
-        new_resource = {
-            "name": resource,
-            "id": resource_id_count,
-        }
-
-        for key in data["resources"][resource]:
-            new_resource[key] = data["resources"][resource][key]
-
-        new_resources.append(new_resource)
-        resource_id_count += 1
-    data["resources"] = new_resources
-
-    return data

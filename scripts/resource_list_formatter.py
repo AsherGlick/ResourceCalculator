@@ -41,9 +41,12 @@ def main() -> None:
 
     if args.all:
         for calculator in os.listdir("../resource_lists"):
-            path = os.path.join("../resource_lists", calculator, "resources.yaml")
-            print(path)
-            format_single_file(path, same_file=True)
+            folder_path = os.path.join("../resource_lists", calculator)
+            if not os.path.isdir(folder_path):
+                continue
+            resource_path = os.path.join(folder_path, "resources.yaml")
+            print(resource_path)
+            format_single_file(resource_path, same_file=True)
 
     elif args.path is not None:
         format_single_file(args.path, same_file=args.inline)

@@ -13,5160 +13,3397 @@ recipe_types:
 resources:
 
   ##############################################################################
-  _a: {H1: Clothing} ###########################################################
+  - H1: Clothing ###############################################################
   ##############################################################################
 
-  _b: {H2: Ancient Armor Set} ##################################################
+  - H2: Ancient Armor Set ######################################################
 
-  Ancient Helm:
+  - name: Ancient Helm
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Ancient Gear: -20
-        Ancient Shaft: -5
-        Ancient Core: -3
-        Rupee: -2000
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ancient Helm: 0
+        Ancient Gear: 20
+        Ancient Shaft: 5
+        Ancient Core: 3
+        Rupee: 2000
 
-  Ancient Helm ★:
+  - name: Ancient Helm ★
     custom_simplename: ancienthelm1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Ancient Helm: -1
-        Ancient Screw: -5
-        Ancient Spring: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ancient Helm ★: 0
+        Ancient Helm: 1
+        Ancient Screw: 5
+        Ancient Spring: 5
 
-  Ancient Helm ★★:
+  - name: Ancient Helm ★★
     custom_simplename: ancienthelm2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Ancient Helm ★: -1
-        Ancient Spring: -15
-        Ancient Gear: -10
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ancient Helm ★★: 0
+        Ancient Helm ★: 1
+        Ancient Spring: 15
+        Ancient Gear: 10
 
-  Ancient Helm ★★★:
+  - name: Ancient Helm ★★★
     custom_simplename: ancienthelm3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Ancient Helm ★★: -1
-        Ancient Shaft: -15
-        Ancient Core: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ancient Helm ★★★: 0
+        Ancient Helm ★★: 1
+        Ancient Shaft: 15
+        Ancient Core: 5
 
-  Ancient Helm ★★★★:
+  - name: Ancient Helm ★★★★
     custom_simplename: ancienthelm4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Ancient Helm ★★★: -1
-        Giant Ancient Core: -2
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ancient Helm ★★★★: 0
+        Ancient Helm ★★★: 1
+        Giant Ancient Core: 2
+        Star Fragment: 1
 
-  Ancient Cuirass:
+  - name: Ancient Cuirass
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Ancient Gear: -20
-        Ancient Screw: -5
-        Ancient Core: -3
-        Rupee: -2000
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ancient Cuirass: 0
+        Ancient Gear: 20
+        Ancient Screw: 5
+        Ancient Core: 3
+        Rupee: 2000
 
-  Ancient Cuirass ★:
+  - name: Ancient Cuirass ★
     custom_simplename: ancientcuirass1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Ancient Cuirass: -1
-        Ancient Screw: -5
-        Ancient Spring: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ancient Cuirass ★: 0
+        Ancient Cuirass: 1
+        Ancient Screw: 5
+        Ancient Spring: 5
 
-  Ancient Cuirass ★★:
+  - name: Ancient Cuirass ★★
     custom_simplename: ancientcuirass2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Ancient Cuirass ★: -1
-        Ancient Spring: -15
-        Ancient Gear: -10
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ancient Cuirass ★★: 0
+        Ancient Cuirass ★: 1
+        Ancient Spring: 15
+        Ancient Gear: 10
 
-  Ancient Cuirass ★★★:
+  - name: Ancient Cuirass ★★★
     custom_simplename: ancientcuirass3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Ancient Cuirass ★★: -1
-        Ancient Shaft: -15
-        Ancient Core: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ancient Cuirass ★★★: 0
+        Ancient Cuirass ★★: 1
+        Ancient Shaft: 15
+        Ancient Core: 5
 
-  Ancient Cuirass ★★★★:
+  - name: Ancient Cuirass ★★★★
     custom_simplename: ancientcuirass4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Ancient Cuirass ★★★: -1
-        Giant Ancient Core: -2
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ancient Cuirass ★★★★: 0
+        Ancient Cuirass ★★★: 1
+        Giant Ancient Core: 2
+        Star Fragment: 1
 
-  Ancient Greaves:
+  - name: Ancient Greaves
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Ancient Gear: -20
-        Ancient Spring: -5
-        Ancient Core: -3
-        Rupee: -2000
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ancient Greaves: 0
+        Ancient Gear: 20
+        Ancient Spring: 5
+        Ancient Core: 3
+        Rupee: 2000
 
-  Ancient Greaves ★:
+  - name: Ancient Greaves ★
     custom_simplename: ancientgreaves1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Ancient Greaves: -1
-        Ancient Screw: -5
-        Ancient Spring: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ancient Greaves ★: 0
+        Ancient Greaves: 1
+        Ancient Screw: 5
+        Ancient Spring: 5
 
-  Ancient Greaves ★★:
+  - name: Ancient Greaves ★★
     custom_simplename: ancientgreaves2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Ancient Greaves ★: -1
-        Ancient Spring: -15
-        Ancient Gear: -10
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ancient Greaves ★★: 0
+        Ancient Greaves ★: 1
+        Ancient Spring: 15
+        Ancient Gear: 10
 
-  Ancient Greaves ★★★:
+  - name: Ancient Greaves ★★★
     custom_simplename: ancientgreaves3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Ancient Greaves ★★: -1
-        Ancient Shaft: -15
-        Ancient Core: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ancient Greaves ★★★: 0
+        Ancient Greaves ★★: 1
+        Ancient Shaft: 15
+        Ancient Core: 5
 
-  Ancient Greaves ★★★★:
+  - name: Ancient Greaves ★★★★
     custom_simplename: ancientgreaves4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Ancient Greaves ★★★: -1
-        Giant Ancient Core: -2
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ancient Greaves ★★★★: 0
+        Ancient Greaves ★★★: 1
+        Giant Ancient Core: 2
+        Star Fragment: 1
 
-  _c: {H2: Barbarian Set} ######################################################
+  - H2: Barbarian Set ##########################################################
 
-  Barbarian Helm:
+  - name: Barbarian Helm
+    raw_resource: true
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Barbarian Helm: 0
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -4000
+        Rupee: 4000
 
-  Barbarian Helm ★:
+  - name: Barbarian Helm ★
     custom_simplename: barbarianhelm1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Barbarian Helm: -1
-        Lynel Horn: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Barbarian Helm ★: 0
+        Barbarian Helm: 1
+        Lynel Horn: 1
 
-  Barbarian Helm ★★:
+  - name: Barbarian Helm ★★
     custom_simplename: barbarianhelm2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Barbarian Helm ★: -1
-        Lynel Horn: -3
-        Lynel Hoof: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Barbarian Helm ★★: 0
+        Barbarian Helm ★: 1
+        Lynel Horn: 3
+        Lynel Hoof: 2
 
-  Barbarian Helm ★★★:
+  - name: Barbarian Helm ★★★
     custom_simplename: barbarianhelm3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Barbarian Helm ★★: -1
-        Lynel Hoof: -4
-        Lynel Guts: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Barbarian Helm ★★★: 0
+        Barbarian Helm ★★: 1
+        Lynel Hoof: 4
+        Lynel Guts: 1
 
-  Barbarian Helm ★★★★:
+  - name: Barbarian Helm ★★★★
     custom_simplename: barbarianhelm4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Barbarian Helm ★★★: -1
-        Lynel Guts: -2
-        Shard of Dinraal's Horn: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Barbarian Helm ★★★★: 0
+        Barbarian Helm ★★★: 1
+        Lynel Guts: 2
+        Shard of Dinraal's Horn: 1
 
-  Barbarian Armor:
+  - name: Barbarian Armor
+    raw_resource: true
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Barbarian Armor: 0
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -4000
+        Rupee: 4000
 
-  Barbarian Armor ★:
+  - name: Barbarian Armor ★
     custom_simplename: barbarianarmor1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Barbarian Armor: -1
-        Lynel Horn: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Barbarian Armor ★: 0
+        Barbarian Armor: 1
+        Lynel Horn: 1
 
-  Barbarian Armor ★★:
+  - name: Barbarian Armor ★★
     custom_simplename: barbarianarmor2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Barbarian Armor ★: -1
-        Lynel Horn: -3
-        Lynel Hoof: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Barbarian Armor ★★: 0
+        Barbarian Armor ★: 1
+        Lynel Horn: 3
+        Lynel Hoof: 2
 
-  Barbarian Armor ★★★:
+  - name: Barbarian Armor ★★★
     custom_simplename: barbarianarmor3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Barbarian Armor ★★: -1
-        Lynel Hoof: -4
-        Lynel Guts: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Barbarian Armor ★★★: 0
+        Barbarian Armor ★★: 1
+        Lynel Hoof: 4
+        Lynel Guts: 1
 
-  Barbarian Armor ★★★★:
+  - name: Barbarian Armor ★★★★
     custom_simplename: barbarianarmor4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Barbarian Armor ★★★: -1
-        Lynel Guts: -2
-        Shard of Farosh's Horn: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Barbarian Armor ★★★★: 0
+        Barbarian Armor ★★★: 1
+        Lynel Guts: 2
+        Shard of Farosh's Horn: 1
 
-  Barbarian Leg Wraps:
+  - name: Barbarian Leg Wraps
+    raw_resource: true
     recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Barbarian Leg Wraps: 0
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -4000
+        Rupee: 4000
 
-  Barbarian Leg Wraps ★:
+  - name: Barbarian Leg Wraps ★
     custom_simplename: barbarianlegwraps1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Barbarian Leg Wraps: -1
-        Lynel Horn: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Barbarian Leg Wraps ★: 0
+        Barbarian Leg Wraps: 1
+        Lynel Horn: 1
 
-  Barbarian Leg Wraps ★★:
+  - name: Barbarian Leg Wraps ★★
     custom_simplename: barbarianlegwraps2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Barbarian Leg Wraps ★: -1
-        Lynel Horn: -3
-        Lynel Hoof: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Barbarian Leg Wraps ★★: 0
+        Barbarian Leg Wraps ★: 1
+        Lynel Horn: 3
+        Lynel Hoof: 2
 
-  Barbarian Leg Wraps ★★★:
+  - name: Barbarian Leg Wraps ★★★
     custom_simplename: barbarianlegwraps3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Barbarian Leg Wraps ★★: -1
-        Lynel Hoof: -4
-        Lynel Guts: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Barbarian Leg Wraps ★★★: 0
+        Barbarian Leg Wraps ★★: 1
+        Lynel Hoof: 4
+        Lynel Guts: 1
 
-  Barbarian Leg Wraps ★★★★:
+  - name: Barbarian Leg Wraps ★★★★
     custom_simplename: barbarianlegwraps4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Barbarian Leg Wraps ★★★: -1
-        Lynel Guts: -2
-        Shard of Naydra's Horn: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Barbarian Leg Wraps ★★★★: 0
+        Barbarian Leg Wraps ★★★: 1
+        Lynel Guts: 2
+        Shard of Naydra's Horn: 1
 
-  _d: {H2: Hero Set (Legend of Zelda Amiibo)} ##################################
+  - H2: Hero Set (Legend of Zelda Amiibo) ######################################
 
-  Cap of the Hero:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of the Hero: 0
+  - name: Cap of the Hero
+    raw_resource: true
 
-  Cap of the Hero ★:
+  - name: Cap of the Hero ★
     custom_simplename: capofthehero1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of the Hero: -1
-        Ruby: -1
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of the Hero ★: 0
+        Cap of the Hero: 1
+        Ruby: 1
+        Star Fragment: 1
 
-  Cap of the Hero ★★:
+  - name: Cap of the Hero ★★
     custom_simplename: capofthehero2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of the Hero ★: -1
-        Ruby: -3
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of the Hero ★★: 0
+        Cap of the Hero ★: 1
+        Ruby: 3
+        Star Fragment: 1
 
-  Cap of the Hero ★★★:
+  - name: Cap of the Hero ★★★
     custom_simplename: capofthehero3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of the Hero ★★: -1
-        Ruby: -5
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of the Hero ★★★: 0
+        Cap of the Hero ★★: 1
+        Ruby: 5
+        Star Fragment: 1
 
-  Cap of the Hero ★★★★:
+  - name: Cap of the Hero ★★★★
     custom_simplename: capofthehero4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of the Hero ★★★: -1
-        Ruby: -10
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of the Hero ★★★★: 0
+        Cap of the Hero ★★★: 1
+        Ruby: 10
+        Star Fragment: 1
 
-  Tunic of the Hero:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of the Hero: 0
+  - name: Tunic of the Hero
+    raw_resource: true
 
-  Tunic of the Hero ★:
+  - name: Tunic of the Hero ★
     custom_simplename: tunicofthehero1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of the Hero: -1
-        Ruby: -1
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of the Hero ★: 0
+        Tunic of the Hero: 1
+        Ruby: 1
+        Star Fragment: 1
 
-  Tunic of the Hero ★★:
+  - name: Tunic of the Hero ★★
     custom_simplename: tunicofthehero2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of the Hero ★: -1
-        Ruby: -3
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of the Hero ★★: 0
+        Tunic of the Hero ★: 1
+        Ruby: 3
+        Star Fragment: 1
 
-  Tunic of the Hero ★★★:
+  - name: Tunic of the Hero ★★★
     custom_simplename: tunicofthehero3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of the Hero ★★: -1
-        Ruby: -5
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of the Hero ★★★: 0
+        Tunic of the Hero ★★: 1
+        Ruby: 5
+        Star Fragment: 1
 
-  Tunic of the Hero ★★★★:
+  - name: Tunic of the Hero ★★★★
     custom_simplename: tunicofthehero4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of the Hero ★★★: -1
-        Ruby: -10
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of the Hero ★★★★: 0
+        Tunic of the Hero ★★★: 1
+        Ruby: 10
+        Star Fragment: 1
 
-  Trousers of the Hero:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of the Hero: 0
+  - name: Trousers of the Hero
+    raw_resource: true
 
-  Trousers of the Hero ★:
+  - name: Trousers of the Hero ★
     custom_simplename: trousersofthehero1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of the Hero: -1
-        Ruby: -1
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of the Hero ★: 0
+        Trousers of the Hero: 1
+        Ruby: 1
+        Star Fragment: 1
 
-  Trousers of the Hero ★★:
+  - name: Trousers of the Hero ★★
     custom_simplename: trousersofthehero2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of the Hero ★: -1
-        Ruby: -3
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of the Hero ★★: 0
+        Trousers of the Hero ★: 1
+        Ruby: 3
+        Star Fragment: 1
 
-  Trousers of the Hero ★★★:
+  - name: Trousers of the Hero ★★★
     custom_simplename: trousersofthehero3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of the Hero ★★: -1
-        Ruby: -5
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of the Hero ★★★: 0
+        Trousers of the Hero ★★: 1
+        Ruby: 5
+        Star Fragment: 1
 
-  Trousers of the Hero ★★★★:
+  - name: Trousers of the Hero ★★★★
     custom_simplename: trousersofthehero4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of the Hero ★★★: -1
-        Ruby: -10
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of the Hero ★★★★: 0
+        Trousers of the Hero ★★★: 1
+        Ruby: 10
+        Star Fragment: 1
 
-  _e: {H2: Skyward Set (Amiibo Skyward Sword)} #################################
+  - H2: Skyward Set (Amiibo Skyward Sword) #####################################
 
-  Cap of the Sky:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of the Sky: 0
+  - name: Cap of the Sky
+    raw_resource: true
 
-  Cap of the Sky ★:
+  - name: Cap of the Sky ★
     custom_simplename: capofthesky1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of the Sky: -1
-        Sapphire: -1
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of the Sky ★: 0
+        Cap of the Sky: 1
+        Sapphire: 1
+        Star Fragment: 1
 
-  Cap of the Sky ★★:
+  - name: Cap of the Sky ★★
     custom_simplename: capofthesky2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of the Sky ★: -1
-        Sapphire: -3
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of the Sky ★★: 0
+        Cap of the Sky ★: 1
+        Sapphire: 3
+        Star Fragment: 1
 
-  Cap of the Sky ★★★:
+  - name: Cap of the Sky ★★★
     custom_simplename: capofthesky3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of the Sky ★★: -1
-        Sapphire: -5
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of the Sky ★★★: 0
+        Cap of the Sky ★★: 1
+        Sapphire: 5
+        Star Fragment: 1
 
-  Cap of the Sky ★★★★:
+  - name: Cap of the Sky ★★★★
     custom_simplename: capofthesky4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of the Sky ★★★: -1
-        Sapphire: -10
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of the Sky ★★★★: 0
+        Cap of the Sky ★★★: 1
+        Sapphire: 10
+        Star Fragment: 1
 
-  Tunic of the Sky:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of the Sky: 0
+  - name: Tunic of the Sky
+    raw_resource: true
 
-  Tunic of the Sky ★:
+  - name: Tunic of the Sky ★
     custom_simplename: tunicofthesky1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of the Sky: -1
-        Sapphire: -1
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of the Sky ★: 0
+        Tunic of the Sky: 1
+        Sapphire: 1
+        Star Fragment: 1
 
-  Tunic of the Sky ★★:
+  - name: Tunic of the Sky ★★
     custom_simplename: tunicofthesky2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of the Sky ★: -1
-        Sapphire: -3
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of the Sky ★★: 0
+        Tunic of the Sky ★: 1
+        Sapphire: 3
+        Star Fragment: 1
 
-  Tunic of the Sky ★★★:
+  - name: Tunic of the Sky ★★★
     custom_simplename: tunicofthesky3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of the Sky ★★: -1
-        Sapphire: -5
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of the Sky ★★★: 0
+        Tunic of the Sky ★★: 1
+        Sapphire: 5
+        Star Fragment: 1
 
-  Tunic of the Sky ★★★★:
+  - name: Tunic of the Sky ★★★★
     custom_simplename: tunicofthesky4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of the Sky ★★★: -1
-        Sapphire: -10
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of the Sky ★★★★: 0
+        Tunic of the Sky ★★★: 1
+        Sapphire: 10
+        Star Fragment: 1
 
-  Trousers of the Sky:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of the Sky: 0
+  - name: Trousers of the Sky
+    raw_resource: true
 
-  Trousers of the Sky ★:
+  - name: Trousers of the Sky ★
     custom_simplename: trousersofthesky1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of the Sky: -1
-        Sapphire: -1
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of the Sky ★: 0
+        Trousers of the Sky: 1
+        Sapphire: 1
+        Star Fragment: 1
 
-  Trousers of the Sky ★★:
+  - name: Trousers of the Sky ★★
     custom_simplename: trousersofthesky2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of the Sky ★: -1
-        Sapphire: -3
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of the Sky ★★: 0
+        Trousers of the Sky ★: 1
+        Sapphire: 3
+        Star Fragment: 1
 
-  Trousers of the Sky ★★★:
+  - name: Trousers of the Sky ★★★
     custom_simplename: trousersofthesky3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of the Sky ★★: -1
-        Sapphire: -5
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of the Sky ★★★: 0
+        Trousers of the Sky ★★: 1
+        Sapphire: 5
+        Star Fragment: 1
 
-  Trousers of the Sky ★★★★:
+  - name: Trousers of the Sky ★★★★
     custom_simplename: trousersofthesky4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of the Sky ★★★: -1
-        Sapphire: -10
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of the Sky ★★★★: 0
+        Trousers of the Sky ★★★: 1
+        Sapphire: 10
+        Star Fragment: 1
 
-  _f: {H2: Wild set (breath of the wild shrine reward)} ########################
+  - H2: Wild set (breath of the wild shrine reward) ############################
 
-  Cap of the Wild:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of the Wild: 0
+  - name: Cap of the Wild
+    raw_resource: true
 
-  Cap of the Wild ★:
+  - name: Cap of the Wild ★
     custom_simplename: capofthewild1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of the Wild: -1
-        Acorn: -10
-        Farosh's Scale: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of the Wild ★: 0
+        Cap of the Wild: 1
+        Acorn: 10
+        Farosh's Scale: 2
 
-  Cap of the Wild ★★:
+  - name: Cap of the Wild ★★
     custom_simplename: capofthewild2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of the Wild ★: -1
-        Courser Bee Honey: -5
-        Farosh's Claw: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of the Wild ★★: 0
+        Cap of the Wild ★: 1
+        Courser Bee Honey: 5
+        Farosh's Claw: 2
 
-  Cap of the Wild ★★★:
+  - name: Cap of the Wild ★★★
     custom_simplename: capofthewild3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of the Wild ★★: -1
-        Energetic Rhino Beetle: -5
-        Shard of Farosh's Fang: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of the Wild ★★★: 0
+        Cap of the Wild ★★: 1
+        Energetic Rhino Beetle: 5
+        Shard of Farosh's Fang: 2
 
-  Cap of the Wild ★★★★:
+  - name: Cap of the Wild ★★★★
     custom_simplename: capofthewild4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of the Wild ★★★: -1
-        Star Fragment: -1
-        Shard of Farosh's Horn: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of the Wild ★★★★: 0
+        Cap of the Wild ★★★: 1
+        Star Fragment: 1
+        Shard of Farosh's Horn: 2
 
-  Tunic of the Wild:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of the Wild: 0
+  - name: Tunic of the Wild
+    raw_resource: true
 
-  Tunic of the Wild ★:
+  - name: Tunic of the Wild ★
     custom_simplename: tunicofthewild1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of the Wild: -1
-        Acorn: -10
-        Naydra's Scale: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of the Wild ★: 0
+        Tunic of the Wild: 1
+        Acorn: 10
+        Naydra's Scale: 2
 
-  Tunic of the Wild ★★:
+  - name: Tunic of the Wild ★★
     custom_simplename: tunicofthewild2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of the Wild ★: -1
-        Courser Bee Honey: -5
-        Naydra's Claw: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of the Wild ★★: 0
+        Tunic of the Wild ★: 1
+        Courser Bee Honey: 5
+        Naydra's Claw: 2
 
-  Tunic of the Wild ★★★:
+  - name: Tunic of the Wild ★★★
     custom_simplename: tunicofthewild3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of the Wild ★★: -1
-        Energetic Rhino Beetle: -5
-        Shard of Naydra's Fang: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of the Wild ★★★: 0
+        Tunic of the Wild ★★: 1
+        Energetic Rhino Beetle: 5
+        Shard of Naydra's Fang: 2
 
-  Tunic of the Wild ★★★★:
+  - name: Tunic of the Wild ★★★★
     custom_simplename: tunicofthewild4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of the Wild ★★★: -1
-        Star Fragment: -1
-        Shard of Naydra's Horn: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of the Wild ★★★★: 0
+        Tunic of the Wild ★★★: 1
+        Star Fragment: 1
+        Shard of Naydra's Horn: 2
 
-  Trousers of the Wild:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of the Wild: 0
+  - name: Trousers of the Wild
+    raw_resource: true
 
-  Trousers of the Wild ★:
+  - name: Trousers of the Wild ★
     custom_simplename: trousersofthewild1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of the Wild: -1
-        Acorn: -10
-        Dinraal's Scale: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of the Wild ★: 0
+        Trousers of the Wild: 1
+        Acorn: 10
+        Dinraal's Scale: 2
 
-  Trousers of the Wild ★★:
+  - name: Trousers of the Wild ★★
     custom_simplename: trousersofthewild2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of the Wild ★: -1
-        Courser Bee Honey: -5
-        Dinraal's Claw: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of the Wild ★★: 0
+        Trousers of the Wild ★: 1
+        Courser Bee Honey: 5
+        Dinraal's Claw: 2
 
-  Trousers of the Wild ★★★:
+  - name: Trousers of the Wild ★★★
     custom_simplename: trousersofthewild3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of the Wild ★★: -1
-        Energetic Rhino Beetle: -5
-        Shard of Dinraal's Fang: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of the Wild ★★★: 0
+        Trousers of the Wild ★★: 1
+        Energetic Rhino Beetle: 5
+        Shard of Dinraal's Fang: 2
 
-  Trousers of the Wild ★★★★:
+  - name: Trousers of the Wild ★★★★
     custom_simplename: trousersofthewild4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of the Wild ★★★: -1
-        Star Fragment: -1
-        Shard of Dinraal's Horn: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of the Wild ★★★★: 0
+        Trousers of the Wild ★★★: 1
+        Star Fragment: 1
+        Shard of Dinraal's Horn: 2
 
-  _g: {H2: Wind Set (skyward sword)} ###########################################
+  - H2: Wind Set (skyward sword) ###############################################
 
-  Cap of the Wind:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of the Wind: 0
+  - name: Cap of the Wind
+    raw_resource: true
 
-  Cap of the Wind ★:
+  - name: Cap of the Wind ★
     custom_simplename: capofthewind1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of the Wind: -1
-        Opal: -1
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of the Wind ★: 0
+        Cap of the Wind: 1
+        Opal: 1
+        Star Fragment: 1
 
-  Cap of the Wind ★★:
+  - name: Cap of the Wind ★★
     custom_simplename: capofthewind2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of the Wind ★: -1
-        Opal: -3
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of the Wind ★★: 0
+        Cap of the Wind ★: 1
+        Opal: 3
+        Star Fragment: 1
 
-  Cap of the Wind ★★★:
+  - name: Cap of the Wind ★★★
     custom_simplename: capofthewind3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of the Wind ★★: -1
-        Opal: -5
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of the Wind ★★★: 0
+        Cap of the Wind ★★: 1
+        Opal: 5
+        Star Fragment: 1
 
-  Cap of the Wind ★★★★:
+  - name: Cap of the Wind ★★★★
     custom_simplename: capofthewind4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of the Wind ★★★: -1
-        Opal: -10
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of the Wind ★★★★: 0
+        Cap of the Wind ★★★: 1
+        Opal: 10
+        Star Fragment: 1
 
-  Tunic of the Wind:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of the Wind: 0
+  - name: Tunic of the Wind
+    raw_resource: true
 
-  Tunic of the Wind ★:
+  - name: Tunic of the Wind ★
     custom_simplename: tunicofthewind1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of the Wind: -1
-        Opal: -1
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of the Wind ★: 0
+        Tunic of the Wind: 1
+        Opal: 1
+        Star Fragment: 1
 
-  Tunic of the Wind ★★:
+  - name: Tunic of the Wind ★★
     custom_simplename: tunicofthewind2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of the Wind ★: -1
-        Opal: -3
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of the Wind ★★: 0
+        Tunic of the Wind ★: 1
+        Opal: 3
+        Star Fragment: 1
 
-  Tunic of the Wind ★★★:
+  - name: Tunic of the Wind ★★★
     custom_simplename: tunicofthewind3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of the Wind ★★: -1
-        Opal: -5
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of the Wind ★★★: 0
+        Tunic of the Wind ★★: 1
+        Opal: 5
+        Star Fragment: 1
 
-  Tunic of the Wind ★★★★:
+  - name: Tunic of the Wind ★★★★
     custom_simplename: tunicofthewind4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of the Wind ★★★: -1
-        Opal: -10
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of the Wind ★★★★: 0
+        Tunic of the Wind ★★★: 1
+        Opal: 10
+        Star Fragment: 1
 
-  Trousers of the Wind:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of the Wind: 0
+  - name: Trousers of the Wind
+    raw_resource: true
 
-  Trousers of the Wind ★:
+  - name: Trousers of the Wind ★
     custom_simplename: trousersofthewind1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of the Wind: -1
-        Opal: -1
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of the Wind ★: 0
+        Trousers of the Wind: 1
+        Opal: 1
+        Star Fragment: 1
 
-  Trousers of the Wind ★★:
+  - name: Trousers of the Wind ★★
     custom_simplename: trousersofthewind2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of the Wind ★: -1
-        Opal: -3
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of the Wind ★★: 0
+        Trousers of the Wind ★: 1
+        Opal: 3
+        Star Fragment: 1
 
-  Trousers of the Wind ★★★:
+  - name: Trousers of the Wind ★★★
     custom_simplename: trousersofthewind3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of the Wind ★★: -1
-        Opal: -5
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of the Wind ★★★: 0
+        Trousers of the Wind ★★: 1
+        Opal: 5
+        Star Fragment: 1
 
-  Trousers of the Wind ★★★★:
+  - name: Trousers of the Wind ★★★★
     custom_simplename: trousersofthewind4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of the Wind ★★★: -1
-        Opal: -10
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of the Wind ★★★★: 0
+        Trousers of the Wind ★★★: 1
+        Opal: 10
+        Star Fragment: 1
 
-  _h: {H2: Time Set (Ocarina of time amiibo)} ##################################
+  - H2: Time Set (Ocarina of time amiibo) ######################################
 
-  Cap of Time:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of Time: 0
+  - name: Cap of Time
+    raw_resource: true
 
-  Cap of Time ★:
+  - name: Cap of Time ★
     custom_simplename: capoftime1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of Time: -1
-        Amber: -1
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of Time ★: 0
+        Cap of Time: 1
+        Amber: 1
+        Star Fragment: 1
 
-  Cap of Time ★★:
+  - name: Cap of Time ★★
     custom_simplename: capoftime2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of Time ★: -1
-        Amber: -3
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of Time ★★: 0
+        Cap of Time ★: 1
+        Amber: 3
+        Star Fragment: 1
 
-  Cap of Time ★★★:
+  - name: Cap of Time ★★★
     custom_simplename: capoftime3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of Time ★★: -1
-        Amber: -5
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of Time ★★★: 0
+        Cap of Time ★★: 1
+        Amber: 5
+        Star Fragment: 1
 
-  Cap of Time ★★★★:
+  - name: Cap of Time ★★★★
     custom_simplename: capoftime4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of Time ★★★: -1
-        Amber: -10
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of Time ★★★★: 0
+        Cap of Time ★★★: 1
+        Amber: 10
+        Star Fragment: 1
 
-  Tunic of Time:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of Time: 0
+  - name: Tunic of Time
+    raw_resource: true
 
-  Tunic of Time ★:
+  - name: Tunic of Time ★
     custom_simplename: tunicoftime1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of Time: -1
-        Amber: -1
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of Time ★: 0
+        Tunic of Time: 1
+        Amber: 1
+        Star Fragment: 1
 
-  Tunic of Time ★★:
+  - name: Tunic of Time ★★
     custom_simplename: tunicoftime2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of Time ★: -1
-        Amber: -3
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of Time ★★: 0
+        Tunic of Time ★: 1
+        Amber: 3
+        Star Fragment: 1
 
-  Tunic of Time ★★★:
+  - name: Tunic of Time ★★★
     custom_simplename: tunicoftime3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of Time ★★: -1
-        Amber: -5
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of Time ★★★: 0
+        Tunic of Time ★★: 1
+        Amber: 5
+        Star Fragment: 1
 
-  Tunic of Time ★★★★:
+  - name: Tunic of Time ★★★★
     custom_simplename: tunicoftime4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of Time ★★★: -1
-        Amber: -10
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of Time ★★★★: 0
+        Tunic of Time ★★★: 1
+        Amber: 10
+        Star Fragment: 1
 
-  Trousers of Time:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of Time: 0
+  - name: Trousers of Time
+    raw_resource: true
 
-  Trousers of Time ★:
+  - name: Trousers of Time ★
     custom_simplename: trousersoftime1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of Time: -1
-        Amber: -1
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of Time ★: 0
+        Trousers of Time: 1
+        Amber: 1
+        Star Fragment: 1
 
-  Trousers of Time ★★:
+  - name: Trousers of Time ★★
     custom_simplename: trousersoftime2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of Time ★: -1
-        Amber: -3
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of Time ★★: 0
+        Trousers of Time ★: 1
+        Amber: 3
+        Star Fragment: 1
 
-  Trousers of Time ★★★:
+  - name: Trousers of Time ★★★
     custom_simplename: trousersoftime3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of Time ★★: -1
-        Amber: -5
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of Time ★★★: 0
+        Trousers of Time ★★: 1
+        Amber: 5
+        Star Fragment: 1
 
-  Trousers of Time ★★★★:
+  - name: Trousers of Time ★★★★
     custom_simplename: trousersoftime4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of Time ★★★: -1
-        Amber: -10
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of Time ★★★★: 0
+        Trousers of Time ★★★: 1
+        Amber: 10
+        Star Fragment: 1
 
-  _i: {H2: Wind Set (skyward sword)} ###########################################
+  - H2: Wind Set (skyward sword) ###############################################
 
-  Cap of Twilight:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of Twilight: 0
+  - name: Cap of Twilight
+    raw_resource: true
 
-  Cap of Twilight ★:
+  - name: Cap of Twilight ★
     custom_simplename: capoftwilight1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of Twilight: -1
-        Topaz: -1
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of Twilight ★: 0
+        Cap of Twilight: 1
+        Topaz: 1
+        Star Fragment: 1
 
-  Cap of Twilight ★★:
+  - name: Cap of Twilight ★★
     custom_simplename: capoftwilight2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of Twilight ★: -1
-        Topaz: -3
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of Twilight ★★: 0
+        Cap of Twilight ★: 1
+        Topaz: 3
+        Star Fragment: 1
 
-  Cap of Twilight ★★★:
+  - name: Cap of Twilight ★★★
     custom_simplename: capoftwilight3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of Twilight ★★: -1
-        Topaz: -5
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of Twilight ★★★: 0
+        Cap of Twilight ★★: 1
+        Topaz: 5
+        Star Fragment: 1
 
-  Cap of Twilight ★★★★:
+  - name: Cap of Twilight ★★★★
     custom_simplename: capoftwilight4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Cap of Twilight ★★★: -1
-        Topaz: -10
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Cap of Twilight ★★★★: 0
+        Cap of Twilight ★★★: 1
+        Topaz: 10
+        Star Fragment: 1
 
-  Tunic of Twilight:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of Twilight: 0
+  - name: Tunic of Twilight
+    raw_resource: true
 
-  Tunic of Twilight ★:
+  - name: Tunic of Twilight ★
     custom_simplename: tunicoftwilight1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of Twilight: -1
-        Topaz: -1
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of Twilight ★: 0
+        Tunic of Twilight: 1
+        Topaz: 1
+        Star Fragment: 1
 
-  Tunic of Twilight ★★:
+  - name: Tunic of Twilight ★★
     custom_simplename: tunicoftwilight2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of Twilight ★: -1
-        Topaz: -3
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of Twilight ★★: 0
+        Tunic of Twilight ★: 1
+        Topaz: 3
+        Star Fragment: 1
 
-  Tunic of Twilight ★★★:
+  - name: Tunic of Twilight ★★★
     custom_simplename: tunicoftwilight3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of Twilight ★★: -1
-        Topaz: -5
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of Twilight ★★★: 0
+        Tunic of Twilight ★★: 1
+        Topaz: 5
+        Star Fragment: 1
 
-  Tunic of Twilight ★★★★:
+  - name: Tunic of Twilight ★★★★
     custom_simplename: tunicoftwilight4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Tunic of Twilight ★★★: -1
-        Topaz: -10
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tunic of Twilight ★★★★: 0
+        Tunic of Twilight ★★★: 1
+        Topaz: 10
+        Star Fragment: 1
 
-  Trousers of Twilight:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of Twilight: 0
+  - name: Trousers of Twilight
+    raw_resource: true
 
-  Trousers of Twilight ★:
+  - name: Trousers of Twilight ★
     custom_simplename: trousersoftwilight1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of Twilight: -1
-        Topaz: -1
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of Twilight ★: 0
+        Trousers of Twilight: 1
+        Topaz: 1
+        Star Fragment: 1
 
-  Trousers of Twilight ★★:
+  - name: Trousers of Twilight ★★
     custom_simplename: trousersoftwilight2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of Twilight ★: -1
-        Topaz: -3
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of Twilight ★★: 0
+        Trousers of Twilight ★: 1
+        Topaz: 3
+        Star Fragment: 1
 
-  Trousers of Twilight ★★★:
+  - name: Trousers of Twilight ★★★
     custom_simplename: trousersoftwilight3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of Twilight ★★: -1
-        Topaz: -5
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of Twilight ★★★: 0
+        Trousers of Twilight ★★: 1
+        Topaz: 5
+        Star Fragment: 1
 
-  Trousers of Twilight ★★★★:
+  - name: Trousers of Twilight ★★★★
     custom_simplename: trousersoftwilight4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Trousers of Twilight ★★★: -1
-        Topaz: -10
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Trousers of Twilight ★★★★: 0
+        Trousers of Twilight ★★★: 1
+        Topaz: 10
+        Star Fragment: 1
 
-  _j: {H2: Climbers Set} #######################################################
+  - H2: Climbers Set ###########################################################
 
-  Climber's Bandanna:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Climber's Bandanna: 0
+  - name: Climber's Bandanna
+    raw_resource: true
 
-  Climber's Bandanna ★:
+  - name: Climber's Bandanna ★
     custom_simplename: climbersbandanna1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Climber's Bandanna: -1
-        Keese Wing: -3
-        Rushroom: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Climber's Bandanna ★: 0
+        Climber's Bandanna: 1
+        Keese Wing: 3
+        Rushroom: 3
 
-  Climber's Bandanna ★★:
+  - name: Climber's Bandanna ★★
     custom_simplename: climbersbandanna2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Climber's Bandanna ★: -1
-        Electric Keese Wing: -5
-        Hightail Lizard: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Climber's Bandanna ★★: 0
+        Climber's Bandanna ★: 1
+        Electric Keese Wing: 5
+        Hightail Lizard: 5
 
-  Climber's Bandanna ★★★:
+  - name: Climber's Bandanna ★★★
     custom_simplename: climbersbandanna3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Climber's Bandanna ★★: -1
-        Ice Keese Wing: -8
-        Hot-Footed Frog: -10
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Climber's Bandanna ★★★: 0
+        Climber's Bandanna ★★: 1
+        Ice Keese Wing: 8
+        Hot-Footed Frog: 10
 
-  Climber's Bandanna ★★★★:
+  - name: Climber's Bandanna ★★★★
     custom_simplename: climbersbandanna4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Climber's Bandanna ★★★: -1
-        Fire Keese Wing: -10
-        Swift Violet: -15
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Climber's Bandanna ★★★★: 0
+        Climber's Bandanna ★★★: 1
+        Fire Keese Wing: 10
+        Swift Violet: 15
 
-  Climbing Gear:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Climbing Gear: 0
+  - name: Climbing Gear
+    raw_resource: true
 
-  Climbing Gear ★:
+  - name: Climbing Gear ★
     custom_simplename: climbinggear1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Climbing Gear: -1
-        Keese Wing: -3
-        Rushroom: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Climbing Gear ★: 0
+        Climbing Gear: 1
+        Keese Wing: 3
+        Rushroom: 3
 
-  Climbing Gear ★★:
+  - name: Climbing Gear ★★
     custom_simplename: climbinggear2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Climbing Gear ★: -1
-        Electric Keese Wing: -5
-        Hightail Lizard: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Climbing Gear ★★: 0
+        Climbing Gear ★: 1
+        Electric Keese Wing: 5
+        Hightail Lizard: 5
 
-  Climbing Gear ★★★:
+  - name: Climbing Gear ★★★
     custom_simplename: climbinggear3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Climbing Gear ★★: -1
-        Ice Keese Wing: -8
-        Hot-Footed Frog: -10
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Climbing Gear ★★★: 0
+        Climbing Gear ★★: 1
+        Ice Keese Wing: 8
+        Hot-Footed Frog: 10
 
-  Climbing Gear ★★★★:
+  - name: Climbing Gear ★★★★
     custom_simplename: climbinggear4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Climbing Gear ★★★: -1
-        Fire Keese Wing: -10
-        Swift Violet: -15
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Climbing Gear ★★★★: 0
+        Climbing Gear ★★★: 1
+        Fire Keese Wing: 10
+        Swift Violet: 15
 
-  Climbing Boots:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Climbing Boots: 0
+  - name: Climbing Boots
+    raw_resource: true
 
-  Climbing Boots ★:
+  - name: Climbing Boots ★
     custom_simplename: climbingboots1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Climbing Boots: -1
-        Keese Wing: -3
-        Rushroom: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Climbing Boots ★: 0
+        Climbing Boots: 1
+        Keese Wing: 3
+        Rushroom: 3
 
-  Climbing Boots ★★:
+  - name: Climbing Boots ★★
     custom_simplename: climbingboots2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Climbing Boots ★: -1
-        Electric Keese Wing: -5
-        Hightail Lizard: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Climbing Boots ★★: 0
+        Climbing Boots ★: 1
+        Electric Keese Wing: 5
+        Hightail Lizard: 5
 
-  Climbing Boots ★★★:
+  - name: Climbing Boots ★★★
     custom_simplename: climbingboots3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Climbing Boots ★★: -1
-        Ice Keese Wing: -8
-        Hot-Footed Frog: -10
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Climbing Boots ★★★: 0
+        Climbing Boots ★★: 1
+        Ice Keese Wing: 8
+        Hot-Footed Frog: 10
 
-  Climbing Boots ★★★★:
+  - name: Climbing Boots ★★★★
     custom_simplename: climbingboots4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Climbing Boots ★★★: -1
-        Fire Keese Wing: -10
-        Swift Violet: -15
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Climbing Boots ★★★★: 0
+        Climbing Boots ★★★: 1
+        Fire Keese Wing: 10
+        Swift Violet: 15
 
-  _k: {H2: Deser Voe Set} ######################################################
+  - H2: Deser Voe Set ##########################################################
 
-  Desert Voe Headband:
+  - name: Desert Voe Headband
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -450
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Desert Voe Headband: 0
+        Rupee: 450
 
-  Desert Voe Headband ★:
+  - name: Desert Voe Headband ★
     custom_simplename: desertvoeheadband1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Desert Voe Headband: -1
-        White Chuchu Jelly: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Desert Voe Headband ★: 0
+        Desert Voe Headband: 1
+        White Chuchu Jelly: 3
 
-  Desert Voe Headband ★★:
+  - name: Desert Voe Headband ★★
     custom_simplename: desertvoeheadband2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Desert Voe Headband ★: -1
-        White Chuchu Jelly: -5
-        Ice Keese Wing: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Desert Voe Headband ★★: 0
+        Desert Voe Headband ★: 1
+        White Chuchu Jelly: 5
+        Ice Keese Wing: 3
 
-  Desert Voe Headband ★★★:
+  - name: Desert Voe Headband ★★★
     custom_simplename: desertvoeheadband3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Desert Voe Headband ★★: -1
-        Ice Keese Wing: -8
-        Icy Lizalfos Tail: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Desert Voe Headband ★★★: 0
+        Desert Voe Headband ★★: 1
+        Ice Keese Wing: 8
+        Icy Lizalfos Tail: 5
 
-  Desert Voe Headband ★★★★:
+  - name: Desert Voe Headband ★★★★
     custom_simplename: desertvoeheadband4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Desert Voe Headband ★★★: -1
-        Icy Lizalfos Tail: -10
-        Sapphire: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Desert Voe Headband ★★★★: 0
+        Desert Voe Headband ★★★: 1
+        Icy Lizalfos Tail: 10
+        Sapphire: 5
 
-  Desert Voe Spaulder:
+  - name: Desert Voe Spaulder
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -1300
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Desert Voe Spaulder: 0
+        Rupee: 1300
 
-  Desert Voe Spaulder ★:
+  - name: Desert Voe Spaulder ★
     custom_simplename: desertvoespaulder1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Desert Voe Spaulder: -1
-        White Chuchu Jelly: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Desert Voe Spaulder ★: 0
+        Desert Voe Spaulder: 1
+        White Chuchu Jelly: 3
 
-  Desert Voe Spaulder ★★:
+  - name: Desert Voe Spaulder ★★
     custom_simplename: desertvoespaulder2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Desert Voe Spaulder ★: -1
-        White Chuchu Jelly: -5
-        Ice Keese Wing: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Desert Voe Spaulder ★★: 0
+        Desert Voe Spaulder ★: 1
+        White Chuchu Jelly: 5
+        Ice Keese Wing: 3
 
-  Desert Voe Spaulder ★★★:
+  - name: Desert Voe Spaulder ★★★
     custom_simplename: desertvoespaulder3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Desert Voe Spaulder ★★: -1
-        Ice Keese Wing: -8
-        Icy Lizalfos Tail: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Desert Voe Spaulder ★★★: 0
+        Desert Voe Spaulder ★★: 1
+        Ice Keese Wing: 8
+        Icy Lizalfos Tail: 5
 
-  Desert Voe Spaulder ★★★★:
+  - name: Desert Voe Spaulder ★★★★
     custom_simplename: desertvoespaulder4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Desert Voe Spaulder ★★★: -1
-        Icy Lizalfos Tail: -10
-        Sapphire: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Desert Voe Spaulder ★★★★: 0
+        Desert Voe Spaulder ★★★: 1
+        Icy Lizalfos Tail: 10
+        Sapphire: 5
 
-  Desert Voe Trousers:
+  - name: Desert Voe Trousers
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -650
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Desert Voe Trousers: 0
+        Rupee: 650
 
-  Desert Voe Trousers ★:
+  - name: Desert Voe Trousers ★
     custom_simplename: desertvoetrousers1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Desert Voe Trousers: -1
-        White Chuchu Jelly: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Desert Voe Trousers ★: 0
+        Desert Voe Trousers: 1
+        White Chuchu Jelly: 3
 
-  Desert Voe Trousers ★★:
+  - name: Desert Voe Trousers ★★
     custom_simplename: desertvoetrousers2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Desert Voe Trousers ★: -1
-        White Chuchu Jelly: -5
-        Ice Keese Wing: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Desert Voe Trousers ★★: 0
+        Desert Voe Trousers ★: 1
+        White Chuchu Jelly: 5
+        Ice Keese Wing: 3
 
-  Desert Voe Trousers ★★★:
+  - name: Desert Voe Trousers ★★★
     custom_simplename: desertvoetrousers3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Desert Voe Trousers ★★: -1
-        Ice Keese Wing: -8
-        Icy Lizalfos Tail: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Desert Voe Trousers ★★★: 0
+        Desert Voe Trousers ★★: 1
+        Ice Keese Wing: 8
+        Icy Lizalfos Tail: 5
 
-  Desert Voe Trousers ★★★★:
+  - name: Desert Voe Trousers ★★★★
     custom_simplename: desertvoetrousers4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Desert Voe Trousers ★★★: -1
-        Icy Lizalfos Tail: -10
-        Sapphire: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Desert Voe Trousers ★★★★: 0
+        Desert Voe Trousers ★★★: 1
+        Icy Lizalfos Tail: 10
+        Sapphire: 5
 
-  _l: {H2: Flame breaker set} ##################################################
+  - H2: Flame breaker set ######################################################
 
-  Flamebreaker Helm:
+  - name: Flamebreaker Helm
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -2000
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Flamebreaker Helm: 0
+        Rupee: 2000
 
-  Flamebreaker Helm ★:
+  - name: Flamebreaker Helm ★
     custom_simplename: flamebreakerhelm1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Flamebreaker Helm: -1
-        Fireproof Lizard: -1
-        Moblin Horn: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Flamebreaker Helm ★: 0
+        Flamebreaker Helm: 1
+        Fireproof Lizard: 1
+        Moblin Horn: 2
 
-  Flamebreaker Helm ★★:
+  - name: Flamebreaker Helm ★★
     custom_simplename: flamebreakerhelm2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Flamebreaker Helm ★: -1
-        Fireproof Lizard: -3
-        Moblin Fang: -4
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Flamebreaker Helm ★★: 0
+        Flamebreaker Helm ★: 1
+        Fireproof Lizard: 3
+        Moblin Fang: 4
 
-  Flamebreaker Helm ★★★:
+  - name: Flamebreaker Helm ★★★
     custom_simplename: flamebreakerhelm3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Flamebreaker Helm ★★: -1
-        Smotherwing Butterfly: -3
-        Moblin Guts: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Flamebreaker Helm ★★★: 0
+        Flamebreaker Helm ★★: 1
+        Smotherwing Butterfly: 3
+        Moblin Guts: 3
 
-  Flamebreaker Helm ★★★★:
+  - name: Flamebreaker Helm ★★★★
     custom_simplename: flamebreakerhelm4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Flamebreaker Helm ★★★: -1
-        Smotherwing Butterfly: -5
-        Hinox Guts: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Flamebreaker Helm ★★★★: 0
+        Flamebreaker Helm ★★★: 1
+        Smotherwing Butterfly: 5
+        Hinox Guts: 2
 
-  Flamebreaker Armor:
+  - name: Flamebreaker Armor
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -600
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Flamebreaker Armor: 0
+        Rupee: 600
 
-  Flamebreaker Armor ★:
+  - name: Flamebreaker Armor ★
     custom_simplename: flamebreakerarmor1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Flamebreaker Armor: -1
-        Fireproof Lizard: -1
-        Moblin Horn: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Flamebreaker Armor ★: 0
+        Flamebreaker Armor: 1
+        Fireproof Lizard: 1
+        Moblin Horn: 2
 
-  Flamebreaker Armor ★★:
+  - name: Flamebreaker Armor ★★
     custom_simplename: flamebreakerarmor2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Flamebreaker Armor ★: -1
-        Fireproof Lizard: -3
-        Moblin Fang: -4
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Flamebreaker Armor ★★: 0
+        Flamebreaker Armor ★: 1
+        Fireproof Lizard: 3
+        Moblin Fang: 4
 
-  Flamebreaker Armor ★★★:
+  - name: Flamebreaker Armor ★★★
     custom_simplename: flamebreakerarmor3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Flamebreaker Armor ★★: -1
-        Smotherwing Butterfly: -3
-        Moblin Guts: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Flamebreaker Armor ★★★: 0
+        Flamebreaker Armor ★★: 1
+        Smotherwing Butterfly: 3
+        Moblin Guts: 3
 
-  Flamebreaker Armor ★★★★:
+  - name: Flamebreaker Armor ★★★★
     custom_simplename: flamebreakerarmor4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Flamebreaker Armor ★★★: -1
-        Smotherwing Butterfly: -5
-        Hinox Guts: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Flamebreaker Armor ★★★★: 0
+        Flamebreaker Armor ★★★: 1
+        Smotherwing Butterfly: 5
+        Hinox Guts: 2
 
-  Flamebreaker Boots:
+  - name: Flamebreaker Boots
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -700
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Flamebreaker Boots: 0
+        Rupee: 700
 
-  Flamebreaker Boots ★:
+  - name: Flamebreaker Boots ★
     custom_simplename: flamebreakerboots1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Flamebreaker Boots: -1
-        Fireproof Lizard: -1
-        Moblin Horn: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Flamebreaker Boots ★: 0
+        Flamebreaker Boots: 1
+        Fireproof Lizard: 1
+        Moblin Horn: 2
 
-  Flamebreaker Boots ★★:
+  - name: Flamebreaker Boots ★★
     custom_simplename: flamebreakerboots2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Flamebreaker Boots ★: -1
-        Fireproof Lizard: -3
-        Moblin Fang: -4
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Flamebreaker Boots ★★: 0
+        Flamebreaker Boots ★: 1
+        Fireproof Lizard: 3
+        Moblin Fang: 4
 
-  Flamebreaker Boots ★★★:
+  - name: Flamebreaker Boots ★★★
     custom_simplename: flamebreakerboots3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Flamebreaker Boots ★★: -1
-        Smotherwing Butterfly: -3
-        Moblin Guts: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Flamebreaker Boots ★★★: 0
+        Flamebreaker Boots ★★: 1
+        Smotherwing Butterfly: 3
+        Moblin Guts: 3
 
-  Flamebreaker Boots ★★★★:
+  - name: Flamebreaker Boots ★★★★
     custom_simplename: flamebreakerboots4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Flamebreaker Boots ★★★: -1
-        Smotherwing Butterfly: -5
-        Hinox Guts: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Flamebreaker Boots ★★★★: 0
+        Flamebreaker Boots ★★★: 1
+        Smotherwing Butterfly: 5
+        Hinox Guts: 2
 
-  _m: {H2: Hylian Set)} ########################################################
+  - H2: Hylian Set) ############################################################
 
-  Hylian Hood:
+  - name: Hylian Hood
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -60
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hylian Hood: 0
+        Rupee: 60
 
-  Hylian Hood ★:
+  - name: Hylian Hood ★
     custom_simplename: hylianhood1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Hylian Hood: -1
-        Bokoblin Horn: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hylian Hood ★: 0
+        Hylian Hood: 1
+        Bokoblin Horn: 5
 
-  Hylian Hood ★★:
+  - name: Hylian Hood ★★
     custom_simplename: hylianhood2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Hylian Hood ★: -1
-        Bokoblin Horn: -8
-        Bokoblin Fang: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hylian Hood ★★: 0
+        Hylian Hood ★: 1
+        Bokoblin Horn: 8
+        Bokoblin Fang: 5
 
-  Hylian Hood ★★★:
+  - name: Hylian Hood ★★★
     custom_simplename: hylianhood3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Hylian Hood ★★: -1
-        Bokoblin Fang: -10
-        Bokoblin Guts: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hylian Hood ★★★: 0
+        Hylian Hood ★★: 1
+        Bokoblin Fang: 10
+        Bokoblin Guts: 5
 
-  Hylian Hood ★★★★:
+  - name: Hylian Hood ★★★★
     custom_simplename: hylianhood4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Hylian Hood ★★★: -1
-        Bokoblin Guts: -15
-        Amber: -15
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hylian Hood ★★★★: 0
+        Hylian Hood ★★★: 1
+        Bokoblin Guts: 15
+        Amber: 15
 
-  Hylian Tunic:
+  - name: Hylian Tunic
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -120
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hylian Tunic: 0
+        Rupee: 120
 
-  Hylian Tunic ★:
+  - name: Hylian Tunic ★
     custom_simplename: hyliantunic1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Hylian Tunic: -1
-        Bokoblin Horn: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hylian Tunic ★: 0
+        Hylian Tunic: 1
+        Bokoblin Horn: 5
 
-  Hylian Tunic ★★:
+  - name: Hylian Tunic ★★
     custom_simplename: hyliantunic2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Hylian Tunic ★: -1
-        Bokoblin Horn: -8
-        Bokoblin Fang: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hylian Tunic ★★: 0
+        Hylian Tunic ★: 1
+        Bokoblin Horn: 8
+        Bokoblin Fang: 5
 
-  Hylian Tunic ★★★:
+  - name: Hylian Tunic ★★★
     custom_simplename: hyliantunic3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Hylian Tunic ★★: -1
-        Bokoblin Fang: -10
-        Bokoblin Guts: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hylian Tunic ★★★: 0
+        Hylian Tunic ★★: 1
+        Bokoblin Fang: 10
+        Bokoblin Guts: 5
 
-  Hylian Tunic ★★★★:
+  - name: Hylian Tunic ★★★★
     custom_simplename: hyliantunic4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Hylian Tunic ★★★: -1
-        Bokoblin Guts: -15
-        Amber: -15
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hylian Tunic ★★★★: 0
+        Hylian Tunic ★★★: 1
+        Bokoblin Guts: 15
+        Amber: 15
 
-  Hylian Trousers:
+  - name: Hylian Trousers
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -90
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hylian Trousers: 0
+        Rupee: 90
 
-  Hylian Trousers ★:
+  - name: Hylian Trousers ★
     custom_simplename: hyliantrousers1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Hylian Trousers: -1
-        Bokoblin Horn: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hylian Trousers ★: 0
+        Hylian Trousers: 1
+        Bokoblin Horn: 5
 
-  Hylian Trousers ★★:
+  - name: Hylian Trousers ★★
     custom_simplename: hyliantrousers2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Hylian Trousers ★: -1
-        Bokoblin Horn: -8
-        Bokoblin Fang: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hylian Trousers ★★: 0
+        Hylian Trousers ★: 1
+        Bokoblin Horn: 8
+        Bokoblin Fang: 5
 
-  Hylian Trousers ★★★:
+  - name: Hylian Trousers ★★★
     custom_simplename: hyliantrousers3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Hylian Trousers ★★: -1
-        Bokoblin Fang: -10
-        Bokoblin Guts: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hylian Trousers ★★★: 0
+        Hylian Trousers ★★: 1
+        Bokoblin Fang: 10
+        Bokoblin Guts: 5
 
-  Hylian Trousers ★★★★:
+  - name: Hylian Trousers ★★★★
     custom_simplename: hyliantrousers4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Hylian Trousers ★★★: -1
-        Bokoblin Guts: -15
-        Amber: -15
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hylian Trousers ★★★★: 0
+        Hylian Trousers ★★★: 1
+        Bokoblin Guts: 15
+        Amber: 15
 
-  _n: {H2: Radient Set} ########################################################
+  - H2: Radient Set ############################################################
 
-  Radiant Mask:
+  - name: Radiant Mask
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -800
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Radiant Mask: 0
+        Rupee: 800
 
-  Radiant Mask ★:
+  - name: Radiant Mask ★
     custom_simplename: radiantmask1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Radiant Mask: -1
-        Luminous Stone: -5
-        Bokoblin Guts: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Radiant Mask ★: 0
+        Radiant Mask: 1
+        Luminous Stone: 5
+        Bokoblin Guts: 3
 
-  Radiant Mask ★★:
+  - name: Radiant Mask ★★
     custom_simplename: radiantmask2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Radiant Mask ★: -1
-        Luminous Stone: -8
-        Moblin Guts: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Radiant Mask ★★: 0
+        Radiant Mask ★: 1
+        Luminous Stone: 8
+        Moblin Guts: 3
 
-  Radiant Mask ★★★:
+  - name: Radiant Mask ★★★
     custom_simplename: radiantmask3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Radiant Mask ★★: -1
-        Luminous Stone: -10
-        Molduga Guts: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Radiant Mask ★★★: 0
+        Radiant Mask ★★: 1
+        Luminous Stone: 10
+        Molduga Guts: 2
 
-  Radiant Mask ★★★★:
+  - name: Radiant Mask ★★★★
     custom_simplename: radiantmask4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Radiant Mask ★★★: -1
-        Luminous Stone: -20
-        Lynel Guts: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Radiant Mask ★★★★: 0
+        Radiant Mask ★★★: 1
+        Luminous Stone: 20
+        Lynel Guts: 1
 
-  Radiant Shirt:
+  - name: Radiant Shirt
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -800
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Radiant Shirt: 0
+        Rupee: 800
 
-  Radiant Shirt ★:
+  - name: Radiant Shirt ★
     custom_simplename: radiantshirt1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Radiant Shirt: -1
-        Luminous Stone: -5
-        Bokoblin Guts: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Radiant Shirt ★: 0
+        Radiant Shirt: 1
+        Luminous Stone: 5
+        Bokoblin Guts: 3
 
-  Radiant Shirt ★★:
+  - name: Radiant Shirt ★★
     custom_simplename: radiantshirt2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Radiant Shirt ★: -1
-        Luminous Stone: -8
-        Moblin Guts: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Radiant Shirt ★★: 0
+        Radiant Shirt ★: 1
+        Luminous Stone: 8
+        Moblin Guts: 3
 
-  Radiant Shirt ★★★:
+  - name: Radiant Shirt ★★★
     custom_simplename: radiantshirt3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Radiant Shirt ★★: -1
-        Luminous Stone: -10
-        Molduga Guts: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Radiant Shirt ★★★: 0
+        Radiant Shirt ★★: 1
+        Luminous Stone: 10
+        Molduga Guts: 2
 
-  Radiant Shirt ★★★★:
+  - name: Radiant Shirt ★★★★
     custom_simplename: radiantshirt4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Radiant Shirt ★★★: -1
-        Luminous Stone: -20
-        Lynel Guts: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Radiant Shirt ★★★★: 0
+        Radiant Shirt ★★★: 1
+        Luminous Stone: 20
+        Lynel Guts: 1
 
-  Radiant Tights:
+  - name: Radiant Tights
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -800
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Radiant Tights: 0
+        Rupee: 800
 
-  Radiant Tights ★:
+  - name: Radiant Tights ★
     custom_simplename: radianttights1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Radiant Tights: -1
-        Luminous Stone: -5
-        Bokoblin Guts: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Radiant Tights ★: 0
+        Radiant Tights: 1
+        Luminous Stone: 5
+        Bokoblin Guts: 3
 
-  Radiant Tights ★★:
+  - name: Radiant Tights ★★
     custom_simplename: radianttights2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Radiant Tights ★: -1
-        Luminous Stone: -8
-        Moblin Guts: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Radiant Tights ★★: 0
+        Radiant Tights ★: 1
+        Luminous Stone: 8
+        Moblin Guts: 3
 
-  Radiant Tights ★★★:
+  - name: Radiant Tights ★★★
     custom_simplename: radianttights3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Radiant Tights ★★: -1
-        Luminous Stone: -10
-        Molduga Guts: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Radiant Tights ★★★: 0
+        Radiant Tights ★★: 1
+        Luminous Stone: 10
+        Molduga Guts: 2
 
-  Radiant Tights ★★★★:
+  - name: Radiant Tights ★★★★
     custom_simplename: radianttights4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Radiant Tights ★★★: -1
-        Luminous Stone: -20
-        Lynel Guts: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Radiant Tights ★★★★: 0
+        Radiant Tights ★★★: 1
+        Luminous Stone: 20
+        Lynel Guts: 1
 
-  _o: {H2: Rubber Set} #########################################################
+  - H2: Rubber Set #############################################################
 
-  Rubber Helm:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Rubber Helm: 0
+  - name: Rubber Helm
+    raw_resource: true
 
-  Rubber Helm ★:
+  - name: Rubber Helm ★
     custom_simplename: rubberhelm1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Rubber Helm: -1
-        Yellow Chuchu Jelly: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Rubber Helm ★: 0
+        Rubber Helm: 1
+        Yellow Chuchu Jelly: 3
 
-  Rubber Helm ★★:
+  - name: Rubber Helm ★★
     custom_simplename: rubberhelm2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Rubber Helm ★: -1
-        Yellow Chuchu Jelly: -5
-        Voltfruit: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Rubber Helm ★★: 0
+        Rubber Helm ★: 1
+        Yellow Chuchu Jelly: 5
+        Voltfruit: 5
 
-  Rubber Helm ★★★:
+  - name: Rubber Helm ★★★
     custom_simplename: rubberhelm3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Rubber Helm ★★: -1
-        Zapshroom: -5
-        Yellow Lizalfos Tail: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Rubber Helm ★★★: 0
+        Rubber Helm ★★: 1
+        Zapshroom: 5
+        Yellow Lizalfos Tail: 5
 
-  Rubber Helm ★★★★:
+  - name: Rubber Helm ★★★★
     custom_simplename: rubberhelm4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Rubber Helm ★★★: -1
-        Yellow Lizalfos Tail: -10
-        Topaz: -10
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Rubber Helm ★★★★: 0
+        Rubber Helm ★★★: 1
+        Yellow Lizalfos Tail: 10
+        Topaz: 10
 
-  Rubber Armor:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Rubber Armor: 0
+  - name: Rubber Armor
+    raw_resource: true
 
-  Rubber Armor ★:
+  - name: Rubber Armor ★
     custom_simplename: rubberarmor1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Rubber Armor: -1
-        Yellow Chuchu Jelly: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Rubber Armor ★: 0
+        Rubber Armor: 1
+        Yellow Chuchu Jelly: 3
 
-  Rubber Armor ★★:
+  - name: Rubber Armor ★★
     custom_simplename: rubberarmor2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Rubber Armor ★: -1
-        Yellow Chuchu Jelly: -5
-        Voltfruit: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Rubber Armor ★★: 0
+        Rubber Armor ★: 1
+        Yellow Chuchu Jelly: 5
+        Voltfruit: 5
 
-  Rubber Armor ★★★:
+  - name: Rubber Armor ★★★
     custom_simplename: rubberarmor3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Rubber Armor ★★: -1
-        Zapshroom: -5
-        Yellow Lizalfos Tail: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Rubber Armor ★★★: 0
+        Rubber Armor ★★: 1
+        Zapshroom: 5
+        Yellow Lizalfos Tail: 5
 
-  Rubber Armor ★★★★:
+  - name: Rubber Armor ★★★★
     custom_simplename: rubberarmor4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Rubber Armor ★★★: -1
-        Yellow Lizalfos Tail: -10
-        Topaz: -10
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Rubber Armor ★★★★: 0
+        Rubber Armor ★★★: 1
+        Yellow Lizalfos Tail: 10
+        Topaz: 10
 
-  Rubber Tights:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Rubber Tights: 0
+  - name: Rubber Tights
+    raw_resource: true
 
-  Rubber Tights ★:
+  - name: Rubber Tights ★
     custom_simplename: rubbertights1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Rubber Tights: -1
-        Yellow Chuchu Jelly: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Rubber Tights ★: 0
+        Rubber Tights: 1
+        Yellow Chuchu Jelly: 3
 
-  Rubber Tights ★★:
+  - name: Rubber Tights ★★
     custom_simplename: rubbertights2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Rubber Tights ★: -1
-        Yellow Chuchu Jelly: -5
-        Voltfruit: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Rubber Tights ★★: 0
+        Rubber Tights ★: 1
+        Yellow Chuchu Jelly: 5
+        Voltfruit: 5
 
-  Rubber Tights ★★★:
+  - name: Rubber Tights ★★★
     custom_simplename: rubbertights3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Rubber Tights ★★: -1
-        Zapshroom: -5
-        Yellow Lizalfos Tail: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Rubber Tights ★★★: 0
+        Rubber Tights ★★: 1
+        Zapshroom: 5
+        Yellow Lizalfos Tail: 5
 
-  Rubber Tights ★★★★:
+  - name: Rubber Tights ★★★★
     custom_simplename: rubbertights4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Rubber Tights ★★★: -1
-        Yellow Lizalfos Tail: -10
-        Topaz: -10
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Rubber Tights ★★★★: 0
+        Rubber Tights ★★★: 1
+        Yellow Lizalfos Tail: 10
+        Topaz: 10
 
-  _p: {H2: Snowquill Set} ######################################################
+  - H2: Snowquill Set ##########################################################
 
-  Snowquill Headdress:
+  - name: Snowquill Headdress
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -1000
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Snowquill Headdress: 0
+        Rupee: 1000
 
-  Snowquill Headdress ★:
+  - name: Snowquill Headdress ★
     custom_simplename: snowquillheaddress1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Snowquill Headdress: -1
-        Red Chuchu Jelly: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Snowquill Headdress ★: 0
+        Snowquill Headdress: 1
+        Red Chuchu Jelly: 3
 
-  Snowquill Headdress ★★:
+  - name: Snowquill Headdress ★★
     custom_simplename: snowquillheaddress2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Snowquill Headdress ★: -1
-        Red Chuchu Jelly: -5
-        Warm Safflina: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Snowquill Headdress ★★: 0
+        Snowquill Headdress ★: 1
+        Red Chuchu Jelly: 5
+        Warm Safflina: 3
 
-  Snowquill Headdress ★★★:
+  - name: Snowquill Headdress ★★★
     custom_simplename: snowquillheaddress3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Snowquill Headdress ★★: -1
-        Fire Keese Wing: -8
-        Sunshroom: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Snowquill Headdress ★★★: 0
+        Snowquill Headdress ★★: 1
+        Fire Keese Wing: 8
+        Sunshroom: 5
 
-  Snowquill Headdress ★★★★:
+  - name: Snowquill Headdress ★★★★
     custom_simplename: snowquillheaddress4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Snowquill Headdress ★★★: -1
-        Red Lizalfos Tail: -10
-        Ruby: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Snowquill Headdress ★★★★: 0
+        Snowquill Headdress ★★★: 1
+        Red Lizalfos Tail: 10
+        Ruby: 5
 
-  Snowquill Tunic:
+  - name: Snowquill Tunic
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -1000
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Snowquill Tunic: 0
+        Rupee: 1000
 
-  Snowquill Tunic ★:
+  - name: Snowquill Tunic ★
     custom_simplename: snowquilltunic1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Snowquill Tunic: -1
-        Red Chuchu Jelly: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Snowquill Tunic ★: 0
+        Snowquill Tunic: 1
+        Red Chuchu Jelly: 3
 
-  Snowquill Tunic ★★:
+  - name: Snowquill Tunic ★★
     custom_simplename: snowquilltunic2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Snowquill Tunic ★: -1
-        Red Chuchu Jelly: -5
-        Warm Safflina: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Snowquill Tunic ★★: 0
+        Snowquill Tunic ★: 1
+        Red Chuchu Jelly: 5
+        Warm Safflina: 3
 
-  Snowquill Tunic ★★★:
+  - name: Snowquill Tunic ★★★
     custom_simplename: snowquilltunic3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Snowquill Tunic ★★: -1
-        Fire Keese Wing: -8
-        Sunshroom: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Snowquill Tunic ★★★: 0
+        Snowquill Tunic ★★: 1
+        Fire Keese Wing: 8
+        Sunshroom: 5
 
-  Snowquill Tunic ★★★★:
+  - name: Snowquill Tunic ★★★★
     custom_simplename: snowquilltunic4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Snowquill Tunic ★★★: -1
-        Red Lizalfos Tail: -10
-        Ruby: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Snowquill Tunic ★★★★: 0
+        Snowquill Tunic ★★★: 1
+        Red Lizalfos Tail: 10
+        Ruby: 5
 
-  Snowquill Trousers:
+  - name: Snowquill Trousers
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -1000
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Snowquill Trousers: 0
+        Rupee: 1000
 
-  Snowquill Trousers ★:
+  - name: Snowquill Trousers ★
     custom_simplename: snowquilltrousers1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Snowquill Trousers: -1
-        Red Chuchu Jelly: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Snowquill Trousers ★: 0
+        Snowquill Trousers: 1
+        Red Chuchu Jelly: 3
 
-  Snowquill Trousers ★★:
+  - name: Snowquill Trousers ★★
     custom_simplename: snowquilltrousers2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Snowquill Trousers ★: -1
-        Red Chuchu Jelly: -5
-        Warm Safflina: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Snowquill Trousers ★★: 0
+        Snowquill Trousers ★: 1
+        Red Chuchu Jelly: 5
+        Warm Safflina: 3
 
-  Snowquill Trousers ★★★:
+  - name: Snowquill Trousers ★★★
     custom_simplename: snowquilltrousers3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Snowquill Trousers ★★: -1
-        Fire Keese Wing: -8
-        Sunshroom: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Snowquill Trousers ★★★: 0
+        Snowquill Trousers ★★: 1
+        Fire Keese Wing: 8
+        Sunshroom: 5
 
-  Snowquill Trousers ★★★★:
+  - name: Snowquill Trousers ★★★★
     custom_simplename: snowquilltrousers4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Snowquill Trousers ★★★: -1
-        Red Lizalfos Tail: -10
-        Ruby: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Snowquill Trousers ★★★★: 0
+        Snowquill Trousers ★★★: 1
+        Red Lizalfos Tail: 10
+        Ruby: 5
 
-  _q: {H2: Soldiers Set} #######################################################
+  - H2: Soldiers Set ###########################################################
 
-  Soldier's Helm:
+  - name: Soldier's Helm
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -180
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Soldier's Helm: 0
+        Rupee: 180
 
-  Soldier's Helm ★:
+  - name: Soldier's Helm ★
     custom_simplename: soldiershelm1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Soldier's Helm: -1
-        Chuchu Jelly: -5
-        Bokoblin Guts: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Soldier's Helm ★: 0
+        Soldier's Helm: 1
+        Chuchu Jelly: 5
+        Bokoblin Guts: 3
 
-  Soldier's Helm ★★:
+  - name: Soldier's Helm ★★
     custom_simplename: soldiershelm2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Soldier's Helm ★: -1
-        Keese Eyeball: -3
-        Moblin Guts: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Soldier's Helm ★★: 0
+        Soldier's Helm ★: 1
+        Keese Eyeball: 3
+        Moblin Guts: 3
 
-  Soldier's Helm ★★★:
+  - name: Soldier's Helm ★★★
     custom_simplename: soldiershelm3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Soldier's Helm ★★: -1
-        Lizalfos Tail: -3
-        Hinox Guts: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Soldier's Helm ★★★: 0
+        Soldier's Helm ★★: 1
+        Lizalfos Tail: 3
+        Hinox Guts: 2
 
-  Soldier's Helm ★★★★:
+  - name: Soldier's Helm ★★★★
     custom_simplename: soldiershelm4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Soldier's Helm ★★★: -1
-        Lynel Hoof: -4
-        Lynel Guts: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Soldier's Helm ★★★★: 0
+        Soldier's Helm ★★★: 1
+        Lynel Hoof: 4
+        Lynel Guts: 2
 
-  Soldier's Armor:
+  - name: Soldier's Armor
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -180
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Soldier's Armor: 0
+        Rupee: 180
 
-  Soldier's Armor ★:
+  - name: Soldier's Armor ★
     custom_simplename: soldiersarmor1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Soldier's Armor: -1
-        Chuchu Jelly: -5
-        Bokoblin Guts: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Soldier's Armor ★: 0
+        Soldier's Armor: 1
+        Chuchu Jelly: 5
+        Bokoblin Guts: 3
 
-  Soldier's Armor ★★:
+  - name: Soldier's Armor ★★
     custom_simplename: soldiersarmor2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Soldier's Armor ★: -1
-        Keese Eyeball: -3
-        Moblin Guts: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Soldier's Armor ★★: 0
+        Soldier's Armor ★: 1
+        Keese Eyeball: 3
+        Moblin Guts: 3
 
-  Soldier's Armor ★★★:
+  - name: Soldier's Armor ★★★
     custom_simplename: soldiersarmor3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Soldier's Armor ★★: -1
-        Lizalfos Tail: -3
-        Hinox Guts: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Soldier's Armor ★★★: 0
+        Soldier's Armor ★★: 1
+        Lizalfos Tail: 3
+        Hinox Guts: 2
 
-  Soldier's Armor ★★★★:
+  - name: Soldier's Armor ★★★★
     custom_simplename: soldiersarmor4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Soldier's Armor ★★★: -1
-        Lynel Hoof: -4
-        Lynel Guts: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Soldier's Armor ★★★★: 0
+        Soldier's Armor ★★★: 1
+        Lynel Hoof: 4
+        Lynel Guts: 2
 
-  Soldier's Greaves:
+  - name: Soldier's Greaves
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -180
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Soldier's Greaves: 0
+        Rupee: 180
 
-  Soldier's Greaves ★:
+  - name: Soldier's Greaves ★
     custom_simplename: soldiersgreaves1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Soldier's Greaves: -1
-        Chuchu Jelly: -5
-        Bokoblin Guts: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Soldier's Greaves ★: 0
+        Soldier's Greaves: 1
+        Chuchu Jelly: 5
+        Bokoblin Guts: 3
 
-  Soldier's Greaves ★★:
+  - name: Soldier's Greaves ★★
     custom_simplename: soldiersgreaves2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Soldier's Greaves ★: -1
-        Keese Eyeball: -3
-        Moblin Guts: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Soldier's Greaves ★★: 0
+        Soldier's Greaves ★: 1
+        Keese Eyeball: 3
+        Moblin Guts: 3
 
-  Soldier's Greaves ★★★:
+  - name: Soldier's Greaves ★★★
     custom_simplename: soldiersgreaves3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Soldier's Greaves ★★: -1
-        Lizalfos Tail: -3
-        Hinox Guts: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Soldier's Greaves ★★★: 0
+        Soldier's Greaves ★★: 1
+        Lizalfos Tail: 3
+        Hinox Guts: 2
 
-  Soldier's Greaves ★★★★:
+  - name: Soldier's Greaves ★★★★
     custom_simplename: soldiersgreaves4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Soldier's Greaves ★★★: -1
-        Lynel Hoof: -4
-        Lynel Guts: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Soldier's Greaves ★★★★: 0
+        Soldier's Greaves ★★★: 1
+        Lynel Hoof: 4
+        Lynel Guts: 2
 
-  _r: {H2: Zora Set} ###########################################################
+  - H2: Zora Set ###############################################################
 
-  Zora Helm:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Zora Helm: 0
+  - name: Zora Helm
+    raw_resource: true
 
-  Zora Helm ★:
+  - name: Zora Helm ★
     custom_simplename: zorahelm1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Zora Helm: -1
-        Lizalfos Horn: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Zora Helm ★: 0
+        Zora Helm: 1
+        Lizalfos Horn: 3
 
-  Zora Helm ★★:
+  - name: Zora Helm ★★
     custom_simplename: zorahelm2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Zora Helm ★: -1
-        Lizalfos Talon: -5
-        Hyrule Bass: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Zora Helm ★★: 0
+        Zora Helm ★: 1
+        Lizalfos Talon: 5
+        Hyrule Bass: 5
 
-  Zora Helm ★★★:
+  - name: Zora Helm ★★★
     custom_simplename: zorahelm3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Zora Helm ★★: -1
-        Lizalfos Tail: -5
-        Hearty Bass: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Zora Helm ★★★: 0
+        Zora Helm ★★: 1
+        Lizalfos Tail: 5
+        Hearty Bass: 5
 
-  Zora Helm ★★★★:
+  - name: Zora Helm ★★★★
     custom_simplename: zorahelm4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Zora Helm ★★★: -1
-        Lizalfos Tail: -5
-        Opal: -15
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Zora Helm ★★★★: 0
+        Zora Helm ★★★: 1
+        Lizalfos Tail: 5
+        Opal: 15
 
-  Zora Armor:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Zora Armor: 0
+  - name: Zora Armor
+    raw_resource: true
 
-  Zora Armor ★:
+  - name: Zora Armor ★
     custom_simplename: zoraarmor1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Zora Armor: -1
-        Lizalfos Horn: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Zora Armor ★: 0
+        Zora Armor: 1
+        Lizalfos Horn: 3
 
-  Zora Armor ★★:
+  - name: Zora Armor ★★
     custom_simplename: zoraarmor2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Zora Armor ★: -1
-        Lizalfos Talon: -5
-        Hyrule Bass: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Zora Armor ★★: 0
+        Zora Armor ★: 1
+        Lizalfos Talon: 5
+        Hyrule Bass: 5
 
-  Zora Armor ★★★:
+  - name: Zora Armor ★★★
     custom_simplename: zoraarmor3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Zora Armor ★★: -1
-        Lizalfos Tail: -5
-        Hearty Bass: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Zora Armor ★★★: 0
+        Zora Armor ★★: 1
+        Lizalfos Tail: 5
+        Hearty Bass: 5
 
-  Zora Armor ★★★★:
+  - name: Zora Armor ★★★★
     custom_simplename: zoraarmor4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Zora Armor ★★★: -1
-        Lizalfos Tail: -5
-        Opal: -15
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Zora Armor ★★★★: 0
+        Zora Armor ★★★: 1
+        Lizalfos Tail: 5
+        Opal: 15
 
-  Zora Greaves:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Zora Greaves: 0
+  - name: Zora Greaves
+    raw_resource: true
 
-  Zora Greaves ★:
+  - name: Zora Greaves ★
     custom_simplename: zoragreaves1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Zora Greaves: -1
-        Lizalfos Horn: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Zora Greaves ★: 0
+        Zora Greaves: 1
+        Lizalfos Horn: 3
 
-  Zora Greaves ★★:
+  - name: Zora Greaves ★★
     custom_simplename: zoragreaves2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Zora Greaves ★: -1
-        Lizalfos Talon: -5
-        Hyrule Bass: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Zora Greaves ★★: 0
+        Zora Greaves ★: 1
+        Lizalfos Talon: 5
+        Hyrule Bass: 5
 
-  Zora Greaves ★★★:
+  - name: Zora Greaves ★★★
     custom_simplename: zoragreaves3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Zora Greaves ★★: -1
-        Lizalfos Tail: -5
-        Hearty Bass: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Zora Greaves ★★★: 0
+        Zora Greaves ★★: 1
+        Lizalfos Tail: 5
+        Hearty Bass: 5
 
-  Zora Greaves ★★★★:
+  - name: Zora Greaves ★★★★
     custom_simplename: zoragreaves4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Zora Greaves ★★★: -1
-        Lizalfos Tail: -5
-        Opal: -15
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Zora Greaves ★★★★: 0
+        Zora Greaves ★★★: 1
+        Lizalfos Tail: 5
+        Opal: 15
 
-  _s: {H2: Fierce Deity set (Majoras mask)} ####################################
+  - H2: Fierce Deity set (Majoras mask) ########################################
 
-  Fierce Deity Mask:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Fierce Deity Mask: 0
+  - name: Fierce Deity Mask
+    raw_resource: true
 
-  Fierce Deity Mask ★:
+  - name: Fierce Deity Mask ★
     custom_simplename: fiercedeitymask1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Fierce Deity Mask: -1
-        Hinox Toenail: -5
-        Dinraal's Scale: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Fierce Deity Mask ★: 0
+        Fierce Deity Mask: 1
+        Hinox Toenail: 5
+        Dinraal's Scale: 1
 
-  Fierce Deity Mask ★★:
+  - name: Fierce Deity Mask ★★
     custom_simplename: fiercedeitymask2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Fierce Deity Mask ★: -1
-        Hinox Tooth: -5
-        Dinraal's Claw: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Fierce Deity Mask ★★: 0
+        Fierce Deity Mask ★: 1
+        Hinox Tooth: 5
+        Dinraal's Claw: 1
 
-  Fierce Deity Mask ★★★:
+  - name: Fierce Deity Mask ★★★
     custom_simplename: fiercedeitymask3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Fierce Deity Mask ★★: -1
-        Hinox Guts: -2
-        Shard of Dinraal's Fang: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Fierce Deity Mask ★★★: 0
+        Fierce Deity Mask ★★: 1
+        Hinox Guts: 2
+        Shard of Dinraal's Fang: 1
 
-  Fierce Deity Mask ★★★★:
+  - name: Fierce Deity Mask ★★★★
     custom_simplename: fiercedeitymask4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Fierce Deity Mask ★★★: -1
-        Lynel Guts: -2
-        Shard of Dinraal's Horn: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Fierce Deity Mask ★★★★: 0
+        Fierce Deity Mask ★★★: 1
+        Lynel Guts: 2
+        Shard of Dinraal's Horn: 1
 
-  Fierce Deity Armor:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Fierce Deity Armor: 0
+  - name: Fierce Deity Armor
+    raw_resource: true
 
-  Fierce Deity Armor ★:
+  - name: Fierce Deity Armor ★
     custom_simplename: fiercedeityarmor1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Fierce Deity Armor: -1
-        Hinox Toenail: -5
-        Naydra's Scale: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Fierce Deity Armor ★: 0
+        Fierce Deity Armor: 1
+        Hinox Toenail: 5
+        Naydra's Scale: 1
 
-  Fierce Deity Armor ★★:
+  - name: Fierce Deity Armor ★★
     custom_simplename: fiercedeityarmor2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Fierce Deity Armor ★: -1
-        Hinox Tooth: -5
-        Naydra's Claw: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Fierce Deity Armor ★★: 0
+        Fierce Deity Armor ★: 1
+        Hinox Tooth: 5
+        Naydra's Claw: 1
 
-  Fierce Deity Armor ★★★:
+  - name: Fierce Deity Armor ★★★
     custom_simplename: fiercedeityarmor3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Fierce Deity Armor ★★: -1
-        Hinox Guts: -2
-        Shard of Naydra's Fang: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Fierce Deity Armor ★★★: 0
+        Fierce Deity Armor ★★: 1
+        Hinox Guts: 2
+        Shard of Naydra's Fang: 1
 
-  Fierce Deity Armor ★★★★:
+  - name: Fierce Deity Armor ★★★★
     custom_simplename: fiercedeityarmor4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Fierce Deity Armor ★★★: -1
-        Lynel Guts: -2
-        Shard of Naydra's Horn: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Fierce Deity Armor ★★★★: 0
+        Fierce Deity Armor ★★★: 1
+        Lynel Guts: 2
+        Shard of Naydra's Horn: 1
 
-  Fierce Deity Boots:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Fierce Deity Boots: 0
+  - name: Fierce Deity Boots
+    raw_resource: true
 
-  Fierce Deity Boots ★:
+  - name: Fierce Deity Boots ★
     custom_simplename: fiercedeityboots1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Fierce Deity Boots: -1
-        Hinox Toenail: -5
-        Farosh's Scale: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Fierce Deity Boots ★: 0
+        Fierce Deity Boots: 1
+        Hinox Toenail: 5
+        Farosh's Scale: 1
 
-  Fierce Deity Boots ★★:
+  - name: Fierce Deity Boots ★★
     custom_simplename: fiercedeityboots2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Fierce Deity Boots ★: -1
-        Hinox Tooth: -5
-        Farosh's Claw: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Fierce Deity Boots ★★: 0
+        Fierce Deity Boots ★: 1
+        Hinox Tooth: 5
+        Farosh's Claw: 1
 
-  Fierce Deity Boots ★★★:
+  - name: Fierce Deity Boots ★★★
     custom_simplename: fiercedeityboots3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Fierce Deity Boots ★★: -1
-        Hinox Guts: -2
-        Shard of Farosh's Fang: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Fierce Deity Boots ★★★: 0
+        Fierce Deity Boots ★★: 1
+        Hinox Guts: 2
+        Shard of Farosh's Fang: 1
 
-  Fierce Deity Boots ★★★★:
+  - name: Fierce Deity Boots ★★★★
     custom_simplename: fiercedeityboots4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Fierce Deity Boots ★★★: -1
-        Lynel Guts: -2
-        Shard of Farosh's Horn: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Fierce Deity Boots ★★★★: 0
+        Fierce Deity Boots ★★★: 1
+        Lynel Guts: 2
+        Shard of Farosh's Horn: 1
 
-  _t: {H2: Stealth Set} ########################################################
+  - H2: Stealth Set ############################################################
 
-  Stealth Mask:
+  - name: Stealth Mask
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -600
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Stealth Mask: 0
+        Rupee: 600
 
-  Stealth Mask ★:
+  - name: Stealth Mask ★
     custom_simplename: stealthmask1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Stealth Mask: -1
-        Blue Nightshade: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Stealth Mask ★: 0
+        Stealth Mask: 1
+        Blue Nightshade: 3
 
-  Stealth Mask ★★:
+  - name: Stealth Mask ★★
     custom_simplename: stealthmask2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Stealth Mask ★: -1
-        Blue Nightshade: -5
-        Sunset Firefly: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Stealth Mask ★★: 0
+        Stealth Mask ★: 1
+        Blue Nightshade: 5
+        Sunset Firefly: 5
 
-  Stealth Mask ★★★:
+  - name: Stealth Mask ★★★
     custom_simplename: stealthmask3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Stealth Mask ★★: -1
-        Silent Shroom: -8
-        Sneaky River Snail: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Stealth Mask ★★★: 0
+        Stealth Mask ★★: 1
+        Silent Shroom: 8
+        Sneaky River Snail: 5
 
-  Stealth Mask ★★★★:
+  - name: Stealth Mask ★★★★
     custom_simplename: stealthmask4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Stealth Mask ★★★: -1
-        Stealthfin Trout: -10
-        Silent Princess: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Stealth Mask ★★★★: 0
+        Stealth Mask ★★★: 1
+        Stealthfin Trout: 10
+        Silent Princess: 5
 
-  Stealth Chest Guard:
+  - name: Stealth Chest Guard
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -600
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Stealth Chest Guard: 0
+        Rupee: 600
 
-  Stealth Chest Guard ★:
+  - name: Stealth Chest Guard ★
     custom_simplename: stealthchestguard1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Stealth Chest Guard: -1
-        Blue Nightshade: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Stealth Chest Guard ★: 0
+        Stealth Chest Guard: 1
+        Blue Nightshade: 3
 
-  Stealth Chest Guard ★★:
+  - name: Stealth Chest Guard ★★
     custom_simplename: stealthchestguard2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Stealth Chest Guard ★: -1
-        Blue Nightshade: -5
-        Sunset Firefly: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Stealth Chest Guard ★★: 0
+        Stealth Chest Guard ★: 1
+        Blue Nightshade: 5
+        Sunset Firefly: 5
 
-  Stealth Chest Guard ★★★:
+  - name: Stealth Chest Guard ★★★
     custom_simplename: stealthchestguard3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Stealth Chest Guard ★★: -1
-        Silent Shroom: -8
-        Sneaky River Snail: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Stealth Chest Guard ★★★: 0
+        Stealth Chest Guard ★★: 1
+        Silent Shroom: 8
+        Sneaky River Snail: 5
 
-  Stealth Chest Guard ★★★★:
+  - name: Stealth Chest Guard ★★★★
     custom_simplename: stealthchestguard4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Stealth Chest Guard ★★★: -1
-        Stealthfin Trout: -10
-        Silent Princess: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Stealth Chest Guard ★★★★: 0
+        Stealth Chest Guard ★★★: 1
+        Stealthfin Trout: 10
+        Silent Princess: 5
 
-  Stealth Tights:
+  - name: Stealth Tights
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -600
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Stealth Tights: 0
+        Rupee: 600
 
-  Stealth Tights ★:
+  - name: Stealth Tights ★
     custom_simplename: stealthtights1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Stealth Tights: -1
-        Blue Nightshade: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Stealth Tights ★: 0
+        Stealth Tights: 1
+        Blue Nightshade: 3
 
-  Stealth Tights ★★:
+  - name: Stealth Tights ★★
     custom_simplename: stealthtights2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Stealth Tights ★: -1
-        Blue Nightshade: -5
-        Sunset Firefly: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Stealth Tights ★★: 0
+        Stealth Tights ★: 1
+        Blue Nightshade: 5
+        Sunset Firefly: 5
 
-  Stealth Tights ★★★:
+  - name: Stealth Tights ★★★
     custom_simplename: stealthtights3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Stealth Tights ★★: -1
-        Silent Shroom: -8
-        Sneaky River Snail: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Stealth Tights ★★★: 0
+        Stealth Tights ★★: 1
+        Silent Shroom: 8
+        Sneaky River Snail: 5
 
-  Stealth Tights ★★★★:
+  - name: Stealth Tights ★★★★
     custom_simplename: stealthtights4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Stealth Tights ★★★: -1
-        Stealthfin Trout: -10
-        Silent Princess: -5
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Stealth Tights ★★★★: 0
+        Stealth Tights ★★★: 1
+        Stealthfin Trout: 10
+        Silent Princess: 5
 
   ##############################################################################
-  _u: {H1: Setless Upgradable items} ###########################################
+  - H1: Setless Upgradable items ###############################################
   ##############################################################################
 
-  Sheik's Mask:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Sheik's Mask: 0
+  - name: Sheik's Mask
+    raw_resource: true
 
-  Sheik's Mask ★:
+  - name: Sheik's Mask ★
     custom_simplename: sheiksmask1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Sheik's Mask: -1
-        Silent Princess: -1
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Sheik's Mask ★: 0
+        Sheik's Mask: 1
+        Silent Princess: 1
+        Star Fragment: 1
 
-  Sheik's Mask ★★:
+  - name: Sheik's Mask ★★
     custom_simplename: sheiksmask2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Sheik's Mask ★: -1
-        Silent Princess: -2
-        Star Fragment: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Sheik's Mask ★★: 0
+        Sheik's Mask ★: 1
+        Silent Princess: 2
+        Star Fragment: 2
 
-  Sheik's Mask ★★★:
+  - name: Sheik's Mask ★★★
     custom_simplename: sheiksmask3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Sheik's Mask ★★: -1
-        Silent Princess: -3
-        Star Fragment: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Sheik's Mask ★★★: 0
+        Sheik's Mask ★★: 1
+        Silent Princess: 3
+        Star Fragment: 3
 
-  Sheik's Mask ★★★★:
+  - name: Sheik's Mask ★★★★
     custom_simplename: sheiksmask4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Sheik's Mask ★★★: -1
-        Silent Princess: -4
-        Star Fragment: -4
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Sheik's Mask ★★★★: 0
+        Sheik's Mask ★★★: 1
+        Silent Princess: 4
+        Star Fragment: 4
 
-  Amber Earrings:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Amber Earrings: 0
+  - name: Amber Earrings
+    raw_resource: true
 
-  Amber Earrings ★:
+  - name: Amber Earrings ★
     custom_simplename: amberearrings1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Amber Earrings: -1
-        Amber: -5
-        Flint: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Amber Earrings ★: 0
+        Amber Earrings: 1
+        Amber: 5
+        Flint: 3
 
-  Amber Earrings ★★:
+  - name: Amber Earrings ★★
     custom_simplename: amberearrings2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Amber Earrings ★: -1
-        Amber: -10
-        Flint: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Amber Earrings ★★: 0
+        Amber Earrings ★: 1
+        Amber: 10
+        Flint: 3
 
-  Amber Earrings ★★★:
+  - name: Amber Earrings ★★★
     custom_simplename: amberearrings3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Amber Earrings ★★: -1
-        Amber: -20
-        Flint: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Amber Earrings ★★★: 0
+        Amber Earrings ★★: 1
+        Amber: 20
+        Flint: 3
 
-  Amber Earrings ★★★★:
+  - name: Amber Earrings ★★★★
     custom_simplename: amberearrings4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Amber Earrings ★★★: -1
-        Amber: -30
-        Flint: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Amber Earrings ★★★★: 0
+        Amber Earrings ★★★: 1
+        Amber: 30
+        Flint: 3
 
-  Diamond Circlet:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Diamond Circlet: 0
+  - name: Diamond Circlet
+    raw_resource: true
 
-  Diamond Circlet ★:
+  - name: Diamond Circlet ★
     custom_simplename: diamondcirclet1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Diamond Circlet: -1
-        Diamond: -2
-        Flint: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Diamond Circlet ★: 0
+        Diamond Circlet: 1
+        Diamond: 2
+        Flint: 3
 
-  Diamond Circlet ★★:
+  - name: Diamond Circlet ★★
     custom_simplename: diamondcirclet2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Diamond Circlet ★: -1
-        Diamond: -4
-        Flint: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Diamond Circlet ★★: 0
+        Diamond Circlet ★: 1
+        Diamond: 4
+        Flint: 3
 
-  Diamond Circlet ★★★:
+  - name: Diamond Circlet ★★★
     custom_simplename: diamondcirclet3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Diamond Circlet ★★: -1
-        Diamond: -6
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Diamond Circlet ★★★: 0
+        Diamond Circlet ★★: 1
+        Diamond: 6
+        Star Fragment: 1
 
-  Diamond Circlet ★★★★:
+  - name: Diamond Circlet ★★★★
     custom_simplename: diamondcirclet4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Diamond Circlet ★★★: -1
-        Diamond: -10
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Diamond Circlet ★★★★: 0
+        Diamond Circlet ★★★: 1
+        Diamond: 10
+        Star Fragment: 1
 
-  Opal Earrings:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Opal Earrings: 0
+  - name: Opal Earrings
+    raw_resource: true
 
-  Opal Earrings ★:
+  - name: Opal Earrings ★
     custom_simplename: opalearrings1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Opal Earrings: -1
-        Opal: -5
-        Flint: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Opal Earrings ★: 0
+        Opal Earrings: 1
+        Opal: 5
+        Flint: 3
 
-  Opal Earrings ★★:
+  - name: Opal Earrings ★★
     custom_simplename: opalearrings2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Opal Earrings ★: -1
-        Opal: -8
-        Flint: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Opal Earrings ★★: 0
+        Opal Earrings ★: 1
+        Opal: 8
+        Flint: 3
 
-  Opal Earrings ★★★:
+  - name: Opal Earrings ★★★
     custom_simplename: opalearrings3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Opal Earrings ★★: -1
-        Opal: -16
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Opal Earrings ★★★: 0
+        Opal Earrings ★★: 1
+        Opal: 16
+        Star Fragment: 1
 
-  Opal Earrings ★★★★:
+  - name: Opal Earrings ★★★★
     custom_simplename: opalearrings4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Opal Earrings ★★★: -1
-        Opal: -20
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Opal Earrings ★★★★: 0
+        Opal Earrings ★★★: 1
+        Opal: 20
+        Star Fragment: 1
 
-  Ruby Circlet:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ruby Circlet: 0
+  - name: Ruby Circlet
+    raw_resource: true
 
-  Ruby Circlet ★:
+  - name: Ruby Circlet ★
     custom_simplename: rubycirclet1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Ruby Circlet: -1
-        Ruby: -2
-        Flint: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ruby Circlet ★: 0
+        Ruby Circlet: 1
+        Ruby: 2
+        Flint: 3
 
-  Ruby Circlet ★★:
+  - name: Ruby Circlet ★★
     custom_simplename: rubycirclet2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Ruby Circlet ★: -1
-        Ruby: -4
-        Flint: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ruby Circlet ★★: 0
+        Ruby Circlet ★: 1
+        Ruby: 4
+        Flint: 3
 
-  Ruby Circlet ★★★:
+  - name: Ruby Circlet ★★★
     custom_simplename: rubycirclet3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Ruby Circlet ★★: -1
-        Ruby: -6
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ruby Circlet ★★★: 0
+        Ruby Circlet ★★: 1
+        Ruby: 6
+        Star Fragment: 1
 
-  Ruby Circlet ★★★★:
+  - name: Ruby Circlet ★★★★
     custom_simplename: rubycirclet4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Ruby Circlet ★★★: -1
-        Ruby: -10
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ruby Circlet ★★★★: 0
+        Ruby Circlet ★★★: 1
+        Ruby: 10
+        Star Fragment: 1
 
-  Sapphire Circlet:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Sapphire Circlet: 0
+  - name: Sapphire Circlet
+    raw_resource: true
 
-  Sapphire Circlet ★:
+  - name: Sapphire Circlet ★
     custom_simplename: sapphirecirclet1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Sapphire Circlet: -1
-        Sapphire: -2
-        Flint: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Sapphire Circlet ★: 0
+        Sapphire Circlet: 1
+        Sapphire: 2
+        Flint: 3
 
-  Sapphire Circlet ★★:
+  - name: Sapphire Circlet ★★
     custom_simplename: sapphirecirclet2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Sapphire Circlet ★: -1
-        Sapphire: -4
-        Flint: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Sapphire Circlet ★★: 0
+        Sapphire Circlet ★: 1
+        Sapphire: 4
+        Flint: 3
 
-  Sapphire Circlet ★★★:
+  - name: Sapphire Circlet ★★★
     custom_simplename: sapphirecirclet3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Sapphire Circlet ★★: -1
-        Sapphire: -6
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Sapphire Circlet ★★★: 0
+        Sapphire Circlet ★★: 1
+        Sapphire: 6
+        Star Fragment: 1
 
-  Sapphire Circlet ★★★★:
+  - name: Sapphire Circlet ★★★★
     custom_simplename: sapphirecirclet4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Sapphire Circlet ★★★: -1
-        Sapphire: -10
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Sapphire Circlet ★★★★: 0
+        Sapphire Circlet ★★★: 1
+        Sapphire: 10
+        Star Fragment: 1
 
-  Topaz Earrings:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Topaz Earrings: 0
+  - name: Topaz Earrings
+    raw_resource: true
 
-  Topaz Earrings ★:
+  - name: Topaz Earrings ★
     custom_simplename: topazearrings1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Topaz Earrings: -1
-        Topaz: -2
-        Flint: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Topaz Earrings ★: 0
+        Topaz Earrings: 1
+        Topaz: 2
+        Flint: 3
 
-  Topaz Earrings ★★:
+  - name: Topaz Earrings ★★
     custom_simplename: topazearrings2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Topaz Earrings ★: -1
-        Topaz: -4
-        Flint: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Topaz Earrings ★★: 0
+        Topaz Earrings ★: 1
+        Topaz: 4
+        Flint: 3
 
-  Topaz Earrings ★★★:
+  - name: Topaz Earrings ★★★
     custom_simplename: topazearrings3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Topaz Earrings ★★: -1
-        Topaz: -6
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Topaz Earrings ★★★: 0
+        Topaz Earrings ★★: 1
+        Topaz: 6
+        Star Fragment: 1
 
-  Topaz Earrings ★★★★:
+  - name: Topaz Earrings ★★★★
     custom_simplename: topazearrings4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Topaz Earrings ★★★: -1
-        Topaz: -10
-        Star Fragment: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Topaz Earrings ★★★★: 0
+        Topaz Earrings ★★★: 1
+        Topaz: 10
+        Star Fragment: 1
 
-  Champion's Tunic:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Champion's Tunic: 0
+  - name: Champion's Tunic
+    raw_resource: true
 
-  Champion's Tunic ★:
+  - name: Champion's Tunic ★
     custom_simplename: championstunic1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Champion's Tunic: -1
-        Silent Princess: -3
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Champion's Tunic ★: 0
+        Champion's Tunic: 1
+        Silent Princess: 3
 
-  Champion's Tunic ★★:
+  - name: Champion's Tunic ★★
     custom_simplename: championstunic2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Champion's Tunic ★: -1
-        Silent Princess: -3
-        Shard of Farosh's Horn: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Champion's Tunic ★★: 0
+        Champion's Tunic ★: 1
+        Silent Princess: 3
+        Shard of Farosh's Horn: 2
 
-  Champion's Tunic ★★★:
+  - name: Champion's Tunic ★★★
     custom_simplename: championstunic3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Champion's Tunic ★★: -1
-        Silent Princess: -3
-        Shard of Naydra's Horn: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Champion's Tunic ★★★: 0
+        Champion's Tunic ★★: 1
+        Silent Princess: 3
+        Shard of Naydra's Horn: 2
 
-  Champion's Tunic ★★★★:
+  - name: Champion's Tunic ★★★★
     custom_simplename: championstunic4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Champion's Tunic ★★★: -1
-        Silent Princess: -10
-        Shard of Dinraal's Horn: -2
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Champion's Tunic ★★★★: 0
+        Champion's Tunic ★★★: 1
+        Silent Princess: 10
+        Shard of Dinraal's Horn: 2
 
-  Sand Boots:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Sand Boots: 0
+  - name: Sand Boots
+    raw_resource: true
 
-  Sand Boots ★:
+  - name: Sand Boots ★
     custom_simplename: sandboots1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Sand Boots: -1
-        Molduga Fin: -5
-        Hightail Lizard: -10
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Sand Boots ★: 0
+        Sand Boots: 1
+        Molduga Fin: 5
+        Hightail Lizard: 10
 
-  Sand Boots ★★:
+  - name: Sand Boots ★★
     custom_simplename: sandboots2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Sand Boots ★: -1
-        Molduga Fin: -10
-        Swift Carrot: -10
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Sand Boots ★★: 0
+        Sand Boots ★: 1
+        Molduga Fin: 10
+        Swift Carrot: 10
 
-  Sand Boots ★★★:
+  - name: Sand Boots ★★★
     custom_simplename: sandboots3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Sand Boots ★★: -1
-        Molduga Guts: -3
-        Rushroom: -15
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Sand Boots ★★★: 0
+        Sand Boots ★★: 1
+        Molduga Guts: 3
+        Rushroom: 15
 
-  Sand Boots ★★★★:
+  - name: Sand Boots ★★★★
     custom_simplename: sandboots4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Sand Boots ★★★: -1
-        Molduga Guts: -5
-        Swift Violet: -1
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Sand Boots ★★★★: 0
+        Sand Boots ★★★: 1
+        Molduga Guts: 5
+        Swift Violet: 1
 
-  Snow Boots:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Snow Boots: 0
+  - name: Snow Boots
+    raw_resource: true
 
-  Snow Boots ★:
+  - name: Snow Boots ★
     custom_simplename: snowboots1
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Snow Boots: -1
-        Octorok Tentacle: -5
-        Hightail Lizard: -10
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Snow Boots ★: 0
+        Snow Boots: 1
+        Octorok Tentacle: 5
+        Hightail Lizard: 10
 
-  Snow Boots ★★:
+  - name: Snow Boots ★★
     custom_simplename: snowboots2
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Snow Boots ★: -1
-        Octo Balloon: -5
-        Swift Carrot: -10
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Snow Boots ★★: 0
+        Snow Boots ★: 1
+        Octo Balloon: 5
+        Swift Carrot: 10
 
-  Snow Boots ★★★:
+  - name: Snow Boots ★★★
     custom_simplename: snowboots3
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Snow Boots ★★: -1
-        Octorok Eyeball: -5
-        Rushroom: -15
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Snow Boots ★★★: 0
+        Snow Boots ★★: 1
+        Octorok Eyeball: 5
+        Rushroom: 15
 
-  Snow Boots ★★★★:
+  - name: Snow Boots ★★★★
     custom_simplename: snowboots4
     recipes:
     - output: 1
       recipe_type: Great Fairy
       requirements:
-        Snow Boots ★★★: -1
-        Naydra's Scale: -2
-        Swift Violet: -15
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Snow Boots ★★★★: 0
+        Snow Boots ★★★: 1
+        Naydra's Scale: 2
+        Swift Violet: 15
 
   ##############################################################################
-  _v: {H1: Non upgradable} #####################################################
+  - H1: Non upgradable #########################################################
   ##############################################################################
 
-  Warm Doublet:
+  - name: Warm Doublet
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Rupee: -80
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Warm Doublet: 0
+        Rupee: 80
 
-  Old Shirt:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Old Shirt: 0
-    - output: 1
-      recipe_type: Buying
-      requirements:
-        Rupee: -50
-
-  Well-Worn Trousers:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Well-Worn Trousers: 0
-    - output: 1
-      recipe_type: Buying
-      requirements:
-        Rupee: -50
-
-  Thunder Helm:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Thunder Helm: 0
-
-  Dark Hood:
+  - name: Old Shirt
+    raw_resource: true
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Mon: -1999
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Dark Hood: 0
+        Rupee: 50
 
-  Dark Tunic:
+  - name: Well-Worn Trousers
+    raw_resource: true
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Mon: -999
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Dark Tunic: 0
+        Rupee: 50
 
-  Dark Trousers:
+  - name: Thunder Helm
+    raw_resource: true
+
+  - name: Dark Hood
     recipes:
     - output: 1
       recipe_type: Buying
       requirements:
-        Mon: -999
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Dark Trousers: 0
+        Mon: 1999
 
-  Gerudo Veil:
+  - name: Dark Tunic
     recipes:
     - output: 1
-      recipe_type: Raw Resource
+      recipe_type: Buying
       requirements:
-        Gerudo Veil: 0
+        Mon: 999
 
-  Gerudo Top:
+  - name: Dark Trousers
     recipes:
     - output: 1
-      recipe_type: Raw Resource
+      recipe_type: Buying
       requirements:
-        Gerudo Top: 0
+        Mon: 999
 
-  Gerudo Sirwal:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Gerudo Sirwal: 0
+  - name: Gerudo Veil
+    raw_resource: true
 
-  Tingle's Hood:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tingle's Hood: 0
+  - name: Gerudo Top
+    raw_resource: true
 
-  Tingle's Shirt:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tingle's Shirt: 0
+  - name: Gerudo Sirwal
+    raw_resource: true
 
-  Tingle's Tights:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Tingle's Tights: 0
+  - name: Tingle's Hood
+    raw_resource: true
 
-  Phantom Helmet:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Phantom Helmet: 0
+  - name: Tingle's Shirt
+    raw_resource: true
 
-  Phantom Armor:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Phantom Armor: 0
+  - name: Tingle's Tights
+    raw_resource: true
 
-  Phantom Greaves:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Phantom Greaves: 0
+  - name: Phantom Helmet
+    raw_resource: true
 
-  Bokoblin Mask:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Bokoblin Mask: 0
+  - name: Phantom Armor
+    raw_resource: true
 
-  Lizalfos Mask:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Lizalfos Mask: 0
+  - name: Phantom Greaves
+    raw_resource: true
 
-  Moblin Mask:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Moblin Mask: 0
+  - name: Bokoblin Mask
+    raw_resource: true
 
-  Lynel Mask:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Lynel Mask: 0
+  - name: Lizalfos Mask
+    raw_resource: true
 
-  Korok Mask:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Korok Mask: 0
+  - name: Moblin Mask
+    raw_resource: true
 
-  Majora's Mask:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Majora's Mask: 0
+  - name: Lynel Mask
+    raw_resource: true
 
-  Midna's Helmet:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Midna's Helmet: 0
+  - name: Korok Mask
+    raw_resource: true
 
-  Nintendo Switch Shirt:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Nintendo Switch Shirt: 0
+  - name: Majora's Mask
+    raw_resource: true
+
+  - name: Midna's Helmet
+    raw_resource: true
+
+  - name: Nintendo Switch Shirt
+    raw_resource: true
 
   ##############################################################################
-  _w: {H1: Materials} ##########################################################
+  - H1: Materials ##############################################################
   ##############################################################################
 
-  _x: {H2: Ancient Materials} ##################################################
-
-  Ancient Screw:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ancient Screw: 0
-
-  Ancient Spring:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ancient Spring: 0
-
-  Ancient Shaft:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ancient Shaft: 0
-
-  Ancient Gear:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ancient Gear: 0
-
-  Ancient Core:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ancient Core: 0
-
-  Giant Ancient Core:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Giant Ancient Core: 0
-
-  _y: {H2: Lynel Materials} ####################################################
-
-  Lynel Horn:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Lynel Horn: 0
-
-  Lynel Hoof:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Lynel Hoof: 0
-
-  Lynel Guts:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Lynel Guts: 0
-
-  _z: {H2: Keese Wings} ########################################################
-
-  Keese Wing:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Keese Wing: 0
-
-  Ice Keese Wing:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ice Keese Wing: 0
-
-  Electric Keese Wing:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Electric Keese Wing: 0
-
-  Fire Keese Wing:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Fire Keese Wing: 0
-
-  Keese Eyeball:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Keese Eyeball: 0
-
-  _aa: {H2: Flowers} ###########################################################
-
-  Swift Violet:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Swift Violet: 0
-
-  Warm Safflina:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Warm Safflina: 0
-
-  Blue Nightshade:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Blue Nightshade: 0
-
-  Silent Princess:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Silent Princess: 0
-
-  _ab: {H2: Dragon Materials} ##################################################
-
-  Shard of Dinraal's Horn:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Shard of Dinraal's Horn: 0
-
-  Shard of Farosh's Horn:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Shard of Farosh's Horn: 0
-
-  Shard of Naydra's Horn:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Shard of Naydra's Horn: 0
-
-  Dinraal's Scale:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Dinraal's Scale: 0
-
-  Farosh's Scale:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Farosh's Scale: 0
-
-  Naydra's Scale:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Naydra's Scale: 0
-
-  Dinraal's Claw:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Dinraal's Claw: 0
-
-  Farosh's Claw:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Farosh's Claw: 0
-
-  Naydra's Claw:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Naydra's Claw: 0
-
-  Shard of Dinraal's Fang:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Shard of Dinraal's Fang: 0
-
-  Shard of Farosh's Fang:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Shard of Farosh's Fang: 0
-
-  Shard of Naydra's Fang:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Shard of Naydra's Fang: 0
-
-  _ac: {H2: Gems} ##############################################################
-
-  Ruby:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Ruby: 0
-
-  Sapphire:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Sapphire: 0
-
-  Opal:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Opal: 0
-
-  Amber:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Amber: 0
-
-  Topaz:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Topaz: 0
-
-  Diamond:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Diamond: 0
-
-  Luminous Stone:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Luminous Stone: 0
-
-  Flint:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Flint: 0
-
-  Star Fragment:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Star Fragment: 0
-
-  _ad: {H2: Other} #############################################################
-
-  Acorn:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Acorn: 0
-
-  Voltfruit:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Voltfruit: 0
-
-  Courser Bee Honey:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Courser Bee Honey: 0
-
-  Energetic Rhino Beetle:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Energetic Rhino Beetle: 0
-
-  Hightail Lizard:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hightail Lizard: 0
-
-  Hot-Footed Frog:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hot-Footed Frog: 0
-
-  Rushroom:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Rushroom: 0
-
-  Zapshroom:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Zapshroom: 0
-
-  Sunshroom:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Sunshroom: 0
-
-  Silent Shroom:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Silent Shroom: 0
-
-  Chuchu Jelly:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Chuchu Jelly: 0
-
-  White Chuchu Jelly:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        White Chuchu Jelly: 0
-
-  Yellow Chuchu Jelly:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Yellow Chuchu Jelly: 0
-
-  Red Chuchu Jelly:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Red Chuchu Jelly: 0
-
-  Lizalfos Horn:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Lizalfos Horn: 0
-
-  Lizalfos Talon:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Lizalfos Talon: 0
-
-  Lizalfos Tail:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Lizalfos Tail: 0
-
-  Icy Lizalfos Tail:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Icy Lizalfos Tail: 0
-
-  Yellow Lizalfos Tail:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Yellow Lizalfos Tail: 0
-
-  Red Lizalfos Tail:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Red Lizalfos Tail: 0
-
-  Moblin Guts:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Moblin Guts: 0
-
-  Smotherwing Butterfly:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Smotherwing Butterfly: 0
-
-  Fireproof Lizard:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Fireproof Lizard: 0
-
-  Moblin Fang:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Moblin Fang: 0
-
-  Moblin Horn:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Moblin Horn: 0
-
-  Bokoblin Horn:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Bokoblin Horn: 0
-
-  Bokoblin Fang:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Bokoblin Fang: 0
-
-  Bokoblin Guts:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Bokoblin Guts: 0
-
-  Hinox Guts:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hinox Guts: 0
-
-  Hinox Toenail:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hinox Toenail: 0
-
-  Hinox Tooth:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hinox Tooth: 0
-
-  Molduga Guts:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Molduga Guts: 0
-
-  Molduga Fin:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Molduga Fin: 0
-
-  Octorok Tentacle:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Octorok Tentacle: 0
-
-  Octo Balloon:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Octo Balloon: 0
-
-  Octorok Eyeball:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Octorok Eyeball: 0
-
-  Stealthfin Trout:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Stealthfin Trout: 0
-
-  Hyrule Bass:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hyrule Bass: 0
-
-  Hearty Bass:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Hearty Bass: 0
-
-  Sunset Firefly:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Sunset Firefly: 0
-
-  Sneaky River Snail:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Sneaky River Snail: 0
-
-  Swift Carrot:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Swift Carrot: 0
-
-  _ae: {H2: Currency} ##########################################################
-
-  Rupee:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Rupee: 0
-
-  Mon:
-    recipes:
-    - output: 1
-      recipe_type: Raw Resource
-      requirements:
-        Mon: 0
+  - H2: Ancient Materials ######################################################
+
+  - name: Ancient Screw
+    raw_resource: true
+
+  - name: Ancient Spring
+    raw_resource: true
+
+  - name: Ancient Shaft
+    raw_resource: true
+
+  - name: Ancient Gear
+    raw_resource: true
+
+  - name: Ancient Core
+    raw_resource: true
+
+  - name: Giant Ancient Core
+    raw_resource: true
+
+  - H2: Lynel Materials ########################################################
+
+  - name: Lynel Horn
+    raw_resource: true
+
+  - name: Lynel Hoof
+    raw_resource: true
+
+  - name: Lynel Guts
+    raw_resource: true
+
+  - H2: Keese Wings ############################################################
+
+  - name: Keese Wing
+    raw_resource: true
+
+  - name: Ice Keese Wing
+    raw_resource: true
+
+  - name: Electric Keese Wing
+    raw_resource: true
+
+  - name: Fire Keese Wing
+    raw_resource: true
+
+  - name: Keese Eyeball
+    raw_resource: true
+
+  - H2: Flowers ################################################################
+
+  - name: Swift Violet
+    raw_resource: true
+
+  - name: Warm Safflina
+    raw_resource: true
+
+  - name: Blue Nightshade
+    raw_resource: true
+
+  - name: Silent Princess
+    raw_resource: true
+
+  - H2: Dragon Materials #######################################################
+
+  - name: Shard of Dinraal's Horn
+    raw_resource: true
+
+  - name: Shard of Farosh's Horn
+    raw_resource: true
+
+  - name: Shard of Naydra's Horn
+    raw_resource: true
+
+  - name: Dinraal's Scale
+    raw_resource: true
+
+  - name: Farosh's Scale
+    raw_resource: true
+
+  - name: Naydra's Scale
+    raw_resource: true
+
+  - name: Dinraal's Claw
+    raw_resource: true
+
+  - name: Farosh's Claw
+    raw_resource: true
+
+  - name: Naydra's Claw
+    raw_resource: true
+
+  - name: Shard of Dinraal's Fang
+    raw_resource: true
+
+  - name: Shard of Farosh's Fang
+    raw_resource: true
+
+  - name: Shard of Naydra's Fang
+    raw_resource: true
+
+  - H2: Gems ###################################################################
+
+  - name: Ruby
+    raw_resource: true
+
+  - name: Sapphire
+    raw_resource: true
+
+  - name: Opal
+    raw_resource: true
+
+  - name: Amber
+    raw_resource: true
+
+  - name: Topaz
+    raw_resource: true
+
+  - name: Diamond
+    raw_resource: true
+
+  - name: Luminous Stone
+    raw_resource: true
+
+  - name: Flint
+    raw_resource: true
+
+  - name: Star Fragment
+    raw_resource: true
+
+  - H2: Other ##################################################################
+
+  - name: Acorn
+    raw_resource: true
+
+  - name: Voltfruit
+    raw_resource: true
+
+  - name: Courser Bee Honey
+    raw_resource: true
+
+  - name: Energetic Rhino Beetle
+    raw_resource: true
+
+  - name: Hightail Lizard
+    raw_resource: true
+
+  - name: Hot-Footed Frog
+    raw_resource: true
+
+  - name: Rushroom
+    raw_resource: true
+
+  - name: Zapshroom
+    raw_resource: true
+
+  - name: Sunshroom
+    raw_resource: true
+
+  - name: Silent Shroom
+    raw_resource: true
+
+  - name: Chuchu Jelly
+    raw_resource: true
+
+  - name: White Chuchu Jelly
+    raw_resource: true
+
+  - name: Yellow Chuchu Jelly
+    raw_resource: true
+
+  - name: Red Chuchu Jelly
+    raw_resource: true
+
+  - name: Lizalfos Horn
+    raw_resource: true
+
+  - name: Lizalfos Talon
+    raw_resource: true
+
+  - name: Lizalfos Tail
+    raw_resource: true
+
+  - name: Icy Lizalfos Tail
+    raw_resource: true
+
+  - name: Yellow Lizalfos Tail
+    raw_resource: true
+
+  - name: Red Lizalfos Tail
+    raw_resource: true
+
+  - name: Moblin Guts
+    raw_resource: true
+
+  - name: Smotherwing Butterfly
+    raw_resource: true
+
+  - name: Fireproof Lizard
+    raw_resource: true
+
+  - name: Moblin Fang
+    raw_resource: true
+
+  - name: Moblin Horn
+    raw_resource: true
+
+  - name: Bokoblin Horn
+    raw_resource: true
+
+  - name: Bokoblin Fang
+    raw_resource: true
+
+  - name: Bokoblin Guts
+    raw_resource: true
+
+  - name: Hinox Guts
+    raw_resource: true
+
+  - name: Hinox Toenail
+    raw_resource: true
+
+  - name: Hinox Tooth
+    raw_resource: true
+
+  - name: Molduga Guts
+    raw_resource: true
+
+  - name: Molduga Fin
+    raw_resource: true
+
+  - name: Octorok Tentacle
+    raw_resource: true
+
+  - name: Octo Balloon
+    raw_resource: true
+
+  - name: Octorok Eyeball
+    raw_resource: true
+
+  - name: Stealthfin Trout
+    raw_resource: true
+
+  - name: Hyrule Bass
+    raw_resource: true
+
+  - name: Hearty Bass
+    raw_resource: true
+
+  - name: Sunset Firefly
+    raw_resource: true
+
+  - name: Sneaky River Snail
+    raw_resource: true
+
+  - name: Swift Carrot
+    raw_resource: true
+
+  - H2: Currency ###############################################################
+
+  - name: Rupee
+    raw_resource: true
+
+  - name: Mon
+    raw_resource: true

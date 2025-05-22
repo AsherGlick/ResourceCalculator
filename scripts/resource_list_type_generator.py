@@ -78,8 +78,8 @@ def main() -> None:
                 ),
                 Variable(
                     name="resources",
-                    type="OrderedDict[str, Union[Resource, Heading]]",
-                    default="OrderedDict()",
+                    type="List[Union[Resource, Heading]]",
+                    default="[]",
                     blank_lines_above_field=1,
                 ),
             ]
@@ -126,6 +126,11 @@ def main() -> None:
             classname="Resource",
             variables=[
                 Variable(
+                    name="name",
+                    type="str",
+                    default='""',
+                ),
+                Variable(
                     name="custom_simplename",
                     type="str",
                     default='""',
@@ -139,6 +144,11 @@ def main() -> None:
                     name="note",
                     type="str",
                     default='""'
+                ),
+                Variable(
+                    name="raw_resource",
+                    type="bool",
+                    default="False"
                 ),
                 Variable(
                     name="recipes",
@@ -644,14 +654,7 @@ def generate_python_parser_class(classname: str, variables: List[Variable]) -> s
                 varblock.append("")
                 varblock.append("                self.{name}[str(key.value)] = int(value.value or 0)")
             elif variable.type == "OrderedDict[str, StackSize]":
-                varblock += subobject_parse_python("StackSize")
-
-            elif variable.type == "OrderedDict[str, Union[Resource, Heading]]":
-                varblock.append("                tokenless_value_keys = [x.value for x in value.keys()]")
-                varblock.append("                if 'H1' in tokenless_value_keys or 'H2' in tokenless_value_keys or 'H3' in tokenless_value_keys:")
-                varblock += subobject_parse_python("Heading", 20)
-                varblock.append("                else:")
-                varblock += subobject_parse_python("Resource", 20)
+                varblock += subobject_parse_python("StackSize", insert_type="dict")
 
             elif variable.type == "OrderedDict[str, List[str]]":
                 varblock.append("                item_list: List[str] = []")
@@ -673,7 +676,13 @@ def generate_python_parser_class(classname: str, variables: List[Variable]) -> s
             varblock.append("                recipe = Recipe()")
             varblock.append("                errors += recipe.parse(item)")
             varblock.append("                self.{name}.append(recipe)")
-
+        elif variable.type == "List[Union[Resource, Heading]]":
+            varblock.append("            for value in tokenless_keys['{name}']:")
+            varblock.append("                tokenless_value_keys = [x.value for x in value.keys()]")
+            varblock.append("                if 'H1' in tokenless_value_keys or 'H2' in tokenless_value_keys or 'H3' in tokenless_value_keys:")
+            varblock += subobject_parse_python("Heading", 20, insert_type="list")
+            varblock.append("                else:")
+            varblock += subobject_parse_python("Resource", 20, insert_type="list")
         else:
             print("UNKNOWN VARIABLE TYPE", variable.type, file=sys.stderr)
 
@@ -708,7 +717,7 @@ def generate_python_parser_class(classname: str, variables: List[Variable]) -> s
         if variable.type == "str":
             varblock.append(indent + "        output.append(indent + \"{name}: \" + yaml_string(self.{name}, indent))")
         elif variable.type == "bool":
-            varblock.append(indent + "        output.append(indent + \"{name}: \" + str(self.{name}))")
+            varblock.append(indent + "        output.append(indent + \"{name}: \" + str(self.{name}).lower())")
         elif variable.type == "Optional[str]":
             if variable.default is not None or variable.always_present is True:
                 varblock.append(indent + "        if self.{name} is None:")
@@ -732,31 +741,32 @@ def generate_python_parser_class(classname: str, variables: List[Variable]) -> s
             varblock.append(indent + "            output.append(indent + \"  \" + {name}_k + \":\")")
             varblock.append(indent + "            output.append({name}_v.to_yaml(indent + '    '))")
 
-        elif variable.type == "OrderedDict[str, Union[Resource, Heading]]":
+        elif variable.type == "List[Union[Resource, Heading]]":
             varblock.append(indent + "        output.append(\"{name}:\")")
-            varblock.append(indent + "        for i, ({name}_k, {name}_v) in enumerate(self.{name}.items()):")
+            varblock.append(indent + "        for i, {name}_v in enumerate(self.{name}):")
             varblock.append(indent + "            if isinstance({name}_v, Resource):")
             varblock.append(indent + "                if i != 0:")
             varblock.append(indent + "                    output.append(\"\")")
-            varblock.append(indent + "                output.append(indent + \"  \" + {name}_k + \":\")")
-            varblock.append(indent + "                output.append({name}_v.to_yaml(indent + '    '))")
+            varblock.append(indent + "                resource_text = {name}_v.to_yaml(indent + '    ')")
+            varblock.append(indent + "                resource_text = indent + '  - ' + resource_text[len(indent) + 4:]")
+            varblock.append(indent + "                output.append(resource_text)")
             varblock.append("")
             varblock.append(indent + "            elif isinstance({name}_v, Heading):")
             varblock.append(indent + "                if {name}_v.H1 != \"\":")
             varblock.append(indent + "                    output.append(\"\")")
             varblock.append(indent + "                    output.append(indent + \"  \" + \"#\" * (78 - len(indent)))")
-            varblock.append(indent + "                    line = indent + \"  \" + {name}_k + \": {{H1: \" + {name}_v.H1 + \"}}\"")
+            varblock.append(indent + "                    line = indent + \"  - H1: \" + optional_quote_wrapping({name}_v.H1)")
             varblock.append(indent + "                    line += \" \" + \"#\" * (79 - len(line))")
             varblock.append(indent + "                    output.append(line)")
             varblock.append(indent + "                    output.append(indent + \"  \" + \"#\" * (78 - len(indent)))")
             varblock.append(indent + "                elif {name}_v.H2 != \"\":")
             varblock.append(indent + "                    output.append(\"\")")
-            varblock.append(indent + "                    line = indent + \"  \" + {name}_k + \": {{H2: \" + {name}_v.H2 + \"}}\"")
+            varblock.append(indent + "                    line = indent + \"  - H2: \" + optional_quote_wrapping({name}_v.H2)")
             varblock.append(indent + "                    line += \" \" + \"#\" * (79 - len(line))")
             varblock.append(indent + "                    output.append(line)")
             varblock.append(indent + "                elif {name}_v.H3 != \"\":")
             varblock.append(indent + "                    output.append(\"\")")
-            varblock.append(indent + "                    output.append(indent + \"  \" + {name}_k + \": {{H3: \" + {name}_v.H3 + \"}}\")")
+            varblock.append(indent + "                    output.append(indent + \"  - H3: \" + optional_quote_wrapping({name}_v.H3))")
             varblock.append("")
             varblock.append(indent + "            else:")
             varblock.append(indent + "                raise ValueError")
@@ -795,12 +805,18 @@ def generate_python_parser_class(classname: str, variables: List[Variable]) -> s
 ################################################################################
 #
 ################################################################################
-def subobject_parse_python(object_name: str, indent: int = 16) -> List[str]:
+def subobject_parse_python(object_name: str, indent: int = 16, insert_type: Union[Literal["dict"], Literal["list"]] = "dict") -> List[str]:
     chunk = []
     chunk.append(" " * indent + object_name + "_subobject = " + object_name + "()")
     chunk.append(" " * indent + "errors += " + object_name + "_subobject.parse(value)")
     chunk.append("")
-    chunk.append(" " * indent + "self.{name}[str(key.value)] = " + object_name + "_subobject")
+    if insert_type == "dict":
+        chunk.append(" " * indent + "self.{name}[str(key.value)] = " + object_name + "_subobject")
+    elif insert_type == "list":
+        chunk.append(" " * indent + "self.{name}.append(" + object_name + "_subobject)")
+    else:
+        raise ValueError(f"Unknown insert_type {insert_type}")
+
     return chunk
 
 

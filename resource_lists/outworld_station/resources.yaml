@@ -27,1178 +27,1066 @@ recipe_types:
 resources:
 
   ##############################################################################
-  _a: {H1: Drone} ##############################################################
+  - H1: Drone ##################################################################
   ##############################################################################
 
-  Connector:
+  - name: Connector
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Hull Plating: -1
-    - recipe_type: Raw Resource
+        Hull Plating: 1
 
-  Vertical Connector:
+  - name: Vertical Connector
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Hull Plating: -5
-    - recipe_type: Raw Resource
+        Hull Plating: 5
 
-  Storage Unit:
+  - name: Storage Unit
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Hull Plating: -5
-        Basic Frames: -1
-    - recipe_type: Raw Resource
+        Hull Plating: 5
+        Basic Frames: 1
 
-  Storage Unit Mk2:
+  - name: Storage Unit Mk2
     recipes:
     - output: 1
       recipe_type: Upgrade
       requirements:
-        Storage Unit: -1
-        Nano Plating: -10
-        Reinforced Frames: -2
+        Storage Unit: 1
+        Nano Plating: 10
+        Reinforced Frames: 2
     - output: 1
       recipe_type: Drone
       requirements:
-        Hull Plating: -5
-        Basic Frames: -1
-        Nano Plating: -10
-        Reinforced Frames: -2
-    - recipe_type: Raw Resource
+        Hull Plating: 5
+        Basic Frames: 1
+        Nano Plating: 10
+        Reinforced Frames: 2
 
-  Storage Unit Mk3:
+  - name: Storage Unit Mk3
     recipes:
     - output: 1
       recipe_type: Upgrade
       requirements:
-        Storage Unit Mk2: -1
-        Advanced Plating: -8
-        Heavy Frames: -4
+        Storage Unit Mk2: 1
+        Advanced Plating: 8
+        Heavy Frames: 4
     - output: 1
       recipe_type: Drone
       requirements:
-        Hull Plating: -5
-        Basic Frames: -1
-        Nano Plating: -10
-        Reinforced Frames: -2
-        Advanced Plating: -8
-        Heavy Frames: -4
-    - recipe_type: Raw Resource
+        Hull Plating: 5
+        Basic Frames: 1
+        Nano Plating: 10
+        Reinforced Frames: 2
+        Advanced Plating: 8
+        Heavy Frames: 4
 
-  Atomizer:
+  - name: Atomizer
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Hull Plating: -5
-        Basic Frames: -1
-    - recipe_type: Raw Resource
+        Hull Plating: 5
+        Basic Frames: 1
 
-  Smelter:
+  - name: Smelter
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Hull Plating: -10
-        Basic Frames: -2
-    - recipe_type: Raw Resource
+        Hull Plating: 10
+        Basic Frames: 2
 
-  Smelter Mk2:
+  - name: Smelter Mk2
     recipes:
     - output: 1
       recipe_type: Upgrade
       requirements:
-        Smelter: -1
-        Nano Plating: -25
-        Reinforced Frames: -5
-    - recipe_type: Raw Resource
+        Smelter: 1
+        Nano Plating: 25
+        Reinforced Frames: 5
 
-  Solar Panel:
+  - name: Solar Panel
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Basic Frames: -5
-        Gold: -5
-    - recipe_type: Raw Resource
+        Basic Frames: 5
+        Gold: 5
 
-  Matter Printer:
+  - name: Matter Printer
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Hull Plating: -15
-        Basic Frames: -5
-    - recipe_type: Raw Resource
+        Hull Plating: 15
+        Basic Frames: 5
 
-  Artifact Analyzer:
+  - name: Artifact Analyzer
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Hull Plating: -50
-        Basic Frames: -25
-        Composite: -25
-    - recipe_type: Raw Resource
+        Hull Plating: 50
+        Basic Frames: 25
+        Composite: 25
 
-  Fabricator:
+  - name: Fabricator
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Hull Plating: -25
-        Basic Frames: -10
-        Composite: -10
-    - recipe_type: Raw Resource
+        Hull Plating: 25
+        Basic Frames: 10
+        Composite: 10
 
-  Energy Storage:
+  - name: Energy Storage
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Hull Plating: -15
-        Basic Frames: -5
-        Fibre Optics: -5
-    - recipe_type: Raw Resource
+        Hull Plating: 15
+        Basic Frames: 5
+        Fibre Optics: 5
 
-  Small Shipyard:
+  - name: Small Shipyard
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Nano Plating: -25
-        Reinforced Frames: -10
-        Composite: -25
-    - recipe_type: Raw Resource
+        Nano Plating: 25
+        Reinforced Frames: 10
+        Composite: 25
 
-  Miner:
+  - name: Miner
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Nano Plating: -15
-        Reinforced Frames: -5
-        Fibre Optics: -5
-        Computers: -1
-    - recipe_type: Raw Resource
+        Nano Plating: 15
+        Reinforced Frames: 5
+        Fibre Optics: 5
+        Computers: 1
 
-  Miner Mk2:
+  - name: Miner Mk2
     recipes:
     - output: 1
       recipe_type: Upgrade
       requirements:
-        Miner: -1
-        Nano Plating: -35
-        Reinforced Frames: -20
-        Superconductor: -15
-        Computers: -5
+        Miner: 1
+        Nano Plating: 35
+        Reinforced Frames: 20
+        Superconductor: 15
+        Computers: 5
     - output: 1
       recipe_type: Drone
       requirements:
-        Nano Plating: -50
-        Reinforced Frames: -25
-        Fibre Optics: -5
-        Superconductor: -15
-        Computers: -6
-    - recipe_type: Raw Resource
+        Nano Plating: 50
+        Reinforced Frames: 25
+        Fibre Optics: 5
+        Superconductor: 15
+        Computers: 6
 
-  Miner Mk3:
+  - name: Miner Mk3
     recipes:
     - output: 1
       recipe_type: Upgrade
       requirements:
-        Miner Mk2: -1
-        Advanced Plating: -10
-        Heavy Frames: -5
-        Supercomputer: -1
+        Miner Mk2: 1
+        Advanced Plating: 10
+        Heavy Frames: 5
+        Supercomputer: 1
     - output: 1
       recipe_type: Drone
       requirements:
-        Nano Plating: -50
-        Reinforced Frames: -25
-        Fibre Optics: -5
-        Superconductor: -15
-        Computers: -6
-        Advanced Plating: -10
-        Heavy Frames: -5
-        Supercomputer: -1
-    - recipe_type: Raw Resource
+        Nano Plating: 50
+        Reinforced Frames: 25
+        Fibre Optics: 5
+        Superconductor: 15
+        Computers: 6
+        Advanced Plating: 10
+        Heavy Frames: 5
+        Supercomputer: 1
 
-  Freighter Dock:
+  - name: Freighter Dock
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Nano Plating: -20
-        Reinforced Frames: -10
-        Composite: -25
-        Computers: -5
-    - recipe_type: Raw Resource
+        Nano Plating: 20
+        Reinforced Frames: 10
+        Composite: 25
+        Computers: 5
 
-  Freighter:
+  - name: Freighter
     recipes:
     - output: 1
       recipe_type: Freighter Dock
       requirements:
-        Hull Plating: -25
-        Reinforced Frames: -5
-        Computers: -1
-    - recipe_type: Raw Resource
+        Hull Plating: 25
+        Reinforced Frames: 5
+        Computers: 1
 
-  Freighter Dock Mk2:
+  - name: Freighter Dock Mk2
     recipes:
     - output: 1
       recipe_type: Upgrade
       requirements:
-        Freighter Dock: -1
-        Nano Plating: -80
-        Reinforced Frames: -20
-        Composite: -75
-        Computers: -20
-        Carbon Nanotube: -250
-    - recipe_type: Raw Resource
+        Freighter Dock: 1
+        Nano Plating: 80
+        Reinforced Frames: 20
+        Composite: 75
+        Computers: 20
+        Carbon Nanotube: 250
 
-  Freighter Mk2:
+  - name: Freighter Mk2
     recipes:
     - output: 1
       recipe_type: Upgrade
       requirements:
-        Freighter: -1
-        Hull Plating: -25
-        Reinforced Frames: -20
-        Computers: -4
-        Small Engine: -5
+        Freighter: 1
+        Hull Plating: 25
+        Reinforced Frames: 20
+        Computers: 4
+        Small Engine: 5
     - output: 1
       recipe_type: Freighter Dock
       requirements:
-        Hull Plating: -50
-        Reinforced Frames: -25
-        Computers: -5
-        Small Engine: -5
-    - recipe_type: Raw Resource
+        Hull Plating: 50
+        Reinforced Frames: 25
+        Computers: 5
+        Small Engine: 5
 
-  Defense Turret:
+  - name: Defense Turret
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Nano Plating: -15
-        Reinforced Frames: -10
-        Superconductor: -5
-        Computers: -1
-    - recipe_type: Raw Resource
+        Nano Plating: 15
+        Reinforced Frames: 10
+        Superconductor: 5
+        Computers: 1
 
-  Pipe:
+  - name: Pipe
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Carbon Nanotube: -1
-    - recipe_type: Raw Resource
+        Carbon Nanotube: 1
 
-  Pipe Junction:
+  - name: Pipe Junction
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Carbon Nanotube: -10
-        Reinforced Frames: -1
-    - recipe_type: Raw Resource
+        Carbon Nanotube: 10
+        Reinforced Frames: 1
 
-  Storage Tank:
+  - name: Storage Tank
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Nano Plating: -12
-        Composite: -24
-        Reinforced Frames: -4
-        Carbon Nanotube: -25
-    - recipe_type: Raw Resource
+        Nano Plating: 12
+        Composite: 24
+        Reinforced Frames: 4
+        Carbon Nanotube: 25
 
-  Refinery:
+  - name: Refinery
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Nano Plating: -20
-        Reinforced Frames: -10
-        Carbon Nanotube: -50
-        Superconductor: -5
-    - recipe_type: Raw Resource
+        Nano Plating: 20
+        Reinforced Frames: 10
+        Carbon Nanotube: 50
+        Superconductor: 5
 
-  Fusion Reactor:
+  - name: Fusion Reactor
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Nano Plating: -50
-        Reinforced Frames: -25
-        Superconductor: -25
-        Computers: -10
-    - recipe_type: Raw Resource
+        Nano Plating: 50
+        Reinforced Frames: 25
+        Superconductor: 25
+        Computers: 10
 
-  Power Link:
+  - name: Power Link
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Nano Plating: -20
-        Reinforced Frames: -10
-        Composite: -25
-        Computers: -5
-    - recipe_type: Raw Resource
+        Nano Plating: 20
+        Reinforced Frames: 10
+        Composite: 25
+        Computers: 5
 
-  Wormhole Terminus:
+  - name: Wormhole Terminus
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Nano Plating: -50
-        Reinforced Frames: -25
-        Superconductor: -25
-        Computers: -10
-    - recipe_type: Raw Resource
+        Nano Plating: 50
+        Reinforced Frames: 25
+        Superconductor: 25
+        Computers: 10
 
-  Tug Bay:
+  - name: Tug Bay
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Nano Plating: -20
-        Reinforced Frames: -10
-        Composite: -25
-        Computers: -5
-    - recipe_type: Raw Resource
+        Nano Plating: 20
+        Reinforced Frames: 10
+        Composite: 25
+        Computers: 5
 
-  Fuel Depot:
+  - name: Fuel Depot
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Nano Plating: -20
-        Reinforced Frames: -10
-        Carbon Nanotube: -50
-        Computers: -5
-    - recipe_type: Raw Resource
+        Nano Plating: 20
+        Reinforced Frames: 10
+        Carbon Nanotube: 50
+        Computers: 5
 
-  Fuel Depot Mk2:
+  - name: Fuel Depot Mk2
     recipes:
     - output: 1
       recipe_type: Upgrade
       requirements:
-        Fuel Depot: -1
-        Carbon Nanotube: -500
-        Computers: -20
-        Advanced Plating: -25
-        Heavy Frames: -10
+        Fuel Depot: 1
+        Carbon Nanotube: 500
+        Computers: 20
+        Advanced Plating: 25
+        Heavy Frames: 10
     - output: 1
       recipe_type: Drone
       requirements:
-        Nano Plating: -20
-        Reinforced Frames: -10
-        Carbon Nanotube: -550
-        Computers: -25
-        Advanced Plating: -25
-        Heavy Frames: -10
-    - recipe_type: Raw Resource
+        Nano Plating: 20
+        Reinforced Frames: 10
+        Carbon Nanotube: 550
+        Computers: 25
+        Advanced Plating: 25
+        Heavy Frames: 10
 
-  Cloud Miner:
+  - name: Cloud Miner
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Nano Plating: -30
-        Reinforced Frames: -15
-        Carbon Nanotube: -50
-        Computers: -10
-    - recipe_type: Raw Resource
+        Nano Plating: 30
+        Reinforced Frames: 15
+        Carbon Nanotube: 50
+        Computers: 10
 
-  Cyclone Generator:
+  - name: Cyclone Generator
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Nano Plating: -15
-        Reinforced Frames: -10
-        Superconductor: -5
-        Small Engine: -1
-    - recipe_type: Raw Resource
+        Nano Plating: 15
+        Reinforced Frames: 10
+        Superconductor: 5
+        Small Engine: 1
 
-  Plasma Forge:
+  - name: Plasma Forge
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Superalloy: -40
-        Reinforced Frames: -20
-        Computers: -10
-        Superconductor: -20
-    - recipe_type: Raw Resource
+        Superalloy: 40
+        Reinforced Frames: 20
+        Computers: 10
+        Superconductor: 20
 
-  Bio Extractor:
+  - name: Bio Extractor
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Superalloy: -25
-        Reinforced Frames: -25
-        Carbon Nanotube: -50
-        Computers: -10
-    - recipe_type: Raw Resource
+        Superalloy: 25
+        Reinforced Frames: 25
+        Carbon Nanotube: 50
+        Computers: 10
 
-  Manufactory:
+  - name: Manufactory
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Superalloy: -25
-        Nano Plating: -50
-        Reinforced Frames: -25
-        Composite: -50
-        Computers: -10
-    - recipe_type: Raw Resource
+        Superalloy: 25
+        Nano Plating: 50
+        Reinforced Frames: 25
+        Composite: 50
+        Computers: 10
 
-  Medium Shipyard:
+  - name: Medium Shipyard
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Advanced Plating: -25
-        Heavy Frames: -10
-        Composite: -25
-    - recipe_type: Raw Resource
+        Advanced Plating: 25
+        Heavy Frames: 10
+        Composite: 25
 
-  Missile Turret:
+  - name: Missile Turret
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Advanced Plating: -15
-        Heavy Frames: -10
-        Superconductor: -10
-        Computers: -2
-    - recipe_type: Raw Resource
+        Advanced Plating: 15
+        Heavy Frames: 10
+        Superconductor: 10
+        Computers: 2
 
-  Ammo Factory:
+  - name: Ammo Factory
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Advanced Plating: -50
-        Heavy Frames: -25
-        Composite: -100
-        Supercomputer: -1
-    - recipe_type: Raw Resource
+        Advanced Plating: 50
+        Heavy Frames: 25
+        Composite: 100
+        Supercomputer: 1
 
-  Ammo Depot:
+  - name: Ammo Depot
     recipes:
     - output: 1
       recipe_type: Drone
       requirements:
-        Advanced Plating: -50
-        Heavy Frames: -25
-        Composite: -150
-        Supercomputer: -1
-    - recipe_type: Raw Resource
+        Advanced Plating: 50
+        Heavy Frames: 25
+        Composite: 150
+        Supercomputer: 1
 
   ##############################################################################
-  _b: {H1: Raw Resource} #######################################################
+  - H1: Raw Resource ###########################################################
   ##############################################################################
 
-  Titanium Ore:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Titanium Ore
+    raw_resource: true
 
-  Gold Ore:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Gold Ore
+    raw_resource: true
 
-  Silica:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Silica
+    raw_resource: true
 
-  Carbon Ore:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Carbon Ore
+    raw_resource: true
 
-  Water Ice:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Water Ice
+    raw_resource: true
 
-  Tungsten Ore:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Tungsten Ore
+    raw_resource: true
 
-  Nitratium:
-    recipes:
-    - recipe_type: Raw Resource
+  - name: Nitratium
+    raw_resource: true
 
   ##############################################################################
-  _c: {H1: Smelter} ############################################################
+  - H1: Smelter ################################################################
   ##############################################################################
 
-  Titanium:
+  - name: Titanium
     recipes:
     - output: 1
       recipe_type: Smelter
       requirements:
-        Titanium Ore: -1
-    - recipe_type: Raw Resource
+        Titanium Ore: 1
 
-  Carbon:
+  - name: Carbon
     recipes:
     - output: 1
       recipe_type: Smelter
       requirements:
-        Carbon Ore: -1
-    - recipe_type: Raw Resource
+        Carbon Ore: 1
 
-  Glass Fibre:
+  - name: Glass Fibre
     recipes:
     - output: 1
       recipe_type: Smelter
       requirements:
-        Silica: -1
-    - recipe_type: Raw Resource
+        Silica: 1
 
-  Gold:
+  - name: Gold
     recipes:
     - output: 1
       recipe_type: Smelter
       requirements:
-        Gold Ore: -1
-    - recipe_type: Raw Resource
+        Gold Ore: 1
 
-  Molecular Bonding:
+  - name: Molecular Bonding
     recipes:
     - output: 3
       recipe_type: Smelter
       requirements:
-        Silica: -1
-    - recipe_type: Raw Resource
+        Silica: 1
 
-  Tungsten:
+  - name: Tungsten
     recipes:
     - output: 1
       recipe_type: Smelter
       requirements:
-        Tungsten Ore: -2
-    - recipe_type: Raw Resource
+        Tungsten Ore: 2
 
   ##############################################################################
-  _d: {H1: Plasma Forge} #######################################################
+  - H1: Plasma Forge ###########################################################
   ##############################################################################
 
-  Superalloy:
+  - name: Superalloy
     recipes:
     - output: 1
       recipe_type: Plasma Forge
       requirements:
-        Titanium: -4
-        Tungsten: -4
-    - recipe_type: Raw Resource
+        Titanium: 4
+        Tungsten: 4
 
   ##############################################################################
-  _e: {H1: Refinery} ###########################################################
+  - H1: Refinery ###############################################################
   ##############################################################################
 
-  Pure Water:
+  - name: Pure Water
     recipes:
     - output: 5
       recipe_type: Refinery
       note: Also outputs 1 Carbon
       requirements:
-        Water Ice: -5
-    - recipe_type: Raw Resource
+        Water Ice: 5
 
-  Hydrogen:
+  - name: Hydrogen
     recipes:
     - output: 4
       recipe_type: Refinery
       requirements:
-        Pure Water: -1
-    - recipe_type: Raw Resource
+        Pure Water: 1
 
-  Oxygen:
+  - name: Oxygen
     recipes:
     - output: 1
       recipe_type: Refinery
       requirements:
-        Pure Water: -5
-    - recipe_type: Raw Resource
+        Pure Water: 5
 
-  Nitrox:
+  - name: Nitrox
     recipes:
     - output: 1
       recipe_type: Refinery
       requirements:
-        Oxygen: -10
-        Nitratium: -10
-    - recipe_type: Raw Resource
+        Oxygen: 10
+        Nitratium: 10
 
   ##############################################################################
-  _f: {H1: Matter Printer} #####################################################
+  - H1: Matter Printer #########################################################
   ##############################################################################
 
-  Hull Plating:
+  - name: Hull Plating
     recipes:
     - output: 2
       recipe_type: Matter Printer
       requirements:
-        Titanium: -3
-    - recipe_type: Raw Resource
+        Titanium: 3
 
-  Basic Frames:
+  - name: Basic Frames
     recipes:
     - output: 1
       recipe_type: Matter Printer
       requirements:
-        Titanium: -4
-    - recipe_type: Raw Resource
+        Titanium: 4
 
-  Fibre Optics:
+  - name: Fibre Optics
     recipes:
     - output: 2
       recipe_type: Matter Printer
       requirements:
-        Glass Fibre: -3
-    - recipe_type: Raw Resource
+        Glass Fibre: 3
 
-  Composite:
+  - name: Composite
     recipes:
     - output: 2
       recipe_type: Matter Printer
       requirements:
-        Carbon: -3
-    - recipe_type: Raw Resource
+        Carbon: 3
 
-  Artificial Diamond:
+  - name: Artificial Diamond
     recipes:
     - output: 1
       recipe_type: Matter Printer
       requirements:
-        Carbon: -10
-    - recipe_type: Raw Resource
+        Carbon: 10
 
-  Carbon Nanotube:
+  - name: Carbon Nanotube
     recipes:
     - output: 1
       recipe_type: Matter Printer
       requirements:
-        Carbon: -1
-    - recipe_type: Raw Resource
+        Carbon: 1
 
   ##############################################################################
-  _g: {H1: Fabricator} #########################################################
+  - H1: Fabricator #############################################################
   ##############################################################################
 
-  Nano Plating:
+  - name: Nano Plating
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Hull Plating: -4
-        Molecular Bonding: -6
-    - recipe_type: Raw Resource
+        Hull Plating: 4
+        Molecular Bonding: 6
 
-  Reinforced Frames:
+  - name: Reinforced Frames
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Basic Frames: -4
-        Molecular Bonding: -6
-    - recipe_type: Raw Resource
+        Basic Frames: 4
+        Molecular Bonding: 6
 
-  Circuit Boards:
+  - name: Circuit Boards
     recipes:
     - output: 2
       recipe_type: Fabricator
       requirements:
-        Fibre Optics: -2
-        Gold: -4
-    - recipe_type: Raw Resource
+        Fibre Optics: 2
+        Gold: 4
 
-  Computers:
+  - name: Computers
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Circuit Boards: -4
-        Fibre Optics: -12
-    - recipe_type: Raw Resource
+        Circuit Boards: 4
+        Fibre Optics: 12
 
-  Small Engine:
+  - name: Small Engine
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Hull Plating: -4
-        Composite: -8
-    - recipe_type: Raw Resource
+        Hull Plating: 4
+        Composite: 8
 
-  Superconductor:
+  - name: Superconductor
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Artificial Diamond: -2
-        Fibre Optics: -12
-    - recipe_type: Raw Resource
+        Artificial Diamond: 2
+        Fibre Optics: 12
 
-  Small Cargo Pod:
+  - name: Small Cargo Pod
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Composite: -16
-        Reinforced Frames: -3
-    - recipe_type: Raw Resource
+        Composite: 16
+        Reinforced Frames: 3
 
-  Small Fuel Tank:
+  - name: Small Fuel Tank
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Nano Plating: -6
-        Molecular Bonding: -8
-    - recipe_type: Raw Resource
+        Nano Plating: 6
+        Molecular Bonding: 8
 
-  Small Aero-Wing:
+  - name: Small Aero-Wing
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Composite: -10
-        Molecular Bonding: -6
-    - recipe_type: Raw Resource
+        Composite: 10
+        Molecular Bonding: 6
 
-  Small Scramjet:
+  - name: Small Scramjet
     recipes:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Small Engine: -2
-        Carbon Nanotube: -25
-    - recipe_type: Raw Resource
+        Small Engine: 2
+        Carbon Nanotube: 25
 
   ##############################################################################
-  _h: {H1: Manufactory} ########################################################
+  - H1: Manufactory ############################################################
   ##############################################################################
 
-  Advanced Plating:
+  - name: Advanced Plating
     recipes:
     - output: 1
       recipe_type: Manufactory
       requirements:
-        Nano Plating: -4
-        Molecular Bonding: -8
-        Superalloy: -6
-    - recipe_type: Raw Resource
+        Nano Plating: 4
+        Molecular Bonding: 8
+        Superalloy: 6
 
-  Heavy Frames:
+  - name: Heavy Frames
     recipes:
     - output: 1
       recipe_type: Manufactory
       requirements:
-        Reinforced Frames: -4
-        Molecular Bonding: -8
-        Superalloy: -12
-    - recipe_type: Raw Resource
+        Reinforced Frames: 4
+        Molecular Bonding: 8
+        Superalloy: 12
 
-  Medium Engine:
+  - name: Medium Engine
     recipes:
     - output: 1
       recipe_type: Manufactory
       requirements:
-        Small Engine: -4
-        Molecular Bonding: -12
-        Reinforced Frames: -4
-        Nano Plating: -8
-    - recipe_type: Raw Resource
+        Small Engine: 4
+        Molecular Bonding: 12
+        Reinforced Frames: 4
+        Nano Plating: 8
 
-  Supercomputer:
+  - name: Supercomputer
     recipes:
     - output: 1
       recipe_type: Manufactory
       requirements:
-        Computers: -4
-        Fibre Optics: -24
-        Superconductor: -8
-    - recipe_type: Raw Resource
+        Computers: 4
+        Fibre Optics: 24
+        Superconductor: 8
 
-  Micro-Fusion Reactor:
+  - name: Micro-Fusion Reactor
     recipes:
     - output: 1
       recipe_type: Manufactory
       requirements:
-        Supercomputer: -1
-        Superconductor: -24
-        Superalloy: -12
-        Gold: -24
-    - recipe_type: Raw Resource
+        Supercomputer: 1
+        Superconductor: 24
+        Superalloy: 12
+        Gold: 24
 
-  Missile Launcher:
+  - name: Missile Launcher
     recipes:
     - output: 1
       recipe_type: Manufactory
       requirements:
-        Advanced Plating: -8
-        Heavy Frames: -4
-        Computers: -3
-    - recipe_type: Raw Resource
+        Advanced Plating: 8
+        Heavy Frames: 4
+        Computers: 3
 
-  Shield Generator:
+  - name: Shield Generator
     recipes:
     - output: 1
       recipe_type: Manufactory
       requirements:
-        Advanced Plating: -4
-        Superconductor: -18
-        Heavy Frames: -2
-        Computers: -1
-    - recipe_type: Raw Resource
+        Advanced Plating: 4
+        Superconductor: 18
+        Heavy Frames: 2
+        Computers: 1
 
   ##############################################################################
-  _i: {H1: Ammo Factory} #######################################################
+  - H1: Ammo Factory ###########################################################
   ##############################################################################
 
-  Warheads:
+  - name: Warheads
     recipes:
     - output: 1
       recipe_type: Ammo Factory
       requirements:
-        Nitrox: -5
-        Molecular Bonding: -2
-    - recipe_type: Raw Resource
+        Nitrox: 5
+        Molecular Bonding: 2
 
-  Light Missile Ammo:
+  - name: Light Missile Ammo
     recipes:
     - output: 5
       recipe_type: Ammo Factory
       requirements:
-        Warheads: -1
-        Hull Plating: -10
-        Basic Frames: -5
-        Small Engine: -1
-    - recipe_type: Raw Resource
+        Warheads: 1
+        Hull Plating: 10
+        Basic Frames: 5
+        Small Engine: 1
 
   ##############################################################################
-  _j: {H1: Ships} ##############################################################
+  - H1: Ships ##################################################################
   ##############################################################################
 
-  Aeon Hopper:
+  - name: Aeon Hopper
     recipes:
     - output: 1
       recipe_type: Small Shipyard
       requirements:
-        Hull Plating: -10
-        Computers: -1
-        Small Engine: -2
-    - recipe_type: Raw Resource
+        Hull Plating: 10
+        Computers: 1
+        Small Engine: 2
 
-  Aeon Courier:
+  - name: Aeon Courier
     recipes:
     - output: 1
       recipe_type: Small Shipyard
       requirements:
-        Hull Plating: -20
-        Computers: -2
-        Small Engine: -4
-    - recipe_type: Raw Resource
+        Hull Plating: 20
+        Computers: 2
+        Small Engine: 4
 
-  Aeon Courier - Fuelled:
+  - name: Aeon Courier - Fuelled
     recipes:
     - output: 1
       recipe_type: Fuel Depot
       requirements:
-        Aeon Courier: -1
-        Hydrogen: -10
-    - recipe_type: Raw Resource
+        Aeon Courier: 1
+        Hydrogen: 10
 
-  Photon Light Hauler:
+  - name: Photon Light Hauler
     recipes:
     - output: 1
       recipe_type: Small Shipyard
       requirements:
-        Nano Plating: -10
-        Reinforced Frames: -5
-        Computers: -2
-        Small Engine: -3
-        Small Cargo Pod: -6
-    - recipe_type: Raw Resource
+        Nano Plating: 10
+        Reinforced Frames: 5
+        Computers: 2
+        Small Engine: 3
+        Small Cargo Pod: 6
 
-  Photon Tanker:
+  - name: Photon Tanker
     recipes:
     - output: 1
       recipe_type: Small Shipyard
       requirements:
-        Nano Plating: -15
-        Reinforced Frames: -8
-        Computers: -3
-        Small Engine: -4
-        Small Fuel Tank: -4
-    - recipe_type: Raw Resource
+        Nano Plating: 15
+        Reinforced Frames: 8
+        Computers: 3
+        Small Engine: 4
+        Small Fuel Tank: 4
 
-  Photon Tanker - Fuelled:
+  - name: Photon Tanker - Fuelled
     recipes:
     - output: 1
       recipe_type: Fuel Depot
       requirements:
-        Photon Tanker: -1
-        Hydrogen: -25
-    - recipe_type: Raw Resource
+        Photon Tanker: 1
+        Hydrogen: 25
 
-  Neutron Explorer:
+  - name: Neutron Explorer
     recipes:
     - output: 1
       recipe_type: Small Shipyard
       requirements:
-        Nano Plating: -25
-        Reinforced Frames: -15
-        Computers: -10
-        Small Engine: -8
-        Small Fuel Tank: -2
-    - recipe_type: Raw Resource
+        Nano Plating: 25
+        Reinforced Frames: 15
+        Computers: 10
+        Small Engine: 8
+        Small Fuel Tank: 2
 
-  Neutron Explorer - Fuelled:
+  - name: Neutron Explorer - Fuelled
     recipes:
     - output: 1
       recipe_type: Fuel Depot
       requirements:
-        Neutron Explorer: -1
-        Hydrogen: -100
-    - recipe_type: Raw Resource
+        Neutron Explorer: 1
+        Hydrogen: 100
 
-  Stratos Shuttle:
+  - name: Stratos Shuttle
     recipes:
     - output: 1
       recipe_type: Small Shipyard
       requirements:
-        Nano Plating: -8
-        Reinforced Frames: -2
-        Composite: -10
-        Computers: -1
-        Small Aero-Wing: -2
-        Small Scramjet: -2
-    - recipe_type: Raw Resource
+        Nano Plating: 8
+        Reinforced Frames: 2
+        Composite: 10
+        Computers: 1
+        Small Aero-Wing: 2
+        Small Scramjet: 2
 
-  Stratos Shuttle - Fuelled:
+  - name: Stratos Shuttle - Fuelled
     recipes:
     - output: 1
       recipe_type: Fuel Depot
       requirements:
-        Stratos Shuttle: -1
-        Hydrogen: -25
-    - recipe_type: Raw Resource
+        Stratos Shuttle: 1
+        Hydrogen: 25
 
-  Meson Heavy Hauler:
+  - name: Meson Heavy Hauler
     recipes:
     - output: 1
       recipe_type: Medium Shipyard
       requirements:
-        Micro-Fusion Reactor: -1
-        Advanced Plating: -15
-        Heavy Frames: -10
-        Supercomputer: -1
-        Medium Engine: -2
-        Small Engine: -4
-        Small Cargo Pod: -2
-    - recipe_type: Raw Resource
+        Micro-Fusion Reactor: 1
+        Advanced Plating: 15
+        Heavy Frames: 10
+        Supercomputer: 1
+        Medium Engine: 2
+        Small Engine: 4
+        Small Cargo Pod: 2
 
-  Meson Heavy Hauler - Fuelled:
+  - name: Meson Heavy Hauler - Fuelled
     recipes:
     - output: 1
       recipe_type: Fuel Depot
       requirements:
-        Meson Heavy Hauler: -1
-        Hydrogen: -500
-    - recipe_type: Raw Resource
+        Meson Heavy Hauler: 1
+        Hydrogen: 500
 
-  Meson Archer:
+  - name: Meson Archer
     recipes:
     - output: 1
       recipe_type: Medium Shipyard
       requirements:
-        Micro-Fusion Reactor: -2
-        Advanced Plating: -20
-        Heavy Frames: -15
-        Supercomputer: -3
-        Medium Engine: -3
-        Small Engine: -2
-        Missile Launcher: -1
-        Shield Generator: -1
-    - recipe_type: Raw Resource
+        Micro-Fusion Reactor: 2
+        Advanced Plating: 20
+        Heavy Frames: 15
+        Supercomputer: 3
+        Medium Engine: 3
+        Small Engine: 2
+        Missile Launcher: 1
+        Shield Generator: 1
 
-  Meson Archer - Fuelled:
+  - name: Meson Archer - Fuelled
     recipes:
     - output: 1
       recipe_type: Fuel Depot
       requirements:
-        Meson Archer: -1
-        Hydrogen: -1000
-    - recipe_type: Raw Resource
+        Meson Archer: 1
+        Hydrogen: 1000
 
-  Meson Archer - Fuelled - Armed:
+  - name: Meson Archer - Fuelled - Armed
     recipes:
     - output: 1
       recipe_type: Ammo Depot
       requirements:
-        Meson Archer - Fuelled: -1
-        Light Missile Ammo: -50
-    - recipe_type: Raw Resource
+        Meson Archer - Fuelled: 1
+        Light Missile Ammo: 50
 
-  Meson Lifter:
+  - name: Meson Lifter
     recipes:
     - output: 1
       recipe_type: Medium Shipyard
       requirements:
-        Micro-Fusion Reactor: -2
-        Advanced Plating: -20
-        Heavy Frames: -15
-        Supercomputer: -3
-        Medium Engine: -2
-        Small Aero-Wing: -6
-        Small Scramjet: -6
-    - recipe_type: Raw Resource
+        Micro-Fusion Reactor: 2
+        Advanced Plating: 20
+        Heavy Frames: 15
+        Supercomputer: 3
+        Medium Engine: 2
+        Small Aero-Wing: 6
+        Small Scramjet: 6
 
-  Meson Lifter - Fuelled:
+  - name: Meson Lifter - Fuelled
     recipes:
     - output: 1
       recipe_type: Fuel Depot
       requirements:
-        Meson Lifter: -1
-        Hydrogen: -1500
-    - recipe_type: Raw Resource
+        Meson Lifter: 1
+        Hydrogen: 1500
 
-  Stratos Interceptor:
+  - name: Stratos Interceptor
     recipes:
     - output: 1
       recipe_type: Small Shipyard
       requirements:
-        Nano Plating: -12
-        Reinforced Frames: -4
-        Composite: -12
-        Computers: -2
-        Small Aero-Wing: -4
-        Small Scramjet: -4
-    - recipe_type: Raw Resource
+        Nano Plating: 12
+        Reinforced Frames: 4
+        Composite: 12
+        Computers: 2
+        Small Aero-Wing: 4
+        Small Scramjet: 4
 
-  Stratos Interceptor - Fuelled:
+  - name: Stratos Interceptor - Fuelled
     recipes:
     - output: 1
       recipe_type: Fuel Depot
       requirements:
-        Stratos Interceptor: -1
-        Hydrogen: -50
-    - recipe_type: Raw Resource
+        Stratos Interceptor: 1
+        Hydrogen: 50
 
-  Stratos Interceptor - Fuelled - Armed:
+  - name: Stratos Interceptor - Fuelled - Armed
     recipes:
     - output: 1
       recipe_type: Ammo Depot
       requirements:
-        Stratos Interceptor - Fuelled: -1
-        Light Missile Ammo: -4
-    - recipe_type: Raw Resource
+        Stratos Interceptor - Fuelled: 1
+        Light Missile Ammo: 4
 
   ##############################################################################
-  _k: {H1: Locations} ##########################################################
+  - H1: Locations ##############################################################
   ##############################################################################
 
-  Asteroid Belt:
+  - name: Asteroid Belt
     recipes:
     - output: 1
       recipe_type: Location
       requirements:
-        Nano Plating: -50
-        Reinforced Frames: -25
-        Superconductor: -25
-        Computers: -10
-    - recipe_type: Raw Resource
+        Nano Plating: 50
+        Reinforced Frames: 25
+        Superconductor: 25
+        Computers: 10
 
-  Titania - Low Orbit:
+  - name: Titania - Low Orbit
     recipes:
     - output: 1
       recipe_type: Location
       requirements:
-        Nano Plating: -50
-        Reinforced Frames: -25
-        Superconductor: -25
-        Computers: -10
-    - recipe_type: Raw Resource
+        Nano Plating: 50
+        Reinforced Frames: 25
+        Superconductor: 25
+        Computers: 10
 
-  Asteroid Belt 2:
+  - name: Asteroid Belt 2
     recipes:
     - output: 1
       recipe_type: Location
       requirements:
-        Nano Plating: -50
-        Reinforced Frames: -25
-        Superconductor: -25
-        Computers: -10
-    - recipe_type: Raw Resource
+        Nano Plating: 50
+        Reinforced Frames: 25
+        Superconductor: 25
+        Computers: 10
 
-  Glacialis - Ice Ring:
+  - name: Glacialis - Ice Ring
     recipes:
     - output: 1
       recipe_type: Location
       requirements:
-        Nano Plating: -50
-        Reinforced Frames: -25
-        Superconductor: -25
-        Computers: -10
-    - recipe_type: Raw Resource
+        Nano Plating: 50
+        Reinforced Frames: 25
+        Superconductor: 25
+        Computers: 10
 
   ##############################################################################
-  _l: {H1: Objectives} #########################################################
+  - H1: Objectives #############################################################
   ##############################################################################
 
-  Station Expansion 7:
+  - name: Station Expansion 7
     recipes:
     - output: 1
       recipe_type: Objective
       requirements:
-        Photon Tanker - Fuelled: -50
-        Nitrox: -100
-    - recipe_type: Raw Resource
+        Photon Tanker - Fuelled: 50
+        Nitrox: 100
 
-  Station Expansion 8:
+  - name: Station Expansion 8
     recipes:
     - output: 1
       recipe_type: Objective
       requirements:
-        Neutron Explorer - Fuelled: -50
-        Stratos Shuttle - Fuelled: -100
-        Superalloy: -500
-    - recipe_type: Raw Resource
+        Neutron Explorer - Fuelled: 50
+        Stratos Shuttle - Fuelled: 100
+        Superalloy: 500
 
-  Station Expansion 9:
+  - name: Station Expansion 9
     recipes:
     - output: 1
       recipe_type: Objective
       requirements:
-        Meson Heavy Hauler - Fuelled: -25
-        Photon Tanker - Fuelled: -100
-        Aeon Courier - Fuelled: -250
-        Micro-Fusion Reactor: -25
-        Nitrox: -1000
-    - recipe_type: Raw Resource
+        Meson Heavy Hauler - Fuelled: 25
+        Photon Tanker - Fuelled: 100
+        Aeon Courier - Fuelled: 250
+        Micro-Fusion Reactor: 25
+        Nitrox: 1000
 
-  Station Expansion 10:
+  - name: Station Expansion 10
     recipes:
     - output: 1
       recipe_type: Objective
       requirements:
-        Meson Archer - Fuelled - Armed: -50
-        Meson Lifter - Fuelled: -50
-        Stratos Interceptor - Fuelled - Armed: -250
-        Light Missile Ammo: -1000
-    - recipe_type: Raw Resource
+        Meson Archer - Fuelled - Armed: 50
+        Meson Lifter - Fuelled: 50
+        Stratos Interceptor - Fuelled - Armed: 250
+        Light Missile Ammo: 1000
