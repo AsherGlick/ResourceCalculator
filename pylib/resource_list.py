@@ -176,6 +176,32 @@ def _get_duplicate_keys(data: Any) -> List[TokenBundle]:
 
 
 ################################################################################
+# optional_quote_wrapping
+#
+# Optionally wrap a string in quotes if it needs it to be encoded into a yaml
+# value. Certian values will also be escaped.
+################################################################################
+def optional_quote_wrapping(string: str) -> str:
+    quotes_required = False
+    if "," in string:
+        quotes_required = True
+
+    if "'" in string:
+        quotes_required = True
+
+    if '"' in string:
+        string.replace('"', '\\"')
+
+    if '\\' in string:
+        string.replace('\\', '\\\\')
+
+    if quotes_required:
+        return f'"{string}"'
+    else:
+        return string
+
+
+################################################################################
 ################################ Generated Code ################################
 ################################################################################
 # BEGINGENERATOR
@@ -192,7 +218,7 @@ class ResourceList():
         self.requirement_groups: OrderedDict[str, List[str]] = OrderedDict()
         self.stack_sizes: OrderedDict[str, StackSize] = OrderedDict()
         self.default_stack_size: str = ""
-        self.resources: OrderedDict[str, Union[Resource, Heading]] = OrderedDict()
+        self.resources: List[Union[Resource, Heading]] = []
 
         self.valid_keys = ['authors', 'index_page_display_name', 'game_version', 'row_group_count', 'note', 'banner_message', 'recipe_types', 'requirement_groups', 'stack_sizes', 'default_stack_size', 'resources']
 
@@ -321,25 +347,18 @@ class ResourceList():
 
         # Load resources into a typed object
         if 'resources' in tokenless_keys:
-            # Create error for duplicate keys
-            for duplicate_key in _get_duplicate_keys(tokenless_keys["resources"]):
-                errors.append(TokenError("Found Duplicate resources key", Token().from_yaml_scalar_node(duplicate_key.token)))
-
-            for key, value in tokenless_keys["resources"].items():
-                if type(key.value) != str:
-                    errors.append(TokenError("resources key should be a string not a {}".format(str(type(key.value))), Token().from_yaml_scalar_node(key.token)))
-
+            for value in tokenless_keys['resources']:
                 tokenless_value_keys = [x.value for x in value.keys()]
                 if 'H1' in tokenless_value_keys or 'H2' in tokenless_value_keys or 'H3' in tokenless_value_keys:
                     Heading_subobject = Heading()
                     errors += Heading_subobject.parse(value)
 
-                    self.resources[str(key.value)] = Heading_subobject
+                    self.resources.append(Heading_subobject)
                 else:
                     Resource_subobject = Resource()
                     errors += Resource_subobject.parse(value)
 
-                    self.resources[str(key.value)] = Resource_subobject
+                    self.resources.append(Resource_subobject)
         return errors
 
     def to_primitive(self) -> Any:
@@ -401,15 +420,16 @@ class ResourceList():
         if self.default_stack_size != "":
             output.append("")
             output.append(indent + "default_stack_size: " + yaml_string(self.default_stack_size, indent))
-        if self.resources != OrderedDict():
+        if self.resources != []:
             output.append("")
             output.append("resources:")
-            for i, (resources_k, resources_v) in enumerate(self.resources.items()):
+            for i, resources_v in enumerate(self.resources):
                 if isinstance(resources_v, Resource):
                     if i != 0:
                         output.append("")
-                    # output.append(indent + "  " + resources_k + ":")
-                    output.append(resources_v.to_yaml(indent + '    ', resources_k))
+                    resource_text = resources_v.to_yaml(indent + '    ')
+                    resource_text = indent + '  - ' + resource_text[len(indent) + 4:]
+                    output.append(resource_text)
 
                 elif isinstance(resources_v, Heading):
                     if resources_v.H1 != "":
@@ -431,32 +451,6 @@ class ResourceList():
                 else:
                     raise ValueError
         return '\n'.join(output)
-
-
-################################################################################
-# optional_quote_wrapping
-#
-# Optionally wrap a string in quotes if it needs it to be encoded into a yaml
-# value. Certian values will also be escaped.
-################################################################################
-def optional_quote_wrapping(string: str) -> str:
-    quotes_required = False
-    if "," in string:
-        quotes_required = True
-
-    if "'" in string:
-        quotes_required = True
-
-    if '"' in string:
-        string.replace('"', '\\"')
-
-    if '\\' in string:
-        string.replace('\\', '\\\\')
-
-    if quotes_required:
-        return f'"{string}"'
-    else:
-        return string
 
 
 # Class Generated with resource_list_type_generator.py
@@ -563,13 +557,15 @@ class StackSize():
 # Class Generated with resource_list_type_generator.py
 class Resource():
     def __init__(self) -> None:
+        self.name: str = ""
         self.custom_simplename: str = ""
         self.currency: bool = False
         self.note: str = ""
+        self.raw_resource: bool = False
         self.recipes: List[Recipe] = []
         self.custom_stack_multipliers: OrderedDict[str, int] = OrderedDict()
 
-        self.valid_keys = ['custom_simplename', 'currency', 'note', 'recipes', 'custom_stack_multipliers']
+        self.valid_keys = ['name', 'custom_simplename', 'currency', 'note', 'raw_resource', 'recipes', 'custom_stack_multipliers']
 
     def parse(self, tuple_tree: Any) -> List[TokenError]:
         errors: List[TokenError] = []
@@ -583,6 +579,14 @@ class Resource():
             errors.append(TokenError("Found Duplicate Resource key", Token().from_yaml_scalar_node(duplicate_key.token)))
 
         tokenless_keys = {k.value: v for k, v in tuple_tree.items()}
+
+        # Load name into a typed object
+        if 'name' in tokenless_keys:
+            name = tokenless_keys["name"]
+            if type(name.value) != str:
+                errors.append(TokenError("name should be a string not a {}".format(str(type(name.value))), Token().from_yaml_scalar_node(name.token)))
+
+            self.name = str(name.value)
 
         # Load custom_simplename into a typed object
         if 'custom_simplename' in tokenless_keys:
@@ -607,6 +611,14 @@ class Resource():
                 errors.append(TokenError("note should be a string not a {}".format(str(type(note.value))), Token().from_yaml_scalar_node(note.token)))
 
             self.note = str(note.value)
+
+        # Load raw_resource into a typed object
+        if 'raw_resource' in tokenless_keys:
+            raw_resource = tokenless_keys["raw_resource"]
+            if type(raw_resource.value) != bool:
+                errors.append(TokenError("raw_resource should be a bool not a {}".format(str(type(raw_resource.value))), Token().from_yaml_scalar_node(raw_resource.token)))
+
+            self.raw_resource = bool(raw_resource.value)
 
         # Load recipes into a typed object
         if 'recipes' in tokenless_keys:
@@ -633,30 +645,30 @@ class Resource():
 
     def to_primitive(self) -> Any:
         return {
+            "name": get_primitive(self.name),
             "custom_simplename": get_primitive(self.custom_simplename),
             "currency": get_primitive(self.currency),
             "note": get_primitive(self.note),
+            "raw_resource": get_primitive(self.raw_resource),
             "recipes": get_primitive(self.recipes),
             "custom_stack_multipliers": get_primitive(self.custom_stack_multipliers),
         }
 
-    def to_yaml(self, indent: str = "", resource_name: str = "<<<<<ERROR>>>>>") -> str:
+    def to_yaml(self, indent: str = "") -> str:
         output = []
-        if resource_name:
-            output.append(indent[:-2] + "- name: " + yaml_string(resource_name, indent))
+        if self.name != "":
+            output.append(indent + "name: " + yaml_string(self.name, indent))
         if self.custom_simplename != "":
             output.append(indent + "custom_simplename: " + yaml_string(self.custom_simplename, indent))
         if self.currency is not False:
-            output.append(indent + "currency: " + str(self.currency))
+            output.append(indent + "currency: " + str(self.currency).lower())
         if self.note != "":
             output.append(indent + "note: " + yaml_string(self.note, indent))
-        if self.recipes[0].recipe_type == "Raw Resource":
-            output.append(indent + "raw_resource: true")
-        if self.recipes != [] and not (len(self.recipes) == 1 and self.recipes[0].recipe_type == "Raw Resource"):
+        if self.raw_resource is not False:
+            output.append(indent + "raw_resource: " + str(self.raw_resource).lower())
+        if self.recipes != []:
             output.append(indent + "recipes:")
             for recipes_v in self.recipes:
-                if recipes_v.recipe_type == "Raw Resource":
-                    continue
                 line = recipes_v.to_yaml(indent + '  ')
                 line = indent + '- ' + line.removeprefix(indent + '  ')
                 output.append(line)
@@ -804,8 +816,6 @@ class Recipe():
         }
 
     def to_yaml(self, indent: str = "") -> str:
-        if self.recipe_type == "Raw Resource":
-            return ""
         output = []
         if self.output != 0:
             output.append(indent + "output: " + str(self.output))
@@ -816,8 +826,6 @@ class Recipe():
         if self.requirements != OrderedDict():
             output.append(indent + "requirements:")
             for requirements_k, requirements_v in self.requirements.items():
-                if (requirements_v > 0):
-                    raise ValueError("NonNegative Requirement")
-                output.append(indent + "  " + requirements_k + ": " + str(-requirements_v))
+                output.append(indent + "  " + requirements_k + ": " + str(requirements_v))
         return '\n'.join(output)
 # ENDGENERATOR
