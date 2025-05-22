@@ -17,8 +17,9 @@ def test_load(input_yaml: str) -> List[TokenError]:
         resource_list = ResourceList()
         errors += resource_list.parse(yaml_data)
 
-    resources: OrderedDict[str, Resource] = OrderedDict([(k, v) for k, v in resource_list.resources.items() if not isinstance(v, Heading)])
-    resources = expand_raw_resource(resources)
+    resources: List[Resource] = [v for v in resource_list.resources if not isinstance(v, Heading)]
+    resources, expantion_errors = expand_raw_resource(resources)
+    errors += expantion_errors
 
     recipe_types: OrderedDict[str, str] = resource_list.recipe_types
 
@@ -50,18 +51,8 @@ class Test_Invalid_Yaml(unittest.TestCase):
     def test_invalid_raw_resource_error(self) -> None:
         errors = test_load("tests/invalid_raw_resource.yaml")
         desired_errors: List[TokenError] = [
-            TokenError('MyResource has an invalid "Raw Resource"', Token(0, 0, 0, 0)),
-            TokenError('MyResource must have a "Raw Resource" which outputs 1 and has a requirement of 0 of itself', Token(0, 0, 0, 0))
-        ]
-        self.assertListEqual(errors, desired_errors)
-
-    ############################################################################
-    #
-    ############################################################################
-    def test_missing_raw_resource_error(self) -> None:
-        errors = test_load("tests/missing_raw_resource.yaml")
-        desired_errors: List[TokenError] = [
-            TokenError('MyResource must have a "Raw Resource" which outputs 1 and has a requirement of 0 of itself', Token(0, 0, 0, 0))
+            TokenError('MyResource should not have a "Raw Resource". Instead use the raw_resource boolean on the resource itself', Token(0, 0, 0, 0)),
+            TokenError('MyResource has an invalid "Raw Resource". You should use the resource.raw_resource boolean flag instead.', Token(0, 0, 0, 0))
         ]
         self.assertListEqual(errors, desired_errors)
 
@@ -118,7 +109,7 @@ class Test_Invalid_Yaml(unittest.TestCase):
     def test_invalid_recipe_type(self) -> None:
         errors = test_load("tests/invalid_recipe_type.yaml")
         desired_errors: List[TokenError] = [
-            TokenError('MyResource has an undefined resource_type: "UnkonwnRecipeType"', Token(0, 0, 0, 0))
+            TokenError('MyResource has an undefined recipe_type: "UnkonwnRecipeType"', Token(0, 0, 0, 0))
         ]
         self.assertListEqual(errors, desired_errors)
 
@@ -148,6 +139,6 @@ class Test_Invalid_Yaml(unittest.TestCase):
     def test_invalid_requirement_count(self) -> None:
         errors = test_load("tests/invalid_requirement_count.yaml")
         desired_errors: List[TokenError] = [
-            TokenError('ERROR: Invalid requirement for resource:MyResource. "MySubResource" must be a negative number', Token(0, 0, 0, 0))
+            TokenError('ERROR: Invalid requirement for resource:MyResource. "MySubResource" must be a positive number', Token(0, 0, 0, 0))
         ]
         self.assertListEqual(errors, desired_errors)

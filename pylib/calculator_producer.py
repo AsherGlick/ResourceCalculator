@@ -91,7 +91,7 @@ def calculator_function(input_files: CalculatorInputFiles, groups: Dict[str, str
 
     default_stack_size: str = resource_list.default_stack_size
 
-    resources: OrderedDict[str, Resource] = OrderedDict({k: v for k, v in resource_list.resources.items() if not isinstance(v, Heading)})
+    resources: List[Resource] = [v for v in resource_list.resources if not isinstance(v, Heading)]
 
     resource_simple_names_js_data = mini_js_data(get_primitive(get_simple_names_only(resources)), "resource_simple_names")
 
@@ -167,23 +167,23 @@ def calculator_function(input_files: CalculatorInputFiles, groups: Dict[str, str
 # resource, and if it has then returns it. Otherwise it generates the simple
 # name from the resource's actual name.
 ################################################################################
-def get_simple_name(resource: str, resources: OrderedDict[str, Resource]) -> str:
+def get_simple_name(resource: Resource) -> str:
     # TODO: Change this if we end up implementing something like "is_set()" for the YAML conversions
-    if resources[resource].custom_simplename != "":
-        return resources[resource].custom_simplename
-    return re.sub(r'[^a-z0-9]', '', resource.lower())
+    if resource.custom_simplename != "":
+        return resource.custom_simplename
+    return re.sub(r'[^a-z0-9]', '', resource.name.lower())
 
 
 ################################################################################
 # get_simple_names_only generates an object of custom_simplenames only for
 # resources where a simple name override has been set.
 ################################################################################
-def get_simple_names_only(resources: OrderedDict[str, Resource]) -> Dict[str, str]:
+def get_simple_names_only(resources: List[Resource]) -> Dict[str, str]:
     simple_names = {}
 
-    for resourceKey in resources:
-        if resources[resourceKey].custom_simplename != "":
-            simple_names[resourceKey] = resources[resourceKey].custom_simplename
+    for resource in resources:
+        if resource.custom_simplename != "":
+            simple_names[resource.name] = resource.custom_simplename
 
     return simple_names
 
@@ -271,8 +271,23 @@ def generate_recipe_type_format_js(recipe_types: OrderedDict[str, str]) -> str:
 # Takes in a complete resources list and returns a mapping of each item to only
 # the recipes that item has, stripping out all other information.
 ################################################################################
-def get_recipes_only(resources: OrderedDict[str, Resource]) -> Dict[str, List[Recipe]]:
-    return {resource: resources[resource].recipes for resource in resources}
+def get_recipes_only(resources: List[Resource]) -> Dict[str, List[Recipe]]:
+
+    primitive_resources = {resource.name: get_primitive(resource.recipes) for resource in resources}
+    for resource in primitive_resources:
+        for recipe in primitive_resources[resource]:
+            for requirement in recipe["requirements"]:
+                recipe["requirements"][requirement] = -recipe["requirements"][requirement]
+
+    # TODO: Remove this hack to invert the data. This only works with the type
+    # ignore because the very next command that is run in the only place this
+    # function is called is get_primitive. We are putting this hack in here
+    # instead of editing the solver to take positive numbers so that we can
+    # diff the effects of the resource_list schema change more easily.
+    return primitive_resources
+
+    # TODO: Eventually the following should be the only return value
+    # return {resource.name: resource.recipes for resource in resources}
 
 
 ################################################################################
@@ -281,12 +296,12 @@ def get_recipes_only(resources: OrderedDict[str, Resource]) -> Dict[str, List[Re
 # Extracts a list of dicts containing information about each item that should
 # be displayed to the user.
 ################################################################################
-def generate_resource_html_data(resources: OrderedDict[str, Resource]) -> List[Dict[str, str]]:
+def generate_resource_html_data(resources: List[Resource]) -> List[Dict[str, str]]:
     resources_html_data = []
     for resource in resources:
         resource_html_data = {}
-        simple_name = get_simple_name(resource, resources)
-        resource_html_data["aria_label"] = resource
+        simple_name = get_simple_name(resource)
+        resource_html_data["aria_label"] = resource.name
         resource_html_data["simplename"] = simple_name
         resources_html_data.append(resource_html_data)
     return resources_html_data
@@ -298,10 +313,10 @@ def generate_resource_html_data(resources: OrderedDict[str, Resource]) -> List[D
 # Creates the CSS required to properly display images contained in the packed
 # image.
 ################################################################################
-def generate_resource_offset_classes(resources: OrderedDict[str, Resource], resource_image_coordinates: Dict[str, Tuple[int, int]]) -> Dict[str, str]:
+def generate_resource_offset_classes(resources: List[Resource], resource_image_coordinates: Dict[str, Tuple[int, int]]) -> Dict[str, str]:
     item_styles: Dict[str, str] = {}
     for resource in resources:
-        simple_name = get_simple_name(resource, resources)
+        simple_name = get_simple_name(resource)
 
         if simple_name in resource_image_coordinates:
             x_coordinate, y_coordinate = resource_image_coordinates[simple_name]
@@ -360,12 +375,12 @@ def generate_content_width_css(image_width: int, resource_list: ResourceList) ->
 # Takes the custom stack sizes found attached to each item and merges them into
 # the stack size information so it can be displayed more easily.
 ################################################################################
-def merge_custom_multipliers(stack_sizes: OrderedDict[str, StackSize], resources: OrderedDict[str, Resource]) -> OrderedDict[str, StackSize]:
+def merge_custom_multipliers(stack_sizes: OrderedDict[str, StackSize], resources: List[Resource]) -> OrderedDict[str, StackSize]:
     for resource in resources:
-        custom_sizes = resources[resource].custom_stack_multipliers
+        custom_sizes = resource.custom_stack_multipliers
         for custom_size_name in custom_sizes:
             custom_size = custom_sizes[custom_size_name]
 
-            stack_sizes[custom_size_name].custom_multipliers[resource] = custom_size
+            stack_sizes[custom_size_name].custom_multipliers[resource.name] = custom_size
 
     return stack_sizes
