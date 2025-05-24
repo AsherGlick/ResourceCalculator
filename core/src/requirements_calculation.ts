@@ -50,108 +50,109 @@ export function generatelist(inventory: { [key: string]: number}) {
 
         // For each negative requirement get it's base resources
         for (let requirement in requirements){
-            if (requirements[requirement] < 0) {
-                let recipe = get_recipe(requirement);
-                let recipe_requirements = recipe.requirements;
-                let recipe_output = recipe.output;
+            if (requirements[requirement] >= 0) {
+                continue;
+            }
+            let recipe = get_recipe(requirement);
+            let recipe_requirements = recipe.requirements;
+            let recipe_output = recipe.output;
 
-                if (remaining_inventory_items[requirement] > 0) {
-                    let owned = remaining_inventory_items[requirement];
-                    let needed = Math.abs(requirements[requirement]);
-                    let recipes_from_owned = Math.floor(owned / recipe_output);
-                    let overshot_from_owned = owned % recipe_output;
-                    let extra_from_produce = needed % recipe_output;
+            if (remaining_inventory_items[requirement] > 0) {
+                let owned = remaining_inventory_items[requirement];
+                let needed = Math.abs(requirements[requirement]);
+                let recipes_from_owned = Math.floor(owned / recipe_output);
+                let overshot_from_owned = owned % recipe_output;
+                let extra_from_produce = needed % recipe_output;
 
-                    if (overshot_from_owned < extra_from_produce) {
-                        if (recipes_from_owned > 0) {
-                            recipes_from_owned--;
-                        }
-                        else {
-                            extra_from_produce = 0;
-                        }
+                if (overshot_from_owned < extra_from_produce) {
+                    if (recipes_from_owned > 0) {
+                        recipes_from_owned--;
                     }
-
-                    // Only take so much from inventory, that no [Extra] will be crafted.
-                    let usable_count =  Math.min(needed, extra_from_produce + recipes_from_owned * recipe_output);
-
-                    remaining_inventory_items[requirement] -= usable_count;
-                    output_requirements[requirement] += usable_count;
-                    requirements[requirement] += usable_count;
-
-                    if (used_from_inventory[requirement] === undefined) {
-                        used_from_inventory[requirement] = 0;
+                    else {
+                        extra_from_produce = 0;
                     }
+                }
 
-                    used_from_inventory[requirement] += usable_count;
+                // Only take so much from inventory, that no [Extra] will be crafted.
+                let usable_count =  Math.min(needed, extra_from_produce + recipes_from_owned * recipe_output);
 
-                    let tracker_key: string = requirement + requirement + inventory_label_suffix;
+                remaining_inventory_items[requirement] -= usable_count;
+                output_requirements[requirement] += usable_count;
+                requirements[requirement] += usable_count;
+
+                if (used_from_inventory[requirement] === undefined) {
+                    used_from_inventory[requirement] = 0;
+                }
+
+                used_from_inventory[requirement] += usable_count;
+
+                let tracker_key: string = requirement + requirement + inventory_label_suffix;
+                if (!(tracker_key in resource_tracker)) {
+                    resource_tracker[tracker_key] = new ResourceEdge(
+                        requirement + inventory_label_suffix,
+                        requirement,
+                        0,
+                    );
+                }
+
+                resource_tracker[tracker_key].value += usable_count;
+
+                let inventory_key = requirement + inventory_label_suffix;
+                if (!(inventory_key in generation_totals)) {
+                    generation_totals[inventory_key] = 0;
+                }
+
+                generation_totals[inventory_key] += usable_count;
+
+                // console.log("using " + usable_count + " " + requirement + " from inventory.");
+            }
+
+            let required_count = -requirements[requirement];
+            // Figure out the minimum number of a given requirement can be produced
+            // to fit the quantity of that requirement needed.
+            // EG: if a recipe produces 4 of an item but you only need 3
+            //     then you must produce 4 of that item with 1 left over
+            let produce_count = Math.ceil(required_count / recipe_output);
+            output_requirements[requirement] += produce_count * recipe_output;
+
+            // Add the quantity of the item created to the generation_totals
+            // This is used to keep track of how many of any item in the crafting process are produced
+            if (!(requirement in generation_totals)) {
+                generation_totals[requirement] = 0;
+            }
+
+            generation_totals[requirement] += produce_count * recipe_output;
+
+            // if this is a raw resource then add it to the raw resource list
+            if (recipe_requirements[requirement] === 0 && Object.keys(recipe_requirements).length === 1) {
+                if (raw_resources[requirement] === undefined) {
+                    raw_resources[requirement] = 0;
+                }
+
+                raw_resources[requirement] += produce_count * recipe_output;
+            }
+
+            // If this is not a raw resource, track the change the and modify the output requirements
+            else {
+                for (let item of Object.keys(recipe_requirements)) {
+
+                    // Set the recipe requirements as new output requirements
+                    if (output_requirements[item] === undefined) {
+                        output_requirements[item] = 0;
+                    }
+                    output_requirements[item] -= recipe_requirements[item] * produce_count;
+
+                    // Add the recipe's conversion
+                    let tracker_key = requirement+item;
                     if (!(tracker_key in resource_tracker)) {
                         resource_tracker[tracker_key] = new ResourceEdge(
-                            requirement + inventory_label_suffix,
+                            item,
                             requirement,
                             0,
                         );
                     }
-
-                    resource_tracker[tracker_key].value += usable_count;
-
-                    let inventory_key = requirement + inventory_label_suffix;
-                    if (!(inventory_key in generation_totals)) {
-                        generation_totals[inventory_key] = 0;
-                    }
-
-                    generation_totals[inventory_key] += usable_count;
-
-                    // console.log("using " + usable_count + " " + requirement + " from inventory.");
-                }
-
-                let required_count = -requirements[requirement];
-                // Figure out the minimum number of a given requirement can be produced
-                // to fit the quantity of that requirement needed.
-                // EG: if a recipe produces 4 of an item but you only need 3
-                //     then you must produce 4 of that item with 1 left over
-                let produce_count = Math.ceil(required_count / recipe_output);
-                output_requirements[requirement] += produce_count * recipe_output;
-
-                // Add the quantity of the item created to the generation_totals
-                // This is used to keep track of how many of any item in the crafting process are produced
-                if (!(requirement in generation_totals)) {
-                    generation_totals[requirement] = 0;
-                }
-
-                generation_totals[requirement] += produce_count * recipe_output;
-
-                // if this is a raw resource then add it to the raw resource list
-                if (recipe_requirements[requirement] === 0 && Object.keys(recipe_requirements).length === 1) {
-                    if (raw_resources[requirement] === undefined) {
-                        raw_resources[requirement] = 0;
-                    }
-
-                    raw_resources[requirement] += produce_count * recipe_output;
-                }
-
-                // If this is not a raw resource, track the change the and modify the output requirements
-                else {
-                    for (let item of Object.keys(recipe_requirements)) {
-
-                        // Set the recipe requirements as new output requirements
-                        if (output_requirements[item] === undefined) {
-                            output_requirements[item] = 0;
-                        }
-                        output_requirements[item] -= recipe_requirements[item] * produce_count;
-
-                        // Add the recipe's conversion
-                        let tracker_key = requirement+item;
-                        if (!(tracker_key in resource_tracker)) {
-                            resource_tracker[tracker_key] = new ResourceEdge(
-                                item,
-                                requirement,
-                                0,
-                            );
-                        }
-                        resource_tracker[tracker_key].value += recipe_requirements[item] * produce_count;
-                    };
-                }
+                    resource_tracker[tracker_key].value += recipe_requirements[item] * produce_count;
+                };
             }
         }
         requirements = output_requirements;
