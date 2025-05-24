@@ -27,11 +27,28 @@ function negative_requirements_exist(requirements: { [key: string]: number }): b
 ////////////////////////////////////////////////////////////////////////////////
 // generatelist
 //
-// The primary function which handles all of the calculations needed to process
-// the resource requirements and build the graph of conversion steps.
+// Scan the DOM for the items that the user has specified, calculate the
+// requirements, and then display the calculated data to the user.
 ////////////////////////////////////////////////////////////////////////////////
 export function generatelist(inventory: { [key: string]: number}) {
     var original_requirements: { [key: string]: number } = gather_requirements();
+
+    let {resource_tracker, generation_totals, used_from_inventory} = calculate_resource_graph(inventory, original_requirements);
+
+    generate_chart(resource_tracker, generation_totals, used_from_inventory);
+    generate_instructions(resource_tracker, generation_totals);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// calculate_resource_graph
+//
+// The primary function which handles all of the calculations needed to process
+// the resource requirements and build the graph of conversion steps.
+////////////////////////////////////////////////////////////////////////////////
+function calculate_resource_graph(
+    inventory: { [key: string]: number},
+    original_requirements: { [key: string]: number },
+) {
     var requirements: { [key: string]: number } = JSON.parse(JSON.stringify(original_requirements));
     var resource_tracker: { [key: string]: ResourceEdge } = {};
     var generation_totals: { [key: string]: number} = {}; // the total number of each resource produce (ignoring any consumption)
@@ -215,10 +232,14 @@ export function generatelist(inventory: { [key: string]: number}) {
         }
     }
 
-    generate_chart(resource_tracker, generation_totals, used_from_inventory);
-    generate_instructions(resource_tracker, generation_totals);
+    return {
+        resource_tracker,
+        generation_totals,
+        used_from_inventory,
+    }
 }
 
+ 
 ////////////////////////////////////////////////////////////////////////////////
 // gather_requirements
 //
