@@ -7,6 +7,13 @@ import { generate_instructions } from "./text_instructions";
 import { generate_chart } from "./chart";
 import { get_recipe } from "./recipe_info";
 
+////////////////////////////////////////////////////////////////////////////////
+// negative_requirements_exist
+//
+// A helper function to check all of the nodes that have been touched to see if
+// any of them still have a negative quantity required. This means that we need
+// to do more calculations still before the resource graph is complete.
+////////////////////////////////////////////////////////////////////////////////
 function negative_requirements_exist(requirements: { [key: string]: number }): boolean {
     for (let requirement in requirements){
         if (requirements[requirement] < 0) {
@@ -16,6 +23,13 @@ function negative_requirements_exist(requirements: { [key: string]: number }): b
     return false;
 }
 
+
+////////////////////////////////////////////////////////////////////////////////
+// generatelist
+//
+// The primary function which handles all of the calculations needed to process
+// the resource requirements and build the graph of conversion steps.
+////////////////////////////////////////////////////////////////////////////////
 export function generatelist(inventory: { [key: string]: number}) {
     var original_requirements: { [key: string]: number } = gather_requirements();
     var requirements: { [key: string]: number } = JSON.parse(JSON.stringify(original_requirements));
@@ -204,6 +218,13 @@ export function generatelist(inventory: { [key: string]: number}) {
     generate_instructions(resource_tracker, generation_totals);
 }
 
+////////////////////////////////////////////////////////////////////////////////
+// gather_requirements
+//
+// A helper function that parses the DOM in order to identify which items the
+// user has specified a desire for. Then returns those items as a mapping of
+// item name to negative quantity.
+////////////////////////////////////////////////////////////////////////////////
 function gather_requirements(): { [key: string]: number } {
     var resources: { [key: string]:number } = {};
 
