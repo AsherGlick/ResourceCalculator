@@ -4,11 +4,11 @@
 # name all of the images according to their in-game name.
 ################################################################################
 
-import math
 import subprocess
 import time
 from PIL import Image
 import pyautogui
+import os
 
 # Some constants about minecraft's UI that are scaled via the ui_size attribute
 NATIVE_TEXT_SIZE = 8 + 3 # 3 extra for the border bar
@@ -62,6 +62,8 @@ def screenshot_page(
 
     horizontal_inventory_count = 9
     vertical_inventory_count = 5
+
+    os.makedirs("raw_images", exist_ok=True)
 
     # Screenshot each item
     item_page_screenshot = take_screenshot(
@@ -122,6 +124,7 @@ def scroll_down(
 def main():
     anchor_position = pyautogui.locateOnScreen("menu_anchor.png")
     if anchor_position is None:
+        print("We could not find the brick block anchor present on the top left tab in the creative menu. Please make sure the creative menu is open and that you are on the full search tab of the creative menu.")
         raise ValueError("No Anchor found")
 
     page = 0

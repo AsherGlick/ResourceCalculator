@@ -59,6 +59,12 @@ requirement_groups:
   - Stripped Jungle Log
   - Stripped Jungle Wood
 
+  Any Pale Oak Log:
+  - Pale Oak Log
+  - Pale Oak Wood
+  - Stripped Pale Oak Log
+  - Stripped Pale Oak Wood
+
   Any Log:
   - Oak Log
   - Acacia Log
@@ -100,6 +106,10 @@ requirement_groups:
   - Cherry Wood
   - Stripped Cherry Log
   - Stripped Cherry Wood
+  - Pale Oak Log
+  - Pale Oak Wood
+  - Stripped Pale Oak Log
+  - Stripped Pale Oak Wood
 
   Any Log That Burns:
   - Oak Log
@@ -134,6 +144,11 @@ requirement_groups:
   - Cherry Wood
   - Stripped Cherry Log
   - Stripped Cherry Wood
+  - Pale Oak Log
+  - Pale Oak Wood
+  - Stripped Pale Oak Log
+  - Stripped Pale Oak Wood
+
 
   Any Mangrove Log:
   - Mangrove Log
@@ -159,6 +174,7 @@ requirement_groups:
   - Warped Planks
   - Bamboo Planks
   - Cherry Planks
+  - Pale Oak Planks
 
   Any Purpur Block:
   - Purpur Block
@@ -205,6 +221,7 @@ requirement_groups:
   - Warped Slab
   - Bamboo Slab
   - Cherry Slab
+  - Pale Oak Slab
 
   Any Soul Fire Base Block:
   - Soul Sand
@@ -1093,6 +1110,70 @@ requirement_groups:
   - Purple Wool
   - Red Wool
   - White Wool
+
+  Any Bundle:
+  - Bundle
+  - Black Bundle
+  - Blue Bundle
+  - Brown Bundle
+  - Cyan Bundle
+  - Gray Bundle
+  - Green Bundle
+  - Light Blue Bundle
+  - Light Gray Bundle
+  - Lime Bundle
+  - Magenta Bundle
+  - Orange Bundle
+  - Pink Bundle
+  - Purple Bundle
+  - Red Bundle
+  - White Bundle
+  - Yellow Bundle
+
+  Any Wooden Tool Material:
+  - Acacia Planks
+  - Bamboo Planks
+  - Birch Planks
+  - Cherry Planks
+  - Crimson Planks
+  - Dark Oak Planks
+  - Jungle Planks
+  - Mangrove Planks
+  - Oak Planks
+  - Pale Oak Planks
+  - Spruce Planks
+  - Warped Planks
+
+  Any Iron Tool Material:
+  - Iron Ingot
+
+  Any Gold Tool Material:
+  - Gold Ingot
+
+  Any Diamond Tool Material:
+  - Diamond
+
+  Any Netherite Tool Material:
+  - Netherite Ingot
+
+  Any Egg:
+  - Blue Egg
+  - Brown Egg
+  - Egg
+
+  Any Leaf:
+  - Acacia Leaves
+  - Azalea Leaves
+  - Birch Leaves
+  - Cherry Leaves
+  - Dark Oak Leaves
+  - Flowering Azalea Leaves
+  - Jungle Leaves
+  - Mangrove Leaves
+  - Oak Leaves
+  - Pale Oak Leaves
+  - Spruce Leaves
+
 
 stack_sizes:
   Double Chest:
@@ -8136,7 +8217,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Chiseled Stone Bricks: 8
-        Netherite Ingot: 1
+        Iron Ingot: 1
 
   - name: Ladder
     recipes:
@@ -8780,7 +8861,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: 2
-        Any Planks: 1
+        Any Wooden Tool Material: 1
 
   - name: Wooden Pickaxe
     recipes:
@@ -8788,7 +8869,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: 2
-        Any Planks: 3
+        Any Wooden Tool Material: 3
 
   - name: Wooden Axe
     recipes:
@@ -8796,7 +8877,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: 2
-        Any Planks: 3
+        Any Wooden Tool Material: 3
 
   - name: Wooden Hoe
     recipes:
@@ -8804,7 +8885,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: 2
-        Any Planks: 2
+        Any Wooden Tool Material: 2
 
   - name: Stone Shovel
     recipes:
@@ -8844,7 +8925,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: 2
-        Iron Ingot: 1
+        Any Iron Tool Material: 1
 
   - name: Iron Pickaxe
     recipes:
@@ -8852,7 +8933,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: 2
-        Iron Ingot: 3
+        Any Iron Tool Material: 3
 
   - name: Iron Axe
     recipes:
@@ -8860,7 +8941,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: 2
-        Iron Ingot: 3
+        Any Iron Tool Material: 3
 
   - name: Iron Hoe
     recipes:
@@ -8868,7 +8949,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: 2
-        Iron Ingot: 2
+        Any Iron Tool Material: 2
 
   - name: Golden Shovel
     recipes:
@@ -8876,7 +8957,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: 2
-        Gold Ingot: 1
+        Any Gold Tool Material: 1
 
   - name: Golden Pickaxe
     recipes:
@@ -8884,7 +8965,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: 2
-        Gold Ingot: 3
+        Any Gold Tool Material: 3
 
   - name: Golden Axe
     recipes:
@@ -8892,7 +8973,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: 2
-        Gold Ingot: 3
+        Any Gold Tool Material: 3
 
   - name: Golden Hoe
     recipes:
@@ -8900,7 +8981,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: 2
-        Gold Ingot: 2
+        Any Gold Tool Material: 2
 
   - name: Diamond Shovel
     recipes:
@@ -8908,7 +8989,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: 2
-        Diamond: 1
+        Any Diamond Tool Material: 1
 
   - name: Diamond Pickaxe
     recipes:
@@ -8916,7 +8997,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: 2
-        Diamond: 3
+        Any Diamond Tool Material: 3
 
   - name: Diamond Axe
     recipes:
@@ -8924,7 +9005,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: 2
-        Diamond: 3
+        Any Diamond Tool Material: 3
 
   - name: Diamond Hoe
     recipes:
@@ -8932,7 +9013,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: 2
-        Diamond: 2
+        Any Diamond Tool Material: 2
 
   - name: Netherite Shovel
     recipes:
@@ -8940,7 +9021,7 @@ resources:
       recipe_type: Smithing Table
       requirements:
         Diamond Shovel: 1
-        Netherite Ingot: 1
+        Any Netherite Tool Material: 1
 
   - name: Netherite Pickaxe
     recipes:
@@ -8948,7 +9029,7 @@ resources:
       recipe_type: Smithing Table
       requirements:
         Diamond Pickaxe: 1
-        Netherite Ingot: 1
+        Any Netherite Tool Material: 1
 
   - name: Netherite Axe
     recipes:
@@ -8956,7 +9037,7 @@ resources:
       recipe_type: Smithing Table
       requirements:
         Diamond Axe: 1
-        Netherite Ingot: 1
+        Any Netherite Tool Material: 1
 
   - name: Netherite Hoe
     recipes:
@@ -8964,7 +9045,7 @@ resources:
       recipe_type: Smithing Table
       requirements:
         Diamond Hoe: 1
-        Netherite Ingot: 1
+        Any Netherite Tool Material: 1
 
   - name: Bucket
     recipes:
@@ -9350,7 +9431,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: 1
-        Any Planks: 2
+        Any Wooden Tool Material: 2
 
   - name: Stone Sword
     recipes:
@@ -9366,7 +9447,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: 1
-        Iron Ingot: 2
+        Any Iron Tool Material: 2
 
   - name: Golden Sword
     recipes:
@@ -9374,7 +9455,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: 1
-        Gold Ingot: 2
+        Any Gold Tool Material: 2
 
   - name: Diamond Sword
     recipes:
@@ -9382,7 +9463,7 @@ resources:
       recipe_type: Crafting
       requirements:
         Stick: 1
-        Diamond: 2
+        Any Diamond Tool Material: 2
 
   - name: Netherite Sword
     recipes:
@@ -9390,7 +9471,7 @@ resources:
       recipe_type: Smithing Table
       requirements:
         Diamond Sword: 1
-        Netherite Ingot: 1
+        Any Netherite Tool Material: 1
 
   - name: Trident
     raw_resource: true
@@ -9408,7 +9489,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Any Planks: 6
+        Any Wooden Tool Material: 6
         Iron Ingot: 1
 
   - name: Leather Cap
@@ -9541,7 +9622,7 @@ resources:
       recipe_type: Smithing Table
       requirements:
         Diamond Helmet: 1
-        Netherite Ingot: 1
+        Any Netherite Tool Material: 1
 
   - name: Netherite Chestplate
     recipes:
@@ -9549,7 +9630,7 @@ resources:
       recipe_type: Smithing Table
       requirements:
         Diamond Chestplate: 1
-        Netherite Ingot: 1
+        Any Netherite Tool Material: 1
 
   - name: Netherite Leggings
     recipes:
@@ -9557,7 +9638,7 @@ resources:
       recipe_type: Smithing Table
       requirements:
         Diamond Leggings: 1
-        Netherite Ingot: 1
+        Any Netherite Tool Material: 1
 
   - name: Netherite Boots
     recipes:
@@ -9565,7 +9646,7 @@ resources:
       recipe_type: Smithing Table
       requirements:
         Diamond Boots: 1
-        Netherite Ingot: 1
+        Any Netherite Tool Material: 1
 
   - name: Turtle Shell
     recipes:
@@ -9811,7 +9892,7 @@ resources:
       requirements:
         Wheat: 3
         Sugar: 2
-        Egg: 1
+        Any Egg: 1
         Milk Bucket: 3
 
   - name: Pumpkin Pie
@@ -9821,7 +9902,7 @@ resources:
       requirements:
         Pumpkin: 1
         Sugar: 1
-        Egg: 1
+        Any Egg: 1
 
   - name: Rotten Flesh
     raw_resource: true
@@ -10386,6 +10467,10 @@ resources:
       requirements:
         White Dye: 1
         Black Dye: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Closed Eyeblossom: 1
 
   - name: Black Dye
     recipes:
@@ -10439,6 +10524,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Torchflower: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Open Eyeblossom: 1
 
   - name: Yellow Dye
     recipes:
@@ -10450,6 +10539,11 @@ resources:
       recipe_type: Crafting
       requirements:
         Dandelion: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Wildflowers: 1
+
 
   - name: Lime Dye
     recipes:
@@ -10562,6 +10656,10 @@ resources:
       recipe_type: Crafting
       requirements:
         Pink Petals: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cactus Flower: 1
 
   - name: Bowl
     recipes:
@@ -10695,6 +10793,17 @@ resources:
       requirements:
         Paper: 1
         Creeper Head: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Paper: 1
+        Vines: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Paper: 1
+        Bricks: 1
+
 
   - name: Bottle o' Enchanting
     raw_resource: true
@@ -10729,3 +10838,529 @@ resources:
       recipe_type: As
       requirements:
         Any Planks: 2
+
+  - name: Black Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Black Dye: 1
+
+
+  - name: Blue Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Blue Dye: 1
+
+  - name: Brown Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Brown Dye: 1
+
+
+  - name: Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        String: 1
+        Leather: 1
+
+
+  - name: Chiseled Resin Bricks
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Resin Brick Slab: 2
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Resin Bricks: 1
+
+
+  - name: Creaking Heart
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Log: 2
+        Block of Resin: 1
+
+
+  - name: Cyan Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Cyan Dye: 1
+
+  - name: Gray Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Gray Dye: 1
+
+
+  - name: Green Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Green Dye: 1
+
+
+  - name: Leaf Litter
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Any Leaf: 1
+        Fuel: 1
+
+
+  - name: Light Blue Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Light Blue Dye: 1
+
+
+  - name: Light Gray Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Light Gray Dye: 1
+
+
+  - name: Lime Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Lime Dye: 1
+
+
+  - name: Magenta Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Magenta Dye: 1
+
+
+  - name: Orange Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Orange Dye: 1
+
+
+  - name: Pale Moss Carpet
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Pale Moss Block: 2
+
+
+  - name: Pale Oak Boat
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Planks: 5
+
+
+  - name: Pale Oak Button
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Planks: 1
+
+
+  - name: Pale Oak Boat with Chest
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Chest: 1
+        Pale Oak Boat: 1
+
+
+  - name: Pale Oak Door
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Planks: 6
+
+
+  - name: Pale Oak Fence
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Planks: 4
+        Stick: 2
+
+
+  - name: Pale Oak Fence Gate
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: 4
+        Pale Oak Planks: 2
+
+
+  - name: Pale Oak Hanging Sign
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Chain: 2
+        Stripped Pale Oak Log: 6
+
+
+  - name: Pale Oak Planks
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Any Pale Oak Log: 1
+
+
+  - name: Pale Oak Pressure Plate
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Planks: 2
+
+
+  - name: Pale Oak Sign
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Planks: 6
+        Stick: 1
+
+
+  - name: Pale Oak Slab
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Planks: 3
+
+
+  - name: Pale Oak Stairs
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Planks: 6
+
+
+  - name: Pale Oak Trapdoor
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Planks: 6
+
+
+  - name: Pale Oak Wood
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Log: 4
+
+
+  - name: Pink Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Pink Dye: 1
+
+
+  - name: Purple Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Purple Dye: 1
+
+
+  - name: Red Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Red Dye: 1
+
+
+  - name: Block of Resin
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Resin Clump: 9
+
+
+  - name: Resin Brick
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Resin Clump: 1
+        Fuel: 1
+
+
+  - name: Resin Brick Slab
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Resin Bricks: 3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Resin Bricks: 1
+
+
+  - name: Resin Brick Stairs
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Resin Bricks: 6
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Resin Bricks: 1
+
+
+  - name: Resin Brick Wall
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Resin Bricks: 6
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Resin Bricks: 1
+
+
+  - name: Resin Bricks
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Resin Brick: 4
+
+
+  - name: Resin Clump
+    recipes:
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Block of Resin: 1
+
+
+  - name: Stripped Pale Oak Wood
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Stripped Pale Oak Log: 4
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Pale Oak Wood: 1
+
+
+  - name: Suspicious Stew
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Allium: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Azure Bluet: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Blue Orchid: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Closed Eyeblossom: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Cornflower: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Dandelion: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Lily of the Valley: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Open Eyeblossom: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Orange Tulip: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Oxeye Daisy: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Pink Tulip: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Poppy: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Red Tulip: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Torchflower: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        White Tulip: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Wither Rose: 1
+
+
+  - name: White Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        White Dye: 1
+
+
+  - name: Yellow Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Yellow Dye: 1
+
+
+  - name: Stripped Pale Oak Log
+    recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Pale Oak Log: 1
+
+
+  - name: Blue Egg
+    raw_resource: true
+  - name: Wildflowers
+    raw_resource: true
+  - name: Cactus Flower
+    raw_resource: true
+  - name: Pale Moss Block
+    raw_resource: true
+  - name: Pale Oak Log
+    raw_resource: true
+  - name: Closed Eyeblossom
+    raw_resource: true
+  - name: Open Eyeblossom
+    raw_resource: true

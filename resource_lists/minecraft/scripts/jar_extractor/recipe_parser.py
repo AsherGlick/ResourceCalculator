@@ -5,6 +5,7 @@ import custom_recipes_shulker_box_coloring
 import custom_recipes_fireworks
 from dataclasses import dataclass, field
 import classnotation
+from classnotation.typecheck_error import TypeCheckError
 
 
 ################################################################################
@@ -34,6 +35,8 @@ def parse_recipe_data(input_struct: Any, id_to_name_map: Dict[str, str], resourc
         return custom_recipes_shulker_box_coloring.recipes()
     elif input_struct["type"] == "minecraft:crafting_special_firework_rocket":
         return custom_recipes_fireworks.recipes()
+    elif input_struct["type"] == "minecraft:crafting_transmute":
+        return parse_crafting_transmute(input_struct, id_to_name_map, resource_groups)
     elif input_struct["type"] in [
         "minecraft:crafting_special_armordye",
         "minecraft:crafting_special_bannerduplicate",
@@ -57,16 +60,9 @@ def parse_recipe_data(input_struct: Any, id_to_name_map: Dict[str, str], resourc
 class Result:
     item_id: str = field(metadata={"json": "id"})
     count: int = 1
+    components: Any = None
 
-@dataclass
-class ItemDictItem:
-    item: str
-
-@dataclass
-class ItemDictTag:
-    tag: str
-
-ItemDict = Union[ItemDictItem, ItemDictTag, List[ItemDictItem]]
+ItemDict = Union[str, List[str]]
 
 ################################################################################
 ################################ Shaped Recipes ################################
@@ -92,7 +88,13 @@ def parse_shaped_data(
     id_to_name_map: Dict[str, str],
     resource_groups: ResourceGroups,
 ) -> List[RecipeItem]:
-    input_struct: ShapedData = classnotation.load_data(ShapedData, input_data)
+    try:
+        input_struct: ShapedData = classnotation.load_data(ShapedData, input_data)
+    except TypeCheckError as e:
+        print(input_data)
+        raise e
+
+    print(input_struct.result.item_id)
 
     # result = get_item_name_from_item_dict(input_struct["result"], id_to_name_map, resource_groups)
     result = id_to_name_map[input_struct.result.item_id]
@@ -123,7 +125,7 @@ def parse_shaped_data(
         requirements=ingredients
     )
 
-
+    print(recipe_item)
     return [recipe_item]
 
 
@@ -138,14 +140,16 @@ class ShapelessData:
     result: Result
     group: Optional[str] = None
 
-
 def parse_shapeless_data(
     input_data: Any,
     id_to_name_map: Dict[str, str],
     resource_groups: ResourceGroups,
 ) -> List[RecipeItem]:
-    input_struct: ShapelessData = classnotation.load_data(ShapelessData, input_data)
-
+    try:
+        input_struct: ShapelessData = classnotation.load_data(ShapelessData, input_data)
+    except TypeCheckError as e:
+        print(input_data)
+        raise e
     # result = get_item_name_from_item_dict(input_struct["result"], id_to_name_map, resource_groups)
     result = id_to_name_map[input_struct.result.item_id]
 
@@ -240,7 +244,7 @@ def parse_smoking_data(
     # Hack to unwrap lists of itemdicts into individual recipes to avoid making
     # custom groups for singleinput recipes.
     ingredients = input_struct.ingredient
-    if isinstance(ingredients, ItemDictItem) or isinstance(ingredients, ItemDictTag):
+    if isinstance(ingredients, str):
         ingredients = [ingredients]
 
     recipe_items: List[RecipeItem] = []
@@ -290,7 +294,7 @@ def parse_blasting_data(
     # Hack to unwrap lists of itemdicts into individual recipes to avoid making
     # custom groups for singleinput recipes.
     ingredients = input_struct.ingredient
-    if isinstance(ingredients, ItemDictItem) or isinstance(ingredients, ItemDictTag):
+    if isinstance(ingredients, str):
         ingredients = [ingredients]
 
     recipe_items: List[RecipeItem] = []
@@ -311,7 +315,7 @@ def parse_blasting_data(
     return [] #recipe_items
 
 ################################################################################
-# Parse the Smelting Recipes
+############################### Smelting Recipes ###############################
 ################################################################################
 @dataclass
 class SmeltingData:
@@ -337,7 +341,7 @@ def parse_smelting_data(
     # Hack to unwrap lists of itemdicts into individual recipes to avoid making
     # custom groups for singleinput recipes.
     ingredients = input_struct.ingredient
-    if isinstance(ingredients, ItemDictItem) or isinstance(ingredients, ItemDictTag):
+    if isinstance(ingredients, str):
         ingredients = [ingredients]
 
     recipe_items: List[RecipeItem] = []
@@ -356,9 +360,8 @@ def parse_smelting_data(
     return recipe_items
 
 
-
 ################################################################################
-# Parse the stonecutting recipe type into a recipe item
+############################# Stonecutting Recipes #############################
 ################################################################################
 @dataclass
 class StonecuttingData:
@@ -388,6 +391,7 @@ def parse_stonecutting_data(
         }
     )
     return [recipe_item]
+
 
 ################################################################################
 ############################### Smithing Recipes ###############################
@@ -423,6 +427,42 @@ def parse_smithing_transform_data(
         )
     ]
 
+
+################################################################################
+######################## Crafting Transmutation Recipes ########################
+################################################################################
+@dataclass
+class CraftingTransmutationData:
+    recipe_type: Literal["minecraft:crafting_transmute"] = field(metadata={"json": "type"})
+    category: str
+    group: str
+    input_item: str = field(metadata={"json": "input"})
+    material: str
+    result: Result
+
+def parse_crafting_transmute(
+    input_data: Any,
+    id_to_name_map: Dict[str, str],
+    resource_groups: ResourceGroups,
+):
+    try:
+        input_struct = classnotation.load_data(CraftingTransmutationData, input_data)
+    except TypeCheckError as e:
+        print(input_data)
+        raise e
+
+    return [
+        RecipeItem(
+            name=id_to_name_map[input_struct.result.item_id],
+            output=input_struct.result.count,
+            recipe_type="Crafting",
+            requirements={
+                get_item_name_from_item_dict(input_struct.input_item, id_to_name_map, resource_groups): 1,
+                get_item_name_from_item_dict(input_struct.material, id_to_name_map, resource_groups): 1
+            }
+        )
+    ]
+
 ################################################################################
 ################################################################################
 ################################################################################
@@ -431,18 +471,18 @@ def get_item_name_from_item_dict(
     id_to_name_map: Dict[str, str],
     resource_groups: ResourceGroups,
 ) -> str:
-    if isinstance(itemdict, ItemDictItem):
-        return id_to_name_map[itemdict.item] 
-    elif isinstance(itemdict, ItemDictTag):
-        return resource_groups.get_display_name_from_group(itemdict.tag)
+    if isinstance(itemdict, str):
+        if itemdict[0] == "#":
+            return resource_groups.get_display_name_from_group(itemdict[1:])
+        return id_to_name_map[itemdict]
     elif isinstance(itemdict, list):
-        return resource_groups.get_display_name_from_group(get_tag_from_itemdict_list(itemdict, resource_groups).tag)
+        return resource_groups.get_display_name_from_group(get_tag_from_itemdict_list(itemdict, resource_groups))
 
 
 def get_tag_from_itemdict_list(
-    ingredient_list: List[ItemDictItem],
+    ingredient_list: List[str],
     resource_groups: ResourceGroups
-) -> ItemDictTag:
-    compact_list = sorted([x.item for x in ingredient_list])
+) -> str:
+    compact_list = sorted([x for x in ingredient_list])
     group_name = resource_groups.get_group_from_resources(compact_list)
-    return ItemDictTag(tag=group_name)
+    return group_name
