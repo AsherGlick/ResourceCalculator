@@ -109,6 +109,7 @@ For Example:
 > For Example:  
 > * `name: Health Mix`* uses *[healthmix.png](resource_lists/the%20forest/items/healthmix.png)*  
 > * `name: Health Mix+` with `custom_simplename: healthmixplus`* uses *[healthmixplus.png](resource_lists/the%20forest/items/healthmixplus.png)*
+
 icon.jpg
 --------------------------------------------------------------------------------
 The icon needs to be `460px` by `215px` to fit in with the other calculator
