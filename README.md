@@ -49,7 +49,7 @@ Other optional fields are also available.
 name: Lithium
 
 # Specify the simplename of the resource, this is used for the image
-# path the url encoding. It must be unique between resources
+# path the url encoding. It must be unique between resources.
 custom_simplename: lithium1
 
 # Indicates if the resource is a currency or not.
@@ -101,6 +101,15 @@ For Example:
 *"Pink Stained Glass Pane"* becomes *[pinkstainedglasspane.png](resource_lists/minecraft/items/pinkstainedglasspane.png)*  
 *"Jack 'o Lantern"* becomes *[jackolantern.png](resource_lists/minecraft/items/jackolantern.png)*
 
+> [!NOTE]
+> If the names of two or more items would conflict, `custom_simplename` must
+> be used to define an alternate "simple" name for a given item. The item's image
+> must match the new `custom_simplename`, the display name does not need to be changed.
+> 
+> For Example:  
+> * `name: Health Mix`* uses *[healthmix.png](resource_lists/the%20forest/items/healthmix.png)*  
+> * `name: Health Mix+` with `custom_simplename: healthmixplus`* uses *[healthmixplus.png](resource_lists/the%20forest/items/healthmixplus.png)*
+
 icon.jpg
 --------------------------------------------------------------------------------
 The icon needs to be `460px` by `215px` to fit in with the other calculator
@@ -109,7 +118,8 @@ is on Steam, the Steam page for a game uses a `jpg` thumbnail with those
 dimensions. Simply downloading it to the appropriate directory and renaming it
 to `icon.jpg` should be all that is needed.
 
-Prefer images that only contain the title/tagline (first) rather than ones for a specific event and/or with reviews (second).
+Prefer images that only contain the title/tagline (first example) rather than
+ones for a specific event and/or with reviews (second example).
 
 <details>
     <summary>See Thumbnail Examples</summary>

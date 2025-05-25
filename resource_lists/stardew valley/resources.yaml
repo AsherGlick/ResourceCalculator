@@ -7778,6 +7778,7 @@ resources:
 
   - name: Gold
     raw_resource: true
+    currency: true
 
   - name: Qi Coin
     recipes:
@@ -7785,9 +7786,11 @@ resources:
       recipe_type: Buy
       requirements:
         Gold: 1000
+    currency: true
 
   - name: Qi Gem
     raw_resource: true
+    currency: true
 
   ##############################################################################
   - H1: Groups #################################################################
