@@ -101,14 +101,14 @@ For Example:
 *"Pink Stained Glass Pane"* becomes *[pinkstainedglasspane.png](resource_lists/minecraft/items/pinkstainedglasspane.png)*  
 *"Jack 'o Lantern"* becomes *[jackolantern.png](resource_lists/minecraft/items/jackolantern.png)*
 
-If the names of two or more items would conflict, `custom_simplename` should
-be used to define an alternate "simple" name for a given item. The item's image
-should then match this name (the display name will remain the same).
-
-For Example:  
-*`name: Health Mix`* uses *[healthmix.png](resource_lists/the%20forest/items/healthmix.png)*  
-*`name: Health Mix+` with `custom_simplename: healthmixplus`* uses *[healthmixplus.png](resource_lists/the%20forest/items/healthmixplus.png)*
-
+> [!NOTE]
+> If the names of two or more items would conflict, `custom_simplename` must
+> be used to define an alternate "simple" name for a given item. The item's image
+> must match the new `custom_simplename`, the display name does not need to be changed.
+> 
+> For Example:  
+> * `name: Health Mix`* uses *[healthmix.png](resource_lists/the%20forest/items/healthmix.png)*  
+> * `name: Health Mix+` with `custom_simplename: healthmixplus`* uses *[healthmixplus.png](resource_lists/the%20forest/items/healthmixplus.png)*
 icon.jpg
 --------------------------------------------------------------------------------
 The icon needs to be `460px` by `215px` to fit in with the other calculator
