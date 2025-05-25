@@ -228,7 +228,6 @@ def decode_image_text(filename: str, ui_size: int) -> str:
 
     if len(decoded_letters) == 0:
         print("Zero Length Name {}".format(filename))
-        # raise ValueError("Zero Length Name {}".format(filename))
 
     return "".join(decoded_letters)
 

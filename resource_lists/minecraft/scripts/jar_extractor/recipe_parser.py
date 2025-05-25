@@ -125,7 +125,6 @@ def parse_shaped_data(
         requirements=ingredients
     )
 
-    print(recipe_item)
     return [recipe_item]
 
 

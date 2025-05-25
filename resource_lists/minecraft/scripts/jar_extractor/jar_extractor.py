@@ -229,7 +229,6 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: List[Resou
 
         has_matching_recipe = False
         for resource_recipe in item_resource_recipes:
-            # print(jar_recipe, resource_recipe.to_primitive())
             if is_matching_recipe(jar_recipe, resource_recipe):
                 has_matching_recipe = True
                 break
