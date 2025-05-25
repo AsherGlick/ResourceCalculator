@@ -149,7 +149,6 @@ requirement_groups:
   - Stripped Pale Oak Log
   - Stripped Pale Oak Wood
 
-
   Any Mangrove Log:
   - Mangrove Log
   - Mangrove Wood
@@ -1174,7 +1173,6 @@ requirement_groups:
   - Pale Oak Leaves
   - Spruce Leaves
 
-
 stack_sizes:
   Double Chest:
     quantity_multiplier: 54
@@ -1937,6 +1935,99 @@ resources:
       recipe_type: Crafting
       requirements:
         Cherry Planks: 1
+
+  - name: Pale Oak Log
+    raw_resource: true
+
+  - name: Pale Oak Wood
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Log: 4
+
+  - name: Stripped Pale Oak Log
+    recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Pale Oak Log: 1
+
+  - name: Stripped Pale Oak Wood
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Stripped Pale Oak Log: 4
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Pale Oak Wood: 1
+
+  - name: Pale Oak Planks
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Any Pale Oak Log: 1
+
+  - name: Pale Oak Stairs
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Planks: 6
+
+  - name: Pale Oak Slab
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Planks: 3
+
+  - name: Pale Oak Fence
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Planks: 4
+        Stick: 2
+
+  - name: Pale Oak Fence Gate
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: 4
+        Pale Oak Planks: 2
+
+  - name: Pale Oak Door
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Planks: 6
+
+  - name: Pale Oak Trapdoor
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Planks: 6
+
+  - name: Pale Oak Pressure Plate
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Planks: 2
+
+  - name: Pale Oak Button
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Planks: 1
 
   - name: Block of Bamboo
     recipes:
@@ -3316,6 +3407,57 @@ resources:
       recipe_type: Crafting
       requirements:
         Mud Bricks: 6
+
+  - name: Resin Bricks
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Resin Brick: 4
+
+  - name: Resin Brick Stairs
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Resin Bricks: 6
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Resin Bricks: 1
+
+  - name: Resin Brick Slab
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Resin Bricks: 3
+    - output: 2
+      recipe_type: Cutting
+      requirements:
+        Resin Bricks: 1
+
+  - name: Resin Brick Wall
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Resin Bricks: 6
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Resin Bricks: 1
+
+  - name: Chiseled Resin Bricks
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Resin Brick Slab: 2
+    - output: 1
+      recipe_type: Cutting
+      requirements:
+        Resin Bricks: 1
 
   - name: Sandstone
     raw_resource: true
@@ -7337,6 +7479,16 @@ resources:
       requirements:
         Moss Block: 2
 
+  - name: Pale Moss Block
+    raw_resource: true
+
+  - name: Pale Moss Carpet
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Pale Moss Block: 2
+
   - name: Calcite
     raw_resource: true
 
@@ -7641,11 +7793,31 @@ resources:
   - name: Torchflower
     raw_resource: true
 
+  - name: Cactus Flower
+    raw_resource: true
+
+  - name: Closed Eyeblossom
+    raw_resource: true
+
+  - name: Open Eyeblossom
+    raw_resource: true
+
   - name: Wither Rose
     raw_resource: true
 
   - name: Pink Petals
     raw_resource: true
+
+  - name: Wildflowers
+    raw_resource: true
+
+  - name: Leaf Litter
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Any Leaf: 1
+        Fuel: 1
 
   - name: Spore Blossom
     raw_resource: true
@@ -7941,6 +8113,13 @@ resources:
       note: "TODO: Empty Glass Bottles Are Also Produced Here"
       requirements:
         Honey Bottle: 4
+
+  - name: Block of Resin
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Resin Clump: 9
 
   - name: Ochre Froglight
     raw_resource: true
@@ -8466,6 +8645,22 @@ resources:
       requirements:
         Chain: 2
         Stripped Cherry Log: 6
+
+  - name: Pale Oak Sign
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Planks: 6
+        Stick: 1
+
+  - name: Pale Oak Hanging Sign
+    recipes:
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Chain: 2
+        Stripped Pale Oak Log: 6
 
   - name: Bamboo Sign
     recipes:
@@ -9194,6 +9389,142 @@ resources:
         String: 4
         Slimeball: 1
 
+  - name: Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        String: 1
+        Leather: 1
+
+  - name: White Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        White Dye: 1
+
+  - name: Light Gray Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Light Gray Dye: 1
+
+  - name: Gray Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Gray Dye: 1
+
+  - name: Black Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Black Dye: 1
+
+  - name: Brown Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Brown Dye: 1
+
+  - name: Red Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Red Dye: 1
+
+  - name: Orange Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Orange Dye: 1
+
+  - name: Yellow Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Yellow Dye: 1
+
+  - name: Lime Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Lime Dye: 1
+
+  - name: Green Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Green Dye: 1
+
+  - name: Cyan Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Cyan Dye: 1
+
+  - name: Light Blue Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Light Blue Dye: 1
+
+  - name: Blue Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Blue Dye: 1
+
+  - name: Purple Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Purple Dye: 1
+
+  - name: Magenta Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Magenta Dye: 1
+
+  - name: Pink Bundle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Bundle: 1
+        Pink Dye: 1
+
   - name: Compass
     recipes:
     - output: 1
@@ -9406,6 +9737,21 @@ resources:
       requirements:
         Chest: 1
         Cherry Boat: 1
+
+  - name: Pale Oak Boat
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Planks: 5
+
+  - name: Pale Oak Boat with Chest
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Chest: 1
+        Pale Oak Boat: 1
 
   - name: Bamboo Raft
     recipes:
@@ -9691,6 +10037,9 @@ resources:
     custom_stack_multipliers:
       Stack: 16
 
+  - name: Blue Egg
+    raw_resource: true
+
   - name: Bow
     recipes:
     - output: 1
@@ -9945,6 +10294,121 @@ resources:
         Bowl: 1
         Carrot: 1
         Red Mushroom: 1
+
+  - name: Suspicious Stew
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Allium: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Azure Bluet: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Blue Orchid: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Closed Eyeblossom: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Cornflower: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Dandelion: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Lily of the Valley: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Open Eyeblossom: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Orange Tulip: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Oxeye Daisy: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Pink Tulip: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Poppy: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Red Tulip: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Torchflower: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        White Tulip: 1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bowl: 1
+        Brown Mushroom: 1
+        Red Mushroom: 1
+        Wither Rose: 1
 
   - name: Honey Bottle
     raw_resource: true
@@ -10360,6 +10824,13 @@ resources:
   - name: Honeycomb
     raw_resource: true
 
+  - name: Resin Clump
+    recipes:
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Block of Resin: 1
+
   - name: Ink Sac
     raw_resource: true
 
@@ -10544,7 +11015,6 @@ resources:
       requirements:
         Wildflowers: 1
 
-
   - name: Lime Dye
     recipes:
     - output: 2
@@ -10684,6 +11154,14 @@ resources:
         Netherrack: 1
         Fuel: 1
 
+  - name: Resin Brick
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Resin Clump: 1
+        Fuel: 1
+
   - name: Paper
     recipes:
     - output: 3
@@ -10804,9 +11282,16 @@ resources:
         Paper: 1
         Bricks: 1
 
-
   - name: Bottle o' Enchanting
     raw_resource: true
+
+  - name: Creaking Heart
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Pale Oak Log: 2
+        Block of Resin: 1
 
   - name: Fuel
     recipes:
@@ -10838,529 +11323,3 @@ resources:
       recipe_type: As
       requirements:
         Any Planks: 2
-
-  - name: Black Bundle
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Any Bundle: 1
-        Black Dye: 1
-
-
-  - name: Blue Bundle
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Any Bundle: 1
-        Blue Dye: 1
-
-  - name: Brown Bundle
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Any Bundle: 1
-        Brown Dye: 1
-
-
-  - name: Bundle
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        String: 1
-        Leather: 1
-
-
-  - name: Chiseled Resin Bricks
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Resin Brick Slab: 2
-    - output: 1
-      recipe_type: Cutting
-      requirements:
-        Resin Bricks: 1
-
-
-  - name: Creaking Heart
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Pale Oak Log: 2
-        Block of Resin: 1
-
-
-  - name: Cyan Bundle
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Any Bundle: 1
-        Cyan Dye: 1
-
-  - name: Gray Bundle
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Any Bundle: 1
-        Gray Dye: 1
-
-
-  - name: Green Bundle
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Any Bundle: 1
-        Green Dye: 1
-
-
-  - name: Leaf Litter
-    recipes:
-    - output: 1
-      recipe_type: Smelting
-      requirements:
-        Any Leaf: 1
-        Fuel: 1
-
-
-  - name: Light Blue Bundle
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Any Bundle: 1
-        Light Blue Dye: 1
-
-
-  - name: Light Gray Bundle
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Any Bundle: 1
-        Light Gray Dye: 1
-
-
-  - name: Lime Bundle
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Any Bundle: 1
-        Lime Dye: 1
-
-
-  - name: Magenta Bundle
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Any Bundle: 1
-        Magenta Dye: 1
-
-
-  - name: Orange Bundle
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Any Bundle: 1
-        Orange Dye: 1
-
-
-  - name: Pale Moss Carpet
-    recipes:
-    - output: 3
-      recipe_type: Crafting
-      requirements:
-        Pale Moss Block: 2
-
-
-  - name: Pale Oak Boat
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Pale Oak Planks: 5
-
-
-  - name: Pale Oak Button
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Pale Oak Planks: 1
-
-
-  - name: Pale Oak Boat with Chest
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Chest: 1
-        Pale Oak Boat: 1
-
-
-  - name: Pale Oak Door
-    recipes:
-    - output: 3
-      recipe_type: Crafting
-      requirements:
-        Pale Oak Planks: 6
-
-
-  - name: Pale Oak Fence
-    recipes:
-    - output: 3
-      recipe_type: Crafting
-      requirements:
-        Pale Oak Planks: 4
-        Stick: 2
-
-
-  - name: Pale Oak Fence Gate
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Stick: 4
-        Pale Oak Planks: 2
-
-
-  - name: Pale Oak Hanging Sign
-    recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Chain: 2
-        Stripped Pale Oak Log: 6
-
-
-  - name: Pale Oak Planks
-    recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Any Pale Oak Log: 1
-
-
-  - name: Pale Oak Pressure Plate
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Pale Oak Planks: 2
-
-
-  - name: Pale Oak Sign
-    recipes:
-    - output: 3
-      recipe_type: Crafting
-      requirements:
-        Pale Oak Planks: 6
-        Stick: 1
-
-
-  - name: Pale Oak Slab
-    recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Pale Oak Planks: 3
-
-
-  - name: Pale Oak Stairs
-    recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Pale Oak Planks: 6
-
-
-  - name: Pale Oak Trapdoor
-    recipes:
-    - output: 2
-      recipe_type: Crafting
-      requirements:
-        Pale Oak Planks: 6
-
-
-  - name: Pale Oak Wood
-    recipes:
-    - output: 3
-      recipe_type: Crafting
-      requirements:
-        Pale Oak Log: 4
-
-
-  - name: Pink Bundle
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Any Bundle: 1
-        Pink Dye: 1
-
-
-  - name: Purple Bundle
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Any Bundle: 1
-        Purple Dye: 1
-
-
-  - name: Red Bundle
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Any Bundle: 1
-        Red Dye: 1
-
-
-  - name: Block of Resin
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Resin Clump: 9
-
-
-  - name: Resin Brick
-    recipes:
-    - output: 1
-      recipe_type: Smelting
-      requirements:
-        Resin Clump: 1
-        Fuel: 1
-
-
-  - name: Resin Brick Slab
-    recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Resin Bricks: 3
-    - output: 2
-      recipe_type: Cutting
-      requirements:
-        Resin Bricks: 1
-
-
-  - name: Resin Brick Stairs
-    recipes:
-    - output: 4
-      recipe_type: Crafting
-      requirements:
-        Resin Bricks: 6
-    - output: 1
-      recipe_type: Cutting
-      requirements:
-        Resin Bricks: 1
-
-
-  - name: Resin Brick Wall
-    recipes:
-    - output: 6
-      recipe_type: Crafting
-      requirements:
-        Resin Bricks: 6
-    - output: 1
-      recipe_type: Cutting
-      requirements:
-        Resin Bricks: 1
-
-
-  - name: Resin Bricks
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Resin Brick: 4
-
-
-  - name: Resin Clump
-    recipes:
-    - output: 9
-      recipe_type: Crafting
-      requirements:
-        Block of Resin: 1
-
-
-  - name: Stripped Pale Oak Wood
-    recipes:
-    - output: 3
-      recipe_type: Crafting
-      requirements:
-        Stripped Pale Oak Log: 4
-    - output: 1
-      recipe_type: Strip
-      requirements:
-        Pale Oak Wood: 1
-
-
-  - name: Suspicious Stew
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bowl: 1
-        Brown Mushroom: 1
-        Red Mushroom: 1
-        Allium: 1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bowl: 1
-        Brown Mushroom: 1
-        Red Mushroom: 1
-        Azure Bluet: 1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bowl: 1
-        Brown Mushroom: 1
-        Red Mushroom: 1
-        Blue Orchid: 1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bowl: 1
-        Brown Mushroom: 1
-        Red Mushroom: 1
-        Closed Eyeblossom: 1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bowl: 1
-        Brown Mushroom: 1
-        Red Mushroom: 1
-        Cornflower: 1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bowl: 1
-        Brown Mushroom: 1
-        Red Mushroom: 1
-        Dandelion: 1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bowl: 1
-        Brown Mushroom: 1
-        Red Mushroom: 1
-        Lily of the Valley: 1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bowl: 1
-        Brown Mushroom: 1
-        Red Mushroom: 1
-        Open Eyeblossom: 1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bowl: 1
-        Brown Mushroom: 1
-        Red Mushroom: 1
-        Orange Tulip: 1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bowl: 1
-        Brown Mushroom: 1
-        Red Mushroom: 1
-        Oxeye Daisy: 1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bowl: 1
-        Brown Mushroom: 1
-        Red Mushroom: 1
-        Pink Tulip: 1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bowl: 1
-        Brown Mushroom: 1
-        Red Mushroom: 1
-        Poppy: 1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bowl: 1
-        Brown Mushroom: 1
-        Red Mushroom: 1
-        Red Tulip: 1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bowl: 1
-        Brown Mushroom: 1
-        Red Mushroom: 1
-        Torchflower: 1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bowl: 1
-        Brown Mushroom: 1
-        Red Mushroom: 1
-        White Tulip: 1
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Bowl: 1
-        Brown Mushroom: 1
-        Red Mushroom: 1
-        Wither Rose: 1
-
-
-  - name: White Bundle
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Any Bundle: 1
-        White Dye: 1
-
-
-  - name: Yellow Bundle
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Any Bundle: 1
-        Yellow Dye: 1
-
-
-  - name: Stripped Pale Oak Log
-    recipes:
-    - output: 1
-      recipe_type: Strip
-      requirements:
-        Pale Oak Log: 1
-
-
-  - name: Blue Egg
-    raw_resource: true
-  - name: Wildflowers
-    raw_resource: true
-  - name: Cactus Flower
-    raw_resource: true
-  - name: Pale Moss Block
-    raw_resource: true
-  - name: Pale Oak Log
-    raw_resource: true
-  - name: Closed Eyeblossom
-    raw_resource: true
-  - name: Open Eyeblossom
-    raw_resource: true

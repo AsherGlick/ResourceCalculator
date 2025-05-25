@@ -88,15 +88,15 @@ def is_expected_missing_item(item: str) -> bool:
     return False
 
 visited_items = set()
-def sorted_resources(resources: OrderedDict[str, Union[Resource, Heading]]) -> OrderedDict[str, Union[Resource, Heading]]:
+def sorted_resources(resources: List[Union[Resource, Heading]]) -> List[Union[Resource, Heading]]:
     with open("./item_ordering.json") as f:
         item_order = json.load(f)
-
     item_order += custom_items()
 
-    expanded_names = get_compressed_name_map(resources.keys())
+    resource_map = {x.name: x for x in resources if not isinstance(x, Heading)}
+    expanded_names = get_compressed_name_map([k for k in resource_map.keys()])
 
-    new_ordered_resources: List[Tuple[str, Union[Resource, Heading]]] = []
+    new_ordered_resources: List[Union[Resource, Heading]] = []
 
     for item in item_order:
         if item in visited_items:
@@ -110,12 +110,12 @@ def sorted_resources(resources: OrderedDict[str, Union[Resource, Heading]]) -> O
             print("Missing: ", item)
             continue
         
-        new_ordered_resources.append((expanded_name, resources[expanded_name]))
-        del resources[expanded_name] # This will probalby cause errors because of duplicates
+        new_ordered_resources.append(resource_map[expanded_name])
+        del resource_map[expanded_name] # This will probalby cause errors because of duplicates
 
-    if len(resources) > 0:
-        print("Some Resources Are Remaining", resources)
-    return OrderedDict(new_ordered_resources)
+    if len(resource_map) > 0:
+        print("Some Resources Are Remaining", resource_map.keys())
+    return new_ordered_resources
 
 if __name__ == "__main__":
     main()
