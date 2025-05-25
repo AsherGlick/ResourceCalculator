@@ -175,8 +175,8 @@ function calculate_resource_graph(
         requirements = output_requirements;
     }
 
-    // console.log("Used from inventory:", used_from_inventory);
-
+    // Draw an edge between all starting nodes that are also final nodes
+    // TODO: Why dont we need to include data for generation_totals in this bock?
     for (let original_requirement in original_requirements) {
         // console.log(get_recipe(original_requirement));
         if (get_recipe(original_requirement).recipe_type === "Raw Resource") {
@@ -204,27 +204,10 @@ function calculate_resource_graph(
         }
     }
 
-    // Make a copy of the resource_tracker to prevent updates while iterating
-    var resource_tracker_copy = JSON.parse(JSON.stringify(resource_tracker));
-
-    // Find any final resource that also feed into another resource and have it
-    // feed into an extra node. This prevents final resource from not appearing
-    // in the right hand column of the chart
-    for (let tracked_resource in resource_tracker_copy) {
-        var source = resource_tracker_copy[tracked_resource].source;
-        if (source in original_requirements) {
-
-            var final_tracker = source + "final";
-            resource_tracker[final_tracker] = new ResourceEdge(
-                source,
-                "[Final] " + source,
-                -original_requirements[source],
-            );
-
-            // Add in value of the non-extra resource
-            generation_totals["[Final] " + source] = -original_requirements[source];
-        }
-    }
+    // Build all of the linkages to the "final" nodes
+    const {helper_final_edges, helper_final_nodes} = get_helper_final_resources(resource_tracker, original_requirements);
+    Object.assign(resource_tracker, helper_final_edges);
+    Object.assign(generation_totals, helper_final_nodes);
 
     for (let tracked_resource in resource_tracker) {
         if (resource_tracker[tracked_resource].value === 0) {
@@ -239,6 +222,37 @@ function calculate_resource_graph(
     }
 }
 
+////////////////////////////////////////////////////////////////////////////////
+// get_helper_final_resources
+//
+// Find any final resource that also feed into another resource and have it
+// feed into an extra node. This prevents final resource from not appearing
+// in the right hand column of the chart
+////////////////////////////////////////////////////////////////////////////////
+function get_helper_final_resources(
+    resource_tracker: Readonly<{[key: string]: ResourceEdge}>,
+    original_requirements: Readonly<{ [key: string]: number}>,
+) {
+    let helper_final_edges: {[key: string]: ResourceEdge} = {};
+    let helper_final_nodes: {[key: string]: number} = {};
+
+    for (let tracked_resource in resource_tracker) {
+        var source = resource_tracker[tracked_resource].source;
+        if (source in original_requirements) {
+
+            var final_tracker = source + "final";
+            helper_final_edges[final_tracker] = new ResourceEdge(
+                source,
+                "[Final] " + source,
+                -original_requirements[source],
+            );
+
+            // Add in value of the non-extra resource
+            helper_final_nodes["[Final] " + source] = -original_requirements[source];
+        }
+    }
+    return {helper_final_edges, helper_final_nodes};
+}
  
 ////////////////////////////////////////////////////////////////////////////////
 // gather_requirements
