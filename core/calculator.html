@@ -30,7 +30,6 @@
 	<body>
 		<div class="header_bar">
 			<a href="/" aria-label="Home"><div class="home_button_logo">&nbsp;</div></a>
-			<a href="#" id="reset_item_count"><div class="home_button"> Reset Item Counts</div></a>
 			<a href="mailto:admin@resourcecalculator.com?Subject=Resource%20Calculator%20Issue"><div class="home_button">Report An Issue</div></a>
 			<a href="https://github.com/AsherGlick/ResourceCalculator/blob/master/README.md"><div class="home_button">Contribute</div></a>
 			<a><div id="about_button" class="home_button">About</div></a>
@@ -57,16 +56,19 @@
 				</div>
 				<!-- <input type="button" class="inventory_import_export_toggle" title="Show/Hide Inventory as Text" value="Show/Hide Inventory as Text"/> -->
 				<div class="search_bar">
-					<div class='hide_unused_wrapper'>
-						<input type="checkbox" id="unused_hide_checkbox" class="hide_unused_checkbox" />
-						<label class="hide_unused_label" for="unused_hide_checkbox" id="unused_hide_checkbox_label">Hide Unused</label>
-					</div>
-					<div class="search_label_wrapper">
+					<div id="search_label_wrapper" class="search_bar_button">
 						<label class="search_label" for="item_filter">Filter:</label>
 					</div>
-					<span class="search_box_wrapper">
-						<input type="text" class="search_box" id="item_filter" />
-					</span>
+					<div class="search_box_wrapper">
+						<input type="text" id="item_filter" class="search_box" placeholder="Type to filter items..." />
+					</div>
+					<div>
+						<div class="hide_unused_wrapper search_bar_button">
+							<input type="checkbox" id="unused_hide_checkbox" class="hide_unused_checkbox" />
+							<label class="hide_unused_label" for="unused_hide_checkbox" id="unused_hide_checkbox_label">Hide Unused</label>
+						</div>
+						<button type="button" id="reset_item_count" class="search_bar_button">Reset</button>
+					</div>
 				</div>
 
 				<div class="resource_content">
