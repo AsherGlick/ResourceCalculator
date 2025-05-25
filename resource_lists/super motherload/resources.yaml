@@ -763,6 +763,7 @@ resources:
 
   - name: Dollars
     raw_resource: true
+    currency: true
     recipes:
     - output: 30
       recipe_type: Sell
