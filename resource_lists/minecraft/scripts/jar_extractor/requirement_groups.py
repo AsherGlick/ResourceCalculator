@@ -39,6 +39,7 @@ class ResourceGroups():
             self.auto_resource_group("minecraft:mangrove_logs", "Any Mangrove Log"),
             self.auto_resource_group("minecraft:spruce_logs", "Any Spruce Log"),
             self.auto_resource_group("minecraft:warped_stems", "Any Warped Stem"),
+            self.auto_resource_group("minecraft:pale_oak_logs", "Any Pale Oak Log"),
             self.auto_resource_group("minecraft:coals", "Any Coal"),
             self.auto_resource_group("minecraft:wool", "Any Wool"),
             self.auto_resource_group("minecraft:soul_fire_base_blocks", "Any Soul Fire Base Block"),
@@ -49,6 +50,14 @@ class ResourceGroups():
             self.auto_resource_group("minecraft:beds", "Any Bed"),
             self.auto_resource_group("minecraft:wool_carpets", "Any Carpet"),
             self.auto_resource_group("minecraft:smelts_to_glass", "Any Sand"),
+            self.auto_resource_group("minecraft:eggs", "Any Egg"),
+            self.auto_resource_group("minecraft:diamond_tool_materials", "Any Diamond Tool Material"),
+            self.auto_resource_group("minecraft:gold_tool_materials", "Any Gold Tool Material"),
+            self.auto_resource_group("minecraft:iron_tool_materials", "Any Iron Tool Material"),
+            self.auto_resource_group("minecraft:wooden_tool_materials", "Any Wooden Tool Material"),
+            self.auto_resource_group("minecraft:netherite_tool_materials", "Any Netherite Tool Material"),
+            self.auto_resource_group("minecraft:leaves", "Any Leaf"),
+            self.auto_resource_group("minecraft:bundles", "Any Bundle"),
 
             # Non-Auto, these are groups that are defined inside the resource recipes but have no formal grouping
             {

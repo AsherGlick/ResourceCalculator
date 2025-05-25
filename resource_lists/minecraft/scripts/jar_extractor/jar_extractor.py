@@ -157,7 +157,7 @@ def validate_resources(recipes:List[RecipeItem], groups: Dict[str, List[str]], i
         resource_list = ResourceList()
         errors += resource_list.parse(yaml_data)
 
-    resources: OrderedDict[str, Resource] = OrderedDict({k: v for k, v in resource_list.resources.items() if not isinstance(v, Heading)})
+    resources: List[Resource] = [v for v in resource_list.resources if not isinstance(v, Heading)]
 
     validate_recipes(recipes, resources)
     validate_requirement_groups(groups, resource_list.requirement_groups, id_to_name_map)
@@ -173,7 +173,7 @@ def print_recipe_yaml(recipe: RecipeItem) -> None:
     print("      recipe_type: " + recipe.recipe_type)
     print("      requirements:")
     for requirement in recipe.requirements:
-        print("        " + requirement + ": " + str(- recipe.requirements[requirement]))
+        print("        " + requirement + ": " + str(recipe.requirements[requirement]))
 
 
 ################################################################################
@@ -193,14 +193,14 @@ def is_matching_recipe(jar_recipe: RecipeItem, resource_recipe: Recipe) -> bool:
         if requirement not in resource_recipe.requirements:
             return False
 
-        if jar_recipe.requirements[requirement] != -resource_recipe.requirements[requirement]:
+        if jar_recipe.requirements[requirement] != resource_recipe.requirements[requirement]:
             return False
 
     for requirement in resource_recipe.requirements:
         if requirement not in jar_recipe.requirements:
             return False
 
-        if jar_recipe.requirements[requirement] != -resource_recipe.requirements[requirement]:
+        if jar_recipe.requirements[requirement] != resource_recipe.requirements[requirement]:
             return False
 
     return True
@@ -212,19 +212,20 @@ def is_matching_recipe(jar_recipe: RecipeItem, resource_recipe: Recipe) -> bool:
 # resources.yaml file and make sure that all of the recipes in the resources.yaml
 # file are one that have been parsed from the jar file.
 ################################################################################
-def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, Resource]) -> None:
-
+def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: List[Resource]) -> None:
     missing_items: Dict[str, List[RecipeItem]] = {}
+
+    resources_by_name: Dict[str, Resource] = {x.name: x for x in resource_recipes}
 
     # Validate all jar recipes are in the resource recipes
     for jar_recipe in jar_recipes:
-        if jar_recipe.name not in resource_recipes:
+        if jar_recipe.name not in resources_by_name:
             if jar_recipe.name not in missing_items:
                 missing_items[jar_recipe.name] = []
             missing_items[jar_recipe.name].append(jar_recipe)
             continue
 
-        item_resource_recipes: List[Recipe] = resource_recipes[jar_recipe.name].recipes
+        item_resource_recipes: List[Recipe] = resources_by_name[jar_recipe.name].recipes
 
         has_matching_recipe = False
         for resource_recipe in item_resource_recipes:
@@ -239,12 +240,10 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, 
     for missing_item, recipes in missing_items.items():
         print("#!#Cannot find recipes for", missing_item)
         print("#!#Expecting")
-        print("  " + missing_item + ":")
+        print("  - name: " + missing_item)
         print("    recipes:")
         for recipe in recipes:
             print_recipe_yaml(recipe)
-        print("    - recipe_type: Raw Resource")
-        print("")
 
     # Validate all resource recipes are in jar recipes
     for resource in resource_recipes:
@@ -253,18 +252,18 @@ def validate_recipes(jar_recipes: List[RecipeItem], resource_recipes: Dict[str, 
         if resource == "Fuel":
             continue
 
-        for resource_recipe in resource_recipes[resource].recipes:
+        for resource_recipe in resource.recipes:
             if resource_recipe.recipe_type == "Raw Resource":
                 continue
 
             has_matching_recipe = False
             for jar_recipe in jar_recipes:
-                if jar_recipe.name == resource and is_matching_recipe(jar_recipe, resource_recipe):
+                if jar_recipe.name == resource.name and is_matching_recipe(jar_recipe, resource_recipe):
                     has_matching_recipe = True
                     break
 
             if not has_matching_recipe:
-                print("Found Extra Yaml Recipe \""+resource+"\"")
+                print("Found Extra Yaml Recipe \""+resource.name+"\"")
                 print(resource_recipe.to_yaml())
 
 

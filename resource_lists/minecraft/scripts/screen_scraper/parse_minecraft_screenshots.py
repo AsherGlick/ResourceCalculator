@@ -84,7 +84,7 @@ duplicate_names: Dict[str,int] = {}
 ################################################################################
 def main(ui_size: int) -> None:
     item_ordering = []
-    for i in range(37):
+    for i in range(40):
         item_ordering += parse_page(i, ui_size)
 
     with open("item_ordering.json", 'w') as f:
@@ -108,7 +108,7 @@ def parse_page(page_index: int, ui_size: int) -> List[str]:
             )
 
             decoded_name = decode_image_text(raw_text_path, ui_size)
-            print(decoded_name)
+            print(".", end="", flush=True)
             item_ordering.append(decoded_name)
 
             # Convert to lowercase and strip symbols
@@ -227,7 +227,7 @@ def decode_image_text(filename: str, ui_size: int) -> str:
             raise ValueError("Unknown Hex {} after {}? ({})".format(letterhex, "".join(decoded_letters), filename))
 
     if len(decoded_letters) == 0:
-        raise ValueError("Zero Length Name {}".format(filename))
+        print("Zero Length Name {}".format(filename))
 
     return "".join(decoded_letters)
 
