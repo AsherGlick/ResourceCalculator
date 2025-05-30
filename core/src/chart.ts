@@ -16,11 +16,11 @@ class ResourceNode {
 	public size: number = 0;
 	public column: number = 0;
 	public passthrough: boolean = false;
-	public passthrough_node_index: number | null = null; // TODO: Confirm this is correct
+	public passthrough_node_index: number | null = null;
 	public incoming_edges: string[] = []; // List of edge key ids
 	public outgoing_edges: string[] = []; // List of edge key ids
 
-	public passthrough_edge_id: string = ""; // todo: figure out how this should be used
+	public passthrough_edge_id: string = "";
 
 	// Size and positions
 	public height: number = 0;
@@ -455,17 +455,16 @@ export function generate_chart(
 
 	// Calculate the scale of a single item based on the tallest column of items
 	// such that that column fits within the allotted height of the chart
-	var value_scale = 9999;
+	let value_scale = 9999;
 	for (let column in columns) {
-		var height_for_values = height + node_padding;
-		var values = 0;
-		for (let node_index in columns[column]) {
-			var node = nodes[columns[column][node_index]];
-			height_for_values -= node_padding;
-			values += node.size;
+		const height_for_values = height - (columns.length - 1) * node_padding;
+
+		let values = 0;
+		for (const node_index of columns[column]) {
+			values += nodes[node_index].size;
 		}
 
-		var column_scale = height_for_values / values;
+		let column_scale = height_for_values / values;
 		if (value_scale > column_scale) {
 			value_scale = column_scale;
 		}
@@ -480,11 +479,14 @@ export function generate_chart(
 	layout_chart(columns, nodes, edges, height, value_scale, margin);
 }
 
-/******************************************************************************\
-| layout_chart
-|
-| draw the chart itself
-\******************************************************************************/
+////////////////////////////////////////////////////////////////////////////////
+// CachedChartData
+//
+// All of the arguments needed for drawing the flow chart. We store a cached
+// version of the chart so that we can redraw the chart anytime it is needed.
+// Such as on resize, where we would not have access to the original chart's
+// data and would need to recalculate it from scratch.
+////////////////////////////////////////////////////////////////////////////////
 class CachedChartData {
 	columns: string[][] = [];
 	nodes: { [key: string]: ResourceNode } = {};
@@ -493,7 +495,15 @@ class CachedChartData {
 	value_scale: number = 0;
 	margin: RectangleMargin = {top: 0, right: 0, bottom: 0, left: 0};
 }
-let cached_chart_data: CachedChartData|undefined;
+let cached_chart_data: CachedChartData | undefined;
+
+////////////////////////////////////////////////////////////////////////////////
+// layout_chart
+//
+// Configures and draws the chart to the DOM. Also caches the chart parameters
+// so that the chart can easily be redrawn with the function relayout_chart()
+// without the caller needing to know the charts parameters.
+////////////////////////////////////////////////////////////////////////////////
 function layout_chart(
 	columns: string[][],
 	nodes: { [key: string]: ResourceNode },
@@ -718,7 +728,6 @@ function relayout_chart() {
 	var chart_width = width + margin.left + margin.right;
 	var chart_height = height + margin.top + margin.bottom;
 
-
 	svg.setAttribute("width", chart_width.toString());
 	svg.setAttribute("height", chart_height.toString());
 	chart_elem.appendChild(svg);
@@ -728,7 +737,7 @@ function relayout_chart() {
 ////////////////////////////////////////////////////////////////////////////////
 // get_input_size
 //
-// Calcuate the sum of all the edge values that are connected as inputs to the
+// Calculate the sum of all the edge values that are connected as inputs to the
 // node named node_name.
 ////////////////////////////////////////////////////////////////////////////////
 function get_input_size(edges: {[key: string]: ResourceEdge}, node_name: string): number{
@@ -742,19 +751,24 @@ function get_input_size(edges: {[key: string]: ResourceEdge}, node_name: string)
 }
 
 
-
+////////////////////////////////////////////////////////////////////////////////
+// get_columns
+//
+// A helper function to transform the results of get_node_columns from a key
+// value object to a 2D array of columns and nodes.
+////////////////////////////////////////////////////////////////////////////////
 function get_columns(edges: { [key: string]: ResourceEdge }): string[][] {
 	let node_columns: { [key: string]: number } = get_node_columns(edges);
 
-	// determine how many columns there should be
+	// Find the maximum column index in node_columns
 	let column_count = 0;
-	for (let node in node_columns) {
+	for (const node in node_columns) {
 		if (node_columns[node] + 1 > column_count) {
 			column_count = node_columns[node] + 1;
 		}
 	}
 
-	// Create an array of those columns
+	// Create a 2D array of columns and nodes
 	let columns: string[][] = Array(column_count);
 	for (let i = 0; i < column_count; i++){
 		columns[i] = [];
