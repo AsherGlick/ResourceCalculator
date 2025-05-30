@@ -188,21 +188,9 @@ function calculate_resource_graph(
         }
     }
 
-    // This maps all extra items to an extra value
-    // It is done in order to get the right heights for items that produce more then they take
-    // TODO, it might be nice to have a special path instead of a node to represent "extra"
-    for (let key in output_requirements) {
-        if (output_requirements[key] > 0) {
-            var tracker_key = key+"extra";
-            resource_tracker[tracker_key] = new ResourceEdge(
-                key,
-                "[Extra] " + key,
-                output_requirements[key],
-            );
-            // Store the number of extra values for hover text on the chart
-            generation_totals["[Extra] " + key] = output_requirements[key];
-        }
-    }
+    const {helper_extra_edges, helper_extra_nodes} = get_helper_extra_resources(resource_tracker, original_requirements);
+    Object.assign(resource_tracker, helper_extra_edges);
+    Object.assign(generation_totals, helper_extra_nodes);
 
     // Build all of the linkages to the "final" nodes
     const {helper_final_edges, helper_final_nodes} = get_helper_final_resources(resource_tracker, original_requirements);
@@ -220,6 +208,31 @@ function calculate_resource_graph(
         generation_totals,
         used_from_inventory,
     }
+}
+
+function get_helper_extra_resources(
+    resource_tracker: Readonly<{[key: string]: ResourceEdge}>,
+    output_requirements: Readonly<{ [key: string]: number}>,
+) {
+    let helper_extra_edges: {[key: string]: ResourceEdge} = {};
+    let helper_extra_nodes: {[key: string]: number} = {}
+
+    // This maps all extra items to an extra value
+    // It is done in order to get the right heights for items that produce more then they take
+    // TODO, it might be nice to have a special path instead of a node to represent "extra"
+    for (let key in output_requirements) {
+        if (output_requirements[key] > 0) {
+            var tracker_key = key + "extra";
+            helper_extra_edges[tracker_key] = new ResourceEdge(
+                key,
+                "[Extra] " + key,
+                output_requirements[key],
+            );
+            // Store the number of extra values for hover text on the chart
+            helper_extra_nodes["[Extra] " + key] = output_requirements[key];
+        }
+    }
+    return {helper_extra_edges, helper_extra_nodes}
 }
 
 ////////////////////////////////////////////////////////////////////////////////
