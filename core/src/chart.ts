@@ -2,6 +2,10 @@ import { ResourceEdge } from "./resource_edge";
 import { get_node_columns } from "./node_columns";
 
 
+const chart_elem: HTMLElement = document.getElementById("chart")!;
+const content_elem: HTMLElement = document.getElementById("content")!;
+
+
 ////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////// Chart Creation ////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -508,15 +512,17 @@ function layout_chart(
 	};
 	relayout_chart();
 }
-window.onresize = function() {
-	relayout_chart();
-};
 
-const chart_elem: HTMLElement = document.getElementById("chart")!;
-const content_elem: HTMLElement = document.getElementById("content")!;
+// Redraw the chart every time the window resizes
+window.addEventListener("resize", ()=>{relayout_chart()});
 
-
-function relayout_chart(){
+////////////////////////////////////////////////////////////////////////////////
+// relayout_chart
+//
+// This function will redraw the chart elements based on the cached_chart_data.
+// In order to update the chart with new data call `layout_chart` instead.
+////////////////////////////////////////////////////////////////////////////////
+function relayout_chart() {
 	// Empty the chart immediately.
 	while (chart_elem.lastChild) {
 		chart_elem.removeChild(chart_elem.lastChild);
@@ -542,8 +548,6 @@ function relayout_chart(){
 	// Determine the space between the left hand side of each node column
 	var node_spacing: number = (width-node_width) / (columns.length - 1);
 
-
-
 	// Create the new SVG object that will represent our chart
 	var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 	var padding_g = document.createElementNS("http://www.w3.org/2000/svg", "g")
@@ -562,106 +566,114 @@ function relayout_chart(){
 	// Draw all of the node lines
 	for (let column_index_string in columns) {
 		let column_index = parseInt(column_index_string);
-		var x = node_spacing * column_index;
+		const x_offset = node_spacing * column_index;
 		for (let node_index in columns[column_index]) {
-			var node_id = columns[column_index][node_index];
-			let node = nodes[node_id];
+			const node_id: string = columns[column_index][node_index];
+			const node: ResourceNode = nodes[node_id];
+
+			// Dont draw node elements if the node is a passthrough node.
+			if (node.passthrough === true) {
+				continue;
+			}
 
 			// Build the node
-			if (!node.passthrough) {
-				var left_height = node.input * value_scale;
-				var full_height = node.size * value_scale;
-				var right_height = node.output * value_scale;
-				if (Number(column_index) === 0) {
-					left_height = full_height;
-				}
+			let node_g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+			node_g.setAttribute("transform", "translate(" + x_offset + "," + node.y + ")");
+			node_g.setAttribute("class", "node");
 
-
-				let d = "M 0,0 L 0,"+left_height+" "+node_width/3+","+left_height+" "+node_width/3+","+full_height+" "+node_width*2/3+","+full_height+" "+node_width*2/3+","+right_height+" "+node_width+","+right_height+" "+node_width+",0 Z";
-
-				let node_g = document.createElementNS("http://www.w3.org/2000/svg", "g");
-				node_g.setAttribute("transform", "translate(" + x + "," + node.y + ")");
-				node_g.setAttribute("class", "node");
-
-
-				var fill_color = get_color(node_id);
-				var edge_color = color_darken(fill_color);
-
-
-				let node_shape_elem = document.createElementNS("http://www.w3.org/2000/svg", "path")
-				node_shape_elem.setAttribute("d", d)
-				node_shape_elem.setAttribute("style", "fill: "+color_string(fill_color)+"; stroke: "+color_string(edge_color)+";")
-				node_g.appendChild(node_shape_elem);
-
-				var text_offset = node_width + 6;
-				var text_anchor = "start";
-				if (column_index >= columns.length/2){
-					text_offset = -6;
-					text_anchor = "end";
-				}
-
-				let node_name_text: SVGTextElement = document.createElementNS("http://www.w3.org/2000/svg", "text")
-				node_name_text.setAttribute("x", text_offset.toString());
-				node_name_text.setAttribute("y", (full_height/2).toString());
-				node_name_text.setAttribute("dy", ".35em");
-				node_name_text.setAttribute("text-anchor", text_anchor);
-				node_name_text.textContent = node_id;
-				node_g.appendChild(node_name_text);
-
-				nodes_g.appendChild(node_g);
+			let node_shape_elem = document.createElementNS("http://www.w3.org/2000/svg", "path")
+			var left_height = node.input * value_scale;
+			var full_height = node.size * value_scale;
+			var right_height = node.output * value_scale;
+			if (Number(column_index) === 0) {
+				left_height = full_height;
 			}
+			const node_shape_points = [
+				[0, 0],
+				[0, left_height],
+				[node_width / 3, left_height],
+				[node_width / 3, full_height],
+				[node_width * 2 / 3, full_height],
+				[node_width * 2 / 3, right_height],
+				[node_width, right_height],
+				[node_width, 0],
+			];
+			let d = "M 0,0 L";
+			for (const point of node_shape_points) {
+				d += ` ${point[0]},${point[1]}`;
+			}
+			d+= " Z";
+			node_shape_elem.setAttribute("d", d)
+			const fill_color = get_color(node_id);
+			const edge_color = color_darken(fill_color);
+			node_shape_elem.setAttribute("style", "fill: "+color_string(fill_color)+"; stroke: "+color_string(edge_color)+";")
+			node_g.appendChild(node_shape_elem);
+
+			var text_offset = node_width + 6;
+			var text_anchor = "start";
+			if (column_index >= columns.length/2){
+				text_offset = -6;
+				text_anchor = "end";
+			}
+
+			let node_name_text: SVGTextElement = document.createElementNS("http://www.w3.org/2000/svg", "text")
+			node_name_text.setAttribute("x", text_offset.toString());
+			node_name_text.setAttribute("y", (full_height/2).toString());
+			node_name_text.setAttribute("dy", ".35em");
+			node_name_text.setAttribute("text-anchor", text_anchor);
+			node_name_text.textContent = node_id;
+			node_g.appendChild(node_name_text);
+
+			nodes_g.appendChild(node_g);
 		}
 	}
 
-	// Determine offset of all the edge connections
+	// Position all of the edge start and end positions based on the positions
+	// of the nodes that they connect to.
 	function source_y(edge_id: string) {
 		var edge = edges[edge_id];
-		// if this is a passthrough edge get the last passthrough node instead of the source
+		// If this is a passthrough edge we dont care about the position of the
+		// actual source node, just the position of the final passthrough
+		// node before this node.
 		if (edge.passthrough_nodes.length > 0) {
 			return nodes[edge.passthrough_nodes[edge.passthrough_nodes.length-1]].y;
 		}
-		else {
-			return nodes[edge.source].y;
-		}
-	}
-	function source_y_comp(a: string, b: string) {
-		return source_y(a) - source_y(b);
+		return nodes[edge.source].y;
 	}
 
 	function target_y(edge_id: string) {
 		var edge = edges[edge_id];
-		// if this is a passthrough edge get the first passthrough node instead of the target
+		// If this is a passthrough edge we dont care about the position of the
+		// actual target node, just the position of the first passthrough node
+		// after this node.
 		if (edge.passthrough_nodes.length > 0) {
 			return nodes[edge.passthrough_nodes[0]].y;
 		}
-		else {
-			return nodes[edge.target].y;
-		}
-	}
-	function target_y_comp(a: string, b: string) {
-		return target_y(a) - target_y(b);
-	}
-	for (let node_id in nodes) {
-		let node = nodes[node_id];
-		if (node.passthrough === false) {
-			node.incoming_edges.sort(source_y_comp);
-			node.outgoing_edges.sort(target_y_comp);
-
-			var running_edge_height = 0;
-			for (let edge_id in node.incoming_edges) {
-				let edge = edges[node.incoming_edges[edge_id]];
-				edge.target_y_offset = running_edge_height;
-				running_edge_height += edge.value * value_scale;
-			}
-			running_edge_height = 0;
-			for (let edge_id in node.outgoing_edges) {
-				let edge = edges[node.outgoing_edges[edge_id]];
-				edge.source_y_offset = running_edge_height;
-				running_edge_height += edge.value * value_scale;
-			}
-		}
+		return nodes[edge.target].y;
 	}
 
+	for (const node_id in nodes) {
+		const node: ResourceNode = nodes[node_id];
+		// Skip processing this node if it is a passthrough node.
+		if (node.passthrough === true) {
+			continue;
+		}
+		node.incoming_edges.sort((a, b)=>{return source_y(a) - source_y(b)});
+		node.outgoing_edges.sort((a, b)=>{return target_y(a) - target_y(b)});
+
+		let running_edge_height = 0;
+		for (const edge_id of node.incoming_edges) {
+			let edge = edges[edge_id];
+			edge.target_y_offset = running_edge_height;
+			running_edge_height += edge.value * value_scale;
+		}
+		running_edge_height = 0;
+		for (const edge_id of node.outgoing_edges) {
+			let edge = edges[edge_id];
+			edge.source_y_offset = running_edge_height;
+			running_edge_height += edge.value * value_scale;
+		}
+	}
 
 	// Draw all of the edge Lines
 	for (let edge_index in edges) {
@@ -713,14 +725,16 @@ function relayout_chart(){
 }
 
 
-
-
-
-function get_input_size(edges: { [key: string]: ResourceEdge }, output: string): number{
-
-	var inputs_size = 0;
-	for (let edge in edges){
-		if (edges[edge].target === output) {
+////////////////////////////////////////////////////////////////////////////////
+// get_input_size
+//
+// Calcuate the sum of all the edge values that are connected as inputs to the
+// node named node_name.
+////////////////////////////////////////////////////////////////////////////////
+function get_input_size(edges: {[key: string]: ResourceEdge}, node_name: string): number{
+	let inputs_size = 0;
+	for (const edge in edges){
+		if (edges[edge].target === node_name) {
 			inputs_size += edges[edge].value;
 		}
 	}
