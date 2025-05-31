@@ -64,7 +64,7 @@ function set_node_positions(
 	columns: string[][],
 	nodes: {[key: string]: ResourceNode},
 	edges: {[key: string]: ResourceEdge},
-	value_scale: number,
+	chart_scale: ChartScale,
 	node_padding: number,
 	svg_height: number,
 ) {
@@ -73,7 +73,7 @@ function set_node_positions(
 		var running_y = 0;
 		for (let node_index in columns[column_index]) {
 			var node = nodes[columns[column_index][node_index]];
-			node.height = node.size * value_scale;
+			node.height = chart_scale.scale(node.size);
 			node.y = running_y;
 			running_y += node.height + node_padding;
 		}
@@ -345,6 +345,48 @@ function get_color(key: string) {
 }
 
 
+class ChartScale {
+	private _scale: number = 0;
+
+
+	scale(input: number): number {
+		return this.preprocess(input) * this._scale;
+	}
+
+	preprocess(input: number): number {
+		return input;
+
+		// TODO: Eventually we want to support a log-scale graph. This code
+		// allows us to begin testing that and finding edge cases.
+		// if (input <= 1) {
+		// 	return input;
+		// }
+		// return Math.log(input);
+	}
+
+	set_data(columns: number[][], node_padding: number, height: number) {
+		// Calculate the scale of a single item based on the tallest column of items
+		// such that that column fits within the allotted height of the chart
+		this._scale = 9999;
+		for (const column of columns) {
+			const height_for_values = height - (columns.length - 1) * node_padding;
+
+			let value_size = 0;
+			for (const size of column) {
+				value_size += this.preprocess(size);
+			}
+
+			let column_scale = height_for_values / value_size;
+			if (this._scale > column_scale) {
+				this._scale = column_scale;
+			}
+		}
+		console.log(this._scale);
+	}
+}
+
+
+
 /******************************************************************************\
 | generate_chart                                                               |
 |                                                                              |
@@ -453,30 +495,25 @@ export function generate_chart(
 		}
 	}
 
-	// Calculate the scale of a single item based on the tallest column of items
-	// such that that column fits within the allotted height of the chart
-	let value_scale = 9999;
-	for (let column in columns) {
-		const height_for_values = height - (columns.length - 1) * node_padding;
-
-		let values = 0;
-		for (const node_index of columns[column]) {
-			values += nodes[node_index].size;
+	let column_sizes: number[][] = [];
+	for (const column of columns) {
+		let column_size: number[] = []
+		for (const node of column) {
+			column_size.push(nodes[node].size)
 		}
-
-		let column_scale = height_for_values / values;
-		if (value_scale > column_scale) {
-			value_scale = column_scale;
-		}
+		column_sizes.push(column_size);
 	}
+
+	let chart_scale: ChartScale = new ChartScale();
+	chart_scale.set_data(column_sizes, node_padding, height);
 
 	// Calculate the positions of the nodes in each column based on the nodes
 	// in other columns. We do 32 iterations of the internal process to achieve
 	// very good positions
-	set_node_positions(32, columns, nodes, edges, value_scale, node_padding, height);
+	set_node_positions(32, columns, nodes, edges, chart_scale, node_padding, height);
 
 	// Make the call to draw the chart itself now that numbers have been calculated
-	layout_chart(columns, nodes, edges, height, value_scale, margin);
+	layout_chart(columns, nodes, edges, height, chart_scale, margin);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -492,7 +529,7 @@ class CachedChartData {
 	nodes: { [key: string]: ResourceNode } = {};
 	edges: { [key: string]: ResourceEdge } = {};
 	height: number = 0;
-	value_scale: number = 0;
+	chart_scale: ChartScale = new ChartScale();
 	margin: RectangleMargin = {top: 0, right: 0, bottom: 0, left: 0};
 }
 let cached_chart_data: CachedChartData | undefined;
@@ -509,7 +546,7 @@ function layout_chart(
 	nodes: { [key: string]: ResourceNode },
 	edges: { [key: string]: ResourceEdge } ,
 	height: number,
-	value_scale: number,
+	chart_scale: ChartScale,
 	margin: RectangleMargin
 ) {
 	cached_chart_data = {
@@ -517,7 +554,7 @@ function layout_chart(
 		nodes: nodes,
 		edges: edges,
 		height: height,
-		value_scale: value_scale,
+		chart_scale: chart_scale,
 		margin: margin,
 	};
 	relayout_chart();
@@ -547,7 +584,7 @@ function relayout_chart() {
 	var nodes = cached_chart_data.nodes;
 	var edges = cached_chart_data.edges;
 	var height = cached_chart_data.height;
-	var value_scale = cached_chart_data.value_scale;
+	const chart_scale = cached_chart_data.chart_scale;
 	var margin = cached_chart_data.margin;
 
 
@@ -592,9 +629,9 @@ function relayout_chart() {
 			node_g.setAttribute("class", "node");
 
 			let node_shape_elem = document.createElementNS("http://www.w3.org/2000/svg", "path")
-			var left_height = node.input * value_scale;
-			var full_height = node.size * value_scale;
-			var right_height = node.output * value_scale;
+			var left_height = chart_scale.scale(node.input);
+			var full_height = chart_scale.scale(node.size);
+			var right_height = chart_scale.scale(node.output);
 			if (Number(column_index) === 0) {
 				left_height = full_height;
 			}
@@ -675,20 +712,20 @@ function relayout_chart() {
 		for (const edge_id of node.incoming_edges) {
 			let edge = edges[edge_id];
 			edge.target_y_offset = running_edge_height;
-			running_edge_height += edge.value * value_scale;
+			running_edge_height += chart_scale.scale(edge.value);
 		}
 		running_edge_height = 0;
 		for (const edge_id of node.outgoing_edges) {
 			let edge = edges[edge_id];
 			edge.source_y_offset = running_edge_height;
-			running_edge_height += edge.value * value_scale;
+			running_edge_height += chart_scale.scale(edge.value);
 		}
 	}
 
 	// Draw all of the edge Lines
 	for (let edge_index in edges) {
 		var edge = edges[edge_index];
-		var line_thickness = edge.value * value_scale;
+		var line_thickness = chart_scale.scale(edge.value);
 
 		let node_g = document.createElementNS("http://www.w3.org/2000/svg", "g")
 		node_g.setAttribute("transform", "translate(" + 0 + "," + 0 + ")");
@@ -739,6 +776,10 @@ function relayout_chart() {
 //
 // Calculate the sum of all the edge values that are connected as inputs to the
 // node named node_name.
+//
+// TODO: This simple addition is wrong if we are dealing with a log scale chart
+// we need to figure out how best to handle this case. Cause we are dealing with
+// the log value of the summation of log values.
 ////////////////////////////////////////////////////////////////////////////////
 function get_input_size(edges: {[key: string]: ResourceEdge}, node_name: string): number{
 	let inputs_size = 0;
