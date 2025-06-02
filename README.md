@@ -17,7 +17,7 @@ If you want to add a new resource list to the calculator, you will only need 4 t
 resources.yaml
 --------------------------------------------------------------------------------
 The resource list is a yaml file that contains all the recipes for each item in
-the game. Here is a minimal example of what he yaml syntax looks like for a
+the game. Here is a minimal example of what the yaml syntax looks like for a
 list of resources.
 
 ```yaml
@@ -107,8 +107,8 @@ For Example:
 > must match the new `custom_simplename`, the display name does not need to be changed.
 > 
 > For Example:  
-> * `name: Health Mix`* uses *[healthmix.png](resource_lists/the%20forest/items/healthmix.png)*  
-> * `name: Health Mix+` with `custom_simplename: healthmixplus`* uses *[healthmixplus.png](resource_lists/the%20forest/items/healthmixplus.png)*
+> `name: Health Mix` uses *[healthmix.png](resource_lists/the%20forest/items/healthmix.png)*  
+> `name: Health Mix+` with `custom_simplename: healthmixplus` uses *[healthmixplus.png](resource_lists/the%20forest/items/healthmixplus.png)*
 
 icon.jpg
 --------------------------------------------------------------------------------
