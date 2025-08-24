@@ -1,0 +1,632 @@
+---
+authors:
+  MochSA: "https://github.com/mochsa/"
+
+index_page_display_name: Global City
+
+recipe_types:
+  Crafting: Craft {IN_ITEMS} into {OUT_ITEM}
+
+resources:
+# ===== Raw Items =====
+  - name: Ore
+    raw_resource: true
+
+  - name: Sand
+    raw_resource: true
+
+  - name: Aluminum
+    raw_resource: true
+
+  - name: Wood
+    raw_resource: true
+
+  - name: Fertilizer
+    raw_resource: true
+  
+  - name: Oil
+    raw_resource: true
+    
+  - name: Copper
+    raw_resource: true
+
+# ===== Agricultural Enterprise =====
+  - name: Cotton
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Fertilizer: 2
+
+  - name: Dyes
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Fertilizer: 4
+
+  - name: Caoutchouc
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Fertilizer: 6
+
+
+# ===== Chemical Factory =====
+  - name: Silicon Wafer
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Ore: 5
+  
+  - name: Paint
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Dyes: 1
+
+  - name: Foam Rubber
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Caoutchouc: 1
+
+  - name: Rubber
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Caoutchouc: 1
+        Ore: 2
+
+  - name: Plastic
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oil: 8
+        Sand: 1
+
+  - name: Lubricant
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Oil: 10
+
+
+# ===== Textile Factory=====
+  - name: Canvas
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cotton: 1
+
+  - name: Fabric
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cotton: 1
+        Paint: 1
+
+  - name: Eco-Leather
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cotton: 1
+        Paint: 1
+        Caoutchouc: 1
+
+  - name: Tarpaulin
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cotton: 2
+        Plastic: 1
+
+  - name: Carpet
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Paint: 1
+        Caoutchouc: 1
+
+
+# ===== Steel Plant=====
+  - name: Rails
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Metal: 6
+        Fasteners: 6
+
+  - name: Coachwork
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Pipes: 1
+        Aluminum: 1
+
+  - name: Machinery
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Metal: 4
+        Welding Equipment: 1
+
+  - name: Engine
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Metal: 3
+        Lubricant: 1
+
+  - name: Wheel
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Metal: 2
+        Rubber: 2
+
+
+# ===== Carpentry Factory=====
+  - name: Sleepers
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Hand Tool: 3
+        Wood: 3
+
+  - name: Plywood
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Planks: 1
+
+  - name: Door
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Planks: 2
+        Hand Tool: 1
+
+  - name: Upholstered Furniture
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Planks: 1
+        Fabric: 1
+        Foam Rubber: 1
+
+  - name: Cabinet Furniture
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Fasteners: 2
+        Planks: 3
+        Power Tool: 1
+
+
+# ===== Processing Factory=====
+  - name: Cement
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Sand: 1
+
+  - name: Metal
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Ore: 3
+
+  - name: Glass
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Sand: 4
+
+  - name: Planks
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Wood: 2
+
+  - name: Pipes
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Copper: 2
+        Metal: 1
+
+
+# ===== Tools Factory=====
+  - name: Hand Tool
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Metal: 1
+        Wood: 1
+
+  - name: Measuring Tool
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Wood: 1
+        Fasteners: 1
+
+  - name: Chainsaw
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Metal: 3
+
+  - name: Welding Equipment
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Metal: 1
+        Fasteners: 1
+        Rubber: 1
+
+  - name: Power Tool
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Fasteners: 1
+        Paint: 1
+        Caoutchouc: 1
+
+
+# ===== Electrical Parts Plant=====
+  - name: Cable
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Copper: 3
+
+  - name: Antenna
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cable: 1
+        Aluminum: 1
+        Fasteners: 1
+
+  - name: CPU
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Silicon Wafer: 1
+
+  - name: Display
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Silicon Wafer: 2
+        Glass: 1
+
+  - name: Hard Drive
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Metal: 1
+        Silicon Wafer: 2
+        Fasteners: 1
+
+  - name: Surveillance Camera
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Light Bulb: 1
+        Silicon Wafer: 2
+        Fasteners: 1
+
+        
+# ===== Building Materials Factory=====
+  - name: Brick
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Sand: 2
+
+  - name: Fasteners
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Metal: 1
+
+  - name: Slab
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Metal: 1
+        Cement: 3
+
+  - name: Window
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Planks: 1
+        Glass: 1
+
+  - name: Radiator
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Metal: 2
+        Aluminum: 2
+
+  - name: Building Module
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cement: 1
+        Glass: 1
+        Door: 1
+
+
+# ===== Electrical Appliance Plant=====
+  - name: Light Bulb
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Metal: 1
+        Glass: 1
+
+  - name: Drone
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Metal: 1
+        Plastic: 1
+
+  - name: Battery
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Metal: 1
+        Plastic: 1
+
+  - name: Household Appliances
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Metal: 1
+        CPU: 1
+        Welding Equipment: 1
+
+  - name: Digital Device
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Metal: 1
+        CPU: 1
+        Display: 1
+        Hard Drive: 1
+
+
+# ===== Dockyard=====
+  - name: Boat
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Machinery: 1
+        Planks: 1
+        Fasteners: 1
+
+  - name: Sailboat
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Machinery: 1
+        Canvas: 1
+
+  - name: Speed Boat
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Machinery: 1
+        Tarpaulin: 1
+        Engine: 1
+        Glass: 1
+
+  - name: Catamaran
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Coachwork: 1
+        Engine: 1
+        Pipes: 1
+        Machinery: 1
+
+  - name: Yacht
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Machinery: 1
+        Upholstered Furniture: 1
+        Engine: 1
+        Eco-Leather: 1
+
+
+# ===== Car Factory=====
+  - name: Motorcycle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Machinery: 1
+        Engine: 1
+        Wheel: 1
+        Light Bulb: 1
+
+  - name: Car
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Machinery: 1
+        Engine: 1
+        Wheel: 1
+        Battery: 1
+
+
+# ===== Military Parts Factory=====
+  - name: Aluminum Alloy
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Aluminum: 2
+
+  - name: Carbon Fiber
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Fertilizer: 1
+        Aluminum: 2
+
+  - name: Kevlar
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Silicon Wafer: 1
+        Fabric: 1
+
+
+# ===== Military Equipment Factory=====
+  - name: Rotor
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Aluminum Alloy: 5
+
+  - name: Infrared Camera
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Aluminum Alloy: 3
+        CPU: 2
+
+
+# ===== Military Parts Factory=====
+  - name: Armor Steel
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Metal: 2
+
+  - name: Bulletproof Glass
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Glass: 1
+        Sand: 2
+        Aluminum: 1
+
+  - name: Military Electronics
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cable: 1
+        Antenna: 1
+        Metal: 2
+
+
+# ===== Aircraft Factory=====
+  - name: Combat Helicopter
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Aluminum Alloy: 5
+        Carbon Fiber: 3
+        Rotor: 1
+
+  - name: Fighter Plane
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Aluminum Alloy: 6
+        Kevlar: 4
+        Infrared Camera: 3
+
+  - name: Fighter Interceptor
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Aluminum Alloy: 5
+        Carbon Fiber: 5
+        Infrared Camera: 4
+
+
+# ===== Ground Equipment Assembly Workshop=====
+  - name: Armored Vehicle
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Armor Steel: 5
+        Bulletproof Glass: 2
+        Military Electronics: 1
