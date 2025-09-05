@@ -2,6 +2,10 @@ import { ResourceEdge } from "./resource_edge";
 import { get_node_columns } from "./node_columns";
 
 
+const chart_elem: HTMLElement = document.getElementById("chart")!;
+const content_elem: HTMLElement = document.getElementById("content")!;
+
+
 ////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////// Chart Creation ////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -12,11 +16,11 @@ class ResourceNode {
 	public size: number = 0;
 	public column: number = 0;
 	public passthrough: boolean = false;
-	public passthrough_node_index: number | null = null; // TODO: Confirm this is correct
+	public passthrough_node_index: number | null = null;
 	public incoming_edges: string[] = []; // List of edge key ids
 	public outgoing_edges: string[] = []; // List of edge key ids
 
-	public passthrough_edge_id: string = ""; // todo: figure out how this should be used
+	public passthrough_edge_id: string = "";
 
 	// Size and positions
 	public height: number = 0;
@@ -60,7 +64,7 @@ function set_node_positions(
 	columns: string[][],
 	nodes: {[key: string]: ResourceNode},
 	edges: {[key: string]: ResourceEdge},
-	value_scale: number,
+	chart_scale: ChartScale,
 	node_padding: number,
 	svg_height: number,
 ) {
@@ -69,7 +73,7 @@ function set_node_positions(
 		var running_y = 0;
 		for (let node_index in columns[column_index]) {
 			var node = nodes[columns[column_index][node_index]];
-			node.height = node.size * value_scale;
+			node.height = chart_scale.scale(node.size);
 			node.y = running_y;
 			running_y += node.height + node_padding;
 		}
@@ -341,6 +345,48 @@ function get_color(key: string) {
 }
 
 
+class ChartScale {
+	private _scale: number = 0;
+
+
+	scale(input: number): number {
+		return this.preprocess(input) * this._scale;
+	}
+
+	preprocess(input: number): number {
+		return input;
+
+		// TODO: Eventually we want to support a log-scale graph. This code
+		// allows us to begin testing that and finding edge cases.
+		// if (input <= 1) {
+		// 	return input;
+		// }
+		// return Math.log(input);
+	}
+
+	set_data(columns: number[][], node_padding: number, height: number) {
+		// Calculate the scale of a single item based on the tallest column of items
+		// such that that column fits within the allotted height of the chart
+		this._scale = 9999;
+		for (const column of columns) {
+			const height_for_values = height - (columns.length - 1) * node_padding;
+
+			let value_size = 0;
+			for (const size of column) {
+				value_size += this.preprocess(size);
+			}
+
+			let column_scale = height_for_values / value_size;
+			if (this._scale > column_scale) {
+				this._scale = column_scale;
+			}
+		}
+		console.log(this._scale);
+	}
+}
+
+
+
 /******************************************************************************\
 | generate_chart                                                               |
 |                                                                              |
@@ -449,53 +495,58 @@ export function generate_chart(
 		}
 	}
 
-	// Calculate the scale of a single item based on the tallest column of items
-	// such that that column fits within the allotted height of the chart
-	var value_scale = 9999;
-	for (let column in columns) {
-		var height_for_values = height + node_padding;
-		var values = 0;
-		for (let node_index in columns[column]) {
-			var node = nodes[columns[column][node_index]];
-			height_for_values -= node_padding;
-			values += node.size;
+	let column_sizes: number[][] = [];
+	for (const column of columns) {
+		let column_size: number[] = []
+		for (const node of column) {
+			column_size.push(nodes[node].size)
 		}
-
-		var column_scale = height_for_values / values;
-		if (value_scale > column_scale) {
-			value_scale = column_scale;
-		}
+		column_sizes.push(column_size);
 	}
+
+	let chart_scale: ChartScale = new ChartScale();
+	chart_scale.set_data(column_sizes, node_padding, height);
 
 	// Calculate the positions of the nodes in each column based on the nodes
 	// in other columns. We do 32 iterations of the internal process to achieve
 	// very good positions
-	set_node_positions(32, columns, nodes, edges, value_scale, node_padding, height);
+	set_node_positions(32, columns, nodes, edges, chart_scale, node_padding, height);
 
 	// Make the call to draw the chart itself now that numbers have been calculated
-	layout_chart(columns, nodes, edges, height, value_scale, margin);
+	layout_chart(columns, nodes, edges, height, chart_scale, margin);
 }
 
-/******************************************************************************\
-| layout_chart
-|
-| draw the chart itself
-\******************************************************************************/
+////////////////////////////////////////////////////////////////////////////////
+// CachedChartData
+//
+// All of the arguments needed for drawing the flow chart. We store a cached
+// version of the chart so that we can redraw the chart anytime it is needed.
+// Such as on resize, where we would not have access to the original chart's
+// data and would need to recalculate it from scratch.
+////////////////////////////////////////////////////////////////////////////////
 class CachedChartData {
 	columns: string[][] = [];
 	nodes: { [key: string]: ResourceNode } = {};
 	edges: { [key: string]: ResourceEdge } = {};
 	height: number = 0;
-	value_scale: number = 0;
+	chart_scale: ChartScale = new ChartScale();
 	margin: RectangleMargin = {top: 0, right: 0, bottom: 0, left: 0};
 }
-let cached_chart_data: CachedChartData|undefined;
+let cached_chart_data: CachedChartData | undefined;
+
+////////////////////////////////////////////////////////////////////////////////
+// layout_chart
+//
+// Configures and draws the chart to the DOM. Also caches the chart parameters
+// so that the chart can easily be redrawn with the function relayout_chart()
+// without the caller needing to know the charts parameters.
+////////////////////////////////////////////////////////////////////////////////
 function layout_chart(
 	columns: string[][],
 	nodes: { [key: string]: ResourceNode },
 	edges: { [key: string]: ResourceEdge } ,
 	height: number,
-	value_scale: number,
+	chart_scale: ChartScale,
 	margin: RectangleMargin
 ) {
 	cached_chart_data = {
@@ -503,20 +554,22 @@ function layout_chart(
 		nodes: nodes,
 		edges: edges,
 		height: height,
-		value_scale: value_scale,
+		chart_scale: chart_scale,
 		margin: margin,
 	};
 	relayout_chart();
 }
-window.onresize = function() {
-	relayout_chart();
-};
 
-const chart_elem: HTMLElement = document.getElementById("chart")!;
-const content_elem: HTMLElement = document.getElementById("content")!;
+// Redraw the chart every time the window resizes
+window.addEventListener("resize", ()=>{relayout_chart()});
 
-
-function relayout_chart(){
+////////////////////////////////////////////////////////////////////////////////
+// relayout_chart
+//
+// This function will redraw the chart elements based on the cached_chart_data.
+// In order to update the chart with new data call `layout_chart` instead.
+////////////////////////////////////////////////////////////////////////////////
+function relayout_chart() {
 	// Empty the chart immediately.
 	while (chart_elem.lastChild) {
 		chart_elem.removeChild(chart_elem.lastChild);
@@ -531,7 +584,7 @@ function relayout_chart(){
 	var nodes = cached_chart_data.nodes;
 	var edges = cached_chart_data.edges;
 	var height = cached_chart_data.height;
-	var value_scale = cached_chart_data.value_scale;
+	const chart_scale = cached_chart_data.chart_scale;
 	var margin = cached_chart_data.margin;
 
 
@@ -541,8 +594,6 @@ function relayout_chart(){
 
 	// Determine the space between the left hand side of each node column
 	var node_spacing: number = (width-node_width) / (columns.length - 1);
-
-
 
 	// Create the new SVG object that will represent our chart
 	var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -562,111 +613,119 @@ function relayout_chart(){
 	// Draw all of the node lines
 	for (let column_index_string in columns) {
 		let column_index = parseInt(column_index_string);
-		var x = node_spacing * column_index;
+		const x_offset = node_spacing * column_index;
 		for (let node_index in columns[column_index]) {
-			var node_id = columns[column_index][node_index];
-			let node = nodes[node_id];
+			const node_id: string = columns[column_index][node_index];
+			const node: ResourceNode = nodes[node_id];
+
+			// Dont draw node elements if the node is a passthrough node.
+			if (node.passthrough === true) {
+				continue;
+			}
 
 			// Build the node
-			if (!node.passthrough) {
-				var left_height = node.input * value_scale;
-				var full_height = node.size * value_scale;
-				var right_height = node.output * value_scale;
-				if (Number(column_index) === 0) {
-					left_height = full_height;
-				}
+			let node_g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+			node_g.setAttribute("transform", "translate(" + x_offset + "," + node.y + ")");
+			node_g.setAttribute("class", "node");
 
-
-				let d = "M 0,0 L 0,"+left_height+" "+node_width/3+","+left_height+" "+node_width/3+","+full_height+" "+node_width*2/3+","+full_height+" "+node_width*2/3+","+right_height+" "+node_width+","+right_height+" "+node_width+",0 Z";
-
-				let node_g = document.createElementNS("http://www.w3.org/2000/svg", "g");
-				node_g.setAttribute("transform", "translate(" + x + "," + node.y + ")");
-				node_g.setAttribute("class", "node");
-
-
-				var fill_color = get_color(node_id);
-				var edge_color = color_darken(fill_color);
-
-
-				let node_shape_elem = document.createElementNS("http://www.w3.org/2000/svg", "path")
-				node_shape_elem.setAttribute("d", d)
-				node_shape_elem.setAttribute("style", "fill: "+color_string(fill_color)+"; stroke: "+color_string(edge_color)+";")
-				node_g.appendChild(node_shape_elem);
-
-				var text_offset = node_width + 6;
-				var text_anchor = "start";
-				if (column_index >= columns.length/2){
-					text_offset = -6;
-					text_anchor = "end";
-				}
-
-				let node_name_text: SVGTextElement = document.createElementNS("http://www.w3.org/2000/svg", "text")
-				node_name_text.setAttribute("x", text_offset.toString());
-				node_name_text.setAttribute("y", (full_height/2).toString());
-				node_name_text.setAttribute("dy", ".35em");
-				node_name_text.setAttribute("text-anchor", text_anchor);
-				node_name_text.textContent = node_id;
-				node_g.appendChild(node_name_text);
-
-				nodes_g.appendChild(node_g);
+			let node_shape_elem = document.createElementNS("http://www.w3.org/2000/svg", "path")
+			var left_height = chart_scale.scale(node.input);
+			var full_height = chart_scale.scale(node.size);
+			var right_height = chart_scale.scale(node.output);
+			if (Number(column_index) === 0) {
+				left_height = full_height;
 			}
+			const node_shape_points = [
+				[0, 0],
+				[0, left_height],
+				[node_width / 3, left_height],
+				[node_width / 3, full_height],
+				[node_width * 2 / 3, full_height],
+				[node_width * 2 / 3, right_height],
+				[node_width, right_height],
+				[node_width, 0],
+			];
+			let d = "M 0,0 L";
+			for (const point of node_shape_points) {
+				d += ` ${point[0]},${point[1]}`;
+			}
+			d+= " Z";
+			node_shape_elem.setAttribute("d", d)
+			const fill_color = get_color(node_id);
+			const edge_color = color_darken(fill_color);
+			node_shape_elem.setAttribute("style", "fill: "+color_string(fill_color)+"; stroke: "+color_string(edge_color)+";")
+			node_g.appendChild(node_shape_elem);
+
+			var text_offset = node_width + 6;
+			var text_anchor = "start";
+			if (column_index >= columns.length/2){
+				text_offset = -6;
+				text_anchor = "end";
+			}
+
+			let node_name_text: SVGTextElement = document.createElementNS("http://www.w3.org/2000/svg", "text")
+			node_name_text.setAttribute("x", text_offset.toString());
+			node_name_text.setAttribute("y", (full_height/2).toString());
+			node_name_text.setAttribute("dy", ".35em");
+			node_name_text.setAttribute("text-anchor", text_anchor);
+			node_name_text.textContent = node_id;
+			node_g.appendChild(node_name_text);
+
+			nodes_g.appendChild(node_g);
 		}
 	}
 
-	// Determine offset of all the edge connections
+	// Position all of the edge start and end positions based on the positions
+	// of the nodes that they connect to.
 	function source_y(edge_id: string) {
 		var edge = edges[edge_id];
-		// if this is a passthrough edge get the last passthrough node instead of the source
+		// If this is a passthrough edge we dont care about the position of the
+		// actual source node, just the position of the final passthrough
+		// node before this node.
 		if (edge.passthrough_nodes.length > 0) {
 			return nodes[edge.passthrough_nodes[edge.passthrough_nodes.length-1]].y;
 		}
-		else {
-			return nodes[edge.source].y;
-		}
-	}
-	function source_y_comp(a: string, b: string) {
-		return source_y(a) - source_y(b);
+		return nodes[edge.source].y;
 	}
 
 	function target_y(edge_id: string) {
 		var edge = edges[edge_id];
-		// if this is a passthrough edge get the first passthrough node instead of the target
+		// If this is a passthrough edge we dont care about the position of the
+		// actual target node, just the position of the first passthrough node
+		// after this node.
 		if (edge.passthrough_nodes.length > 0) {
 			return nodes[edge.passthrough_nodes[0]].y;
 		}
-		else {
-			return nodes[edge.target].y;
-		}
-	}
-	function target_y_comp(a: string, b: string) {
-		return target_y(a) - target_y(b);
-	}
-	for (let node_id in nodes) {
-		let node = nodes[node_id];
-		if (node.passthrough === false) {
-			node.incoming_edges.sort(source_y_comp);
-			node.outgoing_edges.sort(target_y_comp);
-
-			var running_edge_height = 0;
-			for (let edge_id in node.incoming_edges) {
-				let edge = edges[node.incoming_edges[edge_id]];
-				edge.target_y_offset = running_edge_height;
-				running_edge_height += edge.value * value_scale;
-			}
-			running_edge_height = 0;
-			for (let edge_id in node.outgoing_edges) {
-				let edge = edges[node.outgoing_edges[edge_id]];
-				edge.source_y_offset = running_edge_height;
-				running_edge_height += edge.value * value_scale;
-			}
-		}
+		return nodes[edge.target].y;
 	}
 
+	for (const node_id in nodes) {
+		const node: ResourceNode = nodes[node_id];
+		// Skip processing this node if it is a passthrough node.
+		if (node.passthrough === true) {
+			continue;
+		}
+		node.incoming_edges.sort((a, b)=>{return source_y(a) - source_y(b)});
+		node.outgoing_edges.sort((a, b)=>{return target_y(a) - target_y(b)});
+
+		let running_edge_height = 0;
+		for (const edge_id of node.incoming_edges) {
+			let edge = edges[edge_id];
+			edge.target_y_offset = running_edge_height;
+			running_edge_height += chart_scale.scale(edge.value);
+		}
+		running_edge_height = 0;
+		for (const edge_id of node.outgoing_edges) {
+			let edge = edges[edge_id];
+			edge.source_y_offset = running_edge_height;
+			running_edge_height += chart_scale.scale(edge.value);
+		}
+	}
 
 	// Draw all of the edge Lines
 	for (let edge_index in edges) {
 		var edge = edges[edge_index];
-		var line_thickness = edge.value * value_scale;
+		var line_thickness = chart_scale.scale(edge.value);
 
 		let node_g = document.createElementNS("http://www.w3.org/2000/svg", "g")
 		node_g.setAttribute("transform", "translate(" + 0 + "," + 0 + ")");
@@ -706,21 +765,26 @@ function relayout_chart(){
 	var chart_width = width + margin.left + margin.right;
 	var chart_height = height + margin.top + margin.bottom;
 
-
 	svg.setAttribute("width", chart_width.toString());
 	svg.setAttribute("height", chart_height.toString());
 	chart_elem.appendChild(svg);
 }
 
 
-
-
-
-function get_input_size(edges: { [key: string]: ResourceEdge }, output: string): number{
-
-	var inputs_size = 0;
-	for (let edge in edges){
-		if (edges[edge].target === output) {
+////////////////////////////////////////////////////////////////////////////////
+// get_input_size
+//
+// Calculate the sum of all the edge values that are connected as inputs to the
+// node named node_name.
+//
+// TODO: This simple addition is wrong if we are dealing with a log scale chart
+// we need to figure out how best to handle this case. Cause we are dealing with
+// the log value of the summation of log values.
+////////////////////////////////////////////////////////////////////////////////
+function get_input_size(edges: {[key: string]: ResourceEdge}, node_name: string): number{
+	let inputs_size = 0;
+	for (const edge in edges){
+		if (edges[edge].target === node_name) {
 			inputs_size += edges[edge].value;
 		}
 	}
@@ -728,19 +792,24 @@ function get_input_size(edges: { [key: string]: ResourceEdge }, output: string):
 }
 
 
-
+////////////////////////////////////////////////////////////////////////////////
+// get_columns
+//
+// A helper function to transform the results of get_node_columns from a key
+// value object to a 2D array of columns and nodes.
+////////////////////////////////////////////////////////////////////////////////
 function get_columns(edges: { [key: string]: ResourceEdge }): string[][] {
 	let node_columns: { [key: string]: number } = get_node_columns(edges);
 
-	// determine how many columns there should be
+	// Find the maximum column index in node_columns
 	let column_count = 0;
-	for (let node in node_columns) {
+	for (const node in node_columns) {
 		if (node_columns[node] + 1 > column_count) {
 			column_count = node_columns[node] + 1;
 		}
 	}
 
-	// Create an array of those columns
+	// Create a 2D array of columns and nodes
 	let columns: string[][] = Array(column_count);
 	for (let i = 0; i < column_count; i++){
 		columns[i] = [];
