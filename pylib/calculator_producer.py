@@ -35,6 +35,7 @@ def calculator_producers(calculator_dir_regex: str) -> List[GenericProducer]:
             "css_filename_data": r"^cache/calculator\.css\.json",
             "calculator_template": r"^core/calculator\.html$",
             "recipe_type_display_function_template": r"^core/_recipe_type_display_functions\.js$",
+            "calculator_js_metadata": r"^cache/calculator\.min\.js\.json$"
         },
         function=calculator_function,
     )
@@ -56,6 +57,7 @@ class CalculatorInputFiles(TypedDict):
     css_filename_data: str
     calculator_template: str
     recipe_type_display_function_template: str
+    calculator_js_metadata: str
 
 
 ################################################################################
@@ -80,6 +82,9 @@ def calculator_function(input_files: CalculatorInputFiles, groups: Dict[str, str
 
     # Get the relative hashed name of the calculator's stitched item images
     calculator_item_image = filename_from_metadatafile(input_files["image_metadata"], rel=os.path.dirname(calculator_index_html_filepath))
+
+    # Get the calculator js path
+    calculator_js_path = filename_from_metadatafile(input_files["calculator_js_metadata"], rel=os.path.dirname(calculator_index_html_filepath))
 
     # Load and validate the type of the resource list data
     with open(resource_list_file, 'rb') as f:
@@ -142,6 +147,8 @@ def calculator_function(input_files: CalculatorInputFiles, groups: Dict[str, str
         # Used to do calculations to divide counts into stacks
         stack_sizes_json=stack_sizes_json,
         css_path=css_path,
+        # CalculatorJS Path
+        calculator_js_path=calculator_js_path,
     )
 
     minified_calculator = htmlmin.minify(rendered_calculator, remove_comments=True, remove_empty_space=True)

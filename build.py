@@ -41,6 +41,7 @@ def core_resource_producers() -> List[GenericProducer]:
     hashed_copyfiles = [
         "core/calculator.css",
         "core/add_game.png",
+        "cache/calculator.min.js",
     ]
 
     # Files that should be copied out of the "core" folder.
@@ -61,10 +62,10 @@ def core_resource_producers() -> List[GenericProducer]:
     }
 
     # Javascript files that should be minified for production.
-    minify_js_files = [
-        "cache/calculator.js",
-        "core/yaml_export.js",
-    ]
+    minify_js_files = {
+        "cache/calculator.js": "cache/calculator.min.js",
+        "core/yaml_export.js": "output/yaml_export.js",
+    }
 
     core_producers: List[GenericProducer] = []
 
@@ -98,10 +99,7 @@ def core_resource_producers() -> List[GenericProducer]:
         core_producers += js_rollup_producer(js_target_file, js_destination_file)
 
     # Add a producer for each javascript file to minify.
-    for minify_js_file in minify_js_files:
-        input_file = minify_js_file
-        output_file = os.path.join("output", os.path.basename(minify_js_file))
-
+    for input_file, output_file in minify_js_files.items():
         if FLAG_skip_js_minify:
             core_producers.append(copy_file(
                 name=f"Copy File {input_file}",
