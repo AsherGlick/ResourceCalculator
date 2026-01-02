@@ -9386,8 +9386,7 @@ resources:
     - output: 2
       recipe_type: Crafting
       requirements:
-        String: 4
-        Slimeball: 1
+        String: 5
 
   - name: Bundle
     recipes:
