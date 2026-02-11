@@ -5,7 +5,7 @@ flake8==3.9.2
 htmlmin==0.1.12
 Jinja2==3.1.6
 mypy==1.10.1
-pillow==10.3.0
+pillow==12.1.1
 PyAutoGUI==0.9.54
 PyYAML==6.0.1
 snakeviz==2.1.1
