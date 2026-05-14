@@ -1,0 +1,263 @@
+---
+authors:
+  Ben: "https://benjaminvreeland.com"
+
+index_page_display_name: How To Survive
+
+game_version: "Oct 21 2014, 18:23:47"
+
+note: |
+  Based on
+  https://howtosurvive.fandom.com/wiki/How_to_Survive_Wiki
+  https://steamcommunity.com/sharedfiles/filedetails/?id=667281900
+  https://steamcommunity.com/sharedfiles/filedetails/?id=734978788
+
+recipe_types:
+  Crafting: Combine {IN_ITEMS} to craft {OUT_ITEM}
+  Crafting (up to): Combine up to {IN_ITEMS} to craft up to {OUT_ITEM} (keeping the remainder)
+  Crafting (container): Combine {IN_ITEMS} to craft {OUT_ITEM} (and empty container)
+  Crafting (sharpen): Combine {IN_ITEMS} with a sharp tool to craft {OUT_ITEM}
+  Cooking: Use {IN_ITEMS} at a fire pit to make {OUT_ITEM}
+
+resources:
+  ##############################################################################
+  - H1: Weapons ################################################################
+  ##############################################################################
+
+  - H2: Melee ##################################################################
+
+  - name: Rusty Machete
+    raw_resource: true
+  - name: Golden Rusty Machete
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Rusty Machete: 1
+          Red Stone: 1
+  - name: Wooden Stick
+    raw_resource: true
+  - name: Golden Stick
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wooden Stick: 1
+          Red Stone: 1
+  - name: Unfinished Wooden Axe
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wooden Stick: 1
+          Flint: 1
+  - name: Wooden Axe
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Wooden Axe: 1
+          Hardware Box: 1
+  - name: Golden Wooden Axe
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wooden Axe: 1
+          Red Stone: 1
+  - name: Iron Stick
+    raw_resource: true
+  - name: Improved Golden Stick
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Iron Stick: 1
+          Red Stone: 1
+  - name: Unfinished Iron Axe
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Iron Stick: 1
+          Flint: 1
+  - name: Iron Axe
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Iron Axe: 1
+          Hardware Box: 1
+  - name: Golden Iron Axe
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Iron Axe: 1
+          Red Stone: 1
+
+  - H2: Ranged #################################################################
+
+  - H2: Thrown #################################################################
+
+  - name: Bone Blade
+    recipes:
+      - output: 1
+        recipe_type: Crafting (sharpen)
+        requirements:
+          Bone: 1
+  - name: Twin Sticks Boomerang
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Bone Blade: 2
+  - name: Golden Twin Sticks Boomerang
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Twin Sticks Boomerang: 1
+          Red Stone: 1
+  - name: Twin Sticks Cutting Boomerang
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Twin Sticks Boomerang: 1
+          Flint: 1
+  - name: Golden Twin Sticks Cutting Boomerang
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Twin Sticks Cutting Boomerang: 1
+          Red Stone: 1
+  - name: Triple Sticks Boomerang
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Twin Sticks Boomerang: 1
+          Bone Blade: 1
+  - name: Golden Triple Sticks Boomerang
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Triple Sticks Boomerang: 1
+          Red Stone: 1
+  - name: Triple Sticks Cutting Boomerang
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Triple Sticks Boomerang: 1
+          Flint: 1
+  - name: Golden Triple Sticks Cutting Boomerang
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Triple Sticks Cutting Boomerang: 1
+          Red Stone: 1
+
+  - H2: Ammo ###################################################################
+
+  ##############################################################################
+  - H1: Barricade ##############################################################
+  ##############################################################################
+
+  - name: Wooden Barricade
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wooden Planks: 1
+          Hardware Box: 1
+  - name: Iron Rods Made Barricade
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Iron Rods: 1
+          Hardware Box: 1
+  - name: Cast Iron Made Barricade
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Cast Iron Sheet: 1
+          Hardware Box: 1
+
+  - name: Unfinished Handmade Turret Part 1
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Diving Tank: 1
+          Short Tube: 1
+  - name: Unfinished Handmade Turret Part 2
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Handmade Turret Part 1: 1
+          Electronic Device: 1
+  - name: Unfinished Handmade Turret Part 3
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Handmade Turret Part 2: 1
+          Electronic Device: 1
+  - name: Handmade Turret
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Handmade Turret Part 3: 1
+          Hardware Box: 1
+
+  - name: Wooden Planks
+    raw_resource: true
+  - name: Iron Rods
+    raw_resource: true
+  - name: Cast Iron Sheet
+    raw_resource: true
+
+  - name: Lighter
+    raw_resource: true
+  - name: Crowbar
+    raw_resource: true
+
+  ##############################################################################
+  - H1: Misc ###################################################################
+  ##############################################################################
+
+  - name: Flint
+    raw_resource: true
+  - name: Bone
+    raw_resource: true
+  - name: Feathers
+    raw_resource: true
+
+  - name: Diving Tank
+    raw_resource: true
+  - name: Short Tube
+    raw_resource: true
+  - name: Motobike Motor
+    raw_resource: true
+  - name: Electronic Device
+    raw_resource: true
+  - name: Cogwheel
+    raw_resource: true
+  - name: Hardware Box
+    raw_resource: true
+
+  - name: Red Stone
+    raw_resource: true
+
+  ##############################################################################
+  - H1: Quest ##################################################################
+  ##############################################################################
