@@ -9,14 +9,14 @@ game_version: "Oct 21 2014, 18:23:47"
 note: |
   Based on
   https://howtosurvive.fandom.com/wiki/How_to_Survive_Wiki
+  https://howtosurvive.fandom.com/wiki/Recipes
   https://steamcommunity.com/sharedfiles/filedetails/?id=667281900
   https://steamcommunity.com/sharedfiles/filedetails/?id=734978788
 
 recipe_types:
   Crafting: Combine {IN_ITEMS} to craft {OUT_ITEM}
   Crafting (up to): Combine up to {IN_ITEMS} to craft up to {OUT_ITEM} (keeping the remainder)
-  Crafting (container): Combine {IN_ITEMS} to craft {OUT_ITEM} (and empty container)
-  Crafting (sharpen): Combine {IN_ITEMS} with a sharp tool to craft {OUT_ITEM}
+  Crafting (sharpen): Combine {IN_ITEMS} with a sharp weapon to craft {OUT_ITEM}
   Cooking: Use {IN_ITEMS} at a fire pit to make {OUT_ITEM}
 
 resources:
@@ -50,7 +50,7 @@ resources:
         recipe_type: Crafting
         requirements:
           Wooden Stick: 1
-          Flint: 1
+          Piece of Flint: 1
   - name: Wooden Axe
     recipes:
       - output: 1
@@ -80,7 +80,7 @@ resources:
         recipe_type: Crafting
         requirements:
           Iron Stick: 1
-          Flint: 1
+          Piece of Flint: 1
   - name: Iron Axe
     recipes:
       - output: 1
@@ -125,7 +125,7 @@ resources:
         recipe_type: Crafting
         requirements:
           Twin Sticks Boomerang: 1
-          Flint: 1
+          Piece of Flint: 1
   - name: Golden Twin Sticks Cutting Boomerang
     recipes:
       - output: 1
@@ -153,7 +153,12 @@ resources:
         recipe_type: Crafting
         requirements:
           Triple Sticks Boomerang: 1
-          Flint: 1
+          Piece of Flint: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Twin Sticks Cutting Boomerang: 1
+          Bone Blade: 1
   - name: Golden Triple Sticks Cutting Boomerang
     recipes:
       - output: 1
@@ -162,7 +167,144 @@ resources:
           Triple Sticks Cutting Boomerang: 1
           Red Stone: 1
 
+  - name: Molotov Cocktail
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Bottle of Gasoline: 1
+          Piece of Cloth: 1
+  - name: Explosive Charge
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Molotov Cocktail: 1
+          Chemical Fertilizer: 1
+
+  - name: Attractive Molotov
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Fresh Meat: 1
+          Molotov Cocktail: 1
+  - name: Explosive Bait
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Fresh Meat: 1
+          Explosive Charge: 1
+
   - H2: Ammo ###################################################################
+
+  - name: Ammo for Handmade Guns
+    raw_resource: true
+  - name: Incendiary Ammo for Handmade Guns
+    recipes:
+      - output: 500
+        recipe_type: Crafting (up to)
+        requirements:
+          Ammo for Handmade Guns: 500
+          Bottle Full of Gasoline: 1
+      - output: 500
+        recipe_type: Crafting (up to)
+        requirements:
+          Ammo for Handmade Guns: 500
+          Jerrycan Filled with 1/3 of Gasoline: 1
+      - output: 500
+        recipe_type: Crafting (up to)
+        requirements:
+          Ammo for Handmade Guns: 500
+          Jerrycan Filled with 2/3 of Gasoline: 1
+      - output: 500
+        recipe_type: Crafting (up to)
+        requirements:
+          Ammo for Handmade Guns: 500
+          Jerrycan Full of Gasoline: 1
+
+  - name: Classic Arrows
+    recipes:
+      - output: 10
+        recipe_type: Crafting (sharpen)
+        requirements:
+          Wooden Stick: 1
+  - name: Classic Arrows with Feathers
+    recipes:
+      - output: 10
+        recipe_type: Crafting (up to)
+        requirements:
+          Classic Arrows: 10
+          Feathers: 1
+  - name: Incendiary Arrows
+    recipes:
+      - output: 10
+        recipe_type: Crafting (up to)
+        requirements:
+          Classic Arrows: 10
+          Bottle Full of Gasoline: 1
+      - output: 10
+        recipe_type: Crafting (up to)
+        requirements:
+          Classic Arrows: 10
+          Jerrycan Filled with 1/3 of Gasoline: 1
+      - output: 10
+        recipe_type: Crafting (up to)
+        requirements:
+          Classic Arrows: 10
+          Jerrycan Filled with 2/3 of Gasoline: 1
+      - output: 500
+        recipe_type: Crafting (up to)
+        requirements:
+          Classic Arrows: 10
+          Jerrycan Full of Gasoline: 1
+  - name: Incendiary Arrows with Feathers
+    recipes:
+      - output: 10
+        recipe_type: Crafting (up to)
+        requirements:
+          Incendiary Arrows: 10
+          Feathers: 1
+      - output: 10
+        recipe_type: Crafting (up to)
+        requirements:
+          Classic Arrows with Feathers: 10
+          Bottle Full of Gasoline: 1
+      - output: 10
+        recipe_type: Crafting (up to)
+        requirements:
+          Classic Arrows with Feathers: 10
+          Jerrycan Filled with 1/3 of Gasoline: 1
+      - output: 10
+        recipe_type: Crafting (up to)
+        requirements:
+          Classic Arrows with Feathers: 10
+          Jerrycan Filled with 2/3 of Gasoline: 1
+      - output: 500
+        recipe_type: Crafting (up to)
+        requirements:
+          Classic Arrows with Feathers: 10
+          Jerrycan Full of Gasoline: 1
+  - name: Explosive Arrows
+    recipes:
+      - output: 10
+        recipe_type: Crafting (up to)
+        requirements:
+          Classic Arrows: 10
+          Explosive Charge: 1
+  - name: Explosive Arrows with Feathers
+    recipes:
+      - output: 10
+        recipe_type: Crafting (up to)
+        requirements:
+          Explosive Arrows: 10
+          Feathers: 1
+      - output: 10
+        recipe_type: Crafting (up to)
+        requirements:
+          Classic Arrows with Feathers: 10
+          Explosive Charge: 1
 
   ##############################################################################
   - H1: Barricade ##############################################################
@@ -235,17 +377,57 @@ resources:
   - H1: Misc ###################################################################
   ##############################################################################
 
-  - name: Flint
+  - name: Piece of Flint
+    raw_resource: true
+  - name: Piece of Cloth
     raw_resource: true
   - name: Bone
+    raw_resource: true
+  - name: Fresh Meat
+    raw_resource: true
+  - name: Animal Skin
     raw_resource: true
   - name: Feathers
     raw_resource: true
 
+  - name: Empty Bottle
+    raw_resource: true
+  - name: Bottle Full of Gasoline
+    raw_resource: true
+  - name: Bottle Full of Water
+    raw_resource: true
+  - name: Empty Jerrycan
+    raw_resource: true
+  - name: Jerrycan Full of Gasoline
+    raw_resource: true
+  - name: Jerrycan Filled with 2/3 of Gasoline
+    raw_resource: true
+  - name: Jerrycan Filled with 1/3 of Gasoline
+    raw_resource: true
+  - name: Jerrycan Full of Water
+    raw_resource: true
+  - name: Jerrycan Filled with 2/3 of Water
+    raw_resource: true
+  - name: Jerrycan Filled with 1/3 of Water
+    raw_resource: true
+  - name: Chemical Fertilizer
+    raw_resource: true
+
+  - name: Harpoon Grip
+    raw_resource: true
+  - name: Manual Compressor
+    raw_resource: true
   - name: Diving Tank
     raw_resource: true
   - name: Short Tube
     raw_resource: true
+  - name: Long Tube
+    raw_resource: true
+  - name: Flared Tube
+    raw_resource: true
+  - name: Glasses
+    raw_resource: true
+
   - name: Motobike Motor
     raw_resource: true
   - name: Electronic Device
@@ -261,3 +443,8 @@ resources:
   ##############################################################################
   - H1: Quest ##################################################################
   ##############################################################################
+
+  - name: Guarana Seeds
+    raw_resource: true
+  - name: White Plant Seeds
+    raw_resource: true
