@@ -233,6 +233,307 @@ resources:
           Stabilized Carbon Long Bow Pulley: 1
           Red Stone: 1
 
+  - name: Wooden Crossbow
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wooden Long Bow Pulley: 1
+          Harpoon Grip: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Stabilized Wooden Long Bow Pulley: 1
+          Harpoon Grip: 1
+  - name: Golden Wooden Crossbow
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wooden Crossbow: 1
+          Red Stone: 1
+  - name: Scoped Wooden Crossbow
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Wooden Crossbow: 1
+          Handmade Scope: 1
+  - name: Golden Scoped Wooden Crossbow
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Scoped Wooden Crossbow: 1
+          Red Stone: 1
+  - name: Carbon Crossbow
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Carbon Long Bow Pulley: 1
+          Harpoon Grip: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Stabilized Carbon Long Bow Pulley: 1
+          Harpoon Grip: 1
+  - name: Golden Carbon Crossbow
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Carbon Crossbow: 1
+          Red Stone: 1
+  - name: Scoped Carbon Crossbow
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Carbon Crossbow: 1
+          Handmade Scope: 1
+  - name: Golden Scoped Carbon Crossbow
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Scoped Carbon Crossbow: 1
+          Red Stone: 1
+
+  - name: Handmade Scope
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Short Tube: 1
+          Glasses: 1
+
+  - name: Unfinished Semi-Auto Weapon
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Harpoon Grip: 1
+          Manual Compressor: 1
+  - name: Unfinished Gun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Semi-Auto Weapon: 1
+          Short Tube: 1
+  - name: Unfinished Pump-Action Shotgun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Semi-auto Weapon: 1
+          Flared Tube: 1
+  - name: Unfinished Precision Rifle
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Semi-auto Weapon: 1
+          Long Tube: 1
+  - name: Handmade Gun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Gun: 1
+          Hardware Box: 1
+  - name: Golden Handmade Gun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Gun: 1
+          Red Stone: 1
+  - name: Handmade Pump-Action Shotgun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Pump-Action Shotgun: 1
+          Hardware Box: 1
+  - name: Golden Handmade Pump-Action Shotgun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Pump-Action Shotgun: 1
+          Red Stone: 1
+  - name: Handmade Precision Rifle
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Precision Rifle: 1
+          Hardware Box: 1
+  - name: Golden Handmade Precision Rifle
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Precision Rifle: 1
+          Red Stone: 1
+  - name: Handmade Scoped Gun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Gun: 1
+          Handmade Scope: 1
+  - name: Golden Handmade Scoped Gun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Scoped Gun: 1
+          Red Stone: 1
+  - name: Handmade Scoped Pump-Action Shotgun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Pump-Action Shotgun: 1
+          Handmade Scope: 1
+  - name: Golden Handmade Scoped Pump-Action Shotgun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Scoped Pump-Action Shotgun: 1
+          Red Stone: 1
+  - name: Handmade Scoped Precision Rifle
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Precision Rifle: 1
+          Handmade Scope: 1
+  - name: Golden Handmade Scoped Precision Rifle
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Scoped Precision Rifle: 1
+          Red Stone: 1
+
+  - name: Unfinished Full Auto Weapon
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Harpoon Grip: 1
+          Diving Tank: 1
+  - name: Unfinished Sten Gun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Full Auto Weapon: 1
+          Short Tube: 1
+  - name: Unfinished Fast Shotgun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Full Auto Weapon: 1
+          Flared Tube: 1
+  - name: Unfinished Machine Gun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Full Auto Weapon: 1
+          Long Tube: 1
+  - name: Handmade Sten Gun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Sten Gun: 1
+          Hardware Box: 1
+  - name: Golden Handmade Sten Gun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Sten Gun: 1
+          Red Stone: 1
+  - name: Handmade Fast Shotgun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Fast Shotgun: 1
+          Hardware Box: 1
+  - name: Golden Handmade Fast Shotgun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Fast Shotgun: 1
+          Red Stone: 1
+  - name: Handmade Machine Gun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Machine Gun: 1
+          Hardware Box: 1
+  - name: Golden Handmade Machine Gun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Machine Gun: 1
+          Red Stone: 1
+  - name: Handmade Scoped Sten Gun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Sten Gun: 1
+          Handmade Scope: 1
+  - name: Golden Handmade Scoped Sten Gun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Scoped Sten Gun: 1
+          Red Stone: 1
+  - name: Handmade Scoped Fast Shotgun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Fast Shotgun: 1
+          Handmade Scope: 1
+  - name: Golden Handmade Scoped Fast Shotgun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Scoped Fast Shotgun: 1
+          Red Stone: 1
+  - name: Handmade Scoped Machine Gun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Machine Gun: 1
+          Handmade Scope: 1
+  - name: Golden Handmade Scoped Machine Gun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Scoped Machine Gun: 1
+          Red Stone: 1
+
   - H2: Thrown #################################################################
 
   - name: Bone Blade
@@ -452,6 +753,20 @@ resources:
         requirements:
           Animal Skin: 1
           Reel: 1
+  - name: String with Hook
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reel: 1
+          Hardware Box: 1
+  - name: Fishing Rod
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          String with Hook: 1
+          Flexible Branch: 1
 
   ##############################################################################
   - H1: Barricade ##############################################################
@@ -691,10 +1006,14 @@ resources:
           Feathers: 1
   - name: Fully Charged Battery
     raw_resource: true
+  - name: Sanchez's Packages
+    raw_resource: true
 
   - name: Guarana Seeds
     raw_resource: true
   - name: White Plant Seeds
+    raw_resource: true
+  - name: Mushroom Spores
     raw_resource: true
 
   - name: Golden Chalice
