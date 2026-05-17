@@ -525,7 +525,7 @@ resources:
         requirements:
           Handmade Scoped Machine Gun: 1
           Red Stone: 1
-   
+
   - name: Handmade Scope
     recipes:
       - output: 1
@@ -533,6 +533,35 @@ resources:
         requirements:
           Short Tube: 1
           Glasses: 1
+
+  - name: Unfinished Electrogun (Part 1) # TODO: wrong image in recipe view
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Harpoon Grip: 1
+          Tesla Coil: 1
+  - name: Unfinished Electrogun (Part 2)
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Electrogun (Part 1): 1
+          Big Fork: 1
+  - name: Electrogun “Basic”
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Electrogun (Part 2): 1
+          Hardware Box: 1
+  - name: Golden Electrogun “Basic”
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Electrogun “Basic”: 1
+          Red Stone: 1
 
   - H2: Machine ################################################################
 
@@ -785,7 +814,7 @@ resources:
       - output: 1
         recipe_type: Crafting
         requirements:
-          Bottle of Gasoline: 1
+          Bottle Full of Gasoline: 1
           Piece of Cloth: 1
   - name: Explosive Charge
     recipes:
@@ -1168,6 +1197,13 @@ resources:
     raw_resource: true
   - name: Reel
     raw_resource: true
+  - name: Golden Reel
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reel: 1
+          Red Stone: 1
   - name: Big Fork
     raw_resource: true
   - name: Pulleys
@@ -1237,6 +1273,31 @@ resources:
     raw_resource: true
   - name: Sanchez's Packages
     raw_resource: true
+
+  - name: Defibrilator
+    raw_resource: true
+  - name: Useless Defibrilator
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Tesla Coil: 1
+          Hardware Box: 1
+  - name: Tesla Coil
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Golden Reel: 1
+          Short Tube: 1
+  - name: Unfinished Gear
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Cogwheel: 2
 
   - name: Guarana Seeds
     raw_resource: true
