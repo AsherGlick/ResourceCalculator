@@ -13,7 +13,7 @@ from pylib.producer import Producer, SingleFile, GenericProducer
 ################################################################################
 def gz_compressor_producers() -> List[GenericProducer]:
     return [
-        Producer(
+        Producer[SingleFile](
             name="Compress HTTP Files",
             input_path_patterns={
                 "file": r"^output/.*\.(?:html|js|css)$"

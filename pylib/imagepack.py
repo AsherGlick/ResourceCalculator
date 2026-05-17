@@ -29,30 +29,24 @@ class ImagePackOutputFiles(TypedDict):
 ################################################################################
 def item_image_producers(calculator_dir_regex: str) -> List[GenericProducer]:
     return [
-        Producer(
+        Producer[MultiFile](
             name="Pack Image",
             input_path_patterns={
-                "files": [r"^resource_lists/(?P<calculator_dir>{calculator_dir_regex})/items/.*$".format(
-                    calculator_dir_regex=calculator_dir_regex
-                )],
+                "files": [rf"^resource_lists/(?P<calculator_dir>{calculator_dir_regex})/items/.*$"],
             },
             function=image_pack_function,
         ),
-        Producer(
+        Producer[SingleFile](
             name="Compress Packed Image",
             input_path_patterns={
-                "file": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/packed_image\.png$".format(
-                    calculator_dir_regex=calculator_dir_regex
-                ),
+                "file": rf"^cache/(?P<calculator_dir>{calculator_dir_regex})/packed_image\.png$",
             },
             function=image_compress_function,
         ),
-        Producer(
+        Producer[SingleFile](
             name="Copy Hashed Compressed Image",
             input_path_patterns={
-                "file": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/compressed_packed_image\.png$".format(
-                    calculator_dir_regex=calculator_dir_regex,
-                ),
+                "file": rf"^cache/(?P<calculator_dir>{calculator_dir_regex})/compressed_packed_image\.png$",
             },
             function=hash_and_copy_file,
         )
@@ -70,8 +64,9 @@ def item_image_producers(calculator_dir_regex: str) -> List[GenericProducer]:
 def image_pack_function(input_files: MultiFile, groups: Dict[str, str]) -> List[str]:
     calculator_page = groups["calculator_dir"]
 
-    output_image_path: str = os.path.join("cache", calculator_page, "packed_image.png")
-    output_data_path: str = os.path.join("cache", calculator_page, "packed_image_layout.json")
+    output_dir = os.path.join("cache", calculator_page)
+    output_image_path: str = os.path.join(output_dir, "packed_image.png")
+    output_data_path: str = os.path.join(output_dir, "packed_image_layout.json")
     input_image_files: List[str] = input_files["files"]
 
     image_coordinates: Dict[str, Tuple[int, int]] = {}
@@ -108,6 +103,8 @@ def image_pack_function(input_files: MultiFile, groups: Dict[str, str]) -> List[
         y_coordinate = math.floor(index / columns) * standard_height
         image_coordinates[name] = (x_coordinate, y_coordinate)
 
+    os.makedirs(output_dir, exist_ok=True)
+
     # Create the new packed image file and all the coordinates of the images
     result = Image.new('RGBA', (result_width, result_height))
     for image_name, image_path in images:
@@ -123,7 +120,6 @@ def image_pack_function(input_files: MultiFile, groups: Dict[str, str]) -> List[
     result.save(output_image_path)
 
     # Write the metadata for the packed image that will be used for later phases
-    os.makedirs(os.path.dirname(output_data_path), exist_ok=True)
     with open(output_data_path, 'w') as f:
         json.dump({
             "standard_width": standard_width,

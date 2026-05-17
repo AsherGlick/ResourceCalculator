@@ -2533,16 +2533,3 @@ class BuildLogTests(unittest.TestCase):
                 "output_2_one.txt",
             ],
         )
-
-
-# class Initialization_Query_Tests(unittest.TestCase):
-#     pass
-
-# class Insert_Query_Tests(unittest.TestCase):
-#     pass
-
-# class Remove_Query_Tests(unittest.TestCase):
-#     pass
-
-# class Filesets_Query_Tests(unittest.TestCase):
-#     pass

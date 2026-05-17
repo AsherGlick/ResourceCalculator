@@ -111,7 +111,7 @@ class Producer(Generic[InputFileDatatype]):
                 field_regex_groups.add(group_name)
                 all_regex_groups.add(group_name)
 
-            self._regex_groups[field_name] = list(field_regex_groups)
+            self._regex_groups[field_name] = sorted(list(field_regex_groups))
 
         self._all_regex_groups: List[str] = sorted(list(all_regex_groups))
 
@@ -137,17 +137,6 @@ class Producer(Generic[InputFileDatatype]):
 
     def get_match_group_id(self, group_name: str) -> str:
         return str(self._regex_group_to_index[group_name])
-
-    # ############################################################################
-    # # get_field_table_name
-    # #
-    # # A helper function to produce the name of the table that stores matches
-    # # for a particular field.
-    # # TODO: The SQL logic should somehow be moved to scheduler.py
-    # ############################################################################
-    # @staticmethod
-    # def get_field_table_name(producer_index: int, field_index: int) -> str:
-    #     return "producer{producer_index}_field{field_index}_matches".format(producer_index=producer_index, field_index=field_index)
 
     def get_field_id(self, field_name: str) -> str:
         return str(self._field_to_field_id[field_name])

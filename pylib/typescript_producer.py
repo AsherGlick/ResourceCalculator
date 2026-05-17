@@ -47,7 +47,7 @@ def typescript_producer(
     input_files_regex = "|".join(input_files)
 
     return [
-        Producer(
+        Producer[TypescriptInputFiles](
             name="Compile Typescript to Javascript",
             input_path_patterns={
                 "inputs": [input_files_regex],

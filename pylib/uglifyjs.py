@@ -2,7 +2,7 @@ from typing import Callable, List, Dict
 import shutil
 import subprocess
 
-from pylib.producer import Producer, SingleFile
+from pylib.producer import Producer, SingleFile, GenericProducer
 
 ProducerFunctionType = Callable[[SingleFile, Dict[str, str]], List[str]]
 
@@ -53,8 +53,8 @@ def uglify_js_string(js_string: str) -> str:
 #
 # Creates a producer that minifies a javascript file.
 ################################################################################
-def uglify_js_producer(input_file: str, output_file: str) -> Producer[SingleFile]:
-    return Producer(
+def uglify_js_producer(input_file: str, output_file: str) -> GenericProducer:
+    return Producer[SingleFile](
         name="Minify Javascript " + input_file,
         input_path_patterns={
             "file": "^" + input_file + "$",

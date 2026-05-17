@@ -16,15 +16,11 @@ from pylib.resource_list import ResourceList, get_primitive
 ################################################################################
 def editor_producers(calculator_dir_regex: str) -> List[GenericProducer]:
     return [
-        Producer(
+        Producer[EditorInputFiles](
             name="Build Editor page",
             input_path_patterns={
-                "resources_pickle": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/resources\.pickle$".format(
-                    calculator_dir_regex=calculator_dir_regex
-                ),
-                "image_layout_json": r"^cache/(?P<calculator_dir>{calculator_dir_regex})/packed_image_layout\.json$".format(
-                    calculator_dir_regex=calculator_dir_regex
-                ),
+                "resources_pickle": rf"^cache/(?P<calculator_dir>{calculator_dir_regex})/resources\.pickle$",
+                "image_layout_json": rf"^cache/(?P<calculator_dir>{calculator_dir_regex})/packed_image_layout\.json$",
                 "editor_template": r"^core/edit\.html$",
             },
             function=editor_function,

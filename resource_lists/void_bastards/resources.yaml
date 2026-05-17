@@ -1,0 +1,2245 @@
+---
+authors:
+  Ben: "https://benjaminvreeland.com"
+
+index_page_display_name: Void Bastards
+
+game_version: "9388"
+
+note: |
+  Based on
+  https://voidbastards.fandom.com/wiki/Void_Bastards_Wiki
+  https://steamcommunity.com/sharedfiles/filedetails/?id=2799409005
+  https://steamcommunity.com/sharedfiles/filedetails/?id=1762175988
+
+recipe_types:
+  Build: Use {IN_ITEMS} at the workbench to build {OUT_ITEM}
+  Recycle: Recycle {IN_ITEMS} at the workbench into {OUT_ITEM}
+  Salvage: Salvage {IN_ITEMS} to get {OUT_ITEM}
+
+  Buy: Spend {IN_ITEMS} at a Krell-Mart to buy {OUT_ITEM}
+  Buy (Depth 1): Spend {IN_ITEMS} at a depth 1 Krell-Mart to buy {OUT_ITEM}
+  Buy (Depth 2): Spend {IN_ITEMS} at a depth 2 Krell-Mart to buy {OUT_ITEM}
+  Buy (Depth 3): Spend {IN_ITEMS} at a depth 3 Krell-Mart to buy {OUT_ITEM}
+  Buy (Depth 4): Spend {IN_ITEMS} at a depth 4 Krell-Mart to buy {OUT_ITEM}
+  Buy (Depth 5): Spend {IN_ITEMS} at a depth 5 Krell-Mart to buy {OUT_ITEM}
+
+  Sell (Depth 1): Sell {IN_ITEMS} at a depth 1 Krell-Mart to get {OUT_ITEM}
+  Sell (Depth 2): Sell {IN_ITEMS} at a depth 2 Krell-Mart to get {OUT_ITEM}
+  Sell (Depth 3): Sell {IN_ITEMS} at a depth 3 Krell-Mart to get {OUT_ITEM}
+  Sell (Depth 4): Sell {IN_ITEMS} at a depth 4 Krell-Mart to get {OUT_ITEM}
+  Sell (Depth 5): Sell {IN_ITEMS} at a depth 5 Krell-Mart to get {OUT_ITEM}
+
+  Upgrade (FIX): Upgrade {IN_ITEMS} in a FIX room to get {OUT_ITEM}
+  Recycle (GARB): Recycle {IN_ITEMS} in a GARB room to get {OUT_ITEM}
+
+resources:
+  ##############################################################################
+  - H1: Action Items ###########################################################
+  ##############################################################################
+
+  - name: Citizen Card
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          ID Card: 1
+          Line Printer: 1
+  - name: HR Computer
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Wiring Diagram: 1
+          TACputer: 1
+          Mouse Ball: 1
+  - name: Water Cooling
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Body Fluid: 1
+          Cool Pops: 1
+          Water Based Lube: 1
+  - name: Transmitter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Atomic Clock: 1
+          Handset: 1
+          Lette Wheel: 1
+  - name: Reg Certificate
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          CNT Stamp: 1
+          Ink: 1
+          Laminator: 1
+
+  ##############################################################################
+  - H1: Workbench ##############################################################
+  ##############################################################################
+
+  - H2: Firearms ###############################################################
+
+  - name: Regulator
+    raw_resource: true
+  - name: Hefty Regulator
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Metal Tube: 1
+          Regulator: 1
+  - name: Swift Regulator
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Colon Irrigator: 1
+          Whizz Rocks: 1
+          Hefty Regulator: 1
+  - name: Legislator
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Chain: 1
+          Pneum Tube: 1
+          Swift Regulator: 1
+  - name: Bullet Hunter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Magnifying Glass: 1
+
+  - name: Stapler
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          FTL Nozzle: 1
+  - name: Senior Stapler
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Med Blower: 1
+          Spanner: 1
+          Stapler: 1
+  - name: Head Stapler
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Metal Tube: 1
+          Slag Melter: 1
+          Senior Stapler: 1
+  - name: Staple Hunter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Surgery 4 Dummies: 1
+
+  - name: Toaster
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Nutri Tray: 1
+  - name: Roaster
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Body Fluid: 1
+          Skin Tape: 1
+          Toaster: 1
+  - name: Toast Hunter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Screwshifter: 1
+          The Art of Warp: 1
+
+  - name: Riveter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Drill: 1
+  - name: Riveter Pro
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Chain: 1
+          Drill: 1
+          Riveter: 1
+  - name: Rivet Hunter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Crowbar: 1
+          Slag Melter: 1
+
+  - name: Nebulator
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Pneum Tube: 1
+  - name: Uberlator
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          The Art of Warp: 1
+          Slop Can: 1
+          Nebulator: 1
+  - name: Nebula Hunter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio Scalpel: 1
+          Slop Can: 1
+
+  # DLC
+  - name: Whackuum
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Fan Blade: 1
+          Thread Press: 1
+  - name: Smackuum
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Fan Blade: 1
+          Skin Tape: 1
+          Whackuum: 1
+  - name: Void Hunter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Lumstik: 1
+          Thread Press: 1
+
+  - H2: Indirect ###############################################################
+
+  - name: Bushwhacker
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Buzz Box: 1
+  - name: Fastwhacker
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Metal Tube: 1
+          XTC Stim: 1
+          Bushwhacker: 1
+  - name: Boomwhacker
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Atomic Clock: 1
+          Juve's Cookbook: 1
+          Fastwhacker: 1
+  - name: Trap Hunter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Juve's Cookbook: 1
+          Lumstik: 1
+
+  - name: Spiker
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Med Blower: 1
+  - name: Germspiker
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          ION BRU: 1
+          Surgery 4 Dummies: 1
+          Spiker: 1
+  - name: Virspiker
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Distended Testicle: 1
+          Poly Sheath: 1
+          Germspiker: 1
+  - name: Spike Hunter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Transit Regs: 1
+
+  - name: Banger
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Compressor: 1
+  - name: Big Banger
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Cool Pops: 1
+          PAC Handbook: 1
+          Banger: 1
+  - name: Explosive Hunter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Magnifying Glass: 1
+          WCG Policy: 1
+
+  - name: Clusterflack
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Detonator: 1
+  - name: Clusterfluck
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Handset: 1
+          Whizz Rocks: 1
+          Clusterflack: 1
+  - name: Bomb Hunter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Lint Brush: 1
+          Recyc Sac: 1
+
+  - name: Rad Spiker
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Lumstik: 1
+  - name: Glow Spiker
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Drill: 1
+          Rad Shield: 1
+          Rad Spiker: 1
+  - name: Rad Hunter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio Scalpel: 1
+          PAC Handbook: 1
+
+  - H2: Devices ################################################################
+
+  - name: Zapper
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          XTC Stim: 1
+  - name: Cow Zapper
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Duct Tape: 1
+          Lint Brush: 1
+          Zapper: 1
+  - name: Herd Zapper
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Body Fluid: 1
+          Laminator: 1
+          Cow Zapper: 1
+  - name: Zap Hunter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Drill: 1
+          Wiring Diagram: 1
+
+  - name: Kittybot
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Control Collar: 1
+  - name: Unstable Kitty
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Duct Tape: 1
+          Juve's Cookbook: 1
+          Kittybot: 1
+  - name: Kitty Hunter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Mouse Ball: 1
+          Robo Manual: 1
+
+  - name: Rifter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Warp Sphere: 1
+  - name: Hyper Rifter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Lette Wheel: 1
+          Magnetron: 1
+          Rifter: 1
+  - name: Rift Hunter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Kraut Kan: 1
+          The Art of Warp: 1
+
+  - name: Bouncer
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Distended Testicle: 1
+  - name: Zec Hunter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Recyc Sac: 1
+          Surgery 4 Dummies: 1
+
+  - name: Scrambler
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Magnetron: 1
+  - name: Scram Hunter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Poly Sheath: 1
+          Warp Sphere: 1
+
+  - H2: Upgrades ###############################################################
+
+  - name: Gunpoint MGR
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Transit Regs: 1
+  - name: V.P. Gunpoints
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          V.P. Gunpoints: 1
+          WCG Policy: 1
+          Gunpoint MGR: 1
+  - name: Merit Badge
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Form T82B: 1
+  - name: Merit Garter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Skin Tape: 1
+          Wiring Diagram: 1
+          Merit Badge: 1
+  - name: Door Manager
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Mouse Ball: 1
+  - name: Secbot Manager
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          WCG Policy: 1
+  - name: V.P. of Bots
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Circular 983 AR: 1
+          Ink: 1
+          Secbot Manager: 1
+  - name: Cargo Manager
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Circular 983 AR: 1
+          Transit Regs: 1
+  - name: Term Manager
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Circular 983 AR: 1
+
+  - name: Trainers
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Compressor: 1
+  - name: Air Freshener
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Cool Pops: 1
+          ION BRU: 1
+  - name: Rad Cream
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Magnifying Glass: 1
+          Water Based Lube: 1
+  - name: Asbestos Jacket
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Colon Irrigator: 1
+          Lint Brush: 1
+
+  - name: Part Locator
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Glow Bulb: 1
+  - name: Fuel Scavenger
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Latex Seal: 1
+  - name: Rebreather
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Compressor: 1
+          Restraint Pad: 1
+  - name: Re-Rebreather
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Pneum Tube: 1
+          Whizz Rocks: 1
+          Rebreather: 1
+  - name: Disassembler
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Latex Seal: 1
+          Spanner: 1
+  - name: Decompiler
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Crowbar: 1
+          Spanner: 1
+          Disassembler: 1
+  - name: Deconstructor
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Detonator: 1
+          Screwshifter: 1
+          Decompiler: 1
+  - name: Demoleculator
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio Scalpel: 1
+          Screwshifter: 1
+          Deconstructor: 1
+
+  - name: Padded Jacket
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Restraint Pad: 1
+  - name: Flak Vest
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Nutri Tray: 1
+          Restraint Pad: 1
+          Padded Jacket: 1
+  - name: Carapace
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Kraut Kan: 1
+          Nutri Tray: 1
+          Flak Vest: 1
+  - name: Lead Carapace
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Nutri Tray: 1
+          Rad Shield: 1
+          Carapace: 1
+  - name: Steel Carapace
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          CNT Stamp: 1
+          Rad Shield: 1
+          Lead Carapace: 1
+  - name: Ammo Subsidy
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Form T82B: 1
+  - name: Travel Subsidy
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Duct Tape: 1
+  - name: Travel Rort
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          ID Card: 1
+          Kraut Kan: 1
+          Travel Subsidy: 1
+  - name: Heart Starter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Control Collar: 1
+          Surgery 4 Dummies: 1
+  - name: Qi Starter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Distended Testicle: 1
+          Whizz Rocks: 1
+          Heart Starter: 1
+  - name: Colon Cleanser
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Compressor: 1
+          ION BRU: 1
+
+  ##############################################################################
+  - H1: Parts ##################################################################
+  ##############################################################################
+
+  - H2: Tier 1 #################################################################
+
+  - name: Buzz Box
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Data: 20
+          Volt: 20
+  - name: Control Collar
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Data: 20
+          Volt: 20
+  - name: FTL Nozzle
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Slag: 20
+          Volt: 20
+  - name: Glow Bulb
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 3
+          Plaz: 3
+  - name: Latex Seal
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 20
+          Plaz: 20
+  - name: Line Printer
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Data: 20
+          Slag: 20
+  - name: Med Blower
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Plaz: 20
+          Slag: 20
+  - name: Restraint Pad
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 20
+          Plaz: 20
+  - name: XTC Stim
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 20
+          Slag: 10
+          Volt: 10
+
+  - H2: Tier 2 #################################################################
+
+  - name: Compressor
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Plaz: 40
+          Slag: 20
+          Volt: 20
+  - name: Detonator
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Plaz: 40
+          Slag: 20
+          Volt: 20
+  - name: Duct Tape
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 60
+          Plaz: 20
+  - name: Form T82B
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 20
+          Data: 40
+          Plaz: 20
+  - name: ID Card
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 20
+          Data: 60
+  - name: Magnifying Glass
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Plaz: 40
+          Slag: 40
+  - name: Metal Tube
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Slag: 80
+  - name: Nutri Tray
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Slag: 40
+          Volt: 40
+  - name: Spanner
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Slag: 40
+          Volt: 40
+  - name: Surgery 4 Dummies
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 40
+          Data: 40
+  - name: Transit Regs
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 40
+          Data: 40
+  - name: Warp Sphere
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Plaz: 20
+          Volt: 60
+  - name: Wiring Diagram
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Data: 40
+          Plaz: 40
+
+  - H2: Tier 3 #################################################################
+
+  - name: Colon Irrigator
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 40
+          Plaz: 80
+          Slag: 40
+  - name: Crowbar
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Slag: 120
+          Volt: 40
+  - name: Drill
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Slag: 80
+          Volt: 80
+  - name: ION BRU
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 80
+          Data: 80
+  - name: Juve's Cookbook
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 80
+          Data: 80
+  - name: Kraut Kan
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Slag: 80
+          Volt: 80
+  - name: Lint Brush
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 80
+          Plaz: 80
+  - name: Lumstik
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Plaz: 80
+          Volt: 80
+  - name: Mouse Ball
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Plaz: 80
+          Volt: 80
+  - name: Pneum Tube
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Plaz: 80
+          Slag: 80
+  - name: WCG Policy
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 80
+          Data: 80
+  - name: Water Based Lube
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 80
+          Plaz: 80
+  - name: Whizz Rocks
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 80
+          Volt: 80
+
+  - H2: Tier 4 #################################################################
+
+  - name: Body Fluid
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Plaz: 80
+          Slag: 80
+          Volt: 160
+  - name: Circular 983 AR
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 80
+          Data: 240
+  - name: Cool Pops
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Data: 80
+          Plaz: 80
+          Volt: 160
+  - name: Distended Testicle
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 320
+  - name: Lette Wheel
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Plaz: 160
+          Slag: 80
+          Volt: 80
+  - name: Rad Shield
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Slag: 320
+  - name: Recyc Sac
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Plaz: 240
+          Volt: 80
+  - name: Robo Manual
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 80
+          Data: 240
+  - name: Screwshifter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Slag: 160
+          Volt: 160
+  - name: Skin Tape
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 160
+          Plaz: 160
+  - name: Slag Melter
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Slag: 160
+          Volt: 160
+  - name: TACputer
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Data: 80
+          Slag: 40
+          Volt: 40
+  - name: The Art of Warp
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 80
+          Data: 240
+
+  - H2: Tier 5 #################################################################
+
+  - name: Atomic Clock
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Data: 320
+          Volt: 320
+  - name: Bio Scalpel
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 320
+          Slag: 160
+          Volt: 160
+  - name: Chain
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Slag: 640
+  - name: CNT Stamp
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 160
+          Data: 320
+          Plaz: 160
+  - name: Handset
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Data: 320
+          Slag: 320
+  - name: Ink
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 320
+          Plaz: 320
+  - name: Laminator
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Plaz: 320
+          Volt: 320
+  - name: Magnetron
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Data: 160
+          Slag: 160
+          Volt: 320
+  - name: PAC Handbook
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 320
+          Data: 320
+  - name: Poly Sheath
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 320
+          Plaz: 320
+  - name: Slop Can
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Plaz: 320
+          Volt: 320
+
+  - H2: DLC ####################################################################
+
+  - name: Fan Blade
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Bio: 20
+          Plaz: 20
+  - name: Thread Press
+    recipes:
+      - output: 1
+        recipe_type: Build
+        requirements:
+          Slag: 20
+          Volt: 20
+
+  ##############################################################################
+  - H1: Materials ##############################################################
+  ##############################################################################
+
+  - name: Bio
+    raw_resource: true
+    currency: true
+    recipes:
+      - output: 10
+        recipe_type: Buy (Depth 1)
+        requirements:
+          Merits: 40
+      - output: 20
+        recipe_type: Buy (Depth 2)
+        requirements:
+          Merits: 40
+      - output: 40
+        recipe_type: Buy (Depth 3)
+        requirements:
+          Merits: 40
+      - output: 80
+        recipe_type: Buy (Depth 4)
+        requirements:
+          Merits: 40
+      - output: 160
+        recipe_type: Buy (Depth 5)
+        requirements:
+          Merits: 40
+      - output: 1
+        recipe_type: Salvage
+        requirements:
+          Finger: 1
+      - output: 2
+        recipe_type: Salvage
+        requirements:
+          Eyeball: 1
+      - output: 5
+        recipe_type: Salvage
+        requirements:
+          Hand: 1
+      - output: 10
+        recipe_type: Salvage
+        requirements:
+          Spleen: 1
+      - output: 20
+        recipe_type: Salvage
+        requirements:
+          Heart: 1
+      - output: 50
+        recipe_type: Salvage
+        requirements:
+          Head: 1
+      - output: 10
+        recipe_type: Salvage
+        requirements:
+          Dust Pak (10 Bio): 1
+      - output: 50
+        recipe_type: Salvage
+        requirements:
+          Dust Pak (50 Bio): 1
+      # Tier 1
+      - output: 10
+        recipe_type: Recycle
+        requirements:
+          Latex Seal: 1
+      - output: 10
+        recipe_type: Recycle
+        requirements:
+          XTC Stim: 1
+      # Tier 2
+      - output: 20
+        recipe_type: Recycle
+        requirements:
+          Duct Tape: 1
+      - output: 20
+        recipe_type: Recycle
+        requirements:
+          Surgery 4 Dummies: 1
+      - output: 20
+        recipe_type: Recycle
+        requirements:
+          Transit Regs: 1
+      # Tier 3
+      - output: 40
+        recipe_type: Recycle
+        requirements:
+          ION BRU: 1
+      - output: 40
+        recipe_type: Recycle
+        requirements:
+          Water Based Lube: 1
+      - output: 40
+        recipe_type: Recycle
+        requirements:
+          Whizz Rocks: 1
+      # Tier 4
+      - output: 80
+        recipe_type: Recycle
+        requirements:
+          Distended Testicle: 1
+      - output: 80
+        recipe_type: Recycle
+        requirements:
+          Skin Tape: 1
+      # Tier 5
+      - output: 160
+        recipe_type: Recycle
+        requirements:
+          Bio Scalpel: 1
+      - output: 160
+        recipe_type: Recycle
+        requirements:
+          Ink: 1
+      - output: 160
+        recipe_type: Recycle
+        requirements:
+          PAC Handbook: 1
+
+  - name: Data
+    raw_resource: true
+    currency: true
+    recipes:
+      - output: 10
+        recipe_type: Buy (Depth 1)
+        requirements:
+          Merits: 40
+      - output: 20
+        recipe_type: Buy (Depth 2)
+        requirements:
+          Merits: 40
+      - output: 40
+        recipe_type: Buy (Depth 3)
+        requirements:
+          Merits: 40
+      - output: 80
+        recipe_type: Buy (Depth 4)
+        requirements:
+          Merits: 40
+      - output: 160
+        recipe_type: Buy (Depth 5)
+        requirements:
+          Merits: 40
+      - output: 1
+        recipe_type: Salvage
+        requirements:
+          Hole Card: 1
+      - output: 2
+        recipe_type: Salvage
+        requirements:
+          Tape Slug: 1
+      - output: 5
+        recipe_type: Salvage
+        requirements:
+          E Cassette: 1
+      - output: 10
+        recipe_type: Salvage
+        requirements:
+          Floppy Cube: 1
+      - output: 20
+        recipe_type: Salvage
+        requirements:
+          Memstick: 1
+      - output: 50
+        recipe_type: Salvage
+        requirements:
+          Hard Cube: 1
+      # Tier 1
+      - output: 10
+        recipe_type: Recycle
+        requirements:
+          Control Collar: 1
+      - output: 10
+        recipe_type: Recycle
+        requirements:
+          Line Printer: 1
+      # Tier 2
+      - output: 20
+        recipe_type: Recycle
+        requirements:
+          Form T82B: 1
+      - output: 20
+        recipe_type: Recycle
+        requirements:
+          ID Card: 1
+      - output: 20
+        recipe_type: Recycle
+        requirements:
+          Wiring Diagram: 1
+      # Tier 3
+      - output: 40
+        recipe_type: Recycle
+        requirements:
+          Juve's Cookbook: 1
+      - output: 40
+        recipe_type: Recycle
+        requirements:
+          WCG Policy: 1
+      - output: 40
+        recipe_type: Recycle
+        requirements:
+          TACputer: 1
+      # Tier 4
+      - output: 80
+        recipe_type: Recycle
+        requirements:
+          Circular 983 AR: 1
+      - output: 80
+        recipe_type: Recycle
+        requirements:
+          Robo Manual: 1
+      - output: 80
+        recipe_type: Recycle
+        requirements:
+          The Art of Warp: 1
+      # Tier 5
+      - output: 160
+        recipe_type: Recycle
+        requirements:
+          Atomic Clock: 1
+      - output: 160
+        recipe_type: Recycle
+        requirements:
+          CNT Stamp: 1
+
+  - name: Plaz
+    raw_resource: true
+    currency: true
+    recipes:
+      - output: 10
+        recipe_type: Buy (Depth 1)
+        requirements:
+          Merits: 40
+      - output: 20
+        recipe_type: Buy (Depth 2)
+        requirements:
+          Merits: 40
+      - output: 40
+        recipe_type: Buy (Depth 3)
+        requirements:
+          Merits: 40
+      - output: 80
+        recipe_type: Buy (Depth 4)
+        requirements:
+          Merits: 40
+      - output: 160
+        recipe_type: Buy (Depth 5)
+        requirements:
+          Merits: 40
+      - output: 1
+        recipe_type: Salvage
+        requirements:
+          Scriber: 1
+      - output: 2
+        recipe_type: Salvage
+        requirements:
+          Optics: 1
+      - output: 5
+        recipe_type: Salvage
+        requirements:
+          Suit Tidy: 1
+      - output: 10
+        recipe_type: Salvage
+        requirements:
+          Docu-mate: 1
+      - output: 20
+        recipe_type: Salvage
+        requirements:
+          Mouse Mat: 1
+      - output: 50
+        recipe_type: Salvage
+        requirements:
+          Mylaroon: 1
+      # Tier 1
+      - output: 2
+        recipe_type: Recycle
+        requirements:
+          Glow Bulb: 1
+      - output: 10
+        recipe_type: Recycle
+        requirements:
+          Restraint Pad: 1
+      # Tier 2
+      - output: 20
+        recipe_type: Recycle
+        requirements:
+          Compressor: 1
+      - output: 20
+        recipe_type: Recycle
+        requirements:
+          Detonator: 1
+      # Tier 3
+      - output: 40
+        recipe_type: Recycle
+        requirements:
+          Colon Irrigator: 1
+      - output: 40
+        recipe_type: Recycle
+        requirements:
+          Lint Brush: 1
+      - output: 40
+        recipe_type: Recycle
+        requirements:
+          Pneum Tube: 1
+      # Tier 4
+      - output: 80
+        recipe_type: Recycle
+        requirements:
+          Lette Wheel: 1
+      - output: 80
+        recipe_type: Recycle
+        requirements:
+          Recyc Sac: 1
+      # Tier 5
+      - output: 160
+        recipe_type: Recycle
+        requirements:
+          Laminator: 1
+      - output: 160
+        recipe_type: Recycle
+        requirements:
+          Poly Sheath: 1
+      # DLC
+      - output: 10
+        recipe_type: Recycle
+        requirements:
+          Fan Blade: 1
+      - output: 10
+        recipe_type: Recycle
+        requirements:
+          Thread Press: 1
+
+  - name: Slag
+    raw_resource: true
+    currency: true
+    recipes:
+      - output: 10
+        recipe_type: Buy (Depth 1)
+        requirements:
+          Merits: 40
+      - output: 20
+        recipe_type: Buy (Depth 2)
+        requirements:
+          Merits: 40
+      - output: 40
+        recipe_type: Buy (Depth 3)
+        requirements:
+          Merits: 40
+      - output: 80
+        recipe_type: Buy (Depth 4)
+        requirements:
+          Merits: 40
+      - output: 160
+        recipe_type: Buy (Depth 5)
+        requirements:
+          Merits: 40
+      - output: 1
+        recipe_type: Salvage
+        requirements:
+          Coin: 1
+      - output: 2
+        recipe_type: Salvage
+        requirements:
+          Foon: 1
+      - output: 5
+        recipe_type: Salvage
+        requirements:
+          Flange: 1
+      - output: 10
+        recipe_type: Salvage
+        requirements:
+          Socket: 1
+      - output: 20
+        recipe_type: Salvage
+        requirements:
+          Z-lock: 1
+      - output: 50
+        recipe_type: Salvage
+        requirements:
+          Bracket: 1
+      # Tier 1
+      - output: 10
+        recipe_type: Recycle
+        requirements:
+          FTL Nozzle: 1
+      - output: 10
+        recipe_type: Recycle
+        requirements:
+          Med Blower: 1
+      # Tier 2
+      - output: 20
+        recipe_type: Recycle
+        requirements:
+          Magnifying Glass: 1
+      - output: 20
+        recipe_type: Recycle
+        requirements:
+          Metal Tube: 1
+      - output: 20
+        recipe_type: Recycle
+        requirements:
+          Spanner: 1
+      # Tier 3
+      - output: 40
+        recipe_type: Recycle
+        requirements:
+          Crowbar: 1
+      - output: 40
+        recipe_type: Recycle
+        requirements:
+          Drill: 1
+      - output: 40
+        recipe_type: Recycle
+        requirements:
+          Kraut Kan: 1
+      # Tier 4
+      - output: 80
+        recipe_type: Recycle
+        requirements:
+          Rad Shield: 1
+      - output: 80
+        recipe_type: Recycle
+        requirements:
+          Screwshifter: 1
+      # Tier 5
+      - output: 160
+        recipe_type: Recycle
+        requirements:
+          Chain: 1
+      - output: 160
+        recipe_type: Recycle
+        requirements:
+          Handset: 1
+
+  - name: Volt
+    raw_resource: true
+    currency: true
+    recipes:
+      - output: 10
+        recipe_type: Buy (Depth 1)
+        requirements:
+          Merits: 40
+      - output: 20
+        recipe_type: Buy (Depth 2)
+        requirements:
+          Merits: 40
+      - output: 40
+        recipe_type: Buy (Depth 3)
+        requirements:
+          Merits: 40
+      - output: 80
+        recipe_type: Buy (Depth 4)
+        requirements:
+          Merits: 40
+      - output: 160
+        recipe_type: Buy (Depth 5)
+        requirements:
+          Merits: 40
+      - output: 1
+        recipe_type: Salvage
+        requirements:
+          AAA Battery: 1
+      - output: 2
+        recipe_type: Salvage
+        requirements:
+          AA Battery: 1
+      - output: 5
+        recipe_type: Salvage
+        requirements:
+          A Battery: 1
+      - output: 10
+        recipe_type: Salvage
+        requirements:
+          B Battery: 1
+      - output: 20
+        recipe_type: Salvage
+        requirements:
+          C Battery: 1
+      - output: 50
+        recipe_type: Salvage
+        requirements:
+          D Battery: 1
+      # Tier 1
+      - output: 10
+        recipe_type: Recycle
+        requirements:
+          Buzz Box: 1
+      # Tier 2
+      - output: 20
+        recipe_type: Recycle
+        requirements:
+          Nutri Tray: 1
+      - output: 20
+        recipe_type: Recycle
+        requirements:
+          Warp Sphere: 1
+      # Tier 3
+      - output: 40
+        recipe_type: Recycle
+        requirements:
+          Lumstik: 1
+      - output: 40
+        recipe_type: Recycle
+        requirements:
+          Mouse Ball: 1
+      # Tier 4
+      - output: 80
+        recipe_type: Recycle
+        requirements:
+          Body Fluid: 1
+      - output: 80
+        recipe_type: Recycle
+        requirements:
+          Cool Pops: 1
+      - output: 80
+        recipe_type: Recycle
+        requirements:
+          Slag Melter: 1
+      # Tier 5
+      - output: 160
+        recipe_type: Recycle
+        requirements:
+          Magnetron: 1
+      - output: 160
+        recipe_type: Recycle
+        requirements:
+          Slop Can: 1
+
+  - H2: Resources ##############################################################
+
+  - name: Merits
+    raw_resource: true
+    currency: true
+    recipes:
+      - output: 10
+        recipe_type: Sell (Depth 1)
+        requirements:
+          Bio: 10
+      - output: 10
+        recipe_type: Sell (Depth 1)
+        requirements:
+          Data: 10
+      - output: 10
+        recipe_type: Sell (Depth 1)
+        requirements:
+          Plaz: 10
+      - output: 10
+        recipe_type: Sell (Depth 1)
+        requirements:
+          Slag: 10
+      - output: 10
+        recipe_type: Sell (Depth 1)
+        requirements:
+          Volt: 10
+      - output: 10
+        recipe_type: Sell (Depth 2)
+        requirements:
+          Bio: 20
+      - output: 10
+        recipe_type: Sell (Depth 2)
+        requirements:
+          Data: 20
+      - output: 10
+        recipe_type: Sell (Depth 2)
+        requirements:
+          Plaz: 20
+      - output: 10
+        recipe_type: Sell (Depth 2)
+        requirements:
+          Slag: 20
+      - output: 10
+        recipe_type: Sell (Depth 2)
+        requirements:
+          Volt: 20
+      - output: 10
+        recipe_type: Sell (Depth 3)
+        requirements:
+          Bio: 40
+      - output: 10
+        recipe_type: Sell (Depth 3)
+        requirements:
+          Data: 40
+      - output: 10
+        recipe_type: Sell (Depth 3)
+        requirements:
+          Plaz: 40
+      - output: 10
+        recipe_type: Sell (Depth 3)
+        requirements:
+          Slag: 40
+      - output: 10
+        recipe_type: Sell (Depth 3)
+        requirements:
+          Volt: 40
+      - output: 10
+        recipe_type: Sell (Depth 4)
+        requirements:
+          Bio: 80
+      - output: 10
+        recipe_type: Sell (Depth 4)
+        requirements:
+          Data: 80
+      - output: 10
+        recipe_type: Sell (Depth 4)
+        requirements:
+          Plaz: 80
+      - output: 10
+        recipe_type: Sell (Depth 4)
+        requirements:
+          Slag: 80
+      - output: 10
+        recipe_type: Sell (Depth 4)
+        requirements:
+          Volt: 80
+      - output: 10
+        recipe_type: Sell (Depth 5)
+        requirements:
+          Bio: 160
+      - output: 10
+        recipe_type: Sell (Depth 5)
+        requirements:
+          Data: 160
+      - output: 10
+        recipe_type: Sell (Depth 5)
+        requirements:
+          Plaz: 160
+      - output: 10
+        recipe_type: Sell (Depth 5)
+        requirements:
+          Slag: 160
+      - output: 10
+        recipe_type: Sell (Depth 5)
+        requirements:
+          Volt: 160
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Finger: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Eyeball: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Hand: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Spleen: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Heart: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Head: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Hole Card: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Tape Slug: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          E Cassette: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Floppy Cube: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Memstick: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Hard Cube: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Scriber: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Optics: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Suit Tidy: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Docu-mate: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Mouse Mat: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Mylaroon: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Coin: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Foon: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Flange: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Socket: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Z-lock: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          Bracket: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          AAA Battery: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          AA Battery: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          A Battery: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          B Battery: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          C Battery: 1
+      - output: 5
+        recipe_type: Recycle (GARB)
+        requirements:
+          D Battery: 1
+
+  - name: Food
+    recipes:
+      - output: 1
+        recipe_type: Buy
+        requirements:
+          Merits: 25
+      - output: 1
+        recipe_type: Salvage
+        requirements:
+          Biscuit: 1
+  - name: Biscuit
+    recipes:
+      - output: 1
+        recipe_type: Buy
+        requirements:
+          Merits: 25
+  - name: Fuel
+    recipes:
+      - output: 1
+        recipe_type: Buy
+        requirements:
+          Merits: 25
+  - name: Warp Key
+    recipes:
+      - output: 1
+        recipe_type: Buy
+        requirements:
+          Merits: 100
+  - name: Torpedo
+    recipes:
+      - output: 1
+        recipe_type: Buy
+        requirements:
+          Merits: 50
+
+  - H2: Ammo ###################################################################
+
+  - name: Bullets
+    recipes:
+      - output: 10
+        recipe_type: Buy
+        requirements:
+          Merits: 5
+  - name: Staples
+    recipes:
+      - output: 4
+        recipe_type: Buy
+        requirements:
+          Merits: 5
+  - name: Toaster Juice
+    recipes:
+      - output: 3
+        recipe_type: Buy
+        requirements:
+          Merits: 5
+  - name: Rivets
+    recipes:
+      - output: 45
+        recipe_type: Buy
+        requirements:
+          Merits: 5
+  - name: Nebula Tubes
+    recipes:
+      - output: 2
+        recipe_type: Buy
+        requirements:
+          Merits: 5
+
+  - name: Bushwhackers
+    recipes:
+      - output: 2
+        recipe_type: Buy
+        requirements:
+          Merits: 5
+  - name: Spikes
+    recipes:
+      - output: 4
+        recipe_type: Buy
+        requirements:
+          Merits: 5
+  - name: Bangers
+    recipes:
+      - output: 2
+        recipe_type: Buy
+        requirements:
+          Merits: 5
+  - name: Clusterflaks
+    recipes:
+      - output: 2
+        recipe_type: Buy
+        requirements:
+          Merits: 5
+  - name: Rad Spikes
+    recipes:
+      - output: 4
+        recipe_type: Buy
+        requirements:
+          Merits: 5
+
+  - name: Zap Charges
+    recipes:
+      - output: 3
+        recipe_type: Buy
+        requirements:
+          Merits: 5
+  - name: Kittybots
+    recipes:
+      - output: 2
+        recipe_type: Buy
+        requirements:
+          Merits: 5
+  - name: Rifter Nuclei
+    recipes:
+      - output: 2
+        recipe_type: Buy
+        requirements:
+          Merits: 5
+  - name: Bouncer Goo
+    recipes:
+      - output: 10
+        recipe_type: Buy
+        requirements:
+          Merits: 5
+  - name: Scrambler Eggs
+    recipes:
+      - output: 2
+        recipe_type: Buy
+        requirements:
+          Merits: 5
+
+  - name: Void Pods
+    recipes:
+      - output: 6
+        recipe_type: Buy
+        requirements:
+          Merits: 5
+  - name: Heart Starters
+    raw_resource: true
+
+  - H2: Junk ###################################################################
+
+  - name: Finger
+    raw_resource: true
+  - name: Eyeball
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          Finger: 1
+  - name: Hand
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          Eyeball: 1
+  - name: Spleen
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          Hand: 1
+  - name: Heart
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          Spleen: 1
+  - name: Head
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          Heart: 1
+  - name: Dust Pak (10 Bio)
+    raw_resource: true
+  - name: Dust Pak (50 Bio)
+    raw_resource: true
+
+  - name: Hole Card
+    raw_resource: true
+  - name: Tape Slug
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          Hole Card: 1
+  - name: E Cassette
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          Tape Slug: 1
+  - name: Floppy Cube
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          E Cassette: 1
+  - name: Memstick
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          Floppy Cube: 1
+  - name: Hard Cube
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          Memstick: 1
+
+  - name: Scriber
+    raw_resource: true
+  - name: Optics
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          Scriber: 1
+  - name: Suit Tidy
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          Optics: 1
+  - name: Docu-mate
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          Suit Tidy: 1
+  - name: Mouse Mat
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          Docu-mate: 1
+  - name: Mylaroon
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          Mouse Mat: 1
+
+  - name: Coin
+    raw_resource: true
+  - name: Foon
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          Coin: 1
+  - name: Flange
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          Foon: 1
+  - name: Socket
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          Flange: 1
+  - name: Z-lock
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          Socket: 1
+  - name: Bracket
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          Z-lock: 1
+
+  - name: AAA Battery
+    raw_resource: true
+  - name: AA Battery
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          AAA Battery: 1
+  - name: A Battery
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          AA Battery: 1
+  - name: B Battery
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          A Battery: 1
+  - name: C Battery
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          B Battery: 1
+  - name: D Battery
+    raw_resource: true
+    recipes:
+      - output: 1
+        recipe_type: Upgrade (FIX)
+        requirements:
+          C Battery: 1

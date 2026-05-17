@@ -7,6 +7,7 @@ import difflib
 import os
 import sys
 import yaml
+import shutil
 sys.path.append("../")
 from pylib.resource_list import ResourceList  # noqa: E402
 from pylib.yaml_token_load import ordered_load  # noqa: E402
@@ -63,10 +64,7 @@ def main() -> None:
 # is set to True then the output is written in place to the input file instead.
 ################################################################################
 def format_single_file(input_filepath: str, same_file: bool = False) -> None:
-    if same_file:
-        output_filepath = input_filepath
-    else:
-        output_filepath = input_filepath + ".formatted"
+    output_filepath = input_filepath + ".tmp"
 
     errors = []
     with open(input_filepath, 'r', encoding="utf_8") as f:
@@ -82,7 +80,16 @@ def format_single_file(input_filepath: str, same_file: bool = False) -> None:
         f.write(resource_list.to_yaml())
         f.write("\n")
 
-    print(diff_yaml(input_filepath, output_filepath))
+    yaml_diff = diff_yaml(input_filepath, output_filepath)
+    print(yaml_diff)
+
+    if same_file:
+        if yaml_diff.strip() == "" and same_file:
+            shutil.move(output_filepath, input_filepath)
+        else:
+            print("not overwriting original file due to yaml errors")
+    else:
+        shutil.move(output_filepath, input_filepath + ".formatted")
 
 
 ################################################################################

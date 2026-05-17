@@ -35,24 +35,18 @@ class LandingPageInputTypes(TypedDict):
 ################################################################################
 def landing_page_producers(calculator_dir_regex: str) -> List[GenericProducer]:
     return [
-        Producer(
+        Producer[SingleFile](
             name="Copy Calculator Icon",
             input_path_patterns={
-                "file": r"^resource_lists/(?P<calculator_dir>{calculator_dir_regex})/icon\.jpg$".format(
-                    calculator_dir_regex=calculator_dir_regex
-                ),
+                "file": rf"^resource_lists/(?P<calculator_dir>{calculator_dir_regex})/icon\.jpg$",
             },
             function=hash_and_copy_file,
         ),
-        Producer(
+        Producer[LandingPageInputTypes](
             name="Build Landing Page",
             input_path_patterns={
-                "files": [r"^cache/(?:{calculator_dir_regex})/page_metadata\.json$".format(
-                    calculator_dir_regex=calculator_dir_regex
-                )],
-                "icon_filename_data": [r"^cache/(?:{calculator_dir_regex})/icon\.jpg_name\.json$".format(
-                    calculator_dir_regex=calculator_dir_regex
-                )],
+                "files": [rf"^cache/(?:{calculator_dir_regex})/page_metadata\.json$"],
+                "icon_filename_data": [rf"^cache/(?:{calculator_dir_regex})/icon\.jpg_name\.json$"],
                 "css_filename_data": r"^cache/calculator\.css\.json",
                 "add_game_filename_data": r"^cache/add_game\.png\.json$",
                 "popular_lists_file": r"^resource_lists/popular_lists\.json$",

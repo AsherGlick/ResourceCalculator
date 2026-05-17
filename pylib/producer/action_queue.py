@@ -1,9 +1,12 @@
 import heapq
-from typing import TypeVar, Generic, Dict, List, Protocol, Optional, Iterator, Union
+from typing import TypeVar, Generic, Dict, List, Protocol, Optional, Iterator, Union, Any
 
 
 class WeakHash(Protocol):
     def weak_hash(self) -> int:
+        ...  # pragma: nocover
+
+    def __lt__(self, other: Any) -> bool:
         ...  # pragma: nocover
 
 
