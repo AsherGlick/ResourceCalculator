@@ -347,7 +347,7 @@ resources:
       - output: 1
         recipe_type: Crafting
         requirements:
-          Unfinished Semi-auto Weapon: 1
+          Unfinished Semi-Auto Weapon: 1
           Flared Tube: 1
   - name: Handmade Pump-Action Shotgun
     recipes:
@@ -382,7 +382,7 @@ resources:
       - output: 1
         recipe_type: Crafting
         requirements:
-          Unfinished Semi-auto Weapon: 1
+          Unfinished Semi-Auto Weapon: 1
           Long Tube: 1
   - name: Handmade Precision Rifle
     recipes:
@@ -534,7 +534,8 @@ resources:
           Short Tube: 1
           Glasses: 1
 
-  - name: Unfinished Electrogun (Part 1) # TODO: wrong image in recipe view
+  - name: Unfinished Electrogun (Part 1)
+    custom_simplename: unfinishedelectrogunpart1
     recipes:
       - output: 1
         recipe_type: Crafting
@@ -542,6 +543,7 @@ resources:
           Harpoon Grip: 1
           Tesla Coil: 1
   - name: Unfinished Electrogun (Part 2)
+    custom_simplename: unfinishedelectrogunpart2
     recipes:
       - output: 1
         recipe_type: Crafting
@@ -549,6 +551,7 @@ resources:
           Unfinished Electrogun (Part 1): 1
           Big Fork: 1
   - name: Electrogun “Basic”
+    custom_simplename: electrogunbasic
     recipes:
       - output: 1
         recipe_type: Crafting
@@ -556,6 +559,7 @@ resources:
           Unfinished Electrogun (Part 2): 1
           Hardware Box: 1
   - name: Golden Electrogun “Basic”
+    custom_simplename: goldenelectrogunbasic
     recipes:
       - output: 1
         recipe_type: Crafting
@@ -982,7 +986,7 @@ resources:
         recipe_type: Crafting
         requirements:
           Healing Plant: 1
-          Piece of Fabric: 1
+          Piece of Cloth: 1
 
   - name: Cassava Root
     raw_resource: true
@@ -1057,14 +1061,14 @@ resources:
         recipe_type: Crafting
         requirements:
           Unfinished Handmade Turret Part 1: 1
-          Electronic Device: 1
+          Motobike Motor: 1
   - name: Unfinished Handmade Turret Part 3
     recipes:
       - output: 1
         recipe_type: Crafting
         requirements:
           Unfinished Handmade Turret Part 2: 1
-          Electronic Device: 1
+          Electric Device: 1
   - name: Handmade Turret
     recipes:
       - output: 1
@@ -1143,6 +1147,7 @@ resources:
   - name: Empty Jerrycan
     raw_resource: true
   - name: Jerrycan Filled with 1/3 of Gasoline
+    custom_simplename: jerrycanfilledwith13ofgasoline
     raw_resource: true
     recipes:
       - output: 1
@@ -1151,6 +1156,7 @@ resources:
           Empty Jerrycan: 1
           Bottle Full of Gasoline: 1
   - name: Jerrycan Filled with 2/3 of Gasoline
+    custom_simplename: jerrycanfilledwith23ofgasoline
     raw_resource: true
     recipes:
       - output: 1
@@ -1167,6 +1173,7 @@ resources:
           Jerrycan Filled with 2/3 of Gasoline: 1
           Bottle Full of Gasoline: 1
   - name: Jerrycan Filled with 1/3 of Water
+    custom_simplename: jerrycanfilledwith13ofwater
     raw_resource: true
     recipes:
       - output: 1
@@ -1175,6 +1182,7 @@ resources:
           Empty Jerrycan: 1
           Bottle Full of Water: 1
   - name: Jerrycan Filled with 2/3 of Water
+    custom_simplename: jerrycanfilledwith23ofwater
     raw_resource: true
     recipes:
       - output: 1
