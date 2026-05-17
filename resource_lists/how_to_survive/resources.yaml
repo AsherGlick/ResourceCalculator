@@ -16,8 +16,16 @@ note: |
 recipe_types:
   Crafting: Combine {IN_ITEMS} to craft {OUT_ITEM}
   Crafting (up to): Combine up to {IN_ITEMS} to craft up to {OUT_ITEM} (keeping the remainder)
-  Crafting (cut): Combine {IN_ITEMS} with a sharp weapon to craft {OUT_ITEM} (keeping the sharp weapon) # TODO enumerate?
+  Crafting (up to, Heat Wave): Combine up to {IN_ITEMS} to craft up to {OUT_ITEM} (keeping the remainder, DLC outfit only)
+  Crafting (cut): Combine {IN_ITEMS} with a sharp weapon to craft {OUT_ITEM} (keeping the sharp weapon)
   Crafting (container): Combine {IN_ITEMS} to transfer 1 gallon to {OUT_ITEM} (keeping the remainder)
+  Crafting (monkey): Bring {IN_ITEMS} to the appropriate monkey to craft {OUT_ITEM}
+  Crafting (Abby): Combine {IN_ITEMS} to craft {OUT_ITEM} (Abby only)
+  Crafting (Kenji): Combine {IN_ITEMS} to craft {OUT_ITEM} (Kenji only)
+  Crafting (Nina): Combine {IN_ITEMS} to craft {OUT_ITEM} (Nina only)
+  Crafting (Jack): Combine {IN_ITEMS} to craft {OUT_ITEM} (Jack only)
+  Crafting (Abby & Kenji): Combine {IN_ITEMS} to craft {OUT_ITEM} (Abby & Kenji only)
+  Crafting (Abby & Jack): Combine {IN_ITEMS} to craft {OUT_ITEM} (Abby & Jack only)
   Cooking: Use {IN_ITEMS} at a fire pit to make {OUT_ITEM}
   Cooking (compressor): Combine {IN_ITEMS} to make {OUT_ITEM} (keeping the compression tank)
 
@@ -52,7 +60,7 @@ resources:
         recipe_type: Crafting
         requirements:
           Wooden Stick: 1
-          Piece of Flint: 1
+          Pieces of Flint: 1
   - name: Wooden Axe
     recipes:
       - output: 1
@@ -82,7 +90,7 @@ resources:
         recipe_type: Crafting
         requirements:
           Iron Stick: 1
-          Piece of Flint: 1
+          Pieces of Flint: 1
   - name: Iron Axe
     recipes:
       - output: 1
@@ -237,12 +245,12 @@ resources:
   - name: Wooden Crossbow
     recipes:
       - output: 1
-        recipe_type: Crafting
+        recipe_type: Crafting (Kenji)
         requirements:
           Wooden Long Bow Pulley: 1
           Harpoon Grip: 1
       - output: 1
-        recipe_type: Crafting
+        recipe_type: Crafting (Kenji)
         requirements:
           Stabilized Wooden Long Bow Pulley: 1
           Harpoon Grip: 1
@@ -270,12 +278,12 @@ resources:
   - name: Carbon Crossbow
     recipes:
       - output: 1
-        recipe_type: Crafting
+        recipe_type: Crafting (Kenji)
         requirements:
           Carbon Long Bow Pulley: 1
           Harpoon Grip: 1
       - output: 1
-        recipe_type: Crafting
+        recipe_type: Crafting (Kenji)
         requirements:
           Stabilized Carbon Long Bow Pulley: 1
           Harpoon Grip: 1
@@ -530,7 +538,7 @@ resources:
   - name: Handmade Scope
     recipes:
       - output: 1
-        recipe_type: Crafting
+        recipe_type: Crafting (Jack)
         requirements:
           Short Tube: 1
           Glasses: 1
@@ -566,6 +574,54 @@ resources:
         recipe_type: Crafting
         requirements:
           Electrogun “Basic”: 1
+          Red Stone: 1
+  - name: Unfinished Electrogun “Spread+” (Part 3)
+    custom_simplename: unfinishedelectrogunspreadpluspart3
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Electrogun (Part 2): 1
+          Capacitor: 1
+  - name: Electrogun “Spread+”
+    custom_simplename: electrogunspreadplus
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Electrogun “Spread+” (Part 3): 1
+          Hardware Box: 1
+  - name: Golden Electrogun “Spread+”
+    custom_simplename: goldenelectrogunspreadplus
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Electrogun “Spread+”: 1
+          Red Stone: 1
+  - name: Unfinished Electrogun “Fast+” (Part 3)
+    custom_simplename: unfinishedelectrogunfastpluspart3
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Electrogun (Part 2): 1
+          Amplifier: 1
+  - name: Electrogun “Fast+”
+    custom_simplename: electrogunfastplus
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Electrogun “Fast+” (Part 3): 1
+          Hardware Box: 1
+  - name: Golden Electrogun “Fast+”
+    custom_simplename: goldenelectrogunfastplus
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Electrogun “Fast+”: 1
           Red Stone: 1
 
   - H2: Machine ################################################################
@@ -745,6 +801,72 @@ resources:
           High Capacity Improved Chainsaw: 1
           Red Stone: 1
 
+  # TODO: "Elite" Chainsaws (Nina)
+  # TODO: Flamethrowers (Nina)
+
+  - name: Unfinished Blower Gun (Part 1)
+    custom_simplename: unfinishedblowergunpart1
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Weapon with Tank: 1
+          Flared Tube: 1
+  - name: Unfinished Blower Gun (Part 2)
+    custom_simplename: unfinishedblowergunpart2
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Blower Gun (Part 1): 1
+          Motobike Motor: 1
+  - name: Unfinished Blower Gun (Part 3)
+    custom_simplename: unfinishedblowergunpart3
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Blower Gun (Part 2): 1
+          Boat Helix: 1
+  - name: Blower Gun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Blower Gun (Part 3): 1
+          Hardware Box: 1
+  - name: Unfinished HC Blower Gun (Part 1)
+    custom_simplename: unfinishedhcblowergunpart1
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Weapon with Double Tank: 1
+          Flared Tube: 1
+  - name: Unfinished HC Blower Gun (Part 2)
+    custom_simplename: unfinishedhcblowergunpart2
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished HC Blower Gun (Part 1): 1
+          Motobike Motor: 1
+  - name: Unfinished HC Blower Gun (Part 3)
+    custom_simplename: unfinishedhcblowergunpart3
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished HC Blower Gun (Part 2): 1
+          Boat Helix: 1
+  - name: High Capacity Blower Gun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished HC Blower Gun (Part 3): 1
+          Hardware Box: 1
+
   - H2: Thrown #################################################################
 
   - name: Bone Blade
@@ -753,6 +875,17 @@ resources:
         recipe_type: Crafting (cut)
         requirements:
           Bone: 1
+          Rusty Machete: 1
+      - output: 1
+        recipe_type: Crafting (cut)
+        requirements:
+          Bone: 1
+          Wooden Axe: 1
+      - output: 1
+        recipe_type: Crafting (cut)
+        requirements:
+          Bone: 1
+          Iron Axe: 1
   - name: Twin Sticks Boomerang
     recipes:
       - output: 1
@@ -772,7 +905,7 @@ resources:
         recipe_type: Crafting
         requirements:
           Twin Sticks Boomerang: 1
-          Piece of Flint: 1
+          Pieces of Flint: 1
   - name: Golden Twin Sticks Cutting Boomerang
     recipes:
       - output: 1
@@ -800,7 +933,7 @@ resources:
         recipe_type: Crafting
         requirements:
           Triple Sticks Boomerang: 1
-          Piece of Flint: 1
+          Pieces of Flint: 1
       - output: 1
         recipe_type: Crafting
         requirements:
@@ -832,14 +965,14 @@ resources:
   - name: Attractive Molotov
     recipes:
       - output: 1
-        recipe_type: Crafting
+        recipe_type: Crafting (Abby & Kenji)
         requirements:
           Fresh Meat: 1
           Molotov Cocktail: 1
   - name: Explosive Bait
     recipes:
       - output: 1
-        recipe_type: Crafting
+        recipe_type: Crafting (Abby & Jack)
         requirements:
           Fresh Meat: 1
           Explosive Charge: 1
@@ -851,22 +984,22 @@ resources:
   - name: Incendiary Ammo for Handmade Guns
     recipes:
       - output: 500
-        recipe_type: Crafting (up to)
+        recipe_type: Crafting (up to, Heat Wave)
         requirements:
           Ammo for Handmade Guns: 500
           Bottle Full of Gasoline: 1
       - output: 500
-        recipe_type: Crafting (up to)
+        recipe_type: Crafting (up to, Heat Wave)
         requirements:
           Ammo for Handmade Guns: 500
           Jerrycan Filled with 1/3 of Gasoline: 1
       - output: 500
-        recipe_type: Crafting (up to)
+        recipe_type: Crafting (up to, Heat Wave)
         requirements:
           Ammo for Handmade Guns: 500
           Jerrycan Filled with 2/3 of Gasoline: 1
       - output: 500
-        recipe_type: Crafting (up to)
+        recipe_type: Crafting (up to, Heat Wave)
         requirements:
           Ammo for Handmade Guns: 500
           Jerrycan Full of Gasoline: 1
@@ -877,6 +1010,17 @@ resources:
         recipe_type: Crafting (cut)
         requirements:
           Wooden Stick: 1
+          Rusty Machete: 1
+      - output: 10
+        recipe_type: Crafting (cut)
+        requirements:
+          Wooden Stick: 1
+          Wooden Axe: 1
+      - output: 10
+        recipe_type: Crafting (cut)
+        requirements:
+          Wooden Stick: 1
+          Iron Axe: 1
   - name: Classic Arrows with Feathers
     recipes:
       - output: 10
@@ -979,6 +1123,55 @@ resources:
           String with Hook: 1
           Flexible Branch: 1
 
+  - name: Cooked Sea Fish
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Fresh Sea Fish: 1
+  - name: Cooked Sea Fish (variant)
+    custom_simplename: cookedseafishvariant
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Fresh Sea Fish (variant): 1
+  - name: Cooked Swamp Fish
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Fresh Swamp Fish: 1
+  - name: Cooked Swamp Fish (variant)
+    custom_simplename: cookedswampfishvariant
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Fresh Swamp Fish (variant): 1
+  - name: Fish N’ Chips
+    custom_simplename: fishnchips
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Cooked Sea Fish: 1
+          Cassava Root: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Cooked Sea Fish (variant): 1
+          Cassava Root: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Cooked Swamp Fish: 1
+          Cassava Root: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Cooked Swamp Fish (variant): 1
+          Cassava Root: 1
   - name: Cooked Meat
     recipes:
       - output: 1
@@ -989,10 +1182,12 @@ resources:
     custom_simplename: steaknmushrooms
     recipes:
       - output: 1
-        recipe_type: Cooking
+        recipe_type: Crafting
         requirements:
           Cooked Meat: 1
           Brown Mushrooms: 1
+
+  # TODO: cooked Crocodile Egg?
 
   - name: Cooked Special White Plant
     recipes:
@@ -1012,7 +1207,7 @@ resources:
     custom_simplename: shieldultrapotion
     recipes:
       - output: 1
-        recipe_type: Crafting
+        recipe_type: Crafting (Abby)
         requirements:
           “Shield” Potion: 1
           Guarana Root: 1
@@ -1028,7 +1223,7 @@ resources:
     custom_simplename: aimultrapotion
     recipes:
       - output: 1
-        recipe_type: Crafting
+        recipe_type: Crafting (Abby)
         requirements:
           “Aim” Potion: 1
           Guarana Root: 1
@@ -1044,7 +1239,7 @@ resources:
     custom_simplename: strengthultrapotion
     recipes:
       - output: 1
-        recipe_type: Crafting
+        recipe_type: Crafting (Abby)
         requirements:
           “Strength” Potion: 1
           Guarana Root: 1
@@ -1102,6 +1297,17 @@ resources:
   - name: Healing Plant
     raw_resource: true
 
+  - name: Fresh Sea Fish
+    raw_resource: true
+  - name: Fresh Sea Fish (variant)
+    custom_simplename: freshseafishvariant
+    raw_resource: true
+  - name: Fresh Swamp Fish
+    raw_resource: true
+  - name: Fresh Swamp Fish (variant)
+    custom_simplename: freshswampfishvariant
+    raw_resource: true
+
   ##############################################################################
   - H1: Armor ##################################################################
   ##############################################################################
@@ -1112,12 +1318,68 @@ resources:
         recipe_type: Crafting (cut)
         requirements:
           Animal Skin: 1
+          Rusty Machete: 1
+      - output: 1
+        recipe_type: Crafting (cut)
+        requirements:
+          Animal Skin: 1
+          Wooden Axe: 1
+      - output: 1
+        recipe_type: Crafting (cut)
+        requirements:
+          Animal Skin: 1
+          Iron Axe: 1
   - name: Tire Strap
     recipes:
       - output: 1
         recipe_type: Crafting (cut)
         requirements:
           Truck Tire: 1
+          Rusty Machete: 1
+      - output: 1
+        recipe_type: Crafting (cut)
+        requirements:
+          Truck Tire: 1
+          Wooden Axe: 1
+      - output: 1
+        recipe_type: Crafting (cut)
+        requirements:
+          Truck Tire: 1
+          Iron Axe: 1
+
+  - name: Soldier Bulletproof Jacket
+    raw_resource: true
+
+  - name: Unfinished Electric Jacket (Step 1)
+    custom_simplename: unfinishedelectricjacketstep1
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Soldier Bulletproof Jacket: 1
+          Big Fork: 1
+  - name: Unfinished Electric Jacket (Step 2)
+    custom_simplename: unfinishedelectricjacketstep2
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Electric Jacket (Step 1): 1
+          Tesla Coil: 1
+  - name: Electric Jacket
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Electric Jacket (Step 2): 1
+          Fuses: 1
+  - name: Fireproof Boots
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Old Boots: 1
+          Fireproof Fabric: 1
 
   ##############################################################################
   - H1: Barricade ##############################################################
@@ -1190,7 +1452,7 @@ resources:
   - H1: Misc ###################################################################
   ##############################################################################
 
-  - name: Piece of Flint
+  - name: Pieces of Flint
     raw_resource: true
   - name: Piece of Cloth
     raw_resource: true
@@ -1198,9 +1460,11 @@ resources:
     raw_resource: true
   - name: Fresh Meat
     raw_resource: true
+  - name: Feathers
+    raw_resource: true
   - name: Animal Skin
     raw_resource: true
-  - name: Feathers
+  - name: Truck Tire
     raw_resource: true
 
   - name: Empty Bottle
@@ -1339,16 +1603,19 @@ resources:
     raw_resource: true
   - name: Hardware Box
     raw_resource: true
-
-  - name: Truck Tire
+  - name: Boat Helix
+    raw_resource: true
+  - name: Capacitor
+    raw_resource: true
+  - name: Amplifier
+    raw_resource: true
+  - name: Fuses
     raw_resource: true
 
   - name: Red Stone
     raw_resource: true
 
   - name: Electric Device
-    raw_resource: true
-  - name: Cogwheel
     raw_resource: true
 
   ##############################################################################
@@ -1393,16 +1660,55 @@ resources:
     raw_resource: true
     recipes:
       - output: 1
-        recipe_type: Crafting
+        recipe_type: Crafting (monkey)
         requirements:
           Golden Reel: 1
           Short Tube: 1
+  - name: Cogwheel
+    raw_resource: true
   - name: Unfinished Gear
     recipes:
       - output: 1
         recipe_type: Crafting
         requirements:
           Cogwheel: 2
+  - name: Gear
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Gear: 1
+          Cogwheel: 1
+  - name: Key Card
+    raw_resource: true
+  - name: Old Boots
+    raw_resource: true
+  - name: Asbestos
+    raw_resource: true
+  - name: Unfinished Fireproof Fabric (Step 1)
+    custom_simplename: unfinishedfireprooffabricstep1
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Asbestos: 1
+          Piece of Cloth: 1
+  - name: Unfinished Fireproof Fabric (Step 2)
+    custom_simplename: unfinishedfireprooffabricstep2
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Fireproof Fabric (Step 1): 2
+  - name: Fireproof Fabric
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Fireproof Fabric (Step 2): 2
+          Unfinished Fireproof Fabric (Step 1): 1
+  - name: Crank
+    raw_resource: true
 
   - name: Guarana Seeds
     raw_resource: true
