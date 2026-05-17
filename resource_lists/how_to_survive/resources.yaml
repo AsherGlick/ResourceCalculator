@@ -16,7 +16,7 @@ note: |
 recipe_types:
   Crafting: Combine {IN_ITEMS} to craft {OUT_ITEM}
   Crafting (up to): Combine up to {IN_ITEMS} to craft up to {OUT_ITEM} (keeping the remainder)
-  Crafting (sharpen): Combine {IN_ITEMS} with a sharp weapon to craft {OUT_ITEM}
+  Crafting (cut): Combine {IN_ITEMS} with a sharp weapon to craft {OUT_ITEM}
   Crafting (container): Combine {IN_ITEMS} to transfer 1 gallon to {OUT_ITEM} (keeping the remainder)
   Cooking: Use {IN_ITEMS} at a fire pit to make {OUT_ITEM}
 
@@ -300,14 +300,6 @@ resources:
           Scoped Carbon Crossbow: 1
           Red Stone: 1
 
-  - name: Handmade Scope
-    recipes:
-      - output: 1
-        recipe_type: Crafting
-        requirements:
-          Short Tube: 1
-          Glasses: 1
-
   - name: Unfinished Semi-Auto Weapon
     recipes:
       - output: 1
@@ -322,20 +314,6 @@ resources:
         requirements:
           Unfinished Semi-Auto Weapon: 1
           Short Tube: 1
-  - name: Unfinished Pump-Action Shotgun
-    recipes:
-      - output: 1
-        recipe_type: Crafting
-        requirements:
-          Unfinished Semi-auto Weapon: 1
-          Flared Tube: 1
-  - name: Unfinished Precision Rifle
-    recipes:
-      - output: 1
-        recipe_type: Crafting
-        requirements:
-          Unfinished Semi-auto Weapon: 1
-          Long Tube: 1
   - name: Handmade Gun
     recipes:
       - output: 1
@@ -349,34 +327,6 @@ resources:
         recipe_type: Crafting
         requirements:
           Handmade Gun: 1
-          Red Stone: 1
-  - name: Handmade Pump-Action Shotgun
-    recipes:
-      - output: 1
-        recipe_type: Crafting
-        requirements:
-          Unfinished Pump-Action Shotgun: 1
-          Hardware Box: 1
-  - name: Golden Handmade Pump-Action Shotgun
-    recipes:
-      - output: 1
-        recipe_type: Crafting
-        requirements:
-          Handmade Pump-Action Shotgun: 1
-          Red Stone: 1
-  - name: Handmade Precision Rifle
-    recipes:
-      - output: 1
-        recipe_type: Crafting
-        requirements:
-          Unfinished Precision Rifle: 1
-          Hardware Box: 1
-  - name: Golden Handmade Precision Rifle
-    recipes:
-      - output: 1
-        recipe_type: Crafting
-        requirements:
-          Handmade Precision Rifle: 1
           Red Stone: 1
   - name: Handmade Scoped Gun
     recipes:
@@ -392,6 +342,27 @@ resources:
         requirements:
           Handmade Scoped Gun: 1
           Red Stone: 1
+  - name: Unfinished Pump-Action Shotgun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Semi-auto Weapon: 1
+          Flared Tube: 1
+  - name: Handmade Pump-Action Shotgun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Pump-Action Shotgun: 1
+          Hardware Box: 1
+  - name: Golden Handmade Pump-Action Shotgun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Pump-Action Shotgun: 1
+          Red Stone: 1
   - name: Handmade Scoped Pump-Action Shotgun
     recipes:
       - output: 1
@@ -405,6 +376,27 @@ resources:
         recipe_type: Crafting
         requirements:
           Handmade Scoped Pump-Action Shotgun: 1
+          Red Stone: 1
+  - name: Unfinished Precision Rifle
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Semi-auto Weapon: 1
+          Long Tube: 1
+  - name: Handmade Precision Rifle
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Precision Rifle: 1
+          Hardware Box: 1
+  - name: Golden Handmade Precision Rifle
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Precision Rifle: 1
           Red Stone: 1
   - name: Handmade Scoped Precision Rifle
     recipes:
@@ -435,20 +427,6 @@ resources:
         requirements:
           Unfinished Full Auto Weapon: 1
           Short Tube: 1
-  - name: Unfinished Fast Shotgun
-    recipes:
-      - output: 1
-        recipe_type: Crafting
-        requirements:
-          Unfinished Full Auto Weapon: 1
-          Flared Tube: 1
-  - name: Unfinished Machine Gun
-    recipes:
-      - output: 1
-        recipe_type: Crafting
-        requirements:
-          Unfinished Full Auto Weapon: 1
-          Long Tube: 1
   - name: Handmade Sten Gun
     recipes:
       - output: 1
@@ -462,34 +440,6 @@ resources:
         recipe_type: Crafting
         requirements:
           Handmade Sten Gun: 1
-          Red Stone: 1
-  - name: Handmade Fast Shotgun
-    recipes:
-      - output: 1
-        recipe_type: Crafting
-        requirements:
-          Unfinished Fast Shotgun: 1
-          Hardware Box: 1
-  - name: Golden Handmade Fast Shotgun
-    recipes:
-      - output: 1
-        recipe_type: Crafting
-        requirements:
-          Handmade Fast Shotgun: 1
-          Red Stone: 1
-  - name: Handmade Machine Gun
-    recipes:
-      - output: 1
-        recipe_type: Crafting
-        requirements:
-          Unfinished Machine Gun: 1
-          Hardware Box: 1
-  - name: Golden Handmade Machine Gun
-    recipes:
-      - output: 1
-        recipe_type: Crafting
-        requirements:
-          Handmade Machine Gun: 1
           Red Stone: 1
   - name: Handmade Scoped Sten Gun
     recipes:
@@ -505,6 +455,27 @@ resources:
         requirements:
           Handmade Scoped Sten Gun: 1
           Red Stone: 1
+  - name: Unfinished Fast Shotgun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Full Auto Weapon: 1
+          Flared Tube: 1
+  - name: Handmade Fast Shotgun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Fast Shotgun: 1
+          Hardware Box: 1
+  - name: Golden Handmade Fast Shotgun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Fast Shotgun: 1
+          Red Stone: 1
   - name: Handmade Scoped Fast Shotgun
     recipes:
       - output: 1
@@ -518,6 +489,27 @@ resources:
         recipe_type: Crafting
         requirements:
           Handmade Scoped Fast Shotgun: 1
+          Red Stone: 1
+  - name: Unfinished Machine Gun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Full Auto Weapon: 1
+          Long Tube: 1
+  - name: Handmade Machine Gun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Machine Gun: 1
+          Hardware Box: 1
+  - name: Golden Handmade Machine Gun
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Handmade Machine Gun: 1
           Red Stone: 1
   - name: Handmade Scoped Machine Gun
     recipes:
@@ -533,13 +525,198 @@ resources:
         requirements:
           Handmade Scoped Machine Gun: 1
           Red Stone: 1
+   
+  - name: Handmade Scope
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Short Tube: 1
+          Glasses: 1
+
+  - H2: Machine ################################################################
+
+  - name: Unfinished Weapon with Tank
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Harpoon Grip: 1
+          Empty Jerrycan: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Harpoon Grip: 1
+          Jerrycan Filled with 1/3 of Gasoline: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Harpoon Grip: 1
+          Jerrycan Filled with 2/3 of Gasoline: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Harpoon Grip: 1
+          Jerrycan Full of Gasoline: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Harpoon Grip: 1
+          Jerrycan Filled with 1/3 of Water: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Harpoon Grip: 1
+          Jerrycan Filled with 2/3 of Water: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Harpoon Grip: 1
+          Jerrycan Full of Water: 1
+
+  - name: Unfinished Small Capacity Chainsaw Step 2
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Weapon with Tank: 1
+          Motobike Motor: 1
+  - name: Unfinished Small Capacity Chainsaw
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Small Capacity Chainsaw Step 2: 1
+          Small Chain: 1
+  - name: Small Capacity Chainsaw
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Small Capacity Chainsaw: 1
+          Hardware Box: 1
+  - name: Golden Small Capacity Chainsaw
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Small Capacity Chainsaw: 1
+          Red Stone: 1
+  - name: Unfinished Small Capacity Improved Chainsaw
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Small Capacity Chainsaw Step 2: 1
+          Big Chain: 1
+  - name: Small Capacity Improved Chainsaw
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Small Capacity Improved Chainsaw: 1
+          Hardware Box: 1
+  - name: Golden Small Capacity Improved Chainsaw
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Small Capacity Improved Chainsaw: 1
+          Red Stone: 1
+
+  - name: Unfinished Weapon with Double Tank
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Weapon with Tank: 1
+          Empty Jerrycan: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Weapon with Tank: 1
+          Jerrycan Filled with 1/3 of Gasoline: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Weapon with Tank: 1
+          Jerrycan Filled with 2/3 of Gasoline: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Weapon with Tank: 1
+          Jerrycan Full of Gasoline: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Weapon with Tank: 1
+          Jerrycan Filled with 1/3 of Water: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Weapon with Tank: 1
+          Jerrycan Filled with 2/3 of Water: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Weapon with Tank: 1
+          Jerrycan Full of Water: 1
+  - name: Unfinished High Capacity Chainsaw Step 3
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished Weapon with Double Tank: 1
+          Motobike Motor: 1
+  - name: Unfinished High Capacity Chainsaw
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished High Capacity Chainsaw Step 3: 1
+          Small Chain: 1
+  - name: High Capacity Chainsaw
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished High Capacity Chainsaw: 1
+          Hardware Box: 1
+  - name: Golden High Capacity Chainsaw
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          High Capacity Chainsaw: 1
+          Red Stone: 1
+  - name: Unfinished High Capacity Improved Chainsaw
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished High Capacity Chainsaw Step 3: 1
+          Big Chain: 1
+  - name: High Capacity Improved Chainsaw
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Unfinished High Capacity Improved Chainsaw: 1
+          Hardware Box: 1
+  - name: Golden High Capacity Improved Chainsaw
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          High Capacity Improved Chainsaw: 1
+          Red Stone: 1
 
   - H2: Thrown #################################################################
 
   - name: Bone Blade
     recipes:
       - output: 1
-        recipe_type: Crafting (sharpen)
+        recipe_type: Crafting (cut)
         requirements:
           Bone: 1
   - name: Twin Sticks Boomerang
@@ -663,7 +840,7 @@ resources:
   - name: Classic Arrows
     recipes:
       - output: 10
-        recipe_type: Crafting (sharpen)
+        recipe_type: Crafting (cut)
         requirements:
           Wooden Stick: 1
   - name: Classic Arrows with Feathers
@@ -767,6 +944,50 @@ resources:
         requirements:
           String with Hook: 1
           Flexible Branch: 1
+
+  - name: Medikit
+    raw_resource: true
+  - name: Healing Poultice
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Healing Plant: 1
+          Piece of Fabric: 1
+
+  - name: Cassava Root
+    raw_resource: true
+  - name: Guarana Root
+    raw_resource: true
+  - name: Brown Mushrooms
+    raw_resource: true
+  - name: Special White Plant
+    raw_resource: true
+  - name: Special Blue Plant
+    raw_resource: true
+  - name: Special Red Plant
+    raw_resource: true
+  - name: Exotic Fruits
+    raw_resource: true
+  - name: Healing Plant
+    raw_resource: true
+
+  ##############################################################################
+  - H1: Armor ##################################################################
+  ##############################################################################
+
+  - name: Leather Strap
+    recipes:
+      - output: 1
+        recipe_type: Crafting (cut)
+        requirements:
+          Animal Skin: 1
+  - name: Tire Strap
+    recipes:
+      - output: 1
+        recipe_type: Crafting (cut)
+        requirements:
+          Truck Tire: 1
 
   ##############################################################################
   - H1: Barricade ##############################################################
@@ -968,17 +1189,25 @@ resources:
     raw_resource: true
   - name: Glasses
     raw_resource: true
+  - name: Small Chain
+    raw_resource: true
+  - name: Big Chain
+    raw_resource: true
 
   - name: Motobike Motor
-    raw_resource: true
-  - name: Electric Device
-    raw_resource: true
-  - name: Cogwheel
     raw_resource: true
   - name: Hardware Box
     raw_resource: true
 
+  - name: Truck Tire
+    raw_resource: true
+
   - name: Red Stone
+    raw_resource: true
+
+  - name: Electric Device
+    raw_resource: true
+  - name: Cogwheel
     raw_resource: true
 
   ##############################################################################
