@@ -1,6 +1,5 @@
 from typing import List, Optional, Any, Union
 import yaml
-import yaml.nodes
 from collections import OrderedDict
 
 from .yaml_token_load import TokenBundle

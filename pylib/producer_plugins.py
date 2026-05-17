@@ -21,13 +21,15 @@ def plugins_producers(calculator_dir_regex: str) -> List[GenericProducer]:
         return [destination_file]
 
     return [
-        Producer[SingleFile](
+        Producer(
             name="Copy Plugin Directories",
             input_path_patterns={
                 # TODO: Get rid of the full path capture group when the bug of
                 # these files deduplicating themselves on only "calculator_dir"
                 # is fixed.
-                "file": rf"^(?P<fullpath>resource_lists/(?P<calculator_dir>{calculator_dir_regex})/plugins/.+/.+)$",
+                "file": r"^(?P<fullpath>resource_lists/(?P<calculator_dir>{calculator_dir_regex})/plugins/.+/.+)$".format(
+                    calculator_dir_regex=calculator_dir_regex
+                ),
             },
             function=function,
         )

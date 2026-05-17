@@ -1,8 +1,7 @@
 from collections import OrderedDict
-from typing import Any, TextIO
+from typing import Any, TextIO, Type
 from typing import NamedTuple
 import yaml
-import yaml.nodes
 
 
 class TokenBundle(NamedTuple):
@@ -38,7 +37,7 @@ def placeholder_constructor(loader: Any, node: yaml.nodes.ScalarNode) -> None:
 # humans to use while also allowing us to set the order of the items for easy
 # grouping
 ################################################################################
-def ordered_load(stream: TextIO) -> Any:
+def ordered_load(stream: TextIO, object_pairs_hook: Type[object] = OrderedDict) -> Any:
     class OrderedLoader(yaml.SafeLoader):
         pass
 
@@ -46,7 +45,7 @@ def ordered_load(stream: TextIO) -> Any:
     def construct_mapping(loader, node):  # type: ignore
         loader.flatten_mapping(node)
         pairs = loader.construct_pairs(node)
-        return OrderedDict(pairs)
+        return object_pairs_hook(pairs)  # type: ignore
 
     OrderedLoader.add_constructor(  # type: ignore
         yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG,
