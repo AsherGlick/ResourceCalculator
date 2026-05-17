@@ -479,7 +479,6 @@ resources:
       - output: 1
         recipe_type: Build
         requirements:
-          V.P. Gunpoints: 1
           WCG Policy: 1
           Gunpoint MGR: 1
   - name: Merit Badge
