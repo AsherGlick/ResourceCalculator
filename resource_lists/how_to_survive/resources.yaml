@@ -2,7 +2,7 @@
 authors:
   Ben: "https://benjaminvreeland.com"
 
-index_page_display_name: How To Survive
+index_page_display_name: How to Survive
 
 game_version: "Oct 21 2014, 18:23:47"
 
@@ -16,10 +16,10 @@ note: |
 recipe_types:
   Crafting: Combine {IN_ITEMS} to craft {OUT_ITEM}
   Crafting (up to): Combine up to {IN_ITEMS} to craft up to {OUT_ITEM} (keeping the remainder)
-  Crafting (up to, Heat Wave): Combine up to {IN_ITEMS} to craft up to {OUT_ITEM} (keeping the remainder, DLC outfit only)
+  Crafting (up to, DLC): Combine up to {IN_ITEMS} to craft up to {OUT_ITEM} (keeping the remainder, DLC skill only)
   Crafting (cut): Combine {IN_ITEMS} with a sharp weapon to craft {OUT_ITEM} (keeping the sharp weapon)
   Crafting (container): Combine {IN_ITEMS} to transfer 1 gallon to {OUT_ITEM} (keeping the remainder)
-  Crafting (monkey): Bring {IN_ITEMS} to the appropriate monkey to craft {OUT_ITEM}
+  Crafting (quest): Bring {IN_ITEMS} to the appropriate questgiver to craft {OUT_ITEM}
   Crafting (Abby): Combine {IN_ITEMS} to craft {OUT_ITEM} (Abby only)
   Crafting (Kenji): Combine {IN_ITEMS} to craft {OUT_ITEM} (Kenji only)
   Crafting (Nina): Combine {IN_ITEMS} to craft {OUT_ITEM} (Nina only)
@@ -692,6 +692,22 @@ resources:
         requirements:
           Small Capacity Chainsaw: 1
           Red Stone: 1
+  - name: Small Capacity Chainsaw +
+    custom_simplename: smallcapacitychainsawplus
+    recipes:
+      - output: 1
+        recipe_type: Crafting (Nina)
+        requirements:
+          Unfinished Small Capacity Chainsaw: 1
+          Hardware Box: 1
+  - name: Golden Small Capacity Chainsaw +
+    custom_simplename: goldensmallcapacitychainsawplus
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Small Capacity Chainsaw +: 1
+          Red Stone: 1
   - name: Unfinished Small Capacity Improved Chainsaw
     recipes:
       - output: 1
@@ -712,6 +728,22 @@ resources:
         recipe_type: Crafting
         requirements:
           Small Capacity Improved Chainsaw: 1
+          Red Stone: 1
+  - name: Small Capacity Improved Chainsaw +
+    custom_simplename: smallcapacityimprovedchainsawplus
+    recipes:
+      - output: 1
+        recipe_type: Crafting (Nina)
+        requirements:
+          Unfinished Small Capacity Improved Chainsaw: 1
+          Hardware Box: 1
+  - name: Golden Small Capacity Improved Chainsaw +
+    custom_simplename: goldensmallcapacityimprovedchainsawplus
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Small Capacity Improved Chainsaw +: 1
           Red Stone: 1
 
   - name: Unfinished Weapon with Double Tank
@@ -779,6 +811,22 @@ resources:
         requirements:
           High Capacity Chainsaw: 1
           Red Stone: 1
+  - name: High Capacity Chainsaw +
+    custom_simplename: highcapacitychainsawplus
+    recipes:
+      - output: 1
+        recipe_type: Crafting (Nina)
+        requirements:
+          Unfinished High Capacity Chainsaw: 1
+          Hardware Box: 1
+  - name: Golden High Capacity Chainsaw +
+    custom_simplename: goldenhighcapacitychainsawplus
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          High Capacity Chainsaw +: 1
+          Red Stone: 1
   - name: Unfinished High Capacity Improved Chainsaw
     recipes:
       - output: 1
@@ -800,9 +848,83 @@ resources:
         requirements:
           High Capacity Improved Chainsaw: 1
           Red Stone: 1
+  - name: High Capacity Improved Chainsaw +
+    custom_simplename: highcapacityimprovedchainsawplus
+    recipes:
+      - output: 1
+        recipe_type: Crafting (Nina)
+        requirements:
+          Unfinished High Capacity Improved Chainsaw: 1
+          Hardware Box: 1
+  - name: Golden High Capacity Improved Chainsaw +
+    custom_simplename: goldenhighcapacityimprovedchainsawplus
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          High Capacity Improved Chainsaw +: 1
+          Red Stone: 1
 
-  # TODO: "Elite" Chainsaws (Nina)
-  # TODO: Flamethrowers (Nina)
+  - name: Uncompleted Flamethrower (Part 1)
+    custom_simplename: uncompletedflamethrowerpart1
+    recipes:
+      - output: 1
+        recipe_type: Crafting (Nina)
+        requirements:
+          Unfinished Weapon with Tank: 1
+          Diving Tank: 1
+  - name: Uncompleted Flamethrower (Part 2)
+    custom_simplename: uncompletedflamethrowerpart2
+    recipes:
+      - output: 1
+        recipe_type: Crafting (Nina)
+        requirements:
+          Uncompleted Flamethrower (Part 1): 1
+          Flared Tube: 1
+  - name: Flamethrower
+    recipes:
+      - output: 1
+        recipe_type: Crafting (Nina)
+        requirements:
+          Uncompleted Flamethrower (Part 2): 1
+          Hardware Box: 1
+  - name: Golden Flamethrower
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Flamethrower: 1
+          Red Stone: 1
+  - name: Uncompleted High Capacity Flamethrower (Part 1)
+    custom_simplename: uncompletedhighcapacityflamethrowerpart1
+    recipes:
+      - output: 1
+        recipe_type: Crafting (Nina)
+        requirements:
+          Unfinished Weapon with Double Tank: 1
+          Diving Tank: 1
+  - name: Uncompleted High Capacity Flamethrower (Part 2)
+    custom_simplename: uncompletedhighcapacityflamethrowerpart2
+    recipes:
+      - output: 1
+        recipe_type: Crafting (Nina)
+        requirements:
+          Uncompleted High Capacity Flamethrower (Part 1): 1
+          Flared Tube: 1
+  - name: High Capacity Flamethrower
+    recipes:
+      - output: 1
+        recipe_type: Crafting (Nina)
+        requirements:
+          Uncompleted High Capacity Flamethrower (Part 2): 1
+          Hardware Box: 1
+  - name: Golden High Capacity Flamethrower
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          High Capacity Flamethrower: 1
+          Red Stone: 1
 
   - name: Unfinished Blower Gun (Part 1)
     custom_simplename: unfinishedblowergunpart1
@@ -984,22 +1106,22 @@ resources:
   - name: Incendiary Ammo for Handmade Guns
     recipes:
       - output: 500
-        recipe_type: Crafting (up to, Heat Wave)
+        recipe_type: Crafting (up to, DLC)
         requirements:
           Ammo for Handmade Guns: 500
           Bottle Full of Gasoline: 1
       - output: 500
-        recipe_type: Crafting (up to, Heat Wave)
+        recipe_type: Crafting (up to, DLC)
         requirements:
           Ammo for Handmade Guns: 500
           Jerrycan Filled with 1/3 of Gasoline: 1
       - output: 500
-        recipe_type: Crafting (up to, Heat Wave)
+        recipe_type: Crafting (up to, DLC)
         requirements:
           Ammo for Handmade Guns: 500
           Jerrycan Filled with 2/3 of Gasoline: 1
       - output: 500
-        recipe_type: Crafting (up to, Heat Wave)
+        recipe_type: Crafting (up to, DLC)
         requirements:
           Ammo for Handmade Guns: 500
           Jerrycan Full of Gasoline: 1
@@ -1187,7 +1309,12 @@ resources:
           Cooked Meat: 1
           Brown Mushrooms: 1
 
-  # TODO: cooked Crocodile Egg?
+  - name: Cooked Egg
+    recipes:
+      - output: 1
+        recipe_type: Cooking
+        requirements:
+          Crocodile Egg: 1
 
   - name: Cooked Special White Plant
     recipes:
@@ -1203,14 +1330,6 @@ resources:
         requirements:
           Special White Plant: 1
           Brown Mushrooms: 1
-  - name: “Shield” Ultra Potion
-    custom_simplename: shieldultrapotion
-    recipes:
-      - output: 1
-        recipe_type: Crafting (Abby)
-        requirements:
-          “Shield” Potion: 1
-          Guarana Root: 1
   - name: “Aim” Potion
     custom_simplename: aimpotion
     recipes:
@@ -1219,14 +1338,6 @@ resources:
         requirements:
           Special White Plant: 1
           Special Blue Plant: 1
-  - name: “Aim” Ultra Potion
-    custom_simplename: aimultrapotion
-    recipes:
-      - output: 1
-        recipe_type: Crafting (Abby)
-        requirements:
-          “Aim” Potion: 1
-          Guarana Root: 1
   - name: “Strength” Potion
     custom_simplename: strengthpotion
     recipes:
@@ -1235,6 +1346,22 @@ resources:
         requirements:
           Special White Plant: 1
           Special Red Plant: 1
+  - name: “Shield” Ultra Potion
+    custom_simplename: shieldultrapotion
+    recipes:
+      - output: 1
+        recipe_type: Crafting (Abby)
+        requirements:
+          “Shield” Potion: 1
+          Guarana Root: 1
+  - name: “Aim” Ultra Potion
+    custom_simplename: aimultrapotion
+    recipes:
+      - output: 1
+        recipe_type: Crafting (Abby)
+        requirements:
+          “Aim” Potion: 1
+          Guarana Root: 1
   - name: “Strength” Ultra Potion
     custom_simplename: strengthultrapotion
     recipes:
@@ -1272,6 +1399,8 @@ resources:
 
   - name: Medikit
     raw_resource: true
+  - name: Healing Plant
+    raw_resource: true
   - name: Healing Poultice
     recipes:
       - output: 1
@@ -1284,6 +1413,9 @@ resources:
     raw_resource: true
   - name: Guarana Root
     raw_resource: true
+  - name: Exotic Fruits
+    raw_resource: true
+
   - name: Brown Mushrooms
     raw_resource: true
   - name: Special White Plant
@@ -1291,21 +1423,6 @@ resources:
   - name: Special Blue Plant
     raw_resource: true
   - name: Special Red Plant
-    raw_resource: true
-  - name: Exotic Fruits
-    raw_resource: true
-  - name: Healing Plant
-    raw_resource: true
-
-  - name: Fresh Sea Fish
-    raw_resource: true
-  - name: Fresh Sea Fish (variant)
-    custom_simplename: freshseafishvariant
-    raw_resource: true
-  - name: Fresh Swamp Fish
-    raw_resource: true
-  - name: Fresh Swamp Fish (variant)
-    custom_simplename: freshswampfishvariant
     raw_resource: true
 
   ##############################################################################
@@ -1347,8 +1464,804 @@ resources:
           Truck Tire: 1
           Iron Axe: 1
 
+  - name: Leg Protections
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Leather Strap: 1
+          Tire Strap: 1
+  - name: Leg Protections with Flint
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Leg Protections: 1
+          Pieces of Flint: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Leg Protections with Bones: 1
+          Pieces of Flint: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Legs Protections: 1
+          Pieces of Flint: 1
+  - name: Leg Protections with Bones
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Leg Protections: 1
+          Bone: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Leg Protections with Flint: 1
+          Bone: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Legs Protections: 1
+          Bone: 1
+  - name: Ghillie Legs Protections
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Leg Protections: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Leg Protections with Flint: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Leg Protections with Bones: 1
+          Camo Kit: 1
+  - name: Arm Protections
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Leg Protections: 1
+          Tire Strap: 1
+  - name: Arm Protections with Flint
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Arm Protections: 1
+          Pieces of Flint: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Leg Protections with Flint: 1
+          Tire Strap: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Arm Protections with Bones: 1
+          Pieces of Flint: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Arms Protections: 1
+          Pieces of Flint: 1
+  - name: Arm Protections with Bones
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Arm Protections: 1
+          Bone: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Leg Protections with Bones: 1
+          Tire Strap: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Arm Protections with Flint: 1
+          Bone: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Arms Protections: 1
+          Bone: 1
+  - name: Ghillie Arms Protections
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Arm Protections: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Legs Protections: 1
+          Tire Strap: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Arm Protections with Flint: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Arm Protections with Bones: 1
+          Camo Kit: 1
+
+  - name: Reinforced Leg Protections
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Leather Strap: 1
+          Iron Sheet: 1
+  - name: Reinforced Leg Protections with Flint
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Leg Protections: 1
+          Pieces of Flint: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Leg Protections with Bones: 1
+          Pieces of Flint: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Ghillie Legs Protections: 1
+          Pieces of Flint: 1
+  - name: Reinforced Leg Protections with Bones
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Leg Protections: 1
+          Bone: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Leg Protections with Flint: 1
+          Bone: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Ghillie Legs Protections: 1
+          Bone: 1
+  - name: Reinforced Ghillie Legs Protections
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Leg Protections: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Leg Protections with Flint: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Leg Protections with Bones: 1
+          Camo Kit: 1
+  - name: Reinforced Arm Protections
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Leg Protections: 1
+          Iron Sheet: 1
+  - name: Reinforced Arm Protections with Flint
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Arm Protections: 1
+          Pieces of Flint: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Leg Protections with Flint: 1
+          Iron Sheet: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Arm Protections with Bones: 1
+          Pieces of Flint: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Ghillie Arms Protections : 1
+          Pieces of Flint: 1
+  - name: Reinforced Arm Protections with Bones
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Arm Protections: 1
+          Bone: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Leg Protections with Bones: 1
+          Iron Sheet: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Arm Protections with Flint: 1
+          Bone: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Ghillie Arms Protections: 1
+          Bone: 1
+  - name: Reinforced Ghillie Arms Protections
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Arm Protections: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Ghillie Legs Protections: 1
+          Iron Sheet: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Arm Protections with Flint: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Arm Protections with Bones: 1
+          Camo Kit: 1
+
+  - name: Soldier Helmet
+    raw_resource: true
+  - name: Helmet with Flint
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Soldier Helmet: 1
+          Pieces of Flint: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Helmet: 1
+          Pieces of Flint: 1
+  - name: Helmet with Bones
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Soldier Helmet: 1
+          Bone: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Helmet: 1
+          Bone: 1
+  - name: Ghillie Helmet
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Soldier Helmet: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Helmet with Flint: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Helmet with Bones: 1
+          Camo Kit: 1
+  - name: Visored Helmet
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Soldier Helmet: 1
+          Iron Grid: 1
+  - name: Hazmat Helmet
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Soldier Helmet: 1
+          Soldier Gas Mask: 1
+
+  - name: Visored Helmet with Flint
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Visored Helmet: 1
+          Pieces of Flint: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Helmet with Grid: 1
+          Pieces of Flint: 1
+  - name: Visored Helmet with Bones
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Visored Helmet: 1
+          Bone: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Helmet with Grid: 1
+          Bone: 1
+  - name: Hazmat Helmet with Flint
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hazmat Helmet: 1
+          Pieces of Flint: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Helmet with Mask: 1
+          Pieces of Flint: 1
+  - name: Hazmat Helmet with Bones
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hazmat Helmet: 1
+          Bone: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Helmet with Mask: 1
+          Bone: 1
+
+  - name: Ghillie Helmet with Grid
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Helmet: 1
+          Iron Grid: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Visored Helmet: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Visored Helmet with Flint: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Visored Helmet with Bones: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Helmet with Mask: 1
+          Iron Grid: 1
+  - name: Ghillie Helmet with Mask
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Helmet: 1
+          Soldier Gas Mask: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hazmat Helmet: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hazmat Helmet with Flint: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hazmat Helmet with Bones: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Helmet with Grid: 1
+          Soldier Gas Mask: 1
+
+  - name: Reinforced Helmet
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Soldier Helmet: 1
+          Iron Sheet: 1
+
+  - name: Reinforced Helmet with Flint
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Helmet: 1
+          Pieces of Flint: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Helmet with Flint: 1
+          Iron Sheet: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Ghillie Helmet: 1
+          Pieces of Flint: 1
+  - name: Reinforced Helmet with Bones
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Helmet: 1
+          Bone: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Helmet with Bones: 1
+          Iron Sheet: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Ghillie Helmet: 1
+          Bone: 1
+  - name: Reinforced Ghillie Helmet
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Helmet: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Helmet: 1
+          Iron Sheet: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Helmet with Flint: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Helmet with Bones: 1
+          Camo Kit: 1
+  - name: Visored Reinforced Helmet
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Helmet: 1
+          Iron Grid: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Visored Helmet: 1
+          Iron Sheet: 1
+  - name: Reinforced Hazmat Helmet
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Helmet: 1
+          Soldier Gas Mask: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hazmat Helmet: 1
+          Iron Sheet: 1
+
+  - name: Visored Reinforced Helmet with Flint
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Visored Reinforced Helmet: 1
+          Pieces of Flint: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Visored Helmet with Flint: 1
+          Iron Sheet: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Ghillie Helmet with Grid: 1
+          Pieces of Flint: 1
+  - name: Visored Reinforced Helmet with Bones
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Visored Reinforced Helmet: 1
+          Bone: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Visored Helmet with Bones: 1
+          Iron Sheet: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Ghillie Helmet with Grid: 1
+          Bone: 1
+  - name: Reinforced Hazmat Helmet with Flint
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Hazmat Helmet: 1
+          Pieces of Flint: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hazmat Helmet with Flint: 1
+          Iron Sheet: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Ghillie Helmet with Mask: 1
+          Pieces of Flint: 1
+  - name: Reinforced Hazmat Helmet with Bones
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Hazmat Helmet: 1
+          Bone: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Hazmat Helmet with Bones: 1
+          Iron Sheet: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Ghillie Helmet with Mask: 1
+          Bone: 1
+
+  - name: Reinforced Ghillie Helmet with Grid
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Ghillie Helmet: 1
+          Iron Grid: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Visored Reinforced Helmet: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Helmet with Grid: 1
+          Iron Sheet: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Visored Reinforced Helmet with Flint: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Visored Reinforced Helmet with Bones: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Ghillie Helmet with Mask: 1
+          Iron Grid: 1
+  - name: Reinforced Ghillie Helmet with Mask
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Ghillie Helmet: 1
+          Soldier Gas Mask: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Hazmat Helmet: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Helmet with Mask: 1
+          Iron Sheet: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Hazmat Helmet with Flint: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Hazmat Helmet with Bones: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Ghillie Helmet with Grid: 1
+          Soldier Gas Mask: 1
+
+  - name: Angry Deer Helmet
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Deer Head: 1
+          Leather Strap: 1
+  - name: Angry Tapir Helmet
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Tapir Head: 1
+          Leather Strap: 1
+  - name: Bear Helmet
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Bear Head: 1
+          Soldier Helmet: 1
+
   - name: Soldier Bulletproof Jacket
     raw_resource: true
+  - name: Bulletproof Jacket with Flint
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Soldier Bulletproof Jacket: 1
+          Pieces of Flint: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Bulletproof Jacket with Bones: 1
+          Pieces of Flint: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Bulletproof Jacket: 1
+          Pieces of Flint: 1
+  - name: Bulletproof Jacket with Bones
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Soldier Bulletproof Jacket: 1
+          Bone: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Bulletproof Jacket with Flint: 1
+          Bone: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Bulletproof Jacket: 1
+          Bone: 1
+  - name: Ghillie Bulletproof Jacket
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Soldier Bulletproof Jacket: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Bulletproof Jacket with Flint: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Bulletproof Jacket with Bones: 1
+          Camo Kit: 1
+
+  - name: Reinforced Jacket
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Soldier Bulletproof Jacket: 1
+          Iron Sheet: 1
+  - name: Reinforced Jacket with Flint
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Jacket: 1
+          Pieces of Flint: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Bulletproof Jacket with Flint: 1
+          Iron Sheet: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Jacket with Bones: 1
+          Pieces of Flint: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Ghillie Bulletproof Jacket: 1
+          Pieces of Flint: 1
+  - name: Reinforced Jacket with Bones
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Jacket: 1
+          Bone: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Bulletproof Jacket with Bones: 1
+          Iron Sheet: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Jacket with Flint: 1
+          Bone: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Ghillie Bulletproof Jacket: 1
+          Bone: 1
+  - name: Reinforced Ghillie Bulletproof Jacket
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Jacket: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Ghillie Bulletproof Jacket: 1
+          Iron Sheet: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Jacket with Flint: 1
+          Camo Kit: 1
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Reinforced Jacket with Bones: 1
+          Camo Kit: 1
 
   - name: Unfinished Electric Jacket (Step 1)
     custom_simplename: unfinishedelectricjacketstep1
@@ -1380,6 +2293,42 @@ resources:
         requirements:
           Old Boots: 1
           Fireproof Fabric: 1
+
+  - name: Crocodile Helmet
+    recipes:
+      - output: 1
+        recipe_type: Crafting (quest)
+        requirements:
+          Soldier Helmet: 1
+          Crocodile Head: 1
+          Reel: 1
+  - name: Crocodile Bulletproof Jacket # checked in-game
+    recipes:
+      - output: 1
+        recipe_type: Crafting (quest)
+        requirements:
+          Soldier Bulletproof Jacket: 1
+          Crocodile Skin: 1
+          Crocodile Claws: 1
+          Reel: 1
+  - name: Crocodile Arms Protections # Explicitly both plural, checked in-game
+    recipes:
+      - output: 1
+        recipe_type: Crafting (quest)
+        requirements:
+          Leather Strap: 1
+          Crocodile Skin: 1
+          Crocodile Claws: 1
+          Hardware Box: 1
+  - name: Crocodile Legs Protections # Explicitly both plural, checked in-game
+    recipes:
+      - output: 1
+        recipe_type: Crafting (quest)
+        requirements:
+          Leather Strap: 1
+          Crocodile Skin: 1
+          Crocodile Teeth: 1
+          Hardware Box: 1
 
   ##############################################################################
   - H1: Barricade ##############################################################
@@ -1436,6 +2385,8 @@ resources:
           Unfinished Handmade Turret Part 3: 1
           Hardware Box: 1
 
+  # TODO: turret upgrades?
+
   - name: Wooden Planks
     raw_resource: true
   - name: Iron Rods
@@ -1465,6 +2416,14 @@ resources:
   - name: Animal Skin
     raw_resource: true
   - name: Truck Tire
+    raw_resource: true
+  - name: Iron Sheet
+    raw_resource: true
+  - name: Camo Kit
+    raw_resource: true
+  - name: Soldier Gas Mask
+    raw_resource: true
+  - name: Iron Grid
     raw_resource: true
 
   - name: Empty Bottle
@@ -1615,12 +2574,45 @@ resources:
   - name: Red Stone
     raw_resource: true
 
-  - name: Electric Device
+  - name: Bear Head
+    raw_resource: true
+  - name: Crocodile Head
+    raw_resource: true
+  - name: Crocodile Teeth
+    raw_resource: true
+  - name: Crocodile Skin
+    raw_resource: true
+  - name: Crocodile Claws
+    raw_resource: true
+  - name: Crocodile Egg
+    raw_resource: true
+  - name: Deer Head
+    raw_resource: true
+  - name: Tapir Head
+    raw_resource: true
+
+  - name: Fresh Sea Fish
+    raw_resource: true
+  - name: Fresh Sea Fish (variant)
+    custom_simplename: freshseafishvariant
+    raw_resource: true
+  - name: Fresh Swamp Fish
+    raw_resource: true
+  - name: Fresh Swamp Fish (variant)
+    custom_simplename: freshswampfishvariant
     raw_resource: true
 
   ##############################################################################
   - H1: Quest ##################################################################
   ##############################################################################
+
+  - name: Golden Egg
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Crocodile Egg: 1
+          Red Stone: 1
 
   - name: Flashlight
     raw_resource: true
@@ -1631,6 +2623,8 @@ resources:
   - name: Old Battery
     raw_resource: true
   - name: Plane Cables
+    raw_resource: true
+  - name: Engine Timing Belt
     raw_resource: true
   - name: Dead Cat
     raw_resource: true
@@ -1660,7 +2654,7 @@ resources:
     raw_resource: true
     recipes:
       - output: 1
-        recipe_type: Crafting (monkey)
+        recipe_type: Crafting (quest)
         requirements:
           Golden Reel: 1
           Short Tube: 1
@@ -1707,8 +2701,19 @@ resources:
         requirements:
           Unfinished Fireproof Fabric (Step 2): 2
           Unfinished Fireproof Fabric (Step 1): 1
+  - name: Transmitter’s Coordinates
+    custom_simplename: transmitterscoordinates
+    raw_resource: true
   - name: Crank
     raw_resource: true
+  - name: Electric Device
+    raw_resource: true
+  - name: Weather Remote Control
+    recipes:
+      - output: 1
+        recipe_type: Crafting (quest)
+        requirements:
+          Electric Device: 10
 
   - name: Guarana Seeds
     raw_resource: true
@@ -1726,4 +2731,7 @@ resources:
   - name: Golden Santa Barbara Statue
     raw_resource: true
   - name: Golden Cat
+    raw_resource: true
+
+  - name: Spark Plugs
     raw_resource: true
