@@ -20,7 +20,7 @@ def resource_list_parser_producers(calculator_dir_regex: str) -> List[GenericPro
         Producer[SingleFile](
             name="Parse Resource List",
             input_path_patterns={
-                "file": r"^resource_lists/(?P<calculator_dir>{calculator_dir_regex})/resources.yaml$",
+                "file": rf"^resource_lists/(?P<calculator_dir>{calculator_dir_regex})/resources.yaml$",
             },
             function=resource_list_parser_function,
         ),
