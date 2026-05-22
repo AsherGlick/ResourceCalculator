@@ -2385,8 +2385,6 @@ resources:
           Unfinished Handmade Turret Part 3: 1
           Hardware Box: 1
 
-  # TODO: turret upgrades?
-
   - name: Wooden Planks
     raw_resource: true
   - name: Iron Rods
@@ -2576,6 +2574,10 @@ resources:
 
   - name: Bear Head
     raw_resource: true
+  - name: Deer Head
+    raw_resource: true
+  - name: Tapir Head
+    raw_resource: true
   - name: Crocodile Head
     raw_resource: true
   - name: Crocodile Teeth
@@ -2585,10 +2587,6 @@ resources:
   - name: Crocodile Claws
     raw_resource: true
   - name: Crocodile Egg
-    raw_resource: true
-  - name: Deer Head
-    raw_resource: true
-  - name: Tapir Head
     raw_resource: true
 
   - name: Fresh Sea Fish
@@ -2605,14 +2603,6 @@ resources:
   ##############################################################################
   - H1: Quest ##################################################################
   ##############################################################################
-
-  - name: Golden Egg
-    recipes:
-      - output: 1
-        recipe_type: Crafting
-        requirements:
-          Crocodile Egg: 1
-          Red Stone: 1
 
   - name: Flashlight
     raw_resource: true
@@ -2638,6 +2628,8 @@ resources:
   - name: Fully Charged Battery
     raw_resource: true
   - name: Sanchez's Packages
+    raw_resource: true
+  - name: Spark Plugs
     raw_resource: true
 
   - name: Defibrilator
@@ -2732,6 +2724,10 @@ resources:
     raw_resource: true
   - name: Golden Cat
     raw_resource: true
-
-  - name: Spark Plugs
-    raw_resource: true
+  - name: Golden Egg
+    recipes:
+      - output: 1
+        recipe_type: Crafting
+        requirements:
+          Crocodile Egg: 1
+          Red Stone: 1
