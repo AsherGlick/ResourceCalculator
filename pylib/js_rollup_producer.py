@@ -16,7 +16,7 @@ def js_rollup_producer(
         return [destination_file]
 
     return [
-        Producer[SingleFile](
+        Producer(
             name="Rollup Javascript Modules " + target_file,
             input_path_patterns={
                 "file": "^" + re.escape(target_file) + "$",

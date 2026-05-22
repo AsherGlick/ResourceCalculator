@@ -1,6 +1,5 @@
 import argparse
 import os
-import shutil
 from typing import Dict, Tuple, List
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEvent, FileSystemEventHandler
@@ -150,8 +149,6 @@ def main() -> None:
     parser.add_argument('--watch', action='store_true', help="Watch source files and automatically rebuild when they change")
     parser.add_argument('--draft', action='store_true', help="Enable all speed up flags for dev builds")
 
-    parser.add_argument('--clean', action='store_true', help="Clean up temporary and built files from previous builds")
-
     # # parser.add_argument('--no-jslint', action='store_true', help="Speed up dev-builds by skipping linting javascript files")
     parser.add_argument('--no-js-minify', action='store_true', help="Speed up dev-builds by skipping javascript compression")
     # parser.add_argument('--no-gz', action='store_true', help="Speed up dev-builds by skipping gz text compression")
@@ -170,12 +167,6 @@ def main() -> None:
     # global FLAG_skip_plugins
 
     args = parser.parse_args()
-
-    if args.clean:
-        shutil.rmtree("./cache", ignore_errors=True)
-        shutil.rmtree("./build", ignore_errors=True)
-        os.unlink(".buildevents.json")
-
     # if (args.watch):
     #     pass
 

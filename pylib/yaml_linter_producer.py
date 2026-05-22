@@ -17,7 +17,7 @@ from pylib.yaml_token_load import ordered_load
 ################################################################################
 def resource_list_parser_producers(calculator_dir_regex: str) -> List[GenericProducer]:
     return [
-        Producer[SingleFile](
+        Producer(
             name="Parse Resource List",
             input_path_patterns={
                 "file": rf"^resource_lists/(?P<calculator_dir>{calculator_dir_regex})/resources.yaml$",
