@@ -479,6 +479,7 @@ resources:
       - output: 1
         recipe_type: Build
         requirements:
+          Robo Manual: 1
           WCG Policy: 1
           Gunpoint MGR: 1
   - name: Merit Badge
