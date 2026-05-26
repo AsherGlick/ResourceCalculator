@@ -1,0 +1,1289 @@
+---
+authors:
+  puhi8: "https://puhi8.github.io/me/"
+
+
+index_page_display_name: Subnautica 2
+
+game_version: Early Access Hotfix 2
+
+note: |
+  Based on
+  https://wiki.subnautica.com/sn2/
+
+recipe_types:
+  Fabricator: Use a Fabricator to turn {IN_ITEMS} into {OUT_ITEM}
+  Vehicle Fabricator: Use the Vehicle Fabricator to turn {IN_ITEMS} into {OUT_ITEM}
+  Habitat Builder: Use the Habitat Builder to build {OUT_ITEM} from {IN_ITEMS}
+  Processor: Use a Processor to turn {IN_ITEMS} into {OUT_ITEM}
+  Modification Station: Use a Modification station to turn {IN_ITEMS} into {OUT_ITEM}
+
+
+resources:
+
+  - H1: Raw items ########################################################
+
+  - H2: Plants ########################################################
+
+  - name: Acidic Raion Pouch
+    raw_resource: true
+  - name: Medical Gel Sac
+    raw_resource: true
+  - name: Fibrous Pulp
+    raw_resource: true
+  - name: Lucifer Rotsac
+    raw_resource: true
+  - name: Necrolei Cyst
+    raw_resource: true
+  - name: Pent
+    raw_resource: true
+  - name: Coral Shavings
+    raw_resource: true
+  - name: Cherimoya Rotsac
+    raw_resource: true
+
+  - H2: Ors ########################################################
+
+  - name: Metal Salvage
+    raw_resource: true
+  - name: Titanium
+    raw_resource: true
+    recipes:
+    - output: 4
+      recipe_type: Fabricator
+      requirements:
+        Metal Salvage: 1
+  - name: Copper
+    raw_resource: true
+  - name: Quartz
+    raw_resource: true
+  - name: Salt
+    raw_resource: true
+  - name: Silver
+    raw_resource: true
+  - name: Gold
+    raw_resource: true
+  - name: Sulfur
+    raw_resource: true
+  - name: Lead
+    raw_resource: true
+  - name: Lithium
+    raw_resource: true
+  - name: Celestine
+    raw_resource: true
+  - name: Conduit Crystal
+    raw_resource: true
+  - name: Atacamite
+    raw_resource: true
+  - name: Troilite
+    raw_resource: true
+  - name: Axum Bacterial Culture
+    raw_resource: true
+
+  - H2: Animals ########################################################
+
+  - name: Creature Enamel
+    raw_resource: true
+  - name: Deepwing Egg Clump
+    raw_resource: true
+  - name: Crab Feces
+    raw_resource: true
+  - name: Water Slug
+    raw_resource: true
+  - name: Halfmoon
+    raw_resource: true
+  - name: Bluemoon
+    raw_resource: true
+  - name: Harvestmoon
+    raw_resource: true
+  - name: Quadrate
+    raw_resource: true
+  - name: Geordie
+    raw_resource: true
+  - name: Electric Geordie
+    raw_resource: true
+  - name: Pneuma
+    raw_resource: true
+  - name: Flash Slug
+    raw_resource: true
+  - name: Hoverthorn
+    raw_resource: true
+  - name: Black Hoverthorn
+    raw_resource: true
+
+  - H1: Food ########################################################
+
+  - H2: Cooked ########################################################
+
+  - name: Cooked Halfmoon
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Halfmoon: 1
+  - name: Cooked Harvestmoon
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Harvestmoon: 1
+  - name: Cooked Bluemoon
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Bluemoon: 1
+  - name: Cooked Geordie
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Geordie: 1
+  - name: Cooked Electric Geordie
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Electric Geordie: 1
+  - name: Cooked Pneuma
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Pneuma: 1
+  - name: Cooked Hoverthorn
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Hoverthorn: 1
+  - name: Cooked Black Hoverthorn
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Black Hoverthorn: 1
+  - name: Coral Mash
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Coral Shavings: 3
+        Sugar Of Salt: 1
+  - name: Nutrient Block
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Salt: 1
+        Biofuel Block: 1
+  - name: Oily Salad
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Fibrous Pulp: 1
+
+  - H2: Prepared Meals ########################################################
+  
+  - name: Water
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Water Slug: 1
+    - output: 1
+      recipe_type: Processor
+      requirements:
+        Fibrous Pulp: 3
+  - name: Isotonic Water
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Flash Slug: 1
+        Salt: 1
+  - name: Sugar of Saturn
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Lead: 1
+        Salt: 1
+  - name: Halfmoon Jerky
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Halfmoon: 2
+        Salt: 1
+  - name: Threemoon Temaki
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Halfmoon: 1
+        Bluemoon: 1
+        Harvestmoon: 1
+        Fibrous Pulp: 1
+  - name: Hoverthorn Souvlaki
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Hoverthorn: 3
+        Salt: 1
+  - name: Cherimoya Chutney
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Cherimoya Rotsac: 2
+        Sugar of Saturn: 1
+  - name: Pavlova
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Cherimoya Rotsac: 1
+        Deepwing Egg Clump: 1
+        Sugar of Saturn: 1
+
+  - H1: Basic Materials ########################################################
+
+  - name: Copper Wire
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Copper: 2
+  - name: Mild Acid
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Acidic Raion Pouch: 2
+        Copper: 1
+    - output: 1
+      recipe_type: Processor
+      requirements:
+        Acidic Raion Pouch: 2
+  - name: Strong Acid
+    recipes:
+    - output: 1
+      recipe_type: Processor
+      requirements:
+        Necrolei Cyst: 2
+    - output: 1
+      recipe_type: Processor
+      requirements:
+        Gold: 1
+        Sul: 1
+  - name: Glass
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Quartz: 2
+    - output: 1
+      recipe_type: Processor
+      requirements:
+        Salt: 2
+  - name: Enameled Glass
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Glass: 1
+        Creature Enamel: 1
+  - name: Fiber
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Fibrous Pulp: 2
+  - name: Grease
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Lucifer Rotsac: 1
+    - output: 1
+      recipe_type: Processor
+      requirements:
+        Halfmoon: 2
+  - name: Rubber
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Lucifer Rotsac: 2
+  - name: Fiber Mesh
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Fiber: 2
+        Strong Acid: 1
+  - name: Basic Battery
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Copper: 2
+        Acidic Raion Pouch: 1
+  - name: Power Cell
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Battery: 2
+        Strong Acid: 1
+        Salt: 1
+  - name: Advanced Battery
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Conduit Crystal: 2
+        Strong Acid: 1
+        Silver Ingot: 1
+  - name: Entangled Power Cell
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Conduit Crystal: 1
+        Strong Acid: 1
+        Gold Ingot: 1
+        Troilite: 1
+  - name: Basic First Aid Kit
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Fiber: 2
+    - output: 1
+      recipe_type: Processor
+      requirements:
+        Medical Gel Sac: 1
+  - name: Enhanced First Aid Kit
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Fiber: 1
+        Medical Gel Sac: 1
+  - name: Wiring Kit
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Silver: 1
+        Copper Wire: 1
+  - name: Advanced Wiring Kit
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Gold: 1
+        Sulfur: 1
+        Wiring Kit: 1
+  - name: System Chip
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Quartz: 1
+        Wiring Kit: 1
+  - name: Dedicated Core
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Strong Acid: 1
+        Quartz: 1
+        Advanced Wiring Kit: 1
+
+  - name: Titanium Ingot
+    recipes:
+    - output: 1
+      recipe_type: Processor
+      requirements:
+        Titanium: 3
+  - name: Silver Ingot
+    recipes:
+    - output: 1
+      recipe_type: Processor
+      requirements:
+        Silver: 3
+  - name: Copper Ingot
+    recipes:
+    - output: 1
+      recipe_type: Processor
+      requirements:
+        Copper: 3
+  - name: Gold Ingot
+    recipes:
+    - output: 1
+      recipe_type: Processor
+      requirements:
+        Gold: 3
+  - name: Germanium Ingot
+    recipes:
+    - output: 1
+      recipe_type: Processor
+      requirements:
+        Silver: 2
+    - output: 1
+      recipe_type: Processor
+      requirements:
+        Lead: 2
+  - name: Strontium
+    recipes:
+    - output: 1
+      recipe_type: Processor
+      requirements:
+        Celestine: 2
+  - name: Plasteel Ingot
+    recipes:
+    - output: 1
+      recipe_type: Processor
+      requirements:
+        Titanium: 2
+        Lithium: 1
+  - name: Mangalloy Ingot
+    recipes:
+    - output: 1
+      recipe_type: Processor
+      requirements:
+        Titanium Ingot: 2
+        Atacamite: 1
+        Troilite: 1
+  - name: Biofuel Block
+    recipes:
+    - output: 1
+      recipe_type: Processor
+      requirements:
+        Fibrous Pulp: 1
+    - output: 1
+      recipe_type: Processor
+      requirements:
+        Pent: 3
+    - output: 1
+      recipe_type: Processor
+      requirements:
+        Crab Feces: 2
+
+  - H1: Equipment ########################################################
+  
+  - name: Basic Fins
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Fiber: 2
+        Rubber: 2
+  - name: Improved Fins
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Basic Fins: 1
+        Fiber Mesh: 1
+        Conduit Crystal: 2
+  - name: Rebreather
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Fiber Mesh: 2
+        System Chip: 1
+  - name: Standard Air Tank
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Titanium: 2
+        Rubber: 1
+        Silver: 2
+  - name: High Capacity Air Tank
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Standard Air Tank: 1
+        Plasteel Ingot: 1
+  - name: Ultra High Capacity Air Tank
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        High Capacity Air Tank: 1
+        Troilite: 3
+        Atacamite: 3
+  
+  - H2: Tools #######################################
+  - name: Air Bladder
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Titanium: 2
+        Rubber: 1
+  - name: Distraction Flare
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Titanium: 1
+        Quartz: 1
+  - name: Survival Multitool
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Titanium: 3
+  - name: Flashlight
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Titanium: 2
+        Quartz: 1
+        Battery: 1
+  - name: Scanner
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Titanium: 2
+        Quartz: 2
+        Battery: 1
+  - name: Habitat Builder
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Titanium: 2
+        Glass: 1
+        Battery: 1
+        Copper Wire: 1
+  - name: Repair Tool
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Titanium Ingot: 1
+        Sulfur: 1
+        Battery: 1
+        Wiring Kit: 1
+  - name: Sonic Resonator
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Titanium Ingot: 2
+        Lead: 2
+        Battery: 1
+        Wiring Kit: 1
+  - name: Wakemaker
+    recipes:
+    - output: 1
+      recipe_type: Fabricator
+      requirements:
+        Silver: 1
+        Grease: 1
+        Battery: 1
+        Wiring Kit: 1
+
+  - H2: Upgrades #######################################
+
+  - name: Bioscanner
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Conduit Crystal: 3
+        Enameled Glass: 2
+        Scanner: 1
+  - name: Feedback Resonator
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Sonic Resonator: 1
+        Enameled Glass: 2
+        Conduit Crystal: 2
+        Strontium: 2
+  - name: Engine Efficiency
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Titanium Ingot: 2
+        Glass: 2
+        System Chip: 1
+  - name: Strike Armor
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Strontium: 2
+        Enameled Glass: 2
+  - name: Cavitation Muffler
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Titanium: 3
+        Strontium: 2
+  - name: Photovoltaic Charger
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Strong Acid: 1
+        Troilite: 1
+        Strontium: 1
+  - name: Tadpole Depth Module Mk1
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Celestine: 3
+        Enameled Glass: 2
+        System Chip: 1
+  - name: Tadpole Depth Module Mk2
+    recipes:
+    - output: 1
+      recipe_type: Modification Station
+      requirements:
+        Mangalloy Ingot: 3
+        Troilite: 2
+        System Chip: 2
+
+  - H2: Utility #######################################
+
+  - name: Portable Locker
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 4
+  - name: Beacon
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+        Copper: 1
+  - name: Portable Oxygen Generator
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 3
+        Lithium: 2
+  - name: Work Light
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 3
+        Quartz: 2
+  - name: Dive Elevator
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 4
+        Copper: 2
+        Quartz: 2
+
+  - H1: Building ##################################################
+
+  - name: Metal Farm
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Mangalloy Ingot: 1
+        Axum Bacterial Culture: 1
+  - name: Growbed
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+
+  - H2: Base ##################################################
+
+  - name: Corridor
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 2
+  - name: Hatch
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+        Quartz: 1
+  - name: Room 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 5
+  - name: Window 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Glass: 1
+  - name: Nook
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 3
+        Glass: 2
+  - name: Half Round Room 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 5
+        Glass: 5
+  - name: Moonpool 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 5
+  - name: Tadpole Dock
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium Ingot: 2
+        Silver Ingot: 1
+        Copper Wire: 2
+  
+  - name: Interior Wall 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 2
+  - name: Interior Arch 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+  - name: Interior Door 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 3
+        Glass: 1
+        COpper Wire: 1
+  - name: Ladder 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 2
+  
+  - H2: Habitat System ##################################################
+
+  - name: Habitat Beacon
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 
+  - name: Fabricator
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+        Copper: 1
+        Quartz: 1
+  - name: Processor
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 2
+        Copper Wire: 1
+        Mild Acid: 1
+  - name: Modification Station
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 2
+        Copper: 2
+        Celestine: 2
+  - name: Biolab
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 3
+        Copper Wire: 1
+        Mild Acid: 1
+  - name: Vehicle Fabricator
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium Ingot: 2
+        Copper Ingot: 1
+        Glass: 2
+
+  - name: Biobed
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 3
+        Copper Wire: 1
+        Glass: 1
+  - name: NoA Terminal
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 3
+        Copper Wire: 1
+        Glass: 1
+  - name: Scanner Station
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 3
+        Wiring Kit: 1
+        System Chip: 1
+  - name: Time of Day Display
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+        Copper: 1
+        Enamel Glass: 1
+
+  - H2: Storage ##################################################
+
+  - name: Wall Locker 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 2
+  - name: Floor Locker 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 3
+        Quartz: 1
+  - name: Tailing Chest 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 3
+  - name: Wall Rack 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+        Copper: 1
+
+  - H2: Lights ##################################################
+
+  - name: Exterior Wall Light
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+        Copper: 1
+  - name: Spotlight
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+        Copper: 2
+  
+  - name: Small Ceiling Light
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+        Copper: 1
+  - name: Rectangular Ceiling Light
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 2
+        Copper: 1
+  - name: Wall Light Small
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+        Copper: 1
+  - name: Wall Light Large
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 2
+        Copper: 1
+  - name: Axum Wall Lamp
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Celestine: 1
+        Titanium: 1
+  
+  - H2: Power ##################################################  
+  
+  - name: Solar Panel
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+        Quartz: 2
+  - name: Hydroelectric Turbine
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 3
+        Copper: 3
+        Silver: 3
+  - name: Thermal Plant
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 3
+        Copper: 3
+        Gold: 3
+  - name: Power Transmitter
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+        Copper: 1
+  - name: Battery Terminal
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 2
+        Copper Wire: 1
+        Quartz: 2
+  - name: Power Cell Terminal
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 3
+        Copper: 3
+        Wiring Kit: 3
+  - name: Bioreactor
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium Ingot: 2
+        Copper Ingot: 2
+  - name: Power Storage
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 3
+        Salt: 3
+        Germanium Ingot: 1
+
+  - H2: Furniture ##################################################
+
+  - H3: Interior #################################################
+
+  - name: Painted Tree Poster 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+  - name: Dining Chair 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 2
+  - name: Lab Chair 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 2
+  - name: Stool 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+        Rubber: 1
+  - name: Dining Table 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 3
+        Glass: 3
+  - name: Single Bed 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 2
+        Fiber: 3
+  - name: S Shelf 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 2
+  - name: Trashcan 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 2
+  - name: Small Crate 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+  - name: Sign 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+        Copper: 1
+  - name: Reaper LEviathan 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+  - name: Sea Moth Model 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+
+  - name: Tailing Table 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 2
+  - name: Tailing Drum
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 2
+        Fiber Mesh: 2
+  - name: Tailing Barrel
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 2
+  - name: Coral Jar
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Coral Shavings: 1
+  - name: Small Coral Jar
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Coral Shavings: 1
+  - name: Tailing Jar
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Fiber: 1
+        Salt: 1
+  - name: Hanging Tailing Jar 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Fiber: 2
+        Salt: 1
+  - name: Tailing Rug
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Fiber: 3
+  - name: Small Axum Jar  
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Glass: 1
+        Copper: 1
+  - name: Axum Jar 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Glass: 1
+        Copper: 2
+  - name: Tall Axum Jar 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Glass: 1
+        Copper: 3 
+
+  - H3: Exterior ################################################
+
+  - name: Wall Unit Small 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+  - name: Wall Panel 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+  - name: Wall Unit Large
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 3
+  - name: Wall Vent 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 2
+  - name: Wall Vent Large
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 3
+  - name: Roof Pump 
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+  - name: Roof Pump Double
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 2
+  - name: Roof Cylinder
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+  - name: Roof Panel Large
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 2
+  - name: Roof Antenna
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 1
+  - name: Roof Antenna Large
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 3
+  - name: Roof Listening Dish
+    recipes:
+    - output: 1
+      recipe_type: Habitat Builder
+      requirements:
+        Titanium: 3
+
+  - H1: Vehicle ##################################################
+
+  - name: Tadpole
+    recipes:
+    - output: 1
+      recipe_type: Vehicle Fabricator
+      requirements:
+        Titanium Ingot: 2
+        Glass: 1
+        System Chip: 1
+        Power Cell: 1
+  - name: Scout Ray Chassis
+    recipes:
+    - output: 1
+      recipe_type: Vehicle Fabricator
+      requirements:
+        Plasteel Ingot: 2
+        Advanced Wiring Kit: 1
+        Dedicated Core: 1
+        Strong Acid: 1
+  - name: Tadpole Haul Chassis
+    recipes:
+    - output: 1
+      recipe_type: Vehicle Fabricator
+      requirements:
+        Titanium Ingot: 4
+        Strontium: 3
+        Enamel Glass: 3
+        Dedicated Core: 1
+
