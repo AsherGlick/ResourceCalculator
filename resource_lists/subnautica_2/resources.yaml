@@ -169,7 +169,7 @@ resources:
       recipe_type: Fabricator
       requirements:
         Coral Shavings: 3
-        Sugar Of Salt: 1
+        Sugar Of Saturn: 1
   - name: Nutrient Block
     recipes:
     - output: 1
@@ -337,7 +337,7 @@ resources:
     - output: 1
       recipe_type: Fabricator
       requirements:
-        Battery: 2
+        Basic Battery: 2
         Strong Acid: 1
         Salt: 1
   - name: Advanced Battery
@@ -551,7 +551,7 @@ resources:
       requirements:
         Titanium: 2
         Quartz: 1
-        Battery: 1
+        Basic Battery: 1
   - name: Scanner
     recipes:
     - output: 1
@@ -559,7 +559,7 @@ resources:
       requirements:
         Titanium: 2
         Quartz: 2
-        Battery: 1
+        Basic Battery: 1
   - name: Habitat Builder
     recipes:
     - output: 1
@@ -567,7 +567,7 @@ resources:
       requirements:
         Titanium: 2
         Glass: 1
-        Battery: 1
+        Basic Battery: 1
         Copper Wire: 1
   - name: Repair Tool
     recipes:
@@ -576,7 +576,7 @@ resources:
       requirements:
         Titanium Ingot: 1
         Sulfur: 1
-        Battery: 1
+        Basic Battery: 1
         Wiring Kit: 1
   - name: Sonic Resonator
     recipes:
@@ -585,7 +585,7 @@ resources:
       requirements:
         Titanium Ingot: 2
         Lead: 2
-        Battery: 1
+        Basic Battery: 1
         Wiring Kit: 1
   - name: Wakemaker
     recipes:
@@ -594,7 +594,7 @@ resources:
       requirements:
         Silver: 1
         Grease: 1
-        Battery: 1
+        Basic Battery: 1
         Wiring Kit: 1
 
   - H2: Upgrades #######################################
@@ -792,7 +792,7 @@ resources:
       requirements:
         Titanium: 3
         Glass: 1
-        COpper Wire: 1
+        Copper Wire: 1
   - name: Ladder 
     recipes:
     - output: 1
@@ -807,7 +807,7 @@ resources:
     - output: 1
       recipe_type: Habitat Builder
       requirements:
-        Titanium: 
+        Titanium: 1
   - name: Fabricator
     recipes:
     - output: 1
@@ -880,7 +880,7 @@ resources:
       requirements:
         Titanium: 1
         Copper: 1
-        Enamel Glass: 1
+        Enameled Glass: 1
 
   - H2: Storage ##################################################
 
@@ -1284,6 +1284,6 @@ resources:
       requirements:
         Titanium Ingot: 4
         Strontium: 3
-        Enamel Glass: 3
+        Enameled Glass: 3
         Dedicated Core: 1
 
