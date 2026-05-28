@@ -188,7 +188,7 @@ function calculate_resource_graph(
         }
     }
 
-    const {helper_extra_edges, helper_extra_nodes} = get_helper_extra_resources(resource_tracker, original_requirements);
+    const {helper_extra_edges, helper_extra_nodes} = get_helper_extra_resources(resource_tracker, output_requirements);
     Object.assign(resource_tracker, helper_extra_edges);
     Object.assign(generation_totals, helper_extra_nodes);
 
