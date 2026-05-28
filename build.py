@@ -5,6 +5,7 @@ from typing import Dict, Tuple, List
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEvent, FileSystemEventHandler
 import queue
+import re
 
 from pylib.calculator_producer import calculator_producers
 from pylib.editor_producer import editor_producers
@@ -203,8 +204,12 @@ def main() -> None:
 
     # calculator_page_sublist = []
 
-    calculator_dir_regex = r"[a-z_ ]+"
+    any_calculator_dir_regex = r"[a-z0-9_ ]+"
+    calculator_dir_regex = any_calculator_dir_regex
     if len(args.limit_files) >= 1:
+        for limited_file in args.limit_files:
+            if not re.match("^" + any_calculator_dir_regex + "$", limited_file):
+                raise ValueError("Specified calculator wont be picked up by the global regex. Report this as a bug to the maintainer")
         calculator_page_sublist = args.limit_files
         calculator_dir_regex = "|".join(calculator_page_sublist)
 
