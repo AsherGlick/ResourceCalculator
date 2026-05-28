@@ -369,7 +369,7 @@ class ChartScale {
 		// such that that column fits within the allotted height of the chart
 		this._scale = 9999;
 		for (const column of columns) {
-			const height_for_values = height - (columns.length - 1) * node_padding;
+			const height_for_values = height - (column.length - 1) * node_padding;
 
 			let value_size = 0;
 			for (const size of column) {
