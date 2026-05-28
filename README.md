@@ -70,7 +70,7 @@ raw_resource: true
 # A list of all the recipes for this resource
 recipes: []
 
-# Overlay values for the global stack_multipliers chart. This lets certian
+# Overlay values for the global stack_multipliers chart. This lets certain
 # resources have different stack sizes when doing the calculations of how many
 # stacks of an item are needed. EG: in minecraft you can normally have 64 of an
 # item, but some items can be stacked to only 16 instead. While others can only
