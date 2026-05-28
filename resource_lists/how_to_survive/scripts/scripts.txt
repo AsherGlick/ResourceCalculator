@@ -1,0 +1,27 @@
+### Extracting images:
+
+split.py was created to automate splitting out images from the game files as outlined in this guide:
+https://steamcommunity.com/sharedfiles/filedetails/?id=353530351
+
+Just update the script with the hex value to split and the filename, and run as you would any other python script.
+
+### Imagemagick script for converting dds to png:
+
+for f in *.dds; do magick "$f" -flip "${f%.dds}.png"; done
+
+### Imagemagick scripts for adding background colors:
+
+for f in *.png; do magick "$f" -background "#FFBE00" -layers flatten "yellow/${f%.png}.png"; done
+for f in *.png; do magick "$f" -background "#BECF07" -layers flatten "green/${f%.png}.png"; done
+for f in *.png; do magick "$f" -background "#F49C07" -layers flatten "orange/${f%.png}.png"; done
+
+### Imagemagick script for resizing:
+
+magick mogrify -path resize/ -gravity center -adaptive-resize 64x64 *.png
+
+### Other
+
+other/ contains images not used by the game or used to create other images.
+layers.psd is what was used to align and create pngs that required multiple elements.
+
+Both are included here in the event that anything was missed and images need to be created/recreated.
