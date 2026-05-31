@@ -44,16 +44,24 @@
 
 		<div id="title_container">
 			<span class="title">Resource Calculator - {{calculator_display_name}}</span>
+			{% if game_version != "" or authors | length > 0 %}
 			<button class="info_button"	popovertarget="calc_info">&#x1F6C8;</button>
 			<div id="calc_info" class="info_popover" popover="auto">
+				{% if game_version != "" %}
 			 	Up to date as of game version:<br>
 				"{{game_version}}"<br>
-				<br>
+				{% endif %}
+				{% if game_version != "" and authors | length > 0 %}<br>{% endif %}
+				{% if authors | length > 0 %}
 				This calculator was created/updated by:
-				<div id="author_list"><ul>{% for author in authors %}
-				<li><a {% if authors[author] != "" %}href="{% if '@' in authors[author] %}mailto:{% endif %}{{authors[author]}}"{% endif %} target="_blank">{{ author }}</a></li>
-				{% endfor %}</ul></div>
+				<ul>{% for author in authors %}
+				<li>{% if authors[author] != "" %}<a href="{% if '@' in authors[author] %}mailto:{% endif %}{{authors[author]}}" target="_blank">{% endif %}
+					{{ author }}
+				{% if authors[author] != "" %}</a>{% endif %}</li>
+				{% endfor %}</ul>
+				{% endif %}
 			</div>
+			{% endif %}
 		</div>
 
 		<div id="content" class="content">
