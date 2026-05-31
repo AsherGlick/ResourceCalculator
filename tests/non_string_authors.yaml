@@ -2,7 +2,7 @@
 authors:
   -5: 123456
 
-index_page_display_name: Test
+calculator_display_name: Test
 
 recipe_types:
   Crafting: Craft {IN_ITEMS} into {OUT_ITEM}

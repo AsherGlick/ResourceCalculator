@@ -22,7 +22,7 @@ def main() -> None:
                     default="OrderedDict()",
                 ),
                 Variable(
-                    name="index_page_display_name",
+                    name="calculator_display_name",
                     type="str",
                     default='""',
                     blank_lines_above_field=1,
@@ -221,7 +221,7 @@ def main() -> None:
                     default="{}"
                 ),
                 Variable(
-                    name="index_page_display_name",
+                    name="calculator_display_name",
                     type="str",
                     default='""',
                     line_above=True,  # Formatting Style

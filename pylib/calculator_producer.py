@@ -126,6 +126,11 @@ def calculator_function(input_files: CalculatorInputFiles, groups: Dict[str, str
         item_styles=item_styles,
         # The name of the calculator
         calculator_name=calculator_name,
+        # The name of the calculator for display
+        calculator_display_name=resource_list.calculator_display_name,
+        # The version of the game the calculator has been updated for
+        game_version=resource_list.game_version,
+        # The image of all stitched item images
         resource_image=calculator_item_image,
         # Javascript formatting functions for recipe instructions # TODO this should be made into format strings to save space
         recipe_type_format_js=recipe_type_format_js,

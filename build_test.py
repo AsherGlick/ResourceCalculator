@@ -63,7 +63,7 @@ class Test_Invalid_Yaml(unittest.TestCase):
         errors = test_load("tests/invalid_resource_list_key.yaml")
         desired_errors: List[TokenError] = [
             TokenError(
-                "Found Invalid ResourceList key, valid ResourceList keys are ['authors', 'index_page_display_name', 'game_version', 'row_group_count', 'note', 'banner_message', 'recipe_types', 'requirement_groups', 'stack_sizes', 'default_stack_size', 'resources']",
+                "Found Invalid ResourceList key, valid ResourceList keys are ['authors', 'calculator_display_name', 'game_version', 'row_group_count', 'note', 'banner_message', 'recipe_types', 'requirement_groups', 'stack_sizes', 'default_stack_size', 'resources']",
                 Token(10, 10, 0, 16)
             )
         ]
@@ -87,7 +87,7 @@ class Test_Invalid_Yaml(unittest.TestCase):
     def test_non_string_index_display_name(self) -> None:
         errors = test_load("tests/non_string_index_display_name.yaml")
         desired_errors: List[TokenError] = [
-            TokenError("index_page_display_name should be a string not a <class 'int'>", Token(5, 5, 25, 27))
+            TokenError("calculator_display_name should be a string not a <class 'int'>", Token(5, 5, 25, 27))
         ]
         self.assertListEqual(errors, desired_errors)
 

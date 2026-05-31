@@ -2,7 +2,7 @@
 authors:
   Asher: "https://aglick.com"
 
-index_page_display_name: Witcher 3
+calculator_display_name: Witcher 3
 
 recipe_types:
   Alchemy: Craft {OUT_ITEM} with {IN_ITEMS}

@@ -10,6 +10,58 @@ body {
 	overflow-x: hidden;
 }
 
+#title_container {
+	margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+	text-align: center;
+}
+.title {
+	font-size: larger;
+	anchor-name: --calc_info_anchor;
+}
+.info_button {
+	border: none;
+  	cursor: pointer;
+}
+.info_popover[popover] {
+	position: absolute;
+	max-width: 320px;
+	border: none;
+	border-radius: 5px;
+	background: #FFF;
+	padding: 10px;
+	color: #000;
+	white-space: nowrap;
+	display: none;
+	opacity: 0;
+	z-index: 3;
+	box-shadow: 2px 2px 5px 0 #000;
+	transition: opacity .1s linear;
+
+	position: fixed;
+	position-anchor: --calc_info_anchor;
+	top: anchor(bottom);
+	margin-top: 8px;
+}
+.info_popover[popover]:popover-open {
+	opacity: 1;
+	display: block;
+}
+.info_popover ul {
+	width: fit-content;
+    margin: 0 auto;
+	padding-inline-start: 0;
+	list-style-position: inside;
+	text-align: left;
+}
+.info_popover a {
+  	color: black;
+}
+.info_popover a:hover {
+ 	text-decoration: underline;
+}
+
 .content {
 	margin-left: 8px;
 	margin-right: 8px;
@@ -70,7 +122,6 @@ body {
 
 .search_bar {
 	margin-bottom: 10px;
-
 }
 
 .search_label_wrapper {
@@ -80,8 +131,6 @@ body {
 	border-right: 0;
 	background: #D8D9ED;
 	border-radius: 5px 0 0 5px;
-}
-.search_label {
 }
 
 .search_box_wrapper {
@@ -144,13 +193,6 @@ body {
 
 }
 
-
-#generatelist {
-
-}
-
-
-
 .hide_unused_checkbox {
 	display: none;
 }
@@ -158,7 +200,7 @@ body {
 
 
 #hover_name {
-	position:absolute;
+	position: absolute;
 	border-radius: 5px;
 	background: #FFF;
 	padding: 10px;
@@ -293,7 +335,7 @@ body {
 
 .header_bar {
 	overflow: hidden;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 	text-align: center;
 }
 
@@ -565,7 +607,7 @@ body {
 }
 .icon img {
 	border: 2px solid black;
-		border-top: 2px solid #CBCBCB;
+	border-top: 2px solid #CBCBCB;
 	border-left: 2px solid #CBCBCB;
 	border-radius: 5px;
 	padding: 5px;

@@ -73,7 +73,7 @@ def resource_list_parser_function(input_files: SingleFile, groups: Dict[str, str
     os.makedirs(os.path.dirname(page_metadata_path), exist_ok=True)
     with open(page_metadata_path, 'w') as f:
         json.dump({
-            "calculator_name": resource_list.index_page_display_name
+            "calculator_name": resource_list.calculator_display_name
         }, f)
 
     return [

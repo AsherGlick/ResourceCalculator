@@ -3,7 +3,7 @@ authors:
   TesterPerson: testerperson@example.com
   BOT: bot.example.com
 
-index_page_display_name: -1
+calculator_display_name: -1
 
 recipe_types:
   Crafting: Craft {IN_ITEMS} into {OUT_ITEM}

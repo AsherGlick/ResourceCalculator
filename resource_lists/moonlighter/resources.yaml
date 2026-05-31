@@ -2,7 +2,7 @@
 authors:
   Asher: "https://aglick.com"
 
-index_page_display_name: Moonlighter
+calculator_display_name: Moonlighter
 
 recipe_types:
   Smith: Buy {OUT_ITEM} for {IN_ITEMS} from Vulcan's Forge

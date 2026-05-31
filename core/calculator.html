@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>ResourceCalculator</title>
+		<title>Resource Calculator - {{calculator_display_name}}</title>
 
 		<link rel="stylesheet" href="{{css_path}}">
 		<meta charset="UTF-8">
@@ -39,14 +39,22 @@
 
 		<div id="about_us">
 			Resource Calculator is an open source project to allow players to easily calculate how many raw resources they need in order to construct the items they want.
-			It was originally created by Asher Glick. You can help keep Resource Calculator up to date or add resources for new games by clicking on the Contribute button above. <br><br> The resources and recipes for the <b>{{calculator_name}} calculator</b> were created and updated by<br>
-			{% for author in authors %}
-
-
-			- <a {% if authors[author] != "" %}href="{{authors[author]}}"{% endif %}>{{ author }}</a><br>
-			{% endfor %}
+			It was originally created by Asher Glick. You can help keep Resource Calculator up to date or add resources for new games by clicking on the Contribute button above.
 		</div>
 
+		<div id="title_container">
+			<span class="title">Resource Calculator - {{calculator_display_name}}</span>
+			<button class="info_button"	popovertarget="calc_info">&#x1F6C8;</button>
+			<div id="calc_info" class="info_popover" popover="auto">
+			 	Up to date as of game version:<br>
+				"{{game_version}}"<br>
+				<br>
+				This calculator was created/updated by:
+				<div id="author_list"><ul>{% for author in authors %}
+				<li><a {% if authors[author] != "" %}href="{% if '@' in authors[author] %}mailto:{% endif %}{{authors[author]}}"{% endif %} target="_blank">{{ author }}</a></li>
+				{% endfor %}</ul></div>
+			</div>
+		</div>
 
 		<div id="content" class="content">
 			<div id="content_field" class="menu_style">

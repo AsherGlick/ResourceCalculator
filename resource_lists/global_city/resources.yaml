@@ -2,7 +2,7 @@
 authors:
   MochSA: "https://github.com/mochsa/"
 
-index_page_display_name: Global City
+calculator_display_name: Global City
 
 recipe_types:
   Crafting: Craft {IN_ITEMS} into {OUT_ITEM}

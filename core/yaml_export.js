@@ -3,26 +3,42 @@ function write_ResourceList(object, indented=0){
     let output = "";
     const tab = "  ";
     let indent = tab.repeat(indented);
-    const key_list = ["authors","index_page_display_name","row_group_count","game_version","banner_message","recipe_types","requirement_groups","stack_sizes","default_stack_size","resources"];
+    const key_list = [
+      "authors",
+      "calculator_display_name",
+      "row_group_count",
+      "game_version",
+      "banner_message",
+      "recipe_types",
+      "requirement_groups",
+      "stack_sizes",
+      "default_stack_size",
+      "resources",
+    ];
     const key_set = new Set(key_list);
     let key_names = Object.keys(object);
     for (var i in key_names) {
-        let key_name = key_names[i];
-        if (!key_set.has(key_name)) {
-            console.warn("Unknown Key Found " + key_name);
-        }
+      let key_name = key_names[i];
+      if (!key_set.has(key_name)) {
+        console.warn("Unknown Key Found " + key_name);
+      }
     }
     if ("authors" in object) {
-        output += indent + "authors:"
-        output += "\n";
-        for (let list_index in object["authors"]) {
-        output += indent + tab + "- " + write_Author(object["authors"][list_index], indented+2).trim() + "\n";
-        }
+      output += indent + "authors:";
+      output += "\n";
+      for (let list_index in object["authors"]) {
+        output +=
+          indent +
+          tab +
+          "- " +
+          write_Author(object["authors"][list_index], indented + 2).trim() +
+          "\n";
+      }
     }
-    if ("index_page_display_name" in object) {
-        output += "\n"
-        output += indent + "index_page_display_name:"
-        output += " \"" + object["index_page_display_name"] + "\"\n";
+    if ("calculator_display_name" in object) {
+      output += "\n";
+      output += indent + "calculator_display_name:";
+      output += ' "' + object["calculator_display_name"] + '"\n';
     }
     if ("row_group_count" in object) {
         output += "\n"

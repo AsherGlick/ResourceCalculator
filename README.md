@@ -92,7 +92,7 @@ that resource. If an image is missing, then the build process will submit a
 warning and fill that space with a purple color, indicating it does not have
 an icon.
 
-The icons can be any size, even rectangular, but they all must be the same size
+The icons can be any size, not necessarily square, but they all must be the same size
 as each other for a given calculator.
 The file names of each file should be the resource name in all lower case with
 no spaces or punctuation.
@@ -159,8 +159,8 @@ python3 build.py --watch
 
 Docker
 --------------------------------------------------------------------------------
-The secondary method for building resource calculator is using Docker and Docker
-Compose. As long as you have Docker Compose on your system you should be able
+The secondary method for building resource calculator is using [Docker](https://www.docker.com/) and [Docker
+Compose](https://docs.docker.com/compose/). As long as you have Docker Compose on your system you should be able
 to run the `./run.sh` command from any terminal that can run a shell script.
 This will start two docker containers, one which will build the calculator and
 one which will host the calculator output so you can easily access it via a web
@@ -180,9 +180,9 @@ The docker container will install the node and python libraries into the
 
 Windows
 --------------------------------------------------------------------------------
-On windows it is recommended to use the Docker runtime. However if you do not
+On Windows it is recommended to use the Docker runtime. However if you do not
 wish to use it you can install the dependencies manually using native versions,
-cygwin, or wsl just like on Linux.
+[cygwin](https://www.cygwin.com/), or [wsl](https://github.com/microsoft/WSL) just like on Linux.
 
 > [!IMPORTANT]
 > For Docker on Windows you may need to allow the docker container to access
