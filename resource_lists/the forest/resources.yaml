@@ -29,6 +29,7 @@ resources:
     raw_resource: true
 
   - name: Rope
+    raw_resource: true
     recipes:
     - output: 1
       recipe_type: Crafting
@@ -64,31 +65,23 @@ resources:
 
   - name: Blackberries
     raw_resource: true
-
   - name: Blueberries
     raw_resource: true
-
   - name: Snowberries
     raw_resource: true
-
   - name: Twinberries
     raw_resource: true
 
   - name: Amanita Mushroom
     raw_resource: true
-
   - name: Chanterelle Mushroom
     raw_resource: true
-
   - name: Deer Mushroom
     raw_resource: true
-
   - name: Jack Mushroom
     raw_resource: true
-
   - name: Liberty Cap Mushroom
     raw_resource: true
-
   - name: Puff Mushroom
     raw_resource: true
 
@@ -1875,7 +1868,6 @@ resources:
       requirements:
         Stick: 38
         Cloth: 1
-
   - name: Timmy Sitting
     recipes:
     - output: 1
@@ -1884,7 +1876,6 @@ resources:
         Stick: 38
         Cloth: 1
         Log: 1
-
   - name: Wife Standing
     recipes:
     - output: 1
@@ -1892,7 +1883,6 @@ resources:
       requirements:
         Stick: 38
         Cloth: 1
-
   - name: Wife Sitting
     recipes:
     - output: 1
@@ -1901,7 +1891,6 @@ resources:
         Stick: 38
         Cloth: 1
         Log: 1
-
   - name: Car
     recipes:
     - output: 1
@@ -1909,7 +1898,6 @@ resources:
       requirements:
         Stick: 121
         Log: 47
-
   - name: Dog
     recipes:
     - output: 1
@@ -1918,7 +1906,6 @@ resources:
         Stick: 20
         Log: 1
         Cloth: 1
-
   - name: TV
     recipes:
     - output: 1
