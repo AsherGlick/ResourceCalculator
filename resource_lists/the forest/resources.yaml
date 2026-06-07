@@ -21,13 +21,10 @@ recipe_types:
 resources:
   - name: Stick
     raw_resource: true
-
   - name: Rock
     raw_resource: true
-
   - name: Cloth
     raw_resource: true
-
   - name: Rope
     raw_resource: true
     recipes:
@@ -42,6 +39,8 @@ resources:
   - name: Cash
     raw_resource: true
 
+  - name: Skull
+    raw_resource: true
   - name: Bone
     raw_resource: true
 
@@ -91,25 +90,19 @@ resources:
 
   - name: Small Meat
     raw_resource: true
-
   - name: Meat
     raw_resource: true
-
   - name: Rabbit Meat
     raw_resource: true
-
   - name: Lizard Meat
     raw_resource: true
-
   - name: Fish
     raw_resource: true
-
   - name: Oyster
     raw_resource: true
 
   - name: Soda
     raw_resource: true
-
   - name: Snack
     raw_resource: true
 
@@ -118,34 +111,23 @@ resources:
 
   - name: Lizard Skin
     raw_resource: true
-
   - name: Raccoon Skin
     raw_resource: true
-
   - name: Boar Skin
     raw_resource: true
-
   - name: Deer Skin
     raw_resource: true
-
   - name: Rabbit Fur
     raw_resource: true
-
   - name: Turtle Shell
-    raw_resource: true
-
-  - name: Skull
     raw_resource: true
 
   - name: Head
     raw_resource: true
-
   - name: Torso
     raw_resource: true
-
   - name: Arm
     raw_resource: true
-
   - name: Leg
     raw_resource: true
 
