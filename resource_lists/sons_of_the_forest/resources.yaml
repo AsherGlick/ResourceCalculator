@@ -20,12 +20,13 @@ recipe_types:
   Crafting (can opener): Use with a can opener in your inventory to turn {IN_ITEMS} into {OUT_ITEM}
   Crafting (3D printer): Use {IN_ITEMS} at a 3D printer to make {OUT_ITEM}
   Crafting (axe): Use with an axe to turn {IN_ITEMS} into {OUT_ITEM} (and more when applicable)
-  Upgrading: Use your inventory to add {OUT_ITEM} to a weapon using {IN_ITEMS} (weapon will not be consumed, not all weapons are applicable)
+  Crafting (armor plater): Use {IN_ITEMS} at an armor plater to turn them into {OUT_ITEM}
   Cooking (fire): Use {IN_ITEMS} at a fire to turn them into {OUT_ITEM}
   Cooking (drying rack): Leave {IN_ITEMS} on a drying rack over time to turn them into {OUT_ITEM}
   Cooking (spoil): Leave {IN_ITEMS} out over time to turn them into {OUT_ITEM}
   Cooking (stew): Use with a cooking pot and fire to turn {IN_ITEMS} into {OUT_ITEM}
   Building (prefab): Place blueprint(s) and fill in to turn {IN_ITEMS} into {OUT_ITEM}
+  # Upgrading: Use your inventory to add {OUT_ITEM} to a weapon using {IN_ITEMS} (weapon will not be consumed, not all weapons are applicable)
 
 resources:
 
@@ -174,14 +175,20 @@ resources:
     raw_resource: true
   - name: Solar Panel
     raw_resource: true
+  - name: Radio
+    raw_resource: true
   - name: Turtle Shell
     raw_resource: true
+  - name: Skin Pouch
+    raw_resource: true
+  - name: Knight V
+    raw_resource: true
+  - name: Foldable Glider
+    raw_resource: true
+  - name: Golf Cart
+    raw_resource: true
 
-  - name: Head
-    raw_resource: true
-  - name: Arm
-    raw_resource: true
-  - name: Leg
+  - name: Solafite Ore
     raw_resource: true
 
   - name: Variable Log Amount
@@ -192,7 +199,7 @@ resources:
     raw_resource: true
   - name: Variable Rock Amount
     raw_resource: true
-  
+
   - H2: 3D Printed #############################################################
 
   - name: 3D Printed Arrow
@@ -207,12 +214,6 @@ resources:
       recipe_type: Crafting (3D printer)
       requirements:
         Printer Resin: 100
-  - name: Red Mask
-    recipes:
-    - output: 1
-      recipe_type: Crafting (3D printer)
-      requirements:
-        Printer Resin: 150
   - name: 3D Printed GPS Case
     recipes:
     - output: 1
@@ -238,6 +239,68 @@ resources:
       requirements:
         Printer Resin: 1000
 
+  - name: Red Mask
+    recipes:
+    - output: 1
+      recipe_type: Crafting (3D printer)
+      requirements:
+        Printer Resin: 150
+  - name: Gold Mask
+    raw_resource: true
+
+  - H2: Armor ##################################################################
+
+  - name: Leaf Armor
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Leaf: 10
+        Cloth: 1
+  - name: Bone Armor
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bone: 4
+        Duct Tape: 1
+        Rope: 1
+  - name: Hide Armor
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Animal Hide: 2
+        Cloth: 1
+  - name: Creepy Armor
+    raw_resource: true
+  - name: Tech Armor
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Tech Mesh: 1
+        Circuit Board: 1
+        Duct Tape: 1
+        Wire: 1
+        Batteries: 1
+  - name: Solafite Armor
+    recipes:
+    - output: 10
+      recipe_type: Crafting (armor plater)
+      requirements:
+        Bone Armor: 10
+        Solafite Ore: 12
+  - name: Ancient Armor
+    raw_resource: true
+  - name: Ancient Armor (activated)
+    custom_simplename: ancientarmoractivated
+    recipes:
+    - output: 1
+      recipe_type: Crafting (armor plater)
+      requirements:
+        Ancient Armor: 1
+        Solafite Ore: 12
 
   ##############################################################################
   - H1: Consumables ############################################################
@@ -436,6 +499,8 @@ resources:
       requirements:
         Raw Meat: 1
 
+  - name: Head
+    raw_resource: true
   - name: Arm
     raw_resource: true
   - name: Cooked Arm
@@ -1900,8 +1965,8 @@ resources:
     - output: 1
       recipe_type: Building (prefab)
       requirements:
-        Arms: 6
-        Legs: 2
+        Arm: 6
+        Leg: 2
         Head: 1
         Creepy Armor: 2
         Stick: 9
@@ -1913,8 +1978,8 @@ resources:
       recipe_type: Building (prefab)
       requirements:
         Creepy Armor: 14
-        Arms: 4
-        Legs: 2
+        Arm: 4
+        Leg: 2
         Stick: 40
   - name: Leg Lamp
     recipes:
@@ -2030,7 +2095,7 @@ resources:
         Vodka Bottle: 2
         Stick: 14
         Golf Cart Battery: 1
-        Leaves: 3
+        Leaf: 3
         Rock: 6
         Bone: 15
         Rope: 2
