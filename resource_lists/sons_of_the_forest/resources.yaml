@@ -48,8 +48,8 @@ resources:
     raw_resource: true
     recipes:
     - output: 1
-      note: "Also creates Quarter Log"
       recipe_type: Crafting (axe)
+      note: "Also creates Quarter Log"
       requirements:
         Log: 1
   - name: Half Log
@@ -60,8 +60,8 @@ resources:
       requirements:
         Log: 1
     - output: 1
-      note: "Also creates Quarter Log"
       recipe_type: Crafting (axe)
+      note: "Also creates Quarter Log"
       requirements:
         Three Quarter Log: 1
   - name: Quarter Log
@@ -72,12 +72,11 @@ resources:
       requirements:
         Half Log: 1
     - output: 1
-      note: "Also creates Half Log"
       recipe_type: Crafting (axe)
+      note: "Also creates Half Log"
       requirements:
         Three Quarter Log: 1
   - name: Plank
-    raw_resource: true
     recipes:
     - output: 2
       recipe_type: Crafting (axe)
@@ -91,8 +90,8 @@ resources:
       requirements:
         Three Quarter Log: 1
     - output: 1
-      note: "Also creates Quarter Plank"
       recipe_type: Crafting (axe)
+      note: "Also creates Quarter Plank"
       requirements:
         Plank: 1
   - name: Half Plank
@@ -107,8 +106,8 @@ resources:
       requirements:
         Plank: 1
     - output: 1
-      note: "Also creates Quarter Plank"
       recipe_type: Crafting (axe)
+      note: "Also creates Quarter Plank"
       requirements:
         Three Quarter Plank: 1
   - name: Quarter Plank
@@ -123,8 +122,8 @@ resources:
       requirements:
         Half Plank: 1
     - output: 1
-      note: "Also creates Half Plank"
       recipe_type: Crafting (axe)
+      note: "Also creates Half Plank"
       requirements:
         Three Quarter Plank: 1
   - name: Stone
@@ -144,6 +143,8 @@ resources:
     raw_resource: true
   - name: Coins
     raw_resource: true
+  - name: Cash
+    raw_resource: true
   - name: Duct Tape
     raw_resource: true
   - name: Feather
@@ -160,8 +161,6 @@ resources:
     raw_resource: true
 
   - name: Air Tank
-    raw_resource: true
-  - name: Cash
     raw_resource: true
   - name: Head Trophy
     raw_resource: true
@@ -183,6 +182,15 @@ resources:
   - name: Arm
     raw_resource: true
   - name: Leg
+    raw_resource: true
+
+  - name: Variable Log Amount
+    raw_resource: true
+  - name: Variable Half Log Amount
+    raw_resource: true
+  - name: Variable Stick Amount
+    raw_resource: true
+  - name: Variable Rock Amount
     raw_resource: true
   
   - H2: 3D Printed #############################################################
@@ -1024,26 +1032,65 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Log: 2
+        Log: 5
+        Stick: 6
+        Rock: 7
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Log: 5
         Stick: 6
         Rock: 7
-  - name: Log Cabin
+  - name: Small Log Cabin
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Log: 3
+        Three Quarter Log: 3
+        Plank: 35
+        Quarter Log: 8
+        Log: 46
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Log: 75
-  - name: Lean to
+  - name: Lean To
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Quarter Log: 2
+        Three Quarter Log: 2
+        Half Log: 8
+        Plank: 36
+        Log: 30
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Log: 53
-  - name: Look out Tower
+  - name: Look Out Tower
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Rope: 1
+        Quarter Log: 5
+        Half Log: 2
+        Plank: 17
+        Log: 49
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Log: 60
         Rope: 1
@@ -1052,6 +1099,14 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Plank: 5
+        Rope: 1
+        Log: 4
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Log: 7
         Rope: 1
@@ -1059,6 +1114,15 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Log: 12
+        Plank: 25
+        Rope: 1
+        Log: 16
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Log: 35
         Rope: 1
@@ -1066,6 +1130,17 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Quarter Log: 7
+        Three Quarter Log: 5
+        Plank: 34
+        Rope: 1
+        Half Log: 9
+        Log: 41
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Log: 68
         Rope: 1
@@ -1073,6 +1148,16 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Quarter Log: 6
+        Plank: 49
+        Rope: 1
+        Half Log: 7
+        Log: 68
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Log: 96
 
@@ -1080,26 +1165,42 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
       requirements:
-        Log: 1 # TODO: infinite?
+        Plank: 5
+        Log: 4
+        Variable Log Amount: 1
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Variable Log Amount: 1
   - name: Medium Platform
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
       requirements:
-        Log: 1  # TODO: infinite?
+        Plank: 20
+        Log: 12
+        Variable Log Amount: 1
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Variable Log Amount: 1
   - name: Defensive Wall
     recipes:
     - output: 1
       recipe_type: Building (prefab)
       requirements:
-        Log: 1  # TODO: infinite?
+        Variable Log Amount: 1
   - name: Short Defensive Wall
     recipes:
     - output: 1
       recipe_type: Building (prefab)
       requirements:
-        Log: 1  # TODO: infinite?
+        Variable Half Log Amount: 1
 
   - name: Stick Chair
     recipes:
@@ -1111,8 +1212,15 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
-        Log: 2 # TODO: see if log things only need partials
+        Log: 2
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Plank: 1
+        Half Log: 2
 
   - name: Bone Chair
     recipes:
@@ -1133,6 +1241,14 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Stick: 18
+        Quarter Plank: 1
+        Animal Hide: 2
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Stick: 18
         Log: 1
@@ -1141,6 +1257,14 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Stick: 21
+        Plank: 2
+        Animal Hide: 6
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Stick: 21
         Log: 1
@@ -1180,12 +1304,26 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Plank: 3
+        Half Plank: 4
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Log: 6
   - name: Round Table
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Three Quarter Plank: 5
+        Half Plank: 12
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Log: 6
 
@@ -1200,6 +1338,15 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Animal Hide: 2
+        Plank: 8
+        Duct Tape: 2
+        Stick: 40
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Stick: 40
         Log: 4
@@ -1273,12 +1420,26 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Plank: 3
+        Three Quarter Plank: 2
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Log: 2
   - name: Wall Shelf
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Plank: 1
+        Stick: 2
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Log: 1
         Stick: 2
@@ -1287,6 +1448,13 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Quarter Plank: 4
+        Stick: 7
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Stick: 7
         Log: 1
@@ -1303,6 +1471,13 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Plank: 4
+        Stick: 9
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Stick: 9
         Log: 1
@@ -1310,6 +1485,13 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Plank: 1
+        Stick: 5
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Stick: 5
         Log: 1
@@ -1318,14 +1500,30 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Stick: 2
+        Bone: 6
+        Quarter Plank: 3
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Stick: 2
         Log: 1
-        Bone: 5
+        Bone: 6
   - name: Foldable Glider Holder
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Three Quarter Plank: 1
+        Half Plank: 3
+        Plank: 4
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Log: 5
 
@@ -1333,14 +1531,28 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
       requirements:
-        Rock: 1 # TODO: infinite?
+        Rock: 4
+        Variable Rock Amount: 1
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Variable Rock Amount: 1
   - name: Stick Path
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
       requirements:
-        Stick: 1 # TODO: infinite?
+        Stick: 4
+        Variable Stick Amount: 1
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Variable Stick Amount: 1
 
   - name: Rain Catcher
     recipes:
@@ -1382,6 +1594,16 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Skull: 2
+        Cloth: 2
+        Duct Tape: 4
+        Stick: 60
+        Plank: 6
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Log: 3
         Stick: 60
@@ -1393,12 +1615,31 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
       requirements:
         Stick: 31
+        Half Plank: 2
+        Quarter Plank: 4
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 31
+        Log: 2
   - name: Rabbit Hutch
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Three Quarter Plank: 7
+        Plank: 7
+        Stick: 72
+        Half Plank: 2
+        Quarter Plank: 1
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Stick: 72
         Log: 10
@@ -1459,6 +1700,7 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook match actual"
       requirements:
         Log: 6
         Rock: 15
@@ -1504,6 +1746,15 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Rope: 1
+        Duct Tape: 1
+        Stick: 4
+        Plank: 13
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Stick: 4
         Rope: 1
@@ -1513,6 +1764,15 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Rope: 2
+        Duct Tape: 2
+        Stick: 52
+        Plank: 109
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Stick: 52
         Rope: 2
@@ -1522,6 +1782,16 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Rope: 2
+        Duct Tape: 1
+        Stick: 4
+        Log: 5
+        Plank: 116
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Stick: 4
         Rope: 2
@@ -1531,6 +1801,13 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Quarter Log: 1
+        Stick: 6
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Stick: 6
         Log: 1
@@ -1577,6 +1854,16 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Wire: 4
+        Turtle Shell: 4
+        Stick: 14
+        Plank: 12
+        Log: 7
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Log: 14
         Stick: 14
@@ -1587,10 +1874,22 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Arm: 2
+        Watch: 1
+        Bone: 1
+        Quarter Log: 1
+        Wire: 1
+        Golf Cart Battery: 1
+        Stick: 22
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Log: 1
         Golf Cart Battery: 1
-        Arms: 2
+        Arm: 2
         Stick: 22
         Watch: 1
         Bone: 1
@@ -1642,6 +1941,15 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Light Bulb: 9
+        Half Plank: 1
+        Plank: 1
+        Wire: 2
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Log: 1
         Wire: 2
@@ -1660,6 +1968,18 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Skull: 1
+        Golf Cart Battery: 1
+        Wire: 3
+        Knight V: 1
+        Plank: 2
+        Stone: 2
+        Stick: 65
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Log: 1
         Stone: 2
@@ -1672,6 +1992,18 @@ resources:
     recipes:
     - output: 1
       recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Wire: 3
+        Stick: 2
+        C4 Brick: 3
+        Golf Cart Battery: 1
+        Bone: 8
+        Half Plank: 2
+        Half Log: 2
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
       requirements:
         Log: 2
         Golf Cart Battery: 1
