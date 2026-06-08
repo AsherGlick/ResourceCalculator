@@ -16,10 +16,11 @@ note: |
   https://sonsoftheforest.wiki.gg/wiki/Tools
 
 recipe_types:
-  Crafting: Use in your inventory to turn {IN_ITEMS} into {OUT_ITEM}
-  Crafting (can opener): Use with a can opener in your inventory to turn {IN_ITEMS} into {OUT_ITEM}
+  Crafting: Use {IN_ITEMS} in your inventory to turn into {OUT_ITEM}
+  Crafting (utility knife): Use {IN_ITEMS} with a utility knife to turn into {OUT_ITEM}
+  Crafting (can opener): Use {IN_ITEMS} with a can opener to turn into {OUT_ITEM}
   Crafting (3D printer): Use {IN_ITEMS} at a 3D printer to make {OUT_ITEM}
-  Crafting (axe): Use with an axe to turn {IN_ITEMS} into {OUT_ITEM} (and more when applicable)
+  Crafting (axe): Use an axe to turn {IN_ITEMS} into {OUT_ITEM} (and more when applicable)
   Crafting (armor plater): Use {IN_ITEMS} at an armor plater to turn them into {OUT_ITEM}
   Cooking (fire): Use {IN_ITEMS} at a fire to turn them into {OUT_ITEM}
   Cooking (drying rack): Leave {IN_ITEMS} on a drying rack over time to turn them into {OUT_ITEM}
@@ -29,6 +30,264 @@ recipe_types:
   # Upgrading: Use your inventory to add {OUT_ITEM} to a weapon using {IN_ITEMS} (weapon will not be consumed, not all weapons are applicable)
 
 resources:
+
+  ##############################################################################
+  - H1: Weapons ################################################################
+  ##############################################################################
+
+  - H2: Melee ##################################################################
+
+  - name: Crafted Spear
+    recipes:
+    - output: 1
+      recipe_type: Crafting (utility knife)
+      requirements:
+        Duct Tape: 1
+        Stick: 2
+  - name: Crafted Club
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Skull: 1
+        Stick: 1
+        Rope: 1
+
+  - name: Utility Knife
+    raw_resource: true
+  - name: Tactical Axe
+    raw_resource: true
+  - name: Modern Axe
+    raw_resource: true
+  - name: Firefighter Axe
+    raw_resource: true
+
+  - name: Guitar
+    raw_resource: true
+  - name: Katana
+    raw_resource: true
+  - name: Machete
+    raw_resource: true
+  - name: Putter
+    raw_resource: true
+  - name: Stun Baton
+    raw_resource: true
+
+  - H2: Ranged #################################################################
+
+  - name: Crafted Bow
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Duct Tape: 1
+        Rope: 1
+        Stick: 2
+  - name: Compound Bow
+    raw_resource: true
+  - name: Crossbow
+    raw_resource: true
+  - name: Pistol
+    raw_resource: true
+  - name: Revolver
+    raw_resource: true
+  - name: Rifle
+    raw_resource: true
+  - name: Shotgun
+    raw_resource: true
+  - name: Slingshot
+    raw_resource: true
+  - name: Stun Gun
+    raw_resource: true
+  - name: Cross
+    raw_resource: true
+
+  - H2: Attachment #############################################################
+
+  - name: Flashlight Attachment
+    raw_resource: true
+  - name: Laser Sight
+    raw_resource: true
+  - name: Pistol Rail
+    raw_resource: true
+  - name: Shotgun Rail
+    raw_resource: true
+  - name: Silencer
+    raw_resource: true
+
+  - H2: Explosives #############################################################
+
+  - name: Molotov
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Vodka Bottle: 1
+        Cloth: 1
+  - name: Sticky Bomb
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        C4 Brick: 1
+        Circuit Board: 1
+        Duct Tape: 1
+        Wire: 1
+        Watch: 1
+        Coins: 5
+  - name: Grenade
+    raw_resource: true
+
+  - H2: Ammo ###################################################################
+
+  - name: 9mm Ammo
+    raw_resource: true
+  - name: Buckshot Ammo
+    raw_resource: true
+  - name: Slug Ammo
+    raw_resource: true
+  - name: Rifle Ammo
+    raw_resource: true
+
+  - name: Stone Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Feather: 2
+        Stick: 2
+        Small Rock: 4
+  - name: Fire Stone Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stone Arrow: 4
+        Vodka Bottle: 1
+        Cloth: 1
+  - name: Poison Stone Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stone Arrow: 4
+        Snowberries: 2
+        Fly Amanita: 1
+  - name: Shock Stone Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stone Arrow: 4
+        Batteries: 2
+        Circuit Board: 1
+        Wire: 1
+  - name: Explosive Stone Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stone Arrow: 4
+        Batteries: 2
+        Wire: 1
+        Circuit Board: 1
+        C4 Brick: 1
+
+  - name: 3D Printed Arrow
+    recipes:
+    - output: 5
+      recipe_type: Crafting (3D printer)
+      requirements:
+        Printer Resin: 50
+  - name: Fire 3D Printed Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        3D Printed Arrow: 4
+        Vodka Bottle: 1
+        Cloth: 1
+  - name: Poison 3D Printed Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        3D Printed Arrow: 4
+        Snowberries: 2
+        Fly Amanita: 1
+  - name: Shock 3D Printed Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        3D Printed Arrow: 4
+        Batteries: 2
+        Circuit Board: 1
+        Wire: 1
+  - name: Explosive 3D Printed Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        3D Printed Arrow: 4
+        Batteries: 2
+        Wire: 1
+        Circuit Board: 1
+        C4 Brick: 1
+
+  - name: Carbon Fiber Arrow
+    raw_resource: true
+  - name: Fire Carbon Fiber Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Carbon Fiber Arrow: 4
+        Vodka Bottle: 1
+        Cloth: 1
+  - name: Poison Carbon Fiber Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Carbon Fiber Arrow: 4
+        Snowberries: 2
+        Fly Amanita: 1
+  - name: Shock Carbon Fiber Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Carbon Fiber Arrow: 4
+        Batteries: 2
+        Circuit Board: 1
+        Wire: 1
+  - name: Explosive Carbon Fiber Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Carbon Fiber Arrow: 4
+        Batteries: 2
+        Wire: 1
+        Circuit Board: 1
+        C4 Brick: 1
+
+  - name: Crossbow Bolt
+    raw_resource: true
+  - name: Golf Ball
+    raw_resource: true
+  - name: Small Rock
+    raw_resource: true
+  - name: Stun Gun Ammo
+    raw_resource: true
+  - name: Zipline Rope
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Rope: 1
+        Printed Grappling Hook: 1
 
   ##############################################################################
   - H1: Crafting Materials #####################################################
@@ -179,8 +438,12 @@ resources:
     raw_resource: true
   - name: Turtle Shell
     raw_resource: true
+
+  - name: Emergency Pack
+    raw_resource: true
   - name: Skin Pouch
     raw_resource: true
+
   - name: Knight V
     raw_resource: true
   - name: Foldable Glider
@@ -191,23 +454,8 @@ resources:
   - name: Solafite Ore
     raw_resource: true
 
-  - name: Variable Log Amount
-    raw_resource: true
-  - name: Variable Half Log Amount
-    raw_resource: true
-  - name: Variable Stick Amount
-    raw_resource: true
-  - name: Variable Rock Amount
-    raw_resource: true
-
   - H2: 3D Printed #############################################################
 
-  - name: 3D Printed Arrow
-    recipes:
-    - output: 5
-      recipe_type: Crafting (3D printer)
-      requirements:
-        Printer Resin: 50
   - name: Printed Flask
     recipes:
     - output: 1
@@ -431,9 +679,7 @@ resources:
 
   - name: Canned Food
     raw_resource: true
-  - name: Can Opener
-    raw_resource: true
-  - name: Cat Food
+  - name: Cat Food # TODO: "Raw Cat Food"?
     recipes:
     - output: 1
       recipe_type: Crafting (can opener)
@@ -2099,3 +2345,97 @@ resources:
         Rock: 6
         Bone: 15
         Rope: 2
+
+  - name: Backpack
+    raw_resource: true
+  - name: Guide Book
+    raw_resource: true
+  - name: Walkie Talkie
+    raw_resource: true
+  - name: Lighter
+    raw_resource: true
+  - name: Flare
+    raw_resource: true
+  - name: Repair Tool
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Rope: 1
+        Stick: 1
+        Rock: 1
+  - name: Pickaxe
+    raw_resource: true
+
+  - name: Action Camera
+    raw_resource: true
+  - name: Binoculars
+    raw_resource: true
+  - name: Can Opener
+    raw_resource: true
+  - name: Chainsaw
+    raw_resource: true
+  - name: Flashlight
+    raw_resource: true
+  - name: GPS Locator
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        3D Printed GPS Case: 1
+        Circuit Board: 1
+        Batteries: 1
+        Wire: 1
+  - name: GPS Tracker
+    raw_resource: true
+  - name: Night Vision Goggles
+    raw_resource: true
+  - name: Rebreather
+    raw_resource: true
+  - name: Rope Gun
+    raw_resource: true
+  - name: Shovel
+    raw_resource: true
+
+  - name: Guest Keycard
+    raw_resource: true
+  - name: Maintenance Keycard
+    raw_resource: true
+  - name: VIP Keycard
+    raw_resource: true
+
+  - name: Artifact Piece A
+    raw_resource: true
+  - name: Artifact Piece B
+    raw_resource: true
+  - name: Artifact Piece C
+    raw_resource: true
+  - name: Artifact Piece D
+    raw_resource: true
+  - name: Artifact Piece E
+    raw_resource: true
+  - name: Artifact Piece F
+    raw_resource: true
+  - name: Artifact Piece G
+    raw_resource: true
+  - name: Artifact
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Artifact Piece A: 1
+        Artifact Piece B: 1
+        Artifact Piece C: 1
+        Artifact Piece D: 1
+        Artifact Piece E: 1
+        Artifact Piece F: 1
+        Artifact Piece G: 1
+
+  - name: Variable Log Amount
+    raw_resource: true
+  - name: Variable Half Log Amount
+    raw_resource: true
+  - name: Variable Stick Amount
+    raw_resource: true
+  - name: Variable Rock Amount
+    raw_resource: true
