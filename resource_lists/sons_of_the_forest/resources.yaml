@@ -22,14 +22,23 @@ recipe_types:
   Crafting (3D printer): Use {IN_ITEMS} at a 3D printer to make {OUT_ITEM}
   Crafting (axe): Use an axe to turn {IN_ITEMS} into {OUT_ITEM} (and more when applicable)
   Crafting (armor plater): Use {IN_ITEMS} at an armor plater to turn them into {OUT_ITEM}
-  Cooking (fire): Use {IN_ITEMS} at a fire to turn them into {OUT_ITEM}
+  Crafting (fire): Use {IN_ITEMS} in a fire to turn them into {OUT_ITEM}
+  Cooking (fire): Use {IN_ITEMS} in a pot at a fire to turn them into {OUT_ITEM}
   Cooking (drying rack): Leave {IN_ITEMS} on a drying rack over time to turn them into {OUT_ITEM}
   Cooking (spoil): Leave {IN_ITEMS} out over time to turn them into {OUT_ITEM}
   Cooking (stew): Use with a cooking pot and fire to turn {IN_ITEMS} into {OUT_ITEM}
   Building (prefab): Place blueprint(s) and fill in to turn {IN_ITEMS} into {OUT_ITEM}
-  # Upgrading: Use your inventory to add {OUT_ITEM} to a weapon using {IN_ITEMS} (weapon will not be consumed, not all weapons are applicable)
 
 resources:
+
+  - name: Repair Tool
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Rope: 1
+        Stick: 1
+        Rock: 1
 
   ##############################################################################
   - H1: Weapons ################################################################
@@ -60,6 +69,8 @@ resources:
   - name: Modern Axe
     raw_resource: true
   - name: Firefighter Axe
+    raw_resource: true
+  - name: Pickaxe
     raw_resource: true
 
   - name: Guitar
@@ -397,6 +408,55 @@ resources:
     raw_resource: true
   - name: Bone
     raw_resource: true
+    recipes:
+    - output: 1
+      recipe_type: Crafting (fire)
+      requirements:
+        Raw Arm: 1
+    - output: 1
+      recipe_type: Crafting (fire)
+      requirements:
+        Cooked Arm: 1
+    - output: 1
+      recipe_type: Crafting (fire)
+      requirements:
+        Burnt Arm: 1
+    - output: 1
+      recipe_type: Crafting (fire)
+      requirements:
+        Raw Leg: 1
+    - output: 1
+      recipe_type: Crafting (fire)
+      requirements:
+        Cooked Leg: 1
+    - output: 1
+      recipe_type: Crafting (fire)
+      requirements:
+        Burnt Leg: 1
+    - output: 2
+      recipe_type: Crafting (fire)
+      requirements:
+        Torso: 1
+    - output: 5
+      recipe_type: Crafting (fire)
+      note: "Sometimes more based on the body"
+      requirements:
+        Body: 1
+  - name: Skull
+    raw_resource: true
+    recipes:
+    - output: 1
+      recipe_type: Crafting (fire)
+      requirements:
+        Raw Head: 1
+    - output: 1
+      recipe_type: Crafting (fire)
+      requirements:
+        Cooked Head: 1
+    - output: 1
+      recipe_type: Crafting (fire)
+      requirements:
+        Burnt Head: 1
   - name: Circuit Board
     raw_resource: true
   - name: C4 Brick
@@ -411,8 +471,6 @@ resources:
     raw_resource: true
   - name: Leaf
     raw_resource: true
-  - name: Skull
-    raw_resource: true
   - name: Vodka Bottle
     raw_resource: true
   - name: Watch
@@ -421,8 +479,6 @@ resources:
     raw_resource: true
 
   - name: Air Tank
-    raw_resource: true
-  - name: Head Trophy
     raw_resource: true
   - name: Golf Cart Battery
     raw_resource: true
@@ -679,14 +735,16 @@ resources:
 
   - name: Canned Food
     raw_resource: true
-  - name: Cat Food # TODO: "Raw Cat Food"?
+  - name: Raw Cat Food
     recipes:
     - output: 1
       recipe_type: Crafting (can opener)
       requirements:
         Canned Food: 1
 
-  - name: Oyster
+  - name: Raw Oyster
+    raw_resource: true
+  - name: Rotten Oyster
     raw_resource: true
   - name: Turtle Egg
     raw_resource: true
@@ -705,13 +763,17 @@ resources:
       recipe_type: Cooking (fire)
       requirements:
         Raw Fish: 1
-  - name: Burned Fish
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Dried Fish: 1
+  - name: Burnt Fish
     recipes:
     - output: 1
       recipe_type: Cooking (fire)
       requirements:
         Raw Fish: 1
-  - name: Spoiled Fish
+  - name: Rotten Fish
     recipes:
     - output: 1
       recipe_type: Cooking (spoil)
@@ -732,77 +794,129 @@ resources:
       recipe_type: Cooking (fire)
       requirements:
         Raw Meat: 1
-  - name: Burned Meat
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Dried Meat: 1
+  - name: Burnt Meat
     recipes:
     - output: 1
       recipe_type: Cooking (fire)
       requirements:
         Raw Meat: 1
-  - name: Spoiled Meat
+  - name: Rotten Meat
     recipes:
     - output: 1
       recipe_type: Cooking (spoil)
       requirements:
         Raw Meat: 1
 
-  - name: Head
+  - name: Raw Head
     raw_resource: true
-  - name: Arm
+  - name: Cooked Head
+    recipes:
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Raw Head: 1
+  - name: Burnt Head
+    recipes:
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Raw Head: 1
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Cooked Head: 1
+  - name: Rotten Head
+    recipes:
+    - output: 1
+      recipe_type: Cooking (spoil)
+      requirements:
+        Raw Head: 1
+  - name: Raw Arm
     raw_resource: true
   - name: Cooked Arm
     recipes:
     - output: 1
       recipe_type: Cooking (fire)
       requirements:
-        Arm: 1
+        Raw Arm: 1
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Dried Arm: 1
   - name: Dried Arm
     recipes:
     - output: 1
       recipe_type: Cooking (drying rack)
       requirements:
-        Arm: 1
-  - name: Burned Arm
+        Raw Arm: 1
+  - name: Burnt Arm
     recipes:
     - output: 1
       recipe_type: Cooking (fire)
       requirements:
-        Arm: 1
-  - name: Spoiled Arm
+        Raw Arm: 1
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Dried Arm: 1
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Cooked Arm: 1
+  - name: Rotten Arm
     recipes:
     - output: 1
       recipe_type: Cooking (spoil)
       requirements:
-        Arm: 1
+        Raw Arm: 1
 
-  - name: Leg
+  - name: Raw Leg
     raw_resource: true
-  - name: Cooked Leg
-    recipes:
-    - output: 1
-      recipe_type: Cooking (fire)
-      requirements:
-        Leg: 1
   - name: Dried Leg
     recipes:
     - output: 1
       recipe_type: Cooking (drying rack)
       requirements:
-        Leg: 1
-  - name: Burned Leg
+        Raw Leg: 1
+  - name: Cooked Leg
     recipes:
     - output: 1
       recipe_type: Cooking (fire)
       requirements:
-        Leg: 1
-  - name: Spoiled Leg
+        Raw Leg: 1
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Dried Leg: 1
+  - name: Burnt Leg
+    recipes:
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Raw Leg: 1
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Dried Leg: 1
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Cooked Leg: 1
+  - name: Rotten Leg
     recipes:
     - output: 1
       recipe_type: Cooking (spoil)
       requirements:
-        Leg: 1
-
-  - name: Cooking Pot
+        Raw Leg: 1
+  - name: Body
     raw_resource: true
+  - name: Torso
+    raw_resource: true
+
   - name: Clean Water
     raw_resource: true
 
@@ -868,7 +982,7 @@ resources:
     - output: 1
       recipe_type: Cooking (stew)
       requirements:
-        Arm: 1
+        Raw Arm: 1
         Ramen Noodles: 1
         Clean Water: 1
     - output: 1
@@ -892,70 +1006,70 @@ resources:
     - output: 1
       recipe_type: Cooking (stew)
       requirements:
-        Head: 1
-        Arm: 2
-        Leg: 2
+        Raw Head: 1
+        Raw Arm: 2
+        Raw Leg: 2
         Clean Water: 1
     - output: 1
       recipe_type: Cooking (stew)
       requirements:
-        Head: 1
+        Raw Head: 1
         Dried Arm: 2
         Dried Leg: 2
         Clean Water: 1
     - output: 1
       recipe_type: Cooking (stew)
       requirements:
-        Head: 1
-        Arm: 2
+        Raw Head: 1
+        Raw Arm: 2
         Dried Leg: 2
         Clean Water: 1
     - output: 1
       recipe_type: Cooking (stew)
       requirements:
-        Head: 1
+        Raw Head: 1
         Dried Arm: 2
-        Leg: 2
+        Raw Leg: 2
         Clean Water: 1
     - output: 1
       recipe_type: Cooking (stew)
       requirements:
-        Head: 1
-        Arm: 1
+        Raw Head: 1
+        Raw Arm: 1
         Dried Arm: 1
-        Leg: 2
+        Raw Leg: 2
         Clean Water: 1
     - output: 1
       recipe_type: Cooking (stew)
       requirements:
-        Head: 1
-        Arm: 1
+        Raw Head: 1
+        Raw Arm: 1
         Dried Arm: 1
         Dried Leg: 2
         Clean Water: 1
     - output: 1
       recipe_type: Cooking (stew)
       requirements:
-        Head: 1
-        Arm: 2
-        Leg: 1
+        Raw Head: 1
+        Raw Arm: 2
+        Raw Leg: 1
         Dried Leg: 1
         Clean Water: 1
     - output: 1
       recipe_type: Cooking (stew)
       requirements:
-        Head: 1
+        Raw Head: 1
         Dried Arm: 2
-        Leg: 1
+        Raw Leg: 1
         Dried Leg: 1
         Clean Water: 1
     - output: 1
       recipe_type: Cooking (stew)
       requirements:
-        Head: 1
-        Arm: 1
+        Raw Head: 1
+        Raw Arm: 1
         Dried Arm: 1
-        Leg: 1
+        Raw Leg: 1
         Dried Leg: 1
         Clean Water: 1
 
@@ -965,27 +1079,27 @@ resources:
       recipe_type: Cooking (stew)
       requirements:
         Raw Fish: 3
-        Oyster: 1
+        Raw Oyster: 1
         Clean Water: 1
     - output: 1
       recipe_type: Cooking (stew)
       requirements:
         Dried Fish: 3
-        Oyster: 1
+        Raw Oyster: 1
         Clean Water: 1
     - output: 1
       recipe_type: Cooking (stew)
       requirements:
         Raw Fish: 2
         Dried Fish: 1
-        Oyster: 1
+        Raw Oyster: 1
         Clean Water: 1
     - output: 1
       recipe_type: Cooking (stew)
       requirements:
         Raw Fish: 1
         Dried Fish: 2
-        Oyster: 1
+        Raw Oyster: 1
         Clean Water: 1
 
   - name: Kitchen Sink
@@ -995,7 +1109,7 @@ resources:
       requirements:
         Raw Meat: 2
         Raw Fish: 2
-        Oyster: 2
+        Raw Oyster: 2
         Turtle Egg: 2
         King Oyster: 2
         Ramen Noodles: 1
@@ -1005,7 +1119,7 @@ resources:
       requirements:
         Raw Meat: 2
         Dried Fish: 2
-        Oyster: 2
+        Raw Oyster: 2
         Turtle Egg: 2
         King Oyster: 2
         Ramen Noodles: 1
@@ -1016,7 +1130,7 @@ resources:
         Raw Meat: 2
         Raw Fish: 1
         Dried Fish: 1
-        Oyster: 2
+        Raw Oyster: 2
         Turtle Egg: 2
         King Oyster: 2
         Ramen Noodles: 1
@@ -1026,7 +1140,7 @@ resources:
       requirements:
         Dried Meat: 2
         Raw Fish: 2
-        Oyster: 2
+        Raw Oyster: 2
         Turtle Egg: 2
         King Oyster: 2
         Ramen Noodles: 1
@@ -1036,7 +1150,7 @@ resources:
       requirements:
         Dried Meat: 2
         Dried Fish: 2
-        Oyster: 2
+        Raw Oyster: 2
         Turtle Egg: 2
         King Oyster: 2
         Ramen Noodles: 1
@@ -1047,7 +1161,7 @@ resources:
         Dried Meat: 2
         Raw Fish: 1
         Dried Fish: 1
-        Oyster: 2
+        Raw Oyster: 2
         Turtle Egg: 2
         King Oyster: 2
         Ramen Noodles: 1
@@ -1058,7 +1172,7 @@ resources:
         Raw Meat: 1
         Dried Meat: 1
         Raw Fish: 2
-        Oyster: 2
+        Raw Oyster: 2
         Turtle Egg: 2
         King Oyster: 2
         Ramen Noodles: 1
@@ -1069,7 +1183,7 @@ resources:
         Raw Meat: 1
         Dried Meat: 1
         Dried Fish: 2
-        Oyster: 2
+        Raw Oyster: 2
         Turtle Egg: 2
         King Oyster: 2
         Ramen Noodles: 1
@@ -1081,7 +1195,7 @@ resources:
         Dried Meat: 1
         Raw Fish: 1
         Dried Fish: 1
-        Oyster: 2
+        Raw Oyster: 2
         Turtle Egg: 2
         King Oyster: 2
         Ramen Noodles: 1
@@ -2187,7 +2301,7 @@ resources:
       recipe_type: Building (prefab)
       note: "Actual requirements in practice"
       requirements:
-        Arm: 2
+        Raw Arm: 2
         Watch: 1
         Bone: 1
         Quarter Log: 1
@@ -2200,7 +2314,7 @@ resources:
       requirements:
         Log: 1
         Golf Cart Battery: 1
-        Arm: 2
+        Raw Arm: 2
         Stick: 22
         Watch: 1
         Bone: 1
@@ -2211,9 +2325,9 @@ resources:
     - output: 1
       recipe_type: Building (prefab)
       requirements:
-        Arm: 6
-        Leg: 2
-        Head: 1
+        Raw Arm: 6
+        Raw Leg: 2
+        Raw Head: 1
         Creepy Armor: 2
         Stick: 9
         Wire: 1
@@ -2224,15 +2338,15 @@ resources:
       recipe_type: Building (prefab)
       requirements:
         Creepy Armor: 14
-        Arm: 4
-        Leg: 2
+        Raw Arm: 4
+        Raw Leg: 2
         Stick: 40
   - name: Leg Lamp
     recipes:
     - output: 1
       recipe_type: Building (prefab)
       requirements:
-        Leg: 1
+        Raw Leg: 1
         Animal Hide: 1
         Wire: 1
         Light Bulb: 1
@@ -2356,22 +2470,14 @@ resources:
     raw_resource: true
   - name: Flare
     raw_resource: true
-  - name: Repair Tool
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Rope: 1
-        Stick: 1
-        Rock: 1
-  - name: Pickaxe
-    raw_resource: true
 
   - name: Action Camera
     raw_resource: true
   - name: Binoculars
     raw_resource: true
   - name: Can Opener
+    raw_resource: true
+  - name: Cooking Pot
     raw_resource: true
   - name: Chainsaw
     raw_resource: true
@@ -2439,3 +2545,10 @@ resources:
     raw_resource: true
   - name: Variable Rock Amount
     raw_resource: true
+
+  - name: Head Trophy
+    raw_resource: true
+  - name: Outfit
+    raw_resource: true
+
+# TODO: some non-prefab but common?
