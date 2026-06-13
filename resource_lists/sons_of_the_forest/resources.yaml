@@ -14,6 +14,7 @@ note: |
   https://sonsoftheforest.wiki.gg/wiki/Inventory
   https://sonsoftheforest.wiki.gg/wiki/Consumables
   https://sonsoftheforest.wiki.gg/wiki/Tools
+  https://sonsoftheforest.wiki.gg/wiki/Custom_Buildings
 
 recipe_types:
   Crafting: Use {IN_ITEMS} in your inventory to turn into {OUT_ITEM}
@@ -28,6 +29,7 @@ recipe_types:
   Cooking (spoil): Leave {IN_ITEMS} out over time to turn them into {OUT_ITEM}
   Cooking (stew): Use with a cooking pot and fire to turn {IN_ITEMS} into {OUT_ITEM}
   Building (prefab): Place blueprint(s) and fill in to turn {IN_ITEMS} into {OUT_ITEM}
+  Building (custom): Place {IN_ITEMS} to create {OUT_ITEM}
 
 resources:
 
@@ -61,6 +63,13 @@ resources:
         Skull: 1
         Stick: 1
         Rope: 1
+  - name: Torch
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: 1
+        Cloth: 1
 
   - name: Utility Knife
     raw_resource: true
@@ -347,6 +356,11 @@ resources:
       note: "Also creates Half Log"
       requirements:
         Three Quarter Log: 1
+    - output: 1
+      recipe_type: Crafting (axe)
+      note: "Also creates Three Quarter Log"
+      requirements:
+        Log: 1
   - name: Plank
     recipes:
     - output: 2
@@ -397,6 +411,11 @@ resources:
       note: "Also creates Half Plank"
       requirements:
         Three Quarter Plank: 1
+    - output: 1
+      recipe_type: Crafting (axe)
+      note: "Also creates Three Quarter Plank"
+      requirements:
+        Plank: 1
   - name: Stone
     raw_resource: true
 
@@ -912,9 +931,9 @@ resources:
       recipe_type: Cooking (spoil)
       requirements:
         Raw Leg: 1
-  - name: Body
-    raw_resource: true
   - name: Torso
+    raw_resource: true
+  - name: Body
     raw_resource: true
 
   - name: Clean Water
@@ -1614,18 +1633,75 @@ resources:
       note: "Listed requirements in guidebook"
       requirements:
         Variable Log Amount: 1
+
   - name: Defensive Wall
     recipes:
     - output: 1
       recipe_type: Building (prefab)
       requirements:
         Variable Log Amount: 1
-  - name: Short Defensive Wall
-    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Variable Three Quarter Log Amount: 1
     - output: 1
       recipe_type: Building (prefab)
       requirements:
         Variable Half Log Amount: 1
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Variable Quarter Log Amount: 1
+  - name: Defensive Wall Door
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Defensive Wall: 1
+        Log: 1
+  - name: Fence
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 4
+        Variable Stick Amount: 1
+  - name: Reinforced Fence
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Fence: 1
+        Variable Rock Amount: 1
+  - name: Electric Fence
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Fence: 1
+        Basic Electricity: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Fence: 1
+        Upgraded Electricity: 1
+  - name: Reinforced Electric Fence
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Electric Fence: 1
+        Variable Rock Amount: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Reinforced Fence: 1
+        Basic Electricity: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Reinforced Fence: 1
+        Upgraded Electricity: 1
 
   - name: Stick Chair
     recipes:
@@ -2419,13 +2495,14 @@ resources:
       recipe_type: Building (prefab)
       note: "Actual requirements in practice"
       requirements:
-        Wire: 3
-        Stick: 2
-        C4 Brick: 3
-        Golf Cart Battery: 1
-        Bone: 8
-        Half Plank: 2
         Half Log: 2
+        Half Plank: 3
+        Bone: 8
+        Golf Cart Battery: 1
+        C4 Brick: 3
+        Stick: 2
+        Wire: 3
+        Spear: 5
     - output: 1
       recipe_type: Building (prefab)
       note: "Listed requirements in guidebook"
@@ -2459,6 +2536,229 @@ resources:
         Rock: 6
         Bone: 15
         Rope: 2
+
+  - H2: Custom #################################################################
+
+  - name: Tent
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "Most combinations of tarp and stick are viable"
+      requirements:
+        Tarp: 1
+        Stick: 1
+
+  - name: Basic Fire
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 2
+  - name: Reinforced Fire
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Basic Fire: 1
+        Rock: 7
+  - name: Standing Fire
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 2
+        Cloth: 1
+  - name: Reinforced Standing Fire
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Standing Fire: 1
+        Rock: 3
+  - name: Bonfire
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Basic Fire: 1
+        Quarter Plank: 2
+        Log: 6
+  - name: Firewood
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "Up to a max of 50"
+      requirements:
+        Quarter Plank: 50
+
+  - name: Skull Lamp
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 1
+        Cloth: 1
+        Skull: 1
+  - name: Reinforced Skull Lamp
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Skull Lamp: 1
+        Rock: 3
+
+  - name: Skull Stick
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 1
+        Skull: 1
+  - name: Reinforced Skull Stick
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Skull Stick: 1
+        Rock: 3
+  - name: Pointed Stick
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 1
+  - name: Reinforced Pointed Stick
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Pointed Stick: 1
+        Rock: 3
+
+  - name: Floor
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment"
+      requirements:
+        Plank: 5
+  - name: Stone Floor
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment"
+      requirements:
+        Stone: 20
+  - name: Wall
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment"
+      requirements:
+        Log: 6
+  - name: Stone Wall
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment"
+      requirements:
+        Stone: 28
+  - name: Door
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Plank: 3
+  - name: Door Lock
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 1
+  - name: Shutters
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment"
+      requirements:
+        Quarter Plank: 2
+
+  # TODO: alternate recipes for continuing?
+
+  - name: Stairs
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One floor"
+      requirements:
+        Log: 5
+        Plank: 9
+  - name: Ramp
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One floor"
+      requirements:
+        Log: 5
+        Plank: 9
+  - name: Corner Ramp
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One floor"
+      requirements:
+        Log: 4
+        Quarter Plank: 4
+        Half Plank: 4
+        Three Quarter Plank: 4
+        Plank: 4
+  - name: Railing
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment"
+      requirements:
+        Quarter Log: 2
+        Plank: 1
+
+  - name: Climbing Rope
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Rope: 1
+  - name: Rope Bridge
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Rope: 2
+        Variable Plank Amount: 1
+
+  - name: Basic Electricity
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Solar Panel: 1
+        Variable Wire Amount: 1
+  - name: Upgraded Electricity
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Solar Panel: 1
+        Golf Cart Battery: 1
+        Variable Wire Amount: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Basic Electricity: 1
+        Golf Cart Battery: 1
+
+  ##############################################################################
+  - H1: Misc ###################################################################
+  ##############################################################################
 
   - name: Backpack
     raw_resource: true
@@ -2539,11 +2839,19 @@ resources:
 
   - name: Variable Log Amount
     raw_resource: true
+  - name: Variable Three Quarter Log Amount
+    raw_resource: true
   - name: Variable Half Log Amount
+    raw_resource: true
+  - name: Variable Quarter Log Amount
+    raw_resource: true
+  - name: Variable Plank Amount
     raw_resource: true
   - name: Variable Stick Amount
     raw_resource: true
   - name: Variable Rock Amount
+    raw_resource: true
+  - name: Variable Wire Amount
     raw_resource: true
 
   - name: Head Trophy
@@ -2551,4 +2859,9 @@ resources:
   - name: Outfit
     raw_resource: true
 
-# TODO: some non-prefab but common?
+  # TODO: collectables (like books)?
+
+  - name: Album Cover
+    raw_resource: true
+
+  # TODO: move buildings up?
