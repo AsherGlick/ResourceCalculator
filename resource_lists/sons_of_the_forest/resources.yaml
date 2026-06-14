@@ -2906,12 +2906,93 @@ resources:
   - name: Variable Wire Amount
     raw_resource: true
 
-  - name: Head Trophy
+  - name: Squirrel Head
     raw_resource: true
-  - name: Outfit
+  - name: Small Turtle Head
+    raw_resource: true
+  - name: Duck Head
+    raw_resource: true
+  - name: Eagle Head
+    raw_resource: true
+  - name: Seagull Head
+    raw_resource: true
+  - name: Rabbit Head
+    raw_resource: true
+  - name: Turtle Head
+    raw_resource: true
+  - name: Raccoon Head
+    raw_resource: true
+  - name: Deer Head
+    raw_resource: true
+  - name: Moose Head
     raw_resource: true
 
-  # TODO: collectables (like books)?
-
+  - name: The Realm Beyond
+    raw_resource: true
+  - name: Parallel Universes
+    raw_resource: true
+  - name: Rescued
+    raw_resource: true
+  - name: Puffton - On Creating an Empire 
+    custom_simplename: pufftononcreatinganempire
+    raw_resource: true
+  - name: Corporate Line
+    raw_resource: true
+  - name: Circus Pamphlet
+    raw_resource: true
+  - name: Holosprings Pamphlet
+    raw_resource: true
+  - name: Cult Pamphlet
+    raw_resource: true
   - name: Album Cover
+    raw_resource: true
+  - name: Notes
+    raw_resource: true
+    note: "50 in total"
+
+  - name: Winter Jacket
+    note: "For player"
+    raw_resource: true
+  - name: Leather Jacket
+    note: "For player and Kelvin"
+    raw_resource: true
+  - name: Tactical Jacket
+    note: "Starting outfit for player and Kelvin"
+    raw_resource: true
+  - name: Tuxedo
+    note: "For player and Kelvin"
+    raw_resource: true
+  - name: Silk Pyjamas
+    note: "For player and Kelvin"
+    raw_resource: true
+  - name: Space Suit
+    note: "For player and Kelvin"
+    raw_resource: true
+  - name: Hoodie
+    note: "For player and Kelvin"
+    raw_resource: true
+  - name: Blazer
+    note: "For player and Kelvin"
+    raw_resource: true
+  - name: Priest Outfit
+    note: "For player"
+    raw_resource: true
+  - name: Wetsuit
+    note: "For player"
+    raw_resource: true
+
+  - name: Swim Suit
+    raw_resource: true
+    note: "Starting outfit for Virginia"
+  - name: Dress
+    note: "For Virginia"
+    raw_resource: true
+  - name: Camouflage Suit
+    note: "For Virginia"
+    raw_resource: true
+  - name: Leather Suit
+    note: "For Virginia"
+    raw_resource: true
+  - name: Track Suit
+    note: "For Virginia"
     raw_resource: true
