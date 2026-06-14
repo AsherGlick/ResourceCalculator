@@ -1,8 +1,8 @@
 ---
 authors:
-  Asher: ""
+  Asher: "https://aglick.com"
 
-index_page_display_name: Skyrim
+calculator_display_name: Skyrim
 
 recipe_types:
   Craft: Craft {IN_ITEMS} into {OUT_ITEM}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>ResourceCalculator</title>
+		<title>Resource Calculator - {{calculator_display_name}}</title>
 
 		<link rel="stylesheet" href="{{css_path}}">
 		<meta charset="UTF-8">
@@ -39,14 +39,30 @@
 
 		<div id="about_us">
 			Resource Calculator is an open source project to allow players to easily calculate how many raw resources they need in order to construct the items they want.
-			It was originally created by Asher Glick. You can help keep Resource Calculator up to date or add resources for new games by clicking on the Contribute button above. <br><br> The resources and recipes for the <b>{{calculator_name}} calculator</b> were created and updated by<br>
-			{% for author in authors %}
-
-
-			- <a {% if authors[author] != "" %}href="{{authors[author]}}"{% endif %}>{{ author }}</a><br>
-			{% endfor %}
+			It was originally created by Asher Glick. You can help keep Resource Calculator up to date or add resources for new games by clicking on the Contribute button above.
 		</div>
 
+		<div id="title_container">
+			<span class="title">Resource Calculator - {{calculator_display_name}}</span>
+			{% if game_version != "" or authors | length > 0 %}
+			<button class="info_button"	popovertarget="calc_info">&#x1F6C8;</button>
+			<div id="calc_info" class="info_popover" popover="auto">
+				{% if game_version != "" %}
+			 	Up to date as of game version:<br>
+				"{{game_version}}"<br>
+				{% endif %}
+				{% if game_version != "" and authors | length > 0 %}<br>{% endif %}
+				{% if authors | length > 0 %}
+				This calculator was created/updated by:
+				<ul>{% for author in authors %}
+				<li>{% if authors[author] != "" %}<a href="{% if '@' in authors[author] %}mailto:{% endif %}{{authors[author]}}" target="_blank">{% endif %}
+					{{ author }}
+				{% if authors[author] != "" %}</a>{% endif %}</li>
+				{% endfor %}</ul>
+				{% endif %}
+			</div>
+			{% endif %}
+		</div>
 
 		<div id="content" class="content">
 			<div id="content_field" class="menu_style">

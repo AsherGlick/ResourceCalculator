@@ -210,7 +210,7 @@ def optional_quote_wrapping(string: str) -> str:
 class ResourceList():
     def __init__(self) -> None:
         self.authors: OrderedDict[str, str] = OrderedDict()
-        self.index_page_display_name: str = ""
+        self.calculator_display_name: str = ""
         self.game_version: str = ""
         self.row_group_count: int = 1
         self.note: str = ""
@@ -221,7 +221,7 @@ class ResourceList():
         self.default_stack_size: str = ""
         self.resources: List[Union[Resource, Heading]] = []
 
-        self.valid_keys = ['authors', 'index_page_display_name', 'game_version', 'row_group_count', 'note', 'banner_message', 'recipe_types', 'requirement_groups', 'stack_sizes', 'default_stack_size', 'resources']
+        self.valid_keys = ['authors', 'calculator_display_name', 'game_version', 'row_group_count', 'note', 'banner_message', 'recipe_types', 'requirement_groups', 'stack_sizes', 'default_stack_size', 'resources']
 
     def parse(self, tuple_tree: Any) -> List[TokenError]:
         errors: List[TokenError] = []
@@ -251,13 +251,13 @@ class ResourceList():
 
                 self.authors[str(key.value)] = str(value.value)
 
-        # Load index_page_display_name into a typed object
-        if 'index_page_display_name' in tokenless_keys:
-            index_page_display_name = tokenless_keys["index_page_display_name"]
-            if type(index_page_display_name.value) != str:
-                errors.append(TokenError("index_page_display_name should be a string not a {}".format(str(type(index_page_display_name.value))), Token().from_yaml_scalar_node(index_page_display_name.token)))
+        # Load calculator_display_name into a typed object
+        if 'calculator_display_name' in tokenless_keys:
+            calculator_display_name = tokenless_keys["calculator_display_name"]
+            if type(calculator_display_name.value) != str:
+                errors.append(TokenError("calculator_display_name should be a string not a {}".format(str(type(calculator_display_name.value))), Token().from_yaml_scalar_node(calculator_display_name.token)))
 
-            self.index_page_display_name = str(index_page_display_name.value)
+            self.calculator_display_name = str(calculator_display_name.value)
 
         # Load game_version into a typed object
         if 'game_version' in tokenless_keys:
@@ -365,7 +365,7 @@ class ResourceList():
     def to_primitive(self) -> Any:
         return {
             "authors": get_primitive(self.authors),
-            "index_page_display_name": get_primitive(self.index_page_display_name),
+            "calculator_display_name": get_primitive(self.calculator_display_name),
             "game_version": get_primitive(self.game_version),
             "row_group_count": get_primitive(self.row_group_count),
             "note": get_primitive(self.note),
@@ -383,9 +383,9 @@ class ResourceList():
             output.append(indent + "authors:")
             for authors_k, authors_v in self.authors.items():
                 output.append(indent + "  " + authors_k + ": " + yaml_string(authors_v, indent + "  "))
-        if self.index_page_display_name != "":
+        if self.calculator_display_name != "":
             output.append("")
-            output.append(indent + "index_page_display_name: " + yaml_string(self.index_page_display_name, indent))
+            output.append(indent + "calculator_display_name: " + yaml_string(self.calculator_display_name, indent))
         if self.game_version != "":
             output.append("")
             output.append(indent + "game_version: " + yaml_string(self.game_version, indent))

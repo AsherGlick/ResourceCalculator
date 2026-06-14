@@ -1,5 +1,3 @@
-version: "3"
-
 services:
   # A webserver to host the files
   web:

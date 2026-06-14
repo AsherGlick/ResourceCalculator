@@ -2,7 +2,7 @@
 authors:
   Asher: "https://aglick.com"
 
-index_page_display_name: Skyward Sword
+calculator_display_name: Skyward Sword
 
 recipe_types:
   Beedle: Buy {OUT_ITEM} for {IN_ITEMS} from Beedle
