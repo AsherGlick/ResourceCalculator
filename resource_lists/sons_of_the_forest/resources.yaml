@@ -33,14 +33,1348 @@ recipe_types:
 
 resources:
 
-  - name: Repair Tool
+  ##############################################################################
+  - H1: Buildings ##############################################################
+  ##############################################################################
+
+  - H2: Prefab #################################################################
+
+  - name: Hunting Shelter
     recipes:
     - output: 1
-      recipe_type: Crafting
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Log: 2
+        Log: 5
+        Stick: 6
+        Rock: 7
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 5
+        Stick: 6
+        Rock: 7
+  - name: Small Log Cabin
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Log: 3
+        Three Quarter Log: 3
+        Plank: 35
+        Quarter Log: 8
+        Log: 46
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 75
+  - name: Lean To
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Quarter Log: 2
+        Three Quarter Log: 2
+        Half Log: 8
+        Plank: 36
+        Log: 30
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 53
+  - name: Look Out Tower
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
       requirements:
         Rope: 1
+        Quarter Log: 5
+        Half Log: 2
+        Plank: 17
+        Log: 49
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 60
+        Rope: 1
+
+  - name: Tree Platform 1
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Plank: 5
+        Rope: 1
+        Log: 4
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 7
+        Rope: 1
+  - name: Tree Platform 2
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Log: 12
+        Plank: 25
+        Rope: 1
+        Log: 16
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 35
+        Rope: 1
+  - name: Tree Shelter 1
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Quarter Log: 7
+        Three Quarter Log: 5
+        Plank: 34
+        Rope: 1
+        Half Log: 9
+        Log: 41
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 68
+        Rope: 1
+  - name: Tree Shelter 2
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Quarter Log: 6
+        Plank: 49
+        Rope: 1
+        Half Log: 7
+        Log: 68
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 96
+
+  - name: Small Platform
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Plank: 5
+        Log: 4
+        Variable Log Amount: 1
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Variable Log Amount: 1
+  - name: Medium Platform
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Plank: 20
+        Log: 12
+        Variable Log Amount: 1
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Variable Log Amount: 1
+
+  - name: Defensive Wall
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Variable Log Amount: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Variable Log Amount: 1
+  - name: Short Defensive Wall
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Variable Half Log Amount: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Variable Three Quarter Log Amount: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Variable Half Log Amount: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Variable Quarter Log Amount: 1
+  - name: Defensive Wall Door
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Defensive Wall: 1
+        Log: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Short Defensive Wall: 1
+        Log: 1
+  - name: Fence
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 4
+        Variable Stick Amount: 1
+  - name: Reinforced Fence
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Fence: 1
+        Variable Rock Amount: 1
+  - name: Electric Fence
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Fence: 1
+        Basic Electricity: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Fence: 1
+        Upgraded Electricity: 1
+  - name: Reinforced Electric Fence
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Electric Fence: 1
+        Variable Rock Amount: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Reinforced Fence: 1
+        Basic Electricity: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Reinforced Fence: 1
+        Upgraded Electricity: 1
+
+  - name: Stick Chair
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 14
+  - name: Bench
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 2
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Plank: 1
+        Half Log: 2
+
+  - name: Bone Chair
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Bone: 15
+        Skull: 1
+  - name: Bone Chandelier
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Bone: 19
+        Skull: 9
+
+  - name: Chair
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Stick: 18
+        Quarter Plank: 1
+        Animal Hide: 2
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 18
+        Log: 1
+        Animal Hide: 2
+  - name: Couch
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Stick: 21
+        Plank: 2
+        Animal Hide: 6
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 21
+        Log: 1
+        Animal Hide: 6
+
+  - name: Wall Torch
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 1
+        Cloth: 1
+
+  - name: Ceiling Skull Lamp
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Rope: 1
+        Skull: 1
+
+  - name: Head Trophy Mount
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 1
+
+  - name: Deer Hide Rug
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Animal Hide: 1
+
+  - name: Table
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Plank: 3
+        Half Plank: 4
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 6
+  - name: Round Table
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Three Quarter Plank: 5
+        Half Plank: 12
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 6
+
+  - name: Stick Bed
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 16
+        Duct Tape: 1
+  - name: Double Bed
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Animal Hide: 2
+        Plank: 8
+        Duct Tape: 2
+        Stick: 40
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 40
+        Log: 4
+        Duct Tape: 2
+        Animal Hide: 2
+
+  - name: Stick Storage
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 6
+  - name: Rock Storage
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 7
+  - name: Log Storage
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 8
+  - name: Large Log Storage
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 40
+  - name: Stone Storage
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 12
+  - name: Bone Storage
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 7
+  - name: Spear Storage
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 10
+  - name: Firewood Storage
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 20
+
+  - name: Drying Rack
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 9
+  - name: Armor Rack
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 20
+        Duct Tape: 1
+
+  - name: Shelf
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Plank: 3
+        Three Quarter Plank: 2
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 2
+  - name: Wall Shelf
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Plank: 1
+        Stick: 2
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 1
+        Stick: 2
+
+  - name: Arrow Storage
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Quarter Plank: 4
+        Stick: 7
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 7
+        Log: 1
+  - name: Explosives Holder
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 10
+        Stone: 1
+        Rope: 1
+
+  - name: Weapon Rack
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Plank: 4
+        Stick: 9
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 9
+        Log: 1
+  - name: Wall Weapon Rack
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Plank: 1
+        Stick: 5
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 5
+        Log: 1
+
+  - name: Knight V Holder
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Stick: 2
+        Bone: 6
+        Quarter Plank: 3
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 2
+        Log: 1
+        Bone: 6
+  - name: Foldable Glider Holder
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Three Quarter Plank: 1
+        Half Plank: 3
+        Plank: 4
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 5
+
+  - name: Rock Path
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Rock: 4
+        Variable Rock Amount: 1
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Variable Rock Amount: 1
+  - name: Stick Path
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Stick: 4
+        Variable Stick Amount: 1
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Variable Stick Amount: 1
+
+  - name: Rain Catcher
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 12
+        Turtle Shell: 1
+
+  - name: Stone Fireplace
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stone: 42
+
+  - name: Bird House
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 18
+
+  - name: Scarecrow
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 14
+        Duct Tape: 4
+
+  - name: Basic Log Sled
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 33
+  - name: Log Sled
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Skull: 2
+        Cloth: 2
+        Duct Tape: 4
+        Stick: 60
+        Plank: 6
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 3
+        Stick: 60
+        Duct Tape: 4
+        Skull: 2
+        Cloth: 2
+
+  - name: Small Rabbit Hutch
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Stick: 31
+        Half Plank: 2
+        Quarter Plank: 4
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 31
+        Log: 2
+  - name: Rabbit Hutch
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Three Quarter Plank: 7
+        Plank: 7
+        Stick: 72
+        Half Plank: 2
+        Quarter Plank: 1
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 72
+        Log: 10
+
+  - name: Standing Planter
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 18
+  - name: Wall Planter
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 16
+
+  - name: Small Animal Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 14
+  - name: Fish Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 25
+
+  - name: Bone Maker Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Rock: 3
+        Stick: 2
+        Vodka Bottle: 1
+        Rope: 1
+        Leaf: 3
+  - name: Fly Swatter Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Rock: 3
+        Stick: 10
+        Rope: 1
+  - name: Spring Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Turtle Shell: 1
+        Stick: 7
+        Wire: 1
+  - name: Hokey Pokey Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook match actual"
+      requirements:
+        Log: 6
+        Rock: 15
+        Stick: 10
+        Rope: 3
+  - name: Silent Alarm
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Rock: 1
+        Skull: 1
+        Stick: 13
+        Bone: 8
+        Radio: 1
+        Wire: 1
+  - name: Leaf Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Leaf: 20
+  - name: Explosive Tripwire
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 1
+        Wire: 1
+        Grenade: 1
+  - name: Molotov Tripwire
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
         Stick: 1
         Rock: 1
+        Leaf: 4
+        Rope: 1
+        Vodka Bottle: 1
+
+  - name: Small Raft
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Rope: 1
+        Duct Tape: 1
+        Stick: 4
+        Plank: 13
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 4
+        Rope: 1
+        Log: 7
+        Duct Tape: 1
+  - name: Large Raft
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Rope: 2
+        Duct Tape: 2
+        Stick: 52
+        Plank: 109
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 52
+        Rope: 2
+        Log: 55
+        Duct Tape: 2
+  - name: House Boat
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Rope: 2
+        Duct Tape: 1
+        Stick: 4
+        Log: 5
+        Plank: 116
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 4
+        Rope: 2
+        Log: 63
+        Duct Tape: 1
+  - name: Mooring
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Quarter Log: 1
+        Stick: 6
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 6
+        Log: 1
+
+  - name: Weapon Plater
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stone: 7
+        Golf Cart Battery: 4
+        Stick: 11
+        Turtle Shell: 3
+        Wire: 3
+  - name: Armor Plater
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stone: 25
+        Golf Cart Battery: 4
+        Wire: 4
+        Skull: 1
+        Bone: 33
+
+  - name: Attract Shrine
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stone: 10
+        Skull: 11
+        Bone: 24
+  - name: Repel Shrine
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stone: 7
+        Skull: 6
+        Bone: 49
+
+  - name: Glider Launcher
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Wire: 4
+        Turtle Shell: 4
+        Stick: 14
+        Plank: 12
+        Log: 7
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 14
+        Stick: 14
+        Turtle Shell: 4
+        Wire: 4
+
+  - name: Clock
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Raw Arm: 2
+        Watch: 1
+        Bone: 1
+        Quarter Log: 1
+        Wire: 1
+        Golf Cart Battery: 1
+        Stick: 22
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 1
+        Golf Cart Battery: 1
+        Raw Arm: 2
+        Stick: 22
+        Watch: 1
+        Bone: 1
+        Wire: 1
+
+  - name: Gore Chair
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Raw Arm: 6
+        Raw Leg: 2
+        Raw Head: 1
+        Creepy Armor: 2
+        Stick: 9
+        Wire: 1
+        Light Bulb: 1
+  - name: Gore Couch
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Creepy Armor: 14
+        Raw Arm: 4
+        Raw Leg: 2
+        Stick: 40
+  - name: Leg Lamp
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Raw Leg: 1
+        Animal Hide: 1
+        Wire: 1
+        Light Bulb: 1
+        Stick: 16
+
+  - name: Spotlight
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Tarp: 1
+        Rope: 1
+        Wire: 2
+        Light Bulb: 2
+        Stick: 36
+  - name: Powered Cross
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Light Bulb: 9
+        Half Plank: 1
+        Plank: 1
+        Wire: 2
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 1
+        Wire: 2
+        Light Bulb: 9
+
+  - name: Teleporter
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stone: 33
+        Skull: 8
+        Bone: 50
+
+  - name: Grind Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Skull: 1
+        Golf Cart Battery: 1
+        Wire: 3
+        Knight V: 1
+        Plank: 2
+        Stone: 2
+        Stick: 65
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 1
+        Stone: 2
+        Golf Cart Battery: 1
+        Skull: 1
+        Wire: 3
+        Stick: 65
+        Knight V: 1
+  - name: Spear Thrower Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Log: 2
+        Half Plank: 3
+        Bone: 8
+        Golf Cart Battery: 1
+        C4 Brick: 3
+        Stick: 2
+        Wire: 3
+        Spear: 5
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 2
+        Golf Cart Battery: 1
+        C4 Brick: 3
+        Wire: 3
+        Stick: 2
+        Bone: 8
+  - name: Spin Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Golf Cart Battery: 1
+        Light Bulb: 1
+        Wire: 5
+        Stick: 37
+  - name: Uber Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Wire: 4
+        Skull: 2
+        Vodka Bottle: 2
+        Stick: 14
+        Golf Cart Battery: 1
+        Leaf: 3
+        Rock: 6
+        Bone: 15
+        Rope: 2
+
+  - H2: Custom #################################################################
+
+  - name: Tent
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "Most combinations of tarp and stick are viable"
+      requirements:
+        Tarp: 1
+        Stick: 1
+
+  - name: Basic Fire
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 2
+  - name: Reinforced Fire
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Basic Fire: 1
+        Rock: 7
+  - name: Standing Fire
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 2
+        Cloth: 1
+  - name: Reinforced Standing Fire
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Standing Fire: 1
+        Rock: 3
+  - name: Bonfire
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Basic Fire: 1
+        Quarter Plank: 2
+        Log: 6
+  - name: Firewood
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "Up to a max of 50"
+      requirements:
+        Quarter Plank: 50
+
+  - name: Skull Lamp
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 1
+        Cloth: 1
+        Skull: 1
+  - name: Reinforced Skull Lamp
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Skull Lamp: 1
+        Rock: 3
+
+  - name: Skull Stick
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 1
+        Skull: 1
+  - name: Reinforced Skull Stick
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Skull Stick: 1
+        Rock: 3
+  - name: Pointed Stick
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 1
+  - name: Reinforced Pointed Stick
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Pointed Stick: 1
+        Rock: 3
+
+  - name: Floor
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment, no framing"
+      requirements:
+        Plank: 5
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment, with framing"
+      requirements:
+        Log: 4
+        Plank: 5
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment, with framing"
+      requirements:
+        Stone: 16
+        Plank: 5
+  - name: Stone Floor
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment"
+      requirements:
+        Stone: 20
+  - name: Wall
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment"
+      requirements:
+        Log: 6
+  - name: Stone Wall
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment"
+      requirements:
+        Stone: 28
+  - name: Door
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Plank: 3
+  - name: Door Lock
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 1
+  - name: Shutters
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment"
+      requirements:
+        Quarter Plank: 2
+
+  - name: Stairs
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One floor, no height framing"
+      requirements:
+        Log: 2
+        Plank: 9
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One floor, with framing"
+      requirements:
+        Log: 5
+        Plank: 9
+  - name: Ramp
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One floor, no height framing"
+      requirements:
+        Log: 2
+        Plank: 9
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One floor, with framing"
+      requirements:
+        Log: 5
+        Plank: 9
+  - name: Corner Ramp
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One floor, no external framing"
+      requirements:
+        Log: 1
+        Quarter Plank: 4
+        Half Plank: 4
+        Three Quarter Plank: 4
+        Plank: 4
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One floor, with framing"
+      requirements:
+        Log: 4
+        Quarter Plank: 4
+        Half Plank: 4
+        Three Quarter Plank: 4
+        Plank: 4
+  - name: Railing
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment"
+      requirements:
+        Quarter Log: 2
+        Plank: 1
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment, continuing"
+      requirements:
+        Quarter Log: 1
+        Plank: 1
+
+  - name: Climbing Rope
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Rope: 1
+  - name: Rope Bridge
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Rope: 2
+        Variable Plank Amount: 1
+
+  - name: Basic Electricity
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Solar Panel: 1
+        Variable Wire Amount: 1
+  - name: Upgraded Electricity
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Solar Panel: 1
+        Golf Cart Battery: 1
+        Variable Wire Amount: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Basic Electricity: 1
+        Golf Cart Battery: 1
+
 
   ##############################################################################
   - H1: Weapons ################################################################
@@ -70,6 +1404,14 @@ resources:
       requirements:
         Stick: 1
         Cloth: 1
+  - name: Repair Tool
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Rope: 1
+        Stick: 1
+        Rock: 1
 
   - name: Utility Knife
     raw_resource: true
@@ -1467,1296 +2809,6 @@ resources:
         Clean Water: 1
 
   ##############################################################################
-  - H1: Buildings ##############################################################
-  ##############################################################################
-
-  - H2: Prefab #################################################################
-
-  - name: Hunting Shelter
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Half Log: 2
-        Log: 5
-        Stick: 6
-        Rock: 7
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Log: 5
-        Stick: 6
-        Rock: 7
-  - name: Small Log Cabin
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Half Log: 3
-        Three Quarter Log: 3
-        Plank: 35
-        Quarter Log: 8
-        Log: 46
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Log: 75
-  - name: Lean To
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Quarter Log: 2
-        Three Quarter Log: 2
-        Half Log: 8
-        Plank: 36
-        Log: 30
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Log: 53
-  - name: Look Out Tower
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Rope: 1
-        Quarter Log: 5
-        Half Log: 2
-        Plank: 17
-        Log: 49
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Log: 60
-        Rope: 1
-
-  - name: Tree Platform 1
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Plank: 5
-        Rope: 1
-        Log: 4
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Log: 7
-        Rope: 1
-  - name: Tree Platform 2
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Half Log: 12
-        Plank: 25
-        Rope: 1
-        Log: 16
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Log: 35
-        Rope: 1
-  - name: Tree Shelter 1
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Quarter Log: 7
-        Three Quarter Log: 5
-        Plank: 34
-        Rope: 1
-        Half Log: 9
-        Log: 41
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Log: 68
-        Rope: 1
-  - name: Tree Shelter 2
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Quarter Log: 6
-        Plank: 49
-        Rope: 1
-        Half Log: 7
-        Log: 68
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Log: 96
-
-  - name: Small Platform
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Plank: 5
-        Log: 4
-        Variable Log Amount: 1
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Variable Log Amount: 1
-  - name: Medium Platform
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Plank: 20
-        Log: 12
-        Variable Log Amount: 1
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Variable Log Amount: 1
-
-  - name: Defensive Wall
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Variable Log Amount: 1
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Variable Three Quarter Log Amount: 1
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Variable Half Log Amount: 1
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Variable Quarter Log Amount: 1
-  - name: Defensive Wall Door
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Defensive Wall: 1
-        Log: 1
-  - name: Fence
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Stick: 4
-        Variable Stick Amount: 1
-  - name: Reinforced Fence
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Fence: 1
-        Variable Rock Amount: 1
-  - name: Electric Fence
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Fence: 1
-        Basic Electricity: 1
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Fence: 1
-        Upgraded Electricity: 1
-  - name: Reinforced Electric Fence
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Electric Fence: 1
-        Variable Rock Amount: 1
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Reinforced Fence: 1
-        Basic Electricity: 1
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Reinforced Fence: 1
-        Upgraded Electricity: 1
-
-  - name: Stick Chair
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 14
-  - name: Bench
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Log: 2
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Plank: 1
-        Half Log: 2
-
-  - name: Bone Chair
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Bone: 15
-        Skull: 1
-  - name: Bone Chandelier
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Bone: 19
-        Skull: 9
-
-  - name: Chair
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Stick: 18
-        Quarter Plank: 1
-        Animal Hide: 2
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Stick: 18
-        Log: 1
-        Animal Hide: 2
-  - name: Couch
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Stick: 21
-        Plank: 2
-        Animal Hide: 6
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Stick: 21
-        Log: 1
-        Animal Hide: 6
-
-  - name: Wall Torch
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 1
-        Cloth: 1
-
-  - name: Ceiling Skull Lamp
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Rope: 1
-        Skull: 1
-
-  - name: Head Trophy Mount
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 1
-
-  - name: Deer Hide Rug
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Animal Hide: 1
-
-  - name: Table
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Plank: 3
-        Half Plank: 4
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Log: 6
-  - name: Round Table
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Three Quarter Plank: 5
-        Half Plank: 12
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Log: 6
-
-  - name: Stick Bed
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 16
-        Duct Tape: 1
-  - name: Double Bed
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Animal Hide: 2
-        Plank: 8
-        Duct Tape: 2
-        Stick: 40
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Stick: 40
-        Log: 4
-        Duct Tape: 2
-        Animal Hide: 2
-
-  - name: Stick Storage
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 6
-  - name: Rock Storage
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 7
-  - name: Log Storage
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 8
-  - name: Large Log Storage
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 40
-  - name: Stone Storage
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 12
-  - name: Bone Storage
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 7
-  - name: Spear Storage
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 10
-  - name: Firewood Storage
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 20
-
-  - name: Drying Rack
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 9
-  - name: Armor Rack
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 20
-        Duct Tape: 1
-
-  - name: Shelf
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Half Plank: 3
-        Three Quarter Plank: 2
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Log: 2
-  - name: Wall Shelf
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Half Plank: 1
-        Stick: 2
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Log: 1
-        Stick: 2
-
-  - name: Arrow Storage
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Quarter Plank: 4
-        Stick: 7
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Stick: 7
-        Log: 1
-  - name: Explosives Holder
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 10
-        Stone: 1
-        Rope: 1
-
-  - name: Weapon Rack
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Half Plank: 4
-        Stick: 9
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Stick: 9
-        Log: 1
-  - name: Wall Weapon Rack
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Half Plank: 1
-        Stick: 5
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Stick: 5
-        Log: 1
-
-  - name: Knight V Holder
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Stick: 2
-        Bone: 6
-        Quarter Plank: 3
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Stick: 2
-        Log: 1
-        Bone: 6
-  - name: Foldable Glider Holder
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Three Quarter Plank: 1
-        Half Plank: 3
-        Plank: 4
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Log: 5
-
-  - name: Rock Path
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Rock: 4
-        Variable Rock Amount: 1
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Variable Rock Amount: 1
-  - name: Stick Path
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Stick: 4
-        Variable Stick Amount: 1
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Variable Stick Amount: 1
-
-  - name: Rain Catcher
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 12
-        Turtle Shell: 1
-
-  - name: Stone Fireplace
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stone: 42
-
-  - name: Bird House
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 18
-
-  - name: Scarecrow
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 14
-        Duct Tape: 4
-
-  - name: Basic Log Sled
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 33
-  - name: Log Sled
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Skull: 2
-        Cloth: 2
-        Duct Tape: 4
-        Stick: 60
-        Plank: 6
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Log: 3
-        Stick: 60
-        Duct Tape: 4
-        Skull: 2
-        Cloth: 2
-
-  - name: Small Rabbit Hutch
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Stick: 31
-        Half Plank: 2
-        Quarter Plank: 4
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Stick: 31
-        Log: 2
-  - name: Rabbit Hutch
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Three Quarter Plank: 7
-        Plank: 7
-        Stick: 72
-        Half Plank: 2
-        Quarter Plank: 1
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Stick: 72
-        Log: 10
-
-  - name: Standing Planter
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 18
-  - name: Wall Planter
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 16
-
-  - name: Small Animal Trap
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 14
-  - name: Fish Trap
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 25
-
-  - name: Bone Maker Trap
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Rock: 3
-        Stick: 2
-        Vodka Bottle: 1
-        Rope: 1
-        Leaf: 3
-  - name: Fly Swatter Trap
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Rock: 3
-        Stick: 10
-        Rope: 1
-  - name: Spring Trap
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Turtle Shell: 1
-        Stick: 7
-        Wire: 1
-  - name: Hokey Pokey Trap
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook match actual"
-      requirements:
-        Log: 6
-        Rock: 15
-        Stick: 10
-        Rope: 3
-  - name: Silent Alarm
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Rock: 1
-        Skull: 1
-        Stick: 13
-        Bone: 8
-        Radio: 1
-        Wire: 1
-  - name: Leaf Trap
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Leaf: 20
-  - name: Explosive Tripwire
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 1
-        Wire: 1
-        Grenade: 1
-  - name: Molotov Tripwire
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stick: 1
-        Rock: 1
-        Leaf: 4
-        Rope: 1
-        Vodka Bottle: 1
-
-  - name: Small Raft
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Rope: 1
-        Duct Tape: 1
-        Stick: 4
-        Plank: 13
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Stick: 4
-        Rope: 1
-        Log: 7
-        Duct Tape: 1
-  - name: Large Raft
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Rope: 2
-        Duct Tape: 2
-        Stick: 52
-        Plank: 109
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Stick: 52
-        Rope: 2
-        Log: 55
-        Duct Tape: 2
-  - name: House Boat
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Rope: 2
-        Duct Tape: 1
-        Stick: 4
-        Log: 5
-        Plank: 116
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Stick: 4
-        Rope: 2
-        Log: 63
-        Duct Tape: 1
-  - name: Mooring
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Quarter Log: 1
-        Stick: 6
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Stick: 6
-        Log: 1
-
-  - name: Weapon Plater
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stone: 7
-        Golf Cart Battery: 4
-        Stick: 11
-        Turtle Shell: 3
-        Wire: 3
-  - name: Armor Plater
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stone: 25
-        Golf Cart Battery: 4
-        Wire: 4
-        Skull: 1
-        Bone: 33
-
-  - name: Attract Shrine
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stone: 10
-        Skull: 11
-        Bone: 24
-  - name: Repel Shrine
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stone: 7
-        Skull: 6
-        Bone: 49
-
-  - name: Glider Launcher
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Wire: 4
-        Turtle Shell: 4
-        Stick: 14
-        Plank: 12
-        Log: 7
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Log: 14
-        Stick: 14
-        Turtle Shell: 4
-        Wire: 4
-
-  - name: Clock
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Raw Arm: 2
-        Watch: 1
-        Bone: 1
-        Quarter Log: 1
-        Wire: 1
-        Golf Cart Battery: 1
-        Stick: 22
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Log: 1
-        Golf Cart Battery: 1
-        Raw Arm: 2
-        Stick: 22
-        Watch: 1
-        Bone: 1
-        Wire: 1
-
-  - name: Gore Chair
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Raw Arm: 6
-        Raw Leg: 2
-        Raw Head: 1
-        Creepy Armor: 2
-        Stick: 9
-        Wire: 1
-        Light Bulb: 1
-  - name: Gore Couch
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Creepy Armor: 14
-        Raw Arm: 4
-        Raw Leg: 2
-        Stick: 40
-  - name: Leg Lamp
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Raw Leg: 1
-        Animal Hide: 1
-        Wire: 1
-        Light Bulb: 1
-        Stick: 16
-
-  - name: Spotlight
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Tarp: 1
-        Rope: 1
-        Wire: 2
-        Light Bulb: 2
-        Stick: 36
-  - name: Powered Cross
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Light Bulb: 9
-        Half Plank: 1
-        Plank: 1
-        Wire: 2
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Log: 1
-        Wire: 2
-        Light Bulb: 9
-
-  - name: Teleporter
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Stone: 33
-        Skull: 8
-        Bone: 50
-
-  - name: Grind Trap
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Skull: 1
-        Golf Cart Battery: 1
-        Wire: 3
-        Knight V: 1
-        Plank: 2
-        Stone: 2
-        Stick: 65
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Log: 1
-        Stone: 2
-        Golf Cart Battery: 1
-        Skull: 1
-        Wire: 3
-        Stick: 65
-        Knight V: 1
-  - name: Spear Thrower Trap
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Actual requirements in practice"
-      requirements:
-        Half Log: 2
-        Half Plank: 3
-        Bone: 8
-        Golf Cart Battery: 1
-        C4 Brick: 3
-        Stick: 2
-        Wire: 3
-        Spear: 5
-    - output: 1
-      recipe_type: Building (prefab)
-      note: "Listed requirements in guidebook"
-      requirements:
-        Log: 2
-        Golf Cart Battery: 1
-        C4 Brick: 3
-        Wire: 3
-        Stick: 2
-        Bone: 8
-  - name: Spin Trap
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Golf Cart Battery: 1
-        Light Bulb: 1
-        Wire: 5
-        Stick: 37
-  - name: Uber Trap
-    recipes:
-    - output: 1
-      recipe_type: Building (prefab)
-      requirements:
-        Wire: 4
-        Skull: 2
-        Vodka Bottle: 2
-        Stick: 14
-        Golf Cart Battery: 1
-        Leaf: 3
-        Rock: 6
-        Bone: 15
-        Rope: 2
-
-  - H2: Custom #################################################################
-
-  - name: Tent
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      note: "Most combinations of tarp and stick are viable"
-      requirements:
-        Tarp: 1
-        Stick: 1
-
-  - name: Basic Fire
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Stick: 2
-  - name: Reinforced Fire
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Basic Fire: 1
-        Rock: 7
-  - name: Standing Fire
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Stick: 2
-        Cloth: 1
-  - name: Reinforced Standing Fire
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Standing Fire: 1
-        Rock: 3
-  - name: Bonfire
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Basic Fire: 1
-        Quarter Plank: 2
-        Log: 6
-  - name: Firewood
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      note: "Up to a max of 50"
-      requirements:
-        Quarter Plank: 50
-
-  - name: Skull Lamp
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Stick: 1
-        Cloth: 1
-        Skull: 1
-  - name: Reinforced Skull Lamp
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Skull Lamp: 1
-        Rock: 3
-
-  - name: Skull Stick
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Stick: 1
-        Skull: 1
-  - name: Reinforced Skull Stick
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Skull Stick: 1
-        Rock: 3
-  - name: Pointed Stick
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Stick: 1
-  - name: Reinforced Pointed Stick
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Pointed Stick: 1
-        Rock: 3
-
-  - name: Floor
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      note: "One segment"
-      requirements:
-        Plank: 5
-  - name: Stone Floor
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      note: "One segment"
-      requirements:
-        Stone: 20
-  - name: Wall
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      note: "One segment"
-      requirements:
-        Log: 6
-  - name: Stone Wall
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      note: "One segment"
-      requirements:
-        Stone: 28
-  - name: Door
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Plank: 3
-  - name: Door Lock
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Stick: 1
-  - name: Shutters
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      note: "One segment"
-      requirements:
-        Quarter Plank: 2
-
-  # TODO: alternate recipes for continuing?
-
-  - name: Stairs
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      note: "One floor"
-      requirements:
-        Log: 5
-        Plank: 9
-  - name: Ramp
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      note: "One floor"
-      requirements:
-        Log: 5
-        Plank: 9
-  - name: Corner Ramp
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      note: "One floor"
-      requirements:
-        Log: 4
-        Quarter Plank: 4
-        Half Plank: 4
-        Three Quarter Plank: 4
-        Plank: 4
-  - name: Railing
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      note: "One segment"
-      requirements:
-        Quarter Log: 2
-        Plank: 1
-
-  - name: Climbing Rope
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Rope: 1
-  - name: Rope Bridge
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Rope: 2
-        Variable Plank Amount: 1
-
-  - name: Basic Electricity
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Solar Panel: 1
-        Variable Wire Amount: 1
-  - name: Upgraded Electricity
-    recipes:
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Solar Panel: 1
-        Golf Cart Battery: 1
-        Variable Wire Amount: 1
-    - output: 1
-      recipe_type: Building (custom)
-      requirements:
-        Basic Electricity: 1
-        Golf Cart Battery: 1
-
-  ##############################################################################
   - H1: Misc ###################################################################
   ##############################################################################
 
@@ -2803,9 +2855,9 @@ resources:
   - name: Shovel
     raw_resource: true
 
-  - name: Guest Keycard
-    raw_resource: true
   - name: Maintenance Keycard
+    raw_resource: true
+  - name: Guest Keycard
     raw_resource: true
   - name: VIP Keycard
     raw_resource: true
@@ -2863,5 +2915,3 @@ resources:
 
   - name: Album Cover
     raw_resource: true
-
-  # TODO: move buildings up?
