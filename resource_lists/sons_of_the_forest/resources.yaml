@@ -1,0 +1,2998 @@
+---
+authors:
+  Ben: "https://benjaminvreeland.com"
+
+index_page_display_name: Sons of the Forest
+# calculator_display_name: Sons of the Forest
+
+game_version: Patch 16 - Hotfix 2
+
+note: |
+  Based on
+  https://sonsoftheforest.wiki.gg/wiki/Prefab_Buildings
+  https://sonsoftheforest.wiki.gg/wiki/Category:Items
+  https://sonsoftheforest.wiki.gg/wiki/Inventory
+  https://sonsoftheforest.wiki.gg/wiki/Consumables
+  https://sonsoftheforest.wiki.gg/wiki/Tools
+  https://sonsoftheforest.wiki.gg/wiki/Custom_Buildings
+
+recipe_types:
+  Crafting: Use {IN_ITEMS} in your inventory to turn into {OUT_ITEM}
+  Crafting (utility knife): Use {IN_ITEMS} with a utility knife to turn into {OUT_ITEM}
+  Crafting (can opener): Use {IN_ITEMS} with a can opener to turn into {OUT_ITEM}
+  Crafting (3D printer): Use {IN_ITEMS} at a 3D printer to make {OUT_ITEM}
+  Crafting (axe): Use an axe to turn {IN_ITEMS} into {OUT_ITEM} (and more when applicable)
+  Crafting (armor plater): Use {IN_ITEMS} at an armor plater to turn them into {OUT_ITEM}
+  Crafting (fire): Use {IN_ITEMS} in a fire to turn them into {OUT_ITEM}
+  Cooking (fire): Use {IN_ITEMS} in a pot at a fire to turn them into {OUT_ITEM}
+  Cooking (drying rack): Leave {IN_ITEMS} on a drying rack over time to turn them into {OUT_ITEM}
+  Cooking (spoil): Leave {IN_ITEMS} out over time to turn them into {OUT_ITEM}
+  Cooking (stew): Use with a cooking pot and fire to turn {IN_ITEMS} into {OUT_ITEM}
+  Building (prefab): Place blueprint(s) and fill in to turn {IN_ITEMS} into {OUT_ITEM}
+  Building (custom): Place {IN_ITEMS} to create {OUT_ITEM}
+
+resources:
+
+  ##############################################################################
+  - H1: Buildings ##############################################################
+  ##############################################################################
+
+  - H2: Prefab #################################################################
+
+  - name: Hunting Shelter
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Log: 2
+        Log: 5
+        Stick: 6
+        Rock: 7
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 5
+        Stick: 6
+        Rock: 7
+  - name: Small Log Cabin
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Log: 3
+        Three Quarter Log: 3
+        Plank: 35
+        Quarter Log: 8
+        Log: 46
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 75
+  - name: Lean To
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Quarter Log: 2
+        Three Quarter Log: 2
+        Half Log: 8
+        Plank: 36
+        Log: 30
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 53
+  - name: Look Out Tower
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Rope: 1
+        Quarter Log: 5
+        Half Log: 2
+        Plank: 17
+        Log: 49
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 60
+        Rope: 1
+
+  - name: Tree Platform 1
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Plank: 5
+        Rope: 1
+        Log: 4
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 7
+        Rope: 1
+  - name: Tree Platform 2
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Log: 12
+        Plank: 25
+        Rope: 1
+        Log: 16
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 35
+        Rope: 1
+  - name: Tree Shelter 1
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Quarter Log: 7
+        Three Quarter Log: 5
+        Plank: 34
+        Rope: 1
+        Half Log: 9
+        Log: 41
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 68
+        Rope: 1
+  - name: Tree Shelter 2
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Quarter Log: 6
+        Plank: 49
+        Rope: 1
+        Half Log: 7
+        Log: 68
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 96
+
+  - name: Small Platform
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Plank: 5
+        Log: 4
+        Variable Log Amount: 1
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Variable Log Amount: 1
+  - name: Medium Platform
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Plank: 20
+        Log: 12
+        Variable Log Amount: 1
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Variable Log Amount: 1
+
+  - name: Defensive Wall
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Variable Log Amount: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Variable Log Amount: 1
+  - name: Short Defensive Wall
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Variable Half Log Amount: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Variable Three Quarter Log Amount: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Variable Half Log Amount: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Variable Quarter Log Amount: 1
+  - name: Defensive Wall Door
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Defensive Wall: 1
+        Log: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Short Defensive Wall: 1
+        Log: 1
+  - name: Fence
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 4
+        Variable Stick Amount: 1
+  - name: Reinforced Fence
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Fence: 1
+        Variable Rock Amount: 1
+  - name: Electric Fence
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Fence: 1
+        Basic Electricity: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Fence: 1
+        Upgraded Electricity: 1
+  - name: Reinforced Electric Fence
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Electric Fence: 1
+        Variable Rock Amount: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Reinforced Fence: 1
+        Basic Electricity: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Reinforced Fence: 1
+        Upgraded Electricity: 1
+
+  - name: Stick Chair
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 14
+  - name: Bench
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 2
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Plank: 1
+        Half Log: 2
+
+  - name: Bone Chair
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Bone: 15
+        Skull: 1
+  - name: Bone Chandelier
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Bone: 19
+        Skull: 9
+
+  - name: Chair
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Stick: 18
+        Quarter Plank: 1
+        Animal Hide: 2
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 18
+        Log: 1
+        Animal Hide: 2
+  - name: Couch
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Stick: 21
+        Plank: 2
+        Animal Hide: 6
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 21
+        Log: 1
+        Animal Hide: 6
+
+  - name: Wall Torch
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 1
+        Cloth: 1
+
+  - name: Ceiling Skull Lamp
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Rope: 1
+        Skull: 1
+
+  - name: Head Trophy Mount
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 1
+
+  - name: Deer Hide Rug
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Animal Hide: 1
+
+  - name: Table
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Plank: 3
+        Half Plank: 4
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 6
+  - name: Round Table
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Three Quarter Plank: 5
+        Half Plank: 12
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 6
+
+  - name: Stick Bed
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 16
+        Duct Tape: 1
+  - name: Double Bed
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Animal Hide: 2
+        Plank: 8
+        Duct Tape: 2
+        Stick: 40
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 40
+        Log: 4
+        Duct Tape: 2
+        Animal Hide: 2
+
+  - name: Stick Storage
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 6
+  - name: Rock Storage
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 7
+  - name: Log Storage
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 8
+  - name: Large Log Storage
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 40
+  - name: Stone Storage
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 12
+  - name: Bone Storage
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 7
+  - name: Spear Storage
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 10
+  - name: Firewood Storage
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 20
+
+  - name: Drying Rack
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 9
+  - name: Armor Rack
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 20
+        Duct Tape: 1
+
+  - name: Shelf
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Plank: 3
+        Three Quarter Plank: 2
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 2
+  - name: Wall Shelf
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Plank: 1
+        Stick: 2
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 1
+        Stick: 2
+
+  - name: Arrow Storage
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Quarter Plank: 4
+        Stick: 7
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 7
+        Log: 1
+  - name: Explosives Holder
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 10
+        Stone: 1
+        Rope: 1
+
+  - name: Weapon Rack
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Plank: 4
+        Stick: 9
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 9
+        Log: 1
+  - name: Wall Weapon Rack
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Plank: 1
+        Stick: 5
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 5
+        Log: 1
+
+  - name: Knight V Holder
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Stick: 2
+        Bone: 6
+        Quarter Plank: 3
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 2
+        Log: 1
+        Bone: 6
+  - name: Foldable Glider Holder
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Three Quarter Plank: 1
+        Half Plank: 3
+        Plank: 4
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 5
+
+  - name: Rock Path
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Rock: 4
+        Variable Rock Amount: 1
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Variable Rock Amount: 1
+  - name: Stick Path
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Stick: 4
+        Variable Stick Amount: 1
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Variable Stick Amount: 1
+
+  - name: Rain Catcher
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 12
+        Turtle Shell: 1
+
+  - name: Stone Fireplace
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stone: 42
+
+  - name: Bird House
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 18
+
+  - name: Scarecrow
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 14
+        Duct Tape: 4
+
+  - name: Basic Log Sled
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 33
+  - name: Log Sled
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Skull: 2
+        Cloth: 2
+        Duct Tape: 4
+        Stick: 60
+        Plank: 6
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 3
+        Stick: 60
+        Duct Tape: 4
+        Skull: 2
+        Cloth: 2
+
+  - name: Small Rabbit Hutch
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Stick: 31
+        Half Plank: 2
+        Quarter Plank: 4
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 31
+        Log: 2
+  - name: Rabbit Hutch
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Three Quarter Plank: 7
+        Plank: 7
+        Stick: 72
+        Half Plank: 2
+        Quarter Plank: 1
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 72
+        Log: 10
+
+  - name: Standing Planter
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 18
+  - name: Wall Planter
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 16
+
+  - name: Small Animal Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 14
+  - name: Fish Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 25
+
+  - name: Bone Maker Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Rock: 3
+        Stick: 2
+        Vodka Bottle: 1
+        Rope: 1
+        Leaf: 3
+  - name: Fly Swatter Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Rock: 3
+        Stick: 10
+        Rope: 1
+  - name: Spring Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Turtle Shell: 1
+        Stick: 7
+        Wire: 1
+  - name: Hokey Pokey Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook match actual"
+      requirements:
+        Log: 6
+        Rock: 15
+        Stick: 10
+        Rope: 3
+  - name: Silent Alarm
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Rock: 1
+        Skull: 1
+        Stick: 13
+        Bone: 8
+        Radio: 1
+        Wire: 1
+  - name: Leaf Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Leaf: 20
+  - name: Explosive Tripwire
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 1
+        Wire: 1
+        Grenade: 1
+  - name: Molotov Tripwire
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stick: 1
+        Rock: 1
+        Leaf: 4
+        Rope: 1
+        Vodka Bottle: 1
+
+  - name: Small Raft
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Rope: 1
+        Duct Tape: 1
+        Stick: 4
+        Plank: 13
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 4
+        Rope: 1
+        Log: 7
+        Duct Tape: 1
+  - name: Large Raft
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Rope: 2
+        Duct Tape: 2
+        Stick: 52
+        Plank: 109
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 52
+        Rope: 2
+        Log: 55
+        Duct Tape: 2
+  - name: House Boat
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Rope: 2
+        Duct Tape: 1
+        Stick: 4
+        Log: 5
+        Plank: 116
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 4
+        Rope: 2
+        Log: 63
+        Duct Tape: 1
+  - name: Mooring
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Quarter Log: 1
+        Stick: 6
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Stick: 6
+        Log: 1
+
+  - name: Weapon Plater
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stone: 7
+        Golf Cart Battery: 4
+        Stick: 11
+        Turtle Shell: 3
+        Wire: 3
+  - name: Armor Plater
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stone: 25
+        Golf Cart Battery: 4
+        Wire: 4
+        Skull: 1
+        Bone: 33
+
+  - name: Attract Shrine
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stone: 10
+        Skull: 11
+        Bone: 24
+  - name: Repel Shrine
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stone: 7
+        Skull: 6
+        Bone: 49
+
+  - name: Glider Launcher
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Wire: 4
+        Turtle Shell: 4
+        Stick: 14
+        Plank: 12
+        Log: 7
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 14
+        Stick: 14
+        Turtle Shell: 4
+        Wire: 4
+
+  - name: Clock
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Raw Arm: 2
+        Watch: 1
+        Bone: 1
+        Quarter Log: 1
+        Wire: 1
+        Golf Cart Battery: 1
+        Stick: 22
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 1
+        Golf Cart Battery: 1
+        Raw Arm: 2
+        Stick: 22
+        Watch: 1
+        Bone: 1
+        Wire: 1
+
+  - name: Gore Chair
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Raw Arm: 6
+        Raw Leg: 2
+        Raw Head: 1
+        Creepy Armor: 2
+        Stick: 9
+        Wire: 1
+        Light Bulb: 1
+  - name: Gore Couch
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Creepy Armor: 14
+        Raw Arm: 4
+        Raw Leg: 2
+        Stick: 40
+  - name: Leg Lamp
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Raw Leg: 1
+        Animal Hide: 1
+        Wire: 1
+        Light Bulb: 1
+        Stick: 16
+
+  - name: Spotlight
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Tarp: 1
+        Rope: 1
+        Wire: 2
+        Light Bulb: 2
+        Stick: 36
+  - name: Powered Cross
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Light Bulb: 9
+        Half Plank: 1
+        Plank: 1
+        Wire: 2
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 1
+        Wire: 2
+        Light Bulb: 9
+
+  - name: Teleporter
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Stone: 33
+        Skull: 8
+        Bone: 50
+
+  - name: Grind Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Skull: 1
+        Golf Cart Battery: 1
+        Wire: 3
+        Knight V: 1
+        Plank: 2
+        Stone: 2
+        Stick: 65
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 1
+        Stone: 2
+        Golf Cart Battery: 1
+        Skull: 1
+        Wire: 3
+        Stick: 65
+        Knight V: 1
+  - name: Spear Thrower Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Actual requirements in practice"
+      requirements:
+        Half Log: 2
+        Half Plank: 3
+        Bone: 8
+        Golf Cart Battery: 1
+        C4 Brick: 3
+        Stick: 2
+        Wire: 3
+        Spear: 5
+    - output: 1
+      recipe_type: Building (prefab)
+      note: "Listed requirements in guidebook"
+      requirements:
+        Log: 2
+        Golf Cart Battery: 1
+        C4 Brick: 3
+        Wire: 3
+        Stick: 2
+        Bone: 8
+  - name: Spin Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Golf Cart Battery: 1
+        Light Bulb: 1
+        Wire: 5
+        Stick: 37
+  - name: Uber Trap
+    recipes:
+    - output: 1
+      recipe_type: Building (prefab)
+      requirements:
+        Wire: 4
+        Skull: 2
+        Vodka Bottle: 2
+        Stick: 14
+        Golf Cart Battery: 1
+        Leaf: 3
+        Rock: 6
+        Bone: 15
+        Rope: 2
+
+  - H2: Custom #################################################################
+
+  - name: Tent
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "Most combinations of tarp and stick are viable"
+      requirements:
+        Tarp: 1
+        Stick: 1
+
+  - name: Basic Fire
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 2
+  - name: Reinforced Fire
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Basic Fire: 1
+        Rock: 7
+  - name: Standing Fire
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 2
+        Cloth: 1
+  - name: Reinforced Standing Fire
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Standing Fire: 1
+        Rock: 3
+  - name: Bonfire
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Basic Fire: 1
+        Quarter Plank: 2
+        Log: 6
+  - name: Firewood
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "Up to a max of 50"
+      requirements:
+        Quarter Plank: 50
+
+  - name: Skull Lamp
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 1
+        Cloth: 1
+        Skull: 1
+  - name: Reinforced Skull Lamp
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Skull Lamp: 1
+        Rock: 3
+
+  - name: Skull Stick
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 1
+        Skull: 1
+  - name: Reinforced Skull Stick
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Skull Stick: 1
+        Rock: 3
+  - name: Pointed Stick
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 1
+  - name: Reinforced Pointed Stick
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Pointed Stick: 1
+        Rock: 3
+
+  - name: Floor
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment, no framing"
+      requirements:
+        Plank: 5
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment, with framing"
+      requirements:
+        Log: 4
+        Plank: 5
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment, with framing"
+      requirements:
+        Stone: 16
+        Plank: 5
+  - name: Stone Floor
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment"
+      requirements:
+        Stone: 20
+  - name: Wall
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment"
+      requirements:
+        Log: 6
+  - name: Stone Wall
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment"
+      requirements:
+        Stone: 28
+  - name: Door
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Plank: 3
+  - name: Door Lock
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Stick: 1
+  - name: Shutters
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment"
+      requirements:
+        Quarter Plank: 2
+
+  - name: Stairs
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One floor, no height framing"
+      requirements:
+        Log: 2
+        Plank: 9
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One floor, with framing"
+      requirements:
+        Log: 5
+        Plank: 9
+  - name: Ramp
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One floor, no height framing"
+      requirements:
+        Log: 2
+        Plank: 9
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One floor, with framing"
+      requirements:
+        Log: 5
+        Plank: 9
+  - name: Corner Ramp
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One floor, no external framing"
+      requirements:
+        Log: 1
+        Quarter Plank: 4
+        Half Plank: 4
+        Three Quarter Plank: 4
+        Plank: 4
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One floor, with framing"
+      requirements:
+        Log: 4
+        Quarter Plank: 4
+        Half Plank: 4
+        Three Quarter Plank: 4
+        Plank: 4
+  - name: Railing
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment"
+      requirements:
+        Quarter Log: 2
+        Plank: 1
+    - output: 1
+      recipe_type: Building (custom)
+      note: "One segment, continuing"
+      requirements:
+        Quarter Log: 1
+        Plank: 1
+
+  - name: Climbing Rope
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Rope: 1
+  - name: Rope Bridge
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Rope: 2
+        Variable Plank Amount: 1
+
+  - name: Basic Electricity
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Solar Panel: 1
+        Variable Wire Amount: 1
+  - name: Upgraded Electricity
+    recipes:
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Solar Panel: 1
+        Golf Cart Battery: 1
+        Variable Wire Amount: 1
+    - output: 1
+      recipe_type: Building (custom)
+      requirements:
+        Basic Electricity: 1
+        Golf Cart Battery: 1
+
+
+  ##############################################################################
+  - H1: Weapons ################################################################
+  ##############################################################################
+
+  - H2: Melee ##################################################################
+
+  - name: Crafted Spear
+    recipes:
+    - output: 1
+      recipe_type: Crafting (utility knife)
+      requirements:
+        Duct Tape: 1
+        Stick: 2
+  - name: Crafted Club
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Skull: 1
+        Stick: 1
+        Rope: 1
+  - name: Torch
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: 1
+        Cloth: 1
+  - name: Repair Tool
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Rope: 1
+        Stick: 1
+        Rock: 1
+
+  - name: Utility Knife
+    raw_resource: true
+  - name: Tactical Axe
+    raw_resource: true
+  - name: Modern Axe
+    raw_resource: true
+  - name: Firefighter Axe
+    raw_resource: true
+  - name: Pickaxe
+    raw_resource: true
+
+  - name: Guitar
+    raw_resource: true
+  - name: Katana
+    raw_resource: true
+  - name: Machete
+    raw_resource: true
+  - name: Putter
+    raw_resource: true
+  - name: Stun Baton
+    raw_resource: true
+
+  - H2: Ranged #################################################################
+
+  - name: Crafted Bow
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Duct Tape: 1
+        Rope: 1
+        Stick: 2
+  - name: Compound Bow
+    raw_resource: true
+  - name: Crossbow
+    raw_resource: true
+  - name: Pistol
+    raw_resource: true
+  - name: Revolver
+    raw_resource: true
+  - name: Rifle
+    raw_resource: true
+  - name: Shotgun
+    raw_resource: true
+  - name: Slingshot
+    raw_resource: true
+  - name: Stun Gun
+    raw_resource: true
+  - name: Cross
+    raw_resource: true
+
+  - H2: Attachment #############################################################
+
+  - name: Flashlight Attachment
+    raw_resource: true
+  - name: Laser Sight
+    raw_resource: true
+  - name: Pistol Rail
+    raw_resource: true
+  - name: Shotgun Rail
+    raw_resource: true
+  - name: Silencer
+    raw_resource: true
+
+  - H2: Explosives #############################################################
+
+  - name: Molotov
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Vodka Bottle: 1
+        Cloth: 1
+  - name: Sticky Bomb
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        C4 Brick: 1
+        Circuit Board: 1
+        Duct Tape: 1
+        Wire: 1
+        Watch: 1
+        Coins: 5
+  - name: Grenade
+    raw_resource: true
+
+  - H2: Ammo ###################################################################
+
+  - name: 9mm Ammo
+    raw_resource: true
+  - name: Buckshot Ammo
+    raw_resource: true
+  - name: Slug Ammo
+    raw_resource: true
+  - name: Rifle Ammo
+    raw_resource: true
+
+  - name: Stone Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Feather: 2
+        Stick: 2
+        Small Rock: 4
+  - name: Fire Stone Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stone Arrow: 4
+        Vodka Bottle: 1
+        Cloth: 1
+  - name: Poison Stone Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stone Arrow: 4
+        Snowberries: 2
+        Fly Amanita: 1
+  - name: Shock Stone Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stone Arrow: 4
+        Batteries: 2
+        Circuit Board: 1
+        Wire: 1
+  - name: Explosive Stone Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stone Arrow: 4
+        Batteries: 2
+        Wire: 1
+        Circuit Board: 1
+        C4 Brick: 1
+
+  - name: 3D Printed Arrow
+    recipes:
+    - output: 5
+      recipe_type: Crafting (3D printer)
+      requirements:
+        Printer Resin: 50
+  - name: Fire 3D Printed Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        3D Printed Arrow: 4
+        Vodka Bottle: 1
+        Cloth: 1
+  - name: Poison 3D Printed Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        3D Printed Arrow: 4
+        Snowberries: 2
+        Fly Amanita: 1
+  - name: Shock 3D Printed Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        3D Printed Arrow: 4
+        Batteries: 2
+        Circuit Board: 1
+        Wire: 1
+  - name: Explosive 3D Printed Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        3D Printed Arrow: 4
+        Batteries: 2
+        Wire: 1
+        Circuit Board: 1
+        C4 Brick: 1
+
+  - name: Carbon Fiber Arrow
+    raw_resource: true
+  - name: Fire Carbon Fiber Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Carbon Fiber Arrow: 4
+        Vodka Bottle: 1
+        Cloth: 1
+  - name: Poison Carbon Fiber Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Carbon Fiber Arrow: 4
+        Snowberries: 2
+        Fly Amanita: 1
+  - name: Shock Carbon Fiber Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Carbon Fiber Arrow: 4
+        Batteries: 2
+        Circuit Board: 1
+        Wire: 1
+  - name: Explosive Carbon Fiber Arrow
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Carbon Fiber Arrow: 4
+        Batteries: 2
+        Wire: 1
+        Circuit Board: 1
+        C4 Brick: 1
+
+  - name: Crossbow Bolt
+    raw_resource: true
+  - name: Golf Ball
+    raw_resource: true
+  - name: Small Rock
+    raw_resource: true
+  - name: Stun Gun Ammo
+    raw_resource: true
+  - name: Zipline Rope
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Rope: 1
+        Printed Grappling Hook: 1
+
+  ##############################################################################
+  - H1: Crafting Materials #####################################################
+  ##############################################################################
+
+  - name: Stick
+    raw_resource: true
+  - name: Rock
+    raw_resource: true
+  - name: Cloth
+    raw_resource: true
+  - name: Rope
+    raw_resource: true
+
+  - name: Log
+    raw_resource: true
+  - name: Three Quarter Log
+    raw_resource: true
+    recipes:
+    - output: 1
+      recipe_type: Crafting (axe)
+      note: "Also creates Quarter Log"
+      requirements:
+        Log: 1
+  - name: Half Log
+    raw_resource: true
+    recipes:
+    - output: 2
+      recipe_type: Crafting (axe)
+      requirements:
+        Log: 1
+    - output: 1
+      recipe_type: Crafting (axe)
+      note: "Also creates Quarter Log"
+      requirements:
+        Three Quarter Log: 1
+  - name: Quarter Log
+    raw_resource: true
+    recipes:
+    - output: 2
+      recipe_type: Crafting (axe)
+      requirements:
+        Half Log: 1
+    - output: 1
+      recipe_type: Crafting (axe)
+      note: "Also creates Half Log"
+      requirements:
+        Three Quarter Log: 1
+    - output: 1
+      recipe_type: Crafting (axe)
+      note: "Also creates Three Quarter Log"
+      requirements:
+        Log: 1
+  - name: Plank
+    recipes:
+    - output: 2
+      recipe_type: Crafting (axe)
+      requirements:
+        Log: 1
+  - name: Three Quarter Plank
+    raw_resource: true
+    recipes:
+    - output: 2
+      recipe_type: Crafting (axe)
+      requirements:
+        Three Quarter Log: 1
+    - output: 1
+      recipe_type: Crafting (axe)
+      note: "Also creates Quarter Plank"
+      requirements:
+        Plank: 1
+  - name: Half Plank
+    raw_resource: true
+    recipes:
+    - output: 2
+      recipe_type: Crafting (axe)
+      requirements:
+        Half Log: 1
+    - output: 2
+      recipe_type: Crafting (axe)
+      requirements:
+        Plank: 1
+    - output: 1
+      recipe_type: Crafting (axe)
+      note: "Also creates Quarter Plank"
+      requirements:
+        Three Quarter Plank: 1
+  - name: Quarter Plank
+    raw_resource: true
+    recipes:
+    - output: 2
+      recipe_type: Crafting (axe)
+      requirements:
+        Quarter Log: 1
+    - output: 2
+      recipe_type: Crafting (axe)
+      requirements:
+        Half Plank: 1
+    - output: 1
+      recipe_type: Crafting (axe)
+      note: "Also creates Half Plank"
+      requirements:
+        Three Quarter Plank: 1
+    - output: 1
+      recipe_type: Crafting (axe)
+      note: "Also creates Three Quarter Plank"
+      requirements:
+        Plank: 1
+  - name: Stone
+    raw_resource: true
+
+  - name: Tarp
+    raw_resource: true
+  - name: Animal Hide
+    raw_resource: true
+  - name: Batteries
+    raw_resource: true
+  - name: Bone
+    raw_resource: true
+    recipes:
+    - output: 1
+      recipe_type: Crafting (fire)
+      requirements:
+        Raw Arm: 1
+    - output: 1
+      recipe_type: Crafting (fire)
+      requirements:
+        Cooked Arm: 1
+    - output: 1
+      recipe_type: Crafting (fire)
+      requirements:
+        Burnt Arm: 1
+    - output: 1
+      recipe_type: Crafting (fire)
+      requirements:
+        Raw Leg: 1
+    - output: 1
+      recipe_type: Crafting (fire)
+      requirements:
+        Cooked Leg: 1
+    - output: 1
+      recipe_type: Crafting (fire)
+      requirements:
+        Burnt Leg: 1
+    - output: 2
+      recipe_type: Crafting (fire)
+      requirements:
+        Torso: 1
+    - output: 5
+      recipe_type: Crafting (fire)
+      note: "Sometimes more based on the body"
+      requirements:
+        Body: 1
+  - name: Skull
+    raw_resource: true
+    recipes:
+    - output: 1
+      recipe_type: Crafting (fire)
+      requirements:
+        Raw Head: 1
+    - output: 1
+      recipe_type: Crafting (fire)
+      requirements:
+        Cooked Head: 1
+    - output: 1
+      recipe_type: Crafting (fire)
+      requirements:
+        Burnt Head: 1
+  - name: Circuit Board
+    raw_resource: true
+  - name: C4 Brick
+    raw_resource: true
+  - name: Coins
+    raw_resource: true
+  - name: Cash
+    raw_resource: true
+  - name: Duct Tape
+    raw_resource: true
+  - name: Feather
+    raw_resource: true
+  - name: Leaf
+    raw_resource: true
+  - name: Vodka Bottle
+    raw_resource: true
+  - name: Watch
+    raw_resource: true
+  - name: Wire
+    raw_resource: true
+
+  - name: Air Tank
+    raw_resource: true
+  - name: Golf Cart Battery
+    raw_resource: true
+  - name: Light Bulb
+    raw_resource: true
+  - name: Paper Target
+    raw_resource: true
+  - name: Printer Resin
+    raw_resource: true
+  - name: Solar Panel
+    raw_resource: true
+  - name: Radio
+    raw_resource: true
+  - name: Turtle Shell
+    raw_resource: true
+
+  - name: Emergency Pack
+    raw_resource: true
+  - name: Skin Pouch
+    raw_resource: true
+
+  - name: Knight V
+    raw_resource: true
+  - name: Foldable Glider
+    raw_resource: true
+  - name: Golf Cart
+    raw_resource: true
+
+  - name: Solafite Ore
+    raw_resource: true
+
+  - H2: 3D Printed #############################################################
+
+  - name: Printed Flask
+    recipes:
+    - output: 1
+      recipe_type: Crafting (3D printer)
+      requirements:
+        Printer Resin: 100
+  - name: 3D Printed GPS Case
+    recipes:
+    - output: 1
+      recipe_type: Crafting (3D printer)
+      requirements:
+        Printer Resin: 75
+  - name: Printed Grappling Hook
+    recipes:
+    - output: 2
+      recipe_type: Crafting (3D printer)
+      requirements:
+        Printer Resin: 100
+  - name: Tech Mesh
+    recipes:
+    - output: 1
+      recipe_type: Crafting (3D printer)
+      requirements:
+        Printer Resin: 250
+  - name: Printed Sled
+    recipes:
+    - output: 1
+      recipe_type: Crafting (3D printer)
+      requirements:
+        Printer Resin: 1000
+
+  - name: Red Mask
+    recipes:
+    - output: 1
+      recipe_type: Crafting (3D printer)
+      requirements:
+        Printer Resin: 150
+  - name: Gold Mask
+    raw_resource: true
+
+  - H2: Armor ##################################################################
+
+  - name: Leaf Armor
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Leaf: 10
+        Cloth: 1
+  - name: Bone Armor
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bone: 4
+        Duct Tape: 1
+        Rope: 1
+  - name: Hide Armor
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Animal Hide: 2
+        Cloth: 1
+  - name: Creepy Armor
+    raw_resource: true
+  - name: Tech Armor
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Tech Mesh: 1
+        Circuit Board: 1
+        Duct Tape: 1
+        Wire: 1
+        Batteries: 1
+  - name: Solafite Armor
+    recipes:
+    - output: 10
+      recipe_type: Crafting (armor plater)
+      requirements:
+        Bone Armor: 10
+        Solafite Ore: 12
+  - name: Ancient Armor
+    raw_resource: true
+  - name: Ancient Armor (activated)
+    custom_simplename: ancientarmoractivated
+    recipes:
+    - output: 1
+      recipe_type: Crafting (armor plater)
+      requirements:
+        Ancient Armor: 1
+        Solafite Ore: 12
+
+  ##############################################################################
+  - H1: Consumables ############################################################
+  ##############################################################################
+
+  - H2: Flora ##################################################################
+
+  - name: Blackberries
+    raw_resource: true
+  - name: Blackberry Seed
+    raw_resource: true
+  - name: Blueberries
+    raw_resource: true
+  - name: Blueberry Seed
+    raw_resource: true
+  - name: Devil's Club
+    raw_resource: true
+  - name: Devils Club Seed
+    raw_resource: true
+  - name: Guarana Berries
+    raw_resource: true
+  - name: Guarana Seed
+    raw_resource: true
+  - name: Salmonberries
+    raw_resource: true
+  - name: Salmonberry Seed
+    raw_resource: true
+  - name: Snowberries
+    raw_resource: true
+  - name: Snowberry Seed
+    raw_resource: true
+  - name: Twinberries
+    raw_resource: true
+  - name: Twinberry Seed
+    raw_resource: true
+
+  - name: Fly Amanita
+    raw_resource: true
+  - name: Hydnum Repandum
+    raw_resource: true
+  - name: King Oyster
+    raw_resource: true
+  - name: Shiitake
+    raw_resource: true
+
+  - name: Aloe Vera
+    raw_resource: true
+  - name: Aloe Vera Seed
+    raw_resource: true
+  - name: Arrowleaf
+    raw_resource: true
+  - name: Arrowleaf Seed
+    raw_resource: true
+  - name: Chicory
+    raw_resource: true
+  - name: Chicory Seed
+    raw_resource: true
+  - name: Fireweed
+    raw_resource: true
+  - name: Fireweed Seed
+    raw_resource: true
+  - name: Horsetail
+    raw_resource: true
+  - name: Horsetail Seed
+    raw_resource: true
+  - name: Yarrow
+    raw_resource: true
+  - name: Yarrow Seed
+    raw_resource: true
+
+  - H2: Herbal Mixes ###########################################################
+
+  - name: Energy Mix
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Arrowleaf: 1
+        Chicory: 1
+  - name: Energy Mix +
+    custom_simplename: energymixplus
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Chicory: 1
+        Fireweed: 1
+        Devil's Club: 1
+  - name: Health Mix
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Aloe Vera: 1
+        Yarrow: 1
+  - name: Health Mix +
+    custom_simplename: healthmixplus
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Aloe Vera: 1
+        Horsetail: 1
+        Fireweed: 1
+
+  - H2: Food ###################################################################
+
+  - name: Meds
+    raw_resource: true
+  - name: Crunchie Wunchies
+    raw_resource: true
+  - name: Ramen Noodles
+    raw_resource: true
+  - name: MRE Pack
+    raw_resource: true
+
+  - name: Energy Bar
+    raw_resource: true
+  - name: Energy Drink
+    raw_resource: true
+
+  - name: Bacon Bite
+    raw_resource: true
+  - name: Brain Bite
+    raw_resource: true
+  - name: Steak Bite
+    raw_resource: true
+
+  - name: Canned Food
+    raw_resource: true
+  - name: Raw Cat Food
+    recipes:
+    - output: 1
+      recipe_type: Crafting (can opener)
+      requirements:
+        Canned Food: 1
+
+  - name: Raw Oyster
+    raw_resource: true
+  - name: Rotten Oyster
+    raw_resource: true
+  - name: Turtle Egg
+    raw_resource: true
+
+  - name: Raw Fish
+    raw_resource: true
+  - name: Dried Fish
+    recipes:
+    - output: 1
+      recipe_type: Cooking (drying rack)
+      requirements:
+        Raw Fish: 1
+  - name: Cooked Fish
+    recipes:
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Raw Fish: 1
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Dried Fish: 1
+  - name: Burnt Fish
+    recipes:
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Raw Fish: 1
+  - name: Rotten Fish
+    recipes:
+    - output: 1
+      recipe_type: Cooking (spoil)
+      requirements:
+        Raw Fish: 1
+
+  - name: Raw Meat
+    raw_resource: true
+  - name: Dried Meat
+    recipes:
+    - output: 1
+      recipe_type: Cooking (drying rack)
+      requirements:
+        Raw Meat: 1
+  - name: Cooked Meat
+    recipes:
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Raw Meat: 1
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Dried Meat: 1
+  - name: Burnt Meat
+    recipes:
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Raw Meat: 1
+  - name: Rotten Meat
+    recipes:
+    - output: 1
+      recipe_type: Cooking (spoil)
+      requirements:
+        Raw Meat: 1
+
+  - name: Raw Head
+    raw_resource: true
+  - name: Cooked Head
+    recipes:
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Raw Head: 1
+  - name: Burnt Head
+    recipes:
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Raw Head: 1
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Cooked Head: 1
+  - name: Rotten Head
+    recipes:
+    - output: 1
+      recipe_type: Cooking (spoil)
+      requirements:
+        Raw Head: 1
+  - name: Raw Arm
+    raw_resource: true
+  - name: Cooked Arm
+    recipes:
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Raw Arm: 1
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Dried Arm: 1
+  - name: Dried Arm
+    recipes:
+    - output: 1
+      recipe_type: Cooking (drying rack)
+      requirements:
+        Raw Arm: 1
+  - name: Burnt Arm
+    recipes:
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Raw Arm: 1
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Dried Arm: 1
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Cooked Arm: 1
+  - name: Rotten Arm
+    recipes:
+    - output: 1
+      recipe_type: Cooking (spoil)
+      requirements:
+        Raw Arm: 1
+
+  - name: Raw Leg
+    raw_resource: true
+  - name: Dried Leg
+    recipes:
+    - output: 1
+      recipe_type: Cooking (drying rack)
+      requirements:
+        Raw Leg: 1
+  - name: Cooked Leg
+    recipes:
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Raw Leg: 1
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Dried Leg: 1
+  - name: Burnt Leg
+    recipes:
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Raw Leg: 1
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Dried Leg: 1
+    - output: 1
+      recipe_type: Cooking (fire)
+      requirements:
+        Cooked Leg: 1
+  - name: Rotten Leg
+    recipes:
+    - output: 1
+      recipe_type: Cooking (spoil)
+      requirements:
+        Raw Leg: 1
+  - name: Torso
+    raw_resource: true
+  - name: Body
+    raw_resource: true
+
+  - name: Clean Water
+    raw_resource: true
+
+  - name: Boiled Meat
+    recipes:
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 2
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Dried Meat: 2
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 1
+        Dried Meat: 1
+        Clean Water: 1
+
+  - name: Cooked Ramen Noodles
+    recipes:
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Ramen Noodles: 2
+        Clean Water: 1
+
+  - name: Cream of Mushroom
+    recipes:
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Hydnum Repandum: 1
+        King Oyster: 1
+        Shiitake: 1
+        Fly Amanita: 1
+        Clean Water: 1
+
+  - name: Jam
+    recipes:
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Blueberries: 5
+        Salmonberries: 5
+        Twinberries: 5
+        Clean Water: 1
+
+  - name: Liquid Battery
+    recipes:
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Blueberries: 10
+        Guarana Berries: 10
+        Clean Water: 1
+
+  - name: Chicken Noodle Soup
+    recipes:
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Arm: 1
+        Ramen Noodles: 1
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Dried Arm: 1
+        Ramen Noodles: 1
+        Clean Water: 1
+
+  - name: Egg Nog
+    recipes:
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Turtle Egg: 4
+        Vodka Bottle: 1
+        Clean Water: 1
+
+  - name: Greg
+    recipes:
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Head: 1
+        Raw Arm: 2
+        Raw Leg: 2
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Head: 1
+        Dried Arm: 2
+        Dried Leg: 2
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Head: 1
+        Raw Arm: 2
+        Dried Leg: 2
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Head: 1
+        Dried Arm: 2
+        Raw Leg: 2
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Head: 1
+        Raw Arm: 1
+        Dried Arm: 1
+        Raw Leg: 2
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Head: 1
+        Raw Arm: 1
+        Dried Arm: 1
+        Dried Leg: 2
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Head: 1
+        Raw Arm: 2
+        Raw Leg: 1
+        Dried Leg: 1
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Head: 1
+        Dried Arm: 2
+        Raw Leg: 1
+        Dried Leg: 1
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Head: 1
+        Raw Arm: 1
+        Dried Arm: 1
+        Raw Leg: 1
+        Dried Leg: 1
+        Clean Water: 1
+
+  - name: Kelvin Special
+    recipes:
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Fish: 3
+        Raw Oyster: 1
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Dried Fish: 3
+        Raw Oyster: 1
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Fish: 2
+        Dried Fish: 1
+        Raw Oyster: 1
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Fish: 1
+        Dried Fish: 2
+        Raw Oyster: 1
+        Clean Water: 1
+
+  - name: Kitchen Sink
+    recipes:
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 2
+        Raw Fish: 2
+        Raw Oyster: 2
+        Turtle Egg: 2
+        King Oyster: 2
+        Ramen Noodles: 1
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 2
+        Dried Fish: 2
+        Raw Oyster: 2
+        Turtle Egg: 2
+        King Oyster: 2
+        Ramen Noodles: 1
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 2
+        Raw Fish: 1
+        Dried Fish: 1
+        Raw Oyster: 2
+        Turtle Egg: 2
+        King Oyster: 2
+        Ramen Noodles: 1
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Dried Meat: 2
+        Raw Fish: 2
+        Raw Oyster: 2
+        Turtle Egg: 2
+        King Oyster: 2
+        Ramen Noodles: 1
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Dried Meat: 2
+        Dried Fish: 2
+        Raw Oyster: 2
+        Turtle Egg: 2
+        King Oyster: 2
+        Ramen Noodles: 1
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Dried Meat: 2
+        Raw Fish: 1
+        Dried Fish: 1
+        Raw Oyster: 2
+        Turtle Egg: 2
+        King Oyster: 2
+        Ramen Noodles: 1
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 1
+        Dried Meat: 1
+        Raw Fish: 2
+        Raw Oyster: 2
+        Turtle Egg: 2
+        King Oyster: 2
+        Ramen Noodles: 1
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 1
+        Dried Meat: 1
+        Dried Fish: 2
+        Raw Oyster: 2
+        Turtle Egg: 2
+        King Oyster: 2
+        Ramen Noodles: 1
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 1
+        Dried Meat: 1
+        Raw Fish: 1
+        Dried Fish: 1
+        Raw Oyster: 2
+        Turtle Egg: 2
+        King Oyster: 2
+        Ramen Noodles: 1
+        Clean Water: 1
+
+  - name: Lumberjack Juice
+    recipes:
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 5
+        Raw Fish: 3
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 5
+        Dried Fish: 3
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 5
+        Raw Fish: 2
+        Dried Fish: 1
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 5
+        Raw Fish: 1
+        Dried Fish: 2
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Dried Meat: 5
+        Raw Fish: 3
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Dried Meat: 5
+        Dried Fish: 3
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Dried Meat: 5
+        Raw Fish: 2
+        Dried Fish: 1
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Dried Meat: 5
+        Raw Fish: 1
+        Dried Fish: 2
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 4
+        Dried Meat: 1
+        Raw Fish: 3
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 4
+        Dried Meat: 1
+        Dried Fish: 3
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 4
+        Dried Meat: 1
+        Raw Fish: 2
+        Dried Fish: 1
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 4
+        Dried Meat: 1
+        Raw Fish: 1
+        Dried Fish: 2
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 3
+        Dried Meat: 2
+        Raw Fish: 3
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 3
+        Dried Meat: 2
+        Dried Fish: 3
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 3
+        Dried Meat: 2
+        Raw Fish: 2
+        Dried Fish: 1
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 3
+        Dried Meat: 2
+        Raw Fish: 1
+        Dried Fish: 2
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 2
+        Dried Meat: 3
+        Raw Fish: 3
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 2
+        Dried Meat: 3
+        Dried Fish: 3
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 2
+        Dried Meat: 3
+        Raw Fish: 2
+        Dried Fish: 1
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 2
+        Dried Meat: 3
+        Raw Fish: 1
+        Dried Fish: 2
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 1
+        Dried Meat: 4
+        Raw Fish: 3
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 1
+        Dried Meat: 4
+        Dried Fish: 3
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 1
+        Dried Meat: 4
+        Raw Fish: 2
+        Dried Fish: 1
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 1
+        Dried Meat: 4
+        Raw Fish: 1
+        Dried Fish: 2
+        Meds: 1
+        Chicory: 5
+        Clean Water: 1
+
+  - name: Protein Shake
+    recipes:
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Raw Meat: 1
+        Turtle Egg: 1
+        Fly Amanita: 1
+        Aloe Vera: 1
+        Guarana Berries: 3
+        Meds: 1
+        Clean Water: 1
+    - output: 1
+      recipe_type: Cooking (stew)
+      requirements:
+        Dried Meat: 1
+        Turtle Egg: 1
+        Fly Amanita: 1
+        Aloe Vera: 1
+        Guarana Berries: 3
+        Meds: 1
+        Clean Water: 1
+
+  ##############################################################################
+  - H1: Misc ###################################################################
+  ##############################################################################
+
+  - name: Backpack
+    raw_resource: true
+  - name: Guide Book
+    raw_resource: true
+  - name: Walkie Talkie
+    raw_resource: true
+  - name: Lighter
+    raw_resource: true
+  - name: Flare
+    raw_resource: true
+
+  - name: Action Camera
+    raw_resource: true
+  - name: Binoculars
+    raw_resource: true
+  - name: Can Opener
+    raw_resource: true
+  - name: Cooking Pot
+    raw_resource: true
+  - name: Chainsaw
+    raw_resource: true
+  - name: Flashlight
+    raw_resource: true
+  - name: GPS Locator
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        3D Printed GPS Case: 1
+        Circuit Board: 1
+        Batteries: 1
+        Wire: 1
+  - name: GPS Tracker
+    raw_resource: true
+  - name: Night Vision Goggles
+    raw_resource: true
+  - name: Rebreather
+    raw_resource: true
+  - name: Rope Gun
+    raw_resource: true
+  - name: Shovel
+    raw_resource: true
+
+  - name: Maintenance Keycard
+    raw_resource: true
+  - name: Guest Keycard
+    raw_resource: true
+  - name: VIP Keycard
+    raw_resource: true
+
+  - name: Artifact Piece A
+    raw_resource: true
+  - name: Artifact Piece B
+    raw_resource: true
+  - name: Artifact Piece C
+    raw_resource: true
+  - name: Artifact Piece D
+    raw_resource: true
+  - name: Artifact Piece E
+    raw_resource: true
+  - name: Artifact Piece F
+    raw_resource: true
+  - name: Artifact Piece G
+    raw_resource: true
+  - name: Artifact
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Artifact Piece A: 1
+        Artifact Piece B: 1
+        Artifact Piece C: 1
+        Artifact Piece D: 1
+        Artifact Piece E: 1
+        Artifact Piece F: 1
+        Artifact Piece G: 1
+
+  - name: Variable Log Amount
+    raw_resource: true
+  - name: Variable Three Quarter Log Amount
+    raw_resource: true
+  - name: Variable Half Log Amount
+    raw_resource: true
+  - name: Variable Quarter Log Amount
+    raw_resource: true
+  - name: Variable Plank Amount
+    raw_resource: true
+  - name: Variable Stick Amount
+    raw_resource: true
+  - name: Variable Rock Amount
+    raw_resource: true
+  - name: Variable Wire Amount
+    raw_resource: true
+
+  - name: Squirrel Head
+    raw_resource: true
+  - name: Small Turtle Head
+    raw_resource: true
+  - name: Duck Head
+    raw_resource: true
+  - name: Eagle Head
+    raw_resource: true
+  - name: Seagull Head
+    raw_resource: true
+  - name: Rabbit Head
+    raw_resource: true
+  - name: Turtle Head
+    raw_resource: true
+  - name: Raccoon Head
+    raw_resource: true
+  - name: Deer Head
+    raw_resource: true
+  - name: Moose Head
+    raw_resource: true
+
+  - name: The Realm Beyond
+    raw_resource: true
+  - name: Parallel Universes
+    raw_resource: true
+  - name: Rescued
+    raw_resource: true
+  - name: Puffton - On Creating an Empire 
+    custom_simplename: pufftononcreatinganempire
+    raw_resource: true
+  - name: Corporate Line
+    raw_resource: true
+  - name: Circus Pamphlet
+    raw_resource: true
+  - name: Holosprings Pamphlet
+    raw_resource: true
+  - name: Cult Pamphlet
+    raw_resource: true
+  - name: Album Cover
+    raw_resource: true
+  - name: Notes
+    raw_resource: true
+    note: "50 in total"
+
+  - name: Winter Jacket
+    note: "For player"
+    raw_resource: true
+  - name: Leather Jacket
+    note: "For player and Kelvin"
+    raw_resource: true
+  - name: Tactical Jacket
+    note: "Starting outfit for player and Kelvin"
+    raw_resource: true
+  - name: Tuxedo
+    note: "For player and Kelvin"
+    raw_resource: true
+  - name: Silk Pyjamas
+    note: "For player and Kelvin"
+    raw_resource: true
+  - name: Space Suit
+    note: "For player and Kelvin"
+    raw_resource: true
+  - name: Hoodie
+    note: "For player and Kelvin"
+    raw_resource: true
+  - name: Blazer
+    note: "For player and Kelvin"
+    raw_resource: true
+  - name: Priest Outfit
+    note: "For player"
+    raw_resource: true
+  - name: Wetsuit
+    note: "For player"
+    raw_resource: true
+
+  - name: Swim Suit
+    raw_resource: true
+    note: "Starting outfit for Virginia"
+  - name: Dress
+    note: "For Virginia"
+    raw_resource: true
+  - name: Camouflage Suit
+    note: "For Virginia"
+    raw_resource: true
+  - name: Leather Suit
+    note: "For Virginia"
+    raw_resource: true
+  - name: Track Suit
+    note: "For Virginia"
+    raw_resource: true

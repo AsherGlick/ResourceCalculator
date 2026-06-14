@@ -15,7 +15,7 @@ note: |
 
 recipe_types:
   Crafting: Use your inventory to turn {IN_ITEMS} into {OUT_ITEM}
-  Upgrading: Use your inventory to add {OUT_ITEM} to a weapon using {IN_ITEMS} (the weapon will not be consumed, not all weapons are applicable, terms and conditions may apply)
+  Upgrading: Use your inventory to add {OUT_ITEM} to a weapon using {IN_ITEMS} (weapon will not be consumed, not all weapons are applicable)
   Building: Place blueprint(s) and fill to turn {IN_ITEMS} into {OUT_ITEM}
 
 resources:
@@ -29,6 +29,7 @@ resources:
     raw_resource: true
 
   - name: Rope
+    raw_resource: true
     recipes:
     - output: 1
       recipe_type: Crafting
@@ -39,6 +40,9 @@ resources:
     raw_resource: true
 
   - name: Cash
+    raw_resource: true
+
+  - name: Skull
     raw_resource: true
 
   - name: Bone
@@ -139,9 +143,6 @@ resources:
     raw_resource: true
 
   - name: Turtle Shell
-    raw_resource: true
-
-  - name: Skull
     raw_resource: true
 
   - name: Head
