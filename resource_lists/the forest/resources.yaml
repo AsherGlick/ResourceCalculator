@@ -21,10 +21,13 @@ recipe_types:
 resources:
   - name: Stick
     raw_resource: true
+
   - name: Rock
     raw_resource: true
+
   - name: Cloth
     raw_resource: true
+
   - name: Rope
     raw_resource: true
     recipes:
@@ -41,6 +44,7 @@ resources:
 
   - name: Skull
     raw_resource: true
+
   - name: Bone
     raw_resource: true
 
@@ -64,23 +68,31 @@ resources:
 
   - name: Blackberries
     raw_resource: true
+
   - name: Blueberries
     raw_resource: true
+
   - name: Snowberries
     raw_resource: true
+
   - name: Twinberries
     raw_resource: true
 
   - name: Amanita Mushroom
     raw_resource: true
+
   - name: Chanterelle Mushroom
     raw_resource: true
+
   - name: Deer Mushroom
     raw_resource: true
+
   - name: Jack Mushroom
     raw_resource: true
+
   - name: Liberty Cap Mushroom
     raw_resource: true
+
   - name: Puff Mushroom
     raw_resource: true
 
@@ -90,19 +102,25 @@ resources:
 
   - name: Small Meat
     raw_resource: true
+
   - name: Meat
     raw_resource: true
+
   - name: Rabbit Meat
     raw_resource: true
+
   - name: Lizard Meat
     raw_resource: true
+
   - name: Fish
     raw_resource: true
+
   - name: Oyster
     raw_resource: true
 
   - name: Soda
     raw_resource: true
+
   - name: Snack
     raw_resource: true
 
@@ -111,23 +129,31 @@ resources:
 
   - name: Lizard Skin
     raw_resource: true
+
   - name: Raccoon Skin
     raw_resource: true
+
   - name: Boar Skin
     raw_resource: true
+
   - name: Deer Skin
     raw_resource: true
+
   - name: Rabbit Fur
     raw_resource: true
+
   - name: Turtle Shell
     raw_resource: true
 
   - name: Head
     raw_resource: true
+
   - name: Torso
     raw_resource: true
+
   - name: Arm
     raw_resource: true
+
   - name: Leg
     raw_resource: true
 
@@ -333,20 +359,28 @@ resources:
 
   - name: Gun Part 1
     raw_resource: true
+
   - name: Gun Part 2
     raw_resource: true
+
   - name: Gun Part 3
     raw_resource: true
+
   - name: Gun Part 4
     raw_resource: true
+
   - name: Gun Part 5
     raw_resource: true
+
   - name: Gun Part 6
     raw_resource: true
+
   - name: Gun Part 7
     raw_resource: true
+
   - name: Gun Part 8
     raw_resource: true
+
   - name: Flintlock Pistol
     recipes:
     - output: 1
@@ -824,44 +858,61 @@ resources:
 
   - name: Variable Log Amount
     raw_resource: true
+
   - name: Variable Stick Amount
     raw_resource: true
+
   - name: Variable Rock Amount
     raw_resource: true
+
   - name: Variable Bone Amount
     raw_resource: true
+
   - name: Variable Rope Amount
     raw_resource: true
 
   - name: Boar Head
     raw_resource: true
+
   - name: Crocodile Head
     raw_resource: true
+
   - name: Deer Head
     raw_resource: true
+
   - name: Goose Head
     raw_resource: true
+
   - name: Lizard Head
     raw_resource: true
+
   - name: Rabbit Head
     raw_resource: true
+
   - name: Raccoon Head
     raw_resource: true
+
   - name: Seagull Head
     raw_resource: true
+
   - name: Shark Head
     raw_resource: true
+
   - name: Squirrel Head
     raw_resource: true
+
   - name: Tortoise Head
     raw_resource: true
 
   - name: Armsy Head
     raw_resource: true
+
   - name: Cowman Head
     raw_resource: true
+
   - name: Mutant Baby Head
     raw_resource: true
+
   - name: Virginia Head
     raw_resource: true
 
@@ -876,6 +927,7 @@ resources:
       requirements:
         Leaf: 7
         Stick: 2
+
   - name: Fire Pit
     recipes:
     - output: 1
@@ -884,6 +936,7 @@ resources:
         Leaf: 7
         Stick: 4
         Rock: 7
+
   - name: Standing Fire
     recipes:
     - output: 1
@@ -892,6 +945,7 @@ resources:
         Leaf: 7
         Stick: 4
         Rock: 3
+
   - name: Bonfire
     recipes:
     - output: 1
@@ -981,6 +1035,7 @@ resources:
       recipe_type: Building
       requirements:
         Stick: 6
+
   - name: Large Stick Holder
     recipes:
     - output: 1
@@ -994,6 +1049,7 @@ resources:
       recipe_type: Building
       requirements:
         Stick: 16
+
   - name: Large Log Holder
     recipes:
     - output: 1
@@ -1007,6 +1063,7 @@ resources:
       recipe_type: Building
       requirements:
         Stick: 8
+
   - name: Large Rock Holder
     recipes:
     - output: 1
@@ -1027,6 +1084,7 @@ resources:
       recipe_type: Building
       requirements:
         Stick: 10
+
   - name: Explosives Holder
     recipes:
     - output: 1
@@ -1041,6 +1099,7 @@ resources:
       recipe_type: Building
       requirements:
         Log: 7
+
   - name: Large Cabinet
     recipes:
     - output: 1
@@ -1668,6 +1727,7 @@ resources:
         Stick: 4
         Rope: 4
         Log: 7
+
   - name: House Boat
     recipes:
     - output: 1
@@ -1676,6 +1736,7 @@ resources:
         Stick: 4
         Rope: 4
         Log: 40
+
   - name: Large Raft
     recipes:
     - output: 1
@@ -1683,6 +1744,7 @@ resources:
       requirements:
         Stick: 32
         Log: 57
+
   - name: Dock
     recipes:
     - output: 1
@@ -1701,6 +1763,7 @@ resources:
       requirements:
         Stick: 2
         Rock: 3
+
   - name: Small Effigy
     recipes:
     - output: 1
@@ -1711,6 +1774,7 @@ resources:
         Arm: 3
         Leg: 2
         Head: 3
+
   - name: Large Effigy
     recipes:
     - output: 1
@@ -1721,6 +1785,7 @@ resources:
         Arm: 9
         Leg: 4
         Head: 9
+
   - name: Arm Effigy
     recipes:
     - output: 1
@@ -1811,6 +1876,7 @@ resources:
       requirements:
         Stick: 38
         Cloth: 1
+
   - name: Timmy Sitting
     recipes:
     - output: 1
@@ -1819,6 +1885,7 @@ resources:
         Stick: 38
         Cloth: 1
         Log: 1
+
   - name: Wife Standing
     recipes:
     - output: 1
@@ -1826,6 +1893,7 @@ resources:
       requirements:
         Stick: 38
         Cloth: 1
+
   - name: Wife Sitting
     recipes:
     - output: 1
@@ -1834,6 +1902,7 @@ resources:
         Stick: 38
         Cloth: 1
         Log: 1
+
   - name: Car
     recipes:
     - output: 1
@@ -1841,6 +1910,7 @@ resources:
       requirements:
         Stick: 121
         Log: 47
+
   - name: Dog
     recipes:
     - output: 1
@@ -1849,6 +1919,7 @@ resources:
         Stick: 20
         Log: 1
         Cloth: 1
+
   - name: TV
     recipes:
     - output: 1
