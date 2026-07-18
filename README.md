@@ -142,7 +142,7 @@ Compiling The Calculator
 Linux
 --------------------------------------------------------------------------------
 The primary method for building resource calculator is via a native linux
-environment. On Linux, you will need to have installed  Python 3.8 or newer,
+environment. On Linux, you will need to have installed  Python 3.10 to 3.12,
 nodejs 12 or newer, as well as all the python and node dependencies found in
 `requirements.txt` and `package.json`. Additionally you will need the program
 `pngquant` to perform the png compression stage of the build process.
